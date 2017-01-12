@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QGy-YS-R3b">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base Navigation View Controller-->
+        <scene sceneID="uzV-Je-uxR">
+            <objects>
+                <navigationController id="QGy-YS-R3b" customClass="BaseNavigationViewController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iBF-Yp-QG3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jsr-PT-ntE" kind="relationship" relationship="rootViewController" id="Utr-8F-HsN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I51-np-iJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-975" y="-117"/>
+        </scene>
+        <!--签到-->
+        <scene sceneID="L7V-yI-eOl">
+            <objects>
+                <viewController id="jsr-PT-ntE" customClass="SigninViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C8x-1N-ZTt"/>
+                        <viewControllerLayoutGuide type="bottom" id="mdS-J8-43g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ePb-qS-BRk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ml-AJ-NQu">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jsr-PT-ntE" id="bXd-7V-6xz"/>
+                                    <outlet property="delegate" destination="jsr-PT-ntE" id="FgE-Wr-no5"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QxZ-U5-yeB">
+                                <rect key="frame" x="36" y="72" width="303" height="29"/>
+                                <segments>
+                                    <segment title="进行中的签到"/>
+                                    <segment title="已关闭的签到"/>
+                                </segments>
+                                <color key="tintColor" red="0.031331380208333336" green="0.72957356770833337" blue="0.034559461805555552" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="QxZ-U5-yeB" secondAttribute="trailing" constant="20" id="BQq-QR-bix"/>
+                            <constraint firstItem="QxZ-U5-yeB" firstAttribute="top" secondItem="C8x-1N-ZTt" secondAttribute="bottom" constant="8" id="Btk-i0-qMl"/>
+                            <constraint firstItem="mdS-J8-43g" firstAttribute="top" secondItem="1ml-AJ-NQu" secondAttribute="bottom" id="Iq9-y8-lug"/>
+                            <constraint firstItem="QxZ-U5-yeB" firstAttribute="leading" secondItem="ePb-qS-BRk" secondAttribute="leadingMargin" constant="20" id="PIa-ab-3Zv"/>
+                            <constraint firstItem="1ml-AJ-NQu" firstAttribute="top" secondItem="C8x-1N-ZTt" secondAttribute="bottom" constant="44" id="Qit-YV-z5V"/>
+                            <constraint firstItem="1ml-AJ-NQu" firstAttribute="top" secondItem="QxZ-U5-yeB" secondAttribute="bottom" constant="8" id="ZWa-Hn-e7Q"/>
+                            <constraint firstItem="1ml-AJ-NQu" firstAttribute="leading" secondItem="ePb-qS-BRk" secondAttribute="leading" id="qSN-bN-vGb"/>
+                            <constraint firstAttribute="trailing" secondItem="1ml-AJ-NQu" secondAttribute="trailing" id="xjM-ox-zuD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="签到" id="j7w-a3-Csc"/>
+                    <connections>
+                        <outlet property="segmented" destination="QxZ-U5-yeB" id="NXY-xw-G8e"/>
+                        <outlet property="tableView" destination="1ml-AJ-NQu" id="3ef-I9-fcc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nI1-hc-hvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-239" y="-251"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,49 @@
+//
+//  zhundao.pch
+//  zhundao
+//
+//  Created by zhundao on 2016/12/2.
+//  Copyright © 2016年 zhundao. All rights reserved.
+//
+
+#ifndef zhundao_pch
+#define zhundao_pch
+//------------------------define----------------
+
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
+#define WXDoctor_App_ID @"wxfe2a9da163481ba9" // 注册微信时的AppID
+#define WXDoctor_App_Secret @"ace26a762813528cc2dbb65b4279398e" // 注册时得到的AppSecret
+//#define WXPatient_App_ID @"wxbd02bfeea4292***"
+//#define WXPatient_App_Secret @"4a788217f363358276309ab655707***"
+
+#define WX_UNION_ID @"Unionid"
+#define AccessKey @"AccessKey"
+
+#define img @"HeadImgurl"
+
+#define sex @"Sex"
+#define username1 @"Name"//微信
+#define userdic1 @"userdic"
+
+#define phoneSexsex @"phoneSex"
+#define phoneName @"phoneName"//手机
+#define phoneuserimage @"phoneuserimage"
+#define activityaArray @"activityaArray"
+#define color1 ([UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1])
+#define zhundaoColor  [UIColor colorWithRed:141.00f/255.0f green:189.00f/255.0f blue:38.00f/255.0f alpha:1]
+//-------------------------import------------------
+#import "MBProgressHUD.h"
+#import "YYModel.h"
+#import "UIImageView+WebCache.h"
+#import "AFNetworking.h"
+#import "IQKeyboardManager.h"
+#import "HHPullToRefreshWave.h"
+#import "SignManager.h"
+#import "JQIndicatorView.h"
+#import "FMDB.h"
+#import "AFmanager.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* zhundao_pch */

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9v6-WI-r2z">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base Navigation View Controller-->
+        <scene sceneID="UEC-ER-jSb">
+            <objects>
+                <navigationController id="9v6-WI-r2z" customClass="BaseNavigationViewController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5nV-oo-kpg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZJX-zy-t3o" kind="relationship" relationship="rootViewController" id="6E0-vm-YKh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTM-Yw-dCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-489" y="-204"/>
+        </scene>
+        <!--活动-->
+        <scene sceneID="5Rh-AM-ndz">
+            <objects>
+                <viewController id="ZJX-zy-t3o" customClass="ActivityViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lL4-fI-WkF"/>
+                        <viewControllerLayoutGuide type="bottom" id="VQk-gZ-50e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tng-Nc-VXK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B32-pa-N50">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZJX-zy-t3o" id="uV0-tD-eqb"/>
+                                    <outlet property="delegate" destination="ZJX-zy-t3o" id="crQ-DG-sB0"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QPt-6K-R0A">
+                                <rect key="frame" x="36" y="72" width="303" height="29"/>
+                                <segments>
+                                    <segment title="进行中的活动"/>
+                                    <segment title="已结束的活动"/>
+                                </segments>
+                                <color key="tintColor" red="0.044053819444444448" green="0.72658962673611116" blue="0.029812282986111112" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B32-pa-N50" firstAttribute="top" secondItem="QPt-6K-R0A" secondAttribute="bottom" constant="8" id="0y5-yw-RtE"/>
+                            <constraint firstItem="VQk-gZ-50e" firstAttribute="top" secondItem="B32-pa-N50" secondAttribute="bottom" id="Grd-8h-jUF"/>
+                            <constraint firstAttribute="trailing" secondItem="B32-pa-N50" secondAttribute="trailing" id="T2H-9m-yF7"/>
+                            <constraint firstItem="B32-pa-N50" firstAttribute="top" secondItem="lL4-fI-WkF" secondAttribute="bottom" constant="44" id="ZeH-jG-RiV"/>
+                            <constraint firstItem="B32-pa-N50" firstAttribute="leading" secondItem="Tng-Nc-VXK" secondAttribute="leading" id="eCx-ES-dv6"/>
+                            <constraint firstItem="QPt-6K-R0A" firstAttribute="leading" secondItem="Tng-Nc-VXK" secondAttribute="leadingMargin" constant="20" id="jBv-HQ-UHw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QPt-6K-R0A" secondAttribute="trailing" constant="20" id="lD1-ZU-Wwg"/>
+                            <constraint firstItem="QPt-6K-R0A" firstAttribute="top" secondItem="lL4-fI-WkF" secondAttribute="bottom" constant="8" id="x1m-Li-HF2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="活动" id="VOH-6u-cuE"/>
+                    <connections>
+                        <outlet property="segmented" destination="QPt-6K-R0A" id="AiV-mp-2fJ"/>
+                        <outlet property="tableview" destination="B32-pa-N50" id="tVB-rn-mB5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bK1-m2-J6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="-357"/>
+        </scene>
+    </scenes>
+</document>
