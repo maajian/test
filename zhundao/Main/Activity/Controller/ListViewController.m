@@ -31,7 +31,6 @@
    self.title = @"名单";
     [self getaccseekey];
      [self createTableView];
-  
     [self firstload];
 }
 - (void)firstload
