@@ -10,7 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol ZDDiscoveEditApplyFooterViewDelegate <NSObject>
+// 点击增加选项
+- (void)footerView:(UIView *)footerView didAddButton:(UIButton *)button;
+
+@end
+
 @interface ZDDiscoveEditApplyFooterView : UIView
+// 代理
+@property (nonatomic, weak) id<ZDDiscoveEditApplyFooterViewDelegate> discoveEditApplyFooterViewDelegate;
+// 是否删除增加选项
+@property (nonatomic, assign) BOOL isNeedChoice;
+// 是否新增
+@property (nonatomic, assign) BOOL isNew;
 
 @end
 

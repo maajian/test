@@ -31,13 +31,14 @@ typedef NS_ENUM(NSInteger , YBPopupMenuPriorityDirection) {
 };
 
 @class YBPopupMenu;
+
 @protocol YBPopupMenuDelegate <NSObject>
 
 @optional
 /**
  点击事件回调
  */
-- (void)ybPopupMenuDidSelectedAtIndex:(NSInteger)index ybPopupMenu:(YBPopupMenu *)ybPopupMenu;
+- (void)ybPopupMenuDidSelectedAtIndex:(NSInteger)index ybPopupMenu:(YBPopupMenu *)ybPopupMenu cell :(UITableViewCell *)cell;
 - (void)ybPopupMenuBeganDismiss;
 - (void)ybPopupMenuDidDismiss;
 - (void)ybPopupMenuBeganShow;

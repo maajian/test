@@ -8,9 +8,29 @@
 
 #import <UIKit/UIKit.h>
 
+@class moreModalHeaderView;
+
+typedef NS_ENUM(NSInteger, chartType) {
+    chartTypeApply,
+    chartTypeBrowse,
+    chartTypeIncome
+};
+
+@protocol moreModalHeaderViewDelegate <NSObject>
+- (void)header:(moreModalHeaderView *)headerView didTapDetailView:(UIView *)detailView;
+- (void)header:(moreModalHeaderView *)headerView didTapChartView:(chartType)type ;
+
+@end
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface moreModalHeaderView : UICollectionReusableView
+
+@property (nonatomic, strong) ActivityModel *model;
+// 截止时间
+@property (nonatomic, copy) NSString *endTime;
+
+@property (nonatomic, weak) id<moreModalHeaderViewDelegate> headerViewDelegate;
 
 @end
 

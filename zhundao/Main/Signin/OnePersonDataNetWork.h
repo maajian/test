@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface OnePersonDataNetWork : NSObject
 
+typedef void(^backBlock) (NSArray *backArray);
+@interface OnePersonDataNetWork : NSObject
+- (void)getNewList :(NSInteger)listID BackBlock :(backBlock)backBlock ;
 @end

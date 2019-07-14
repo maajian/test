@@ -6,8 +6,14 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "bindingBeacon.h"
+#import "SaoYiSaoViewController.h"
+typedef void(^signStatusBlock) (NSInteger signStatus,FMResultSet * rs);
+typedef void(^haveNetBlock) (NSInteger signStatus,NSDictionary  *dic);
+@interface muliSignViewController : SaoYiSaoViewController
+@property(nonatomic,copy)signStatusBlock signStatusBlock;
+@property(nonatomic,copy)haveNetBlock haveNetBlock;
 
-@interface muliSignViewController : bindingBeacon
+// 用户密钥
+@property (nonatomic, copy) NSString *acckey;
 
 @end

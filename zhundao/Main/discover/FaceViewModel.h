@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-
+typedef void(^listBlock) (NSArray *dataArray);
 @interface FaceViewModel : NSObject
+//获取设备列表
+- (void)getListWithBlock :(listBlock)liBlock;
+
+
+
+
+
+
+
+- (void)saveData:(NSArray *)array ;
+
+- (NSArray *)getData;
 
 @end

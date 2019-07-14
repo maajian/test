@@ -1,4 +1,4 @@
-//
+    //
 //  OptionTableViewCell.h
 //  zhundao
 //
@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface OptionTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

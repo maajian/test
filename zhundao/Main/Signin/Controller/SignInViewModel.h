@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface SignInViewModel : NSObject
+- (void)removeObject;
+
+
 
 @end

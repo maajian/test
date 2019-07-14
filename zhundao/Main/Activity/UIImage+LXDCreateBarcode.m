@@ -170,28 +170,27 @@ void ProviderReleaseData(void * info, const void * data, size_t size) {
  */
 + (UIImage *)imageFillBlackColorAndTransparent: (UIImage *)image red: (NSUInteger)red green: (NSUInteger)green blue: (NSUInteger)blue
 {
-    const int imageWidth = image.size.width;
-    const int imageHeight = image.size.height;
-    size_t bytesPerRow = imageWidth * 4;
-    uint32_t * rgbImageBuf = (uint32_t *)malloc(bytesPerRow * imageHeight);
+//    const int imageWidth = image.size.width;
+//    const int imageHeight = image.size.height;
+//    size_t bytesPerRow = imageWidth * 4;
+//    uint32_t * rgbImageBuf = (uint32_t *)malloc(bytesPerRow * imageHeight);
+//
+//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//    CGContextRef context = CGBitmapContextCreate(rgbImageBuf, imageWidth, imageHeight, 8, bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipLast);
+//    CGContextDrawImage(context, (CGRect){(CGPointZero), (image.size)}, image.CGImage);
+//
+//    //遍历像素
+//    int pixelNumber = imageHeight * imageWidth;
+//    [self fillWhiteToTransparentOnPixel: rgbImageBuf pixelNum: pixelNumber red: red green: green blue: blue];
+//
+//    CGDataProviderRef dataProvider = CGDataProviderCreateWithData(NULL, rgbImageBuf, bytesPerRow, ProviderReleaseData);
+//    CGImageRef imageRef = CGImageCreate(imageWidth, imageHeight, 8, 32, bytesPerRow, colorSpace, kCGImageAlphaLast | kCGBitmapByteOrder32Little, dataProvider, NULL, true, kCGRenderingIntentDefault);
+//    UIImage * resultImage = [UIImage imageWithCGImage: imageRef];
+//    CGImageRelease(imageRef);
+//    CGColorSpaceRelease(colorSpace);
+//    CGContextRelease(context);
     
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate(rgbImageBuf, imageWidth, imageHeight, 8, bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipLast);
-    CGContextDrawImage(context, (CGRect){(CGPointZero), (image.size)}, image.CGImage);
-    
-    //遍历像素
-    int pixelNumber = imageHeight * imageWidth;
-    [self fillWhiteToTransparentOnPixel: rgbImageBuf pixelNum: pixelNumber red: red green: green blue: blue];
-    
-    CGDataProviderRef dataProvider = CGDataProviderCreateWithData(NULL, rgbImageBuf, bytesPerRow, ProviderReleaseData);
-    CGImageRef imageRef = CGImageCreate(imageWidth, imageHeight, 8, 32, bytesPerRow, colorSpace, kCGImageAlphaLast | kCGBitmapByteOrder32Little, dataProvider, NULL, true, kCGRenderingIntentDefault);
-    
-    UIImage * resultImage = [UIImage imageWithCGImage: imageRef];
-    CGImageRelease(imageRef);
-    CGColorSpaceRelease(colorSpace);
-    CGContextRelease(context);
-    
-    return resultImage;
+    return image;
 }
 
 /*!

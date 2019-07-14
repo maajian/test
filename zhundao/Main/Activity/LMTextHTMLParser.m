@@ -20,25 +20,44 @@
  *
  *  @return 导出的 HTML
  */
-+ (NSString *)HTMLFromAttributedString:(NSAttributedString *)attributedString {
-    
+//https://joinheadoss.oss-cn-hangzhou.aliyuncs.com/zhundao/
++ (NSString *)HTMLFromAttributedString:(NSAttributedString *)attributedString WithImageArray :(NSArray *)imageArray{
+    NSInteger count = 0;
     BOOL isNewParagraph = YES;
     NSMutableString *htmlContent = [NSMutableString string];
     NSRange effectiveRange = NSMakeRange(0, 0);
     while (effectiveRange.location + effectiveRange.length < attributedString.length) {
         
         NSDictionary *attributes = [attributedString attributesAtIndex:effectiveRange.location effectiveRange:&effectiveRange];
+        NSLog(@"dic = %@",attributes);
+        
         NSTextAttachment *attachment = attributes[@"NSAttachment"];
         NSParagraphStyle *paragraph = attributes[@"NSParagraphStyle"];
+        
+        NSString *link  = attributes[@"NSLink"];
         LMParagraphConfig *paragraphConfig = [[LMParagraphConfig alloc] initWithParagraphStyle:paragraph type:LMParagraphTypeNone];
         if (attachment) {
             switch (attachment.attachmentType) {
                 case LMTextAttachmentTypeImage:
+                    if (attachment.userInfo==nil)
+                    {
+                        if (imageArray.count>count) {
+                            NSString *urlString = imageArray[count];
+                            attachment.userInfo = urlString;
+                            count = count+1;
+                        }
+                        
+                    }
                 [htmlContent appendString:[NSString stringWithFormat:@"<img src=\"%@\" width=\"100%%\"/>", attachment.userInfo]];
                 break;
                 default:
                 break;
             }
+        }
+        else if (link)
+        {
+            NSString *text = [[attributedString string] substringWithRange:effectiveRange];
+            [htmlContent appendString:[NSString stringWithFormat:@"<a href=%@>%@</a>",link,text ]];
         }
         else {
             NSString *text = [[attributedString string] substringWithRange:effectiveRange];
@@ -58,6 +77,7 @@
                     [htmlContent appendString:@"</p>"];
                     isNewParagraph = YES;
                 }
+            
                 if (isNewParagraph && (content.length > 0 || i < components.count - 1)) {
                     [htmlContent appendString:[NSString stringWithFormat:@"<p style=\"text-indent:%@em;margin:4px auto 0px auto;\">", @(2 * paragraphConfig.indentLevel).stringValue]];
                     isNewParagraph = NO;

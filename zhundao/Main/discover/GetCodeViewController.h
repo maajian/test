@@ -9,5 +9,6 @@
 #import "SaoYiSaoViewController.h"
 
 @interface GetCodeViewController : SaoYiSaoViewController
-
+@property(nonatomic,copy) NSString* offsetX;
+@property(nonatomic,copy) NSString* offsetY;
 @end

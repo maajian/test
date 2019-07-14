@@ -24,6 +24,7 @@
 @property(nonatomic,assign)          NSInteger buttonCount ; //数组个数
 @property(nonatomic,strong)         UIButton  *cancelButton ; //取消按钮
 @property(nonatomic,strong)        UIView    *backView ; //全屏幕的视图 进入后视图透明度变化
+@property(nonatomic,strong)        UIView     *titleView ;//遮挡titlelabel
 @property(nonatomic,strong)        UIView    *sheetView  ;  //弹出视图的底部背景视图
 @end
 @implementation AJAlertSheet
@@ -40,7 +41,13 @@ const static NSInteger cellHeight  = 44 ;
     if (self = [super initWithFrame:frame]) {
         self.dataArray = [dataArray mutableCopy];
         _title = [title copy];
-        if (_title) titleHeight = 55;
+        if (_title){
+            CGSize size = [_title boundingRectWithSize:CGSizeMake(kScreenWidth-40, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]} context:nil].size;
+            titleHeight = size.height + 40;
+        }
+            
+            
+//            titleHeight = 55;
         else titleHeight = 0 ;
         _buttonCount = self.dataArray.count;
         delete = isDelete;
@@ -55,13 +62,24 @@ const static NSInteger cellHeight  = 44 ;
 - (UILabel *)titleLabel
 {
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kWidth, titleHeight)];
+        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, kWidth-40, titleHeight)];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.backgroundColor = [UIColor whiteColor];
         _titleLabel.text = self.title;
-        _titleLabel.textColor = [UIColor colorWithRed:200.f/255.f green:200.f/255.f blue:200.f/255.f alpha:1];
+        _titleLabel.numberOfLines = 0 ;
+        _titleLabel.font = [UIFont systemFontOfSize:14];
+        _titleLabel.textColor = kheaderTitleColor;
+        
     }
     return _titleLabel;
+}
+
+- (UIView *)titleView{
+    if (!_titleView) {
+        _titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWidth, titleHeight)];
+        _titleView.backgroundColor = [UIColor whiteColor];
+    }
+    return _titleView;
 }
 
 - (UIButton *)cancelButton
@@ -79,8 +97,8 @@ const static NSInteger cellHeight  = 44 ;
 - (UIView *)backView
 {
     if (!_backView ) {
-        _backView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-        _backView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+        _backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
+        _backView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cancelAction)];
         [_backView addGestureRecognizer:tap];
         [_backView addSubview:self.sheetView];
@@ -92,8 +110,9 @@ const static NSInteger cellHeight  = 44 ;
 - (UIView *)sheetView
 {
     if (!_sheetView) {
-        _sheetView = [[UIView alloc]initWithFrame:CGRectMake(0, kHeight- cellHeight *(_buttonCount +1) - crackHeight -    titleHeight, kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight)];
-        _sheetView.backgroundColor = [UIColor colorWithRed:208.f/256.f green:203.f/256.f blue:192.f/256.f alpha:1];
+        _sheetView = [[UIView alloc]initWithFrame:CGRectMake(0, kHeight- cellHeight *(_buttonCount +1) - crackHeight -    titleHeight  , kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight)];
+        _sheetView.backgroundColor = kColorA(225, 225, 231, 1);
+        [_sheetView addSubview:self.titleView];
         [_sheetView addSubview:self.titleLabel];
         [_sheetView addSubview:self.cancelButton];
     }
@@ -126,9 +145,9 @@ const static NSInteger cellHeight  = 44 ;
 - (void)fadeIn
 {
     self.alpha = 0.0    ;
-    _sheetView.frame =CGRectMake(0,kHeight, kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight);
-     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionTransitionCurlUp animations:^{
-         _sheetView.frame =CGRectMake(0,kHeight- cellHeight *(_buttonCount +1) - crackHeight -    titleHeight, kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight);
+    _sheetView.frame =CGRectMake(0,kHeight-64, kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight);
+     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionTransitionCurlUp animations:^{
+         _sheetView.frame =CGRectMake(0,kHeight- cellHeight *(_buttonCount +1) - crackHeight -    titleHeight-64, kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight);
          self.alpha = 1.0;
      } completion:nil];
 }
@@ -147,6 +166,7 @@ const static NSInteger cellHeight  = 44 ;
 {
     NSInteger select = sender.tag - 100 ;
     _backBlock (select);
+    [self fadeOut];
 }
 
 - (void)cancelAction

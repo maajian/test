@@ -6,8 +6,8 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface DiscoverViewController : BaseViewController
+@interface DiscoverViewController : UITableViewController
 
 @end

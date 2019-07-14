@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol inviteDelegate <NSObject>
+
+- (void)selectIndex  :(NSInteger) index ;
+
+- (void)dismissVC;
+
+@end
+
 @interface inviteCollectionView : UICollectionView
+
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout imageArray :(NSArray *)imageArray View : (UIView *)View;
+
+@property(nonatomic,weak) id<inviteDelegate> inviteDelegate;
 
 @end

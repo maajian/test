@@ -25,7 +25,6 @@ typedef void (^AMapLocatingCompletionBlock)(CLLocation *location, AMapLocationRe
 
 ///MapLocationManager类。初始化之前请设置 AMapLocationServices 中的APIKey，否则将无法正常使用服务.
 @interface AMapLocationManager : NSObject
-
 ///实现了 AMapLocationManagerDelegate 协议的类指针。
 @property (nonatomic, weak) id<AMapLocationManagerDelegate> delegate;
 

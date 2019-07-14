@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface postActivityTableViewCell : UITableViewCell
-
++ (instancetype)cellAllocWithTableView:(UITableView *)tableView WithIndexPath :(NSIndexPath *)indexpath;
 @end

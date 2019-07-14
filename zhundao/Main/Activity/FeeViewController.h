@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
-
+typedef void(^backBlock1) (NSArray *array);
 @interface FeeViewController : BaseViewController
-
+@property(nonatomic,copy)backBlock1 block;
+@property(nonatomic,copy)NSArray *feeArray ;
 @end

@@ -26,7 +26,7 @@
 // 支持block
 @property (nonatomic,copy) void (^ClickIndex) (NSInteger index);
 
-
+//@property (nonatomic,strong)UILabel *titleLabel ;
 /**
  根据数组进行文字显示,返回index
  @param titleArr 传入显示的数组
@@ -34,6 +34,7 @@
  @return return value description
  */
 - (instancetype)initWithTitleArray:(NSArray *)titleArr
+                     WithRedIndex :(NSInteger)index
                      andShowCancel:(BOOL )show;
 
 @end

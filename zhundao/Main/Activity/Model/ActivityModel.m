@@ -9,5 +9,8 @@
 #import "ActivityModel.h"
 
 @implementation ActivityModel
-
+//+ (NSDictionary *)modelCustomPropertyMapper {
+//    return @{@"iD" : @"ID"
+//             };
+//}
 @end

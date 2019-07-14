@@ -17,7 +17,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _fontSize = [UIFont systemFontSize];
+        _fontSize = 16.f;
         _textColor = [UIColor blackColor];
     }
     return self;

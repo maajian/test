@@ -10,7 +10,7 @@
 #import "CBController.h"
 #import "UUIDSettingViewController.h"
 #import "DeviceInfo.h"
-
+//typedef void(^devideBlock) (NSString *str);
 @interface ConnectViewController : CBController<UITableViewDataSource, UITextViewDelegate, UITableViewDelegate>
 {
     IBOutlet UITableView *devicesTableView;
@@ -36,7 +36,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *statusLabel;
 @property (assign) int connectionStatus;
 @property (retain, nonatomic) IBOutlet UILabel *versionLabel;
-
+//@property(nonatomic,copy) devideBlock devideBlock;
 - (IBAction)refreshDeviceList:(id)sender;
 - (IBAction)actionButtonCancelScan:(id)sender;
 - (IBAction)manualUUIDSetting:(id)sender;

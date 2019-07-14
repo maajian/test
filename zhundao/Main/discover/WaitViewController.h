@@ -10,4 +10,9 @@
 
 @interface WaitViewController : BaseViewController
 
+@property(nonatomic,assign)NSInteger signID;
+ // 用户密钥
+@property (nonatomic, copy) NSString *acckey;
+
 @end
+

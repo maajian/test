@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
+typedef void(^getAllBlock) (NSArray *dataArray,NSArray *timeArray,NSArray *noAnswerArray,NSArray *hadAnswerArray);
 @interface ConsultViewModel : NSObject
+
+
+/*! 获取咨询列表 */
+- (void)getAllConsult :(NSDictionary *)dic  getAllBlock:(getAllBlock)getAllBlock;
+
+/*! 获取高度 */
+- (NSArray *)getHeight:(NSArray *)array;
 
 @end

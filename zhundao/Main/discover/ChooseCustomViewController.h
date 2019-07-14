@@ -7,7 +7,11 @@
 //
 
 #import "BaseViewController.h"
-
+typedef void(^backBlock) (NSArray *array);
 @interface ChooseCustomViewController : BaseViewController
+
+@property(nonatomic,copy)backBlock block;
+
+@property(nonatomic,copy)NSArray *nowDataArray ;
 
 @end

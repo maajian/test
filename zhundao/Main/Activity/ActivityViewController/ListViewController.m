@@ -233,10 +233,7 @@
         self.view.bounds = viewBounds;
     }
 }
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
+
 - (void)deleteData
 {
     if (_phoneSearchArray)  [_phoneSearchArray removeAllObjects];
@@ -318,7 +315,7 @@
 }
 - (void)loadData    //网络加载数据
 {
-    NSString *listurl = [NSString stringWithFormat:@"%@api/PerActivity/PostActivityListed?accessKey=%@",zhundaoApi,accesskey];
+    NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivityList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     AFmanager *manager = [AFmanager shareManager];
     NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)self.listID],
                           @"pageSize":@"200000",
@@ -327,7 +324,7 @@
     [manager POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
-        NSArray *array1 = result[@"Data"];
+        NSArray *array1 = result[@"data"];
         [self getOptionWithdic:result];
         [indicator stopAnimating];
         NSMutableArray *muarray = [NSMutableArray array];

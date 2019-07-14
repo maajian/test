@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface EditSignListTableViewCell : UITableViewCell
+@property(nonatomic,copy)NSString *cellIndex;
+
 
 @end

@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface ConsultViewController : BaseViewController
-
+@property(nonatomic,assign)NSInteger acID;
 @end

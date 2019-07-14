@@ -8,6 +8,12 @@
 
 #import "BaseViewController.h"
 
+typedef void(^backBlock) (NSInteger backNumber);
+
 @interface moreModalViewController : BaseViewController
+
+@property(nonatomic,copy)backBlock backBlock;
+
+@property(nonatomic,strong)ActivityModel *moreModel;
 
 @end

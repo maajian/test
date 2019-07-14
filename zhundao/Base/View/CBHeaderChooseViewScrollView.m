@@ -51,7 +51,7 @@
     if (self) {
         self.showsHorizontalScrollIndicator=NO;
         self.delegate=self;
-//        self.auto
+        self.backgroundColor = [UIColor colorWithWhite:0.96 alpha:1];
         headerH=self.frame.size.height;
     }
     return self;
@@ -67,17 +67,14 @@
     if (color==nil) {
         titleColor=CBColorA(102, 102, 102, 1);
     }
-    
     titleSelectedColor=selectedColor;
     if (selectedColor==nil) {
-        titleSelectedColor=CBColorA(199, 13, 23, 1);
+        titleSelectedColor=zhundaoGreenColor;
     }
-    
     titleFontSize=size;
     if (size==0) {
         titleFontSize=13;
     }
-    
     titleArray=array;
     if (array.count!=0) {
         [self setUpUI];
@@ -102,7 +99,7 @@
         [btn setTitleColor:titleColor forState:UIControlStateNormal];
         [btn setTitleColor:titleSelectedColor forState:UIControlStateSelected];
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [btn setBackgroundColor:[UIColor whiteColor]];
+        [btn setBackgroundColor:[UIColor colorWithWhite:0.96 alpha:1]];
         
         if (i==0) {
             btn.selected=YES;
@@ -121,15 +118,14 @@
     
     self.sliderView.jzl_width=textSize.width;
     self.sliderView.jzl_height=2;
-    self.sliderView.jzl_y=headerH-2;
+    self.sliderView.jzl_y=headerH-8;
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     //    按钮
     CGFloat btnH=headerH-2;
-    CGFloat totalX=25;
-    
+    CGFloat totalX=CBScreenW/(titleArray.count*2)-15;
     for (NSInteger i=0; i<self.btnArray.count; i++) {
         
         CGRect btnRect=[titleArray[i] boundingRectWithSize:CGSizeMake(MAXFLOAT, btnH) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:titleFontSize],NSFontAttributeName, nil] context:nil];
@@ -141,15 +137,15 @@
         btn.jzl_x=totalX;
         btn.jzl_y=1;
         btn.jzl_height=btnH;
-        totalX=totalX+btnRect.size.width+35;
+        totalX=totalX+CBScreenW/(titleArray.count);
     }
-    
+    self.contentSize=CGSizeMake(CBScreenW, 0);
+
     if (totalX-10<CBScreenW) {
         self.contentSize=CGSizeMake(CBScreenW, 0);
     }else{
         self.contentSize=CGSizeMake(totalX-10, 0);
     }
-    
     NSMutableDictionary*dic=[NSMutableDictionary dictionaryWithObject:[UIFont systemFontOfSize:titleFontSize] forKey:NSFontAttributeName];
     CGSize textSize = [titleArray[self.selectedBtn.tag] boundingRectWithSize:CGSizeMake(MAXFLOAT, 0.0) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
     self.sliderView.jzl_width=textSize.width;
@@ -172,7 +168,7 @@
     [UIView animateWithDuration:0.2 animations:^{
         self.sliderView.jzl_centerX=btn.jzl_centerX;
     }];
-    //    设置scrollview的滑动
+//        设置scrollview的滑动
     CGFloat offset=btn.center.x-CBScreenW*0.5;
     
     if (offset<0) {

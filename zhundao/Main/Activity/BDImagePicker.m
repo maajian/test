@@ -79,7 +79,7 @@ static BDImagePicker *bdImagePickerInstance = nil;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    UIImage *image = info[UIImagePickerControllerEditedImage];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
     if (image == nil) {
         image = info[UIImagePickerControllerOriginalImage];
     }
@@ -87,18 +87,9 @@ static BDImagePicker *bdImagePickerInstance = nil;
     if (_finishAction) {
         _finishAction(image);
     }
-//    NSData *fileData = UIImageJPEGRepresentation(image, 1.0);//压缩图片
-    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
     [picker dismissViewControllerAnimated:YES completion:^{}];
     
     bdImagePickerInstance = nil;
-}
-- (void) image: (UIImage *) image didFinishSavingWithError:(NSError *) error contextInfo: (void *)contextInf{
-    if (error) {
-        NSLog(@"保存图片过程中发生错误，错误信息:%@",error.localizedDescription);
-    }else{
-        NSLog(@"图片保存成功.");
-    }
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     if (_finishAction) {

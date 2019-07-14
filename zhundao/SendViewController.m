@@ -13,9 +13,9 @@
 #import "LoginViewController.h"
 @interface SendViewController ()
 {
-    NSString *Unionid;
     NSDictionary *dic;
 }
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *phonetext;
 @property (weak, nonatomic) IBOutlet UITextField *phoneyangzheng;
 
@@ -23,16 +23,43 @@
 
 @implementation SendViewController
 - (IBAction)sendyangzheng:(id)sender {
-    AFHTTPSessionManager *manager = [AFmanager shareManager];
-  
-    NSString *urlstr = [NSString stringWithFormat:@"https://open.zhundao.net/api/PerBase/SendICode?phone=%@&accessKey=%@",_phonetext.text,Unionid];
-    [manager GET:urlstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"res = %@",responseObject);
+    AFmanager *manager = [AFmanager shareManager];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/senCode?phoneOrEmail=%@",zhundaoApi,_phonetext.text];
+    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self beginTime];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@",error);
     }];
+}
+- (void)beginTime
+{
+    __block int timeout =60;
     
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     
+    dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC,0);
+    dispatch_source_set_event_handler(timer, ^{
+        if (timeout<=0) {
+            dispatch_source_cancel(timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _sendButton.userInteractionEnabled = YES;
+                    [_sendButton setBackgroundColor:zhundaoGreenColor];
+                 [_sendButton setTitle:@"获取验证码" forState:UIControlStateNormal];
+            });
+          
+            
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _sendButton.userInteractionEnabled = NO;
+                [_sendButton setBackgroundColor:zhundaoGrayColor];
+                  [_sendButton setTitle:[NSString stringWithFormat:@"(%d)发送验证码",timeout] forState:UIControlStateNormal];
+                timeout--;
+            });
+            
+        }
+    });
+    dispatch_resume(timer);
 }
 - (IBAction)backaction:(id)sender {
     
@@ -42,37 +69,60 @@
     
 }
 - (IBAction)bangding:(id)sender {
-    AFHTTPSessionManager *manager = [AFmanager shareManager];
-    NSString *url = [NSString stringWithFormat:@"https://open.zhundao.net/api/PerBase/BindPhone?phone=%@&accessKey=%@&code=%@",_phonetext.text,Unionid,_phoneyangzheng.text];
-    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"response = %@",responseObject);
-        dic = [NSDictionary dictionaryWithDictionary:responseObject];
-        if ([dic[@"Res"] integerValue]==0) {
-            MainViewController *tabbar = [[MainViewController alloc]init];
-            AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-            appDelegate.window.rootViewController= tabbar;
-
-        }
-          if ([dic[@"Res"] integerValue]==1) {
-              [self showalert];
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    if (_phonetext.text.length <7) {
+        [self showAlert:@"请输入正确的手机号"];
+        return;
+    }
+    
+    
+    
+    AFmanager *manager = [AFmanager shareManager];
+    NSString *verifyUrl = [NSString stringWithFormat:@"%@api/v2/verifyCode?phoneOrEmail=%@&code=%@",zhundaoApi,_phonetext.text,_phoneyangzheng.text];
+    [manager GET:verifyUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSString *url = [NSString stringWithFormat:@"%@api/v2/bindPhone?phone=%@&token=%@",zhundaoApi,_phonetext.text,[[SignManager shareManager] getToken]];
+        [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            dic = [NSDictionary dictionaryWithDictionary:responseObject];
+            if ([dic[@"errcode"] integerValue]==0) {
+                MainViewController *tabbar = [[MainViewController alloc]init];
+                AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                appDelegate.window.rootViewController= tabbar;
+                
+            } else {
+                [self showalert];
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             NSLog(@"error = %@",error);
+        }];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error = %@",error);
     }];
-  
+    
+    
 }
+
 - (void)showalert
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入正确的手机号和验证码" message:@"sssssss" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入正确的手机号和验证码" message:nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:action1];
     [self presentViewController:alert animated:YES completion:nil];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-   Unionid = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
-    
+    self.title = @"绑定手机号";
+    _phonetext.keyboardType = UIKeyboardTypeNumberPad;
+    _phoneyangzheng.keyboardType = UIKeyboardTypeNumberPad;
     // Do any additional setup after loading the view from its nib.
+}
+
+#pragma mark --- action
+// 弹窗
+- (void)showAlert:(NSString *)alert {
+    maskLabel *label = [[maskLabel alloc] initWithTitle:alert];
+    [label labelAnimationWithViewlong:self.view];
 }
 
 - (void)didReceiveMemoryWarning {

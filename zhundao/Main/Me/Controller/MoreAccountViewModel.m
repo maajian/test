@@ -10,4 +10,44 @@
 
 @implementation MoreAccountViewModel
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _userArray = [NSMutableArray array];
+    }
+    return self;
+}
+
+/*! 获取列表数据 */
+- (void)getListData:(dispatch_block_t)successBlock  {
+    [_userArray removeAllObjects];
+    NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"userArray"];
+    for (NSDictionary *userdic in array) {
+        MoreAccountModel *model = [MoreAccountModel yy_modelWithDictionary:userdic];
+        [_userArray addObject:model];
+    }
+    successBlock();
+}
+
+/*! 退出登录清空数据 */
+- (void)didLogout
+{
+    /*! 清除本地数据 */
+    NSDictionary *userArray = [[NSUserDefaults standardUserDefaults]objectForKey:@"userArray"];
+    NSString *appDomain = [[NSBundle mainBundle]bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults]removePersistentDomainForName:appDomain];
+    [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:@"userArray"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    if ([[SignManager shareManager].dataBase open])
+    {
+        NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
+        [[SignManager shareManager].dataBase executeUpdate:updateSql];
+        NSString *updateSql1 = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
+        [[SignManager shareManager].dataBase executeUpdate:updateSql1];
+        NSString *updateSql12 = [NSString stringWithFormat:@"DROP TABLE contact"];
+        [[SignManager shareManager].dataBase executeUpdate:updateSql12];
+        [[SignManager shareManager].dataBase close];
+    }
+}
+
 @end

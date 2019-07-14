@@ -7,7 +7,9 @@
 //
 
 #import "WebViewController.h"
-
+typedef void(^successBlock) (BOOL issuccess);
 @interface UpDataViewController : WebViewController
+@property(nonatomic,copy)successBlock block;
 
+@property (nonatomic, assign) BOOL isPresent;
 @end

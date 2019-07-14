@@ -10,10 +10,10 @@
 
 @class LMWordView;
 
-@interface LMWordViewController : UIViewController
+@interface LMWordViewController : BaseViewController
 
 @property (nonatomic, strong) LMWordView *textView;
-
+@property(nonatomic,copy)NSArray *imageArray;
 - (NSString *)exportHTML;
 
 @end

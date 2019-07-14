@@ -7,7 +7,13 @@
 //
 
 #import "otherSignViewController.h"
-
+typedef void(^signStatusBlock) (NSInteger signStatus,FMResultSet * rs);
+typedef void(^haveNetBlock) (NSInteger signStatus,NSDictionary  *dic);
 @interface muliotherViewController : otherSignViewController
+@property(nonatomic,copy)signStatusBlock signStatusBlock;
+@property(nonatomic,copy)haveNetBlock haveNetBlock;
+
+// 用户密钥
+@property (nonatomic, copy) NSString *acckey;
 
 @end

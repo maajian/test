@@ -6,8 +6,19 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
+typedef void(^searchBlock) (BOOL isSuccess);
 @interface DBManager : NSObject
+@property(nonatomic,strong)FMDatabase *dataBase;
+@property(nonatomic,copy)searchBlock  searchBlock;
++ (DBManager *)shareManager ;
 
+
+/*! 创建数据库 */
+- (void)createDatabase  ;
+/*! 创建表 */
+- (void)createTable :(NSString *)sqlStr;
+/*! 删除表 */
+- (void)deleteData:(NSString *)sqlStr;
+/*! 查询表 */
+- (void)searchData:(NSString *)sqlStr;
 @end

@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 @interface SigninViewController : BaseViewController
-@property(nonatomic,assign)NSInteger netWorkingStatus;
+{
+
+}
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong)UIButton *button;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmented;
+@property(nonatomic,strong)NSString *signUrlStr;
 @end

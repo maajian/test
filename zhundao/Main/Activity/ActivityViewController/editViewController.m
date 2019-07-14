@@ -8,7 +8,8 @@
 
 #import "editViewController.h"
 #import <WebKit/WebKit.h>
-#import "ActivityViewController.h"
+//#import "ActivityViewController.h"
+#import "ZDMainActivityVC.h"
 @interface editViewController ()<WKNavigationDelegate>
 {
     JQIndicatorView *indicator;
@@ -69,16 +70,9 @@
     if ([requestString rangeOfString:subStr].location != NSNotFound) {
         NSLog(@"这个字符串中有MangeActivity");
         //回调的URL中如果含有百度，就直接返回，也就是关闭了webView界面
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            ActivityViewController *acti = nil;
-            for (UIViewController *VC in weakSelf.navigationController.viewControllers) {
-                if ([VC isKindOfClass:[ActivityViewController class]]) {
-                    acti = (ActivityViewController *)VC;
-                }
-            }
-            [weakSelf.navigationController popToViewController:acti animated:YES];
-            [acti loadData];
-            acti.tableview.mj_footer.state = MJRefreshStateIdle;
+        [ZD_NotificationCenter postNotificationName:ZDNotification_Load_Activity object:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
         });
     }
     

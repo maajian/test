@@ -9,5 +9,7 @@
 #import "BaseViewController.h"
 
 @interface CodeViewController : BaseViewController
-
+@property(nonatomic,strong)NSString *titlestr;
+@property(nonatomic,strong)NSString *imagestr ;
+@property(nonatomic,strong)NSString *labelStr ;
 @end

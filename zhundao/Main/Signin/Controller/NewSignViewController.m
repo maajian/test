@@ -8,7 +8,7 @@
 
 #import "NewSignViewController.h"
 
-@interface NewSignViewController ()<WKNavigationDelegate,UIScrollViewDelegate>
+@interface NewSignViewController ()<WKNavigationDelegate>
 
 @end
 
@@ -19,7 +19,6 @@
     self.title =@"发起签到";
     WKWebView *webview = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
     webview.navigationDelegate = self;
-    webview.scrollView.delegate = self;
     [self.view addSubview:webview];
     [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
     self.webView =webview;

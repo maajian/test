@@ -8,20 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-
-@interface SaoYiSaoViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
+#import "SaoYiSaoViewController.h"
+typedef void(^block) (BOOL issuccess);
+@interface bindingBeacon : SaoYiSaoViewController<AVCaptureMetadataOutputObjectsDelegate>
 {
-    int num;
-    BOOL upOrdown;
-    NSTimer * timer;
+  
 }
-
-@property (strong,nonatomic)AVCaptureDevice * device;
-@property (strong,nonatomic)AVCaptureDeviceInput * input;
-@property (strong,nonatomic)AVCaptureMetadataOutput * output;
-@property (strong,nonatomic)AVCaptureSession * session;
-@property (strong,nonatomic)AVCaptureVideoPreviewLayer * preview;
-@property (nonatomic, retain) UIImageView * line;
-
+@property(nonatomic,copy)block backblock;
 
 @end

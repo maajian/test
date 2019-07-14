@@ -8,7 +8,6 @@
 
 #import "ActivityViewController.h"
 #import "ActivityCell.h"
-#import "editViewController.h"
 #import "UIView+TYAlertView.h"
 #import "TYAlertController+BlurEffects.h"
 #import "ListViewController.h"
@@ -25,7 +24,6 @@
 #import "oneActivityViewController.h"
 #import "postActivityViewController.h"
 #import "ActivityViewModel.h"
-#import "SearchViewController.h"
 #import "ConsultActivitySocket.h"
 #import "isReadView.h"
 
@@ -75,8 +73,8 @@
         [self loadData];
          [self createView];
     }
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"changeaAccount" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"loadList" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:ZDNotification_Change_Account object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:ZDNotification_Load_Activity object:nil];
 }
 
 #pragma mark --- 懒加载
@@ -181,13 +179,6 @@
     postActivityViewController *postVC = [[postActivityViewController alloc]init];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:postVC animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
-}
-
-- (void)searchActivity{
-    SearchViewController *search = [[SearchViewController alloc]init];
-    [self setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:search animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
 }
 
@@ -440,7 +431,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 10)];
-    view.backgroundColor =[UIColor colorWithRed:235.00f/255.0f green:235.00f/255.0f blue:241.00f/255.0f alpha:1];
+    view.backgroundColor =zhundaoBackgroundColor;
     return  view;
 }
 

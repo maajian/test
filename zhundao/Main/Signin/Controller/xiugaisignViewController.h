@@ -6,8 +6,7 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
-
-@interface xiugaisignViewController : BaseViewController
-
+#import "PostSignViewController.h"
+@interface xiugaisignViewController : PostSignViewController
+@property(nonatomic,strong)NSArray *xiugaiArray;
 @end

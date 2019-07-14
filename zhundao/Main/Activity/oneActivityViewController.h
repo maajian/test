@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface oneActivityViewController : BaseViewController
-
+@property(nonatomic,assign)NSInteger acID;
+@property(nonatomic,strong)NSString *activityName;
 @end

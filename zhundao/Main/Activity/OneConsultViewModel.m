@@ -10,4 +10,33 @@
 
 @implementation OneConsultViewModel
 
+//POST api/PerBase/ReplyConsult/{id}?accessKey={accessKey}&answer={answer}&IsRecommend={IsRecommend}
+
+- (void)postData:(NSInteger)ConsultID answer :(NSString *)answer IsRecommend:(BOOL)IsRecommend postBlock:(postBlock)postBlock {
+    NSString *url = [[NSString stringWithFormat:@"%@api/PerBase/ReplyConsult/%li?accessKey=%@&answer=%@&IsRecommend=%@",zhundaoApi,(long)ConsultID,[[SignManager shareManager] getaccseekey],answer,IsRecommend?@"true":@"false"] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    AFmanager *manager = [AFmanager shareManager];
+    [manager POST:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@" responseObject = %@ ",responseObject);
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+        if ([dic[@"Res"]integerValue ]==0) {
+            postBlock(1);
+        }else{
+            postBlock(0);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error = %@",error);
+        postBlock(0);
+    }];
+}
+
+
+
+
+/*! 获取高度 */
+- (float)getHeight:(NSString *)str width :(float)width
+{
+    CGSize size = [str boundingRectWithSize:CGSizeMake(width, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]} context:nil].size;
+    return size.height;
+}
+
 @end

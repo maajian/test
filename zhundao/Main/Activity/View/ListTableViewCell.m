@@ -17,6 +17,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    UIView *selectedBg = [[UIView alloc] initWithFrame:self.frame];
+    selectedBg.backgroundColor =[UIColor clearColor];
+    self.selectedBackgroundView = selectedBg;
+    self.tintColor = zhundaoGreenColor;
     // Initialization code
 }
 -(void)setModel:(listModel *)model
@@ -24,7 +28,11 @@
     if (model) {
         _model = model;
     }
-    _titleLabel.text =_model.UserName;
+    if (_model.NickName==nil) {
+        _titleLabel.text =[NSString stringWithFormat:@"%@",_model.UserName];
+    }else{
+         _titleLabel.text =[NSString stringWithFormat:@"%@(%@)",_model.UserName,_model.NickName];
+    }
     _phoneLabel.text = _model.Mobile;
     _timeLabel.text = _model.AddTime;
    _successLabel.layer.borderColor = [[UIColor colorWithRed:141.00f/255.0f green:189.00f/255.0f blue:38.00f/255.0f alpha:1] CGColor];
@@ -34,14 +42,18 @@
     if (_model.Status==0) {
         _successLabel.text = @"报名成功";
     }
-    else
+    else if(_model.Status==1)
     {
         _successLabel.text = @"未付款";
+    }else if(_model.Status == 2){
+        _successLabel.text = @"待审核";
+    } else {
+        _successLabel.text = @"未通过";
     }
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+  
     // Configure the view for the selected state
 }
 

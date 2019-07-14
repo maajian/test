@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CustomModel.h"
 @interface CustomTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *boolLabel;
+@property (weak, nonatomic) IBOutlet UILabel *markLabel;
+@property(nonatomic,strong)CustomModel *model;
 @end

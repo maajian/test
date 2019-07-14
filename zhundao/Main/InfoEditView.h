@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol InfoEditViewDelegate<NSObject>
+ // 返回
+- (void)backPop;
+ // 完成内容编辑
+- (void)finishEditWithName:(NSString *)name passWord:(NSString *)passWord;
+
+@end
+
 @interface InfoEditView : UIView
+ // 初始化 
+- (instancetype)initWithFrame:(CGRect)frame phoneStr:(NSString *)phoneStr;
+ // 代理
+@property (nonatomic, weak) id<InfoEditViewDelegate> infoEditViewDelegate;
 
 @end

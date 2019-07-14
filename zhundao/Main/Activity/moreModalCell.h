@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "moreModalModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface moreModalCell : UICollectionViewCell
+
+@property (nonatomic, strong) moreModalModel *model;
 
 @end
 

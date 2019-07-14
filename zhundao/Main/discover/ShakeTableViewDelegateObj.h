@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "detailModel.h"
 
-@interface ShakeTableViewDelegateObj : NSObject
 
+@protocol detailModelDelegate <NSObject>
+
+- (void)selectIndex :(NSIndexPath *)indexPath;
+
+@end
+
+@interface ShakeTableViewDelegateObj : NSObject<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic,strong)detailModel *model;
+
+@property(nonatomic,copy)NSDictionary  *datadic;
+@property(nonatomic,weak) id<detailModelDelegate>  detailModelDelegate;
++(instancetype)createTableViewDelegateWithDataList:(detailModel *)model
+                                          withdic :(NSDictionary *)dic;
 @end

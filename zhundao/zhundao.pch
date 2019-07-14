@@ -8,10 +8,18 @@
 
 #ifndef zhundao_pch
 #define zhundao_pch
+
+#import "ZDHeader.h"
+#import "ZDMacro.h"
+#import "ZDConst.h"
 //------------------------define----------------
 
 #define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
+#define kStatusBarHeight           [UIApplication sharedApplication].statusBarFrame.size.height
+#define kNavBarHeight                  44
+#define kTabBarHeight                  49
+#define kTopBarHeight                 (kNavBarHeight + kStatusBarHeight)
 #define WXDoctor_App_ID @"wxfe2a9da163481ba9" // 注册微信时的AppID
 #define WXDoctor_App_Secret @"ace26a762813528cc2dbb65b4279398e" // 注册时得到的AppSecret
 //#define WXPatient_App_ID @"wxbd02bfeea4292***"
@@ -26,24 +34,42 @@
 #define username1 @"Name"//微信
 #define userdic1 @"userdic"
 
-#define phoneSexsex @"phoneSex"
-#define phoneName @"phoneName"//手机
-#define phoneuserimage @"phoneuserimage"
 #define activityaArray @"activityaArray"
 #define color1 ([UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1])
-#define zhundaoColor  [UIColor colorWithRed:141.00f/255.0f green:189.00f/255.0f blue:38.00f/255.0f alpha:1]
-//-------------------------import------------------
-#import "MBProgressHUD.h"
-#import "YYModel.h"
-#import "UIImageView+WebCache.h"
-#import "AFNetworking.h"
-#import "IQKeyboardManager.h"
-#import "HHPullToRefreshWave.h"
-#import "SignManager.h"
-#import "JQIndicatorView.h"
-#import "FMDB.h"
-#import "AFmanager.h"
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+//#define zhundaoColor  [UIColor colorWithRed:141.00f/255.0f green:189.00f/255.0f blue:38.00f/255.0f alpha:1]
+#define zhundaoGrayColor  [UIColor colorWithRed:186.00f/255.0f green:187.00f/255.0f blue:192.00f/255.0f alpha:1]
+#define zhundaoGreenColor  [UIColor colorWithRed:68.00f/255.0f green:186.00f/255.0f blue:37.00f/255.0f alpha:1]  
+#define zhundaoBackgroundColor  [UIColor colorWithRed:237.00f/255.0f green:237.00f/255.0f blue:237.00f/255.0f alpha:1]
+#define zhundaoLineColor  [UIColor colorWithRed:223.00f/255.0f green:223.00f/255.0f blue:223.00f/255.0f alpha:1]
+#define KplaceHolderColor  [UIColor colorWithRed:199.0f/256.0f green:199.0f/256.0f blue:205.0f/256.0f alpha:1]
+#define kheaderTitleColor [UIColor colorWithRed:137.0f/256.0f green:137.0f/256.0f blue:137.0f/256.0f alpha:1]
+
+#define zhundaoApi ([[NSUserDefaults standardUserDefaults]objectForKey:@"netLine"]?@"https://open.zhundao.com.cn/":@"https://open.zhundao.net/")
+#define zhundaoH5Api @"https://m.zhundao.net/"
+#define zhundaoMessageApi @"https://sms.zhundao.com.cn/"
+
+#define kColorA(r,g,b,a) [UIColor colorWithRed:(r)/256.0 green:(g)/256.0 blue:(b)/256.0 alpha:a]
+#define KweixinFont(r) [UIFont fontWithName:@"Helvetica" size:r]
+#define KHeitiSCMedium(r) [UIFont fontWithName:@"STHeitiSC-Medium" size:r]
+#define KHeitiSCLight(r) [UIFont fontWithName:@"STHeitiSC-Light" size:r]
+/*! 状态栏高度 */
+#define KStatusBarHeight  ([[UIApplication sharedApplication] statusBarFrame].size.height+44)
+/*! 底部高度 */
+#define SafeAreaBottomHeight (kWJScreenHeight == 812.0 ? 34 : 0)
+/*! 网络请求失败和成功的回调 */
+#define kZDCommonSucc void(^)(void)
+#define kZDCommonFail void(^)(NSString *error)
+
+#define ZD_SafeValue(arg)                arg ? arg: @""
+
+//*版本信息*//
+#define kAPPVERSION    [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define kDEVICEUUID    [UIDevice currentDevice].identifierForVendor.UUIDString /**<设备唯一标识*/
+#define kDEVICEVERSION [UIDevice currentDevice].systemVersion  /**<设备系统版本信息*/
+#define kPLATFORM       [UIDevice currentDevice].systemName     /**<平台信息 iPhone iPad Pod*/
+
+ // 极光通知
+#define kAppNotification @"kAppNotification"
+
 
 #endif /* zhundao_pch */

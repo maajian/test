@@ -10,6 +10,6 @@
 
 @interface LMTextHTMLParser : NSObject
 
-+ (NSString *)HTMLFromAttributedString:(NSAttributedString *)attributedString;
++ (NSString *)HTMLFromAttributedString:(NSAttributedString *)attributedString WithImageArray :(NSArray *)imageArray;
 
 @end

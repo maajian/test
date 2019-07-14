@@ -14,65 +14,41 @@
 
 /**
  * 方法说明：设置标签尺寸的宽和高
- * @param width  标签宽度
- * @param height 标签高度
- * @return void
  */
 -(void) addSize:(int) width :(int) height;
 
 /**
  * 方法说明：设置标签间隙尺寸 单位mm
- * @param m    间隙长度
- * @param n    间隙偏移
- * @return void
  */
 -(void) addGapWithM:(int) m withN:(int) n;
 
 /**
  * 方法说明：设置标签原点坐标
- * @param x  横坐标
- * @param y  纵坐标
- * @return void
  */
 -(void) addReference:(int) x :(int)y;
 
 /**
  * 方法说明：设置打印速度
- * @param speed  打印速度
- * @return void
  */
 -(void) addSpeed:(int) speed;
 
 /**
  * 方法说明：设置打印浓度
- * @param density  浓度
- * @return void
  */
 -(void) addDensity:(int) density;
 
 /**
  * 方法说明：设置打印方向
- * @param direction  方向
- * @return void
  */
 -(void) addDirection:(int) direction;
 
 /**
  * 方法说明：清除打印缓冲区
- * @return void
  */
 -(void) addCls;
 
 /**
  * 方法说明:在标签上绘制文字
- * @param x 横坐标
- * @param y 纵坐标
- * @param font  字体类型
- * @param rotation  旋转角度
- * @param Xscal  横向放大
- * @param Yscal  纵向放大
- * @param text   文字字符串
- * @return void
  */
 -(void) addTextwithX:(int)x withY:(int) y withFont:(NSString*) font
         withRotation:(int) rotation withXscal:(int) Xscal withYscal:(int) Yscal withText:(NSString*) text;
@@ -104,17 +80,6 @@
  * @param Narrow 默认值2，窄 bar  宽度，以点(dot)表示
  * @param Wide 默认值4，宽 bar  宽度，以点(dot)表示
  * @param content   条码内容
- * @return void
- BARCODE X,Y,"code type",height,human readable,rotation,narrow,wide,"code"
- BARCODE 100,100,"39",40,1,0,2,4,"1000"
- BARCODE 10,10,"128",40,1,0,2,2,"124096ABCDEFZ$%+-./*"
- "code type":
- EAN13("EAN13"),
- EAN8("EAN8"),
- UPCA("UPCA"),
- ITF14("ITF14"),
- CODE39("39"),
- CODE128("128"),
  */
 -(void) add1DBarcode:(int)x :(int)y :(NSString*)barcodetype :(int)height
                     :(int)readable :(int)rotation :(int)Narrow :(int)Wide :(NSString*)content;

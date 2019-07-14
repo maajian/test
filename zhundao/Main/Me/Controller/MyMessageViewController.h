@@ -10,4 +10,7 @@
 
 @interface MyMessageViewController : BaseViewController
 
+/*! 用户信息 */
+@property(nonatomic,strong)NSDictionary *userDic;
+
 @end

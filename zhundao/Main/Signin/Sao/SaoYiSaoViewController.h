@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 #import <AVFoundation/AVFoundation.h>
-typedef void(^countBlock)(NSString *str);
-@interface SaoYiSaoViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
+typedef void(^countBlock)(NSInteger str);
+@interface SaoYiSaoViewController :BaseViewController <AVCaptureMetadataOutputObjectsDelegate>
 {
     int num;
     BOOL upOrdown;
     NSTimer * timer;
 }
+- (void)otherView;
 @property(nonatomic,assign)NSInteger signID;
 @property (strong,nonatomic)AVCaptureDevice * device;
 @property (strong,nonatomic)AVCaptureDeviceInput * input;

@@ -8,7 +8,7 @@
 
 #import "BaseNavigationViewController.h"
 
-@interface BaseNavigationViewController ()
+@interface BaseNavigationViewController ()<UINavigationControllerDelegate>
 
 @end
 
@@ -17,17 +17,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSDictionary *attributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:18],
-                                 NSForegroundColorAttributeName : [UIColor whiteColor]};
+                                 NSForegroundColorAttributeName : [UIColor blackColor]};
     self.navigationBar.titleTextAttributes = attributes;
+    [[UINavigationBar appearance] setShadowImage:[UIImage new]];
     //将导航栏设置为不透明  会影响每一个视图的布局
     self.navigationBar.translucent = NO;
-    self.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationBar.barTintColor = [UIColor blackColor];
+    self.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationBar.barTintColor = zhundaoBackgroundColor;
     // Do any additional setup after loading the view.
 }
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.viewControllers.count) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    [super pushViewController:viewController animated:animated];
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

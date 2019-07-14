@@ -2,7 +2,7 @@
 //  ZDSearchBar.h
 //  zhundao
 //
-//  Created by maj on 2019/7/6.
+//  Created by maj on 2019/7/7.
 //  Copyright © 2019 zhundao. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDSearchBar : UIView
+@interface ZDSearchBar : UISearchBar
 
 @end
 

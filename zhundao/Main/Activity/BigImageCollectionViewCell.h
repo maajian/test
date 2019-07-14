@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BigImageCollectionViewCell : UICollectionViewCell
+/*! 图片 */
+@property(nonatomic,strong)UIImageView *bigImageView;
+
+@property(nonatomic,copy)NSString *imageStr;
 
 @end

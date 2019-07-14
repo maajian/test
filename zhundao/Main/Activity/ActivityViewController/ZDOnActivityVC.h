@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDOnActivityVC : BaseViewController
+// 搜索的字符串
+@property (nonatomic, copy) NSString *searchText;
+// 是否搜索中
+@property (nonatomic, assign) BOOL active;
 
 @end
 

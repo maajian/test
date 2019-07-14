@@ -17,7 +17,7 @@
 
 @end
 
-@interface LMImagePreviewController : UIViewController
+@interface LMImagePreviewController : BaseViewController
 
 @property (nonatomic, weak) id<LMImagePreviewControllerDelegate> delegate;
 @property (nonatomic, strong) PHAsset *asset;

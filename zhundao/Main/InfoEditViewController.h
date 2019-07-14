@@ -9,5 +9,9 @@
 #import "BaseViewController.h"
 
 @interface InfoEditViewController : BaseViewController
+ // 手机号码 
+@property (nonatomic, copy) NSString *phoneStr;
+ // 验证码
+@property (nonatomic, copy) NSString *code;
 
 @end

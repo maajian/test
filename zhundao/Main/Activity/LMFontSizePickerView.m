@@ -36,7 +36,7 @@
 - (void)setup {
     self.backgroundColor = [UIColor whiteColor];
     
-    _normalFont = [UIFont systemFontOfSize:13.f];
+    _normalFont = [UIFont systemFontOfSize:16.f];
     _selectedFont = [UIFont boldSystemFontOfSize:21.f];
     _normalTextColor = [UIColor grayColor];
     _selectedTextColor = [UIColor blackColor];

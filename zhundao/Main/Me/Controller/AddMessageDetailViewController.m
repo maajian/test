@@ -8,7 +8,7 @@
 
 #import "AddMessageDetailViewController.h"
 
-@interface AddMessageDetailViewController ()
+@interface AddMessageDetailViewController ()<WKNavigationDelegate>
 
 @end
 
@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title =@"充值记录";
+    WKWebView *webview = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
+    webview.navigationDelegate = self;
+    [self.view addSubview:webview];
+    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
+    self.webView =webview;
     // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning {

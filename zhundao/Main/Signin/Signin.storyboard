@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QGy-YS-R3b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QGy-YS-R3b">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +14,7 @@
             <objects>
                 <navigationController id="QGy-YS-R3b" customClass="BaseNavigationViewController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iBF-Yp-QG3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -39,15 +38,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ml-AJ-NQu">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="122" width="375" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="jsr-PT-ntE" id="bXd-7V-6xz"/>
                                     <outlet property="delegate" destination="jsr-PT-ntE" id="FgE-Wr-no5"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QxZ-U5-yeB">
-                                <rect key="frame" x="36" y="72" width="303" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QxZ-U5-yeB">
+                                <rect key="frame" x="16" y="74" width="343" height="39"/>
                                 <segments>
                                     <segment title="进行中的签到"/>
                                     <segment title="已关闭的签到"/>
@@ -55,27 +54,27 @@
                                 <color key="tintColor" red="0.031331380208333336" green="0.72957356770833337" blue="0.034559461805555552" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="QxZ-U5-yeB" secondAttribute="trailing" constant="20" id="BQq-QR-bix"/>
-                            <constraint firstItem="QxZ-U5-yeB" firstAttribute="top" secondItem="C8x-1N-ZTt" secondAttribute="bottom" constant="8" id="Btk-i0-qMl"/>
-                            <constraint firstItem="mdS-J8-43g" firstAttribute="top" secondItem="1ml-AJ-NQu" secondAttribute="bottom" id="Iq9-y8-lug"/>
-                            <constraint firstItem="QxZ-U5-yeB" firstAttribute="leading" secondItem="ePb-qS-BRk" secondAttribute="leadingMargin" constant="20" id="PIa-ab-3Zv"/>
-                            <constraint firstItem="1ml-AJ-NQu" firstAttribute="top" secondItem="C8x-1N-ZTt" secondAttribute="bottom" constant="44" id="Qit-YV-z5V"/>
-                            <constraint firstItem="1ml-AJ-NQu" firstAttribute="top" secondItem="QxZ-U5-yeB" secondAttribute="bottom" constant="8" id="ZWa-Hn-e7Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QxZ-U5-yeB" secondAttribute="trailing" id="BQq-QR-bix"/>
+                            <constraint firstItem="QxZ-U5-yeB" firstAttribute="leading" secondItem="ePb-qS-BRk" secondAttribute="leadingMargin" id="PIa-ab-3Zv"/>
+                            <constraint firstItem="QxZ-U5-yeB" firstAttribute="top" secondItem="C8x-1N-ZTt" secondAttribute="bottom" constant="10" id="VHS-bn-fB2"/>
+                            <constraint firstItem="1ml-AJ-NQu" firstAttribute="top" secondItem="QxZ-U5-yeB" secondAttribute="bottom" constant="10" id="ZWa-Hn-e7Q"/>
+                            <constraint firstItem="mdS-J8-43g" firstAttribute="top" secondItem="1ml-AJ-NQu" secondAttribute="bottom" id="d8C-bu-p9c"/>
+                            <constraint firstItem="1ml-AJ-NQu" firstAttribute="top" secondItem="C8x-1N-ZTt" secondAttribute="bottom" constant="58" id="kEA-bf-7n6"/>
                             <constraint firstItem="1ml-AJ-NQu" firstAttribute="leading" secondItem="ePb-qS-BRk" secondAttribute="leading" id="qSN-bN-vGb"/>
                             <constraint firstAttribute="trailing" secondItem="1ml-AJ-NQu" secondAttribute="trailing" id="xjM-ox-zuD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="签到" id="j7w-a3-Csc"/>
                     <connections>
-                        <outlet property="segmented" destination="QxZ-U5-yeB" id="NXY-xw-G8e"/>
-                        <outlet property="tableView" destination="1ml-AJ-NQu" id="3ef-I9-fcc"/>
+                        <outlet property="segmented" destination="QxZ-U5-yeB" id="7Rd-zp-SmB"/>
+                        <outlet property="tableView" destination="1ml-AJ-NQu" id="fLx-gn-F3t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nI1-hc-hvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239" y="-251"/>
+            <point key="canvasLocation" x="-244" y="-167"/>
         </scene>
     </scenes>
 </document>

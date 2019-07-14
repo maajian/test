@@ -14,6 +14,32 @@
     [super awakeFromNib];
     // Initialization code
 }
+- (void)setModel:(ShakeModel *)model
+{
+    if (model) {
+        _model= model;
+    }
+    [_iconUrlImageView sd_setImageWithURL:[NSURL URLWithString:_model.IconUrl]];
+    _iconUrlImageView.layer.masksToBounds = YES;
+    _iconUrlImageView.layer.cornerRadius = 4;
+    _titlelabel.text = _model.Title;
+    _beconnameDevidedID.text = [NSString stringWithFormat:@"%@(%@)",_model.BeaconName,_model.DeviceId];
+    
+    
+
+}
+
+- (void)setFaceModel:(FaceModel *)faceModel
+{
+    if (faceModel) {
+        _faceModel = faceModel;
+    }
+    _iconUrlImageView.image = [UIImage imageNamed:@"人脸签到"];
+    _iconUrlImageView.layer.masksToBounds = YES;
+    _iconUrlImageView.layer.cornerRadius = 4;
+    _titlelabel.text = _faceModel.Name;
+    _beconnameDevidedID.text = [NSString stringWithFormat:@"%@",_faceModel.deviceKey];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

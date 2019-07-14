@@ -59,22 +59,22 @@ void addRoundRectToPath(CGContextRef context, CGRect rect, float radius, CGImage
     radius = MAX(5.f, radius);
     radius = MIN(10.f, radius);
     
-    UIImage * img = image;
+    UIImage * img3 = image;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 4 * width, colorSpace, kCGImageAlphaPremultipliedFirst);
     CGRect rect = CGRectMake(0, 0, width, height);
     
     //绘制圆角
     CGContextBeginPath(context);
-    addRoundRectToPath(context, rect, radius, img.CGImage);
+    addRoundRectToPath(context, rect, radius, img3.CGImage);
     CGImageRef imageMasked = CGBitmapContextCreateImage(context);
-    img = [UIImage imageWithCGImage: imageMasked];
+    img3 = [UIImage imageWithCGImage: imageMasked];
     
     CGContextRelease(context);
     CGColorSpaceRelease(colorSpace);
     CGImageRelease(imageMasked);
     
-    return img;
+    return img3;
 }
 
 

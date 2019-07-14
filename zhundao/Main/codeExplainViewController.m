@@ -8,7 +8,7 @@
 
 #import "CodeExplainViewController.h"
 
-@interface CodeExplainViewController ()
+@interface CodeExplainViewController ()<WKNavigationDelegate>
 
 @end
 
@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.title =@"获取验证码";
+    WKWebView *webview =  [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
+    webview.navigationDelegate = self;
+    [self.view addSubview:webview];
+    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
+    self.webView =webview;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol colorDelegate <NSObject>
+
+/*! 当前选择的rgb*/
+- (void)colorViewCurrrentColor :(UIColor *)currentColor;
+
+@end
+
 @interface ColorView : UIView
+
+@property(nonatomic,weak) id<colorDelegate> colorDelegate;
+/*! 初始化方法 */
+- (instancetype)initWithColor :(UIColor *)originColor;
 
 @end

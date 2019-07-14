@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 
+/**
+ 多账号登陆
+ */
 @interface MoreAcountViewController : BaseViewController
 
 @end

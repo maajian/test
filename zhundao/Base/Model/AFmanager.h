@@ -9,5 +9,10 @@
 #import "AFHTTPSessionManager.h"
 
 @interface AFmanager : AFHTTPSessionManager
-+(AFHTTPSessionManager *)shareManager;
+
+@property (nonatomic, assign) AFNetworkReachabilityStatus networkStatus;
+
++(AFmanager *)shareManager;
+
+
 @end

@@ -8,6 +8,7 @@
 
 #import "ZDConst.h"
 
-@implementation ZDConst
-
-@end
+#pragma mark --- notification
+NSString *const ZDNotification_Message_Select = @"ZDNotification_Message_Select";
+NSString *const ZDNotification_Change_Account = @"ZDNotification_Change_Account";
+NSString *const ZDNotification_Load_Activity  = @"ZDNotification_Load_Activity";

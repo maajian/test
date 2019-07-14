@@ -9,5 +9,7 @@
 #import "BaseViewController.h"
 
 @interface inviteViewController : BaseViewController
-
+@property(nonatomic,assign)NSInteger acid;
+@property(nonatomic,strong)ActivityModel *model;
+@property(nonatomic,strong)NSString *imageStr;
 @end

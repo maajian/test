@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FaceModel.h"
 @interface FaceDetailTableViewCell : UITableViewCell
+
+
+@property(nonatomic,strong)FaceModel *model;
+
+@property(nonatomic,strong)UILabel *nameLabel;
+
+@property(nonatomic,strong)UILabel *rightLabel;
+
+@property(nonatomic,strong)UIButton *signButton;
 
 @end

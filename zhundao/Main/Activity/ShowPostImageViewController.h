@@ -9,5 +9,9 @@
 #import "BaseViewController.h"
 
 @interface ShowPostImageViewController : BaseViewController
+/*! 图片地址 */
+@property(nonatomic,strong)NSString *imageStr;
+
+@property(nonatomic,strong)NSArray *imageArray;
 
 @end

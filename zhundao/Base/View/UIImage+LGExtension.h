@@ -19,12 +19,5 @@
  */
 + (UIImage *)circleImageWithText:(NSString *)text bgColor:(UIColor *)bgColor size:(CGSize)size;
 
-/**
- 生成一张倒三角的图片
- 
- @param size context的大小
- @param tintColor 颜色
- @return 生成的图片
- */
-+ (UIImage *)triangleImageWithSize:(CGSize)size tintColor:(UIColor *)tintColor;
+
 @end

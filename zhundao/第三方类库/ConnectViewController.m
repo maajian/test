@@ -32,10 +32,6 @@
         if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
             self.edgesForExtendedLayout = UIRectEdgeNone;
         }
-
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] init];
-        backButton.title = @"Back";
-        self.navigationItem.backBarButtonItem = backButton;
         
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 28, 57, 57)];
@@ -83,14 +79,30 @@
     }
     return self;
 }
-
+- (void)backpop
+{
+//     DeviceInfo *tmpDeviceInfo = [connectedDeviceInfo objectAtIndex:0];
+//    if (tmpDeviceInfo.myPeripheral.advName) {
+//        _devideBlock(tmpDeviceInfo.myPeripheral.advName);
+//    }
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.title = @"打印设备选择";
     // Do any additional setup after loading the view from its nib.
     [self setConnectionStatus:LE_STATUS_IDLE];
     [versionLabel setText:[NSString stringWithFormat:@"BLETR %@, %s",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], __DATE__]];
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(-8, 20, 80, 44)];
+    UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(backpop)];
+    UIImageView *imageview = [MyImage initWithImageFrame:CGRectMake(-8, 10, 25, 25) imageName:@"nav_back" cornerRadius:0 masksToBounds:NO];
+    UILabel *button1 = [MyLabel initWithLabelFrame:CGRectMake(15, 0, 40,45) Text:@"返回" textColor:[UIColor whiteColor] font:[UIFont systemFontOfSize:17] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:NO];
+    [view addSubview:imageview];
+    [view addSubview:button1];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:view];
+    self.navigationItem.leftBarButtonItem = item;
+    [view addGestureRecognizer:tap3];
     
 }
 
@@ -98,7 +110,8 @@
     
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    [[appDelegate navigationController] setToolbarHidden:NO animated:NO];
-//    
+//
+    [super viewDidAppear:animated];
     if([connectedDeviceInfo count] == 0) {
         if (uuidSettingViewController.isUUIDAvailable) {
             [self configureTransparentServiceUUID:uuidSettingViewController.transServiceUUIDStr txUUID:uuidSettingViewController.transTxUUIDStr rxUUID:uuidSettingViewController.transRxUUIDStr];
@@ -187,7 +200,7 @@
             break;
         case LE_STATUS_SCANNING:
             [devicesTableView reloadData];
-            statusLabel.text = @"Scanning...";
+            statusLabel.text = @"查找中...";
             [activityIndicatorView startAnimating];
             break;
         default:
@@ -321,7 +334,7 @@
     for (int idx =0; idx< [devicesList count]; idx++) {
         MyPeripheral *tmpPeripheral = [devicesList objectAtIndex:idx];
         if (tmpPeripheral == myPeripheral) {
-            //NSLog(@"devicesList removeObject:%@",tmpPeripheral.advName);
+            NSLog(@"devicesList removeObject:%@",tmpPeripheral.advName);
             [devicesList removeObjectAtIndex:idx];
             break;
         }
@@ -345,7 +358,7 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    UITableViewCell *cell;
+    UITableViewCell *cell= nil;
     
     switch (indexPath.section) {
         case 0:
@@ -358,7 +371,7 @@
             DeviceInfo *tmpDeviceInfo = [connectedDeviceInfo objectAtIndex:indexPath.row];
             
             cell.textLabel.text = tmpDeviceInfo.myPeripheral.advName;
-            cell.detailTextLabel.text = @"connected";
+            cell.detailTextLabel.text = @"已连接";
             cell.accessoryView = nil;
             if (cell.textLabel.text == nil)
                 cell.textLabel.text = @"Unknow";
@@ -366,7 +379,7 @@
             UIButton *accessoryButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [accessoryButton addTarget:self action:@selector(actionButtonDisconnect:)  forControlEvents:UIControlEventTouchUpInside];
             accessoryButton.tag = indexPath.row;
-            [accessoryButton setTitle:@"Disonnect" forState:UIControlStateNormal];
+            [accessoryButton setTitle:@"取消连接" forState:UIControlStateNormal];
             [accessoryButton setFrame:CGRectMake(0,0,100,35)];
             cell.accessoryView  = accessoryButton;           
         }
@@ -385,11 +398,11 @@
             cell.detailTextLabel.text = @"";
             cell.accessoryView = nil;
             if (tmpPeripheral.connectStaus == MYPERIPHERAL_CONNECT_STATUS_CONNECTING) {
-                cell.detailTextLabel.text = @"connecting...";
+                cell.detailTextLabel.text = @"连接中...";
                 UIButton *accessoryButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
                 [accessoryButton addTarget:self action:@selector(actionButtonCancelConnect:)  forControlEvents:UIControlEventTouchUpInside];
                 accessoryButton.tag = indexPath.row;
-                [accessoryButton setTitle:@"Cancel" forState:UIControlStateNormal];
+                [accessoryButton setTitle:@"取消" forState:UIControlStateNormal];
                 [accessoryButton setFrame:CGRectMake(0,0,100,35)];
                 cell.accessoryView  = accessoryButton;
                 
@@ -409,10 +422,10 @@
 	NSString *title = nil;
 	switch (section) {
         case 0:
-            title = @"Connected Device:";
+            title = @"当前蓝牙设备:";
             break;
 		case 1:
-			title = @"Discovered Devices:";
+			title = @"所有蓝牙设备:";
 			break;
             
 		default:
@@ -446,8 +459,8 @@
         case 1:
         {
             //Derek
-            NSLog(@"[ConnectViewController] didSelectRowAtIndexPath section 0, Row = %d",[indexPath row]);
-            int count = [devicesList count];
+            NSLog(@"[ConnectViewController] didSelectRowAtIndexPath section 0, Row = %ld",(long)[indexPath row]);
+            int count = (int)[devicesList count];
             if ((count != 0) && count > indexPath.row) {
                 MyPeripheral *tmpPeripheral = [devicesList objectAtIndex:indexPath.row];
                 if (tmpPeripheral.connectStaus != MYPERIPHERAL_CONNECT_STATUS_IDLE) {
@@ -489,7 +502,7 @@
 //Derek
 - (IBAction)actionButtonDisconnect:(id)sender {
     //NSLog(@"[ConnectViewController] actionButtonDisconnect idx = %d",[sender tag]);
-    int idx = [sender tag];
+    int idx = (int)[sender tag];
     DeviceInfo *tmpDeviceInfo = [connectedDeviceInfo objectAtIndex:idx];
     [self disconnectDevice:tmpDeviceInfo.myPeripheral];
 }
@@ -497,7 +510,7 @@
 //Derek
 - (IBAction)actionButtonCancelConnect:(id)sender {
     //NSLog(@"[ConnectViewController] actionButtonCancelConnect idx = %d",[sender tag]);
-    int idx = [sender tag];
+    int idx = (int)[sender tag];
     MyPeripheral *tmpPeripheral = [devicesList objectAtIndex:idx];
     tmpPeripheral.connectStaus = MYPERIPHERAL_CONNECT_STATUS_IDLE;
     [devicesList replaceObjectAtIndex:idx withObject:tmpPeripheral];

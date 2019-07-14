@@ -14,5 +14,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *checkLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
+@property(nonatomic,assign)NSInteger signid;
 @end

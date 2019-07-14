@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface PostSign : NSObject
-
+- (void)postWithstr :(NSString *)str;
 @end

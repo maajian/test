@@ -10,6 +10,25 @@
 
 @implementation BigSizeButton
 
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+
+    }
+    return self;
+}
+
+
+
+
+-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
+        //当前btn大小
+        CGRect btnBounds = self.bounds;
+        //扩大点击区域，想缩小就将-10设为正值
+        btnBounds = CGRectInset(btnBounds, -30, -30);
+        //若点击的点在新的bounds里，就返回YES
+        return CGRectContainsPoint(btnBounds, point);
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -44,12 +44,12 @@
     [super viewDidLoad];
         
     NSArray *items = @[
-                       [UIImage imageNamed:@"ABC_icon"],
-                       [UIImage imageNamed:@"style_icon"],
-                       [UIImage imageNamed:@"img_icon"],
-                       [UIImage imageNamed:@"@_icon"],
-                       [UIImage imageNamed:@"comment_icon"],
-                       [UIImage imageNamed:@"clear_icon"]
+                       [UIImage imageNamed:@"keyboard.png"],
+                       [UIImage imageNamed:@"font.png"],
+                       [UIImage imageNamed:@"insertImage.png"],
+                       [UIImage imageNamed:@"link.png"],
+//                       [UIImage imageNamed:@"comment_icon"],
+                       [UIImage imageNamed:@"bottomMove.png"]
                        ];
     _contentInputAccessoryView = [[LMSegmentedControl alloc] initWithItems:items];
     _contentInputAccessoryView.delegate = self;
@@ -64,7 +64,6 @@
     [self setCurrentTextStyle:[LMTextStyle textStyleWithType:LMTextStyleFormatNormal]];
     [self updateParagraphTypingAttributes];
     [self updateTextStyleTypingAttributes];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
@@ -79,21 +78,24 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     [self layoutTextView];
-    
     CGRect rect = self.view.bounds;
     rect.size.height = 40.f;
     self.contentInputAccessoryView.frame = rect;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [_textView becomeFirstResponder];
+}
 - (void)layoutTextView {
     CGRect rect = self.view.bounds;
     rect.origin.y = [self.topLayoutGuide length];
     rect.size.height -= rect.origin.y;
     self.textView.frame = rect;
-
     UIEdgeInsets insets = self.textView.contentInset;
     insets.bottom = self.keyboardSpacingHeight;
     self.textView.contentInset = insets;
+    
 }
 
 #pragma mark - Keyboard
@@ -182,7 +184,49 @@
 }
 
 #pragma mark - Change InputView
+- (void)insertlink
+{
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"插入超链接" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        textField.placeholder = @"超链接地址";
+    }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"超链接标题";
+    }];
+    __weak typeof(alertController) weakAlertController = alertController;
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSDictionary *attr = self.textView.typingAttributes;
+        
+        UITextField *address = weakAlertController.textFields.firstObject;
+        UITextField *title = weakAlertController.textFields.lastObject;
+        NSError *error;
+          NSString *regulaStr = @"\\b[a-zA-Z0-9\\-.]+(?::(\\d+))?(?:(?:/[a-zA-Z0-9\\-._?,'+\\&%$=~*!():@\\\\]*)+)?";
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regulaStr
+                                                                               options:NSRegularExpressionCaseInsensitive
+                                                                                 error:&error];
 
+        NSUInteger numberOfMatches = [regex numberOfMatchesInString:address.text options:0 range:NSMakeRange(0, [address.text length])];
+        if (numberOfMatches ==1) {
+            NSDictionary * attris = @{NSLinkAttributeName:[NSURL URLWithString:address.text]};
+            NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:title.text];
+            [attributedText setAttributes:attris range:NSMakeRange(0,attributedText.length)];
+            NSMutableAttributedString *attributedText1 = [[NSMutableAttributedString alloc] initWithAttributedString:self.textView.attributedText];
+            [attributedText1 replaceCharactersInRange:_lastSelectedRange withAttributedString:attributedText];
+            self.textView.allowsEditingTextAttributes = YES;
+            self.textView.attributedText = attributedText1;
+            self.textView.allowsEditingTextAttributes = NO;
+            [self setCurrentParagraphConfig:[[LMParagraphConfig alloc] init]];
+            [self setCurrentTextStyle:[LMTextStyle textStyleWithType:LMTextStyleFormatNormal]];
+            
+            self.textView.typingAttributes = attr;
+            [self updateParagraphTypingAttributes];
+            [self updateTextStyleTypingAttributes];
+        }
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 - (void)lm_segmentedControl:(LMSegmentedControl *)control didTapAtIndex:(NSInteger)index {
     
     if (index == control.numberOfSegments - 1) {
@@ -241,6 +285,12 @@
             self.textView.inputView = inputView;
             break;
         }
+        case 3:
+        {
+            [self insertlink];
+            [self reloadSettingsView];
+            break;
+        }
         default:
             self.textView.inputView = nil;
             break;
@@ -261,6 +311,7 @@
 - (LMTextStyle *)textStyleForSelection {
     
     LMTextStyle *textStyle = [[LMTextStyle alloc] init];
+    NSLog(@"%@",self.textView.typingAttributes);
     UIFont *font = self.textView.typingAttributes[NSFontAttributeName];
     textStyle.bold = font.bold;
     textStyle.italic = font.italic;
@@ -365,10 +416,8 @@
     for (NSValue *rangeValue in ranges) {
         
         NSRange range = NSMakeRange(rangeValue.rangeValue.location + offset, rangeValue.rangeValue.length);
-        LMParagraphType type;
+       
         if ([key isEqualToString:LMParagraphTypeName]) {
-            
-            type = self.currentParagraphConfig.type;
             if (self.currentParagraphConfig.type == LMParagraphTypeNone) {
                 [attributedText deleteCharactersInRange:NSMakeRange(range.location, 1)];
                 offset -= 1;
@@ -380,20 +429,6 @@
                 [attributedText insertAttributedString:attributedString atIndex:range.location];
                 offset += 1;
             }
-            //            switch (self.currentParagraphConfig.type) {
-            //                case LMParagraphTypeNone:
-            //
-            //                    break;
-            //                case LMParagraphTypeNone:
-            //
-            //                    break;
-            //                case LMParagraphTypeNone:
-            //
-            //                    break;
-            //                case LMParagraphTypeNone:
-            //
-            //                    break;
-            //            }
         }
         else {
             [attributedText addAttribute:NSParagraphStyleAttributeName value:self.currentParagraphConfig.paragraphStyle range:range];
@@ -433,7 +468,8 @@
     self.textView.allowsEditingTextAttributes = YES;
     self.textView.attributedText = attributedText;
     self.textView.allowsEditingTextAttributes = NO;
-    
+    [self.textView resignFirstResponder];
+    [self.textView scrollRangeToVisible:_lastSelectedRange];
     return textAttachment;
 }
 
@@ -500,23 +536,44 @@
     NSTextAttachment *attachment = [self insertImage:degradedImage];
     [self.textView resignFirstResponder];
     [self.textView scrollRangeToVisible:_lastSelectedRange];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        // 实际应用时候可以将存本地的操作改为上传到服务器，URL 也由本地路径改为服务器图片地址。
-        NSURL *documentDir = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory
-                                                                    inDomain:NSUserDomainMask
-                                                           appropriateForURL:nil
-                                                                      create:NO
-                                                                       error:nil];
-        NSURL *filePath = [documentDir URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", [NSDate date].description]];
-        NSData *originImageData = UIImagePNGRepresentation(image);
-        
-        if ([originImageData writeToFile:filePath.path atomically:YES]) {
+    NSString *urlStr = [NSString stringWithFormat:@"%@/OAuth/UploadFile",zhundaoH5Api];
+    AFmanager *manager = [AFmanager shareManager];
+    MBProgressHUD *hud1 = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",
+                                                         @"text/html",
+                                                         @"image/jpeg",
+                                                         @"image/png",
+                                                         @"application/octet-stream",
+                                                         @"text/json",
+                                                         nil];
+    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    manager.requestSerializer.timeoutInterval = 20.f;
+    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    [manager POST:urlStr parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        if (image) {
+            NSData *data = UIImageJPEGRepresentation(image, 0.8);
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            formatter.dateFormat =@"yyyyMMddHHmmss";
+            NSString *str = [formatter stringFromDate:[NSDate date]];
+            NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
+            [formData appendPartWithFileData:data name:@"imgFile" fileName:fileName mimeType:@"image/jpeg"];
+        }
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"responseObject = %@",responseObject);
+        [hud1 hideAnimated:YES];
+         MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        [hud hideAnimated:YES afterDelay:1];
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            // 实际应用时候可以将存本地的操作改为上传到服务器，URL 也由本地路径改为服务器图片地址。
+            NSURL *filePath = [NSURL URLWithString:dic[@"url"]];
             attachment.attachmentType = LMTextAttachmentTypeImage;
             attachment.userInfo = filePath.absoluteString;
-        }
-    });
+        });
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       [hud1 hideAnimated:YES];
+    }];
 }
 
 - (void)lm_imageSettingsController:(LMImageSettingsController *)viewController presentImagePickerView:(UIViewController *)picker {
@@ -527,8 +584,8 @@
 
 - (NSString *)exportHTML {
     
-    NSString *title = [NSString stringWithFormat:@"<h1 align=\"center\">%@</h1>", self.textView.titleTextField.text];
-    NSString *content = [LMTextHTMLParser HTMLFromAttributedString:self.textView.attributedText];
+    NSString *title = [NSString stringWithFormat:@"<h3 align=\"center\">%@</h3>", self.textView.titleTextField.text];
+    NSString *content = [LMTextHTMLParser HTMLFromAttributedString:self.textView.attributedText WithImageArray:self.imageArray];
     return [title stringByAppendingString:content];
 }
 

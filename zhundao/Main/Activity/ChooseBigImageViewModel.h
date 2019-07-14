@@ -10,4 +10,11 @@
 
 @interface ChooseBigImageViewModel : NSObject
 
+- (NSMutableArray *)heightForCell :(NSArray *) array;
+
+/*! 高度 */
+- (NSInteger)heightForRowAtIndexPath:(NSIndexPath *)indexPath
+                              isPost:(BOOL)isPost
+                         heightArray:(NSArray *)heightArray;
+
 @end

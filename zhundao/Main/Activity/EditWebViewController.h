@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface EditWebViewController : UIViewController
-
+typedef void(^postBlock1) (NSAttributedString *text,NSString *htmlstr,NSString *titletext);
+@interface EditWebViewController : BaseViewController
+@property(nonatomic,copy)postBlock1 block;
+@property(nonatomic,copy)NSAttributedString *pushText;
+@property(nonatomic,copy)NSArray *imageArray;
 @end

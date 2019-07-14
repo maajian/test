@@ -43,7 +43,7 @@ typedef void(^dateBlock)(NSDate *dateString);
  控件显示
  */
 - (void)fadeOut;
-
+- (instancetype)initWithFrame:(CGRect)frame WithStr :(NSString *)str withDate:(NSDate *)mydate;
 @end
 
 

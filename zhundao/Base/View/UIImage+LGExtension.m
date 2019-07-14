@@ -12,18 +12,17 @@
 
 - (UIImage *)circleImage{
     
-    UIGraphicsBeginImageContextWithOptions(self.size,NO, 0);
-    
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    
+    UIGraphicsBeginImageContextWithOptions(self.size,NO, 0.0);
+//    CGContextRef ctx = UIGraphicsGetCurrentContext();
+//    
     CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
-    
-    CGContextAddEllipseInRect(ctx, rect);
-    
-    CGContextClip(ctx);
-    
+//
+//    CGContextAddEllipseInRect(ctx, rect);
+//    
+//    CGContextClip(ctx);
+
+    [[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:rect.size.width/2]addClip];
     [self drawInRect:rect];
-    
     UIImage *circleImage =  UIGraphicsGetImageFromCurrentImageContext();
  
     UIGraphicsEndImageContext();
@@ -32,7 +31,7 @@
 }
 
 + (UIImage *)circleImageWithText:(NSString *)text bgColor:(UIColor *)bgColor size:(CGSize)size{
-    NSDictionary *fontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:30], NSForegroundColorAttributeName: [UIColor redColor]};
+    NSDictionary *fontAttributes = @{NSFontAttributeName:KHeitiSCMedium(14), NSForegroundColorAttributeName: [UIColor whiteColor]};
     
     CGSize textSize = [text sizeWithAttributes:fontAttributes];
     
@@ -48,7 +47,7 @@
     [path fill];
     
     [text drawAtPoint:drawPoint withAttributes:fontAttributes];
-    
+    CGContextSetAllowsAntialiasing(ctx,NO);
     UIImage *resultImg = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
@@ -56,19 +55,6 @@
     return resultImg;
 }
 
-+ (UIImage *)triangleImageWithSize:(CGSize)size tintColor:(UIColor *)tintColor{
-    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(0, 0)];
-    [path addLineToPoint:CGPointMake(size.width/2,size.height)];
-    [path addLineToPoint:CGPointMake(size.width, 0)];
-    [path closePath];
-    CGContextSetFillColorWithColor(ctx, tintColor.CGColor);
-    [path fill];
-    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return resultImage;
-}
+
 
 @end

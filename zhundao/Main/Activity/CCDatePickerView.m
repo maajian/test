@@ -19,7 +19,6 @@
 #define MINYEAR 1970
 
 @interface CCDatePickerView ()
-
 {
     //日期存储数组
     NSMutableArray *_yearArray;
@@ -60,13 +59,15 @@
 
 @implementation CCDatePickerView
 
-- (instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame WithStr :(NSString *)str withDate:(NSDate *)mydate{
     self=[super initWithFrame:frame];
     if (self) {
         _dateFormatter = @"yyyy-MM-dd HH:mm";
         [self setupUI];
         [self defaultConfig];
-        [self getNowDate:nil animated:NO];//当前时间
+        _startDate = mydate;
+        [self getNowDate:mydate animated:NO];//当前时间
+        self.chooseTimeLabel.text= str ;
     }
     return self;
 }
@@ -86,7 +87,6 @@
     self.dateView.userInteractionEnabled=YES;
     
     self.chooseTimeLabel=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.dateView.size.width, H(80))];
-    self.chooseTimeLabel.text=@"请选择服务时间";
     self.chooseTimeLabel.textColor=[UIColor grayColor];
     self.chooseTimeLabel.font=[UIFont systemFontOfSize:16];
     self.chooseTimeLabel.textAlignment=NSTextAlignmentCenter;
@@ -96,7 +96,7 @@
     self.line1.backgroundColor= RGBA(237, 237, 237, 1.0);
     [self.dateView addSubview:self.line1];
     
-    [self addLabelTextWithName:@[@"年",@"月",@"日",@"分",@"秒"]];
+    [self addLabelTextWithName:@[@"年",@"月",@"日",@"时",@"分"]];
     
     self.line2=[[UIView alloc] initWithFrame:CGRectMake(0, self.yearLabel.bottom, self.dateView.size.width, 1)];
     self.line2.backgroundColor=RGBA(237, 237, 237, 1.0);
@@ -231,10 +231,10 @@
         title = [NSString stringWithFormat:@"%@日",_dayArray[row]];
     }
     if (component==3) {
-        title = [NSString stringWithFormat:@"%@分",_hourArray[row]];
+        title = [NSString stringWithFormat:@"%@时",_hourArray[row]];
     }
     if (component==4) {
-        title = [NSString stringWithFormat:@"%@秒",_minuteArray[row]];
+        title = [NSString stringWithFormat:@"%@分",_minuteArray[row]];
     }
     customLabel.text = title;
     customLabel.textColor = [UIColor blackColor];
@@ -358,7 +358,7 @@
         }
         
     }
-    _startDate = self.scrollToDate;
+    _startDate = date;
 }
 
 /**

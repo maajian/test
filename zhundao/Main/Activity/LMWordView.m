@@ -11,14 +11,14 @@
 
 @implementation LMWordView {
     UIView *_titleView;
-    UIView *_separatorLine;
+//    UIView *_separatorLine;
     
     CGRect _frameCache;
 }
 
-static CGFloat const kLMWMargin = 20.f;
-static CGFloat const kLMWTitleHeight = 44.f;
-static CGFloat const kLMWCommonSpacing = 16.f;
+static CGFloat const kLMWMargin = 10.f;
+static CGFloat const kLMWTitleHeight = 1.f;
+static CGFloat const kLMWCommonSpacing = 12.f;
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
@@ -37,22 +37,22 @@ static CGFloat const kLMWCommonSpacing = 16.f;
 - (void)setup {
     _titleTextField = [[UITextField alloc] init];
     _titleTextField.font = [UIFont boldSystemFontOfSize:16.f];
-    _titleTextField.placeholder = @"标题";
+//    _titleTextField.placeholder = @"标题";
     
-    _separatorLine = [[UIView alloc] init];
-    _separatorLine.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+//    _separatorLine = [[UIView alloc] init];
+//    _separatorLine.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     
     _titleView = [[UIView alloc] init];
     _titleView.backgroundColor = [UIColor whiteColor];
     
     [_titleView addSubview:_titleTextField];
-    [_titleView addSubview:_separatorLine];
+//    [_titleView addSubview:_separatorLine];
     [self addSubview:_titleView];
     
     self.autocorrectionType = UITextAutocorrectionTypeNo;
     self.spellCheckingType = UITextSpellCheckingTypeNo;    
     self.alwaysBounceVertical = YES;
-    self.textContainerInset = UIEdgeInsetsMake(kLMWMargin + kLMWTitleHeight + kLMWCommonSpacing,
+    self.textContainerInset = UIEdgeInsetsMake(kLMWMargin + kLMWTitleHeight,
                                                kLMWCommonSpacing,
                                                kLMWCommonSpacing,
                                                kLMWCommonSpacing);
@@ -72,7 +72,7 @@ static CGFloat const kLMWCommonSpacing = 16.f;
         
         rect.origin.y = CGRectGetHeight(_titleView.bounds) - 1;
         rect.size.height = 1.f;
-        _separatorLine.frame = rect;
+//        _separatorLine.frame = rect;
         
         _frameCache = self.frame;
     }

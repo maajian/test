@@ -7,7 +7,11 @@
 //
 
 #import "BaseViewController.h"
+@protocol XYdelegate <NSObject>
+
+- (void)backWithX :(NSString * )offsetx y :(NSString *)offsety;
+@end
 
 @interface XYViewController : BaseViewController
-
+@property(nonatomic,weak) id<XYdelegate> delegate ;
 @end

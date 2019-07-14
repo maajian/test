@@ -69,18 +69,18 @@
     if (!self.textStyle) {
         return 0;
     }
-    return 5;
+    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if ([indexPath isEqual:self.selectedIndexPath]) {
         switch (indexPath.row) {
-            case 2:
+            case 1:
                 return 120.f;
-            case 3:
+            case 2:
                 return 180.f;
-            case 4:
+            case 3:
                 return 120.f;
             default:
                 break;
@@ -91,7 +91,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell;
+    UITableViewCell *cell= nil;
     switch (indexPath.row) {
         case 0:
         {
@@ -105,14 +105,11 @@
         }
         case 1:
         {
-            LMStyleParagraphCell *prargraphCell = [tableView dequeueReusableCellWithIdentifier:@"paragraph"];
-            prargraphCell.type = _paragraphType;
-            prargraphCell.delegate = self;
-            cell = prargraphCell;
-            break;
-        }
-        case 2:
-        {
+//            LMStyleParagraphCell *prargraphCell = [tableView dequeueReusableCellWithIdentifier:@"paragraph"];
+//            prargraphCell.type = _paragraphType;
+//            prargraphCell.delegate = self;
+//            cell = prargraphCell;
+//            break;
             LMStyleFontSizeCell *fontSizeCell = [tableView dequeueReusableCellWithIdentifier:@"fontSize"];
             if (!fontSizeCell.fontSizeNumbers) {
                 fontSizeCell.fontSizeNumbers = @[@9, @10, @11, @12, @14, @16, @18, @24, @30, @36];
@@ -122,21 +119,42 @@
             cell = fontSizeCell;
             break;
         }
-        case 3:
+        case 2:
         {
+//            LMStyleFontSizeCell *fontSizeCell = [tableView dequeueReusableCellWithIdentifier:@"fontSize"];
+//            if (!fontSizeCell.fontSizeNumbers) {
+//                fontSizeCell.fontSizeNumbers = @[@9, @10, @11, @12, @14, @16, @18, @24, @30, @36];
+//                fontSizeCell.delegate = self;
+//            }
+//            fontSizeCell.currentFontSize = self.textStyle.fontSize;
+//            cell = fontSizeCell;
+//            break;
             LMStyleColorCell *colorCell = [tableView dequeueReusableCellWithIdentifier:@"color"];
             colorCell.selectedColor = self.textStyle.textColor;
             colorCell.delegate = self;
             cell = colorCell;
             break;
         }
-        case 4:
+        case 3:
         {
+//            LMStyleColorCell *colorCell = [tableView dequeueReusableCellWithIdentifier:@"color"];
+//            colorCell.selectedColor = self.textStyle.textColor;
+//            colorCell.delegate = self;
+//            cell = colorCell;
+//            break;
             LMStyleFormatCell *formatCell = [tableView dequeueReusableCellWithIdentifier:@"format"];
             formatCell.selectedIndex = (self.textStyle.type == 0) ? -1 : self.textStyle.type;
             formatCell.delegate = self;
             cell = formatCell;
             break;
+        }
+        case 4:
+        {
+//            LMStyleFormatCell *formatCell = [tableView dequeueReusableCellWithIdentifier:@"format"];
+//            formatCell.selectedIndex = (self.textStyle.type == 0) ? -1 : self.textStyle.type;
+//            formatCell.delegate = self;
+//            cell = formatCell;
+//            break;
         }
         default:
             break;

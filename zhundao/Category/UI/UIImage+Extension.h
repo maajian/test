@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (Extension)
+//  颜色转换为背景图片
++ (nullable UIImage *)imageWithColor:(nullable UIColor *)color;
 
 @end
 

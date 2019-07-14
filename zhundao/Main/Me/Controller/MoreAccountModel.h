@@ -9,5 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface MoreAccountModel : NSObject
+/*! 姓名 */
+@property (nonatomic, strong) NSString *name;
+/*! 手机 */
+@property (nonatomic, strong) NSString *phone;
+/*! 头像 */
+@property (nonatomic, strong) NSString *headImgurl;
+
 
 @end

@@ -71,27 +71,46 @@
 }
 
 #pragma mark --- setter
+- (void)setTextFont:(UIFont *)textFont {
+    for (UILabel *label in self.labelArray) {
+        label.font = textFont;
+    }
+}
+- (void)setLineWidth:(CGFloat)lineWidth {
+    _lineWidth = lineWidth;
+    [_lineView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(lineWidth);
+    }];
+}
+- (void)setCurrentIndex:(NSInteger)currentIndex {
+    [self animationMoveWithCurrentIndex:currentIndex];
+}
 
 #pragma mark --- action
 - (void)labelAction:(UIGestureRecognizer *)gestureRecognizer {
     UILabel *label = (UILabel *)gestureRecognizer.view;
     NSInteger index = label.tag - 100;
-    __weak typeof(self) weakSelf = self;
+    [self animationMoveWithCurrentIndex:index];
+    if ([self.segmentViewDelegate respondsToSelector:@selector(segmentView:didSelectIndex:)]) {
+        [self.segmentViewDelegate segmentView:self didSelectIndex:label.tag -100];
+    }
+}
+
+#pragma mark --- animation
+- (void)animationMoveWithCurrentIndex:(NSInteger)index {
+    ZD_WeakSelf
     _labelArray[_priIndex].textColor = [UIColor blackColor];
     _labelArray[index].textColor = zhundaoGreenColor;
     
     [UIView animateWithDuration:0.25 animations:^{
         [weakSelf.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(100);
-            make.centerX.equalTo(label.mas_centerX);
+            make.width.mas_equalTo(_lineWidth ? _lineWidth : 100);
+            make.centerX.equalTo(_labelArray[index].mas_centerX);
             make.bottom.mas_equalTo(self.mas_bottom);
             make.height.mas_equalTo(2);
         }];
         [self layoutIfNeeded];
     }];
-    if ([self.segmentViewDelegate respondsToSelector:@selector(segmentView:didSelectIndex:)]) {
-        [self.segmentViewDelegate segmentView:self didSelectIndex:label.tag -100];
-    }
     _priIndex = index;
 }
 

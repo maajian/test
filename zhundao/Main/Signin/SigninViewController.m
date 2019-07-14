@@ -5,19 +5,20 @@
 #import "signinTableViewCell.h"
 #import "SaoYiSaoViewController.h"
 #import "signinModel.h"
-#import "Reachability.h"
 #import "LoadAllSignViewController.h"
 #import "LoadallsignModel.h"
-#import "JQIndicatorView.h"
 #import "NewSignViewController.h"
+#import "xiugaisignViewController.h"
+#import "PostSign.h"
+#import "ResultsViewController.h"
+#import "CodeViewController.h"
+#import "GZActionSheet.h"
+#import "SignInViewModel.h"
+#import "PostEmailViewController.h"
 @interface SigninViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
-    NSString *accesskey;
     NSMutableArray *_dataArray;
-    NSMutableArray *dataarr;
     NSMutableArray *_dataArray1;
-    NSMutableArray *dataarr1;
-    NSInteger flag;
     NSInteger status;
     NSInteger signid;
     Reachability *r;
@@ -25,10 +26,15 @@
     NSMutableArray *signarr;
        NSMutableArray *signarr1;
        NSMutableArray *signarr2;
-    
+    NSMutableArray *modelArray;
+     NSMutableArray *modelArray1;
+    NSInteger xiala;
+    NSInteger flag;
+    JQIndicatorView *indicator;
 }
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmented;
+@property(nonatomic,strong)SignInViewModel *signInViewModel;
+
+@property(nonatomic,assign)BOOL isJuhua;
 
 @end
 
@@ -36,150 +42,88 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self baseSetting];
     flag =0;
-    
-    [self createRight];
-    [self getaccseekey];
-     self.view.backgroundColor = [UIColor colorWithRed:235.00f/255.0f green:235.00f/255.0f blue:241.00f/255.0f alpha:1];
+    [self getPage];
+    _isJuhua = NO;
      [_segmented addTarget:self action:@selector(segmentedAction:) forControlEvents:UIControlEventValueChanged];
-  
     [_tableView registerNib:[UINib nibWithNibName:@"signinTableViewCell" bundle:nil] forCellReuseIdentifier:@"signid"];
-       _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.backgroundColor = [UIColor clearColor];
     _tableView.separatorStyle = NO;
-//     _tableView.backgroundColor = [UIColor colorWithRed:57/255.0 green:67/255.0 blue:89/255.0 alpha:1];
       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifi:) name:AFNetworkingReachabilityDidChangeNotification object:nil];
-  
     [self firstload];
-    
-    
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDataWithIsShowIndicator:) name:ZDNotification_Change_Account object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDataWithIsShowIndicator:) name:@"updateSign" object:nil];
 }
+#pragma  mark ------baseSetting 
 
-
-
-/////////。 看看
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{if (scrollView == _tableView) {
-    CGFloat sectionHeaderHeight = 10;
-    if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
-        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-    }
-    else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
-        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-    }
-}
-}
-
-
-- (void)createRight
+- (void)baseSetting
 {
-    _button = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.button.frame = CGRectMake(0, 0, 20, 20);
-    [_button setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-    [self.button addTarget:self action:@selector(pushAddSign) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *rightItem1 = [[UIBarButtonItem alloc]initWithCustomView:self.button];
-    self.navigationItem.rightBarButtonItem = rightItem1;
-    
+    [self.signInViewModel removeObject];
 }
-- (void)pushAddSign
+
+#pragma  mark ------懒加载 
+
+- (SignInViewModel *)signInViewModel
 {
-    NewSignViewController *newSign = [[NewSignViewController alloc]init];
-    newSign.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/CheckIn/PubCheckIn?accesskey=%@",accesskey];
-    [self setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:newSign animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
+    if (!_signInViewModel) {
+        _signInViewModel = [[SignInViewModel alloc]init];
+    }
+    return _signInViewModel;
+}
+- (NSString *)signUrlStr
+{
+   _signUrlStr =  [NSString stringWithFormat:@"%@api/CheckIn/PostCheckIn?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    return _signUrlStr;
+}
+#pragma mark ---数据和网络判断
+- (void)ishaveArray
+{
+    NSArray *array1 = [[[SignManager shareManager]getArray:@"signdata"]copy];
+    NSArray *array2 = [[[SignManager shareManager]getArray:@"signdata1"]copy];
+    if (array1.count==0&&array2.count==0) {
+        [self loadDataWithIsShowIndicator:YES];
+    }
+    else{
+        [self loadArray];
+    }
 }
 - (void)firstload
 {
    r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-            NSLog(@"wu");
-        {NSMutableArray *muarray = [NSMutableArray array];
-            NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:@"signdata"];
-            for (NSDictionary *acdic in array1) {
-                signinModel *model = [signinModel yy_modelWithJSON:acdic];
-                [muarray addObject:model];
-            }
-            _dataArray = [muarray mutableCopy];
-            NSMutableArray *muarray1 = [NSMutableArray array];
-            NSArray *array2 = [[NSUserDefaults standardUserDefaults]objectForKey:@"signdata1"];
-            for (NSDictionary *acdic in array2) {
-                signinModel *model = [signinModel yy_modelWithJSON:acdic];
-                [muarray1 addObject:model];
-            }
-            _dataArray1 = [muarray mutableCopy];
-         
-                [_tableView reloadData];
-           
-            self.netWorkingStatus=0;
-            
+        {
+            [self loadArray];
             break;
         }
     
         case ReachableViaWWAN:
-            // 使用3G网络
-            NSLog(@"wan");
              [self reflsh];
-            [self loadData];
-             self.netWorkingStatus=1;
-            
-            
+            [self ishaveArray];
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
-            NSLog(@"wifi");
             [self reflsh];
-            [self loadData];
-           
-             self.netWorkingStatus=1;
+            [self ishaveArray];
             break;
     }
 }
+- (void)loadArray
+{
+    _dataArray = [[[SignManager shareManager]getArray:@"signdata"]mutableCopy];
+    _dataArray1 = [[[SignManager shareManager]getArray:@"signdata1"]mutableCopy];
+    [_tableView reloadData];
+}
 - (void)notifi:(NSNotification *)noti{
     NSDictionary *dic = noti.userInfo;
-    
     //获取网络状态
     status = [[dic objectForKey:@"AFNetworkingReachabilityNotificationStatusItem"] integerValue];
-    
     if (status==0){
-        
-    
-        {
-            if (flag==1||flag==0) {
-                NSMutableArray *muarray = [NSMutableArray array];
-                NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:@"signdata"];
-                for (NSDictionary *acdic in array1) {
-                    signinModel *model = [signinModel yy_modelWithJSON:acdic];
-                    [muarray addObject:model];
-                }
-     
-                _dataArray = [muarray mutableCopy];
-                if (flag==0) {
-                    [_tableView reloadData];
-                }
-                self.netWorkingStatus=0;
-            }
-            if (flag==2) {
-                NSMutableArray *muarray = [NSMutableArray array];
-                NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:@"signdata1"];
-                for (NSDictionary *acdic in array1) {
-                    signinModel *model = [signinModel yy_modelWithJSON:acdic];
-                    [muarray addObject:model];
-                }
-                _dataArray1 = [muarray mutableCopy];
-                self.netWorkingStatus=0;
-                
-                
-            }
-            
-        }
-        
+        [self loadArray];
     }
     else if(status==2||status==1)
     {
-        self.netWorkingStatus=1;
-        [self loadData];
+         [self reflsh];
     }
     else
     {
@@ -187,56 +131,47 @@
     }
     
 }
-- (void)dealloc
-{
-     [_tableView hh_removeRefreshView];
-     [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
+
+#pragma mark -----下拉刷新
 - (void)reflsh
 {
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
-     __weak typeof (self) weakSelf = self;
-    
-    [self.tableView hh_addRefreshViewWithActionHandler:^{
-        
+         __weak typeof (self) weakSelf = self;
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        __strong __typeof(self) strongSelf = weakSelf;
         if ((flag==1||flag==0||flag==2)&&(manager.networkReachabilityStatus==AFNetworkReachabilityStatusReachableViaWiFi||manager.networkReachabilityStatus==AFNetworkReachabilityStatusReachableViaWWAN)) {
-            [self loadData];
             
+            strongSelf.isJuhua =YES;
+            [strongSelf loadDataWithIsShowIndicator:NO];
+                    }
+                    else{
+                        weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
+                        weakSelf.tableView.mj_header.state = MJRefreshStateNoMoreData;
+                        
+                        weakSelf.tableView.mj_header.hidden = YES;
+                        weakSelf.tableView.mj_insetT=0;
+                    }
+    }];
+    self.tableView.mj_header = header;
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"释放刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"加载中，请等待 ..." forState:MJRefreshStateRefreshing];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        __strong __typeof(self) strongSelf = weakSelf;
+        if ((flag==1||flag==0||flag==2)&&(manager.networkReachabilityStatus==AFNetworkReachabilityStatusReachableViaWiFi||manager.networkReachabilityStatus==AFNetworkReachabilityStatusReachableViaWWAN)) {
+             strongSelf.isJuhua =YES;
+            [strongSelf loadmoreData];
         }
         else{
-            [weakSelf.tableView hh_removeRefreshView];
-            if (flag==1||flag==0) {
-                NSMutableArray *muarray = [NSMutableArray array];
-                NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:@"signdata"];
-                for (NSDictionary *acdic in array1) {
-                    signinModel *model = [signinModel yy_modelWithJSON:acdic];
-                    [muarray addObject:model];
-                }
-                _dataArray = [muarray mutableCopy];
-                if (flag==0) {
-                    [weakSelf.tableView reloadData];
-                }
-                self.netWorkingStatus=0;
-            }
-            if (flag==2) {
-                NSMutableArray *muarray = [NSMutableArray array];
-                NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:@"signdata1"];
-                for (NSDictionary *acdic in array1) {
-                    signinModel *model = [signinModel yy_modelWithJSON:acdic];
-                    [muarray addObject:model];
-                }
-                _dataArray1 = [muarray mutableCopy];
-                self.netWorkingStatus=1;
-                
-                
-            }
+            weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
             
-            
+            weakSelf.tableView.mj_header.state = MJRefreshStateNoMoreData;
         }
     }];
-    [_tableView hh_setRefreshViewTopWaveFillColor:[UIColor lightGrayColor]];
-    [_tableView hh_setRefreshViewBottomWaveFillColor:[UIColor whiteColor]];
 }
+
+#pragma mark ---------- 分段
 - (void)segmentedAction:(UISegmentedControl *)seg{
     
     NSInteger index = seg.selectedSegmentIndex;
@@ -251,7 +186,6 @@
         {
             flag=2;
             [_tableView reloadData];
-            self.netWorkingStatus=0;
         }
             
             break;
@@ -260,258 +194,146 @@
     }
     
 }
-
-
-
-- (void)getaccseekey
+#pragma mark ---------网络请求 更多数据
+//网络请求
+- (void)loadmoreData
 {
-    NSString *acc =[[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
-    NSString *uid = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
-    if (acc) {
-        accesskey = [acc copy];
-    }
-    if (uid) {
-        accesskey = [uid copy];
+    xiala += 1;
+    [self savePage];
+    NSString *xialaStr = [NSString stringWithFormat:@"%li",(long)xiala];
+    NSString *listurl =self.signUrlStr;
+    AFmanager *manager = [AFmanager shareManager];
+    NSDictionary *dic = @{@"Type":@"0",
+                          @"pageSize":@"10",
+                          @"curPage":xialaStr};
+    [manager POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+        NSArray *array1 = result[@"Data"];
+        if (!modelArray) {
+            modelArray = [_dataArray mutableCopy];
+        }
+        if (!modelArray1) {
+            modelArray1 = [_dataArray1 mutableCopy];
+        }
+        for (NSDictionary *acdic in array1) {
+            signinModel *model = [signinModel yy_modelWithJSON:acdic];
+            if (model.Status==1) {
+                [modelArray addObject:model];
+            }
+            if (model.Status==0) {
+                [modelArray1 addObject:model];
+            }
+        }
+        [[SignManager shareManager] saveData:modelArray name:@"signdata"];
+        [[SignManager shareManager] saveData:modelArray1 name:@"signdata1"];
+        _dataArray = [modelArray mutableCopy];
+        _dataArray1 = [modelArray1 mutableCopy];
+         [_tableView reloadData];
+        if (_isJuhua==YES) {
+            if (array1.count<10) {
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            } else {
+                [self.tableView.mj_footer endRefreshing];
+            }
+            _isJuhua=NO;
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error = %@",error);
+    }];
+
+}
+
+#pragma mark ------ 获取最新数据
+- (void)showindicator{
+    indicator= [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
+    if (_isJuhua==NO) {
+        indicator.center = self.view.center;
+        [self.view addSubview:indicator];
+        [indicator startAnimating];
     }
 }
-- (void)loadData    //网络加载数据
+- (void)loadDataWithIsShowIndicator:(BOOL)isshow    //网络加载数据
 {
-    
-    JQIndicatorView *indicator = [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
-    indicator.center = self.view.center;
-    [self.view addSubview:indicator];
-    [indicator startAnimating];
-    NSString *listurl = [NSString stringWithFormat:@"https://open.zhundao.net/api/CheckIn/PostCheckIn?accessKey=%@",accesskey];
-    AFHTTPSessionManager *manager = [AFmanager shareManager];
-//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    NSDictionary *dic = @{@"Type":@"1",
-                          @"pageSize":@"1000",
+    xiala = 1;
+    [self savePage];
+    if (isshow) {
+        [self showindicator];
+    }
+    NSString *listurl =self.signUrlStr;
+    AFmanager *manager = [AFmanager shareManager];
+    NSDictionary *dic = @{@"Type":@"0",
+                          @"pageSize":@"10",
                           @"curPage":@"1"};
     [manager POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
-       
+        if (_isJuhua==NO&&indicator!=nil) {
+            [indicator stopAnimating];
+        }
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
         NSArray *array1 = result[@"Data"];
         NSMutableArray *muarray = [NSMutableArray array];
-         NSMutableArray *muarray1 = [NSMutableArray array];
-        dataarr = [NSMutableArray array];
-        dataarr1 = [NSMutableArray array];
+        NSMutableArray *muarray1 = [NSMutableArray array];
         for (NSDictionary *acdic in array1) {
             signinModel *model = [signinModel yy_modelWithJSON:acdic];
             if (model.Status==1) {
                 [muarray addObject:model];
-                NSMutableDictionary *e = [NSMutableDictionary dictionary];
-                for (NSString *keystr in acdic.allKeys) {
-                    
-                    if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-                        //
-                        [e setObject:@"" forKey:keystr];
-                    }
-                    else
-                    {
-                        [e setObject:[acdic objectForKey:keystr] forKey:keystr];
-                    }
-                }
-                [dataarr addObject:e];
             }
             if (model.Status==0) {
                 [muarray1 addObject:model];
-                NSMutableDictionary *e = [NSMutableDictionary dictionary];
-                for (NSString *keystr in acdic.allKeys) {
-                    
-                    if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-                        //
-                        [e setObject:@"" forKey:keystr];
-                    }
-                    else
-                    {
-                        [e setObject:[acdic objectForKey:keystr] forKey:keystr];
-                    }
-                }
-                [dataarr1 addObject:e];
-            }
-
+        }
+    }
+        if (_isJuhua==NO&&indicator!=nil) {
             [indicator stopAnimating];
         }
-        [[NSUserDefaults standardUserDefaults]setObject:dataarr forKey:@"signdata"];
-         [[NSUserDefaults standardUserDefaults]setObject:dataarr1 forKey:@"signdata1"];
-        [[NSUserDefaults standardUserDefaults]synchronize];
         _dataArray = [muarray mutableCopy];
         _dataArray1 = [muarray1 mutableCopy];
+        modelArray = [muarray mutableCopy];
+        modelArray1 = [muarray1 mutableCopy];
+        [[SignManager shareManager]saveData:modelArray name:@"signdata"];
+        [[SignManager shareManager]saveData:modelArray1 name:@"signdata1"];
+        if (_isJuhua==YES) {
+             [self.tableView.mj_header endRefreshing];
+            self.tableView.mj_footer.state = MJRefreshStateIdle;
+            _isJuhua=NO;
+        }
         [_tableView reloadData];
-        
-        
-        
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@",error);
+        if (_isJuhua==YES) {
+            [self.tableView.mj_header endRefreshing];
+            self.tableView.mj_footer.state = MJRefreshStateIdle;
+            _isJuhua=NO;
+        }
+        if (_isJuhua==NO&&indicator!=nil) {
+            [indicator stopAnimating];
+        }
     }];
     
 }
 
-- (void)clickButtonAction:(UIButton *)button{
-    UIResponder *nextResponder = button.nextResponder;
-    while (nextResponder) {
-        if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
-            
-            mycell  = (signinTableViewCell *)nextResponder;
-            break;
-        }
-        
-        nextResponder = nextResponder.nextResponder;
-        
-    }
-
-    signid = mycell.model.ID;
-    NSArray *array = [[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)mycell.model.ID]] copy];
-    if (array.count==0) {
-
-//     if (array!=nil) {
-        UIAlertController *nullAlert = [UIAlertController alertControllerWithTitle:@"注意哦" message:@"尚未下载名单或无报名人员" preferredStyle:UIAlertControllerStyleAlert];
-        __weak typeof (self) weakSelf = self;
-        UIAlertAction *Action = [UIAlertAction actionWithTitle:@"下载" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [weakSelf loadSigndata];
-                    }];
-            UIAlertAction *Action1 = [UIAlertAction actionWithTitle:@"返回" style:UIAlertActionStyleDefault handler:nil];
-        [nullAlert addAction:Action];
-        [nullAlert addAction: Action1];
-                    [self presentViewController:nullAlert animated:YES completion:nil];
-
-    }
-    if ([array firstObject]) {
-        SaoYiSaoViewController *sao = [[SaoYiSaoViewController alloc] init];
-        [self setHidesBottomBarWhenPushed:YES];
-        sao.signID = mycell.model.ID;
-        [self presentViewController:sao animated:YES completion:nil];
-        sao.block = ^(NSString *a){
-            NSInteger b ;
-            NSLog(@" sss = %@",[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"blockNumber%li",(long)mycell.model.ID]]);
-            if ( [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"blockNumber%li",(long)mycell.model.ID]]) {
-                b =  [[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"blockNumber%li",(long)mycell.model.ID]]integerValue]+[a integerValue];
-                [mycell.signcountLabel setTitle:[NSString stringWithFormat:@"已签到: %li  查看",(long)b] forState:UIControlStateNormal];
-                [[NSUserDefaults standardUserDefaults]setInteger:b forKey:[NSString stringWithFormat:@"blockNumber%li",(long)mycell.model.ID]];
-            }
-            if (![[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"blockNumber%li",(long)mycell.model.ID]]) {
-                b =(long)mycell.model.NumFact + [a integerValue];
-                 [mycell.signcountLabel setTitle:[NSString stringWithFormat:@"已签到: %li  查看",(long)b] forState:UIControlStateNormal];
-               [ [NSUserDefaults standardUserDefaults]setInteger:b forKey:[NSString stringWithFormat:@"blockNumber%li",(long)mycell.model.ID]];
-            }
-       
-        };
-        [self setHidesBottomBarWhenPushed:NO];
-    }
-    
-    
-
+- (void)savePage {
+    [[NSUserDefaults standardUserDefaults] setInteger:xiala forKey:@"signPage"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (void)loadSigndata
-{
-    JQIndicatorView *indicator = [[JQIndicatorView alloc]initWithType:2 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(70, 70)];
-    indicator.center = self.view.center;
-    
-    [self.view addSubview:indicator];
-    [indicator startAnimating];
-    NSString *listurl = [NSString stringWithFormat:@"https://open.zhundao.net/api/CheckIn/PostCheckInList?accessKey=%@",accesskey];
-    AFHTTPSessionManager *manager = [AFmanager shareManager];
-    NSDictionary *dic = @{@"Type":@"0",
-                          @"ID":[NSString stringWithFormat:@"%li",(long)signid],
-                          @"pageSize":@"10000",
-                          @"curPage":@"1"};
-    SignManager *datamanager = [SignManager shareManager];
-    [datamanager createDatabase];
-    if ([datamanager.dataBase open]) {
-        bool result = [datamanager.dataBase executeUpdate:@"CREATE TABLE IF NOT EXISTS signList(listid integer PRIMARY KEY AUTOINCREMENT,vcode TEXT NOT NULL,signID integer NOT NULL,Status integer,post integer DEFAULT 2);"];
-        if (result) {
-            NSLog(@"成功创建table");
-        }
-        else
-        {
-            NSLog(@"创建table失败");
-        }
-        [datamanager.dataBase close];
-        
+- (void)getPage {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"signPage"]) {
+        xiala = [[[NSUserDefaults standardUserDefaults] objectForKey:@"signPage"] integerValue];
+    } else {
+        xiala = 1;
     }
-    [manager POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
-        NSArray *array1 = result[@"Data"];
-        signarr = [NSMutableArray array];
-        signarr1 = [NSMutableArray array];
-        signarr2 = [NSMutableArray array];
-        
-        if ([datamanager.dataBase open]) {
-            
-        
-        for (NSDictionary *acdic in array1) {
-            LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];
-            NSMutableDictionary *e = [NSMutableDictionary dictionary];
-            NSString *insertSql =[NSString stringWithFormat:@"INSERT INTO signList(vcode, signID,Status)VALUES('%@',%li,%li)",model.VCode,(long)mycell.model.ID,(long)model.Status];
-            BOOL res = [datamanager.dataBase executeUpdate:insertSql];
-            if (res) {
-                NSLog(@"数据表插入成功");
-            }
-            else
-            {
-                NSLog(@"数据表插入失败");
-            }
-            
-            for (NSString *keystr in acdic.allKeys) {
-                
-                if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-           
-                    [e setObject:@"" forKey:keystr];
-                }
-                else
-                {
-                    [e setObject:[acdic objectForKey:keystr] forKey:keystr];
-                }
-            }
-     
-            
-            if (model.Status==1) {              //签到完成的
-                [signarr1 addObject:e];
-            }
-            if (model.Status==0) {           //还未到场的
-                [signarr2 addObject:e];
-            }
-            
-            [signarr addObject:e];
-        }
-            
-             [datamanager.dataBase close];
-        }
-        [[NSUserDefaults standardUserDefaults]setObject:signarr forKey:[NSString stringWithFormat:@"all%li",(long)signid]];
-        
-        [[NSUserDefaults standardUserDefaults]setObject:signarr2 forKey:[NSString stringWithFormat:@"sign%li",(long)signid]];
-        [[NSUserDefaults standardUserDefaults]setObject:signarr1 forKey:[NSString stringWithFormat:@"signed%li",(long)signid]];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-        
-      
-        
-        
-        
-        
-         [indicator stopAnimating];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
-    }];
-
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+
+
+#pragma mark --------tableview dataSource 数据源代理
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if (flag==1||flag==0) {
         return _dataArray.count;
     }
-    else
-        
-    {
+    else{
         return _dataArray1.count;
     }
 }
@@ -521,16 +343,20 @@
     if (cell==nil) {
         cell = [[signinTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"signid"];
     }
+   
     if (flag==1||flag==0) {
         cell.model = _dataArray[indexPath.section];
     }
     if (flag==2) {
         cell.model = _dataArray1[indexPath.section];
     }
+    cell.signid  = cell.model.ID;
+    [cell getData];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell.saoButton addTarget:self action:@selector(clickButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [cell.signcountLabel addTarget:self action:@selector(pushSignList:) forControlEvents:UIControlEventTouchUpInside];
-    [cell.switchButton addTarget:self action:@selector(switchChange:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.switchButton addTarget:self action:@selector(switchChange:) forControlEvents:UIControlEventValueChanged];
+    [cell.signname addTarget:self action:@selector(pushXiuGai:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.arrowButton addTarget:self action:@selector(pushXiuGai:) forControlEvents:UIControlEventTouchUpInside];
     if (flag==1||flag==0) {
         [cell.switchButton setOn:YES];
     }
@@ -539,92 +365,11 @@
     }
     return  cell;
 }
-- (void)switchChange:(UIButton *)button
-{
-    UIResponder *nextResponder = button.nextResponder;
-    while (nextResponder) {
-        if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
-            
-            mycell  = (signinTableViewCell *)nextResponder;
-            break;
-        }
-        
-        nextResponder = nextResponder.nextResponder;
-        
-    }
-    NSString *listurl = [NSString stringWithFormat:@"https://open.zhundao.net/api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",accesskey,(long)mycell.model.ID];
-    
-    AFHTTPSessionManager *manager = [AFmanager shareManager];
-    [manager GET:listurl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSIndexPath *indexpath = [_tableView indexPathForCell:mycell];
-        if (flag==1||flag==0)
-        {
-            [_dataArray1 addObject:_dataArray[indexpath.section]];
-          
-            [_dataArray removeObjectAtIndex:indexpath.section];
-             [_tableView reloadData];
-        }
-        if (flag==2) {
-            
-            [_dataArray addObject:_dataArray1[indexpath.section]];
-            [_dataArray1 removeObjectAtIndex:indexpath.section];
-             [_tableView reloadData];
-        }
-       
-        
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
-    }];
-}
-- (void)pushSignList:(UIButton *)button
-{
-    UIResponder *nextResponder = button.nextResponder;
-    while (nextResponder) {
-        if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
-            
-         mycell  = (signinTableViewCell *)nextResponder;
-            break;
-        }
-        
-        nextResponder = nextResponder.nextResponder;
-        
-    }
-    LoadAllSignViewController *load = [[LoadAllSignViewController alloc]init];
-    load.signID = mycell.model.ID;
-    [self setHidesBottomBarWhenPushed:YES];
-    
-    
-    
-    
-    
-    
-    
-    
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
-    
-    
-    
-    [self.navigationController pushViewController:load animated:YES];
-    
-    [self setHidesBottomBarWhenPushed:NO];
-     
-    
-}
+#pragma mark -----tableview delegate  代理
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    return 140;
+    return 176;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -639,18 +384,228 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 10)];
-    view.backgroundColor =[UIColor colorWithRed:235.00f/255.0f green:235.00f/255.0f blue:241.00f/255.0f alpha:1];
+    view.backgroundColor = zhundaoBackgroundColor;
     return  view;
 }
-//-------------------------数据库操作---------------------------
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (flag==2) {
+        if (_dataArray1.count-1==section) {
+            return 10;
+        }else{
+            return 0.1;
+        }
+    }else{
+        if (_dataArray.count-1==section) {
+            return 10;
+        }else{
+            return 0.1;
+        }
+    }
+}
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 10)];
+    view.backgroundColor =[UIColor clearColor];
+    return  view;
+}
+#pragma mark  --------------手势点击事件
+- (void)pushXiuGai:(UIButton *)button
+{
+    UIResponder *nextResponder = button.nextResponder;
+    while (nextResponder) {
+        if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
+            
+            mycell  = (signinTableViewCell *)nextResponder;
+            break;
+        }
+        
+        nextResponder = nextResponder.nextResponder;
+        
+    }
+    NSArray *array = @[@"删除签到",@"修改签到",@"微信签到二维码",@"手机号签到二维码",@"导出签到名单"];
+    
+    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
+    
+    // 2. Block 方式
+    __weak typeof(self) weakSelf = self;
+    sheet.ClickIndex = ^(NSInteger index){
+        NSLog(@"Show Index %zi",index); //取消0
+        if (index==1) {
+            [weakSelf deleteSign];
+        }
+       else if (index==2) {
+            xiugaisignViewController *xiugai = [[xiugaisignViewController alloc]init];
+            xiugai.activityName = mycell.model.ActivityName;
+            xiugai.acID = mycell.model.ActivityID;
+            xiugai.signID = mycell.model.ID;
+            xiugai.xiugaiArray =[self createXiuArray];
+            [self setHidesBottomBarWhenPushed:YES];
+            [self.navigationController pushViewController:xiugai animated:YES];
+            [self setHidesBottomBarWhenPushed:NO];           
+        }
+         // 微信签到二维码
+       else if (index==3) {
+            CodeViewController *code = [[CodeViewController alloc]init];
+            NSString *imagestr =   [NSString stringWithFormat:@"%@ck/%li/%li/3",zhundaoH5Api,(long)mycell.model.ID,(long)mycell.model.ActivityID];
+            code.imagestr = imagestr;
+            code.titlestr = mycell.model.Name;
+            code.labelStr = @"签到";
+            [self presentViewController:code animated:YES completion:^{
+                
+            }];
+        }
+         // 手机号签到二维码
+       else if(index==4){
+           CodeViewController *code = [[CodeViewController alloc]init];
+           NSString *imagestr =   [NSString stringWithFormat:@"%@ckp/%li/%li/11",zhundaoH5Api,mycell.model.ID,(long)mycell.model.ActivityID];
+           code.imagestr = imagestr;
+           code.titlestr = mycell.model.Name;
+           code.labelStr = @"手机号签到";
+           [self presentViewController:code animated:YES completion:^{
+               
+           }];
+       }else{
+            // 导出签到名单 
+           {
+               PostEmailViewController *post = [[PostEmailViewController alloc]init];
+               post.signID = mycell.model.ID;
+               [self setHidesBottomBarWhenPushed:YES];
+               [self.navigationController pushViewController:post animated:YES];
+               [self setHidesBottomBarWhenPushed:NO];
+           }
+       }
+    };
+    
+    [self.view.window addSubview:sheet];
+    
+}
+- (void)deleteSign
+{
+    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/DeleteCheckIn?accessKey=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)mycell.model.ID];
+    [[AFmanager shareManager]GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+        NSLog(@"dic = %@",dic);
+        [hud hideAnimated:YES];
+        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        [hud1 hideAnimated:YES afterDelay:1.5];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"updateSign" object:nil];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [hud hideAnimated:YES];
+        NSLog(@"error = %@",error);
+    }];
+}
+- (NSArray *)createXiuArray
+{
+    NSArray *array1 = @[@"限报名人员",@"不限报名人员"];
+    if (mycell.model.Name.length>0) {
+        return @[mycell.model.Name,
+                 [NSString stringWithFormat:@"%@",mycell.model.ActivityName],
+                 [array1 objectAtIndex:mycell.model.SignObject]
+                 ];
+    }
+    else{
+        return @[[NSString stringWithFormat:@"%@[签到]",mycell.model.ActivityName],
+                 [NSString stringWithFormat:@"%@",mycell.model.ActivityName],
+                 [array1 objectAtIndex:mycell.model.SignObject]
+                 ];
+    }
+}
+- (void)switchChange:(UISwitch *)button
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否改变签到状态" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIResponder *nextResponder = button.nextResponder;
+        while (nextResponder) {
+            if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
+                
+                mycell  = (signinTableViewCell *)nextResponder;
+                break;
+            }
+            nextResponder = nextResponder.nextResponder;
+        }
+        NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)mycell.model.ID];
+        
+        AFmanager *manager = [AFmanager shareManager];
+        [manager GET:listurl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSIndexPath *indexpath = [_tableView indexPathForCell:mycell];
+            if (flag==1||flag==0){
+                [_dataArray1 addObject:_dataArray[indexpath.section]];
+                [_dataArray removeObjectAtIndex:indexpath.section];
+                [_tableView reloadData];
+            }
+            if (flag==2) {
+                [_dataArray addObject:_dataArray1[indexpath.section]];
+                [_dataArray1 removeObjectAtIndex:indexpath.section];
+                [_tableView reloadData];
+            }
+            [[SignManager shareManager]saveData:_dataArray name:@"signdata"];
+            [[SignManager shareManager]saveData:_dataArray1 name:@"signdata1"];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"error = %@",error);
+        }];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        button.on = !button.on;
+    }]];
+    [self presentViewController:alert  animated:YES completion:nil];
 
+}
 
-
+- (void)pushSignList:(UIButton *)button
+{
+    UIResponder *nextResponder = button.nextResponder;
+    while (nextResponder) {
+        if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
+            
+            mycell  = (signinTableViewCell *)nextResponder;
+            break;
+        }
+        nextResponder = nextResponder.nextResponder;
+    }
+    LoadAllSignViewController *load = [[LoadAllSignViewController alloc]init];
+    load.activityID = mycell.model.ActivityID;
+    load.signID = mycell.model.ID;
+    load.signName = mycell.model.Name;
+    load.signNumber = mycell.model.NumShould;
+    [self setHidesBottomBarWhenPushed:YES];
+    
+    [self.navigationController pushViewController:load animated:YES];
+    
+    load.block = ^(NSInteger a)
+    {
+        [self loadDataWithIsShowIndicator:NO];
+    };
+    [self setHidesBottomBarWhenPushed:NO];
+    
+}
+#pragma mark ------去出tableview 黏性
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{if (scrollView == _tableView) {
+    CGFloat sectionHeaderHeight = 10;
+    if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
+        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+    }
+    else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
+        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+    }
+}
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.view.backgroundColor = zhundaoBackgroundColor;
+    [_tableView reloadData];
+}
 /*
 #pragma mark - Navigation
 

@@ -92,7 +92,9 @@ static CGFloat const indicatorHeight = 3;
     CGFloat labelW = scrollViewWidth / self.staticTitleArr.count;
     CGFloat labelH = self.frame.size.height;
     
-    [self removeAllSubviews];
+    while (self.subviews.lastObject) {
+        [self.subviews.lastObject removeFromSuperview];
+    }
     for (NSInteger j = 0; j < self.staticTitleArr.count; j++) {
         // 创建静止时的标题Label
         self.staticTitleLabel = [[UILabel alloc] init];
@@ -103,8 +105,8 @@ static CGFloat const indicatorHeight = 3;
         _staticTitleLabel.tag = j;
         
         // 设置高亮文字颜色
-        _staticTitleLabel.highlightedTextColor = kAppNaigationColor;
-        _staticTitleLabel.textColor = kGetColor(102, 102, 102, 1.0);
+        _staticTitleLabel.highlightedTextColor = zhundaoGreenColor;
+        _staticTitleLabel.textColor = kColorA(102, 102, 102, 1.0);
         
         // 计算staticTitleLabel的x值
         labelX = j * labelW;
@@ -131,7 +133,7 @@ static CGFloat const indicatorHeight = 3;
     
     // 添加指示器
     self.indicatorView = [[UIView alloc] init];
-    _indicatorView.backgroundColor = kAppNaigationColor;
+    _indicatorView.backgroundColor = zhundaoGreenColor;
     _indicatorView.SG_height = indicatorHeight;
     _indicatorView.SG_y = self.frame.size.height - indicatorHeight;
     [self addSubview:_indicatorView];
@@ -143,8 +145,8 @@ static CGFloat const indicatorHeight = 3;
     _indicatorView.SG_centerX = firstLabel.SG_centerX;
     
     self.bottomLineLabel = [[UILabel alloc] init];
-    self.bottomLineLabel.backgroundColor = kGetColor(219, 219, 219, 1.0);
-    self.bottomLineLabel.frame = CGRectMake(0.0, self.height - 0.5, kScreenWidth, 0.5);
+    self.bottomLineLabel.backgroundColor = kColorA(219, 219, 219, 1.0);
+    self.bottomLineLabel.frame = CGRectMake(0.0, CGRectGetHeight(self.frame) - 0.5, kScreenWidth, 0.5);
     [self addSubview:self.bottomLineLabel];
 }
 
@@ -169,7 +171,7 @@ static CGFloat const indicatorHeight = 3;
     _selectedTitleLabel.highlighted = NO;
     
     // 颜色恢复
-    _selectedTitleLabel.textColor = kGetColor(102, 102, 102, 1.0);
+    _selectedTitleLabel.textColor = kColorA(102, 102, 102, 1.0);
     _selectedTitleLabel.font = kAppMiddleTextFont;
     
     // 高亮
@@ -177,7 +179,7 @@ static CGFloat const indicatorHeight = 3;
     
     _selectedTitleLabel = label;
     _selectedTitleLabel.font = kAppLargeTextFont;
-    _selectedTitleLabel.textColor = kAppNaigationColor;
+    _selectedTitleLabel.textColor = zhundaoGreenColor;
     
     // 改变指示器位置
     [UIView animateWithDuration:0.20 animations:^{
@@ -207,7 +209,7 @@ static CGFloat const indicatorHeight = 3;
         _scrollTitleLabel.tag = i;
         
         // 设置高亮文字颜色
-        _scrollTitleLabel.highlightedTextColor = kAppNaigationColor;
+        _scrollTitleLabel.highlightedTextColor = zhundaoGreenColor;
         
         // 计算内容的Size
         CGSize labelSize = [self sizeWithText:_scrollTitleLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, labelH)];
@@ -250,7 +252,7 @@ static CGFloat const indicatorHeight = 3;
     
     // 添加指示器
     self.indicatorView = [[UIView alloc] init];
-    _indicatorView.backgroundColor = kAppNaigationColor;
+    _indicatorView.backgroundColor = zhundaoGreenColor;
     _indicatorView.SG_height = indicatorHeight;
     _indicatorView.SG_y = self.frame.size.height - indicatorHeight;
     _indicatorView.layer.shadowColor = kAppGrayColor.CGColor;//shadowColor阴影颜色
@@ -299,7 +301,7 @@ static CGFloat const indicatorHeight = 3;
     
     _selectedTitleLabel = label;
     _selectedTitleLabel.font = kAppLargeTextFont;
-    _selectedTitleLabel.textColor = kAppNaigationColor;
+    _selectedTitleLabel.textColor = zhundaoGreenColor;
     
     // 改变指示器位置
     [UIView animateWithDuration:0.20 animations:^{

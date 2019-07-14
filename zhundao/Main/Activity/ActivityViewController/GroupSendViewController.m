@@ -61,7 +61,6 @@
         }
         [_tableView reloadData];
     } error:^(NSError *error) {
-        [self showAlertWithStr:@"请检查网络设置"];
     }];
 }
 - (void)showAlertWithStr:(NSString *)str{
@@ -197,7 +196,6 @@
         } error:^(NSError *error) {
             NSLog(@"error = %@",error);
             [hud hideAnimated:YES];
-            [self showAlertWithStr:@"请检查网络设置"];
         }];
     }
 }

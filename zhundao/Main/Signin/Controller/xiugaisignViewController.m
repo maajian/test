@@ -14,9 +14,9 @@
 
 @implementation xiugaisignViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)createDataArray   //创建右边数组
+{
+    self.dataArray1 = [_xiugaiArray copy];
 }
 
 - (void)didReceiveMemoryWarning {

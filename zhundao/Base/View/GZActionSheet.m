@@ -18,20 +18,22 @@
 @property (nonatomic, strong) NSArray   *titleArr;
 
 @property (nonatomic, strong) UIView    *btnBgView;
-
+@property(nonatomic,assign)NSInteger redIndex;
 @property (nonatomic,assign,getter=isShow) BOOL  show;
 
 @end
 
 @implementation GZActionSheet
 
-- (instancetype)initWithTitleArray:(NSArray *)titleArr andShowCancel:(BOOL)show{
+- (instancetype)initWithTitleArray:(NSArray *)titleArr
+                     WithRedIndex :(NSInteger)index
+                     andShowCancel:(BOOL )show{
     if (self = [super init]) {
         
         self.frame = [UIScreen mainScreen].bounds;
         
         self.titleArr  = titleArr; self.show = show;
-        
+        _redIndex =index;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenSheet)];
         [self addGestureRecognizer:tap];
         
@@ -104,11 +106,14 @@
         UIButton  *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         
         [btn setTitle:self.titleArr[i] forState:UIControlStateNormal];
-        
-        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        
-        [btn setBackgroundColor:[UIColor whiteColor]];
-        
+        if (i==_redIndex-1) {
+            [btn setTitleColor:kColorA(233, 97, 111, 1) forState:UIControlStateNormal];
+        }
+        else{
+            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }
+        if (self.titleArr.count==1) [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+         [btn setBackgroundColor:[UIColor whiteColor]];
         btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
         
         btn.tag   = i+1;
@@ -118,12 +123,12 @@
         [self.btnBgView addSubview:btn];
         
     }
-    
     // 显示
     [UIView animateWithDuration:0.3 animations:^{
         CGRect frame = self.btnBgView.frame;
         frame.origin.y =  size.height - frame.size.height;
         self.btnBgView.frame = frame;
+       
     }];
     
 }

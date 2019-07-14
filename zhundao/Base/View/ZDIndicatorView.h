@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDIndicatorView : JQIndicatorView
 
++ (instancetype)shareIndicator;
+
++ (void)showIndicatorView:(UIView *)view;
+
++ (void)dismiss;
+
 @end
 
 NS_ASSUME_NONNULL_END

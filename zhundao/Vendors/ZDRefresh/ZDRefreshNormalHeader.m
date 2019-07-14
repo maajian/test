@@ -10,12 +10,12 @@
 
 @implementation ZDRefreshNormalHeader
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)prepare {
+    [super prepare];
+    [self setTitle:@"下拉刷新"  forState:MJRefreshStateIdle];
+    [self setTitle:@"释放刷新" forState:MJRefreshStatePulling];
+    [self setTitle:@"加载中，请等待 ..." forState:MJRefreshStateRefreshing];
+    self.lastUpdatedTimeLabel.hidden = YES;
 }
-*/
 
 @end

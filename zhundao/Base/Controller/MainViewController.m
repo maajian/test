@@ -8,6 +8,10 @@
 
 #import "MainViewController.h"
 
+#import "LoginViewController.h"
+#import "DetailNoticeViewController.h"
+#import "BaseNavigationViewController.h"
+
 @interface MainViewController ()
 {
     NSInteger flag;
@@ -15,6 +19,9 @@
 @property(nonatomic,strong)UIButton *startButton;
 @property(nonatomic,strong)UILabel *startLabel;
 @property(nonatomic,strong)UIImageView *startIamgeView;
+
+@property (nonatomic, strong) NSTimer *timer;
+
 @end
 
 @implementation MainViewController
@@ -22,9 +29,9 @@
 {
     self = [super init];
     if (self) {
-        [self createCustomTabBar];
         [self createSubControllers];
-     
+        [self createCustomTabBar];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotification:) name:kAppNotification object:nil];
     }
     return self;
 }
@@ -33,62 +40,54 @@
     self.tabBar.translucent = NO;
     // Do any additional setup after loading the view.
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    for (UIView *subView in self.tabBar.subviews) {
-        Class buttonClass = NSClassFromString(@"UITabBarButton");
-        if ([subView isKindOfClass:buttonClass]) {
-            [subView removeFromSuperview];
-        }
-    }
-     [self.selectedViewController beginAppearanceTransition: YES animated: animated];
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 -(void)createSubControllers
 {
-    NSArray *storyboardNames = @[@"Activity",@"Signin",@"Me"];
+    NSArray *storyboardNames = @[@"Activity",@"Signin",@"Discover",@"Me"];
     NSMutableArray *Marray = [[NSMutableArray alloc]init];
     for (NSString *sbName in storyboardNames) {
+        UINavigationController *nav= nil;
         UIStoryboard *sb = [UIStoryboard storyboardWithName:sbName bundle:nil];
-        UINavigationController *nav = [sb instantiateInitialViewController];
+        nav = [sb instantiateInitialViewController];
         [Marray addObject:nav];
     }
     self.viewControllers = [Marray copy];
 }
 - (void)createCustomTabBar
 {
-
-    
-    CGFloat buttonWidth = kScreenWidth/3;
-    NSArray *imageArray = @[@"activity",@"loginin",@"me"];
-    NSArray *titleArray = @[@"活动",@"签到",@"我"];
-    for (int i=0; i<3; i++) {
+    for (UIView *subView in self.tabBar.subviews) {
+        Class buttonClass = NSClassFromString(@"UITabBarButton");
+        if ([subView isKindOfClass:buttonClass]) {
+            [subView removeFromSuperview];
+        }
+    }
+    CGFloat buttonWidth = kScreenWidth/4;
+    NSArray *imageArray = @[@"activity",@"loginin",@"discover",@"me"];
+    NSArray *titleArray = @[@"活动",@"签到",@"发现",@"我"];
+    for (int i=0; i<4; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i*buttonWidth, 0, buttonWidth, 49);
-        
-        
-//        [button setImage:[UIImage imageNamed:imageArray[i]] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonAction:) forControlEvents: UIControlEventTouchUpInside ];
         button.tag = 100+i;
         [self.tabBar addSubview:button];
         UIImageView *imageview = [[UIImageView alloc]init];
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 35 , buttonWidth,  12)];
-
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 27 , buttonWidth,  12)];
+        
            imageview.image = [UIImage imageNamed:imageArray[i]];
             label.textColor = [UIColor lightGrayColor];
 
-        imageview.frame = CGRectMake(buttonWidth/2-10, 10, 20, 20);
+        imageview.frame = CGRectMake(buttonWidth/2-10, 2, 20, 20);
         
         [button addSubview:imageview];
         
         
         
         label.text = titleArray[i];
-        label.font = [UIFont systemFontOfSize:13];
+        label.font = [UIFont systemFontOfSize:12];
         
         label.textAlignment = NSTextAlignmentCenter;
      
@@ -116,8 +115,12 @@
 - (void)buttonAction:(UIButton *)sender{
     self.selectedIndex = sender.tag-100;
     
-    NSArray *imageArray = @[@"activity",@"loginin",@"me"];
-        NSArray *imagedarray = @[@"activityed",@"logined",@"meed"];
+    
+    [MobClick event:@"zhundaoID"];
+    
+    
+    NSArray *imageArray = @[@"activity",@"loginin",@"discover",@"me"];
+        NSArray *imagedarray = @[@"activityed",@"logined",@"discovered",@"meed"];
     
     if ([_startButton.subviews[0] isKindOfClass:[UILabel class]]) {
          _startLabel =  (UILabel *)_startButton.subviews[0];
@@ -161,21 +164,85 @@
     }
 }
 
-
--(void) viewDidAppear:(BOOL)animated
-{    [super viewDidAppear:animated];
-    [self.selectedViewController endAppearanceTransition];
+#pragma mark --- 定时器
+- (void)addTimer {
+    if (!_timer) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(checklogin) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    }
 }
 
--(void) viewWillDisappear:(BOOL)animated
-{    [super viewWillDisappear:animated];
-    [self.selectedViewController beginAppearanceTransition: NO animated: animated];
+- (void)checklogin {
+    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    AFmanager *manager = [AFmanager shareManager];
+    [manager GET:userstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"responseObject = %@",responseObject);
+        if (![responseObject[@"data"][@"email"] isEqual:[NSNull null]]) {
+            [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"data"][@"email"] forKey:@"email"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"code = %li",(long)error.code);
+        if (error.code == -1011) {
+            maskLabel *label = [[maskLabel alloc] initWithTitle:@"登录超时，请重新登录"];
+            [label labelAnimationWithViewlong:[UIApplication sharedApplication].keyWindow];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self didLogout];
+            });
+        }
+    }];
 }
 
--(void) viewDidDisappear:(BOOL)animated
-{   [super viewDidDisappear:animated];
-    [self.selectedViewController endAppearanceTransition];
+/*! 退出登录清空数据 */
+- (void)didLogout
+{
+    /*! 清除本地数据 */
+    NSDictionary *userArray = [[NSUserDefaults standardUserDefaults]objectForKey:@"userArray"];
+    NSString *appDomain = [[NSBundle mainBundle]bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults]removePersistentDomainForName:appDomain];
+    [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:@"userArray"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    if ([[SignManager shareManager].dataBase open])
+    {
+        NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
+        [[SignManager shareManager].dataBase executeUpdate:updateSql];
+        NSString *updateSql1 = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
+        [[SignManager shareManager].dataBase executeUpdate:updateSql1];
+        NSString *updateSql12 = [NSString stringWithFormat:@"DROP TABLE contact"];
+        [[SignManager shareManager].dataBase executeUpdate:updateSql12];
+        [[SignManager shareManager].dataBase close];
+    }
+    LoginViewController *login = [[LoginViewController alloc]init];
+    [UIApplication sharedApplication].delegate.window.rootViewController = login;
 }
+
+#pragma mark --- 通知接收
+- (void)getNotification:(NSNotification *)nofi {
+    BaseNavigationViewController *baseNav = self.viewControllers[0];
+    DetailNoticeViewController *detailNotice = [[DetailNoticeViewController alloc]init];
+    detailNotice.ID = [nofi.userInfo[@"id"] integerValue];
+    detailNotice.isNotificationPush = YES;
+    [detailNotice setHidesBottomBarWhenPushed:YES];
+    self.selectedIndex = 0;
+    [baseNav pushViewController:detailNotice animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self addTimer];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [_timer invalidate];
+    _timer = nil;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 /*
 #pragma mark - Navigation
 

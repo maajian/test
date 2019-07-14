@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+typedef void(^blackBlock) (NSDictionary *dic);
 @interface ImageViewController : BaseViewController
-
+@property(nonatomic,copy)blackBlock block;
 @end

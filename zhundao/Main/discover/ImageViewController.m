@@ -8,14 +8,131 @@
 
 #import "ImageViewController.h"
 
-@interface ImageViewController ()
+#import "UpDataViewController.h"
+#import "BaseNavigationViewController.h"
+@interface ImageViewController ()<UITextViewDelegate>
+{
+    BOOL switchFlag;
+}
+@property (weak, nonatomic) IBOutlet UISwitch *switchButton;
+@property (weak, nonatomic) IBOutlet UIButton *sureButton;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
 @implementation ImageViewController
+- (IBAction)cancelButton:(id)sender {
+      [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"请输入项目名称"]) {
+        textView.text = @"";
+    }
+    _textView.textColor = [UIColor blackColor];
+    
+}
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if (textView.text.length<1) {
+        textView.text = @"请输入项目名称";
+        _textView.textColor = [UIColor lightGrayColor];
+    }
+    
+}
+- (IBAction)sureButton:(id)sender {
+    if ([_textView.text isEqualToString:@"请输入项目名称"]||[[_textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0||[[_textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]==0) {
+        NSLog(@"不能为空");
+        UILabel *label = [[UILabel alloc]init];
+        label.backgroundColor = [UIColor blackColor];
+        label.textColor =[UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.layer.cornerRadius = 6;
+        label.layer.masksToBounds = YES;
+        
+        label.text = @"输入框不能为空";
+        label.font = [UIFont boldSystemFontOfSize:16];
+        [self.view addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.view);
+            make.size.mas_equalTo(CGSizeMake(120, 35));
+        }];
+        label.alpha = 1;
+        [UIView animateWithDuration:1.5 animations:^{
+            label.alpha =0;
+        } completion:^(BOOL finished) {
+            [label removeFromSuperview];
+        }];
+    }
+    else
+    {
+        [self sendData];
+    }
 
+}
+- (void)sendData
+{
+    NSMutableDictionary *sendDic = [NSMutableDictionary dictionary];
+    [sendDic setObject:_textView.text forKey:@"Title"];
+    [sendDic setValue:@"4" forKey:@"InputType"];
+    
+    if (switchFlag) {
+        [sendDic setValue:@"true" forKey:@"Required"];
+    }
+    else{
+        [sendDic setValue:@"false" forKey:@"Required"];
+        
+    }
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:[sendDic copy] options:0 error:nil];
+    NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+    AFmanager *manager= [AFmanager shareManager];
+    NSString *accesskey = [[SignManager shareManager]getaccseekey];
+    NSString *posturl = [NSString stringWithFormat:@"%@api/PerActivity/UpdateOrAddOption?accessKey=%@",zhundaoApi,accesskey];
+    
+    
+    [manager POST:posturl parameters:jsonStr progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"res = %@",responseObject);
+        if ([responseObject[@"Res"] integerValue] == 0) {
+            if (self.block) {
+                self.block([sendDic copy]);
+            }
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:responseObject[@"Msg"] message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                UpDataViewController *updata = [[UpDataViewController alloc]init];
+                updata.isPresent = YES;
+                updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[SignManager shareManager] getaccseekey]];
+                BaseNavigationViewController *nav = [[BaseNavigationViewController alloc] initWithRootViewController:updata];
+                [self presentViewController:nav animated:YES completion:nil];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error = %@",error);
+    }];
+}
+
+- (void)SwitchChange
+{
+    switchFlag = !switchFlag;
+    NSLog(@"%i",switchFlag);
+    if (switchFlag==NO) {
+        [_switchButton setOn:NO];
+    }
+    else{
+        [_switchButton setOn:YES];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _textView.text = @"请输入项目名称";
+    _textView.textColor = [UIColor lightGrayColor];
+    _textView.delegate =self;
+    switchFlag =YES;
+    
+    [_switchButton addTarget:self action:@selector(SwitchChange) forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view from its nib.
 }
 

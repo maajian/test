@@ -6,8 +6,10 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "otherSignViewController.h"
+#import "BaseViewController.h"
 
-@interface postActivityViewController : otherSignViewController
+@interface postActivityViewController : BaseViewController
+
+@property(nonatomic,strong)ActivityModel *activityModel; //编辑界面的model
 
 @end

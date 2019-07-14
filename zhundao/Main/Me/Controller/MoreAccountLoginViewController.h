@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
+
+/**
+ 登陆页
+ */
 @interface MoreAccountLoginViewController : BaseViewController
 
 @end

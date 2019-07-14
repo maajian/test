@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MoreAccountModel.h"
 @interface MoreAccountTableViewCell : UITableViewCell
+/*! 头像 */
+@property (nonatomic, strong) UIImageView *iconImageView;
+/*! 姓名 */
+@property (nonatomic, strong) UILabel *nameLabel;
+/*! 手机 */
+@property (nonatomic, strong) UILabel *phoneLabel;
+
+@property (nonatomic, strong) MoreAccountModel *model;
 
 @end

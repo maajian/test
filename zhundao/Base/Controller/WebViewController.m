@@ -8,7 +8,7 @@
 
 #import "WebViewController.h"
 
-@interface WebViewController ()<WKNavigationDelegate,UIScrollViewDelegate>
+@interface WebViewController ()<WKNavigationDelegate>
 {
     JQIndicatorView *indicator;
 }
@@ -19,20 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
-- (void)dealloc
-{
-    self.webView.navigationDelegate = nil;
-    [self.webView removeFromSuperview];
-    self.webView = nil;
-    self.webView.scrollView.delegate = nil;
-}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+     [MobClick beginLogPageView:self.title];
     self.navigationController.navigationBar.hidden = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:self.title];
 }
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
 {

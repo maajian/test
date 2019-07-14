@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
-
+@property(nonatomic,strong)UILabel *nulllabel;
+@property(nonatomic,strong)UIImageView *nullimageview;
+- (UIImageView *)showNullImage;
+- (UILabel *)showNullLabelWithText :(NSString *)text WithTextColor :(UIColor *)color;
+- (void)shownull :(NSArray *)nullArray WithText :(NSString *)text WithTextColor :(UIColor *)Color;
 @end

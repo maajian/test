@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface PriviteInviteTableViewCell : UITableViewCell
+/*! 左边 */
+@property(nonatomic,strong)UILabel *leftLabel;
+/*! 右边 */
+@property(nonatomic,strong)UILabel *rightLabel;
 
 @end

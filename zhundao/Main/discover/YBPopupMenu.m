@@ -207,10 +207,10 @@ UITableViewDataSource
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (_dismissOnSelected) [self dismiss];
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(ybPopupMenuDidSelectedAtIndex:ybPopupMenu:)]) {
+    UITableViewCell *Cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(ybPopupMenuDidSelectedAtIndex:ybPopupMenu:cell:)]) {
         
-        [self.delegate ybPopupMenuDidSelectedAtIndex:indexPath.row ybPopupMenu:self];
+        [self.delegate ybPopupMenuDidSelectedAtIndex:indexPath.row ybPopupMenu:self cell :Cell];
     }
 }
 
@@ -280,7 +280,7 @@ UITableViewDataSource
     _arrowDirection = YBPopupMenuArrowDirectionTop;
     _priorityDirection = YBPopupMenuPriorityDirectionTop;
     _minSpace = 10.0;
-    _maxVisibleCount = 5;
+    _maxVisibleCount = 7;
     _itemHeight = 44;
     _isCornerChanged = NO;
     _showMaskView = YES;

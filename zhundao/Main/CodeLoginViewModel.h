@@ -9,5 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @interface CodeLoginViewModel : UIView
+ // 发送验证码
+@property (nonatomic, strong) NSDictionary *sendCodeJson;
+
+/**
+ 发送验证码
+ 
+ @param phoneStr 电话号码
+ @param successBlock <#successBlock description#>
+ @param failBlock <#failBlock description#>
+ */
+- (void)sendCode:(NSString *)phoneStr successBlock:(kZDCommonSucc)successBlock failBlock:(kZDCommonFail)failBlock;
+
+
+// 验证码登录
+- (void)loginWirhCode:(NSString *)code phoneStr:(NSString *)phoneStr successBlock:(kZDCommonSucc)successBlock failBlock:(kZDCommonFail)failBlock ;
 
 @end

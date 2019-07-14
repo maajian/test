@@ -9,6 +9,9 @@
 #import "BaseViewController.h"
 #import <WebKit/WebKit.h>
 @interface WebViewController : BaseViewController
+
 @property(nonatomic,strong)NSString *urlString;
+
 @property (nonatomic, strong) WKWebView * webView;
+
 @end

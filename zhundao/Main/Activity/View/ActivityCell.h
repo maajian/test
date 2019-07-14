@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ActivityModel.h"
 @interface ActivityCell : UITableViewCell<NSCoding>
 @property(nonatomic,strong)ActivityModel *model;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
@@ -18,10 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
-
-//@property(nonatomic,strong,readonly)UIButton *editButton;
-//@property(nonatomic,strong,readonly)UIButton *listButton;
-//@property(nonatomic,strong,readonly)UIButton *shareButton;
-//@property(nonatomic,strong,readonly)UIButton *moreButton;
 @end

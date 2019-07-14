@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface otherSignViewController : UIViewController
-
+@interface otherSignViewController : BaseViewController
+@property(nonatomic,strong)UITextField *textf;
+@property(nonatomic,assign)NSInteger signid;
 @end

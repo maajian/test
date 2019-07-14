@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface MoreChioceMV : NSObject
-
+- (CGFloat)heightForCellWithImagearr :(NSArray *) array;
 @end

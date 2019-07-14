@@ -10,4 +10,8 @@
 
 @interface UIView (LeftBack)
 
+
+-(void)CustomBackWithVC :(UIViewController *)VC SEL : (SEL) SEL; //自定义返回
+
 @end
+

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface pulldownViewController : UIViewController
-
+typedef void(^backBlock) (NSDictionary *dic);
+@interface pulldownViewController : BaseViewController
+@property(nonatomic,copy)backBlock block;
 @end

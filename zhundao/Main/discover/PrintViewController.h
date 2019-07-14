@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PrintViewController : UIViewController
+@interface PrintViewController : BaseViewController
 
 @end

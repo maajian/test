@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+#pragma mark --- notification
 
-@interface ZDConst : NSObject
-
-@end
-
-NS_ASSUME_NONNULL_END
+UIKIT_EXTERN NSString *const ZDNotification_Message_Select;
+UIKIT_EXTERN NSString *const ZDNotification_Change_Account;
+UIKIT_EXTERN NSString *const ZDNotification_Load_Activity;

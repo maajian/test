@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ZDDiscoverCustomApplyModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDiscoverCustomApplyCell : UITableViewCell
+
+@property (nonatomic, strong) ZDDiscoverCustomApplyModel *model;
 
 @end
 

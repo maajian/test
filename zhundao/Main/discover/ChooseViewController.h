@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ChooseViewController : UIViewController
-
+#import "CustomModel.h"
+typedef void(^backBlock) (NSDictionary *dic);
+@interface ChooseViewController : BaseViewController
+@property(nonatomic,strong)CustomModel *model;
+@property(nonatomic,copy)backBlock block;
 @end

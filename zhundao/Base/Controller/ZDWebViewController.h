@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDWebViewController : UIViewController
+#import "BaseViewController.h"
+
+@interface ZDWebViewController : BaseViewController
+
+// 链接
+@property (nonatomic, strong) NSString *urlString;
+// 网页的标题
+@property (nonatomic, copy) NSString *webTitle;
+ // 是否需要关闭按钮
+@property (nonatomic , assign) BOOL isClose;
 
 @end

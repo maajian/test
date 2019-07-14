@@ -31,6 +31,7 @@
 @implementation LMImageSettingsController
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.selecting = NO;
     
     self.button1.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -63,27 +64,26 @@
 
 - (void)setSelecting:(BOOL)selecting {
     _selecting = selecting;
-    
     if (selecting){
-        [self.button1 setImage:[UIImage imageNamed:@"photo_preview_icon"] forState:UIControlStateNormal];
-        [self.button2 setImage:[UIImage imageNamed:@"photo_send_icon"] forState:UIControlStateNormal];
+        [self.button1 setImage:[UIImage imageNamed:@"预览"] forState:UIControlStateNormal];
+        [self.button2 setImage:[UIImage imageNamed:@"打勾蓝色"] forState:UIControlStateNormal];
         [self.button1 setTitle:@"预览" forState:UIControlStateNormal];
         [self.button2 setTitle:@"发送" forState:UIControlStateNormal];
         [self.button2 setTitleColor:[UIColor colorWithRed:93/255.f green:150/255.f blue:209/255.f alpha:1.f] forState:UIControlStateNormal];
     }
     else {
-        [self.button1 setImage:[UIImage imageNamed:@"photo_take_icon"] forState:UIControlStateNormal];
-        [self.button2 setImage:[UIImage imageNamed:@"photo_gallery_icon"] forState:UIControlStateNormal];
+        [self.button1 setImage:[UIImage imageNamed:@"拍照"] forState:UIControlStateNormal];
+        [self.button2 setImage:[UIImage imageNamed:@"相册"] forState:UIControlStateNormal];
         [self.button1 setTitle:@"拍照" forState:UIControlStateNormal];
         [self.button2 setTitle:@"相册" forState:UIControlStateNormal];
         [self.button2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     }
 }
-
+#warning 可能错误
 - (void)fetchPhotos {
     PHFetchOptions *nearestPhotosOptions = [[PHFetchOptions alloc] init];
     nearestPhotosOptions.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
-    nearestPhotosOptions.fetchLimit = 20;
+//    nearestPhotosOptions.fetchLimit = 20;
     self.photosResult = [PHAsset fetchAssetsWithOptions:nearestPhotosOptions];
     self.photos = [NSMutableDictionary dictionary];
 }

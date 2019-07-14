@@ -6,32 +6,23 @@
 //  Copyright © 2016年 ClaudeLi. All rights reserved.
 //
 
-#import "SaoYiSaoViewController.h"
+#import "bindingBeacon.h"
 #import "UIImage+mask.h"
 // 距顶部高度
 #define Top_Height 0.2*kScreenHeight
 // 中间View的宽度
 #define MiddleWidth 0.8*kScreenWidth
-
 static NSString *saoText = @"将二维码/条形码放入框内，即可自动扫描";
 
-@interface SaoYiSaoViewController ()<UIAlertViewDelegate>
+@interface bindingBeacon ()<UIAlertViewDelegate>
 {
     bool _canOpen;
 }
-
+@property(nonatomic,assign)BOOL successFlag;
 @end
 
-@implementation SaoYiSaoViewController
+@implementation bindingBeacon
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        _canOpen = NO;
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,96 +30,14 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     self.view.backgroundColor = [UIColor blackColor];
     [self creatBackGroundView];
     [self creatUI];
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [self setupCamera];
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [timer invalidate];
-    timer = nil;
-    [_session stopRunning];
-}
-
--(void)lineAnimation{
-    CGFloat leadSpace = (kScreenWidth - MiddleWidth)/ 2;
-    if (upOrdown == NO) {
-        num ++;
-        _line.frame = CGRectMake(leadSpace, Top_Height+2*num, MiddleWidth, 12);
-        if (2*num >= MiddleWidth-12) {
-            upOrdown = YES;
-            _line.image = [UIImage imageNamed:@"Icon_SaoLineOn"];
-        }
-    }else {
-        num --;
-        _line.frame = CGRectMake(leadSpace, Top_Height+2*num, MiddleWidth, 12);
-        if (num == 0) {
-            upOrdown = NO;
-            _line.image = [UIImage imageNamed:@"Icon_SaoLine"];
-        }
-    }
+    _successFlag = 0;
 }
 
 -(void)backAction{
+    if (_successFlag) {
+         _backblock(_successFlag);
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)setupCamera{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // Device
-        if (!_device) {
-            _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-            // Input
-            _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
-            
-            // Output
-            _output = [[AVCaptureMetadataOutput alloc]init];
-            [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-            
-            // Session
-            _session = [[AVCaptureSession alloc]init];
-            [_session setSessionPreset:AVCaptureSessionPresetHigh];
-            if ([_session canAddInput:self.input]){
-                [_session addInput:self.input];
-                _canOpen = YES;
-            }else{
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    //回到主线程
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"打开相机权限" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"去设置", nil];
-                    [alert show];
-                });
-            }
-            if (_canOpen) {
-                if ([_session canAddOutput:self.output]){
-                    [_session addOutput:self.output];
-                }
-                // 条形码/二维码
-                _output.metadataObjectTypes =[NSArray arrayWithObjects:AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeQRCode, nil];
-                // 只支持二维码
-//                _output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
-                
-                // Preview
-                _preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
-                _preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    //回到主线程
-                    _preview.frame =CGRectMake(0,0,kScreenWidth,kScreenHeight);
-                    [self.view.layer insertSublayer:self.preview atIndex:0];
-                });
-            }
-        }
-        // Start
-        if (_canOpen) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //回到主线程
-                timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(lineAnimation) userInfo:nil repeats:YES];
-                [_session startRunning];
-            });
-        }
-    });
 }
 
 #pragma mark -
@@ -139,30 +48,64 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
         stringValue = metadataObject.stringValue;
     }
-    
-    [_session stopRunning];
+    [self.session stopRunning];
     [timer invalidate];
     timer = nil;
     NSLog(@"%@",stringValue);
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"扫描结果" message:stringValue delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    [alert show];
+    [self netWorkWithstringValue:stringValue];
 }
-
-#pragma mark - - UIAlertView Delegate - - - - - - - - - - - - - -
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)netWorkWithstringValue:(NSString *)stringValue
 {
-    //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=Privacy&path=CONTACTS"]];
-    if (buttonIndex == 0) {
-        [self backAction];
-    }else{
-        NSURL * url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    NSString *acckey = [[SignManager shareManager]getaccseekey];
+    NSString *str = [NSString stringWithFormat:@"%@api/Game/UpdateBeacon?accessKey=%@&deviceId=%@&type=0",zhundaoApi,acckey,stringValue];
+    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    [[AFmanager shareManager] GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+        [hud hideAnimated:YES];
+        [self succseeresponseObject:dic];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [hud hideAnimated:YES];
+         [self showhudWithString:@"绑定失败" WithImageName:nil successBool:0];
+    }];
+}
+- (void)showhudWithString :(NSString *)labelText WithImageName :(NSString *)imageName successBool :(BOOL )isSuccess
+{
+    
+    if (isSuccess) {
+        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:labelText showAnimated:YES UIView:self.view imageName:imageName];
+        [hud1 showAnimated:YES];
+        [hud1 hideAnimated:YES afterDelay:1];
+        [self willPop];
         
-        if([[UIApplication sharedApplication] canOpenURL:url]) {
-            [[UIApplication sharedApplication] openURL:url];
-        }
+    }
+   else
+   {
+       MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeText labelText:labelText showAnimated:YES UIView:self.view imageName:nil];
+       [hud1 showAnimated: YES];
+        [hud1 hideAnimated:YES afterDelay:1];
+       [self willPop];
+   }
+}
+- (void)willPop
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self backAction];
+    });
+}
+- (void)succseeresponseObject:(NSDictionary *)dic
+{
+    NSInteger isSeccess = [dic[@"Res"] integerValue];
+    if (isSeccess) {
+        _successFlag = 0;
+         [self showhudWithString:dic[@"Msg"] WithImageName:nil successBool:0];
+    }
+    else
+    {
+        _successFlag =1;
+    [self showhudWithString:@"绑定成功" WithImageName:@"签到打勾" successBool:YES];
     }
 }
+
 
 #pragma mark -
 #pragma mark  -- -- -- -- -- MakeView
@@ -196,10 +139,10 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     
     upOrdown = NO;
     num =0;
-    _line = [[UIImageView alloc] initWithFrame:CGRectMake(leadSpace, Top_Height, MiddleWidth, 12)];
-    _line.image = [UIImage imageNamed:@"Icon_SaoLine"];
-    _line.contentMode = UIViewContentModeScaleToFill;
-    [self.view addSubview:_line];
+  self.line = [[UIImageView alloc] initWithFrame:CGRectMake(leadSpace, Top_Height, MiddleWidth, 12)];
+   self.line.image = [UIImage imageNamed:@"Icon_SaoLine"];
+  self.line.contentMode = UIViewContentModeScaleToFill;
+    [self.view addSubview:self.line];
 }
 
 - (void)didReceiveMemoryWarning {

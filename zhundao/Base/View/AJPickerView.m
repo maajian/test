@@ -22,18 +22,20 @@ const NSInteger ACHeight = 44 ;
 @property(nonatomic,strong)                UIPickerView       *pickerView ;
 @property(nonatomic,strong)                NSMutableArray  *dataArray ;  //数组
 @property(nonatomic,assign)                NSInteger     dataCount ;  //数组个数
+@property(nonatomic,copy)                  NSString     *currentStr;
 @end
 @implementation AJPickerView
 
 
 #pragma mark  初始化
 
-- (instancetype)initWithFrame:(CGRect)frame dataArray : (NSArray *)dataArray backBlock :(backBlock)selectBlock
+- (instancetype)initWithFrame:(CGRect)frame dataArray : (NSArray *)dataArray currentStr :(NSString *)str  backBlock :(backBlock)selectBlock
 {
     if (self = [super initWithFrame:frame]) {
         _backBlock = [selectBlock copy];
         self.dataArray = [dataArray mutableCopy];
         self.dataCount =self.dataArray.count;
+        self.currentStr = str;
         [self addSubview:self.backView];
     }
     return  self;
@@ -65,8 +67,8 @@ const NSInteger ACHeight = 44 ;
 - (UIView *)actionView
 {
     if (!_actionView) {
-        _actionView = [[UIView alloc]initWithFrame:CGRectMake(0, (kHeight-64)/2+64  , kWidth, ACHeight)];
-        _actionView .backgroundColor = [UIColor colorWithRed:236.f/255.f green:237.f/255.f blue:239.f/255.f alpha:1];
+        _actionView = [[UIView alloc]initWithFrame:CGRectMake(0, (kHeight-64)/2  , kWidth, ACHeight)];
+        _actionView .backgroundColor = zhundaoBackgroundColor;
         [_actionView addSubview:self.sureButton];
         [_actionView addSubview:self.cancelButton];
     }
@@ -98,7 +100,7 @@ const NSInteger ACHeight = 44 ;
         [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
       NSMutableAttributedString *str =   [self changeColorWithStr:@"取消"];
         [_cancelButton setAttributedTitle:str forState:UIControlStateNormal];
-        [_cancelButton addTarget:self action:@selector(sureAction) forControlEvents:UIControlEventTouchUpInside];
+        [_cancelButton addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
     
@@ -110,13 +112,17 @@ const NSInteger ACHeight = 44 ;
 //        NSLog(@"all = %f",kHeight);
 //        NSLog(@"height = %f" ,kHeight -((kHeight-64)/2+44+64));
 //        NSLog(@"y = %f" ,(kHeight-64)/2+44+64);
-        _pickerView  = [[UIPickerView alloc]initWithFrame:CGRectMake(0, (kHeight-64)/2+44+64  , kWidth, kHeight -((kHeight-64)/2+44+64))];
+        _pickerView  = [[UIPickerView alloc]initWithFrame:CGRectMake(0, (kHeight-64)/2+44  , kWidth, kHeight -((kHeight-64)/2+44+64))];
         _pickerView.backgroundColor = [UIColor colorWithRed:198.f/255.f green:203.f/255.f blue:211.f/255.f alpha:1];
         _pickerView.delegate = self;
         _pickerView.dataSource = self;
-        
-        [_pickerView selectRow:_dataCount/2 inComponent:0 animated:YES];  //选择中间位置
-        selectStr = self.dataArray[_dataCount/2];   //起始的block值为中间位置字符串
+        if (_currentStr) {
+            [_pickerView selectRow:[_dataArray indexOfObject:_currentStr] inComponent:0 animated:YES];
+            selectStr = _currentStr;
+        }else{
+            [_pickerView selectRow:_dataCount/2 inComponent:0 animated:YES];  //选择中间位置
+            selectStr = self.dataArray[_dataCount/2];   //起始的block值为中间位置字符串
+        }
         _pickerView.showsSelectionIndicator = YES;
     }
     return _pickerView;

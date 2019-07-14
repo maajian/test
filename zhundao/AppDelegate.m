@@ -9,17 +9,27 @@
 #import "AppDelegate.h"
 #import "BaseNavigationViewController.h"
 #import "MainViewController.h"
-#import "ActivityViewController.h"
+//#import "ActivityViewController.h"
 #import "WXApi.h"
 #import "LoginViewController.h"
+#import <UMSocialCore/UMSocialCore.h>
 #import "SendViewController.h"
+#import "UMMobClick/MobClick.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import "JPUSHService.h"
+#import "loginViewModel.h"
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
+NSString * const kdbManagerVersion = @"DBManagerVersion";
+#define kYoumengAPPKEY @"58b3c7a275ca352ea8000c3a"
+#define KMapkey @"ec66cd9c1c0675a526822e333504cad7"
 @class AFURLResponseSerialization;
-//wxe25de2684f235a04 appid
-//3286d02771487220b3135ed3620e552e appsecret
-@interface AppDelegate ()<WXApiDelegate,UIApplicationDelegate>
+
+//58b3c7a275ca352ea8000c3a 友盟appkey
+@interface AppDelegate ()<WXApiDelegate,UIApplicationDelegate,JPUSHRegisterDelegate>
 {
     NSDictionary *userDict;
-    
 }
 @end
 
@@ -33,30 +43,175 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    MainViewController *tabbar = [[MainViewController alloc]init];
      [WXApi registerApp:@"wxfe2a9da163481ba9" ];
-    
     LoginViewController *login = [[LoginViewController alloc]init];
-    
-
-  NSString  *Unionid = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
-   NSString *access = [[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
+    NSString  *Unionid = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
+    NSString *access = [[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
+    NSString *mobile = [[NSUserDefaults standardUserDefaults]objectForKey:@"mobile"];
               //oX9XjjizWbtuCeHkJRKDwJDvPFEQ
               //oX9Xjjjk0W7TGowAdZZtcfdeNg0o uid
-                
+    /*! 数据库更新 */
+    [self deleteDatabase];
+    //友盟
     
+    [[UMSocialManager defaultManager] openLog:YES];
+    /* 设置友盟appkey */
+    [[UMSocialManager defaultManager] setUmSocialAppkey:kYoumengAPPKEY];
+    [self configUSharePlatforms];
+    [MobClick setLogEnabled:YES];
+    UMConfigInstance.appKey = @"58b3c7a275ca352ea8000c3a";
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];
+    
+    //地图
+    [AMapServices sharedServices].apiKey = KMapkey;  //地图apikey
+    
+    //推送
+    [self JPushSet:launchOptions];
+    
+    //是否登录
     if (Unionid==nil&&access==nil) {
         self.window.rootViewController = login;
     }
-    if (Unionid||access) {
-
+    if (access) {
+        MainViewController *tabbar = [[MainViewController alloc]init];
         self.window.rootViewController = tabbar;
     }
+    if (Unionid&&[mobile isEqualToString:@"<null>"]) {
+        self.window.rootViewController = login;
+    }
+    if (Unionid&&![mobile isEqualToString:@"<null>"]) {
+        MainViewController *tabbar = [[MainViewController alloc]init];
+        self.window.rootViewController = tabbar;
+    }
+    
+    if (@available(iOS 11.0, *)) {
+        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    self.mConnBLE = [[ConnectViewController alloc] initWithNibName:nil bundle:nil];
+    
+     // app杀死时通知
+//    [self applicationHasKill:application Options:launchOptions];
+    
     [[AFNetworkReachabilityManager sharedManager]startMonitoring];
-    [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {}];
+    [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        AFmanager.shareManager.networkStatus = status;
+    }];
     return YES;
 }
+#pragma mark -----数据库更新
+- (void)deleteDatabase
+{
+    NSInteger version = [[NSUserDefaults standardUserDefaults] integerForKey:kdbManagerVersion];
+    if (version != 1) {
+        [[SignManager shareManager] createDatabase];
+        if ([[SignManager shareManager].dataBase open])
+        {
+            NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
+            [[SignManager shareManager].dataBase executeUpdate:updateSql];
+            NSString *updateSql1 = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
+            [[SignManager shareManager].dataBase executeUpdate:updateSql1];
+            NSString *updateSql12 = [NSString stringWithFormat:@"DROP TABLE contact"];
+            [[SignManager shareManager].dataBase executeUpdate:updateSql12];
+            [[SignManager shareManager].dataBase close];
+        }
+        [self saveDBVersion];
+    }
+}
+- (void)saveDBVersion {
+    [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kdbManagerVersion];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
+
+#pragma  mark -----极光推送设置 
+
+- (void)JPushSet:(NSDictionary *)launchOptions
+{
+     static NSString *appkey = @"770f6e079395b847e46bc296";
+      NSString *channel = @"appStore";
+    
+    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        
+    }
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    
+    [JPUSHService setupWithOption:launchOptions appKey:appkey
+                          channel:channel
+                 apsForProduction:0   //0为开发 1为上传app
+            advertisingIdentifier:nil];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [JPUSHService registerDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //Optional
+    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
+}
+
+#pragma mark  ------ 推送代理 JPUSHRegisterDelegate
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        [JPUSHService handleRemoteNotification:userInfo];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAppNotification object:nil userInfo:userInfo];
+    completionHandler(UNNotificationPresentationOptionAlert);
+    
+}
+
+
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        [JPUSHService handleRemoteNotification:userInfo];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kAppNotification object:nil userInfo:userInfo];
+    completionHandler();
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+    // Required, iOS 7 Support
+    NSLog(@"内容 = %@",userInfo);
+    [JPUSHService handleRemoteNotification:userInfo];
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    NSLog(@"内容 = %@",userInfo);
+    // Required,For systems with less than or equal to iOS6
+    [JPUSHService handleRemoteNotification:userInfo];
+}
+
+// app杀死的时候调用
+//- (void)applicationHasKill:(UIApplication *)application Options:(NSDictionary *)launchOptions {
+//    if (launchOptions != nil) {
+//        NSDictionary * userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//            [[NSNotificationCenter defaultCenter] postNotificationName:kAppNotification object:nil userInfo:userInfo];
+//            //这个方法用来做action点击的统计
+//            [JPUSHService handleRemoteNotification:userInfo];
+//        });
+//    }
+//}
+
+#pragma mark ------友盟分享设置
+- (void)configUSharePlatforms
+{
+     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxfe2a9da163481ba9" appSecret:@"ace26a762813528cc2dbb65b4279398e" redirectURL:@"https://mobile.umeng.com/social"];
+
+    /* 设置分享到QQ互联的appID
+     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
+     */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105950214"/*设置QQ平台的appID*/  appSecret:@"GAFeY0k6OGdPe1nb" redirectURL:@"https://mobile.umeng.com/social"];
+}
 
 
 
@@ -71,60 +226,81 @@
      */
     return [WXApi handleOpenURL:url delegate:self];
 }
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    [WXApi handleOpenURL:url delegate:self];
+    return YES;
+}
+#pragma mark  -----微信授权回调
 - (void)onResp:(BaseResp *)resp {
     // 向微信请求授权后,得到响应结果
-   SendViewController *send = [[SendViewController alloc]init];
-    NSLog(@"resp = %@", resp.errStr);
+    NSLog(@"resp = %i", resp.errCode);
     if (resp.errCode==0) {
         if ([resp isKindOfClass:[SendAuthResp class]]) {
             SendAuthResp *temp = (SendAuthResp *)resp;
+            NSLog(@"temp.code = %@",temp.code);
+            NSLog(@"state = %@",temp.state);
+            AFmanager *manager = [AFmanager shareManager];
             
-            AFHTTPSessionManager *manager = [AFmanager shareManager];
-            
-            NSString *poststring =[NSString stringWithFormat:@"https://m.zhundao.net/oauth/appcallback?code=%@&type=android",temp.code];
-            
-            [manager POST:poststring parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSString *poststring =[NSString stringWithFormat:@"%@api/v2/weChatLogin?code=%@&type=1",zhundaoApi,temp.code];
+            [manager GET:poststring parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"accessKey"] forKey:AccessKey];
+                [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"token"] forKey:@"token"];
+                [[NSUserDefaults standardUserDefaults]synchronize];
+                [self getUserInfo];
                 
-                NSLog(@"responseObject= %@",responseObject);
-                NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
-                userDict = dic [@"Data"];
-                NSString *imageurl = [NSString stringWithFormat:@"%@",userDict[@"HeadImgurl"]];
-                NSString *sexurl = [NSString stringWithFormat:@"%@",userDict[@"Sex"]];
-                NSString *nameurl = [NSString stringWithFormat:@"%@",userDict[@"NickName"]];
-                NSLog(@"imageurl = %@",imageurl);
-                NSString *Unionid = [NSString stringWithFormat:@"%@",userDict[WX_UNION_ID]];
-                NSLog(@"Unionid= %@",Unionid);
-                [[NSUserDefaults standardUserDefaults]setObject:Unionid forKey:WX_UNION_ID];
-                [[NSUserDefaults standardUserDefaults]setObject:imageurl forKey:@"image"];
-                [[NSUserDefaults standardUserDefaults]setObject:sexurl forKey:@"sex"];
-                [[  NSUserDefaults standardUserDefaults  ]setObject:nameurl forKey:@"name"];
-                NSString *path = NSHomeDirectory();
-                NSLog(@"path : %@", path);
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                
-                if ([userDict[@"Mobile"] isEqual:[NSNull null]]) {
-                    self.window.rootViewController = send;
-                }
-                MainViewController *tabbar = [[MainViewController alloc]init];
-                AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-                appDelegate.window.rootViewController= tabbar;
-             
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 NSLog(@"发送失败");
-                
-                
             }];
-            
-            
         }
     }
 
 }
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+
+- (void)getUserInfo
+{
     
-    [WXApi handleOpenURL:url delegate:self];
-    return YES;
+    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    AFmanager *manager = [AFmanager shareManager];
+    [manager GET:userstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *data = [NSDictionary dictionaryWithDictionary:responseObject];
+        NSDictionary  *userdic = data[@"data"];
+        // 手机号码
+        NSString *mobile = userdic[@"phone"] ? userdic[@"phone"] : @"";
+        if (mobile.length) {
+            [[ NSUserDefaults  standardUserDefaults]setObject:mobile forKey:@"mobile"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"wechatLogin"];
+            // 等级
+            [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            
+            MainViewController *tabbar = [[MainViewController alloc]init];
+            AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+            appDelegate.window.rootViewController= tabbar;
+        } else {
+            SendViewController *send = [[SendViewController alloc]init];
+            self.window.rootViewController = send;
+            send.Unionid = [[SignManager shareManager] getaccseekey];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 }
+
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+//    
+//    [WXApi handleOpenURL:url delegate:self];
+//    return YES;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -133,20 +309,17 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
-
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    [application setApplicationIconBadgeNumber:0];
+    [application cancelAllLocalNotifications];
 }
-
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.

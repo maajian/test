@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ChangeInputViewController : UIViewController
-
+#import "CustomModel.h"
+typedef void(^backBlock) (NSDictionary *dic);
+@interface ChangeInputViewController : BaseViewController
+@property(nonatomic,assign)CustomModel *model;
+//@property(nonatomic,assign)NSInteger inputID;
+//@property(nonatomic,assign)NSInteger inputtype;
+@property(nonatomic,copy)backBlock block;
 @end

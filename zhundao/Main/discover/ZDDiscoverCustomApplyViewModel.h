@@ -8,9 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ZDDiscoverCustomApplyModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDiscoverCustomApplyViewModel : NSObject
+// 数据源
+@property (nonatomic, strong) NSMutableArray<ZDDiscoverCustomApplyModel *> *dataArray;
+/*! 搜索数据源 */
+@property (nonatomic, strong) NSMutableArray<ZDDiscoverCustomApplyModel *> *titleArray;
+/*! 所有名字 */
+@property (nonatomic, strong) NSMutableArray<NSString *> *allTitleArray;
+
+// 获取自定义报名项列表
+- (void)getCustomApplyList:(kZDCommonSucc)success fail:(kZDCommonFail)fail;
+// 隐藏显示报名项
+- (void)hideOrShowList:(BOOL)hidden ID:(NSInteger)ID success:(kZDCommonSucc)success fail:(kZDCommonFail)fail;
 
 @end
 
