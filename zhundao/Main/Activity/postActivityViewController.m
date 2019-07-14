@@ -376,20 +376,18 @@
 }
 - (void)havedic :(NSDictionary *)dic str :(NSString *)str
 {
-    AFmanager *manager = [AFmanager shareManager];
-    __weak typeof(self) weakSelf = self;
-    manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json",
+    ZDNetWorkManager.shareHTTPSessionManager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json",
                                                           @"text/html",
                                                           @"text/json",
                                                           @"text/javascript",
                                                           @"text/plain",
                                                           nil];
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        NSDictionary *dictinary = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        NSDictionary *dictinary = [NSDictionary dictionaryWithDictionary:obj];
         /*! 失败跳转 */
         if ([dictinary[@"errcode"]integerValue] != 0) {
-             [hud hideAnimated:YES];
+            [hud hideAnimated:YES];
             maskLabel *label = [[maskLabel alloc]initWithTitle:dictinary[@"errmsg"]];
             [label labelAnimationWithViewlong:self.view];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -397,20 +395,19 @@
             });
         }
         /*! 成功跳转刷新 */
-         if ([dictinary[@"errcode"]integerValue]==0) {
-             [self showSuccess];
-             [ZD_NotificationCenter postNotificationName:ZDNotification_Load_Activity object:nil];
-             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                  [self.navigationController popToRootViewControllerAnimated:YES];
-             });
-         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if ([dictinary[@"errcode"]integerValue]==0) {
+            [self showSuccess];
+            [ZD_NotificationCenter postNotificationName:ZDNotification_Load_Activity object:nil];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            });
+        }
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         [hud hideAnimated:YES];
         maskLabel *label = [[maskLabel alloc]initWithTitle:@"发布失败"];
         [label labelAnimationWithViewlong:self.view];
     }];
-
 }
 #pragma 逻辑
 

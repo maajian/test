@@ -103,7 +103,7 @@
 /*! 线路显示 */
 
 - (void)showLine {
-    if ([[ NSUserDefaults standardUserDefaults]objectForKey:@"netLine"]) {
+    if ([[ NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
         _lineLabel.text = @"备用线路";
     }else{
         _lineLabel.text = @"默认线路";
@@ -148,19 +148,18 @@
         hud.animationType = MBProgressHUDAnimationFade;
         //        hud.minShowTime = 1;
         [hud showAnimated:YES];
-        AFmanager *manager = [AFmanager shareManager];
-        [manager POST:postStr parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            [hud hideAnimated:YES];
-            
-            maskLabel *label = [[maskLabel alloc] initWithTitle:@"修改成功,请重新登录"];
-            [label labelAnimationWithViewlong:self.view];
-        
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self didLogout];
-            });
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"error = %@",error);
-        }];
+            [ZD_NetWorkM postDataWithMethod:postStr parameters:parameter succ:^(NSDictionary *obj) {
+                [hud hideAnimated:YES];
+                
+                maskLabel *label = [[maskLabel alloc] initWithTitle:@"修改成功,请重新登录"];
+                [label labelAnimationWithViewlong:self.view];
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self didLogout];
+                });
+            } fail:^(NSError *error) {
+                
+            }];
         }
     }];
     
@@ -185,11 +184,11 @@
     _pickView = [[AJPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:dataArray currentStr:_lineLabel.text backBlock:^(NSString *str) {
         _lineLabel.text = str;
         if ([str isEqualToString:dataArray.firstObject]) {
-            if ([[NSUserDefaults standardUserDefaults]objectForKey:@"netLine"]) {
-                [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"netLine"];
+            if ([[NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
+                [[NSUserDefaults standardUserDefaults]removeObjectForKey:ZDUserDefault_Network_Line];
             }else{}
         }else{
-            [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:@"netLine"];
+            [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
             [[NSUserDefaults standardUserDefaults]synchronize];
         }
     }];

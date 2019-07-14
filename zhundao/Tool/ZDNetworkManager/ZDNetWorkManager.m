@@ -8,8 +8,14 @@
 
 #import "ZDNetWorkManager.h"
 
+@interface ZDNetWorkManager()
+// 网络线路
+@property (nonatomic, assign) BOOL isDefaultNetworkLine;
+
+@end
+
 @implementation ZDNetWorkManager
-ZD_Singleton_Implementation(ZDNetWorkManager)
+ZD_Singleton_Implementation(NetWorkManager)
 
 + (AFHTTPSessionManager *)shareHTTPSessionManager {
     static AFHTTPSessionManager *manager = nil;
@@ -25,16 +31,23 @@ ZD_Singleton_Implementation(ZDNetWorkManager)
     return manager;
 }
 
+#pragma mark --- network
 /**
  get请求
  */
 - (void)getDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
-    [[ZDNetWorkManager shareHTTPSessionManager] GET:method parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        succ(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        fail(error);
+    [self checkNetworkStatusAvailable:^{
+        [[ZDNetWorkManager shareHTTPSessionManager] GET:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            succ(responseObject);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            if (self.isDefaultNetworkLine) {
+                [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
+            } else {
+                fail(error);
+            }
+        }];
+    } unavailable:^{
+        fail([self networkError]);
     }];
 }
 
@@ -42,29 +55,75 @@ ZD_Singleton_Implementation(ZDNetWorkManager)
  post请求
  */
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
-    [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        succ(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        fail(error);
+    [self checkNetworkStatusAvailable:^{
+        [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            succ(responseObject);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            if (self.isDefaultNetworkLine) {
+                [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
+            } else {
+                fail(error);
+            }
+        }];
+    } unavailable:^{
+        fail([self networkError]);
     }];
 }
 
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters constructing:(void (^)(id<AFMultipartFormData> formData))constructing succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
-    [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters constructingBodyWithBlock:constructing progress: nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        succ(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        fail(error);
+    [self checkNetworkStatusAvailable:^{
+        [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters constructingBodyWithBlock:constructing progress: nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            succ(responseObject);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            if (self.isDefaultNetworkLine) {
+                [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
+            } else {
+                fail(error);
+            }
+        }];
+    } unavailable:^{
+        fail([self networkError]);
     }];
 }
 
+#pragma mark --- public
+- (void)checkNetworkStatusAvailable:(ZDBlock_Void)available unavailable:(ZDBlock_Void)unavailable {
+    switch (ZD_NetWorkM.networkStatus) {
+        case AFNetworkReachabilityStatusReachableViaWWAN: available();break;
+        case AFNetworkReachabilityStatusReachableViaWiFi: available(available); break;
+        case AFNetworkReachabilityStatusNotReachable: unavailable(available); break;
+        default: unavailable(); break;
+    }
+}
 
+- (NSError *)networkError {
+    NSDictionary *dic = @{@"error code": @(1002),
+                          @"error description": @"网络错误, 请检查网络设置",
+                          };
+    NSError *error = [NSError errorWithDomain:@"network error" code:1002 userInfo:dic];
+    return error;
+}
 
+#pragma mark 第一次网络请求错误时间
+// 是否需要切换线路
+- (void)autoChangeLine {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:ZDUserDefault_First_Network]) {
+        NSString *dayStr = [[NSUserDefaults standardUserDefaults] objectForKey:ZDUserDefault_First_Network];
+        NSInteger day = [NSDate getDifferenceByDate:dayStr];
+        if (day >= 1) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:ZDUserDefault_First_Network];
+        }
+    }
+}
 
-
-
-
+#pragma mark --- getter
+- (BOOL)isDefaultNetworkLine {
+    if ([[ NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
+        return NO;
+    }else{
+        return YES;
+    }
+}
 
 
 @end

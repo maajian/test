@@ -178,55 +178,52 @@
 #pragma mark 获取信息
 - (void)getuser {
         NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-        AFmanager *manager = [AFmanager shareManager];
-        [manager GET:userstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"errcode"] integerValue] == 0) {
+            userdic = [obj[@"data"] copy];
+            // 头像
+            NSString *headImgUrl = userdic[@"headImgUrl"] ? userdic[@"headImgUrl"] : @"";
+            [_iconImageView sd_setImageWithURL:[NSURL URLWithString:headImgUrl] placeholderImage:[UIImage imageNamed:@"user.png"]];
+            // 等级
+            [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
+            _VIPlabel.text = [NSString stringWithFormat:@"V%@",userdic[@"gradeId"]];
             
-            if ([responseObject[@"errcode"] integerValue] == 0) {
-                userdic = [responseObject[@"data"] copy];
-                 // 头像
-                NSString *headImgUrl = userdic[@"headImgUrl"] ? userdic[@"headImgUrl"] : @"";
-                [_iconImageView sd_setImageWithURL:[NSURL URLWithString:headImgUrl] placeholderImage:[UIImage imageNamed:@"user.png"]];
-                 // 等级
-               [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
-                _VIPlabel.text = [NSString stringWithFormat:@"V%@",userdic[@"gradeId"]];
-
-                 // 手机号码
-                NSString *mobile = userdic[@"phone"] ? userdic[@"phone"] : @"";
-                [[ NSUserDefaults  standardUserDefaults]setObject:mobile forKey:@"mobile"];
-                _phoneLabel.text = [NSString stringWithFormat:@"准到ID: %@",userdic[@"id"]];
-                
-                 // 姓名
-                NSString *nickName = userdic[@"nickName"] ?  userdic[@"nickName"] : @"";
-                _nameLabel.text = nickName;
-                
+            // 手机号码
+            NSString *mobile = userdic[@"phone"] ? userdic[@"phone"] : @"";
+            [[ NSUserDefaults  standardUserDefaults]setObject:mobile forKey:@"mobile"];
+            _phoneLabel.text = [NSString stringWithFormat:@"准到ID: %@",userdic[@"id"]];
+            
+            // 姓名
+            NSString *nickName = userdic[@"nickName"] ?  userdic[@"nickName"] : @"";
+            _nameLabel.text = nickName;
+            
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            [self.tableView reloadData];
+        }
+    } fail:^(NSError *error) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            if ([[ NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
+                [[NSUserDefaults standardUserDefaults]removeObjectForKey:ZDUserDefault_Network_Line];
                 [[NSUserDefaults standardUserDefaults] synchronize];
-                
-                [self.tableView reloadData];
+            } else {
+                [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
+                [[NSUserDefaults standardUserDefaults]synchronize];
             }
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            static dispatch_once_t onceToken;
-            dispatch_once(&onceToken, ^{
-                if ([[ NSUserDefaults standardUserDefaults]objectForKey:@"netLine"]) {
-                    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"netLine"];
-                    [[NSUserDefaults standardUserDefaults] synchronize];
-                } else {
-                    [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:@"netLine"];
-                    [[NSUserDefaults standardUserDefaults]synchronize];
-                }
-                [self getuser];
-            });
-        }];
+            [self getuser];
+        });
+    }];
 }
 
 - (void)getAuth {
     NSString *str = [NSString stringWithFormat:@"%@api/v2/user/getAuthInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject[@"res"] integerValue] == 1) {
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"res"] integerValue] == 1) {
             [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"Authentication"];
             
-            NSMutableDictionary *authdic = [responseObject[@"data"] mutableCopy];
-            NSDictionary *tempDic = [NSDictionary dictionaryWithDictionary:responseObject[@"data"]];
+            NSMutableDictionary *authdic = [obj[@"data"] mutableCopy];
+            NSDictionary *tempDic = [NSDictionary dictionaryWithDictionary:obj[@"data"]];
             for (NSString *key in tempDic.allKeys) {
                 if ([[tempDic objectForKey:key] isEqual:[NSNull null]]) {
                     [authdic setObject:@"" forKey:key];
@@ -241,8 +238,7 @@
             [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"Authentication"];
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         
     }];
 }

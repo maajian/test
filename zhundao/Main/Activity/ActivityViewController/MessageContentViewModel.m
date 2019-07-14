@@ -25,11 +25,10 @@
                   esid:(NSInteger)esid
           successBlock:(ZDSuccessBlock)successBlock
                  error:(ZDErrorBlock)errorBlock{
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/sms/DeleteTemplate?id=%li&esid=%li",zhundaoMessageApi,ID,esid];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        successBlock(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        successBlock(obj);
+    } fail:^(NSError *error) {
         errorBlock(error);
     }];
 }
@@ -38,16 +37,15 @@
                  ID:(NSInteger)ID
           successBlock:(ZDSuccessBlock)successBlock
                  error:(ZDErrorBlock)errorBlock{
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/sms/AddTemplate",zhundaoMessageApi];
     NSDictionary *dic = @{@"es_id" :@(ID),
                           @"es_content" :content,
                           @"es_sort" : @(1),
                           @"remark" : @""
                           };
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        successBlock(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
+        successBlock(obj);
+    } fail:^(NSError *error) {
         errorBlock(error);
     }];
 }
@@ -57,12 +55,11 @@
                           @"PageSize" : @(1000),
                           @"PageIndex" : [NSString stringWithFormat:@"%li",pageIndex]
                           };
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/sms/GetDefaultTemplateList",zhundaoMessageApi];
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
         [_systemArray removeAllObjects];
         [_systemHeightArray removeAllObjects];
-        for (NSDictionary *dic in responseObject[@"data"]) {
+        for (NSDictionary *dic in obj[@"data"]) {
             MessageContentModel *model = [[MessageContentModel alloc] initWithDic:dic];
             model.isSystem = YES;
             [self.systemArray addObject:model];
@@ -71,8 +68,8 @@
             CGSize size = [content boundingRectWithSize:CGSizeMake(kScreenWidth - 30, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil].size;
             [self.systemHeightArray addObject:@(size.height + 20)];
         }
-        success(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        success(obj);
+    } fail:^(NSError *error) {
         failure(error.description);
     }];
 }
@@ -83,12 +80,11 @@
                           @"EsID" : @(EsID),
                           @"Status": @(-2)
                           };
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/sms/GetTemplateList",zhundaoMessageApi];
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
         [_customArray removeAllObjects];
         [_customHeightArray removeAllObjects];
-        for (NSDictionary *dic in responseObject[@"data"]) {
+        for (NSDictionary *dic in obj[@"data"]) {
             MessageContentModel *model = [[MessageContentModel alloc] initWithDic:dic];
             model.isSystem = NO;
             [self.customArray addObject:model];
@@ -97,8 +93,8 @@
             CGSize size = [content boundingRectWithSize:CGSizeMake(kScreenWidth - 30, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil].size;
             [self.customHeightArray addObject:@(size.height + 40)];
         }
-        success(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        success(obj);
+    } fail:^(NSError *error) {
         failure(error.description);
     }];
 }

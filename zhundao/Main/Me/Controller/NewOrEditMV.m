@@ -44,7 +44,7 @@
 + (void)changeToNetImage :(UIImage *)image block:(upBlock)block
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@/OAuth/UploadFile",zhundaoH5Api];
-    AFmanager *manager = [AFmanager shareManager];
+    AFHTTPSessionManager *manager = [ZDNetWorkManager shareHTTPSessionManager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",
                                                          @"text/html",
                                                          @"image/jpeg",
@@ -52,23 +52,22 @@
                                                          @"application/octet-stream",
                                                          @"text/json",
                                                          nil];
-    [manager POST:urlStr parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [ZD_NetWorkM postDataWithMethod:urlStr parameters:nil constructing:^(id<AFMultipartFormData> formData) {
         NSData *data = UIImageJPEGRepresentation(image, 0.8);
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat =@"yyyyMMddHHmmss";
         NSString *str = [formatter stringFromDate:[NSDate date]];
         NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
         [formData appendPartWithFileData:data name:@"imgFile" fileName:fileName mimeType:@"image/jpeg"];
-    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    } succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if (block) {
             block(dic[@"url"]);
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-         NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
-    
 }
 
 - (NSMutableArray *)sexChangeWithArray :(NSArray *)dataArray  muArray :(NSMutableArray *)array

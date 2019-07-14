@@ -44,24 +44,20 @@
         NSString *postStr =[NSString stringWithFormat:@"%@api/CheckIn/BatchCheckIn?accessKey=%@&checkInWay=6",zhundaoApi,[[SignManager shareManager]getaccseekey ]];
         postStr = [postStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         
-        AFmanager *afmanager = [AFmanager shareManager];
-    
-    [afmanager POST:postStr parameters:@{@"checkJson": jsonStr} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"responseObject = %@",responseObject);
-            NSDictionary *msg = [NSDictionary dictionaryWithDictionary:responseObject];
-            if ([msg[@"Msg"]integerValue] ==0) {
-                SignManager *manager = [SignManager shareManager];
-                [manager createDatabase];
-                if ([manager.dataBase open]) {
-                    [manager.dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE '%@' SET  post = '1' where post ='0';",str]];
-                    [manager.dataBase close];
-                }
+    [ZD_NetWorkM postDataWithMethod:postStr parameters:@{@"checkJson": jsonStr} succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        NSDictionary *msg = [NSDictionary dictionaryWithDictionary:obj];
+        if ([msg[@"Msg"]integerValue] ==0) {
+            SignManager *manager = [SignManager shareManager];
+            [manager createDatabase];
+            if ([manager.dataBase open]) {
+                [manager.dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE '%@' SET  post = '1' where post ='0';",str]];
+                [manager.dataBase close];
             }
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"error = %@",error);
-        }];
-        
-        
+        }
+    } fail:^(NSError *error) {
+        NSLog(@"error = %@",error);
+    }];
         
         
    

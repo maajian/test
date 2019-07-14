@@ -82,8 +82,7 @@
         
         /*! 获取短信条数 */
          NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/adminInfo?accessKey=%@",zhundaoMessageApi,[[SignManager shareManager]getaccseekey]];
-        AFmanager *manager = [AFmanager shareManager];
-        [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
             NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
             NSArray *array = dic[@"Data"];
             NSDictionary *dataDic = array.firstObject;
@@ -91,11 +90,10 @@
             _es_id = [dataDic[@"es_id"] integerValue];
             _messageView.countLabel.text = [NSString stringWithFormat:@"%li",messageCount];
             [indicator stopAnimating];
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        } fail:^(NSError *error) {
             [[SignManager shareManager]showNotHaveNet:self.view];
             [indicator stopAnimating];
         }];
-       
     } error:^(NSError *error) {
         [[SignManager shareManager]showNotHaveNet:self.view];
         [indicator stopAnimating];

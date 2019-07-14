@@ -23,16 +23,14 @@
 
 @implementation SendViewController
 - (IBAction)sendyangzheng:(id)sender {
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/v2/senCode?phoneOrEmail=%@",zhundaoApi,_phonetext.text];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         [self beginTime];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
 }
-- (void)beginTime
-{
+- (void)beginTime {
     __block int timeout =60;
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -76,14 +74,11 @@
     
     
     
-    AFmanager *manager = [AFmanager shareManager];
     NSString *verifyUrl = [NSString stringWithFormat:@"%@api/v2/verifyCode?phoneOrEmail=%@&code=%@",zhundaoApi,_phonetext.text,_phoneyangzheng.text];
-    [manager GET:verifyUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+    [ZD_NetWorkM getDataWithMethod:verifyUrl parameters:nil succ:^(NSDictionary *obj) {
         NSString *url = [NSString stringWithFormat:@"%@api/v2/bindPhone?phone=%@&token=%@",zhundaoApi,_phonetext.text,[[SignManager shareManager] getToken]];
-        [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            
-            dic = [NSDictionary dictionaryWithDictionary:responseObject];
+        [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+            dic = [NSDictionary dictionaryWithDictionary:obj];
             if ([dic[@"errcode"] integerValue]==0) {
                 MainViewController *tabbar = [[MainViewController alloc]init];
                 AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
@@ -92,15 +87,12 @@
             } else {
                 [self showalert];
             }
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"error = %@",error);
+        } fail:^(NSError *error) {
+            
         }];
+    } fail:^(NSError *error) {
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
     }];
-    
-    
 }
 
 - (void)showalert

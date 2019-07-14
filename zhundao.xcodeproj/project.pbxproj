@@ -78,6 +78,8 @@
 		281A031422D1B735002D87DD /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A031322D1B735002D87DD /* UIImage+Extension.m */; };
 		281F1F7322D9D8D4007B6932 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F1F7122D9D8D3007B6932 /* MBProgressHUD.m */; };
 		281F1F7922D9E45D007B6932 /* ZDNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F1F7722D9E45D007B6932 /* ZDNetWorkManager.m */; };
+		281F1F8122DB35D3007B6932 /* TYAlertController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F1F8022DB35D3007B6932 /* TYAlertController+Extension.m */; };
+		281F1F8522DB4684007B6932 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F1F8422DB4684007B6932 /* NSDate+Extension.m */; };
 		286E7B12223FE1A4001FC1D8 /* ZDRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 286E7B11223FE1A4001FC1D8 /* ZDRefreshNormalFooter.m */; };
 		286E7B15223FE1C9001FC1D8 /* ZDRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 286E7B14223FE1C9001FC1D8 /* ZDRefreshNormalHeader.m */; };
 		2874BB2422998C3E00D8508E /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2874BB2322998C3E00D8508E /* UIBarButtonItem+Extension.m */; };
@@ -851,6 +853,10 @@
 		281F1F7222D9D8D4007B6932 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		281F1F7722D9E45D007B6932 /* ZDNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNetWorkManager.m; sourceTree = "<group>"; };
 		281F1F7822D9E45D007B6932 /* ZDNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNetWorkManager.h; sourceTree = "<group>"; };
+		281F1F7F22DB35D3007B6932 /* TYAlertController+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TYAlertController+Extension.h"; sourceTree = "<group>"; };
+		281F1F8022DB35D3007B6932 /* TYAlertController+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TYAlertController+Extension.m"; sourceTree = "<group>"; };
+		281F1F8322DB4684007B6932 /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		281F1F8422DB4684007B6932 /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		286E7B10223FE1A4001FC1D8 /* ZDRefreshNormalFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDRefreshNormalFooter.h; sourceTree = "<group>"; };
 		286E7B11223FE1A4001FC1D8 /* ZDRefreshNormalFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDRefreshNormalFooter.m; sourceTree = "<group>"; };
 		286E7B13223FE1C9001FC1D8 /* ZDRefreshNormalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDRefreshNormalHeader.h; sourceTree = "<group>"; };
@@ -1984,7 +1990,7 @@
 		281A02E922D06E22002D87DD /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				281F1F6522D9D5AB007B6932 /* Vendor */,
+				281F1F7E22DB3446007B6932 /* Vendor */,
 				281A031122D1B70C002D87DD /* NS */,
 				281A031022D1B6F5002D87DD /* UI */,
 			);
@@ -2043,13 +2049,17 @@
 			children = (
 				281A02F322D090B1002D87DD /* NSString+Extension.h */,
 				281A02F422D090B1002D87DD /* NSString+Extension.m */,
+				281F1F8322DB4684007B6932 /* NSDate+Extension.h */,
+				281F1F8422DB4684007B6932 /* NSDate+Extension.m */,
 			);
 			path = NS;
 			sourceTree = "<group>";
 		};
-		281F1F6522D9D5AB007B6932 /* Vendor */ = {
+		281F1F7E22DB3446007B6932 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				281F1F7F22DB35D3007B6932 /* TYAlertController+Extension.h */,
+				281F1F8022DB35D3007B6932 /* TYAlertController+Extension.m */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -5610,6 +5620,7 @@
 				8446DCDD20D15C4B000C724B /* AAYAxis.m in Sources */,
 				9C4754681E52D33D00BA114C /* ShakeTableViewDelegateObj.m in Sources */,
 				9C594F4B1F6A125C0006CD5E /* showView.m in Sources */,
+				281F1F8522DB4684007B6932 /* NSDate+Extension.m in Sources */,
 				9C6645511EA0A48F005A1016 /* GZActionSheet.m in Sources */,
 				9C53AAB81E078ABB00EF1B6A /* Time.m in Sources */,
 				9C4505EA1DF51AF100C79165 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -5680,6 +5691,7 @@
 				9C52D8661E97725600F43069 /* muliotherViewController.m in Sources */,
 				5B9957041FCD8B2100A26866 /* MJRefreshHeader.m in Sources */,
 				8446DCBE20D15C4B000C724B /* AAOptions.m in Sources */,
+				281F1F8122DB35D3007B6932 /* TYAlertController+Extension.m in Sources */,
 				9C2747E71F2978C7005319CB /* FaceDetailViewController.m in Sources */,
 				281486B022C8BC34000BAE70 /* PrintVcodeVM.m in Sources */,
 				9C4F09891FA9A0B80075925D /* ChangeSexViewController.m in Sources */,

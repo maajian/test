@@ -316,14 +316,12 @@
 - (void)loadData    //网络加载数据
 {
     NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivityList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    AFmanager *manager = [AFmanager shareManager];
     NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)self.listID],
                           @"pageSize":@"200000",
                           @"curPage":@"1"};
     dispatch_queue_t conQueue = dispatch_queue_create("1", DISPATCH_QUEUE_CONCURRENT);
-    [manager POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array1 = result[@"data"];
         [self getOptionWithdic:result];
         [indicator stopAnimating];
@@ -345,7 +343,7 @@
                 if (model.UserName ==nil) {
                     [_UserNameSearchArray addObject:@"没有姓名"];
                 }else{
-                     [_UserNameSearchArray addObject:model.UserName];
+                    [_UserNameSearchArray addObject:model.UserName];
                 }
                 model.count =array1.count-i;
                 
@@ -376,15 +374,11 @@
             [[NSUserDefaults standardUserDefaults]synchronize];
             _dataArray = [muarray copy];
             dispatch_async(dispatch_get_main_queue(), ^{
-                    [_table.mj_header endRefreshing];
-                 [_table reloadData];
+                [_table.mj_header endRefreshing];
+                [_table reloadData];
             });
         });
-        
-      
-      
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         [indicator stopAnimating];
         [[SignManager shareManager] showNotHaveNet:self.view];

@@ -14,10 +14,9 @@
 //api/PerActivity/GetActivityNumCurMonth?accessKey={accessKey}
 - (void)checkIsCanpost:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock {
     NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/GetActivityNumCurMonth?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        successBlock(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        successBlock(obj);
+    } fail:^(NSError *error) {
         errorBlock(error);
     }];
 }

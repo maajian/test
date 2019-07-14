@@ -14,9 +14,8 @@
 
 - (void)GetCreditCards :(allAccountBlock)allAccountBlock{
     NSString *url = [NSString stringWithFormat:@"%@api/PerBase/GetCreditCards?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-       NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSLog( @"dic = %@",result );
         if ([result[@"Res"]integerValue]==0) {
             NSMutableArray *array = [NSMutableArray array];
@@ -31,8 +30,7 @@
         }else{
             allAccountBlock(0,@[]);
         }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         allAccountBlock(0,@[]);
     }];
 }
@@ -41,12 +39,10 @@
 //api/PerBase/DeleteCreadCard/{id}?accessKey={accessKey}
 - (void)deleteCreadCard :(NSInteger)ID successBlock:(ZDSuccessBlock)successBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/DeleteCreadCard/%li?accessKey=%@",zhundaoApi,ID,[[SignManager shareManager]getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         successBlock(dic);
-
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         
     }];
 }

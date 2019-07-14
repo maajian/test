@@ -106,9 +106,8 @@
 - (void)addPersonNetWork :(NSDictionary *)dic feeid :(NSInteger)feeid
 {
     NSString *postStr = [NSString stringWithFormat:@"%@api/PerActivity/AddActivityList?accessKey=%@&activityFeeid=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)feeid];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager POST:postStr parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:postStr parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"] integerValue]==0) {
             _blcok(1);
         }
@@ -116,8 +115,8 @@
         {
             _blcok(2);
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-         _blcok(0);
+    } fail:^(NSError *error) {
+        _blcok(0);
     }];
 }
 

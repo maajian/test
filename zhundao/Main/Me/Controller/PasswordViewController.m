@@ -77,43 +77,34 @@
 #pragma mark--- 网络请求
 - (void)changePassword{
     
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/SetPassWord?accessKey=%@&newPwd=%@",zhundaoApi,[[SignManager shareManager]getaccseekey],textfView.textf.text];
     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"请稍候...";
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"]integerValue]==0) {
             MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"设置成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
             [hud1 hideAnimated:YES afterDelay:1.5];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                MyWalletViewController *MyWallet = nil;
-//                for (UIViewController *VC in self.navigationController.viewControllers) {
-//                    if ([VC isKindOfClass:[MyWalletViewController class]]) {
-//                        MyWallet = (MyWalletViewController *)VC;
-//                    }
-//                }
-//                [self.navigationController popToViewController:MyWallet animated:YES];
                 [self.navigationController popToRootViewControllerAnimated:YES];
             });
         }else{
             maskLabel *label = [[maskLabel alloc]initWithTitle:dic[@"Msg"]];
             [label labelAnimationWithViewlong:self.view];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-         [hud hideAnimated:YES];
+    } fail:^(NSError *error) {
+        [hud hideAnimated:YES];
     }];
 }
 
 - (void)verifyOld :(NSString *)old{
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/VerifyOldPwd?accessKey=%@&oldPwd=%@",zhundaoApi,[[SignManager shareManager]getaccseekey],old];
      MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"请稍候...";
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-         [hud hideAnimated:YES];
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        [hud hideAnimated:YES];
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"] integerValue]==0) {
             PasswordViewController *password1 = [[PasswordViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
@@ -123,8 +114,8 @@
             [self showLabel:@"密码输入错误"];
             [self clearData];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-         [hud hideAnimated:YES];
+    } fail:^(NSError *error) {
+        [hud hideAnimated:YES];
     }];
 }
 

@@ -537,19 +537,15 @@
     [self.textView resignFirstResponder];
     [self.textView scrollRangeToVisible:_lastSelectedRange];
     NSString *urlStr = [NSString stringWithFormat:@"%@/OAuth/UploadFile",zhundaoH5Api];
-    AFmanager *manager = [AFmanager shareManager];
     MBProgressHUD *hud1 = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",
+    ZDNetWorkManager.shareHTTPSessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",
                                                          @"text/html",
                                                          @"image/jpeg",
                                                          @"image/png",
                                                          @"application/octet-stream",
                                                          @"text/json",
                                                          nil];
-    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
-    manager.requestSerializer.timeoutInterval = 20.f;
-    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
-    [manager POST:urlStr parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [ZD_NetWorkM postDataWithMethod:urlStr parameters:nil constructing:^(id<AFMultipartFormData> formData) {
         if (image) {
             NSData *data = UIImageJPEGRepresentation(image, 0.8);
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -558,12 +554,12 @@
             NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
             [formData appendPartWithFileData:data name:@"imgFile" fileName:fileName mimeType:@"image/jpeg"];
         }
-    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
+    } succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
         [hud1 hideAnimated:YES];
-         MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud hideAnimated:YES afterDelay:1];
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             // 实际应用时候可以将存本地的操作改为上传到服务器，URL 也由本地路径改为服务器图片地址。
@@ -571,8 +567,8 @@
             attachment.attachmentType = LMTextAttachmentTypeImage;
             attachment.userInfo = filePath.absoluteString;
         });
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-       [hud1 hideAnimated:YES];
+    } fail:^(NSError *error) {
+        [hud1 hideAnimated:YES];
     }];
 }
 

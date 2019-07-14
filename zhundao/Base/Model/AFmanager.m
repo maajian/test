@@ -30,13 +30,6 @@
     return [[AFHTTPSessionManager manager] POST:URLString parameters:parameters constructingBodyWithBlock:block progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(task, responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"netLine"]) {
-//            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"netLine"];
-//            [[NSUserDefaults standardUserDefaults]synchronize];
-//        } else {
-//            [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:@"netLine"];
-//            [[NSUserDefaults standardUserDefaults]synchronize];
-//        }
         failure(task, error);
     }];
 }

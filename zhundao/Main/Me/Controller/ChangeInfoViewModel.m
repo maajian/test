@@ -15,11 +15,10 @@
 - (void)UpdateUserInfo :(NSDictionary *)dic
           successBlock :(ZDSuccessBlock)successBlock
             errorBlock : (ZDErrorBlock)errorBlock {
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/v2/user/updateUser?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        successBlock(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
+        successBlock(obj);
+    } fail:^(NSError *error) {
         errorBlock(error);
     }];
 }
@@ -27,10 +26,9 @@
 - (void)getUserInfo:(ZDSuccessBlock)successBlock
         errorBlock : (ZDErrorBlock)errorBlock{
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:userstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        successBlock(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
+        successBlock(obj);
+    } fail:^(NSError *error) {
         errorBlock(error);
     }];
 }

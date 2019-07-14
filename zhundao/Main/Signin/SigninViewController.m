@@ -73,7 +73,7 @@
 }
 - (NSString *)signUrlStr
 {
-   _signUrlStr =  [NSString stringWithFormat:@"%@api/CheckIn/PostCheckIn?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+   _signUrlStr =  [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     return _signUrlStr;
 }
 #pragma mark ---数据和网络判断
@@ -202,13 +202,12 @@
     [self savePage];
     NSString *xialaStr = [NSString stringWithFormat:@"%li",(long)xiala];
     NSString *listurl =self.signUrlStr;
-    AFmanager *manager = [AFmanager shareManager];
     NSDictionary *dic = @{@"Type":@"0",
                           @"pageSize":@"10",
-                          @"curPage":xialaStr};
-    [manager POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
-        NSArray *array1 = result[@"Data"];
+                          @"pageIndex":xialaStr};
+    [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
+        NSArray *array1 = result[@"data"];
         if (!modelArray) {
             modelArray = [_dataArray mutableCopy];
         }
@@ -228,7 +227,7 @@
         [[SignManager shareManager] saveData:modelArray1 name:@"signdata1"];
         _dataArray = [modelArray mutableCopy];
         _dataArray1 = [modelArray1 mutableCopy];
-         [_tableView reloadData];
+        [_tableView reloadData];
         if (_isJuhua==YES) {
             if (array1.count<10) {
                 [self.tableView.mj_footer endRefreshingWithNoMoreData];
@@ -237,10 +236,9 @@
             }
             _isJuhua=NO;
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
-
 }
 
 #pragma mark ------ 获取最新数据
@@ -260,17 +258,15 @@
         [self showindicator];
     }
     NSString *listurl =self.signUrlStr;
-    AFmanager *manager = [AFmanager shareManager];
     NSDictionary *dic = @{@"Type":@"0",
                           @"pageSize":@"10",
-                          @"curPage":@"1"};
-    [manager POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-
+                          @"pageIndex":@"1"};
+    [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
         if (_isJuhua==NO&&indicator!=nil) {
             [indicator stopAnimating];
         }
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
-        NSArray *array1 = result[@"Data"];
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
+        NSArray *array1 = result[@"data"];
         NSMutableArray *muarray = [NSMutableArray array];
         NSMutableArray *muarray1 = [NSMutableArray array];
         for (NSDictionary *acdic in array1) {
@@ -280,8 +276,8 @@
             }
             if (model.Status==0) {
                 [muarray1 addObject:model];
+            }
         }
-    }
         if (_isJuhua==NO&&indicator!=nil) {
             [indicator stopAnimating];
         }
@@ -292,12 +288,12 @@
         [[SignManager shareManager]saveData:modelArray name:@"signdata"];
         [[SignManager shareManager]saveData:modelArray1 name:@"signdata1"];
         if (_isJuhua==YES) {
-             [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_header endRefreshing];
             self.tableView.mj_footer.state = MJRefreshStateIdle;
             _isJuhua=NO;
         }
         [_tableView reloadData];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         if (_isJuhua==YES) {
             [self.tableView.mj_header endRefreshing];
@@ -308,7 +304,6 @@
             [indicator stopAnimating];
         }
     }];
-    
 }
 
 - (void)savePage {
@@ -484,16 +479,15 @@
 {
     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/DeleteCheckIn?accessKey=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)mycell.model.ID];
-    [[AFmanager shareManager]GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"dic = %@",dic);
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"updateSign" object:nil];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         [hud hideAnimated:YES];
-        NSLog(@"error = %@",error);
     }];
 }
 - (NSArray *)createXiuArray
@@ -527,8 +521,7 @@
         }
         NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)mycell.model.ID];
         
-        AFmanager *manager = [AFmanager shareManager];
-        [manager GET:listurl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [ZD_NetWorkM getDataWithMethod:listurl parameters:nil succ:^(NSDictionary *obj) {
             NSIndexPath *indexpath = [_tableView indexPathForCell:mycell];
             if (flag==1||flag==0){
                 [_dataArray1 addObject:_dataArray[indexpath.section]];
@@ -542,8 +535,8 @@
             }
             [[SignManager shareManager]saveData:_dataArray name:@"signdata"];
             [[SignManager shareManager]saveData:_dataArray1 name:@"signdata1"];
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"error = %@",error);
+        } fail:^(NSError *error) {
+            
         }];
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

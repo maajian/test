@@ -295,8 +295,8 @@
 
     NSString *urlstr = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByPhone?accessKey=%@&phone=%@&checkInId=%li&checkInWay=11",zhundaoApi,[[SignManager shareManager] getaccseekey],phoneStr,(long)signid];
     
-    [[AFmanager shareManager]GET:urlstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"[[SignManager shareManager] getaccseekey] = %@",[[SignManager shareManager] getaccseekey]);
         NSString *Url = dic[@"Url"];
         NSString *Res = dic[@"Res"];
@@ -317,25 +317,25 @@
         [hud hideAnimated:YES];
         if ([Url isEqualToString:@"101"]&&[Res integerValue]==1) {
             if (MaskLabel) {
-               [self createmaskLabelWithctr:Ctr WithTitle:@"该用户已经签到!"];
+                [self createmaskLabelWithctr:Ctr WithTitle:@"该用户已经签到!"];
             }
             else{
-            [self getDataWithData:Data WithStringValue:phoneStr withID:signid WithSignBool:0 withSigncheckInWay:11 WithPhone:phone Withtitle1:@"确定" Withtitle2:nil WithAction1:SignedAction WithAction1:^(TYAlertAction *action1) {
-                nil;
-            } otherSign:YES WithCtr:Ctr];
+                [self getDataWithData:Data WithStringValue:phoneStr withID:signid WithSignBool:0 withSigncheckInWay:11 WithPhone:phone Withtitle1:@"确定" Withtitle2:nil WithAction1:SignedAction WithAction1:^(TYAlertAction *action1) {
+                    nil;
+                } otherSign:YES WithCtr:Ctr];
             }
         }
         else  if ([Url isEqualToString:@"100"]&&[Res integerValue]==0) {
             if (MaskLabel) {
                 [self createmaskLabelWithctr:Ctr WithTitle:@"签到成功!"];
-                 [self xiugaibendiWithphoneStr:phoneStr WithSignID:signid];
+                [self xiugaibendiWithphoneStr:phoneStr WithSignID:signid];
                 maskBlock(1);
             }
             else{
-            [self getDataWithData:Data WithStringValue:phoneStr withID:signid WithSignBool:1 withSigncheckInWay:11 WithPhone:phone Withtitle1:@"确定" Withtitle2:nil WithAction1:WillSignAction WithAction1:^(TYAlertAction *action1) {
-                nil;
-            } otherSign:YES WithCtr:Ctr];
-            [self xiugaibendiWithphoneStr:phoneStr WithSignID:signid];
+                [self getDataWithData:Data WithStringValue:phoneStr withID:signid WithSignBool:1 withSigncheckInWay:11 WithPhone:phone Withtitle1:@"确定" Withtitle2:nil WithAction1:WillSignAction WithAction1:^(TYAlertAction *action1) {
+                    nil;
+                } otherSign:YES WithCtr:Ctr];
+                [self xiugaibendiWithphoneStr:phoneStr WithSignID:signid];
             }
         }
         else {
@@ -343,12 +343,12 @@
                 [self createmaskLabelWithctr:Ctr WithTitle:@"签到失败 凭证码无效"];
             }
             else{
-            [[SignManager shareManager]showAlertWithTitle:@"提醒" WithMessage:dic[@"Msg"]  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
-
-            } WithAlertStyle:TYAlertActionStyleDefault  WithCTR:Ctr];
+                [[SignManager shareManager]showAlertWithTitle:@"提醒" WithMessage:dic[@"Msg"]  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+                    
+                } WithAlertStyle:TYAlertActionStyleDefault  WithCTR:Ctr];
             }
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         if (hud) {
             [hud hideAnimated: YES];
         }

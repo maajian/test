@@ -14,19 +14,17 @@
 /*! 添加提现账号 */
 - (void)AddCreadCards :(NSDictionary *)dic  AddAccountBlock:(AddAccountBlock)AddAccountBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/AddCreadCards?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
-    AFmanager *manager= [AFmanager shareManager];
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"result = %@",result);
         if ([result[@"Res"] integerValue]==0) {
             AddAccountBlock(1);
         }else{
             AddAccountBlock(0);
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         AddAccountBlock(0);
     }];
-    
 }
 
 - (BOOL)isCanPost :(NSDictionary *)postdic{

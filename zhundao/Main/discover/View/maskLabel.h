@@ -11,5 +11,4 @@
 @interface maskLabel : UILabel
 - (instancetype)initWithTitle:(NSString *)str;
 - (void)labelAnimationWithViewlong :(UIView *)view;
-- (void)labelAnimationWithViewlong :(UIView *)view;
 @end

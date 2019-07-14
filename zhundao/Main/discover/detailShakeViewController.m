@@ -227,7 +227,6 @@
     //    POST api/CheckIn/PostCheckIn?accessKey={accessKey}
     NSString *accesskey = [[SignManager shareManager]getaccseekey];
     NSString *listUrl =[NSString stringWithFormat:@"%@api/CheckIn/PostCheckIn?accessKey=%@",zhundaoApi,accesskey];
-    AFmanager *manager = [AFmanager shareManager];
     NSDictionary *dic = @{@"Type":@"1",
                           @"pageSize":@"1000",
                           @"curPage":@"1"};
@@ -236,8 +235,8 @@
     hud.label.text = @"加载中...";
     hud.mode = MBProgressHUDModeIndeterminate;
     [hud showAnimated:YES];
-    [manager POST:listUrl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:listUrl parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array1 = result[@"Data"];
         NSMutableArray *muarray = [NSMutableArray array];
         NSMutableArray *muarray1 = [NSMutableArray array];
@@ -267,8 +266,8 @@
             maskLabel *label = [[maskLabel alloc]initWithTitle:@"您尚未创建活动"];
             [label labelAnimationWithViewlong:self.view];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
 }
 - (void)activityListData
@@ -277,7 +276,6 @@
     NSString *accesskey = [[SignManager shareManager]getaccseekey];
     
     NSString *listUrl =[NSString stringWithFormat:@"%@api/PerActivity/PostActivityList?accessKey=%@",zhundaoApi,accesskey];
-    AFmanager *manager = [AFmanager shareManager];
     NSDictionary *dic = @{@"Type":@"1",
                           @"pageSize":@"1000",
                           @"curPage":@"1"};
@@ -286,8 +284,8 @@
     hud.label.text = @"加载中...";
     hud.mode = MBProgressHUDModeIndeterminate;
     [hud showAnimated:YES];
-    [manager POST:listUrl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:listUrl parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array1 = result[@"Data"];
         NSMutableArray *muarray = [NSMutableArray array];
         NSMutableArray *muarray1 = [NSMutableArray array];
@@ -304,13 +302,13 @@
         if (_activityDataArray.count>0) {
             [self createpicker];
         }
-       else
-       {
-           maskLabel *label = [[maskLabel alloc]initWithTitle:@"您尚未创建活动"];
-           [label labelAnimationWithViewlong:self.view];
-       }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+        else
+        {
+            maskLabel *label = [[maskLabel alloc]initWithTitle:@"您尚未创建活动"];
+            [label labelAnimationWithViewlong:self.view];
+        }
+    } fail:^(NSError *error) {
+        
     }];
 }
 
@@ -342,8 +340,6 @@
 - (void)updataData
 {    NSString *accesskey = [[SignManager shareManager]getaccseekey];
     NSString *uptataUrl=[NSString stringWithFormat:@"%@api/Game/UpdateBeacon?accessKey=%@",zhundaoApi,accesskey];
-    AFmanager *manager = [AFmanager shareManager];
-    
     if (flag==1) {
         updatadic = @{
                       @"ID" :[NSString stringWithFormat:@"%li",(long)model.ID],
@@ -373,16 +369,15 @@
     }
     
     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    [manager POST:uptataUrl parameters:updatadic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM postDataWithMethod:uptataUrl parameters:updatadic succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:self.view imageName:@"checked"];
         [hud1 hideAnimated:YES afterDelay:1];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeText labelText:@"修改失败" showAnimated:YES UIView:self.view imageName:nil];
         [hud1 hideAnimated:YES afterDelay:1];
-        
     }];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -463,11 +458,11 @@
     NSString *acckey = [[SignManager shareManager]getaccseekey];
     NSString *str = [NSString stringWithFormat:@"%@api/Game/UpdateBeacon?accessKey=%@&deviceId=%@&type=1",zhundaoApi,acckey,stringValue];
     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    [[AFmanager shareManager] GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         [hud hideAnimated:YES];
         [self succseeresponseObject:dic];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         [hud hideAnimated:YES];
         [self showhudWithString:@"解绑失败" WithImageName:nil successBool:0];
     }];

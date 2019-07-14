@@ -10,8 +10,6 @@
 
 @interface AFmanager : AFHTTPSessionManager
 
-@property (nonatomic, assign) AFNetworkReachabilityStatus networkStatus;
-
 +(AFmanager *)shareManager;
 
 

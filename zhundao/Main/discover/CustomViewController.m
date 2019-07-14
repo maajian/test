@@ -133,11 +133,9 @@
 {
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/getActivityOptionList?token=%@",zhundaoApi,token];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-
+    [ZD_NetWorkM getDataWithMethod:urlStr parameters:nil succ:^(NSDictionary *obj) {
         [_allTitleArray removeAllObjects];
-        result = responseObject[@"data"];
+        result = obj[@"data"];
         NSMutableArray *dataarr = [NSMutableArray array];
         
         NSMutableArray *earray = [NSMutableArray array];
@@ -151,7 +149,7 @@
             } else {
                 [showArray addObject:model];
             }
-             NSMutableDictionary *e = [NSMutableDictionary dictionary];
+            NSMutableDictionary *e = [NSMutableDictionary dictionary];
             for (NSString *keystr in dic.allKeys) {
                 if ([[dic objectForKey:keystr] isEqual:[NSNull null]]) {
                     [e setObject:@"" forKey:keystr];
@@ -162,18 +160,17 @@
             }
             [earray addObject:e];
         }
-         [dataarr addObjectsFromArray:showArray];
+        [dataarr addObjectsFromArray:showArray];
         [dataarr addObjectsFromArray:hideArray];
         [_indicator stopAnimating];
         [[NSUserDefaults standardUserDefaults]setObject:[earray copy]forKey:@"Custom"];
-          [[NSUserDefaults standardUserDefaults]synchronize];
+        [[NSUserDefaults standardUserDefaults]synchronize];
         _dataArray = [dataarr copy];
         [_tableview reloadData];
-         [self shownull];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+        [self shownull];
+    } fail:^(NSError *error) {
+        
     }];
- 
     
 }
 -(void)createTableView
@@ -546,13 +543,12 @@
      MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
      hud.label.text = @"请稍等";
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    AFmanager *manager = [AFmanager shareManager];
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     [dic setObject:hidden ? @(1): @(0) forKey:@"hidden"];
     [dic setObject:@(model.ID) forKey:@"id"];
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
     NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-    [manager POST:[NSString stringWithFormat:@"%@api/v2/activity/updateActivityOption?token=%@",zhundaoApi,token] parameters:jsonStr progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM postDataWithMethod:[NSString stringWithFormat:@"%@api/v2/activity/updateActivityOption?token=%@",zhundaoApi,token] parameters:jsonStr succ:^(NSDictionary *obj) {
         if (_searchController.active) {
             NSInteger index = [_titleArray indexOfObject:model];
             model.Hidden = !model.Hidden;
@@ -562,7 +558,7 @@
             [hud hideAnimated:YES];
             [self loadData];
         });
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         [hud hideAnimated:YES];
         if (_searchController.active) {
             NSInteger index = [_titleArray indexOfObject:model];

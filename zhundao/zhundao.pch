@@ -10,7 +10,6 @@
 #define zhundao_pch
 
 #import "ZDHeader.h"
-#import "ZDMacro.h"
 #import "ZDConst.h"
 //------------------------define----------------
 
@@ -44,7 +43,7 @@
 #define KplaceHolderColor  [UIColor colorWithRed:199.0f/256.0f green:199.0f/256.0f blue:205.0f/256.0f alpha:1]
 #define kheaderTitleColor [UIColor colorWithRed:137.0f/256.0f green:137.0f/256.0f blue:137.0f/256.0f alpha:1]
 
-#define zhundaoApi ([[NSUserDefaults standardUserDefaults]objectForKey:@"netLine"]?@"https://open.zhundao.com.cn/":@"https://open.zhundao.net/")
+#define zhundaoApi ([[NSUserDefaults standardUserDefaults]objectForKey:@"ZDUserDefault_Network_Line"]?@"https://open.zhundao.com.cn/":@"https://open.zhundao.net/")
 #define zhundaoH5Api @"https://m.zhundao.net/"
 #define zhundaoMessageApi @"https://sms.zhundao.com.cn/"
 

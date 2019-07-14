@@ -124,10 +124,9 @@
     [indicator startAnimating];
 //    api/Game/GetMybeaconList?accessKey={accessKey}
     NSString *shakeUrl = [NSString stringWithFormat:@"%@api/Game/GetMybeaconList?accessKey=%@",zhundaoApi,accesskey];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:shakeUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:shakeUrl parameters:nil succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array1 = result[@"Data"];
         NSMutableArray *muarray = [NSMutableArray array];
         dataarr = [NSMutableArray array];
@@ -158,9 +157,9 @@
         [indicator stopAnimating];
         _dataArray = [muarray mutableCopy];
         [_tableview reloadData];
-         [self shownull];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+        [self shownull];
+    } fail:^(NSError *error) {
+        
     }];
 }
 

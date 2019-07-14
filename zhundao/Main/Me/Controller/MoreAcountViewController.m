@@ -167,18 +167,17 @@ static NSString *moreAccountCellID = @"moreAccountCellID";
     NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login",zhundaoApi];
     NSDictionary *parameters = @{@"userName" : userdic[@"phone"], @"passWord" : userdic[@"password"]};
     
-    AFmanager *manager = [AFmanager shareManager];
-    [manager POST:phoneurl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM postDataWithMethod:phoneurl parameters:parameters succ:^(NSDictionary *obj) {
         [_hud hideAnimated:YES];
-        if (responseObject[@"token"]) {
-            [[NSUserDefaults standardUserDefaults]setObject:responseObject[@"accessKey"] forKey:AccessKey];
-            [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"token"] forKey:@"token"];
+        if (obj[@"token"]) {
+            [[NSUserDefaults standardUserDefaults]setObject:obj[@"accessKey"] forKey:AccessKey];
+            [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];
             [[NSUserDefaults standardUserDefaults]synchronize];
             [self getGrade];
         } else {
             [self setupAlertController1];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         [_hud hideAnimated:YES];
         [[SignManager shareManager] showNotHaveNet:self.view];
     }];
@@ -188,16 +187,15 @@ static NSString *moreAccountCellID = @"moreAccountCellID";
 {
     
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:userstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *data = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary  *userdic = data[@"data"];
         [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"wechatLogin"];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:WX_UNION_ID];
         [[NSUserDefaults standardUserDefaults]synchronize];
         [[NSNotificationCenter defaultCenter] postNotificationName:ZDNotification_Change_Account object:nil];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         
     }];
 }

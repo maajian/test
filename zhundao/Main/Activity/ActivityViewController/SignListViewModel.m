@@ -89,15 +89,14 @@
                           @"Mobile" : Mobile,
                           @"ID" : @(personID),
                           @"AdminRemark":adMark};
-    AFmanager *manager = [AFmanager shareManager];
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic1 = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *dic1 = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic1[@"Res"] integerValue]==0) {
             markBlock(1);
         }else{
             markBlock(0);
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         markBlock(0);
         NSLog(@"error = %@",error);
     }];

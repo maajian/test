@@ -16,10 +16,9 @@
 //https://open.zhundao.net/api/App/InstallApp?accesskey={accesskey}&id=3&from=ios
 - (void)openMessage:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/App/InstallMessageApp?accesskey=%@&id=3&from=ios",zhundaoApi,[[SignManager shareManager]getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        successBlock(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        successBlock(obj);
+    } fail:^(NSError *error) {
         errorBlock(error);
     }];
 }
@@ -28,11 +27,10 @@
 /*! 获取短信用户信息 这里获取签名*/
 - (void)getAdminInfo:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/adminInfo?accessKey=%@",zhundaoMessageApi,[[SignManager shareManager]getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject );
-        successBlock(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj );
+        successBlock(obj);
+    } fail:^(NSError *error) {
         errorBlock(error);
     }];
 }
@@ -57,15 +55,15 @@
         return;
     }else{
         NSString *str = [NSString stringWithFormat:@"%@api/core/BatchSendSmsByTemplateNew",zhundaoMessageApi];
-        AFmanager *manager = [AFmanager manager];
         NSDictionary *dic = @{@"esid" : @(esid),
                               @"activityId" : @(activityId),
                               @"template" : content,
                               @"phones" : string
                               };
-        [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            successBlock(responseObject);
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
+            successBlock(obj);
+        } fail:^(NSError *error) {
             errorBlock(error);
         }];
     }
@@ -80,21 +78,19 @@
            count :(NSInteger)count
      successBlock:(ZDSuccessBlock)successBlock
             error:(ZDErrorBlock)errorBlock{
-    AFmanager *manager =[AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/TopUpSMS?accessKey=%@&payPwd=%@&chargeCount=%li",zhundaoApi,[[SignManager shareManager]getaccseekey],password,(long)count];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        successBlock(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        successBlock(obj);
+    } fail:^(NSError *error) {
         errorBlock(error);
     }];
 }
 - (void)getContent:(ZDSuccessBlock)successBlock
              error:(ZDErrorBlock)errorBlock{
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/selectContent?accessKey=%@",zhundaoMessageApi,[[SignManager shareManager]getaccseekey]];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        successBlock(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        successBlock(obj);
+    } fail:^(NSError *error) {
         errorBlock(error);
     }];
 }

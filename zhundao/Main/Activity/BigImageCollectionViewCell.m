@@ -8,8 +8,6 @@
 
 #import "BigImageCollectionViewCell.h"
 
-static const CGFloat itemSpace = 10;
-
 @implementation BigImageCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame{

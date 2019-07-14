@@ -97,14 +97,12 @@
     }
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:[sendDic copy] options:0 error:nil];
     NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-    AFmanager *manager= [AFmanager shareManager];
     NSString *accesskey = [[SignManager shareManager]getaccseekey];
     NSString *posturl = [NSString stringWithFormat:@"%@api/PerActivity/UpdateOrAddOption?accessKey=%@",zhundaoApi,accesskey];
     
-    
-    [manager POST:posturl parameters:jsonStr progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"res = %@",responseObject);
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:posturl parameters:jsonStr succ:^(NSDictionary *obj) {
+        NSLog(@"res = %@",obj);
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"] integerValue] == 0) {
             NSInteger customID = [dic[@"Data"] integerValue];
             [sendDic setValue:[NSString stringWithFormat:@"%li",(long)customID] forKey:@"ID"];
@@ -113,7 +111,7 @@
             }
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:responseObject[@"Msg"] message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:obj[@"Msg"] message:nil preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
             [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 UpDataViewController *updata = [[UpDataViewController alloc]init];
@@ -124,8 +122,8 @@
             }]];
             [self presentViewController:alert animated:YES completion:nil];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
 }
 

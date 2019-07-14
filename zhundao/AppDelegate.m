@@ -95,7 +95,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     
     [[AFNetworkReachabilityManager sharedManager]startMonitoring];
     [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        AFmanager.shareManager.networkStatus = status;
+        ZD_NetWorkM.networkStatus = status;
     }];
     return YES;
 }
@@ -248,16 +248,14 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             SendAuthResp *temp = (SendAuthResp *)resp;
             NSLog(@"temp.code = %@",temp.code);
             NSLog(@"state = %@",temp.state);
-            AFmanager *manager = [AFmanager shareManager];
             
             NSString *poststring =[NSString stringWithFormat:@"%@api/v2/weChatLogin?code=%@&type=1",zhundaoApi,temp.code];
-            [manager GET:poststring parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"accessKey"] forKey:AccessKey];
-                [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"token"] forKey:@"token"];
+            [ZD_NetWorkM getDataWithMethod:poststring parameters:nil succ:^(NSDictionary *obj) {
+                [[NSUserDefaults standardUserDefaults] setObject:obj[@"accessKey"] forKey:AccessKey];
+                [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];
                 [[NSUserDefaults standardUserDefaults]synchronize];
                 [self getUserInfo];
-                
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            } fail:^(NSError *error) {
                 NSLog(@"发送失败");
             }];
         }
@@ -269,9 +267,8 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 {
     
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:userstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *data = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary  *userdic = data[@"data"];
         // 手机号码
         NSString *mobile = userdic[@"phone"] ? userdic[@"phone"] : @"";
@@ -290,8 +287,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             self.window.rootViewController = send;
             send.Unionid = [[SignManager shareManager] getaccseekey];
         }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         
     }];
 }
@@ -318,7 +314,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    
+    [ZD_NetWorkM autoChangeLine];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

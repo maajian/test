@@ -14,16 +14,15 @@
 
 - (void)postAuthentication :(NSDictionary *)dic authBlock :(authBlock)authBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/PstAuthentication?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-         NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"result = %@",result);
         if ([result[@"Res"] integerValue]==0) {
             authBlock(1);
         }else{
             authBlock(0);
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         authBlock(0);
     }];
@@ -32,11 +31,10 @@
 //api/PerBase/GetAuthorInfo?accessKey={accessKey} 获取省份认证信息
 - (void)GetAuthorInfo {
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/GetAuthorInfo?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"result = %@",result);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         
     }];
 }

@@ -14,16 +14,15 @@
 //api/Contact/GetSingleContactGroup/{id}?accessKey={accessKey} 获取组里面的信息
 - (void)netWorkWithStr :(NSString *)str
 {
-    AFmanager *mamager = [AFmanager shareManager];
-    [mamager POST:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *dataArray = dicionary[@"Data"];
         if (_block) {
             _block(dataArray);
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
 }
 
@@ -54,37 +53,24 @@
     
     return allArray;
 }
-//- (void)netWorkCreateGroupWithStr :(NSString *)str
-//{
-//    NSString *netstr = [NSString stringWithFormat:@"%@api/Contact/UpdateOrAddContactGroup?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
-//    NSDictionary *dic = @{@"GroupName":str};
-//    AFmanager *manager = [AFmanager shareManager];
-//    [manager POST:netstr parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"responseObject = %@",responseObject);
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        NSLog(@"error = %@",error);
-//    }];
-//}
 - (void)addPersonToGroupWithDic :(NSDictionary *)dic
 {
     NSString *netstr = [NSString stringWithFormat:@"%@api/Contact/UpdateOrAddContact?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager POST:netstr parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:netstr parameters:dic succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:obj];
         
         if ([dicionary[@"Res"] integerValue] ==0) {
             if (_addPersonBlock) {
                 _addPersonBlock(1);
             }
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         if (_addPersonBlock) {
             _addPersonBlock(0);
         }
     }];
-    
 }
 - (void)searchDatabaseFromID:(NSInteger )groupID GroupName :(NSString *)GroupName  ID:(NSInteger )ID
 {

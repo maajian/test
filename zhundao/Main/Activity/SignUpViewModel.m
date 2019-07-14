@@ -25,21 +25,20 @@
                     endDate:(NSString *)endDate
                successBlock:(kZDCommonSucc)successBlock
                   failBlock:(kZDCommonFail)failBlock{
-    AFmanager *manager = [AFmanager shareManager];
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-    [manager GET:[NSString stringWithFormat:@"%@api/v2/dataCube/getActivityListDate?token=%@&activityId=%li&beginDate=%@&endDate=%@",zhundaoApi,token,(long)activityId,beginDate,endDate] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/dataCube/getActivityListDate?token=%@&activityId=%li&beginDate=%@&endDate=%@",zhundaoApi,token,(long)activityId,beginDate,endDate];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         [_dataArray removeAllObjects];
         [_xLabelArray removeAllObjects];
         
-        for (NSDictionary *dic in responseObject[@"data"]) {
+        for (NSDictionary *dic in obj[@"data"]) {
             SignUpModel *model = [[SignUpModel alloc] initWithDic:dic];
             [_dataArray addObject:[NSString stringWithFormat:@"%li",(long)model.count]];
             [_xLabelArray addObject:model.date];
         }
         
         successBlock();
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
         failBlock(error.description);
     }];
 }
@@ -51,21 +50,20 @@
                successBlock:(kZDCommonSucc)successBlock
                   failBlock:(kZDCommonFail)failBlock {
     
-    AFmanager *manager = [AFmanager shareManager];
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-    [manager GET:[NSString stringWithFormat:@"%@api/v2/dataCube/getActivityReadDate?token=%@&activityId=%li&beginDate=%@&endDate=%@",zhundaoApi,token,(long)activityId,beginDate,endDate] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/dataCube/getActivityReadDate?token=%@&activityId=%li&beginDate=%@&endDate=%@",zhundaoApi,token,(long)activityId,beginDate,endDate];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         [_dataArray removeAllObjects];
         [_xLabelArray removeAllObjects];
         
-        for (NSDictionary *dic in responseObject[@"data"]) {
+        for (NSDictionary *dic in obj[@"data"]) {
             SignUpModel *model = [[SignUpModel alloc] initWithDic:dic];
             [_dataArray addObject:[NSString stringWithFormat:@"%li",model.count]];
             [_xLabelArray addObject:model.date];
         }
         
         successBlock();
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
         failBlock(error.description);
     }];
 }
@@ -74,23 +72,21 @@
 - (void)getFeePeopleNoDate:(NSInteger)activityId
               successBlock:(kZDCommonSucc)successBlock
                  failBlock:(kZDCommonFail)failBlock {
-    AFmanager *manager = [AFmanager shareManager];
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-    [manager GET:[NSString stringWithFormat:@"%@api/v2/dataCube/getFeePeopleNoDate?token=%@&activityId=%li",zhundaoApi,token,(long)activityId] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject[@"errcode"] integerValue] == 0) {
-            if ( [responseObject[@"data"][@"total"] integerValue] - [responseObject[@"data"][@"unpaid"] integerValue] == 0) {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/dataCube/getFeePeopleNoDate?token=%@&activityId=%li",zhundaoApi,token,(long)activityId];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"errcode"] integerValue] == 0) {
+            if ( [obj[@"data"][@"total"] integerValue] - [obj[@"data"][@"unpaid"] integerValue] == 0) {
                 failBlock(@"该活动暂无收入");
             } else {
-                [_personCountArray addObject:@[@"付款人数", responseObject[@"data"][@"paid"]]];
-                [_personCountArray addObject:@[@"未付款人数", responseObject[@"data"][@"unpaid"]]];
+                [_personCountArray addObject:@[@"付款人数", obj[@"data"][@"paid"]]];
+                [_personCountArray addObject:@[@"未付款人数", obj[@"data"][@"unpaid"]]];
                 successBlock();
             }
         } else {
-             failBlock(@"该活动暂无收入");
+            failBlock(@"该活动暂无收入");
         }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
         failBlock(error.description);
     }];
 }
@@ -99,20 +95,18 @@
 - (void)getEachFeeDate:(NSInteger)activityId
               successBlock:(kZDCommonSucc)successBlock
                  failBlock:(kZDCommonFail)failBlock {
-    AFmanager *manager = [AFmanager shareManager];
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-    [manager GET:[NSString stringWithFormat:@"%@api/v2/dataCube/getEachFeeDate?token=%@&activityId=%li",zhundaoApi,token,activityId] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        if ([responseObject[@"errcode"] integerValue] == 0) {
-            for (NSDictionary *dic in responseObject[@"data"]) {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/dataCube/getEachFeeDate?token=%@&activityId=%li",zhundaoApi,token,activityId];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"errcode"] integerValue] == 0) {
+            for (NSDictionary *dic in obj[@"data"]) {
                 SignUpModel *model = [[SignUpModel alloc] initWithDic:dic];
                 [_dataArray addObject:model];
             }
         }
         
         successBlock();
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
         failBlock(error.description);
     }];
 }

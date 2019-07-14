@@ -28,11 +28,10 @@
     NSMutableArray *timeArray = [NSMutableArray array];
     NSMutableArray *hadArray = [NSMutableArray array];
     NSMutableArray *notArray = [NSMutableArray array];
-    AFmanager *manager = [AFmanager shareManager];
     __weak typeof(self) weakSelf = self;
-    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array = dic[@"Data"];
         for (NSDictionary *datadic  in array) {
             ConsultModel *model = [ConsultModel yy_modelWithJSON:datadic];
@@ -42,8 +41,8 @@
             [timeArray addObject:[weakSelf getTime:model.AddTime]];
         }
         getAllBlock(muarray,timeArray,notArray,hadArray);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error );
+    } fail:^(NSError *error) {
+        
     }];
 }
 

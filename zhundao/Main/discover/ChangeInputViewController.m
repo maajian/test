@@ -76,19 +76,17 @@
     }
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:[sendDic copy] options:0 error:nil];
     NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-    AFmanager *manager= [AFmanager shareManager];
     NSString *accesskey = [[SignManager shareManager]getaccseekey];
     NSString *posturl = [NSString stringWithFormat:@"%@api/PerActivity/UpdateOrAddOption?accessKey=%@",zhundaoApi,accesskey];
     
-    
-    [manager POST:posturl parameters:jsonStr progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"res = %@",responseObject);
+    [ZD_NetWorkM postDataWithMethod:posturl parameters:jsonStr succ:^(NSDictionary *obj) {
+        NSLog(@"res = %@",obj);
         if (self.block) {
             self.block([sendDic copy]);
         }
         [self dismissViewControllerAnimated:YES completion:nil];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
 }
 - (void)begin

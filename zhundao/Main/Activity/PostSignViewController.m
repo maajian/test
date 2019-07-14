@@ -182,16 +182,16 @@
         NSString *urlStr = [self urlStr];
         NSDictionary *dic = [self getPostDic];
         if ([_dataArray1.firstObject isEqualToString:@""]) {
-            [[AFmanager shareManager]POST:urlStr parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [ZD_NetWorkM postDataWithMethod:urlStr parameters:dic succ:^(NSDictionary *obj) {
                 [indicator stopAnimating];
-                if ([responseObject[@"Res"] integerValue] == 0) {
+                if ([obj[@"Res"] integerValue] == 0) {
                     [self showhud];
                 } else {
-                    [self showMask:responseObject[@"Msg"]];
+                    [self showMask:obj[@"Msg"]];
                 }
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"updateSign" object:nil];
                 [self back];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            } fail:^(NSError *error) {
                 NSLog(@"error = %@",error);
                 [indicator stopAnimating];
                 [self showMask:@"服务器开小差啦"];
@@ -199,16 +199,16 @@
         }
         else
         {
-            [[AFmanager shareManager]GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [ZD_NetWorkM getDataWithMethod:urlStr parameters:nil succ:^(NSDictionary *obj) {
                 [indicator stopAnimating];
-                if ([responseObject[@"Res"] integerValue] == 0) {
+                if ([obj[@"Res"] integerValue] == 0) {
                     [self showhud];
                 } else {
-                    [self showMask:responseObject[@"Msg"]];
+                    [self showMask:obj[@"Msg"]];
                 }
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"updateSign" object:nil];
                 [self back];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            } fail:^(NSError *error) {
                 NSLog(@"error = %@",error);
                 [indicator stopAnimating];
                 [self showMask:@"服务器开小差啦"];

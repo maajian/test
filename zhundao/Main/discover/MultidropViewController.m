@@ -173,12 +173,12 @@ static NSString *muliData =@"muliData";
         MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
         NSString *str = [NSString stringWithFormat:@"%@api/PerBase/VerifyCheckInAdmin?checkInId=%@&phone=%@&pwd=%@",zhundaoApi,_IDTextField.text,_phonoTextField.text,_passwordTextField.text];
         str = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        [[AFmanager shareManager]GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+        [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+            NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
             [hud hideAnimated:YES];
             acckey = dic[@"AccessToken"];
             [self JudgeWithDic:dic];
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        } fail:^(NSError *error) {
             NSLog(@"error = %@",error);
             [hud hideAnimated:YES];
             [self showResultWithTitle:@"请确认签到ID"];

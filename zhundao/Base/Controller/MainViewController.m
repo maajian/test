@@ -174,14 +174,13 @@
 
 - (void)checklogin {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:userstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        if (![responseObject[@"data"][@"email"] isEqual:[NSNull null]]) {
-            [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"data"][@"email"] forKey:@"email"];
+    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        if (![obj[@"data"][@"email"] isEqual:[NSNull null]]) {
+            [[NSUserDefaults standardUserDefaults] setObject:obj[@"data"][@"email"] forKey:@"email"];
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         NSLog(@"code = %li",(long)error.code);
         if (error.code == -1011) {
             maskLabel *label = [[maskLabel alloc] initWithTitle:@"登录超时，请重新登录"];

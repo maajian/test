@@ -186,16 +186,14 @@
         indicator.center = self.view.center;
         [self.view addSubview:indicator];
         [indicator startAnimating];
-    NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/PostCheckInList?accessKey=%@",zhundaoApi,accesskey];
-    AFmanager *manager = [AFmanager shareManager];
+    NSString *listurl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckInPeopleList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     NSDictionary *dic = @{@"Type":@"0",
-                          @"ID":[NSString stringWithFormat:@"%li",(long)_signID],
+                          @"CheckInId":[NSString stringWithFormat:@"%li",(long)_signID],
                           @"pageSize":@"200000",
-                          @"curPage":@"1"};
-    [manager POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
-        NSArray *array1 = result[@"Data"];
+                          @"pageIndex":@"1"};
+    [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
+        NSArray *array1 = result[@"data"];
         if (result[@"Url"]) {
             [self showNoDataArray];
         }
@@ -210,8 +208,8 @@
             SignManager *manager = [SignManager shareManager];
             if ([manager.dataBase open]) {
                 
-//                            NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
-//                            BOOL res = [manager.dataBase executeUpdate:updateSql];
+                //                            NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
+                //                            BOOL res = [manager.dataBase executeUpdate:updateSql];
                 
                 [self transactionwitharray:array1 withmarr:muarray withmarr:muarray1 withmarr:muarray2];
                 [manager.dataBase close];
@@ -223,20 +221,17 @@
             _dataArray = [muarray copy];
             _dataArray1 = [muarray1 copy];
             _dataArray2 = [muarray2 copy];
-
+            
         }
         
-            [_tableview.mj_header endRefreshing];
-            [indicator stopAnimating];
+        [_tableview.mj_header endRefreshing];
+        [indicator stopAnimating];
         [indicator stopAnimating];
         [self createSearchCtr];
         [_tableview reloadData];
+    } fail:^(NSError *error) {
         
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
     }];
-    
 }
 
 -(void)transactionwitharray:(NSArray*)array1 withmarr:(NSMutableArray *)muarray withmarr:(NSMutableArray *)muarray1 withmarr:(NSMutableArray *)muarray2{
@@ -321,14 +316,14 @@
 }
 - (void)getuser
 {    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    [[AFmanager shareManager] GET:userstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
-      NSDictionary  *userDict = dic [@"data"];
+    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
+        NSDictionary  *userDict = dic [@"data"];
         NSString *GradeId = [NSString stringWithFormat:@"%@",userDict[@"gradeId"]];
-         [[  NSUserDefaults standardUserDefaults  ]setObject:GradeId forKey:@"GradeId"];
+        [[  NSUserDefaults standardUserDefaults  ]setObject:GradeId forKey:@"GradeId"];
         [[NSUserDefaults standardUserDefaults]synchronize];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
 }
 - (void)createSignList

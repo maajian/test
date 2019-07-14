@@ -234,17 +234,17 @@ static NSString *reUseID = @"moreSignReuseID";
 }
 - (void)postdataWithListurl:(NSString *)listurl WithDic :(NSDictionary *)dic indicator :(BOOL )isShow
 {
-    [[AFmanager shareManager]POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject[@"Res"] integerValue] == 0) {
-            NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
+        if ([obj[@"Res"] integerValue] == 0) {
+            NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
             [self savaDataWithResult:result indicator:isShow];   //保存数据进数据库
             [self dataBaseSeacrhData];          //从数据库中搜索数据
             [_tableview reloadData];
         } else {
-            maskLabel *label = [[maskLabel alloc] initWithTitle:responseObject[@"Msg"]];
+            maskLabel *label = [[maskLabel alloc] initWithTitle:obj[@"Msg"]];
             [label labelAnimationWithViewlong:self.view];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         if (isShow) {
             [indicator stopAnimating];
         }

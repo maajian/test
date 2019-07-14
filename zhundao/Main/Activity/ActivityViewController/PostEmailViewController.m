@@ -76,12 +76,8 @@
         str = [NSString stringWithFormat:@"%@api/PerActivity/SendActivityListByEmail?accessKey=%@&email=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],_textField.text,(long)self.activityID];
     }
     MBProgressHUD *hud1 = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
-    manager.requestSerializer.timeoutInterval = 30.f;
-    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         [hud1 hideAnimated:YES];
         if ([dic[@"Res"] integerValue]==0) {
             
@@ -94,7 +90,7 @@
             maskLabel *label = [[maskLabel alloc]initWithTitle:dic[@"Msg"]];
             [label labelAnimationWithViewlong:self.view];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         [hud1 hideAnimated:YES];
         [[SignManager shareManager] showNotHaveNet:self.view];

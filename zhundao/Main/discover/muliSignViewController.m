@@ -120,16 +120,15 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
       [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET post = '0'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
       [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET addTime = '%@'  where VCode = '%@' AND signID = %li",timeStr,stringValue,(long)self.signID]];
 }
-- (void)netWorkWithstringValue:(NSString *)stringValue
-{
-    
+- (void)netWorkWithstringValue:(NSString *)stringValue {
   NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByQrcode?accessKey=%@&vCode=%@&checkInId=%li&checkInWay=6",zhundaoApi,_acckey,stringValue,(long)self.signID];
-    [[AFmanager shareManager] GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         [self succseeresponseObject:dic WithStr:stringValue];
         [self backAction];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-}];
+    } fail:^(NSError *error) {
+        
+    }];
 }
 - (void)haveNetUpdataWithStr :(NSString *)stringValue  //更新数据库元素
 {

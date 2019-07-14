@@ -27,6 +27,7 @@
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkChange:) name:ZDNotification_Network_Change object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,14 +91,15 @@
         [MobClick endLogPageView:self.title];
     }
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark --- notification
+- (void)networkChange:(NSNotification *)nofi {
+   TYAlertController *alert = [TYAlertController showChangeNetworkWithoOtherAction:^{
+       [[NSUserDefaults standardUserDefaults] setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
+       [[NSUserDefaults standardUserDefaults] setObject:[NSDate getCurrentDayStr] forKey:ZDUserDefault_First_Network];
+       [[NSUserDefaults standardUserDefaults] synchronize];
+    }];
+    [self presentViewController:alert animated:YES completion:nil];
 }
-*/
 
 @end

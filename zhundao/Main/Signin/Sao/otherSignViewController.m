@@ -268,9 +268,9 @@
 -(void)haveNet
 {
     NSString *urlstr = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByPhone?accessKey=%@&phone=%@&checkInId=%li&checkInWay=11",zhundaoApi,[[SignManager shareManager] getaccseekey],textFieldStr,(long)self.signid];
-    [[AFmanager shareManager]GET:urlstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
-        NSLog(@"responseObject = %@",responseObject);
+    [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
+        NSLog(@"responseObject = %@",obj);
         NSString *Url = dic[@"Url"];
         NSString *Res = dic[@"Res"];
         NSMutableDictionary *Data = nil;
@@ -307,9 +307,9 @@
                 [self backroot];
             } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"继续签到"  WithActionTwo:nil WithCTR:self];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         if (hud) {
-                [hud hideAnimated: YES];
+            [hud hideAnimated: YES];
         }
         NSLog(@"error = %@",error);
     }];

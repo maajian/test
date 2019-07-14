@@ -15,16 +15,15 @@
 
 -  (void)getImage:(ZDSuccessBlock)successBlock error :(ZDErrorBlock)errorBlock {
     NSString *str = @"https://www.zhundao.net/images.txt";
-    AFmanager *manager = [AFmanager shareManager];
     NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:0
                                                             diskCapacity:0
                                                                 diskPath:nil];
     [NSURLCache setSharedURLCache:sharedCache];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        successBlock(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        errorBlock(error);
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        successBlock(obj);
+    } fail:^(NSError *error) {
+        
     }];
 }
 

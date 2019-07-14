@@ -12,9 +12,8 @@
 
 - (void)getInfo :(moneyBlock)moneyBlock {
     NSString *url = [NSString stringWithFormat:@"%@api/PerBase/GetWithdrawStatus?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic1 = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic1 = [NSDictionary dictionaryWithDictionary:obj];
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         [dic setValue:dic1[@"Balance"] forKey:@"Balance"];  //全部金额
         [dic setValue:dic1[@"Status"] forKey:@"status"];   //是否在提现中
@@ -39,10 +38,9 @@
             }
         }
         moneyBlock(dic);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
-    
 }
 
 - (void)saveWithdraw :(NSDictionary *)dic{

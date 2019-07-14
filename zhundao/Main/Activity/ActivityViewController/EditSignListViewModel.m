@@ -78,18 +78,17 @@
 
 #pragma 网络
 - (void)postDataWithDic :(NSDictionary *)dic {
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/UpdateActivityList?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"] integerValue]==0) {
-             _postBlock(1);
+            _postBlock(1);
         }
-         else
-         {
-             _postBlock(0);
-         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        else
+        {
+            _postBlock(0);
+        }
+    } fail:^(NSError *error) {
         _postBlock(0);
     }];
 }

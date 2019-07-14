@@ -13,15 +13,13 @@
 - (void)netWorkWithStr:(NSString *)str  //返回字典保存 首字母和data
 {
    
-    AFmanager *manager = [AFmanager shareManager];
     NSDictionary *dic = @{
                           @"contactGroupID":@"-1",
                           @"curPage":@"1",
                           @"pageSize":@"10000"
                           };
-    
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dictionary = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *dictionary = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array =dictionary[@"Data"];
         NSMutableArray *dataarray = [array mutableCopy];
         @autoreleasepool {
@@ -31,21 +29,19 @@
                 }
             }
         }
-               if (_block) {
+        if (_block) {
             _block(dataarray);
         }
+    } fail:^(NSError *error) {
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
     }];
 }
 - (void)netWorkGroupSave
 {
     NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContactGroup?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
-    AFmanager *mamager = [AFmanager shareManager];
-    [mamager POST:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *dataArray = dicionary[@"Data"];
         NSMutableArray *array1 = [NSMutableArray array];
         NSMutableArray *array2 = [NSMutableArray array];
@@ -56,8 +52,8 @@
         [[NSUserDefaults standardUserDefaults]setObject:array1 forKey:@"GroupName"];
         [[NSUserDefaults standardUserDefaults]setObject:array2 forKey:@"GroupID"];
         [[NSUserDefaults standardUserDefaults]synchronize];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
 }
 -(NSDictionary *)getdicWithArray:(NSArray *)dataarray isHaveNet :(BOOL) isHave
@@ -195,12 +191,11 @@
 //GET api/Contact/DeleteContact/{id}?accessKey={accessKey}
 - (void)deleteDataHaveNetWithStr:(NSString *)str
 {
-    AFmanager *mamager = [AFmanager shareManager];
-    [mamager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dictionary = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dictionary = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *dataarray =dictionary[@"Data"];
         NSLog(@"%@",dataarray);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
     }];
     

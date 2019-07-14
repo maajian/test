@@ -108,33 +108,32 @@
 
 - (void)sendVerify
 {
-    AFmanager *manager = [AFmanager shareManager];
     NSString *urlstr = [NSString stringWithFormat:@"%@api/PerBase/SendVcode?phone=%@",zhundaoApi,self.phoneStr];
-    [manager GET:urlstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
         [self beginTime];
-        NSLog(@"res = %@",responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"res = %@",obj);
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
     }];
 }
 
 - (void)verifyMessage{
     NSString *urlstr = [NSString stringWithFormat:@"%@api/PerBase/VerifyPhoneAndCode?phone=%@&Vcode=%@",zhundaoApi,self.phoneStr,_textf.text];
-    [[AFmanager shareManager]GET:urlstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"msg = %@",dic[@"Msg"]);
         if ([dic[@"Res"]integerValue] ==0) {
             PasswordViewController *pass = [[PasswordViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
-             pass.state = New;
+            pass.state = New;
             [self.navigationController pushViewController:pass animated:YES];
         }
         else{
             maskLabel *label = [[maskLabel alloc]initWithTitle:@"验证码错误"];
             [label labelAnimationWithViewlong:self.view];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+    } fail:^(NSError *error) {
+        
     }];
 }
 

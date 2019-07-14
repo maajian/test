@@ -18,33 +18,29 @@
  @param failBlock <#failBlock description#>
  */
 - (void)sendCode:(NSString *)phoneStr successBlock:(kZDCommonSucc)successBlock failBlock:(kZDCommonFail)failBlock {
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/v2/senCode?phoneOrEmail=%@",zhundaoApi,phoneStr];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        _sendCodeJson = [responseObject copy];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        _sendCodeJson = [obj copy];
         successBlock();
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         failBlock(error.description);
     }];
 }
 
  // 验证码登录 
 - (void)loginWirhCode:(NSString *)code phoneStr:(NSString *)phoneStr successBlock:(kZDCommonSucc)successBlock failBlock:(kZDCommonFail)failBlock  {
-    AFmanager *manager = [AFmanager shareManager];
     NSString *str = [NSString stringWithFormat:@"%@api/v2/login",zhundaoApi];
     NSDictionary *dic = @{@"userName":phoneStr,
                           @"code":code};
-    [manager POST:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (responseObject[@"token"]) {
-            [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"token"] forKey:@"token"];
-            [[NSUserDefaults standardUserDefaults]setObject:responseObject[@"accessKey"] forKey:AccessKey];
+    [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
+        if (obj[@"token"]) {
+            [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];
+            [[NSUserDefaults standardUserDefaults]setObject:obj[@"accessKey"] forKey:AccessKey];
             [[NSUserDefaults standardUserDefaults]synchronize];
             successBlock();
-        } else {
-            failBlock(responseObject[@"errmsg"]);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        } 
+    } fail:^(NSError *error) {
         failBlock(error.description);
     }];
 }

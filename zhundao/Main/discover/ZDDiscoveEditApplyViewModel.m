@@ -78,11 +78,10 @@
                           };
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
     NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-    AFmanager *manager= [AFmanager shareManager];
-    [manager POST:url parameters:jsonStr progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"res = %@",responseObject);
+    [ZD_NetWorkM postDataWithMethod:url parameters:jsonStr succ:^(NSDictionary *obj) {
+        NSLog(@"res = %@",obj);
         success();
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         failure(error.description);
     }];
 }
@@ -107,11 +106,10 @@
                           };
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
     NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-    AFmanager *manager= [AFmanager shareManager];
-    [manager POST:url parameters:jsonStr progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"res = %@",responseObject);
-        success(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [ZD_NetWorkM postDataWithMethod:url parameters:jsonStr succ:^(NSDictionary *obj) {
+        NSLog(@"res = %@",obj);
+        success(obj);
+    } fail:^(NSError *error) {
         failure(error.description);
     }];
 }

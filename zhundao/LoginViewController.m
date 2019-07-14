@@ -70,22 +70,20 @@
     NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login",@"https://open.zhundao.net/"];
     NSDictionary *parameters = @{@"userName" : _phoneTextLabel.text, @"passWord" : _lockTextLabel.text};
     
-    AFmanager *manager = [AFmanager shareManager];
-    
-    [manager POST:phoneurl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (responseObject[@"token"]) {
-            [[NSUserDefaults standardUserDefaults]setObject:responseObject[@"accessKey"] forKey:AccessKey];
-            [[NSUserDefaults standardUserDefaults] setObject:responseObject[@"token"] forKey:@"token"];
+    [ZD_NetWorkM postDataWithMethod:phoneurl parameters:parameters succ:^(NSDictionary *obj) {
+        if (obj[@"token"]) {
+            [[NSUserDefaults standardUserDefaults]setObject:obj[@"accessKey"] forKey:AccessKey];
+            [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];
             [[NSUserDefaults standardUserDefaults]synchronize];
             [self getGrade];
         } else {
             [_hud hideAnimated:YES];
             [self setupAlertController1];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:@"netLine"];
+            [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
             [[NSUserDefaults standardUserDefaults]synchronize];
             [self login];
         });
@@ -96,11 +94,10 @@
 - (void)getGrade
 {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:userstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         [_hud hideAnimated:YES];
-        NSDictionary *data = [NSDictionary dictionaryWithDictionary:responseObject];
-      NSDictionary  *userdic = data[@"data"];
+        NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
+        NSDictionary  *userdic = data[@"data"];
         [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
         NSDictionary *dic = @{@"name":userdic[@"nickName"],
                               @"phone":_phoneTextLabel.text,
@@ -129,7 +126,7 @@
         MainViewController *tabbar = [[MainViewController alloc]init];
         AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
         appDelegate.window.rootViewController= tabbar;
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         [_hud hideAnimated:YES];
     }];
 }

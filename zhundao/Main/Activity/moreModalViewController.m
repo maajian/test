@@ -238,9 +238,8 @@ static NSString *headerID = @"moreModalHeaderView";
     [[SignManager shareManager]showAlertWithTitle:@"确定删除活动?" WithMessage:@"删除后将不能恢复" WithTitleOne:@"删除" WithActionOne:^(TYAlertAction *action1) {
         MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
         NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/deleteActivity?token=%@&activityId =%li",zhundaoApi,[SignManager shareManager].getToken,(long)_moreModel.ID];
-        AFmanager *manager = [AFmanager shareManager];
-        [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+        [ZD_NetWorkM getDataWithMethod:urlStr parameters:nil succ:^(NSDictionary *obj) {
+            NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
             NSLog(@"%@",dic);
             [hud hideAnimated:YES];
             if ([dic[@"Res"] integerValue]==0) {
@@ -254,7 +253,7 @@ static NSString *headerID = @"moreModalHeaderView";
                 maskLabel *label = [[maskLabel alloc]initWithTitle:dic[@"Msg"]];
                 [label labelAnimationWithViewlong:self.view];
             }
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        } fail:^(NSError *error) {
             NSLog(@"error = %@",error);
             [hud hideAnimated:YES];
         }];
@@ -312,7 +311,7 @@ static NSString *headerID = @"moreModalHeaderView";
         [self.view addSubview:hud];
         hud.animationType = MBProgressHUDAnimationFade;
         [hud showAnimated: YES];
-        [[AFmanager shareManager]GET:urlstr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
             NSLog(@"设置成功");
             [hud hideAnimated:YES];
             MBProgressHUD *hud1 = [[MBProgressHUD alloc]init];
@@ -325,7 +324,7 @@ static NSString *headerID = @"moreModalHeaderView";
             Time *TimeStop = [Time bringWithTime:Datastr];
             _endTimeStr = [NSString stringWithFormat:@"报名截止 : %@", TimeStop.timeStr];
             [_collectionView reloadData];
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        } fail:^(NSError *error) {
             [hud hideAnimated:YES];
             NSLog(@"error = %@",error);
         }];
@@ -350,15 +349,14 @@ static NSString *headerID = @"moreModalHeaderView";
 #pragma mark --- network
 - (void)netWorkConsult{
     NSString *url = [NSString stringWithFormat:@"%@api/PerBase/PstConsultList?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
     NSDictionary *dic = @{@"Status":@"2",
                           @"ID":@(_moreModel.ID),
                           @"title":@"",
                           @"pageSize":@"10000",
                           @"curPage":@"1"};
-    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array = dic[@"Data"];
         if (array.count>0) {
             [_dataArray enumerateObjectsUsingBlock:^(moreModalModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -369,8 +367,8 @@ static NSString *headerID = @"moreModalHeaderView";
             }];
             [_collectionView reloadData];
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error );
+    } fail:^(NSError *error) {
+        
     }];
 }
 
@@ -378,9 +376,8 @@ static NSString *headerID = @"moreModalHeaderView";
 - (void)copyActivity {
      MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"加载中...";
-    AFmanager *manager = [AFmanager shareManager];
     NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/copyActivity?token=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getToken],self.moreModel.ID];
-    [manager POST:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM postDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"复制成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
@@ -388,7 +385,7 @@ static NSString *headerID = @"moreModalHeaderView";
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.navigationController popViewControllerAnimated:YES];
         });
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         [hud hideAnimated:YES];
         maskLabel *label = [[maskLabel alloc]initWithTitle:@"复制活动失败"];
         [label labelAnimationWithViewlong:self.view];

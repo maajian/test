@@ -213,5 +213,9 @@
     NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     return array;
 }
+- (void)showNotHaveNet:(UIView *)View {
+    maskLabel *label = [[maskLabel alloc] initWithTitle:@"请检查网络设置"];
+    [label labelAnimationWithViewlong:View];
+}
 
 @end

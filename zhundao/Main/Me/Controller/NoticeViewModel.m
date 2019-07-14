@@ -13,24 +13,23 @@
  // 获取通知列表
 - (void)netWorkWithPage:(NSInteger)page Block :(allBlock)allBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/ZDInfo/GetNoticeList",zhundaoApi];
-    AFmanager *manager = [AFmanager shareManager];
     NSDictionary *postDic = @{@"pageSize" : @"10",
                           @"curPage"  : [NSString stringWithFormat:@"%li",page]};
-    [manager POST:str parameters:postDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:str parameters:postDic succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         allBlock(dic[@"Data"]);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
+        
     }];
 }
 
  // 获取通知详情
 - (void)getNoticeDetail:(NSInteger)ID successBlock:(kZDCommonSucc)successBlock failBlock:(kZDCommonFail)failBlock {
     NSString *str = [NSString stringWithFormat:@"%@api/ZDInfo/GetNoticeDetail?id=%li",zhundaoApi,ID];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        _noticeModel = [NoticeModel yy_modelWithJSON:responseObject[@"Data"]];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        _noticeModel = [NoticeModel yy_modelWithJSON:obj[@"Data"]];
         successBlock();
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         failBlock(error.description);
     }];
 }

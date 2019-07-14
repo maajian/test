@@ -60,12 +60,10 @@
     NSLog(@"jsonStr = %@",jsonStr);
     NSString *postStr =[NSString stringWithFormat:@"%@api/CheckIn/BatchCheckIn?accessKey=%@&checkInWay=6",zhundaoApi,acckey];
     postStr = [postStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    AFmanager *afmanager = [AFmanager shareManager];
-    [afmanager POST:postStr parameters:@{@"checkJson": jsonStr} progress:^(NSProgress * _Nonnull uploadProgress) {
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
+    [ZD_NetWorkM postDataWithMethod:postStr parameters:@{@"checkJson": jsonStr} succ:^(NSDictionary *obj) {
+        NSLog(@"responseObject = %@",obj);
         if (isShow) [indicator stopAnimating];
-        NSDictionary *msg = [NSDictionary dictionaryWithDictionary:responseObject];
+        NSDictionary *msg = [NSDictionary dictionaryWithDictionary:obj];
         if ([msg[@"Msg"]integerValue] ==0) {
             SignManager *manager = [SignManager shareManager];
             [manager createDatabase];
@@ -77,11 +75,10 @@
                 _updataBlock(1);
             }
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         if (isShow) [indicator stopAnimating];
         [[SignManager shareManager] showNotHaveNet:view];
     }];
-
 }
 @end

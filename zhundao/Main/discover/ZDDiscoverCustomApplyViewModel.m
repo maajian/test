@@ -24,11 +24,10 @@
     NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/getActivityOptionList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     NSMutableArray *hiddenArray = [NSMutableArray array];
     NSMutableArray *showArray = [NSMutableArray array];
-    AFmanager *manager = [AFmanager shareManager];
     __weak typeof(self) weakSelf = self;
-    [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM getDataWithMethod:urlStr parameters:nil succ:^(NSDictionary *obj) {
         [weakSelf.allTitleArray removeAllObjects];
-        for (NSDictionary *dic in responseObject[@"data"]) {
+        for (NSDictionary *dic in obj[@"data"]) {
             ZDDiscoverCustomApplyModel *model = [[ZDDiscoverCustomApplyModel alloc] initWithDic:dic];;
             if (model.hidden) {
                 [hiddenArray addObject:model];
@@ -41,9 +40,9 @@
         for (ZDDiscoverCustomApplyModel *applyModel in _dataArray) {
             [weakSelf.allTitleArray addObject:applyModel.title];
         }
-        [ZDCache.sharedCache setCache:responseObject forKey:@"customApply"];
+        [ZDCache.sharedCache setCache:obj forKey:@"customApply"];
         success();
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         if ([ZDCache.sharedCache cacheForKey:@"customApply"]) {
             id json = [ZDCache.sharedCache cacheForKey:@"customApply"];
             for (NSDictionary *dic in json[@"data"]) {
@@ -68,10 +67,9 @@
                           @"id" : @(ID)};
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
     NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-    AFmanager *manager = [AFmanager shareManager];
-    [manager POST:str parameters:jsonStr progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [ZD_NetWorkM postDataWithMethod:str parameters:jsonStr succ:^(NSDictionary *obj) {
         success();
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         fail(error.description);
     }];
 }

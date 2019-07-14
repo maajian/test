@@ -302,15 +302,13 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
             NSLog(@"使用wifi");
             NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByQrcode?accessKey=%@&vCode=%@&checkInId=%li&checkInWay=6",zhundaoApi,acckey,stringValue,(long)self.signID];
 
-            AFmanager *manager = [AFmanager shareManager];
-            [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                NSLog(@"respondse = %@",responseObject);
-                NSDictionary *dic= [NSDictionary dictionaryWithDictionary:responseObject];
+            [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+                NSLog(@"respondse = %@",obj);
+                NSDictionary *dic= [NSDictionary dictionaryWithDictionary:obj];
                 
                 [self getDataWithData:dic WithStringValue:stringValue];
+            } fail:^(NSError *error) {
                 
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                NSLog(@"error = %@",error);
             }];
         }
             
@@ -320,13 +318,12 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
             NSLog(@"使用流量");
             NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByQrcode?accessKey=%@&vCode=%@&checkInId=%li&checkInWay=6",zhundaoApi,acckey,stringValue,(long)self.signID];
             
-            AFmanager *manager = [AFmanager shareManager];
-            [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                NSLog(@"respondse = %@",responseObject);
-                NSDictionary *dic= [NSDictionary dictionaryWithDictionary:responseObject];
+            [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+                NSLog(@"respondse = %@",obj);
+                NSDictionary *dic= [NSDictionary dictionaryWithDictionary:obj];
                 [self getDataWithData:dic WithStringValue:stringValue];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                NSLog(@"error = %@",error);
+            } fail:^(NSError *error) {
+                
             }];
         }
             break;

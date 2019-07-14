@@ -175,17 +175,12 @@
     xiala++;
     NSString *xialaStr = [NSString stringWithFormat:@"%li",(long)xiala];
     NSString *listurl =self.signUrlStr;
-    AFmanager *manager = [AFmanager shareManager];
-    manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    
     NSDictionary *dic = @{@"Type":@"0",
                           @"pageSize":@"10",
                           @"curPage":xialaStr,
                            @"ID":@(self.acID)};
-    [manager POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array1 = result[@"Data"];
         _dataarr = [[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"oneActivity%li",(long)self.acID]] mutableCopy];
         if (!_modelArray) {
@@ -193,30 +188,30 @@
         }
         for (NSDictionary *acdic in array1) {
             signinModel *model = [signinModel yy_modelWithJSON:acdic];
-        
-                [_modelArray addObject:model];
-                NSMutableDictionary *e = [NSMutableDictionary dictionary];
-                for (NSString *keystr in acdic.allKeys) {
-                    
-                    if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-                        //
-                        [e setObject:@"" forKey:keystr];
-                    }
-                    else
-                    {
-                        [e setObject:[acdic objectForKey:keystr] forKey:keystr];
-                    }
+            
+            [_modelArray addObject:model];
+            NSMutableDictionary *e = [NSMutableDictionary dictionary];
+            for (NSString *keystr in acdic.allKeys) {
+                
+                if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
+                    //
+                    [e setObject:@"" forKey:keystr];
                 }
-                [_dataarr addObject:e];
-          
-   
+                else
+                {
+                    [e setObject:[acdic objectForKey:keystr] forKey:keystr];
+                }
+            }
+            [_dataarr addObject:e];
+            
+            
         }
         
         [[NSUserDefaults standardUserDefaults]setObject:_dataarr forKey:[NSString stringWithFormat:@"oneActivity%li",(long)self.acID]];
-
+        
         [[NSUserDefaults standardUserDefaults]synchronize];
         _dataArray = [_modelArray mutableCopy];
-
+        
         if (_isJuhua==YES) {
             [self.tableView.mj_footer endRefreshing];
             if (array1.count<20) {
@@ -227,13 +222,9 @@
         }
         
         [_tableView reloadData];
+    } fail:^(NSError *error) {
         
-        
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
     }];
-    
 }
 - (void)ishaveArray {
     [self loadData];
@@ -281,47 +272,44 @@
         [indicator startAnimating];
     }
     NSString *listurl =self.signUrlStr;
-    AFmanager *manager = [AFmanager shareManager];
-    manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
     NSDictionary *dic = @{@"Type":@"0",
                           @"pageSize":@"10",
                           @"curPage":@"1",
                           @"ID":@(self.acID)};
-    [manager POST:listurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+    [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
         if (_isJuhua==NO) {
             [indicator stopAnimating];
         }
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
+        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array1 = result[@"Data"];
         _dataarr = [NSMutableArray array];
         NSMutableArray *muarray = [NSMutableArray array];
         for (NSDictionary *acdic in array1) {
             signinModel *model = [signinModel yy_modelWithJSON:acdic];
-                [muarray addObject:model];
-                NSMutableDictionary *e = [NSMutableDictionary dictionary];
-                for (NSString *keystr in acdic.allKeys) {
-                    
-                    if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-                        //
-                        [e setObject:@"" forKey:keystr];
-                    }
-                    else
-                    {
-                        [e setObject:[acdic objectForKey:keystr] forKey:keystr];
-                    }
+            [muarray addObject:model];
+            NSMutableDictionary *e = [NSMutableDictionary dictionary];
+            for (NSString *keystr in acdic.allKeys) {
+                
+                if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
+                    //
+                    [e setObject:@"" forKey:keystr];
                 }
-                [self.dataarr addObject:e];
+                else
+                {
+                    [e setObject:[acdic objectForKey:keystr] forKey:keystr];
+                }
+            }
+            [self.dataarr addObject:e];
         }
-
+        
         if (_isJuhua==NO) {
             [indicator stopAnimating];
         }
         [[NSUserDefaults standardUserDefaults]setObject:_dataarr forKey:[NSString stringWithFormat:@"oneActivity%li",(long)self.acID]];
         [[NSUserDefaults standardUserDefaults]synchronize];
-            
+        
         _dataArray = [muarray mutableCopy];
-
+        
         _modelArray = [muarray mutableCopy];
         
         if (_isJuhua==YES) {
@@ -331,10 +319,7 @@
         }
         [_tableView reloadData];
         [self shownull:_dataArray WithText:@"暂时没有签到哦，请在右上方添加!" WithTextColor:[UIColor lightGrayColor]];
-        
-        
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         if (_isJuhua==YES) {
             [self.tableView.mj_header endRefreshing];
@@ -464,14 +449,14 @@
 {
     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/DeleteCheckIn?accessKey=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)mycell.model.ID];
-    [[AFmanager shareManager]GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"dic = %@",dic);
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"updateSign" object:nil];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         [hud hideAnimated:YES];
         NSLog(@"error = %@",error);
     }];
@@ -494,10 +479,10 @@
         }
         NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",zhundaoApi,accesskey,(long)mycell.model.ID];
         
-        AFmanager *manager = [AFmanager shareManager];
-        [manager GET:listurl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"error = %@",error);
+        [ZD_NetWorkM getDataWithMethod:listurl parameters:nil succ:^(NSDictionary *obj) {
+            
+        } fail:^(NSError *error) {
+            
         }];
         [self changeModelswitchButton:mycell.switchButton];
     }]];

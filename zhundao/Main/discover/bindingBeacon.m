@@ -59,13 +59,13 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     NSString *acckey = [[SignManager shareManager]getaccseekey];
     NSString *str = [NSString stringWithFormat:@"%@api/Game/UpdateBeacon?accessKey=%@&deviceId=%@&type=0",zhundaoApi,acckey,stringValue];
     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    [[AFmanager shareManager] GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         [hud hideAnimated:YES];
         [self succseeresponseObject:dic];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } fail:^(NSError *error) {
         [hud hideAnimated:YES];
-         [self showhudWithString:@"绑定失败" WithImageName:nil successBool:0];
+        [self showhudWithString:@"绑定失败" WithImageName:nil successBool:0];
     }];
 }
 - (void)showhudWithString :(NSString *)labelText WithImageName :(NSString *)imageName successBool :(BOOL )isSuccess
