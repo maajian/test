@@ -13,6 +13,7 @@ NSString *const ZDNotification_Message_Select = @"ZDNotification_Message_Select"
 NSString *const ZDNotification_Change_Account = @"ZDNotification_Change_Account";
 NSString *const ZDNotification_Load_Activity  = @"ZDNotification_Load_Activity";
 NSString *const ZDNotification_Network_Change = @"ZDNotification_Network_Change";
+NSString *const ZDNotification_Logout         = @"ZDNotification_Logout";
 
 #pragma mark --- NSUserDefaults
 NSString *const ZDUserDefault_First_Network = @"ZDUserDefault_First_Network";

@@ -167,9 +167,9 @@
     [_activityImageView setContentMode:UIViewContentModeScaleAspectFill];
     _activityImageView.clipsToBounds = YES;
     // 活动开始时间
-    _beginLabel.text = [_model.TimeStop getHomeActivityBeginTime];
+    _beginLabel.text = [_model.TimeStart getHomeActivityBeginTime];
     // 活动截止时间
-    _endLabel.text = [_model.TimeStart getHomeActivityEndTime];
+    _endLabel.text = [_model.TimeStop getHomeActivityEndTime];
     
     NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"%li",(long)_model.ID]];
     if (_model.HasJoinNum!=array1.count&&_model.HasJoinNum!=0) {

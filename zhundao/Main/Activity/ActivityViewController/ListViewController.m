@@ -322,7 +322,7 @@
     dispatch_queue_t conQueue = dispatch_queue_create("1", DISPATCH_QUEUE_CONCURRENT);
     [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
-        NSArray *array1 = result[@"data"];
+        NSArray *array1 = [result[@"data"] isEqual:[NSNull null]] ? @[] : result[@"data"];
         [self getOptionWithdic:result];
         [indicator stopAnimating];
         NSMutableArray *muarray = [NSMutableArray array];
@@ -729,7 +729,7 @@
 
 - (void)rightButton   // 添加rightbutton
 {
-    [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"whiteMore" Withtarget:self Selector:@selector(showPost)];
+    [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];
 }
 #pragma mark GZActionSheet action 响应事件
 - (void)postEmail // 发送邮件

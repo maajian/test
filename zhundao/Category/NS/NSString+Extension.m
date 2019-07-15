@@ -35,15 +35,12 @@
     int day1 = (int)value / (24 * 3600);
     if (day1>=1) {
         timeStr = [NSString stringWithFormat:@"报名截止: %@(剩%d天%d小时)",endstr,day1,hour];
-    }
-    if (day1==0&&hour>=1) {
+    } else if (day1==0&&hour>=1) {
         timeStr = [NSString stringWithFormat:@"报名截止: %@(剩%d小时%d分)",endstr,hour,minute];
-    }
-    if (day1==0&&hour==0&&minute>=0) {
+    } else if (day1==0&&hour==0&&minute>=0) {
         timeStr = [NSString stringWithFormat:@"报名截止: %@(剩%d分)",endstr,minute];
-    }
-    if (minute<0) {
-        timeStr = [NSString stringWithFormat:@"报名截止: %@",endstr];
+    } else if (minute<0) {
+        timeStr = [NSString stringWithFormat:@"报名截止: %@(已截止)",endstr];
     }
     return timeStr;
 }

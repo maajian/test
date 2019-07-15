@@ -34,7 +34,7 @@
     accesskey = [[SignManager shareManager]getaccseekey];
     [self createTableView];
     [self firstload];
-    [self createRight];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem scanItemWithTarget:self action:@selector(pushOtherWithIndex)];
     // Do any additional setup after loading the view.
 }
 
@@ -49,11 +49,6 @@
             [self loadData];
         }
     };
-}
-- (void)createRight
-{
-     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"扫一扫white" Withtarget:self Selector:@selector(pushOtherWithIndex)];
-    
 }
 
 - (void)firstload

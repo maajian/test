@@ -65,6 +65,7 @@
 		281486EC22C8C00B000BAE70 /* PhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2814868922C8BAE5000BAE70 /* PhotoView.m */; };
 		281486EE22C8C086000BAE70 /* detailShare.png in Resources */ = {isa = PBXBuildFile; fileRef = 281486ED22C8C085000BAE70 /* detailShare.png */; };
 		281486F122C8C31D000BAE70 /* ZDActivityViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 281486F022C8C31D000BAE70 /* ZDActivityViewModel.m */; };
+		2816362922DCD23900DC0ED8 /* ZDUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2816362822DCD23900DC0ED8 /* ZDUserManager.m */; };
 		281A02EC22D06E80002D87DD /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A02EB22D06E80002D87DD /* UITableView+Extension.m */; };
 		281A02EF22D081B9002D87DD /* ZDActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A02EE22D081B9002D87DD /* ZDActivityCell.m */; };
 		281A02F222D08457002D87DD /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A02F122D08457002D87DD /* UILabel+Extension.m */; };
@@ -825,6 +826,8 @@
 		281486ED22C8C085000BAE70 /* detailShare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = detailShare.png; path = zhundao/Main/Activity/ActivityViewController/detailShare.png; sourceTree = SOURCE_ROOT; };
 		281486EF22C8C31D000BAE70 /* ZDActivityViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDActivityViewModel.h; sourceTree = "<group>"; };
 		281486F022C8C31D000BAE70 /* ZDActivityViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDActivityViewModel.m; sourceTree = "<group>"; };
+		2816362722DCD23900DC0ED8 /* ZDUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDUserManager.h; sourceTree = "<group>"; };
+		2816362822DCD23900DC0ED8 /* ZDUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDUserManager.m; sourceTree = "<group>"; };
 		281A02EA22D06E80002D87DD /* UITableView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extension.h"; sourceTree = "<group>"; };
 		281A02EB22D06E80002D87DD /* UITableView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
 		281A02ED22D081B9002D87DD /* ZDActivityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDActivityCell.h; sourceTree = "<group>"; };
@@ -1987,6 +1990,15 @@
 			path = ZDSegmentView;
 			sourceTree = "<group>";
 		};
+		2816362622DCD22000DC0ED8 /* ZDUserManager */ = {
+			isa = PBXGroup;
+			children = (
+				2816362722DCD23900DC0ED8 /* ZDUserManager.h */,
+				2816362822DCD23900DC0ED8 /* ZDUserManager.m */,
+			);
+			path = ZDUserManager;
+			sourceTree = "<group>";
+		};
 		281A02E922D06E22002D87DD /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -2136,6 +2148,7 @@
 		28ACE36F21B2ACC100C2AEB8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				2816362622DCD22000DC0ED8 /* ZDUserManager */,
 				281A02F922D0B2A7002D87DD /* ZDSearchBar */,
 				2814864522C8B951000BAE70 /* ZDSegmentView */,
 				286E7B0F223FE12C001FC1D8 /* ZDRefresh */,
@@ -5811,6 +5824,7 @@
 				28ACE36521B2A2DE00C2AEB8 /* ZDDiscoverCustomApplyCell.m in Sources */,
 				2814864B22C8B961000BAE70 /* ZDSegmentView.m in Sources */,
 				9C6300501F2095B5007D5D56 /* ChooseCustomViewController.m in Sources */,
+				2816362922DCD23900DC0ED8 /* ZDUserManager.m in Sources */,
 				9C59CFA61DF135410089F2EB /* AFNetworkReachabilityManager.m in Sources */,
 				9C23ED961E2E38B600CD1B62 /* CustomViewController.m in Sources */,
 				5B8D67F5208F740300714ABB /* SignUpModel.m in Sources */,

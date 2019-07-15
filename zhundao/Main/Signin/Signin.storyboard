@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-975" y="-117"/>
         </scene>
-        <!--签到-->
+        <!--准到-->
         <scene sceneID="L7V-yI-eOl">
             <objects>
                 <viewController id="jsr-PT-ntE" customClass="SigninViewController" sceneMemberID="viewController">
@@ -66,7 +66,7 @@
                             <constraint firstAttribute="trailing" secondItem="1ml-AJ-NQu" secondAttribute="trailing" id="xjM-ox-zuD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="签到" id="j7w-a3-Csc"/>
+                    <navigationItem key="navigationItem" title="准到" id="j7w-a3-Csc"/>
                     <connections>
                         <outlet property="segmented" destination="QxZ-U5-yeB" id="7Rd-zp-SmB"/>
                         <outlet property="tableView" destination="1ml-AJ-NQu" id="fLx-gn-F3t"/>

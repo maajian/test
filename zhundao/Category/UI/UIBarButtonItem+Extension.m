@@ -42,6 +42,16 @@
                                                        action:action
                                              equalToImageSize:NO];
 }
++ (UIBarButtonItem *)scanItemWithTarget:(id)target action:(SEL)action {
+    return [UIBarButtonItem imageBarButtonItemWithNormalImage:@"sign_scan"
+                                                renderingMode:UIImageRenderingModeAlwaysTemplate
+                                         highlightedImageName:nil
+                                             seletedImageName:nil
+                                                       Target:target
+                                                       action:action
+                                             equalToImageSize:NO];
+}
+
 
 #pragma mark --- 文本
 /**

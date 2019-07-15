@@ -16,6 +16,8 @@
 @property (nonatomic, strong) NSMutableArray<UILabel *> *labelArray;
 // 线
 @property (nonatomic, strong) UIView *lineView;
+// 底部黑线
+@property (nonatomic, strong) UIView *bottomLine;
 
 @end
 
@@ -53,6 +55,11 @@
     _lineView = [[UIView alloc] init];
     _lineView.backgroundColor = zhundaoGreenColor;
     [self addSubview:_lineView];
+    // 底部黑线
+    _bottomLine = [[UIView alloc] init];
+    _bottomLine.backgroundColor = zhundaoLineColor;
+    _bottomLine.hidden = YES;
+    [self addSubview:_bottomLine];
 }
 
 #pragma mark --- 布局
@@ -67,6 +74,12 @@
         make.centerX.equalTo(_labelArray[0].mas_centerX);
         make.bottom.mas_equalTo(self.mas_bottom);
         make.height.mas_equalTo(2);
+    }];
+    
+    [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self);
+        make.height.mas_equalTo(1);
+        make.bottom.equalTo(self);
     }];
 }
 
@@ -83,7 +96,12 @@
     }];
 }
 - (void)setCurrentIndex:(NSInteger)currentIndex {
+    _currentIndex = currentIndex;
     [self animationMoveWithCurrentIndex:currentIndex];
+}
+- (void)setShowBottomLine:(BOOL)showBottomLine {
+    _showBottomLine = showBottomLine;
+    self.bottomLine.hidden = NO;
 }
 
 #pragma mark --- action

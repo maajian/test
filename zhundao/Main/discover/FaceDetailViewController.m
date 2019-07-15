@@ -253,7 +253,7 @@
 
 - (void)createRight
 {
-    [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"whiteMore" Withtarget:self Selector:@selector(showPost)];
+    [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];
 }
 
 - (void)showPost  //sheet显示

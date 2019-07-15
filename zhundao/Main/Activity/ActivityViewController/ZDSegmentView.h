@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIFont *textFont; // 字体
 @property (nonatomic, assign) CGFloat lineWidth; //线的宽度
 @property (nonatomic, assign) NSInteger currentIndex; // 当前页码
+@property (nonatomic, assign) BOOL showBottomLine; // 是否显示底部黑线
 
 @end
 

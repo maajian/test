@@ -36,6 +36,7 @@
 #import "ZDSegmentView.h"
 #import "ZDSearchBar.h"
 #import "ZDNetWorkManager.h"
+#import "ZDUserManager.h"
 #import "ZDMacro.h"
 
 #import "UIView+Extension.h"

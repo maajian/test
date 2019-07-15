@@ -50,7 +50,7 @@
 }
 - (void)savephotobutton
 {
-     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"whiteMore" Withtarget:self Selector:@selector(savealert)];
+     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(savealert)];
 }
 - (void)addges
 {

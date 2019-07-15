@@ -14,7 +14,7 @@ UIKIT_EXTERN NSString *const ZDNotification_Message_Select;
 UIKIT_EXTERN NSString *const ZDNotification_Change_Account;
 UIKIT_EXTERN NSString *const ZDNotification_Load_Activity;
 UIKIT_EXTERN NSString *const ZDNotification_Network_Change;
-
+UIKIT_EXTERN NSString *const ZDNotification_Logout;
 
 #pragma mark --- NSUserDefaults
 UIKIT_EXTERN NSString *const ZDUserDefault_First_Network;

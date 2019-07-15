@@ -19,7 +19,6 @@
     NSInteger _currentIndex;
 }
 @property (nonatomic, strong) UISearchController *searchController; // 搜索
-@property (nonatomic, strong) UISearchBar        *searchBar; // 搜索框
 @property (nonatomic, strong) ZDSegmentView      *segmentView; // 分页
 @property (nonatomic, strong) UIScrollView       *scrollView;
 @property (nonatomic, strong) ZDAllActivityVC    *allVC;
@@ -94,11 +93,7 @@
         _segmentView.segmentViewDelegate = self;
         _segmentView.textFont = [UIFont boldSystemFontOfSize:14];
         _segmentView.lineWidth = 42;
-        _segmentView.layer.masksToBounds = NO;
-        _segmentView.layer.shadowColor = [UIColor blackColor].CGColor;
-        _segmentView.layer.shadowRadius = 2.0f;
-        _segmentView.layer.shadowOpacity = 0.2f;
-        _segmentView.layer.shadowOffset = CGSizeMake(1, 1);
+        _segmentView.showBottomLine = YES;
     }
     return _segmentView;
 }

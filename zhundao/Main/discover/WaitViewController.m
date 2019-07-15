@@ -161,7 +161,7 @@ static NSString *reUseID = @"moreSignReuseID";
 - (UIImageView *)saoImageView
 {
     if (!_saoImageView) {
-        _saoImageView = [MyImage initWithImageFrame:CGRectMake(kScreenWidth/2-32, kScreenHeight-150-128, 25, 25) imageName:@"扫一扫white" cornerRadius:0 masksToBounds:NO];
+        _saoImageView = [MyImage initWithImageFrame:CGRectMake(kScreenWidth/2-32, kScreenHeight-150-128, 25, 25) imageName:@"sign_scan" cornerRadius:0 masksToBounds:NO];
     }
     return _saoImageView;
 }
@@ -605,7 +605,7 @@ static NSString *reUseID = @"moreSignReuseID";
 }
 - (void)rightButton   // 添加rightbutton
 {
-     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"whiteMore" Withtarget:self Selector:@selector(showPost)];
+     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];
 }
 #pragma mark  GZActionSheet action 响应事件
 - (void)postData // 发送离线数据

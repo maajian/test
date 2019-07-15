@@ -43,6 +43,9 @@ ZD_Singleton_Implementation(NetWorkManager)
             if (self.isDefaultNetworkLine) {
                 [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
             } else {
+                if (error.code == -1011) {
+                    [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+                }
                 fail(error);
             }
         }];
@@ -62,6 +65,9 @@ ZD_Singleton_Implementation(NetWorkManager)
             if (self.isDefaultNetworkLine) {
                 [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
             } else {
+                if (error.code == -1011) {
+                    [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+                }
                 fail(error);
             }
         }];
@@ -78,6 +84,9 @@ ZD_Singleton_Implementation(NetWorkManager)
             if (self.isDefaultNetworkLine) {
                 [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
             } else {
+                if (error.code == -1011) {
+                    [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+                }
                 fail(error);
             }
         }];

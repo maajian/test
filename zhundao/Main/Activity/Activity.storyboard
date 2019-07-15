@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="954" y="-626"/>
         </scene>
-        <!--活动-->
+        <!--准到-->
         <scene sceneID="5Rh-AM-ndz">
             <objects>
                 <viewController id="ZJX-zy-t3o" customClass="ZDMainActivityVC" sceneMemberID="viewController">
@@ -39,7 +39,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.1019607843" green="0.67843137249999996" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="活动" id="VOH-6u-cuE"/>
+                    <navigationItem key="navigationItem" title="准到" id="VOH-6u-cuE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bK1-m2-J6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

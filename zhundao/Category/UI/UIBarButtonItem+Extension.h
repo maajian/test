@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIBarButtonItem *)addWhiteImageItemWithTarget:(id)target action:(SEL)action;
 // 活动添加
 + (UIBarButtonItem *)activityAddItemWithTarget:(id)target action:(SEL)action;
+// 扫一扫
++ (UIBarButtonItem *)scanItemWithTarget:(id)target action:(SEL)action;
 
 #pragma mark --- 文字
 // 保存

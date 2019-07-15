@@ -240,7 +240,7 @@
 }
 - (void)createRightNav
 {
-     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"whiteMore" Withtarget:self Selector:@selector(moreAction)];
+     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(moreAction)];
 }
 #pragma 事件响应
 - (void)moreAction

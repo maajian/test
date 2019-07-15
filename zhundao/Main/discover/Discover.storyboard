@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-1020" y="-203"/>
         </scene>
-        <!--发现-->
+        <!--准到-->
         <scene sceneID="nWe-Hz-bmY">
             <objects>
                 <tableViewController id="bGe-Om-9bd" customClass="DiscoverViewController" sceneMemberID="viewController">
@@ -257,7 +257,7 @@
                             <outlet property="delegate" destination="bGe-Om-9bd" id="kGZ-sY-Yc0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="发现" id="fpV-Zu-cfP"/>
+                    <navigationItem key="navigationItem" title="准到" id="fpV-Zu-cfP"/>
                     <connections>
                         <outlet property="customPushCell" destination="7fX-uV-7zj" id="8W2-J2-FRT"/>
                         <outlet property="inviteCell" destination="8Ua-Fl-aWY" id="yVk-iG-1vl"/>

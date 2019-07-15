@@ -46,7 +46,7 @@
     flag=0;
     backNumber = 0;
     [self setNavTitle];
-    [self createRight];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem scanItemWithTarget:self action:@selector(pushScan)];
     SignManager *manager = [SignManager shareManager];
     [manager createDatabase];
     accesskey = [manager getaccseekey];
@@ -74,12 +74,7 @@
     UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(0, 0, 44, 44) Text:_signName textColor:[UIColor blackColor] font:KHeitiSCMedium(17) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
     self.navigationItem.titleView = label;
 }
-
-- (void)createRight
-{
-    [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"扫一扫white" Withtarget:self Selector:@selector(pushAddActivity)];
-}
-- (void)pushAddActivity
+- (void)pushScan
 {
     SaoYiSaoViewController *sao = [[SaoYiSaoViewController alloc] init];
     sao.signID = self.signID;

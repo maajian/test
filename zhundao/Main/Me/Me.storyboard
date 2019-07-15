@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-1103" y="-63"/>
         </scene>
-        <!--我-->
+        <!--准到-->
         <scene sceneID="tq0-4t-edj">
             <objects>
                 <tableViewController id="Giv-vv-suT" customClass="MeViewController" sceneMemberID="viewController">
@@ -313,7 +313,7 @@
                             <outlet property="delegate" destination="Giv-vv-suT" id="5cY-VX-a3m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="我" id="0Lo-ua-DP0"/>
+                    <navigationItem key="navigationItem" title="准到" id="0Lo-ua-DP0"/>
                     <connections>
                         <outlet property="VIPlabel" destination="oMd-xr-qeN" id="FgZ-qP-ckK"/>
                         <outlet property="iconImageView" destination="lyG-jx-g1y" id="rna-PN-n0R"/>

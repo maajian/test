@@ -164,58 +164,6 @@
     }
 }
 
-#pragma mark --- 定时器
-- (void)addTimer {
-    if (!_timer) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(checklogin) userInfo:nil repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-    }
-}
-
-- (void)checklogin {
-    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
-        if (![obj[@"data"][@"email"] isEqual:[NSNull null]]) {
-            [[NSUserDefaults standardUserDefaults] setObject:obj[@"data"][@"email"] forKey:@"email"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }
-    } fail:^(NSError *error) {
-        NSLog(@"code = %li",(long)error.code);
-        if (error.code == -1011) {
-            maskLabel *label = [[maskLabel alloc] initWithTitle:@"登录超时，请重新登录"];
-            [label labelAnimationWithViewlong:[UIApplication sharedApplication].keyWindow];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self didLogout];
-            });
-        }
-    }];
-}
-
-/*! 退出登录清空数据 */
-- (void)didLogout
-{
-    /*! 清除本地数据 */
-    NSDictionary *userArray = [[NSUserDefaults standardUserDefaults]objectForKey:@"userArray"];
-    NSString *appDomain = [[NSBundle mainBundle]bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults]removePersistentDomainForName:appDomain];
-    [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:@"userArray"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    if ([[SignManager shareManager].dataBase open])
-    {
-        NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
-        [[SignManager shareManager].dataBase executeUpdate:updateSql];
-        NSString *updateSql1 = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
-        [[SignManager shareManager].dataBase executeUpdate:updateSql1];
-        NSString *updateSql12 = [NSString stringWithFormat:@"DROP TABLE contact"];
-        [[SignManager shareManager].dataBase executeUpdate:updateSql12];
-        [[SignManager shareManager].dataBase close];
-    }
-    LoginViewController *login = [[LoginViewController alloc]init];
-    [UIApplication sharedApplication].delegate.window.rootViewController = login;
-}
-
 #pragma mark --- 通知接收
 - (void)getNotification:(NSNotification *)nofi {
     BaseNavigationViewController *baseNav = self.viewControllers[0];
@@ -229,7 +177,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self addTimer];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

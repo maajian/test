@@ -237,7 +237,7 @@
 #pragma mark 右侧导航栏 
 - (void)createRightButton
 {
-    [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"whiteMore" Withtarget:self Selector:@selector(showa)];
+    [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showa)];
 }
 
 - (void)showa
