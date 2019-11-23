@@ -20,6 +20,23 @@
     return user;
 }
 
+#pragma mark --- 签到判断
+// 判断本地是否有签到
+- (BOOL)hasLocalSign:(NSInteger)signID {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"%@%li", ZDUserDefault_Sign_Mark, signID]];
+}
+// 标记本地有签到
+- (void)markLocalSign:(NSInteger)signID {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:[NSString stringWithFormat:@"%@%li", ZDUserDefault_Sign_Mark, signID]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+// 移除本地签到标记
+- (void)removeLocalSign:(NSInteger)signID {
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:[NSString stringWithFormat:@"%@%li", ZDUserDefault_Sign_Mark, signID]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+#pragma mark --- 本地数据
 /*! 退出登录清空数据 */
 - (void)didLogout
 {

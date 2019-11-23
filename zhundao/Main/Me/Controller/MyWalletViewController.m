@@ -220,7 +220,7 @@
                 
                 ZDWebViewController *web = [[ZDWebViewController alloc] init];
                 web.webTitle = @"修改支付密码";
-                web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/UpdatePwd?accesskey=%@",[[SignManager shareManager] getaccseekey]];
+                web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/UpdatePwd?token=%@",[[SignManager shareManager] getToken]];
                 [self setHidesBottomBarWhenPushed:YES];
                 [self.navigationController pushViewController:web animated:YES];
                 
@@ -243,7 +243,7 @@
 - (void)pushCtr{
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"找回支付密码";
-    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/GetPassWord?accesskey=%@",[[SignManager shareManager] getaccseekey]];
+    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/GetPassWord?token=%@",[[SignManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
 }

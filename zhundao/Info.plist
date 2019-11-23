@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0.0</string>
+	<string>3.0.3</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -68,7 +68,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>39.0</string>
+	<string>45</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>mttbrowser</string>
@@ -107,7 +107,7 @@
 		<true/>
 	</dict>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>蓝牙</string>
+	<string>检测周边开启的蓝牙设备,配合打印机</string>
 	<key>NSCameraUsageDescription</key>
 	<string>使用相机对签到对象二维码进行扫码验证</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

@@ -25,8 +25,6 @@
     _titlelabel.text = _model.Title;
     _beconnameDevidedID.text = [NSString stringWithFormat:@"%@(%@)",_model.BeaconName,_model.DeviceId];
     
-    
-
 }
 
 - (void)setFaceModel:(FaceModel *)faceModel

@@ -13,6 +13,8 @@
 		2802B8EC21B6187400ED3CDB /* ZDDiscoveEditApplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802B8EB21B6187400ED3CDB /* ZDDiscoveEditApplyCell.m */; };
 		2802B8EF21B6189200ED3CDB /* ZDDiscoveEditApplyFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802B8EE21B6189200ED3CDB /* ZDDiscoveEditApplyFooterView.m */; };
 		2802B8FA21B7E5F300ED3CDB /* ZDDiscoveEditApplyViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802B8F921B7E5F300ED3CDB /* ZDDiscoveEditApplyViewModel.m */; };
+		2805E2C22375C623000CF6D1 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2805E2C12375C623000CF6D1 /* NSDictionary+Extension.m */; };
+		2805E2C52375C64B000CF6D1 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2805E2C42375C64B000CF6D1 /* NSArray+Extension.m */; };
 		2814863222C8B6A5000BAE70 /* ActivityViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2814863122C8B6A5000BAE70 /* ActivityViewModel.m */; };
 		2814863522C8B75C000BAE70 /* ZDAllActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2814863422C8B75C000BAE70 /* ZDAllActivityVC.m */; };
 		2814863822C8B800000BAE70 /* ZDOnActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2814863722C8B800000BAE70 /* ZDOnActivityVC.m */; };
@@ -81,6 +83,12 @@
 		281F1F7922D9E45D007B6932 /* ZDNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F1F7722D9E45D007B6932 /* ZDNetWorkManager.m */; };
 		281F1F8122DB35D3007B6932 /* TYAlertController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F1F8022DB35D3007B6932 /* TYAlertController+Extension.m */; };
 		281F1F8522DB4684007B6932 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 281F1F8422DB4684007B6932 /* NSDate+Extension.m */; };
+		283210FE22ECA2090065EBAD /* ZDMainSignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 283210FD22ECA2090065EBAD /* ZDMainSignInVC.m */; };
+		2832110122ECA2380065EBAD /* ZDAllSignVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110022ECA2380065EBAD /* ZDAllSignVC.m */; };
+		2832110422ECA24E0065EBAD /* ZDOnSignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110322ECA24E0065EBAD /* ZDOnSignInVC.m */; };
+		2832110722ECA2660065EBAD /* ZDCloseSignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110622ECA2660065EBAD /* ZDCloseSignInVC.m */; };
+		2832110B22ED77A10065EBAD /* ZDSignInViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110A22ED77A10065EBAD /* ZDSignInViewModel.m */; };
+		2832110E22ED77B40065EBAD /* ZDSignInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110D22ED77B40065EBAD /* ZDSignInModel.m */; };
 		286E7B12223FE1A4001FC1D8 /* ZDRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 286E7B11223FE1A4001FC1D8 /* ZDRefreshNormalFooter.m */; };
 		286E7B15223FE1C9001FC1D8 /* ZDRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 286E7B14223FE1C9001FC1D8 /* ZDRefreshNormalHeader.m */; };
 		2874BB2422998C3E00D8508E /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2874BB2322998C3E00D8508E /* UIBarButtonItem+Extension.m */; };
@@ -725,6 +733,10 @@
 		2802B8EE21B6189200ED3CDB /* ZDDiscoveEditApplyFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDiscoveEditApplyFooterView.m; sourceTree = "<group>"; };
 		2802B8F821B7E5F300ED3CDB /* ZDDiscoveEditApplyViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDiscoveEditApplyViewModel.h; sourceTree = "<group>"; };
 		2802B8F921B7E5F300ED3CDB /* ZDDiscoveEditApplyViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDiscoveEditApplyViewModel.m; sourceTree = "<group>"; };
+		2805E2C02375C623000CF6D1 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
+		2805E2C12375C623000CF6D1 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		2805E2C32375C64B000CF6D1 /* NSArray+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
+		2805E2C42375C64B000CF6D1 /* NSArray+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
 		2814863022C8B6A5000BAE70 /* ActivityViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityViewModel.h; path = zhundao/Main/Activity/ActivityViewController/ActivityViewModel.h; sourceTree = SOURCE_ROOT; };
 		2814863122C8B6A5000BAE70 /* ActivityViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityViewModel.m; path = zhundao/Main/Activity/ActivityViewController/ActivityViewModel.m; sourceTree = SOURCE_ROOT; };
 		2814863322C8B75C000BAE70 /* ZDAllActivityVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDAllActivityVC.h; sourceTree = "<group>"; };
@@ -860,6 +872,18 @@
 		281F1F8022DB35D3007B6932 /* TYAlertController+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TYAlertController+Extension.m"; sourceTree = "<group>"; };
 		281F1F8322DB4684007B6932 /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		281F1F8422DB4684007B6932 /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		283210FC22ECA2090065EBAD /* ZDMainSignInVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMainSignInVC.h; sourceTree = "<group>"; };
+		283210FD22ECA2090065EBAD /* ZDMainSignInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMainSignInVC.m; sourceTree = "<group>"; };
+		283210FF22ECA2380065EBAD /* ZDAllSignVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDAllSignVC.h; sourceTree = "<group>"; };
+		2832110022ECA2380065EBAD /* ZDAllSignVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDAllSignVC.m; sourceTree = "<group>"; };
+		2832110222ECA24E0065EBAD /* ZDOnSignInVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDOnSignInVC.h; sourceTree = "<group>"; };
+		2832110322ECA24E0065EBAD /* ZDOnSignInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDOnSignInVC.m; sourceTree = "<group>"; };
+		2832110522ECA2660065EBAD /* ZDCloseSignInVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDCloseSignInVC.h; sourceTree = "<group>"; };
+		2832110622ECA2660065EBAD /* ZDCloseSignInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDCloseSignInVC.m; sourceTree = "<group>"; };
+		2832110922ED77A10065EBAD /* ZDSignInViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDSignInViewModel.h; sourceTree = "<group>"; };
+		2832110A22ED77A10065EBAD /* ZDSignInViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSignInViewModel.m; sourceTree = "<group>"; };
+		2832110C22ED77B40065EBAD /* ZDSignInModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDSignInModel.h; sourceTree = "<group>"; };
+		2832110D22ED77B40065EBAD /* ZDSignInModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSignInModel.m; sourceTree = "<group>"; };
 		286E7B10223FE1A4001FC1D8 /* ZDRefreshNormalFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDRefreshNormalFooter.h; sourceTree = "<group>"; };
 		286E7B11223FE1A4001FC1D8 /* ZDRefreshNormalFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDRefreshNormalFooter.m; sourceTree = "<group>"; };
 		286E7B13223FE1C9001FC1D8 /* ZDRefreshNormalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDRefreshNormalHeader.h; sourceTree = "<group>"; };
@@ -2063,6 +2087,10 @@
 				281A02F422D090B1002D87DD /* NSString+Extension.m */,
 				281F1F8322DB4684007B6932 /* NSDate+Extension.h */,
 				281F1F8422DB4684007B6932 /* NSDate+Extension.m */,
+				2805E2C02375C623000CF6D1 /* NSDictionary+Extension.h */,
+				2805E2C12375C623000CF6D1 /* NSDictionary+Extension.m */,
+				2805E2C32375C64B000CF6D1 /* NSArray+Extension.h */,
+				2805E2C42375C64B000CF6D1 /* NSArray+Extension.m */,
 			);
 			path = NS;
 			sourceTree = "<group>";
@@ -2747,6 +2775,8 @@
 			children = (
 				9C1E49F91F2B1699008CE1C0 /* SignInViewModel.h */,
 				9C1E49FA1F2B1699008CE1C0 /* SignInViewModel.m */,
+				2832110922ED77A10065EBAD /* ZDSignInViewModel.h */,
+				2832110A22ED77A10065EBAD /* ZDSignInViewModel.m */,
 			);
 			name = ViewModel;
 			path = Controller;
@@ -3247,9 +3277,9 @@
 		9C50749F1E9C83970030809D /* PostActivity */ = {
 			isa = PBXGroup;
 			children = (
+				9C4E78031E9F6BEF005D68BD /* Controller */,
 				9C1F971F1EC58626003280F4 /* SimpleWord */,
 				9C6B5A4B1EB9C1DD006DE7DD /* Fee */,
-				9C4E78031E9F6BEF005D68BD /* Controller */,
 				9C4E78021E9F6BED005D68BD /* Model */,
 				9C5D24181F68C7D30040C3B7 /* ViewModel */,
 				9C4E78011E9F6BEB005D68BD /* View */,
@@ -4726,6 +4756,14 @@
 		9C7752E21DF02EB000FC31BB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				283210FC22ECA2090065EBAD /* ZDMainSignInVC.h */,
+				283210FD22ECA2090065EBAD /* ZDMainSignInVC.m */,
+				283210FF22ECA2380065EBAD /* ZDAllSignVC.h */,
+				2832110022ECA2380065EBAD /* ZDAllSignVC.m */,
+				2832110222ECA24E0065EBAD /* ZDOnSignInVC.h */,
+				2832110322ECA24E0065EBAD /* ZDOnSignInVC.m */,
+				2832110522ECA2660065EBAD /* ZDCloseSignInVC.h */,
+				2832110622ECA2660065EBAD /* ZDCloseSignInVC.m */,
 				281486E622C8BE20000BAE70 /* ResultsViewController.h */,
 				281486E722C8BE20000BAE70 /* ResultsViewController.m */,
 				9C59CF6D1DF0FD910089F2EB /* SigninViewController.h */,
@@ -4745,6 +4783,8 @@
 			children = (
 				9C692BBF1DFA717500D151B1 /* signinModel.h */,
 				9C692BC01DFA717500D151B1 /* signinModel.m */,
+				2832110C22ED77B40065EBAD /* ZDSignInModel.h */,
+				2832110D22ED77B40065EBAD /* ZDSignInModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -5423,6 +5463,7 @@
 				9C5166C61E320D0E002886A2 /* ChangeInputViewController.m in Sources */,
 				9C5D24331F6969C10040C3B7 /* PriviteInviteTableViewCell.m in Sources */,
 				28ACE36E21B2A36E00C2AEB8 /* ZDDiscoverCustomApplyViewModel.m in Sources */,
+				2805E2C22375C623000CF6D1 /* NSDictionary+Extension.m in Sources */,
 				5B4BF4B1201777F2006887A1 /* MoreAccountTableViewCell.m in Sources */,
 				9C1F974F1EC5870F003280F4 /* LMStyleParagraphCell.m in Sources */,
 				9C8635151E2CC4D500364FD6 /* MASCompositeConstraint.m in Sources */,
@@ -5462,6 +5503,7 @@
 				9C4505DE1DF51AF100C79165 /* NSData+ImageContentType.m in Sources */,
 				281A030F22D1B53B002D87DD /* ZDSearchBar.m in Sources */,
 				9C4F09801FA95DD00075925D /* PersonInfoTableViewCell.m in Sources */,
+				283210FE22ECA2090065EBAD /* ZDMainSignInVC.m in Sources */,
 				9C17D0DC1DF6B589001B2F1E /* UIViewExt.m in Sources */,
 				2814863B22C8B814000BAE70 /* ZDCloseActivityVC.m in Sources */,
 				9C8635241E2CE49500364FD6 /* CustomModel.m in Sources */,
@@ -5478,6 +5520,7 @@
 				9C710E3F1FB558F3001CD89F /* AddMessageDetailViewController.m in Sources */,
 				281A02EF22D081B9002D87DD /* ZDActivityCell.m in Sources */,
 				9CCD13CD1E12154900FBD451 /* SettingTableViewController.m in Sources */,
+				2832110722ECA2660065EBAD /* ZDCloseSignInVC.m in Sources */,
 				9C59CFA91DF135410089F2EB /* AFURLResponseSerialization.m in Sources */,
 				8446DCCA20D15C4B000C724B /* AAColumn.m in Sources */,
 				9C5C18671EFA54E50096F678 /* EditMoreChooseTableViewCell.m in Sources */,
@@ -5535,6 +5578,7 @@
 				9C0066AB1F6FC3360054EEB5 /* AllAccountModel.m in Sources */,
 				5B9957361FCD8E2900A26866 /* TYAlertDropDownAnimation.m in Sources */,
 				9C5BD9841F74A5C60081EBCE /* BigTextView.m in Sources */,
+				2832110422ECA24E0065EBAD /* ZDOnSignInVC.m in Sources */,
 				8446DCD920D15C4B000C724B /* AASubtitle.m in Sources */,
 				9C614A361ED5469300E853D6 /* GroupMV.m in Sources */,
 				9C17D0DD1DF6B589001B2F1E /* YYClassInfo.m in Sources */,
@@ -5581,6 +5625,7 @@
 				9C55BA1C1E8224680086C01E /* muliSignViewController.m in Sources */,
 				9C58D4E41F32C9AD00C93B16 /* ConsultModel.m in Sources */,
 				9C8BD37B1E88EC5A00C63898 /* UIButton+UIButton_RightNav.m in Sources */,
+				2832110122ECA2380065EBAD /* ZDAllSignVC.m in Sources */,
 				9C4342391F42D26600A0B757 /* DetailNoticeViewController.m in Sources */,
 				9C692BC11DFA717500D151B1 /* signinModel.m in Sources */,
 				9C719DBE1F0C9BB700A5478A /* XYViewController.m in Sources */,
@@ -5648,6 +5693,7 @@
 				2814865022C8B9B2000BAE70 /* ZDMeaageSystemVC.m in Sources */,
 				2814867B22C8BA77000BAE70 /* successSendView.m in Sources */,
 				2814868122C8BAC4000BAE70 /* detailActivityViewController.m in Sources */,
+				2805E2C52375C64B000CF6D1 /* NSArray+Extension.m in Sources */,
 				2814867E22C8BAAA000BAE70 /* GroupSendViewModel.m in Sources */,
 				2814863822C8B800000BAE70 /* ZDOnActivityVC.m in Sources */,
 				9C6B5A431EB9791F006DE7DD /* FeeTableViewCell.m in Sources */,
@@ -5655,6 +5701,7 @@
 				9C1F97521EC5870F003280F4 /* LMStyleFormatCell.m in Sources */,
 				9C60D1931EE92C3E003803FD /* NewOrEditPersonViewController.m in Sources */,
 				9C5943B31EEA4E78000F1E55 /* NewOrEditMV.m in Sources */,
+				2832110E22ED77B40065EBAD /* ZDSignInModel.m in Sources */,
 				9C1F97611EC58754003280F4 /* UIFont+LMText.m in Sources */,
 				9C1F97331EC58677003280F4 /* LMImageSettingsController.m in Sources */,
 				28ACE35921B2163A00C2AEB8 /* moreModalCell.m in Sources */,
@@ -5707,6 +5754,7 @@
 				281F1F8122DB35D3007B6932 /* TYAlertController+Extension.m in Sources */,
 				9C2747E71F2978C7005319CB /* FaceDetailViewController.m in Sources */,
 				281486B022C8BC34000BAE70 /* PrintVcodeVM.m in Sources */,
+				2832110B22ED77A10065EBAD /* ZDSignInViewModel.m in Sources */,
 				9C4F09891FA9A0B80075925D /* ChangeSexViewController.m in Sources */,
 				5B99574E1FCD90BF00A26866 /* UIView+MJExtension.m in Sources */,
 				9CBBCF9F1FA872C4009074F2 /* PersonInfoViewController.m in Sources */,

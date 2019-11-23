@@ -58,6 +58,9 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="ngD-lO-hxf"/>
                         </constraints>
+                        <connections>
+                            <action selector="switchChange:" destination="KGk-i7-Jjw" eventType="valueChanged" id="M3s-9K-lDt"/>
+                        </connections>
                     </switch>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ddy-Wd-3Cc" userLabel="View4">
                         <rect key="frame" x="25" y="51" width="387" height="0.5"/>
@@ -82,6 +85,9 @@
                         <state key="normal" title="未命名">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="alertAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2VV-SQ-YwJ"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehi-sH-Wz3">
                         <rect key="frame" x="0.0" y="0.0" width="437" height="0.5"/>
@@ -97,6 +103,9 @@
                             <constraint firstAttribute="width" constant="20" id="u66-Gs-1hX"/>
                         </constraints>
                         <state key="normal" image="arrows.png"/>
+                        <connections>
+                            <action selector="alertAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Gf-Fw-hMs"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifo-Wo-0ND">
                         <rect key="frame" x="262" y="137.5" width="150" height="30"/>
@@ -109,6 +118,9 @@
                         <state key="normal" title="签到" image="public_image_arrow_right">
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="pushSignList:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0x9-th-3er"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到: 11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOA-Uo-8vP">
                         <rect key="frame" x="112.5" y="92" width="87.5" height="40"/>

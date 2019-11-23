@@ -315,83 +315,90 @@
 }
 - (void)loadData    //网络加载数据
 {
-    NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivityList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)self.listID],
-                          @"pageSize":@"200000",
-                          @"curPage":@"1"};
     dispatch_queue_t conQueue = dispatch_queue_create("1", DISPATCH_QUEUE_CONCURRENT);
-    [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
-        NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
-        NSArray *array1 = [result[@"data"] isEqual:[NSNull null]] ? @[] : result[@"data"];
-        [self getOptionWithdic:result];
-        [indicator stopAnimating];
-        NSMutableArray *muarray = [NSMutableArray array];
-        dataarr = [NSMutableArray array];
-        [self deleteData];
-        dispatch_async(conQueue, ^{
-            for (int i=0; i<array1.count; i++)
-            {
-                NSDictionary *acdic = [array1 objectAtIndex:i];
-                listModel *model = [listModel yy_modelWithJSON:acdic];
-                [_phoneSearchArray addObject:model.Mobile];
-                if (model.NickName==nil) {
-                    [_nickNameSearchArray addObject:@"没有昵称"];
-                }
-                else{
-                    [_nickNameSearchArray addObject:model.NickName];
-                }
-                if (model.UserName ==nil) {
-                    [_UserNameSearchArray addObject:@"没有姓名"];
-                }else{
-                    [_UserNameSearchArray addObject:model.UserName];
-                }
-                model.count =array1.count-i;
-                
+    NSString *extraInfoUrl = [NSString stringWithFormat:@"%@api/v2/activity/GetActivityOption?token=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getToken], _listID];
+    [ZD_NetWorkM postDataWithMethod:extraInfoUrl parameters:nil succ:^(NSDictionary *obj) {
+        NSArray *extraInfoArray = obj[@"data"];
+        NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivityList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)self.listID],
+                              @"pageSize":@"200000",
+                              @"curPage":@"1"};
+        [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
+            NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
+            NSArray *array1 = [result[@"data"] isEqual:[NSNull null]] ? @[] : result[@"data"];
+            if (array1.count) {
+                NSString *extraInfo = ZD_SafeStringValue(array1.firstObject[@"ExtraInfo"]);
+                [self getOptionWithArray:extraInfoArray];
+            }
+            [indicator stopAnimating];
+            NSMutableArray *muarray = [NSMutableArray array];
+            dataarr = [NSMutableArray array];
+            [self deleteData];
+            dispatch_async(conQueue, ^{
+                for (int i=0; i<array1.count; i++)
                 {
-                    NSMutableDictionary *e = [NSMutableDictionary dictionary];
+                    NSDictionary *acdic = [array1 objectAtIndex:i];
+                    listModel *model = [listModel yy_modelWithJSON:acdic];
+                    [_phoneSearchArray addObject:model.Mobile];
+                    if (model.NickName==nil) {
+                        [_nickNameSearchArray addObject:@"没有昵称"];
+                    }
+                    else{
+                        [_nickNameSearchArray addObject:model.NickName];
+                    }
+                    if (model.UserName ==nil) {
+                        [_UserNameSearchArray addObject:@"没有姓名"];
+                    }else{
+                        [_UserNameSearchArray addObject:model.UserName];
+                    }
+                    model.count =array1.count-i;
                     
-                    [muarray addObject:model];
-                    for (NSString *keystr in acdic.allKeys) {
+                    {
+                        NSMutableDictionary *e = [NSMutableDictionary dictionary];
                         
-                        if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-                            //
-                            [e setObject:@"" forKey:keystr];
+                        [muarray addObject:model];
+                        for (NSString *keystr in acdic.allKeys) {
+                            
+                            if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
+                                //
+                                [e setObject:@"" forKey:keystr];
+                            }
+                            else
+                            {
+                                [e setObject:[acdic objectForKey:keystr] forKey:keystr];
+                            }
                         }
-                        else
-                        {
-                            [e setObject:[acdic objectForKey:keystr] forKey:keystr];
-                        }
+                        
+                        [dataarr addObject:e];
+                        
+                        
                     }
                     
-                    [dataarr addObject:e];
-                    
                     
                 }
-                
-                
-            }
-            [[NSUserDefaults standardUserDefaults]setObject:dataarr forKey:listuser];
-            [[NSUserDefaults standardUserDefaults]synchronize];
-            _dataArray = [muarray copy];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_table.mj_header endRefreshing];
-                [_table reloadData];
+                [[NSUserDefaults standardUserDefaults]setObject:dataarr forKey:listuser];
+                [[NSUserDefaults standardUserDefaults]synchronize];
+                _dataArray = [muarray copy];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [_table.mj_header endRefreshing];
+                    [_table reloadData];
+                });
             });
-        });
+        } fail:^(NSError *error) {
+            NSLog(@"error = %@",error);
+            [indicator stopAnimating];
+            [[SignManager shareManager] showNotHaveNet:self.view];
+        }];
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
-        [indicator stopAnimating];
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        
     }];
 }
-- (void)getOptionWithdic:(NSDictionary *)optiondic
+- (void)getOptionWithArray:(NSArray *)option
 {
-    NSMutableArray *idArray =[NSMutableArray array];
-    NSMutableArray *optionArray = [optiondic[@"Option"] mutableCopy];
+    NSMutableArray *optionArray = option.mutableCopy;
     if ([optionArray firstObject]) {
         for (int i = 0 ; i < optionArray.count ;i++) {
             NSMutableDictionary *mudic = [optionArray[i] mutableCopy];
-            [idArray addObject:mudic[@"InputType"]];
             for (NSString *key in mudic.allKeys) {
                 if ([[mudic objectForKey:key] isEqual:[NSNull null]]) {
                     [mudic setObject:@"" forKey:key];
@@ -399,7 +406,6 @@
             }
             [optionArray replaceObjectAtIndex:i withObject:mudic];
         }
-        [[NSUserDefaults standardUserDefaults]setObject:[idArray copy] forKey: [NSString stringWithFormat:@"optionID%li",(long)self.listID]];
         [[NSUserDefaults standardUserDefaults]setObject:[optionArray copy] forKey:[NSString stringWithFormat:@"optionArray%li",(long)self.listID]];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }

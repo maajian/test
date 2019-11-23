@@ -20,13 +20,9 @@
 @interface LoadAllSignViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchControllerDelegate>
 {
     UITableView *_tableview;
-    NSString *accesskey;
-    NSArray *_dataArray;
-    NSMutableArray *dataarr;
-    NSArray *_dataArray1;
-    NSMutableArray *dataarr1;
-    NSArray *_dataArray2;
-    NSMutableArray *dataarr2;
+    NSMutableArray *_dataArray;
+    NSMutableArray *_dataArray1;
+    NSMutableArray *_dataArray2;
     NSInteger flag;
      Reachability *r;
     ResultsViewController *resultsController;
@@ -47,17 +43,18 @@
     backNumber = 0;
     [self setNavTitle];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem scanItemWithTarget:self action:@selector(pushScan)];
-    SignManager *manager = [SignManager shareManager];
-    [manager createDatabase];
-    accesskey = [manager getaccseekey];
     self.definesPresentationContext = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    _dataArray = [NSMutableArray array];
+    _dataArray1 = [NSMutableArray array];
+    _dataArray2 = [NSMutableArray array];
     [self createTableView];
-    [self firstload];
     self.view.backgroundColor = zhundaoBackgroundColor;
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self postData];
+    [self loadData];
     _tableview.backgroundColor = zhundaoBackgroundColor;
 }
 
@@ -80,99 +77,11 @@
     sao.signID = self.signID;
     [self presentViewController:sao animated:YES completion:nil];
 }
-- (void)reflsh
-{
-    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
-    BOOL isfresh = NO ;
-    if (manager.networkReachabilityStatus==AFNetworkReachabilityStatusReachableViaWiFi||manager.networkReachabilityStatus==AFNetworkReachabilityStatusReachableViaWWAN) {
-        isfresh = YES;
-    }
-    __weak typeof(_tableview) weakTableview = _tableview;
-    __weak typeof (self) weakSelf = self;
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        if (isfresh) {
-            [weakSelf loadData];
-        }
-        else{
-            weakTableview.mj_header.state = MJRefreshStateNoMoreData;
-            weakTableview.mj_header.hidden = YES;
-            weakTableview.mj_insetT=0;
-        }
-    }];
-    _tableview.mj_header = header;
-    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
-    [header setTitle:@"释放刷新" forState:MJRefreshStatePulling];
-    [header setTitle:@"加载中，请等待 ..." forState:MJRefreshStateRefreshing];
-    header.lastUpdatedTimeLabel.hidden = YES;
-}
-- (void)firstload
-{
-    r = [Reachability reachabilityWithHostName:@"www.apple.com"];
-    switch ([r currentReachabilityStatus]) {
-        case NotReachable:
-            NSLog(@"wu");
-        {
-            [self getdataArray];
-            [_tableview reloadData];
-//            self.netWorkingStatus=0;
-            break;
-        }
-            
-        case ReachableViaWWAN:
-            // 使用3G网络
-            NSLog(@"wan");
-            [self reflsh];
-            [self isNeedNet];
-//            self.netWorkingStatus=1;
-            break;
-        case ReachableViaWiFi:
-            // 使用WiFi网络
-            NSLog(@"wifi");
-            [self reflsh];
-            [self isNeedNet];
-//            self.netWorkingStatus=1;
-            break;
-    }
-}
-
-- (void)isNeedNet{
-
-    NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)_signID]];
-    if (array1.count==_signNumber) {
-        [self getdataArray];
-         [_tableview reloadData];
-    }else{
-         [self loadData];
-    }
-}
-
-
-- (void)getdataArray
-{
-    NSMutableArray *muarray = [NSMutableArray array];
-    NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)_signID]];
-    
-    for (NSDictionary *acdic in array1) {
-        LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];
-        [muarray addObject:model];
-    }
-    _dataArray = [muarray mutableCopy];
-    
-    NSMutableArray *muarray1 = [NSMutableArray array];
-    NSArray *array2 = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"signed%li",(long)_signID]];
-    for (NSDictionary *acdic in array2) {
-        LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];
-        [muarray1 addObject:model];
-    }
-    _dataArray1 = [muarray1 mutableCopy];
-    
-    NSMutableArray *muarray2 = [NSMutableArray array];
-    NSArray *array3 = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"sign%li",(long)_signID]];
-    for (NSDictionary *acdic in array3) {
-        LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];
-        [muarray2 addObject:model];
-    }
-    _dataArray2 = [muarray2 mutableCopy];
+- (void)postData {
+    ZD_WeakSelf
+    [[signResult alloc] postLocalDataWithSignID:_signID success:^{
+        [weakSelf loadData];
+    } fail:nil];
 }
 - (void)loadData    //网络加载数据
 {
@@ -187,105 +96,112 @@
                           @"pageSize":@"200000",
                           @"pageIndex":@"1"};
     [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
+        [_dataArray removeAllObjects];
+        [_dataArray1 removeAllObjects];
+        [_dataArray2 removeAllObjects];
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
-        NSArray *array1 = result[@"data"];
         if (result[@"Url"]) {
             [self showNoDataArray];
         }
         else{
-            NSMutableArray *muarray = [NSMutableArray array];
-            NSMutableArray *muarray1 = [NSMutableArray array];
-            NSMutableArray *muarray2 = [NSMutableArray array];
-            dataarr = [NSMutableArray array];
-            dataarr1 = [NSMutableArray array];
-            dataarr2 = [NSMutableArray array];
-            [self createSignList];
-            SignManager *manager = [SignManager shareManager];
-            if ([manager.dataBase open]) {
-                
-                //                            NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
-                //                            BOOL res = [manager.dataBase executeUpdate:updateSql];
-                
-                [self transactionwitharray:array1 withmarr:muarray withmarr:muarray1 withmarr:muarray2];
-                [manager.dataBase close];
+            for (NSDictionary *tempDic in result[@"data"]) {
+                LoadallsignModel *model = [LoadallsignModel yy_modelWithDictionary:tempDic];
+                [_dataArray addObject:model];
+                if (model.Status == 0) {
+                    [_dataArray2 addObject:model];
+                }
+                if (model.Status == 1) {
+                    [_dataArray1 addObject:model];
+                }
             }
-            [[NSUserDefaults standardUserDefaults]setObject:dataarr forKey:[NSString stringWithFormat:@"all%li",(long)_signID]];
-            [[NSUserDefaults standardUserDefaults]setObject:dataarr2 forKey:[NSString stringWithFormat:@"sign%li",(long)_signID]];
-            [[NSUserDefaults standardUserDefaults]setObject:dataarr1 forKey:[NSString stringWithFormat:@"signed%li",(long)_signID]];
-            [[NSUserDefaults standardUserDefaults]synchronize];
-            _dataArray = [muarray copy];
-            _dataArray1 = [muarray1 copy];
-            _dataArray2 = [muarray2 copy];
-            
         }
-        
+        [ZDCache.sharedCache setCache:result[@"data"] forKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, _signID]];
         [_tableview.mj_header endRefreshing];
-        [indicator stopAnimating];
         [indicator stopAnimating];
         [self createSearchCtr];
         [_tableview reloadData];
     } fail:^(NSError *error) {
-        
+        [indicator stopAnimating];
+        [_tableview.mj_header endRefreshing];
+        NSArray *tempArray = (NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, _signID]];
+        if (tempArray.count) {
+            [self dealDataWithArray:tempArray];
+        }
     }];
 }
-
--(void)transactionwitharray:(NSArray*)array1 withmarr:(NSMutableArray *)muarray withmarr:(NSMutableArray *)muarray1 withmarr:(NSMutableArray *)muarray2{
-    // 开启事务
-    [[SignManager shareManager].dataBase beginTransaction];
-    BOOL isRollBack = NO;
-    @try {
-        for (NSDictionary *acdic in array1) {
-            LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];
-            NSMutableDictionary *e = [NSMutableDictionary dictionary];
-            
-            NSString *insertSql =[NSString stringWithFormat:@"replace INTO signList(vcode, signID,Status,AdminRemark,FeeName,Fee,phone)VALUES('%@',%li,%li,'%@','%@',%f,'%@')",model.VCode,(long)_signID,(long)model.Status,model.AdminRemark,model.FeeName,model.Fee,model.Mobile];
-            
-            BOOL res = [[SignManager shareManager].dataBase executeUpdate:insertSql];
-            if (res) {
-                NSLog(@"数据表插入成功");
-            }
-            else
-            {
-                NSLog(@"数据表插入失败");
-            }
-            
-            for (NSString *keystr in acdic.allKeys) {
-                
-                if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-                    //
-                    [e setObject:@"" forKey:keystr];
-                }
-                else
-                {
-                    [e setObject:[acdic objectForKey:keystr] forKey:keystr];
-                }
-            }
-            [muarray addObject:model];
-            
-            if (model.Status==1) {              //签到完成的
-                [muarray1 addObject:model];
-                [dataarr1 addObject:e];
-            }
-            if (model.Status==0) {           //还未到场的
-                [muarray2 addObject:model];
-                [dataarr2 addObject:e];
-            }
-            
-            [dataarr addObject:e];
+- (void)dealDataWithArray:(NSArray *)array {
+    [_dataArray removeAllObjects];
+    [_dataArray1 removeAllObjects];
+    [_dataArray2 removeAllObjects];
+    for (NSDictionary *tempDic in array) {
+        LoadallsignModel *model = [LoadallsignModel yy_modelWithDictionary:tempDic];
+        [_dataArray addObject:model];
+        if (model.Status == 0) {
+            [_dataArray2 addObject:model];
+        }
+        if (model.Status == 1) {
+            [_dataArray1 addObject:model];
         }
     }
-    @catch (NSException *exception) {
-        isRollBack = YES;
-        // 事务回退
-        [[SignManager shareManager].dataBase rollback];
-    }
-    @finally {
-        if (!isRollBack) {
-            //事务提交
-            [[SignManager shareManager].dataBase commit];
-        }
-    }
+    [_tableview reloadData];
 }
+//-(void)transactionwitharray:(NSArray*)array1 withmarr:(NSMutableArray *)muarray withmarr:(NSMutableArray *)muarray1 withmarr:(NSMutableArray *)muarray2{
+//    // 开启事务
+//    [[SignManager shareManager].dataBase beginTransaction];
+//    BOOL isRollBack = NO;
+//    @try {
+//        for (NSDictionary *acdic in array1) {
+//            LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];
+//            NSMutableDictionary *e = [NSMutableDictionary dictionary];
+//
+//            NSString *insertSql =[NSString stringWithFormat:@"replace INTO signList(vcode, signID,Status,AdminRemark,FeeName,Fee,phone)VALUES('%@',%li,%li,'%@','%@',%f,'%@')",model.VCode,(long)_signID,(long)model.Status,model.AdminRemark,model.FeeName,model.Fee,model.Mobile];
+//
+//            BOOL res = [[SignManager shareManager].dataBase executeUpdate:insertSql];
+//            if (res) {
+//                NSLog(@"数据表插入成功");
+//            }
+//            else
+//            {
+//                NSLog(@"数据表插入失败");
+//            }
+//
+//            for (NSString *keystr in acdic.allKeys) {
+//
+//                if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
+//                    //
+//                    [e setObject:@"" forKey:keystr];
+//                }
+//                else
+//                {
+//                    [e setObject:[acdic objectForKey:keystr] forKey:keystr];
+//                }
+//            }
+//            [muarray addObject:model];
+//
+//            if (model.Status==1) {              //签到完成的
+//                [muarray1 addObject:model];
+//                [dataarr1 addObject:e];
+//            }
+//            if (model.Status==0) {           //还未到场的
+//                [muarray2 addObject:model];
+//                [dataarr2 addObject:e];
+//            }
+//
+//            [dataarr addObject:e];
+//        }
+//    }
+//    @catch (NSException *exception) {
+//        isRollBack = YES;
+//        // 事务回退
+//        [[SignManager shareManager].dataBase rollback];
+//    }
+//    @finally {
+//        if (!isRollBack) {
+//            //事务提交
+//            [[SignManager shareManager].dataBase commit];
+//        }
+//    }
+//}
 - (void)showNoDataArray
 {
     [[SignManager shareManager]showAlertWithTitle:@"对不起，您的权限不够" WithMessage:@"请前往升级" WithTitleOne:@"返回" WithActionOne:^(TYAlertAction *action1) {
@@ -321,22 +237,6 @@
         
     }];
 }
-- (void)createSignList
-{
-    SignManager *manager = [SignManager shareManager];
-    if ([manager.dataBase open]) {
-        bool result = [manager.dataBase executeUpdate:@"CREATE TABLE IF NOT EXISTS signList(vcode TEXT NOT NULL,signID integer NOT NULL,Status integer,post integer DEFAULT 2,AdminRemark TEXT,Fee DOUBLE,addTime TEXT,phone TEXT,FeeName TEXT, PRIMARY KEY(vcode, signID));"];
-        if (result) {
-            NSLog(@"成功创建table");
-        }
-        else
-        {
-            NSLog(@"创建table失败");
-        }
-        [manager.dataBase close];
-        
-    }
-}
 - (void)createTableView
 {
     _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
@@ -344,6 +244,7 @@
     _tableview.delegate = self ;
     _tableview.backgroundColor = zhundaoBackgroundColor;
     _tableview.dataSource = self;
+    _tableview.mj_header = [ZDRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     [_tableview setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [self.view addSubview:_tableview];
     if ([r currentReachabilityStatus]==NotReachable) {
@@ -368,9 +269,7 @@
 }
 - (void)didDismissSearchController:(UISearchController *)searchController
 {
-    [self getdataArray];
-    [_tableview reloadData];
-    
+    [self loadData];
 }
 - (void)willPresentSearchController:(UISearchController *)searchController
 {
@@ -378,7 +277,7 @@
 }
 - (NSArray *)getallData
 {
-    NSArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)_signID]];
+    NSArray *arr = (NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, _signID]];
     NSMutableArray *alldataarray = [NSMutableArray array]; 
     for (NSDictionary *acdic in arr) {
         LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];
@@ -397,7 +296,6 @@
    else {
         return _dataArray2.count;
     }
-  
 }
 
 
@@ -484,21 +382,8 @@
 {
     __weak typeof(self) weakSelf = self;
     [[SignManager shareManager]showAlertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] WithMessage:@"代签后不能修改" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
-        
-        [[signResult alloc]sureSignWithphoneStr:myCell.model.Mobile WithView:self.view WithSignId:self.signID WithCtr:self WithMaskLabelBool :YES WithTYaction1:^(TYAlertAction *action1) {
-
-        } WithTYaction2:^(TYAlertAction *action1) {
-           
-        } WithTYActionNotNet1:^(TYAlertAction *action1) {
-          
-        } WithTYActionNotNet2:^(TYAlertAction *action1) {
-    
-        }  maskBlock:^(BOOL maskIsSuccess) {
-            if (maskIsSuccess) {
-                [weakSelf getdataArray];
-                [_tableview reloadData];
-                _block(1);
-            }
+        [[signResult alloc] dealAdminSignWithSignID:self.signID phone:myCell.model.Mobile Ctr:self title1:@"确定" action1:^(TYAlertAction *action1) {
+            [weakSelf loadData];
         }];
     } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
 }

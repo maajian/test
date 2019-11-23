@@ -6,30 +6,29 @@
 //  Copyright © 2019 zhundao. All rights reserved.
 //
 
-#import "ZDMainActivityVC.h"
+#import "ZDMainSignInVC.h"
 
-#import "postActivityViewController.h"
-#import "ZDAllActivityVC.h"
-#import "ZDOnActivityVC.h"
-#import "ZDCloseActivityVC.h"
+#import "ZDAllSignVC.h"
+#import "ZDOnSignInVC.h"
+#import "ZDCloseSignInVC.h"
 
-#import "ZDActivityViewModel.h"
+#import "ZDSignInViewModel.h"
 
-@interface ZDMainActivityVC ()<ZDSegmentViewDelegate, UIScrollViewDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
+@interface ZDMainSignInVC ()<ZDSegmentViewDelegate, UIScrollViewDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
     NSInteger _currentIndex;
 }
 @property (nonatomic, strong) UISearchController *searchController; // 搜索
 @property (nonatomic, strong) ZDSegmentView      *segmentView; // 分页
 @property (nonatomic, strong) UIScrollView       *scrollView;
-@property (nonatomic, strong) ZDAllActivityVC    *allVC;
-@property (nonatomic, strong) ZDOnActivityVC     *onVC;
-@property (nonatomic, strong) ZDCloseActivityVC  *closeVC;
+@property (nonatomic, strong) ZDAllSignVC    *allVC;
+@property (nonatomic, strong) ZDOnSignInVC     *onVC;
+@property (nonatomic, strong) ZDCloseSignInVC  *closeVC;
 
-@property (nonatomic, strong) ZDActivityViewModel *viewModel;
+@property (nonatomic, strong) ZDSignInViewModel *viewModel;
 
 @end
 
-@implementation ZDMainActivityVC
+@implementation ZDMainSignInVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,7 +48,7 @@
     if(@available(iOS 11.0, *)) {
         self.navigationItem.hidesSearchBarWhenScrolling=YES;
     }
-    [self getEmail];
+    [ZD_NotificationCenter postNotificationName:ZDUserDefault_Update_Sign object:nil];
 }
 
 #pragma mark --- init
@@ -61,15 +60,13 @@
     [self.view addSubview:self.searchController.searchBar];
     [self.view addSubview:self.segmentView];
     [self.view addSubview:self.scrollView];
-    _allVC = [[ZDAllActivityVC alloc] init];
-    _onVC = [[ZDOnActivityVC alloc] init];
-    _closeVC = [[ZDCloseActivityVC alloc] init];
+    _allVC = [[ZDAllSignVC alloc] init];
+    _onVC = [[ZDOnSignInVC alloc] init];
+    _closeVC = [[ZDCloseSignInVC alloc] init];
     [self addChildViewController:_allVC];
     [self addChildViewController:_onVC];
     [self addChildViewController:_closeVC];
     [self.scrollView addSubview:_allVC.view];
-    // 添加活动
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(pushAddActivity)];
 }
 - (void)initLayout {
     ZD_WeakSelf
@@ -80,7 +77,7 @@
     }];
     [self.allVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.equalTo(weakSelf.scrollView);
-//        make.height.mas_equalTo(kScreenHeight- kTopBarHeight - 49 - 95);
+        //        make.height.mas_equalTo(kScreenHeight- kTopBarHeight - 49 - 95);
         make.bottom.equalTo(weakSelf.view);
         make.width.equalTo(weakSelf.scrollView);
     }];
@@ -90,7 +87,7 @@
 #pragma mark 懒加载
 - (ZDSegmentView *)segmentView {
     if (!_segmentView) {
-        _segmentView = [[ZDSegmentView alloc] initWithFrame:CGRectMake(0, 50, kScreenWidth, 50) dataArray:@[@"全 部",@"进行中",@"已结束"]];
+        _segmentView = [[ZDSegmentView alloc] initWithFrame:CGRectMake(0, 50, kScreenWidth, 50) dataArray:@[@"全 部",@"进行中",@"已关闭"]];
         _segmentView.segmentViewDelegate = self;
         _segmentView.textFont = [UIFont boldSystemFontOfSize:14];
         _segmentView.lineWidth = 42;
@@ -110,9 +107,9 @@
     }
     return _scrollView;
 }
-- (ZDActivityViewModel *)viewModel {
+- (ZDSignInViewModel *)viewModel {
     if (!_viewModel) {
-        _viewModel = [[ZDActivityViewModel alloc] init];
+        _viewModel = [[ZDSignInViewModel alloc] init];
     }
     return _viewModel;
 }
@@ -149,7 +146,6 @@
             [self.onVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(weakSelf.scrollView);
                 make.leading.equalTo(self.scrollView).offset(kScreenWidth);
-//                make.height.mas_equalTo(kScreenHeight- kTopBarHeight - 49 - 95);
                 make.bottom.equalTo(self.view);
                 make.width.equalTo(weakSelf.scrollView);
             }];
@@ -165,7 +161,7 @@
             [self.closeVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(weakSelf.scrollView);
                 make.leading.equalTo(self.scrollView).offset(2 * kScreenWidth);
-//                make.height.mas_equalTo(kScreenHeight- kTopBarHeight - 49 - 95);
+                //                make.height.mas_equalTo(kScreenHeight- kTopBarHeight - 49 - 95);
                 make.bottom.equalTo(self.view);
                 make.width.equalTo(weakSelf.scrollView);
             }];
@@ -222,43 +218,6 @@
     _currentIndex = index;
     [self segmentView:nil didSelectIndex:index];
     self.segmentView.currentIndex = index;
-}
-
-#pragma mark --- action
-- (void)pushAddActivity {
-    if ([[  NSUserDefaults standardUserDefaults  ]objectForKey:@"GradeId"]) {
-        NSInteger grade =  [[[  NSUserDefaults standardUserDefaults  ]objectForKey:@"GradeId"]integerValue];
-        if (grade <= 1) {
-            ZD_WeakSelf
-            [self.viewModel checkIsCanpost:^(id obj) {
-                if ([obj[@"Res"] integerValue] == 0) {
-                    [weakSelf gotoPost];
-                } else {
-                    maskLabel *label = [[maskLabel alloc]initWithTitle:@"免费版一个月最多只能发4个活动"];
-                    [label  labelAnimationWithViewlong:weakSelf.view];
-                }
-            } error:^(NSError *error) {
-                [[SignManager shareManager] showNotHaveNet:weakSelf.view];
-            }];
-        } else {
-            [self gotoPost];
-        }
-    }
-}
-- (void)gotoPost {
-    postActivityViewController *postVC = [[postActivityViewController alloc]init];
-    [self.navigationController pushViewController:postVC animated:YES];
-}
-
-- (void)getEmail {
-    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
-        NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
-        NSDictionary  *userdic = data[@"data"];
-        [[NSUserDefaults standardUserDefaults]setObject:userdic[@"email"] forKey:@"email"];
-    } fail:^(NSError *error) {
-        
-    }];
 }
 
 

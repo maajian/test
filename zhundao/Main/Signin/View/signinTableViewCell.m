@@ -10,15 +10,16 @@
 #import "Time.h"
 #import "SignInViewModel.h"
 @interface signinTableViewCell()
-@property(nonatomic,strong)SignInViewModel *vm;
+
 @end
+
 @implementation signinTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
 }
-- (void)setModel:(signinModel *)model
+- (void)setModel:(ZDSignInModel *)model
 {
     if (model) {
         _model = model;
@@ -35,16 +36,10 @@
     {
         _tpyeLabel.text =@"";
     }
+    _switchButton.on = model.Status;
     _titleLabel.text = _model.ActivityName;
     [_signname setTitle:_model.Name forState:UIControlStateNormal];
     _signobjectLabel.text =[NSString stringWithFormat: @"全部:%li",(long)_model.NumShould];
-}
-
-- (SignInViewModel *)vm{
-    if (!_vm) {
-        _vm = [[SignInViewModel alloc]init];
-    }
-    return _vm;
 }
 
 - (BOOL)isShowRed{
@@ -65,11 +60,12 @@
 
 - (void)getData{
     NSInteger all =_model.NumShould;
-    for (CALayer *layer in self.layer.sublayers) {
-        if ([layer isKindOfClass:[CAShapeLayer class]]) {
-            [layer removeFromSuperlayer];
+    [self.layer.sublayers enumerateObjectsUsingBlock:^(__kindof CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[CAShapeLayer class]] ) {
+            [obj removeFromSuperlayer];
+            *stop = YES;
         }
-    }
+    }];
     if (all) {
         NSInteger had =_model.NumFact;
         NSInteger will =_model.NumShould - _model.NumFact;
@@ -109,11 +105,27 @@
     label.attributedText = string;
 }
 
+#pragma mark --- Action
+- (IBAction)pushSignList:(id)sender {
+    if ([self.signinCellDelegate respondsToSelector:@selector(signinCell:willPushList:)]) {
+        [self.signinCellDelegate signinCell:self willPushList:sender];
+    }
+}
+
+- (IBAction)switchChange:(id)sender {
+    if ([self.signinCellDelegate respondsToSelector:@selector(signinCell:willTapSwitch:)]) {
+        [self.signinCellDelegate signinCell:self willTapSwitch:sender];
+    }
+}
+- (IBAction)alertAction:(id)sender {
+    if ([self.signinCellDelegate respondsToSelector:@selector(signinCell:willShowAlert:)]) {
+        [self.signinCellDelegate signinCell:self willShowAlert:sender];
+    }
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    
 }
 
 @end

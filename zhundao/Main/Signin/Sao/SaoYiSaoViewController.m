@@ -24,17 +24,6 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 @interface SaoYiSaoViewController ()<UIAlertViewDelegate>
 {
     bool _canOpen;
-    
-    NSString *acckey;
-     Reachability *r;
-    NSMutableArray *array;
-    NSMutableArray *array1;
-    NSMutableArray *array2;
-    
-    NSMutableArray *dataarr;
-    NSMutableArray *dataarr1;
-    NSMutableArray *dataarr2;
-    NSString *vcode;
     UIAlertController *Alert;
     NSInteger flag;
     BOOL viewflag;
@@ -43,6 +32,7 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     UIImageView *leftImage;
     UIImageView *rightImage;
 }
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
 
@@ -60,32 +50,25 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 - (void)viewDidLoad {
     [super viewDidLoad];
     flag =0;
- array = [[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)self.signID]] mutableCopy];
-    array1 = [[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"sign%li",(long)self.signID]] mutableCopy];
-    array2 = [[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"signed%li",(long)self.signID]]mutableCopy];
-  
-
-    SignManager *manager= [SignManager shareManager];
-    acckey = [manager getaccseekey];
     
+    _dataArray = ((NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, _signID]]).mutableCopy;
     self.navigationController.navigationBar.hidden = YES;
     self.view.backgroundColor = [UIColor blackColor];
     [self creatBackGroundView];
     [self creatUI];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{  [super viewWillAppear:animated];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setupCamera];
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [timer invalidate];
     timer = nil;
     [_session stopRunning];
 }
-
 -(void)lineAnimation{
     CGFloat leadSpace = (kScreenWidth - MiddleWidth)/ 2;
     if (upOrdown == NO) {
@@ -129,6 +112,7 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
             // Session
             _session = [[AVCaptureSession alloc]init];
             [_session setSessionPreset:AVCaptureSessionPresetHigh];
+            
             if ([_session canAddInput:self.input]){
                 [_session addInput:self.input];
                 _canOpen = YES;
@@ -181,208 +165,20 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 #pragma mark -
 #pragma mark  -- -- -- -- -- AVCapture Metadata Output Objects Delegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
+    // 扫描二维码
     NSString *stringValue;
     if ([metadataObjects count] >0){
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
         stringValue = metadataObject.stringValue;
     }
-    
     [_session stopRunning];
     [timer invalidate];
     timer = nil;
-    NSLog(@"string = %@",stringValue);
-    r = [Reachability reachabilityWithHostName:@"www.apple.com"];
-    switch ([r currentReachabilityStatus]) {
-        case NotReachable:
-            NSLog(@"暂无网络");
-        {
-            SignManager *manager = [SignManager shareManager];
-            [manager createDatabase];
-            NSString *timeStr = [[Time alloc]nextDateWithNumber:0];
-            dataarr = [NSMutableArray array];
-            dataarr1 = [NSMutableArray array];
-              dataarr2 = [NSMutableArray array];
-            if ([manager.dataBase open]) {
-                NSString *sql = [NSString stringWithFormat:@"SELECT * FROM signList WHERE signID = %li",(long)_signID];
-                FMResultSet * rs = [manager.dataBase executeQuery:sql];
-                while ([rs next]) {
-                    if ([[rs stringForColumn:@"VCode"] isEqualToString:stringValue]) {  //如果找到vcode一致的
-                        flag=1;
-               [manager.dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE signList SET Status = '1'  where VCode = '%@' AND signID = %li",stringValue,(long)_signID]];   //更新数据库的vcode
-             [manager.dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE signList SET post = '0'  where VCode = '%@' AND signID = %li",stringValue,(long)_signID]];
-            [manager.dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE signList SET addTime = '%@'  where VCode = '%@' AND signID = %li",timeStr,stringValue,(long)_signID]];
-                        for (int i=0; i<array.count; i++) {
-                            NSDictionary *acdic = [array objectAtIndex:i];
-                            NSMutableDictionary *e =  [acdic mutableCopy];
-                          
-                            for (NSString *keystr in acdic.allKeys) {
-                                
-                                if ([keystr isEqualToString:@"VCode"]) {
-                                      NSLog(@"status = %@",[acdic valueForKey:@"Status"]);
-                                    if ([[acdic valueForKey:keystr] isEqualToString:stringValue]) {
-                                     
-                                        if ([[acdic valueForKey:@"Status"]integerValue]==0) {
-                                            [e  setValue:@"1" forKey:@"Status"];
-                                            [array removeObjectAtIndex:i];
-                                            [array addObject:e];            
-                                            [array2 addObject:e];  //array2   已经签到
-                                            SystemSoundID soundID = 1102;
-                                            AudioServicesPlaySystemSound(soundID);
-                                            [[signResult alloc]showallWithFMResultSet:rs withdic:acdic actionWithTitle1:@"返回主界面" actionWithTitle2:@"继续扫码" withAction1:^(TYAlertAction *action1) {
-                                                [self backAction];
-                                            } withAction2:^(TYAlertAction *action1) {
-                                                [self run];
-                                            } otherSign:NO withCtr:self];
-                                           
-                                            
-                                        }
-                                        if ([[acdic valueForKey:@"Status"]integerValue]==1) {
-                                            SystemSoundID soundID = 1102;
-                                            AudioServicesPlaySystemSound(soundID);
-                                            [[signResult alloc]showallWithFMResultSet:rs withdic:acdic actionWithTitle1:@"返回主界面" actionWithTitle2:@"继续扫码" withAction1:^(TYAlertAction *action1) {
-                                                [self backAction];
-                                            } withAction2:^(TYAlertAction *action1) {
-                                                [self run];
-                                            } otherSign:NO withCtr:self];
-                                        }
-                                    }
-                               
-                                }
-                                
-                            }
-                         
-                          
-                    }
-                      
-                        
-                        for (int i=0; i<array1.count; i++) {
-                            NSDictionary *acdic = [array1 objectAtIndex:i];
-        
-                            for (NSString *keystr in acdic.allKeys) {
-                                
-                                if ([keystr isEqualToString:@"VCode"]) {
-                                    if ([[acdic valueForKey:keystr] isEqualToString:stringValue])  {
-                                    
-                                    [array1 removeObjectAtIndex:i];
-                                    break;
-                                }
-                                }
-                            }
-                            
-                            
-                        }
-                }
-                    dataarr = [array copy];
-                    dataarr1 = [array1 copy];
-                    dataarr2 = [array2 copy];
-            }
-                if (flag==0)
-                    
-                {  SystemSoundID soundID = 1102;
-                    AudioServicesPlaySystemSound(soundID);
-                    [[SignManager shareManager]showAlertWithTitle:@"扫描结果" WithMessage:@"签到失败 凭证码无效" WithTitleOne:@"返回主界面" WithActionOne:^(TYAlertAction *action1) {
-                          [self backAction];
-                    } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"继续扫码" WithActionTwo:^(TYAlertAction *action1) {
-                        [self run];
-                    } WithCTR:self];
-                }
-                [manager.dataBase close];
-                [[NSUserDefaults standardUserDefaults]setObject:dataarr forKey:[NSString stringWithFormat:@"all%li",(long)_signID]];
-                
-                [[NSUserDefaults standardUserDefaults]setObject:dataarr1 forKey:[NSString stringWithFormat:@"sign%li",(long)_signID]];
-                [[NSUserDefaults standardUserDefaults]setObject:dataarr2 forKey:[NSString stringWithFormat:@"signed%li",(long)_signID]];
-                  [[NSUserDefaults standardUserDefaults]synchronize];
-            }
-            
-        
-        }
-       
-            break;
-        case ReachableViaWiFi:{
-            NSLog(@"使用wifi");
-            NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByQrcode?accessKey=%@&vCode=%@&checkInId=%li&checkInWay=6",zhundaoApi,acckey,stringValue,(long)self.signID];
-
-            [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-                NSLog(@"respondse = %@",obj);
-                NSDictionary *dic= [NSDictionary dictionaryWithDictionary:obj];
-                
-                [self getDataWithData:dic WithStringValue:stringValue];
-            } fail:^(NSError *error) {
-                
-            }];
-        }
-            
-            break;
-        case ReachableViaWWAN:
-        {
-            NSLog(@"使用流量");
-            NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByQrcode?accessKey=%@&vCode=%@&checkInId=%li&checkInWay=6",zhundaoApi,acckey,stringValue,(long)self.signID];
-            
-            [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-                NSLog(@"respondse = %@",obj);
-                NSDictionary *dic= [NSDictionary dictionaryWithDictionary:obj];
-                [self getDataWithData:dic WithStringValue:stringValue];
-            } fail:^(NSError *error) {
-                
-            }];
-        }
-            break;
-        default:
-            break;
-    }
-}
--(void)getDataWithData:(NSDictionary *)dic  WithStringValue:(NSString *)stringValue
-{
-    NSMutableDictionary *Data = nil;
-    if ( ! [dic[@"Data"] isEqual:[NSNull null]]){
-         Data =[dic[@"Data"] mutableCopy];
-         for (NSString *keystr in Data.allKeys) {
-        if ([[Data valueForKey:keystr] isEqual:[NSNull null]]) {
-            [Data setObject:@"" forKey:keystr];
-        }
-    }
-    }
-    NSInteger res =[dic[@"Res"]integerValue];
-    NSString *Url = dic[@"Url"];
-    
-    NSString *phone = nil;
-    NSString *Mobile =Data[@"Phone"];
-    if (Mobile.length>7) {
-        phone = [Mobile stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
-    }
-    
-    if (res==0&&[Url isEqualToString:@"100"]) {
-        SystemSoundID soundID = 1102;
-        AudioServicesPlaySystemSound(soundID);
-        [[signResult alloc]getDataWithData:Data WithStringValue:stringValue withID:_signID WithSignBool:1 withSigncheckInWay:6 WithPhone:phone Withtitle1:@"返回主界面" Withtitle2:@"继续扫码" WithAction1:^(TYAlertAction *action1) {
-            [self backAction];
-        } WithAction1:^(TYAlertAction *action1) {
-            [self run];
-        } otherSign:NO WithCtr:self];
-    }
-    else  if (res==0&&[Url isEqualToString:@"101"]) {
-        SystemSoundID soundID = 1102;
-        AudioServicesPlaySystemSound(soundID);
-        [[signResult alloc]getDataWithData:Data WithStringValue:stringValue withID:_signID WithSignBool:0 withSigncheckInWay:6 WithPhone:phone Withtitle1:@"返回主界面" Withtitle2:@"继续扫码" WithAction1:^(TYAlertAction *action1) {
-            [self backAction];
-        } WithAction1:^(TYAlertAction *action1) {
-            [self run];
-        } otherSign:NO WithCtr:self];
-    
-    }
-    else
-    {
-        
-        SystemSoundID soundID = 1102;
-        AudioServicesPlaySystemSound(soundID);
-        [[SignManager shareManager]showAlertWithTitle:@"扫描结果" WithMessage:@"签到失败 凭证码无效"  WithTitleOne:@"返回主界面" WithActionOne:^(TYAlertAction *action1) {
-            [self backAction];
-        } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"继续扫码"  WithActionTwo:^(TYAlertAction *action1) {
-            [self run];
-        } WithCTR:self];
-    }
-    
-
+    [[signResult alloc] dealCodeSignWithSignID:_signID vcode:stringValue Ctr:self title1:@"返回主界面" title2:@"继续扫码" action1:^(TYAlertAction *action1) {
+        [self backAction];
+    } action2:^(TYAlertAction *action1) {
+        [self run];
+    }];
 }
 
 -(void)dealloc

@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "signinModel.h"
+#import "ZDSignInModel.h"
+
+@class signinTableViewCell;
+@protocol signinTableViewCellDelegate <NSObject>
+- (void)signinCell:(signinTableViewCell *)signinCell willPushList:(id)sender;
+- (void)signinCell:(signinTableViewCell *)signinCell willTapSwitch:(UISwitch *)signSwicth;
+- (void)signinCell:(signinTableViewCell *)signinCell willShowAlert:(id)sender;
+
+@end
+
 @interface signinTableViewCell : UITableViewCell
-@property(nonatomic,strong)signinModel *model;
+@property(nonatomic,strong) ZDSignInModel *model;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *tpyeLabel;
@@ -31,6 +40,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *signRatioLabel;
 
 @property(nonatomic,assign)NSInteger signid ;
+
+@property (nonatomic, weak) id<signinTableViewCellDelegate> signinCellDelegate;
 
 - (void)getData;
 @end

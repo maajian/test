@@ -28,7 +28,7 @@
         <!--准到-->
         <scene sceneID="L7V-yI-eOl">
             <objects>
-                <viewController id="jsr-PT-ntE" customClass="SigninViewController" sceneMemberID="viewController">
+                <viewController id="jsr-PT-ntE" customClass="ZDMainSignInVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C8x-1N-ZTt"/>
                         <viewControllerLayoutGuide type="bottom" id="mdS-J8-43g"/>
@@ -36,41 +36,9 @@
                     <view key="view" contentMode="scaleToFill" id="ePb-qS-BRk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ml-AJ-NQu">
-                                <rect key="frame" x="0.0" y="122" width="375" height="545"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="jsr-PT-ntE" id="bXd-7V-6xz"/>
-                                    <outlet property="delegate" destination="jsr-PT-ntE" id="FgE-Wr-no5"/>
-                                </connections>
-                            </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QxZ-U5-yeB">
-                                <rect key="frame" x="16" y="74" width="343" height="39"/>
-                                <segments>
-                                    <segment title="进行中的签到"/>
-                                    <segment title="已关闭的签到"/>
-                                </segments>
-                                <color key="tintColor" red="0.031331380208333336" green="0.72957356770833337" blue="0.034559461805555552" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="QxZ-U5-yeB" secondAttribute="trailing" id="BQq-QR-bix"/>
-                            <constraint firstItem="QxZ-U5-yeB" firstAttribute="leading" secondItem="ePb-qS-BRk" secondAttribute="leadingMargin" id="PIa-ab-3Zv"/>
-                            <constraint firstItem="QxZ-U5-yeB" firstAttribute="top" secondItem="C8x-1N-ZTt" secondAttribute="bottom" constant="10" id="VHS-bn-fB2"/>
-                            <constraint firstItem="1ml-AJ-NQu" firstAttribute="top" secondItem="QxZ-U5-yeB" secondAttribute="bottom" constant="10" id="ZWa-Hn-e7Q"/>
-                            <constraint firstItem="mdS-J8-43g" firstAttribute="top" secondItem="1ml-AJ-NQu" secondAttribute="bottom" id="d8C-bu-p9c"/>
-                            <constraint firstItem="1ml-AJ-NQu" firstAttribute="top" secondItem="C8x-1N-ZTt" secondAttribute="bottom" constant="58" id="kEA-bf-7n6"/>
-                            <constraint firstItem="1ml-AJ-NQu" firstAttribute="leading" secondItem="ePb-qS-BRk" secondAttribute="leading" id="qSN-bN-vGb"/>
-                            <constraint firstAttribute="trailing" secondItem="1ml-AJ-NQu" secondAttribute="trailing" id="xjM-ox-zuD"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="准到" id="j7w-a3-Csc"/>
-                    <connections>
-                        <outlet property="segmented" destination="QxZ-U5-yeB" id="7Rd-zp-SmB"/>
-                        <outlet property="tableView" destination="1ml-AJ-NQu" id="fLx-gn-F3t"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nI1-hc-hvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

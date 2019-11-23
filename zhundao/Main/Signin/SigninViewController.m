@@ -53,7 +53,7 @@
       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifi:) name:AFNetworkingReachabilityDidChangeNotification object:nil];
     [self firstload];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDataWithIsShowIndicator:) name:ZDNotification_Change_Account object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDataWithIsShowIndicator:) name:@"updateSign" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDataWithIsShowIndicator:) name:ZDUserDefault_Update_Sign object:nil];
 }
 #pragma  mark ------baseSetting 
 
@@ -319,7 +319,6 @@
     }
 }
 
-
 #pragma mark --------tableview dataSource 数据源代理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
@@ -478,14 +477,14 @@
 - (void)deleteSign
 {
     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/DeleteCheckIn?accessKey=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)mycell.model.ID];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getToken],(long)mycell.model.ID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"dic = %@",dic);
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"updateSign" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
     } fail:^(NSError *error) {
         [hud hideAnimated:YES];
     }];

@@ -18,3 +18,9 @@ NSString *const ZDNotification_Logout         = @"ZDNotification_Logout";
 #pragma mark --- NSUserDefaults
 NSString *const ZDUserDefault_First_Network = @"ZDUserDefault_First_Network";
 NSString *const ZDUserDefault_Network_Line = @"ZDUserDefault_Network_Line";
+NSString *const ZDUserDefault_Sign_Mark = @"ZDUserDefault_Sign_Mark";
+NSString *const ZDUserDefault_Update_Sign = @"ZDUserDefault_Update_Sign";
+
+#pragma mark --- Cache
+NSString *const ZDCacheSign_One_List = @"ZDCacheSign_One_List";
+

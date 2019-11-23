@@ -16,14 +16,6 @@
     MBProgressHUD *hud;
     NSString *textFieldStr;
     NSInteger flag; //判断是否离线签到成功
-    
-    NSMutableArray *array;
-    NSMutableArray *array1;
-    NSMutableArray *array2;
-    
-    NSMutableArray *dataarr;
-    NSMutableArray *dataarr1;
-    NSMutableArray *dataarr2;
 }
 @end
 
@@ -34,9 +26,6 @@
     self.view.backgroundColor = zhundaoBackgroundColor;
     i = 0;
     flag=0;
-    array = [[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)self.signid]] mutableCopy];
-    array1 = [[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"sign%li",(long)self.signid]] mutableCopy];
-    array2 = [[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"signed%li",(long)self.signid]]mutableCopy];
     [self createUI];
       self.modalTransitionStyle =UIModalTransitionStyleFlipHorizontal;
     _textf.delegate =self;
@@ -138,182 +127,15 @@
     sureButton.layer.borderColor = zhundaoGreenColor.CGColor;
     [self.view addSubview:sureButton];
 }
-- (void)sure
-{   textFieldStr =[_textf.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-            r = [Reachability reachabilityWithHostName:@"www.apple.com"];
-    if ([r currentReachabilityStatus] ==NotReachable) {
-        [self NotReachable];
-    }
-    else
-    {
-        hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-        [self haveNet];
-    }
-   
-}
-
-
-- (FMResultSet *)searchFMResultSet
-{
-    SignManager *manager = [SignManager shareManager];
-    FMResultSet * rs = nil;
-    [manager createDatabase];
-    if ([manager.dataBase open]) {
+- (void)sure {
+    textFieldStr = [_textf.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [[signResult alloc] dealPhoneSignWithSignID:(NSInteger)_signid phone:textFieldStr Ctr:self title1:@"返回主界面" title2:@"继续签到" action1:^(TYAlertAction *action1) {
+        [self backroot];
+    } action2:^(TYAlertAction *action1) {
         
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM signList WHERE signID = %li",(long)_signid];
-        rs = [manager.dataBase executeQuery:sql];
-   }
-    return rs;
-}
-- (void)NotReachable
-{
-    NSLog(@"没网");
- FMResultSet *rs =[self searchFMResultSet];
-    
-   while ([rs next]) {
-        if ([[rs stringForColumn:@"phone"] isEqualToString:textFieldStr]) {
-            flag = 1;
-            [self updatapost];
-            [self signinwithRs:rs];
-            [self removeObject];
-        }
-       dataarr = [array copy];
-        dataarr1 = [array1 copy];
-        dataarr2 = [array2 copy];
-    }
-    if (flag==0) {
-        [self signLost];
-    }
-    [[SignManager shareManager].dataBase close];
-    [[NSUserDefaults standardUserDefaults]setObject:dataarr forKey:[NSString stringWithFormat:@"all%li",(long)_signid]];
-    
-    [[NSUserDefaults standardUserDefaults]setObject:dataarr1 forKey:[NSString stringWithFormat:@"sign%li",(long)_signid]];
-    [[NSUserDefaults standardUserDefaults]setObject:dataarr2 forKey:[NSString stringWithFormat:@"signed%li",(long)_signid]];
-    [[NSUserDefaults standardUserDefaults]synchronize];
-}
-- (void)signLost
-{
-     [[SignManager shareManager]showAlertWithTitle:@"扫描结果" WithMessage:@"签到失败 凭证码无效" WithTitleOne:@"返回主界面" WithActionOne:^(TYAlertAction *action1) {
-          [self backroot];
-     } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"继续签到" WithActionTwo:nil WithCTR:self];
-}
-- (void)signinwithRs:( FMResultSet *)rs
-{
-    for (int j=0; j<array.count; j++) {
-        NSDictionary *acdic = [array objectAtIndex:j];
-        
-        NSMutableDictionary *e =  [acdic mutableCopy];
-        
-        for (NSString *keystr in acdic.allKeys) {
-            
-            if ([keystr isEqualToString:@"Mobile"]) {
-                NSLog(@"status = %@",[acdic valueForKey:@"Status"]);
-                if ([[acdic valueForKey:keystr] isEqualToString:textFieldStr]) {
-                    
-                    if ([[acdic valueForKey:@"Status"]integerValue]==0) {
-                        [e  setValue:@"1" forKey:@"Status"];
-                        [array removeObjectAtIndex:j];
-                        [array addObject:e];
-                        [array2 addObject:e];  //array2   已经签到
-                        
-                        [[signResult alloc]showallWithFMResultSet:rs withdic:acdic actionWithTitle1:@"返回主界面" actionWithTitle2:@"继续签到" withAction1:^(TYAlertAction *action1) {
-                            [self backroot];
-                        } withAction2:^(TYAlertAction *action1) {
-                            nil;
-                        } otherSign:NO withCtr:self];
-                    }
-                    if ([[acdic valueForKey:@"Status"]integerValue]==1) {
-                        [[signResult alloc]showallWithFMResultSet:rs withdic:acdic actionWithTitle1:@"返回主界面" actionWithTitle2:@"继续签到" withAction1:^(TYAlertAction *action1) {
-                            [self backroot];
-                        } withAction2:^(TYAlertAction *action1) {
-                            nil;
-                        } otherSign:NO withCtr:self];
-                    }
-                }
-
-            }
-            
-        }
-        
-        
-    }
-    
-
-}
-- (void)removeObject
-{
-    for (int j=0; j<array1.count; j++) {
-        NSDictionary *acdic = [array1 objectAtIndex:j];
-        
-        for (NSString *keystr in acdic.allKeys) {
-            
-            if ([keystr isEqualToString:@"VCode"]) {
-                if ([[acdic valueForKey:keystr] isEqualToString:textFieldStr])  {
-                    
-                    [array1 removeObjectAtIndex:j];
-                    break;
-                }
-            }
-        }
-    }
-}
-- (void)updatapost
-{
-    NSString *timeStr = [[Time alloc]nextDateWithNumber:0];
-    [ [SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE signList SET Status = '1'  where phone = '%@' AND signID = %li",textFieldStr,(long)_signid]];   //更新数据库的vcode
-    [ [SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE signList SET post = '0'  where phone = '%@' AND signID = %li",textFieldStr,(long)_signid]];
-    [ [SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE signList SET addTime = '%@'  where phone = '%@' AND signID = %li",timeStr,textFieldStr,(long)_signid]];
-
-}
--(void)haveNet
-{
-    NSString *urlstr = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByPhone?accessKey=%@&phone=%@&checkInId=%li&checkInWay=11",zhundaoApi,[[SignManager shareManager] getaccseekey],textFieldStr,(long)self.signid];
-    [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
-        NSLog(@"responseObject = %@",obj);
-        NSString *Url = dic[@"Url"];
-        NSString *Res = dic[@"Res"];
-        NSMutableDictionary *Data = nil;
-        if ( ! [dic[@"Data"] isEqual:[NSNull null]]){
-            Data =[dic[@"Data"] mutableCopy];
-            for (NSString *keystr in Data.allKeys) {
-                if ([[Data valueForKey:keystr] isEqual:[NSNull null]]) {
-                    [Data setObject:@"" forKey:keystr];
-                }
-            }
-        }
-        NSString *phone = nil;
-        NSString *Mobile =Data[@"Phone"];
-        if (Mobile.length>7) {
-            phone = [Mobile stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
-        }
-        [hud hideAnimated:YES];
-        if ([Url isEqualToString:@"101"]&&[Res integerValue]==1) {
-            [[signResult alloc]getDataWithData:Data WithStringValue:textFieldStr withID:_signid WithSignBool:0 withSigncheckInWay:11 WithPhone:phone Withtitle1:@"返回主界面" Withtitle2:@"继续签到" WithAction1:^(TYAlertAction *action1) {
-                [self backroot];
-            } WithAction1:^(TYAlertAction *action1) {
-                nil;
-            } otherSign:NO WithCtr:self];
-        }
-        else  if ([Url isEqualToString:@"100"]&&[Res integerValue]==0) {
-            [[signResult alloc]getDataWithData:Data WithStringValue:textFieldStr withID:_signid WithSignBool:1 withSigncheckInWay:11 WithPhone:phone Withtitle1:@"返回主界面" Withtitle2:@"继续签到" WithAction1:^(TYAlertAction *action1) {
-                [self backroot];
-            } WithAction1:^(TYAlertAction *action1) {
-                nil;
-            } otherSign:NO WithCtr:self];
-        }
-        else {
-            [[SignManager shareManager]showAlertWithTitle:@"扫描结果" WithMessage:@"签到失败 凭证码无效"  WithTitleOne:@"返回主界面" WithActionOne:^(TYAlertAction *action1) {
-                [self backroot];
-            } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"继续签到"  WithActionTwo:nil WithCTR:self];
-        }
-    } fail:^(NSError *error) {
-        if (hud) {
-            [hud hideAnimated: YES];
-        }
-        NSLog(@"error = %@",error);
     }];
 }
+
 - (void)backroot
 {
         UIViewController *rootVC = self.presentingViewController;

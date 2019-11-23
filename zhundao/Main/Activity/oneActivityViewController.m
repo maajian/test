@@ -46,7 +46,7 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(signin)];
     accesskey = [[SignManager shareManager]getaccseekey];
     self.view.backgroundColor = zhundaoBackgroundColor;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"updateSign" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:ZDUserDefault_Update_Sign object:nil];
     [self createtableview];
     [self firstload];
     // Do any additional setup after loading the view.
@@ -203,8 +203,6 @@
                 }
             }
             [_dataarr addObject:e];
-            
-            
         }
         
         [[NSUserDefaults standardUserDefaults]setObject:_dataarr forKey:[NSString stringWithFormat:@"oneActivity%li",(long)self.acID]];
@@ -448,14 +446,14 @@
 - (void)deleteSign
 {
     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/DeleteCheckIn?accessKey=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)mycell.model.ID];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getToken],(long)mycell.model.ID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"dic = %@",dic);
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"updateSign" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
     } fail:^(NSError *error) {
         [hud hideAnimated:YES];
         NSLog(@"error = %@",error);

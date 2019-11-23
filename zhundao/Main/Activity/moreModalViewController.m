@@ -237,8 +237,8 @@ static NSString *headerID = @"moreModalHeaderView";
 - (void)delelteActivity {
     [[SignManager shareManager]showAlertWithTitle:@"确定删除活动?" WithMessage:@"删除后将不能恢复" WithTitleOne:@"删除" WithActionOne:^(TYAlertAction *action1) {
         MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-        NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/deleteActivity?token=%@&activityId =%li",zhundaoApi,[SignManager shareManager].getToken,(long)_moreModel.ID];
-        [ZD_NetWorkM getDataWithMethod:urlStr parameters:nil succ:^(NSDictionary *obj) {
+        NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/deleteActivity?token=%@&activityId=%li",zhundaoApi,[SignManager shareManager].getToken,(long)_moreModel.ID];
+        [ZD_NetWorkM postDataWithMethod:urlStr parameters:nil succ:^(NSDictionary *obj) {
             NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
             NSLog(@"%@",dic);
             [hud hideAnimated:YES];

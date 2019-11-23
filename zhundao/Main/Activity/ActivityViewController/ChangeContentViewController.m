@@ -40,7 +40,7 @@
     
     countLabel = [[UILabel alloc]initWithFrame:CGRectMake(kScreenWidth-100, 130, 70, 30)];
     countLabel.textColor = kColorA(140, 140, 140, 1);
-    countLabel.text = [NSString stringWithFormat:@"0/%li",(200 -_signCount)];
+    countLabel.text = [NSString stringWithFormat:@"0/%li",(450 -_signCount)];
     countLabel.font = KweixinFont(14);
     countLabel.textAlignment = NSTextAlignmentRight;
     [view addSubview:countLabel];
@@ -53,12 +53,12 @@
 #pragma mark --- UITextViewDelegate
 
 - (void)textViewDidChange:(UITextView *)textView{
-    countLabel.text =  [NSString stringWithFormat:@"%li/%li",textView.text.length,(200 -_signCount)];
+    countLabel.text =  [NSString stringWithFormat:@"%li/%li",textView.text.length,(450 -_signCount)];
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    if (range.location < (200 -_signCount))
+    if (range.location < (450 -_signCount))
     {
         return  YES;
     } else {

@@ -97,22 +97,9 @@
 #pragma mark --- UITextViewDelegate
 
 - (void)textViewDidChange:(UITextView *)textView{
-    
-    if (_signStr.length+_TextView.text.length>200) {
-        maskLabel *label = [[maskLabel alloc]initWithTitle:@"字数超过限制"];
-        [label labelAnimationWithViewlong:self];
-        [self endEditing:YES];
-    }
-    if (_signStr.length+_TextView.text.length<=70) {
-        self.labelCount = 1;
-    }else if (_signStr.length+_TextView.text.length<=140){
-        self.labelCount = 2;
-    }else{
-        self.labelCount = 3;
-    }
+    self.labelCount = ((_signStr.length+_TextView.text.length - 1) / 70 + 1);
     _wordLabel.text = [NSString stringWithFormat:@"共%li个字/分为%li条",_signStr.length+_TextView.text.length,_labelCount];
     [self attributeForWordLabel:_wordLabel.text];
-    
 }
 
 #pragma mark --- 存取器重写

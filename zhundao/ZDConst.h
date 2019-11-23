@@ -19,3 +19,8 @@ UIKIT_EXTERN NSString *const ZDNotification_Logout;
 #pragma mark --- NSUserDefaults
 UIKIT_EXTERN NSString *const ZDUserDefault_First_Network;
 UIKIT_EXTERN NSString *const ZDUserDefault_Network_Line;
+UIKIT_EXTERN NSString *const ZDUserDefault_Sign_Mark;
+UIKIT_EXTERN NSString *const ZDUserDefault_Update_Sign;
+
+#pragma mark --- Cache
+UIKIT_EXTERN NSString *const ZDCacheSign_One_List;

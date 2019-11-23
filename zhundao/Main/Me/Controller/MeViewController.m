@@ -135,7 +135,7 @@
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"个人信息";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"%@/Activity/UserEdit?accesskey=%@",zhundaoH5Api,[[SignManager shareManager] getaccseekey]];
+    web.urlString = [NSString stringWithFormat:@"%@/Activity/UserEdit?token=%@",zhundaoH5Api,[[SignManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
@@ -153,7 +153,7 @@
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"我的工单";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Extra/TicketMain?accesskey=%@",[[SignManager shareManager] getaccseekey]];
+    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Extra/TicketMain?token=%@",[[SignManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
@@ -162,7 +162,7 @@
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"我的钱包";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/MyWallet?accesskey=%@",[[SignManager shareManager] getaccseekey]];
+    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/MyWallet?token=%@",[[SignManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
@@ -202,16 +202,18 @@
             [self.tableView reloadData];
         }
     } fail:^(NSError *error) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            if ([[ NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
-                [[NSUserDefaults standardUserDefaults]removeObjectForKey:ZDUserDefault_Network_Line];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-            } else {
-                [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
-                [[NSUserDefaults standardUserDefaults]synchronize];
-            }
-            [self getuser];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                if ([[ NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
+                    [[NSUserDefaults standardUserDefaults]removeObjectForKey:ZDUserDefault_Network_Line];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                } else {
+                    [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
+                    [[NSUserDefaults standardUserDefaults]synchronize];
+                }
+                [self getuser];
+            });
         });
     }];
 }

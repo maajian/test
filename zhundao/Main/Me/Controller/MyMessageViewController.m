@@ -83,7 +83,7 @@
         /*! 获取短信条数 */
          NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/adminInfo?accessKey=%@",zhundaoMessageApi,[[SignManager shareManager]getaccseekey]];
         [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-            NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
+            NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
             NSArray *array = dic[@"Data"];
             NSDictionary *dataDic = array.firstObject;
             NSInteger messageCount = [dataDic[@"es_pay"] integerValue];

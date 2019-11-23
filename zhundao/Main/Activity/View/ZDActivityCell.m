@@ -167,7 +167,7 @@
     [_activityImageView setContentMode:UIViewContentModeScaleAspectFill];
     _activityImageView.clipsToBounds = YES;
     // 活动开始时间
-    _beginLabel.text = [_model.TimeStart getHomeActivityBeginTime];
+    _beginLabel.text = [NSString getHomeActivityBeginTime:_model.TimeStart stopTime:_model.EndTime];
     // 活动截止时间
     _endLabel.text = [_model.TimeStop getHomeActivityEndTime];
     

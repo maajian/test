@@ -51,5 +51,7 @@
 #import "UIImage+Extension.h"
 #import "TYAlertController+Extension.h"
 #import "NSDate+Extension.h"
+#import "NSArray+Extension.h"
+#import "NSDictionary+Extension.h"
 
 #endif /* ZDHeader_h */

@@ -71,12 +71,9 @@
         [self showAlert:@"请输入正确的手机号"];
         return;
     }
-    
-    
-    
     NSString *verifyUrl = [NSString stringWithFormat:@"%@api/v2/verifyCode?phoneOrEmail=%@&code=%@",zhundaoApi,_phonetext.text,_phoneyangzheng.text];
     [ZD_NetWorkM getDataWithMethod:verifyUrl parameters:nil succ:^(NSDictionary *obj) {
-        NSString *url = [NSString stringWithFormat:@"%@api/v2/bindPhone?phone=%@&token=%@",zhundaoApi,_phonetext.text,[[SignManager shareManager] getToken]];
+        NSString *url = [NSString stringWithFormat:@"%@/api/v2/user/updatePhoneOrEmail?phoneOrEmail=%@&token=%@code=%@",zhundaoApi,_phonetext.text,[[SignManager shareManager] getToken],_phoneyangzheng.text];
         [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
             dic = [NSDictionary dictionaryWithDictionary:obj];
             if ([dic[@"errcode"] integerValue]==0) {

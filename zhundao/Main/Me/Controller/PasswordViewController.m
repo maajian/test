@@ -99,7 +99,7 @@
 }
 
 - (void)verifyOld :(NSString *)old{
-    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/VerifyOldPwd?accessKey=%@&oldPwd=%@",zhundaoApi,[[SignManager shareManager]getaccseekey],old];
+    NSString *str = [NSString stringWithFormat:@"%@g?accessKey=%@&oldPwd=%@",zhundaoApi,[[SignManager shareManager]getaccseekey],old];
      MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"请稍候...";
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {

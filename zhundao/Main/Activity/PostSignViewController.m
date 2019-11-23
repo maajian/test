@@ -189,7 +189,7 @@
                 } else {
                     [self showMask:obj[@"Msg"]];
                 }
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"updateSign" object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
                 [self back];
             } fail:^(NSError *error) {
                 NSLog(@"error = %@",error);
@@ -199,14 +199,17 @@
         }
         else
         {
-            [ZD_NetWorkM getDataWithMethod:urlStr parameters:nil succ:^(NSDictionary *obj) {
+            NSDictionary *param = @{@"ID": @(self.signID),
+                                    @"Name": textf.text,
+                                    @"SignObject":@(_selectIndex)};
+            [ZD_NetWorkM postDataWithMethod:urlStr parameters:param succ:^(NSDictionary *obj) {
                 [indicator stopAnimating];
                 if ([obj[@"Res"] integerValue] == 0) {
                     [self showhud];
                 } else {
                     [self showMask:obj[@"Msg"]];
                 }
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"updateSign" object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
                 [self back];
             } fail:^(NSError *error) {
                 NSLog(@"error = %@",error);
@@ -249,13 +252,11 @@
 }
 - (NSString *)urlStr
 {
-    NSInteger b = _selectIndex;
     if ([_dataArray1.firstObject isEqualToString:@""]) {
-        return [NSString stringWithFormat:@"%@api/CheckIn/AddCheckIn?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
-
+        return [NSString stringWithFormat:@"%@api/v2/checkIn/addCheckIn?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     }
     else{
-        return  [[NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckInTypeName?accessKey=%@&checkInId=%li&name=%@&type=0&signObject=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)self.signID,textf.text,(long)b] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        return  [NSString stringWithFormat:@"%@api/v2/checkIn/updateCheckIn?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     }
 }
 - (void)didReceiveMemoryWarning {

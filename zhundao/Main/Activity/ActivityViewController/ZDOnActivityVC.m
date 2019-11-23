@@ -29,6 +29,9 @@ static NSString *cellID = @"ActivityCellID";
 
 @implementation ZDOnActivityVC
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -138,7 +141,7 @@ static NSString *cellID = @"ActivityCellID";
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.isClose = YES;
     web.webTitle = @"活动详情";
-    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/event/%li?accesskey=%@",(long)cell.model.ID,[[SignManager shareManager] getaccseekey]];
+    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/event/%li?token=%@",(long)cell.model.ID,[[SignManager shareManager] getToken]];
     [self.navigationController pushViewController:web animated:YES];
 }
 

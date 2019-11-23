@@ -139,48 +139,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="RCy-h6-Umh">
-                                        <rect key="frame" x="0.0" y="178" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RCy-h6-Umh" id="oIU-Ha-Qma">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moreSign.png" translatesAutoresizingMaskIntoConstraints="NO" id="KTo-3s-edP">
-                                                    <rect key="frame" x="20" y="9" width="25" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="Yhc-vx-hZH"/>
-                                                        <constraint firstAttribute="height" constant="25" id="Z81-DP-P9K"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="多点签到" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkl-Px-clE">
-                                                    <rect key="frame" x="60" y="15" width="150" height="14"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="LUI-TU-ayv"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="tkl-Px-clE" secondAttribute="bottom" constant="4" id="JK2-vb-Zap"/>
-                                                <constraint firstItem="KTo-3s-edP" firstAttribute="leading" secondItem="oIU-Ha-Qma" secondAttribute="leading" constant="20" id="LUG-cx-Em9"/>
-                                                <constraint firstItem="tkl-Px-clE" firstAttribute="leading" secondItem="KTo-3s-edP" secondAttribute="trailing" constant="15" id="R6E-83-8U6"/>
-                                                <constraint firstItem="tkl-Px-clE" firstAttribute="top" secondItem="oIU-Ha-Qma" secondAttribute="topMargin" constant="4" id="xc6-Ar-adh"/>
-                                                <constraint firstItem="KTo-3s-edP" firstAttribute="top" secondItem="oIU-Ha-Qma" secondAttribute="top" constant="9" id="yV8-fe-bpP"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="JOa-2Z-GF4" kind="show" id="2qa-Ow-QaS"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="bIg-49-pQP">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="NAF-Hq-jXc">
-                                        <rect key="frame" x="0.0" y="233" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="189" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NAF-Hq-jXc" id="3o4-nS-A2D">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -217,7 +181,7 @@
                             <tableViewSection id="LLX-ds-scP">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="LdJ-Vn-eWk">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="244" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LdJ-Vn-eWk" id="16A-OD-5Jd">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -284,7 +248,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入签到ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4O-sk-k1I">
-                                <rect key="frame" x="36" y="244" width="303" height="40"/>
+                                <rect key="frame" x="36" y="200" width="303" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vEp-1n-nM4"/>
                                 </constraints>
@@ -296,7 +260,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Slv-xk-L6w">
-                                <rect key="frame" x="36" y="304" width="303" height="40"/>
+                                <rect key="frame" x="36" y="260" width="303" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ki7-G4-eqp"/>
                                 </constraints>
@@ -308,7 +272,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIq-cD-8Sf">
-                                <rect key="frame" x="36" y="434" width="303" height="40"/>
+                                <rect key="frame" x="36" y="390" width="303" height="40"/>
                                 <color key="backgroundColor" red="0.2666666667" green="0.7345093385" blue="0.14520428769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xcX-8N-kv1"/>
@@ -318,7 +282,7 @@
                                 </state>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X47-V8-ZXu">
-                                <rect key="frame" x="36" y="364" width="303" height="40"/>
+                                <rect key="frame" x="36" y="320" width="303" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zok-Sd-bI7"/>
                                 </constraints>
@@ -330,14 +294,14 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oir-YP-0DN">
-                                <rect key="frame" x="137.5" y="114" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="70" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="VIf-kO-N5s"/>
                                     <constraint firstAttribute="width" constant="100" id="ePa-xD-eTT"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Er-Qm-gKl">
-                                <rect key="frame" x="239" y="484" width="100" height="30"/>
+                                <rect key="frame" x="239" y="440" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="3V9-z7-9v5"/>
                                     <constraint firstAttribute="height" constant="30" id="fmz-2i-uvG"/>
@@ -394,7 +358,6 @@
         <image name="custom.png" width="54" height="54"/>
         <image name="logo.png" width="60" height="60"/>
         <image name="moreApply.png" width="300" height="300"/>
-        <image name="moreSign.png" width="54" height="54"/>
         <image name="shake.png" width="54" height="54"/>
         <image name="蓝牙打印.png" width="200" height="200"/>
         <image name="邀请.png" width="72" height="72"/>

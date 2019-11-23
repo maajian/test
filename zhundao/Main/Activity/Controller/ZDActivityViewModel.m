@@ -41,7 +41,7 @@
 #pragma mark --- network
 - (void)getAllActivityListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
     NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    NSDictionary *dic = @{@"Type":@"0",
+    NSDictionary *dic = @{@"ActivityStatus":@(0),
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
     [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
@@ -82,7 +82,7 @@
 
 - (void)getOnActivityListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
     NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    NSDictionary *dic = @{@"Type":@"1",
+    NSDictionary *dic = @{@"ActivityStatus":@(1),
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
     [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
@@ -123,7 +123,7 @@
 
 - (void)getCloseActivityListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
     NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    NSDictionary *dic = @{@"Type":@"2",
+    NSDictionary *dic = @{@"ActivityStatus":@(2),
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
     [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
