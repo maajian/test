@@ -32,7 +32,7 @@
 {
     self.title = @"选择分组";
     self.selectIndex = 1000;
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     [self.view addSubview:self.tableview];
     [self customBack];
     [self firstload];
@@ -198,12 +198,12 @@
 //    else
 //    {
 //        cell.textLabel.text = @"新增...";
-//        cell.textLabel.textColor = zhundaoGreenColor;
+//        cell.textLabel.textColor = ZDGreenColor;
 //         cell.textLabel.font = [UIFont systemFontOfSize:12];
 //    }
     if (self.selectIndex ==indexPath.row) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-           cell.tintColor = zhundaoGreenColor;
+           cell.tintColor = ZDGreenColor;
     }else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -242,7 +242,7 @@
         self.selectIndex = indexPath.row;
         UITableViewCell *cell1 = [tableView cellForRowAtIndexPath:indexPath];
         cell1.accessoryType = UITableViewCellAccessoryCheckmark;
-        cell1.tintColor = zhundaoGreenColor;
+        cell1.tintColor = ZDGreenColor;
 
 }
 #pragma 添加分组

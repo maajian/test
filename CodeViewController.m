@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor =zhundaoBackgroundColor;
+    self.view.backgroundColor =ZDBackgroundColor;
     [self setimage];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
     [self.view addGestureRecognizer:tap];
@@ -55,7 +55,7 @@
     
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(imageViewMinX-17, imageViewMinY-40, imageViewWidth+34, 30)];   //普通label
     titleLabel.text = _labelStr;
-    titleLabel.textColor = zhundaoGrayColor;
+    titleLabel.textColor = ZDGrayColor;
     titleLabel.font = [UIFont systemFontOfSize:14];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:titleLabel];
@@ -71,7 +71,7 @@
     UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(imageViewMinX-20, imageViewMaxY, imageViewWidth+40, 40)];  // 扫码提示label
     label2.text =[NSString stringWithFormat:@"扫一扫上面的二维码，进行%@",_labelStr];
     label2.font = [UIFont systemFontOfSize:13];
-    label2.textColor = zhundaoGrayColor;
+    label2.textColor = ZDGrayColor;
     label2.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:label2];
     

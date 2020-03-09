@@ -239,7 +239,7 @@
 - (UILabel *)moreLabel
 {
     if (!_moreLabel) {
-        _moreLabel = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 70, 44) Text:@"更多选项" textColor:zhundaoGreenColor font:KHeitiSCMedium(15) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+        _moreLabel = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 70, 44) Text:@"更多选项" textColor:ZDGreenColor font:KHeitiSCMedium(15) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     }
     return _moreLabel;
 }

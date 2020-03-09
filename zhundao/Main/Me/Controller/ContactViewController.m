@@ -48,7 +48,7 @@
 - (void)baseSetting
 {
     self.title = @"通讯录";
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.searchController.searchBar;
     [self firstload];
@@ -180,7 +180,7 @@
         _searchController = [[UISearchController alloc]initWithSearchResultsController:nil]; //不写nil可以选择新建控制器，通过block回调数据
         _searchController.searchBar.frame = CGRectMake(0, 2, kScreenWidth, 42);
         _searchController.searchBar.placeholder = @"搜索";
-        _searchController.searchBar.barTintColor = zhundaoBackgroundColor; //搜索框旁边的颜色
+        _searchController.searchBar.barTintColor = ZDBackgroundColor; //搜索框旁边的颜色
         _searchController.dimsBackgroundDuringPresentation = NO;  //开始搜索时是否显示背景
         _searchController.delegate = self;   // 控制出现和消失等情况的代理 UISearchControllerDelegate
         [_searchController.searchBar sizeToFit];
@@ -511,7 +511,7 @@
 {
     NSLog(@"搜索即将出现");
     _tableView.frame = CGRectMake(0,0, kScreenWidth, kScreenHeight);
-    searchController.searchBar.backgroundColor = zhundaoBackgroundColor;
+    searchController.searchBar.backgroundColor = ZDBackgroundColor;
 }
 - (void)willDismissSearchController:(UISearchController *)searchController
 {

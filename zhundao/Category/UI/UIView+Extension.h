@@ -35,4 +35,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIView (SubView)
+// 是否包含某个class
+- (BOOL)containView:(Class)viewClass;
+//  移除所有子视图
+- (void)removeAllSubviews;
+
+@end
+
 NS_ASSUME_NONNULL_END

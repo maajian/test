@@ -21,7 +21,7 @@ static const NSInteger paragraphSpacing =10;
     self.title = @"多点签到使用介绍";
     [self.view addSubview: self.textview];
     [self makeAttribute];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     // Do any additional setup after loading the view.
 }
 #pragma  懒加载   

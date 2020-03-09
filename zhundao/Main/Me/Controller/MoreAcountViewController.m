@@ -60,7 +60,7 @@ static NSString *moreAccountCellID = @"moreAccountCellID";
         _tableView.rowHeight = 70;
         _tableView.tableHeaderView = [self getHeaderView];
         _tableView.tableFooterView = [[UIView alloc] init];
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
         [_tableView registerClass:[MoreAccountTableViewCell class] forCellReuseIdentifier:moreAccountCellID];
     }
     return _tableView;
@@ -188,6 +188,7 @@ static NSString *moreAccountCellID = @"moreAccountCellID";
     
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
+        [ZD_UserM saveLoginTime];
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary  *userdic = data[@"data"];
         [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];

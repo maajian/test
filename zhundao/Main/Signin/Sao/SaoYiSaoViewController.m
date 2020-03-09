@@ -174,9 +174,7 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     [_session stopRunning];
     [timer invalidate];
     timer = nil;
-    [[signResult alloc] dealCodeSignWithSignID:_signID vcode:stringValue Ctr:self title1:@"返回主界面" title2:@"继续扫码" action1:^(TYAlertAction *action1) {
-        [self backAction];
-    } action2:^(TYAlertAction *action1) {
+    [[signResult alloc] dealCodeSignWithSignID:_signID vcode:stringValue action1:^{
         [self run];
     }];
 }

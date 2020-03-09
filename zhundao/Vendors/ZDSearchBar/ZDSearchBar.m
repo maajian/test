@@ -37,9 +37,9 @@ static CGFloat const placeHolderFont = 15.0;
             field.borderStyle = UITextBorderStyleNone;
             field.layer.cornerRadius = 2.0f;
             field.layer.masksToBounds = YES;
-            // 设置占位文字字体颜色
-            [field setValue:[UIColor colorWithRed:156/255.0 green:156/255.0 blue:156/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-            [field setValue:[UIFont systemFontOfSize:placeHolderFont] forKeyPath:@"_placeholderLabel.font"];
+//            // 设置占位文字字体颜色
+//            [field setValue:[UIColor colorWithRed:156/255.0 green:156/255.0 blue:156/255.0 alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+//            [field setValue:[UIFont systemFontOfSize:placeHolderFont] forKeyPath:@"_placeholderLabel.font"];
             if (@available(iOS 11.0, *)) {
                 // 先默认居中placeholder
                 [self setPositionAdjustment:UIOffsetMake((field.frame.size.width-self.placeholderWidth)/2, 0) forSearchBarIcon:UISearchBarIconSearch];

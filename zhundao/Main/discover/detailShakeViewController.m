@@ -88,7 +88,7 @@
 {
     _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStyleGrouped];
     _tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,0.0f, _tableview.bounds.size.width,15.0f)];
-    _tableview.backgroundColor = zhundaoBackgroundColor;
+    _tableview.backgroundColor = ZDBackgroundColor;
     _tableview.separatorStyle = NO;
     [self.view addSubview:_tableview];
     tableDelegate = [ShakeTableViewDelegateObj createTableViewDelegateWithDataList:model   withdic :_dataDic];

@@ -47,7 +47,7 @@
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -78,7 +78,7 @@
         _progressView = [[UIProgressView alloc]initWithFrame:CGRectMake(5, 3, kScreenWidth-10, 5)];
         _progressView.progressViewStyle = UIProgressViewStyleDefault;
         _progressView.trackTintColor = [UIColor lightGrayColor];
-        _progressView.progressTintColor = zhundaoGreenColor;
+        _progressView.progressTintColor = ZDGreenColor;
         [_progressView setProgress:0.0 animated:YES];
         
     }

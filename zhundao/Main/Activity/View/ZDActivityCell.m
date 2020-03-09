@@ -62,7 +62,7 @@
     
     // 线
     _centerLine = [[UILabel alloc] init];
-    _centerLine.backgroundColor = zhundaoLineColor;
+    _centerLine.backgroundColor = ZDLineColor;
     [self.contentView addSubview:self.centerLine];
     
     // 名单按钮

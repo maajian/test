@@ -34,7 +34,7 @@
     [self createTableview];
     [self createButton];
     [self settitle];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     // Do any additional setup after loading the view.
 }
 
@@ -121,7 +121,7 @@
         label3.tag = 0;
         
         CAShapeLayer *layer = [CAShapeLayer layer];
-        layer.strokeColor = zhundaoLineColor.CGColor;
+        layer.strokeColor = ZDLineColor.CGColor;
         UIBezierPath *bezierPath = [UIBezierPath bezierPath];
         [bezierPath moveToPoint:CGPointMake(100,44)];
         [bezierPath addLineToPoint:CGPointMake(kScreenWidth, 44)];
@@ -164,7 +164,7 @@
 #pragma mark  ---按钮创建
 - (void)createButton
 {
-    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10,215, kScreenWidth-20, 40) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(buttonAction) BackgroundColor:zhundaoGreenColor cornerRadius:3 masksToBounds:YES];
+    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10,215, kScreenWidth-20, 40) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(buttonAction) BackgroundColor:ZDGreenColor cornerRadius:3 masksToBounds:YES];
     [_tableview addSubview:button];  //创建下面button
     
 }

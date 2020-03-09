@@ -56,7 +56,7 @@
     [self createChoose];
     
     [self.view addSubview:self.tableView];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     _viewModel = [[ConsultViewModel alloc]init];
     [self firstLoad];
     [self reflsh];
@@ -166,7 +166,7 @@
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, kScreenWidth, kScreenHeight-64-40)];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
         _tableView.sectionHeaderHeight = 0.1;
         _tableView.sectionFooterHeight = 20;
         _tableView.estimatedRowHeight = 64;

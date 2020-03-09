@@ -42,7 +42,7 @@
     
     _mv = [[NewOrEditMV alloc]init];
     [self.view addSubview:self.tableview];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     [self leftButton];
     [self rightButton];
     personMV *mv = [[personMV alloc]init];
@@ -92,7 +92,7 @@
 {
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(savaAction)];
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
-                          NSForegroundColorAttributeName:zhundaoGreenColor};
+                          NSForegroundColorAttributeName:ZDGreenColor};
     [item2 setTitleTextAttributes:dic forState:UIControlStateNormal];
 
     self.navigationItem.rightBarButtonItem = item2;
@@ -107,7 +107,7 @@
         _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
         _tableview.delegate =self;
         _tableview.dataSource =self;
-        _tableview.backgroundColor = zhundaoBackgroundColor;
+        _tableview.backgroundColor = ZDBackgroundColor;
     }
     return _tableview;
 }
@@ -277,7 +277,7 @@
 - (UIView *) createHeaderWithText:(NSString *)text   //创建头视图
 {
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
-    view.backgroundColor=zhundaoBackgroundColor;
+    view.backgroundColor=ZDBackgroundColor;
     UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 100, 30) Text:text textColor:[UIColor colorWithRed:137.0f/256.0f green:137.0f/256.0f blue:137.0f/256.0f alpha:1] font:KHeitiSCMedium(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     [view addSubview:label];
     label.attributedText = [_mv setAttrbriteStrWithText:text];

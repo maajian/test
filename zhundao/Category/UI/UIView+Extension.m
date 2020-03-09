@@ -141,3 +141,22 @@
 
 @end
 
+
+@implementation UIView (SubView)
+
+- (BOOL)containView:(Class)viewClass {
+    BOOL contain = NO;
+    for (UIView *view in self.subviews) {
+        if ([view isKindOfClass:viewClass]) {
+            contain = YES;
+        }
+    }
+    return contain;
+}
+//  移除所有子视图
+- (void)removeAllSubviews {
+    while (self.subviews.lastObject)
+        [self.subviews.lastObject removeFromSuperview];
+}
+
+@end

@@ -49,7 +49,7 @@
         _TextView.showsHorizontalScrollIndicator = NO;
         _TextView.backgroundColor = [UIColor whiteColor];
         _TextView.delegate = self;
-        _TextView.textColor = zhundaoGrayColor;
+        _TextView.textColor = ZDGrayColor;
         [_TextView addTapGestureTarget:self action:@selector(textViewAction:)];
     }
     return _TextView;

@@ -43,7 +43,7 @@
 }
 - (UILabel *)topRightLabel{
     if (!_topRightLabel) {
-        _topRightLabel = [MyLabel initWithLabelFrame:CGRectMake(100, 0, kScreenWidth-130, 44) Text:@"建议尺寸600*400" textColor:kheaderTitleColor font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentRight cornerRadius:0 masksToBounds:0];
+        _topRightLabel = [MyLabel initWithLabelFrame:CGRectMake(100, 0, kScreenWidth-130, 44) Text:@"建议尺寸600*400" textColor:ZDHeaderTitleColor font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentRight cornerRadius:0 masksToBounds:0];
     }
     return _topRightLabel;
 }

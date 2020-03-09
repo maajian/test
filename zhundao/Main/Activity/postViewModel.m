@@ -15,6 +15,12 @@
 
 -  (void)getImage:(ZDSuccessBlock)successBlock error :(ZDErrorBlock)errorBlock {
     NSString *str = @"https://www.zhundao.net/images.txt";
+    ZDNetWorkManager.shareHTTPSessionManager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json",
+    @"text/html",
+    @"text/json",
+    @"text/javascript",
+    @"text/plain",
+    nil];
     NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:0
                                                             diskCapacity:0
                                                                 diskPath:nil];

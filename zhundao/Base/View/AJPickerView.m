@@ -68,7 +68,7 @@ const NSInteger ACHeight = 44 ;
 {
     if (!_actionView) {
         _actionView = [[UIView alloc]initWithFrame:CGRectMake(0, (kHeight-64)/2  , kWidth, ACHeight)];
-        _actionView .backgroundColor = zhundaoBackgroundColor;
+        _actionView .backgroundColor = ZDBackgroundColor;
         [_actionView addSubview:self.sureButton];
         [_actionView addSubview:self.cancelButton];
     }

@@ -64,7 +64,7 @@
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64-44)];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
         _tableView.tableFooterView = [[UIView alloc]init];
         _tableView.rowHeight = 60 ;
         _tableView.tintColor = [UIColor clearColor];
@@ -136,7 +136,7 @@
     view.backgroundColor = [UIColor clearColor];
     _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 18.5, 18, 18)];
     _imageView.image = [UIImage imageNamed:@"option打勾"];
-    _imageView.layer.borderColor = zhundaoGrayColor.CGColor;
+    _imageView.layer.borderColor = ZDGrayColor.CGColor;
     _imageView.layer.borderWidth = 0.5;
     _imageView.layer.cornerRadius = 9;
     _imageView.layer.masksToBounds = YES;

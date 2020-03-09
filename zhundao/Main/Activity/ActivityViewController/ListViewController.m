@@ -182,14 +182,14 @@
     _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
     _table.delegate = self;
     _table.dataSource = self;
-    _table.backgroundColor = zhundaoBackgroundColor;
+    _table.backgroundColor = ZDBackgroundColor;
     _table.separatorStyle = NO;
     [_table registerNib:[UINib nibWithNibName:@"ListTableViewCell" bundle:nil] forCellReuseIdentifier:@"listcell"];
     
     _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     _searchController.searchBar.frame = CGRectMake(0,5,kScreenWidth-40, 40);
     _searchController.searchBar.placeholder = @"搜索";
-     _searchController.searchBar.barTintColor =zhundaoBackgroundColor;
+     _searchController.searchBar.barTintColor =ZDBackgroundColor;
     _searchController.dimsBackgroundDuringPresentation = NO;
     _searchController.delegate = self;
      [self.searchController.searchBar sizeToFit];
@@ -267,15 +267,18 @@
     if (array3.count!=0||array4.count!=0||array6.count!=0) {
             for (int i =0; i<array3.count; i++) {
                 [set addIndex:[array1 indexOfObject:array3[i]]];
+                array1[[array1 indexOfObject:array3[i]]] = @"";
             }
             for (int i=0 ; i<array4.count; i++) {
                 [set addIndex:[array2 indexOfObject:array4[i]]];
+                array2[[array2 indexOfObject:array4[i]]] = @"";
             }
              for (int i=0 ; i<array6.count; i++) {
                 [set addIndex:[array5 indexOfObject:array6[i]]];
+                 array5[[array5 indexOfObject:array6[i]]] = @"";
             }
-                _searchDataArray = [[_dataArray copy] objectsAtIndexes:set];
-             [_table reloadData];
+            _searchDataArray = [[_dataArray copy] objectsAtIndexes:set];
+            [_table reloadData];
     }
    else
    {
@@ -490,7 +493,7 @@
         UITableViewRowAction *rowAction2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"线下支付" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
             [self underLineWithActivityListId:model.ID];
         }];
-        rowAction2.backgroundColor = zhundaoGreenColor;
+        rowAction2.backgroundColor = ZDGreenColor;
         [rowArray addObject:rowAction2];
     }
     if (model.Status ==2) {
@@ -501,7 +504,7 @@
         UITableViewRowAction *rowAction4 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"审核失败" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
             [self check:NO activityListId:model.ID];
         }];
-        rowAction4.backgroundColor = zhundaoGrayColor;
+        rowAction4.backgroundColor = ZDGrayColor;
         [rowArray addObject:rowAction3];
         [rowArray addObject:rowAction4];
     }
@@ -510,7 +513,7 @@
             [self sendInvite];
         }];
         mycell = [tableView cellForRowAtIndexPath:indexPath];
-        rowAction5.backgroundColor = zhundaoGreenColor;
+        rowAction5.backgroundColor = ZDGreenColor;
         [rowArray addObject:rowAction5];
     }
     return rowArray;
@@ -673,6 +676,7 @@
             PrintVcodeViewController *print = [[PrintVcodeViewController alloc]init];
             [weakSelf setHidesBottomBarWhenPushed:YES];
             print.modelArray = [_dataArray copy];
+            print.activityID = _listID;
             [weakSelf.navigationController pushViewController:print animated:YES];
         }
         

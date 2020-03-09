@@ -45,7 +45,7 @@
     self.title = @"签到";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(signin)];
     accesskey = [[SignManager shareManager]getaccseekey];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:ZDUserDefault_Update_Sign object:nil];
     [self createtableview];
     [self firstload];
@@ -101,7 +101,7 @@
     [_tableView registerNib:[UINib nibWithNibName:@"signinTableViewCell" bundle:nil] forCellReuseIdentifier:@"signid"];
     _tableView.separatorStyle = NO;
     _tableView.delegate =self;
-    _tableView.backgroundColor = zhundaoBackgroundColor;
+    _tableView.backgroundColor = ZDBackgroundColor;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
 }

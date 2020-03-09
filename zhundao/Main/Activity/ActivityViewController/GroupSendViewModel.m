@@ -26,7 +26,7 @@
 //api/CoreByAccessKey/adminInfo?accessKey={accessKey}
 /*! 获取短信用户信息 这里获取签名*/
 - (void)getAdminInfo:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
-    NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/adminInfo?accessKey=%@",zhundaoMessageApi,[[SignManager shareManager]getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/GetAdminInfo?token=%@",zhundaoMessageApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj );
         successBlock(obj);

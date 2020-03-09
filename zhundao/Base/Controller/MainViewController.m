@@ -101,7 +101,7 @@
             flag=0;
             _startButton = button;
             _startLabel = label;
-            _startLabel.textColor = color1;
+            _startLabel.textColor = ZDGreenColor2;
             _startIamgeView = imageview;
             _startIamgeView.image = [UIImage imageNamed:@"activityed"];
             [_startButton addSubview:_startLabel];
@@ -159,7 +159,7 @@
         self.startButton.selected = YES;    // starbutton 选中
     }
     if (!self.startButton.selected) {
-        _startLabel.textColor =color1;
+        _startLabel.textColor = ZDGreenColor2;
         _startIamgeView.image = [UIImage imageNamed:imagedarray[flag]];
     }
 }

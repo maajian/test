@@ -69,7 +69,7 @@
     }
     titleSelectedColor=selectedColor;
     if (selectedColor==nil) {
-        titleSelectedColor=zhundaoGreenColor;
+        titleSelectedColor=ZDGreenColor;
     }
     titleFontSize=size;
     if (size==0) {

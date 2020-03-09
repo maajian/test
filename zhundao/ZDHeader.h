@@ -35,6 +35,7 @@
 #import "ZDRefreshNormalHeader.h"
 #import "ZDSegmentView.h"
 #import "ZDSearchBar.h"
+#import "ZDSignAlertView.h"
 #import "ZDNetWorkManager.h"
 #import "ZDUserManager.h"
 #import "ZDMacro.h"
@@ -53,5 +54,7 @@
 #import "NSDate+Extension.h"
 #import "NSArray+Extension.h"
 #import "NSDictionary+Extension.h"
+#import "UIFont+Extension.h"
+#import "ZDAlertView+ZDAdd.h"
 
 #endif /* ZDHeader_h */

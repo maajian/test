@@ -52,7 +52,7 @@
     [_viewModel getAdminInfo:^(id responseObject) {
         /*! 获取短信数 */
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
-        NSArray *array = dic[@"Data"];
+        NSArray *array = dic[@"data"];
         NSDictionary *dataDic = array.firstObject;
         _messageCount = [dataDic[@"es_pay"] integerValue];
         if (![dataDic[@"JH_Remark"] isEqual:[NSNull null]]) {
@@ -75,7 +75,7 @@
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStyleGrouped];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -129,8 +129,8 @@
 {
     if (section==2) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
-        view.backgroundColor = zhundaoBackgroundColor;
-        UIButton *bottomButton  = [MyButton initWithButtonFrame:CGRectMake(20, 20, kScreenWidth-40, 44) title:@"发送短信" textcolor:[UIColor whiteColor] Target:self action:@selector(sendMessage) BackgroundColor:zhundaoGreenColor cornerRadius:3 masksToBounds:1];
+        view.backgroundColor = ZDBackgroundColor;
+        UIButton *bottomButton  = [MyButton initWithButtonFrame:CGRectMake(20, 20, kScreenWidth-40, 44) title:@"发送短信" textcolor:[UIColor whiteColor] Target:self action:@selector(sendMessage) BackgroundColor:ZDGreenColor cornerRadius:3 masksToBounds:1];
         [view addSubview:bottomButton];
         return view;
     }else{
@@ -142,17 +142,17 @@
     UIView *view;
     if (section==2) {
         view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
-        view.backgroundColor = zhundaoBackgroundColor;
+        view.backgroundColor = ZDBackgroundColor;
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, kScreenWidth-20, 30)];
         label.text = @"涉及变量以上字数仅供参考,非大陆手机号将被排除";
         label.textAlignment = NSTextAlignmentRight;
-        label.textColor = kheaderTitleColor;
+        label.textColor = ZDHeaderTitleColor;
         label.font = [UIFont systemFontOfSize:10];
         [view addSubview:label];
     
     }else{
         view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 10)];
-        view.backgroundColor = zhundaoBackgroundColor;
+        view.backgroundColor = ZDBackgroundColor;
     }
     return view;
 }

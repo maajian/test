@@ -70,7 +70,7 @@ static NSString *headerID = @"moreModalHeaderView";
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kTopBarHeight) collectionViewLayout:layout];
         [_collectionView registerClass:[moreModalCell class] forCellWithReuseIdentifier:cellID];
         [_collectionView registerClass:[moreModalHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerID];
-        _collectionView.backgroundColor = zhundaoBackgroundColor;
+        _collectionView.backgroundColor = ZDBackgroundColor;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.alwaysBounceVertical = YES;

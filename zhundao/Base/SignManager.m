@@ -146,59 +146,60 @@
     }
     [label labelAnimationWithViewlong:SaveCtr.view];
 }
-- (void)shareImagewithModel:(ActivityModel *)model withCTR:(UIViewController *)ctr Withtype:(NSInteger)type withImage :(UIImage *)image
-{
-    
-    
-    NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_Qzone), nil];
-    if ( ![QQApiInterface isQQInstalled]) {
-        //没有安装QQ
-        
-        [arr removeObject:@(UMSocialPlatformType_QQ)];
-        [arr removeObject:@(UMSocialPlatformType_Qzone)];
-    }
-    if (![WXApi isWXAppInstalled]) {
-        //没有安装微信
-        [arr removeObject:@(UMSocialPlatformType_WechatSession)];
-        [arr removeObject:@(UMSocialPlatformType_WechatTimeLine)];
-    }
-  
-    [UMSocialUIManager setPreDefinePlatforms:arr];
-    [UMSocialShareUIConfig shareInstance].shareTitleViewConfig.isShow = NO;
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-        UMShareWebpageObject *shareObject = nil;
-        UMShareImageObject *imageObject = nil;
-        if (type==5) { //网页分享
-            if (platformType ==UMSocialPlatformType_WechatSession) {
-                shareObject = [UMShareWebpageObject shareObjectWithTitle:model.Title descr:[NSString stringWithFormat:@"时间:%@ 地点:%@",model.TimeStart,model.Address] thumImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.ShareImgurl]]]];
-            }
-            else
-            {
-                shareObject = [UMShareWebpageObject shareObjectWithTitle:model.Title descr:nil thumImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.ShareImgurl]]]];
-            }
-            //如果有缩略图，则设置缩略图
-            shareObject.webpageUrl =[NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)model.ID];
-           messageObject.shareObject = shareObject;
-        }
-        else
-        {
-               imageObject = [[UMShareImageObject alloc] init];
-            [imageObject setShareImage:image];
-            messageObject.shareObject = imageObject;
-        }
-
-        
-        //调用分享接口
-        [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:ctr completion:^(id data, NSError *error) {
-            if (error) {
-                NSLog(@"************Share fail with error %@*********",error);
-            }else{
-                NSLog(@"response data is %@",data);
-            }
-        }];
-    }];
+- (void)shareImagewithModel:(ActivityModel *)model withCTR:(UIViewController *)ctr Withtype:(NSInteger)type withImage :(UIImage *)image {
+    [self shareWithTitle:model.Title detailTitle:[NSString stringWithFormat:@"时间:%@ 地点:%@",model.TimeStart,model.Address] thumImage:image ? image : [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.ShareImgurl]]] webpageUrl:[NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)model.ID] withCTR:ctr Withtype:type];
 }
+- (void)shareWithTitle:(NSString *)title detailTitle:(NSString *)detailTitle thumImage:(UIImage *)thumImage webpageUrl:(NSString *)webpageUrl withCTR:(UIViewController *)ctr Withtype:(NSInteger)type {
+    NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_Qzone), nil];
+      if ( ![QQApiInterface isQQInstalled]) {
+          //没有安装QQ
+          
+          [arr removeObject:@(UMSocialPlatformType_QQ)];
+          [arr removeObject:@(UMSocialPlatformType_Qzone)];
+      }
+      if (![WXApi isWXAppInstalled]) {
+          //没有安装微信
+          [arr removeObject:@(UMSocialPlatformType_WechatSession)];
+          [arr removeObject:@(UMSocialPlatformType_WechatTimeLine)];
+      }
+    
+      [UMSocialUIManager setPreDefinePlatforms:arr];
+      [UMSocialShareUIConfig shareInstance].shareTitleViewConfig.isShow = NO;
+      [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+          UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+          UMShareWebpageObject *shareObject = nil;
+          UMShareImageObject *imageObject = nil;
+          if (type==5) { //网页分享
+              if (platformType ==UMSocialPlatformType_WechatSession) {
+                  shareObject = [UMShareWebpageObject shareObjectWithTitle:title descr:detailTitle thumImage:thumImage];
+              }
+              else
+              {
+                  shareObject = [UMShareWebpageObject shareObjectWithTitle:title descr:nil thumImage:thumImage];
+              }
+              //如果有缩略图，则设置缩略图
+              shareObject.webpageUrl =webpageUrl;
+             messageObject.shareObject = shareObject;
+          }
+          else
+          {
+                 imageObject = [[UMShareImageObject alloc] init];
+              [imageObject setShareImage:thumImage];
+              messageObject.shareObject = imageObject;
+          }
+
+          
+          //调用分享接口
+          [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:ctr completion:^(id data, NSError *error) {
+              if (error) {
+                  NSLog(@"************Share fail with error %@*********",error);
+              }else{
+                  NSLog(@"response data is %@",data);
+              }
+          }];
+      }];
+}
+
 
 - (void)saveData:(NSArray *)array name :(NSString *)name
 {

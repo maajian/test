@@ -37,7 +37,7 @@
                      topText :(NSString *) topText
                   bottomText :(NSString *) bottomText{
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = zhundaoBackgroundColor;
+        self.backgroundColor = ZDBackgroundColor;
         self.showsVerticalScrollIndicator = NO;
         self.contentSize = CGSizeMake(kScreenWidth, kScreenHeight-63.9);
         _imageName = imageName ;
@@ -70,7 +70,7 @@
         _topLabel = [[UILabel alloc]initWithFrame:CGRectZero];
         _topLabel.text = _topText;
         _topLabel.font = KHeitiSCMedium(15);
-        _topLabel.textColor = kheaderTitleColor;
+        _topLabel.textColor = ZDHeaderTitleColor;
         _topLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _topLabel;
@@ -81,7 +81,7 @@
         _bottomLabel = [[UILabel alloc]initWithFrame:CGRectZero];
         _bottomLabel.text = _bottomText;
         _bottomLabel.font = KHeitiSCMedium(15);
-        _bottomLabel.textColor = kheaderTitleColor;
+        _bottomLabel.textColor = ZDHeaderTitleColor;
         _bottomLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _bottomLabel;

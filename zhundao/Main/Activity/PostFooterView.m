@@ -36,7 +36,7 @@
 
 - (UIButton *)button{
     if (!_button) {
-        _button= [MyButton initWithButtonFrame:CGRectMake(10, 10, kScreenWidth-20, 40) title:@"发布" textcolor:[UIColor whiteColor] Target:self action:@selector(isCanPost) BackgroundColor:zhundaoGreenColor cornerRadius:5 masksToBounds:YES];
+        _button= [MyButton initWithButtonFrame:CGRectMake(10, 10, kScreenWidth-20, 40) title:@"发布" textcolor:[UIColor whiteColor] Target:self action:@selector(isCanPost) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:YES];
         _button.layer.borderColor = [UIColor lightGrayColor].CGColor;
         _button.layer.borderWidth = 0.5;
     }
@@ -69,7 +69,7 @@
     if (!_label1) {
         _label1 =  [MyLabel initWithLabelFrame:CGRectMake(95, 65, 100, 35) Text:@"《准到服务协议》" textColor:[UIColor grayColor] font:KHeitiSCMedium(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:NO];
         NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:_label1.text];
-        [str addAttribute:NSForegroundColorAttributeName value:zhundaoGreenColor range:NSMakeRange(0, _label1.text.length)];
+        [str addAttribute:NSForegroundColorAttributeName value:ZDGreenColor range:NSMakeRange(0, _label1.text.length)];
         [str addAttribute:NSFontAttributeName value:KHeitiSCMedium(12) range:NSMakeRange(0, _label1.text.length)];
         _label1.attributedText = str;
         _label1.userInteractionEnabled = YES;
@@ -91,7 +91,7 @@
     else{
         NSLog(@"未选中"); //打勾
         [_button setImage:[UIImage imageNamed:@"签到打勾"] forState:UIControlStateNormal];
-        _button.backgroundColor = zhundaoGreenColor;
+        _button.backgroundColor = ZDGreenColor;
         _button.userInteractionEnabled = YES;
     }
 }

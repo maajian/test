@@ -20,12 +20,13 @@
 #import "loginViewModel.h"
 #import "BaseNavigationViewController.h"
 #import "CodeLoginViewController.h"
+#import "ZDWebViewController.h"
 
 #define URL_APPID @"appid"
 #define URL_SECRET @"app secret"
 //wxe25de2684f235a04 appid
 //3286d02771487220b3135ed3620e552e appsecret
-@interface LoginViewController ()
+@interface LoginViewController ()<ZDAlertViewDelegate>
 {
     SendAuthResp *temp ;
     NSString *AccessKey1;
@@ -95,6 +96,7 @@
 {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
+        [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
         [_hud hideAnimated:YES];
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary  *userdic = data[@"data"];
@@ -122,6 +124,7 @@
         }
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"wechatLogin"];
         [[NSUserDefaults standardUserDefaults]synchronize];
+        [ZD_UserM saveLoginTime];
         [loginViewModel getTokenByAccount:_phoneTextLabel.text passWord:_lockTextLabel.text];
         MainViewController *tabbar = [[MainViewController alloc]init];
         AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
@@ -255,7 +258,6 @@
         make.width.mas_equalTo(20);
     }];
      imageview1.image = [UIImage imageNamed:@"手机"];
-    
 }
 
 - (void)setLeftView
@@ -278,7 +280,35 @@
     [self setimageView];
     [self.view layoutIfNeeded];
     [self setLeftView];
+    if (!ZD_UserM.hasShowPrivacy) {
+        [ZDAlertView privacyAlertWithDelegate:self firstComeIn:YES];
+    }
 }
+
+#pragma mark --- ZDAlertViewDelegate
+- (void)alertView:(ZDAlertView *)alertView didTapUrl:(NSString *)url {
+    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    BaseNavigationViewController *nav = [[BaseNavigationViewController alloc] initWithRootViewController:web];
+    web.urlString = url;
+    nav.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:nav animated:YES completion:nil];
+}
+- (void)alertView:(ZDAlertView *)alertView didTapCancelButton:(UIButton *)button {
+    [alertView contentOut];
+    alertView = nil;
+    [ZDAlertView privacyNeedCheckAlertWithDelegate:self];
+}
+- (void)alertView:(ZDAlertView *)alertView didTapSureButton:(UIButton *)button {
+    if (alertView.alertViewType == ZDAlertViewTypePrivacyNormalAlert) {
+        [alertView animationOut];
+        ZD_UserM.hasShowPrivacy = YES;
+    } else {
+        [alertView contentOut];
+        [ZDAlertView privacyAlertWithDelegate:self firstComeIn:NO];
+    }
+    alertView = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - CocoaAsyncSocket (7.6.1)
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
@@ -10,6 +25,7 @@ PODS:
   - YYCache (1.0.4)
 
 DEPENDENCIES:
+  - AFNetworking
   - CocoaAsyncSocket
   - FMDB
   - IQKeyboardManager
@@ -17,15 +33,18 @@ DEPENDENCIES:
   - YYCache
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - CocoaAsyncSocket
     - FMDB
     - IQKeyboardManager
     - JCore
     - JPush
     - YYCache
+  trunk:
+    - AFNetworking
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CocoaAsyncSocket: 7eadd3f59e1a6c84e2aefc93e9ff7b55156fe174
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   IQKeyboardManager: 1df9c0f147af1681cfb2d9977bc30309d45a7e76
@@ -33,6 +52,6 @@ SPEC CHECKSUMS:
   JPush: 9574d072cc37e93fa293ba69b43ce763c440943a
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: ac29ec7a8a4bc8558d7ac4d58e02d87ea492d0b3
+PODFILE CHECKSUM: 6a353c239b36f314ef4b6e56afb7f523f0cbcb39
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

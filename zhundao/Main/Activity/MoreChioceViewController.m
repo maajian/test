@@ -95,7 +95,7 @@ static NSString *optionid = @"optionid";
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
-                          NSForegroundColorAttributeName:zhundaoGreenColor};
+                          NSForegroundColorAttributeName:ZDGreenColor};
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
 
     self.navigationItem.rightBarButtonItem = item;
@@ -497,7 +497,7 @@ static NSString *optionid = @"optionid";
 }
 - (void)borderImage:(UIImageView *)imageView{
     imageView.layer.borderWidth = 1;
-    imageView.layer.borderColor = zhundaoLineColor.CGColor;
+    imageView.layer.borderColor = ZDLineColor.CGColor;
 }
 #pragma 手势
 - (void)addSmallImage

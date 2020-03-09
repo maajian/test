@@ -29,9 +29,9 @@
 
 - (void)setButtonC :(UIButton *)button
 {
-    [button setTitleColor:zhundaoGreenColor forState:UIControlStateNormal];
-    [button setTitleColor:zhundaoGrayColor forState:UIControlStateHighlighted];
-    button.layer.borderColor = zhundaoGreenColor.CGColor;
+    [button setTitleColor:ZDGreenColor forState:UIControlStateNormal];
+    [button setTitleColor:ZDGrayColor forState:UIControlStateHighlighted];
+    button.layer.borderColor = ZDGreenColor.CGColor;
     button.layer.borderWidth = 1 ;
     button.layer.cornerRadius = 5 ;
     button.layer.masksToBounds = YES;

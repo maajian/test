@@ -51,7 +51,7 @@
 {
     self.title = @"个人信息";
     flag = 0;
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     [self createTableView];
     if (_isChange )  [self rightButton];
     _VM = [[EditSignListViewModel alloc]init];
@@ -112,7 +112,7 @@
     _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
     _table.delegate = self;
     _table.dataSource = self;
-    _table.backgroundColor = zhundaoBackgroundColor;
+    _table.backgroundColor = ZDBackgroundColor;
     [self.view addSubview:_table];
 }
 #pragma mark tableview delegate
@@ -276,7 +276,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 20)];
-    view.backgroundColor = zhundaoBackgroundColor;
+    view.backgroundColor = ZDBackgroundColor;
     return view;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -293,7 +293,7 @@
     if (!_isChange&&[[[NSUserDefaults standardUserDefaults]objectForKey:@"GradeId"]integerValue]>=4&&[[NSUserDefaults standardUserDefaults]boolForKey:@"printFlag"]&&section==1) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
         view.backgroundColor = [UIColor clearColor];
-        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(20, 20, kScreenWidth-40, 44) title:@"打印签到二维码" textcolor:[UIColor whiteColor] Target:self action:@selector(print) BackgroundColor:zhundaoGreenColor cornerRadius:5 masksToBounds:1];
+        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(20, 20, kScreenWidth-40, 44) title:@"打印签到二维码" textcolor:[UIColor whiteColor] Target:self action:@selector(print) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:1];
             [view addSubview:button];
             return view;
        

@@ -83,7 +83,7 @@
         _tableView.delegate =self;
         _tableView.dataSource =self;
         [_tableView registerNib:[UINib nibWithNibName:@"EditMoreChooseTableViewCell" bundle:nil] forCellReuseIdentifier:@"moreChooseID"];
-        _tableView.backgroundColor  = zhundaoBackgroundColor;
+        _tableView.backgroundColor  = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -136,9 +136,9 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
-    view.backgroundColor=zhundaoBackgroundColor;
+    view.backgroundColor=ZDBackgroundColor;
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, kScreenWidth, 30)];
-    label.textColor = kheaderTitleColor;
+    label.textColor = ZDHeaderTitleColor;
     label.font = [UIFont systemFontOfSize:12];
     label.text = @"请选择文本打印，至少一项，至多三项";
     [view addSubview:label];

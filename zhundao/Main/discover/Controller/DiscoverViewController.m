@@ -7,12 +7,16 @@
 //
 
 #import "DiscoverViewController.h"
+
 #import "CustomViewController.h"
 #import "ShakeViewController.h"
 #import "PrintViewController.h"
 #import "FaceViewController.h"
 #import "PriviteInviteViewController.h"
 #import "ZDDiscoverCustomApplyVC.h"
+#import "ZDDiscoverShopDetailVC.h"
+#import "ZDDiscoverQuestionVC.h"
+
 @interface DiscoverViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 /*! 摇一摇 */
@@ -24,6 +28,8 @@
 /*! 邀请函 */
 @property (weak, nonatomic) IBOutlet UITableViewCell *inviteCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *moreApplyCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *storeCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *questionCell;
 
 @end
 
@@ -31,7 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     /*! 添加头视图 */
     _tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,0.0f, _tableview.bounds.size.width,15.0f)];
     /*! 添加手势 */
@@ -50,6 +56,12 @@
     
     UITapGestureRecognizer *moreApply = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToMoreApply)];
     [_moreApplyCell addGestureRecognizer:moreApply];
+    
+    UITapGestureRecognizer *store = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToStore)];
+    [_storeCell addGestureRecognizer:store];
+    
+    UITapGestureRecognizer *question = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToQuestion)];
+    [_questionCell addGestureRecognizer:question];
 }
 #pragma  mark --- 界面跳转
 
@@ -93,6 +105,25 @@
             [label labelAnimationWithViewlong:self.view];
         }
     }
+}
+
+/*! 严选商城 */
+- (void)pushToStore {
+    ZDDiscoverShopDetailVC *web = [[ZDDiscoverShopDetailVC alloc] init];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/shop/index.html?token=%@#!/market/",[[SignManager shareManager] getToken]];
+    web.isClose = YES;
+    [self setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:web animated:YES];
+    [self setHidesBottomBarWhenPushed:NO];
+}
+
+- (void)pushToQuestion {
+    ZDDiscoverQuestionVC *web = [[ZDDiscoverQuestionVC alloc] init];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/wenjuan/admin/index.html?token=%@#/",[[SignManager shareManager] getToken]];
+    web.isClose = YES;
+    [self setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:web animated:YES];
+    [self setHidesBottomBarWhenPushed:NO];
 }
 
 - (void)pushToInvite{

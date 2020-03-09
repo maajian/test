@@ -53,7 +53,7 @@
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStyleGrouped];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -73,7 +73,7 @@
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID1];
             cell.textLabel.font = [UIFont systemFontOfSize:14];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.tintColor = zhundaoGreenColor;
+            cell.tintColor = ZDGreenColor;
         }
         cell.textLabel.text = _leftArray[indexPath.row];
         [self setStyle:cell row:indexPath.row];
@@ -83,7 +83,7 @@
         buyMessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID2];
         if (!cell) {
             cell = [[buyMessageTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID2];
-            cell.tintColor = zhundaoGreenColor;
+            cell.tintColor = ZDGreenColor;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         [cell.textf addTarget:self action:@selector(textFieldDidBeginChange:) forControlEvents:UIControlEventEditingChanged];
@@ -117,7 +117,7 @@
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
     view.backgroundColor = [UIColor clearColor];
-    UIButton *sureButton = [MyButton initWithButtonFrame:CGRectMake(20, 20, kScreenWidth-40, 50) title:@"确认" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:zhundaoGreenColor cornerRadius:4 masksToBounds:1];
+    UIButton *sureButton = [MyButton initWithButtonFrame:CGRectMake(20, 20, kScreenWidth-40, 50) title:@"确认" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:ZDGreenColor cornerRadius:4 masksToBounds:1];
     [view addSubview:sureButton];
     return view;
 }
@@ -127,7 +127,7 @@
     view.backgroundColor = [UIColor clearColor];
     UILabel *leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 120, 44)];
     leftLabel.text = @"请选择短信包";
-    leftLabel.textColor = kheaderTitleColor;
+    leftLabel.textColor = ZDHeaderTitleColor;
     leftLabel.font = KweixinFont(13);
     [view addSubview:leftLabel];
      _rightLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(leftLabel.frame), 0, kScreenWidth-CGRectGetMaxX(leftLabel.frame)-10, 44)];
@@ -215,7 +215,7 @@
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"明细" style:UIBarButtonItemStylePlain target:self action:@selector(messageDetail)];
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
-                          NSForegroundColorAttributeName:zhundaoGreenColor};
+                          NSForegroundColorAttributeName:ZDGreenColor};
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = item;
 }

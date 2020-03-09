@@ -42,7 +42,7 @@ static NSString *CellID = @"isOnGowith";
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -64,7 +64,7 @@ static NSString *CellID = @"isOnGowith";
         [cell.contentView.subviews.lastObject removeFromSuperview];
     }
     if (indexPath.row==0) {
-        amountLabel = [MyLabel initWithLabelFrame:CGRectMake(50, 0, kScreenWidth-50, 44) Text:@"请选择提现账号" textColor:KplaceHolderColor font:[UIFont systemFontOfSize:17] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+        amountLabel = [MyLabel initWithLabelFrame:CGRectMake(50, 0, kScreenWidth-50, 44) Text:@"请选择提现账号" textColor:ZDPlaceHolderColor font:[UIFont systemFontOfSize:17] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
         imageView = [MyImage initWithImageFrame:CGRectMake(12, 12, 20, 20) imageName:@"钱包" cornerRadius:0 masksToBounds:0];
         [cell.contentView addSubview:imageView];
         [cell.contentView addSubview:amountLabel];
@@ -84,14 +84,14 @@ static NSString *CellID = @"isOnGowith";
         [cell.contentView addSubview:textf];
     }else{
         UIView *View = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 128)];
-        View.backgroundColor = zhundaoBackgroundColor;
-        UILabel *leftLabel =[MyLabel initWithLabelFrame:CGRectMake(10, 0, 1000, 44) Text:[NSString stringWithFormat:@"余额 ¥%@",_allMoney] textColor:kheaderTitleColor font:[UIFont systemFontOfSize:12] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+        View.backgroundColor = ZDBackgroundColor;
+        UILabel *leftLabel =[MyLabel initWithLabelFrame:CGRectMake(10, 0, 1000, 44) Text:[NSString stringWithFormat:@"余额 ¥%@",_allMoney] textColor:ZDHeaderTitleColor font:[UIFont systemFontOfSize:12] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
         [leftLabel sizeToFit];
         leftLabel.frame = CGRectMake(10, 0, leftLabel.frame.size.width, 44);
         UIButton *rightButton = [MyButton initWithButtonFrame:CGRectMake(CGRectGetMaxX(leftLabel.frame)+5, 0, 60, 44) title:@"全部提现" textcolor:kColorA(27, 164, 247, 1) Target:self action:@selector(GowithAll) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
         rightButton.titleLabel.font = [UIFont systemFontOfSize:12];
-        UIButton *withdrawButton = [MyButton initWithButtonFrame:CGRectMake(10, 44, kScreenWidth-20, 44) title:@"确认" textcolor:[UIColor whiteColor] Target:self action:@selector(withdraw:) BackgroundColor: zhundaoGreenColor cornerRadius:5 masksToBounds:YES];
-        UILabel *alertLabel =[MyLabel initWithLabelFrame:CGRectMake(10, 88, kScreenWidth-20, 44) Text:[NSString stringWithFormat:@"提现金额不得低于50元，提现手续费为%.1f%%",_factorageRate * 100] textColor:kheaderTitleColor font:[UIFont systemFontOfSize:12] textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
+        UIButton *withdrawButton = [MyButton initWithButtonFrame:CGRectMake(10, 44, kScreenWidth-20, 44) title:@"确认" textcolor:[UIColor whiteColor] Target:self action:@selector(withdraw:) BackgroundColor: ZDGreenColor cornerRadius:5 masksToBounds:YES];
+        UILabel *alertLabel =[MyLabel initWithLabelFrame:CGRectMake(10, 88, kScreenWidth-20, 44) Text:[NSString stringWithFormat:@"提现金额不得低于50元，提现手续费为%.1f%%",_factorageRate * 100] textColor:ZDHeaderTitleColor font:[UIFont systemFontOfSize:12] textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
         [View addSubview:leftLabel];
         [View addSubview:rightButton];
         [View addSubview:withdrawButton];

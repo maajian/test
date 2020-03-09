@@ -27,7 +27,7 @@
 - (UIImageView *)idCardImgView{
     if (!_idCardImgView) {
         _idCardImgView = [MyImage initWithImageFrame:CGRectMake(10, 50, 80, 80) imageName:@"加号" cornerRadius:0 masksToBounds:0];
-        _idCardImgView.layer.borderColor = KplaceHolderColor.CGColor;
+        _idCardImgView.layer.borderColor = ZDPlaceHolderColor.CGColor;
         _idCardImgView.layer.borderWidth = 0.5;
     }
     return _idCardImgView;
@@ -35,7 +35,7 @@
 
 - (UILabel *)topLabel{
     if (!_topLabel) {
-        _topLabel = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 80, 30) Text:nil textColor:KplaceHolderColor font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+        _topLabel = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 80, 30) Text:nil textColor:ZDPlaceHolderColor font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     }
     return _topLabel;
 }

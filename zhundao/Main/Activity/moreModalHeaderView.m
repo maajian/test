@@ -50,7 +50,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = zhundaoBackgroundColor;
+        self.backgroundColor = ZDBackgroundColor;
         [self setupUI];
         [self initLayout];
     }
@@ -115,7 +115,7 @@
 - (UIView *)lineView {
     if (!_lineView) {
         _lineView = [UIView new];
-        _lineView.backgroundColor = zhundaoBackgroundColor;
+        _lineView.backgroundColor = ZDBackgroundColor;
     }
     return _lineView;
 }

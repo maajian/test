@@ -178,13 +178,13 @@
     _tableview  = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
     _tableview.delegate = self;
     _tableview.dataSource = self;
-    _tableview.backgroundColor = zhundaoBackgroundColor;
+    _tableview.backgroundColor = ZDBackgroundColor;
     [_tableview registerNib:[UINib nibWithNibName:@"Custom" bundle:nil] forCellReuseIdentifier:@"Customcell"];
     
     _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     _searchController.searchBar.frame = CGRectMake(0,5,kScreenWidth-40, 40);
     _searchController.searchBar.placeholder = @"搜索";
-    _searchController.searchBar.barTintColor =zhundaoBackgroundColor;
+    _searchController.searchBar.barTintColor =ZDBackgroundColor;
     _searchController.dimsBackgroundDuringPresentation = NO;
     _searchController.delegate = self;
     [self.searchController.searchBar sizeToFit];
@@ -528,7 +528,7 @@
         UITableViewRowAction *showAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:@"显示" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
             [self hideOrShowList:model hidden:NO];
         }];
-        showAction.backgroundColor = zhundaoGreenColor;
+        showAction.backgroundColor = ZDGreenColor;
         return @[showAction];
     } else {
         UITableViewRowAction *hideAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:@"隐藏" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {

@@ -61,7 +61,7 @@ static NSString *bottomID  = @"autobottomID";
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStyleGrouped];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -152,9 +152,9 @@ static NSString *bottomID  = @"autobottomID";
     if (section==2) {
         UIView *View = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 120)];
         View.backgroundColor = [UIColor clearColor];
-        UIButton *explainButton = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth-120, 0, 110, 44) title:@"为什么要实名认证" textcolor:zhundaoGreenColor Target:self action:@selector(explain) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
+        UIButton *explainButton = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth-120, 0, 110, 44) title:@"为什么要实名认证" textcolor:ZDGreenColor Target:self action:@selector(explain) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
         explainButton.titleLabel.font = [UIFont systemFontOfSize:13];
-        UIButton *addAccountButton = [MyButton initWithButtonFrame:CGRectMake(10, 44, kScreenWidth-20, 44) title:@"实名认证" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor: zhundaoGreenColor cornerRadius:5 masksToBounds:YES];
+        UIButton *addAccountButton = [MyButton initWithButtonFrame:CGRectMake(10, 44, kScreenWidth-20, 44) title:@"实名认证" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor: ZDGreenColor cornerRadius:5 masksToBounds:YES];
         [View addSubview:addAccountButton];
         [View addSubview:explainButton];
         return View;
@@ -234,7 +234,7 @@ static NSString *bottomID  = @"autobottomID";
 - (void)explain{
     TYAlertView *alertView = [TYAlertView alertViewWithTitle:nil message:nil];
     [alertView addAction:[TYAlertAction actionWithTitle:@"知道了" style:TYAlertActionStyleCancel handler:nil]];
-    alertView.tintColor = zhundaoGreenColor;
+    alertView.tintColor = ZDGreenColor;
     alertView.messageLabel.text = @"所有委托准到代收款的活动，为了确保主办方的资金安全，我们在首次提现时进行了实名认证。实名认证成功后才允许提现，且申请提现支付宝和银行卡的所有者须为此实名用户";
     TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert];
     [self presentViewController:alertController animated:YES completion:nil];

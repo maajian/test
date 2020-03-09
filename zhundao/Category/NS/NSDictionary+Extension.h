@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)zd_jsonString;
 
+- (id)deleteNullObj;
+
 @end
 
 NS_ASSUME_NONNULL_END

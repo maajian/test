@@ -31,6 +31,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel;
 /*! 多账号管理 */
 @property (weak, nonatomic) IBOutlet UITableViewCell *moreAcountCell;
+// 用户协议
+@property (unsafe_unretained, nonatomic) IBOutlet UITableViewCell *userProtocolCell;
+// 隐私政策
+@property (unsafe_unretained, nonatomic) IBOutlet UITableViewCell *privacyProtectCell;
 
 @end
 
@@ -76,7 +80,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,0.0f, _tableview.bounds.size.width,15.0f)];
-    _tableview.backgroundColor = zhundaoBackgroundColor;
+    _tableview.backgroundColor = ZDBackgroundColor;
     uidstr = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
     AccessKeystr = [[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
     
@@ -88,12 +92,27 @@
     [_lineCell addGestureRecognizer:lineTap];
     UITapGestureRecognizer *moreAcountTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(moreAcount)];
     [_moreAcountCell addGestureRecognizer:moreAcountTap];
+    UITapGestureRecognizer *userProtocolTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushUserProtocol)];
+    [_userProtocolCell addGestureRecognizer:userProtocolTap];
+    UITapGestureRecognizer *privacyProtectTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushPrivacyProtect)];
+    [_privacyProtectCell addGestureRecognizer:privacyProtectTap];
     SignManager *manager = [SignManager shareManager];
     acc = [manager getaccseekey];
     [self createVersion];
     [self showLine];
 }
-
+- (void)pushUserProtocol {
+    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    web.webTitle = @"准到服务协议";
+    web.urlString = @"https://www.zhundao.net/demo/xieyi.html";
+    [self.navigationController pushViewController:web animated:YES];
+}
+- (void)pushPrivacyProtect {
+    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    web.urlString = @"https://www.zhundao.net/yinsi.html";
+    web.webTitle = @"准到隐私政策";
+    [self.navigationController pushViewController:web animated:YES];
+}
 - (void)moreAcount {
     MoreAcountViewController *moreAccount = [[MoreAcountViewController alloc] init];
     [self setHidesBottomBarWhenPushed: YES];
@@ -120,7 +139,7 @@
     versionLabel.text = app_Version;
     versionLabel.font = [UIFont systemFontOfSize:12];
     versionLabel.textAlignment = NSTextAlignmentCenter;
-    versionLabel.textColor  = zhundaoGrayColor ;
+    versionLabel.textColor  = ZDGrayColor ;
 }
 /*! 修改密码 */
 - (void)pushxiugai
@@ -205,9 +224,7 @@
     web.webTitle = @"关于";
     web.isClose = YES;
     web.urlString = @"https://www.zhundao.net";
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

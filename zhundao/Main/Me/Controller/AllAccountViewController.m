@@ -40,7 +40,7 @@ static NSString *cellID = @"AllAccountID";
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -97,8 +97,8 @@ static NSString *cellID = @"AllAccountID";
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIView *View = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
-    View.backgroundColor = zhundaoBackgroundColor;
-    UIButton *addAccountButton = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"添加提现账户" textcolor:[UIColor whiteColor] Target:self action:@selector(addAccount) BackgroundColor: zhundaoGreenColor cornerRadius:5 masksToBounds:YES];
+    View.backgroundColor = ZDBackgroundColor;
+    UIButton *addAccountButton = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"添加提现账户" textcolor:[UIColor whiteColor] Target:self action:@selector(addAccount) BackgroundColor: ZDGreenColor cornerRadius:5 masksToBounds:YES];
     [View addSubview:addAccountButton];
     return  View;
 }
@@ -146,7 +146,7 @@ static NSString *cellID = @"AllAccountID";
             [weakSelf.navigationController pushViewController:auth animated:YES];
         }]];
         alertView.messageLabel.text = @"请先完成实名认证再添加提现账号";
-        alertView.tintColor = zhundaoGreenColor;
+        alertView.tintColor = ZDGreenColor;
         TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationFade];
         [self presentViewController:alertController animated:YES completion:nil];
     }else{

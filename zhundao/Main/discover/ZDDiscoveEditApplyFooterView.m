@@ -56,7 +56,7 @@
 - (UILabel *)desLabel {
     if (!_desLabel) {
         _desLabel = [UILabel new];
-        _desLabel.textColor = kheaderTitleColor;
+        _desLabel.textColor = ZDHeaderTitleColor;
         _desLabel.text = @"修改可能会对已发布活动造成影响";
         _desLabel.font = [UIFont systemFontOfSize:13];
     }

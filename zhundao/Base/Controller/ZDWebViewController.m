@@ -8,15 +8,7 @@
 
 #import "ZDWebViewController.h"
 
-#import <WebKit/WebKit.h>
-
-#import "JQIndicatorView.h"
-
 @interface ZDWebViewController ()<WKNavigationDelegate>
-
-@property (nonatomic, strong) WKWebView *webView;
-
-@property (nonatomic, strong) JQIndicatorView *indicator;
 
 @end
 
@@ -128,13 +120,21 @@
     if ([_webView canGoBack]) {
         [_webView goBack];
     } else {
-        [self.navigationController popViewControllerAnimated:YES];
+        if (self.presentingViewController) {
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
 }
 
  // 返回主页面
 - (void)popClose {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    if (self.presentingViewController) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

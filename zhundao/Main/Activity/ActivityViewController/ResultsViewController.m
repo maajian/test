@@ -67,7 +67,7 @@
       [_tableView registerNib:[UINib nibWithNibName:@"LoadAllSignTableViewCell" bundle:nil] forCellReuseIdentifier:@"loadID"];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.backgroundColor =zhundaoBackgroundColor;
+        _tableView.backgroundColor =ZDBackgroundColor;
         [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     }
     return _tableView;
@@ -193,7 +193,7 @@
 - (void)showSign {
     ZD_WeakSelf
     [[SignManager shareManager]showAlertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] WithMessage:@"代签后不能修改" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
-        [[signResult alloc] dealAdminSignWithSignID:weakSelf.signID phone:myCell.model.Mobile Ctr:self title1:@"提示" action1:^(TYAlertAction *action1) {
+        [[signResult alloc] dealAdminSignWithSignID:weakSelf.signID phone:myCell.model.Mobile action1:^{
             [weakSelf TableReloadData];
         }];
     } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];

@@ -16,6 +16,38 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shareManager;
 
+@property (nonatomic, assign) NSInteger userID;
+@property (nonatomic, assign) CGFloat balance;
+@property (nonatomic, assign) CGFloat factorageRate;
+@property (nonatomic, assign) NSInteger gradeId;
+@property (nonatomic, assign) BOOL hasPayPassWord;
+@property (nonatomic, assign) NSInteger userSex;
+
+@property (nonatomic, copy) NSString *address;
+@property (nonatomic, copy) NSString *company;
+@property (nonatomic, copy) NSString *duty;
+@property (nonatomic, copy) NSString *email;
+@property (nonatomic, copy) NSString *headImgUrl;
+@property (nonatomic, copy) NSString *idCard;
+@property (nonatomic, copy) NSString *industry;
+@property (nonatomic, copy) NSString *nickName;
+@property (nonatomic, copy) NSString *openid;
+@property (nonatomic, copy) NSString *phone;
+@property (nonatomic, copy) NSString *trueName;
+
+#pragma mark --- 扩展
+// 是否显示过隐私
+@property (nonatomic, assign) BOOL hasShowPrivacy;
+// 登录信息是否过期
+@property (nonatomic, assign) BOOL loginExpired;
+
+ 
+#pragma mark --- public
+- (void)initWithDic:(NSDictionary *)dic;
+
+// 保存登录时间
+- (void)saveLoginTime;
+
 // 判断本地是否有签到
 - (BOOL)hasLocalSign:(NSInteger)signID;
 // 标记本地有签到

@@ -46,6 +46,7 @@
     NSDictionary *dic = @{@"Type":@"0",
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
+    [ZDNetWorkManager shareHTTPSessionManager].responseSerializer = [AFJSONResponseSerializer serializer];
     [ZD_NetWorkM postDataWithMethod:listUrl parameters:dic succ:^(NSDictionary *obj) {
         NSMutableArray *tempArray = [NSMutableArray array];
         [_allDataArray removeAllObjects];
@@ -87,6 +88,7 @@
     NSDictionary *dic = @{@"Type":@"1",
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
+    [ZDNetWorkManager shareHTTPSessionManager].responseSerializer = [AFJSONResponseSerializer serializer];
     [ZD_NetWorkM postDataWithMethod:listUrl parameters:dic succ:^(NSDictionary *obj) {
         NSMutableArray *tempArray = [NSMutableArray array];
         [_onDataArray removeAllObjects];
@@ -128,6 +130,7 @@
     NSDictionary *dic = @{@"Type":@"2",
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
+    [ZDNetWorkManager shareHTTPSessionManager].responseSerializer = [AFJSONResponseSerializer serializer];
     [ZD_NetWorkM postDataWithMethod:listUrl parameters:dic succ:^(NSDictionary *obj) {
         NSMutableArray *tempArray = [NSMutableArray array];
         [_closeDataArray removeAllObjects];

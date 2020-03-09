@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     self.title = @"发送名单";
     [self rightButtton];
     // Do any additional setup after loading the view.
@@ -33,7 +33,7 @@
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(postEmail)];
     NSDictionary *dic = @{NSFontAttributeName : [UIFont systemFontOfSize:17],
-                          NSForegroundColorAttributeName : zhundaoGreenColor};
+                          NSForegroundColorAttributeName : ZDGreenColor};
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = item;
 }

@@ -80,7 +80,7 @@
         _tableView.delegate =self;
         _tableView.dataSource =self;
         [_tableView registerNib:[UINib nibWithNibName:@"EditMoreChooseTableViewCell" bundle:nil] forCellReuseIdentifier:@"moreChooseID"];
-        _tableView.backgroundColor  = zhundaoBackgroundColor;
+        _tableView.backgroundColor  = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -121,7 +121,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
-    view.backgroundColor=zhundaoBackgroundColor;
+    view.backgroundColor=ZDBackgroundColor;
     return view;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

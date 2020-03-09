@@ -23,7 +23,7 @@
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:_model.HeadImgurl]];
     self.nameLabel.text = _model.NickName;
     self.consultLabel.text = _model.Question;
-    self.consultLabel.textColor = kheaderTitleColor;
+    self.consultLabel.textColor = ZDHeaderTitleColor;
 //    self.timeLabel
     if (_model.IsReply){
         self.statusLabel.text = @"已回复";
@@ -37,7 +37,7 @@
     self.timeLabel.text = _timeStr;
     if (_model.IsRecommend) {
          self.recommendLabel.text = @"已推荐";
-        self.recommendLabel.textColor = zhundaoGreenColor;
+        self.recommendLabel.textColor = ZDGreenColor;
     }else{
         self.recommendLabel.text = @"未推荐";
         self.recommendLabel.textColor = [UIColor grayColor];

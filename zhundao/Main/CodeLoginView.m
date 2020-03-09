@@ -99,7 +99,7 @@
     _phoneTextField.textColor = [UIColor blackColor];
     _phoneTextField.font = [UIFont systemFontOfSize:16];
     _phoneTextField.placeholder = @"请输入电话号码";
-    [_phoneTextField setValue:kColorA(178, 178, 178, 1) forKeyPath:@"_placeholderLabel.textColor"];
+//    [_phoneTextField setValue:kColorA(178, 178, 178, 1) forKeyPath:@"_placeholderLabel.textColor"];
     _phoneTextField.delegate = self;
     [_phoneTextField becomeFirstResponder];
     _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
@@ -115,7 +115,7 @@
     _codeTextField.textColor = [UIColor blackColor];
     _codeTextField.font = [UIFont systemFontOfSize:16];
     _codeTextField.textAlignment = NSTextAlignmentCenter;
-    [_codeTextField setValue:kColorA(178, 178, 178, 1) forKeyPath:@"_placeholderLabel.textColor"];
+//    [_codeTextField setValue:kColorA(178, 178, 178, 1) forKeyPath:@"_placeholderLabel.textColor"];
     _codeTextField.placeholder = @"请填写验证码";
     _codeTextField.delegate = self;
     _codeTextField.keyboardType = UIKeyboardTypeNumberPad;
@@ -125,7 +125,7 @@
     _sendCodeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_sendCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
     [_sendCodeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_sendCodeButton setBackgroundColor:zhundaoGreenColor];
+    [_sendCodeButton setBackgroundColor:ZDGreenColor];
     _sendCodeButton.titleLabel.font = [UIFont systemFontOfSize:16];
     _sendCodeButton.layer.cornerRadius = 4;
     _sendCodeButton.layer.masksToBounds = YES;
@@ -152,7 +152,7 @@
      // 无法获取验证码
     _dontGetCodeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_dontGetCodeButton setTitle:@"无法获取验证码" forState:UIControlStateNormal];
-    [_dontGetCodeButton setTitleColor:zhundaoGreenColor forState:UIControlStateNormal];
+    [_dontGetCodeButton setTitleColor:ZDGreenColor forState:UIControlStateNormal];
     [_dontGetCodeButton addTarget:self action:@selector(codeWeb) forControlEvents:UIControlEventTouchUpInside];
     _dontGetCodeButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:_dontGetCodeButton];
@@ -285,7 +285,7 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (_codeTextField.text.length) {
         [_nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_nextButton setBackgroundColor:zhundaoGreenColor];
+        [_nextButton setBackgroundColor:ZDGreenColor];
         _nextButton.userInteractionEnabled = YES;
     } else {
         [_nextButton setTitleColor:kColorA(255, 255, 255, 0.4) forState:UIControlStateNormal];
@@ -323,7 +323,7 @@
             dispatch_source_cancel(timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 _sendCodeButton.userInteractionEnabled = YES;
-                [_sendCodeButton setBackgroundColor:zhundaoGreenColor];
+                [_sendCodeButton setBackgroundColor:ZDGreenColor];
                 [_sendCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
             });
             

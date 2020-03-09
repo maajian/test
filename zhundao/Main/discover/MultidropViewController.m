@@ -40,7 +40,7 @@ static NSString *muliData =@"muliData";
 @implementation MultidropViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.view.backgroundColor = zhundaoBackgroundColor;
+     self.view.backgroundColor = ZDBackgroundColor;
 //    [self setXiaHua];
     [self makeLayer];
     [self makeType];
@@ -287,8 +287,8 @@ static NSString *muliData =@"muliData";
 //{
 //    NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:@"什么是多点签到"];
 //    [str addAttribute:NSUnderlineStyleAttributeName value:@(NSUnderlineStyleSingle) range:NSMakeRange(0, str.length)];
-//    [str addAttribute:NSUnderlineColorAttributeName value:zhundaoGreenColor range:(NSRange){0,[str length]}];
-//    [str addAttribute:NSForegroundColorAttributeName value:zhundaoGreenColor range:NSMakeRange(0, str.length)];
+//    [str addAttribute:NSUnderlineColorAttributeName value:ZDGreenColor range:(NSRange){0,[str length]}];
+//    [str addAttribute:NSForegroundColorAttributeName value:ZDGreenColor range:NSMakeRange(0, str.length)];
 //    [_muliButton setAttributedTitle:str forState:UIControlStateNormal];
 //}
 - (void)makeLayer
@@ -300,15 +300,15 @@ static NSString *muliData =@"muliData";
     _IDTextField.layer.masksToBounds = YES ;
     _IDTextField.layer.cornerRadius = 5;
     _IDTextField.layer.borderWidth=0.5;
-    _IDTextField.layer.borderColor =zhundaoGreenColor.CGColor;
+    _IDTextField.layer.borderColor =ZDGreenColor.CGColor;
     _phonoTextField.layer.masksToBounds = YES;
     _phonoTextField.layer.cornerRadius = 5;
     _phonoTextField.layer.borderWidth=0.5;
-    _phonoTextField.layer.borderColor =zhundaoGreenColor.CGColor;
+    _phonoTextField.layer.borderColor =ZDGreenColor.CGColor;
     _passwordTextField.layer.masksToBounds = YES;
     _passwordTextField.layer.cornerRadius = 5;
     _passwordTextField.layer.borderWidth=0.5;
-    _passwordTextField.layer.borderColor =zhundaoGreenColor.CGColor;
+    _passwordTextField.layer.borderColor =ZDGreenColor.CGColor;
     _loginButton.layer.cornerRadius = 5;
     _loginButton.layer.masksToBounds = YES;
 }

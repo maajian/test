@@ -60,7 +60,7 @@
             }
         }
         UIView *view = [[UIView alloc]init];
-        view.backgroundColor = zhundaoGrayColor;
+        view.backgroundColor = ZDGrayColor;
         [cell addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(cell).offset(0);
@@ -70,7 +70,7 @@
         }];
         
         UIView *view1 = [[UIView alloc]init];
-        view1.backgroundColor = zhundaoGrayColor;
+        view1.backgroundColor = ZDGrayColor;
 
         [cell addSubview:view1];
         [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -125,7 +125,7 @@
             }
         }
         UIView *view1 = [[UIView alloc]init];
-        view1.backgroundColor = zhundaoGrayColor;
+        view1.backgroundColor = ZDGrayColor;
         [cell addSubview:view1];
         [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(cell).offset(0);
@@ -178,7 +178,7 @@
         }
         UIView *view1 = [[UIView alloc]init];
         [cell addSubview:view1];
-         view1.backgroundColor =zhundaoGrayColor;
+         view1.backgroundColor =ZDGrayColor;
         [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(cell).offset(0);
             make.height.equalTo(@0.5);
@@ -241,7 +241,7 @@
         _baseLabel.text = array[indexPath.row];
         
         UIView *view1 = [[UIView alloc]init];
-         view1.backgroundColor =zhundaoGrayColor;
+         view1.backgroundColor =ZDGrayColor;
         [cell addSubview:view1];
         [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(cell).offset(0);
@@ -291,7 +291,7 @@
         _baseLabel.text = array[indexPath.row];
         
         UIView *view1 = [[UIView alloc]init];
-        view1.backgroundColor =zhundaoGrayColor;
+        view1.backgroundColor =ZDGrayColor;
         [cell addSubview:view1];
         [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(cell).offset(0);
@@ -345,7 +345,7 @@
         _baseLabel.text = array[indexPath.row];
         
         UIView *view1 = [[UIView alloc]init];
-         view1.backgroundColor =zhundaoGrayColor;
+         view1.backgroundColor =ZDGrayColor;
         
         [cell addSubview:view1];
         [view1 mas_makeConstraints:^(MASConstraintMaker *make) {

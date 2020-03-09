@@ -115,7 +115,7 @@
         _typeLabel = [UILabel new];
         _typeLabel.text = @"输入框";
         _typeLabel.font = [UIFont systemFontOfSize:16];
-        _typeLabel.textColor = kheaderTitleColor;
+        _typeLabel.textColor = ZDHeaderTitleColor;
         _typeLabel.textAlignment = NSTextAlignmentRight;
         [_typeLabel addTapGestureTarget:self action:@selector(changeType:)];
     }
@@ -147,7 +147,7 @@
 
 #pragma mark --- UI
 - (void)setupUI {
-    self.backgroundColor = zhundaoBackgroundColor;
+    self.backgroundColor = ZDBackgroundColor;
     [self addSubview:self.titleTF];
     
     [self addSubview:self.typeContentView];

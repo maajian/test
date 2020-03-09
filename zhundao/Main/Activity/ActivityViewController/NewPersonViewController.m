@@ -48,7 +48,7 @@
     [self rightButton];
      _editVM = [[EditSignListViewModel alloc]init];
     _personVM = [[NewPersonViewModel alloc]init];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     [self.view addSubview:self.tableView];
     NSArray *allOptionArray = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"optionArray%li",(long)self.activityID]];  //获取所有自定义项
     _baseNameArray = [[_personVM getBaseName:self.userInfo] mutableCopy];
@@ -198,7 +198,7 @@
 - (UIView *) createHeader  //创建头视图
 {
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
-    view.backgroundColor=zhundaoBackgroundColor;
+    view.backgroundColor=ZDBackgroundColor;
     return view;
 }
 
@@ -272,8 +272,8 @@
     {
         textField.text =str;
         textField.attributedPlaceholder = [_editVM setAttrbriteStrWithText:@"未填写*"];
-        [textField setValue:[UIColor colorWithRed:137.0f/256.0f green:137.0f/256.0f blue:137.0f/256.0f alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-        [textField setValue:KweixinFont(14) forKeyPath:@"_placeholderLabel.font"];
+//        [textField setValue:[UIColor colorWithRed:137.0f/256.0f green:137.0f/256.0f blue:137.0f/256.0f alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+//        [textField setValue:KweixinFont(14) forKeyPath:@"_placeholderLabel.font"];
     }
     [view addSubview:textField];
 }
@@ -361,7 +361,7 @@
             UIImageView *imageview = [[UIImageView alloc]initWithFrame: CGRectMake(kLineSpace/4, kLineSpace/4, kLineSpace/2, kLineSpace/2)];
             [addImageView addSubview:imageview];
             addImageView.layer.borderWidth = 0.5;
-            addImageView.layer.borderColor = KplaceHolderColor.CGColor;
+            addImageView.layer.borderColor = ZDPlaceHolderColor.CGColor;
             imageview.image = [UIImage imageNamed:@"加号"];
             [cell.contentView addSubview:addImageView];
             addImageView.userInteractionEnabled = YES;
@@ -437,7 +437,7 @@
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
     NSDictionary *attributes = @{NSFontAttributeName : KweixinFont(17),
-                                 NSForegroundColorAttributeName : zhundaoGreenColor};
+                                 NSForegroundColorAttributeName : ZDGreenColor};
     [item setTitleTextAttributes:attributes forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = item;
 }

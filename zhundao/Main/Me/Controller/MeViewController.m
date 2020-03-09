@@ -7,7 +7,16 @@
 //
 
 #import "MeViewController.h"
+
+#import "SettingTableViewController.h"
+
 #import "AppDelegate.h"
+
+#import "ZDMeHeaderCell.h"
+#import "ZDMeNormalCell.h"
+
+#import "ZDMeViewModel.h"
+
 #import "LoginViewController.h"
 #import "MyWalletViewController.h"
 #import "ContactViewController.h"
@@ -18,102 +27,212 @@
 #import "Time.h"
 #import "PersonInfoViewController.h"
 #import "MyMessageViewController.h"
-@interface MeViewController ()
-{
-    NSString *uidstr;
-    NSDictionary *userdic ;
-    NSString *acc;
-    NSString *phonestr;
+#import "ZDMePromoteMainVC.h"
+
+@interface MeViewController ()<UITableViewDataSource, UITableViewDelegate, ZDMeHeaderCellDelegate> {
+    NSDictionary *userdic;
 }
-/*! 手机号码 */
-@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
-/*! 头像 */
-@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
-/*! 名字 */
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-/*! 通知公告 */
-@property (weak, nonatomic) IBOutlet UITableViewCell *noticeCell;
-/*! 钱包 */
-@property (weak, nonatomic) IBOutlet UITableViewCell *myWalletCell;
-/*! 意见反馈 */
-@property (weak, nonatomic) IBOutlet UITableViewCell *suggestCell;
-/*! tableview */
-@property (strong, nonatomic) IBOutlet UITableView *tableview;
-/*! vip标签 */
-@property (weak, nonatomic) IBOutlet UILabel *VIPlabel;
-/*! 通讯录 */
-@property (weak, nonatomic) IBOutlet UITableViewCell *listCell;
-/*! NoticeViewModel */
-@property(nonatomic,strong)NoticeViewModel *noticeVM;
-/*! 个人信息 */
-@property (weak, nonatomic) IBOutlet UITableViewCell *infoCell;
-/*! 短信 */
-@property (weak, nonatomic) IBOutlet UITableViewCell *messageCell;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray <ZDMeModel *> *> *dataSource;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NoticeViewModel *noticeVM;
+@property (nonatomic, strong) ZDMeViewModel *viewModel;
 
 @end
 
 @implementation MeViewController
-
+#pragma mark ------生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
-     _tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,0.0f, _tableview.bounds.size.width,15.0f)];
-    _tableview.backgroundColor = zhundaoBackgroundColor;
-    uidstr = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
-    [self setVIP];
     
-    SignManager *manager = [SignManager shareManager];
-     acc =  [manager getaccseekey];
-     [self setGestureRecognizer];
-    _iconImageView.layer.cornerRadius = 33;
-    _iconImageView.layer.masksToBounds = YES;
-    _iconImageView.layer.borderWidth = 1;
-    _iconImageView.layer.borderColor =  zhundaoBackgroundColor.CGColor;
+    [self initSet];
+    [self initLayout];
 }
 
-#pragma mark ---懒加载 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getuser];
+    [self networkForPromote];
+    [self isShowRed];
+    [MobClick beginLogPageView:self.navigationItem.title];//("PageOne"为页面名称，可自定义)
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:self.navigationItem.title];
+}
+
+#pragma mark --- Lazyload
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView.dataSource = self;
+        _tableView.separatorColor = ZDLineColor;
+        _tableView.delegate = self;
+        [_tableView registerClass:[ZDMeHeaderCell class] forCellReuseIdentifier:@"ZDMeHeaderCell"];
+        [_tableView registerClass:[ZDMeNormalCell class] forCellReuseIdentifier:@"ZDMeNormalCell"];
+        _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,0.0f, kScreenWidth,15.0f)];
+        _tableView.tableFooterView = [[UIView alloc] init];
+        _tableView.backgroundColor = ZDBackgroundColor;
+    }
+    return _tableView;
+}
 - (NoticeViewModel *)noticeVM{
     if (!_noticeVM) {
         _noticeVM = [[NoticeViewModel alloc]init];
     }
     return _noticeVM;
 }
-
-#pragma mark VIP
-- (void)setVIP
-{
-    _VIPlabel.layer.cornerRadius = 6;
-    _VIPlabel.layer.masksToBounds = YES;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(updataVIP)];
-    _VIPlabel.userInteractionEnabled = YES;
-    [_VIPlabel addGestureRecognizer:tap];
-    
+- (ZDMeViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [ZDMeViewModel new];
+    }
+    return _viewModel;
 }
-- (void)updataVIP
-{
+
+#pragma mark --- Init
+- (void)initSet {
+    _dataSource = @[@[[ZDMeModel headerModel]],
+                    @[[ZDMeModel noticeModel]],
+                    @[[ZDMeModel walletModel], [ZDMeModel messageModel], [ZDMeModel contactModel], [ZDMeModel questionModel]],
+                    @[[ZDMeModel honorModel], [ZDMeModel zhundaobiModel], [ZDMeModel voucherModel], [ZDMeModel promoteModel]],
+                    @[[ZDMeModel settingModel]]].mutableCopy;
+    
+    [self.view addSubview:self.tableView];
+}
+- (void)initLayout {
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+}
+
+#pragma mark --- Network
+- (void)getuser {
+    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"errcode"] integerValue] == 0) {
+            [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
+            userdic = [obj[@"data"] copy];
+            [[NSUserDefaults standardUserDefaults]setObject:@(ZD_UserM.gradeId) forKey:@"GradeId"];
+            [[NSUserDefaults  standardUserDefaults]setObject:ZD_UserM.phone forKey:@"mobile"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            [self.tableView reloadData];
+        }
+    } fail:^(NSError *error) {
+        [[SignManager shareManager] showNotHaveNet:self.view];
+    }];
+}
+- (void)networkForPromote {
+    ZD_WeakSelf
+    [self.viewModel getPromoteSuccess:^{
+        [weakSelf.tableView reloadData];
+    } failure:^{
+        
+    }];
+}
+
+#pragma mark --- UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 5;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0 || section == 1) {
+        return 1;
+    } else if (section == 2) {
+        return 4;
+    } else if (section == 3) {
+        return self.viewModel.allowPromote ? 4 : 3;
+    } else {
+        return 1;
+    }
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        ZDMeHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDMeHeaderCell"];
+        cell.model = self.dataSource[indexPath.section][indexPath.row];
+        cell.meHeaderCellDelegate = self;
+        return cell;
+    } else {
+        ZDMeNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDMeNormalCell"];
+        cell.model = self.dataSource[indexPath.section][indexPath.row];
+        return cell;
+    }
+}
+
+#pragma mark --- UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZDMeModel *model = self.dataSource[indexPath.section][indexPath.row];
+    switch (model.type) {
+        case ZDMeTypeHeader: {
+            [self pushChangeInfo];
+            break;
+        }
+        case ZDMeTypeNotice: {
+            [self pushNotice];
+            break;
+        }
+        case ZDMeTypeWallet: {
+            [self pushWallet];
+            break;
+        }
+        case ZDMeTypeMessage: {
+            [self pushMessage];
+            break;
+        }
+        case ZDMeTypeContact: {
+            [self pushList];
+            break;
+        }
+        case ZDMeTypeQuestion: {
+            [self showsuggest];
+            break;
+        }
+        case ZDMeTypeHonor: {
+            [self showHonor];
+            break;
+        }
+        case ZDMeTypeZDBi: {
+            [self showZhundaoBi];
+            break;
+        }
+        case ZDMeTypeVoucher: {
+            [self showVoucher];
+            break;
+        }
+        case ZDMeTypePromote: {
+            [self showPromote];
+            break;
+        }
+        case ZDMeTypeSetting: {
+            [self pushSetting];
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZDMeModel *model = self.dataSource[indexPath.section][indexPath.row];
+    if (model.type == ZDMeTypeHeader) {
+        return 86;
+    } else {
+        return 44;
+    }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 10;
+}
+
+#pragma mark --- ZDMeHeaderCellDelegate
+- (void)headerCell:(ZDMeHeaderCell *)headerCell didTapVIPLabel:(UILabel *)label {
     UpDataViewController *updata = [[UpDataViewController alloc]init];
     updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[SignManager shareManager] getaccseekey]];
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:updata animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
-}
-#pragma mark -----跳转
-- (void)setGestureRecognizer
-{
-    UITapGestureRecognizer *contacttap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showsuggest)];
-    [_suggestCell addGestureRecognizer:contacttap];
-    
-    UITapGestureRecognizer *walletTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushWallet)];
-    [_myWalletCell addGestureRecognizer:walletTap];
-    UITapGestureRecognizer *listTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushList)];
-    [_listCell addGestureRecognizer:listTap];
-    UITapGestureRecognizer *noticeTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushNotice)];
-    [_noticeCell addGestureRecognizer:noticeTap];
-    UITapGestureRecognizer *infoTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushChangeInfo)];
-    [_infoCell addGestureRecognizer:infoTap];
-    UITapGestureRecognizer *messageTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushMessage)];
-    [_messageCell addGestureRecognizer:messageTap];
 }
 
+#pragma mark --- action
 - (void)pushMessage{
     if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"GradeId"] integerValue]>1) {
         MyMessageViewController *message = [[MyMessageViewController alloc]init];
@@ -158,6 +277,34 @@
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
 }
+- (void)showVoucher {
+    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    web.webTitle = @"我的代金券";
+    web.isClose = YES;
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/coupon/index.html#/mycoupon?token=%@",[[SignManager shareManager] getToken]];
+    [self setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:web animated:YES];
+    [self setHidesBottomBarWhenPushed:NO];
+}
+- (void)showHonor {
+    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    web.webTitle = @"我的勋章";
+    web.isClose = YES;
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/account/index.html#!/nameplate?token=%@",[[SignManager shareManager] getToken]];
+    [self setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:web animated:YES];
+    [self setHidesBottomBarWhenPushed:NO];
+}
+- (void)showZhundaoBi {
+    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    web.webTitle = @"我的准币";
+    web.isClose = YES;
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/shop/index.html#!/ZDWallet?token=%@",[[SignManager shareManager] getToken]];
+    [self setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:web animated:YES];
+    [self setHidesBottomBarWhenPushed:NO];
+}
+
 - (void)pushWallet {
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"我的钱包";
@@ -167,7 +314,6 @@
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
 }
-
 /*! 通知公告 */
 - (void)pushNotice {
     NoticeViewController *notice = [[NoticeViewController alloc]init];
@@ -175,113 +321,37 @@
     [self.navigationController pushViewController:notice animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
 }
-#pragma mark 获取信息
-- (void)getuser {
-        NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
-        if ([obj[@"errcode"] integerValue] == 0) {
-            userdic = [obj[@"data"] copy];
-            // 头像
-            NSString *headImgUrl = userdic[@"headImgUrl"] ? userdic[@"headImgUrl"] : @"";
-            [_iconImageView sd_setImageWithURL:[NSURL URLWithString:headImgUrl] placeholderImage:[UIImage imageNamed:@"user.png"]];
-            // 等级
-            [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
-            _VIPlabel.text = [NSString stringWithFormat:@"V%@",userdic[@"gradeId"]];
-            
-            // 手机号码
-            NSString *mobile = userdic[@"phone"] ? userdic[@"phone"] : @"";
-            [[ NSUserDefaults  standardUserDefaults]setObject:mobile forKey:@"mobile"];
-            _phoneLabel.text = [NSString stringWithFormat:@"准到ID: %@",userdic[@"id"]];
-            
-            // 姓名
-            NSString *nickName = userdic[@"nickName"] ?  userdic[@"nickName"] : @"";
-            _nameLabel.text = nickName;
-            
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            [self.tableView reloadData];
-        }
-    } fail:^(NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            static dispatch_once_t onceToken;
-            dispatch_once(&onceToken, ^{
-                if ([[ NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
-                    [[NSUserDefaults standardUserDefaults]removeObjectForKey:ZDUserDefault_Network_Line];
-                    [[NSUserDefaults standardUserDefaults] synchronize];
-                } else {
-                    [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
-                    [[NSUserDefaults standardUserDefaults]synchronize];
-                }
-                [self getuser];
-            });
-        });
-    }];
+/*! 设置 */
+- (void)pushSetting {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Me" bundle:[NSBundle mainBundle]];
+    SettingTableViewController *vc = [sb instantiateViewControllerWithIdentifier:@"settingStoryboard"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
-
-- (void)getAuth {
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/user/getAuthInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-        if ([obj[@"res"] integerValue] == 1) {
-            [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"Authentication"];
-            
-            NSMutableDictionary *authdic = [obj[@"data"] mutableCopy];
-            NSDictionary *tempDic = [NSDictionary dictionaryWithDictionary:obj[@"data"]];
-            for (NSString *key in tempDic.allKeys) {
-                if ([[tempDic objectForKey:key] isEqual:[NSNull null]]) {
-                    [authdic setObject:@"" forKey:key];
-                }else{}
-            }
-            NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"auth.plist"];
-            BOOL issuccess = [authdic writeToFile:path atomically:YES];
-            if (issuccess) {
-                NSLog(@"写入成功");
-            }
-        } else {
-            [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"Authentication"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }
-    } fail:^(NSError *error) {
-        
-    }];
+- (void)showPromote {
+    ZDMePromoteMainVC *main = [[ZDMePromoteMainVC alloc] init];
+    [self setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:main animated:YES];
+    [self setHidesBottomBarWhenPushed:NO];
 }
 
 #pragma mark 通知公告小红点
-
-
 /*! 是否显示小红点 */
 - (void)isShowRed {
-    [self removeLayer];
     NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:@"noticeTime"];
     if (array) {
        return  [self getNotice:array];
     }else{
-        [self createShape];
+        [self showRod:YES];
     }
 }
-/*! 移除CAShapeLayer */
-- (void)removeLayer {
-    [_noticeCell.layer.sublayers enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[CAShapeLayer class]]) {
-            [obj removeFromSuperlayer];
-            *stop = YES;
-        }
-    }];
-}
-/*! 创建CAShapeLayer */
-- (void)createShape {
-    CAShapeLayer *shape = [CAShapeLayer layer];
-    /*! 内切圆 */
-    CGFloat x = kScreenWidth -40 ;
-    CGFloat y = 17;
-    CGFloat width = 10 ;
-    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(x, y, width, width)];
-    shape.path = bezierPath.CGPath;
-    shape.fillColor = [UIColor redColor].CGColor;
-    [_noticeCell.layer addSublayer:shape];
+
+- (void)showRod:(BOOL)isShow {
+    self.dataSource[1][0].showRod = isShow;
+    [self.tableView reloadData];
 }
 /*! 判断是非存在ID ，不存在则创建layer */
-- (void)getNotice :(NSArray *)localArray {
-    __weak typeof(self) weakself = self;
+- (void)getNotice:(NSArray *)localArray {
+    __block BOOL exist = NO;
     [self.noticeVM netWorkWithPage:0 Block:^(NSArray *array) {
         for (NSDictionary *dic in array) {
             NSString *time = dic[@"AddTime"] ;
@@ -292,41 +362,13 @@
             NSTimeInterval lastTime = [[dataFormatter dateFromString:lastStr] timeIntervalSince1970];
             NSTimeInterval nowTime = [[dataFormatter dateFromString:nowTime1.timeStr] timeIntervalSince1970];
             if (nowTime >lastTime) {
-                [weakself createShape];
-            }break;
+                exist = YES;
+            }
+            break;
         }
     }];
+    [self showRod:exist];
 }
 
-
-#pragma mark ------生命周期
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self getuser];
-    [self getAuth];
-    [self isShowRed];
-    [MobClick beginLogPageView:self.navigationItem.title];//("PageOne"为页面名称，可自定义)
-}
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [MobClick endLogPageView:self.navigationItem.title];
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

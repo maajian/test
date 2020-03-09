@@ -101,7 +101,7 @@
 - (void)colorSTRWithStr :(UILabel *)label rangeBegin :(NSInteger )begin
 {
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc]initWithString:label.text];
-    [string addAttribute:NSForegroundColorAttributeName value:zhundaoGreenColor range:NSMakeRange(begin, label.text.length-begin)];
+    [string addAttribute:NSForegroundColorAttributeName value:ZDGreenColor range:NSMakeRange(begin, label.text.length-begin)];
     label.attributedText = string;
 }
 

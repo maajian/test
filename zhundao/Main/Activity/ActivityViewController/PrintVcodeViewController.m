@@ -32,7 +32,7 @@
 - (void)baseSetting
 {
     [self.view addSubview:self.tableView];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     
 }
 
@@ -43,7 +43,7 @@
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
         _tableView.rowHeight = 60 ;
         
         [_tableView registerNib:[UINib nibWithNibName:@"PrintVcodeTableViewCell" bundle:nil] forCellReuseIdentifier:@"printID"];
@@ -92,9 +92,9 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
-    view.backgroundColor=zhundaoBackgroundColor;
+    view.backgroundColor=ZDBackgroundColor;
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, kScreenWidth, 30)];
-    label.textColor = kheaderTitleColor;
+    label.textColor = ZDHeaderTitleColor;
     label.font = [UIFont systemFontOfSize:12];
     label.text = @"使用前，请蓝牙连接打印机";
     [view addSubview:label];
@@ -124,6 +124,7 @@
         NSMutableArray *printArray =  [[_VM getID:nameArray model:cell.model] copy];
         [printvm printQRCode:cell.model.VCode isPrint:YES offsetx:offsetx offsety:offsety textArray:printArray];
     }
+    [self postPrintLogWithModel:cell.model];
 }
 #pragma mark -------打印多个二维码
 
@@ -162,10 +163,31 @@
                     NSMutableArray *printArray =  [[_VM getID:nameArray model:model] copy];
                     [printvm printQRCode:cell.model.VCode isPrint:YES offsetx:offsetx offsety:offsety textArray:printArray];
                 }
+                [self postPrintLogWithModel:model];
             }
         }
         
     };
+}
+
+- (void)postPrintLogWithModel:(listModel *)model {
+    NSString *urlStr = [NSString stringWithFormat:@"%@zhundao2b", zhundaoApi];
+    NSDictionary *params = @{@"BusinessCode": @"Log_InsertUserLog",
+                             @"Data": @{
+                                     @"ActivityId": @(_activityID),
+                                     @"AdminUserId": @(ZD_UserM.userID),
+                                     @"UserId": @(model.ID),
+                                     @"VCode": @"",
+                                     @"AddTime" : @"",
+                                     @"From" : @"IOS"
+                                     }
+                             };
+    [ZD_NetWorkM postDataWithMethod:urlStr parameters:params succ:^(NSDictionary *obj) {
+        
+        NSLog(@"succsss --- ");
+    } fail:^(NSError *error) {
+        NSLog(@"error --- ");
+    }];
 }
 
 

@@ -280,21 +280,21 @@
 - (UIButton *)createAddFeeButton
 {
 
-    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 40) title:@"+ 添加费用项" textcolor:zhundaoGreenColor Target:self action: @selector(addFeeSection) BackgroundColor:[UIColor clearColor] cornerRadius:5 masksToBounds:YES];
+    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 40) title:@"+ 添加费用项" textcolor:ZDGreenColor Target:self action: @selector(addFeeSection) BackgroundColor:[UIColor clearColor] cornerRadius:5 masksToBounds:YES];
     button.layer.borderWidth = 1;
-    button.layer.borderColor = zhundaoGreenColor.CGColor;
+    button.layer.borderColor = ZDGreenColor.CGColor;
     return button;
 }
 - (UIButton *)createSureButton
 {
-    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 70, kScreenWidth-20, 40) title:@"确定" textcolor:[UIColor whiteColor] Target:self action: @selector(sureAction) BackgroundColor:zhundaoGreenColor  cornerRadius:5 masksToBounds:YES];
+    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 70, kScreenWidth-20, 40) title:@"确定" textcolor:[UIColor whiteColor] Target:self action: @selector(sureAction) BackgroundColor:ZDGreenColor  cornerRadius:5 masksToBounds:YES];
     return button;
 }
 - (UIButton *)explainButton
 {
-    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth / 2 - 50, 120, 100 , 30) title:@"交易服务费说明" textcolor:zhundaoGreenColor Target:self action: @selector(pushToExplain) BackgroundColor:[UIColor clearColor] cornerRadius:5 masksToBounds:YES];
+    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth / 2 - 50, 120, 100 , 30) title:@"交易服务费说明" textcolor:ZDGreenColor Target:self action: @selector(pushToExplain) BackgroundColor:[UIColor clearColor] cornerRadius:5 masksToBounds:YES];
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:@"交易服务费说明"];
-    [str addAttribute:NSForegroundColorAttributeName value:zhundaoGreenColor range:NSMakeRange(0, str.length)];
+    [str addAttribute:NSForegroundColorAttributeName value:ZDGreenColor range:NSMakeRange(0, str.length)];
     [str addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13] range:NSMakeRange(0, str.length)];
     [str addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(0, str.length)];
     [button setAttributedTitle:str forState:UIControlStateNormal];

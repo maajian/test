@@ -268,6 +268,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
+        [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary  *userdic = data[@"data"];
         // 手机号码
@@ -279,6 +280,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
             [[NSUserDefaults standardUserDefaults]synchronize];
             
+            [ZD_UserM saveLoginTime];
             MainViewController *tabbar = [[MainViewController alloc]init];
             AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
             appDelegate.window.rootViewController= tabbar;

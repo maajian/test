@@ -51,6 +51,15 @@
                                                        action:action
                                              equalToImageSize:NO];
 }
++ (UIBarButtonItem *)shareItemWithTarget:(id)target action:(SEL)action {
+    return [UIBarButtonItem imageBarButtonItemWithNormalImage:@"nav_share"
+                                                renderingMode:UIImageRenderingModeAlwaysTemplate
+                                         highlightedImageName:nil
+                                             seletedImageName:nil
+                                                       Target:target
+                                                       action:action
+                                             equalToImageSize:NO];
+}
 
 
 #pragma mark --- 文本
@@ -59,7 +68,7 @@
  */
 + (UIBarButtonItem *)saveTextItemWithTarget:(id)target action:(SEL)action {
     return [UIBarButtonItem textBarButtonItemWithText:@"保存"
-                                               color:zhundaoGreenColor
+                                               color:ZDGreenColor
                                                Target:target
                                                action:action];
 }

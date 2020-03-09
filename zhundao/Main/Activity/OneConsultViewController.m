@@ -45,7 +45,7 @@
     }
     _textViewHeight = 60 ;
     _isCommand = _model.IsRecommend;
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
      _cellHeight =  [self.oneVM getHeight:_model.Question width:(0.88 *kScreenWidth-50)];
     [self.view addSubview:self.tableView];
 }
@@ -59,7 +59,7 @@
         _tableView.dataSource =self;
         _tableView.estimatedRowHeight = 44;
         _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -110,8 +110,8 @@
 {
     if(section==2) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
-        view.backgroundColor = zhundaoBackgroundColor;
-        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"确认" textcolor:[UIColor whiteColor] Target:self action:@selector(postConsult) BackgroundColor:zhundaoGreenColor cornerRadius:5 masksToBounds:1];
+        view.backgroundColor = ZDBackgroundColor;
+        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"确认" textcolor:[UIColor whiteColor] Target:self action:@selector(postConsult) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:1];
         [view addSubview:button];
         return view;
     }
@@ -121,8 +121,8 @@
 {
     if (section==0) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
-        view.backgroundColor = zhundaoBackgroundColor;
-        UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, kScreenWidth-20, 30) Text:_model.Title textColor:kheaderTitleColor font:[UIFont systemFontOfSize:12] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+        view.backgroundColor = ZDBackgroundColor;
+        UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, kScreenWidth-20, 30) Text:_model.Title textColor:ZDHeaderTitleColor font:[UIFont systemFontOfSize:12] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
         [view addSubview:label];
         return view;
     }

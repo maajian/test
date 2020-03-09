@@ -207,7 +207,7 @@ static const CGFloat bottomViewHeight= 44;
    BigSizeButton *rightButton = [BigSizeButton buttonWithType:UIButtonTypeCustom];
     rightButton.frame = CGRectMake(kScreenWidth-50, 0, 40, 40);
     [rightButton setTitle:@"完成" forState:UIControlStateNormal];
-    [rightButton setTitleColor:zhundaoGreenColor forState:UIControlStateNormal];
+    [rightButton setTitleColor:ZDGreenColor forState:UIControlStateNormal];
     [rightButton addTarget:self action:@selector(sureEdit) forControlEvents:UIControlEventTouchUpInside];
     rightButton.titleLabel.font = KHeitiSCMedium(17);
     [_topView addSubview:rightButton];

@@ -52,7 +52,7 @@
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
-                          NSForegroundColorAttributeName:zhundaoGreenColor};
+                          NSForegroundColorAttributeName:ZDGreenColor};
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = item;
 }

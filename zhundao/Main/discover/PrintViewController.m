@@ -69,7 +69,7 @@
         _tableView.delegate =self ;
         _tableView.dataSource =self;
         _tableView.rowHeight = 44 ;
-        _tableView.backgroundColor = zhundaoBackgroundColor ;
+        _tableView.backgroundColor = ZDBackgroundColor ;
         _tableView.showsVerticalScrollIndicator = NO;
     }
     return _tableView;
@@ -107,7 +107,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:printID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.tintColor = zhundaoGreenColor;
+        cell.tintColor = ZDGreenColor;
     }
     if (indexPath.section==0) {
         cell.textLabel.text = @"开启打印";
@@ -147,7 +147,7 @@
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 44)];
     view.backgroundColor = [UIColor clearColor];
     if (![_headerArray[section] isEqualToString:@""]) {
-        UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, kScreenWidth, 30) Text:_headerArray[section] textColor:kheaderTitleColor font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+        UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, kScreenWidth, 30) Text:_headerArray[section] textColor:ZDHeaderTitleColor font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
         [view addSubview:label];
         return view;
     }else
@@ -161,7 +161,7 @@
     if (section==3) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 50)];
         view.backgroundColor = [UIColor clearColor];
-//        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:zhundaoGreenColor cornerRadius:5 masksToBounds:YES];
+//        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:YES];
 //        [view addSubview:button];
         return view;
     }
@@ -249,8 +249,6 @@
         NSLog(@"Show Index %zi",index); //取消0
         
         if (index==1) {   //测试打印
-//            [_ViewModel printTextIsPrint:YES offsetx:[_offsetX intValue] offsety:[_offsetY intValue] textArray:@[@"姓名:徐呈龙",@"职务:.net开发工程师",@"单位:杭州准到信息科技有限公司"]];
-            
              [_ViewModel printQRCode:@"m819993" name:@"准到科技" isPrint:YES offsetx:[_offsetX intValue] offsety:[_offsetY intValue]];
             
         }

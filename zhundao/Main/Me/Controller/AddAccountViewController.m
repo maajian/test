@@ -48,7 +48,7 @@ static NSString *cellID = @"addAccountID";
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -99,7 +99,7 @@ static NSString *cellID = @"addAccountID";
 {
     UIView *View = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 80)];
     View.backgroundColor = [UIColor clearColor];
-    UIButton *sureButton = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor: zhundaoGreenColor cornerRadius:5 masksToBounds:YES];
+    UIButton *sureButton = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor: ZDGreenColor cornerRadius:5 masksToBounds:YES];
     [View addSubview:sureButton];
     return View;
 }

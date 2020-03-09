@@ -49,7 +49,7 @@
         _tableView.sectionFooterHeight = 0.1f;
         _tableView.sectionHeaderHeight = 8.f;
         _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 8)];
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -118,7 +118,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (section==1) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 8)];
-        view.backgroundColor = zhundaoBackgroundColor;
+        view.backgroundColor = ZDBackgroundColor;
         return view;
     }else{
         return nil;
@@ -151,7 +151,7 @@
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
-                          NSForegroundColorAttributeName:zhundaoGreenColor};
+                          NSForegroundColorAttributeName:ZDGreenColor};
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = item;
 }

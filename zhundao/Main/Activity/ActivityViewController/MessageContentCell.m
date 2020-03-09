@@ -86,12 +86,12 @@
             case ZDMessageStatusTypeFail:
                 self.statusLabel.text = [NSString stringWithFormat:@"【审核失败,含敏感词汇%@】", model.Reason];
                 self.statusLabel.textColor = [UIColor ZDRedNormalColor];
-                self.titleLabel.textColor = zhundaoGrayColor;
+                self.titleLabel.textColor = ZDGrayColor;
                 break;
             case ZDMessageStatusTypeCheck:
                 self.statusLabel.text = @"【正在审核】";
                 self.statusLabel.textColor = [UIColor ZDBlueNormalColor];
-                self.titleLabel.textColor = zhundaoGrayColor;
+                self.titleLabel.textColor = ZDGrayColor;
                 break;
             default:
                 break;

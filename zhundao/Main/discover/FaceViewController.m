@@ -60,7 +60,7 @@
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
         _tableView.sectionHeaderHeight = 0.1;
         _tableView.sectionFooterHeight = 30;
         _tableView.rowHeight = 70;

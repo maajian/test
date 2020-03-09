@@ -72,7 +72,7 @@
     [self.view addSubview:bottomLine];
     
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [loginButton  setBackgroundColor:zhundaoGreenColor];
+    [loginButton  setBackgroundColor:ZDGreenColor];
     loginButton.layer.cornerRadius = 5;
     loginButton.layer.masksToBounds = YES;
     [loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
@@ -137,6 +137,7 @@
             NSMutableArray *userArray = [NSMutableArray arrayWithObject:dic];
             [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:@"userArray"];
         }
+        [ZD_UserM saveLoginTime];
         [loginViewModel getTokenByAccount:_accountTF .text passWord:_passwordTF.text];
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"wechatLogin"];
         

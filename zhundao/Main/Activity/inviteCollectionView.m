@@ -28,7 +28,7 @@ static NSString *cellID = @"inviteID";
         self.delegate = self;
         self.showsHorizontalScrollIndicator = NO;
         self.pagingEnabled = YES;
-        self.backgroundColor = zhundaoBackgroundColor;
+        self.backgroundColor = ZDBackgroundColor;
         [self registerClass:[InviteCollectionViewCell class] forCellWithReuseIdentifier:cellID];
         [self scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
         [View insertSubview:self.pageControl atIndex:4];

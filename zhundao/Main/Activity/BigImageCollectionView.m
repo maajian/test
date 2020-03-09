@@ -42,7 +42,7 @@ static NSString *headerID = @"BigImageCollectionCellHeaderID";
 #pragma mark --- 懒加载
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
-        _nameLabel = [MyLabel initWithLabelFrame:CGRectMake(20, 0, 100, 40) Text:_headerTitle textColor:kheaderTitleColor font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+        _nameLabel = [MyLabel initWithLabelFrame:CGRectMake(20, 0, 100, 40) Text:_headerTitle textColor:ZDHeaderTitleColor font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     }
     return _nameLabel;
 }

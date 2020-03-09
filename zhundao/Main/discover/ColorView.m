@@ -87,7 +87,7 @@ const static CGFloat buttonWidth = 20;
     /*! 创建下面横线 */
         CAShapeLayer *layer = [CAShapeLayer layer];
         UIBezierPath *path = [UIBezierPath bezierPath];
-        layer.strokeColor =  zhundaoLineColor.CGColor;
+        layer.strokeColor =  ZDLineColor.CGColor;
         layer.lineWidth = 2;
         layer.lineCap = kCALineCapRound;
         [path moveToPoint:CGPointMake(15, 60)];

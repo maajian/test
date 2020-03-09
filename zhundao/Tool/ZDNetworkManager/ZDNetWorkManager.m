@@ -22,12 +22,12 @@ ZD_Singleton_Implementation(NetWorkManager)
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [AFHTTPSessionManager manager];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+        manager.requestSerializer.timeoutInterval = 20.f;
+        [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     });
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
-    manager.requestSerializer.timeoutInterval = 20.f;
-    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     return manager;
 }
 
@@ -36,21 +36,16 @@ ZD_Singleton_Implementation(NetWorkManager)
  get请求
  */
 - (void)getDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
-    [self checkNetworkStatusAvailable:^{
-        [[ZDNetWorkManager shareHTTPSessionManager] GET:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            succ(responseObject);
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            if (self.isDefaultNetworkLine) {
-                [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
-            } else {
-                if (error.code == -1011) {
-                    [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-                }
-                fail(error);
-            }
-        }];
-    } unavailable:^{
-        fail([self networkError]);
+    [[ZDNetWorkManager shareHTTPSessionManager] GET:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        succ(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (error.code == -1011) {
+            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+        } else  if (self.isDefaultNetworkLine) {
+            [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
+        } else {
+            fail([self networkError]);
+        }
     }];
 }
 
@@ -58,52 +53,34 @@ ZD_Singleton_Implementation(NetWorkManager)
  post请求
  */
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
-    [self checkNetworkStatusAvailable:^{
-        [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            succ(responseObject);
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            if (self.isDefaultNetworkLine) {
-                [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
-            } else {
-                if (error.code == -1011) {
-                    [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-                }
-                fail(error);
-            }
-        }];
-    } unavailable:^{
-        fail([self networkError]);
+    [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        succ(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (error.code == -1011) {
+            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+        } else  if (self.isDefaultNetworkLine) {
+            [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
+        } else {
+            fail([self networkError]);
+        }
     }];
 }
 
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters constructing:(void (^)(id<AFMultipartFormData> formData))constructing succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
-    [self checkNetworkStatusAvailable:^{
-        [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters constructingBodyWithBlock:constructing progress: nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            succ(responseObject);
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            if (self.isDefaultNetworkLine) {
-                [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
-            } else {
-                if (error.code == -1011) {
-                    [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-                }
-                fail(error);
-            }
-        }];
-    } unavailable:^{
-        fail([self networkError]);
+    [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters constructingBodyWithBlock:constructing progress: nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        succ(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (error.code == -1011) {
+            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+        } else  if (self.isDefaultNetworkLine) {
+           [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
+       } else {
+           fail([self networkError]);
+       }
     }];
 }
 
 #pragma mark --- public
-- (void)checkNetworkStatusAvailable:(ZDBlock_Void)available unavailable:(ZDBlock_Void)unavailable {
-    switch (ZD_NetWorkM.networkStatus) {
-        case AFNetworkReachabilityStatusReachableViaWWAN: available();break;
-        case AFNetworkReachabilityStatusReachableViaWiFi: available(available); break;
-        case AFNetworkReachabilityStatusNotReachable: unavailable(available); break;
-        default: unavailable(); break;
-    }
-}
 
 - (NSError *)networkError {
     NSDictionary *dic = @{@"error code": @(1002),

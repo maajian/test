@@ -48,7 +48,7 @@ static NSString *topCellID = @"topInviteCellID";
         _tableView.delegate =self;
         _tableView.dataSource =self;
         _tableView.rowHeight = 44 ;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
     }
     return _tableView;
 }
@@ -86,7 +86,7 @@ static NSString *topCellID = @"topInviteCellID";
         }
         cell.imageView.image = [UIImage imageNamed:@"邀请加号"];
         cell.textLabel.text = @"点击增加邀请函模版";
-        cell.textLabel.textColor = zhundaoGreenColor;
+        cell.textLabel.textColor = ZDGreenColor;
         cell.textLabel.font = KweixinFont(14);
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
@@ -117,9 +117,9 @@ static NSString *topCellID = @"topInviteCellID";
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
-    view.backgroundColor = zhundaoBackgroundColor;
+    view.backgroundColor = ZDBackgroundColor;
     if (section==1) {
-        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth - 80, 10, 60, 40) title:@"使用说明" textcolor:kheaderTitleColor Target:self action:@selector(useExplain) BackgroundColor:[UIColor clearColor] cornerRadius:0 masksToBounds:0];
+        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth - 80, 10, 60, 40) title:@"使用说明" textcolor:ZDHeaderTitleColor Target:self action:@selector(useExplain) BackgroundColor:[UIColor clearColor] cornerRadius:0 masksToBounds:0];
         button.titleLabel.font = KweixinFont(13);
             [view addSubview:button];
         
@@ -129,9 +129,9 @@ static NSString *topCellID = @"topInviteCellID";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
-    view.backgroundColor = zhundaoBackgroundColor;
+    view.backgroundColor = ZDBackgroundColor;
     if (section==1) {
-        UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 200, 30) Text:@"选择后编辑效果图" textColor:kheaderTitleColor font:KweixinFont(13) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+        UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 200, 30) Text:@"选择后编辑效果图" textColor:ZDHeaderTitleColor font:KweixinFont(13) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
         [view addSubview:label];
        
     }

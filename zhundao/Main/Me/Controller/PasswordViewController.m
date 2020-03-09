@@ -31,7 +31,7 @@
 - (void)setUI{
     
     _label = [[UILabel alloc]initWithFrame:CGRectMake(50, 110, kScreenWidth-100, 40)];
-    _label.textColor = kheaderTitleColor;
+    _label.textColor = ZDHeaderTitleColor;
     _label.font =[UIFont systemFontOfSize:15];
     _label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_label];

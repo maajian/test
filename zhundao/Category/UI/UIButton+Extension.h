@@ -10,6 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+typedef NS_ENUM(NSInteger, WYButtonInsetType) {
+    WYButtonInsetTypeTitleTop = 0,
+    WYButtonInsetTypeTitleBottom,
+    WYButtonInsetTypeTitleLeft,
+    WYButtonInsetTypeTitleRight,
+};
+
 @interface UIButton (Extension)
 // 增加响应范围的边距宽
 @property (nonatomic, assign) CGFloat addInsetWidth;
@@ -84,6 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 设置按钮和图片垂直居中
 -(void)setButtonContentCenter;
+- (void)setButtonWithButtonInsetType:(WYButtonInsetType)buttonInsetType space:(CGFloat)space;
 
 @end
 

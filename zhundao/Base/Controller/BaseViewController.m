@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     if (@available(iOS 11.0, *)) {
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
         [UITableView appearance].estimatedRowHeight = 0;
@@ -29,6 +29,7 @@
     }
     [ZD_NotificationCenter addObserver:self selector:@selector(networkChange:) name:ZDNotification_Network_Change object:nil];
     [ZD_NotificationCenter addObserver:self selector:@selector(logout:) name:ZDNotification_Logout object:nil];
+//    if (@available(iOS 13.0, *)) self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight ;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,7 +104,7 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 - (void)logout:(NSNotification *)nofi {
-    maskLabel *label = [[maskLabel alloc] initWithTitle:@"登录超时，请重新登录"];
+    maskLabel *label = [[maskLabel alloc] initWithTitle:@"登录信息已过期，请重新登录"];
     [label labelAnimationWithViewlong:[UIApplication sharedApplication].keyWindow];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [ZD_UserM didLogout];

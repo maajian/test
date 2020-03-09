@@ -280,4 +280,36 @@
     return CGRectContainsPoint(bounds, point);
 }
 
+// 设置按钮和图片位置
+- (void)setButtonWithButtonInsetType:(WYButtonInsetType)buttonInsetType space:(CGFloat)space {
+    CGSize imageSize = self.imageView.size;
+    CGSize titleSize = self.titleLabel.size;
+    switch (buttonInsetType) {
+        case WYButtonInsetTypeTitleTop: {
+            self.imageEdgeInsets = UIEdgeInsetsMake(imageSize.height/2 , titleSize.width/2 , -imageSize.height/2, -titleSize.width/2);
+            self.titleEdgeInsets = UIEdgeInsetsMake(-titleSize.height/2 - space, - imageSize.width/2, titleSize.height/2 + space,  imageSize.width/2);
+        }
+            break;
+        case WYButtonInsetTypeTitleLeft: {
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, imageSize.width/2 + titleSize.width/2 + space/2 , 0, - space/2 - imageSize.width/2 - titleSize.width/2);
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, -space/2 - titleSize.width/2 - space/2, 0, titleSize.width/2 + space/2 + imageSize.width/2);
+        }
+            break;
+        case WYButtonInsetTypeTitleRight: {
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, space/2, 0, -space/2);
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, -space/2, 0, space/2);
+        }
+            break;
+        case WYButtonInsetTypeTitleBottom: {
+            self.imageEdgeInsets = UIEdgeInsetsMake(-titleSize.height/2 , titleSize.width/2, titleSize.height/2, -titleSize.width/2);
+            NSLog(@"imageEdgeInsets = %@", NSStringFromUIEdgeInsets(self.imageEdgeInsets));
+            self.titleEdgeInsets = UIEdgeInsetsMake(imageSize.height/2 + space , -imageSize.width/2, - imageSize.height/2 - space ,  imageSize.width/2);
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
 @end

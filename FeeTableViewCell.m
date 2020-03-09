@@ -114,28 +114,28 @@
 - (UIView *)lineView1 {
     if (!_lineView1) {
         _lineView1 = [[UIView alloc] init];
-        _lineView1.backgroundColor = zhundaoLineColor;
+        _lineView1.backgroundColor = ZDLineColor;
     }
     return _lineView1;
 }
 - (UIView *)lineView2 {
     if (!_lineView2) {
         _lineView2 = [[UIView alloc] init];
-        _lineView2.backgroundColor = zhundaoLineColor;
+        _lineView2.backgroundColor = ZDLineColor;
     }
     return _lineView2;
 }
 - (UIView *)lineView3 {
     if (!_lineView3) {
         _lineView3 = [[UIView alloc] init];
-        _lineView3.backgroundColor = zhundaoLineColor;
+        _lineView3.backgroundColor = ZDLineColor;
     }
     return _lineView3;
 }
 - (UIView *)lineView4 {
     if (!_lineView4) {
         _lineView4 = [[UIView alloc] init];
-        _lineView4.backgroundColor = zhundaoLineColor;
+        _lineView4.backgroundColor = ZDLineColor;
     }
     return _lineView4;
 }

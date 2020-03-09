@@ -46,20 +46,31 @@
     
     [self checkLocation];
     
-//    [self.view setBackgroundColor:zhundaoBackgroundColor];
+//    [self.view setBackgroundColor:ZDBackgroundColor];
     // Do any additional setup after loading the view.
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.searchController.active = NO;
+    self.navigationItem.titleView = nil;
 }
 #pragma 初始化
 - (void)initSearchController
 {
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil]; //初始化搜索框，nil表示在本视图控制器中展示
-    
+    self.searchController.searchBar.frame = CGRectMake(0, -10, kScreenWidth - 200, 30);
     self.searchController.searchResultsUpdater = self;  //UISearchResultsUpdating
     self.searchController.dimsBackgroundDuringPresentation = NO;  //搜索时,背景变暗色
     self.searchController.hidesNavigationBarDuringPresentation = NO; //隐藏导航栏
     self.searchController.searchBar.delegate = self; //UISearchBarDelegate
     self.searchController.searchBar.placeholder = @"请输入关键字";
     [self.searchController.searchBar sizeToFit];   //搜索框自适应
+//    [[self.searchController.searchBar.heightAnchor constraintEqualToConstant:44.0] setActive:YES];
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button.frame = CGRectMake(0, 0, kScreenWidth - 100, 30);
+//    self.navigationItem.titleView = button;
+//    [button addSubview:self.searchController.searchBar];
+    
     self.navigationItem.titleView = self.searchController.searchBar; // 将搜索框显示在导航栏标题视图处
     if (self.latitude) {
         CLLocation *loca = [[CLLocation alloc]initWithLatitude:_latitude longitude:_longitude];
@@ -79,7 +90,7 @@
      _mapView.userTrackingMode = MAUserTrackingModeFollow;//跟随用户移动
     _mapView.showsUserLocation = YES;
     _mapView.mapType = MAMapTypeStandard; //地图样式为普通地图。  还有卫星地图
-    _mapView.language = MAMapLanguageZhCN; //地图的语言 
+    _mapView.language = MAMapLanguageZhCN; //地图的语言
     [self.view addSubview:_mapView];
     
 }
@@ -302,7 +313,7 @@
         _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, kScreenHeight/2-64, kScreenWidth, kScreenHeight/2) style:UITableViewStylePlain];
         _tableview.dataSource =self;
         _tableview.delegate =self;
-        _tableview.backgroundColor = zhundaoBackgroundColor;
+        _tableview.backgroundColor = ZDBackgroundColor;
     }
     return _tableview;
 }

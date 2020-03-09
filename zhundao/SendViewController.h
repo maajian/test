@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SendViewController : UIViewController
+@interface SendViewController : BaseViewController
 
 @property(nonatomic,strong)NSString *Unionid;
 

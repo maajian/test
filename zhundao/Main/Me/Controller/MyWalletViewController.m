@@ -109,7 +109,7 @@
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
         _scrollView.contentSize = CGSizeMake(kScreenWidth, kScreenHeight-63);
-        _scrollView.backgroundColor = zhundaoBackgroundColor;
+        _scrollView.backgroundColor = ZDBackgroundColor;
         _scrollView.showsVerticalScrollIndicator = NO;
         [_scrollView addSubview:self.walletView];
     }
@@ -166,7 +166,7 @@
             [weakSelf.navigationController pushViewController:auth animated:YES];
         }]];
         alertView.messageLabel.text = @"请先完成实名认证再添加提现账号";
-        alertView.tintColor = zhundaoGreenColor;
+        alertView.tintColor = ZDGreenColor;
         TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationFade];
         [self presentViewController:alertController animated:YES completion:nil];
     }else{
@@ -194,8 +194,8 @@
     TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationScaleFade];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:str];
     [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue" size:15] range:NSMakeRange(0, attributedString.length)];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:zhundaoGreenColor range:[str rangeOfString:@"izhundao"]];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:zhundaoGreenColor range:[str rangeOfString:@"短信"]];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:ZDGreenColor range:[str rangeOfString:@"izhundao"]];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:ZDGreenColor range:[str rangeOfString:@"短信"]];
     alertView.messageLabel.attributedText = attributedString;
     [self presentViewController:alertController animated:YES completion:nil];
 }

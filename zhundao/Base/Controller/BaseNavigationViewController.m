@@ -23,7 +23,7 @@
     //将导航栏设置为不透明  会影响每一个视图的布局
     self.navigationBar.translucent = NO;
     self.navigationBar.tintColor = [UIColor blackColor];
-    self.navigationBar.barTintColor = zhundaoBackgroundColor;
+    self.navigationBar.barTintColor = ZDBackgroundColor;
     // Do any additional setup after loading the view.
 }
 

@@ -54,7 +54,7 @@
             _timeLabel.text =@" 管理员代签  ";
             _timeLabel.textAlignment = NSTextAlignmentCenter;
             _timeLabel.textColor =[UIColor blackColor];
-            _timeLabel.layer.borderColor = zhundaoGrayColor.CGColor;
+            _timeLabel.layer.borderColor = ZDGrayColor.CGColor;
             _timeLabel.layer.borderWidth = 1;
         }
 

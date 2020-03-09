@@ -166,7 +166,7 @@
     [_tableview registerNib:[UINib nibWithNibName:@"ShakeTableViewCell" bundle:nil] forCellReuseIdentifier:@"shakeID"];
     _tableview.delegate = self;
     _tableview.dataSource =self;
-    _tableview.backgroundColor = zhundaoBackgroundColor;
+    _tableview.backgroundColor = ZDBackgroundColor;
     _tableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:_tableview];
 }

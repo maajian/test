@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
     _viewModel = [[NoticeViewModel alloc] init];
-    self.view.backgroundColor  = zhundaoBackgroundColor;
+    self.view.backgroundColor  = ZDBackgroundColor;
     [self.view addSubview:self.textView];
     self.title = @"通知公告";
     [self customBack];
@@ -47,7 +47,7 @@
         _textView.allowsEditingTextAttributes = NO;
         _textView.editable =NO;
         _textView.showsVerticalScrollIndicator = NO;
-        _textView.backgroundColor = zhundaoBackgroundColor;
+        _textView.backgroundColor = ZDBackgroundColor;
         [_textView becomeFirstResponder];
     }
     return _textView;
@@ -86,14 +86,16 @@
     
     paragraphStyle1.paragraphSpacing = 5; //段落后面的间距
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:@"\n"];
-    NSMutableAttributedString *attributedString1 = [[NSMutableAttributedString alloc]initWithString:_detailTitle attributes:@{NSFontAttributeName :[UIFont boldSystemFontOfSize:18],NSForegroundColorAttributeName:[UIColor blackColor],NSParagraphStyleAttributeName :paragraphStyle1}];
-    [attributedString appendAttributedString:attributedString1];
-    NSAttributedString *returnStr = [[NSAttributedString alloc]initWithString:@"\n"];
-    [attributedString appendAttributedString:returnStr];
-    NSAttributedString *timeString = [[NSAttributedString alloc]initWithString:_time attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:13],NSForegroundColorAttributeName:kColorA(150, 150, 150, 1),NSParagraphStyleAttributeName :paragraphStyle1}];
-    [attributedString appendAttributedString:timeString];
-    NSAttributedString *returnStr1 = [[NSAttributedString alloc]initWithString:@"\n"];
-    [attributedString appendAttributedString:returnStr1];
+    if (_detailTitle.length) {
+        NSMutableAttributedString *attributedString1 = [[NSMutableAttributedString alloc]initWithString:_detailTitle attributes:@{NSFontAttributeName :[UIFont boldSystemFontOfSize:18],NSForegroundColorAttributeName:[UIColor blackColor],NSParagraphStyleAttributeName :paragraphStyle1}];
+        [attributedString appendAttributedString:attributedString1];
+        NSAttributedString *returnStr = [[NSAttributedString alloc]initWithString:@"\n"];
+        [attributedString appendAttributedString:returnStr];
+        NSAttributedString *timeString = [[NSAttributedString alloc]initWithString:_time attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:13],NSForegroundColorAttributeName:kColorA(150, 150, 150, 1),NSParagraphStyleAttributeName :paragraphStyle1}];
+        [attributedString appendAttributedString:timeString];
+        NSAttributedString *returnStr1 = [[NSAttributedString alloc]initWithString:@"\n"];
+        [attributedString appendAttributedString:returnStr1];
+    }
    
     
     NSMutableAttributedString *str1 = [[NSMutableAttributedString alloc]initWithAttributedString:_htmlStr];

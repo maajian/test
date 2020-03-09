@@ -65,12 +65,12 @@ static NSString *cellID = @"MessageContentCell";
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64 - 50)];
         _tableView.delegate =self;
         _tableView.dataSource =self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
          [_tableView registerClass:[MessageContentCell class] forCellReuseIdentifier:@"MessageContentCell"];
         _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.1)];
         _tableView.tableFooterView = [[UIView alloc]init];
         _tableView.layer.borderWidth = 1;
-        _tableView.layer.borderColor = zhundaoLineColor.CGColor;
+        _tableView.layer.borderColor = ZDLineColor.CGColor;
         _tableView.mj_header = [ZDRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getSystemContent)];
     }
     return _tableView;

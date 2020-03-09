@@ -48,7 +48,7 @@ static NSString *cellID = @"ZDDiscoveEditApplyCell";
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kTopBarHeight) style:UITableViewStyleGrouped];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
         [_tableView registerClass:[ZDDiscoveEditApplyCell class] forCellReuseIdentifier:cellID];
         _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.1)];
         _tableView.tableFooterView = [UIView new];

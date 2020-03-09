@@ -27,7 +27,7 @@
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = zhundaoBackgroundColor;
+        self.backgroundColor = ZDBackgroundColor;
         self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-64);
         [view addSubview:self];
         [self addSubview:self.topImageView];
@@ -72,7 +72,7 @@
 
 - (UIButton *)withdrawButton{
     if (!_withdrawButton) {
-        _withdrawButton = [MyButton initWithButtonFrame:CGRectZero title:@"提现" textcolor:[UIColor whiteColor] Target:self action:@selector(pushToWithDraw) BackgroundColor:zhundaoGreenColor cornerRadius:5 masksToBounds:1];
+        _withdrawButton = [MyButton initWithButtonFrame:CGRectZero title:@"提现" textcolor:[UIColor whiteColor] Target:self action:@selector(pushToWithDraw) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:1];
     }
     return _withdrawButton;
 }
@@ -103,7 +103,7 @@
     if (!_passWordView) {
         float topPad = (kScreenHeight -64 - 280)/2-80;
         _passWordView = [[UIView alloc]initWithFrame:CGRectMake(50, topPad+350, kScreenWidth-100, 44)];
-        _passWordView.backgroundColor = zhundaoBackgroundColor;
+        _passWordView.backgroundColor = ZDBackgroundColor;
         
         UILabel *label = [[UILabel alloc]init];
         label.text = @"支付密码设置";

@@ -16,7 +16,6 @@
 #import "UpDataViewController.h"
 #import "OnePersonDataNetWork.h"
 #import "SignleListViewController.h"
-#import "PrintVM.h"
 @interface LoadAllSignViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchControllerDelegate>
 {
     UITableView *_tableview;
@@ -49,13 +48,13 @@
     _dataArray1 = [NSMutableArray array];
     _dataArray2 = [NSMutableArray array];
     [self createTableView];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self postData];
     [self loadData];
-    _tableview.backgroundColor = zhundaoBackgroundColor;
+    _tableview.backgroundColor = ZDBackgroundColor;
 }
 
 #pragma mark ----- 懒加载
@@ -95,6 +94,7 @@
                           @"CheckInId":[NSString stringWithFormat:@"%li",(long)_signID],
                           @"pageSize":@"200000",
                           @"pageIndex":@"1"};
+    [ZDNetWorkManager shareHTTPSessionManager].responseSerializer = [AFJSONResponseSerializer serializer];
     [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
         [_dataArray removeAllObjects];
         [_dataArray1 removeAllObjects];
@@ -145,63 +145,7 @@
     }
     [_tableview reloadData];
 }
-//-(void)transactionwitharray:(NSArray*)array1 withmarr:(NSMutableArray *)muarray withmarr:(NSMutableArray *)muarray1 withmarr:(NSMutableArray *)muarray2{
-//    // 开启事务
-//    [[SignManager shareManager].dataBase beginTransaction];
-//    BOOL isRollBack = NO;
-//    @try {
-//        for (NSDictionary *acdic in array1) {
-//            LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];
-//            NSMutableDictionary *e = [NSMutableDictionary dictionary];
-//
-//            NSString *insertSql =[NSString stringWithFormat:@"replace INTO signList(vcode, signID,Status,AdminRemark,FeeName,Fee,phone)VALUES('%@',%li,%li,'%@','%@',%f,'%@')",model.VCode,(long)_signID,(long)model.Status,model.AdminRemark,model.FeeName,model.Fee,model.Mobile];
-//
-//            BOOL res = [[SignManager shareManager].dataBase executeUpdate:insertSql];
-//            if (res) {
-//                NSLog(@"数据表插入成功");
-//            }
-//            else
-//            {
-//                NSLog(@"数据表插入失败");
-//            }
-//
-//            for (NSString *keystr in acdic.allKeys) {
-//
-//                if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-//                    //
-//                    [e setObject:@"" forKey:keystr];
-//                }
-//                else
-//                {
-//                    [e setObject:[acdic objectForKey:keystr] forKey:keystr];
-//                }
-//            }
-//            [muarray addObject:model];
-//
-//            if (model.Status==1) {              //签到完成的
-//                [muarray1 addObject:model];
-//                [dataarr1 addObject:e];
-//            }
-//            if (model.Status==0) {           //还未到场的
-//                [muarray2 addObject:model];
-//                [dataarr2 addObject:e];
-//            }
-//
-//            [dataarr addObject:e];
-//        }
-//    }
-//    @catch (NSException *exception) {
-//        isRollBack = YES;
-//        // 事务回退
-//        [[SignManager shareManager].dataBase rollback];
-//    }
-//    @finally {
-//        if (!isRollBack) {
-//            //事务提交
-//            [[SignManager shareManager].dataBase commit];
-//        }
-//    }
-//}
+
 - (void)showNoDataArray
 {
     [[SignManager shareManager]showAlertWithTitle:@"对不起，您的权限不够" WithMessage:@"请前往升级" WithTitleOne:@"返回" WithActionOne:^(TYAlertAction *action1) {
@@ -227,6 +171,7 @@
 }
 - (void)getuser
 {    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    [ZDNetWorkManager shareHTTPSessionManager].responseSerializer = [AFJSONResponseSerializer serializer];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary  *userDict = dic [@"data"];
@@ -242,7 +187,7 @@
     _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
     [_tableview registerNib:[UINib nibWithNibName:@"LoadAllSignTableViewCell" bundle:nil] forCellReuseIdentifier:@"loadID"];
     _tableview.delegate = self ;
-    _tableview.backgroundColor = zhundaoBackgroundColor;
+    _tableview.backgroundColor = ZDBackgroundColor;
     _tableview.dataSource = self;
     _tableview.mj_header = [ZDRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     [_tableview setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
@@ -257,11 +202,11 @@
    resultsController = [[ResultsViewController alloc] init];
     _searchController = [[UISearchController alloc] initWithSearchResultsController:resultsController];
     _searchController.searchBar.placeholder = @"搜索";
-    _searchController.searchBar.barTintColor = _tableview.backgroundColor = zhundaoBackgroundColor;
+    _searchController.searchBar.barTintColor = _tableview.backgroundColor = ZDBackgroundColor;
     resultsController.signID = self.signID;
     resultsController.activityID = self.activityID;
     _searchController.dimsBackgroundDuringPresentation = NO;
-    _searchController.view.backgroundColor = zhundaoBackgroundColor;
+    _searchController.view.backgroundColor = ZDBackgroundColor;
     [_searchController.searchBar setBackgroundImage:[UIImage new]];
     _searchController.searchResultsUpdater = resultsController;
     _searchController.delegate =self;
@@ -382,7 +327,7 @@
 {
     __weak typeof(self) weakSelf = self;
     [[SignManager shareManager]showAlertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] WithMessage:@"代签后不能修改" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
-        [[signResult alloc] dealAdminSignWithSignID:self.signID phone:myCell.model.Mobile Ctr:self title1:@"确定" action1:^(TYAlertAction *action1) {
+        [[signResult alloc] dealAdminSignWithSignID:self.signID phone:myCell.model.Mobile action1:^{
             [weakSelf loadData];
         }];
     } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
@@ -414,21 +359,21 @@
             label.text = [NSString stringWithFormat:@"全部(%li)",(unsigned long)_dataArray.count];
             if (flag==0) {
                 _starLabel= label;
-                label.textColor = zhundaoGreenColor;
+                label.textColor = ZDGreenColor;
             }
         }
         if (i==1) {
             label.text = [NSString stringWithFormat:@"已签(%li)",(unsigned long)_dataArray1.count];
             if (flag==1) {
                 _starLabel= label;
-                label.textColor = zhundaoGreenColor;
+                label.textColor = ZDGreenColor;
             }
             
         } if (i==2) {
             label.text = [NSString stringWithFormat:@"未签(%li)",(unsigned long)_dataArray2.count];
             if (flag==2) {
                 _starLabel= label;
-                label.textColor = zhundaoGreenColor;
+                label.textColor = ZDGreenColor;
             }
         }
         
@@ -472,24 +417,6 @@
     if (button.tag==102) {
         flag=2;
         [_tableview reloadData];
-    }
-}
-
-- (void)print
-{
-    PrintVM *printvm = [[PrintVM alloc]init];
-    NSArray *modelselArray = [printvm getModel];
-    NSInteger index = [modelselArray indexOfObject:@"1"];
-    int offsetx = [[[NSUserDefaults standardUserDefaults]objectForKey:@"printX"] intValue];
-    int offsety = [[[NSUserDefaults standardUserDefaults]objectForKey:@"printY"] intValue];
-    @autoreleasepool {
-        for (LoadallsignModel *model in _dataArray) {
-            if (index ==0) {  //打印二维码
-                [printvm printQRCode:model.VCode isPrint:YES offsetx:offsetx offsety:offsety];
-            }else{  //打印二维码加姓名
-                [printvm printQRCode:model.VCode name:model.TrueName isPrint:YES offsetx:offsetx offsety:offsety];
-            }
-        }
     }
 }
 

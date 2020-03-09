@@ -51,13 +51,20 @@
     }
     [self getEmail];
 }
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.definesPresentationContext = NO;
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.definesPresentationContext = YES;
+}
 
 #pragma mark --- init
 - (void)initSet {
-    self.definesPresentationContext = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     _currentIndex = 0;
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     [self.view addSubview:self.searchController.searchBar];
     [self.view addSubview:self.segmentView];
     [self.view addSubview:self.scrollView];
@@ -70,6 +77,9 @@
     [self.scrollView addSubview:_allVC.view];
     // 添加活动
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(pushAddActivity)];
+    if (ZD_UserM.loginExpired) {
+        [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+    }
 }
 - (void)initLayout {
     ZD_WeakSelf
@@ -80,7 +90,6 @@
     }];
     [self.allVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.equalTo(weakSelf.scrollView);
-//        make.height.mas_equalTo(kScreenHeight- kTopBarHeight - 49 - 95);
         make.bottom.equalTo(weakSelf.view);
         make.width.equalTo(weakSelf.scrollView);
     }];
@@ -122,10 +131,10 @@
         _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
         _searchController.searchBar.frame = CGRectMake(0,0,kScreenWidth,40);
         _searchController.searchBar.placeholder = @"搜索";
-        _searchController.searchBar.barTintColor = zhundaoBackgroundColor;
-        _searchController.searchBar.backgroundColor = zhundaoBackgroundColor;
+        _searchController.searchBar.barTintColor = ZDBackgroundColor;
+        _searchController.searchBar.backgroundColor = ZDBackgroundColor;
         _searchController.dimsBackgroundDuringPresentation = NO;
-        _searchController.definesPresentationContext = YES;
+        _searchController.hidesNavigationBarDuringPresentation = YES;
         _searchController.delegate = self;
         _searchController.searchResultsUpdater = self;
         if (@available(iOS 11.0, *)) {

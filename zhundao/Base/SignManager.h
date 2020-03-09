@@ -57,6 +57,7 @@ typedef void(^TYAlert) (TYAlertAction *action1);
                    WithCTR :(UIViewController *)ctr;
 
 - (void)shareImagewithModel:(ActivityModel *)model withCTR:(UIViewController *)ctr Withtype:(NSInteger)type withImage :(UIImage *)image;  // 保存图片至相册
+- (void)shareWithTitle:(NSString *)title detailTitle:(NSString *)detailTitle thumImage:(UIImage *)thumImage webpageUrl:(NSString *)webpageUrl withCTR:(UIViewController *)ctr Withtype:(NSInteger)type;
 
 - (void)showAlertWithTitle :(NSString *)title   //警告视图 确定有事件
                 WithMessage:(NSString *)message

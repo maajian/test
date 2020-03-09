@@ -42,7 +42,7 @@
             dispatch_source_cancel(timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 _sendButton.userInteractionEnabled = YES;
-                    [_sendButton setBackgroundColor:zhundaoGreenColor];
+                    [_sendButton setBackgroundColor:ZDGreenColor];
                  [_sendButton setTitle:@"获取验证码" forState:UIControlStateNormal];
             });
           
@@ -50,7 +50,7 @@
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 _sendButton.userInteractionEnabled = NO;
-                [_sendButton setBackgroundColor:zhundaoGrayColor];
+                [_sendButton setBackgroundColor:ZDGrayColor];
                   [_sendButton setTitle:[NSString stringWithFormat:@"(%d)发送验证码",timeout] forState:UIControlStateNormal];
                 timeout--;
             });
@@ -73,10 +73,11 @@
     }
     NSString *verifyUrl = [NSString stringWithFormat:@"%@api/v2/verifyCode?phoneOrEmail=%@&code=%@",zhundaoApi,_phonetext.text,_phoneyangzheng.text];
     [ZD_NetWorkM getDataWithMethod:verifyUrl parameters:nil succ:^(NSDictionary *obj) {
-        NSString *url = [NSString stringWithFormat:@"%@/api/v2/user/updatePhoneOrEmail?phoneOrEmail=%@&token=%@code=%@",zhundaoApi,_phonetext.text,[[SignManager shareManager] getToken],_phoneyangzheng.text];
+        NSString *url = [NSString stringWithFormat:@"%@/api/v2/user/updatePhoneOrEmail?phoneOrEmail=%@&token=%@&code=%@",zhundaoApi,_phonetext.text,[[SignManager shareManager] getToken],_phoneyangzheng.text];
         [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
             dic = [NSDictionary dictionaryWithDictionary:obj];
             if ([dic[@"errcode"] integerValue]==0) {
+                [ZD_UserM saveLoginTime];
                 MainViewController *tabbar = [[MainViewController alloc]init];
                 AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
                 appDelegate.window.rootViewController= tabbar;

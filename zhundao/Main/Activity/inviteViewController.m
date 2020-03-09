@@ -34,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor =zhundaoBackgroundColor;
+    self.view.backgroundColor =ZDBackgroundColor;
     _index = 0;
     [self setimage];
     [self.ViewModel getImageFromSanbox:_acid imageArray:self.imageArray];
@@ -85,8 +85,6 @@
     [button addTarget:self action:@selector(saveImageWithFrame) forControlEvents:UIControlEventTouchUpInside];
     [button setBackgroundColor:[UIColor colorWithWhite:0.92 alpha:1]];
 }
-
-
 
 - (void)setimage
 {

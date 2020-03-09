@@ -72,8 +72,8 @@ static NSString *cellID = @"ZDDiscoverCustomApplyCell";
         _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
         _searchController.searchBar.frame = CGRectMake(0,5,kScreenWidth-40, 40);
         _searchController.searchBar.placeholder = @"搜索";
-        _searchController.searchBar.barTintColor = zhundaoBackgroundColor;
-        _searchController.searchBar.backgroundColor = zhundaoBackgroundColor;
+        _searchController.searchBar.barTintColor = ZDBackgroundColor;
+        _searchController.searchBar.backgroundColor = ZDBackgroundColor;
         _searchController.dimsBackgroundDuringPresentation = NO;
         _searchController.delegate = self;
         _searchController.searchResultsUpdater = self;
@@ -136,7 +136,7 @@ static NSString *cellID = @"ZDDiscoverCustomApplyCell";
     UITableViewRowAction *showAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:model.hidden ? @"显示" : @"隐藏" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         [self hideOrShowList:model];
     }];
-    showAction.backgroundColor = zhundaoGreenColor;
+    showAction.backgroundColor = ZDGreenColor;
     return @[showAction];
 }
 

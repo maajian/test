@@ -81,7 +81,7 @@ static const int viewHeight = 150;
         _tf1 = [myTextField initWithFrame:CGRectMake(30, 30, 70, 40) placeholder:@"起始序号" font:[UIFont systemFontOfSize:13] TextAlignment:NSTextAlignmentCenter textColor:[UIColor blackColor]];
         _tf1.layer.cornerRadius = 5 ;
         _tf1.layer.masksToBounds = YES;
-        _tf1.layer.borderColor = zhundaoGreenColor.CGColor;
+        _tf1.layer.borderColor = ZDGreenColor.CGColor;
         _tf1.layer.borderWidth = 1 ;
         _tf1.keyboardType = UIKeyboardTypeNumberPad;
     }
@@ -95,7 +95,7 @@ static const int viewHeight = 150;
         _tf2 = [myTextField initWithFrame:CGRectMake(200, 30, 70, 40) placeholder:@"结束序号" font:[UIFont systemFontOfSize:13] TextAlignment:NSTextAlignmentCenter textColor:[UIColor blackColor]];
         _tf2.layer.cornerRadius = 5 ;
         _tf2.layer.masksToBounds = YES;
-        _tf2.layer.borderColor = zhundaoGreenColor.CGColor;
+        _tf2.layer.borderColor = ZDGreenColor.CGColor;
         _tf2.layer.borderWidth = 1 ;
         _tf2.keyboardType = UIKeyboardTypeNumberPad;
     }
@@ -105,7 +105,7 @@ static const int viewHeight = 150;
 - (UIButton *)sureButton
 {
     if (!_sureButton) {
-        _sureButton = [MyButton initWithButtonFrame:CGRectMake(115, 100, 70, 40) title:@"开始打印" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:zhundaoGreenColor cornerRadius:5 masksToBounds:YES];
+        _sureButton = [MyButton initWithButtonFrame:CGRectMake(115, 100, 70, 40) title:@"开始打印" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:YES];
         _sureButton.titleLabel.font = [UIFont systemFontOfSize:13];
     }
     return _sureButton;
@@ -134,7 +134,7 @@ static const int viewHeight = 150;
     [path moveToPoint:CGPointMake(120, 50)];
     [path addLineToPoint:CGPointMake(180, 50)];
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
-    lineLayer.strokeColor = zhundaoGreenColor.CGColor;
+    lineLayer.strokeColor = ZDGreenColor.CGColor;
     lineLayer.lineWidth = 1.0 ;
     lineLayer.path = path.CGPath;
     [_pushView.layer addSublayer:lineLayer];

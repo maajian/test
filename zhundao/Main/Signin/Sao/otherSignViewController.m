@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     i = 0;
     flag=0;
     [self createUI];
@@ -89,9 +89,9 @@
     _textf.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     _textf.layer.cornerRadius = 20;
     _textf.layer.masksToBounds = YES;
-    _textf.tintColor = zhundaoGreenColor;
+    _textf.tintColor = ZDGreenColor;
     
-    _textf.layer.borderColor = zhundaoGreenColor.CGColor;
+    _textf.layer.borderColor = ZDGreenColor.CGColor;
     _textf.layer.borderWidth = 1;
     NSMutableParagraphStyle *style = [_textf.defaultTextAttributes[NSParagraphStyleAttributeName] mutableCopy];
     
@@ -108,11 +108,11 @@
     [signButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 12, 0, 0)];
     signButton.layer.borderWidth = 1;
     NSAttributedString *str = [[NSAttributedString alloc]initWithString:@"扫码签到" attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]
-                                                                                             ,NSForegroundColorAttributeName:zhundaoGreenColor}];
+                                                                                             ,NSForegroundColorAttributeName:ZDGreenColor}];
     
     
     [signButton setAttributedTitle:str forState:UIControlStateNormal];        //确定按钮
-    signButton.layer.borderColor = zhundaoGreenColor.CGColor;
+    signButton.layer.borderColor = ZDGreenColor.CGColor;
     [self.view addSubview:signButton];
     
     UIButton *sureButton = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth/2+10, 180, 100, 40) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(sure) BackgroundColor: nil cornerRadius:20 masksToBounds:YES];
@@ -120,18 +120,16 @@
     sureButton.layer.borderWidth = 1;
     
     NSAttributedString *str1 = [[NSAttributedString alloc]initWithString:@"确定" attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]
-                                                                                            ,NSForegroundColorAttributeName:zhundaoGreenColor}];
+                                                                                            ,NSForegroundColorAttributeName:ZDGreenColor}];
     
     
     [sureButton setAttributedTitle:str1 forState:UIControlStateNormal];
-    sureButton.layer.borderColor = zhundaoGreenColor.CGColor;
+    sureButton.layer.borderColor = ZDGreenColor.CGColor;
     [self.view addSubview:sureButton];
 }
 - (void)sure {
     textFieldStr = [_textf.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [[signResult alloc] dealPhoneSignWithSignID:(NSInteger)_signid phone:textFieldStr Ctr:self title1:@"返回主界面" title2:@"继续签到" action1:^(TYAlertAction *action1) {
-        [self backroot];
-    } action2:^(TYAlertAction *action1) {
+    [[signResult alloc] dealPhoneSignWithSignID:_signid phone:textFieldStr action1:^{
         
     }];
 }

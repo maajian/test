@@ -92,6 +92,7 @@
     [_viewModel loginWirhCode:code phoneStr:phoneStr successBlock:^{
         [hud hideAnimated:YES afterDelay:0.5];
         [self getGrade];
+        [ZD_UserM saveLoginTime];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self dismissViewControllerAnimated:YES completion:nil];
             MainViewController *tabbar = [[MainViewController alloc] init];

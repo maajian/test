@@ -20,7 +20,7 @@
     if (self = [super init]) {
         self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-64);
         self.contentSize = CGSizeMake(kScreenWidth, kScreenHeight-63);
-        self.backgroundColor = zhundaoBackgroundColor;
+        self.backgroundColor = ZDBackgroundColor;
 //        self.showsVerticalScrollIndicator = NO;
         [self setupUI];
     }
@@ -63,7 +63,7 @@
     }];
     
     UIButton *payButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    payButton.backgroundColor = zhundaoGreenColor;
+    payButton.backgroundColor = ZDGreenColor;
     payButton.layer.cornerRadius = 4;
     payButton.layer.masksToBounds = YES;
     [payButton setTitle:@"充值" forState:UIControlStateNormal];

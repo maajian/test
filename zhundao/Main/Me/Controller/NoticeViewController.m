@@ -152,7 +152,7 @@
         _tableView.sectionFooterHeight = 0.1;
         _tableView.estimatedRowHeight = 40 + 20 ;
         _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.backgroundColor = zhundaoBackgroundColor;
+        _tableView.backgroundColor = ZDBackgroundColor;
         _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
         MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNew)];
         [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];

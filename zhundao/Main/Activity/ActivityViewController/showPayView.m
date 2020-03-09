@@ -132,7 +132,7 @@
 - (void)createLayer{
     CAShapeLayer *layer = [CAShapeLayer layer];
     layer.lineWidth = 0.8;
-    layer.strokeColor = zhundaoGreenColor.CGColor;
+    layer.strokeColor = ZDGreenColor.CGColor;
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(0, 44)];
     [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame), 44)];

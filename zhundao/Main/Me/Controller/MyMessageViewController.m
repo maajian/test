@@ -81,10 +81,10 @@
     [viewModel openMessage:^(id responseObject) {
         
         /*! 获取短信条数 */
-         NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/adminInfo?accessKey=%@",zhundaoMessageApi,[[SignManager shareManager]getaccseekey]];
+         NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/GetAdminInfo?token=%@",zhundaoMessageApi,[[SignManager shareManager] getToken]];
         [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
             NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
-            NSArray *array = dic[@"Data"];
+            NSArray *array = dic[@"data"];
             NSDictionary *dataDic = array.firstObject;
             NSInteger messageCount = [dataDic[@"es_pay"] integerValue];
             _es_id = [dataDic[@"es_id"] integerValue];
@@ -105,7 +105,7 @@
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"明细" style:UIBarButtonItemStylePlain target:self action:@selector(messageDetail)];
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
-                          NSForegroundColorAttributeName:zhundaoGreenColor};
+                          NSForegroundColorAttributeName:ZDGreenColor};
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = item;
 }

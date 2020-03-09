@@ -56,7 +56,7 @@
     self.definesPresentationContext = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     _currentIndex = 0;
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     [self.view addSubview:self.searchController.searchBar];
     [self.view addSubview:self.segmentView];
     [self.view addSubview:self.scrollView];
@@ -119,8 +119,8 @@
         _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
         _searchController.searchBar.frame = CGRectMake(0,0,kScreenWidth,40);
         _searchController.searchBar.placeholder = @"搜索";
-        _searchController.searchBar.barTintColor = zhundaoBackgroundColor;
-        _searchController.searchBar.backgroundColor = zhundaoBackgroundColor;
+        _searchController.searchBar.barTintColor = ZDBackgroundColor;
+        _searchController.searchBar.backgroundColor = ZDBackgroundColor;
         _searchController.dimsBackgroundDuringPresentation = NO;
         _searchController.definesPresentationContext = YES;
         _searchController.delegate = self;

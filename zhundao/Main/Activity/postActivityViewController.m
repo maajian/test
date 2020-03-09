@@ -73,7 +73,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = zhundaoBackgroundColor;
+    self.view.backgroundColor = ZDBackgroundColor;
     _postVM = [[postViewModel alloc]init];
     [self baseSetting];
     [self.view addSubview:self.postView];
@@ -306,8 +306,8 @@
                                @"content":_postView.htmlStr,
                                @"userInfo":[_postVM getUserInfo:_moredic ALLOptionsArray:self.ALLOptionsArray],
                                @"userLimit":_postView.activityNumbertField.text,
-                               @"backImgurl":_bigImageUrl,
-                               @"shareImgurl":_smallImageUrl,
+                               @"backImgurl":ZD_SafeStringValue(_bigImageUrl),
+                               @"shareImgurl":ZD_SafeStringValue(_smallImageUrl),
                                @"timeSure":[_postVM timeNow],
                                @"alert":[NSNumber numberWithBool:[_postVM isAlert:_moredic]],
                                @"sendSms":[NSNumber numberWithBool:0],
@@ -382,11 +382,13 @@
                                                           @"text/javascript",
                                                           @"text/plain",
                                                           nil];
+    ZDNetWorkManager.shareHTTPSessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj);
-        NSDictionary *dictinary = [NSDictionary dictionaryWithDictionary:obj];
+        NSDictionary *dictinary = [[NSString alloc]initWithData:obj encoding:NSUTF8StringEncoding].zd_jsonDictionary;
         /*! 失败跳转 */
-        if ([dictinary[@"errcode"]integerValue] != 0) {
+        ZDNetWorkManager.shareHTTPSessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        if ([dictinary[@"errcode"] integerValue] != 0) {
             [hud hideAnimated:YES];
             maskLabel *label = [[maskLabel alloc]initWithTitle:dictinary[@"errmsg"]];
             [label labelAnimationWithViewlong:self.view];
@@ -403,9 +405,10 @@
             });
         }
     } fail:^(NSError *error) {
+        ZDNetWorkManager.shareHTTPSessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
         NSLog(@"error = %@",error);
         [hud hideAnimated:YES];
-        maskLabel *label = [[maskLabel alloc]initWithTitle:@"发布失败"];
+        maskLabel *label = [[maskLabel alloc]initWithTitle:error.description];
         [label labelAnimationWithViewlong:self.view];
     }];
 }

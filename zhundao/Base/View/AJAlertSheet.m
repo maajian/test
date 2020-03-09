@@ -68,7 +68,7 @@ const static NSInteger cellHeight  = 44 ;
         _titleLabel.text = self.title;
         _titleLabel.numberOfLines = 0 ;
         _titleLabel.font = [UIFont systemFontOfSize:14];
-        _titleLabel.textColor = kheaderTitleColor;
+        _titleLabel.textColor = ZDHeaderTitleColor;
         
     }
     return _titleLabel;

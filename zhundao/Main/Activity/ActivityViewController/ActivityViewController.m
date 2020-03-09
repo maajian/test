@@ -431,7 +431,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 10)];
-    view.backgroundColor =zhundaoBackgroundColor;
+    view.backgroundColor =ZDBackgroundColor;
     return  view;
 }
 
