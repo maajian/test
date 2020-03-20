@@ -10,7 +10,9 @@
 
 #import <WebKit/WebKit.h>
 
-@interface ZDDiscoverQuestionVC ()
+@interface ZDDiscoverQuestionVC () {
+    NSString *_shareUrl;
+}
 
 @end
 
@@ -33,7 +35,7 @@
 
 #pragma mark --- action
 - (void)shareAction {
-    [[SignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[UIImage imageNamed:@"120"] webpageUrl:self.urlString  withCTR:self Withtype:5];
+    [[SignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[UIImage imageNamed:@"120"] webpageUrl:_shareUrl  withCTR:self Withtype:5];
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
@@ -47,6 +49,7 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     if ([navigationAction.request.URL.absoluteString containsString:@"wenjuan/index.html?id"]) {
         self.navigationItem.rightBarButtonItem = [UIBarButtonItem shareItemWithTarget:self action:@selector(shareAction)];
+        _shareUrl = navigationAction.request.URL.absoluteString;
     } else {
         self.navigationItem.rightBarButtonItem = nil;
     }
