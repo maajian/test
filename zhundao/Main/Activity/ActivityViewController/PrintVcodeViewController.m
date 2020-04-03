@@ -171,7 +171,7 @@
 }
 
 - (void)postPrintLogWithModel:(listModel *)model {
-    NSString *urlStr = [NSString stringWithFormat:@"%@zhundao2b", zhundaoApi];
+    NSString *urlStr = [NSString stringWithFormat:@"%@zhundao2b?token=%@", zhundaoLogApi,[[SignManager shareManager] getToken]];
     NSDictionary *params = @{@"BusinessCode": @"Log_InsertUserLog",
                              @"Data": @{
                                      @"ActivityId": @(_activityID),
