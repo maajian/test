@@ -23,8 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSDictionary *authdic = [NSDictionary dictionaryWithContentsOfFile:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"auth.plist"]];
-    _phoneStr = authdic[@"Mobile"];
+    _phoneStr = ZD_UserM.phone;
     [self setUI];
     self.title = @"短信验证";
     // Do any additional setup after loading the view.
@@ -106,30 +105,28 @@
 
 #pragma  mark --- 网络请求
 
-- (void)sendVerify
-{
-    NSString *urlstr = [NSString stringWithFormat:@"%@api/PerBase/SendVcode?phone=%@",zhundaoApi,self.phoneStr];
-    [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
+- (void)sendVerify {
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/senCode?phoneOrEmail=%@",zhundaoApi,self.phoneStr];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         [self beginTime];
-        NSLog(@"res = %@",obj);
     } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
     }];
 }
 
 - (void)verifyMessage{
-    NSString *urlstr = [NSString stringWithFormat:@"%@api/PerBase/VerifyPhoneAndCode?phone=%@&Vcode=%@",zhundaoApi,self.phoneStr,_textf.text];
+    NSString *urlstr = [NSString stringWithFormat:@"%@api/v2/verifyCode?phoneOrEmail=%@&code=%@",zhundaoApi,self.phoneStr,_textf.text];
     [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"msg = %@",dic[@"Msg"]);
-        if ([dic[@"Res"]integerValue] ==0) {
+        if ([dic[@"errcode"] integerValue]==0) {
             PasswordViewController *pass = [[PasswordViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
             pass.state = New;
             [self.navigationController pushViewController:pass animated:YES];
         }
         else{
-            maskLabel *label = [[maskLabel alloc]initWithTitle:@"验证码错误"];
+            maskLabel *label = [[maskLabel alloc]initWithTitle:dic[@"errmsg"]];
             [label labelAnimationWithViewlong:self.view];
         }
     } fail:^(NSError *error) {

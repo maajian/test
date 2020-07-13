@@ -243,10 +243,16 @@
 }
 #pragma mark --- feeTableViewCellDelegate
 - (void)feeTableViewCell:(FeeTableViewCell *)feeTableViewCell showSwitchDidChange:(UISwitch *)showSwitch {
-    self.datadic = [self.dataArray[feeTableViewCell.textFIeld1.tag-100] mutableCopy];
-    [self.datadic setObject:showSwitch.isOn ? @"0" : @"1" forKey:@"Status"];
-    [self.dataArray replaceObjectAtIndex:feeTableViewCell.textFIeld1.tag-100 withObject:[self.datadic copy]];
-    [self.datadic removeAllObjects];
+    if (self.dataArray.count > 1) {
+        self.datadic = [self.dataArray[feeTableViewCell.textFIeld1.tag-100] mutableCopy];
+        [self.datadic setObject:showSwitch.isOn ? @"0" : @"1" forKey:@"Status"];
+        [self.dataArray replaceObjectAtIndex:feeTableViewCell.textFIeld1.tag-100 withObject:[self.datadic copy]];
+        [self.datadic removeAllObjects];
+    } else {
+        showSwitch.on = !showSwitch.on;
+        maskLabel *label = [[maskLabel alloc]initWithTitle:@"费用项个数为1时，无法隐藏"];
+        [label labelAnimationWithViewlong:self.view];
+    }
 }
 
 #pragma UITableViewDelegate
@@ -364,6 +370,11 @@
     myCell.textFIeld2.text =@"";
     myCell.textFIeld3.text = @"";
     [self.dataArray removeObjectAtIndex:[_tableview indexPathForCell:myCell].section];
+    if (self.dataArray.count == 1) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:self.dataArray[0]];
+        [dic setObject:@"0" forKey:@"Status"];
+        [self.dataArray replaceObjectAtIndex:0 withObject:dic];
+    }
     [_tableview deleteSections:[NSIndexSet indexSetWithIndex:[_tableview indexPathForCell:myCell].section] withRowAnimation:UITableViewRowAnimationFade];
     NSLog(@"data = %@",self.dataArray);
     [_tableview reloadData];

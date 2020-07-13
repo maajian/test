@@ -185,8 +185,8 @@
     [self.navigationController pushViewController:fee animated:YES];
     fee.block = ^(NSArray *feeArray)
     {
+        _postView.feeArray = [feeArray copy];
         if (feeArray.count) {
-            _postView.feeArray = [feeArray copy];
             _postView.activityFeeRightLabel.text = @"已设置";
         }
         [self.view endEditing:YES];
