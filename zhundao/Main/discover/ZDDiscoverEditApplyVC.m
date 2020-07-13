@@ -173,8 +173,8 @@ static NSString *cellID = @"ZDDiscoveEditApplyCell";
     if ([[title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
         maskLabel *label = [[maskLabel alloc] initWithTitle:@"项目名称不能为空"];
         [label labelAnimationWithViewlong:self.view];
-    } else if (self.model.customType == ZDCustomTypeOneText && title.length > 10) {
-        maskLabel *label = [[maskLabel alloc] initWithTitle:@"单文本字数不能超出10"];
+    } else if (self.model.customType == ZDCustomTypeOneText && title.length > 50) {
+        maskLabel *label = [[maskLabel alloc] initWithTitle:@"单文本字数不能超出50"];
         [label labelAnimationWithViewlong:self.view];
     } else {
         __block BOOL isContinue = YES;

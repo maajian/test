@@ -47,8 +47,8 @@
         } completion:^(BOOL finished) {
             [label removeFromSuperview];
         }];
-    } else if ([self.titleLabel.text isEqualToString:@"单文本"] && _textView.text.length > 10) {
-        maskLabel *label = [[maskLabel alloc] initWithTitle:@"单文本字数不能超出10"];
+    } else if ([self.titleLabel.text isEqualToString:@"单文本"] && _textView.text.length > 50) {
+        maskLabel *label = [[maskLabel alloc] initWithTitle:@"单文本字数不能超出50"];
         [label labelAnimationWithViewlong:self.view];
     } else
     {
@@ -59,13 +59,7 @@
 - (void)sendData{
     NSMutableDictionary *sendDic = [NSMutableDictionary dictionary];
     [sendDic setObject:_textView.text forKey:@"Title"];
-    
-    
     [sendDic setValue:[NSString stringWithFormat:@"%li",(long)_model.InputType] forKey:@"InputType"];
-    
-    
-    
-    
     [sendDic setObject:[NSString stringWithFormat:@"%li",(long)_model.ID] forKey:@"ID"];
     if (switchFlag) {
         [sendDic setValue:@"true" forKey:@"Required"];
