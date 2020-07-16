@@ -109,6 +109,7 @@
 		2832110722ECA2660065EBAD /* ZDCloseSignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110622ECA2660065EBAD /* ZDCloseSignInVC.m */; };
 		2832110B22ED77A10065EBAD /* ZDSignInViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110A22ED77A10065EBAD /* ZDSignInViewModel.m */; };
 		2832110E22ED77B40065EBAD /* ZDSignInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110D22ED77B40065EBAD /* ZDSignInModel.m */; };
+		2851D5D024C0A4B8008F3EAE /* PBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2851D5CF24C0A4B8008F3EAE /* PBAlertView.m */; };
 		285DCA1D23C37D5800946869 /* ZDMePromoteCustomContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 285DCA1C23C37D5800946869 /* ZDMePromoteCustomContactVC.m */; };
 		285DCA2723C37FC200946869 /* ZDMePromoteTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 285DCA2623C37FC200946869 /* ZDMePromoteTabbarVC.m */; };
 		285DCA2A23C37FD900946869 /* ZDMePromoteQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 285DCA2923C37FD900946869 /* ZDMePromoteQRCodeVC.m */; };
@@ -960,6 +961,8 @@
 		2832110A22ED77A10065EBAD /* ZDSignInViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSignInViewModel.m; sourceTree = "<group>"; };
 		2832110C22ED77B40065EBAD /* ZDSignInModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDSignInModel.h; sourceTree = "<group>"; };
 		2832110D22ED77B40065EBAD /* ZDSignInModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSignInModel.m; sourceTree = "<group>"; };
+		2851D5CE24C0A4B8008F3EAE /* PBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBAlertView.h; sourceTree = "<group>"; };
+		2851D5CF24C0A4B8008F3EAE /* PBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBAlertView.m; sourceTree = "<group>"; };
 		285DCA1B23C37D5800946869 /* ZDMePromoteCustomContactVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMePromoteCustomContactVC.h; sourceTree = "<group>"; };
 		285DCA1C23C37D5800946869 /* ZDMePromoteCustomContactVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMePromoteCustomContactVC.m; sourceTree = "<group>"; };
 		285DCA2523C37FC200946869 /* ZDMePromoteTabbarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMePromoteTabbarVC.h; sourceTree = "<group>"; };
@@ -2233,6 +2236,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		2851D5CD24C0A4B8008F3EAE /* PBAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				2851D5CE24C0A4B8008F3EAE /* PBAlertView.h */,
+				2851D5CF24C0A4B8008F3EAE /* PBAlertView.m */,
+			);
+			path = PBAlertView;
+			sourceTree = "<group>";
+		};
 		285DCA1323C37C0200946869 /* Promote */ = {
 			isa = PBXGroup;
 			children = (
@@ -2454,6 +2466,7 @@
 		28ACE36F21B2ACC100C2AEB8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				2851D5CD24C0A4B8008F3EAE /* PBAlertView */,
 				289158B223CC434600D6D6CE /* ZDAlertView */,
 				289158B123CC432600D6D6CE /* ZDSegmentView */,
 				28B354072399556E003BB7BD /* ZDSignAlertView */,
@@ -6142,6 +6155,7 @@
 				28D34E08239E9B4500218524 /* ZDMapTitleView.m in Sources */,
 				5B9956EC1FCD868F00A26866 /* JQMusic2Animation.m in Sources */,
 				9C4505E81DF51AF100C79165 /* UIImage+MultiFormat.m in Sources */,
+				2851D5D024C0A4B8008F3EAE /* PBAlertView.m in Sources */,
 				9C4505EC1DF51AF100C79165 /* UIView+WebCacheOperation.m in Sources */,
 				28B3540A239955A0003BB7BD /* ZDSignAlertView.m in Sources */,
 				9C7AD91F1E8E065C00CC1627 /* UIImageView+nullData.m in Sources */,

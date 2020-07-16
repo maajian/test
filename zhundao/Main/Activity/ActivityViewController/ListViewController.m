@@ -661,9 +661,9 @@
     NSInteger Grade = [[[NSUserDefaults standardUserDefaults]objectForKey:@"GradeId"]integerValue];
     NSArray *array;
     if (Grade>1) {
-         array = @[@"打印二维码",@"添加报名人员",@"发送名单到邮箱",@"群发短信"];
+         array = @[@"添加报名人员",@"发送名单到邮箱",@"群发短信"];
     }else{
-         array = @[@"打印二维码",@"添加报名人员",@"发送名单到邮箱"];
+         array = @[@"添加报名人员",@"发送名单到邮箱"];
     }
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:5 andShowCancel:YES];
     // 2. Block 方式
@@ -672,15 +672,6 @@
         NSLog(@"Show Index %zi",index); //取消0
         
         if (index==1) {
-            
-            PrintVcodeViewController *print = [[PrintVcodeViewController alloc]init];
-            [weakSelf setHidesBottomBarWhenPushed:YES];
-            print.modelArray = [_dataArray copy];
-            print.activityID = _listID;
-            [weakSelf.navigationController pushViewController:print animated:YES];
-        }
-        
-        if (index==2) {
             NewPersonViewController *new = [[NewPersonViewController alloc]init];
             new.activityID = self.listID;
             new.userInfo = self.userInfo;
@@ -695,13 +686,13 @@
             };
         }
         
-        if (index==3) {
+        if (index==2) {
             PostEmailViewController *post = [[PostEmailViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
             post.activityID = self.listID;
             [self.navigationController pushViewController:post animated:YES];
         }
-        if (index == 4) {
+        if (index == 3) {
             ChoosePersonViewController *choosePerson = [[ChoosePersonViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
             if (_searchController.active) {

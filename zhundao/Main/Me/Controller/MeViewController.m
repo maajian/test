@@ -93,7 +93,7 @@
     _dataSource = @[@[[ZDMeModel headerModel]],
                     @[[ZDMeModel noticeModel]],
                     @[[ZDMeModel walletModel], [ZDMeModel messageModel], [ZDMeModel contactModel], [ZDMeModel questionModel]],
-                    @[[ZDMeModel honorModel], [ZDMeModel zhundaobiModel], [ZDMeModel voucherModel], [ZDMeModel promoteModel]],
+//                    @[[ZDMeModel honorModel], [ZDMeModel zhundaobiModel], [ZDMeModel voucherModel], [ZDMeModel promoteModel]],
                     @[[ZDMeModel settingModel]]].mutableCopy;
     
     [self.view addSubview:self.tableView];
@@ -131,18 +131,10 @@
 
 #pragma mark --- UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return self.dataSource.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0 || section == 1) {
-        return 1;
-    } else if (section == 2) {
-        return 4;
-    } else if (section == 3) {
-        return self.viewModel.allowPromote ? 4 : 3;
-    } else {
-        return 1;
-    }
+    return self.dataSource[section].count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {

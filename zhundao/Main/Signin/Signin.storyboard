@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-474" y="-197"/>
         </scene>
-        <!--准到-->
+        <!--金塔-->
         <scene sceneID="L7V-yI-eOl">
             <objects>
                 <viewController id="jsr-PT-ntE" customClass="ZDMainSignInVC" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" title="准到" id="j7w-a3-Csc"/>
+                    <navigationItem key="navigationItem" title="金塔" id="j7w-a3-Csc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nI1-hc-hvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
