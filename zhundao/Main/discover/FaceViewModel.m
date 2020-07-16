@@ -53,7 +53,7 @@
 
 - (void)getListWithBlock :(listBlock)listBlock
 {
-    NSString *str = [NSString stringWithFormat:@"https://face.zhundao.net/api/Core/GetDeviceList?accessKey=%@&userId=2",[[SignManager shareManager] getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"https://face.zhundao.net/api/Core/GetDeviceList?accessKey=%@&userId=2",[[ZDDataManager shareManager] getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
 //        NSArray *array = [NSArray arrayWithArray:obj];
 //        listBlock(array);

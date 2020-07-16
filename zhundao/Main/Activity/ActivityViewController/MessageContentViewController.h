@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^messageContentBlock) (NSString *contentStr);
-@interface MessageContentViewController : BaseViewController
+@interface MessageContentViewController : ZDBaseVC
 /*! 签名的文字字数 */
 @property(nonatomic,assign)NSInteger signCount;
 

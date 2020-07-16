@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^deleteBlock) (BOOL isDelete);
-@interface personDetailViewController : BaseViewController
+@interface personDetailViewController : ZDBaseVC
 @property(copy,nonatomic)NSArray *dataArray;
 @property(nonatomic,assign)NSInteger personID;
 @property(nonatomic,copy) deleteBlock block;

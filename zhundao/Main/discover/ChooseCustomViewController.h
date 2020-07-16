@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^backBlock) (NSArray *array);
-@interface ChooseCustomViewController : BaseViewController
+@interface ChooseCustomViewController : ZDBaseVC
 
 @property(nonatomic,copy)backBlock block;
 

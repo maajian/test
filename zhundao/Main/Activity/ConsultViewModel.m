@@ -23,7 +23,7 @@
 
 - (void)getAllConsult :(NSDictionary *)dic  getAllBlock:(getAllBlock)getAllBlock
 {
-    NSString *url = [NSString stringWithFormat:@"%@api/PerBase/PstConsultList?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *url = [NSString stringWithFormat:@"%@api/PerBase/PstConsultList?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     NSMutableArray *muarray = [NSMutableArray array];
     NSMutableArray *timeArray = [NSMutableArray array];
     NSMutableArray *hadArray = [NSMutableArray array];

@@ -6,11 +6,11 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 
 
-@interface ChangeContentViewController : BaseViewController
+@interface ChangeContentViewController : ZDBaseVC
 /*! 签名的文字字数 */
 @property(nonatomic,assign)NSInteger signCount;
 

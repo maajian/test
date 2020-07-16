@@ -11,7 +11,7 @@
 @implementation personMV
 - (NSArray *)searchDatabaseFromID:(NSInteger )ID
 {
-    SignManager *manager = [SignManager shareManager];
+    ZDDataManager *manager = [ZDDataManager shareManager];
     NSMutableArray *allArray = [NSMutableArray array];
     if ([manager.dataBase open]) {
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM contact WHERE ID = %li",(long)ID];

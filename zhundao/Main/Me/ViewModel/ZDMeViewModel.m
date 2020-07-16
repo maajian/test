@@ -11,7 +11,7 @@
 @implementation ZDMeViewModel
 
 - (void)getPromoteSuccess:(ZDBlock_Void)success failure:(ZDBlock_Void)failure {
-    NSString *urlString = [NSString stringWithFormat:@"%@zhundao2all?token=%@", zhundaoLogApi,[[SignManager shareManager] getToken]];
+    NSString *urlString = [NSString stringWithFormat:@"%@zhundao2all?token=%@", zhundaoLogApi,[[ZDDataManager shareManager] getToken]];
     NSDictionary *params = @{@"BusinessCode": @"Badge_Get", @"Data": @{}};
     ZDNetWorkManager.shareHTTPSessionManager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json",
     @"text/html",

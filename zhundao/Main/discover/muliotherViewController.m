@@ -32,16 +32,16 @@
     }
     else
     {
-        hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+        hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
         [self haveNet];
     }
 }
 - (void)NotReachable
 {
-    [[SignManager shareManager] createDatabase];
-    if ([[SignManager shareManager].dataBase open]) {
+    [[ZDDataManager shareManager] createDatabase];
+    if ([[ZDDataManager shareManager].dataBase open]) {
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM muliSignList WHERE signID = %li",(long)self.signid];
-         FMResultSet * rs = [[SignManager shareManager].dataBase executeQuery:sql];
+         FMResultSet * rs = [[ZDDataManager shareManager].dataBase executeQuery:sql];
         while ([rs next]) {
             
             if ([[rs stringForColumn:@"phone"] isEqualToString:_textFieldStr]) {
@@ -53,7 +53,7 @@
             _signStatusBlock(2,rs); // 签到失败 凭证码无效
             [self backroot];
         }
-         [[SignManager shareManager].dataBase close];
+         [[ZDDataManager shareManager].dataBase close];
     }
 }
 - (void)searchStatusWithStr :(NSString *)stringValue withrs :(FMResultSet *)rs
@@ -73,9 +73,9 @@
 - (void)notNetUpdataWithStr  //更新数据库元素
 {
      NSString *timeStr = [[Time alloc]nextDateWithNumber:0];
-    [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET Status = '1'  where phone = '%@' AND signID = %li",self.textFieldStr,(long)self.signid]];
-    [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET post = '0'  where phone = '%@' AND signID = %li",_textFieldStr,(long)self.signid]];
-    [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET addTime = '%@'  where phone = '%@' AND signID = %li",timeStr,_textFieldStr,(long)self.signid]];
+    [[ZDDataManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET Status = '1'  where phone = '%@' AND signID = %li",self.textFieldStr,(long)self.signid]];
+    [[ZDDataManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET post = '0'  where phone = '%@' AND signID = %li",_textFieldStr,(long)self.signid]];
+    [[ZDDataManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET addTime = '%@'  where phone = '%@' AND signID = %li",timeStr,_textFieldStr,(long)self.signid]];
 }
  -(void)haveNet
 {
@@ -111,26 +111,26 @@
 - (NSString *)searchVcode
 {
     NSString *str = nil;
-    [[SignManager shareManager] createDatabase];
-    if ([[SignManager shareManager].dataBase open]) {
+    [[ZDDataManager shareManager] createDatabase];
+    if ([[ZDDataManager shareManager].dataBase open]) {
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM muliSignList WHERE signID = %li",(long)self.signid];
-        FMResultSet * rs = [[SignManager shareManager].dataBase executeQuery:sql];
+        FMResultSet * rs = [[ZDDataManager shareManager].dataBase executeQuery:sql];
         while ([rs next]) {
             if ([[rs stringForColumn:@"phone"] isEqualToString:_textFieldStr])
             {
                 str =[rs stringForColumn:@"VCode"];
             }
         }
-        [[SignManager shareManager].dataBase close];
+        [[ZDDataManager shareManager].dataBase close];
     }
     return str;
 }
 - (void)haveNetUpdataWithStr //更新数据库元素
 {
-    [[SignManager shareManager] createDatabase];
-    if ([[SignManager shareManager].dataBase open]) {
+    [[ZDDataManager shareManager] createDatabase];
+    if ([[ZDDataManager shareManager].dataBase open]) {
         [self notNetUpdataWithStr];
-        [[SignManager shareManager].dataBase close];
+        [[ZDDataManager shareManager].dataBase close];
     }
 }
 #pragma mark 返回

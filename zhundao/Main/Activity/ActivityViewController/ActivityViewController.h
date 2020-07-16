@@ -6,8 +6,8 @@
 //  Copyright © 2016年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
-@interface ActivityViewController : BaseViewController
+#import "ZDBaseVC.h"
+@interface ActivityViewController : ZDBaseVC
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property(nonatomic,strong)UIButton *button;
 - (void)loadData;

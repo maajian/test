@@ -98,7 +98,7 @@
 
 - (NSString *)searchContactGroupIDFromID:(NSInteger )ID
 {
-    SignManager *manager = [SignManager shareManager];
+    ZDDataManager *manager = [ZDDataManager shareManager];
     NSString *str = nil;
     if ([manager.dataBase open]) {
         NSString *sql = [NSString stringWithFormat:@"SELECT ContactGroupID FROM contact WHERE ID = %li",(long)ID];

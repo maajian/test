@@ -35,7 +35,7 @@
 }
 
 - (void)savaData:(NSArray *)array {
-    DBManager *manager = [DBManager shareManager];
+    ZDDBManager *manager = [ZDDBManager shareManager];
     [manager createDatabase];
     [manager createTable:[NSString stringWithFormat:@"create table if not exists noticeList( ID integer primary key , AddTime text , Detail text ,SortName text ,Title text ,isShow bool default false)"]];
     if ([manager.dataBase open]) {

@@ -38,7 +38,7 @@
 - (void)shareImage
 {
   
-    [[SignManager shareManager]shareImagewithModel:_model withCTR:self Withtype:5 withImage:nil];
+    [[ZDDataManager shareManager]shareImagewithModel:_model withCTR:self Withtype:5 withImage:nil];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

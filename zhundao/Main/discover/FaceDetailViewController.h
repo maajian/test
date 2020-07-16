@@ -6,10 +6,10 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^faceBlock) (BOOL ischange);
 @class FaceModel;
-@interface FaceDetailViewController : BaseViewController
+@interface FaceDetailViewController : ZDBaseVC
 @property(nonatomic,strong)FaceModel *model;
 @property(nonatomic,copy)faceBlock faceBlock;
 @end

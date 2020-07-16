@@ -71,17 +71,17 @@
     }
     NSString *str = nil;
     if (_signID) {
-        str = [NSString stringWithFormat:@"%@api/CheckIn/SendCheckInListByEmail?accessKey=%@&email=%@&checkInId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],_textField.text,(long)self.signID];
+        str = [NSString stringWithFormat:@"%@api/CheckIn/SendCheckInListByEmail?accessKey=%@&email=%@&checkInId=%li",zhundaoApi,[[ZDDataManager shareManager] getaccseekey],_textField.text,(long)self.signID];
     }else{
-        str = [NSString stringWithFormat:@"%@api/PerActivity/SendActivityListByEmail?accessKey=%@&email=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],_textField.text,(long)self.activityID];
+        str = [NSString stringWithFormat:@"%@api/PerActivity/SendActivityListByEmail?accessKey=%@&email=%@&activityId=%li",zhundaoApi,[[ZDDataManager shareManager] getaccseekey],_textField.text,(long)self.activityID];
     }
-    MBProgressHUD *hud1 = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud1 = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         [hud1 hideAnimated:YES];
         if ([dic[@"Res"] integerValue]==0) {
             
-            MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"发送成功!" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"发送成功!" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
             [hud hideAnimated:YES afterDelay:1.5];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self.navigationController popViewControllerAnimated:YES];
@@ -93,7 +93,7 @@
     } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         [hud1 hideAnimated:YES];
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDDataManager shareManager] showNotHaveNet:self.view];
     }];
 }
 - (void)didReceiveMemoryWarning {

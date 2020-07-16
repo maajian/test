@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface AuthViewController : BaseViewController
+@interface AuthViewController : ZDBaseVC
 
 @property(nonatomic,strong)NSDictionary *authdic;
 

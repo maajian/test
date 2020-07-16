@@ -80,10 +80,10 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 - (void)dontHaveNetWithStr :(NSString *)stringValue
 {
  
-    [[SignManager shareManager] createDatabase];
-    if ([[SignManager shareManager].dataBase open]) {
+    [[ZDDataManager shareManager] createDatabase];
+    if ([[ZDDataManager shareManager].dataBase open]) {
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM muliSignList WHERE signID = %li",(long)self.signID];
-        FMResultSet * rs = [[SignManager shareManager].dataBase executeQuery:sql];
+        FMResultSet * rs = [[ZDDataManager shareManager].dataBase executeQuery:sql];
         while ([rs next]) {
             
             if ([[rs stringForColumn:@"VCode"] isEqualToString:stringValue]) {
@@ -95,7 +95,7 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
             _signStatusBlock(2,rs); // 签到失败 凭证码无效
             [self backAction];
         }
-          [[SignManager shareManager].dataBase close];
+          [[ZDDataManager shareManager].dataBase close];
     }
 }
 - (void)searchStatusWithStr :(NSString *)stringValue withrs :(FMResultSet *) rs
@@ -116,9 +116,9 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 - (void)notNetUpdataWithStr :(NSString *)stringValue  //更新数据库元素
 {
      NSString *timeStr = [[Time alloc]nextDateWithNumber:0];
-     [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET Status = '1'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
-      [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET post = '0'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
-      [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET addTime = '%@'  where VCode = '%@' AND signID = %li",timeStr,stringValue,(long)self.signID]];
+     [[ZDDataManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET Status = '1'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
+      [[ZDDataManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET post = '0'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
+      [[ZDDataManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET addTime = '%@'  where VCode = '%@' AND signID = %li",timeStr,stringValue,(long)self.signID]];
 }
 - (void)netWorkWithstringValue:(NSString *)stringValue {
   NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByQrcode?accessKey=%@&vCode=%@&checkInId=%li&checkInWay=6",zhundaoApi,_acckey,stringValue,(long)self.signID];
@@ -132,13 +132,13 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 }
 - (void)haveNetUpdataWithStr :(NSString *)stringValue  //更新数据库元素
 {
-    [[SignManager shareManager] createDatabase];
+    [[ZDDataManager shareManager] createDatabase];
     NSString *timeStr = [[Time alloc]nextDateWithNumber:0];
-    if ([[SignManager shareManager].dataBase open]) {
-    [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET Status = '1'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
-    [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET post = '1'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
-        [[SignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET addTime = '%@'  where VCode = '%@' AND signID = %li",timeStr,stringValue,(long)self.signID]];
-        [[SignManager shareManager].dataBase close];
+    if ([[ZDDataManager shareManager].dataBase open]) {
+    [[ZDDataManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET Status = '1'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
+    [[ZDDataManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET post = '1'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
+        [[ZDDataManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET addTime = '%@'  where VCode = '%@' AND signID = %li",timeStr,stringValue,(long)self.signID]];
+        [[ZDDataManager shareManager].dataBase close];
     }
 }
 - (void)succseeresponseObject:(NSDictionary *)dic WithStr :(NSString *)stringValue

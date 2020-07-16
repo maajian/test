@@ -9,10 +9,9 @@
 #import "LoadallsignModel.h"
 #import "NewSignViewController.h"
 #import "xiugaisignViewController.h"
-#import "PostSign.h"
 #import "ResultsViewController.h"
 #import "CodeViewController.h"
-#import "GZActionSheet.h"
+#import "ZDActionSheet.h"
 #import "SignInViewModel.h"
 #import "PostEmailViewController.h"
 @interface SigninViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -73,14 +72,14 @@
 }
 - (NSString *)signUrlStr
 {
-   _signUrlStr =  [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+   _signUrlStr =  [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     return _signUrlStr;
 }
 #pragma mark ---数据和网络判断
 - (void)ishaveArray
 {
-    NSArray *array1 = [[[SignManager shareManager]getArray:@"signdata"]copy];
-    NSArray *array2 = [[[SignManager shareManager]getArray:@"signdata1"]copy];
+    NSArray *array1 = [[[ZDDataManager shareManager]getArray:@"signdata"]copy];
+    NSArray *array2 = [[[ZDDataManager shareManager]getArray:@"signdata1"]copy];
     if (array1.count==0&&array2.count==0) {
         [self loadDataWithIsShowIndicator:YES];
     }
@@ -110,8 +109,8 @@
 }
 - (void)loadArray
 {
-    _dataArray = [[[SignManager shareManager]getArray:@"signdata"]mutableCopy];
-    _dataArray1 = [[[SignManager shareManager]getArray:@"signdata1"]mutableCopy];
+    _dataArray = [[[ZDDataManager shareManager]getArray:@"signdata"]mutableCopy];
+    _dataArray1 = [[[ZDDataManager shareManager]getArray:@"signdata1"]mutableCopy];
     [_tableView reloadData];
 }
 - (void)notifi:(NSNotification *)noti{
@@ -223,8 +222,8 @@
                 [modelArray1 addObject:model];
             }
         }
-        [[SignManager shareManager] saveData:modelArray name:@"signdata"];
-        [[SignManager shareManager] saveData:modelArray1 name:@"signdata1"];
+        [[ZDDataManager shareManager] saveData:modelArray name:@"signdata"];
+        [[ZDDataManager shareManager] saveData:modelArray1 name:@"signdata1"];
         _dataArray = [modelArray mutableCopy];
         _dataArray1 = [modelArray1 mutableCopy];
         [_tableView reloadData];
@@ -285,8 +284,8 @@
         _dataArray1 = [muarray1 mutableCopy];
         modelArray = [muarray mutableCopy];
         modelArray1 = [muarray1 mutableCopy];
-        [[SignManager shareManager]saveData:modelArray name:@"signdata"];
-        [[SignManager shareManager]saveData:modelArray1 name:@"signdata1"];
+        [[ZDDataManager shareManager]saveData:modelArray name:@"signdata"];
+        [[ZDDataManager shareManager]saveData:modelArray1 name:@"signdata1"];
         if (_isJuhua==YES) {
             [self.tableView.mj_header endRefreshing];
             self.tableView.mj_footer.state = MJRefreshStateIdle;
@@ -419,7 +418,7 @@
     }
     NSArray *array = @[@"删除签到",@"修改签到",@"微信签到二维码",@"手机号签到二维码",@"导出签到名单"];
     
-    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
+    ZDActionSheet *sheet = [[ZDActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
     
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
@@ -476,13 +475,13 @@
 }
 - (void)deleteSign
 {
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getToken],(long)mycell.model.ID];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[ZDDataManager shareManager] getToken],(long)mycell.model.ID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"dic = %@",dic);
         [hud hideAnimated:YES];
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
     } fail:^(NSError *error) {
@@ -518,7 +517,7 @@
             }
             nextResponder = nextResponder.nextResponder;
         }
-        NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)mycell.model.ID];
+        NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",zhundaoApi,[[ZDDataManager shareManager] getaccseekey],(long)mycell.model.ID];
         
         [ZD_NetWorkM getDataWithMethod:listurl parameters:nil succ:^(NSDictionary *obj) {
             NSIndexPath *indexpath = [_tableView indexPathForCell:mycell];
@@ -532,8 +531,8 @@
                 [_dataArray1 removeObjectAtIndex:indexpath.section];
                 [_tableView reloadData];
             }
-            [[SignManager shareManager]saveData:_dataArray name:@"signdata"];
-            [[SignManager shareManager]saveData:_dataArray1 name:@"signdata1"];
+            [[ZDDataManager shareManager]saveData:_dataArray name:@"signdata"];
+            [[ZDDataManager shareManager]saveData:_dataArray1 name:@"signdata1"];
         } fail:^(NSError *error) {
             
         }];

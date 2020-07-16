@@ -6,11 +6,11 @@
 //  Copyright © 2016年 zhundao. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^block)(NSInteger signNum);
 
 typedef void(^signBlock)(BOOL isRed);
-@interface LoadAllSignViewController : BaseViewController
+@interface LoadAllSignViewController : ZDBaseVC
 @property(nonatomic,copy)block block;
 /*! 签到ID */
 @property(nonatomic,assign)NSInteger signID;

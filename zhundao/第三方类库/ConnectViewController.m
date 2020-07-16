@@ -174,8 +174,8 @@
     NSLog(@"[ConnectViewController] switchToMainFeaturePage");
 
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    if ([[[appDelegate navigationController] viewControllers] containsObject:[deviceInfo mainViewController]] == FALSE) {
-//        [[appDelegate navigationController] pushViewController:[deviceInfo mainViewController] animated:YES];
+//    if ([[[appDelegate navigationController] viewControllers] containsObject:[deviceInfo ZDMainViewController]] == FALSE) {
+//        [[appDelegate navigationController] pushViewController:[deviceInfo ZDMainViewController] animated:YES];
 //    }
     
 }
@@ -301,8 +301,8 @@
     
     NSLog(@"[ConnectViewController] updateMyPeripheralForNewConnected");
     DeviceInfo *tmpDeviceInfo = [[DeviceInfo alloc]init];
-//    tmpDeviceInfo.mainViewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-//    tmpDeviceInfo.mainViewController.connectedPeripheral = myPeripheral;
+//    tmpDeviceInfo.ZDMainViewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+//    tmpDeviceInfo.ZDMainViewController.connectedPeripheral = myPeripheral;
     tmpDeviceInfo.myPeripheral = myPeripheral;
     tmpDeviceInfo.myPeripheral.connectStaus = myPeripheral.connectStaus;
     

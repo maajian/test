@@ -11,7 +11,6 @@
 #import "LoadAllSignTableViewCell.h"
 #import "ResultsViewController.h"
 #import "signResult.h"
-#import "PostSign.h"
 #import "SaoYiSaoViewController.h"
 #import "UpDataViewController.h"
 #import "OnePersonDataNetWork.h"
@@ -89,7 +88,7 @@
         indicator.center = self.view.center;
         [self.view addSubview:indicator];
         [indicator startAnimating];
-    NSString *listurl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckInPeopleList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *listurl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckInPeopleList?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     NSDictionary *dic = @{@"Type":@"0",
                           @"CheckInId":[NSString stringWithFormat:@"%li",(long)_signID],
                           @"pageSize":@"200000",
@@ -148,7 +147,7 @@
 
 - (void)showNoDataArray
 {
-    [[SignManager shareManager]showAlertWithTitle:@"对不起，您的权限不够" WithMessage:@"请前往升级" WithTitleOne:@"返回" WithActionOne:^(TYAlertAction *action1) {
+    [[ZDDataManager shareManager]showAlertWithTitle:@"对不起，您的权限不够" WithMessage:@"请前往升级" WithTitleOne:@"返回" WithActionOne:^(TYAlertAction *action1) {
         [self.navigationController popViewControllerAnimated:YES];
     } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"升级" WithActionTwo:^(TYAlertAction *action1) {
         [self showHTML];
@@ -157,7 +156,7 @@
 - (void)showHTML
 {
     UpDataViewController *updata = [[UpDataViewController alloc]init];
-    updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[SignManager shareManager] getaccseekey]];
+    updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[ZDDataManager shareManager] getaccseekey]];
     [self setHidesBottomBarWhenPushed:YES];
      [self.navigationController pushViewController:updata animated:YES];
     __weak typeof(self) weakself =self;
@@ -170,7 +169,7 @@
     };
 }
 - (void)getuser
-{    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+{    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     [ZDNetWorkManager shareHTTPSessionManager].responseSerializer = [AFJSONResponseSerializer serializer];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
@@ -326,7 +325,7 @@
 - (void)showSign
 {
     __weak typeof(self) weakSelf = self;
-    [[SignManager shareManager]showAlertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] WithMessage:@"代签后不能修改" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+    [[ZDDataManager shareManager]showAlertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] WithMessage:@"代签后不能修改" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
         [[signResult alloc] dealAdminSignWithSignID:self.signID phone:myCell.model.Mobile action1:^{
             [weakSelf loadData];
         }];

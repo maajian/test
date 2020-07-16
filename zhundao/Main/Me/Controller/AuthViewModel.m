@@ -13,7 +13,7 @@
 //api/PerBase/PstAuthentication?accessKey={accessKey}
 
 - (void)postAuthentication :(NSDictionary *)dic authBlock :(authBlock)authBlock{
-    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/PstAuthentication?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/PstAuthentication?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager]getaccseekey]];
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"result = %@",result);
@@ -30,7 +30,7 @@
 
 //api/PerBase/GetAuthorInfo?accessKey={accessKey} 获取省份认证信息
 - (void)GetAuthorInfo {
-    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/GetAuthorInfo?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/GetAuthorInfo?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager]getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"result = %@",result);

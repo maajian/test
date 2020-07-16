@@ -185,7 +185,7 @@
     [sendDic setObject:[NSString stringWithFormat:@"%li",(long)_model.ID] forKey:@"ID"];
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:[sendDic copy] options:0 error:nil];
     NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-    NSString *accesskey = [[SignManager shareManager]getaccseekey];
+    NSString *accesskey = [[ZDDataManager shareManager]getaccseekey];
     NSString *posturl = [NSString stringWithFormat:@"%@api/PerActivity/UpdateOrAddOption?accessKey=%@",zhundaoApi,accesskey];
     
     [ZD_NetWorkM postDataWithMethod:posturl parameters:jsonStr succ:^(NSDictionary *obj) {

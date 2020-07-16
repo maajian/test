@@ -105,7 +105,7 @@
 //api/PerActivity/AddActivityList?accessKey={accessKey}&activityFeeid={activityFeeid}
 - (void)addPersonNetWork :(NSDictionary *)dic feeid :(NSInteger)feeid
 {
-    NSString *postStr = [NSString stringWithFormat:@"%@api/PerActivity/AddActivityList?accessKey=%@&activityFeeid=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)feeid];
+    NSString *postStr = [NSString stringWithFormat:@"%@api/PerActivity/AddActivityList?accessKey=%@&activityFeeid=%li",zhundaoApi,[[ZDDataManager shareManager] getaccseekey],(long)feeid];
     [ZD_NetWorkM postDataWithMethod:postStr parameters:dic succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"] integerValue]==0) {

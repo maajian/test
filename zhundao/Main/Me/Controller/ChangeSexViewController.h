@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface ChangeSexViewController : BaseViewController
+@interface ChangeSexViewController : ZDBaseVC
 /*! 当前的性别 */
 @property(nonatomic,assign)NSInteger Sex;
 

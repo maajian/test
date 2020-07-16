@@ -62,7 +62,7 @@ static NSString *cellID = @"AllAccountID";
             _dataArray = muarray;
             [_tableView reloadData];
         }else{
-            [[SignManager shareManager]showNotHaveNet:self.view];
+            [[ZDDataManager shareManager]showNotHaveNet:self.view];
         }
     }];
 }

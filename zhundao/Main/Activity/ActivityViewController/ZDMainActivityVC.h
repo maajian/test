@@ -6,11 +6,11 @@
 //  Copyright © 2019 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDMainActivityVC : BaseViewController
+@interface ZDMainActivityVC : ZDBaseVC
 
 @end
 

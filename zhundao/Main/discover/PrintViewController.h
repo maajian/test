@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PrintViewController : BaseViewController
+@interface PrintViewController : ZDBaseVC
 
 @end

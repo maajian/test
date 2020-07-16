@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface PostEmailViewController : BaseViewController
+@interface PostEmailViewController : ZDBaseVC
 @property(nonatomic,assign)NSInteger activityID;
 
 @property(nonatomic,assign)NSInteger signID;

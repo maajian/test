@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^backBlock1) (NSArray *array);
-@interface FeeViewController : BaseViewController
+@interface FeeViewController : ZDBaseVC
 @property(nonatomic,copy)backBlock1 block;
 @property(nonatomic,copy)NSArray *feeArray ;
 @end

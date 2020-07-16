@@ -6,12 +6,12 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 typedef void(^bacBlock) (BOOL ischange);
 typedef void(^deleteBlock)(BOOL isDelete);
 typedef void(^postBlock) (BOOL isSuccess);
-@interface PostSignViewController : BaseViewController
+@interface PostSignViewController : ZDBaseVC
 @property(nonatomic,strong)NSString *activityName;
 @property(nonatomic,assign)NSInteger acID;
 @property(nonatomic,strong)NSArray *dataArray1;  //内容数组

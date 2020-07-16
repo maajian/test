@@ -8,7 +8,7 @@
 
 #import "personDetailViewController.h"
 #import "ChooseGroupViewController.h"
-#import "GZActionSheet.h"
+#import "ZDActionSheet.h"
 #import "UIAlertController+creat.h"
 #import "NSString+getColorFromFirst.h"
 #import "ContactMV.h"
@@ -246,7 +246,7 @@
 - (void)moreAction
 {
     NSArray *array = @[@"删除联系人",@"编辑联系人"];
-    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
+    ZDActionSheet *sheet = [[ZDActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
@@ -278,7 +278,7 @@
 }
 - (void)callAlert  //打电话
 {
-    [[SignManager shareManager]showAlertWithTitle:@"确定拨打电话?" WithMessage:nil  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+    [[ZDDataManager shareManager]showAlertWithTitle:@"确定拨打电话?" WithMessage:nil  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
         [self callphone];
     } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
 }

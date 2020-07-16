@@ -15,7 +15,7 @@
 
 
 - (void)getNewList :(NSInteger)listID BackBlock :(backBlock)backBlock {
-    NSString *listurl = [NSString stringWithFormat:@"%@api/PerActivity/PostActivityListed?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *listurl = [NSString stringWithFormat:@"%@api/PerActivity/PostActivityListed?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)listID],
                           @"pageSize":@"1000",
                           @"curPage":@"1"};

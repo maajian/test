@@ -17,13 +17,12 @@
 #import "PostEmailViewController.h"
 
 #import "signinTableViewCell.h"
-#import "GZActionSheet.h"
+#import "ZDActionSheet.h"
 
 #import "ZDSignInViewModel.h"
 
 #import "ZDSignInModel.h"
 #import "LoadallsignModel.h"
-#import "PostSign.h"
 
 @interface ZDCloseSignInVC ()<UITableViewDataSource, UITableViewDelegate, signinTableViewCellDelegate> {
     NSInteger _page;
@@ -152,7 +151,7 @@
 - (void)signinCell:(signinTableViewCell *)signinCell willShowAlert:(id)sender {
     NSArray *array = @[@"删除签到",@"修改签到",@"微信签到二维码",@"手机号签到二维码",@"导出签到名单"];
     
-    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
+    ZDActionSheet *sheet = [[ZDActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
     
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
@@ -210,7 +209,7 @@
     ZD_WeakSelf
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否改变签到状态" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)signinCell.model.ID];
+        NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",zhundaoApi,[[ZDDataManager shareManager] getaccseekey],(long)signinCell.model.ID];
         
         [ZD_NetWorkM getDataWithMethod:listurl parameters:nil succ:^(NSDictionary *obj) {
             [weakSelf loadNewData];
@@ -252,13 +251,13 @@
 
 #pragma mark --- private
 - (void)deleteSignWithModel:(ZDSignInModel *)model {
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getToken],(long)model.ID];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[ZDDataManager shareManager] getToken],(long)model.ID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"dic = %@",dic);
         [hud hideAnimated:YES];
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
     } fail:^(NSError *error) {

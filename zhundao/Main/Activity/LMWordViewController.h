@@ -10,7 +10,7 @@
 
 @class LMWordView;
 
-@interface LMWordViewController : BaseViewController
+@interface LMWordViewController : ZDBaseVC
 
 @property (nonatomic, strong) LMWordView *textView;
 @property(nonatomic,copy)NSArray *imageArray;

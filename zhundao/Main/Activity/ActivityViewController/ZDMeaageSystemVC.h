@@ -6,11 +6,11 @@
 //  Copyright © 2019 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDMeaageSystemVC : BaseViewController
+@interface ZDMeaageSystemVC : ZDBaseVC
 
 @property (nonatomic, assign) NSInteger es_id;
 

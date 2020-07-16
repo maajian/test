@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface MyWalletViewController : BaseViewController
+@interface MyWalletViewController : ZDBaseVC
 /*! 用户信息 */
 @property(nonatomic,strong)NSDictionary *userDic;
 

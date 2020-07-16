@@ -504,13 +504,13 @@ static NSString *optionid = @"optionid";
 {
     [BDImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
         if (image) {
-            MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+            MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
             [NewOrEditMV changeToNetImage:image block:^(NSString *str) {
                 _isSmallPost = YES;
                 _imageStr = str;
                 _img1.image = image;
                 [hud hideAnimated:YES];
-                MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+                MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
                 [hud1 hideAnimated:YES afterDelay:1.5];
             }];
         }

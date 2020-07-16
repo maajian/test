@@ -53,7 +53,7 @@ static NSString *cellID = @"MessageContentCell";
         [weakSelf.tableView.mj_header endRefreshing];
     } failure:^(NSString *error) {
         [weakSelf.tableView.mj_header endRefreshing];
-        [[SignManager shareManager]showNotHaveNet:weakSelf.view];
+        [[ZDDataManager shareManager]showNotHaveNet:weakSelf.view];
     }];
 }
 
@@ -113,7 +113,7 @@ static NSString *cellID = @"MessageContentCell";
         [_viewModel deleteContent:model.ID esid:_es_id successBlock:^(id responseObject) {
             [weakSelf getCustomContent];
         } error:^(NSError *error) {
-            [[SignManager shareManager] showNotHaveNet:weakSelf.view];
+            [[ZDDataManager shareManager] showNotHaveNet:weakSelf.view];
         }];
     }];
     

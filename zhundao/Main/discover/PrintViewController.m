@@ -14,7 +14,7 @@
 #import "XYViewController.h"
 #import "AppDelegate.h"
 #import "BLKWrite.h"
-#import "GZActionSheet.h"
+#import "ZDActionSheet.h"
 #import "GetCodeViewController.h"
 #import "ChooseCustomViewController.h"
 @interface PrintViewController ()<UITableViewDelegate ,UITableViewDataSource,XYdelegate>
@@ -243,7 +243,7 @@
 - (void)showa
 {
     NSArray *array = @[@"测试打印",@"扫码打印"];
-    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:10 andShowCancel:YES];
+    ZDActionSheet *sheet = [[ZDActionSheet alloc]initWithTitleArray:array WithRedIndex:10 andShowCancel:YES];
     // 2. Block 方式
     sheet.ClickIndex = ^(NSInteger index){
         NSLog(@"Show Index %zi",index); //取消0

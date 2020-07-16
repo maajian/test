@@ -6,11 +6,11 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 typedef void(^infoBlock)(NSString *str);
 
-@interface ChangeInfoViewController : BaseViewController
+@interface ChangeInfoViewController : ZDBaseVC
 /*! 传入的字符串 */
 @property(nonatomic,strong)NSString *oriStr;
 /*! 第几个cell点击进来 */

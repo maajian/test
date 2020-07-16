@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface postActivityViewController : BaseViewController
+@interface postActivityViewController : ZDBaseVC
 
 @property(nonatomic,strong)ActivityModel *activityModel; //编辑界面的model
 

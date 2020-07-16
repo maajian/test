@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^postBlock1) (NSAttributedString *text,NSString *htmlstr,NSString *titletext);
-@interface EditWebViewController : BaseViewController
+@interface EditWebViewController : ZDBaseVC
 @property(nonatomic,copy)postBlock1 block;
 @property(nonatomic,copy)NSAttributedString *pushText;
 @property(nonatomic,copy)NSArray *imageArray;

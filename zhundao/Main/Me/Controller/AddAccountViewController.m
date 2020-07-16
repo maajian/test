@@ -9,7 +9,7 @@
 #import "AddAccountViewController.h"
 #import "AddAccountTableViewCell.h"
 #import "AddAccountViewModel.h"
-#import "AJPickerView.h"
+#import "ZDPickerView.h"
 static NSString *cellID = @"addAccountID";
 
 @interface AddAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -20,7 +20,7 @@ static NSString *cellID = @"addAccountID";
 
 @property(nonatomic,strong)AddAccountViewModel *addVM;
 /*! 选择银行 */
-@property(nonatomic,strong)AJPickerView *pickerView;
+@property(nonatomic,strong)ZDPickerView *pickerView;
 
 @property(nonatomic,strong)NSMutableDictionary *postDic;
 
@@ -120,7 +120,7 @@ static NSString *cellID = @"addAccountID";
 
 - (void)showSheet{
     NSArray *Array = @[@"支付宝",@"工商银行",@"中国银行",@"建设银行",@"农业银行",@"交通银行",@"民生银行",@"兴业银行"];
-    _pickerView = [[AJPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:Array currentStr:_typeStr backBlock:^(NSString *str) {
+    _pickerView = [[ZDPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:Array currentStr:_typeStr backBlock:^(NSString *str) {
         NSLog(@"选中 %@",str);
         _typeStr = str;
         [_postDic setObject:_typeStr forKey:@"BankName"];

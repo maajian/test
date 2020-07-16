@@ -43,7 +43,7 @@
     BOOL alreadySign = [signArray[1] boolValue];
     _model = signArray.lastObject;
     if (!hasSearch) {
-        NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/checkIn/checkIn?token=%@", zhundaoApi, [[SignManager shareManager] getToken]];
+        NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/checkIn/checkIn?token=%@", zhundaoApi, [[ZDDataManager shareManager] getToken]];
 //        checkInTime
         NSDictionary *params = @{@"content": content, @"type": signType == ZDSignTypeCode ? @(0) : @(1) , @"checkInId": @(signID), @"checkInWay": @(11)};
         [ZD_NetWorkM postDataWithMethod:urlStr parameters:params succ:^(NSDictionary *obj) {
@@ -64,7 +64,7 @@
                 [self showErrorAlertWithSignType:signType message:obj[@"errmsg"] action1:action1];
             }
         } fail:^(NSError *error) {
-            [[SignManager shareManager] showNotHaveNet:UIApplication.sharedApplication.keyWindow];
+            [[ZDDataManager shareManager] showNotHaveNet:UIApplication.sharedApplication.keyWindow];
         }];
     } else {
         SystemSoundID soundID = 1102;
@@ -158,7 +158,7 @@
         }
     }];
     
-    NSString *url = [[NSString stringWithFormat:@"%@api/v2/checkIn/batchCheckIn?token=%@&checkId=%li",zhundaoApi, [[SignManager shareManager] getToken], signID] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSString *url = [[NSString stringWithFormat:@"%@api/v2/checkIn/batchCheckIn?token=%@&checkId=%li",zhundaoApi, [[ZDDataManager shareManager] getToken], signID] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     if (!postArray.count) {
         ZDDo_Block_Safe_Main(success)
         return;
@@ -188,7 +188,7 @@
 }
 
 - (void)postPrintLogWithDic:(NSDictionary *)dic {
-    NSString *urlStr = [NSString stringWithFormat:@"%@zhundao2b?token=%@", zhundaoLogApi,[[SignManager shareManager] getToken]];
+    NSString *urlStr = [NSString stringWithFormat:@"%@zhundao2b?token=%@", zhundaoLogApi,[[ZDDataManager shareManager] getToken]];
     NSDictionary *params = @{@"BusinessCode": @"Log_InsertUserLog",
                              @"Data": @{
                                      @"ActivityId": @(_model.ActivityListID),

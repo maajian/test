@@ -99,7 +99,7 @@
 }
 - (void)saveImageWithFrame
 {
-    [[SignManager shareManager]saveImageWithFrame:imageView.frame WithCtr:self];
+    [[ZDDataManager shareManager]saveImageWithFrame:imageView.frame WithCtr:self];
 }
 
 

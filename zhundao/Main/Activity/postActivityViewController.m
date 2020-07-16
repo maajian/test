@@ -167,7 +167,7 @@
 /*! 跳转协议 */
 - (void)pushXieYi{
     NSString *xieyiStr = @"https://www.zhundao.net/demo/xieyi.html";
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.urlString = xieyiStr;
     web.title = @"准到服务协议";
     web.isClose = YES;
@@ -294,9 +294,9 @@
 {
     NSString *str = nil;
     if (_activityModel) {
-        str = [NSString stringWithFormat:@"%@api/v2/activity/updateActivity?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        str = [NSString stringWithFormat:@"%@api/v2/activity/updateActivity?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     } else {
-        str = [NSString stringWithFormat:@"%@api/v2/activity/addActivity?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        str = [NSString stringWithFormat:@"%@api/v2/activity/addActivity?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     }
     NSDictionary *postBody = @{@"title":ZD_SafeValue(_postView.activityTitleTextField.text),
                                @"timeStart":ZD_SafeValue([_postVM appendTime:_postView.beginTimeRightLabel.text]),
@@ -418,7 +418,7 @@
 - (void)showSuccess
 {
     [hud hideAnimated:YES];
-    MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"发布成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+    MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"发布成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
     [hud1 hideAnimated:YES afterDelay:2];
 }
 /*! 判断有没有修改更多选项，没有则默认，有则改变 */

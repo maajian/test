@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^backBlock) (NSDictionary *dic);
-@interface pulldownViewController : BaseViewController
+@interface pulldownViewController : ZDBaseVC
 @property(nonatomic,copy)backBlock block;
 @end

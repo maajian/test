@@ -6,8 +6,8 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^blackBlock) (NSDictionary *dic);
-@interface ImageViewController : BaseViewController
+@interface ImageViewController : ZDBaseVC
 @property(nonatomic,copy)blackBlock block;
 @end

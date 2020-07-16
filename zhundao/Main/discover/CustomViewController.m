@@ -540,7 +540,7 @@
 }
 
 - (void)hideOrShowList:(CustomModel *)model hidden:(BOOL)hidden{
-     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+     MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
      hud.label.text = @"请稍等";
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];

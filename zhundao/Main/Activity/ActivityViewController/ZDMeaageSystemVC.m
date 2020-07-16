@@ -54,7 +54,7 @@ static NSString *cellID = @"MessageContentCell";
         [weakSelf.tableView reloadData];
     } failure:^(NSString *error) {
         [weakSelf.tableView.mj_header endRefreshing];
-        [[SignManager shareManager]showNotHaveNet:weakSelf.view];
+        [[ZDDataManager shareManager]showNotHaveNet:weakSelf.view];
     }];
 }
 

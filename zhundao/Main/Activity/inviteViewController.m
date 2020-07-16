@@ -136,7 +136,7 @@
 
 - (void)shareImage
 {
-    [[SignManager shareManager]shareImagewithModel:_model withCTR:self Withtype:1 withImage:self.imageArray[_index]];
+    [[ZDDataManager shareManager]shareImagewithModel:_model withCTR:self Withtype:1 withImage:self.imageArray[_index]];
 }
 
 #pragma mark------保存相册

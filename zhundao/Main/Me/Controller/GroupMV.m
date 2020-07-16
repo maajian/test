@@ -28,7 +28,7 @@
 
 - (NSArray *)searchDatabaseFromID:(NSInteger )ID
 {
-    SignManager *manager = [SignManager shareManager];
+    ZDDataManager *manager = [ZDDataManager shareManager];
     NSMutableArray *allArray = [NSMutableArray array];
     NSMutableArray *nameArray = [NSMutableArray array];
     NSMutableArray *imageArray = [NSMutableArray array];
@@ -55,7 +55,7 @@
 }
 - (void)addPersonToGroupWithDic :(NSDictionary *)dic
 {
-    NSString *netstr = [NSString stringWithFormat:@"%@api/Contact/UpdateOrAddContact?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *netstr = [NSString stringWithFormat:@"%@api/Contact/UpdateOrAddContact?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     [ZD_NetWorkM postDataWithMethod:netstr parameters:dic succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj);
         NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:obj];
@@ -74,7 +74,7 @@
 }
 - (void)searchDatabaseFromID:(NSInteger )groupID GroupName :(NSString *)GroupName  ID:(NSInteger )ID
 {
-    SignManager *manager = [SignManager shareManager];
+    ZDDataManager *manager = [ZDDataManager shareManager];
     if ([manager.dataBase open]) {
         NSString *sql = [NSString stringWithFormat:@"UPDATE contact SET ContactGroupID = %li WHERE ID = %li",(long)groupID,(long)ID];
          NSString *sql1 = [NSString stringWithFormat:@"UPDATE contact SET GroupName = '%@' WHERE ID = %li",GroupName,(long)ID];

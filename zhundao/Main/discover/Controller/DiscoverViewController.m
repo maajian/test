@@ -12,7 +12,7 @@
 #import "ShakeViewController.h"
 #import "PrintViewController.h"
 #import "FaceViewController.h"
-#import "PriviteInviteViewController.h"
+#import "ZDDiscoverPriviteInviteVC.h"
 #import "ZDDiscoverCustomApplyVC.h"
 #import "ZDDiscoverShopDetailVC.h"
 #import "ZDDiscoverQuestionVC.h"
@@ -66,7 +66,7 @@
 #pragma  mark --- 界面跳转
 
 - (void)pushToMoreApply {
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.webTitle = @"更多应用";
     web.urlString = @"https://www.zhundao.net/app";
     web.isClose = YES;
@@ -110,7 +110,7 @@
 /*! 严选商城 */
 - (void)pushToStore {
     ZDDiscoverShopDetailVC *web = [[ZDDiscoverShopDetailVC alloc] init];
-    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/shop/index.html?token=%@#!/market/",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/shop/index.html?token=%@#!/market/",[[ZDDataManager shareManager] getToken]];
     web.isClose = YES;
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
@@ -119,7 +119,7 @@
 
 - (void)pushToQuestion {
     ZDDiscoverQuestionVC *web = [[ZDDiscoverQuestionVC alloc] init];
-    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/wenjuan/admin/index.html?token=%@#/",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/wenjuan/admin/index.html?token=%@#/",[[ZDDataManager shareManager] getToken]];
     web.isClose = YES;
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
@@ -127,7 +127,7 @@
 }
 
 - (void)pushToInvite{
-    PriviteInviteViewController *invite = [[PriviteInviteViewController alloc]init];
+    ZDDiscoverPriviteInviteVC *invite = [[ZDDiscoverPriviteInviteVC alloc]init];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:invite animated:YES];
     [self setHidesBottomBarWhenPushed:NO];

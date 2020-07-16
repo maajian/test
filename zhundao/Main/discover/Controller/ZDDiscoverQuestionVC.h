@@ -6,11 +6,11 @@
 //  Copyright © 2020 zhundao. All rights reserved.
 //
 
-#import "ZDWebViewController.h"
+#import "ZDWebViewVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDDiscoverQuestionVC : ZDWebViewController
+@interface ZDDiscoverQuestionVC : ZDWebViewVC
 
 @end
 

@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"准到Beacon";
-    accesskey = [[SignManager shareManager]getaccseekey];
+    accesskey = [[ZDDataManager shareManager]getaccseekey];
     [self createTableView];
     [self firstload];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem scanItemWithTarget:self action:@selector(pushOtherWithIndex)];

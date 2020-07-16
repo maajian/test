@@ -81,7 +81,7 @@
     [self.viewModel getPromoteCustomContactSuccess:^{
         [weakSelf.tableView reloadData];
     } failure:^{
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDDataManager shareManager] showNotHaveNet:self.view];
     }];
 }
 - (void)networkForZDBi {
@@ -89,7 +89,7 @@
     [self.viewModel getZDBiSuccess:^{
         [weakSelf.tableView reloadData];
     } failure:^{
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDDataManager shareManager] showNotHaveNet:self.view];
     }];
 }
 - (void)networkForNotice {
@@ -97,7 +97,7 @@
     [self.viewModel getNoticeSuccess:^{
         [weakSelf.tableView reloadData];
     } failure:^{
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDDataManager shareManager] showNotHaveNet:self.view];
     }];
 }
 

@@ -13,7 +13,7 @@
 #pragma 网络判断 是否可以修改
 - (void)netWorkWithID:(NSInteger)feeID
 {
-    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/GetActivityFee?accessKey=%@&activityFeeId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)feeID];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/GetActivityFee?accessKey=%@&activityFeeId=%li",zhundaoApi,[[ZDDataManager shareManager] getaccseekey],(long)feeID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary *dataDic = [dic[@"Data"] copy];

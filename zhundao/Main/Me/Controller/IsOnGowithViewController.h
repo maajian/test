@@ -6,9 +6,9 @@
 //
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface IsOnGowithViewController : BaseViewController
+@interface IsOnGowithViewController : ZDBaseVC
 
 /*! 余额 */
 @property(nonatomic,strong)NSString *allMoney;

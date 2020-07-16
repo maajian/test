@@ -14,8 +14,8 @@
 - (void)activityListDataWithBlock:(activityBlock)activityBlock
 {
     
-     NSString *listUrl =[NSString stringWithFormat:@"%@api/Uface/PostActivityList?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
-     AFmanager *manager = [AFmanager shareManager];
+     NSString *listUrl =[NSString stringWithFormat:@"%@api/Uface/PostActivityList?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager]getaccseekey]];
+     ZDNetwork *manager = [ZDNetwork shareManager];
     NSDictionary *dic = @{@"Type":@"1",
                           @"pageSize":@"1000",
                           @"curPage":@"1"};
@@ -38,8 +38,8 @@
 
 - (void)signListDataWithdic :(NSDictionary *)dic   Block:(signBlock)signBlock
 {
-    NSString *url =  [NSString stringWithFormat:@"%@api/CheckIn/PostCheckIn?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
-    AFmanager *manager = [AFmanager shareManager];
+    NSString *url =  [NSString stringWithFormat:@"%@api/CheckIn/PostCheckIn?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager]getaccseekey]];
+    ZDNetwork *manager = [ZDNetwork shareManager];
     [manager POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
         NSArray *array1 = result[@"Data"];
@@ -56,8 +56,8 @@
 - (void)BindDeviceWithID :(NSString *)checkInId deviceKey:(NSString *)deviceKey  bindBlock:(bindBlock)bindBlock
 {
     
-    NSString *url  = [NSString stringWithFormat:@"https://face.zhundao.net/api/Core/BindDevice?accessKey=%@&deviceKey=%@&checkInId=%@",[[SignManager shareManager] getaccseekey],deviceKey,checkInId];
-     AFmanager *manager = [AFmanager shareManager];
+    NSString *url  = [NSString stringWithFormat:@"https://face.zhundao.net/api/Core/BindDevice?accessKey=%@&deviceKey=%@&checkInId=%@",[[ZDDataManager shareManager] getaccseekey],deviceKey,checkInId];
+     ZDNetwork *manager = [ZDNetwork shareManager];
     [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     manager.requestSerializer.timeoutInterval = 120.f;
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
@@ -71,8 +71,8 @@
 
 - (void)getProgressWithDeviceKey:(NSString *)deviceKey  progressBlock:(progressBlock)progressBlock
 {
-    NSString *url  = [NSString stringWithFormat:@"https://face.zhundao.net//api/Core/GetProcess?accessKey=%@&deviceKey=%@",[[SignManager shareManager] getaccseekey],deviceKey];
-    AFmanager *manager = [AFmanager shareManager];
+    NSString *url  = [NSString stringWithFormat:@"https://face.zhundao.net//api/Core/GetProcess?accessKey=%@&deviceKey=%@",[[ZDDataManager shareManager] getaccseekey],deviceKey];
+    ZDNetwork *manager = [ZDNetwork shareManager];
     [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     manager.requestSerializer.timeoutInterval = 120.f;
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
@@ -98,8 +98,8 @@
 
 - (void)addNewWithDeviceKey:(NSString *)deviceKey addNewBlock:(addNewBlock)addNewBlock
 {
-    NSString *url = [NSString stringWithFormat:@"https://face.zhundao.net/api/Core/SyncNewPerson?accessKey=%@&deviceKey=%@",[[SignManager shareManager] getaccseekey],deviceKey];
-    AFmanager *manager = [AFmanager shareManager];
+    NSString *url = [NSString stringWithFormat:@"https://face.zhundao.net/api/Core/SyncNewPerson?accessKey=%@&deviceKey=%@",[[ZDDataManager shareManager] getaccseekey],deviceKey];
+    ZDNetwork *manager = [ZDNetwork shareManager];
     [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     manager.requestSerializer.timeoutInterval = 60.f;
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];

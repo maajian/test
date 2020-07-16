@@ -9,7 +9,7 @@
 #import "SignleListViewController.h"
 #import "SignleModel.h"
 #import "ImageBrowserViewController.h"
-#import "GZActionSheet.h"
+#import "ZDActionSheet.h"
 #import "EditSignListViewController.h"
 #import "PrintVM.h"
 #import "EditSignListViewModel.h"
@@ -84,7 +84,7 @@
 - (void)moreAction
 {
     NSArray *array = @[@"修改人员信息"];
-    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
+    ZDActionSheet *sheet = [[ZDActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
@@ -185,7 +185,7 @@
                 imageview.userInteractionEnabled = YES;
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(scanImageClickAction:)];
                 [imageview addGestureRecognizer:tap];
-                MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:imageview];
+                MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:imageview];
                 hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
                 hud.bezelView.backgroundColor = [UIColor clearColor];
                 if ([[[UIDevice currentDevice] systemVersion] floatValue]>=9) {
@@ -344,7 +344,7 @@
 #pragma mark call打电话
 - (void)callAlert
 {
-    [[SignManager shareManager]showAlertWithTitle:@"确定拨打电话?" WithMessage:nil  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+    [[ZDDataManager shareManager]showAlertWithTitle:@"确定拨打电话?" WithMessage:nil  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
         [self callphone];
     } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
 }
@@ -363,11 +363,11 @@
     [self.navigationController pushViewController:more animated:YES];
     __weak typeof(self) weakSelf = self;
     more.strBlock = ^(NSString *backStr) {
-        MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+        MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
          [_SignListVM  addADMark:backStr personID:_personID UserName:_nameStr Mobile:_phoneStr markBlock:^(BOOL isSuccess) {
              [hud hideAnimated:YES];
              if (isSuccess) {
-                 MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:weakSelf.view imageName:@"签到打勾"];
+                 MBProgressHUD *hud = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:weakSelf.view imageName:@"签到打勾"];
                  [hud hideAnimated:YES afterDelay:1.5];
                  label.text = backStr;
              }else{

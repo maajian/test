@@ -9,7 +9,7 @@
 #import "ChoosePersonViewController.h"
 #import "isReadView.h"
 #import "ListTableViewCell.h"
-#import "GroupSendViewController.h"
+#import "ZDGroupSendMessageVC.h"
 #import "GroupSendViewModel.h"
 #import "JQIndicatorView.h"
 #import "listModel.h"
@@ -178,7 +178,7 @@
 
 - (void)nextStep{
     NSArray *lastSelectArray = [_tableView indexPathsForSelectedRows];
-    GroupSendViewController *group = [[GroupSendViewController alloc]init];
+    ZDGroupSendMessageVC *group = [[ZDGroupSendMessageVC alloc]init];
     [self setHidesBottomBarWhenPushed:YES];
     group.modelArray = _modelArray;
     group.selectArray = lastSelectArray;

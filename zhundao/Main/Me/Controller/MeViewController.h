@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MeViewController : BaseViewController
+@interface MeViewController : ZDBaseVC
 
 @end

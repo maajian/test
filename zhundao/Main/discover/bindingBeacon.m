@@ -56,9 +56,9 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 }
 - (void)netWorkWithstringValue:(NSString *)stringValue
 {
-    NSString *acckey = [[SignManager shareManager]getaccseekey];
+    NSString *acckey = [[ZDDataManager shareManager]getaccseekey];
     NSString *str = [NSString stringWithFormat:@"%@api/Game/UpdateBeacon?accessKey=%@&deviceId=%@&type=0",zhundaoApi,acckey,stringValue];
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         [hud hideAnimated:YES];
@@ -72,7 +72,7 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 {
     
     if (isSuccess) {
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:labelText showAnimated:YES UIView:self.view imageName:imageName];
+        MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:labelText showAnimated:YES UIView:self.view imageName:imageName];
         [hud1 showAnimated:YES];
         [hud1 hideAnimated:YES afterDelay:1];
         [self willPop];
@@ -80,7 +80,7 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     }
    else
    {
-       MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeText labelText:labelText showAnimated:YES UIView:self.view imageName:nil];
+       MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeText labelText:labelText showAnimated:YES UIView:self.view imageName:nil];
        [hud1 showAnimated: YES];
         [hud1 hideAnimated:YES afterDelay:1];
        [self willPop];

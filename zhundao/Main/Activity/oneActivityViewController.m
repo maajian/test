@@ -15,7 +15,7 @@
 #import "LoadAllSignViewController.h"
 #import "NewSignViewController.h"
 #import "PostSignViewController.h"
-#import "GZActionSheet.h"
+#import "ZDActionSheet.h"
 #import "CodeViewController.h"
 #import "PostEmailViewController.h"
 @interface oneActivityViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -44,7 +44,7 @@
     _isJuhua = NO;
     self.title = @"签到";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(signin)];
-    accesskey = [[SignManager shareManager]getaccseekey];
+    accesskey = [[ZDDataManager shareManager]getaccseekey];
     self.view.backgroundColor = ZDBackgroundColor;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:ZDUserDefault_Update_Sign object:nil];
     [self createtableview];
@@ -375,7 +375,7 @@
     }
     NSArray *array = @[@"删除签到",@"修改签到",@"微信签到二维码",@"手机号签到二维码",@"导出签到名单"];
    
-    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
+    ZDActionSheet *sheet = [[ZDActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
     
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
@@ -445,13 +445,13 @@
 }
 - (void)deleteSign
 {
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getToken],(long)mycell.model.ID];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[ZDDataManager shareManager] getToken],(long)mycell.model.ID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"dic = %@",dic);
         [hud hideAnimated:YES];
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
     } fail:^(NSError *error) {

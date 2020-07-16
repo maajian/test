@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface EditSignListViewController : BaseViewController
+@interface EditSignListViewController : ZDBaseVC
 @property(nonatomic,assign)NSInteger activityID;   //活动ID
 @property(nonatomic,assign)NSInteger personID;
 @property(nonatomic,copy)NSString *dataStr;  //人员名单信息

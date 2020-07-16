@@ -7,7 +7,7 @@
 //
 
 #import "PostSignViewController.h"
-#import "GZActionSheet.h"
+#import "ZDActionSheet.h"
 #import "CodeViewController.h"
 //static NSString *cellID = @"PostCell";  //tableviewcell id
 @interface PostSignViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
@@ -237,7 +237,7 @@
 }
 - (void)showhud
 {
-    MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"操作成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+    MBProgressHUD *hud = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"操作成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
     [hud hideAnimated:YES afterDelay:1.5];
 }
 - (NSDictionary *)getPostDic
@@ -253,10 +253,10 @@
 - (NSString *)urlStr
 {
     if ([_dataArray1.firstObject isEqualToString:@""]) {
-        return [NSString stringWithFormat:@"%@api/v2/checkIn/addCheckIn?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        return [NSString stringWithFormat:@"%@api/v2/checkIn/addCheckIn?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     }
     else{
-        return  [NSString stringWithFormat:@"%@api/v2/checkIn/updateCheckIn?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        return  [NSString stringWithFormat:@"%@api/v2/checkIn/updateCheckIn?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     }
 }
 - (void)didReceiveMemoryWarning {

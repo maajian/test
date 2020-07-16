@@ -6,8 +6,8 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface AddAccountViewController : BaseViewController
+@interface AddAccountViewController : ZDBaseVC
 
 @end

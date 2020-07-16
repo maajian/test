@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface WaitViewController : BaseViewController
+@interface WaitViewController : ZDBaseVC
 
 @property(nonatomic,assign)NSInteger signID;
  // 用户密钥

@@ -24,7 +24,7 @@
         [indicator startAnimating];
     }
     NSMutableArray  *postArray = [NSMutableArray array];
-    SignManager *manager = [SignManager shareManager];
+    ZDDataManager *manager = [ZDDataManager shareManager];
     [manager createDatabase];
     if ([manager.dataBase open]) {
         NSString *sql =@"SELECT * FROM muliSignList";
@@ -65,7 +65,7 @@
         if (isShow) [indicator stopAnimating];
         NSDictionary *msg = [NSDictionary dictionaryWithDictionary:obj];
         if ([msg[@"Msg"]integerValue] ==0) {
-            SignManager *manager = [SignManager shareManager];
+            ZDDataManager *manager = [ZDDataManager shareManager];
             [manager createDatabase];
             if ([manager.dataBase open]) {
                 [manager.dataBase executeUpdate:@"DROP TABLE muliSignList"];
@@ -78,7 +78,7 @@
     } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         if (isShow) [indicator stopAnimating];
-        [[SignManager shareManager] showNotHaveNet:view];
+        [[ZDDataManager shareManager] showNotHaveNet:view];
     }];
 }
 @end

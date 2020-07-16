@@ -13,7 +13,7 @@
 
 /*! 添加提现账号 */
 - (void)AddCreadCards :(NSDictionary *)dic  AddAccountBlock:(AddAccountBlock)AddAccountBlock{
-    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/AddCreadCards?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/AddCreadCards?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager]getaccseekey]];
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"result = %@",result);

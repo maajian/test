@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
-@interface SignleListViewController : BaseViewController
+#import "ZDBaseVC.h"
+@interface SignleListViewController : ZDBaseVC
 @property(nonatomic,strong)NSDictionary *datadic;
 @property(nonatomic,assign)NSInteger activityID;
 @property(nonatomic,assign)NSInteger personID;

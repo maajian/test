@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface ShowPostImageViewController : BaseViewController
+@interface ShowPostImageViewController : ZDBaseVC
 /*! 图片地址 */
 @property(nonatomic,strong)NSString *imageStr;
 

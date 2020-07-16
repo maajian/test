@@ -89,7 +89,7 @@
 }
 - (void)netWork
 {
-    NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContactGroup?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContactGroup?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     GroupMV *Group = [[GroupMV alloc]init];
     [Group netWorkWithStr:str];
     __weak typeof(Group) weakGroup = Group;
@@ -233,7 +233,7 @@
     [self.navigationController pushViewController:person animated:YES];
     
     
-    NSString *str = [NSString stringWithFormat:@"%@api/Contact/DeleteContact/%li?accessKey=%@",zhundaoApi,(long)[idarray[indexPath.row] integerValue],[[SignManager shareManager] getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/Contact/DeleteContact/%li?accessKey=%@",zhundaoApi,(long)[idarray[indexPath.row] integerValue],[[ZDDataManager shareManager] getaccseekey]];
     person.block = ^(BOOL isDelete)
     {
         if (isDelete) {

@@ -63,7 +63,7 @@
 }
 
 -(void)allQues{
-    ZDWebViewController *questionVC = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *questionVC = [[ZDWebViewVC alloc] init];
     questionVC.webTitle = @"常见问题";
     questionVC.urlString = @"https://www.zhundao.net/service/help/index/68";
     questionVC.isClose = YES;
@@ -81,7 +81,7 @@
     [viewModel openMessage:^(id responseObject) {
         
         /*! 获取短信条数 */
-         NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/GetAdminInfo?token=%@",zhundaoMessageApi,[[SignManager shareManager] getToken]];
+         NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/GetAdminInfo?token=%@",zhundaoMessageApi,[[ZDDataManager shareManager] getToken]];
         [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
             NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
             NSArray *array = dic[@"data"];
@@ -91,11 +91,11 @@
             _messageView.countLabel.text = [NSString stringWithFormat:@"%li",messageCount];
             [indicator stopAnimating];
         } fail:^(NSError *error) {
-            [[SignManager shareManager]showNotHaveNet:self.view];
+            [[ZDDataManager shareManager]showNotHaveNet:self.view];
             [indicator stopAnimating];
         }];
     } error:^(NSError *error) {
-        [[SignManager shareManager]showNotHaveNet:self.view];
+        [[ZDDataManager shareManager]showNotHaveNet:self.view];
         [indicator stopAnimating];
     }];
 }
@@ -111,7 +111,7 @@
 }
 
 - (void)messageDetail{
-    ZDWebViewController *questionVC = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *questionVC = [[ZDWebViewVC alloc] init];
     questionVC.webTitle = @"发送记录";
     questionVC.urlString = [NSString stringWithFormat:@"https://sms.zhundao.com.cn/wx/ios/%li#/outbox",_es_id];
     questionVC.isClose = YES;

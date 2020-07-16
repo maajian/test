@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^fleshBlock) (BOOL isSuccess);
-@interface NewPersonViewController : BaseViewController
+@interface NewPersonViewController : ZDBaseVC
 @property(nonatomic,copy)fleshBlock fleshBlock;
 @property(nonatomic,assign)NSInteger activityID;   //活动ID
 

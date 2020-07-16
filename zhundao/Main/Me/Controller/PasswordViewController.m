@@ -77,14 +77,14 @@
 #pragma mark--- 网络请求
 - (void)changePassword{
     
-    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/SetPassWord?accessKey=%@&newPwd=%@",zhundaoApi,[[SignManager shareManager]getaccseekey],textfView.textf.text];
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/SetPassWord?accessKey=%@&newPwd=%@",zhundaoApi,[[ZDDataManager shareManager]getaccseekey],textfView.textf.text];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"请稍候...";
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"]integerValue]==0) {
-            MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"设置成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"设置成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
             [hud1 hideAnimated:YES afterDelay:1.5];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self.navigationController popToRootViewControllerAnimated:YES];
@@ -99,8 +99,8 @@
 }
 
 - (void)verifyOld :(NSString *)old{
-    NSString *str = [NSString stringWithFormat:@"%@g?accessKey=%@&oldPwd=%@",zhundaoApi,[[SignManager shareManager]getaccseekey],old];
-     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    NSString *str = [NSString stringWithFormat:@"%@g?accessKey=%@&oldPwd=%@",zhundaoApi,[[ZDDataManager shareManager]getaccseekey],old];
+     MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"请稍候...";
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];

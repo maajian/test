@@ -10,15 +10,15 @@
 #import "SignleListViewController.h"
 #import "ListTableViewCell.h"
 #import "PostEmailViewController.h"
-#import "GZActionSheet.h"
+#import "ZDActionSheet.h"
 #import "ListViewModel.h"
 #import "EditSignListViewController.h"
 #import "NewPersonViewController.h"
-#import "AJAlertSheet.h"
+#import "ZDAlertSheet.h"
 #import "PrintVcodeViewController.h"
 #import "showView.h"
-#import "priviteInviteViewModel.h"
-#import "defaultViewController.h"
+#import "ZDDiscoverPriviteInviteViewModel.h"
+#import "ZDDiscoverDefaultVC.h"
 #import "customInviteViewController.h"
 #import "Time.h"
 #import "ChoosePersonViewController.h"
@@ -45,7 +45,7 @@
 /*! 邀请函视图 */
 @property(nonatomic,strong) showView *showVW;
 /*! 邀请函的viewmodel */
-@property(nonatomic,strong) priviteInviteViewModel *priviteViewModel;
+@property(nonatomic,strong) ZDDiscoverPriviteInviteViewModel *priviteViewModel;
 @end
 
 @implementation ListViewController
@@ -58,7 +58,7 @@
      [self createTableView];
     [self rightButton];
     _listVM = [[ListViewModel alloc]init];
-    _priviteViewModel = [[priviteInviteViewModel alloc]init];
+    _priviteViewModel = [[ZDDiscoverPriviteInviteViewModel alloc]init];
      self.definesPresentationContext = YES;
      self.automaticallyAdjustsScrollViewInsets = NO;
      self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -319,10 +319,10 @@
 - (void)loadData    //网络加载数据
 {
     dispatch_queue_t conQueue = dispatch_queue_create("1", DISPATCH_QUEUE_CONCURRENT);
-    NSString *extraInfoUrl = [NSString stringWithFormat:@"%@api/v2/activity/GetActivityOption?token=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getToken], _listID];
+    NSString *extraInfoUrl = [NSString stringWithFormat:@"%@api/v2/activity/GetActivityOption?token=%@&activityId=%li",zhundaoApi,[[ZDDataManager shareManager] getToken], _listID];
     [ZD_NetWorkM postDataWithMethod:extraInfoUrl parameters:nil succ:^(NSDictionary *obj) {
         NSArray *extraInfoArray = obj[@"data"];
-        NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivityList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivityList?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
         NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)self.listID],
                               @"pageSize":@"200000",
                               @"curPage":@"1"};
@@ -390,7 +390,7 @@
         } fail:^(NSError *error) {
             NSLog(@"error = %@",error);
             [indicator stopAnimating];
-            [[SignManager shareManager] showNotHaveNet:self.view];
+            [[ZDDataManager shareManager] showNotHaveNet:self.view];
         }];
     } fail:^(NSError *error) {
         
@@ -579,7 +579,7 @@
     [label labelAnimationWithViewlong:self.view];
 }
 - (void)defaultInvite:(BOOL)isSign{
-    defaultViewController *defaultInvite = [[defaultViewController alloc]init];
+    ZDDiscoverDefaultVC *defaultInvite = [[ZDDiscoverDefaultVC alloc]init];
     defaultInvite.activityTitle = _listName;
     defaultInvite.isSign = isSign;
     if (isSign) {
@@ -597,7 +597,7 @@
 #pragma mark ---审核
 
 - (void)check : (BOOL) isPass activityListId :(NSInteger)activityListId{
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_listVM UpdateStatusActivityListId:activityListId status:isPass block:^(NSInteger isSuccess) {
         [hud hideAnimated:YES];
         [self showAnnimate:isSuccess];
@@ -606,7 +606,7 @@
 
 - (void)showAnnimate :(NSInteger )isSuccess{
     if (isSuccess) {
-        MBProgressHUD  *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD  *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [self loadData];
     }else{
@@ -617,7 +617,7 @@
 #pragma mark -----underLineMoney 线下收款
 
 - (void)underLineWithActivityListId :(NSInteger)activityListId {
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_listVM PayOffLine:activityListId block:^(NSInteger isSuccess) {
         [hud hideAnimated:YES];
         [self showAnnimate:isSuccess];
@@ -630,9 +630,9 @@
     NSArray *array = @[@"删除报名人员"];
     __weak typeof(self) weakSelf = self;
     
-    AJAlertSheet *sheet = [[AJAlertSheet alloc]initWithFrame:[UIScreen mainScreen].bounds array:array title:@"删除后将导致该用户二维码失效，如果有签到记录也将被删除，是否继续?" isDelete : YES selectBlock:^(NSInteger index) {
+    ZDAlertSheet *sheet = [[ZDAlertSheet alloc]initWithFrame:[UIScreen mainScreen].bounds array:array title:@"删除后将导致该用户二维码失效，如果有签到记录也将被删除，是否继续?" isDelete : YES selectBlock:^(NSInteger index) {
         if (index==0) {
-           MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+           MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
            hud.label.text = @"删除中";
             [_listVM deletePersonWithID:model.ID];
             _listVM.deleteBlock = ^(NSInteger isSuccess)
@@ -640,14 +640,14 @@
                 if (isSuccess==1)
                 {
                     [hud hideAnimated:YES];
-                    MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:weakSelf.view imageName:@"签到打勾"];
+                    MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:weakSelf.view imageName:@"签到打勾"];
                     [hud1 hideAnimated:YES afterDelay:1.5];
                     [weakSelf loadData];
                 } else if (isSuccess==2) {
                     maskLabel *label = [[maskLabel alloc]initWithTitle:@"付费或已有用户签到的活动无法删除"];
                     [label labelAnimationWithViewlong:weakSelf.view];
                 }
-                else  [[SignManager shareManager]showNotHaveNet:weakSelf.view];
+                else  [[ZDDataManager shareManager]showNotHaveNet:weakSelf.view];
             };
         }
      }];
@@ -665,7 +665,7 @@
     }else{
          array = @[@"打印二维码",@"添加报名人员",@"发送名单到邮箱"];
     }
-    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:5 andShowCancel:YES];
+    ZDActionSheet *sheet = [[ZDActionSheet alloc]initWithTitleArray:array WithRedIndex:5 andShowCancel:YES];
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
@@ -731,7 +731,7 @@
 //- (void)nextStep{
 //    NSArray *selectArray = [_table indexPathsForSelectedRows];
 //    [self endEditing];
-//    GroupSendViewController *groupSend = [[GroupSendViewController alloc]init];
+//    ZDGroupSendMessageVC *groupSend = [[ZDGroupSendMessageVC alloc]init];
 //    [self setHidesBottomBarWhenPushed:YES];
 //    [self.navigationController pushViewController:groupSend animated:YES];
 //
@@ -741,7 +741,7 @@
 {
     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];
 }
-#pragma mark GZActionSheet action 响应事件
+#pragma mark ZDActionSheet action 响应事件
 - (void)postEmail // 发送邮件
 {
     PostEmailViewController *post = [[PostEmailViewController alloc]init];

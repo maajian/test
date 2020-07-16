@@ -37,7 +37,7 @@
 
 #pragma mark --- action
 - (void)shareAction {
-    [[SignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_imageUrl]]] webpageUrl:self.urlString  withCTR:self Withtype:5];
+    [[ZDDataManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_imageUrl]]] webpageUrl:self.urlString  withCTR:self Withtype:5];
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object

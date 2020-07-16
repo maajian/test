@@ -137,10 +137,10 @@ static NSString *cellID = @"ActivityCellID";
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZDActivityCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.isClose = YES;
     web.webTitle = @"活动详情";
-    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/event/%li?token=%@",(long)cell.model.ID,[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/event/%li?token=%@",(long)cell.model.ID,[[ZDDataManager shareManager] getToken]];
     [self.navigationController pushViewController:web animated:YES];
 }
 
@@ -148,7 +148,7 @@ static NSString *cellID = @"ActivityCellID";
 // 点击
 - (void)activityCell:(ZDActivityCell *)activityCell didTapListButton:(UIButton *)button {
     if (activityCell.model.HasJoinNum==0) {
-        [[SignManager shareManager]showAlertWithTitle:@"暂无人参加,请下拉刷新数据" WithMessage:nil WithCTR:self];
+        [[ZDDataManager shareManager]showAlertWithTitle:@"暂无人参加,请下拉刷新数据" WithMessage:nil WithCTR:self];
     } else {
         ListViewController *list = [[ListViewController alloc]init];
         list.listID = activityCell.model.ID;
@@ -170,7 +170,7 @@ static NSString *cellID = @"ActivityCellID";
 }
 // 分享
 - (void)activityCell:(ZDActivityCell *)activityCell didTapShareButton:(UIButton *)button {
-    [[SignManager shareManager]shareImagewithModel:activityCell.model withCTR:self Withtype:5 withImage:nil];
+    [[ZDDataManager shareManager]shareImagewithModel:activityCell.model withCTR:self Withtype:5 withImage:nil];
 }
 // 更多点击
 - (void)activityCell:(ZDActivityCell *)activityCell didTapMoreButton:(UIButton *)button {

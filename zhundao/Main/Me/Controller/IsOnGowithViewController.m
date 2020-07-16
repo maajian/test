@@ -177,11 +177,11 @@ static NSString *CellID = @"isOnGowith";
 //        [self showMask:@"请选择提现账号"];
 //    }
     else{
-        MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+        MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
         [_viewModel Withdraw:textf.text accountId:_ID isonGowithBlock:^(NSString *success) {
             [hud hideAnimated:YES];
             if ([success isEqualToString:@"提现成功"]) {
-                MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeText labelText:@"申请提现成功" showAnimated:YES UIView:self.view imageName:nil];
+                MBProgressHUD *hud = [ZDHud initWithMode:MBProgressHUDModeText labelText:@"申请提现成功" showAnimated:YES UIView:self.view imageName:nil];
                 [hud hideAnimated:YES afterDelay:1.5];
                 NSDictionary *mudic = [NSDictionary dictionaryWithObjectsAndKeys:amountLabel.text,@"account",@(_ID),@"accountId",_bankName,@"bankName",nil];
                 [[NSUserDefaults standardUserDefaults]setObject:mudic forKey:@"account1"];

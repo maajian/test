@@ -74,7 +74,7 @@
                     [weakMV searchDatabaseFromID:ID GroupName:_groupArray[self.selectIndex] ID:self.personid];
                 }
                 else{
-                    [[SignManager shareManager]showNotHaveNet:self.view];
+                    [[ZDDataManager shareManager]showNotHaveNet:self.view];
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         [self.navigationController popViewControllerAnimated:YES];
                     });
@@ -116,7 +116,7 @@
 #pragma network 有网没网的加载
 - (void)network
 {
-    NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContactGroup?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContactGroup?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     GroupMV *mv = [[GroupMV alloc]init];
     [mv netWorkWithStr:str];
     mv.block = ^(NSArray *Array)

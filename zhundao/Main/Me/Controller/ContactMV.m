@@ -38,7 +38,7 @@
 }
 - (void)netWorkGroupSave
 {
-    NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContactGroup?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContactGroup?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     [ZD_NetWorkM postDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj);
         NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:obj];
@@ -86,9 +86,9 @@
         [dataArray1 addObject:model];
     }
     if (isHave) {
-        if ([[SignManager shareManager].dataBase open]) {
+        if ([[ZDDataManager shareManager].dataBase open]) {
             [self insertSignListWithArray:dataArray1];
-            [[SignManager shareManager].dataBase close];
+            [[ZDDataManager shareManager].dataBase close];
         }
     }
     NSSet *set = [NSSet setWithArray:array];
@@ -122,7 +122,7 @@
 - (void)createSignList
 {
     
-    SignManager *manager = [SignManager shareManager];
+    ZDDataManager *manager = [ZDDataManager shareManager];
     
     [manager createDatabase];
     if ([manager.dataBase open]) {
@@ -142,12 +142,12 @@
 }
 -(void)insertSignListWithArray :(NSArray *)array1 {
     // 开启事务
-    [[SignManager shareManager].dataBase beginTransaction];
+    [[ZDDataManager shareManager].dataBase beginTransaction];
     BOOL isRollBack = NO;
     @try {
         for (ContactModel *model in array1) {
             NSString *insertSql =[NSString stringWithFormat:@"replace INTO contact(ID,GroupName,Sex, HeadImgurl,ContactGroupID,TrueName,Address,Company,Duty,Email,Remark,SerialNo,IDcard,Mobile)VALUES(%li,'%@',%li,'%@',%li,'%@','%@','%@','%@','%@','%@','%@','%@','%@')",(long)model.ID,model.GroupName,(long)model.Sex,model.HeadImgurl,(long)model.ContactGroupID,model.TrueName,model.Address,model.Company,model.Duty,model.Email,model.Remark,model.SerialNo,model.IDcard,model.Mobile];
-            BOOL res = [[SignManager shareManager].dataBase executeUpdate:insertSql];
+            BOOL res = [[ZDDataManager shareManager].dataBase executeUpdate:insertSql];
             if (res) {
                 NSLog(@"数据表插入成功");
             }
@@ -160,19 +160,19 @@
     @catch (NSException *exception) {
         isRollBack = YES;
         // 事务回退
-        [[SignManager shareManager].dataBase rollback];
+        [[ZDDataManager shareManager].dataBase rollback];
     }
     @finally {
         if (!isRollBack) {
             //事务提交
-            [[SignManager shareManager].dataBase commit];
+            [[ZDDataManager shareManager].dataBase commit];
         }
     }
 }
 
 - (void)deleteDataWithModel :(NSInteger)personID
 {
-    SignManager *manager = [SignManager shareManager];
+    ZDDataManager *manager = [ZDDataManager shareManager];
     if ([manager.dataBase open]) {
         NSString *insertSql =[NSString stringWithFormat:@"DELETE FROM contact WHERE ID = '%ld'",(long)personID];
         BOOL res = [manager.dataBase executeUpdate:insertSql];
@@ -203,7 +203,7 @@
 
 - (NSArray *)searchDatabaseFromID:(NSInteger )ID
 {
-    SignManager *manager = [SignManager shareManager];
+    ZDDataManager *manager = [ZDDataManager shareManager];
     NSMutableArray *allArray = [NSMutableArray array];
     NSMutableArray *firArray =[NSMutableArray array];
     if ([manager.dataBase open]) {
@@ -233,7 +233,7 @@
 }
 - (NSMutableArray *)searchAllData
 {
-    SignManager *manager = [SignManager shareManager];
+    ZDDataManager *manager = [ZDDataManager shareManager];
     NSMutableArray *array = [NSMutableArray array];
     if ([manager.dataBase open]) {
         NSString *sql = @"SELECT * FROM contact";

@@ -15,7 +15,7 @@
 /*! 开通短信 */
 //https://open.zhundao.net/api/App/InstallApp?accesskey={accesskey}&id=3&from=ios
 - (void)openMessage:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
-    NSString *str = [NSString stringWithFormat:@"%@api/App/InstallMessageApp?accesskey=%@&id=3&from=ios",zhundaoApi,[[SignManager shareManager]getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/App/InstallMessageApp?accesskey=%@&id=3&from=ios",zhundaoApi,[[ZDDataManager shareManager]getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         successBlock(obj);
     } fail:^(NSError *error) {
@@ -26,7 +26,7 @@
 //api/CoreByAccessKey/adminInfo?accessKey={accessKey}
 /*! 获取短信用户信息 这里获取签名*/
 - (void)getAdminInfo:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
-    NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/GetAdminInfo?token=%@",zhundaoMessageApi,[[SignManager shareManager] getToken]];
+    NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/GetAdminInfo?token=%@",zhundaoMessageApi,[[ZDDataManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj );
         successBlock(obj);
@@ -78,7 +78,7 @@
            count :(NSInteger)count
      successBlock:(ZDSuccessBlock)successBlock
             error:(ZDErrorBlock)errorBlock{
-    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/TopUpSMS?accessKey=%@&payPwd=%@&chargeCount=%li",zhundaoApi,[[SignManager shareManager]getaccseekey],password,(long)count];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/TopUpSMS?accessKey=%@&payPwd=%@&chargeCount=%li",zhundaoApi,[[ZDDataManager shareManager]getaccseekey],password,(long)count];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         successBlock(obj);
     } fail:^(NSError *error) {
@@ -87,7 +87,7 @@
 }
 - (void)getContent:(ZDSuccessBlock)successBlock
              error:(ZDErrorBlock)errorBlock{
-    NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/selectContent?accessKey=%@",zhundaoMessageApi,[[SignManager shareManager]getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/selectContent?accessKey=%@",zhundaoMessageApi,[[ZDDataManager shareManager]getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         successBlock(obj);
     } fail:^(NSError *error) {

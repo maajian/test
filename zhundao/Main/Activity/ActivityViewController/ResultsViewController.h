@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
-@interface ResultsViewController : BaseViewController<UISearchResultsUpdating>
+#import "ZDBaseVC.h"
+@interface ResultsViewController : ZDBaseVC<UISearchResultsUpdating>
 @property (nonatomic, strong) NSArray *alldata;
 @property(nonatomic,assign)NSInteger signID;
 @property(nonatomic,assign)NSInteger activityID;

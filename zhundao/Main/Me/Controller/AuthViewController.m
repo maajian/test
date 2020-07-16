@@ -216,11 +216,11 @@ static NSString *bottomID  = @"autobottomID";
         [label labelAnimationWithViewlong:self.view];
         return;
     }
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_AuthVM postAuthentication:self.postDic authBlock:^(BOOL isSuccess) {
         [hud hideAnimated:YES];
         if (isSuccess) {
-            MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeText labelText:@"申请成功，我们会在一个工作日内审核" showAnimated:YES UIView:self.view imageName:nil];
+            MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeText labelText:@"申请成功，我们会在一个工作日内审核" showAnimated:YES UIView:self.view imageName:nil];
             [hud1 hideAnimated:YES afterDelay:1.5];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self.navigationController popToRootViewControllerAnimated:YES];

@@ -13,7 +13,7 @@
 #import "ZDDiscoveEditApplyCell.h"
 #import "ZDDiscoveEditApplyHeaderView.h"
 #import "ZDDiscoveEditApplyFooterView.h"
-#import "AJAlertSheet.h"
+#import "ZDAlertSheet.h"
 
 #import "ZDDiscoverCustomApplyModel.h"
 #import "ZDDiscoveEditApplyViewModel.h"
@@ -153,7 +153,7 @@ static NSString *cellID = @"ZDDiscoveEditApplyCell";
 - (void)headerView:(ZDDiscoveEditApplyHeaderView *)headerView didChangeType:(UILabel *)typeLabel {
     [self.view endEditing:YES];
     __weak typeof(self) weakSelf = self;
-    AJAlertSheet *sheet = [[AJAlertSheet alloc] initWithFrame:[UIScreen mainScreen].bounds array:self.viewModel.typeArray title:@"请选择报名类型" isDelete:NO selectBlock:^(NSInteger index) {
+    ZDAlertSheet *sheet = [[ZDAlertSheet alloc] initWithFrame:[UIScreen mainScreen].bounds array:self.viewModel.typeArray title:@"请选择报名类型" isDelete:NO selectBlock:^(NSInteger index) {
         weakSelf.model.typeStr = self.viewModel.typeArray[index];
         weakSelf.model.customType = index;
         weakSelf.title = weakSelf.model.typeStr ;
@@ -218,8 +218,8 @@ static NSString *cellID = @"ZDDiscoveEditApplyCell";
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UpDataViewController *updata = [[UpDataViewController alloc]init];
         updata.isPresent = YES;
-        updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[SignManager shareManager] getaccseekey]];
-        BaseNavigationViewController *nav = [[BaseNavigationViewController alloc] initWithRootViewController:updata];
+        updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[ZDDataManager shareManager] getaccseekey]];
+        ZDBaseNavVC *nav = [[ZDBaseNavVC alloc] initWithRootViewController:updata];
         [self presentViewController:nav animated:YES completion:nil];
     }]];
     [self presentViewController:alert animated:YES completion:nil];

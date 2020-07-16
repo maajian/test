@@ -13,8 +13,8 @@
 //api/PerBase/Withdraw?accessKey={accessKey}&amount={amount}&accountId={accountId}
 
 - (void)Withdraw :(NSString *)amount accountId :(NSInteger)accountId isonGowithBlock:(isonGowithBlock)isonGowithBlock{
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/user/withdraw?token=%@&amount=%@&accountId=%li",zhundaoApi,[[SignManager shareManager] getToken],amount,accountId];
-    AFmanager *manager = [AFmanager manager];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/user/withdraw?token=%@&amount=%@&accountId=%li",zhundaoApi,[[ZDDataManager shareManager] getToken],amount,accountId];
+    ZDNetwork *manager = [ZDNetwork manager];
     [manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:responseObject];
         if ([result[@"errcode"] integerValue]==0) {

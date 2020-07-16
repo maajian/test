@@ -9,8 +9,8 @@
 #import "FaceDetailViewController.h"
 #import "FaceDetailTableViewCell.h"
 #import "FaceDetailViewModel.h"
-#import "AJPickerView.h"
-#import "GZActionSheet.h"
+#import "ZDPickerView.h"
+#import "ZDActionSheet.h"
 @interface FaceDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *tableView;
@@ -21,7 +21,7 @@
 
 @property(nonatomic,strong)NSMutableArray *IDArray;
 
-@property(nonatomic,strong)AJPickerView *pickerView ;
+@property(nonatomic,strong)ZDPickerView *pickerView ;
 
 @property(nonatomic,strong)NSMutableArray *signTitleArray;
 
@@ -137,7 +137,7 @@
     __weak typeof(self) weakSelf = self;
     [self.titleArray removeAllObjects];
     [self.IDArray removeAllObjects];
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [self.VM activityListDataWithBlock:^(NSArray *titleArray, NSArray *IDArray) {
         [hud hideAnimated:YES];
             _titleArray = [titleArray mutableCopy];
@@ -160,7 +160,7 @@
                           @"pageSize":@"1000",
                           @"curPage":@"1",
                           @"ID":acid};
-    MBProgressHUD *hud1 = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud1 = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_VM signListDataWithdic:dic Block:^(NSArray *array) {
         [hud1 hideAnimated:YES];
         if (array.count==0) {
@@ -177,7 +177,7 @@
 - (void)showSignPick:(NSArray *)array
 {
     
-    _pickerView = [[AJPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:array currentStr:nil backBlock:^(NSString *str) {
+    _pickerView = [[ZDPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:array currentStr:nil backBlock:^(NSString *str) {
         NSString *idstr = [_signIDArray objectAtIndex:[_signTitleArray indexOfObject:str]];
         [self bindSignWithStr:idstr];
     }];
@@ -187,7 +187,7 @@
 
 - (void)showActivityPick:(NSArray *)array
 {
-    _pickerView = [[AJPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:array currentStr:nil backBlock:^(NSString *str) {
+    _pickerView = [[ZDPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:array currentStr:nil backBlock:^(NSString *str) {
         [self signWithStr:str];
     }];
     [self.view addSubview:_pickerView];
@@ -198,7 +198,7 @@
 
 - (void)bindSignWithStr:(NSString *)str
 {
-    [[SignManager shareManager]showAlertWithTitle:@"同步将消耗一定时间" WithMessage:@"是否继续" WithTitleOne:@"取消" WithActionOne:^(TYAlertAction *action1) {
+    [[ZDDataManager shareManager]showAlertWithTitle:@"同步将消耗一定时间" WithMessage:@"是否继续" WithTitleOne:@"取消" WithActionOne:^(TYAlertAction *action1) {
         
     } WithAlertStyle:TYAlertActionStyleCancel WithTitleTwo:@"确定" WithActionTwo:^(TYAlertAction *action1) {
         dispatch_source_t timer= dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(0, 0));
@@ -224,12 +224,12 @@
         
         [self.view addSubview:self.progressLabel];
         [self.view addSubview:self.progressView];
-        MBProgressHUD *hud2 = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+        MBProgressHUD *hud2 = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
         hud2.label.text = @"绑定中...";
         [self.VM BindDeviceWithID:str deviceKey:_model.deviceKey bindBlock:^(BOOL isSuccess) {
             [hud2 hideAnimated:YES];
             if (isSuccess) {
-                MBProgressHUD *hud3 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"绑定成功" showAnimated:YES UIView:self
+                MBProgressHUD *hud3 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"绑定成功" showAnimated:YES UIView:self
                                        .view imageName:@"签到打勾"];
                 [hud3 hideAnimated:YES afterDelay:1.5];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -259,7 +259,7 @@
 - (void)showPost  //sheet显示
 {
     NSArray *array = @[@"全部同步"];
-    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:5 andShowCancel:YES];
+    ZDActionSheet *sheet = [[ZDActionSheet alloc]initWithTitleArray:array WithRedIndex:5 andShowCancel:YES];
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){

@@ -13,7 +13,7 @@
 //api/PerBase/GetCreditCards?accessKey={accessKey}
 
 - (void)GetCreditCards :(allAccountBlock)allAccountBlock{
-    NSString *url = [NSString stringWithFormat:@"%@api/PerBase/GetCreditCards?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *url = [NSString stringWithFormat:@"%@api/PerBase/GetCreditCards?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSLog( @"dic = %@",result );
@@ -38,7 +38,7 @@
 
 //api/PerBase/DeleteCreadCard/{id}?accessKey={accessKey}
 - (void)deleteCreadCard :(NSInteger)ID successBlock:(ZDSuccessBlock)successBlock{
-    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/DeleteCreadCard/%li?accessKey=%@",zhundaoApi,ID,[[SignManager shareManager]getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/DeleteCreadCard/%li?accessKey=%@",zhundaoApi,ID,[[ZDDataManager shareManager]getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         successBlock(dic);

@@ -6,7 +6,7 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 @protocol AllAccountDelegate <NSObject>
 
@@ -14,7 +14,7 @@
 
 @end
 
-@interface AllAccountViewController : BaseViewController
+@interface AllAccountViewController : ZDBaseVC
 
 @property(nonatomic,weak) id<AllAccountDelegate> AllAccountDelegate;
 

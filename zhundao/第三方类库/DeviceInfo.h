@@ -12,6 +12,6 @@
 @interface DeviceInfo : NSObject
 
 @property(retain) MyPeripheral *myPeripheral;
-//@property(retain) ViewController *mainViewController;
+//@property(retain) ViewController *ZDMainViewController;
 
 @end

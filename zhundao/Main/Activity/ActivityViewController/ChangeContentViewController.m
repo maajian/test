@@ -70,13 +70,13 @@
 #pragma mark --- 确定
 - (void)sureAction{
     MessageContentViewModel *ViewModel = [[MessageContentViewModel alloc]init];
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [ViewModel addContent:textView.text ID:_esid successBlock:^(id responseObject) {
         [hud hideAnimated:YES];
         [self.navigationController popViewControllerAnimated:YES];
     } error:^(NSError *error) {
         [hud hideAnimated:YES];
-        [[SignManager shareManager]showNotHaveNet:self.view];
+        [[ZDDataManager shareManager]showNotHaveNet:self.view];
     }];
 }
 

@@ -131,11 +131,11 @@
     if (indexPath.row ==0) {
         [BDImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
             if (image) {
-                MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+                MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
                 [NewOrEditMV changeToNetImage:image block:^(NSString *str) {
                     _imageView.image = image;
                     [hud hideAnimated:YES];
-                    MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"上传成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+                    MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"上传成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
                     [hud1 hideAnimated:YES afterDelay:1.5];
                     NSDictionary *dic = @{@"HeadImgurl":str};
                     [_viewModel UpdateUserInfo:dic successBlock:^(id responseObject) {

@@ -15,7 +15,7 @@
 - (void)UpdateUserInfo :(NSDictionary *)dic
           successBlock :(ZDSuccessBlock)successBlock
             errorBlock : (ZDErrorBlock)errorBlock {
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/user/updateUser?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/user/updateUser?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
         successBlock(obj);
     } fail:^(NSError *error) {
@@ -25,7 +25,7 @@
 
 - (void)getUserInfo:(ZDSuccessBlock)successBlock
         errorBlock : (ZDErrorBlock)errorBlock{
-    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         successBlock(obj);
     } fail:^(NSError *error) {

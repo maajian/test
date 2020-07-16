@@ -6,8 +6,8 @@
 //  Copyright © 2016年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface editViewController : BaseViewController
+@interface editViewController : ZDBaseVC
 @property(nonatomic,strong)NSString *urlString;
 @end

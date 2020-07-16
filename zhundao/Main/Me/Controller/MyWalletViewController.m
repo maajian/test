@@ -14,7 +14,7 @@
 #import "DetailWithDrawViewController.h"
 #import "IsOnGowithViewController.h"
 #import "AuthViewController.h"
-#import "AJAlertSheet.h"
+#import "ZDAlertSheet.h"
 #import "PasswordViewController.h"
 #import "payVerifyViewController.h"
 @interface MyWalletViewController ()<myWalletDelegate>{
@@ -215,12 +215,12 @@
         isPassWord = YES;
     }
     if (isPassWord) {
-        AJAlertSheet *sheet1 = [[AJAlertSheet alloc]initWithFrame:[UIScreen mainScreen].bounds array:@[@"修改支付密码",@"找回支付密码"] title:nil isDelete:NO selectBlock:^(NSInteger index) {
+        ZDAlertSheet *sheet1 = [[ZDAlertSheet alloc]initWithFrame:[UIScreen mainScreen].bounds array:@[@"修改支付密码",@"找回支付密码"] title:nil isDelete:NO selectBlock:^(NSInteger index) {
             if (index ==0) {
                 
-                ZDWebViewController *web = [[ZDWebViewController alloc] init];
+                ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
                 web.webTitle = @"修改支付密码";
-                web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/UpdatePwd?token=%@",[[SignManager shareManager] getToken]];
+                web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/UpdatePwd?token=%@",[[ZDDataManager shareManager] getToken]];
                 [self setHidesBottomBarWhenPushed:YES];
                 [self.navigationController pushViewController:web animated:YES];
                 
@@ -231,7 +231,7 @@
         [self.view addSubview:sheet1];
         [sheet1 fadeIn];
     }else{
-        AJAlertSheet *sheet1 = [[AJAlertSheet alloc]initWithFrame:[UIScreen mainScreen].bounds array:@[@"设置支付密码"] title:@"未设置支付密码，请先设置支付密码" isDelete:NO selectBlock:^(NSInteger index) {
+        ZDAlertSheet *sheet1 = [[ZDAlertSheet alloc]initWithFrame:[UIScreen mainScreen].bounds array:@[@"设置支付密码"] title:@"未设置支付密码，请先设置支付密码" isDelete:NO selectBlock:^(NSInteger index) {
             [self pushCtr];
         }];
         [self.view addSubview:sheet1];
@@ -241,9 +241,9 @@
 }
 
 - (void)pushCtr{
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.webTitle = @"找回支付密码";
-    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/GetPassWord?token=%@",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/GetPassWord?token=%@",[[ZDDataManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
 }
@@ -252,7 +252,7 @@
 - (void)rightNav
 {
     detailMoneyViewController *detailCtrl = [[detailMoneyViewController alloc]init];
-    detailCtrl.urlString = [NSString stringWithFormat:@"%@Activity/WalletLog?accesskey=%@",zhundaoH5Api,[[SignManager shareManager] getaccseekey]];
+    detailCtrl.urlString = [NSString stringWithFormat:@"%@Activity/WalletLog?accesskey=%@",zhundaoH5Api,[[ZDDataManager shareManager] getaccseekey]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:detailCtrl animated:YES];
 }

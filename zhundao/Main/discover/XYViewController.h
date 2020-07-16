@@ -6,12 +6,12 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 @protocol XYdelegate <NSObject>
 
 - (void)backWithX :(NSString * )offsetx y :(NSString *)offsety;
 @end
 
-@interface XYViewController : BaseViewController
+@interface XYViewController : ZDBaseVC
 @property(nonatomic,weak) id<XYdelegate> delegate ;
 @end

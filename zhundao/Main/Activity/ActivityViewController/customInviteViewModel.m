@@ -7,13 +7,13 @@
 //
 
 #import "customInviteViewModel.h"
-#import "priviteInviteViewModel.h"
-#import "ShowViewModel.h"
+#import "ZDDiscoverPriviteInviteViewModel.h"
+#import "ZDDiscoverShowViewModel.h"
 @interface customInviteViewModel()
 
-@property(nonatomic,strong)priviteInviteViewModel *viewModel;
+@property(nonatomic,strong)ZDDiscoverPriviteInviteViewModel *viewModel;
 
-@property(nonatomic,strong)ShowViewModel *showViewModel;
+@property(nonatomic,strong)ZDDiscoverShowViewModel *showViewModel;
 
 @end
 
@@ -21,8 +21,8 @@
 
 - (instancetype)init{
     if (self = [super init]) {
-        _viewModel = [[priviteInviteViewModel alloc]init];
-        _showViewModel = [[ShowViewModel alloc]init];
+        _viewModel = [[ZDDiscoverPriviteInviteViewModel alloc]init];
+        _showViewModel = [[ZDDiscoverShowViewModel alloc]init];
     }
     return self;
 }

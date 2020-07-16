@@ -115,7 +115,7 @@
 
 - (void)save{
     NSDictionary *sexDic = @{@"sex":@(_Sex)};
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"正在加载";
     __weak typeof(self) weakSelf = self;
     [_viewModel UpdateUserInfo:sexDic successBlock:^(id responseObject) {

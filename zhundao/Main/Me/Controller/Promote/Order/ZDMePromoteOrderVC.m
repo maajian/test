@@ -70,7 +70,7 @@
     [self.viewModel getOrderSuccess:^{
         [weakSelf.tableView reloadData];
     } failure:^{
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDDataManager shareManager] showNotHaveNet:self.view];
     }];
 }
 

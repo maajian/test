@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface CodeViewController : BaseViewController
+@interface CodeViewController : ZDBaseVC
 @property(nonatomic,strong)NSString *titlestr;
 @property(nonatomic,strong)NSString *imagestr ;
 @property(nonatomic,strong)NSString *labelStr ;

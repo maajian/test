@@ -6,9 +6,9 @@
 //  Copyright © 2016年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 #import <WebKit/WebKit.h>
-@interface WebViewController : BaseViewController
+@interface WebViewController : ZDBaseVC
 
 @property(nonatomic,strong)NSString *urlString;
 

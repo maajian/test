@@ -21,7 +21,7 @@
 // 获取自定义报名项列表
 - (void)getCustomApplyList:(kZDCommonSucc)success fail:(kZDCommonFail)fail {
     [_dataArray removeAllObjects];
-    NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/getActivityOptionList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/getActivityOptionList?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     NSMutableArray *hiddenArray = [NSMutableArray array];
     NSMutableArray *showArray = [NSMutableArray array];
     __weak typeof(self) weakSelf = self;
@@ -62,7 +62,7 @@
 
 // 隐藏显示报名项
 - (void)hideOrShowList:(BOOL)hidden ID:(NSInteger)ID success:(kZDCommonSucc)success fail:(kZDCommonFail)fail {
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/updateActivityOption?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/updateActivityOption?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     NSDictionary *dic = @{@"hidden" : hidden ? @(1): @(0),
                           @"id" : @(ID)};
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];

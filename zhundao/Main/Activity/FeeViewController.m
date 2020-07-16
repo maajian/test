@@ -196,7 +196,7 @@
             }
             else
             {
-                [[SignManager shareManager]showNotHaveNet:self.view];
+                [[ZDDataManager shareManager]showNotHaveNet:self.view];
                 [self.view endEditing:YES];
             }
             [self.datadic removeAllObjects];
@@ -350,7 +350,7 @@
                 }
                 else
                 {
-                    [[SignManager shareManager]showNotHaveNet:self.view];
+                    [[ZDDataManager shareManager]showNotHaveNet:self.view];
                 }
                 [self.datadic removeAllObjects];
             };

@@ -81,7 +81,7 @@
 - (void)netWork
 {
     indicator = [[JQIndicatorView alloc]showWithView:self.view];
-    NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContact?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContact?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     ContactMV *mv = [[ ContactMV alloc]init];
     [mv createSignList];   //创建数据库表
     [mv netWorkWithStr:str]; //网络请求
@@ -337,7 +337,7 @@
     {
         if (isDelete) {
             if (_searchController.active) {
-                NSString *str = [NSString stringWithFormat:@"%@api/Contact/DeleteContact/%li?accessKey=%@",zhundaoApi,(long)cell.model.ID,[[SignManager shareManager] getaccseekey]];
+                NSString *str = [NSString stringWithFormat:@"%@api/Contact/DeleteContact/%li?accessKey=%@",zhundaoApi,(long)cell.model.ID,[[ZDDataManager shareManager] getaccseekey]];
                 [mv deleteDataHaveNetWithStr:str];
                 [self netWork];
             }else{
@@ -400,7 +400,7 @@
 }
 - (void)deleteDataWithCell :(ContactTableViewCell *)cell
 {
-    NSString *str = [NSString stringWithFormat:@"%@api/Contact/DeleteContact/%li?accessKey=%@",zhundaoApi,(long)cell.model.ID,[[SignManager shareManager] getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/Contact/DeleteContact/%li?accessKey=%@",zhundaoApi,(long)cell.model.ID,[[ZDDataManager shareManager] getaccseekey]];
     ContactMV *mv = [[ContactMV alloc]init];
     _allCount = _allCount-1;
     _searchController.searchBar.placeholder = [NSString stringWithFormat:@"搜索%li位联系人",(long)_allCount];

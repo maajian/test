@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^deleteBlock) (BOOL isDelete);
-@interface GroupViewController : BaseViewController
+@interface GroupViewController : ZDBaseVC
 @property(nonatomic,copy)deleteBlock deleteBlock;
 
 @end

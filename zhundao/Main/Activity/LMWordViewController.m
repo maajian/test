@@ -537,7 +537,7 @@
     [self.textView resignFirstResponder];
     [self.textView scrollRangeToVisible:_lastSelectedRange];
     NSString *urlStr = [NSString stringWithFormat:@"%@/OAuth/UploadFile",zhundaoH5Api];
-    MBProgressHUD *hud1 = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud1 = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     ZDNetWorkManager.shareHTTPSessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",
                                                          @"text/html",
                                                          @"image/jpeg",
@@ -557,7 +557,7 @@
     } succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj);
         [hud1 hideAnimated:YES];
-        MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud hideAnimated:YES afterDelay:1];
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

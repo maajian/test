@@ -84,7 +84,7 @@
 
 
 - (void)addADMark :(NSString *)adMark personID :(NSInteger)personID UserName :(NSString *)UserName Mobile :(NSString *)Mobile markBlock:(markBlock)markBlock{
-    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/UpdateActivityList?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/UpdateActivityList?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     NSDictionary *dic = @{@"UserName" : UserName,
                           @"Mobile" : Mobile,
                           @"ID" : @(personID),

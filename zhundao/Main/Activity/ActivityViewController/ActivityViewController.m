@@ -20,7 +20,7 @@
 #import <UShareUI/UShareUI.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import "WXApi.h"
-#import "PostSign.h"
+#import "ZDPostSign.h"
 #import "oneActivityViewController.h"
 #import "postActivityViewController.h"
 #import "ActivityViewModel.h"
@@ -117,7 +117,7 @@
         case ReachableViaWWAN:
         case ReachableViaWiFi:
             // 使用3G网
-            [[PostSign alloc]postWithstr:@"signList"];
+            [[ZDPostSign alloc]postWithstr:@"signList"];
             [self loadData];
             break;
     }
@@ -167,7 +167,7 @@
                     [label  labelAnimationWithViewlong:weakSelf.view];
                 }
             } error:^(NSError *error) {
-                [[SignManager shareManager] showNotHaveNet:weakSelf.view];
+                [[ZDDataManager shareManager] showNotHaveNet:weakSelf.view];
             }];
         } else {
             [self gotoPost];
@@ -194,8 +194,8 @@
     xiala += 1;
     [self savePage];
     NSString *xialaStr = [NSString stringWithFormat:@"%li",(long)xiala];
-    NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    AFHTTPSessionManager *manager = [AFmanager shareManager];
+    NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
+    AFHTTPSessionManager *manager = [ZDNetwork shareManager];
     NSDictionary *dic = @{@"Type":@"0",
                           @"pageSize":@"10",
                           @"pageIndex":xialaStr};
@@ -208,7 +208,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self.tableview.mj_header endRefreshing];
         self.tableview.mj_footer.state = MJRefreshStateIdle;
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDDataManager shareManager] showNotHaveNet:self.view];
     }];
 }
 
@@ -216,8 +216,8 @@
 - (void)loadData {
     xiala=1;
     [self savePage];
-    NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    AFmanager *manager = [AFmanager shareManager];
+    NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
+    ZDNetwork *manager = [ZDNetwork shareManager];
     NSDictionary *dic = @{@"Type":@"0",
                           @"pageSize":@"10",
                           @"pageIndex":@"1"};
@@ -229,7 +229,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self.tableview.mj_header endRefreshing];
         self.tableview.mj_footer.state = MJRefreshStateIdle;
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDDataManager shareManager] showNotHaveNet:self.view];
     }];
 }
 
@@ -305,14 +305,14 @@
 {
      [self getMycell:tap];
 
-    [[SignManager shareManager]shareImagewithModel:mycell.model withCTR:self Withtype:5 withImage:nil];
+    [[ZDDataManager shareManager]shareImagewithModel:mycell.model withCTR:self Withtype:5 withImage:nil];
 }
 - (void)pushActivity:(UITapGestureRecognizer *)tap
 {
      [self getMycell:tap];
     detailActivityViewController *detail = [[detailActivityViewController alloc]init];
     detail.model = mycell.model;
-    detail.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/event/%li?accesskey=%@",(long)mycell.model.ID,[[SignManager shareManager] getaccseekey]];
+    detail.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/event/%li?accesskey=%@",(long)mycell.model.ID,[[ZDDataManager shareManager] getaccseekey]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:detail animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
@@ -360,7 +360,7 @@
 {
     [self getMycell:tap];
     if (mycell.model.HasJoinNum==0) {
-        [[SignManager shareManager]showAlertWithTitle:@"暂无人参加,请下拉刷新数据" WithMessage:nil WithCTR:self];
+        [[ZDDataManager shareManager]showAlertWithTitle:@"暂无人参加,请下拉刷新数据" WithMessage:nil WithCTR:self];
     }
     else
     {

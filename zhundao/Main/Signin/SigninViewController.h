@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
-@interface SigninViewController : BaseViewController
+#import "ZDBaseVC.h"
+@interface SigninViewController : ZDBaseVC
 {
 
 }

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CustomModel.h"
 typedef void(^backBlock) (NSDictionary *dic);
-@interface ChangeInputViewController : BaseViewController
+@interface ChangeInputViewController : ZDBaseVC
 @property(nonatomic,assign)CustomModel *model;
 //@property(nonatomic,assign)NSInteger inputID;
 //@property(nonatomic,assign)NSInteger inputtype;

@@ -225,7 +225,7 @@
 - (void)signListData
 {
     //    POST api/CheckIn/PostCheckIn?accessKey={accessKey}
-    NSString *accesskey = [[SignManager shareManager]getaccseekey];
+    NSString *accesskey = [[ZDDataManager shareManager]getaccseekey];
     NSString *listUrl =[NSString stringWithFormat:@"%@api/CheckIn/PostCheckIn?accessKey=%@",zhundaoApi,accesskey];
     NSDictionary *dic = @{@"Type":@"1",
                           @"pageSize":@"1000",
@@ -273,7 +273,7 @@
 - (void)activityListData
 {
     //    POST api/PerActivity/PostActivityList?accessKey={accessKey}
-    NSString *accesskey = [[SignManager shareManager]getaccseekey];
+    NSString *accesskey = [[ZDDataManager shareManager]getaccseekey];
     
     NSString *listUrl =[NSString stringWithFormat:@"%@api/PerActivity/PostActivityList?accessKey=%@",zhundaoApi,accesskey];
     NSDictionary *dic = @{@"Type":@"1",
@@ -338,7 +338,7 @@
 }
 
 - (void)updataData
-{    NSString *accesskey = [[SignManager shareManager]getaccseekey];
+{    NSString *accesskey = [[ZDDataManager shareManager]getaccseekey];
     NSString *uptataUrl=[NSString stringWithFormat:@"%@api/Game/UpdateBeacon?accessKey=%@",zhundaoApi,accesskey];
     if (flag==1) {
         updatadic = @{
@@ -368,15 +368,15 @@
         [ _tableview  reloadData];
     }
     
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [ZD_NetWorkM postDataWithMethod:uptataUrl parameters:updatadic succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:self.view imageName:@"checked"];
+        MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:self.view imageName:@"checked"];
         [hud1 hideAnimated:YES afterDelay:1];
     } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         [hud hideAnimated:YES];
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeText labelText:@"修改失败" showAnimated:YES UIView:self.view imageName:nil];
+        MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeText labelText:@"修改失败" showAnimated:YES UIView:self.view imageName:nil];
         [hud1 hideAnimated:YES afterDelay:1];
     }];
 }
@@ -455,9 +455,9 @@
 }
 - (void)netWorkWithstringValue:(NSString *)stringValue
 {
-    NSString *acckey = [[SignManager shareManager]getaccseekey];
+    NSString *acckey = [[ZDDataManager shareManager]getaccseekey];
     NSString *str = [NSString stringWithFormat:@"%@api/Game/UpdateBeacon?accessKey=%@&deviceId=%@&type=1",zhundaoApi,acckey,stringValue];
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         [hud hideAnimated:YES];
@@ -471,7 +471,7 @@
 {
     
     if (isSuccess) {
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:labelText showAnimated:YES UIView:self.view imageName:imageName];
+        MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:labelText showAnimated:YES UIView:self.view imageName:imageName];
          _jiebangBlock(1);
         [hud1 showAnimated:YES];
         [hud1 hideAnimated:YES afterDelay:1];
@@ -480,7 +480,7 @@
     }
     else
     {
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeText labelText:labelText showAnimated:YES UIView:self.view imageName:nil];
+        MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeText labelText:labelText showAnimated:YES UIView:self.view imageName:nil];
         [hud1 showAnimated: YES];
         [hud1 hideAnimated:YES afterDelay:1];
         [self willPop];

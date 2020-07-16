@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
-@interface ListViewController : BaseViewController
+#import "ZDBaseVC.h"
+@interface ListViewController : ZDBaseVC
 /*! 活动名称 */
 @property(nonatomic,copy)NSString *listName;
 /*! 活动ID */

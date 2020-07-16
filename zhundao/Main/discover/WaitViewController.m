@@ -9,7 +9,7 @@
 #import "WaitViewController.h"
 #import "muliSignViewController.h"
 #import "LoadallsignModel.h"
-#import "GZActionSheet.h"
+#import "ZDActionSheet.h"
 #import "muliPostData.h"
 static NSString *reUseID = @"moreSignReuseID";
 @interface WaitViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -256,9 +256,9 @@ static NSString *reUseID = @"moreSignReuseID";
 - (void)savaDataWithResult :(NSDictionary *)dic   indicator :(BOOL )isShow   //保存数据进数据库
 {
     NSArray *array1 = dic[@"Data"];
-    if ([[SignManager shareManager].dataBase open]) {
+    if ([[ZDDataManager shareManager].dataBase open]) {
         [self transactionwithArray1:array1];
-        [[SignManager shareManager].dataBase close];
+        [[ZDDataManager shareManager].dataBase close];
     }
     if (isShow) {
         [indicator stopAnimating];
@@ -267,18 +267,18 @@ static NSString *reUseID = @"moreSignReuseID";
 }
 - (void)showHudWitharray :(NSArray *)array1  //数据下载成功hud
 {
-    MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:[NSString stringWithFormat:@"已下载%lu人到本地",(unsigned long)array1.count] showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+    MBProgressHUD *hud = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:[NSString stringWithFormat:@"已下载%lu人到本地",(unsigned long)array1.count] showAnimated:YES UIView:self.view imageName:@"签到打勾"];
     [hud hideAnimated:YES afterDelay:1];
 }
 -(void)transactionwithArray1 :(NSArray *)array1 {   //事务封装插入
     // 开启事务
-    [[SignManager shareManager].dataBase beginTransaction];
+    [[ZDDataManager shareManager].dataBase beginTransaction];
     BOOL isRollBack = NO;
     @try {
         for (NSDictionary *acdic in array1) {
             LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];
             NSString *insertSql =[NSString stringWithFormat:@"replace INTO muliSignList(vcode, signID,Status,AdminRemark,FeeName,Fee,phone,trueName)VALUES('%@',%li,%li,'%@','%@',%f,'%@','%@')",model.VCode,(long)self.signID,(long)model.Status,model.AdminRemark,model.FeeName,model.Fee,model.Mobile,model.TrueName];
-            BOOL res = [[SignManager shareManager].dataBase executeUpdate:insertSql];
+            BOOL res = [[ZDDataManager shareManager].dataBase executeUpdate:insertSql];
             if (res) {
                 NSLog(@"数据表插入成功");
             }
@@ -291,19 +291,19 @@ static NSString *reUseID = @"moreSignReuseID";
     @catch (NSException *exception) {
         isRollBack = YES;
         // 事务回退
-        [[SignManager shareManager].dataBase rollback];
+        [[ZDDataManager shareManager].dataBase rollback];
     }
     @finally {
         if (!isRollBack) {
             //事务提交
-            [[SignManager shareManager].dataBase commit];
+            [[ZDDataManager shareManager].dataBase commit];
         }
     }
 }
 
 - (void)createDataTable  //创建数据表
 {
-    SignManager *datamanager = [SignManager shareManager];
+    ZDDataManager *datamanager = [ZDDataManager shareManager];
     [datamanager createDatabase];
     if ([datamanager.dataBase open]) {
 //                    NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
@@ -326,7 +326,7 @@ static NSString *reUseID = @"moreSignReuseID";
 }
 - (void)numberCount
 {
-    SignManager *datamanager = [SignManager shareManager];
+    ZDDataManager *datamanager = [ZDDataManager shareManager];
     [datamanager createDatabase];
     if ([datamanager.dataBase open]) {
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM muliSignList WHERE signID = %li",(long)self.signID];
@@ -589,7 +589,7 @@ static NSString *reUseID = @"moreSignReuseID";
 - (void)showPost  //sheet显示
 {
     NSArray *array = @[@"同步离线人员名单"];
-    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
+    ZDActionSheet *sheet = [[ZDActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
@@ -607,7 +607,7 @@ static NSString *reUseID = @"moreSignReuseID";
 {
      [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];
 }
-#pragma mark  GZActionSheet action 响应事件
+#pragma mark  ZDActionSheet action 响应事件
 - (void)postData // 发送离线数据
 {
     muliPostData *muli = [[muliPostData alloc]init];
@@ -615,13 +615,13 @@ static NSString *reUseID = @"moreSignReuseID";
     muli.updataBlock = ^(BOOL isSuccess)
     {
         if (isSuccess) {
-            MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"上传成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"上传成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
             [hud hideAnimated:YES afterDelay:2];
             [self netWorkWithIndicator:NO];
         }
         else
         {
-            [[SignManager shareManager]showNotHaveNet:self.view];
+            [[ZDDataManager shareManager]showNotHaveNet:self.view];
         }
     };
 }

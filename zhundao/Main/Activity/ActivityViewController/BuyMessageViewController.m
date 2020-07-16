@@ -251,13 +251,13 @@
 #pragma mark --- showPayViewDelegate
 - (void)verify:(NSString *)password{
     GroupSendViewModel *VM = [[GroupSendViewModel alloc]init];
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"充值中";
     [VM topUpSMS:password count:_currentItem successBlock:^(id responseObject) {
         [hud hideAnimated:YES];
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
         if ([dic[@"Res"]integerValue ]==0) {
-            MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"充值成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"充值成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
             [hud1 hideAnimated:YES afterDelay:1.5];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self.navigationController popViewControllerAnimated:YES];
@@ -280,7 +280,7 @@
         }
     } error:^(NSError *error) {
         [hud hideAnimated:YES];
-        [[SignManager shareManager]showNotHaveNet:self.view];
+        [[ZDDataManager shareManager]showNotHaveNet:self.view];
     }];
 }
 

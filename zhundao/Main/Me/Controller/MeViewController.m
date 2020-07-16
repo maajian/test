@@ -17,7 +17,7 @@
 
 #import "ZDMeViewModel.h"
 
-#import "LoginViewController.h"
+#import "ZDLoginVC.h"
 #import "MyWalletViewController.h"
 #import "ContactViewController.h"
 #import "UIImageView+LBBlurredImage.h"
@@ -106,7 +106,7 @@
 
 #pragma mark --- Network
 - (void)getuser {
-    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         if ([obj[@"errcode"] integerValue] == 0) {
             [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
@@ -117,7 +117,7 @@
             [self.tableView reloadData];
         }
     } fail:^(NSError *error) {
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDDataManager shareManager] showNotHaveNet:self.view];
     }];
 }
 - (void)networkForPromote {
@@ -228,7 +228,7 @@
 #pragma mark --- ZDMeHeaderCellDelegate
 - (void)headerCell:(ZDMeHeaderCell *)headerCell didTapVIPLabel:(UILabel *)label {
     UpDataViewController *updata = [[UpDataViewController alloc]init];
-    updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[SignManager shareManager] getaccseekey]];
+    updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[ZDDataManager shareManager] getaccseekey]];
     [self.navigationController pushViewController:updata animated:YES];
 }
 
@@ -251,10 +251,10 @@
 }
 
 - (void)pushChangeInfo{
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.webTitle = @"个人信息";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"%@/Activity/UserEdit?token=%@",zhundaoH5Api,[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"%@/Activity/UserEdit?token=%@",zhundaoH5Api,[[ZDDataManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
@@ -269,47 +269,47 @@
 }
 - (void)showsuggest
 {
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.webTitle = @"我的工单";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Extra/TicketMain?token=%@",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Extra/TicketMain?token=%@",[[ZDDataManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
 }
 - (void)showVoucher {
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.webTitle = @"我的代金券";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/coupon/index.html#/mycoupon?token=%@",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/coupon/index.html#/mycoupon?token=%@",[[ZDDataManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
 }
 - (void)showHonor {
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.webTitle = @"我的勋章";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/account/index.html#!/nameplate?token=%@",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/account/index.html#!/nameplate?token=%@",[[ZDDataManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
 }
 - (void)showZhundaoBi {
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.webTitle = @"我的准币";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/shop/index.html#!/ZDWallet?token=%@",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/shop/index.html#!/ZDWallet?token=%@",[[ZDDataManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
 }
 
 - (void)pushWallet {
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.webTitle = @"我的钱包";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/MyWallet?token=%@",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/MyWallet?token=%@",[[ZDDataManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];

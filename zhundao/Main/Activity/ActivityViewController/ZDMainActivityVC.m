@@ -247,7 +247,7 @@
                     [label  labelAnimationWithViewlong:weakSelf.view];
                 }
             } error:^(NSError *error) {
-                [[SignManager shareManager] showNotHaveNet:weakSelf.view];
+                [[ZDDataManager shareManager] showNotHaveNet:weakSelf.view];
             }];
         } else {
             [self gotoPost];
@@ -260,7 +260,7 @@
 }
 
 - (void)getEmail {
-    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary  *userdic = data[@"data"];

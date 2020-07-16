@@ -6,11 +6,11 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 typedef void(^isLoadBlock)(BOOL isload);
 
-@interface DetailNoticeViewController : BaseViewController
+@interface DetailNoticeViewController : ZDBaseVC
 /*! 内容 */
 @property(nonatomic,copy) NSString   *detail ;
 /*! 题目 */

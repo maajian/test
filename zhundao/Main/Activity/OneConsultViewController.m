@@ -175,12 +175,12 @@
 {
     [self.view endEditing:YES];
     __weak typeof(self) weakSelf = self;
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     if ([_answerStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length>0) {
         [self.oneVM postData:_model.ID answer:_answerStr IsRecommend:_isCommand postBlock:^(BOOL isSuccess) {
             [hud hideAnimated:YES];
             if (isSuccess) {
-                MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"发送成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+                MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"发送成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
                 [hud1 hideAnimated:YES afterDelay:1.5];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [weakSelf.navigationController popViewControllerAnimated:YES];

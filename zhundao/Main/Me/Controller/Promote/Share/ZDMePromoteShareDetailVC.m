@@ -49,7 +49,7 @@
 
 #pragma mark --- action
 - (void)shareAction {
-    [[SignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_imageUrl]]] webpageUrl:self.shareUrl  withCTR:self Withtype:5];
+    [[ZDDataManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_imageUrl]]] webpageUrl:self.shareUrl  withCTR:self Withtype:5];
 }
 
 @end

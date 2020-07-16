@@ -568,7 +568,7 @@
         }
         [_bigImageView sd_setImageWithURL:[NSURL URLWithString:_bigImageStr] placeholderImage:[UIImage imageNamed:@"logogray"]];
     } error:^(NSError *error) {
-        [[SignManager shareManager]showNotHaveNet:self];
+        [[ZDDataManager shareManager]showNotHaveNet:self];
     }];
 }
 

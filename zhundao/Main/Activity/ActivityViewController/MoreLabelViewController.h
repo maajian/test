@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^strBlock) (NSString *backStr);
-@interface MoreLabelViewController : BaseViewController
+@interface MoreLabelViewController : ZDBaseVC
 @property(nonatomic,copy)strBlock strBlock;
 @property(nonatomic,assign)BOOL isMust;
 @property(nonatomic,strong)NSString *textfTitle;

@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^BackBlock) (NSDictionary *dic,NSString *smallStr,BOOL isPost);
-@interface MoreChioceViewController : BaseViewController
+@interface MoreChioceViewController : ZDBaseVC
 
 @property(nonatomic,strong)NSArray *optionsArray;
 

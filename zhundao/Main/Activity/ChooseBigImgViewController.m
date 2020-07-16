@@ -102,7 +102,7 @@
         __weak typeof(self) weakSelf  = self;
         [BDImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
             if (image) {
-                MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:weakSelf.view];
+                MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:weakSelf.view];
                 [NewOrEditMV changeToNetImage:image block:^(NSString *str) {
                     [hud hideAnimated:YES];
                     ShowPostImageViewController *showPost = [[ShowPostImageViewController alloc]init];

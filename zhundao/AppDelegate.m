@@ -7,13 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "BaseNavigationViewController.h"
-#import "MainViewController.h"
+#import "ZDBaseNavVC.h"
+#import "ZDMainViewController.h"
 //#import "ActivityViewController.h"
 #import "WXApi.h"
-#import "LoginViewController.h"
+#import "ZDLoginVC.h"
 #import <UMSocialCore/UMSocialCore.h>
-#import "SendViewController.h"
+#import "ZDSendCodeVC.h"
 #import "UMMobClick/MobClick.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "JPUSHService.h"
@@ -21,7 +21,7 @@
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
-NSString * const kdbManagerVersion = @"DBManagerVersion";
+NSString * const kZDDBManagerVersion = @"ZDDBManagerVersion";
 #define kYoumengAPPKEY @"58b3c7a275ca352ea8000c3a"
 #define KMapkey @"ec66cd9c1c0675a526822e333504cad7"
 @class AFURLResponseSerialization;
@@ -44,7 +44,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     [self.window makeKeyAndVisible];
     
      [WXApi registerApp:@"wxfe2a9da163481ba9" ];
-    LoginViewController *login = [[LoginViewController alloc]init];
+    ZDLoginVC *login = [[ZDLoginVC alloc]init];
     NSString  *Unionid = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
     NSString *access = [[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
     NSString *mobile = [[NSUserDefaults standardUserDefaults]objectForKey:@"mobile"];
@@ -74,14 +74,14 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
         self.window.rootViewController = login;
     }
     if (access) {
-        MainViewController *tabbar = [[MainViewController alloc]init];
+        ZDMainViewController *tabbar = [[ZDMainViewController alloc]init];
         self.window.rootViewController = tabbar;
     }
     if (Unionid&&[mobile isEqualToString:@"<null>"]) {
         self.window.rootViewController = login;
     }
     if (Unionid&&![mobile isEqualToString:@"<null>"]) {
-        MainViewController *tabbar = [[MainViewController alloc]init];
+        ZDMainViewController *tabbar = [[ZDMainViewController alloc]init];
         self.window.rootViewController = tabbar;
     }
     
@@ -102,24 +102,24 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 #pragma mark -----数据库更新
 - (void)deleteDatabase
 {
-    NSInteger version = [[NSUserDefaults standardUserDefaults] integerForKey:kdbManagerVersion];
+    NSInteger version = [[NSUserDefaults standardUserDefaults] integerForKey:kZDDBManagerVersion];
     if (version != 1) {
-        [[SignManager shareManager] createDatabase];
-        if ([[SignManager shareManager].dataBase open])
+        [[ZDDataManager shareManager] createDatabase];
+        if ([[ZDDataManager shareManager].dataBase open])
         {
             NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
-            [[SignManager shareManager].dataBase executeUpdate:updateSql];
+            [[ZDDataManager shareManager].dataBase executeUpdate:updateSql];
             NSString *updateSql1 = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
-            [[SignManager shareManager].dataBase executeUpdate:updateSql1];
+            [[ZDDataManager shareManager].dataBase executeUpdate:updateSql1];
             NSString *updateSql12 = [NSString stringWithFormat:@"DROP TABLE contact"];
-            [[SignManager shareManager].dataBase executeUpdate:updateSql12];
-            [[SignManager shareManager].dataBase close];
+            [[ZDDataManager shareManager].dataBase executeUpdate:updateSql12];
+            [[ZDDataManager shareManager].dataBase close];
         }
         [self saveDBVersion];
     }
 }
 - (void)saveDBVersion {
-    [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kdbManagerVersion];
+    [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kZDDBManagerVersion];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -266,7 +266,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 - (void)getUserInfo
 {
     
-    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
@@ -281,13 +281,13 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             [[NSUserDefaults standardUserDefaults]synchronize];
             
             [ZD_UserM saveLoginTime];
-            MainViewController *tabbar = [[MainViewController alloc]init];
+            ZDMainViewController *tabbar = [[ZDMainViewController alloc]init];
             AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
             appDelegate.window.rootViewController= tabbar;
         } else {
-            SendViewController *send = [[SendViewController alloc]init];
+            ZDSendCodeVC *send = [[ZDSendCodeVC alloc]init];
             self.window.rootViewController = send;
-            send.Unionid = [[SignManager shareManager] getaccseekey];
+            send.Unionid = [[ZDDataManager shareManager] getaccseekey];
         }
     } fail:^(NSError *error) {
         

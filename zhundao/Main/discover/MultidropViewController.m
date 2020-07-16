@@ -9,7 +9,7 @@
 #import "MultidropViewController.h"
 #import "WaitViewController.h"
 #import "textViewController.h"
-#import "LoginViewController.h"
+#import "ZDLoginVC.h"
 #import "muliPostData.h"
 static NSString *muliID =@"MuliID";
 static NSString *muliPhone =@"muliPhone";
@@ -58,7 +58,7 @@ static NSString *muliData =@"muliData";
 
 - (void)backNav {
     if (self.navigationController.viewControllers.count == 1) {
-        LoginViewController *login = [[LoginViewController alloc]init];
+        ZDLoginVC *login = [[ZDLoginVC alloc]init];
         [UIApplication sharedApplication].delegate.window.rootViewController = login;
     } else {
         [self.navigationController popViewControllerAnimated:YES];
@@ -152,10 +152,10 @@ static NSString *muliData =@"muliData";
     muli.updataBlock = ^(BOOL isSuccess)
     {
         if (isSuccess) [self successPost];
-        else [[SignManager shareManager] showNotHaveNet:self.view];
+        else [[ZDDataManager shareManager] showNotHaveNet:self.view];
     };
     
-    [muli postWithView:self.view isShow:NO acckey:[SignManager shareManager].accesskey];
+    [muli postWithView:self.view isShow:NO acckey:[ZDDataManager shareManager].accesskey];
    
 }
 - (void)successPost
@@ -170,7 +170,7 @@ static NSString *muliData =@"muliData";
         [self showMaskWithTitle:@"请输入密码"];
         return;
     } else {
-        MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+        MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
         NSString *str = [NSString stringWithFormat:@"%@api/PerBase/VerifyCheckInAdmin?checkInId=%@&phone=%@&pwd=%@",zhundaoApi,_IDTextField.text,_phonoTextField.text,_passwordTextField.text];
         str = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
@@ -203,7 +203,7 @@ static NSString *muliData =@"muliData";
     }
     else
     {
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"登录成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"登录成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [self savaUser];
         [self saveDataWithDic:dic[@"Data"]];
@@ -232,7 +232,7 @@ static NSString *muliData =@"muliData";
 {
     if ([[NSUserDefaults standardUserDefaults]objectForKey:muliID]&&[[NSUserDefaults standardUserDefaults]objectForKey:muliPhone]&&[[NSUserDefaults standardUserDefaults]objectForKey:muliPassword]) {
         if ([[[NSUserDefaults standardUserDefaults]objectForKey:muliID] isEqualToString:_IDTextField.text]&&[[[NSUserDefaults standardUserDefaults]objectForKey:muliPhone] isEqualToString:_phonoTextField.text]&&[[[NSUserDefaults standardUserDefaults]objectForKey:muliPassword] isEqualToString:_passwordTextField.text]) {
-            MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"登录成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"登录成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
             [hud1 hideAnimated:YES afterDelay:1.5];
             [self presentMuli];
         }

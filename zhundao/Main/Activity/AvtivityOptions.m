@@ -12,7 +12,7 @@
 
 - (void)networkwithBlock :(netBlock)netBlock
 {
-    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/PostActivityOptions?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/PostActivityOptions?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager]getaccseekey]];
     _block = [netBlock copy];
     NSLog(@"str = %@",str);
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {

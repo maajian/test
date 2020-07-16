@@ -481,7 +481,7 @@
         _personVM.blcok =^(NSInteger isSuccess)
         {
             if (isSuccess==1) {
-                MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"编辑成功" showAnimated:YES UIView:weakSelf.view imageName:@"签到打勾"];
+                MBProgressHUD *hud = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"编辑成功" showAnimated:YES UIView:weakSelf.view imageName:@"签到打勾"];
                 [hud hideAnimated:YES afterDelay:1];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     weakBlock(1);
@@ -495,7 +495,7 @@
             }
             else
             {
-                [[SignManager shareManager]showNotHaveNet:weakSelf.view];
+                [[ZDDataManager shareManager]showNotHaveNet:weakSelf.view];
             }
         };
         

@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^strBlock) (NSString *backStr);
-@interface EditMoreChooseViewController : BaseViewController
+@interface EditMoreChooseViewController : ZDBaseVC
 @property(nonatomic,copy)NSArray *allDataArray ;
 
 @property(nonatomic,copy)NSArray *nowDataArray ;

@@ -6,7 +6,7 @@
 //  Copyright © 2018年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 typedef NS_ENUM(NSInteger, DateType) {
     DateTypeWeek,
@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, ChartType) {
     ChartTypePay, /*! 收入，付款 */
 };
 
-@interface SignUpViewController : BaseViewController
+@interface SignUpViewController : ZDBaseVC
 /*! 活动id */
 @property (nonatomic, assign) NSInteger activityId;
 /*! 图表类型 */

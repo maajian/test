@@ -6,7 +6,7 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 @protocol ChooseBigImgDelegate<NSObject>
 
@@ -14,7 +14,7 @@
 
 @end
 
-@interface ChooseBigImgViewController : BaseViewController
+@interface ChooseBigImgViewController : ZDBaseVC
 
 @property(nonatomic,copy)NSArray *imageArray;
 /*!  选择的图片路径 */

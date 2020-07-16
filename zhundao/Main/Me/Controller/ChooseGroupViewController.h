@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^groupblock) (NSString *groupName,NSInteger groupID);
-@interface ChooseGroupViewController : BaseViewController
+@interface ChooseGroupViewController : ZDBaseVC
 @property(nonatomic,copy)NSString *nameStr ;
 @property(nonatomic,assign)NSInteger personid ;
 @property(nonatomic,copy)groupblock block;

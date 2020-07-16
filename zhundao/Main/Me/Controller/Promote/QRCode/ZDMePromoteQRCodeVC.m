@@ -59,7 +59,7 @@
 
 #pragma mark --- Action
 - (void)shareWechat:(UIImage *)image {
-    [[SignManager shareManager] shareWithTitle:@"准到会员注册" detailTitle:@"新用户可享优惠" thumImage:[UIImage imageNamed:@"120"] webpageUrl:self.urlString withCTR:self Withtype:5];
+    [[ZDDataManager shareManager] shareWithTitle:@"准到会员注册" detailTitle:@"新用户可享优惠" thumImage:[UIImage imageNamed:@"120"] webpageUrl:self.urlString withCTR:self Withtype:5];
 }
 - (void)saveImageWithFrame:(UIImage *)image   //保存到相册
 {

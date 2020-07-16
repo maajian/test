@@ -6,11 +6,11 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 typedef void(^backBlock) (NSInteger backNumber);
 
-@interface moreModalViewController : BaseViewController
+@interface moreModalViewController : ZDBaseVC
 
 @property(nonatomic,copy)backBlock backBlock;
 

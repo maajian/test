@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface customInviteViewController : BaseViewController
+@interface customInviteViewController : ZDBaseVC
 
 /*! 签到二维码字符串 */
 @property(nonatomic,copy)NSString *signCodeStr;

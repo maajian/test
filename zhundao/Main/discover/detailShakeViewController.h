@@ -6,10 +6,10 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^popBolck) (NSDictionary *popdic);
 typedef void(^jiebangBlock)(BOOL  issuccess);
-@interface detailShakeViewController : BaseViewController
+@interface detailShakeViewController : ZDBaseVC
 @property(nonatomic,strong)NSDictionary *dataDic;
 @property(nonatomic,copy)popBolck block;
 @property(nonatomic,strong)NSString *DeviceId;

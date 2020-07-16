@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface oneActivityViewController : BaseViewController
+@interface oneActivityViewController : ZDBaseVC
 @property(nonatomic,assign)NSInteger acID;
 @property(nonatomic,strong)NSString *activityName;
 @end

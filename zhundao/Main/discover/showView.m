@@ -11,10 +11,10 @@
 #import "BigSizeButton.h"
 #import "ColorView.h"
 #import "InviteTextView.h"
-#import "showTextView.h"
+#import "ZDDiscoverShowTextView.h"
 #import "YBPopupMenu.h"
-#import "vcodeImageView.h"
-#import "ShowViewModel.h"
+#import "ZDDiscoverVcodeImageView.h"
+#import "ZDDiscoverShowViewModel.h"
 #import "UIImage+ImageEffects.h"
 #import "UIAlertController+creat.h"
 /*! 按钮的宽度 */
@@ -30,7 +30,7 @@ static const CGFloat bottomViewHeight= 44;
     UIAlertController *alert;
 }
 /*! ViewModel */
-@property(nonatomic,strong)ShowViewModel *viewModel;
+@property(nonatomic,strong)ZDDiscoverShowViewModel *viewModel;
 /*! 底部背景图 */
 @property(nonatomic,strong)UIImageView *imageView;
 /*! 背景图片 */
@@ -91,7 +91,7 @@ static const CGFloat bottomViewHeight= 44;
         NSArray *fixArray =  [self.viewModel writeFixArray:name];
         for (NSDictionary *dic in fixArray) {
             if (dic.count==2) {
-                vcodeImageView *imgView =[[vcodeImageView alloc]init];
+                ZDDiscoverVcodeImageView *imgView =[[ZDDiscoverVcodeImageView alloc]init];
                 [self addSubview:imgView];
                 imgView.frame = CGRectFromString(dic[@"rect"]);
                 imgView.tag = [dic[@"tag"] integerValue];
@@ -112,7 +112,7 @@ static const CGFloat bottomViewHeight= 44;
 }
 
 - (void)createTextWithDic :(NSDictionary *)dic{
-    showTextView *textView = [[showTextView alloc]init];
+    ZDDiscoverShowTextView *textView = [[ZDDiscoverShowTextView alloc]init];
     textView.tag = [dic[@"tag"] integerValue];
     [self confing:textView];
     textView.textColor = kColorA([dic[@"R"]floatValue]*256, [dic[@"G"]floatValue]*256, [dic[@"B"]floatValue]*256, 1);
@@ -161,9 +161,9 @@ static const CGFloat bottomViewHeight= 44;
     return _editView;
 }
 
-- (ShowViewModel *)viewModel{
+- (ZDDiscoverShowViewModel *)viewModel{
     if (!_viewModel) {
-        _viewModel = [[ShowViewModel alloc]init];
+        _viewModel = [[ZDDiscoverShowViewModel alloc]init];
     }
     return  _viewModel;
 }
@@ -299,7 +299,7 @@ static const CGFloat bottomViewHeight= 44;
         case 0:
         case 1:
         {
-            vcodeImageView *imgView =[[vcodeImageView alloc]init];
+            ZDDiscoverVcodeImageView *imgView =[[ZDDiscoverVcodeImageView alloc]init];
             [self addSubview:imgView];
             imgView.tag = index+1000;
             UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
@@ -314,7 +314,7 @@ static const CGFloat bottomViewHeight= 44;
             break;
  
         default:{
-            showTextView *textView = [[showTextView alloc]init];
+            ZDDiscoverShowTextView *textView = [[ZDDiscoverShowTextView alloc]init];
             textView.tag = 1000+index;
             _currentTag = textView.tag;
             [self confing:textView];
@@ -359,14 +359,14 @@ static const CGFloat bottomViewHeight= 44;
 /*! 添加输入框 */
 - (void)addTextF{
     _count+=1;
-    showTextView *textView = [[showTextView alloc]init];
+    ZDDiscoverShowTextView *textView = [[ZDDiscoverShowTextView alloc]init];
     textView.tag = _count+100;
     _currentTag = textView.tag;
     [self confing:textView];
     [self setUpEdit];
 }
 
-- (void)confing:(showTextView *)textView{
+- (void)confing:(ZDDiscoverShowTextView *)textView{
     [self.scaleDic setObject:@(1) forKey:@(textView.tag)];
     [self addSubview:textView];
     [self addGes:textView];
@@ -408,7 +408,7 @@ static const CGFloat bottomViewHeight= 44;
 - (void)sureBtnClick :(NSString *)content color:(UIColor *)selectColor fontsize:(float)fontsize{
     [self showView];
     [self removeEditView];
-    showTextView *textView = [self viewWithTag:_currentTag];
+    ZDDiscoverShowTextView *textView = [self viewWithTag:_currentTag];
     textView.text = content;
     if ([self removeTextView:textView]) {
         return;

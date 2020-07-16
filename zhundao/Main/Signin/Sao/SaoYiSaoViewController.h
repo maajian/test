@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 #import <AVFoundation/AVFoundation.h>
 typedef void(^countBlock)(NSInteger str);
-@interface SaoYiSaoViewController :BaseViewController <AVCaptureMetadataOutputObjectsDelegate>
+@interface SaoYiSaoViewController :ZDBaseVC <AVCaptureMetadataOutputObjectsDelegate>
 {
     int num;
     BOOL upOrdown;

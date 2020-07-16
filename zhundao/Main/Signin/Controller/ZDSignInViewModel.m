@@ -42,7 +42,7 @@
 
 #pragma mark --- network
 - (void)getAllSignListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
-    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     NSDictionary *dic = @{@"Type":@"0",
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
@@ -84,7 +84,7 @@
     }];
 }
 - (void)getOnSignListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
-    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     NSDictionary *dic = @{@"Type":@"1",
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
@@ -126,7 +126,7 @@
     }];
 }
 - (void)getCloseSignListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
-    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
     NSDictionary *dic = @{@"Type":@"2",
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};

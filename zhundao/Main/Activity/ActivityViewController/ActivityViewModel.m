@@ -13,7 +13,7 @@
 /*! 获取当前月的活动个数 */
 //api/PerActivity/GetActivityNumCurMonth?accessKey={accessKey}
 - (void)checkIsCanpost:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock {
-    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/GetActivityNumCurMonth?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/GetActivityNumCurMonth?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager]getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         successBlock(obj);
     } fail:^(NSError *error) {

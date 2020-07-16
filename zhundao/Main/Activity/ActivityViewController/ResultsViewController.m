@@ -192,7 +192,7 @@
 
 - (void)showSign {
     ZD_WeakSelf
-    [[SignManager shareManager]showAlertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] WithMessage:@"代签后不能修改" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+    [[ZDDataManager shareManager]showAlertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] WithMessage:@"代签后不能修改" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
         [[signResult alloc] dealAdminSignWithSignID:weakSelf.signID phone:myCell.model.Mobile action1:^{
             [weakSelf TableReloadData];
         }];
@@ -222,7 +222,7 @@
 }
 - (void)callAlert
 {
-    [[SignManager shareManager]showAlertWithTitle:@"确定拨打电话?" WithMessage:nil  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+    [[ZDDataManager shareManager]showAlertWithTitle:@"确定拨打电话?" WithMessage:nil  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
         [self callphone];
     } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
 }

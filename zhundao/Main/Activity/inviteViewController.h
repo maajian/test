@@ -6,9 +6,9 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
-@interface inviteViewController : BaseViewController
+@interface inviteViewController : ZDBaseVC
 @property(nonatomic,assign)NSInteger acid;
 @property(nonatomic,strong)ActivityModel *model;
 @property(nonatomic,strong)NSString *imageStr;

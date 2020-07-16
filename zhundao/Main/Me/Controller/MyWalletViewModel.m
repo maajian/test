@@ -11,7 +11,7 @@
 @implementation MyWalletViewModel
 
 - (void)getInfo :(moneyBlock)moneyBlock {
-    NSString *url = [NSString stringWithFormat:@"%@api/PerBase/GetWithdrawStatus?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *url = [NSString stringWithFormat:@"%@api/PerBase/GetWithdrawStatus?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic1 = [NSDictionary dictionaryWithDictionary:obj];
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];

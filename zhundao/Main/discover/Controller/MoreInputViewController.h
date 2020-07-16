@@ -6,8 +6,8 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 typedef void(^backBlock) (NSDictionary *dic);
-@interface MoreInputViewController : BaseViewController
+@interface MoreInputViewController : ZDBaseVC
 @property(nonatomic,copy)backBlock block;
 @end

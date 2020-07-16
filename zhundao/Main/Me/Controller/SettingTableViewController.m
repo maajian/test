@@ -8,10 +8,10 @@
 
 #import "SettingTableViewController.h"
 #import "AppDelegate.h"
-#import "LoginViewController.h"
+#import "ZDLoginVC.h"
 #import "SuggestViewController.h"
-#import "MoreAcountViewController.h"
-#import "AJPickerView.h"
+#import "ZDMoreAcountVC.h"
+#import "ZDPickerView.h"
 @interface SettingTableViewController ()
 {
     NSString *uidstr;
@@ -26,7 +26,7 @@
 /*! 线路选择 */
 @property (weak, nonatomic) IBOutlet UITableViewCell *lineCell;
 /*! 选择器 */
-@property(nonatomic,strong)AJPickerView *pickView;
+@property(nonatomic,strong)ZDPickerView *pickView;
 /*! 当前线路显示 */
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel;
 /*! 多账号管理 */
@@ -65,15 +65,15 @@
     [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:@"userArray"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-     if ([[SignManager shareManager].dataBase open])
+     if ([[ZDDataManager shareManager].dataBase open])
      {
          NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
-          [[SignManager shareManager].dataBase executeUpdate:updateSql];
+          [[ZDDataManager shareManager].dataBase executeUpdate:updateSql];
          NSString *updateSql12 = [NSString stringWithFormat:@"DROP TABLE contact"];
-         [[SignManager shareManager].dataBase executeUpdate:updateSql12];
-         [[SignManager shareManager].dataBase close];
+         [[ZDDataManager shareManager].dataBase executeUpdate:updateSql12];
+         [[ZDDataManager shareManager].dataBase close];
      }
-    LoginViewController *login = [[LoginViewController alloc]init];
+    ZDLoginVC *login = [[ZDLoginVC alloc]init];
     AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     appDelegate.window.rootViewController = login;
 }
@@ -96,25 +96,25 @@
     [_userProtocolCell addGestureRecognizer:userProtocolTap];
     UITapGestureRecognizer *privacyProtectTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushPrivacyProtect)];
     [_privacyProtectCell addGestureRecognizer:privacyProtectTap];
-    SignManager *manager = [SignManager shareManager];
+    ZDDataManager *manager = [ZDDataManager shareManager];
     acc = [manager getaccseekey];
     [self createVersion];
     [self showLine];
 }
 - (void)pushUserProtocol {
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.webTitle = @"准到服务协议";
     web.urlString = @"https://www.zhundao.net/demo/xieyi.html";
     [self.navigationController pushViewController:web animated:YES];
 }
 - (void)pushPrivacyProtect {
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.urlString = @"https://www.zhundao.net/yinsi.html";
     web.webTitle = @"准到隐私政策";
     [self.navigationController pushViewController:web animated:YES];
 }
 - (void)moreAcount {
-    MoreAcountViewController *moreAccount = [[MoreAcountViewController alloc] init];
+    ZDMoreAcountVC *moreAccount = [[ZDMoreAcountVC alloc] init];
     [self setHidesBottomBarWhenPushed: YES];
     [self.navigationController pushViewController:moreAccount animated:YES];
 }
@@ -153,7 +153,7 @@
     
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-         NSString *postStr = [NSString stringWithFormat:@"%@api/v2/user/updatePassWord?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+         NSString *postStr = [NSString stringWithFormat:@"%@api/v2/user/updatePassWord?token=%@",zhundaoApi,[[ZDDataManager shareManager] getToken]];
         NSDictionary *parameter = @{@"newPassWord" : alert.textFields.firstObject.text};
         if (alert.textFields.firstObject.text.length<6) {
             UIAlertController *lessAlert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入六位以上字符作为密码" preferredStyle:UIAlertControllerStyleAlert];
@@ -200,7 +200,7 @@
     NSArray *dataArray = @[@"默认线路",@"备用线路"];
     
     
-    _pickView = [[AJPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:dataArray currentStr:_lineLabel.text backBlock:^(NSString *str) {
+    _pickView = [[ZDPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:dataArray currentStr:_lineLabel.text backBlock:^(NSString *str) {
         _lineLabel.text = str;
         if ([str isEqualToString:dataArray.firstObject]) {
             if ([[NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
@@ -220,7 +220,7 @@
 
 - (void)pushAbout
 {
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    ZDWebViewVC *web = [[ZDWebViewVC alloc] init];
     web.webTitle = @"关于";
     web.isClose = YES;
     web.urlString = @"https://www.zhundao.net";

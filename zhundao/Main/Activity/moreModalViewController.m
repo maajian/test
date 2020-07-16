@@ -51,7 +51,7 @@ static NSString *headerID = @"moreModalHeaderView";
     [super viewDidLoad];
     NSLog(@"model = %@",_moreModel);
     [self initSet];
-    accesskey = [[SignManager shareManager]getaccseekey];
+    accesskey = [[ZDDataManager shareManager]getaccseekey];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -147,7 +147,7 @@ static NSString *headerID = @"moreModalHeaderView";
         }
             break;
         case MoreMoalTypeShare: {
-            [[SignManager shareManager]shareImagewithModel:_moreModel withCTR:self Withtype:5 withImage:nil];
+            [[ZDDataManager shareManager]shareImagewithModel:_moreModel withCTR:self Withtype:5 withImage:nil];
         }
             break;
         case MoreMoalTypeInvite: {
@@ -235,15 +235,15 @@ static NSString *headerID = @"moreModalHeaderView";
 
 // 删除活动
 - (void)delelteActivity {
-    [[SignManager shareManager]showAlertWithTitle:@"确定删除活动?" WithMessage:@"删除后将不能恢复" WithTitleOne:@"删除" WithActionOne:^(TYAlertAction *action1) {
-        MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-        NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/deleteActivity?token=%@&activityId=%li",zhundaoApi,[SignManager shareManager].getToken,(long)_moreModel.ID];
+    [[ZDDataManager shareManager]showAlertWithTitle:@"确定删除活动?" WithMessage:@"删除后将不能恢复" WithTitleOne:@"删除" WithActionOne:^(TYAlertAction *action1) {
+        MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+        NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/deleteActivity?token=%@&activityId=%li",zhundaoApi,[ZDDataManager shareManager].getToken,(long)_moreModel.ID];
         [ZD_NetWorkM postDataWithMethod:urlStr parameters:nil succ:^(NSDictionary *obj) {
             NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
             NSLog(@"%@",dic);
             [hud hideAnimated:YES];
             if ([dic[@"Res"] integerValue]==0) {
-                MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+                MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
                 [hud1 hideAnimated:YES afterDelay:1.5];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.navigationController popViewControllerAnimated:YES];
@@ -279,7 +279,7 @@ static NSString *headerID = @"moreModalHeaderView";
 - (void)signList
 {
     if (_moreModel.HasJoinNum==0) {
-        [[SignManager shareManager]showAlertWithTitle:@"尚未有人参加" WithMessage:nil WithCTR:self];
+        [[ZDDataManager shareManager]showAlertWithTitle:@"尚未有人参加" WithMessage:nil WithCTR:self];
     }
     else
     {
@@ -299,7 +299,7 @@ static NSString *headerID = @"moreModalHeaderView";
 // 活动截止
 - (void)signEnd
 {
-    [[SignManager shareManager]showAlertWithTitle:@"确定将活动截止?" WithMessage:@"确定后如要再次开启报名请通过编辑活动修改报名截止时间" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+    [[ZDDataManager shareManager]showAlertWithTitle:@"确定将活动截止?" WithMessage:@"确定后如要再次开启报名请通过编辑活动修改报名截止时间" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
         NSString *urlstr = [NSString stringWithFormat:@"%@api/PerActivity/UnDueActivity?accessKey=%@&activityId=%li",zhundaoApi,accesskey,(long)_moreModel.ID];
         //    2017-01-09 19:27:20
         NSDate *date = [NSDate date];
@@ -342,13 +342,13 @@ static NSString *headerID = @"moreModalHeaderView";
 - (void)link {
     UIPasteboard *pastboard = [UIPasteboard generalPasteboard];
     [pastboard setString:[NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)_moreModel.ID]];
-    [[SignManager shareManager]showAlertWithTitle:@"已成功复制到粘贴板" WithMessage:nil WithCTR:self];
+    [[ZDDataManager shareManager]showAlertWithTitle:@"已成功复制到粘贴板" WithMessage:nil WithCTR:self];
     NSLog(@"pastboardstr = %@",[NSString stringWithFormat:@"%@event/%li?accesskey=%@",zhundaoH5Api,(long)_moreModel.ID,accesskey]);
 }
 
 #pragma mark --- network
 - (void)netWorkConsult{
-    NSString *url = [NSString stringWithFormat:@"%@api/PerBase/PstConsultList?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *url = [NSString stringWithFormat:@"%@api/PerBase/PstConsultList?accessKey=%@",zhundaoApi,[[ZDDataManager shareManager] getaccseekey]];
     NSDictionary *dic = @{@"Status":@"2",
                           @"ID":@(_moreModel.ID),
                           @"title":@"",
@@ -374,12 +374,12 @@ static NSString *headerID = @"moreModalHeaderView";
 
 // 复制活动
 - (void)copyActivity {
-     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+     MBProgressHUD *hud = [ZDHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"加载中...";
-    NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/copyActivity?token=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getToken],self.moreModel.ID];
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/copyActivity?token=%@&activityId=%li",zhundaoApi,[[ZDDataManager shareManager] getToken],self.moreModel.ID];
     [ZD_NetWorkM postDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"复制成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud1 = [ZDHud initWithMode:MBProgressHUDModeCustomView labelText:@"复制成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [[NSNotificationCenter defaultCenter] postNotificationName:ZDNotification_Load_Activity object:nil];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

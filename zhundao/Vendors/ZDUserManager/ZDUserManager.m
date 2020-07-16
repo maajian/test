@@ -7,7 +7,7 @@
 //
 
 #import "ZDUserManager.h"
-#import "LoginViewController.h"
+#import "ZDLoginVC.h"
 
 @implementation ZDUserManager
 
@@ -93,17 +93,17 @@
     [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:@"userArray"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    if ([[SignManager shareManager].dataBase open])
+    if ([[ZDDataManager shareManager].dataBase open])
     {
         NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
-        [[SignManager shareManager].dataBase executeUpdate:updateSql];
+        [[ZDDataManager shareManager].dataBase executeUpdate:updateSql];
         NSString *updateSql1 = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
-        [[SignManager shareManager].dataBase executeUpdate:updateSql1];
+        [[ZDDataManager shareManager].dataBase executeUpdate:updateSql1];
         NSString *updateSql12 = [NSString stringWithFormat:@"DROP TABLE contact"];
-        [[SignManager shareManager].dataBase executeUpdate:updateSql12];
-        [[SignManager shareManager].dataBase close];
+        [[ZDDataManager shareManager].dataBase executeUpdate:updateSql12];
+        [[ZDDataManager shareManager].dataBase close];
     }
-    LoginViewController *login = [[LoginViewController alloc]init];
+    ZDLoginVC *login = [[ZDLoginVC alloc]init];
     [UIApplication sharedApplication].delegate.window.rootViewController = login;
 }
 

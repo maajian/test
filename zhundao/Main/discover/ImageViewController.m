@@ -9,7 +9,7 @@
 #import "ImageViewController.h"
 
 #import "UpDataViewController.h"
-#import "BaseNavigationViewController.h"
+#import "ZDBaseNavVC.h"
 @interface ImageViewController ()<UITextViewDelegate>
 {
     BOOL switchFlag;
@@ -85,7 +85,7 @@
     }
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:[sendDic copy] options:0 error:nil];
     NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-    NSString *accesskey = [[SignManager shareManager]getaccseekey];
+    NSString *accesskey = [[ZDDataManager shareManager]getaccseekey];
     NSString *posturl = [NSString stringWithFormat:@"%@api/PerActivity/UpdateOrAddOption?accessKey=%@",zhundaoApi,accesskey];
     
     [ZD_NetWorkM postDataWithMethod:posturl parameters:jsonStr succ:^(NSDictionary *obj) {
@@ -101,8 +101,8 @@
             [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 UpDataViewController *updata = [[UpDataViewController alloc]init];
                 updata.isPresent = YES;
-                updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[SignManager shareManager] getaccseekey]];
-                BaseNavigationViewController *nav = [[BaseNavigationViewController alloc] initWithRootViewController:updata];
+                updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[ZDDataManager shareManager] getaccseekey]];
+                ZDBaseNavVC *nav = [[ZDBaseNavVC alloc] initWithRootViewController:updata];
                 [self presentViewController:nav animated:YES completion:nil];
             }]];
             [self presentViewController:alert animated:YES completion:nil];
