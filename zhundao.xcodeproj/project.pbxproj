@@ -21,7 +21,7 @@
 		2807B8A823C586F500611A2D /* ZDMePromoteUserNumberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807B8A723C586F500611A2D /* ZDMePromoteUserNumberModel.m */; };
 		2807B8AB23C5A63E00611A2D /* UIFont+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807B8AA23C5A63E00611A2D /* UIFont+Extension.m */; };
 		2807B8B023C5D96300611A2D /* ZDMePromoteCustomContactNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807B8AF23C5D96300611A2D /* ZDMePromoteCustomContactNoticeView.m */; };
-		281090A123CDB4D600B48115 /* ZDAlertView+ZDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 281090A023CDB4D600B48115 /* ZDAlertView+ZDAdd.m */; };
+		281090A123CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 281090A023CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.m */; };
 		281090B923D15BD200B48115 /* ZDMePromoteMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 281090B823D15BD200B48115 /* ZDMePromoteMainVC.m */; };
 		281090BC23D15BED00B48115 /* ZDMePromoteBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 281090BB23D15BED00B48115 /* ZDMePromoteBottomView.m */; };
 		281090BF23D1883C00B48115 /* ZDMePromoteCustomContactViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 281090BE23D1883C00B48115 /* ZDMePromoteCustomContactViewModel.m */; };
@@ -109,6 +109,7 @@
 		2832110722ECA2660065EBAD /* ZDCloseSignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110622ECA2660065EBAD /* ZDCloseSignInVC.m */; };
 		2832110B22ED77A10065EBAD /* ZDSignInViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110A22ED77A10065EBAD /* ZDSignInViewModel.m */; };
 		2832110E22ED77B40065EBAD /* ZDSignInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2832110D22ED77B40065EBAD /* ZDSignInModel.m */; };
+		2851D5D424C0ACA1008F3EAE /* ZDAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2851D5D324C0ACA0008F3EAE /* ZDAlertView.m */; };
 		285DCA1D23C37D5800946869 /* ZDMePromoteCustomContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 285DCA1C23C37D5800946869 /* ZDMePromoteCustomContactVC.m */; };
 		285DCA2723C37FC200946869 /* ZDMePromoteTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 285DCA2623C37FC200946869 /* ZDMePromoteTabbarVC.m */; };
 		285DCA2A23C37FD900946869 /* ZDMePromoteQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 285DCA2923C37FD900946869 /* ZDMePromoteQRCodeVC.m */; };
@@ -130,7 +131,7 @@
 		2884ABDA23F663F700A08DDD /* ZDDiscoverQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2884ABD923F663F700A08DDD /* ZDDiscoverQuestionVC.m */; };
 		2884ABDD23F6658000A08DDD /* ZDDiscoverShopDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2884ABDC23F6658000A08DDD /* ZDDiscoverShopDetailVC.m */; };
 		2886605023E2700700D3AFF4 /* ZDMePromoteShareDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2886604F23E2700700D3AFF4 /* ZDMePromoteShareDetailVC.m */; };
-		289158B623CC43E500D6D6CE /* ZDAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289158B523CC43E500D6D6CE /* ZDAlertView.m */; };
+		289158B623CC43E500D6D6CE /* ZDServiceAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289158B523CC43E500D6D6CE /* ZDServiceAlertView.m */; };
 		28ACE35121B17E8F00C2AEB8 /* moreModalHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACE35021B17E8F00C2AEB8 /* moreModalHeaderView.m */; };
 		28ACE35421B1869C00C2AEB8 /* moreModalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACE35321B1869C00C2AEB8 /* moreModalModel.m */; };
 		28ACE35621B2116200C2AEB8 /* more复制.png in Resources */ = {isa = PBXBuildFile; fileRef = 28ACE35521B2116100C2AEB8 /* more复制.png */; };
@@ -785,8 +786,8 @@
 		2807B8AA23C5A63E00611A2D /* UIFont+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Extension.m"; sourceTree = "<group>"; };
 		2807B8AE23C5D96300611A2D /* ZDMePromoteCustomContactNoticeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMePromoteCustomContactNoticeView.h; sourceTree = "<group>"; };
 		2807B8AF23C5D96300611A2D /* ZDMePromoteCustomContactNoticeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMePromoteCustomContactNoticeView.m; sourceTree = "<group>"; };
-		2810909F23CDB4D600B48115 /* ZDAlertView+ZDAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZDAlertView+ZDAdd.h"; sourceTree = "<group>"; };
-		281090A023CDB4D600B48115 /* ZDAlertView+ZDAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZDAlertView+ZDAdd.m"; sourceTree = "<group>"; };
+		2810909F23CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZDServiceAlertView+ZDAdd.h"; sourceTree = "<group>"; };
+		281090A023CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZDServiceAlertView+ZDAdd.m"; sourceTree = "<group>"; };
 		281090B723D15BD200B48115 /* ZDMePromoteMainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMePromoteMainVC.h; sourceTree = "<group>"; };
 		281090B823D15BD200B48115 /* ZDMePromoteMainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMePromoteMainVC.m; sourceTree = "<group>"; };
 		281090BA23D15BED00B48115 /* ZDMePromoteBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMePromoteBottomView.h; sourceTree = "<group>"; };
@@ -960,6 +961,8 @@
 		2832110A22ED77A10065EBAD /* ZDSignInViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSignInViewModel.m; sourceTree = "<group>"; };
 		2832110C22ED77B40065EBAD /* ZDSignInModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDSignInModel.h; sourceTree = "<group>"; };
 		2832110D22ED77B40065EBAD /* ZDSignInModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSignInModel.m; sourceTree = "<group>"; };
+		2851D5D224C0ACA0008F3EAE /* ZDAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAlertView.h; sourceTree = "<group>"; };
+		2851D5D324C0ACA0008F3EAE /* ZDAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAlertView.m; sourceTree = "<group>"; };
 		285DCA1B23C37D5800946869 /* ZDMePromoteCustomContactVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMePromoteCustomContactVC.h; sourceTree = "<group>"; };
 		285DCA1C23C37D5800946869 /* ZDMePromoteCustomContactVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMePromoteCustomContactVC.m; sourceTree = "<group>"; };
 		285DCA2523C37FC200946869 /* ZDMePromoteTabbarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMePromoteTabbarVC.h; sourceTree = "<group>"; };
@@ -1002,8 +1005,8 @@
 		2884ABDC23F6658000A08DDD /* ZDDiscoverShopDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDiscoverShopDetailVC.m; sourceTree = "<group>"; };
 		2886604E23E2700700D3AFF4 /* ZDMePromoteShareDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMePromoteShareDetailVC.h; sourceTree = "<group>"; };
 		2886604F23E2700700D3AFF4 /* ZDMePromoteShareDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMePromoteShareDetailVC.m; sourceTree = "<group>"; };
-		289158B423CC43E500D6D6CE /* ZDAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDAlertView.h; sourceTree = "<group>"; };
-		289158B523CC43E500D6D6CE /* ZDAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDAlertView.m; sourceTree = "<group>"; };
+		289158B423CC43E500D6D6CE /* ZDServiceAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDServiceAlertView.h; sourceTree = "<group>"; };
+		289158B523CC43E500D6D6CE /* ZDServiceAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDServiceAlertView.m; sourceTree = "<group>"; };
 		28ACE34F21B17E8F00C2AEB8 /* moreModalHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = moreModalHeaderView.h; sourceTree = "<group>"; };
 		28ACE35021B17E8F00C2AEB8 /* moreModalHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = moreModalHeaderView.m; sourceTree = "<group>"; };
 		28ACE35221B1869C00C2AEB8 /* moreModalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = moreModalModel.h; sourceTree = "<group>"; };
@@ -2233,6 +2236,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		2851D5D124C0ACA0008F3EAE /* ZDAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				2851D5D224C0ACA0008F3EAE /* ZDAlertView.h */,
+				2851D5D324C0ACA0008F3EAE /* ZDAlertView.m */,
+			);
+			path = ZDAlertView;
+			sourceTree = "<group>";
+		};
 		285DCA1323C37C0200946869 /* Promote */ = {
 			isa = PBXGroup;
 			children = (
@@ -2382,15 +2394,15 @@
 			path = ZDSegmentView;
 			sourceTree = "<group>";
 		};
-		289158B223CC434600D6D6CE /* ZDAlertView */ = {
+		289158B223CC434600D6D6CE /* ZDServiceAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				289158B423CC43E500D6D6CE /* ZDAlertView.h */,
-				289158B523CC43E500D6D6CE /* ZDAlertView.m */,
-				2810909F23CDB4D600B48115 /* ZDAlertView+ZDAdd.h */,
-				281090A023CDB4D600B48115 /* ZDAlertView+ZDAdd.m */,
+				289158B423CC43E500D6D6CE /* ZDServiceAlertView.h */,
+				289158B523CC43E500D6D6CE /* ZDServiceAlertView.m */,
+				2810909F23CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.h */,
+				281090A023CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.m */,
 			);
-			path = ZDAlertView;
+			path = ZDServiceAlertView;
 			sourceTree = "<group>";
 		};
 		28ACE33921AF65D900C2AEB8 /* moreModal */ = {
@@ -2454,7 +2466,8 @@
 		28ACE36F21B2ACC100C2AEB8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				289158B223CC434600D6D6CE /* ZDAlertView */,
+				2851D5D124C0ACA0008F3EAE /* ZDAlertView */,
+				289158B223CC434600D6D6CE /* ZDServiceAlertView */,
 				289158B123CC432600D6D6CE /* ZDSegmentView */,
 				28B354072399556E003BB7BD /* ZDSignAlertView */,
 				2816362622DCD22000DC0ED8 /* ZDUserManager */,
@@ -5847,7 +5860,7 @@
 				9C3F38FA1E08D42100F38FB2 /* LoadAllSignTableViewCell.m in Sources */,
 				9C58D4DD1F32B7BC00C93B16 /* ConsultTableViewCell.m in Sources */,
 				281486E222C8BD14000BAE70 /* SignListViewModel.m in Sources */,
-				289158B623CC43E500D6D6CE /* ZDAlertView.m in Sources */,
+				289158B623CC43E500D6D6CE /* ZDServiceAlertView.m in Sources */,
 				9C1C63801F7A05F50085209A /* AuthModel.m in Sources */,
 				9C5074A51E9C8CB80030809D /* postActivityTableViewCell.m in Sources */,
 				849B3A5420E3ABCC00027510 /* ZDWebViewController.m in Sources */,
@@ -6022,7 +6035,7 @@
 				2814866822C8BA09000BAE70 /* ChangeContentViewController.m in Sources */,
 				5B9957171FCD8BBA00A26866 /* MJRefreshBackStateFooter.m in Sources */,
 				9C53AABB1E07CCAB00EF1B6A /* Reachability.m in Sources */,
-				281090A123CDB4D600B48115 /* ZDAlertView+ZDAdd.m in Sources */,
+				281090A123CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.m in Sources */,
 				5B65BBC02083B02200AC253B /* loginViewModel.m in Sources */,
 				8446DCD120D15C4B000C724B /* AAMarker.m in Sources */,
 				2814866322C8B9F9000BAE70 /* MessageContentViewModel.m in Sources */,
@@ -6142,6 +6155,7 @@
 				28D34E08239E9B4500218524 /* ZDMapTitleView.m in Sources */,
 				5B9956EC1FCD868F00A26866 /* JQMusic2Animation.m in Sources */,
 				9C4505E81DF51AF100C79165 /* UIImage+MultiFormat.m in Sources */,
+				2851D5D424C0ACA1008F3EAE /* ZDAlertView.m in Sources */,
 				9C4505EC1DF51AF100C79165 /* UIView+WebCacheOperation.m in Sources */,
 				28B3540A239955A0003BB7BD /* ZDSignAlertView.m in Sources */,
 				9C7AD91F1E8E065C00CC1627 /* UIImageView+nullData.m in Sources */,

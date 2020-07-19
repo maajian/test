@@ -1,71 +1,64 @@
 //
 //  ZDAlertView.h
-//  zhundao
+//  PBimming
 //
-//  Created by maj on 2020/1/13.
-//  Copyright © 2020 zhundao. All rights reserved.
+//  Created by 罗程勇 on 2018/1/2.
+//  Copyright © 2018年 鱼动科技. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-typedef NS_ENUM(NSInteger, ZDAlertViewDismissType) {
-    ZDAlertViewDismissTypeAnimation = 0, // 透明度变化
-    ZDAlertViewDismissTypeDirect, // 直接退出
-};
-
-typedef NS_ENUM(NSInteger, ZDAlertViewType) {
-    ZDAlertViewTypePrivacyNormalAlert,
-    ZDAlertViewTypePrivacyNeedCheck,
-};
-
-@class ZDAlertView;
-@protocol ZDAlertViewDelegate <NSObject>
-- (void)alertView:(ZDAlertView *)alertView didTapUrl:(NSString *)url;
-- (void)alertView:(ZDAlertView *)alertView didTapCancelButton:(UIButton *)button;
-- (void)alertView:(ZDAlertView *)alertView didTapSureButton:(UIButton *)button;
-
-@end
-
 @interface ZDAlertView : UIView
+ // 取消block
+@property (nonatomic, copy) dispatch_block_t cancelBlock;
+ // 确定block
+@property (nonatomic, copy) dispatch_block_t sureBlock;
 
-@property (nonatomic, weak) id<ZDAlertViewDelegate> alertViewDelegate;
+#pragma mark --- 初始化
+/**
+ 类方法初始化
+ 
+ @param title 标题
+ @param message 副标题
+ @param cancelBlock 取消点击事件
+ @param sureBlock 确定点击事件
+ @return ZDAlertView
+ */
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message sureBlock:(dispatch_block_t)sureBlock cancelBlock:(dispatch_block_t)cancelBlock;
+
+/**
+ 初始化
+ 
+ @param title 标题
+ @param message 副标题
+ @param cancelTitle 取消标题
+  @param sureTitle  确定标题
+ @param cancelBlock 取消点击事件
+ @param sureBlock 确定点击事件
+ @return ZDAlertView
+ */
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle sureTitle:(NSString *)sureTitle sureBlock:(dispatch_block_t)sureBlock cancelBlock:(dispatch_block_t)cancelBlock;
+
+/**
+ 实例方法初始化
+
+ @param title 标题
+ @param message 副标题
+ @param cancelButtonTitle 取消按钮标题
+ @param sureButtonTitle 确定按钮标题
+ @param cancelBlock 取消事件
+ @param sureBlock 确定事件
+ @return ZDAlertView
+ */
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle sureButtonTitle:(NSString *)sureButtonTitle cancelBlock:(dispatch_block_t)cancelBlock sureBlock:(dispatch_block_t)sureBlock;
+
 // 标题
-@property (nonatomic, copy) NSString *title;
-// 标题颜色  default blackColor
-@property (nonatomic, strong) UIColor *titleColor;
-// 标题字体 default ZDMediumFont(25)
-@property (nonatomic, strong) UIFont *titleFont;
-// 文本对齐 default NSTextAlignmentLeft
-@property (nonatomic, assign) NSTextAlignment textViewAlignment;
-// 内容
-@property (nonatomic, copy) NSString *content;
-// 富文本内容
-@property (nonatomic, copy) NSAttributedString *attributeContent;
-// 富文本链接的样式
-@property (nonatomic, copy) NSDictionary<NSAttributedStringKey,id> *linkTextAttributes;
-// 取消按钮标题 default "取消"
-@property (nonatomic, strong) NSString *cancelTitle;
-// 确定按钮标题 default "确定"
-@property (nonatomic, strong) NSString *sureTitle;
-// 只有一个按钮显示
-@property (nonatomic, assign) BOOL onlyOneButton;
-// 取消按钮消失动画
-@property (nonatomic, assign) ZDAlertViewDismissType cancelDismissType;
-// 确定按钮消失动画
-@property (nonatomic, assign) ZDAlertViewDismissType sureDismissType;
-// 类型
-@property (nonatomic, assign) ZDAlertViewType alertViewType;
+@property (nonatomic, strong) UILabel *titleLabel;
+// 副标题
+@property (nonatomic, strong) UILabel *messageLabel;
+// 内容视图
+@property (nonatomic, strong) UIView *contentView;
 
-- (instancetype)initWithCancelBlock:(ZDBlock_Void)cancelBlock sureBlock:(ZDBlock_Void)sureBlock;
-
-- (void)animationIn;
-- (void)animationOut;
-- (void)contentIn;
-- (void)contentOut;
-
+- (void)fadeOut;
 
 @end
-
-NS_ASSUME_NONNULL_END

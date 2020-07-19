@@ -158,5 +158,30 @@
     while (self.subviews.lastObject)
         [self.subviews.lastObject removeFromSuperview];
 }
+- (void)addLineViewAtBottom {
+    UIImageView *line = [UIImageView new];
+    line.backgroundColor = ZDLineColor;
+    [self addSubview:line];
+    line.tag = 200;
+    ZD_WeakSelf
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(1));
+        make.width.equalTo(weakSelf);
+        make.bottom.equalTo(weakSelf);
+        make.centerX.equalTo(weakSelf);
+    }];
+}
+- (void)addLineViewAtTop {
+    UIImageView *line = [UIImageView new];
+    line.backgroundColor = ZDLineColor;
+    [self addSubview:line];
+    ZD_WeakSelf
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(1));
+        make.width.equalTo(weakSelf);
+        make.top.equalTo(weakSelf);
+        make.centerX.equalTo(weakSelf);
+    }];
+}
 
 @end

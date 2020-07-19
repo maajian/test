@@ -1,18 +1,18 @@
 //
-//  ZDAlertView+ZDAdd.m
+//  ZDServiceAlertView+ZDAdd.m
 //  zhundao
 //
 //  Created by maj on 2020/1/14.
 //  Copyright © 2020 zhundao. All rights reserved.
 //
 
-#import "ZDAlertView+ZDAdd.h"
+#import "ZDServiceAlertView+ZDAdd.h"
 
 
-@implementation ZDAlertView (ZDAdd)
+@implementation ZDServiceAlertView (ZDAdd)
 
-+ (instancetype)privacyAlertWithDelegate:(id)delegate firstComeIn:(BOOL)firstComeIn {
-    ZDAlertView *alert = [[ZDAlertView alloc] init];
++ (instancetype)privacyAlertWithDelegate:(id)delegate {
+    ZDServiceAlertView *alert = [[ZDServiceAlertView alloc] init];
     alert.cancelTitle = @"不同意";
     alert.sureTitle = @"同意";
     alert.title = @"用户服务协议及隐私政策";
@@ -22,27 +22,23 @@
     [attr addAttributes:@{NSLinkAttributeName: @"https://www.zhundao.net/demo/xieyi.html"} range:[[attr string] rangeOfString:@"《用户服务协议》"]];
     [attr addAttributes:@{NSLinkAttributeName: @"https://www.zhundao.net/yinsi.html"} range:[[attr string] rangeOfString:@"《隐私政策》"]];
     alert.attributeContent = attr;
-    alert.alertViewType = ZDAlertViewTypePrivacyNormalAlert;
+    alert.alertViewType = ZDServiceAlertViewTypePrivacyNormalAlert;
     alert.linkTextAttributes = @{NSForegroundColorAttributeName : ZDGreenColor};
     [[UIApplication sharedApplication].keyWindow addSubview:alert];
-    if (firstComeIn) {
-        [alert animationIn];
-    } else {
-        [alert contentIn];
-    }
+    [alert animationIn];
     return alert;
 }
 
 + (instancetype)privacyNeedCheckAlertWithDelegate:(id)delegate  {
-    ZDAlertView *alert = [[ZDAlertView alloc] init];
+    ZDServiceAlertView *alert = [[ZDServiceAlertView alloc] init];
     alert.alertViewDelegate = delegate;
     alert.cancelTitle = @"我知道了";
     alert.title = @"隐私保护协议";
     alert.content = @"您需同意《用户服务协议》和《隐私政策》, 方可使用本软件";
     alert.onlyOneButton = YES;
-    alert.alertViewType = ZDAlertViewTypePrivacyNeedCheck;
+    alert.alertViewType = ZDServiceAlertViewTypePrivacyNeedCheck;
     [[UIApplication sharedApplication].keyWindow addSubview:alert];
-    [alert contentIn];
+    [alert animationIn];
     return alert;
 }
 
