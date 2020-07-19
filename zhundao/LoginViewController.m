@@ -26,7 +26,7 @@
 #define URL_SECRET @"app secret"
 //wxe25de2684f235a04 appid
 //3286d02771487220b3135ed3620e552e appsecret
-@interface LoginViewController ()<ZDAlertViewDelegate>
+@interface LoginViewController ()<ZDServiceAlertViewDelegate>
 {
     SendAuthResp *temp ;
     NSString *AccessKey1;
@@ -281,30 +281,26 @@
     [self.view layoutIfNeeded];
     [self setLeftView];
     if (!ZD_UserM.hasShowPrivacy) {
-        [ZDAlertView privacyAlertWithDelegate:self firstComeIn:YES];
+        [ZDServiceAlertView privacyAlertWithDelegate:self];
     }
 }
 
-#pragma mark --- ZDAlertViewDelegate
-- (void)alertView:(ZDAlertView *)alertView didTapUrl:(NSString *)url {
+#pragma mark --- ZDServiceAlertViewDelegate
+- (void)alertView:(ZDServiceAlertView *)alertView didTapUrl:(NSString *)url {
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     BaseNavigationViewController *nav = [[BaseNavigationViewController alloc] initWithRootViewController:web];
     web.urlString = url;
     nav.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:nav animated:YES completion:nil];
 }
-- (void)alertView:(ZDAlertView *)alertView didTapCancelButton:(UIButton *)button {
-    [alertView contentOut];
-    alertView = nil;
-    [ZDAlertView privacyNeedCheckAlertWithDelegate:self];
+- (void)alertView:(ZDServiceAlertView *)alertView didTapCancelButton:(UIButton *)button {
+    [ZDServiceAlertView privacyNeedCheckAlertWithDelegate:self];
 }
-- (void)alertView:(ZDAlertView *)alertView didTapSureButton:(UIButton *)button {
-    if (alertView.alertViewType == ZDAlertViewTypePrivacyNormalAlert) {
-        [alertView animationOut];
+- (void)alertView:(ZDServiceAlertView *)alertView didTapSureButton:(UIButton *)button {
+    if (alertView.alertViewType == ZDServiceAlertViewTypePrivacyNormalAlert) {
         ZD_UserM.hasShowPrivacy = YES;
     } else {
-        [alertView contentOut];
-        [ZDAlertView privacyAlertWithDelegate:self firstComeIn:NO];
+        [ZDServiceAlertView privacyAlertWithDelegate:self];
     }
     alertView = nil;
 }

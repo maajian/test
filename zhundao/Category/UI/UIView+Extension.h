@@ -41,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 //  移除所有子视图
 - (void)removeAllSubviews;
 
+- (void)addLineViewAtBottom;
+- (void)addLineViewAtTop;
+
 @end
 
 NS_ASSUME_NONNULL_END

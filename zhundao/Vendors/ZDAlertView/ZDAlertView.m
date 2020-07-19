@@ -1,243 +1,204 @@
 //
 //  ZDAlertView.m
-//  zhundao
+//  PBimming
 //
-//  Created by maj on 2020/1/13.
-//  Copyright © 2020 zhundao. All rights reserved.
+//  Created by 罗程勇 on 2018/1/2.
+//  Copyright © 2018年 鱼动科技. All rights reserved.
 //
 
 #import "ZDAlertView.h"
 
-@interface ZDAlertView()<UITextViewDelegate>
-@property (nonatomic, strong) UIView *contentView;
-@property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UITextView *textView;
+@interface ZDAlertView()
+ // 取消
 @property (nonatomic, strong) UIButton *cancelButton;
+ // 确定
 @property (nonatomic, strong) UIButton *sureButton;
+ // 标题字符串
+@property (nonatomic, copy, nullable) NSString *title;
+ // 副标题字符串
+@property (nonatomic, copy, nullable) NSString *message;
 
-@property (nonatomic, copy) ZDBlock_Void cancelBlock;
-@property (nonatomic, copy) ZDBlock_Void sureBlock;
+ // 按钮个数
+@property (nonatomic, assign) NSInteger buttonCount;
+ // 取消标题
+@property (nonatomic, copy, nonnull) NSString *cancelButtonTitle;
+ // 确定按钮标题
+@property (nonatomic, copy, nullable) NSString *sureButtonTitle;
 
 @end
 
 @implementation ZDAlertView
 
-- (instancetype)init {
+#pragma mark --- 初始化
+/**
+ 初始化
+ 
+ @param title 标题
+ @param message 副标题
+ @param cancelBlock 取消点击事件
+ @param sureBlock 确定点击事件
+ @return ZDAlertView
+ */
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message sureBlock:(dispatch_block_t)sureBlock cancelBlock:(dispatch_block_t)cancelBlock {
+    ZDAlertView *alert = [[[self class] alloc]initWithTitle:title message:message cancelButtonTitle:@"取消" sureButtonTitle:@"确定"  cancelBlock:cancelBlock sureBlock:sureBlock];
+    // 创建在keyWindow上
+    [alert fadeIn];
+    [[UIApplication sharedApplication].keyWindow addSubview:alert];
+    return alert;
+}
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle sureTitle:(NSString *)sureTitle sureBlock:(dispatch_block_t)sureBlock cancelBlock:(dispatch_block_t)cancelBlock {
+    ZDAlertView *alert = [[[self class] alloc]initWithTitle:title message:message cancelButtonTitle:cancelTitle sureButtonTitle:sureTitle  cancelBlock:cancelBlock sureBlock:sureBlock];
+    // 创建在keyWindow上
+    [alert fadeIn];
+    [[UIApplication sharedApplication].keyWindow addSubview:alert];
+    return alert;
+}
+
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle sureButtonTitle:(NSString *)sureButtonTitle cancelBlock:(dispatch_block_t)cancelBlock sureBlock:(dispatch_block_t)sureBlock {
     if (self = [super init]) {
-        self.frame = [UIScreen mainScreen].bounds;
+        self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+        _title = title;
+        _message = message;
+        _cancelButtonTitle = cancelButtonTitle;
+        _sureButtonTitle = sureButtonTitle;
+        if (cancelBlock) {
+            _cancelBlock = [cancelBlock copy];
+        }
+        if (sureBlock) {
+            _sureBlock = [sureBlock copy];
+        }
+        _buttonCount = sureButtonTitle.length? 2 : 1;
+         // 初始化UI
         [self setupUI];
         [self initLayout];
     }
     return self;
 }
 
-- (instancetype)initWithCancelBlock:(ZDBlock_Void)cancelBlock sureBlock:(ZDBlock_Void)sureBlock {
-    if (self = [super init]) {
-        self.frame = [UIScreen mainScreen].bounds;
-        _cancelBlock = cancelBlock;
-        _sureBlock = sureBlock;
-        [self setupUI];
-        [self initLayout];
-    }
-    return self;
-}
-
-#pragma mark --- lazyload
-- (UIView *)contentView {
-    if (!_contentView) {
-        _contentView = [UIView new];
-        _contentView.backgroundColor = [UIColor whiteColor];
-        _contentView.layer.cornerRadius = 10;
-        _contentView.layer.masksToBounds = YES;
-    }
-    return _contentView;
-}
-- (UILabel *)titleLabel {
-    if (!_titleLabel) {
-        _titleLabel = [UILabel labelWithFrame:CGRectZero textColor:[UIColor blackColor] font:ZDMediumFont(18) numberOfLines:0 lineBreakMode:0 lineAlignment:NSTextAlignmentCenter];
-        _titleLabel.backgroundColor = [UIColor whiteColor];
-    }
-    return _titleLabel;
-}
-- (UITextView *)textView {
-    if (!_textView) {
-        _textView = [UITextView new];
-        _textView.backgroundColor = [UIColor clearColor];
-        _textView.textAlignment = NSTextAlignmentLeft;
-        _textView.textColor = ZDBlackColor;
-        _textView.font = ZDSystemFont(14);
-        _textView.delegate = self;
-        _textView.editable = NO;
-    }
-    return _textView;
-}
-- (UIButton *)cancelButton {
-    if (!_cancelButton) {
-        _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _cancelButton.layer.cornerRadius = 22;
-        _cancelButton.layer.masksToBounds = YES;
-        _cancelButton.layer.borderColor = ZDLineColor.CGColor;
-        _cancelButton.layer.borderWidth = 1;
-        [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
-        [_cancelButton setTitleColor:ZDGrayColor forState:UIControlStateNormal];
-        _cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        [_cancelButton addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _cancelButton;
-}
-- (UIButton *)sureButton {
-    if (!_sureButton) {
-        _sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _sureButton.layer.cornerRadius = 22;
-        _sureButton.layer.masksToBounds = YES;
-        _sureButton.backgroundColor = ZDGreenColor2;
-        [_sureButton setTitle:@"确定" forState:UIControlStateNormal];
-        [_sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _sureButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        [_sureButton addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _sureButton;
-}
-
-#pragma mark --- UI
+#pragma mark --- UI创建
 - (void)setupUI {
-    [self addSubview:self.contentView];
-    [self.contentView addSubview:self.titleLabel];
-    [self.contentView addSubview:self.textView];
-    [self.contentView addSubview:self.sureButton];
-    [self.contentView addSubview:self.cancelButton];
+     // 内容视图
+    _contentView = [[UIView alloc]init];
+    [self addSubview:_contentView];
+    _contentView.backgroundColor = [UIColor whiteColor];
+    _contentView.layer.cornerRadius = 12;
+    _contentView.layer.masksToBounds = YES;
+    
+     // 标题
+    _titleLabel = [[UILabel alloc]initWithFrame:CGRectZero];
+    _titleLabel.text = _title;
+    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.font = [UIFont boldSystemFontOfSize:18];
+    _titleLabel.numberOfLines = 0;
+    [_contentView addSubview:_titleLabel];
+    
+     // 副标题
+    _messageLabel = [[UILabel alloc]initWithFrame:CGRectZero];
+    _messageLabel.textAlignment = NSTextAlignmentCenter;
+    _messageLabel.text = _message;
+    _messageLabel.textColor = [UIColor blackColor];
+    _messageLabel.font = [UIFont systemFontOfSize:16];
+    _messageLabel.numberOfLines = 0;
+    [_contentView addSubview:_messageLabel];
+
+     // 取消按钮
+    _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_cancelButton setTitle:_cancelButtonTitle forState:UIControlStateNormal];
+    [_cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    _cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+    [_cancelButton addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
+    [_contentView addSubview:_cancelButton];
+    
+     // 确定按钮
+    if (_sureButtonTitle.length) {
+        _sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_sureButton setTitle:_sureButtonTitle forState:UIControlStateNormal];
+        [_sureButton setTitleColor:ZDGreenColor forState:UIControlStateNormal];
+        _sureButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+        [_sureButton addTarget:self action:@selector(sureAction) forControlEvents:UIControlEventTouchUpInside];
+        [_contentView addSubview:_sureButton];
+    }
 }
 
-#pragma mark --- 布局
 - (void)initLayout {
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self);
-        make.leading.equalTo(self).offset(60);
-        make.trailing.equalTo(self).offset(-60);
+        make.center.equalTo(self);
+        make.width.mas_equalTo(kScreenWidth - 74);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView);
-        make.height.mas_equalTo(60);
+        make.top.equalTo(self.contentView).offset(28);
         make.leading.equalTo(self.contentView).offset(20);
         make.trailing.equalTo(self.contentView).offset(-20);
     }];
-    [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(0);
-        make.leading.trailing.equalTo(self.contentView).offset(20);
-        make.trailing.equalTo(self.contentView).offset(-20);
-        make.height.mas_lessThanOrEqualTo(280);
-        make.height.mas_equalTo(100);
+    [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(16);
+        make.leading.equalTo(self.contentView).offset(40);
+        make.trailing.equalTo(self.contentView).offset(-40);
     }];
     [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.textView.mas_bottom).offset(15);
-        make.leading.equalTo(self.contentView).offset(20);
-        make.trailing.equalTo(self.contentView.mas_centerX).offset(-8);
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-20);
-        make.height.mas_equalTo(44);
+        make.leading.equalTo(self.contentView);
+        make.top.equalTo(self.messageLabel.mas_bottom).offset(20);
+        make.trailing.equalTo(_sureButtonTitle.length ? self.contentView.mas_centerX : self.contentView.mas_trailing);
+        make.height.mas_equalTo(56);
+        make.bottom.equalTo(self.contentView);
     }];
-    [self.sureButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.equalTo(self.cancelButton);
-        make.leading.equalTo(self.contentView.mas_centerX).offset(8);
-        make.trailing.equalTo(self.contentView).offset(-20);
-    }];
-    [self layoutIfNeeded];
-}
-- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
-    if ([self.alertViewDelegate respondsToSelector:@selector(alertView:didTapUrl:)]) {
-        [self.alertViewDelegate alertView:self didTapUrl:URL.absoluteString];
-    }
-    return NO;
-}
-
-#pragma mark --- setter
-- (void)setTitle:(NSString *)title {
-    _title = title;
-    _titleLabel.text = _title;
-}
-- (void)setTitleColor:(UIColor *)titleColor {
-    _titleColor = titleColor;
-    _titleLabel.textColor = titleColor;
-}
-- (void)setTitleFont:(UIFont *)titleFont {
-    _titleFont = titleFont;
-    _titleLabel.font = titleFont;
-}
-- (void)setContent:(NSString *)content {
-    _content = content;
-    _textView.text = content;
-}
-- (void)setAttributeContent:(NSAttributedString *)attributeContent {
-    _attributeContent = attributeContent;
-    _textView.attributedText = attributeContent;
-    CGSize size = [_textView sizeThatFits:CGSizeMake(_textView.width, 280)];
-    [_textView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(size.height < 100 ? 100 : size.height);
-    }];
-}
-- (void)setLinkTextAttributes:(NSDictionary<NSAttributedStringKey,id> *)linkTextAttributes {
-    _linkTextAttributes = linkTextAttributes;
-    _textView.linkTextAttributes = linkTextAttributes;
-}
-- (void)setTextViewAlignment:(NSTextAlignment)textViewAlignment {
-    _textViewAlignment = textViewAlignment;
-    _textView.textAlignment = _textViewAlignment;
-}
-- (void)setSureTitle:(NSString *)sureTitle {
-    _sureTitle = sureTitle;
-    [_sureButton setTitle:sureTitle forState:UIControlStateNormal];
-}
-- (void)setCancelTitle:(NSString *)cancelTitle {
-    _cancelTitle = cancelTitle;
-    [_cancelButton setTitle:cancelTitle forState:UIControlStateNormal];
-}
-- (void)setOnlyOneButton:(BOOL)onlyOneButton {
-    _onlyOneButton = onlyOneButton;
-    if (_onlyOneButton) {
-        _cancelButton.hidden = YES;
-        [_sureButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.textView.mas_bottom).offset(20);
-            make.leading.equalTo(self.contentView).offset(40);
-            make.trailing.equalTo(self.contentView).offset(-40);
-            make.bottom.equalTo(self.contentView.mas_bottom).offset(-20);
-            make.height.mas_equalTo(44);
+    [self.cancelButton addLineViewAtTop];
+    if (_sureButtonTitle.length) {
+        [self.sureButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(self.contentView.mas_centerX);
+            make.trailing.equalTo(self.contentView);
+            make.top.bottom.equalTo(self.cancelButton);
         }];
+        [self.sureButton addLineViewAtTop];
     }
-}
-#pragma mark --- action
-- (void)cancelAction:(UIButton *)button {
-    ZDDo_Block_Safe_Main(_cancelBlock);
-    if ([self.alertViewDelegate respondsToSelector:@selector(alertView:didTapCancelButton:)]) {
-        [self.alertViewDelegate alertView:self didTapCancelButton:button];
-    }
-}
-- (void)sureAction:(UIButton *)button {
-    ZDDo_Block_Safe_Main(_sureBlock);
-    if ([self.alertViewDelegate respondsToSelector:@selector(alertView:didTapSureButton:)]) {
-        [self.alertViewDelegate alertView:self didTapSureButton:button];
-    }
-}
-- (void)animationIn {
-    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.01];
-    [UIView animateWithDuration:0.25 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0 options:(UIViewAnimationOptionCurveEaseIn) animations:^{
-        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
-    } completion:^(BOOL finished) {
-        
-    }];
-}
-- (void)contentIn {
-    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
 }
 
-- (void)animationOut {
+#pragma mark --- 取消和确定点击事件
+
+- (void)cancelAction {
+    [self fadeOut];
+    if (_cancelBlock) {
+        _cancelBlock();
+    }
+}
+
+- (void)sureAction {
+    [self fadeOut];
+    if (_sureBlock) {
+        _sureBlock();
+    }
+}
+
+#pragma mark --- 视图的小动画
+ // 显示视图
+- (void)fadeIn{
+    ZD_WeakSelf
+    _contentView.transform = CGAffineTransformMakeScale(0.3, 0.3);
+    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0 options:(UIViewAnimationOptionCurveEaseIn) animations:^{
+        ZD_StrongSelf
+        strongSelf.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
+        strongSelf->_contentView.transform = CGAffineTransformMakeScale(1, 1);
+    } completion:nil];
+}
+    
+ // 隐藏视图
+- (void)fadeOut {
+     ZD_WeakSelf
+    _contentView.transform = CGAffineTransformIdentity;
     [UIView animateWithDuration:0.25 animations:^{
+        ZD_StrongSelf
+       strongSelf->_contentView.transform = CGAffineTransformMakeScale(0.3, 0.3);
         self.alpha = 0.01;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
     }];
 }
-- (void)contentOut {
-    [self removeAllSubviews];
-    [self removeFromSuperview];
+
+#pragma mark --- dealloc
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

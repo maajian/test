@@ -1,18 +1,18 @@
 //
-//  ZDAlertView+ZDAdd.h
+//  ZDServiceAlertView+ZDAdd.h
 //  zhundao
 //
 //  Created by maj on 2020/1/14.
 //  Copyright © 2020 zhundao. All rights reserved.
 //
 
-#import "ZDAlertView.h"
+#import "ZDServiceAlertView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDAlertView (ZDAdd)
+@interface ZDServiceAlertView (ZDAdd)
 
-+ (instancetype)privacyAlertWithDelegate:(id)delegate firstComeIn:(BOOL)firstComeIn;
++ (instancetype)privacyAlertWithDelegate:(id)delegate;
 
 + (instancetype)privacyNeedCheckAlertWithDelegate:(id)delegate;
 
