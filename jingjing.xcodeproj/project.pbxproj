@@ -5337,9 +5337,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C77528F1DF01D2200FC31BB /* zhundao */ = {
+		9C77528F1DF01D2200FC31BB /* jingjing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C7752BD1DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "zhundao" */;
+			buildConfigurationList = 9C7752BD1DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "jingjing" */;
 			buildPhases = (
 				34B16293E54522AD1BD545EE /* [CP] Check Pods Manifest.lock */,
 				9C77528C1DF01D2200FC31BB /* Sources */,
@@ -5351,14 +5351,14 @@
 			);
 			dependencies = (
 			);
-			name = zhundao;
+			name = jingjing;
 			productName = zhundao;
 			productReference = 9C7752901DF01D2200FC31BB /* 金塔统计.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9C7752A81DF01D2200FC31BB /* zhundaoTests */ = {
+		9C7752A81DF01D2200FC31BB /* jingjingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C7752C01DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "zhundaoTests" */;
+			buildConfigurationList = 9C7752C01DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "jingjingTests" */;
 			buildPhases = (
 				9C7752A51DF01D2200FC31BB /* Sources */,
 				9C7752A61DF01D2200FC31BB /* Frameworks */,
@@ -5369,14 +5369,14 @@
 			dependencies = (
 				9C7752AB1DF01D2200FC31BB /* PBXTargetDependency */,
 			);
-			name = zhundaoTests;
+			name = jingjingTests;
 			productName = zhundaoTests;
 			productReference = 9C7752A91DF01D2200FC31BB /* zhundaoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9C7752B31DF01D2200FC31BB /* zhundaoUITests */ = {
+		9C7752B31DF01D2200FC31BB /* jingjingUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C7752C31DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "zhundaoUITests" */;
+			buildConfigurationList = 9C7752C31DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "jingjingUITests" */;
 			buildPhases = (
 				9C7752B01DF01D2200FC31BB /* Sources */,
 				9C7752B11DF01D2200FC31BB /* Frameworks */,
@@ -5387,7 +5387,7 @@
 			dependencies = (
 				9C7752B61DF01D2200FC31BB /* PBXTargetDependency */,
 			);
-			name = zhundaoUITests;
+			name = jingjingUITests;
 			productName = zhundaoUITests;
 			productReference = 9C7752B41DF01D2200FC31BB /* zhundaoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -5424,7 +5424,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9C77528B1DF01D2200FC31BB /* Build configuration list for PBXProject "zhundao" */;
+			buildConfigurationList = 9C77528B1DF01D2200FC31BB /* Build configuration list for PBXProject "jingjing" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -5438,9 +5438,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C77528F1DF01D2200FC31BB /* zhundao */,
-				9C7752A81DF01D2200FC31BB /* zhundaoTests */,
-				9C7752B31DF01D2200FC31BB /* zhundaoUITests */,
+				9C77528F1DF01D2200FC31BB /* jingjing */,
+				9C7752A81DF01D2200FC31BB /* jingjingTests */,
+				9C7752B31DF01D2200FC31BB /* jingjingUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -6234,12 +6234,12 @@
 /* Begin PBXTargetDependency section */
 		9C7752AB1DF01D2200FC31BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C77528F1DF01D2200FC31BB /* zhundao */;
+			target = 9C77528F1DF01D2200FC31BB /* jingjing */;
 			targetProxy = 9C7752AA1DF01D2200FC31BB /* PBXContainerItemProxy */;
 		};
 		9C7752B61DF01D2200FC31BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C77528F1DF01D2200FC31BB /* zhundao */;
+			target = 9C77528F1DF01D2200FC31BB /* jingjing */;
 			targetProxy = 9C7752B51DF01D2200FC31BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -6465,7 +6465,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.zhundao.zhundaoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zhundao.app/zhundao";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jingjing.app/jingjing";
 			};
 			name = Debug;
 		};
@@ -6477,7 +6477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.zhundao.zhundaoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zhundao.app/zhundao";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jingjing.app/jingjing";
 			};
 			name = Release;
 		};
@@ -6506,7 +6506,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C77528B1DF01D2200FC31BB /* Build configuration list for PBXProject "zhundao" */ = {
+		9C77528B1DF01D2200FC31BB /* Build configuration list for PBXProject "jingjing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C7752BB1DF01D2200FC31BB /* Debug */,
@@ -6515,7 +6515,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C7752BD1DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "zhundao" */ = {
+		9C7752BD1DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "jingjing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C7752BE1DF01D2200FC31BB /* Debug */,
@@ -6524,7 +6524,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C7752C01DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "zhundaoTests" */ = {
+		9C7752C01DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "jingjingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C7752C11DF01D2200FC31BB /* Debug */,
@@ -6533,7 +6533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C7752C31DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "zhundaoUITests" */ = {
+		9C7752C31DF01D2200FC31BB /* Build configuration list for PBXNativeTarget "jingjingUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C7752C41DF01D2200FC31BB /* Debug */,
