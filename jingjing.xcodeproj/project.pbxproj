@@ -160,7 +160,7 @@
 		5B4BF4B1201777F2006887A1 /* MoreAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4BF4B0201777F2006887A1 /* MoreAccountTableViewCell.m */; };
 		5B519928210F6B75002413DB /* 密码.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B519927210F6B72002413DB /* 密码.png */; };
 		5B65BBC02083B02200AC253B /* loginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B65BBBF2083B02200AC253B /* loginViewModel.m */; };
-		5B8D67EF208F73A900714ABB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D67EE208F73A900714ABB /* SignUpViewController.m */; };
+		5B8D67EF208F73A900714ABB /* beginDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D67EE208F73A900714ABB /* beginDate.m */; };
 		5B8D67F2208F73E800714ABB /* SignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D67F1208F73E800714ABB /* SignUpView.m */; };
 		5B8D67F5208F740300714ABB /* SignUpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D67F4208F740300714ABB /* SignUpModel.m */; };
 		5B8D67F8208F741400714ABB /* SignUpViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D67F7208F741400714ABB /* SignUpViewModel.m */; };
@@ -410,12 +410,7 @@
 		9C46AD961EA869C600375D77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C46AD951EA869C600375D77 /* CoreLocation.framework */; };
 		9C46AD981EA869EC00375D77 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C46AD971EA869EC00375D77 /* AdSupport.framework */; };
 		9C46AD9A1EA86A0000375D77 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C46AD991EA86A0000375D77 /* JavaScriptCore.framework */; };
-		9C46ADE61EA8813500375D77 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C46AD9E1EA8813500375D77 /* AMapLocationKit.framework */; };
-		9C46AE121EA8815600375D77 /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C46AE111EA8815600375D77 /* AMapFoundationKit.framework */; };
-		9C46AE141EA881A800375D77 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C46AE131EA881A800375D77 /* AMapSearchKit.framework */; };
 		9C46AE171EA88B6100375D77 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C46AE161EA88B6100375D77 /* MapViewController.m */; };
-		9C46AE191EA88DB000375D77 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C46AE181EA88DB000375D77 /* MAMapKit.framework */; };
-		9C46AE1B1EA8990C00375D77 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C46AE1A1EA8990C00375D77 /* AMap.bundle */; };
 		9C4754621E52B58F00BA114C /* detailShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4754611E52B58F00BA114C /* detailShakeViewController.m */; };
 		9C4754651E52CDFC00BA114C /* detailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4754641E52CDFC00BA114C /* detailModel.m */; };
 		9C4754681E52D33D00BA114C /* ShakeTableViewDelegateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4754671E52D33D00BA114C /* ShakeTableViewDelegateObj.m */; };
@@ -1064,7 +1059,7 @@
 		5B65BBBE2083B02200AC253B /* loginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = loginViewModel.h; sourceTree = "<group>"; };
 		5B65BBBF2083B02200AC253B /* loginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = loginViewModel.m; sourceTree = "<group>"; };
 		5B8D67ED208F73A900714ABB /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
-		5B8D67EE208F73A900714ABB /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		5B8D67EE208F73A900714ABB /* beginDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beginDate.m; sourceTree = "<group>"; };
 		5B8D67F0208F73E800714ABB /* SignUpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpView.h; sourceTree = "<group>"; };
 		5B8D67F1208F73E800714ABB /* SignUpView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpView.m; sourceTree = "<group>"; };
 		5B8D67F3208F740300714ABB /* SignUpModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpModel.h; sourceTree = "<group>"; };
@@ -1504,13 +1499,8 @@
 		9C46AD971EA869EC00375D77 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		9C46AD991EA86A0000375D77 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		9C46AD9B1EA86A7D00375D77 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		9C46AD9E1EA8813500375D77 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
-		9C46AE111EA8815600375D77 /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapFoundationKit.framework; sourceTree = "<group>"; };
-		9C46AE131EA881A800375D77 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		9C46AE151EA88B6100375D77 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		9C46AE161EA88B6100375D77 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		9C46AE181EA88DB000375D77 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
-		9C46AE1A1EA8990C00375D77 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		9C4754601E52B58F00BA114C /* detailShakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailShakeViewController.h; sourceTree = "<group>"; };
 		9C4754611E52B58F00BA114C /* detailShakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailShakeViewController.m; sourceTree = "<group>"; };
 		9C4754631E52CDFC00BA114C /* detailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailModel.h; sourceTree = "<group>"; };
@@ -2051,21 +2041,17 @@
 				9C62CF111F44556900896F3C /* UShareUI.framework in Frameworks */,
 				9C2448621F286036005E8D52 /* Foundation.framework in Frameworks */,
 				9C2448601F285FD9005E8D52 /* CoreFoundation.framework in Frameworks */,
-				9C46ADE61EA8813500375D77 /* AMapLocationKit.framework in Frameworks */,
 				9C46AD9A1EA86A0000375D77 /* JavaScriptCore.framework in Frameworks */,
-				9C46AE191EA88DB000375D77 /* MAMapKit.framework in Frameworks */,
 				9C59CF8F1DF117B60089F2EB /* Security.framework in Frameworks */,
 				9C46AD961EA869C600375D77 /* CoreLocation.framework in Frameworks */,
 				9C60480B1F4534E3006BA3C7 /* libWeChatSDK.a in Frameworks */,
 				9C5F3C9A1E63CECA0048214E /* CoreGraphics.framework in Frameworks */,
-				9C46AE141EA881A800375D77 /* AMapSearchKit.framework in Frameworks */,
 				9C5F3C9C1E63CF160048214E /* ImageIO.framework in Frameworks */,
 				9C6E28CF1E56D1080025C14A /* QuartzCore.framework in Frameworks */,
 				9C340C241E68305400477527 /* TencentOpenAPI.framework in Frameworks */,
 				9C59CF871DF1172C0089F2EB /* SystemConfiguration.framework in Frameworks */,
 				9CF67ED81E6E52A900BC80DB /* UMMobClick.framework in Frameworks */,
 				9C59CF8D1DF117960089F2EB /* CFNetwork.framework in Frameworks */,
-				9C46AE121EA8815600375D77 /* AMapFoundationKit.framework in Frameworks */,
 				9C59CF851DF117140089F2EB /* CoreTelephony.framework in Frameworks */,
 				9C2448681F2860AB005E8D52 /* libresolv.tbd in Frameworks */,
 				9C62CF061F44556900896F3C /* libSocialWeChat.a in Frameworks */,
@@ -2663,7 +2649,7 @@
 			isa = PBXGroup;
 			children = (
 				5B8D67ED208F73A900714ABB /* SignUpViewController.h */,
-				5B8D67EE208F73A900714ABB /* SignUpViewController.m */,
+				5B8D67EE208F73A900714ABB /* beginDate.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -3420,18 +3406,6 @@
 				9C4505D71DF51AF100C79165 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
-			sourceTree = "<group>";
-		};
-		9C46AD9D1EA8806D00375D77 /* MapKit2D */ = {
-			isa = PBXGroup;
-			children = (
-				9C46AE1A1EA8990C00375D77 /* AMap.bundle */,
-				9C46AE181EA88DB000375D77 /* MAMapKit.framework */,
-				9C46AE131EA881A800375D77 /* AMapSearchKit.framework */,
-				9C46AE111EA8815600375D77 /* AMapFoundationKit.framework */,
-				9C46AD9E1EA8813500375D77 /* AMapLocationKit.framework */,
-			);
-			name = MapKit2D;
 			sourceTree = "<group>";
 		};
 		9C4A85F81EF8C244003DEF70 /* ViewModel */ = {
@@ -4654,7 +4628,6 @@
 				5B9956D51FCD862400A26866 /* JQIndicatorView */,
 				9C35489D1F062CF100E758CF /* PrintSDK */,
 				9C6B5A4C1EB9CD7F006DE7DD /* UMMobClick.framework */,
-				9C46AD9D1EA8806D00375D77 /* MapKit2D */,
 				9C340C0B1E68305400477527 /* UMSocial */,
 				9C8634F91E2CC4D500364FD6 /* Masonry */,
 				9C53AAB91E07CCAB00EF1B6A /* Reachability.h */,
@@ -5471,7 +5444,6 @@
 				9C1F97961EC5B742003280F4 /* underLineed.png in Resources */,
 				9C1F976D1EC59416003280F4 /* bottomMove.png in Resources */,
 				9C7AD9181E8E01C800CC1627 /* allSign灰.png in Resources */,
-				9C46AE1B1EA8990C00375D77 /* AMap.bundle in Resources */,
 				9CEBC9F01E1E444400EC98E1 /* Default@2x.png in Resources */,
 				9C5849C81F46B9630078CB0E /* wallet.png in Resources */,
 				9C5E12361E8A5BE300E9A11B /* shake.png in Resources */,
@@ -5674,10 +5646,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-zhundao/Pods-zhundao-resources.sh",
+				"${PODS_ROOT}/AMap2DMap/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6050,7 +6024,7 @@
 				9C1B8E0F1F3474D000FEE783 /* CBNoHightlightedBtn.m in Sources */,
 				841DAED520D3B37A006B0F65 /* InfoEditView.m in Sources */,
 				5B99570D1FCD8B3200A26866 /* MJRefreshAutoGifFooter.m in Sources */,
-				5B8D67EF208F73A900714ABB /* SignUpViewController.m in Sources */,
+				5B8D67EF208F73A900714ABB /* beginDate.m in Sources */,
 				8446DCC620D15C4B000C724B /* AAArea.m in Sources */,
 				9C52D8661E97725600F43069 /* muliotherViewController.m in Sources */,
 				5B9957041FCD8B2100A26866 /* MJRefreshHeader.m in Sources */,

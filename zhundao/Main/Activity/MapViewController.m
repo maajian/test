@@ -65,11 +65,6 @@
     self.searchController.searchBar.delegate = self; //UISearchBarDelegate
     self.searchController.searchBar.placeholder = @"请输入关键字";
     [self.searchController.searchBar sizeToFit];   //搜索框自适应
-//    [[self.searchController.searchBar.heightAnchor constraintEqualToConstant:44.0] setActive:YES];
-//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    button.frame = CGRectMake(0, 0, kScreenWidth - 100, 30);
-//    self.navigationItem.titleView = button;
-//    [button addSubview:self.searchController.searchBar];
     
     self.navigationItem.titleView = self.searchController.searchBar; // 将搜索框显示在导航栏标题视图处
     if (self.latitude) {
@@ -147,7 +142,7 @@
     [self.locationManager setReGeocodeTimeout:DefaultReGeocodeTimeout];
     //设置不允许系统暂停定位
     [self.locationManager setPausesLocationUpdatesAutomatically:NO];
-    
+
     //设置允许连续定位逆地理
     [self.locationManager setLocatingWithReGeocode:YES];
     [self.locationManager startUpdatingLocation];  //开始连续定位
@@ -346,8 +341,7 @@
     return _latDataArray;
 }
 #pragma 周边 
-- (void)searchAround
-{
+- (void)searchAround {
     AMapPOIAroundSearchRequest *Request = [[AMapPOIAroundSearchRequest alloc]init];
     Request.location = [AMapGeoPoint locationWithLatitude:self.currentLocation.coordinate.latitude longitude:self.currentLocation.coordinate.longitude];
     Request.types = @"道路附属设施|地名地址信息|公共设施|风景名胜|商务住宅|政府机构及社会团体";
