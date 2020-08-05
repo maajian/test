@@ -359,21 +359,21 @@
             label.text = [NSString stringWithFormat:@"全部(%li)",(unsigned long)_dataArray.count];
             if (flag==0) {
                 _starLabel= label;
-                label.textColor = ZDGreenColor;
+                label.textColor = ZDMainColor;
             }
         }
         if (i==1) {
             label.text = [NSString stringWithFormat:@"已签(%li)",(unsigned long)_dataArray1.count];
             if (flag==1) {
                 _starLabel= label;
-                label.textColor = ZDGreenColor;
+                label.textColor = ZDMainColor;
             }
             
         } if (i==2) {
             label.text = [NSString stringWithFormat:@"未签(%li)",(unsigned long)_dataArray2.count];
             if (flag==2) {
                 _starLabel= label;
-                label.textColor = ZDGreenColor;
+                label.textColor = ZDMainColor;
             }
         }
         

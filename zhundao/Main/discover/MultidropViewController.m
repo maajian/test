@@ -59,7 +59,7 @@ static NSString *muliData =@"muliData";
 - (void)backNav {
     if (self.navigationController.viewControllers.count == 1) {
         LoginViewController *login = [[LoginViewController alloc]init];
-        [UIApplication sharedApplication].delegate.window.rootViewController = login;
+        [UIApplication sharedApplication].delegate.window.rootViewController = [[BaseNavigationViewController alloc] initWithRootViewController:login];
     } else {
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -287,8 +287,8 @@ static NSString *muliData =@"muliData";
 //{
 //    NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:@"什么是多点签到"];
 //    [str addAttribute:NSUnderlineStyleAttributeName value:@(NSUnderlineStyleSingle) range:NSMakeRange(0, str.length)];
-//    [str addAttribute:NSUnderlineColorAttributeName value:ZDGreenColor range:(NSRange){0,[str length]}];
-//    [str addAttribute:NSForegroundColorAttributeName value:ZDGreenColor range:NSMakeRange(0, str.length)];
+//    [str addAttribute:NSUnderlineColorAttributeName value:ZDMainColor range:(NSRange){0,[str length]}];
+//    [str addAttribute:NSForegroundColorAttributeName value:ZDMainColor range:NSMakeRange(0, str.length)];
 //    [_muliButton setAttributedTitle:str forState:UIControlStateNormal];
 //}
 - (void)makeLayer
@@ -300,15 +300,15 @@ static NSString *muliData =@"muliData";
     _IDTextField.layer.masksToBounds = YES ;
     _IDTextField.layer.cornerRadius = 5;
     _IDTextField.layer.borderWidth=0.5;
-    _IDTextField.layer.borderColor =ZDGreenColor.CGColor;
+    _IDTextField.layer.borderColor =ZDMainColor.CGColor;
     _phonoTextField.layer.masksToBounds = YES;
     _phonoTextField.layer.cornerRadius = 5;
     _phonoTextField.layer.borderWidth=0.5;
-    _phonoTextField.layer.borderColor =ZDGreenColor.CGColor;
+    _phonoTextField.layer.borderColor =ZDMainColor.CGColor;
     _passwordTextField.layer.masksToBounds = YES;
     _passwordTextField.layer.cornerRadius = 5;
     _passwordTextField.layer.borderWidth=0.5;
-    _passwordTextField.layer.borderColor =ZDGreenColor.CGColor;
+    _passwordTextField.layer.borderColor =ZDMainColor.CGColor;
     _loginButton.layer.cornerRadius = 5;
     _loginButton.layer.masksToBounds = YES;
 }

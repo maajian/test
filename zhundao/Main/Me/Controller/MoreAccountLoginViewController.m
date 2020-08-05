@@ -72,7 +72,7 @@
     [self.view addSubview:bottomLine];
     
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [loginButton  setBackgroundColor:ZDGreenColor];
+    [loginButton  setBackgroundColor:ZDMainColor];
     loginButton.layer.cornerRadius = 5;
     loginButton.layer.masksToBounds = YES;
     [loginButton setTitle:@"登录" forState:(UIControlStateNormal)];

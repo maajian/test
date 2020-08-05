@@ -41,8 +41,6 @@
         self.label.textColor = [UIColor whiteColor];
         if ([[[UIDevice currentDevice] systemVersion] floatValue]>=9) {
             [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]].color = [UIColor whiteColor];
-        }else{
-            self.activityIndicatorColor = [UIColor whiteColor];
         }
         self.animationType = AnimationType;
         [self showAnimated:showAnimated];
@@ -63,8 +61,6 @@
         self.label.textColor = [UIColor whiteColor];
         if ([[[UIDevice currentDevice] systemVersion] floatValue]>=9) {
              [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]].color = [UIColor whiteColor];
-        }else{
-            self.activityIndicatorColor = [UIColor whiteColor];
         }
         [self showAnimated: showAnimated];
         [view addSubview:self];

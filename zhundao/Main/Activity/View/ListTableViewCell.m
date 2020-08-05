@@ -20,7 +20,7 @@
     UIView *selectedBg = [[UIView alloc] initWithFrame:self.frame];
     selectedBg.backgroundColor =[UIColor clearColor];
     self.selectedBackgroundView = selectedBg;
-    self.tintColor = ZDGreenColor;
+    self.tintColor = ZDMainColor;
     // Initialization code
 }
 -(void)setModel:(listModel *)model

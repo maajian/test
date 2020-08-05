@@ -53,6 +53,7 @@
         _levelLabel.layer.masksToBounds = YES;
         _levelLabel.backgroundColor = ZDBlueColor;
         [_levelLabel addTapGestureTarget:self action:@selector(vipAction:)];
+        _levelLabel.hidden = !ZD_UserM.isAdmin;
     }
     return _levelLabel;
 }

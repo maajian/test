@@ -105,7 +105,7 @@ static CGFloat const indicatorHeight = 3;
         _staticTitleLabel.tag = j;
         
         // 设置高亮文字颜色
-        _staticTitleLabel.highlightedTextColor = ZDGreenColor;
+        _staticTitleLabel.highlightedTextColor = ZDMainColor;
         _staticTitleLabel.textColor = kColorA(102, 102, 102, 1.0);
         
         // 计算staticTitleLabel的x值
@@ -133,7 +133,7 @@ static CGFloat const indicatorHeight = 3;
     
     // 添加指示器
     self.indicatorView = [[UIView alloc] init];
-    _indicatorView.backgroundColor = ZDGreenColor;
+    _indicatorView.backgroundColor = ZDMainColor;
     _indicatorView.SG_height = indicatorHeight;
     _indicatorView.SG_y = self.frame.size.height - indicatorHeight;
     [self addSubview:_indicatorView];
@@ -179,7 +179,7 @@ static CGFloat const indicatorHeight = 3;
     
     _selectedTitleLabel = label;
     _selectedTitleLabel.font = kAppLargeTextFont;
-    _selectedTitleLabel.textColor = ZDGreenColor;
+    _selectedTitleLabel.textColor = ZDMainColor;
     
     // 改变指示器位置
     [UIView animateWithDuration:0.20 animations:^{
@@ -209,7 +209,7 @@ static CGFloat const indicatorHeight = 3;
         _scrollTitleLabel.tag = i;
         
         // 设置高亮文字颜色
-        _scrollTitleLabel.highlightedTextColor = ZDGreenColor;
+        _scrollTitleLabel.highlightedTextColor = ZDMainColor;
         
         // 计算内容的Size
         CGSize labelSize = [self sizeWithText:_scrollTitleLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, labelH)];
@@ -252,7 +252,7 @@ static CGFloat const indicatorHeight = 3;
     
     // 添加指示器
     self.indicatorView = [[UIView alloc] init];
-    _indicatorView.backgroundColor = ZDGreenColor;
+    _indicatorView.backgroundColor = ZDMainColor;
     _indicatorView.SG_height = indicatorHeight;
     _indicatorView.SG_y = self.frame.size.height - indicatorHeight;
     _indicatorView.layer.shadowColor = kAppGrayColor.CGColor;//shadowColor阴影颜色
@@ -301,7 +301,7 @@ static CGFloat const indicatorHeight = 3;
     
     _selectedTitleLabel = label;
     _selectedTitleLabel.font = kAppLargeTextFont;
-    _selectedTitleLabel.textColor = ZDGreenColor;
+    _selectedTitleLabel.textColor = ZDMainColor;
     
     // 改变指示器位置
     [UIView animateWithDuration:0.20 animations:^{

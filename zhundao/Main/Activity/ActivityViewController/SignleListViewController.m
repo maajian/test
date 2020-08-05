@@ -190,8 +190,6 @@
                 hud.bezelView.backgroundColor = [UIColor clearColor];
                 if ([[[UIDevice currentDevice] systemVersion] floatValue]>=9) {
                     [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]].color = [UIColor grayColor];
-                }else{
-                    hud.activityIndicatorColor = [UIColor grayColor];
                 }
                 [imageview sd_setImageWithURL:photoArray[i-1] placeholderImage:[UIImage imageNamed:@""] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                     [hud hideAnimated:YES];
@@ -293,7 +291,7 @@
     if (!_isChange&&[[[NSUserDefaults standardUserDefaults]objectForKey:@"GradeId"]integerValue]>=4&&[[NSUserDefaults standardUserDefaults]boolForKey:@"printFlag"]&&section==1) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
         view.backgroundColor = [UIColor clearColor];
-        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(20, 20, kScreenWidth-40, 44) title:@"打印签到二维码" textcolor:[UIColor whiteColor] Target:self action:@selector(print) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:1];
+        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(20, 20, kScreenWidth-40, 44) title:@"打印签到二维码" textcolor:[UIColor whiteColor] Target:self action:@selector(print) BackgroundColor:ZDMainColor cornerRadius:5 masksToBounds:1];
             [view addSubview:button];
             return view;
        

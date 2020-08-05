@@ -8,6 +8,10 @@
 
 #import "ZDConst.h"
 
+#pragma mark --- Key
+NSString *const ZDKey_Wechat_Key = @"wx03bd16d684b23cb3";
+NSString *const ZDKey_Wechat_Secret = @"1dee227e7dca7705a8fe6451f04254f7";
+
 #pragma mark --- notification
 NSString *const ZDNotification_Message_Select = @"ZDNotification_Message_Select";
 NSString *const ZDNotification_Change_Account = @"ZDNotification_Change_Account";
@@ -17,7 +21,6 @@ NSString *const ZDNotification_Logout         = @"ZDNotification_Logout";
 
 #pragma mark --- NSUserDefaults
 NSString *const ZDUserDefault_First_Network = @"ZDUserDefault_First_Network";
-NSString *const ZDUserDefault_Network_Line = @"ZDUserDefault_Network_Line";
 NSString *const ZDUserDefault_Sign_Mark = @"ZDUserDefault_Sign_Mark";
 NSString *const ZDUserDefault_Update_Sign = @"ZDUserDefault_Update_Sign";
 NSString *const ZDUserDefault_HasShowPrivacy = @"ZDUserDefault_HasShowPrivacy";

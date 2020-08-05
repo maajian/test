@@ -9,8 +9,6 @@
 #import "ZDNetWorkManager.h"
 
 @interface ZDNetWorkManager()
-// 网络线路
-@property (nonatomic, assign) BOOL isDefaultNetworkLine;
 
 @end
 
@@ -41,8 +39,6 @@ ZD_Singleton_Implementation(NetWorkManager)
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (error.code == -1011) {
             [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-        } else  if (self.isDefaultNetworkLine) {
-            [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
         } else {
             fail([self networkError]);
         }
@@ -58,9 +54,7 @@ ZD_Singleton_Implementation(NetWorkManager)
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (error.code == -1011) {
             [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-        } else  if (self.isDefaultNetworkLine) {
-            [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
-        } else {
+        }  else {
             fail([self networkError]);
         }
     }];
@@ -72,9 +66,7 @@ ZD_Singleton_Implementation(NetWorkManager)
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (error.code == -1011) {
             [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-        } else  if (self.isDefaultNetworkLine) {
-           [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
-       } else {
+        } else {
            fail([self networkError]);
        }
     }];
@@ -86,7 +78,7 @@ ZD_Singleton_Implementation(NetWorkManager)
     NSDictionary *dic = @{@"error code": @(1002),
                           @"error description": @"网络错误, 请检查网络设置",
                           };
-    NSError *error = [NSError errorWithDomain:@"network error" code:1002 userInfo:dic];
+    NSError *error = [NSError errorWithDomain:@"网络错误, 请检查网络设置" code:1002 userInfo:dic];
     return error;
 }
 
@@ -101,15 +93,5 @@ ZD_Singleton_Implementation(NetWorkManager)
         }
     }
 }
-
-#pragma mark --- getter
-- (BOOL)isDefaultNetworkLine {
-    if ([[ NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
-        return NO;
-    }else{
-        return YES;
-    }
-}
-
 
 @end

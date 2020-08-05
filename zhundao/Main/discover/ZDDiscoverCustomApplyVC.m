@@ -136,7 +136,7 @@ static NSString *cellID = @"ZDDiscoverCustomApplyCell";
     UITableViewRowAction *showAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:model.hidden ? @"显示" : @"隐藏" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         [self hideOrShowList:model];
     }];
-    showAction.backgroundColor = ZDGreenColor;
+    showAction.backgroundColor = ZDMainColor;
     return @[showAction];
 }
 

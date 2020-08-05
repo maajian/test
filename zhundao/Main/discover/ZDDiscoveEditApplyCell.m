@@ -38,7 +38,7 @@
         _choiceTF.font = [UIFont systemFontOfSize:14];
         _choiceTF.textColor = [UIColor blackColor];
         _choiceTF.delegate = self;
-        _choiceTF.tintColor = ZDGreenColor;
+        _choiceTF.tintColor = ZDMainColor;
     }
     return _choiceTF;
 }

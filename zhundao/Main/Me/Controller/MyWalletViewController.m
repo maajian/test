@@ -166,7 +166,7 @@
             [weakSelf.navigationController pushViewController:auth animated:YES];
         }]];
         alertView.messageLabel.text = @"请先完成实名认证再添加提现账号";
-        alertView.tintColor = ZDGreenColor;
+        alertView.tintColor = ZDMainColor;
         TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationFade];
         [self presentViewController:alertController animated:YES completion:nil];
     }else{
@@ -194,8 +194,8 @@
     TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationScaleFade];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:str];
     [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue" size:15] range:NSMakeRange(0, attributedString.length)];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:ZDGreenColor range:[str rangeOfString:@"izhundao"]];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:ZDGreenColor range:[str rangeOfString:@"短信"]];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:ZDMainColor range:[str rangeOfString:@"izhundao"]];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:ZDMainColor range:[str rangeOfString:@"短信"]];
     alertView.messageLabel.attributedText = attributedString;
     [self presentViewController:alertController animated:YES completion:nil];
 }

@@ -42,7 +42,7 @@
             dispatch_source_cancel(timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 _sendButton.userInteractionEnabled = YES;
-                    [_sendButton setBackgroundColor:ZDGreenColor];
+                    [_sendButton setBackgroundColor:ZDMainColor];
                  [_sendButton setTitle:@"获取验证码" forState:UIControlStateNormal];
             });
           
@@ -63,7 +63,7 @@
     
     LoginViewController *login = [[LoginViewController alloc]init];
      AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    appDelegate.window.rootViewController = login;
+    appDelegate.window.rootViewController = [[BaseNavigationViewController alloc] initWithRootViewController:login];
     
 }
 - (IBAction)bangding:(id)sender {

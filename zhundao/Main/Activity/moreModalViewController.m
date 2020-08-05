@@ -82,17 +82,28 @@ static NSString *headerID = @"moreModalHeaderView";
 #pragma mark --- initLayout
 - (void)initSet {
     self.title = @"活动管理";
-    _dataArray = @[[moreModalModel editModel],
-                   [moreModalModel personListModel],
-                   [moreModalModel consultModel],
-                   [moreModalModel linkModel],
-                   [moreModalModel applyEndModel],
-                   [moreModalModel deleteModel],
-                   [moreModalModel shareModel],
-                   [moreModalModel inviteModel],
-                   [moreModalModel qrcodeModel],
-                   [moreModalModel copyModel],
-                   [moreModalModel signinModel]];
+    if (ZD_UserM.isAdmin) {
+        _dataArray = @[[moreModalModel editModel],
+                        [moreModalModel personListModel],
+                        [moreModalModel consultModel],
+                        [moreModalModel linkModel],
+                        [moreModalModel applyEndModel],
+                        [moreModalModel deleteModel],
+                        [moreModalModel shareModel],
+                        [moreModalModel inviteModel],
+                        [moreModalModel qrcodeModel],
+                        [moreModalModel copyModel],
+                        [moreModalModel signinModel],
+        ];
+    } else {
+        _dataArray = @[ [moreModalModel personListModel],
+                        [moreModalModel listOutputModel],
+                        [moreModalModel dataPersonModel],
+                        [moreModalModel linkModel],
+                        [moreModalModel shareModel],
+                        [moreModalModel qrcodeModel],
+        ];
+    }
     [self.view addSubview:self.collectionView];
 }
 
@@ -174,6 +185,14 @@ static NSString *headerID = @"moreModalHeaderView";
             break;
         case MoreMoalTypeCopy: {
             [self copyActivity];
+        }
+            break;
+        case MoreMoalTypeDataPerson: {
+            
+        }
+            break;
+        case MoreMoalTypeListOutput: {
+            
         }
             break;
             

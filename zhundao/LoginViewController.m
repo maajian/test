@@ -21,6 +21,7 @@
 #import "BaseNavigationViewController.h"
 #import "CodeLoginViewController.h"
 #import "ZDWebViewController.h"
+#import "ZDLoginCodeSendVC.h"
 
 #define URL_APPID @"appid"
 #define URL_SECRET @"app secret"
@@ -38,7 +39,7 @@
 @property(nonatomic,strong)UITextField *lockTextLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *appImageView;
 @property (weak, nonatomic) IBOutlet UILabel *weixinlabel;
-@property (weak, nonatomic) IBOutlet UIButton *phonelogin;
+@property (weak, nonatomic) IBOutlet UIButton *codeButton;
 
 @property(nonatomic,strong)MBProgressHUD *hud;
 @end
@@ -47,10 +48,11 @@
  // 验证码登录
 - (IBAction)zhuCeButton:(id)sender {
     
-    CodeLoginViewController *code = [[CodeLoginViewController alloc] init];
-    BaseNavigationViewController *nav = [[BaseNavigationViewController alloc] initWithRootViewController:code];
-    [self presentViewController:nav animated:YES completion:nil];
-    
+//    CodeLoginViewController *code = [[CodeLoginViewController alloc] init];
+//    BaseNavigationViewController *nav = [[BaseNavigationViewController alloc] initWithRootViewController:code];
+//    [self presentViewController:nav animated:YES completion:nil];
+    ZDLoginCodeSendVC *send = [[ZDLoginCodeSendVC alloc] init];
+    [self.navigationController pushViewController:send animated:YES];
 }
 
 - (IBAction)phonelogin:(id)sender {
@@ -67,29 +69,24 @@
  }
 
 - (void)login {
- 
-    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login",@"https://open.zhundao.net/"];
-    NSDictionary *parameters = @{@"userName" : _phoneTextLabel.text, @"passWord" : _lockTextLabel.text};
-    
-    [ZD_NetWorkM postDataWithMethod:phoneurl parameters:parameters succ:^(NSDictionary *obj) {
-        if (obj[@"token"]) {
-            [[NSUserDefaults standardUserDefaults]setObject:obj[@"accessKey"] forKey:AccessKey];
-            [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];
-            [[NSUserDefaults standardUserDefaults]synchronize];
-            [self getGrade];
-        } else {
-            [_hud hideAnimated:YES];
-            [self setupAlertController1];
-        }
-    } fail:^(NSError *error) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
-            [[NSUserDefaults standardUserDefaults]synchronize];
-            [self login];
-        });
-        [_hud hideAnimated:YES];
-    }];
+    [self networkForLogin];
+//
+//    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login",@"https://open.zhundao.net/"];
+//    NSDictionary *parameters = @{@"userName" : _phoneTextLabel.text, @"passWord" : _lockTextLabel.text};
+//
+//    [ZD_NetWorkM postDataWithMethod:phoneurl parameters:parameters succ:^(NSDictionary *obj) {
+//        if (obj[@"token"]) {
+//            [[NSUserDefaults standardUserDefaults]setObject:obj[@"accessKey"] forKey:AccessKey];
+//            [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];
+//            [[NSUserDefaults standardUserDefaults]synchronize];
+//            [self getGrade];
+//        } else {
+//            [_hud hideAnimated:YES];
+//            [self setupAlertController1];
+//        }
+//    } fail:^(NSError *error) {
+//        [_hud hideAnimated:YES];
+//    }];
 }
 
 - (void)getGrade
@@ -158,6 +155,25 @@
         return NO;
     }
 }
+
+#pragma mark --- Network
+- (void)networkForLogin {
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
+    NSDictionary *dic = @{@"BusinessCode": @"Login",
+                          @"Data" : @{
+                                  @"UserName": _phoneTextLabel.text,
+                                  @"PassWord": _lockTextLabel.text,
+                         }
+    };
+    ZD_Hud_Loading
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        ZD_Hud_Dismiss
+    } fail:^(NSError *error) {
+        ZD_Hud_Show_Error(error.domain);
+    }];
+}
+
+
 - (void)setupAlertController1 {
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请输入正确的账号密码" preferredStyle:UIAlertControllerStyleAlert];
@@ -179,6 +195,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_codeButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
+    [_loginButton setBackgroundColor:ZDBlackColor3];
      if ([WXApi isWXAppInstalled])
      {
          _loginButton.hidden  = NO;
@@ -217,7 +235,7 @@
     [self.view addSubview:self.phoneTextLabel];
      [self.view addSubview:self.lockTextLabel];
     [self.phoneTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_appImageView).with.offset(130);
+        make.top.equalTo(_appImageView.mas_bottom).with.offset(100);
         make.left.equalTo(self.view).with.offset(20);
         make.right.equalTo(self.view).with.offset(-20);
         make.height.mas_equalTo(50);

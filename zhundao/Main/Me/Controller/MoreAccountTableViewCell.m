@@ -12,7 +12,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.tintColor = ZDGreenColor;
+        self.tintColor = ZDMainColor;
         [self setupUI];
     }
     return self;

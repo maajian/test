@@ -125,7 +125,7 @@
     _sendCodeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_sendCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
     [_sendCodeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_sendCodeButton setBackgroundColor:ZDGreenColor];
+    [_sendCodeButton setBackgroundColor:ZDMainColor];
     _sendCodeButton.titleLabel.font = [UIFont systemFontOfSize:16];
     _sendCodeButton.layer.cornerRadius = 4;
     _sendCodeButton.layer.masksToBounds = YES;
@@ -152,7 +152,7 @@
      // 无法获取验证码
     _dontGetCodeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_dontGetCodeButton setTitle:@"无法获取验证码" forState:UIControlStateNormal];
-    [_dontGetCodeButton setTitleColor:ZDGreenColor forState:UIControlStateNormal];
+    [_dontGetCodeButton setTitleColor:ZDMainColor forState:UIControlStateNormal];
     [_dontGetCodeButton addTarget:self action:@selector(codeWeb) forControlEvents:UIControlEventTouchUpInside];
     _dontGetCodeButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:_dontGetCodeButton];
@@ -285,7 +285,7 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (_codeTextField.text.length) {
         [_nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_nextButton setBackgroundColor:ZDGreenColor];
+        [_nextButton setBackgroundColor:ZDMainColor];
         _nextButton.userInteractionEnabled = YES;
     } else {
         [_nextButton setTitleColor:kColorA(255, 255, 255, 0.4) forState:UIControlStateNormal];
@@ -323,7 +323,7 @@
             dispatch_source_cancel(timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 _sendCodeButton.userInteractionEnabled = YES;
-                [_sendCodeButton setBackgroundColor:ZDGreenColor];
+                [_sendCodeButton setBackgroundColor:ZDMainColor];
                 [_sendCodeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
             });
             

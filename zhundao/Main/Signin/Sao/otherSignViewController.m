@@ -89,9 +89,9 @@
     _textf.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     _textf.layer.cornerRadius = 20;
     _textf.layer.masksToBounds = YES;
-    _textf.tintColor = ZDGreenColor;
+    _textf.tintColor = ZDMainColor;
     
-    _textf.layer.borderColor = ZDGreenColor.CGColor;
+    _textf.layer.borderColor = ZDMainColor.CGColor;
     _textf.layer.borderWidth = 1;
     NSMutableParagraphStyle *style = [_textf.defaultTextAttributes[NSParagraphStyleAttributeName] mutableCopy];
     
@@ -108,11 +108,11 @@
     [signButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 12, 0, 0)];
     signButton.layer.borderWidth = 1;
     NSAttributedString *str = [[NSAttributedString alloc]initWithString:@"扫码签到" attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]
-                                                                                             ,NSForegroundColorAttributeName:ZDGreenColor}];
+                                                                                             ,NSForegroundColorAttributeName:ZDMainColor}];
     
     
     [signButton setAttributedTitle:str forState:UIControlStateNormal];        //确定按钮
-    signButton.layer.borderColor = ZDGreenColor.CGColor;
+    signButton.layer.borderColor = ZDMainColor.CGColor;
     [self.view addSubview:signButton];
     
     UIButton *sureButton = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth/2+10, 180, 100, 40) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(sure) BackgroundColor: nil cornerRadius:20 masksToBounds:YES];
@@ -120,11 +120,11 @@
     sureButton.layer.borderWidth = 1;
     
     NSAttributedString *str1 = [[NSAttributedString alloc]initWithString:@"确定" attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]
-                                                                                            ,NSForegroundColorAttributeName:ZDGreenColor}];
+                                                                                            ,NSForegroundColorAttributeName:ZDMainColor}];
     
     
     [sureButton setAttributedTitle:str1 forState:UIControlStateNormal];
-    sureButton.layer.borderColor = ZDGreenColor.CGColor;
+    sureButton.layer.borderColor = ZDMainColor.CGColor;
     [self.view addSubview:sureButton];
 }
 - (void)sure {

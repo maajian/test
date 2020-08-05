@@ -107,16 +107,17 @@
         make.leading.equalTo(_activityImageView.mas_trailing).offset(5);
         make.trailing.equalTo(self.contentView).offset(-10);
         make.top.equalTo(_activityImageView.mas_top);
-        make.height.equalTo(_activityImageView.mas_height).multipliedBy(0.25);
+        make.height.equalTo(_activityImageView.mas_height).multipliedBy(ZD_UserM.isAdmin ? 0.33 : 0.25);
     }];
-    
-    [_countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_titleLabel.mas_bottom).offset(0);
-        make.leading.trailing.height.equalTo(_titleLabel);
-    }];
+   if (ZD_UserM.isAdmin) {
+        [_countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(_titleLabel.mas_bottom).offset(0);
+            make.leading.trailing.height.equalTo(_titleLabel);
+        }];
+    }
     
     [_beginLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_countLabel.mas_bottom);
+        make.top.equalTo(ZD_UserM.isAdmin ? _countLabel.mas_bottom : _titleLabel.mas_bottom);
         make.leading.trailing.height.equalTo(_titleLabel);
     }];
     
@@ -132,16 +133,18 @@
         make.height.mas_equalTo(1);
     }];
     
-    [_bottomButtonArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
-    [_bottomButtonArray mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(-5);
-        make.top.equalTo(_centerLine.mas_bottom);
-    }];
-    [self layoutIfNeeded];
-    [_signButton setButtonContentCenter];
-    [_shareButton setButtonContentCenter];
-    [_listButton setButtonContentCenter];
-    [_moreButton setButtonContentCenter];
+    if (ZD_UserM.isAdmin) {
+        [_bottomButtonArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+        [_bottomButtonArray mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(-5);
+            make.top.equalTo(_centerLine.mas_bottom);
+        }];
+        [self layoutIfNeeded];
+        [_signButton setButtonContentCenter];
+        [_shareButton setButtonContentCenter];
+        [_listButton setButtonContentCenter];
+        [_moreButton setButtonContentCenter];
+    }
     
 }
 

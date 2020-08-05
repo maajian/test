@@ -26,7 +26,7 @@
 /*! 线路选择 */
 @property (weak, nonatomic) IBOutlet UITableViewCell *lineCell;
 /*! 选择器 */
-@property(nonatomic,strong)AJPickerView *pickView;
+@property(nonatomic,strong) AJPickerView *pickView;
 /*! 当前线路显示 */
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel;
 /*! 多账号管理 */
@@ -75,7 +75,7 @@
      }
     LoginViewController *login = [[LoginViewController alloc]init];
     AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    appDelegate.window.rootViewController = login;
+    appDelegate.window.rootViewController = [[BaseNavigationViewController alloc] initWithRootViewController:login];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -88,8 +88,6 @@
     [_xiugaiCell addGestureRecognizer:xiugaiTap];
     UITapGestureRecognizer *aboutTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushAbout)];
     [_aboutCell addGestureRecognizer:aboutTap];
-    UITapGestureRecognizer *lineTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectLine)];
-    [_lineCell addGestureRecognizer:lineTap];
     UITapGestureRecognizer *moreAcountTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(moreAcount)];
     [_moreAcountCell addGestureRecognizer:moreAcountTap];
     UITapGestureRecognizer *userProtocolTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushUserProtocol)];
@@ -99,7 +97,6 @@
     SignManager *manager = [SignManager shareManager];
     acc = [manager getaccseekey];
     [self createVersion];
-    [self showLine];
 }
 - (void)pushUserProtocol {
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
@@ -117,16 +114,6 @@
     MoreAcountViewController *moreAccount = [[MoreAcountViewController alloc] init];
     [self setHidesBottomBarWhenPushed: YES];
     [self.navigationController pushViewController:moreAccount animated:YES];
-}
-
-/*! 线路显示 */
-
-- (void)showLine {
-    if ([[ NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
-        _lineLabel.text = @"备用线路";
-    }else{
-        _lineLabel.text = @"默认线路";
-    }
 }
 
 /*! 版本号查看 */
@@ -192,27 +179,6 @@
 {
     [hud removeFromSuperview];
      hud = nil;
-}
-
-#pragma mark -----线路选择
-
-- (void)selectLine {
-    NSArray *dataArray = @[@"默认线路",@"备用线路"];
-    
-    
-    _pickView = [[AJPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:dataArray currentStr:_lineLabel.text backBlock:^(NSString *str) {
-        _lineLabel.text = str;
-        if ([str isEqualToString:dataArray.firstObject]) {
-            if ([[NSUserDefaults standardUserDefaults]objectForKey:ZDUserDefault_Network_Line]) {
-                [[NSUserDefaults standardUserDefaults]removeObjectForKey:ZDUserDefault_Network_Line];
-            }else{}
-        }else{
-            [[NSUserDefaults standardUserDefaults]setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
-            [[NSUserDefaults standardUserDefaults]synchronize];
-        }
-    }];
-    [self.view addSubview:_pickView];
-    [_pickView fadeIn];
 }
 
 #pragma mark -----跳转关于准到

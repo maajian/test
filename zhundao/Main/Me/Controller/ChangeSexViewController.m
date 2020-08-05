@@ -54,7 +54,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.tintColor = ZDGreenColor;
+        cell.tintColor = ZDMainColor;
         cell.textLabel.font = [UIFont systemFontOfSize:14];
     }
     if (indexPath.row==0) {
@@ -103,7 +103,7 @@
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
-                          NSForegroundColorAttributeName:ZDGreenColor};
+                          NSForegroundColorAttributeName:ZDMainColor};
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
     
     self.navigationItem.rightBarButtonItem = item;

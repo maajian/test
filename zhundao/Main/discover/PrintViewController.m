@@ -107,7 +107,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:printID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.tintColor = ZDGreenColor;
+        cell.tintColor = ZDMainColor;
     }
     if (indexPath.section==0) {
         cell.textLabel.text = @"开启打印";
@@ -161,7 +161,7 @@
     if (section==3) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 50)];
         view.backgroundColor = [UIColor clearColor];
-//        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:YES];
+//        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:ZDMainColor cornerRadius:5 masksToBounds:YES];
 //        [view addSubview:button];
         return view;
     }

@@ -31,8 +31,8 @@
     if (!_mainButton) {
         _mainButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"img_me_promote_main_normal"] highlightedImage:[UIImage imageNamed:@"img_me_promote_main_select"] selectedImage:[UIImage imageNamed:@"img_me_promote_main_select"] target:self action:@selector(mainAction:)];
         [_mainButton setTitle:@"首页" forState:UIControlStateNormal];
-        [_mainButton setTitleColor:ZDGreenColor2 forState:UIControlStateHighlighted];
-        [_mainButton setTitleColor:ZDGreenColor2 forState:UIControlStateSelected];
+        [_mainButton setTitleColor:ZDMainColor forState:UIControlStateHighlighted];
+        [_mainButton setTitleColor:ZDMainColor forState:UIControlStateSelected];
         [_mainButton setTitleColor:ZDHeaderTitleColor forState:UIControlStateNormal];
         _mainButton.titleLabel.font = ZDSystemFont(10);
     }
@@ -42,8 +42,8 @@
     if (!_shareButton) {
         _shareButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"img_me_promote_share_normal"] highlightedImage:[UIImage imageNamed:@"img_me_promote_share_select"] selectedImage:[UIImage imageNamed:@"img_me_promote_share_select"] target:self action:@selector(shareButton:)];
         [_shareButton setTitle:@"分享" forState:UIControlStateNormal];
-        [_shareButton setTitleColor:ZDGreenColor2 forState:UIControlStateHighlighted];
-        [_shareButton setTitleColor:ZDGreenColor2 forState:UIControlStateSelected];
+        [_shareButton setTitleColor:ZDMainColor forState:UIControlStateHighlighted];
+        [_shareButton setTitleColor:ZDMainColor forState:UIControlStateSelected];
         [_shareButton setTitleColor:ZDHeaderTitleColor forState:UIControlStateNormal];
         _shareButton.titleLabel.font = ZDSystemFont(10);
     }

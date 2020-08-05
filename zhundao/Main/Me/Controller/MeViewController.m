@@ -28,6 +28,7 @@
 #import "PersonInfoViewController.h"
 #import "MyMessageViewController.h"
 #import "ZDMePromoteMainVC.h"
+#import "ZDMeSettingVC.h"
 
 @interface MeViewController ()<UITableViewDataSource, UITableViewDelegate, ZDMeHeaderCellDelegate> {
     NSDictionary *userdic;
@@ -51,8 +52,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self getuser];
-    [self networkForPromote];
-    [self isShowRed];
+    if (ZD_UserM.isAdmin) {
+        [self networkForPromote];
+        [self isShowRed];
+    } 
     [MobClick beginLogPageView:self.navigationItem.title];//("PageOne"为页面名称，可自定义)
 }
 - (void)viewWillDisappear:(BOOL)animated {
@@ -90,11 +93,16 @@
 
 #pragma mark --- Init
 - (void)initSet {
-    _dataSource = @[@[[ZDMeModel headerModel]],
-                    @[[ZDMeModel noticeModel]],
-                    @[[ZDMeModel walletModel], [ZDMeModel messageModel], [ZDMeModel contactModel], [ZDMeModel questionModel]],
-//                    @[[ZDMeModel honorModel], [ZDMeModel zhundaobiModel], [ZDMeModel voucherModel], [ZDMeModel promoteModel]],
-                    @[[ZDMeModel settingModel]]].mutableCopy;
+    if (ZD_UserM.isAdmin) {
+        _dataSource = @[@[[ZDMeModel headerModel]],
+        @[[ZDMeModel noticeModel]],
+        @[[ZDMeModel walletModel], [ZDMeModel messageModel], [ZDMeModel contactModel], [ZDMeModel questionModel]],
+        @[[ZDMeModel settingModel]]].mutableCopy;
+    } else {
+        _dataSource = @[@[[ZDMeModel headerModel]],
+        @[[ZDMeModel personDataMessageModel]],
+        @[[ZDMeModel settingModel]]].mutableCopy;
+    }
     
     [self.view addSubview:self.tableView];
 }
@@ -247,17 +255,13 @@
     web.webTitle = @"个人信息";
     web.isClose = YES;
     web.urlString = [NSString stringWithFormat:@"%@/Activity/UserEdit?token=%@",zhundaoH5Api,[[SignManager shareManager] getToken]];
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
 }
 
 - (void)pushList
 {
     ContactViewController *contact = [[ContactViewController alloc]init];
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:contact animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
 }
 - (void)showsuggest
 {
@@ -265,36 +269,28 @@
     web.webTitle = @"我的工单";
     web.isClose = YES;
     web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Extra/TicketMain?token=%@",[[SignManager shareManager] getToken]];
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
 }
 - (void)showVoucher {
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"我的代金券";
     web.isClose = YES;
     web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/coupon/index.html#/mycoupon?token=%@",[[SignManager shareManager] getToken]];
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
 }
 - (void)showHonor {
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"我的勋章";
     web.isClose = YES;
     web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/account/index.html#!/nameplate?token=%@",[[SignManager shareManager] getToken]];
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
 }
 - (void)showZhundaoBi {
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"我的准币";
     web.isClose = YES;
     web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/shop/index.html#!/ZDWallet?token=%@",[[SignManager shareManager] getToken]];
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
 }
 
 - (void)pushWallet {
@@ -302,28 +298,21 @@
     web.webTitle = @"我的钱包";
     web.isClose = YES;
     web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/Activity/MyWallet?token=%@",[[SignManager shareManager] getToken]];
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
 }
 /*! 通知公告 */
 - (void)pushNotice {
     NoticeViewController *notice = [[NoticeViewController alloc]init];
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:notice animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
 }
 /*! 设置 */
 - (void)pushSetting {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Me" bundle:[NSBundle mainBundle]];
-    SettingTableViewController *vc = [sb instantiateViewControllerWithIdentifier:@"settingStoryboard"];
-    [self.navigationController pushViewController:vc animated:YES];
+    ZDMeSettingVC *setting = [[ZDMeSettingVC alloc] init];
+    [self.navigationController pushViewController:setting animated:YES];
 }
 - (void)showPromote {
     ZDMePromoteMainVC *main = [[ZDMePromoteMainVC alloc] init];
-    [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:main animated:YES];
-    [self setHidesBottomBarWhenPushed:NO];
 }
 
 #pragma mark 通知公告小红点

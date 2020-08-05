@@ -31,7 +31,7 @@
 #pragma mark --- lazyload
 - (UILabel *)countLabel {
     if (!_countLabel) {
-        _countLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDGreenColor2 font:ZDMediumFont(18) numberOfLines:0 lineBreakMode:0 lineAlignment:NSTextAlignmentCenter];
+        _countLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDMainColor font:ZDMediumFont(18) numberOfLines:0 lineBreakMode:0 lineAlignment:NSTextAlignmentCenter];
     }
     return _countLabel;
 }

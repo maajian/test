@@ -92,7 +92,7 @@
 {
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(savaAction)];
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
-                          NSForegroundColorAttributeName:ZDGreenColor};
+                          NSForegroundColorAttributeName:ZDMainColor};
     [item2 setTitleTextAttributes:dic forState:UIControlStateNormal];
 
     self.navigationItem.rightBarButtonItem = item2;

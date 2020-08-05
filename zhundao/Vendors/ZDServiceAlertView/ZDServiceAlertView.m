@@ -90,7 +90,7 @@
         _sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _sureButton.layer.cornerRadius = 22;
         _sureButton.layer.masksToBounds = YES;
-        _sureButton.backgroundColor = ZDGreenColor2;
+        _sureButton.backgroundColor = ZDMainColor;
         [_sureButton setTitle:@"确定" forState:UIControlStateNormal];
         [_sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _sureButton.titleLabel.font = [UIFont systemFontOfSize:16];

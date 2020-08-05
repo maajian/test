@@ -47,7 +47,12 @@
 }
 -(void)createSubControllers
 {
-    NSArray *storyboardNames = @[@"Activity",@"Signin",@"Discover",@"Me"];
+    NSArray *storyboardNames;
+    if (ZD_UserM.isAdmin) {
+        storyboardNames = @[@"Activity",@"Signin",@"Discover",@"Me"];
+    } else {
+        storyboardNames = @[@"Activity",@"Me"];
+    }
     NSMutableArray *Marray = [[NSMutableArray alloc]init];
     for (NSString *sbName in storyboardNames) {
         UINavigationController *nav= nil;
@@ -66,8 +71,16 @@
         }
     }
     CGFloat buttonWidth = kScreenWidth/4;
-    NSArray *imageArray = @[@"activity",@"loginin",@"discover",@"me"];
-    NSArray *titleArray = @[@"活动",@"签到",@"发现",@"我"];
+    NSArray *imageArray;
+    NSArray *titleArray;
+    if (ZD_UserM.isAdmin) {
+        imageArray = @[@"activity",@"loginin",@"discover",@"me"];
+        titleArray = @[@"活动",@"签到",@"发现",@"我"];
+    } else {
+        imageArray = @[@"activity",@"me"];
+        titleArray = @[@"活动",@"我"];
+    }
+
     for (int i=0; i<4; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i*buttonWidth, 0, buttonWidth, 49);
@@ -101,7 +114,7 @@
             flag=0;
             _startButton = button;
             _startLabel = label;
-            _startLabel.textColor = ZDGreenColor2;
+            _startLabel.textColor = ZDMainColor;
             _startIamgeView = imageview;
             _startIamgeView.image = [UIImage imageNamed:@"activityed"];
             [_startButton addSubview:_startLabel];
@@ -118,9 +131,15 @@
     
     [MobClick event:@"zhundaoID"];
     
-    
-    NSArray *imageArray = @[@"activity",@"loginin",@"discover",@"me"];
-        NSArray *imagedarray = @[@"activityed",@"logined",@"discovered",@"meed"];
+    NSArray *imageArray;
+    NSArray *imagedarray;
+    if (ZD_UserM.isAdmin) {
+        imageArray = @[@"activity",@"loginin",@"discover",@"me"];
+        imagedarray = @[@"activityed",@"logined",@"discovered",@"meed"];
+    } else {
+        imageArray = @[@"activity",@"me"];
+        imagedarray = @[@"activityed",@"meed"];
+    }
     
     if ([_startButton.subviews[0] isKindOfClass:[UILabel class]]) {
          _startLabel =  (UILabel *)_startButton.subviews[0];
@@ -159,7 +178,7 @@
         self.startButton.selected = YES;    // starbutton 选中
     }
     if (!self.startButton.selected) {
-        _startLabel.textColor = ZDGreenColor2;
+        _startLabel.textColor = ZDMainColor;
         _startIamgeView.image = [UIImage imageNamed:imagedarray[flag]];
     }
 }

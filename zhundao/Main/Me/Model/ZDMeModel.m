@@ -36,6 +36,9 @@
 + (instancetype)questionModel {
     return [ZDMeModel modelWithImageName:@"retroaction" title:@"我的工单" type:ZDMeTypeQuestion];
 }
++ (instancetype)personDataMessageModel {
+    return [ZDMeModel modelWithImageName:@"通知公告" title:@"消息" type:ZDMeTypePersonDataMessage];
+}
 + (instancetype)honorModel {
     return [ZDMeModel modelWithImageName:@"img_me_honor" title:@"我的勋章" type:ZDMeTypeHonor];
 }

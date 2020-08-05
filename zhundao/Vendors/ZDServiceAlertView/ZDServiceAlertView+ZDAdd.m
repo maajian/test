@@ -23,7 +23,7 @@
     [attr addAttributes:@{NSLinkAttributeName: @"https://www.zhundao.net/yinsi.html"} range:[[attr string] rangeOfString:@"《隐私政策》"]];
     alert.attributeContent = attr;
     alert.alertViewType = ZDServiceAlertViewTypePrivacyNormalAlert;
-    alert.linkTextAttributes = @{NSForegroundColorAttributeName : ZDGreenColor};
+    alert.linkTextAttributes = @{NSForegroundColorAttributeName : ZDMainColor};
     [[UIApplication sharedApplication].keyWindow addSubview:alert];
     [alert animationIn];
     return alert;

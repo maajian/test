@@ -493,7 +493,7 @@
         UITableViewRowAction *rowAction2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"线下支付" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
             [self underLineWithActivityListId:model.ID];
         }];
-        rowAction2.backgroundColor = ZDGreenColor;
+        rowAction2.backgroundColor = ZDMainColor;
         [rowArray addObject:rowAction2];
     }
     if (model.Status ==2) {
@@ -513,7 +513,7 @@
             [self sendInvite];
         }];
         mycell = [tableView cellForRowAtIndexPath:indexPath];
-        rowAction5.backgroundColor = ZDGreenColor;
+        rowAction5.backgroundColor = ZDMainColor;
         [rowArray addObject:rowAction5];
     }
     return rowArray;

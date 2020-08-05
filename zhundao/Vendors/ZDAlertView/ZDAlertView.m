@@ -114,7 +114,7 @@
     if (_sureButtonTitle.length) {
         _sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_sureButton setTitle:_sureButtonTitle forState:UIControlStateNormal];
-        [_sureButton setTitleColor:ZDGreenColor forState:UIControlStateNormal];
+        [_sureButton setTitleColor:ZDMainColor forState:UIControlStateNormal];
         _sureButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
         [_sureButton addTarget:self action:@selector(sureAction) forControlEvents:UIControlEventTouchUpInside];
         [_contentView addSubview:_sureButton];

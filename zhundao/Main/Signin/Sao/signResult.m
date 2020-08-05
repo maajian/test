@@ -58,7 +58,7 @@
             UIColor *titleColor = nil;
             
             if (![obj[@"data"] isEqual:[NSNull null]]) {
-                titleColor = [obj[@"errcode"] integerValue] == 0 ? ZDGreenColor : ZDYellowColor;
+                titleColor = [obj[@"errcode"] integerValue] == 0 ? ZDMainColor : ZDYellowColor;
                 [self showSuccessAlertWithSignType:signType data:data title:obj[@"errmsg"] titleColor:titleColor action1:action1];
             } else {
                 [self showErrorAlertWithSignType:signType message:obj[@"errmsg"] action1:action1];
@@ -78,7 +78,7 @@
                               @"checkInTime": NSDate.getCurrentDayStr
                               };
         [ZDCache.sharedCache setCache:_dataArray forKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, signID]];
-        [self showSuccessAlertWithSignType:signType data:dic title:alreadySign ? @"重复签到" : @"签到成功" titleColor:alreadySign ? ZDYellowColor: ZDGreenColor action1:action1];
+        [self showSuccessAlertWithSignType:signType data:dic title:alreadySign ? @"重复签到" : @"签到成功" titleColor:alreadySign ? ZDYellowColor: ZDMainColor action1:action1];
         [ZD_UserM markLocalSign:signID];
         [self postLocalDataWithSignID:signID success:nil fail:nil];
     }

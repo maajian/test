@@ -62,7 +62,7 @@
 - (UIButton *)sureBtn
 {
     if (!_sureBtn) {
-        _sureBtn = [MyButton initWithButtonFrame:CGRectMake(10, 174, kScreenWidth-20, 44) title:@"保存" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:YES];
+        _sureBtn = [MyButton initWithButtonFrame:CGRectMake(10, 174, kScreenWidth-20, 44) title:@"保存" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:ZDMainColor cornerRadius:5 masksToBounds:YES];
     }
     return _sureBtn;
 }
@@ -72,7 +72,7 @@
     if (!_exLabel) {
         _exLabel = [[UILabel alloc]initWithFrame:CGRectMake(kScreenWidth-200, 134, 180, 30)];
         _exLabel.font = [UIFont systemFontOfSize:11];
-        _exLabel.textColor= ZDGreenColor;
+        _exLabel.textColor= ZDMainColor;
         _exLabel.text = @"建议修改偏移值为5或-5的倍数";
         _exLabel.textAlignment =NSTextAlignmentRight;
     }
@@ -87,7 +87,7 @@
         _testButton.frame = CGRectMake(kScreenWidth-100, 230, 80, 25);
         [_testButton setTitle:@"打印测试" forState:0];
         [_testButton setTitleColor:[UIColor whiteColor] forState:0];
-        [_testButton setBackgroundColor:ZDGreenColor];
+        [_testButton setBackgroundColor:ZDMainColor];
         _testButton.titleLabel.font = [UIFont systemFontOfSize:14];
         _testButton.layer.cornerRadius = 5;
         _testButton.layer.masksToBounds = YES;

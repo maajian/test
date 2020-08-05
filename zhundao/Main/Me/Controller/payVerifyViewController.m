@@ -60,7 +60,7 @@
     
     _textf = [[UITextField alloc]init];
     _textf.placeholder = @"请输入手机验证码";
-    _textf.tintColor = ZDGreenColor;
+    _textf.tintColor = ZDMainColor;
     _textf.keyboardType = UIKeyboardTypeNumberPad;
     _textf.font = [UIFont systemFontOfSize:16];
     [_textf becomeFirstResponder];
@@ -76,7 +76,7 @@
     [self.view addSubview:_sendVerifyButton];
     [_sendVerifyButton setTitle:@"获取验证码" forState:UIControlStateNormal];
     _sendVerifyButton.titleLabel.font = [UIFont systemFontOfSize:16];
-    [_sendVerifyButton setTitleColor:ZDGreenColor forState:UIControlStateNormal];
+    [_sendVerifyButton setTitleColor:ZDMainColor forState:UIControlStateNormal];
     [_sendVerifyButton addTarget:self action:@selector(sendVerify) forControlEvents:UIControlEventTouchUpInside];
     [_sendVerifyButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view).offset(-20);
@@ -89,7 +89,7 @@
     [self.view addSubview:_verifyButton];
     [_verifyButton setTitle:@"验证" forState:UIControlStateNormal];
     [_verifyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    _verifyButton.backgroundColor =ZDGreenColor;
+    _verifyButton.backgroundColor =ZDMainColor;
     _verifyButton.layer.cornerRadius = 5;
     _verifyButton.layer.masksToBounds = YES;
     [_verifyButton addTarget:self action:@selector(verifyMessage) forControlEvents:UIControlEventTouchUpInside];
@@ -148,7 +148,7 @@
             dispatch_source_cancel(timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 _sendVerifyButton.userInteractionEnabled = YES;
-                [_sendVerifyButton setTitleColor:ZDGreenColor forState:UIControlStateNormal];
+                [_sendVerifyButton setTitleColor:ZDMainColor forState:UIControlStateNormal];
                 [_sendVerifyButton setTitle:@"获取验证码" forState:UIControlStateNormal];
                 
             });

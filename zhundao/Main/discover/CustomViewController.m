@@ -528,7 +528,7 @@
         UITableViewRowAction *showAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:@"显示" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
             [self hideOrShowList:model hidden:NO];
         }];
-        showAction.backgroundColor = ZDGreenColor;
+        showAction.backgroundColor = ZDMainColor;
         return @[showAction];
     } else {
         UITableViewRowAction *hideAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:@"隐藏" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {

@@ -123,13 +123,18 @@ static NSString *cellID = @"ActivityCellID";
     } else {
         cell.model = self.viewModel.allDataArray[indexPath.section];
     }
+    cell.accessoryType = ZD_UserM.isAdmin ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
     cell.activityCellDelegate = self;
     return cell;
 }
 
 #pragma mark --- UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  0.25 * kScreenWidth + 83;
+    if (ZD_UserM.isAdmin) {
+        return  0.25 * kScreenWidth + 83;
+    } else {
+        return  0.25 * kScreenWidth + 24;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

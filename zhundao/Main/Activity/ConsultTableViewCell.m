@@ -37,7 +37,7 @@
     self.timeLabel.text = _timeStr;
     if (_model.IsRecommend) {
          self.recommendLabel.text = @"已推荐";
-        self.recommendLabel.textColor = ZDGreenColor;
+        self.recommendLabel.textColor = ZDMainColor;
     }else{
         self.recommendLabel.text = @"未推荐";
         self.recommendLabel.textColor = [UIColor grayColor];

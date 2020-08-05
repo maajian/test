@@ -45,7 +45,7 @@
     countLabel.textAlignment = NSTextAlignmentRight;
     [view addSubview:countLabel];
     
-    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 200, kScreenWidth-20, 44) title:@"提交" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:ZDGreenColor cornerRadius:4 masksToBounds:1];
+    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 200, kScreenWidth-20, 44) title:@"提交" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor:ZDMainColor cornerRadius:4 masksToBounds:1];
     [self.view addSubview:button];
     
 }

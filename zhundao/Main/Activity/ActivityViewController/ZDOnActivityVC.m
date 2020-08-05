@@ -111,7 +111,11 @@ static NSString *cellID = @"ActivityCellID";
 
 #pragma mark --- UITableViewDataSource
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  0.25 * kScreenWidth + 83;
+    if (ZD_UserM.isAdmin) {
+        return  0.25 * kScreenWidth + 83;
+    } else {
+        return  0.25 * kScreenWidth + 24;
+    }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.active ? self.viewModel.onSearchArray.count : self.viewModel.onDataArray.count;
@@ -126,6 +130,7 @@ static NSString *cellID = @"ActivityCellID";
     } else {
         cell.model = self.viewModel.onDataArray[indexPath.section];
     }
+    cell.accessoryType = ZD_UserM.isAdmin ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
     cell.activityCellDelegate = self;
     return cell;
 }

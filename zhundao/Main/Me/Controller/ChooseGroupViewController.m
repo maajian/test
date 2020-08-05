@@ -198,12 +198,12 @@
 //    else
 //    {
 //        cell.textLabel.text = @"新增...";
-//        cell.textLabel.textColor = ZDGreenColor;
+//        cell.textLabel.textColor = ZDMainColor;
 //         cell.textLabel.font = [UIFont systemFontOfSize:12];
 //    }
     if (self.selectIndex ==indexPath.row) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-           cell.tintColor = ZDGreenColor;
+           cell.tintColor = ZDMainColor;
     }else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -242,7 +242,7 @@
         self.selectIndex = indexPath.row;
         UITableViewCell *cell1 = [tableView cellForRowAtIndexPath:indexPath];
         cell1.accessoryType = UITableViewCellAccessoryCheckmark;
-        cell1.tintColor = ZDGreenColor;
+        cell1.tintColor = ZDMainColor;
 
 }
 #pragma 添加分组

@@ -29,6 +29,14 @@
 + (instancetype)personListModel {
     return [[self alloc] initWithImageStr:@"more名单.png" title:@"报名名单" type:MoreMoalTypePersonList];
 }
+// 名单导出
++ (instancetype)listOutputModel {
+    return [[self alloc] initWithImageStr:@"more名单.png" title:@"名单导出" type:MoreMoalTypeListOutput];
+}
+// 数据员
++ (instancetype)dataPersonModel {
+    return [[self alloc] initWithImageStr:@"more名单.png" title:@"报数据员" type:MoreMoalTypeDataPerson];
+}
 
 // 咨询
 + (instancetype)consultModel {

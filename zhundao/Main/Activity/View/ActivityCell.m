@@ -10,10 +10,8 @@
 #import "TYAlertController+BlurEffects.h"
 #import "UIView+TYAlertView.h"
 #import "Time.h"
-@interface ActivityCell()
-{
+@interface ActivityCell() {
     ActivityCell *mycell;
-    
 }
 @property (weak, nonatomic) IBOutlet UILabel *enrollCount;
 @property (weak, nonatomic) IBOutlet UILabel *incomeLabel;

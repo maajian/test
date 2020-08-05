@@ -22,10 +22,6 @@
 #define kSafeBottomLayout             (WY_iPhone_X ? -(34) : 0)
 
 #define WY_iPhone_X                   (MAX(kScreenWidth, kScreenHeight) == 812 || MAX(kScreenWidth, kScreenHeight) == 818)
-#define WXDoctor_App_ID @"wxfe2a9da163481ba9" // 注册微信时的AppID
-#define WXDoctor_App_Secret @"ace26a762813528cc2dbb65b4279398e" // 注册时得到的AppSecret
-//#define WXPatient_App_ID @"wxbd02bfeea4292***"
-//#define WXPatient_App_Secret @"4a788217f363358276309ab655707***"
 
 #define WX_UNION_ID @"Unionid"
 #define AccessKey @"AccessKey"
@@ -37,10 +33,13 @@
 #define userdic1 @"userdic"
 
 #define activityaArray @"activityaArray"
-#define ZDGreenColor2 ([UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1])
 #define ZDGrayColor  [UIColor colorWithRed:186.00f/255.0f green:187.00f/255.0f blue:192.00f/255.0f alpha:1]
 #define ZDGrayColor2  [UIColor colorWithRed:153.00f/255.0f green:153.00f/255.0f blue:153.00f/255.0f alpha:1]
-#define ZDGreenColor  [UIColor colorWithRed:68.00f/255.0f green:186.00f/255.0f blue:37.00f/255.0f alpha:1]
+//#define ZDMainColor  [UIColor colorWithRed:68.00f/255.0f green:186.00f/255.0f blue:37.00f/255.0f alpha:1]
+#define ZDMainColor  [UIColor colorFromHexCode:@"E87E25"]
+#define ZDGreyColor666  [UIColor colorFromHexCode:@"666666"]
+#define ZDGreyColor999  [UIColor colorFromHexCode:@"999999"]
+#define ZDBlackColor3  [UIColor colorFromHexCode:@"4A4C5B"]
 #define ZDBackgroundColor  [UIColor colorWithRed:244.00f/255.0f green:244.00f/255.0f blue:244.00f/255.0f alpha:1]
 #define ZDLineColor  [UIColor colorWithRed:223.00f/255.0f green:223.00f/255.0f blue:223.00f/255.0f alpha:1]
 #define ZDLineColor2  [UIColor colorWithRed:180.00f/255.0f green:180.00f/255.0f blue:180.00f/255.0f alpha:1]
@@ -57,7 +56,7 @@
 #define ZDSystemFont(r) [UIFont systemFontOfSize:r]
 #define ZDBoldFont(r) [UIFont boldSystemFontOfSize:r]
 
-#define zhundaoApi ([[NSUserDefaults standardUserDefaults]objectForKey:@"ZDUserDefault_Network_Line"]?@"https://open.zhundao.com.cn/":@"https://open.zhundao.net/")
+#define zhundaoApi @"https://open.zhundao.com.cn/"
 #define zhundaoH5Api @"https://m.zhundao.net/"
 #define zhundaoMessageApi @"https://sms.zhundao.com.cn/"
 #define zhundaoLogApi @"https://fc.zhundao.net/"

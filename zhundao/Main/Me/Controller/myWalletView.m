@@ -72,7 +72,7 @@
 
 - (UIButton *)withdrawButton{
     if (!_withdrawButton) {
-        _withdrawButton = [MyButton initWithButtonFrame:CGRectZero title:@"提现" textcolor:[UIColor whiteColor] Target:self action:@selector(pushToWithDraw) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:1];
+        _withdrawButton = [MyButton initWithButtonFrame:CGRectZero title:@"提现" textcolor:[UIColor whiteColor] Target:self action:@selector(pushToWithDraw) BackgroundColor:ZDMainColor cornerRadius:5 masksToBounds:1];
     }
     return _withdrawButton;
 }

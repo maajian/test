@@ -172,7 +172,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (_nameTextField.text.length > 0 && _passWordTextField.text.length>0) {
         [_nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_nextButton setBackgroundColor:ZDGreenColor];
+        [_nextButton setBackgroundColor:ZDMainColor];
     }
 }
 

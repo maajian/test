@@ -141,7 +141,7 @@
 - (UILabel *)applyTitleLabel {
     if (!_applyTitleLabel) {
         _applyTitleLabel = [UILabel new];
-        _applyTitleLabel.text = @"报名";
+        _applyTitleLabel.text = ZD_UserM.isAdmin ? @"报名" : @"全部";
         _applyTitleLabel.textColor = kColorA(153, 153, 153, 1);
         _applyTitleLabel.font = [UIFont systemFontOfSize:13 weight:UIFontWeightThin];
     }
@@ -169,7 +169,7 @@
 - (UILabel *)browseTitleLabel {
     if (!_browseTitleLabel) {
         _browseTitleLabel = [UILabel new];
-        _browseTitleLabel.text = @"浏览";
+        _browseTitleLabel.text = ZD_UserM.isAdmin ? @"浏览" : @"昨日";
         _browseTitleLabel.textColor = kColorA(153, 153, 153, 1);
         _browseTitleLabel.font = [UIFont systemFontOfSize:13 weight:UIFontWeightThin];
     }
@@ -197,7 +197,7 @@
 - (UILabel *)incomeTitleLabel {
     if (!_incomeTitleLabel) {
         _incomeTitleLabel = [UILabel new];
-        _incomeTitleLabel.text = @"收入";
+        _incomeTitleLabel.text = ZD_UserM.isAdmin ? @"收入" : @"今日";
         _incomeTitleLabel.textColor = kColorA(153, 153, 153, 1);
         _incomeTitleLabel.font = [UIFont systemFontOfSize:13 weight:UIFontWeightThin];
     }
@@ -258,7 +258,8 @@
     
     [self.arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).offset(20);
-        make.size.mas_equalTo(CGSizeMake(15, 15));
+        make.height.mas_equalTo(15);
+        make.width.mas_equalTo(ZD_UserM.isAdmin ? 15 : 0);
         make.centerY.equalTo(self.headerImageView);
     }];
     

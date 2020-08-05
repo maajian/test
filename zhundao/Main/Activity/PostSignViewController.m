@@ -164,7 +164,7 @@
 #pragma mark  ---按钮创建
 - (void)createButton
 {
-    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10,215, kScreenWidth-20, 40) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(buttonAction) BackgroundColor:ZDGreenColor cornerRadius:3 masksToBounds:YES];
+    UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10,215, kScreenWidth-20, 40) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(buttonAction) BackgroundColor:ZDMainColor cornerRadius:3 masksToBounds:YES];
     [_tableview addSubview:button];  //创建下面button
     
 }

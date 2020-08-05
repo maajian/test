@@ -108,7 +108,7 @@
     
     UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [sureButton setTitle:@"我知道了" forState:(UIControlStateNormal)];
-    [sureButton setTitleColor:ZDGreenColor forState:UIControlStateNormal];
+    [sureButton setTitleColor:ZDMainColor forState:UIControlStateNormal];
     sureButton.titleLabel.font = [UIFont systemFontOfSize:17];
     [sureButton addTarget:self action:@selector(sure) forControlEvents:UIControlEventTouchUpInside];
     [containView addSubview:sureButton];

@@ -130,7 +130,7 @@
     if (section==2) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
         view.backgroundColor = ZDBackgroundColor;
-        UIButton *bottomButton  = [MyButton initWithButtonFrame:CGRectMake(20, 20, kScreenWidth-40, 44) title:@"发送短信" textcolor:[UIColor whiteColor] Target:self action:@selector(sendMessage) BackgroundColor:ZDGreenColor cornerRadius:3 masksToBounds:1];
+        UIButton *bottomButton  = [MyButton initWithButtonFrame:CGRectMake(20, 20, kScreenWidth-40, 44) title:@"发送短信" textcolor:[UIColor whiteColor] Target:self action:@selector(sendMessage) BackgroundColor:ZDMainColor cornerRadius:3 masksToBounds:1];
         [view addSubview:bottomButton];
         return view;
     }else{

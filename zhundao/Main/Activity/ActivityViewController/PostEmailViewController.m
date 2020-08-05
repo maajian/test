@@ -33,7 +33,7 @@
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(postEmail)];
     NSDictionary *dic = @{NSFontAttributeName : [UIFont systemFontOfSize:17],
-                          NSForegroundColorAttributeName : ZDGreenColor};
+                          NSForegroundColorAttributeName : ZDMainColor};
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = item;
 }

@@ -63,7 +63,7 @@
     }];
     
     UIButton *payButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    payButton.backgroundColor = ZDGreenColor;
+    payButton.backgroundColor = ZDMainColor;
     payButton.layer.cornerRadius = 4;
     payButton.layer.masksToBounds = YES;
     [payButton setTitle:@"充值" forState:UIControlStateNormal];

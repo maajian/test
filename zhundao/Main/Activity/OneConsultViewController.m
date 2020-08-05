@@ -111,7 +111,7 @@
     if(section==2) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
         view.backgroundColor = ZDBackgroundColor;
-        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"确认" textcolor:[UIColor whiteColor] Target:self action:@selector(postConsult) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:1];
+        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"确认" textcolor:[UIColor whiteColor] Target:self action:@selector(postConsult) BackgroundColor:ZDMainColor cornerRadius:5 masksToBounds:1];
         [view addSubview:button];
         return view;
     }

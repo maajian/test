@@ -86,7 +86,7 @@ static NSString *topCellID = @"topInviteCellID";
         }
         cell.imageView.image = [UIImage imageNamed:@"邀请加号"];
         cell.textLabel.text = @"点击增加邀请函模版";
-        cell.textLabel.textColor = ZDGreenColor;
+        cell.textLabel.textColor = ZDMainColor;
         cell.textLabel.font = KweixinFont(14);
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;

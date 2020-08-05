@@ -1,11 +1,12 @@
 platform:ios,'8.0'
-project 'zhundao.xcodeproj'
-target 'zhundao' do
+project 'jingjing.xcodeproj'
+target 'jingjing' do
 pod 'CocoaAsyncSocket'
 pod 'IQKeyboardManager'
 pod 'FMDB'
 pod 'JPush'
 pod 'AFNetworking'
+pod 'MBProgressHUD'
 # 缓存框架
 pod 'YYCache'
 pod 'AMapLocation'

@@ -43,7 +43,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-     [WXApi registerApp:@"wxfe2a9da163481ba9" ];
+    [WXApi registerApp:ZDKey_Wechat_Key ];
     LoginViewController *login = [[LoginViewController alloc]init];
     NSString  *Unionid = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
     NSString *access = [[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
@@ -71,14 +71,14 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     
     //是否登录
     if (Unionid==nil&&access==nil) {
-        self.window.rootViewController = login;
+        self.window.rootViewController = [[BaseNavigationViewController alloc] initWithRootViewController:login];;
     }
     if (access) {
         MainViewController *tabbar = [[MainViewController alloc]init];
         self.window.rootViewController = tabbar;
     }
     if (Unionid&&[mobile isEqualToString:@"<null>"]) {
-        self.window.rootViewController = login;
+        self.window.rootViewController = [[BaseNavigationViewController alloc] initWithRootViewController:login];
     }
     if (Unionid&&![mobile isEqualToString:@"<null>"]) {
         MainViewController *tabbar = [[MainViewController alloc]init];
@@ -205,7 +205,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 #pragma mark ------友盟分享设置
 - (void)configUSharePlatforms
 {
-     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxfe2a9da163481ba9" appSecret:@"ace26a762813528cc2dbb65b4279398e" redirectURL:@"https://mobile.umeng.com/social"];
+     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:ZDKey_Wechat_Key appSecret:ZDKey_Wechat_Secret redirectURL:@"https://mobile.umeng.com/social"];
 
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
@@ -249,15 +249,27 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             NSLog(@"temp.code = %@",temp.code);
             NSLog(@"state = %@",temp.state);
             
-            NSString *poststring =[NSString stringWithFormat:@"%@api/v2/weChatLogin?code=%@&type=1",zhundaoApi,temp.code];
-            [ZD_NetWorkM getDataWithMethod:poststring parameters:nil succ:^(NSDictionary *obj) {
-                [[NSUserDefaults standardUserDefaults] setObject:obj[@"accessKey"] forKey:AccessKey];
-                [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];
-                [[NSUserDefaults standardUserDefaults]synchronize];
-                [self getUserInfo];
+            NSDictionary *codeParam = @{@"appid" : ZDKey_Wechat_Key,
+                                        @"secret" : ZDKey_Wechat_Secret,
+                                        @"code" : temp.code,
+                                        @"grant_type" : @"authorization_code"
+            };
+            NSString *authUrl = @"https://api.weixin.qq.com/sns/oauth2/access_token";
+            [ZD_NetWorkM getDataWithMethod:authUrl parameters:codeParam succ:^(NSDictionary *obj) {
+                
             } fail:^(NSError *error) {
-                NSLog(@"发送失败");
+                
             }];
+            
+//            NSString *poststring =[NSString stringWithFormat:@"%@api/v2/weChatLogin?code=%@&type=1",zhundaoApi,temp.code];
+//            [ZD_NetWorkM getDataWithMethod:poststring parameters:nil succ:^(NSDictionary *obj) {
+//                [[NSUserDefaults standardUserDefaults] setObject:obj[@"accessKey"] forKey:AccessKey];
+//                [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];
+//                [[NSUserDefaults standardUserDefaults]synchronize];
+//                [self getUserInfo];
+//            } fail:^(NSError *error) {
+//                NSLog(@"发送失败");
+//            }];
         }
     }
 

@@ -98,7 +98,7 @@ static NSString *cellID = @"AllAccountID";
 {
     UIView *View = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
     View.backgroundColor = ZDBackgroundColor;
-    UIButton *addAccountButton = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"添加提现账户" textcolor:[UIColor whiteColor] Target:self action:@selector(addAccount) BackgroundColor: ZDGreenColor cornerRadius:5 masksToBounds:YES];
+    UIButton *addAccountButton = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"添加提现账户" textcolor:[UIColor whiteColor] Target:self action:@selector(addAccount) BackgroundColor: ZDMainColor cornerRadius:5 masksToBounds:YES];
     [View addSubview:addAccountButton];
     return  View;
 }
@@ -146,7 +146,7 @@ static NSString *cellID = @"AllAccountID";
             [weakSelf.navigationController pushViewController:auth animated:YES];
         }]];
         alertView.messageLabel.text = @"请先完成实名认证再添加提现账号";
-        alertView.tintColor = ZDGreenColor;
+        alertView.tintColor = ZDMainColor;
         TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationFade];
         [self presentViewController:alertController animated:YES completion:nil];
     }else{

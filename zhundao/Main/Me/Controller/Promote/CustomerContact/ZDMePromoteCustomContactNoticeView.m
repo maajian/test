@@ -51,7 +51,7 @@
 }
 - (UILabel *)noticeLabel {
     if (!_noticeLabel) {
-        _noticeLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDGreenColor2 font:ZDMediumFont(12) numberOfLines:0 lineBreakMode:0 lineAlignment:0];
+        _noticeLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDMainColor font:ZDMediumFont(12) numberOfLines:0 lineBreakMode:0 lineAlignment:0];
         _noticeLabel.text = @"公告";
     }
     return _noticeLabel;

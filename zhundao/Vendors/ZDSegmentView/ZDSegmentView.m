@@ -51,9 +51,9 @@
         [_labelArray addObject:label];
     }
     
-    _labelArray[0].textColor = ZDGreenColor;
+    _labelArray[0].textColor = ZDMainColor;
     _lineView = [[UIView alloc] init];
-    _lineView.backgroundColor = ZDGreenColor;
+    _lineView.backgroundColor = ZDMainColor;
     [self addSubview:_lineView];
     // 底部黑线
     _bottomLine = [[UIView alloc] init];
@@ -118,7 +118,7 @@
 - (void)animationMoveWithCurrentIndex:(NSInteger)index {
     ZD_WeakSelf
     _labelArray[_priIndex].textColor = [UIColor blackColor];
-    _labelArray[index].textColor = ZDGreenColor;
+    _labelArray[index].textColor = ZDMainColor;
     
     [UIView animateWithDuration:0.25 animations:^{
         [weakSelf.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {

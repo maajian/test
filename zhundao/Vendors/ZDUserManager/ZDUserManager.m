@@ -104,7 +104,7 @@
         [[SignManager shareManager].dataBase close];
     }
     LoginViewController *login = [[LoginViewController alloc]init];
-    [UIApplication sharedApplication].delegate.window.rootViewController = login;
+    [UIApplication sharedApplication].delegate.window.rootViewController = [[BaseNavigationViewController alloc] initWithRootViewController:login];
 }
 
 @end

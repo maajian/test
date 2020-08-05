@@ -78,7 +78,7 @@
         _progressView = [[UIProgressView alloc]initWithFrame:CGRectMake(5, 3, kScreenWidth-10, 5)];
         _progressView.progressViewStyle = UIProgressViewStyleDefault;
         _progressView.trackTintColor = [UIColor lightGrayColor];
-        _progressView.progressTintColor = ZDGreenColor;
+        _progressView.progressTintColor = ZDMainColor;
         [_progressView setProgress:0.0 animated:YES];
         
     }

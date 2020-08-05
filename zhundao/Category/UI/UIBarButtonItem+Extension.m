@@ -68,7 +68,7 @@
  */
 + (UIBarButtonItem *)saveTextItemWithTarget:(id)target action:(SEL)action {
     return [UIBarButtonItem textBarButtonItemWithText:@"保存"
-                                               color:ZDGreenColor
+                                               color:ZDMainColor
                                                Target:target
                                                action:action];
 }

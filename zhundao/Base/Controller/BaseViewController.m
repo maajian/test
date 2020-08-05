@@ -27,7 +27,6 @@
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    [ZD_NotificationCenter addObserver:self selector:@selector(networkChange:) name:ZDNotification_Network_Change object:nil];
     [ZD_NotificationCenter addObserver:self selector:@selector(logout:) name:ZDNotification_Logout object:nil];
 //    if (@available(iOS 13.0, *)) self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight ;
 }
@@ -95,14 +94,6 @@
 }
 
 #pragma mark --- notification
-- (void)networkChange:(NSNotification *)nofi {
-   TYAlertController *alert = [TYAlertController showChangeNetworkWithoOtherAction:^{
-       [[NSUserDefaults standardUserDefaults] setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
-       [[NSUserDefaults standardUserDefaults] setObject:[NSDate getCurrentDayStr] forKey:ZDUserDefault_First_Network];
-       [[NSUserDefaults standardUserDefaults] synchronize];
-    }];
-    [self presentViewController:alert animated:YES completion:nil];
-}
 - (void)logout:(NSNotification *)nofi {
     maskLabel *label = [[maskLabel alloc] initWithTitle:@"登录信息已过期，请重新登录"];
     [label labelAnimationWithViewlong:[UIApplication sharedApplication].keyWindow];

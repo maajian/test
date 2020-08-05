@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger gradeId;
 @property (nonatomic, assign) BOOL hasPayPassWord;
 @property (nonatomic, assign) NSInteger userSex;
+@property (nonatomic, assign) BOOL isAdmin; // 是否管理员 ， 否则就是数据员
 
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, copy) NSString *company;

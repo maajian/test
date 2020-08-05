@@ -83,7 +83,7 @@
 - (UIButton *)cancelButton {
     if (!_cancelButton) {
         _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _cancelButton.backgroundColor = ZDGreenColor;
+        _cancelButton.backgroundColor = ZDMainColor;
         _cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
         _cancelButton.layer.cornerRadius = 4;
         _cancelButton.layer.masksToBounds = YES;
@@ -96,7 +96,7 @@
 - (UIButton *)sureButton {
     if (!_sureButton) {
         _sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _sureButton.backgroundColor = ZDGreenColor;
+        _sureButton.backgroundColor = ZDMainColor;
         _sureButton.layer.cornerRadius = 4;
         _sureButton.layer.masksToBounds = YES;
         _sureButton.titleLabel.font = [UIFont systemFontOfSize:16];

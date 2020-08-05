@@ -90,7 +90,7 @@ static NSString *CellID = @"isOnGowith";
         leftLabel.frame = CGRectMake(10, 0, leftLabel.frame.size.width, 44);
         UIButton *rightButton = [MyButton initWithButtonFrame:CGRectMake(CGRectGetMaxX(leftLabel.frame)+5, 0, 60, 44) title:@"全部提现" textcolor:kColorA(27, 164, 247, 1) Target:self action:@selector(GowithAll) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
         rightButton.titleLabel.font = [UIFont systemFontOfSize:12];
-        UIButton *withdrawButton = [MyButton initWithButtonFrame:CGRectMake(10, 44, kScreenWidth-20, 44) title:@"确认" textcolor:[UIColor whiteColor] Target:self action:@selector(withdraw:) BackgroundColor: ZDGreenColor cornerRadius:5 masksToBounds:YES];
+        UIButton *withdrawButton = [MyButton initWithButtonFrame:CGRectMake(10, 44, kScreenWidth-20, 44) title:@"确认" textcolor:[UIColor whiteColor] Target:self action:@selector(withdraw:) BackgroundColor: ZDMainColor cornerRadius:5 masksToBounds:YES];
         UILabel *alertLabel =[MyLabel initWithLabelFrame:CGRectMake(10, 88, kScreenWidth-20, 44) Text:[NSString stringWithFormat:@"提现金额不得低于50元，提现手续费为%.1f%%",_factorageRate * 100] textColor:ZDHeaderTitleColor font:[UIFont systemFontOfSize:12] textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
         [View addSubview:leftLabel];
         [View addSubview:rightButton];

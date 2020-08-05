@@ -147,7 +147,7 @@ static NSString *reUseID = @"moreSignReuseID";
     if (!_bottonSaoButton) {
         NSArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:@"muliData"];
         if ([[arr lastObject]integerValue]) {
-            _bottonSaoButton = [MyButton initWithButtonFrame:CGRectMake(20, kScreenHeight-150-138, kScreenWidth-40, 44) title:@"扫码" textcolor:[UIColor whiteColor] Target:self action:@selector(pushSAO) BackgroundColor:ZDGreenColor cornerRadius:5 masksToBounds:YES];
+            _bottonSaoButton = [MyButton initWithButtonFrame:CGRectMake(20, kScreenHeight-150-138, kScreenWidth-40, 44) title:@"扫码" textcolor:[UIColor whiteColor] Target:self action:@selector(pushSAO) BackgroundColor:ZDMainColor cornerRadius:5 masksToBounds:YES];
             _bottonSaoButton.titleEdgeInsets = UIEdgeInsetsMake(0, 32, 0, 0);
         }
         else{
