@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSDictionary *)zd_jsonDictionary;
 - (NSArray *)zd_jsonArray;
 
+- (NSAttributedString *)dataPersonAttributed1;
+
 @end
 
 NS_ASSUME_NONNULL_END

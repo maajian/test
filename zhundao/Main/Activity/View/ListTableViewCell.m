@@ -11,6 +11,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *departLabel;
 
 @end
 @implementation ListTableViewCell
@@ -35,6 +36,8 @@
     }
     _phoneLabel.text = _model.Mobile;
     _timeLabel.text = _model.AddTime;
+    _departLabel.text = [NSString stringWithFormat:@"所属组织: %@", _model.DepartName.length ? _model.DepartName : @"无"];
+    _timeLabel.textColor = _departLabel.textColor = ZDGreyColor999;
    _successLabel.layer.borderColor = [[UIColor colorWithRed:141.00f/255.0f green:189.00f/255.0f blue:38.00f/255.0f alpha:1] CGColor];
    _successLabel.layer.borderWidth = 1;
     _successLabel.layer.cornerRadius = 5;
@@ -50,6 +53,7 @@
     } else {
         _successLabel.text = @"未通过";
     }
+    [self.contentView addLineViewAtBottom];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

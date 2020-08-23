@@ -8,7 +8,7 @@
 
 #import "ZDWebViewController.h"
 
-@interface ZDWebViewController ()<WKNavigationDelegate>
+@interface ZDWebViewController ()<WKNavigationDelegate, WKUIDelegate>
 
 @end
 
@@ -30,6 +30,7 @@
 - (void)addOwnViews {
     self.webView = [[WKWebView alloc] init];
     self.webView.navigationDelegate = self;
+    self.webView.UIDelegate = self;
     [self.view addSubview:self.webView];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
 //    [self addBackButton];
@@ -78,6 +79,37 @@
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
+#pragma mark --- WKUIDelegate
+// 显示一个按钮。点击后调用completionHandler回调
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
+    [ZDAlertView alertWithTitle:message message:nil cancelBlock:^{
+        completionHandler();
+        ZDDo_Block_Safe_Main(self.alertSureBlock)
+    }];
+}
+
+// 显示两个按钮，通过completionHandler回调判断用户点击的确定还是取消按钮
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
+    [ZDAlertView alertWithTitle:message message:nil sureBlock:^{
+        completionHandler(YES);
+        ZDDo_Block_Safe_Main(self.alertSureBlock)
+    } cancelBlock:^{
+        completionHandler(NO);
+    }];
+}
+
+// 显示一个带有输入框和一个确定按钮的，通过completionHandler回调用户输入的内容
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        
+    }];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(alertController.textFields.lastObject.text);
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 #pragma mark --- 返回按钮
 
 #pragma mark --- 返回按钮
@@ -117,23 +149,31 @@
 #pragma mark --- 跳转
 // pop一层vc
 - (void)popOne {
-    if ([_webView canGoBack]) {
-        [_webView goBack];
+    if (self.popBlock) {
+        ZDDo_Block_Safe_Main(self.popBlock);
     } else {
-        if (self.presentingViewController) {
-            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        if ([_webView canGoBack]) {
+            [_webView goBack];
         } else {
-            [self.navigationController popViewControllerAnimated:YES];
+            if (self.presentingViewController) {
+                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
         }
     }
 }
 
  // 返回主页面
 - (void)popClose {
-    if (self.presentingViewController) {
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    if (self.popBlock) {
+        ZDDo_Block_Safe_Main(self.popBlock);
     } else {
-        [self.navigationController popViewControllerAnimated:YES];
+        if (self.presentingViewController) {
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
 }
 

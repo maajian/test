@@ -25,6 +25,8 @@
 @property (nonatomic, copy) NSString *webTitle;
  // 是否需要关闭按钮
 @property (nonatomic , assign) BOOL isClose;
+@property (nonatomic, copy) ZDBlock_Void popBlock;
+@property (nonatomic, copy) ZDBlock_Void alertSureBlock;
 
 - (void)popOne;
 

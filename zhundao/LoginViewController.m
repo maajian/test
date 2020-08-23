@@ -58,9 +58,6 @@
 - (IBAction)phonelogin:(id)sender {
 
     if (_phoneTextLabel.text.length && _lockTextLabel.text.length) {
-        _hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-        _hud.label.text = @"登录中";
-        _hud.label.textColor = [UIColor whiteColor];
         [self login];
     } else {
         maskLabel *label = [[maskLabel alloc] initWithTitle:@"请输入账号密码"];
@@ -70,23 +67,6 @@
 
 - (void)login {
     [self networkForLogin];
-//
-//    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login",@"https://open.zhundao.net/"];
-//    NSDictionary *parameters = @{@"userName" : _phoneTextLabel.text, @"passWord" : _lockTextLabel.text};
-//
-//    [ZD_NetWorkM postDataWithMethod:phoneurl parameters:parameters succ:^(NSDictionary *obj) {
-//        if (obj[@"token"]) {
-//            [[NSUserDefaults standardUserDefaults]setObject:obj[@"accessKey"] forKey:AccessKey];
-//            [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];
-//            [[NSUserDefaults standardUserDefaults]synchronize];
-//            [self getGrade];
-//        } else {
-//            [_hud hideAnimated:YES];
-//            [self setupAlertController1];
-//        }
-//    } fail:^(NSError *error) {
-//        [_hud hideAnimated:YES];
-//    }];
 }
 
 - (void)getGrade
@@ -158,6 +138,7 @@
 
 #pragma mark --- Network
 - (void)networkForLogin {
+    [self.view endEditing:YES];
     NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
     NSDictionary *dic = @{@"BusinessCode": @"Login",
                           @"Data" : @{
@@ -165,11 +146,27 @@
                                   @"PassWord": _lockTextLabel.text,
                          }
     };
-    ZD_Hud_Loading
+    ZD_WeakSelf
+    ZD_HUD_SHOW_WAITING
     [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
-        ZD_Hud_Dismiss
+        ZD_HUD_DISMISS
+        if ([obj[@"res"] boolValue]) {
+            ZD_UserM.loginAccount = weakSelf.phoneTextLabel.text;
+            [ZD_UserM saveLoginTime];
+            [[NSUserDefaults standardUserDefaults] setObject:obj[@"data"][@"token"] forKey:@"token"];
+            [[NSUserDefaults standardUserDefaults]setObject:obj[@"data"][@"accessKey"] forKey:AccessKey];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            ZD_UserM.isAdmin = [obj[@"data"][@"role"] isEqualToString:@"admin"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf dismissViewControllerAnimated:YES completion:nil];
+                MainViewController *tabbar = [[MainViewController alloc] init];
+                [UIApplication sharedApplication].delegate.window.rootViewController= tabbar;
+            });
+        } else {
+            ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"]);
+        }
     } fail:^(NSError *error) {
-        ZD_Hud_Show_Error(error.domain);
+        ZD_HUD_SHOW_ERROR(error);
     }];
 }
 
@@ -300,6 +297,9 @@
     [self setLeftView];
     if (!ZD_UserM.hasShowPrivacy) {
         [ZDServiceAlertView privacyAlertWithDelegate:self];
+    }
+    if (ZD_UserM.loginAccount.length) {
+        self.phoneTextLabel.text = ZD_UserM.loginAccount;
     }
 }
 

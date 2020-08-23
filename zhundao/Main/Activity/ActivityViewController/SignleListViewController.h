@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "listModel.h"
 @interface SignleListViewController : BaseViewController
 @property(nonatomic,strong)NSDictionary *datadic;
 @property(nonatomic,assign)NSInteger activityID;
@@ -15,4 +16,5 @@
 @property(nonatomic,copy)NSString *vcode;
 @property(nonatomic,copy)NSString *userInfo ;
 @property(nonatomic,assign)BOOL isChange ;
+@property (nonatomic, strong) listModel *personListModel;
 @end

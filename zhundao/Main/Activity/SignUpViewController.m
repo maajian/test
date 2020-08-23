@@ -72,6 +72,7 @@
             
             [indicator stopAnimating];
         } failBlock:^(NSString *error) {
+            ZD_HUD_SHOW_ERROR_STATUS(error)
             [indicator stopAnimating];
         }];
     }
@@ -156,7 +157,7 @@
 }
 
 #pragma mark --- SGTopTitleViewDelegate
-- (void)SGTopTitleView:(SGTopTitleView *)topTitleView didSelectTitleAtIndex:(NSInteger)index {
+- (void)titleViewDidSelectTitleAtIndex:(NSInteger)index {
     /*! 相等退出 */
     if (_oriIndex == index) {
         return;

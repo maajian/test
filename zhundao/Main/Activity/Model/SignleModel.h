@@ -14,6 +14,7 @@
 @property(nonatomic,strong)NSString *Company;  //单位
 @property(nonatomic,assign)NSInteger Sex;    //性别
 @property(nonatomic,strong)NSString *Depart;//部门
+@property (nonatomic, copy) NSString *DepartName; // 组织名称
 @property(nonatomic,strong)NSString *Industry; //行业
 @property(nonatomic,strong)NSString *Duty;  //职务
 @property(nonatomic,strong)NSString *IDcard;  //身份证

@@ -312,7 +312,7 @@
      [self getMycell:tap];
     detailActivityViewController *detail = [[detailActivityViewController alloc]init];
     detail.model = mycell.model;
-    detail.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/event/%li?accesskey=%@",(long)mycell.model.ID,[[SignManager shareManager] getaccseekey]];
+    detail.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)mycell.model.ID];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:detail animated:YES];
     [self setHidesBottomBarWhenPushed:NO];

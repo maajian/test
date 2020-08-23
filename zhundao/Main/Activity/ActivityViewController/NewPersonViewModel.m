@@ -105,19 +105,37 @@
 //api/PerActivity/AddActivityList?accessKey={accessKey}&activityFeeid={activityFeeid}
 - (void)addPersonNetWork :(NSDictionary *)dic feeid :(NSInteger)feeid
 {
-    NSString *postStr = [NSString stringWithFormat:@"%@api/PerActivity/AddActivityList?accessKey=%@&activityFeeid=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)feeid];
-    [ZD_NetWorkM postDataWithMethod:postStr parameters:dic succ:^(NSDictionary *obj) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
-        if ([dic[@"Res"] integerValue]==0) {
-            _blcok(1);
-        }
-        else
-        {
-            _blcok(2);
-        }
-    } fail:^(NSError *error) {
-        _blcok(0);
-    }];
+    if (ZD_UserM.isAdmin) {
+        NSString *postStr = [NSString stringWithFormat:@"%@api/PerActivity/AddActivityList?accessKey=%@&activityFeeid=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)feeid];
+        [ZD_NetWorkM postDataWithMethod:postStr parameters:dic succ:^(NSDictionary *obj) {
+            NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
+            if ([dic[@"Res"] integerValue]==0) {
+                _blcok(1);
+            }
+            else
+            {
+                _blcok(2);
+            }
+        } fail:^(NSError *error) {
+            _blcok(0);
+        }];
+    } else {
+        NSMutableDictionary *param = [NSMutableDictionary dictionaryWithDictionary:dic];
+        [param setValue:@(feeid) forKey:@"activityFeeId"];
+        NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
+        NSDictionary *dic = @{@"BusinessCode": @"AddActivityList",
+                              @"Data" : param
+        };
+        [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+            if ([obj[@"res"] boolValue]) {
+                _blcok(1);
+            } else {
+                _blcok(2);
+            }
+        } fail:^(NSError *error) {
+            _blcok(0);
+        }];
+    }
 }
 
 //Printing description of ((__NSDictionaryI *)0x00006000003a39c0):

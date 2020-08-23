@@ -99,6 +99,10 @@
 - (NSString *)code {
     return self.codeView.textField.text;
 }
+- (void)setPhoneStr:(NSString *)phoneStr {
+    _phoneStr = phoneStr;
+    _phoneLabel.text = [NSString stringWithFormat:@"验证码已发送至 +86 %@", phoneStr];
+}
 
 #pragma mark --- action
 - (void)closeAction:(UIButton *)button {

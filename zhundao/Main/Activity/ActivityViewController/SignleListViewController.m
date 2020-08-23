@@ -11,6 +11,7 @@
 #import "ImageBrowserViewController.h"
 #import "GZActionSheet.h"
 #import "EditSignListViewController.h"
+#import "ListViewController.h"
 #import "PrintVM.h"
 #import "EditSignListViewModel.h"
 #import "NewPersonViewModel.h"
@@ -65,7 +66,7 @@
     self.rightArray = [[_VM getRightMustArray:_baseArray allOptionArray:allOptionArray dic:datadic] mutableCopy];
     [_SignListVM removeNone:self.rightArray];
     self.typeArray =[[_VM getMustInputTypeFromArray:_baseNameArray customArray:allOptionArray] mutableCopy];
-    if (![self.datadic[@"Title"] isEqualToString:@""]) {  //如果有付款
+    if (![self.datadic[@"Title"] isEqualToString:@""] && self.datadic[@"Title"]) {  //如果有付款
         [_SignListVM payMent:[[self.datadic valueForKey:@"Payment"] integerValue] title:[self.datadic valueForKey:@"Title"] array:_leftArray];
         [_rightArray addObject:[self.datadic objectForKey:@"Amount"]];
         [_typeArray addObject:@"10"];
@@ -118,13 +119,15 @@
 #pragma mark tableview delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section==0) {
         return self.leftArray.count;
-    }else{
+    } else if(section == 1){
+        return 1;
+    } else {
         return 1;
     }
 }
@@ -133,12 +136,14 @@
     
     cell = [tableView dequeueReusableCellWithIdentifier:@"signlecell"];
     if (cell==nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"signlecell"];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"signlecell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     while (cell.contentView.subviews.lastObject!=nil) {
         [cell.contentView.subviews.lastObject removeFromSuperview];
     }
     if (indexPath.section==0) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
         if ([_typeArray[indexPath.row] integerValue]==1) {
             UILabel *longLabel   = [MyLabel initWithLabelFrame:CGRectMake(20,8,kScreenWidth-30, 1000) Text: nil textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:16] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
             longLabel.numberOfLines = 0;
@@ -227,7 +232,8 @@
             else{}
             [cell.contentView addSubview:label1];
         }
-    }else{
+    }else if(indexPath.section == 1) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
         UILabel *label   = [MyLabel initWithLabelFrame:CGRectMake(20, 5,80, 30) Text:@"管理员备注" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:15] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
         CGSize size = [label.text boundingRectWithSize:CGSizeMake(100, label.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:label.font} context:nil].size;
         label.frame = CGRectMake(20, 5, size.width, 30);
@@ -236,17 +242,36 @@
         [cell.contentView addSubview:label1];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(adMark:)];
         [label1 addGestureRecognizer:tap];
-        
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.text = @"所属组织";
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
+        cell.detailTextLabel.text = self.personListModel.DepartName;
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:15];
     }
         cell.tag = indexPath.row;
     return cell;
     
 }
 
-
-
 #pragma mark tableview datasource
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 2) {
+        ZDWebViewController *web = [[ZDWebViewController alloc] init];
+        web.webTitle = @"选择组织";
+        web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/p/JinTa/m/index.html?id=%li&token=%@", (long)self.personID ,ZD_UserM.token];
+        web.alertSureBlock = ^{
+            ListViewController *list = nil;
+            for (UIViewController *VC in self.navigationController.viewControllers) {
+                if ([VC isKindOfClass:[ListViewController class]]) {
+                    list = (ListViewController *)VC;
+                }
+            }
+            [self.navigationController popToViewController:list animated:YES];
+        };
+        [self.navigationController pushViewController:web animated:YES];
+    }
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger gradeId;
 @property (nonatomic, assign) BOOL hasPayPassWord;
 @property (nonatomic, assign) NSInteger userSex;
-@property (nonatomic, assign) BOOL isAdmin; // 是否管理员 ， 否则就是数据员
 
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, copy) NSString *company;
@@ -41,6 +40,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL hasShowPrivacy;
 // 登录信息是否过期
 @property (nonatomic, assign) BOOL loginExpired;
+
+@property (nonatomic, assign) BOOL isAdmin; // 是否管理员 ， 否则就是数据员
+// token
+@property (nonatomic, copy) NSString *token;
+// 登录的账号
+@property (nonatomic, copy) NSString *loginAccount;
 
  
 #pragma mark --- public

@@ -27,8 +27,14 @@
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
+    if (self.navigationController.viewControllers.count > 1) {
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem backImageItemWithTarget:self action:@selector(backAction:)];
+    }
     [ZD_NotificationCenter addObserver:self selector:@selector(logout:) name:ZDNotification_Logout object:nil];
 //    if (@available(iOS 13.0, *)) self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight ;
+}
+- (void)backAction:(UIButton *)button {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

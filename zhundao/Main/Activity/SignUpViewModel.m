@@ -28,18 +28,20 @@
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     NSString *url = [NSString stringWithFormat:@"%@api/v2/dataCube/getActivityListDate?token=%@&activityId=%li&beginDate=%@&endDate=%@",zhundaoApi,token,(long)activityId,beginDate,endDate];
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
-        [_dataArray removeAllObjects];
-        [_xLabelArray removeAllObjects];
-        
-        for (NSDictionary *dic in obj[@"data"]) {
-            SignUpModel *model = [[SignUpModel alloc] initWithDic:dic];
-            [_dataArray addObject:[NSString stringWithFormat:@"%li",(long)model.count]];
-            [_xLabelArray addObject:model.date];
+        if ([obj[@"res"] boolValue]) {
+            [_dataArray removeAllObjects];
+            [_xLabelArray removeAllObjects];
+            for (NSDictionary *dic in obj[@"data"]) {
+                SignUpModel *model = [[SignUpModel alloc] initWithDic:dic];
+                [_dataArray addObject:[NSString stringWithFormat:@"%li",(long)model.count]];
+                [_xLabelArray addObject:model.date];
+            }
+            successBlock();
+        } else {
+            ZDDo_Block_Safe_Main1(failBlock, obj[@"errmsg"])
         }
-        
-        successBlock();
     } fail:^(NSError *error) {
-        failBlock(error.description);
+        failBlock(error.domain);
     }];
 }
 

@@ -147,16 +147,35 @@
     [label labelAnimationWithViewlong:SaveCtr.view];
 }
 - (void)shareImagewithModel:(ActivityModel *)model withCTR:(UIViewController *)ctr Withtype:(NSInteger)type withImage :(UIImage *)image {
-    [self shareWithTitle:model.Title detailTitle:[NSString stringWithFormat:@"时间:%@ 地点:%@",model.TimeStart,model.Address] thumImage:image ? image : [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.ShareImgurl]]] webpageUrl:[NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)model.ID] withCTR:ctr Withtype:type];
+    ZD_WeakSelf
+    ZDBlock_Str shareBlock = ^(NSString *str) {
+        [weakSelf shareWithTitle:model.Title detailTitle:[NSString stringWithFormat:@"时间:%@ 地点:%@",model.TimeStart,model.Address] thumImage:image ? image : [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.ShareImgurl]]] webpageUrl:str withCTR:ctr Withtype:type];
+    };
+    if (ZD_UserM.isAdmin) {
+        shareBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0?token=%@",(long)model.ID,ZD_UserM.token]);
+    } else {
+        [self networkForGetActivityLinkWithID:model.ID success:^(NSString *obj) {
+            shareBlock(obj);
+        }];
+    }
+}
+- (void)networkForGetActivityLinkWithID:(NSInteger)ID success:(ZDBlock_Str)success {
+    ZD_HUD_SHOW_WAITING
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
+    NSDictionary *dic = @{@"BusinessCode": @"GetActivityLink",
+                          @"Data" : @{
+                                  @"ActivityId": @(ID),
+                         }
+    };
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        ZD_HUD_DISMISS
+        ZDDo_Block_Safe_Main1(success, obj[@"data"])
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR(error)
+    }];
 }
 - (void)shareWithTitle:(NSString *)title detailTitle:(NSString *)detailTitle thumImage:(UIImage *)thumImage webpageUrl:(NSString *)webpageUrl withCTR:(UIViewController *)ctr Withtype:(NSInteger)type {
-    NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_Qzone), nil];
-      if ( ![QQApiInterface isQQInstalled]) {
-          //没有安装QQ
-          
-          [arr removeObject:@(UMSocialPlatformType_QQ)];
-          [arr removeObject:@(UMSocialPlatformType_Qzone)];
-      }
+    NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine), nil];
       if (![WXApi isWXAppInstalled]) {
           //没有安装微信
           [arr removeObject:@(UMSocialPlatformType_WechatSession)];

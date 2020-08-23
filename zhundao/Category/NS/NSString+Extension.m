@@ -47,7 +47,7 @@
 + (NSString *)getHomeActivityBeginTime:(NSString *)beginTime stopTime:(NSString *)stopTime {
     NSString *begin = [[beginTime substringFromIndex:5] substringToIndex:11];
     NSString *stop = [[stopTime substringFromIndex:5] substringToIndex:11];
-    return [NSString stringWithFormat:@"活动时间: %@ 一 %@",begin, stop];
+    return [[NSString stringWithFormat:@"活动时间: %@ 一 %@",begin, stop] stringByReplacingOccurrencesOfString:@"T" withString:@" "];
 }
 
 - (NSDictionary *)zd_jsonDictionary {
@@ -65,6 +65,19 @@
         return arr;
     }
     return nil;
+}
+
+- (NSAttributedString *)dataPersonAttributed1 {
+    NSRange range1 = [self rangeOfString:@"*"];
+    NSRange range2 = [self rangeOfString:@"未填写"];
+    if (range1.length) {
+        NSMutableAttributedString *attribute = [[NSMutableAttributedString alloc] initWithString:self];
+        [attribute addAttributes:@{NSForegroundColorAttributeName: ZDRedColor} range:range1];
+        [attribute addAttributes:@{NSForegroundColorAttributeName: ZDGreyColor666} range:range2];
+        return attribute;
+    } else {
+        return [[NSAttributedString alloc] initWithString:self];
+    }
 }
 
 @end

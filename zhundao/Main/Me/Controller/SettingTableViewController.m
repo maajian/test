@@ -58,13 +58,6 @@
 /*! 退出登录清空数据 */
 - (void)didLogout
 {
-    /*! 清除本地数据 */
-    NSDictionary *userArray = [[NSUserDefaults standardUserDefaults]objectForKey:@"userArray"];
-      NSString *appDomain = [[NSBundle mainBundle]bundleIdentifier];
-     [[NSUserDefaults standardUserDefaults]removePersistentDomainForName:appDomain];
-    [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:@"userArray"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
      if ([[SignManager shareManager].dataBase open])
      {
          NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
@@ -101,12 +94,12 @@
 - (void)pushUserProtocol {
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"准到服务协议";
-    web.urlString = @"https://www.zhundao.net/demo/xieyi.html";
+    web.urlString = @"https://www.zhundao.net/service/help/detail/206";
     [self.navigationController pushViewController:web animated:YES];
 }
 - (void)pushPrivacyProtect {
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
-    web.urlString = @"https://www.zhundao.net/yinsi.html";
+    web.urlString = @"https://www.zhundao.net/service/help/detail/207";
     web.webTitle = @"准到隐私政策";
     [self.navigationController pushViewController:web animated:YES];
 }

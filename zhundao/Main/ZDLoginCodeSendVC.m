@@ -55,11 +55,18 @@
                                   @"phone": self.loginCodeSendView.phoneTF.text,
                          }
     };
-    ZD_Hud_Loading
+    ZD_HUD_SHOW_WAITING
     [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
-        
+        ZD_HUD_DISMISS
+        if ([obj[@"res"] boolValue]) {
+            ZDLoginCodeFixVC *codeFixVC = [[ZDLoginCodeFixVC alloc] init];
+            codeFixVC.phoneStr = self.loginCodeSendView.phoneTF.text;
+            [self.navigationController pushViewController:codeFixVC animated:YES];
+        } else {
+            [ZDAlertView alertWithTitle:@"暂无登录权限，如有使用需求请联系 13777880773" message:nil cancelBlock:nil];
+        }
     } fail:^(NSError *error) {
-        ZD_Hud_Show_Error(error.domain);
+        ZD_HUD_SHOW_ERROR(error);
     }];
 }
 
@@ -68,9 +75,12 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)ZDLoginCodeSendView:(ZDLoginCodeSendView *)loginCodeSendView didTapNextButton:(UIButton *)button {
-    ZDLoginCodeFixVC *codeFixVC = [[ZDLoginCodeFixVC alloc] init];
-    codeFixVC.phoneStr = self.loginCodeSendView.phoneTF.text;
-    [self.navigationController pushViewController:codeFixVC animated:YES];
+    if (self.loginCodeSendView.phoneTF.text.length != 11) {
+        ZD_HUD_SHOW_ERROR_STATUS(@"请输入正确的手机号")
+        return;
+    }
+    [self.view endEditing:YES];
+    [self networkForCheckPhone];
 }
 
 @end

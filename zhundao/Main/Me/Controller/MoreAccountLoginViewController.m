@@ -163,13 +163,7 @@
 /*! 退出登录清空数据 */
 - (void)didLogout
 {
-    /*! 清除本地数据 */
-    NSDictionary *userArray = [[NSUserDefaults standardUserDefaults]objectForKey:@"userArray"];
-    NSString *appDomain = [[NSBundle mainBundle]bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults]removePersistentDomainForName:appDomain];
-    [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:@"userArray"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
+
     if ([[SignManager shareManager].dataBase open])
     {
         NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];

@@ -25,6 +25,7 @@
  @return ZDAlertView
  */
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message sureBlock:(dispatch_block_t)sureBlock cancelBlock:(dispatch_block_t)cancelBlock;
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message cancelBlock:(dispatch_block_t)cancelBlock;
 
 /**
  初始化

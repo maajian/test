@@ -23,6 +23,8 @@
 #import "oneActivityViewController.h"
 #import "postActivityViewController.h"
 #import "SignUpViewController.h"
+#import "ZDDataPersonListVC.h"
+#import "PostEmailViewController.h"
 
 #import "moreModalModel.h"
 
@@ -52,6 +54,9 @@ static NSString *headerID = @"moreModalHeaderView";
     NSLog(@"model = %@",_moreModel);
     [self initSet];
     accesskey = [[SignManager shareManager]getaccseekey];
+    if (!ZD_UserM.isAdmin) {
+        [self networkForGetDataStatistics];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -165,18 +170,27 @@ static NSString *headerID = @"moreModalHeaderView";
             inviteViewController *invite = [[inviteViewController alloc]init];
             invite.acid = _moreModel.ID;
             invite.model = self.moreModel;
-            NSString *imagestr =   [NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)_moreModel.ID];
+            NSString *imagestr =   [NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID];
             invite.imageStr = imagestr ;
             [self presentViewController:invite animated:YES completion:nil];
         }
             break;
         case MoreMoalTypeQRCode: {
-            CodeViewController *code = [[CodeViewController alloc]init];
-            NSString *imagestr =   [NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)_moreModel.ID];
-            code.imagestr = imagestr;
-            code.titlestr = _moreModel.Title;
-            code.labelStr = @"报名";
-            [self presentViewController:code animated:YES completion:nil];
+            ZDBlock_Str codeBlock = ^(NSString *str) {
+                CodeViewController *code = [[CodeViewController alloc]init];
+                NSString *imagestr =  str;
+                code.imagestr = imagestr;
+                code.titlestr = _moreModel.Title;
+                code.labelStr = @"报名";
+                [self presentViewController:code animated:YES completion:nil];
+            };
+            if (ZD_UserM.isAdmin) {
+                codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID]);
+            } else {
+                [self networkForGetActivityLinkSuccess:^(NSString *obj) {
+                    codeBlock(obj);
+                }];
+            }
         }
             break;
         case MoreMoalTypeSignin: {
@@ -188,11 +202,15 @@ static NSString *headerID = @"moreModalHeaderView";
         }
             break;
         case MoreMoalTypeDataPerson: {
-            
+            ZDDataPersonListVC *personList = [[ZDDataPersonListVC alloc] init];
+            personList.activityID = self.moreModel.ID;
+            [self.navigationController pushViewController:personList animated:YES];
         }
             break;
         case MoreMoalTypeListOutput: {
-            
+            PostEmailViewController *post = [[PostEmailViewController alloc]init];
+            post.activityID = self.moreModel.ID;
+            [self.navigationController pushViewController:post animated:YES];
         }
             break;
             
@@ -204,21 +222,40 @@ static NSString *headerID = @"moreModalHeaderView";
 #pragma mark --- moreModalHeaderViewDelegate
 // 跳转详情
 - (void)header:(moreModalHeaderView *)headerView didTapDetailView:(UIView *)detailView {
-    detailActivityViewController *detail = [[detailActivityViewController alloc]init];
-    detail.model =_moreModel;
-    detail.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/event/%li?accesskey=%@",(long)_moreModel.ID,accesskey];
-    [self.navigationController pushViewController:detail animated:YES];
+    ZDBlock_Str detailBlock = ^(NSString *str) {
+        detailActivityViewController *detail = [[detailActivityViewController alloc]init];
+        detail.model =_moreModel;
+        detail.urlString = str;
+        [self.navigationController pushViewController:detail animated:YES];
+    };
+    
+    if (ZD_UserM.isAdmin) {
+        detailBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID]);
+    } else {
+        [self networkForGetActivityLinkSuccess:^(NSString *obj) {
+            detailBlock(obj);
+        }];
+    }
 }
 
 // 图表
 - (void)header:(moreModalHeaderView *)headerView didTapChartView:(chartType)type {
+    ZDBlock_Void pushPersonBlock = ^() {
+        SignUpViewController *signUp = [[SignUpViewController alloc] init];
+        signUp.activityId = _moreModel.ID;
+        signUp.chartType = ChartTypeActivityPerson;
+        [self.navigationController pushViewController:signUp animated:YES];
+    };
+    
+    if (!ZD_UserM.isAdmin) {
+//        pushPersonBlock();
+        return;
+    }
+    
     switch (type) {
             //  报名
         case chartTypeApply: {
-            SignUpViewController *signUp = [[SignUpViewController alloc] init];
-            signUp.activityId = _moreModel.ID;
-            signUp.chartType = ChartTypeActivityPerson;
-            [self.navigationController pushViewController:signUp animated:YES];
+            pushPersonBlock();
         }
             break;
             // 收入
@@ -359,10 +396,18 @@ static NSString *headerID = @"moreModalHeaderView";
 
 // 链接
 - (void)link {
-    UIPasteboard *pastboard = [UIPasteboard generalPasteboard];
-    [pastboard setString:[NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)_moreModel.ID]];
-    [[SignManager shareManager]showAlertWithTitle:@"已成功复制到粘贴板" WithMessage:nil WithCTR:self];
-    NSLog(@"pastboardstr = %@",[NSString stringWithFormat:@"%@event/%li?accesskey=%@",zhundaoH5Api,(long)_moreModel.ID,accesskey]);
+    ZDBlock_Str block = ^(NSString *str) {
+        UIPasteboard *pastboard = [UIPasteboard generalPasteboard];
+        [pastboard setString:str];
+        [[SignManager shareManager]showAlertWithTitle:@"已成功复制到粘贴板" WithMessage:nil WithCTR:self];
+    };
+    if (ZD_UserM.isAdmin) {
+        block([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID]);
+    } else {
+        [self networkForGetActivityLinkSuccess:^(NSString *obj) {
+            block(obj);
+        }];
+    }
 }
 
 #pragma mark --- network
@@ -388,6 +433,41 @@ static NSString *headerID = @"moreModalHeaderView";
         }
     } fail:^(NSError *error) {
         
+    }];
+}
+// 获取数据统计
+- (void)networkForGetDataStatistics {
+    ZD_HUD_SHOW_WAITING
+    ZD_WeakSelf
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
+    NSDictionary *dic = @{@"BusinessCode": @"GetActivityData",
+                          @"Data" : @{
+                                  @"ActivityId": @(self.moreModel.ID),
+                         }
+    };
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        ZD_HUD_DISMISS
+        weakSelf.moreModel.total = ZD_SafeIntValue(obj[@"data"][@"total"]);
+        weakSelf.moreModel.yesterday = ZD_SafeIntValue(obj[@"data"][@"yesterday"]);
+        weakSelf.moreModel.today = ZD_SafeIntValue(obj[@"data"][@"today"]);
+        [weakSelf.collectionView reloadData];
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR(error)
+    }];
+}
+- (void)networkForGetActivityLinkSuccess:(ZDBlock_Str)success {
+    ZD_HUD_SHOW_WAITING
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
+    NSDictionary *dic = @{@"BusinessCode": @"GetActivityLink",
+                          @"Data" : @{
+                                  @"ActivityId": @(self.moreModel.ID),
+                         }
+    };
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        ZD_HUD_DISMISS
+        ZDDo_Block_Safe_Main1(success, obj[@"data"])
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR(error)
     }];
 }
 

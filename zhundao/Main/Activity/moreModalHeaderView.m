@@ -333,9 +333,15 @@
     Time *TimeStop = [Time bringWithTime:model.TimeStop];
     _endLabel.text = [NSString stringWithFormat:@"报名截止 : %@", TimeStop.timeStr ];
     
-    _applyCountLabel.text = [NSString stringWithFormat:@"%li",(long)model.HasJoinNum];
-    _incomeCountLabel.text = [NSString stringWithFormat:@"%.2f",model.Amount];
-    _browseCountLabel.text = [NSString stringWithFormat:@"%li",(long)model.ClickNo];
+    if (ZD_UserM.isAdmin) {
+        _applyCountLabel.text = [NSString stringWithFormat:@"%li",(long)model.HasJoinNum];
+        _incomeCountLabel.text = [NSString stringWithFormat:@"%.2f",model.Amount];
+        _browseCountLabel.text = [NSString stringWithFormat:@"%li",(long)model.ClickNo];
+    } else {
+        _applyCountLabel.text = [NSString stringWithFormat:@"%li",(long)model.total];
+        _incomeCountLabel.text = [NSString stringWithFormat:@"%li",model.today];
+        _browseCountLabel.text = [NSString stringWithFormat:@"%li",(long)model.yesterday];
+    }
 }
 
 - (void)setEndTime:(NSString *)endTime {

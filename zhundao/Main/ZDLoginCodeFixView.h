@@ -22,9 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZDLoginCodeFixView : UIView
 
 @property (nonatomic, weak) id<ZDLoginCodeFixViewDelegate> loginCodeFixViewDelegate;
-
-@property (nonatomic, strong) NSString *code;
-
+@property (nonatomic, copy) NSString *code;
+@property (nonatomic, copy) NSString *phoneStr;
+ 
 @end
 
 NS_ASSUME_NONNULL_END

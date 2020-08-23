@@ -45,7 +45,7 @@
     [self.contentView addSubview:_activityImageView];
     
     // 标题
-    _titleLabel = [UILabel labelWithFrame:CGRectZero textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:14] numberOfLines:0 lineBreakMode:0 lineAlignment:0];
+    _titleLabel = [UILabel labelWithFrame:CGRectZero textColor:[UIColor blackColor] font:[UIFont boldSystemFontOfSize:14] numberOfLines:0 lineBreakMode:0 lineAlignment:0];
     [self.contentView addSubview:_titleLabel];
     
     // 报名人数
@@ -107,7 +107,7 @@
         make.leading.equalTo(_activityImageView.mas_trailing).offset(5);
         make.trailing.equalTo(self.contentView).offset(-10);
         make.top.equalTo(_activityImageView.mas_top);
-        make.height.equalTo(_activityImageView.mas_height).multipliedBy(ZD_UserM.isAdmin ? 0.33 : 0.25);
+        make.height.equalTo(_activityImageView.mas_height).multipliedBy(ZD_UserM.isAdmin ? 0.25 : 0.33);
     }];
    if (ZD_UserM.isAdmin) {
         [_countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -159,6 +159,7 @@
     } else{
         _countLabel.text = [NSString stringWithFormat:@"报名人数:%li/%li",(long)_model.HasJoinNum,(long)_model.UserLimit];
     }
+    _centerLine.hidden = ZD_UserM.isAdmin ? NO : YES;
     // 收入
     NSString *income = @"";
     if (_model.Fee) {
@@ -175,11 +176,13 @@
     _endLabel.text = [_model.TimeStop getHomeActivityEndTime];
     
     NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"%li",(long)_model.ID]];
-    if (_model.HasJoinNum!=array1.count&&_model.HasJoinNum!=0) {
-        [_listButton.imageView showBadgeWithStyle:(WBadgeStyleRedDot) value:0 animationType:(WBadgeAnimTypeNone)];
-        _listButton.imageView.layer.masksToBounds = NO;
-    } else {
-        [_listButton.imageView clearBadge];
+    if (ZD_UserM.isAdmin) {
+        if (_model.HasJoinNum!=array1.count&&_model.HasJoinNum!=0) {
+            [_listButton.imageView showBadgeWithStyle:(WBadgeStyleRedDot) value:0 animationType:(WBadgeAnimTypeNone)];
+            _listButton.imageView.layer.masksToBounds = NO;
+        } else {
+            [_listButton.imageView clearBadge];
+        }
     }
 }
 

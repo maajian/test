@@ -424,8 +424,7 @@
 }
 
 #pragma mark 保存 返回事件
-- (void)save
-{
+- (void)save {
     [self.view endEditing:YES];
     NSDictionary *saveDic =  [_VM SaveWithRightMustArray:_rightMustArray leftMustArray:_leftMustArray baseArray:self.baseNameArray view:self.view];
     if (saveDic) {

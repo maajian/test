@@ -12,6 +12,7 @@
 #import "ZDAllActivityVC.h"
 #import "ZDOnActivityVC.h"
 #import "ZDCloseActivityVC.h"
+#import "ZDMeMessageVC.h"
 
 #import "ZDActivityViewModel.h"
 
@@ -36,6 +37,7 @@
     
     [self initSet];
     [self initLayout];
+    [self networkGetMessageList];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -76,7 +78,9 @@
     [self addChildViewController:_closeVC];
     [self.scrollView addSubview:_allVC.view];
     // 添加活动
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(pushAddActivity)];
+    if (ZD_UserM.isAdmin) {
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(pushAddActivity)];
+    }
     if (ZD_UserM.loginExpired) {
         [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
     }
@@ -233,7 +237,7 @@
     self.segmentView.currentIndex = index;
 }
 
-#pragma mark --- action
+#pragma mark --- network
 - (void)pushAddActivity {
     if ([[  NSUserDefaults standardUserDefaults  ]objectForKey:@"GradeId"]) {
         NSInteger grade =  [[[  NSUserDefaults standardUserDefaults  ]objectForKey:@"GradeId"]integerValue];
@@ -254,6 +258,19 @@
         }
     }
 }
+- (void)networkGetMessageList {
+    ZD_WeakSelf
+    [self.viewModel getMeMessageListSuccess:^(NSInteger obj) {
+        if (obj) {
+            [ZDAlertView alertWithTitle:@"消息提醒" message:[NSString stringWithFormat:@"您有%li条未读消息", (long)obj] cancelTitle:@"取消" sureTitle:@"查看" sureBlock:^{
+                ZDMeMessageVC *message = [[ZDMeMessageVC alloc] init];
+                [weakSelf.navigationController pushViewController:message animated:YES];
+            } cancelBlock:nil];
+        }
+    } failure:^(NSString *error) {}];
+}
+
+#pragma mark --- action
 - (void)gotoPost {
     postActivityViewController *postVC = [[postActivityViewController alloc]init];
     [self.navigationController pushViewController:postVC animated:YES];

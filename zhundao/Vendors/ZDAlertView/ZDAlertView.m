@@ -46,6 +46,13 @@
     [[UIApplication sharedApplication].keyWindow addSubview:alert];
     return alert;
 }
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message cancelBlock:(dispatch_block_t)cancelBlock {
+    ZDAlertView *alert = [[[self class] alloc]initWithTitle:title message:message cancelButtonTitle:@"确定" sureButtonTitle:@""  cancelBlock:cancelBlock sureBlock:nil];
+    // 创建在keyWindow上
+    [alert fadeIn];
+    [[UIApplication sharedApplication].keyWindow addSubview:alert];
+    return alert;
+}
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle sureTitle:(NSString *)sureTitle sureBlock:(dispatch_block_t)sureBlock cancelBlock:(dispatch_block_t)cancelBlock {
     ZDAlertView *alert = [[[self class] alloc]initWithTitle:title message:message cancelButtonTitle:cancelTitle sureButtonTitle:sureTitle  cancelBlock:cancelBlock sureBlock:sureBlock];
     // 创建在keyWindow上

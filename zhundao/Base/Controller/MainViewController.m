@@ -70,18 +70,18 @@
             [subView removeFromSuperview];
         }
     }
-    CGFloat buttonWidth = kScreenWidth/4;
     NSArray *imageArray;
     NSArray *titleArray;
     if (ZD_UserM.isAdmin) {
-        imageArray = @[@"activity",@"loginin",@"discover",@"me"];
-        titleArray = @[@"活动",@"签到",@"发现",@"我"];
+        imageArray = @[@"home_tab_act_normal",@"home_tab_sign_normal",@"home_tab_find_normal",@"home_tab_mine_normal"];
+        titleArray = @[@"活动",@"签到",@"发现",@"我的"];
     } else {
-        imageArray = @[@"activity",@"me"];
-        titleArray = @[@"活动",@"我"];
+        imageArray = @[@"home_tab_act_normal",@"home_tab_mine_normal"];
+        titleArray = @[@"首页",@"我的"];
     }
+    CGFloat buttonWidth = kScreenWidth/ imageArray.count;
 
-    for (int i=0; i<4; i++) {
+    for (int i=0; i<imageArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i*buttonWidth, 0, buttonWidth, 49);
         [button addTarget:self action:@selector(buttonAction:) forControlEvents: UIControlEventTouchUpInside ];
@@ -116,7 +116,7 @@
             _startLabel = label;
             _startLabel.textColor = ZDMainColor;
             _startIamgeView = imageview;
-            _startIamgeView.image = [UIImage imageNamed:@"activityed"];
+            _startIamgeView.image = [UIImage imageNamed:@"home_tab_act_pressed"];
             [_startButton addSubview:_startLabel];
             [_startButton addSubview:_startIamgeView];
           
@@ -134,11 +134,11 @@
     NSArray *imageArray;
     NSArray *imagedarray;
     if (ZD_UserM.isAdmin) {
-        imageArray = @[@"activity",@"loginin",@"discover",@"me"];
-        imagedarray = @[@"activityed",@"logined",@"discovered",@"meed"];
+        imageArray = @[@"home_tab_act_normal",@"home_tab_sign_normal",@"home_tab_find_normal",@"home_tab_mine_normal"];
+        imagedarray = @[@"home_tab_act_pressed",@"home_tab_sign_pressed",@"home_tab_find_pressed",@"home_tab_mine_pressed"];
     } else {
-        imageArray = @[@"activity",@"me"];
-        imagedarray = @[@"activityed",@"meed"];
+        imageArray = @[@"home_tab_act_normal",@"home_tab_mine_normal"];
+        imagedarray = @[@"home_tab_act_pressed",@"home_tab_mine_pressed"];
     }
     
     if ([_startButton.subviews[0] isKindOfClass:[UILabel class]]) {

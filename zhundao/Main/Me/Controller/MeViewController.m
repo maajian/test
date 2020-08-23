@@ -29,6 +29,7 @@
 #import "MyMessageViewController.h"
 #import "ZDMePromoteMainVC.h"
 #import "ZDMeSettingVC.h"
+#import "ZDMeMessageVC.h"
 
 @interface MeViewController ()<UITableViewDataSource, UITableViewDelegate, ZDMeHeaderCellDelegate> {
     NSDictionary *userdic;
@@ -205,6 +206,9 @@
             [self pushSetting];
             break;
         }
+        case ZDMeTypePersonDataMessage: {
+            [self pushDataPersonMessage];
+        }
             
         default:
             break;
@@ -313,6 +317,10 @@
 - (void)showPromote {
     ZDMePromoteMainVC *main = [[ZDMePromoteMainVC alloc] init];
     [self.navigationController pushViewController:main animated:YES];
+}
+- (void)pushDataPersonMessage {
+    ZDMeMessageVC *message = [[ZDMeMessageVC alloc] init];
+    [self.navigationController pushViewController:message animated:YES];
 }
 
 #pragma mark 通知公告小红点

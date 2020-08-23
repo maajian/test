@@ -53,6 +53,7 @@ static NSString *cellID = @"ActivityCellID";
         _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.1)];
         _tableView.backgroundColor = ZDBackgroundColor;
         _tableView.sectionFooterHeight = CGFLOAT_MIN;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.sectionHeaderHeight = 10;
         _tableView.dataSource = self;
         _tableView.delegate = self;
@@ -104,7 +105,7 @@ static NSString *cellID = @"ActivityCellID";
         } else {
             [weakSelf.tableView reloadData];
         }
-    } failure:^{
+    } failure:^(NSString *obj) {
         [weakSelf.tableView endRefresh];
     }];
 }
@@ -142,12 +143,27 @@ static NSString *cellID = @"ActivityCellID";
     return  view;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZDActivityCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    ZDWebViewController *web = [[ZDWebViewController alloc] init];
-    web.isClose = YES;
-    web.webTitle = @"活动详情";
-    web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/event/%li?token=%@",(long)cell.model.ID,[[SignManager shareManager] getToken]];
-    [self.navigationController pushViewController:web animated:YES];
+    if (ZD_UserM.isAdmin) {
+        ZDActivityCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        ZDWebViewController *web = [[ZDWebViewController alloc] init];
+        web.isClose = YES;
+        web.webTitle = @"活动详情";
+        web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)cell.model.ID];
+        [self.navigationController pushViewController:web animated:YES];
+    } else {
+        ZDActivityCell *activityCell = [tableView cellForRowAtIndexPath:indexPath];
+        moreModalViewController *modal = [[moreModalViewController alloc]init];
+        modal.moreModel = activityCell.model;
+        [self.navigationController pushViewController:modal animated:YES];
+        ZD_WeakSelf
+        modal.backBlock = ^(NSInteger a) {
+            if (a==1) {
+                [weakSelf.viewModel.allDataArray removeObject:activityCell.model];
+                [weakSelf.viewModel.allSearchArray removeObject:activityCell.model];
+                [weakSelf.tableView reloadData];
+            }
+        };
+    }
 }
 
 #pragma mark --- ZDActivityCellDelegate

@@ -30,6 +30,7 @@ PODS:
   - JPush (3.0.8):
     - JCore (~> 1.1.7)
   - MBProgressHUD (1.2.0)
+  - SVProgressHUD (2.2.5)
   - YYCache (1.0.4)
 
 DEPENDENCIES:
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - JPush
   - MBProgressHUD
+  - SVProgressHUD
   - YYCache
 
 SPEC REPOS:
@@ -59,6 +61,7 @@ SPEC REPOS:
     - AMapLocation
     - AMapSearch
     - MBProgressHUD
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -72,8 +75,9 @@ SPEC CHECKSUMS:
   JCore: f7459c81c135281a874a6beafdd321666adcc834
   JPush: 9574d072cc37e93fa293ba69b43ce763c440943a
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: b3489c24126b11f77b9a54a44569f5901de80563
+PODFILE CHECKSUM: f24b23715ea1fef99c4ee642072005c84e542be8
 
 COCOAPODS: 1.9.1

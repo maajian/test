@@ -23,7 +23,7 @@
 #endif
 NSString * const kdbManagerVersion = @"DBManagerVersion";
 #define kYoumengAPPKEY @"58b3c7a275ca352ea8000c3a"
-#define KMapkey @"ec66cd9c1c0675a526822e333504cad7"
+#define KMapkey @"20ef0c1ba6b34bbe79a814a3578b0639"
 @class AFURLResponseSerialization;
 
 //58b3c7a275ca352ea8000c3a 友盟appkey
@@ -241,7 +241,8 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 }
 #pragma mark  -----微信授权回调
 - (void)onResp:(BaseResp *)resp {
-    // 向微信请求授权后,得到响应结果
+    // 向微信请求授权后,得到响应结果'
+    ZD_WeakSelf
     NSLog(@"resp = %i", resp.errCode);
     if (resp.errCode==0) {
         if ([resp isKindOfClass:[SendAuthResp class]]) {
@@ -256,61 +257,43 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             };
             NSString *authUrl = @"https://api.weixin.qq.com/sns/oauth2/access_token";
             [ZD_NetWorkM getDataWithMethod:authUrl parameters:codeParam succ:^(NSDictionary *obj) {
-                
+                if (ZD_SafeStringValue(obj[@"unionid"])) {
+                    [weakSelf loginWehchatWithUnionId:obj[@"unionid"]];
+                }
             } fail:^(NSError *error) {
-                
+                ZD_HUD_SHOW_ERROR_STATUS(@"微信登录失败")
             }];
-            
-//            NSString *poststring =[NSString stringWithFormat:@"%@api/v2/weChatLogin?code=%@&type=1",zhundaoApi,temp.code];
-//            [ZD_NetWorkM getDataWithMethod:poststring parameters:nil succ:^(NSDictionary *obj) {
-//                [[NSUserDefaults standardUserDefaults] setObject:obj[@"accessKey"] forKey:AccessKey];
-//                [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];
-//                [[NSUserDefaults standardUserDefaults]synchronize];
-//                [self getUserInfo];
-//            } fail:^(NSError *error) {
-//                NSLog(@"发送失败");
-//            }];
         }
     }
-
 }
 
-- (void)getUserInfo
-{
-    
-    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-    [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
-        [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
-        NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
-        NSDictionary  *userdic = data[@"data"];
-        // 手机号码
-        NSString *mobile = userdic[@"phone"] ? userdic[@"phone"] : @"";
-        if (mobile.length) {
-            [[ NSUserDefaults  standardUserDefaults]setObject:mobile forKey:@"mobile"];
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"wechatLogin"];
-            // 等级
-            [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
-            [[NSUserDefaults standardUserDefaults]synchronize];
-            
+- (void)loginWehchatWithUnionId:(NSString *)unionId {
+    NSDictionary *dic = @{@"BusinessCode": @"WxLogin",
+                          @"Data" : @{
+                                  @"unionId": unionId,
+                         }
+    };
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
+    ZD_HUD_SHOW_WAITING
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        ZD_HUD_DISMISS
+        if ([obj[@"res"] boolValue]) {
             [ZD_UserM saveLoginTime];
-            MainViewController *tabbar = [[MainViewController alloc]init];
-            AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-            appDelegate.window.rootViewController= tabbar;
+            [[NSUserDefaults standardUserDefaults] setObject:obj[@"data"][@"token"] forKey:@"token"];
+            [[NSUserDefaults standardUserDefaults]setObject:obj[@"data"][@"accessKey"] forKey:AccessKey];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            ZD_UserM.isAdmin = [obj[@"data"][@"role"] isEqualToString:@"admin"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                MainViewController *tabbar = [[MainViewController alloc] init];
+                [UIApplication sharedApplication].delegate.window.rootViewController= tabbar;
+            });
         } else {
-            SendViewController *send = [[SendViewController alloc]init];
-            self.window.rootViewController = send;
-            send.Unionid = [[SignManager shareManager] getaccseekey];
+            ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"]);
         }
     } fail:^(NSError *error) {
-        
+        ZD_HUD_SHOW_ERROR(error);
     }];
 }
-
-//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-//    
-//    [WXApi handleOpenURL:url delegate:self];
-//    return YES;
-//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

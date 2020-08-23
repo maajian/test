@@ -320,17 +320,12 @@
 {
     dispatch_queue_t conQueue = dispatch_queue_create("1", DISPATCH_QUEUE_CONCURRENT);
     NSString *extraInfoUrl = [NSString stringWithFormat:@"%@api/v2/activity/GetActivityOption?token=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getToken], _listID];
+    
     [ZD_NetWorkM postDataWithMethod:extraInfoUrl parameters:nil succ:^(NSDictionary *obj) {
         NSArray *extraInfoArray = obj[@"data"];
-        NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivityList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-        NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)self.listID],
-                              @"pageSize":@"200000",
-                              @"curPage":@"1"};
-        [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
-            NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
-            NSArray *array1 = [result[@"data"] isEqual:[NSNull null]] ? @[] : result[@"data"];
-            if (array1.count) {
-                NSString *extraInfo = ZD_SafeStringValue(array1.firstObject[@"ExtraInfo"]);
+        ZDBlock_Arr succBlock = ^(NSArray *result) {
+            if (result.count) {
+                NSString *extraInfo = ZD_SafeStringValue(result.firstObject[@"ExtraInfo"]);
                 [self getOptionWithArray:extraInfoArray];
             }
             [indicator stopAnimating];
@@ -338,9 +333,9 @@
             dataarr = [NSMutableArray array];
             [self deleteData];
             dispatch_async(conQueue, ^{
-                for (int i=0; i<array1.count; i++)
+                for (int i=0; i< result.count; i++)
                 {
-                    NSDictionary *acdic = [array1 objectAtIndex:i];
+                    NSDictionary *acdic = [result objectAtIndex:i];
                     listModel *model = [listModel yy_modelWithJSON:acdic];
                     [_phoneSearchArray addObject:model.Mobile];
                     if (model.NickName==nil) {
@@ -354,7 +349,7 @@
                     }else{
                         [_UserNameSearchArray addObject:model.UserName];
                     }
-                    model.count =array1.count-i;
+                    model.count = result.count-i;
                     
                     {
                         NSMutableDictionary *e = [NSMutableDictionary dictionary];
@@ -387,13 +382,43 @@
                     [_table reloadData];
                 });
             });
-        } fail:^(NSError *error) {
-            NSLog(@"error = %@",error);
-            [indicator stopAnimating];
-            [[SignManager shareManager] showNotHaveNet:self.view];
-        }];
-    } fail:^(NSError *error) {
+        };
         
+        if (ZD_UserM.isAdmin) {
+            NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivityListForYS?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+            NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)self.listID],
+                                  @"pageSize":@"200000",
+                                  @"curPage":@"1"};
+            [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
+                NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
+                NSArray *array1 = [result[@"data"] isEqual:[NSNull null]] ? @[] : result[@"data"];
+                succBlock(array1);
+            } fail:^(NSError *error) {
+                NSLog(@"error = %@",error);
+                [indicator stopAnimating];
+                [[SignManager shareManager] showNotHaveNet:self.view];
+            }];
+        } else {
+            NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
+            NSDictionary *dic = @{@"BusinessCode": @"GetActivityListForApp",
+                                  @"Data" : @{
+                                          @"ActivityId":[NSString stringWithFormat:@"%li",(long)self.listID],
+                                          @"pageSize":@"200000",
+                                          @"curPage":@"1"
+                                  }
+            };
+            [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+                if ([obj[@"res"] boolValue]) {
+                    succBlock(obj[@"data"][@"list"]);
+                } else {
+                    ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"])
+                }
+            } fail:^(NSError *error) {
+                ZD_HUD_SHOW_ERROR_STATUS(error.domain)
+            }];
+        }
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR_STATUS(error.domain)
     }];
 }
 - (void)getOptionWithArray:(NSArray *)option
@@ -443,7 +468,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 75;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -456,6 +481,9 @@
         NSIndexPath *indexpath = [_table indexPathForCell:mycell];
         if (self.searchController.active) {
             NSArray *arr = [allarray objectsAtIndexes:set];
+            if (arr.count == 0) {
+                return;
+            }
             signle.datadic = [arr objectAtIndex:indexpath.row];
         }else{
             signle.datadic = [allarray objectAtIndex:indexpath.row];
@@ -464,6 +492,7 @@
         signle.isChange = YES;
         signle.activityID = self.listID;
         signle.personID = mycell.model.ID;
+        signle.personListModel = mycell.model;
         [self  setHidesBottomBarWhenPushed:YES];
         [self.navigationController pushViewController:signle animated:YES];
     }
@@ -557,16 +586,26 @@
 - (void)showInviteVC{
     if ([[NSUserDefaults standardUserDefaults]integerForKey:@"selectInvite"]) {
         if ([[NSUserDefaults standardUserDefaults]integerForKey:@"selectInvite"]>1) {
-            customInviteViewController *custom = [[customInviteViewController alloc]init];
-            custom.signCodeStr = mycell.model.VCode ;
-            custom.activityCodeStr = [NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)_listID];
-            custom.activityAddress = [NSString stringWithFormat:@"活动地址：%@",_address];
-            custom.activityTime = [NSString stringWithFormat:@"活动时间：%@",[Time bringWithTime:_timeStart].timeStr];
-            custom.activityTitle = _listName;
-            custom.name = mycell.model.UserName;
-            [self presentViewController:custom animated:YES completion:^{
-                [_table setEditing:NO];
-            }];
+            ZDBlock_Str codeBlock = ^(NSString *str) {
+                customInviteViewController *custom = [[customInviteViewController alloc]init];
+                custom.signCodeStr = mycell.model.VCode ;
+                custom.activityCodeStr = str;
+                custom.activityAddress = [NSString stringWithFormat:@"活动地址：%@",_address];
+                custom.activityTime = [NSString stringWithFormat:@"活动时间：%@",[Time bringWithTime:_timeStart].timeStr];
+                custom.activityTitle = _listName;
+                custom.name = mycell.model.UserName;
+                [self presentViewController:custom animated:YES completion:^{
+                    [_table setEditing:NO];
+                }];
+            };
+            
+            if (ZD_UserM.isAdmin) {
+                codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)self.listID]);
+            } else {
+                [self networkForGetActivityLinkSuccess:^(NSString *obj) {
+                    codeBlock(obj);
+                }];
+            }
         }else{
             [self defaultInvite:YES];
         }
@@ -579,20 +618,30 @@
     [label labelAnimationWithViewlong:self.view];
 }
 - (void)defaultInvite:(BOOL)isSign{
-    defaultViewController *defaultInvite = [[defaultViewController alloc]init];
-    defaultInvite.activityTitle = _listName;
-    defaultInvite.isSign = isSign;
+    ZDBlock_Str codeBlock = ^(NSString *str) {
+        defaultViewController *defaultInvite = [[defaultViewController alloc]init];
+        defaultInvite.activityTitle = _listName;
+        defaultInvite.isSign = isSign;
+        defaultInvite.codeStr = str;
+        defaultInvite.address = [NSString stringWithFormat:@"地址：%@",_address];
+        defaultInvite.timeStr = [NSString stringWithFormat:@"时间：%@",[Time bringWithTime:_timeStart].timeStr];
+        defaultInvite.name  = mycell.model.UserName;
+        [self presentViewController:defaultInvite animated:YES completion:^{
+            [_table setEditing:NO];
+        }];
+    };
+    
     if (isSign) {
-        defaultInvite.codeStr = mycell.model.VCode;
-    }else{
-        defaultInvite.codeStr = [NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)_listID];
+        codeBlock(mycell.model.VCode);
+    } else {
+        if (ZD_UserM.isAdmin) {
+            codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)self.listID]);
+        } else {
+            [self networkForGetActivityLinkSuccess:^(NSString *obj) {
+                codeBlock(obj);
+            }];
+        }
     }
-    defaultInvite.address = [NSString stringWithFormat:@"地址：%@",_address];
-    defaultInvite.timeStr = [NSString stringWithFormat:@"时间：%@",[Time bringWithTime:_timeStart].timeStr];
-    defaultInvite.name  = mycell.model.UserName;
-    [self presentViewController:defaultInvite animated:YES completion:^{
-        [_table setEditing:NO];
-    }];
 }
 #pragma mark ---审核
 
@@ -660,10 +709,14 @@
 {
     NSInteger Grade = [[[NSUserDefaults standardUserDefaults]objectForKey:@"GradeId"]integerValue];
     NSArray *array;
-    if (Grade>1) {
-         array = @[@"添加报名人员",@"发送名单到邮箱",@"群发短信"];
-    }else{
-         array = @[@"添加报名人员",@"发送名单到邮箱"];
+    if (ZD_UserM.isAdmin) {
+        if (Grade>1) {
+             array = @[@"添加报名人员",@"发送名单到邮箱",@"群发短信"];
+        }else{
+             array = @[@"添加报名人员",@"发送名单到邮箱"];
+        }
+    } else {
+        array = @[@"添加报名人员"];
     }
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:5 andShowCancel:YES];
     // 2. Block 方式
@@ -710,27 +763,24 @@
     [self.view.window addSubview:sheet];
 }
 #pragma mark --- readDelegate
-
-//-(void)cancelSend{
-//    [self endEditing];
-//}
-//
-//- (void)endEditing{
-//    _table.allowsMultipleSelectionDuringEditing = NO;
-//    _table.editing = NO;
-//}
-//- (void)nextStep{
-//    NSArray *selectArray = [_table indexPathsForSelectedRows];
-//    [self endEditing];
-//    GroupSendViewController *groupSend = [[GroupSendViewController alloc]init];
-//    [self setHidesBottomBarWhenPushed:YES];
-//    [self.navigationController pushViewController:groupSend animated:YES];
-//
-//}
-
 - (void)rightButton   // 添加rightbutton
 {
     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];
+}
+- (void)networkForGetActivityLinkSuccess:(ZDBlock_Str)success {
+    ZD_HUD_SHOW_WAITING
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
+    NSDictionary *dic = @{@"BusinessCode": @"GetActivityLink",
+                          @"Data" : @{
+                                  @"ActivityId": @(self.listID),
+                         }
+    };
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        ZD_HUD_DISMISS
+        ZDDo_Block_Safe_Main1(success, obj[@"data"])
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR(error)
+    }];
 }
 #pragma mark GZActionSheet action 响应事件
 - (void)postEmail // 发送邮件

@@ -24,7 +24,9 @@ NSString *const ZDUserDefault_First_Network = @"ZDUserDefault_First_Network";
 NSString *const ZDUserDefault_Sign_Mark = @"ZDUserDefault_Sign_Mark";
 NSString *const ZDUserDefault_Update_Sign = @"ZDUserDefault_Update_Sign";
 NSString *const ZDUserDefault_HasShowPrivacy = @"ZDUserDefault_HasShowPrivacy";
+NSString *const ZDUserDefault_IsAdmin = @"ZDUserDefault_IsAdmin";
 NSString *const ZDUserDefault_LoginTime = @"ZDUserDefault_LoginTime";
+NSString *const ZDUserDefault_LoginAccount = @"ZDUserDefault_LoginAccount";
 
 #pragma mark --- Cache
 NSString *const ZDCacheSign_One_List = @"ZDCacheSign_One_List";

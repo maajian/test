@@ -69,4 +69,9 @@
 @property (nonatomic, assign) NSInteger MaxPeople;
 /*! 是否为团体报名 */
 @property(nonatomic,assign)NSInteger ActivityGenre;
+
+@property (nonatomic, assign) NSInteger total; // 总人数
+@property (nonatomic, assign) NSInteger yesterday; // 昨天人数
+@property (nonatomic, assign) NSInteger today; // 今天
+
 @end

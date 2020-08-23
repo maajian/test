@@ -7,6 +7,7 @@ pod 'FMDB'
 pod 'JPush'
 pod 'AFNetworking'
 pod 'MBProgressHUD'
+pod 'SVProgressHUD'
 # 缓存框架
 pod 'YYCache'
 pod 'AMapLocation'

@@ -476,6 +476,8 @@
             lastFeeId = feeid;
         }];
         [_personVM addPersonNetWork:postDIC feeid:lastFeeId];
+        
+        
          __weak typeof(self) weakSelf = self;
         __weak typeof(_fleshBlock) weakBlock =_fleshBlock;
         _personVM.blcok =^(NSInteger isSuccess)

@@ -64,7 +64,25 @@
     [[NSUserDefaults standardUserDefaults] setObject:[NSDate getCurrentDayStr] forKey:ZDUserDefault_LoginTime];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+- (void)setIsAdmin:(BOOL)isAdmin {
+    [[NSUserDefaults standardUserDefaults] setBool:isAdmin forKey:ZDUserDefault_IsAdmin];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+- (BOOL)isAdmin {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:ZDUserDefault_IsAdmin];
+}
+- (NSString *)token {
+    return [[SignManager shareManager] getToken];
+}
 
+// 登录账号
+- (NSString *)loginAccount {
+    return ZD_SafeStringValue([ZD_UserDefaults objectForKey:ZDUserDefault_LoginAccount]);
+}
+- (void)setLoginAccount:(NSString *)loginAccount {
+    [ZD_UserDefaults setObject:loginAccount forKey:ZDUserDefault_LoginAccount];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 #pragma mark --- 签到判断
 // 判断本地是否有签到
@@ -86,13 +104,6 @@
 /*! 退出登录清空数据 */
 - (void)didLogout
 {
-    /*! 清除本地数据 */
-    NSDictionary *userArray = [[NSUserDefaults standardUserDefaults]objectForKey:@"userArray"];
-    NSString *appDomain = [[NSBundle mainBundle]bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults]removePersistentDomainForName:appDomain];
-    [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:@"userArray"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
     if ([[SignManager shareManager].dataBase open])
     {
         NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];

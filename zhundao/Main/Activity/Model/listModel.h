@@ -26,4 +26,6 @@
 @property(nonatomic,strong)NSString *Industry;
 @property(nonatomic,strong)NSString *Email;
 @property(nonatomic,strong)NSString *Address;
+@property(nonatomic,copy)NSString *DepartName;
+
 @end

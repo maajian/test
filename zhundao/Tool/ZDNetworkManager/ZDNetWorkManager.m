@@ -25,6 +25,8 @@ ZD_Singleton_Implementation(NetWorkManager)
         [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
         manager.requestSerializer.timeoutInterval = 20.f;
         [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"application/octet-stream", @"application/json", @"text/json" , @"text/javascript", nil];
+//        [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     });
     return manager;
 }
@@ -35,8 +37,10 @@ ZD_Singleton_Implementation(NetWorkManager)
  */
 - (void)getDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
     [[ZDNetWorkManager shareHTTPSessionManager] GET:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
         succ(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
         if (error.code == -1011) {
             [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
         } else {
@@ -50,8 +54,10 @@ ZD_Singleton_Implementation(NetWorkManager)
  */
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
     [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
         succ(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
         if (error.code == -1011) {
             [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
         }  else {
@@ -62,8 +68,10 @@ ZD_Singleton_Implementation(NetWorkManager)
 
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters constructing:(void (^)(id<AFMultipartFormData> formData))constructing succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
     [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters constructingBodyWithBlock:constructing progress: nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
         succ(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
         if (error.code == -1011) {
             [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
         } else {

@@ -166,7 +166,7 @@
 #pragma mark --- postDelegate
 /*! 跳转协议 */
 - (void)pushXieYi{
-    NSString *xieyiStr = @"https://www.zhundao.net/demo/xieyi.html";
+    NSString *xieyiStr = @"https://www.zhundao.net/service/help/detail/206";
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.urlString = xieyiStr;
     web.title = @"准到服务协议";

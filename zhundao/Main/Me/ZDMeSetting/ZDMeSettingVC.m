@@ -49,6 +49,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:@"退出登录" forState:UIControlStateNormal];
         button.frame = CGRectMake(0, 16, kScreenWidth, 44);
+        button.backgroundColor = [UIColor whiteColor];
         [button setTitleColor:ZDMainColor forState:UIControlStateNormal];
         [button addTarget:self action:@selector(logoutAction:) forControlEvents:UIControlEventTouchUpInside];
         button.titleLabel.font = ZDSystemFont(14);
@@ -59,6 +60,7 @@
 
 #pragma mark --- Init
 - (void)initSet {
+    self.title = @"设置";
     _dataSource = @[
         @[[ZDMeSettingModel changePasswordModel], [ZDMeSettingModel userProtocolModel], [ZDMeSettingModel privacyProtectModel]],
         @[[ZDMeSettingModel aboutModel]]
@@ -85,19 +87,22 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:NSStringFromClass([self class])];
     }
+    ZDMeSettingModel *model = self.dataSource[indexPath.section][indexPath.row];
+    cell.textLabel.text = model.title;
     return cell;
 }
 
 #pragma mark --- UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ZDMeSettingModel *model = self.dataSource[indexPath.section][indexPath.row];
     switch (model.type) {
         case ZDMeSettingTypeAbout: {
             ZDWebViewController *web = [[ZDWebViewController alloc] init];
             web.webTitle = @"关于";
             web.isClose = YES;
-            web.urlString = @"https://www.zhundao.net";
+            web.urlString = @"https://jinta.zhundao.net";
             [self.navigationController pushViewController:web animated:YES];
             break;
         }
@@ -108,13 +113,13 @@
         case ZDMeSettingTypeUserProtocol: {
             ZDWebViewController *web = [[ZDWebViewController alloc] init];
             web.webTitle = @"准到服务协议";
-            web.urlString = @"https://www.zhundao.net/demo/xieyi.html";
+            web.urlString = @"https://www.zhundao.net/service/help/detail/206";
             [self.navigationController pushViewController:web animated:YES];
             break;
         }
         case ZDMeSettingTypePrivacyProtect: {
             ZDWebViewController *web = [[ZDWebViewController alloc] init];
-            web.urlString = @"https://www.zhundao.net/yinsi.html";
+            web.urlString = @"https://www.zhundao.net/service/help/detail/207";
             web.webTitle = @"准到隐私政策";
             [self.navigationController pushViewController:web animated:YES];
             break;

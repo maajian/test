@@ -8,6 +8,8 @@
 
 #import "ZDLoginCodeFixVC.h"
 
+#import "MainViewController.h"
+
 #import "ZDLoginCodeFixView.h"
 
 @interface ZDLoginCodeFixVC()<ZDLoginCodeFixViewDelegate>
@@ -36,6 +38,7 @@
 #pragma mark --- Init
 - (void)initSet {
     _loginCodeFixView = [[ZDLoginCodeFixView alloc] init];
+    _loginCodeFixView.phoneStr = self.phoneStr;
     _loginCodeFixView.loginCodeFixViewDelegate = self;
     [self.view addSubview:self.loginCodeFixView];
 }
@@ -54,17 +57,33 @@
                                   @"code": self.loginCodeFixView.code,
                          }
     };
-    ZD_Hud_Loading
+    ZD_WeakSelf
+    ZD_HUD_SHOW_WAITING
     [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
-        
+       ZD_HUD_DISMISS
+        if ([obj[@"res"] boolValue]) {
+            [ZD_UserM saveLoginTime];
+            ZD_UserM.loginAccount = weakSelf.phoneStr;
+            [[NSUserDefaults standardUserDefaults] setObject:obj[@"data"][@"token"] forKey:@"token"];
+            [[NSUserDefaults standardUserDefaults]setObject:obj[@"data"][@"accessKey"] forKey:AccessKey];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            ZD_UserM.isAdmin = [obj[@"data"][@"role"] isEqualToString:@"admin"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf dismissViewControllerAnimated:YES completion:nil];
+                MainViewController *tabbar = [[MainViewController alloc] init];
+                [UIApplication sharedApplication].delegate.window.rootViewController= tabbar;
+            });
+        } else {
+            ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"]);
+        }
     } fail:^(NSError *error) {
-        ZD_Hud_Show_Error(error.domain);
+        ZD_HUD_SHOW_ERROR(error);
     }];
 }
 
 #pragma mark --- ZDLoginCodeFixViewDelegate
 - (void)ZDLoginCodeFixView:(ZDLoginCodeFixView *)loginCodeFixView didTapNextButton:(UIButton *)button {
-    
+    [self networkForLoginCode];
 }
 - (void)ZDLoginCodeFixView:(ZDLoginCodeFixView *)loginCodeFixView didTapCloseButton:(UIButton *)button {
     [self.navigationController popViewControllerAnimated:YES];

@@ -69,33 +69,51 @@
         [label labelAnimationWithViewlong:self.view];
         return;
     }
-    NSString *str = nil;
-    if (_signID) {
-        str = [NSString stringWithFormat:@"%@api/CheckIn/SendCheckInListByEmail?accessKey=%@&email=%@&checkInId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],_textField.text,(long)self.signID];
-    }else{
-        str = [NSString stringWithFormat:@"%@api/PerActivity/SendActivityListByEmail?accessKey=%@&email=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],_textField.text,(long)self.activityID];
-    }
-    MBProgressHUD *hud1 = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
-        [hud1 hideAnimated:YES];
-        if ([dic[@"Res"] integerValue]==0) {
-            
-            MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"发送成功!" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
-            [hud hideAnimated:YES afterDelay:1.5];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self.navigationController popViewControllerAnimated:YES];
-            });
+    if (!ZD_UserM.isAdmin) {
+        NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
+        NSDictionary *dic = @{@"BusinessCode": @"ExportActivityList",
+                              @"Data" : @{
+                                      @"ActivityId":@(self.activityID),
+                                      @"Email": _textField.text,
+                             }
+        };
+        [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+            if ([obj[@"res"] boolValue]) {
+                ZD_HUD_SHOW_SUCCESS_STATUS(@"发送成功");
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
+            } else {
+                ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"])
+            }
+        } fail:^(NSError *error) {
+            ZD_HUD_SHOW_ERROR(error)
+        }];
+        
+    } else {
+        NSString *str = nil;
+        if (_signID) {
+            str = [NSString stringWithFormat:@"%@api/CheckIn/SendCheckInListByEmail?accessKey=%@&email=%@&checkInId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],_textField.text,(long)self.signID];
         }else{
-            maskLabel *label = [[maskLabel alloc]initWithTitle:dic[@"Msg"]];
-            [label labelAnimationWithViewlong:self.view];
+            str = [NSString stringWithFormat:@"%@api/PerActivity/SendActivityListByEmail?accessKey=%@&email=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],_textField.text,(long)self.activityID];
         }
-    } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
-        [hud1 hideAnimated:YES];
-        [[SignManager shareManager] showNotHaveNet:self.view];
-    }];
+        ZD_HUD_SHOW_WAITING
+        [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+            NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
+            if ([dic[@"Res"] integerValue]==0) {
+                ZD_HUD_SHOW_SUCCESS_STATUS(@"发送成功");
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
+            }else{
+                ZD_HUD_SHOW_ERROR_STATUS(dic[@"Msg"])
+            }
+        } fail:^(NSError *error) {
+            ZD_HUD_SHOW_ERROR(error)
+        }];
+    }
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

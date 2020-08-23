@@ -40,7 +40,6 @@
     self.title = @"群发管理";
     _validArray = [NSMutableArray array];
     _isSelectAll = NO;
-    [self.view addSubview:self.tableView];
     [self setupUI];
     [self selectALL];
     [self OpenMessage];
@@ -66,7 +65,7 @@
         _tableView.dataSource =self;
         _tableView.backgroundColor = ZDBackgroundColor;
         _tableView.tableFooterView = [[UIView alloc]init];
-        _tableView.rowHeight = 60 ;
+        _tableView.rowHeight = 75 ;
         _tableView.tintColor = [UIColor clearColor];
         _tableView.allowsMultipleSelectionDuringEditing = YES;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -78,11 +77,20 @@
 }
 
 #pragma mark --- ui创建
-
 - (void)setupUI{
     _readView = [[isReadView alloc]init];
     _readView.readDelegate = self;
+    [self.view addSubview:self.tableView];
     [self.view addSubview:_readView];
+    [self.readView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).offset(ZD_SAFE_BOTTOM_LAYOUT);
+        make.leading.trailing.equalTo(self.view);
+        make.height.mas_equalTo(44);
+    }];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.top.equalTo(self.view);
+        make.bottom.equalTo(self.readView.mas_top);
+    }];
 }
 
 #pragma mark -------UITableViewDataSource
