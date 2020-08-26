@@ -16,9 +16,7 @@
 #import "detailActivityViewController.h"
 #import "NewView.h"
 #import "moreModalViewController.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UShareUI.h>
-#import <TencentOpenAPI/QQApiInterface.h>
 #import "WXApi.h"
 #import "PostSign.h"
 #import "oneActivityViewController.h"

@@ -121,6 +121,16 @@ Copyright jpush.cn
 
 Copyright jpush.cn
 
+## UMCCommon
+
+Copyright 2011 - 2019 umeng.com. All rights reserved.
+
+
+## UMCShare
+
+Copyright 2011 - 2018 umeng.com. All rights reserved.
+
+
 ## YYCache
 
 The MIT License (MIT)

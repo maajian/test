@@ -12,4 +12,9 @@ pod 'AMapLocation'
 pod 'AMap2DMap'
 pod 'AMapSearch'
 
+pod 'UMCCommon'
+pod 'UMCShare/UI'
+pod 'UMCShare/Social/WeChat'
+pod 'UMCShare/Social/ReducedQQ'
+
 end

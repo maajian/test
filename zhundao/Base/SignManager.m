@@ -8,9 +8,7 @@
 //
 
 #import "SignManager.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UShareUI.h>
-#import <TencentOpenAPI/QQApiInterface.h>
 #import "WXApi.h"
 @interface SignManager ()
 {
@@ -151,7 +149,7 @@
 }
 - (void)shareWithTitle:(NSString *)title detailTitle:(NSString *)detailTitle thumImage:(UIImage *)thumImage webpageUrl:(NSString *)webpageUrl withCTR:(UIViewController *)ctr Withtype:(NSInteger)type {
     NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_Qzone), nil];
-      if ( ![QQApiInterface isQQInstalled]) {
+      if ( ![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
           //没有安装QQ
           
           [arr removeObject:@(UMSocialPlatformType_QQ)];

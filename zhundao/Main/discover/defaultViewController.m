@@ -9,9 +9,7 @@
 #import "defaultViewController.h"
 #import "UIImage+LXDCreateBarcode.h"
 #import "BigSizeButton.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UShareUI.h>
-#import <TencentOpenAPI/QQApiInterface.h>
 #import "WXApi.h"
 @interface defaultViewController ()
 
@@ -170,7 +168,7 @@
 
 - (void)shareImage{
     NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_QQ), nil];
-    if ( ![QQApiInterface isQQInstalled]) {
+    if ( ![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
         //没有安装QQ
         [arr removeObject:@(UMSocialPlatformType_QQ)];
     }

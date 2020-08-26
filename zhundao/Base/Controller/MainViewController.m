@@ -116,9 +116,6 @@
     self.selectedIndex = sender.tag-100;
     
     
-    [MobClick event:@"zhundaoID"];
-    
-    
     NSArray *imageArray = @[@"activity",@"loginin",@"discover",@"me"];
         NSArray *imagedarray = @[@"activityed",@"logined",@"discovered",@"meed"];
     

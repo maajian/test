@@ -15,9 +15,7 @@
 #import "inviteViewController.h"
 #import "detailActivityViewController.h"
 #import "ConsultViewController.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UShareUI.h>
-#import <TencentOpenAPI/QQApiInterface.h>
 #import "WXApi.h"
 #import "PostSignViewController.h"
 #import "oneActivityViewController.h"

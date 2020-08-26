@@ -29,6 +29,22 @@ PODS:
   - JCore (1.1.7)
   - JPush (3.0.8):
     - JCore (~> 1.1.7)
+  - UMCCommon (7.1.1)
+  - UMCShare/Core (6.9.10):
+    - UMCCommon
+  - UMCShare/Social/ReducedQQ (6.9.10):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.10):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/WeChat (6.9.10):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedWeChat
+  - UMCShare/UI (6.9.10):
+    - UMCCommon
+    - UMCShare/Core
   - YYCache (1.0.4)
 
 DEPENDENCIES:
@@ -40,6 +56,10 @@ DEPENDENCIES:
   - FMDB
   - IQKeyboardManager
   - JPush
+  - UMCCommon
+  - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/WeChat
+  - UMCShare/UI
   - YYCache
 
 SPEC REPOS:
@@ -56,6 +76,8 @@ SPEC REPOS:
     - AMapFoundation
     - AMapLocation
     - AMapSearch
+    - UMCCommon
+    - UMCShare
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -68,8 +90,10 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 1df9c0f147af1681cfb2d9977bc30309d45a7e76
   JCore: f7459c81c135281a874a6beafdd321666adcc834
   JPush: 9574d072cc37e93fa293ba69b43ce763c440943a
+  UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
+  UMCShare: a4a95fbdd61ecce5b6751d8c9ed9b519e80fcbc9
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 2b689a9bee4fce57b10133b4324b4b76bfc6db0c
+PODFILE CHECKSUM: 6e2f005b6a70862ce91a5e4c7f8b558f4a11ff2d
 
 COCOAPODS: 1.9.1

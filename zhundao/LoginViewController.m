@@ -151,7 +151,7 @@
         SendAuthReq *req = [[SendAuthReq alloc] init];
         req.scope = @"snsapi_userinfo";
         req.state = @"GSTDoctorApp";
-        [WXApi sendReq:req];
+        [WXApi sendReq:req completion:nil];
         return YES;
     }
     else {
