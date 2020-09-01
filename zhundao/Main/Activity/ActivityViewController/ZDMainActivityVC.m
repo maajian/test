@@ -37,7 +37,9 @@
     
     [self initSet];
     [self initLayout];
-    [self networkGetMessageList];
+    if (!ZD_UserM.isAdmin) {
+        [self networkGetMessageList];
+    }
 }
 
 - (void)viewDidLayoutSubviews {

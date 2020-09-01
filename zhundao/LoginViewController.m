@@ -69,8 +69,7 @@
     [self networkForLogin];
 }
 
-- (void)getGrade
-{
+- (void)getGrade {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
