@@ -7,7 +7,6 @@
 //
 
 #import "BaseViewController.h"
-typedef void(^backBlock) (NSDictionary *dic);
 @interface MorechoiceViewController : BaseViewController
-@property(nonatomic,copy)backBlock block;
+@property(nonatomic,copy)ZDBlock_Dic block;
 @end

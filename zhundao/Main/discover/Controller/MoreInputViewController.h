@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-typedef void(^backBlock) (NSDictionary *dic);
+typedef void(^backpopBlock) (NSDictionary *dic);
 @interface MoreInputViewController : BaseViewController
-@property(nonatomic,copy)backBlock block;
+@property(nonatomic,copy)backpopBlock block;
 @end

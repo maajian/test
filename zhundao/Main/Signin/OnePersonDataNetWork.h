@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-typedef void(^backBlock) (NSArray *backArray);
+typedef void(^backpopBlock) (NSArray *backArray);
 @interface OnePersonDataNetWork : NSObject
-- (void)getNewList :(NSInteger)listID BackBlock :(backBlock)backBlock ;
+- (void)getNewList :(NSInteger)listID BackBlock :(backpopBlock)backBlock ;
 @end

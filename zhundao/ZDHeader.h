@@ -30,6 +30,8 @@
 #import "AAGlobalMacro.h"
 #import "ZDWebViewController.h"
 #import "WZLBadgeImport.h"
+#import "AJAlertSheet.h"
+#import "ZDAlertView.h"
 
 #import "ZDRefreshNormalFooter.h"
 #import "ZDRefreshNormalHeader.h"
@@ -50,7 +52,6 @@
 #import "UILabel+Extension.h"
 #import "NSString+Extension.h"
 #import "UIImage+Extension.h"
-#import "TYAlertController+Extension.h"
 #import "NSDate+Extension.h"
 #import "NSArray+Extension.h"
 #import "NSDictionary+Extension.h"

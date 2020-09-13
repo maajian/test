@@ -149,7 +149,7 @@ static NSString *cellID = @"ActivityCellID";
 // 点击
 - (void)activityCell:(ZDActivityCell *)activityCell didTapListButton:(UIButton *)button {
     if (activityCell.model.HasJoinNum==0) {
-        [[SignManager shareManager]showAlertWithTitle:@"暂无人参加,请下拉刷新数据" WithMessage:nil WithCTR:self];
+        [ZDAlertView alertWithTitle:@"暂无人参加,请下拉刷新数据" message:nil cancelBlock:nil];
     } else {
         ListViewController *list = [[ListViewController alloc]init];
         list.listID = activityCell.model.ID;

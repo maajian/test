@@ -8,8 +8,6 @@
 
 #import "ActivityViewController.h"
 #import "ActivityCell.h"
-#import "UIView+TYAlertView.h"
-#import "TYAlertController+BlurEffects.h"
 #import "ListViewController.h"
 #import "NewActivityViewController.h"
 #import "AppDelegate.h"
@@ -358,7 +356,7 @@
 {
     [self getMycell:tap];
     if (mycell.model.HasJoinNum==0) {
-        [[SignManager shareManager]showAlertWithTitle:@"暂无人参加,请下拉刷新数据" WithMessage:nil WithCTR:self];
+        [ZDAlertView alertWithTitle:@"暂无人参加,请下拉刷新数据" message:nil cancelBlock:nil];
     }
     else
     {

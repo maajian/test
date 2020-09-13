@@ -9,7 +9,6 @@
 #import "ShakeViewController.h"
 #import "ShakeTableViewCell.h"
 #import "ShakeModel.h"
-#import "UIView+TYAlertView.h"
 #import "detailShakeViewController.h"
 #import "bindingBeacon.h"
 #import "UILabel+nullDataLabel.h"

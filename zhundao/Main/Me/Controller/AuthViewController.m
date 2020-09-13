@@ -232,12 +232,7 @@ static NSString *bottomID  = @"autobottomID";
     }];
 }
 - (void)explain{
-    TYAlertView *alertView = [TYAlertView alertViewWithTitle:nil message:nil];
-    [alertView addAction:[TYAlertAction actionWithTitle:@"知道了" style:TYAlertActionStyleCancel handler:nil]];
-    alertView.tintColor = ZDGreenColor;
-    alertView.messageLabel.text = @"所有委托准到代收款的活动，为了确保主办方的资金安全，我们在首次提现时进行了实名认证。实名认证成功后才允许提现，且申请提现支付宝和银行卡的所有者须为此实名用户";
-    TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert];
-    [self presentViewController:alertController animated:YES completion:nil];
+    [ZDAlertView alertWithTitle:@"提示" message:@"所有委托准到代收款的活动，为了确保主办方的资金安全，我们在首次提现时进行了实名认证。实名认证成功后才允许提现，且申请提现支付宝和银行卡的所有者须为此实名用户" cancelBlock:nil];
 }
 
 

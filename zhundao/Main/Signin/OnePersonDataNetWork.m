@@ -14,7 +14,7 @@
 //GET api/PerActivity/GetSingleActivityList?accessKey={accessKey}&activityListId={activityListId}
 
 
-- (void)getNewList :(NSInteger)listID BackBlock :(backBlock)backBlock {
+- (void)getNewList :(NSInteger)listID BackBlock :(backpopBlock)backBlock {
     NSString *listurl = [NSString stringWithFormat:@"%@api/PerActivity/PostActivityListed?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
     NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)listID],
                           @"pageSize":@"1000",

@@ -192,11 +192,13 @@
 
 - (void)showSign {
     ZD_WeakSelf
-    [[SignManager shareManager]showAlertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] WithMessage:@"代签后不能修改" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+    [ZDAlertView alertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] message:@"代签后不能修改" sureBlock:^{
         [[signResult alloc] dealAdminSignWithSignID:weakSelf.signID phone:myCell.model.Mobile action1:^{
             [weakSelf TableReloadData];
         }];
-    } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
+    } cancelBlock:^{
+        
+    }];
 }
 - (void)TableReloadData
 {
@@ -222,9 +224,12 @@
 }
 - (void)callAlert
 {
-    [[SignManager shareManager]showAlertWithTitle:@"确定拨打电话?" WithMessage:nil  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
-        [self callphone];
-    } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
+    ZD_WeakSelf
+    [ZDAlertView alertWithTitle:@"确定拨打电话?" message:nil sureBlock:^{
+        [weakSelf callphone];
+    } cancelBlock:^{
+        
+    }];
 }
 - (void)callphone
 {

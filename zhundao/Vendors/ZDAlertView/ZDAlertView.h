@@ -26,6 +26,8 @@
  */
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message sureBlock:(dispatch_block_t)sureBlock cancelBlock:(dispatch_block_t)cancelBlock;
 
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message cancelBlock:(dispatch_block_t)cancelBlock;
+
 /**
  初始化
  
@@ -58,6 +60,8 @@
 @property (nonatomic, strong) UILabel *messageLabel;
 // 内容视图
 @property (nonatomic, strong) UIView *contentView;
+//
+@property (nonatomic, strong) NSAttributedString *messageAttributedString;
 
 - (void)fadeOut;
 

@@ -148,11 +148,11 @@
 
 - (void)showNoDataArray
 {
-    [[SignManager shareManager]showAlertWithTitle:@"对不起，您的权限不够" WithMessage:@"请前往升级" WithTitleOne:@"返回" WithActionOne:^(TYAlertAction *action1) {
-        [self.navigationController popViewControllerAnimated:YES];
-    } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"升级" WithActionTwo:^(TYAlertAction *action1) {
+    [ZDAlertView alertWithTitle:@"对不起，您的权限不够" message:@"请前往升级" cancelTitle:@"返回" sureTitle:@"升级" sureBlock:^{
         [self showHTML];
-    } WithCTR:self];
+    } cancelBlock:^{
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 - (void)showHTML
 {
@@ -326,11 +326,13 @@
 - (void)showSign
 {
     __weak typeof(self) weakSelf = self;
-    [[SignManager shareManager]showAlertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] WithMessage:@"代签后不能修改" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+    [ZDAlertView alertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] message:@"代签后不能修改" sureBlock:^{
         [[signResult alloc] dealAdminSignWithSignID:self.signID phone:myCell.model.Mobile action1:^{
             [weakSelf loadData];
         }];
-    } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
+    } cancelBlock:^{
+        
+    }];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

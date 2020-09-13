@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomModel.h"
-typedef void(^backBlock) (NSDictionary *dic);
+typedef void(^backChooseBlock) (NSDictionary *dic);
 @interface ChooseViewController : BaseViewController
 @property(nonatomic,strong)CustomModel *model;
-@property(nonatomic,copy)backBlock block;
+@property(nonatomic,copy)backChooseBlock block;
 @end

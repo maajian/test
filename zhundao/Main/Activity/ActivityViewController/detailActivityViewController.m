@@ -7,7 +7,6 @@
 //
 
 #import "detailActivityViewController.h"
-#import "UIView+TYAlertView.h"
 #import <UShareUI/UShareUI.h>
 #import "WXApi.h"
 @interface detailActivityViewController ()<WKNavigationDelegate>

@@ -46,6 +46,13 @@
     [[UIApplication sharedApplication].keyWindow addSubview:alert];
     return alert;
 }
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message cancelBlock:(dispatch_block_t)cancelBlock {
+    ZDAlertView *alert = [[[self class] alloc]initWithTitle:title message:message cancelButtonTitle:@"取消" sureButtonTitle:@""  cancelBlock:cancelBlock sureBlock:nil];
+    // 创建在keyWindow上
+    [alert fadeIn];
+    [[UIApplication sharedApplication].keyWindow addSubview:alert];
+    return alert;
+}
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle sureTitle:(NSString *)sureTitle sureBlock:(dispatch_block_t)sureBlock cancelBlock:(dispatch_block_t)cancelBlock {
     ZDAlertView *alert = [[[self class] alloc]initWithTitle:title message:message cancelButtonTitle:cancelTitle sureButtonTitle:sureTitle  cancelBlock:cancelBlock sureBlock:sureBlock];
     // 创建在keyWindow上
@@ -131,14 +138,16 @@
         make.leading.equalTo(self.contentView).offset(20);
         make.trailing.equalTo(self.contentView).offset(-20);
     }];
-    [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(16);
-        make.leading.equalTo(self.contentView).offset(40);
-        make.trailing.equalTo(self.contentView).offset(-40);
-    }];
+    if (_message.length) {
+        [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.titleLabel.mas_bottom).offset(16);
+            make.leading.equalTo(self.contentView).offset(40);
+            make.trailing.equalTo(self.contentView).offset(-40);
+        }];
+    }
     [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView);
-        make.top.equalTo(self.messageLabel.mas_bottom).offset(20);
+        make.top.equalTo(_message.length ? self.messageLabel.mas_bottom : self.titleLabel.mas_bottom).offset(20);
         make.trailing.equalTo(_sureButtonTitle.length ? self.contentView.mas_centerX : self.contentView.mas_trailing);
         make.height.mas_equalTo(56);
         make.bottom.equalTo(self.contentView);
@@ -152,6 +161,12 @@
         }];
         [self.sureButton addLineViewAtTop];
     }
+}
+
+#pragma mark --- set
+- (void)setMessageAttributedString:(NSAttributedString *)messageAttributedString {
+    _messageAttributedString = messageAttributedString;
+    _messageLabel.attributedText = _messageAttributedString;
 }
 
 #pragma mark --- 取消和确定点击事件
@@ -195,6 +210,7 @@
         [self removeFromSuperview];
     }];
 }
+
 
 #pragma mark --- dealloc
 - (void)dealloc {

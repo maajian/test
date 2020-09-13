@@ -9,7 +9,6 @@
 #import "ShakeTableViewDelegateObj.h"
 #import "detailShakeViewController.h"
 #import "detailModel.h"
-#import "UIView+TYAlertView.h"
 #import "Time.h"
 @interface ShakeTableViewDelegateObj ()
 {

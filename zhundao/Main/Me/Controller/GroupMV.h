@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef void(^backBlock) (NSArray *array);
 typedef void(^addPersonBlock) (BOOL isSuccess);
 @interface GroupMV : NSObject
-@property(nonatomic,copy)backBlock block;
+@property(nonatomic,copy)ZDBlock_Arr block;
 @property(nonatomic,copy)addPersonBlock addPersonBlock;
 - (void)netWorkWithStr :(NSString *)str; //获取分组
 

@@ -29,7 +29,7 @@ const NSInteger ACHeight = 44 ;
 
 #pragma mark  初始化
 
-- (instancetype)initWithFrame:(CGRect)frame dataArray : (NSArray *)dataArray currentStr :(NSString *)str  backBlock :(backBlock)selectBlock
+- (instancetype)initWithFrame:(CGRect)frame dataArray : (NSArray *)dataArray currentStr :(NSString *)str  backBlock :(backPickerBlock)selectBlock
 {
     if (self = [super initWithFrame:frame]) {
         _backBlock = [selectBlock copy];

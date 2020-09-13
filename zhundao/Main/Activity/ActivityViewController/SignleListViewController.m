@@ -342,11 +342,12 @@
     }
 }
 #pragma mark call打电话
-- (void)callAlert
-{
-    [[SignManager shareManager]showAlertWithTitle:@"确定拨打电话?" WithMessage:nil  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+- (void)callAlert {
+    [ZDAlertView alertWithTitle:@"确定拨打电话?" message:nil sureBlock:^{
         [self callphone];
-    } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
+    } cancelBlock:^{
+        
+    }];
 }
 - (void)callphone
 {

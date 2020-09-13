@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^backBlock) (NSDictionary *dic);
 
 @interface MultipleChoiceViewController : BaseViewController
-@property(nonatomic,copy)backBlock block;
+@property(nonatomic,copy)ZDBlock_Dic block;
 @end
