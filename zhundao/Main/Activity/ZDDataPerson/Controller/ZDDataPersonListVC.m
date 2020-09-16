@@ -77,7 +77,7 @@
 
 #pragma mark --- Init
 - (void)initSet {
-    self.title = @"数据员";
+    self.title = @"管理员";
     self.definesPresentationContext = YES;
     _viewModel = [[ZDDataPersonViewModel alloc] init];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(rightAction)];

@@ -40,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *appImageView;
 @property (weak, nonatomic) IBOutlet UILabel *weixinlabel;
 @property (weak, nonatomic) IBOutlet UIButton *codeButton;
+@property (weak, nonatomic) IBOutlet UIButton *tryButton;
 
 @property(nonatomic,strong)MBProgressHUD *hud;
 @end
@@ -127,12 +128,20 @@
         SendAuthReq *req = [[SendAuthReq alloc] init];
         req.scope = @"snsapi_userinfo";
         req.state = @"GSTDoctorApp";
-        [WXApi sendReq:req];
+        [WXApi sendReq:req completion:nil];
         return YES;
     }
     else {
         return NO;
     }
+}
+- (void)tryAction:(UIButton *)button {
+    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/wenjuan/index.html?id=1479"];
+    web.isClose = YES;
+    [self setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:web animated:YES];
+    [self setHidesBottomBarWhenPushed:NO];
 }
 
 #pragma mark --- Network
@@ -192,6 +201,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_codeButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
+    [_tryButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
+    [_tryButton addTarget:self action:@selector(tryAction:) forControlEvents:UIControlEventTouchUpInside];
     [_loginButton setBackgroundColor:ZDBlackColor3];
      if ([WXApi isWXAppInstalled])
      {

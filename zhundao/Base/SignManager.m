@@ -8,9 +8,7 @@
 //
 
 #import "SignManager.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UShareUI.h>
-#import <TencentOpenAPI/QQApiInterface.h>
 #import "WXApi.h"
 @interface SignManager ()
 {
@@ -77,46 +75,7 @@
         NSLog(@"数据库打开失败");
     }
     }
-- (void)showAlertWithTitle :(NSString *)title
-                WithMessage:(NSString *)message
-                   WithCTR :(UIViewController *)ctr
-{
-    TYAlertView *alert = [TYAlertView alertViewWithTitle:title message:message];
-    [alert addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleDefault handler:nil]];
-    TYAlertController *tyCTR = [TYAlertController alertControllerWithAlertView:alert preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationScaleFade];
-    [ctr presentViewController:tyCTR animated:YES completion:nil];
-}
 
-- (void)showAlertWithTitle :(NSString *)title
-                WithMessage:(NSString *)message
-              WithTitleOne :(NSString *)titleOne
-              WithActionOne:(TYAlert )action1
-              WithAlertStyle:(TYAlertActionStyle )style
-              WithTitleTwo :(NSString *)titleTwo
-              WithActionTwo :(TYAlert )action2
-                   WithCTR :(UIViewController *)ctr
-{
-    
-    TYAlertView *alert = [TYAlertView alertViewWithTitle:title message:message];
-    [alert addAction:[TYAlertAction actionWithTitle:titleOne style:style handler:action1]];
-    [alert addAction:[TYAlertAction actionWithTitle:titleTwo style:TYAlertActionStyleDefault handler:action2]];
-    TYAlertController *tyCTR = [TYAlertController alertControllerWithAlertView:alert preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationScaleFade];
-    [ctr presentViewController:tyCTR animated:YES completion:nil];
-}
-
-- (void)showAlertWithTitle :(NSString *)title
-                WithMessage:(NSString *)message
-              WithTitleOne :(NSString *)titleOne
-              WithActionOne:(TYAlert )action1
-             WithAlertStyle:(TYAlertActionStyle )style
-                   WithCTR :(UIViewController *)ctr
-{
-    
-    TYAlertView *alert = [TYAlertView alertViewWithTitle:title message:message];
-    [alert addAction:[TYAlertAction actionWithTitle:titleOne style:style handler:action1]];
-    TYAlertController *tyCTR = [TYAlertController alertControllerWithAlertView:alert preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationScaleFade];
-    [ctr presentViewController:tyCTR animated:YES completion:nil];
-}
 - (void)saveImageWithFrame:(CGRect )rect
                    WithCtr:(UIViewController *)Ctr
 {

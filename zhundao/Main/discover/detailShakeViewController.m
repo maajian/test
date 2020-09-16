@@ -9,7 +9,6 @@
 #import "detailShakeViewController.h"
 #import "detailModel.h"
 #import "ShakeTableViewDelegateObj.h"
-#import "UIView+TYAlertView.h"
 #import "UIAlertController+creat.h"
 @interface detailShakeViewController ()<UIPickerViewDataSource,UIPickerViewDelegate,UIActionSheetDelegate,detailModelDelegate>
 {
@@ -404,50 +403,39 @@
 }
 
 - (void)cellTap{
-    TYAlertView *alertView = [TYAlertView alertViewWithTitle:@"选择类别" message:nil];
-     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
-    
-    [alertView addAction:[TYAlertAction actionWithTitle:@"签到" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
-        if ([r currentReachabilityStatus]==0) {
-            [self alertNotNet];
+    r = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    [AJAlertSheet showWithArray:@[@"签到", @"报名", @"自定义"] title:@"选择类别" isDelete:NO selectBlock:^(NSInteger index) {
+        if (index == 0) {
+            if ([r currentReachabilityStatus]==0) {
+                [self alertNotNet];
+            }
+            else{
+                 [self signListData];
+            }
+        } else if (index == 1) {
+            if ([r currentReachabilityStatus]==0) {
+                [self alertNotNet];
+            }
+            else
+            {
+                 [self activityListData];
+            }
+        } else {
+            if ([r currentReachabilityStatus]==0) {
+                [self alertNotNet];
+            }
+            else
+            {
+                [self custom];
+            }
         }
-        else{
-             [self signListData];
-        }
-        
-    }]];
-    [alertView addAction:[TYAlertAction actionWithTitle:@"报名" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
-        if ([r currentReachabilityStatus]==0) {
-            [self alertNotNet];
-        }
-        else
-        {
-             [self activityListData];
-        }
-    }]];
-    [alertView addAction:[TYAlertAction actionWithTitle:@"自定义" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
-        if ([r currentReachabilityStatus]==0) {
-            [self alertNotNet];
-        }
-        else
-        {
-            [self custom];
-        }
-    }]];
-    [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
-        NSLog(@"%@",action.title);
-    }]];
-    
-    TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleActionSheet];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
+    }];
 }
 - (void)alertNotNet
 {
-    TYAlertView *alertview =[TYAlertView alertViewWithTitle:@"提醒!" message:@"请检查网络连接后重试"];
-    [alertview addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleCancel handler:nil]];
-    TYAlertController *alertCtr = [TYAlertController alertControllerWithAlertView:alertview preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationDropDown];
-    [self presentViewController:alertCtr animated:YES completion:nil];
+    [ZDAlertView alertWithTitle:@"提醒!" message:@"请检查网络连接后重试" cancelBlock:^{
+        
+    }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

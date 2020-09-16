@@ -70,14 +70,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self removeTab];
-    if (self.title.length==0) {
-         [MobClick beginLogPageView:self.navigationItem.title];
-        
-    }
-    else
-    {
-    [MobClick beginLogPageView:self.title];
-    }//("PageOne"为页面名称，可自定义)
 }
 - (void)removeTab  //移除tab
 {
@@ -91,12 +83,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    if (self.title.length == 0) {
-        [MobClick endLogPageView:self.navigationItem.title];
-    }
-    else {
-        [MobClick endLogPageView:self.title];
-    }
 }
 
 #pragma mark --- notification

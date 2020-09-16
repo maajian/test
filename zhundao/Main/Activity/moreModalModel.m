@@ -35,7 +35,7 @@
 }
 // 数据员
 + (instancetype)dataPersonModel {
-    return [[self alloc] initWithImageStr:@"moreDataPerson.png" title:@"数据员" type:MoreMoalTypeDataPerson];
+    return [[self alloc] initWithImageStr:@"moreDataPerson.png" title:@"管理员" type:MoreMoalTypeDataPerson];
 }
 
 // 咨询
@@ -82,5 +82,11 @@
 + (instancetype)copyModel {
     return [[self alloc] initWithImageStr:@"more复制.png" title:@"活动复制" type:MoreMoalTypeCopy];
 }
+
+// 报名统计
++ (instancetype)statisticsModel {
+    return [[self alloc] initWithImageStr:@"statistics.png" title:@"报名统计" type:MoreMoalTypeStatistics];
+}
+
 
 @end

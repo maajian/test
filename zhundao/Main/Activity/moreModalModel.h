@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger, MoreMoalType) {
     MoreMoalTypeCopy,
     MoreMoalTypeListOutput,
     MoreMoalTypeDataPerson,
+    MoreMoalTypeStatistics, // 报名统计
 };
 
 @interface moreModalModel : UICollectionReusableView
@@ -63,6 +64,8 @@ typedef NS_ENUM(NSInteger, MoreMoalType) {
 + (instancetype)listOutputModel;
 // 数据员
 + (instancetype)dataPersonModel;
+// 报名统计
++ (instancetype)statisticsModel;
 
 @end
 

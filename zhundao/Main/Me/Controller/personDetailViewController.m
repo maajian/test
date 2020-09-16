@@ -278,9 +278,11 @@
 }
 - (void)callAlert  //打电话
 {
-    [[SignManager shareManager]showAlertWithTitle:@"确定拨打电话?" WithMessage:nil  WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+    [ZDAlertView alertWithTitle:@"确定拨打电话?" message:nil sureBlock:^{
         [self callphone];
-    } WithAlertStyle:TYAlertActionStyleDefault WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
+    } cancelBlock:^{
+        
+    }];
 }
 - (void)callphone
 {

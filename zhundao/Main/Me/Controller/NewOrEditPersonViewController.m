@@ -391,25 +391,16 @@
 }
 - (void)showAlertWithAlertControllertitle1 //性别选择
 {
-    TYAlertView *view = [TYAlertView alertViewWithTitle:@"性别" message:nil];
-    __weak typeof(self) weakSelf = self;
-    TYAlertAction *Action1 = [TYAlertAction actionWithTitle:@"未知" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
-        [weakSelf changeDataWithIndex:0 Str:@"未知"];
+    ZD_WeakSelf
+    [AJAlertSheet showWithArray:@[@"未知", @"男", @"女"] title:@"性别" isDelete:NO selectBlock:^(NSInteger index) {
+        if (index == 0) {
+            [weakSelf changeDataWithIndex:0 Str:@"未知"];
+        } else if (index == 1) {
+            [weakSelf changeDataWithIndex:1 Str:@"男"];
+        } else {
+            [weakSelf changeDataWithIndex:2 Str:@"女"];
+        }
     }];
-    TYAlertAction *Action2 = [TYAlertAction actionWithTitle:@"男" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
-       [weakSelf changeDataWithIndex:1 Str:@"男"];
-    }];
-    TYAlertAction *Action3 = [TYAlertAction actionWithTitle:@"女" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
-        [weakSelf changeDataWithIndex:2 Str:@"女"];
-    }];
-    TYAlertAction *Action4 = [TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
-    }];
-    [view addAction:Action1];
-    [view addAction:Action2];
-    [view addAction:Action3];
-    [view addAction:Action4];
-    TYAlertController *alert = [TYAlertController alertControllerWithAlertView:view preferredStyle:TYAlertControllerStyleActionSheet];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 - (void)changeDataWithIndex :(NSInteger )index Str :(NSString *)str  //选择成功改变数据
 {

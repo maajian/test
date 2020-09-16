@@ -47,7 +47,7 @@
 
 #pragma mark --- Init
 - (void)initSet {
-    self.title = @"添加数据员";
+    self.title = @"添加管理员";
     _viewModel = [[ZDDataPersonAddViewModel alloc] init];
     [self.view addSubview:self.tableView];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem saveTextItemWithTarget:self action:@selector(saveAction)];

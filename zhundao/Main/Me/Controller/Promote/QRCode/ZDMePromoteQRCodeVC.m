@@ -10,8 +10,6 @@
 
 #import "ZDMePromoteQRCodeView.h"
 
-#import <UMSocialCore/UMSocialCore.h>
-
 @interface ZDMePromoteQRCodeVC ()<ZDMePromoteQRCodeViewDelegate>
 
 @property (nonatomic, strong) ZDMePromoteQRCodeView *mePromoteQRCodeView;

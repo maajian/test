@@ -7,10 +7,7 @@
 //
 
 #import "detailActivityViewController.h"
-#import "UIView+TYAlertView.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UShareUI.h>
-#import <TencentOpenAPI/QQApiInterface.h>
 #import "WXApi.h"
 @interface detailActivityViewController ()<WKNavigationDelegate>
 

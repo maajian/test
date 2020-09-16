@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "ContactModel.h"
-typedef void(^backBlock) (NSArray *array);
+typedef void(^backpopBlock) (NSArray *array);
 typedef void(^searchBlcok) (NSArray *nameArray,NSArray *phoneArray,NSArray *numberArray,NSArray *companyArray);
 @interface ContactMV : NSObject
-@property(nonatomic,copy)backBlock block;
+@property(nonatomic,copy)backpopBlock block;
 @property(nonatomic,copy)searchBlcok searchBlcok;
 - (void)netWorkWithStr :(NSString *)str;   //获取人员名单数据
 

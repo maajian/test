@@ -32,6 +32,16 @@
 #pragma mark 初始化
 const static NSInteger crackHeight = 5 ;
 const static NSInteger cellHeight  = 44 ;
+
++ (void)showWithArray :(NSArray *)dataArray
+      title :(NSString *)title
+   isDelete :(BOOL)isDelete
+         selectBlock :(backBlock)selectBlock {
+    AJAlertSheet *sheet = [[AJAlertSheet alloc] initWithFrame:[UIScreen mainScreen].bounds array:dataArray title:title isDelete:isDelete selectBlock:selectBlock];
+    [ZD_KeyWindow addSubview:sheet];
+    [sheet fadeIn];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
                        array :(NSArray *)dataArray
                        title :(NSString *)title
@@ -97,7 +107,7 @@ const static NSInteger cellHeight  = 44 ;
 - (UIView *)backView
 {
     if (!_backView ) {
-        _backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
+        _backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-ZD_TopBar_H)];
         _backView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cancelAction)];
         [_backView addGestureRecognizer:tap];
@@ -140,20 +150,16 @@ const static NSInteger cellHeight  = 44 ;
     }
 }
 
-#pragma 点击动画 
-
-- (void)fadeIn
-{
+#pragma 点击动画
+- (void)fadeIn {
     self.alpha = 0.0    ;
-    _sheetView.frame =CGRectMake(0,kHeight-64, kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight);
+    _sheetView.frame =CGRectMake(0, kHeight-ZD_TopBar_H, kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight);
      [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionTransitionCurlUp animations:^{
-         _sheetView.frame =CGRectMake(0,kHeight- cellHeight *(_buttonCount +1) - crackHeight -    titleHeight-64, kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight);
+         _sheetView.frame =CGRectMake(0,kHeight- cellHeight *(_buttonCount +1) - crackHeight -    titleHeight , kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight - ZD_SAFE_BOTTOM_LAYOUT);
          self.alpha = 1.0;
      } completion:nil];
 }
-- (void)fadeOut
-{
-    
+- (void)fadeOut {
     [UIView animateWithDuration:.35 animations:^{
         self.alpha = 0;
     } completion:^(BOOL finished) {

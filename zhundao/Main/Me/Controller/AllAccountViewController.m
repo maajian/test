@@ -138,17 +138,14 @@ static NSString *cellID = @"AllAccountID";
     /*! 如果未认证 前往认证*/
     
     if (![[NSUserDefaults standardUserDefaults]boolForKey:@"Authentication"]) {
-        TYAlertView *alertView = [TYAlertView alertViewWithTitle:@"操作提醒" message:nil];
-        __weak typeof(self) weakSelf = self;
-        [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
+        ZD_WeakSelf
+        [ZDAlertView alertWithTitle:@"操作提醒" message:@"请先完成实名认证再添加提现账号" sureBlock:^{
             AuthViewController *auth  = [[AuthViewController alloc]init];
             [weakSelf setHidesBottomBarWhenPushed:YES];
             [weakSelf.navigationController pushViewController:auth animated:YES];
-        }]];
-        alertView.messageLabel.text = @"请先完成实名认证再添加提现账号";
-        alertView.tintColor = ZDMainColor;
-        TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationFade];
-        [self presentViewController:alertController animated:YES completion:nil];
+        } cancelBlock:^{
+            
+        }];
     }else{
         NSDictionary *authdic = [NSDictionary dictionaryWithContentsOfFile:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"auth.plist"]];
         if ([authdic[@"status"] integerValue]!=1) {

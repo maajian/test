@@ -412,29 +412,18 @@ static NSString *optionid = @"optionid";
 #pragma 名单显示设置
 - (void)listGes  //手势点击名单
 {
-        TYAlertView *view = [TYAlertView alertViewWithTitle:@"报名名单设置" message:nil];
-        __weak typeof(self) weakSelf = self;
-        TYAlertAction *Action1 = [TYAlertAction actionWithTitle:@"显示人数和头像姓名" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
+    ZD_WeakSelf
+    [AJAlertSheet showWithArray:@[@"显示人数和头像姓名", @"显示人数和头像昵称", @"显示人数", @"隐藏"] title:@"报名名单设置" isDelete:NO selectBlock:^(NSInteger index) {
+        if (index == 0) {
             [weakSelf changeDataWithIndex:3 Str:@"显示人数和头像姓名"];
-        }];
-        TYAlertAction *Action2 = [TYAlertAction actionWithTitle:@"显示人数和头像昵称" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
+        } else if (index == 1) {
             [weakSelf changeDataWithIndex:0 Str:@"显示人数和头像昵称"];
-        }];
-        TYAlertAction *Action3 = [TYAlertAction actionWithTitle:@"显示人数" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
+        } else if (index == 2) {
             [weakSelf changeDataWithIndex:1 Str:@"显示人数"];
-        }];
-         TYAlertAction *Action4= [TYAlertAction actionWithTitle:@"隐藏" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
+        } else {
             [weakSelf changeDataWithIndex:2 Str:@"隐藏"];
-         }];
-        TYAlertAction *Action5 = [TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
-        }];
-        [view addAction:Action1];
-        [view addAction:Action2];
-        [view addAction:Action3];
-        [view addAction:Action4];
-        [view addAction:Action5];
-        TYAlertController *alert = [TYAlertController alertControllerWithAlertView:view preferredStyle:TYAlertControllerStyleActionSheet];
-        [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
 }
 - (void)changeDataWithIndex :(NSInteger )index Str :(NSString *)str //选择设置
 {

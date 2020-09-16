@@ -8,16 +8,13 @@
 
 #import "moreModalViewController.h"
 #import "Time.h"
-#import "UIView+TYAlertView.h"
 #import "editViewController.h"
 #import "ListViewController.h"
 #import "CodeViewController.h"
 #import "inviteViewController.h"
 #import "detailActivityViewController.h"
 #import "ConsultViewController.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UShareUI.h>
-#import <TencentOpenAPI/QQApiInterface.h>
 #import "WXApi.h"
 #import "PostSignViewController.h"
 #import "oneActivityViewController.h"
@@ -99,6 +96,7 @@ static NSString *headerID = @"moreModalHeaderView";
                         [moreModalModel qrcodeModel],
                         [moreModalModel copyModel],
                         [moreModalModel signinModel],
+                        [moreModalModel statisticsModel],
         ];
     } else {
         _dataArray = @[ [moreModalModel personListModel],
@@ -213,6 +211,10 @@ static NSString *headerID = @"moreModalHeaderView";
             [self.navigationController pushViewController:post animated:YES];
         }
             break;
+        case MoreMoalTypeStatistics: {
+            
+        }
+            break;
             
         default:
             break;
@@ -291,7 +293,7 @@ static NSString *headerID = @"moreModalHeaderView";
 
 // 删除活动
 - (void)delelteActivity {
-    [[SignManager shareManager]showAlertWithTitle:@"确定删除活动?" WithMessage:@"删除后将不能恢复" WithTitleOne:@"删除" WithActionOne:^(TYAlertAction *action1) {
+    [ZDAlertView alertWithTitle:@"确定删除活动?" message:@"删除后将不能恢复" sureBlock:^{
         MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
         NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/deleteActivity?token=%@&activityId=%li",zhundaoApi,[SignManager shareManager].getToken,(long)_moreModel.ID];
         [ZD_NetWorkM postDataWithMethod:urlStr parameters:nil succ:^(NSDictionary *obj) {
@@ -313,8 +315,9 @@ static NSString *headerID = @"moreModalHeaderView";
             NSLog(@"error = %@",error);
             [hud hideAnimated:YES];
         }];
-    }
-                                   WithAlertStyle:TYAlertActionStyleDestructive WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
+    } cancelBlock:^{
+        
+    }];
 }
 
 // 跳转编辑
@@ -335,7 +338,7 @@ static NSString *headerID = @"moreModalHeaderView";
 - (void)signList
 {
     if (_moreModel.HasJoinNum==0) {
-        [[SignManager shareManager]showAlertWithTitle:@"尚未有人参加" WithMessage:nil WithCTR:self];
+        [ZDAlertView alertWithTitle:@"尚未有人参加" message:nil cancelBlock:nil];
     }
     else
     {
@@ -355,7 +358,7 @@ static NSString *headerID = @"moreModalHeaderView";
 // 活动截止
 - (void)signEnd
 {
-    [[SignManager shareManager]showAlertWithTitle:@"确定将活动截止?" WithMessage:@"确定后如要再次开启报名请通过编辑活动修改报名截止时间" WithTitleOne:@"确定" WithActionOne:^(TYAlertAction *action1) {
+    [ZDAlertView alertWithTitle:@"确定将活动截止?" message:@"确定后如要再次开启报名请通过编辑活动修改报名截止时间" sureBlock:^{
         NSString *urlstr = [NSString stringWithFormat:@"%@api/PerActivity/UnDueActivity?accessKey=%@&activityId=%li",zhundaoApi,accesskey,(long)_moreModel.ID];
         //    2017-01-09 19:27:20
         NSDate *date = [NSDate date];
@@ -384,7 +387,9 @@ static NSString *headerID = @"moreModalHeaderView";
             [hud hideAnimated:YES];
             NSLog(@"error = %@",error);
         }];
-    } WithAlertStyle:TYAlertActionStyleDestructive WithTitleTwo:@"取消" WithActionTwo:nil WithCTR:self];
+    } cancelBlock:^{
+        
+    }];
 }
 
 // 咨询
@@ -399,7 +404,7 @@ static NSString *headerID = @"moreModalHeaderView";
     ZDBlock_Str block = ^(NSString *str) {
         UIPasteboard *pastboard = [UIPasteboard generalPasteboard];
         [pastboard setString:str];
-        [[SignManager shareManager]showAlertWithTitle:@"已成功复制到粘贴板" WithMessage:nil WithCTR:self];
+        [ZDAlertView alertWithTitle:@"已成功复制到粘贴板" message:nil cancelBlock:nil];
     };
     if (ZD_UserM.isAdmin) {
         block([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID]);

@@ -9,9 +9,7 @@
 #import "customInviteViewController.h"
 #import "customInviteViewModel.h"
 #import "BigSizeButton.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import <UShareUI/UShareUI.h>
-#import <TencentOpenAPI/QQApiInterface.h>
 #import "WXApi.h"
 #import "UIImage+LXDCreateBarcode.h"
 @interface customInviteViewController ()
@@ -141,11 +139,11 @@
 
 - (void)shareImage{
     NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_QQ), nil];
-    if ( ![QQApiInterface isQQInstalled]) {
+    if ( ![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
         //没有安装QQ
         [arr removeObject:@(UMSocialPlatformType_QQ)];
     }
-    if (![WXApi isWXAppInstalled]) {
+    if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_WechatSession]) {
         //没有安装微信
         [arr removeObject:@(UMSocialPlatformType_WechatSession)];
         

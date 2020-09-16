@@ -7,8 +7,6 @@
 //
 
 #import "ActivityCell.h"
-#import "TYAlertController+BlurEffects.h"
-#import "UIView+TYAlertView.h"
 #import "Time.h"
 @interface ActivityCell() {
     ActivityCell *mycell;

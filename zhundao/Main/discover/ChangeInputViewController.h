@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomModel.h"
-typedef void(^backBlock) (NSDictionary *dic);
+typedef void(^backpopBlock) (NSDictionary *dic);
 @interface ChangeInputViewController : BaseViewController
 @property(nonatomic,assign)CustomModel *model;
-//@property(nonatomic,assign)NSInteger inputID;
-//@property(nonatomic,assign)NSInteger inputtype;
-@property(nonatomic,copy)backBlock block;
+@property(nonatomic,copy)backpopBlock block;
 @end

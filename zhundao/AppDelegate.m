@@ -9,15 +9,15 @@
 #import "AppDelegate.h"
 #import "BaseNavigationViewController.h"
 #import "MainViewController.h"
-//#import "ActivityViewController.h"
-#import "WXApi.h"
 #import "LoginViewController.h"
-#import <UMSocialCore/UMSocialCore.h>
 #import "SendViewController.h"
-#import "UMMobClick/MobClick.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "JPUSHService.h"
 #import "loginViewModel.h"
+#import <UMCommon/UMCommon.h>
+#import <UMShare/UMShare.h>
+#import "WXApi.h"
+
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
@@ -35,15 +35,12 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    [WXApi registerApp:ZDKey_Wechat_Key ];
     LoginViewController *login = [[LoginViewController alloc]init];
     NSString  *Unionid = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
     NSString *access = [[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
@@ -52,16 +49,22 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
               //oX9Xjjjk0W7TGowAdZZtcfdeNg0o uid
     /*! 数据库更新 */
     [self deleteDatabase];
-    //友盟
     
+    //友盟
+    //开发者需要显式的调用此函数，日志系统才能工作
+    [UMConfigure setLogEnabled:YES];//设置打开日志
+    [UMConfigure initWithAppkey:@"58b3c7a275ca352ea8000c3a" channel:@"App Store"];
     [[UMSocialManager defaultManager] openLog:YES];
-    /* 设置友盟appkey */
-    [[UMSocialManager defaultManager] setUmSocialAppkey:kYoumengAPPKEY];
-    [self configUSharePlatforms];
-    [MobClick setLogEnabled:YES];
-    UMConfigInstance.appKey = @"58b3c7a275ca352ea8000c3a";
-    UMConfigInstance.channelId = @"App Store";
-    [MobClick startWithConfigure:UMConfigInstance];
+    /* 设置微信的appKey和appSecret */
+    [WXApi registerApp:@"wxfe2a9da163481ba9" universalLink:@"https://open.zhundao.net/"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxfe2a9da163481ba9" appSecret:@"ace26a762813528cc2dbb65b4279398e" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105950214"/*设置QQ平台的appID*/  appSecret:@"GAFeY0k6OGdPe1nb" redirectURL:@"http://mobile.umeng.com/social"];
+    [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://open.zhundao.net/",
+                                                        @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
+
+    /* 设置分享到QQ互联的appID
+     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
+     */
     
     //地图
     [AMapServices sharedServices].apiKey = KMapkey;  //地图apikey
@@ -189,42 +192,11 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     [JPUSHService handleRemoteNotification:userInfo];
 }
 
-// app杀死的时候调用
-//- (void)applicationHasKill:(UIApplication *)application Options:(NSDictionary *)launchOptions {
-//    if (launchOptions != nil) {
-//        NSDictionary * userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//
-//            [[NSNotificationCenter defaultCenter] postNotificationName:kAppNotification object:nil userInfo:userInfo];
-//            //这个方法用来做action点击的统计
-//            [JPUSHService handleRemoteNotification:userInfo];
-//        });
-//    }
-//}
-
-#pragma mark ------友盟分享设置
-- (void)configUSharePlatforms
-{
-     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:ZDKey_Wechat_Key appSecret:ZDKey_Wechat_Secret redirectURL:@"https://mobile.umeng.com/social"];
-
-    /* 设置分享到QQ互联的appID
-     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
-     */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105950214"/*设置QQ平台的appID*/  appSecret:@"GAFeY0k6OGdPe1nb" redirectURL:@"https://mobile.umeng.com/social"];
-}
-
-
-
 -(BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-    /*! @brief 处理微信通过URL启动App时传递的数据
-     *
-     * 需要在 application:openURL:sourceApplication:annotation:或者application:handleOpenURL中调用。
-     * @param url 微信启动第三方应用时传递过来的URL
-     * @param delegate  WXApiDelegate对象，用来接收微信触发的消息。
-     * @return 成功返回YES，失败返回NO。
-     */
-    return [WXApi handleOpenURL:url delegate:self];
+    BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
+    BOOL wxRes = [WXApi handleOpenURL:url delegate:self];
+    return result & wxRes;
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
@@ -238,6 +210,9 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     [WXApi handleOpenURL:url delegate:self];
     return YES;
+}
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
+    return [WXApi handleOpenUniversalLink:userActivity delegate:self];;
 }
 #pragma mark  -----微信授权回调
 - (void)onResp:(BaseResp *)resp {

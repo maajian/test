@@ -12,6 +12,7 @@
                 <outlet property="appImageView" destination="t64-di-jlc" id="BUl-9L-all"/>
                 <outlet property="codeButton" destination="Wfq-D9-KhJ" id="qC3-kF-D0A"/>
                 <outlet property="loginButton" destination="Rxw-Fk-VQE" id="yh7-xP-KTu"/>
+                <outlet property="tryButton" destination="NeD-wq-Dac" id="E88-b2-4Or"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="weixinlabel" destination="Jnu-MR-lhk" id="L7Q-PC-L6N"/>
             </connections>
@@ -91,17 +92,30 @@
                         <constraint firstAttribute="width" constant="128" id="s51-vq-6ed"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeD-wq-Dac">
+                    <rect key="frame" x="20" y="428" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="E1S-BD-bwY"/>
+                        <constraint firstAttribute="height" constant="30" id="GHY-7Q-QgC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="15"/>
+                    <state key="normal" title="申请试用">
+                        <color key="titleColor" red="0.24644639760000001" green="0.72184244789999996" blue="0.051350911460000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.92900933159722221" green="0.92971462673611116" blue="0.92854817708333337" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="t64-di-jlc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CcA-Cj-Ez3"/>
                 <constraint firstAttribute="trailing" secondItem="Rxw-Fk-VQE" secondAttribute="trailing" constant="20" id="D3s-3p-s6Q"/>
+                <constraint firstItem="NeD-wq-Dac" firstAttribute="centerY" secondItem="Wfq-D9-KhJ" secondAttribute="centerY" id="Ld3-2H-bD9"/>
                 <constraint firstItem="Rxw-Fk-VQE" firstAttribute="top" secondItem="hyx-NE-UpI" secondAttribute="bottom" constant="200" id="OVs-XB-SrP"/>
                 <constraint firstItem="hyx-NE-UpI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SQd-yY-CDv"/>
                 <constraint firstItem="5CN-eF-nys" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TUs-k9-KjH"/>
                 <constraint firstItem="t64-di-jlc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="ZI4-IX-PcW"/>
                 <constraint firstAttribute="trailing" secondItem="Wfq-D9-KhJ" secondAttribute="trailing" constant="20" id="i0A-ib-tsS"/>
                 <constraint firstItem="Jnu-MR-lhk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jg8-40-9x7"/>
+                <constraint firstItem="NeD-wq-Dac" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="jmU-vG-7Rt"/>
                 <constraint firstAttribute="bottom" secondItem="Jnu-MR-lhk" secondAttribute="bottom" constant="30" id="kXm-FH-wNH"/>
                 <constraint firstItem="Wfq-D9-KhJ" firstAttribute="top" secondItem="Rxw-Fk-VQE" secondAttribute="bottom" constant="8" id="r6Z-nn-y4B"/>
                 <constraint firstItem="hyx-NE-UpI" firstAttribute="top" secondItem="t64-di-jlc" secondAttribute="bottom" constant="16" id="ung-n9-NJV"/>

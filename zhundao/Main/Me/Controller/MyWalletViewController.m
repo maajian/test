@@ -157,18 +157,15 @@
 
 - (void)setPassword{
     /*! 判断是否实名认证过 */
+    ZD_WeakSelf
     if (![[NSUserDefaults standardUserDefaults]boolForKey:@"Authentication"]) {
-        TYAlertView *alertView = [TYAlertView alertViewWithTitle:@"操作提醒" message:nil];
-        __weak typeof(self) weakSelf = self;
-        [alertView addAction:[TYAlertAction actionWithTitle:@"确定" style:TYAlertActionStyleDefault handler:^(TYAlertAction *action) {
+        [ZDAlertView alertWithTitle:@"操作提醒" message:@"请先完成实名认证再添加提现账号" sureBlock:^{
             AuthViewController *auth  = [[AuthViewController alloc]init];
             [weakSelf setHidesBottomBarWhenPushed:YES];
             [weakSelf.navigationController pushViewController:auth animated:YES];
-        }]];
-        alertView.messageLabel.text = @"请先完成实名认证再添加提现账号";
-        alertView.tintColor = ZDMainColor;
-        TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationFade];
-        [self presentViewController:alertController animated:YES completion:nil];
+        } cancelBlock:^{
+            
+        }];
     }else{
         [self auth];
     }
@@ -189,15 +186,14 @@
 
 -(void)normalQuestion{
     NSString *str = @"请关注准到官方微信公众号（微信号izhundao），发送关键词“钱包”了解相关功能说明！";
-    TYAlertView *alertView = [TYAlertView alertViewWithTitle:@"常见问题" message:str];
-    [alertView addAction:[TYAlertAction actionWithTitle:@"知道了" style:TYAlertActionStyleCancel handler:nil]];
-    TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert transitionAnimation:TYAlertTransitionAnimationScaleFade];
+    ZDAlertView *alert =  [ZDAlertView alertWithTitle:@"常见问题" message:str cancelBlock:^{
+        
+    }];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:str];
     [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue" size:15] range:NSMakeRange(0, attributedString.length)];
     [attributedString addAttribute:NSForegroundColorAttributeName value:ZDMainColor range:[str rangeOfString:@"izhundao"]];
     [attributedString addAttribute:NSForegroundColorAttributeName value:ZDMainColor range:[str rangeOfString:@"短信"]];
-    alertView.messageLabel.attributedText = attributedString;
-    [self presentViewController:alertController animated:YES completion:nil];
+    alert.messageAttributedString = attributedString;
 }
 
 -(void)popBack{

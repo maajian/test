@@ -198,9 +198,7 @@
 
 - (void)bindSignWithStr:(NSString *)str
 {
-    [[SignManager shareManager]showAlertWithTitle:@"同步将消耗一定时间" WithMessage:@"是否继续" WithTitleOne:@"取消" WithActionOne:^(TYAlertAction *action1) {
-        
-    } WithAlertStyle:TYAlertActionStyleCancel WithTitleTwo:@"确定" WithActionTwo:^(TYAlertAction *action1) {
+    [ZDAlertView alertWithTitle:@"同步将消耗一定时间" message:@"是否继续" sureBlock:^{
         dispatch_source_t timer= dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(0, 0));
         dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2* NSEC_PER_SEC, 0);
         dispatch_source_set_event_handler(timer, ^{
@@ -245,7 +243,9 @@
                 }
             }
         }];
-    } WithCTR:self];
+    } cancelBlock:^{
+        
+    }];
    
 }
 

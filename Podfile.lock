@@ -31,6 +31,22 @@ PODS:
     - JCore (~> 1.1.7)
   - MBProgressHUD (1.2.0)
   - SVProgressHUD (2.2.5)
+  - UMCCommon (7.1.1)
+  - UMCShare/Core (6.9.10):
+    - UMCCommon
+  - UMCShare/Social/ReducedQQ (6.9.10):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.10):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/WeChat (6.9.10):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedWeChat
+  - UMCShare/UI (6.9.10):
+    - UMCCommon
+    - UMCShare/Core
   - YYCache (1.0.4)
 
 DEPENDENCIES:
@@ -44,6 +60,10 @@ DEPENDENCIES:
   - JPush
   - MBProgressHUD
   - SVProgressHUD
+  - UMCCommon
+  - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/WeChat
+  - UMCShare/UI
   - YYCache
 
 SPEC REPOS:
@@ -62,6 +82,8 @@ SPEC REPOS:
     - AMapSearch
     - MBProgressHUD
     - SVProgressHUD
+    - UMCCommon
+    - UMCShare
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -76,8 +98,10 @@ SPEC CHECKSUMS:
   JPush: 9574d072cc37e93fa293ba69b43ce763c440943a
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
+  UMCShare: a4a95fbdd61ecce5b6751d8c9ed9b519e80fcbc9
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: f24b23715ea1fef99c4ee642072005c84e542be8
+PODFILE CHECKSUM: 879bec33ec242fcf127c5910c61489d2ab435b6c
 
 COCOAPODS: 1.9.1

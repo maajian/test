@@ -128,9 +128,6 @@
 - (void)buttonAction:(UIButton *)sender{
     self.selectedIndex = sender.tag-100;
     
-    
-    [MobClick event:@"zhundaoID"];
-    
     NSArray *imageArray;
     NSArray *imagedarray;
     if (ZD_UserM.isAdmin) {
