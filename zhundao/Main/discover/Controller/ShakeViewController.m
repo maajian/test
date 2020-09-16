@@ -12,6 +12,7 @@
 #import "detailShakeViewController.h"
 #import "bindingBeacon.h"
 #import "UILabel+nullDataLabel.h"
+#import "CodeViewController.h"
 @interface ShakeViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *_tableview;
@@ -33,10 +34,18 @@
     accesskey = [[SignManager shareManager]getaccseekey];
     [self createTableView];
     [self firstload];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem scanItemWithTarget:self action:@selector(pushOtherWithIndex)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem moreItemWithTarget:self action:@selector(moreAction)];
     // Do any additional setup after loading the view.
 }
-
+- (void)moreAction {
+    [AJAlertSheet showWithArray:@[@"扫码绑定", @"小程序二维码"] title:@"" isDelete:NO selectBlock:^(NSInteger index) {
+        if (index == 0) {
+            [self pushOtherWithIndex];
+        } else {
+            [self networkForGetQrcode];
+        }
+    }];
+}
 - (void)pushOtherWithIndex
 {
 
@@ -48,6 +57,42 @@
             [self loadData];
         }
     };
+}
+- (void)networkForGetQrcode {
+    NSString *codeUrl = [NSString stringWithFormat:@"%@api/v2/wechatMini/getIbeaconQrcode?userId=%li",zhundaoApi,ZD_UserM.userID];
+
+    NSDictionary *headers = @{ @"Content-Type": @"application/json",
+                               @"cache-control": @"no-cache",
+                               @"Postman-Token": @"54ba4b2e-961e-410b-8231-bc4c164a946f" };
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:codeUrl]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        NSError *error = [[NSError alloc] init];
+                                                        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&httpResponse error:&error];
+                                                        NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+                                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                                            CodeViewController *code = [[CodeViewController alloc]init];
+                                                            NSString *imagestr =   result;
+                                                                    code.imagestr = imagestr;
+                                                                    code.titlestr = @"小程序二维码";
+                                                                    code.hideLabel = NO;
+                                                                    [self presentViewController:code animated:YES completion:nil];
+                                                        });
+                                                    }
+                                                }];
+    [dataTask resume];
 }
 
 - (void)firstload
@@ -117,11 +162,11 @@
     [self.view addSubview:indicator];
     [indicator startAnimating];
 //    api/Game/GetMybeaconList?accessKey={accessKey}
-    NSString *shakeUrl = [NSString stringWithFormat:@"%@api/Game/GetMybeaconList?accessKey=%@",zhundaoApi,accesskey];
+    NSString *shakeUrl = [NSString stringWithFormat:@"%@api/v2/extra/getMyBeaconList?userId=%li",zhundaoApi,ZD_UserM.userID];
     [ZD_NetWorkM getDataWithMethod:shakeUrl parameters:nil succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj);
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
-        NSArray *array1 = result[@"Data"];
+        NSArray *array1 = result[@"data"];
         NSMutableArray *muarray = [NSMutableArray array];
         dataarr = [NSMutableArray array];
         for (NSDictionary *acdic in array1) {
@@ -198,7 +243,7 @@
     NSDictionary *dic = [pushArr objectAtIndex:row];    //获取属性传值的字典dic
     detailShakeViewController *detailShake = [[detailShakeViewController alloc]init];
     detailShake.dataDic = dic;
-    detailShake.DeviceId = mycell.model.DeviceId;
+    detailShake.DeviceId = mycell.model.BeaconID;
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:detailShake animated:YES];
     

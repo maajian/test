@@ -16,7 +16,6 @@
 @property(nonatomic,strong)NSString *BeaconName;
 @property(nonatomic,strong)NSString *Title;
 @property(nonatomic,strong)NSString *IconUrl;
-@property(nonatomic,strong)NSString *DeviceId;
 
 
 @property(nonatomic,strong)NSString *AddTime;

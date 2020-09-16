@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIBarButtonItem *)scanItemWithTarget:(id)target action:(SEL)action;
 // 分享
 + (UIBarButtonItem *)shareItemWithTarget:(id)target action:(SEL)action;
+// 更多
++ (UIBarButtonItem *)moreItemWithTarget:(id)target action:(SEL)action;
 
 #pragma mark --- 文字
 // 保存

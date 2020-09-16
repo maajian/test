@@ -97,7 +97,7 @@
 }
 
 - (void)selectIndex:(NSIndexPath *)indexPath{
-    if (indexPath.row== 5 && indexPath.section == 0) {
+    if (indexPath.row== 4 && indexPath.section == 0) {
         [self cellTap];
     }
 }
@@ -337,8 +337,8 @@
 }
 
 - (void)updataData
-{    NSString *accesskey = [[SignManager shareManager]getaccseekey];
-    NSString *uptataUrl=[NSString stringWithFormat:@"%@api/Game/UpdateBeacon?accessKey=%@",zhundaoApi,accesskey];
+{
+    NSString *uptataUrl=[NSString stringWithFormat:@"%@api/v2/extra/updateBeacon?token=%@&deviceId=%@&&type=0",zhundaoApi,[[SignManager shareManager] getToken], self.DeviceId];
     if (flag==1) {
         updatadic = @{
                       @"ID" :[NSString stringWithFormat:@"%li",(long)model.ID],
@@ -443,8 +443,7 @@
 }
 - (void)netWorkWithstringValue:(NSString *)stringValue
 {
-    NSString *acckey = [[SignManager shareManager]getaccseekey];
-    NSString *str = [NSString stringWithFormat:@"%@api/Game/UpdateBeacon?accessKey=%@&deviceId=%@&type=1",zhundaoApi,acckey,stringValue];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/extra/updateBeacon?token=%@&deviceId=%@&type=1",zhundaoApi,[[SignManager shareManager] getToken],stringValue];
     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];

@@ -38,6 +38,7 @@ ZD_Singleton_Implementation(NetWorkManager)
 - (void)getDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
     [[ZDNetWorkManager shareHTTPSessionManager] GET:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         succ(responseObject);
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (error.code == -1011) {
             [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];

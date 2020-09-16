@@ -15,5 +15,7 @@
 @property(nonatomic,assign)NSInteger ID;
 @property(nonatomic,strong)NSString *NickName;
 @property(nonatomic,strong)NSString *DeviceId;
-@property(nonatomic,strong)NSString *AddTime;
+@property (nonatomic, copy) NSString *Title;
+@property(nonatomic,strong)NSString *BindTime;
+
 @end

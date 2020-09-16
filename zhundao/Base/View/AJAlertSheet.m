@@ -51,7 +51,7 @@ const static NSInteger cellHeight  = 44 ;
     if (self = [super initWithFrame:frame]) {
         self.dataArray = [dataArray mutableCopy];
         _title = [title copy];
-        if (_title){
+        if (_title.length){
             CGSize size = [_title boundingRectWithSize:CGSizeMake(kScreenWidth-40, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]} context:nil].size;
             titleHeight = size.height + 40;
         }
