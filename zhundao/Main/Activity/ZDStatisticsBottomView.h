@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ZDStatisticsModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDStatisticsHeaderView : UIView
+@interface ZDStatisticsBottomView : UIView
+@property (nonatomic, strong) NSMutableArray<ZDStatisticsModel *> *dataSource;
 
 @end
 

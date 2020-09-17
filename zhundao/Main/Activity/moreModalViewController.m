@@ -27,6 +27,7 @@
 
 #import "moreModalCell.h"
 #import "moreModalHeaderView.h"
+#import "ZDStatisticsVC.h"
 
 static const CGFloat itemSpace = 1;
 static NSString *cellID = @"moreModalCell";
@@ -212,7 +213,9 @@ static NSString *headerID = @"moreModalHeaderView";
         }
             break;
         case MoreMoalTypeStatistics: {
-            
+            ZDStatisticsVC *statistics = [[ZDStatisticsVC alloc] init];
+            statistics.moreModel = self.moreModel;
+            [self.navigationController pushViewController:statistics animated:YES];
         }
             break;
             
@@ -445,7 +448,7 @@ static NSString *headerID = @"moreModalHeaderView";
     ZD_HUD_SHOW_WAITING
     ZD_WeakSelf
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
-    NSDictionary *dic = @{@"BusinessCode": @"GetActivityData",
+    NSDictionary *dic = @{@"BusinessCode": @"GetActivityDepartDate",
                           @"Data" : @{
                                   @"ActivityId": @(self.moreModel.ID),
                          }

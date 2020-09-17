@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDStatisticsTopView : UIView
+@property (nonatomic, strong) ActivityModel *moreModel;
 
 @end
 

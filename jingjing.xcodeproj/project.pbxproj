@@ -22,8 +22,9 @@
 		2807B8B023C5D96300611A2D /* ZDMePromoteCustomContactNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807B8AF23C5D96300611A2D /* ZDMePromoteCustomContactNoticeView.m */; };
 		280AD7F325111B2E001DBE73 /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = 280AD7F225111B2E001DBE73 /* statistics.png */; };
 		280AD7F725111DC8001DBE73 /* ZDStatisticsTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 280AD7F625111DC8001DBE73 /* ZDStatisticsTopView.m */; };
-		280AD7FA25111DEC001DBE73 /* ZDStatisticsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 280AD7F925111DEC001DBE73 /* ZDStatisticsHeaderView.m */; };
+		280AD7FA25111DEC001DBE73 /* ZDStatisticsBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 280AD7F925111DEC001DBE73 /* ZDStatisticsBottomView.m */; };
 		280AD7FD25111E13001DBE73 /* ZDStatisticsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 280AD7FC25111E13001DBE73 /* ZDStatisticsVC.m */; };
+		280AD80E2513A6A0001DBE73 /* ZDStatisticsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 280AD80D2513A6A0001DBE73 /* ZDStatisticsModel.m */; };
 		281090A123CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 281090A023CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.m */; };
 		281090B923D15BD200B48115 /* ZDMePromoteMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 281090B823D15BD200B48115 /* ZDMePromoteMainVC.m */; };
 		281090BC23D15BED00B48115 /* ZDMePromoteBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 281090BB23D15BED00B48115 /* ZDMePromoteBottomView.m */; };
@@ -785,10 +786,12 @@
 		280AD7F225111B2E001DBE73 /* statistics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics.png; sourceTree = "<group>"; };
 		280AD7F525111DC8001DBE73 /* ZDStatisticsTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDStatisticsTopView.h; sourceTree = "<group>"; };
 		280AD7F625111DC8001DBE73 /* ZDStatisticsTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDStatisticsTopView.m; sourceTree = "<group>"; };
-		280AD7F825111DEC001DBE73 /* ZDStatisticsHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDStatisticsHeaderView.h; sourceTree = "<group>"; };
-		280AD7F925111DEC001DBE73 /* ZDStatisticsHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDStatisticsHeaderView.m; sourceTree = "<group>"; };
+		280AD7F825111DEC001DBE73 /* ZDStatisticsBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDStatisticsBottomView.h; sourceTree = "<group>"; };
+		280AD7F925111DEC001DBE73 /* ZDStatisticsBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDStatisticsBottomView.m; sourceTree = "<group>"; };
 		280AD7FB25111E13001DBE73 /* ZDStatisticsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDStatisticsVC.h; sourceTree = "<group>"; };
 		280AD7FC25111E13001DBE73 /* ZDStatisticsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDStatisticsVC.m; sourceTree = "<group>"; };
+		280AD80C2513A6A0001DBE73 /* ZDStatisticsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDStatisticsModel.h; sourceTree = "<group>"; };
+		280AD80D2513A6A0001DBE73 /* ZDStatisticsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDStatisticsModel.m; sourceTree = "<group>"; };
 		2810909F23CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZDServiceAlertView+ZDAdd.h"; sourceTree = "<group>"; };
 		281090A023CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZDServiceAlertView+ZDAdd.m"; sourceTree = "<group>"; };
 		281090B723D15BD200B48115 /* ZDMePromoteMainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMePromoteMainVC.h; sourceTree = "<group>"; };
@@ -2092,10 +2095,12 @@
 			children = (
 				280AD7F525111DC8001DBE73 /* ZDStatisticsTopView.h */,
 				280AD7F625111DC8001DBE73 /* ZDStatisticsTopView.m */,
-				280AD7F825111DEC001DBE73 /* ZDStatisticsHeaderView.h */,
-				280AD7F925111DEC001DBE73 /* ZDStatisticsHeaderView.m */,
+				280AD7F825111DEC001DBE73 /* ZDStatisticsBottomView.h */,
+				280AD7F925111DEC001DBE73 /* ZDStatisticsBottomView.m */,
 				280AD7FB25111E13001DBE73 /* ZDStatisticsVC.h */,
 				280AD7FC25111E13001DBE73 /* ZDStatisticsVC.m */,
+				280AD80C2513A6A0001DBE73 /* ZDStatisticsModel.h */,
+				280AD80D2513A6A0001DBE73 /* ZDStatisticsModel.m */,
 			);
 			name = statistics;
 			sourceTree = "<group>";
@@ -6107,7 +6112,7 @@
 				281A02F222D08457002D87DD /* UILabel+Extension.m in Sources */,
 				9C5074A21E9C84780030809D /* postActivityViewController.m in Sources */,
 				9C86351B1E2CC4D500364FD6 /* NSArray+MASAdditions.m in Sources */,
-				280AD7FA25111DEC001DBE73 /* ZDStatisticsHeaderView.m in Sources */,
+				280AD7FA25111DEC001DBE73 /* ZDStatisticsBottomView.m in Sources */,
 				9C5420231E7299AF000E187D /* PostSign.m in Sources */,
 				2814868422C8BACD000BAE70 /* editViewController.m in Sources */,
 				8446DCBC20D15C4B000C724B /* AAChartModel.m in Sources */,
@@ -6232,6 +6237,7 @@
 				28F97D69229C3A14008C98F3 /* ZDConst.m in Sources */,
 				9C706A171F78D664002D7E13 /* showTextView.m in Sources */,
 				9C7F7B141E308BE000310147 /* maskLabel.m in Sources */,
+				280AD80E2513A6A0001DBE73 /* ZDStatisticsModel.m in Sources */,
 				28ACE35121B17E8F00C2AEB8 /* moreModalHeaderView.m in Sources */,
 				285DCA4523C382EA00946869 /* ZDMePromoteQRCodeView.m in Sources */,
 				9C6277371ED42CCD002787FA /* UIImage+LGExtension.m in Sources */,
