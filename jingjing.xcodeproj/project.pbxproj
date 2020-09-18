@@ -5430,7 +5430,7 @@
 				TargetAttributes = {
 					9C77528F1DF01D2200FC31BB = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = YH49M9STFP;
+						DevelopmentTeam = X5R6P2Q692;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -6402,7 +6402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = YH49M9STFP;
+				DEVELOPMENT_TEAM = X5R6P2Q692;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6436,7 +6436,7 @@
 					"-all_load",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zd.jinta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhundao.jinta;
 				PRODUCT_NAME = "金塔统计";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -6456,7 +6456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = YH49M9STFP;
+				DEVELOPMENT_TEAM = X5R6P2Q692;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6491,7 +6491,7 @@
 					"-all_load",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zd.jinta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhundao.jinta;
 				PRODUCT_NAME = "金塔统计";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
