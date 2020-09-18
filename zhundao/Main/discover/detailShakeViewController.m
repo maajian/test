@@ -338,7 +338,7 @@
 
 - (void)updataData
 {
-    NSString *uptataUrl=[NSString stringWithFormat:@"%@api/v2/extra/updateBeacon?token=%@&deviceId=%@&&type=0",zhundaoApi,[[SignManager shareManager] getToken], self.DeviceId];
+    NSString *uptataUrl=[NSString stringWithFormat:@"%@/api/v2/extra/updateBeaconInfo?token=%@&deviceId=%@&&type=0",zhundaoApi,[[SignManager shareManager] getToken], self.DeviceId];
     if (flag==1) {
         updatadic = @{
                       @"ID" :[NSString stringWithFormat:@"%li",(long)model.ID],
@@ -485,7 +485,7 @@
 }
 - (void)succseeresponseObject:(NSDictionary *)dic
 {
-    NSInteger isSeccess = [dic[@"Res"] integerValue];
+    NSInteger isSeccess = [dic[@"res"] integerValue];
     if (isSeccess) {
         _successFlag = 0;
         [self showhudWithString:@"解绑失败" WithImageName:nil successBool:0];
