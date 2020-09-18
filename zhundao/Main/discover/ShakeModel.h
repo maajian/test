@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ShakeModel : NSObject
-@property(nonatomic,strong)NSString *BeaconID;
+@property(nonatomic,strong)NSString *DeviceId;
 @property(nonatomic,assign)NSInteger ID;
 
 

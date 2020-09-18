@@ -487,13 +487,13 @@
 {
     NSInteger isSeccess = [dic[@"res"] integerValue];
     if (isSeccess) {
-        _successFlag = 0;
-        [self showhudWithString:@"解绑失败" WithImageName:nil successBool:0];
+        _successFlag =1;
+        [self showhudWithString:@"解绑成功" WithImageName:@"签到打勾" successBool:YES];
     }
     else
     {
-        _successFlag =1;
-        [self showhudWithString:@"解绑成功" WithImageName:@"签到打勾" successBool:YES];
+        _successFlag = 0;
+        [self showhudWithString:@"解绑失败" WithImageName:nil successBool:0];
     }
 }
 

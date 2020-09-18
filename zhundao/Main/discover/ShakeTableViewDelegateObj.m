@@ -205,7 +205,7 @@
              make.height.equalTo(@30);
         }];
                 nameLabel.font = [UIFont systemFontOfSize:14];
-        nameLabel.text = _model.BeaconID;
+        nameLabel.text = _model.DeviceId;
         nameLabel.textAlignment = NSTextAlignmentRight;
       nameLabel.textColor = [UIColor lightGrayColor];
         return cell;

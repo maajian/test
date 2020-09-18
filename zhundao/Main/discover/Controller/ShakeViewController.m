@@ -243,7 +243,7 @@
     NSDictionary *dic = [pushArr objectAtIndex:row];    //获取属性传值的字典dic
     detailShakeViewController *detailShake = [[detailShakeViewController alloc]init];
     detailShake.dataDic = dic;
-    detailShake.DeviceId = mycell.model.BeaconID;
+    detailShake.DeviceId = mycell.model.DeviceId;
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:detailShake animated:YES];
     

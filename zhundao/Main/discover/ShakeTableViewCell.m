@@ -23,7 +23,7 @@
     _iconUrlImageView.layer.masksToBounds = YES;
     _iconUrlImageView.layer.cornerRadius = 4;
     _titlelabel.text = _model.Title;
-    _beconnameDevidedID.text = [NSString stringWithFormat:@"设备ID: %@",_model.BeaconID];
+    _beconnameDevidedID.text = [NSString stringWithFormat:@"设备ID: %@",_model.DeviceId];
     
 }
 
