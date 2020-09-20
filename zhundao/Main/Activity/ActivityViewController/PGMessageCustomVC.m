@@ -1,3 +1,4 @@
+#import "PGInterfaceOrientationLandscape.h"
 //
 //  PGMessageCustomVC.m
 //  zhundao
@@ -98,6 +99,12 @@ static NSString *cellID = @"PGActivityMessageContentCell";
     return [self.viewModel.customHeightArray[indexPath.row] integerValue];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle backButtonClicko2 = UITableViewStylePlain; 
+        UIButtonType numberBadgeWithV5 = UIButtonTypeContactAdd;
+    PGInterfaceOrientationLandscape *calendarUnitYear= [[PGInterfaceOrientationLandscape alloc] init];
+[calendarUnitYear pg_destinationFilePathWithcollectionOriginalTable:backButtonClicko2 effectThumbImage:numberBadgeWithV5 ];
+});
     PGActivityMessageContentModel *model = self.viewModel.customArray[indexPath.row];
     if (model.messageStatusType != PGMessageStatusTypeSuccess) {
         return;

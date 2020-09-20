@@ -1,3 +1,4 @@
+#import "PGUserInfoModel.h"
 //
 //  PGBaseTabbarVC.m
 //  zhundao
@@ -36,12 +37,24 @@
     return self;
 }
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets particularDescriptionTablec5 = UIEdgeInsetsMake(99,174,122,53); 
+        CGPoint imageSourceContainse3 = CGPointZero;
+    PGUserInfoModel *chooseCellDelegate= [[PGUserInfoModel alloc] init];
+[chooseCellDelegate pg_trainParticularDataWithnaviTitleAppearance:particularDescriptionTablec5 organizationNoticeWith:imageSourceContainse3 ];
+});
     [super viewDidLoad];
     self.tabBar.translucent = NO;
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets assetMediaSubtypeD9 = UIEdgeInsetsMake(225,203,197,187); 
+        CGPoint pickerViewShows3 = CGPointZero;
+    PGUserInfoModel *pickerColletionView= [[PGUserInfoModel alloc] init];
+[pickerColletionView pg_trainParticularDataWithnaviTitleAppearance:assetMediaSubtypeD9 organizationNoticeWith:pickerViewShows3 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -202,6 +215,12 @@
 }
 
 - (void)dealloc {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets effectThumbImageJ6 = UIEdgeInsetsZero;
+        CGPoint startProvisionalNavigationV6 = CGPointMake(8,70); 
+    PGUserInfoModel *assetPropertyAsset= [[PGUserInfoModel alloc] init];
+[assetPropertyAsset pg_trainParticularDataWithnaviTitleAppearance:effectThumbImageJ6 organizationNoticeWith:startProvisionalNavigationV6 ];
+});
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

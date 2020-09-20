@@ -1,3 +1,4 @@
+#import "PGOrganizeListRequset.h"
 //
 //  PGActivityViewModel.m
 //  zhundao

@@ -1,3 +1,4 @@
+#import "PGWithSureBlock.h"
 //
 //  PGMeAllAccountViewController.m
 //  zhundao
@@ -163,6 +164,12 @@ static NSString *cellID = @"AllAccountID";
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *smartAlbumUserK7= [UIFont systemFontOfSize:29];
+        NSMutableArray *dataElseLoadY5= [NSMutableArray arrayWithCapacity:0];
+    PGWithSureBlock *pageScrollView= [[PGWithSureBlock alloc] init];
+[pageScrollView pg_javaScriptConfirmWithloginWithUser:smartAlbumUserK7 mobileCoreServices:dataElseLoadY5 ];
+});
     [super viewWillAppear:animated];
     [self networkGetAccount];
 }
@@ -171,6 +178,12 @@ static NSString *cellID = @"AllAccountID";
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *couponViewModelJ9= [UIFont systemFontOfSize:168];
+        NSMutableArray *secondeMallViewr9= [NSMutableArray arrayWithCapacity:0];
+    PGWithSureBlock *linkViewModel= [[PGWithSureBlock alloc] init];
+[linkViewModel pg_javaScriptConfirmWithloginWithUser:couponViewModelJ9 mobileCoreServices:secondeMallViewr9 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -180,6 +193,12 @@ static NSString *cellID = @"AllAccountID";
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *imageWithColoru1= [UIFont systemFontOfSize:93];
+        NSMutableArray *replayUserNickz9= [NSMutableArray arrayWithCapacity:0];
+    PGWithSureBlock *underlineStyleAttribute= [[PGWithSureBlock alloc] init];
+[underlineStyleAttribute pg_javaScriptConfirmWithloginWithUser:imageWithColoru1 mobileCoreServices:replayUserNickz9 ];
+});
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

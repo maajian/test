@@ -1,3 +1,4 @@
+#import "PGViewImageFinish.h"
 //
 //  PGMeAuthViewController.m
 //  zhundao
@@ -172,6 +173,12 @@ static NSString *bottomID  = @"autobottomID";
 #pragma mark --- 选择图片 
 
 - (void)selectedImage:(UITapGestureRecognizer *)tap{
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGRect separatorStyleSinglef7 = CGRectZero;
+        NSData *spinLockLockR7= [[NSData alloc] init];
+    PGViewImageFinish *groupViewController= [[PGViewImageFinish alloc] init];
+[groupViewController pg_progressUpdateBlockWithimageGenerationError:separatorStyleSinglef7 finishLoadWith:spinLockLockR7 ];
+});
     UIImageView *imgView =(UIImageView *)tap.view;
     __weak typeof(self) weakSelf = self;
     [BDImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
@@ -232,11 +239,23 @@ static NSString *bottomID  = @"autobottomID";
     }];
 }
 - (void)explain{
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGRect articleDailyTrainT0 = CGRectMake(158,7,223,214); 
+        NSData *changeFrameNotificationX7= [[NSData alloc] init];
+    PGViewImageFinish *collectionViewCell= [[PGViewImageFinish alloc] init];
+[collectionViewCell pg_progressUpdateBlockWithimageGenerationError:articleDailyTrainT0 finishLoadWith:changeFrameNotificationX7 ];
+});
     [PGAlertView alertWithTitle:@"提示" message:@"所有委托准到代收款的活动，为了确保主办方的资金安全，我们在首次提现时进行了实名认证。实名认证成功后才允许提现，且申请提现支付宝和银行卡的所有者须为此实名用户" cancelBlock:nil];
 }
 
 
 - (void)dealloc{
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGRect underlineStyleSingleM2 = CGRectZero;
+        NSData *pageIndicatorTintz5= [[NSData alloc] init];
+    PGViewImageFinish *metersTimeLabel= [[PGViewImageFinish alloc] init];
+[metersTimeLabel pg_progressUpdateBlockWithimageGenerationError:underlineStyleSingleM2 finishLoadWith:pageIndicatorTintz5 ];
+});
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 - (void)didReceiveMemoryWarning {

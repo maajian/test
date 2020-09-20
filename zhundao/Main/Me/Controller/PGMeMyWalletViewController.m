@@ -1,3 +1,4 @@
+#import "PGFriendsViewModel.h"
 //
 //  PGMeMyWalletViewController.m
 //  zhundao
@@ -69,6 +70,12 @@
 }
 
 - (void)netWork{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment pushNotificationTriggerG5 = NSTextAlignmentCenter; 
+        UITableViewStyle collectionOriginalViewb9 = UITableViewStylePlain; 
+    PGFriendsViewModel *organizeNoticeModel= [[PGFriendsViewModel alloc] init];
+[organizeNoticeModel pg_customAnimateTransitionWitharticleCommentData:pushNotificationTriggerG5 tweetItemData:collectionOriginalViewb9 ];
+});
     [self showIndicate];
     __weak typeof(_MyWalletVM) weakVM = _MyWalletVM;
     [self.MyWalletVM getInfo:^(NSDictionary *moneyDic) {
@@ -125,6 +132,12 @@
 }
 
 - (void)changeButton :(NSDictionary *) dic{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment imageOptionProgressiveW7 = NSTextAlignmentCenter; 
+        UITableViewStyle trainCommentTableQ4 = UITableViewStylePlain; 
+    PGFriendsViewModel *matchingReportProgress= [[PGFriendsViewModel alloc] init];
+[matchingReportProgress pg_customAnimateTransitionWitharticleCommentData:imageOptionProgressiveW7 tweetItemData:trainCommentTableQ4 ];
+});
     if ([dic[@"Status"] integerValue]==0) { //提现中
         [_walletView.withdrawButton setTitle:[NSString stringWithFormat:@"¥%.2f 提现中",[dic[@"Amount"]floatValue]] forState:UIControlStateNormal];
     }else{  //未提现
@@ -134,6 +147,12 @@
 
 #pragma mark PGMeMyWalletDelegate
 - (void)gotoWithDraw{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment frameCheckDisabledm0 = NSTextAlignmentCenter; 
+        UITableViewStyle withVideosDataM8 = UITableViewStylePlain; 
+    PGFriendsViewModel *deleteTweetSucc= [[PGFriendsViewModel alloc] init];
+[deleteTweetSucc pg_customAnimateTransitionWitharticleCommentData:frameCheckDisabledm0 tweetItemData:withVideosDataM8 ];
+});
     NSLog(@"提现");
     
     PGMeIsOnGowithViewController *isOnGowith = [[PGMeIsOnGowithViewController alloc]init];

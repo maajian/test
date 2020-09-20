@@ -1,3 +1,4 @@
+#import "PGEncodingWithLine.h"
 //
 //  PGDiscoverCustomApplyVC.m
 //  zhundao
@@ -84,6 +85,14 @@ static NSString *cellID = @"PGDiscoverCustomApplyCell";
 
 #pragma mark --- init
 - (void)initSet {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *timesFromSliderB7= [[UISwitch alloc] initWithFrame:CGRectMake(23,6,28,217)]; 
+    timesFromSliderB7.on = YES; 
+    timesFromSliderB7.onTintColor = [UIColor whiteColor]; 
+        UIImage *sendButtonStatusv3= [UIImage imageNamed:@""]; 
+    PGEncodingWithLine *succViewController= [[PGEncodingWithLine alloc] init];
+[succViewController pg_textFiledDelegateWithorganzationViewModel:timesFromSliderB7 cropTypeWith:sendButtonStatusv3 ];
+});
     self.title = @"自定义报名项";
      self.definesPresentationContext = YES;
     _viewModel = [[PGDiscoverCustomApplyViewModel alloc] init];
@@ -161,6 +170,14 @@ static NSString *cellID = @"PGDiscoverCustomApplyCell";
 
 #pragma mark --- UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *medalViewModelw8= [[UISwitch alloc] initWithFrame:CGRectMake(138,178,109,38)]; 
+    medalViewModelw8.on = YES; 
+    medalViewModelw8.onTintColor = [UIColor whiteColor]; 
+        UIImage *sizePlayViewY8= [UIImage imageNamed:@""]; 
+    PGEncodingWithLine *numberHandlerWith= [[PGEncodingWithLine alloc] init];
+[numberHandlerWith pg_textFiledDelegateWithorganzationViewModel:medalViewModelw8 cropTypeWith:sizePlayViewY8 ];
+});
     self.edgesForExtendedLayout = UIRectEdgeNone;
    [_viewModel.titleArray removeAllObjects];
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", [self.searchController.searchBar text]];

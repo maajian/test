@@ -1,3 +1,4 @@
+#import "PGCaseInsensitiveSearch.h"
 //
 //  PGServiceAlertView.m
 //  zhundao
@@ -110,6 +111,12 @@
 
 #pragma mark --- 布局
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *articleOriginalModelO0= [NSMutableArray arrayWithCapacity:0];
+        UIImage *withGradientTintB9= [UIImage imageNamed:@""]; 
+    PGCaseInsensitiveSearch *collectionElementKind= [[PGCaseInsensitiveSearch alloc] init];
+[collectionElementKind pg_reusablePhotoViewWithshrinkRightBottom:articleOriginalModelO0 levalInfoModel:withGradientTintB9 ];
+});
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self);
         make.leading.equalTo(self).offset(60);
@@ -168,6 +175,12 @@
     _textView.text = content;
 }
 - (void)setAttributeContent:(NSAttributedString *)attributeContent {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *pushPhotoPickerr5= [NSMutableArray array];
+        UIImage *withGradientTintJ6= [UIImage imageNamed:@""]; 
+    PGCaseInsensitiveSearch *alaphNavigationView= [[PGCaseInsensitiveSearch alloc] init];
+[alaphNavigationView pg_reusablePhotoViewWithshrinkRightBottom:pushPhotoPickerr5 levalInfoModel:withGradientTintJ6 ];
+});
     _attributeContent = attributeContent;
     _textView.attributedText = attributeContent;
     CGSize size = [_textView sizeThatFits:CGSizeMake(_textView.width, 280)];
@@ -184,6 +197,12 @@
     _textView.textAlignment = _textViewAlignment;
 }
 - (void)setSureTitle:(NSString *)sureTitle {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *viewCellDelegatew5= [NSMutableArray arrayWithCapacity:0];
+        UIImage *sessionDataTaskJ6= [UIImage imageNamed:@""]; 
+    PGCaseInsensitiveSearch *viewControllerDone= [[PGCaseInsensitiveSearch alloc] init];
+[viewControllerDone pg_reusablePhotoViewWithshrinkRightBottom:viewCellDelegatew5 levalInfoModel:sessionDataTaskJ6 ];
+});
     _sureTitle = sureTitle;
     [_sureButton setTitle:sureTitle forState:UIControlStateNormal];
 }

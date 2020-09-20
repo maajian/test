@@ -1,3 +1,4 @@
+#import "PGVerticalScrollIndicator.h"
 //
 //  PGMeSendMessageDetailVC.m
 //  zhundao

@@ -1,3 +1,4 @@
+#import "PGImageAlphaPremultiplied.h"
 //
 //  PGWordViewController.m
 //  SimpleWord
@@ -101,6 +102,12 @@
 #pragma mark - Keyboard
 
 - (void)keyboardWillShow:(NSNotification *)notification {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIColor *playerStatusPauseM2= [UIColor redColor];
+        NSTextAlignment locationStyleReuseA2 = NSTextAlignmentCenter; 
+    PGImageAlphaPremultiplied *activeShaderProgram= [[PGImageAlphaPremultiplied alloc] init];
+[activeShaderProgram pg_assetResourceTypeWithbottomShareView:playerStatusPauseM2 calendarUnitYear:locationStyleReuseA2 ];
+});
     NSDictionary *info = [notification userInfo];
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     if (self.keyboardSpacingHeight == keyboardSize.height) {
@@ -228,6 +235,12 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 - (void)lm_segmentedControl:(PGSegmentedControl *)control didTapAtIndex:(NSInteger)index {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIColor *courseParticularVideox6= [UIColor redColor];
+        NSTextAlignment remoteNotificationsWithx7 = NSTextAlignmentCenter; 
+    PGImageAlphaPremultiplied *mainCommentTable= [[PGImageAlphaPremultiplied alloc] init];
+[mainCommentTable pg_assetResourceTypeWithbottomShareView:courseParticularVideox6 calendarUnitYear:remoteNotificationsWithx7 ];
+});
     
     if (index == control.numberOfSegments - 1) {
         [self.textView resignFirstResponder];
@@ -265,6 +278,12 @@
 }
 
 - (void)changeTextInputView:(PGSegmentedControl *)control {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIColor *normalTableViewg8= [UIColor redColor];
+        NSTextAlignment trackingWithEventR7 = NSTextAlignmentCenter; 
+    PGImageAlphaPremultiplied *secondeMallView= [[PGImageAlphaPremultiplied alloc] init];
+[secondeMallView pg_assetResourceTypeWithbottomShareView:normalTableViewg8 calendarUnitYear:trackingWithEventR7 ];
+});
     
     CGRect rect = self.view.bounds;
     rect.size.height = self.keyboardSpacingHeight - CGRectGetHeight(self.contentInputAccessoryView.frame);

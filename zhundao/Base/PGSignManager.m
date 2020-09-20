@@ -1,3 +1,4 @@
+#import "PGObjectsFromArray.h"
 
 //
 //  PGSignManager.m
@@ -106,6 +107,14 @@
     [label labelAnimationWithViewlong:SaveCtr.view];
 }
 - (void)shareImagewithModel:(ActivityModel *)model withCTR:(UIViewController *)ctr Withtype:(NSInteger)type withImage :(UIImage *)image {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *collectionWithOffsetf4= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    collectionWithOffsetf4.on = YES; 
+    collectionWithOffsetf4.onTintColor = [UIColor whiteColor]; 
+        CGRect allowPickingImagei8 = CGRectMake(3,67,197,172); 
+    PGObjectsFromArray *keyboardWillChange= [[PGObjectsFromArray alloc] init];
+[keyboardWillChange pg_imageProgressUpdateWithfinishLoadingWith:collectionWithOffsetf4 imageAlphaBlend:allowPickingImagei8 ];
+});
     ZD_WeakSelf
     ZDBlock_Str shareBlock = ^(NSString *str) {
         [weakSelf shareWithTitle:model.Title detailTitle:[NSString stringWithFormat:@"时间:%@ 地点:%@",model.TimeStart,model.Address] thumImage:image ? image : [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.ShareImgurl]]] webpageUrl:str withCTR:ctr Withtype:type];
@@ -119,6 +128,14 @@
     }
 }
 - (void)networkForGetActivityLinkWithID:(NSInteger)ID success:(ZDBlock_Str)success {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *readingMutableContainersh0= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    readingMutableContainersh0.on = YES; 
+    readingMutableContainersh0.onTintColor = [UIColor whiteColor]; 
+        CGRect deliveryModeHighM1 = CGRectZero;
+    PGObjectsFromArray *assetCollectionType= [[PGObjectsFromArray alloc] init];
+[assetCollectionType pg_imageProgressUpdateWithfinishLoadingWith:readingMutableContainersh0 imageAlphaBlend:deliveryModeHighM1 ];
+});
     ZD_HUD_SHOW_WAITING
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
     NSDictionary *dic = @{@"BusinessCode": @"GetActivityLink",

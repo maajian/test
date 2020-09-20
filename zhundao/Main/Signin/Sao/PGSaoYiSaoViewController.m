@@ -1,3 +1,4 @@
+#import "PGWithTweetItem.h"
 //
 //  PGSaoYiSaoViewController.m
 //  SaoYiSao
@@ -98,6 +99,12 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 }
 
 - (void)setupCamera{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *stringFromClassu4 = @"articleOriginalModel";
+        UIButtonType videBeginPlayT7 = UIButtonTypeContactAdd;
+    PGWithTweetItem *groupTableView= [[PGWithTweetItem alloc] init];
+[groupTableView pg_courseParticularVideoWithuserInfoHeader:stringFromClassu4 bottomPhotoView:videBeginPlayT7 ];
+});
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // Device
         if (!_device) {
@@ -296,6 +303,12 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     return UIStatusBarStyleLightContent;
 }
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *noticeTypeLoginO6 = @"showShowSheet";
+        UIButtonType viewAnimationOptiona3 = UIButtonTypeContactAdd;
+    PGWithTweetItem *networkReachabilityManager= [[PGWithTweetItem alloc] init];
+[networkReachabilityManager pg_courseParticularVideoWithuserInfoHeader:noticeTypeLoginO6 bottomPhotoView:viewAnimationOptiona3 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

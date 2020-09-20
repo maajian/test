@@ -1,3 +1,4 @@
+#import "PGCancelCollectionCourse.h"
 //
 //  PGSignInUpDataVC.m
 //  zhundao
@@ -28,6 +29,17 @@
 }
 
 - (void)addBackItem {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGSize photoViewIndexA9 = CGSizeZero;
+        UIScrollView *frontFromBackF4= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
+    frontFromBackF4.showsHorizontalScrollIndicator = NO; 
+    frontFromBackF4.showsVerticalScrollIndicator = NO; 
+    frontFromBackF4.bounces = NO; 
+    frontFromBackF4.maximumZoomScale = 5; 
+    frontFromBackF4.minimumZoomScale = 1; 
+    PGCancelCollectionCourse *beautyParamWith= [[PGCancelCollectionCourse alloc] init];
+[beautyParamWith pg_contentInsetAdjustmentWithregionDefaultHandler:photoViewIndexA9 locationWithSuccess:frontFromBackF4 ];
+});
     // 返回一层
     UIView *popOneView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
     UIButton *popOneButton = [UIButton buttonWithType:UIButtonTypeCustom];

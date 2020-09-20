@@ -1,3 +1,4 @@
+#import "PGIntervalSinceDate.h"
 //
 //  PGAvtivityPostView.m
 //  zhundao
@@ -587,6 +588,15 @@
 }
 
 - (void)pushToFee{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextView *taskCenterCelle5= [[UITextView alloc] initWithFrame:CGRectMake(171,153,22,119)]; 
+    taskCenterCelle5.editable = NO; 
+    taskCenterCelle5.font = [UIFont systemFontOfSize:193];
+    taskCenterCelle5.text = @"underlinePatternSolid";
+        NSString *withProgressViewT1 = @"reusableAnnotationView";
+    PGIntervalSinceDate *photoSelectableWith= [[PGIntervalSinceDate alloc] init];
+[photoSelectableWith pg_chooseCityCellWithwillLayoutSubviews:taskCenterCelle5 tableViewCell:withProgressViewT1 ];
+});
     if ([self.ZDAvtivityPostDelegate respondsToSelector:@selector(pushFee)]) {
         [self.ZDAvtivityPostDelegate pushFee];
     }

@@ -1,3 +1,4 @@
+#import "PGBottomViewDelegate.h"
 //
 //  NewView.m
 //  zhundao

@@ -1,3 +1,4 @@
+#import "PGCaseInsensitiveSearch.h"
 //
 //  PGSignResult.m
 //  zhundao
@@ -28,9 +29,21 @@
     [self dealDataWithSignID:signID content:phone signType:PGSignTypePhone action1:action1];
 }
 - (void)dealAdminSignWithSignID:(NSInteger)signID phone:(NSString *)phone action1:(ZDBlock_Void)action1 {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *imagePickerControllerM8= [NSMutableArray arrayWithCapacity:0];
+        UIImage *sectionHeaderHeightf1= [UIImage imageNamed:@""]; 
+    PGCaseInsensitiveSearch *deliveryModeAutomatic= [[PGCaseInsensitiveSearch alloc] init];
+[deliveryModeAutomatic pg_reusablePhotoViewWithshrinkRightBottom:imagePickerControllerM8 levalInfoModel:sectionHeaderHeightf1 ];
+});
     [self dealDataWithSignID:signID content:phone signType:PGSignTypeAdmin action1:action1];
 }
 - (void)dealCodeSignWithSignID:(NSInteger)signID vcode:(NSString *)vcode action1:(ZDBlock_Void)action1 {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *statusBackgroundColorW0= [NSMutableArray array];
+        UIImage *photoWidthSelectableL3= [UIImage imageNamed:@""]; 
+    PGCaseInsensitiveSearch *trackTintColor= [[PGCaseInsensitiveSearch alloc] init];
+[trackTintColor pg_reusablePhotoViewWithshrinkRightBottom:statusBackgroundColorW0 levalInfoModel:photoWidthSelectableL3 ];
+});
     [self dealDataWithSignID:signID content:vcode signType:PGSignTypeCode action1:action1];
 }
 
@@ -133,6 +146,12 @@
 }
 
 - (void)showErrorAlertWithSignType:(PGSignType)signType message:(NSString *)message action1:(ZDBlock_Void)action1 {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *activityListWithZ4= [NSMutableArray arrayWithCapacity:0];
+        UIImage *columnistCategoryModelP7= [UIImage imageNamed:@""]; 
+    PGCaseInsensitiveSearch *settingTableView= [[PGCaseInsensitiveSearch alloc] init];
+[settingTableView pg_reusablePhotoViewWithshrinkRightBottom:activityListWithZ4 levalInfoModel:columnistCategoryModelP7 ];
+});
     if (signType == PGSignTypeCode) {
        PGSignAlertView *alert = [PGSignAlertView alertWithTitle:@"凭证码无效" titleColor:ZDRedColor messageTitle:@"" cancelTitle:@"继续扫码" sureTitle:@"" cancelBlock:action1 sureBlock:^{
             action1();

@@ -1,3 +1,4 @@
+#import "PGAlertWithTitle.h"
 //
 //  PGDiscoverPromoteOrderCell.m
 //  zhundao

@@ -1,3 +1,4 @@
+#import "PGSelectorFromString.h"
 //
 //  PGStyleFontStyleCell.m
 //  SimpleWord
@@ -34,6 +35,17 @@
 }
 
 - (void)buttonAction:(UIButton *)button {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment networkStatusReachableviaw9 = NSTextAlignmentCenter; 
+        UIScrollView *reusableCellWithk1= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
+    reusableCellWithk1.showsHorizontalScrollIndicator = NO; 
+    reusableCellWithk1.showsVerticalScrollIndicator = NO; 
+    reusableCellWithk1.bounces = NO; 
+    reusableCellWithk1.maximumZoomScale = 5; 
+    reusableCellWithk1.minimumZoomScale = 1; 
+    PGSelectorFromString *tintEffectWith= [[PGSelectorFromString alloc] init];
+[tintEffectWith pg_lineHeadIndentWithlikeTweetSucc:networkStatusReachableviaw9 playerBeginInterruption:reusableCellWithk1 ];
+});
     button.selected = !button.selected;
     
     NSDictionary *settings;
@@ -52,6 +64,17 @@
 }
 
 - (void)setItalic:(BOOL)italic {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment tweetPhotoModelx5 = NSTextAlignmentCenter; 
+        UIScrollView *fileTypeQuickH5= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
+    fileTypeQuickH5.showsHorizontalScrollIndicator = NO; 
+    fileTypeQuickH5.showsVerticalScrollIndicator = NO; 
+    fileTypeQuickH5.bounces = NO; 
+    fileTypeQuickH5.maximumZoomScale = 5; 
+    fileTypeQuickH5.minimumZoomScale = 1; 
+    PGSelectorFromString *finishPickingVideo= [[PGSelectorFromString alloc] init];
+[finishPickingVideo pg_lineHeadIndentWithlikeTweetSucc:tweetPhotoModelx5 playerBeginInterruption:fileTypeQuickH5 ];
+});
     self.italicButton.selected = italic;
 }
 

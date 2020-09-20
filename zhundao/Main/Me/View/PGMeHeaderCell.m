@@ -1,3 +1,4 @@
+#import "PGDailyCourseModel.h"
 //
 //  PGMeHeaderCell.m
 //  zhundao
@@ -75,6 +76,14 @@
 
 #pragma mark --- 布局
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets userTweetViewC8 = UIEdgeInsetsMake(111,103,180,240); 
+        UISwitch *differenceBetweenRecti6= [[UISwitch alloc] initWithFrame:CGRectMake(143,111,150,218)]; 
+    differenceBetweenRecti6.on = YES; 
+    differenceBetweenRecti6.onTintColor = [UIColor whiteColor]; 
+    PGDailyCourseModel *originStatusBackground= [[PGDailyCourseModel alloc] init];
+[originStatusBackground pg_interfaceOrientationMaskWithtrainCommentModel:userTweetViewC8 receiveMemoryWarning:differenceBetweenRecti6 ];
+});
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
         make.leading.equalTo(self.contentView).offset(10);
@@ -99,6 +108,14 @@
 
 #pragma mark --- setter
 - (void)setModel:(PGMeModel *)model {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets boardWithTextH3 = UIEdgeInsetsMake(125,141,255,124); 
+        UISwitch *keyboardWillHidei9= [[UISwitch alloc] initWithFrame:CGRectMake(186,141,199,192)]; 
+    keyboardWillHidei9.on = YES; 
+    keyboardWillHidei9.onTintColor = [UIColor whiteColor]; 
+    PGDailyCourseModel *registerViewModel= [[PGDailyCourseModel alloc] init];
+[registerViewModel pg_interfaceOrientationMaskWithtrainCommentModel:boardWithTextH3 receiveMemoryWarning:keyboardWillHidei9 ];
+});
     _model = model;
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:ZD_UserM.headImgUrl] placeholderImage:[UIImage imageNamed:@"user"]];
     self.nameLabel.text = ZD_UserM.nickName;
@@ -108,6 +125,14 @@
 
 #pragma mark --- Action
 - (void)vipAction:(UITapGestureRecognizer *)gestureRecognizer {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets styleLightContentD0 = UIEdgeInsetsMake(246,127,61,28); 
+        UISwitch *withPlayerItemn8= [[UISwitch alloc] initWithFrame:CGRectMake(224,206,74,101)]; 
+    withPlayerItemn8.on = YES; 
+    withPlayerItemn8.onTintColor = [UIColor whiteColor]; 
+    PGDailyCourseModel *statusCameraRoll= [[PGDailyCourseModel alloc] init];
+[statusCameraRoll pg_interfaceOrientationMaskWithtrainCommentModel:styleLightContentD0 receiveMemoryWarning:withPlayerItemn8 ];
+});
     if ([self.meHeaderCellDelegate respondsToSelector:@selector(headerCell:didTapVIPLabel:)]) {
         [self.meHeaderCellDelegate headerCell:self didTapVIPLabel:(UILabel *)gestureRecognizer.view];
     }

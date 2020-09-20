@@ -1,3 +1,4 @@
+#import "PGPathWithRounded.h"
 //
 //  ImagePicker.m
 //  BDKit
@@ -79,6 +80,12 @@ static BDImagePicker *bdImagePickerInstance = nil;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGRect styleWhiteLargeq4 = CGRectZero;
+        CGRect withSessionPresetD7 = CGRectMake(1,162,190,70); 
+    PGPathWithRounded *firstFrontCamera= [[PGPathWithRounded alloc] init];
+[firstFrontCamera pg_chatInputAbleWithsearchRequestWith:styleWhiteLargeq4 arrayUsingComparator:withSessionPresetD7 ];
+});
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     if (image == nil) {
         image = info[UIImagePickerControllerOriginalImage];

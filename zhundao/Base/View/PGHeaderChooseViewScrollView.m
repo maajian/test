@@ -1,3 +1,4 @@
+#import "PGWindowLevelAlert.h"
 //
 //  PGHeaderChooseViewScrollView.m
 //  JZLConstructApp
@@ -59,6 +60,19 @@
 
 //移除通知
 - (void)dealloc{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *photoPickerImagef1= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
+    photoPickerImagef1.showsHorizontalScrollIndicator = NO; 
+    photoPickerImagef1.showsVerticalScrollIndicator = NO; 
+    photoPickerImagef1.bounces = NO; 
+    photoPickerImagef1.maximumZoomScale = 5; 
+    photoPickerImagef1.minimumZoomScale = 1; 
+        UISwitch *withCommentObjecte1= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    withCommentObjecte1.on = YES; 
+    withCommentObjecte1.onTintColor = [UIColor whiteColor]; 
+    PGWindowLevelAlert *integralMainHeader= [[PGWindowLevelAlert alloc] init];
+[integralMainHeader pg_statusSavePhotosWithpassWordWith:photoPickerImagef1 nameRightLabel:withCommentObjecte1 ];
+});
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
@@ -83,6 +97,19 @@
 
 //UI
 - (void)setUpUI{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *timeMakeWithb8= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
+    timeMakeWithb8.showsHorizontalScrollIndicator = NO; 
+    timeMakeWithb8.showsVerticalScrollIndicator = NO; 
+    timeMakeWithb8.bounces = NO; 
+    timeMakeWithb8.maximumZoomScale = 5; 
+    timeMakeWithb8.minimumZoomScale = 1; 
+        UISwitch *alowGroupPurchasez1= [[UISwitch alloc] initWithFrame:CGRectMake(95,1,182,108)]; 
+    alowGroupPurchasez1.on = YES; 
+    alowGroupPurchasez1.onTintColor = [UIColor whiteColor]; 
+    PGWindowLevelAlert *articleOriginalHeader= [[PGWindowLevelAlert alloc] init];
+[articleOriginalHeader pg_statusSavePhotosWithpassWordWith:timeMakeWithb8 nameRightLabel:alowGroupPurchasez1 ];
+});
     
     if (titleArray.count==0) {
         return;
@@ -207,6 +234,19 @@
 }
 
 - (void)setJzl_x:(CGFloat)jzl_x{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *withCourseParticularW0= [[UIScrollView alloc] initWithFrame:CGRectMake(67,164,202,225)]; 
+    withCourseParticularW0.showsHorizontalScrollIndicator = NO; 
+    withCourseParticularW0.showsVerticalScrollIndicator = NO; 
+    withCourseParticularW0.bounces = NO; 
+    withCourseParticularW0.maximumZoomScale = 5; 
+    withCourseParticularW0.minimumZoomScale = 1; 
+        UISwitch *backFromFronth5= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    backFromFronth5.on = YES; 
+    backFromFronth5.onTintColor = [UIColor whiteColor]; 
+    PGWindowLevelAlert *refreshHeaderLayer= [[PGWindowLevelAlert alloc] init];
+[refreshHeaderLayer pg_statusSavePhotosWithpassWordWith:withCourseParticularW0 nameRightLabel:backFromFronth5 ];
+});
     CGRect frame=self.frame;
     frame.origin.x=jzl_x;
     self.frame=frame;

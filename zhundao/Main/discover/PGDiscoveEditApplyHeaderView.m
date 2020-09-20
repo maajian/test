@@ -1,3 +1,4 @@
+#import "PGCollectionViewDelegate.h"
 //
 //  PGDiscoveEditApplyHeaderView.m
 //  zhundao

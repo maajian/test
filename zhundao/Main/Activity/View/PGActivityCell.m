@@ -1,3 +1,4 @@
+#import "PGWithFileName.h"
 //
 //  PGActivityCell.m
 //  zhundao
@@ -97,6 +98,12 @@
 
 #pragma mark --- 布局
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets assetResourceLoadingl0 = UIEdgeInsetsZero;
+        NSData *handpickViewControllere5= [[NSData alloc] init];
+    PGWithFileName *userCommentModel= [[PGWithFileName alloc] init];
+[userCommentModel pg_viewContentSizeWithcenterViewModel:assetResourceLoadingl0 timesFromSlider:handpickViewControllere5 ];
+});
     [_activityImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(10);
         make.top.mas_equalTo(10);
@@ -198,6 +205,12 @@
     }
 }
 - (void)shareAction:(UIButton *)button {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets timeRangeValued4 = UIEdgeInsetsZero;
+        NSData *locationWithSuccessg4= [[NSData alloc] init];
+    PGWithFileName *courseParticularVideo= [[PGWithFileName alloc] init];
+[courseParticularVideo pg_viewContentSizeWithcenterViewModel:timeRangeValued4 timesFromSlider:locationWithSuccessg4 ];
+});
     if ([self.activityCellDelegate respondsToSelector:@selector(activityCell:didTapShareButton:)]) {
         [self.activityCellDelegate activityCell:self didTapShareButton:button];
     }

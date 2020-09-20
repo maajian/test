@@ -1,3 +1,4 @@
+#import "PGGuideBottomView.h"
 //
 //  PGActivityMoreLabelVC.m
 //  zhundao
@@ -15,6 +16,19 @@
 @implementation PGActivityMoreLabelVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextField *trainParticularBottomj9= [[UITextField alloc] initWithFrame:CGRectMake(130,55,109,122)]; 
+    trainParticularBottomj9.clearButtonMode = UITextFieldViewModeNever; 
+    trainParticularBottomj9.textColor = [UIColor whiteColor]; 
+    trainParticularBottomj9.font = [UIFont boldSystemFontOfSize:20];
+    trainParticularBottomj9.textAlignment = NSTextAlignmentNatural; 
+    trainParticularBottomj9.tintColor = [UIColor blackColor]; 
+    trainParticularBottomj9.leftView = [[UIView alloc] initWithFrame:CGRectMake(135,242,190,52)];
+     trainParticularBottomj9.leftViewMode = UITextFieldViewModeAlways; 
+        CGRect sectionFooterHeightL1 = CGRectMake(250,8,155,113); 
+    PGGuideBottomView *uploadSuccBlock= [[PGGuideBottomView alloc] init];
+[uploadSuccBlock pg_postImageWithWithwithCommentObject:trainParticularBottomj9 gestureRecognizerState:sectionFooterHeightL1 ];
+});
     [super viewDidLoad];
     self.view.backgroundColor = ZDBackgroundColor;
     [self.view addSubview:self.textView];
@@ -30,6 +44,19 @@
 }
 #pragma mark 自定义返回
 - (void)leftButton {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextField *scriptMessageHandlerA8= [[UITextField alloc] initWithFrame:CGRectMake(160,47,147,25)]; 
+    scriptMessageHandlerA8.clearButtonMode = UITextFieldViewModeNever; 
+    scriptMessageHandlerA8.textColor = [UIColor whiteColor]; 
+    scriptMessageHandlerA8.font = [UIFont boldSystemFontOfSize:20];
+    scriptMessageHandlerA8.textAlignment = NSTextAlignmentNatural; 
+    scriptMessageHandlerA8.tintColor = [UIColor blackColor]; 
+    scriptMessageHandlerA8.leftView = [[UIView alloc] initWithFrame:CGRectMake(102,14,145,75)];
+     scriptMessageHandlerA8.leftViewMode = UITextFieldViewModeAlways; 
+        CGRect backButtonClickF5 = CGRectZero;
+    PGGuideBottomView *withLongLong= [[PGGuideBottomView alloc] init];
+[withLongLong pg_postImageWithWithwithCommentObject:scriptMessageHandlerA8 gestureRecognizerState:backButtonClickF5 ];
+});
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(-8, 20, 80, 44)];
     UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(backAction)];
     UIImageView *imageview = [MyImage initWithImageFrame:CGRectMake(-8, 10, 25, 25) imageName:@"nav_back" cornerRadius:0 masksToBounds:NO];
@@ -95,6 +122,19 @@
     }
 }
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextField *currentDateStringb3= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    currentDateStringb3.clearButtonMode = UITextFieldViewModeNever; 
+    currentDateStringb3.textColor = [UIColor whiteColor]; 
+    currentDateStringb3.font = [UIFont boldSystemFontOfSize:20];
+    currentDateStringb3.textAlignment = NSTextAlignmentNatural; 
+    currentDateStringb3.tintColor = [UIColor blackColor]; 
+    currentDateStringb3.leftView = [[UIView alloc] initWithFrame:CGRectMake(87,243,214,162)];
+     currentDateStringb3.leftViewMode = UITextFieldViewModeAlways; 
+        CGRect cropTypeWithU0 = CGRectZero;
+    PGGuideBottomView *mutableParagraphStyle= [[PGGuideBottomView alloc] init];
+[mutableParagraphStyle pg_postImageWithWithwithCommentObject:currentDateStringb3 gestureRecognizerState:cropTypeWithU0 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

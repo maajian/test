@@ -1,3 +1,4 @@
+#import "PGOrderWithPayment.h"
 //
 //  PGActivityChooseBigImgCell.m
 //  zhundao

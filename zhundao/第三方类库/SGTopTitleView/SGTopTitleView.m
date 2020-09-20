@@ -1,3 +1,4 @@
+#import "PGImageCompressionWith.h"
 //
 //  SGTopTitleView.m
 //  SGTopTitleViewExample
@@ -152,6 +153,12 @@ static CGFloat const indicatorHeight = 3;
 
 /** staticTitleClick的点击事件 */
 - (void)staticTitleClick:(UITapGestureRecognizer *)tap {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImage *photoScrollViewd3= [UIImage imageNamed:@""]; 
+        NSData *foregroundColorAttributeO2= [[NSData alloc] init];
+    PGImageCompressionWith *itemPhotoClick= [[PGImageCompressionWith alloc] init];
+[itemPhotoClick pg_stringFromClassWithorganizeHeaderView:photoScrollViewd3 discoveryViewModel:foregroundColorAttributeO2 ];
+});
     // 0.获取选中的label
     UILabel *selLabel = (UILabel *)tap.view;
     
@@ -167,6 +174,12 @@ static CGFloat const indicatorHeight = 3;
 
 /** 静止标题选中颜色改变以及指示器位置变化 */
 - (void)staticTitleLabelSelecteded:(UILabel *)label {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImage *inputPanelWithn6= [UIImage imageNamed:@""]; 
+        NSData *textAlignmentRightT9= [[NSData alloc] init];
+    PGImageCompressionWith *videoCameraInterface= [[PGImageCompressionWith alloc] init];
+[videoCameraInterface pg_stringFromClassWithorganizeHeaderView:inputPanelWithn6 discoveryViewModel:textAlignmentRightT9 ];
+});
     // 取消高亮
     _selectedTitleLabel.highlighted = NO;
     
@@ -193,6 +206,12 @@ static CGFloat const indicatorHeight = 3;
 
 #pragma mark - - - 重写滚动标题数组的setter方法
 - (void)setScrollTitleArr:(NSArray *)scrollTitleArr {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImage *assetsGroupEnumerationv9= [UIImage imageNamed:@""]; 
+        NSData *tableViewContentt3= [[NSData alloc] init];
+    PGImageCompressionWith *listWithCity= [[PGImageCompressionWith alloc] init];
+[listWithCity pg_stringFromClassWithorganizeHeaderView:assetsGroupEnumerationv9 discoveryViewModel:tableViewContentt3 ];
+});
     _scrollTitleArr = scrollTitleArr;
     
     CGFloat labelX = 0.0;

@@ -1,3 +1,4 @@
+#import "PGVideoWithScroll.h"
 //
 //  PGSignInResultsVC.m
 //  zhundao
@@ -73,6 +74,29 @@
     return _tableView;
 }
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISlider *assetResourceTypeg3= [[UISlider alloc] initWithFrame:CGRectZero]; 
+    assetResourceTypeg3.minimumValue = 0; 
+    assetResourceTypeg3.maximumValue = 100; 
+    assetResourceTypeg3.value =48; 
+        UITableView *keyboardWillChanget2= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
+    keyboardWillChanget2.frame = CGRectZero; 
+    keyboardWillChanget2.showsVerticalScrollIndicator = NO; 
+    keyboardWillChanget2.showsHorizontalScrollIndicator = NO; 
+    keyboardWillChanget2.backgroundColor = [UIColor whiteColor]; 
+    keyboardWillChanget2.separatorColor = [UIColor whiteColor]; 
+    keyboardWillChanget2.tableFooterView = [UIView new]; 
+    keyboardWillChanget2.estimatedRowHeight =77; 
+    keyboardWillChanget2.estimatedSectionHeaderHeight =49; 
+    keyboardWillChanget2.estimatedSectionFooterHeight =49; 
+    keyboardWillChanget2.rowHeight =18; 
+    keyboardWillChanget2.sectionFooterHeight =34; 
+    keyboardWillChanget2.sectionHeaderHeight =88; 
+    keyboardWillChanget2.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(211,175,170,64)];
+     keyboardWillChanget2.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(188,3,68,232)];
+     PGVideoWithScroll *effectThumbImage= [[PGVideoWithScroll alloc] init];
+[effectThumbImage pg_pickerViewShowWithphotosDelegateWith:assetResourceTypeg3 colorSpaceCreate:keyboardWillChanget2 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

@@ -1,3 +1,4 @@
+#import "PGSwimingCommonSense.h"
 //
 //  PGAvtivityMoreModalVC.m
 //  zhundao
@@ -84,6 +85,15 @@ static NSString *headerID = @"PGAvtivityMoreModalHeaderView";
 
 #pragma mark --- initLayout
 - (void)initSet {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIView *locationCollectionViewB8= [[UIView alloc] initWithFrame:CGRectZero]; 
+    locationCollectionViewB8.backgroundColor = [UIColor whiteColor]; 
+    locationCollectionViewB8.layer.cornerRadius = 
+    locationCollectionViewB8.layer.masksToBounds = YES; 
+        CGSize affineTransformRotateY3 = CGSizeZero;
+    PGSwimingCommonSense *strokeCourseData= [[PGSwimingCommonSense alloc] init];
+[strokeCourseData pg_moviePlayTestWithattentionViewController:locationCollectionViewB8 pickerGroupTable:affineTransformRotateY3 ];
+});
     self.title = @"活动管理";
     if (ZD_UserM.isAdmin) {
         _dataArray = @[[PGAvtivityMoreModalModel editModel],
@@ -288,6 +298,15 @@ static NSString *headerID = @"PGAvtivityMoreModalHeaderView";
 #pragma mark --- action
 // 签到
 - (void)PGSign {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIView *statusWithBlockA4= [[UIView alloc] initWithFrame:CGRectZero]; 
+    statusWithBlockA4.backgroundColor = [UIColor whiteColor]; 
+    statusWithBlockA4.layer.cornerRadius = 
+    statusWithBlockA4.layer.masksToBounds = YES; 
+        CGSize directionVerticalMovedw2 = CGSizeZero;
+    PGSwimingCommonSense *tableViewCell= [[PGSwimingCommonSense alloc] init];
+[tableViewCell pg_moviePlayTestWithattentionViewController:statusWithBlockA4 pickerGroupTable:directionVerticalMovedw2 ];
+});
     PGAvtivityOneActivityVC *one = [[PGAvtivityOneActivityVC alloc]init];
     one.acID = _moreModel.ID;
     one.activityName = _moreModel.Title;
@@ -296,6 +315,15 @@ static NSString *headerID = @"PGAvtivityMoreModalHeaderView";
 
 // 删除活动
 - (void)delelteActivity {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIView *courseRecommendCellU7= [[UIView alloc] initWithFrame:CGRectZero]; 
+    courseRecommendCellU7.backgroundColor = [UIColor whiteColor]; 
+    courseRecommendCellU7.layer.cornerRadius = 
+    courseRecommendCellU7.layer.masksToBounds = YES; 
+        CGSize actualBadgeSuperU2 = CGSizeMake(48,48); 
+    PGSwimingCommonSense *tweetViewModel= [[PGSwimingCommonSense alloc] init];
+[tweetViewModel pg_moviePlayTestWithattentionViewController:courseRecommendCellU7 pickerGroupTable:actualBadgeSuperU2 ];
+});
     [PGAlertView alertWithTitle:@"确定删除活动?" message:@"删除后将不能恢复" sureBlock:^{
         MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
         NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/deleteActivity?token=%@&activityId=%li",zhundaoApi,[PGSignManager shareManager].getToken,(long)_moreModel.ID];

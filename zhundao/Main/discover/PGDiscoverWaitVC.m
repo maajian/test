@@ -1,3 +1,4 @@
+#import "PGCustomDismissAction.h"
 //
 //  PGDiscoverWaitVC.m
 //  zhundao
@@ -44,6 +45,15 @@ static NSString *reUseID = @"moreSignReuseID";
 @implementation PGDiscoverWaitVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextView *previousPerformRequestsx7= [[UITextView alloc] initWithFrame:CGRectMake(217,161,46,152)]; 
+    previousPerformRequestsx7.editable = NO; 
+    previousPerformRequestsx7.font = [UIFont systemFontOfSize:66];
+    previousPerformRequestsx7.text = @"keywindowWithText";
+        NSLineBreakMode dailyTrainClassX1 = NSLineBreakByTruncatingTail; 
+    PGCustomDismissAction *viewControllerTransition= [[PGCustomDismissAction alloc] init];
+[viewControllerTransition pg_inputPanelWithWithdifferenceBetweenRect:previousPerformRequestsx7 playerItemPlayback:dailyTrainClassX1 ];
+});
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"准到多点签到";

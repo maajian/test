@@ -1,3 +1,4 @@
+#import "PGShowInputText.h"
 //
 //  PGloginCodeExplainVC.m
 //  zhundao
@@ -27,6 +28,12 @@
 }
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle tweetItemModelH1 = UITableViewStylePlain; 
+        UITableViewStyle withSessionConfigurationm0 = UITableViewStylePlain; 
+    PGShowInputText *backIndicatorImage= [[PGShowInputText alloc] init];
+[backIndicatorImage pg_birthdayPickerViewWithdataReadingMapped:tweetItemModelH1 assetsUsingBlock:withSessionConfigurationm0 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

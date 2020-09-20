@@ -1,3 +1,4 @@
+#import "PGWithIntegralRecord.h"
 //
 //  SWNetWorkManager.m
 //  zhundao
@@ -54,6 +55,24 @@ ZD_Singleton_Implementation(NetWorkManager)
  post请求
  */
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * metersTimeLabelM4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    metersTimeLabelM4.contentMode = UIViewContentModeCenter; 
+    metersTimeLabelM4.clipsToBounds = NO; 
+    metersTimeLabelM4.multipleTouchEnabled = YES; 
+    metersTimeLabelM4.autoresizesSubviews = YES; 
+    metersTimeLabelM4.clearsContextBeforeDrawing = YES; 
+        UITextField *withInfosHandleA4= [[UITextField alloc] initWithFrame:CGRectMake(108,233,25,77)]; 
+    withInfosHandleA4.clearButtonMode = UITextFieldViewModeNever; 
+    withInfosHandleA4.textColor = [UIColor whiteColor]; 
+    withInfosHandleA4.font = [UIFont boldSystemFontOfSize:20];
+    withInfosHandleA4.textAlignment = NSTextAlignmentNatural; 
+    withInfosHandleA4.tintColor = [UIColor blackColor]; 
+    withInfosHandleA4.leftView = [[UIView alloc] initWithFrame:CGRectMake(174,155,60,76)];
+     withInfosHandleA4.leftViewMode = UITextFieldViewModeAlways; 
+    PGWithIntegralRecord *playerStatusPlaying= [[PGWithIntegralRecord alloc] init];
+[playerStatusPlaying pg_levelUserCollectionsWithlocationViewController:metersTimeLabelM4 selectTypeMyttention:withInfosHandleA4 ];
+});
     [[PGNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         succ(responseObject);
@@ -68,6 +87,24 @@ ZD_Singleton_Implementation(NetWorkManager)
 }
 
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters constructing:(void (^)(id<AFMultipartFormData> formData))constructing succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * messageWithUserh6 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    messageWithUserh6.contentMode = UIViewContentModeCenter; 
+    messageWithUserh6.clipsToBounds = NO; 
+    messageWithUserh6.multipleTouchEnabled = YES; 
+    messageWithUserh6.autoresizesSubviews = YES; 
+    messageWithUserh6.clearsContextBeforeDrawing = YES; 
+        UITextField *whenInteractionEndsJ9= [[UITextField alloc] initWithFrame:CGRectMake(199,58,219,230)]; 
+    whenInteractionEndsJ9.clearButtonMode = UITextFieldViewModeNever; 
+    whenInteractionEndsJ9.textColor = [UIColor whiteColor]; 
+    whenInteractionEndsJ9.font = [UIFont boldSystemFontOfSize:20];
+    whenInteractionEndsJ9.textAlignment = NSTextAlignmentNatural; 
+    whenInteractionEndsJ9.tintColor = [UIColor blackColor]; 
+    whenInteractionEndsJ9.leftView = [[UIView alloc] initWithFrame:CGRectMake(75,167,72,236)];
+     whenInteractionEndsJ9.leftViewMode = UITextFieldViewModeAlways; 
+    PGWithIntegralRecord *organizeTableView= [[PGWithIntegralRecord alloc] init];
+[organizeTableView pg_levelUserCollectionsWithlocationViewController:messageWithUserh6 selectTypeMyttention:whenInteractionEndsJ9 ];
+});
     [[PGNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters constructingBodyWithBlock:constructing progress: nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         succ(responseObject);

@@ -1,3 +1,4 @@
+#import "PGSuccessWithStatus.h"
 //
 //  PGDiscoverColorView.m
 //  zhundao
@@ -195,6 +196,15 @@ const static CGFloat buttonWidth = 20;
 
 #pragma mark---颜色改变不再数组内，按钮还原
 - (void)identityButton{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextView *assetReferenceRestrictionf7= [[UITextView alloc] initWithFrame:CGRectMake(244,255,96,107)]; 
+    assetReferenceRestrictionf7.editable = NO; 
+    assetReferenceRestrictionf7.font = [UIFont systemFontOfSize:21];
+    assetReferenceRestrictionf7.text = @"baseViewController";
+        UIButtonType integralMainDatao2 = UIButtonTypeContactAdd;
+    PGSuccessWithStatus *routeSearchBase= [[PGSuccessWithStatus alloc] init];
+[routeSearchBase pg_trackingWithEventWithfinishPickingMedia:assetReferenceRestrictionf7 openWindowsAutomatically:integralMainDatao2 ];
+});
     [_colorArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIColor *color = (UIColor *)obj;
         if (CGColorEqualToColor(color.CGColor , _currentColor.CGColor)) {

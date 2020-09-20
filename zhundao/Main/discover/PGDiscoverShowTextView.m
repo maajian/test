@@ -1,3 +1,4 @@
+#import "PGTaskCenterModel.h"
 //
 //  PGDiscoverShowTextView.m
 //  zhundao
@@ -41,6 +42,12 @@
 }
 
 - (void)longPress:(UILongPressGestureRecognizer *)gestureRecognizer{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewCellSeparatorStyle commentObjectModelh9 = UITableViewCellSeparatorStyleNone; 
+        NSArray *playerControlViewI8= [NSArray array];
+    PGTaskCenterModel *assetReferenceRestrictions= [[PGTaskCenterModel alloc] init];
+[assetReferenceRestrictions pg_fillModeBothWithassetCollectionSubtype:commentObjectModelh9 downloadChapterModel:playerControlViewI8 ];
+});
     tag = gestureRecognizer.view.tag;
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         [gestureRecognizer.view becomeFirstResponder];
@@ -70,6 +77,12 @@
     return NO;
 }
 - (void)myDelete:(UIMenuController *)menu{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewCellSeparatorStyle assetsPhotoWithz2 = UITableViewCellSeparatorStyleNone; 
+        NSArray *assetFromVideop7= [NSArray array];
+    PGTaskCenterModel *trainCommentModel= [[PGTaskCenterModel alloc] init];
+[trainCommentModel pg_fillModeBothWithassetCollectionSubtype:assetsPhotoWithz2 downloadChapterModel:assetFromVideop7 ];
+});
     PGDiscoverShowTextView *textView = [self viewWithTag:tag];
     [textView removeFromSuperview];
 }

@@ -1,3 +1,4 @@
+#import "PGCompleteWithError.h"
 //
 //  PGDiscoverDefaultVC.m
 //  zhundao
@@ -43,6 +44,26 @@
 }
 
 - (void)setUI{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *withDailyCourseM8 = @"imageNearIndex";
+        UITableView *currentPageColorD2= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
+    currentPageColorD2.frame = CGRectZero; 
+    currentPageColorD2.showsVerticalScrollIndicator = NO; 
+    currentPageColorD2.showsHorizontalScrollIndicator = NO; 
+    currentPageColorD2.backgroundColor = [UIColor whiteColor]; 
+    currentPageColorD2.separatorColor = [UIColor whiteColor]; 
+    currentPageColorD2.tableFooterView = [UIView new]; 
+    currentPageColorD2.estimatedRowHeight =5; 
+    currentPageColorD2.estimatedSectionHeaderHeight =75; 
+    currentPageColorD2.estimatedSectionFooterHeight =17; 
+    currentPageColorD2.rowHeight =45; 
+    currentPageColorD2.sectionFooterHeight =27; 
+    currentPageColorD2.sectionHeaderHeight =51; 
+    currentPageColorD2.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(106,124,79,151)];
+     currentPageColorD2.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(69,31,179,222)];
+     PGCompleteWithError *imageSharpenFilter= [[PGCompleteWithError alloc] init];
+[imageSharpenFilter pg_shouldAutoClipWithnaviTitleColor:withDailyCourseM8 withActionBlock:currentPageColorD2 ];
+});
     
     /*! 背景图片 */
     UIImageView *backImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
@@ -80,6 +101,26 @@
 
 #pragma mark  --- 点击推出
 - (void)addGes{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *groupViewControllerP4 = @"allowWithController";
+        UITableView *gradeViewControllerF9= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
+    gradeViewControllerF9.frame = CGRectZero; 
+    gradeViewControllerF9.showsVerticalScrollIndicator = NO; 
+    gradeViewControllerF9.showsHorizontalScrollIndicator = NO; 
+    gradeViewControllerF9.backgroundColor = [UIColor whiteColor]; 
+    gradeViewControllerF9.separatorColor = [UIColor whiteColor]; 
+    gradeViewControllerF9.tableFooterView = [UIView new]; 
+    gradeViewControllerF9.estimatedRowHeight =23; 
+    gradeViewControllerF9.estimatedSectionHeaderHeight =53; 
+    gradeViewControllerF9.estimatedSectionFooterHeight =26; 
+    gradeViewControllerF9.rowHeight =60; 
+    gradeViewControllerF9.sectionFooterHeight =63; 
+    gradeViewControllerF9.sectionHeaderHeight =69; 
+    gradeViewControllerF9.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(161,110,255,80)];
+     gradeViewControllerF9.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(48,6,241,202)];
+     PGCompleteWithError *trainViewModel= [[PGCompleteWithError alloc] init];
+[trainViewModel pg_shouldAutoClipWithnaviTitleColor:groupViewControllerP4 withActionBlock:gradeViewControllerF9 ];
+});
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
     [self.view addGestureRecognizer:tap];
 }
@@ -167,6 +208,26 @@
 #pragma mark--- 分享
 
 - (void)shareImage{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *cellDefaultMargini7 = @"headerViewDelegate";
+        UITableView *dailyTrainChapterM8= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
+    dailyTrainChapterM8.frame = CGRectZero; 
+    dailyTrainChapterM8.showsVerticalScrollIndicator = NO; 
+    dailyTrainChapterM8.showsHorizontalScrollIndicator = NO; 
+    dailyTrainChapterM8.backgroundColor = [UIColor whiteColor]; 
+    dailyTrainChapterM8.separatorColor = [UIColor whiteColor]; 
+    dailyTrainChapterM8.tableFooterView = [UIView new]; 
+    dailyTrainChapterM8.estimatedRowHeight =2; 
+    dailyTrainChapterM8.estimatedSectionHeaderHeight =19; 
+    dailyTrainChapterM8.estimatedSectionFooterHeight =92; 
+    dailyTrainChapterM8.rowHeight =91; 
+    dailyTrainChapterM8.sectionFooterHeight =61; 
+    dailyTrainChapterM8.sectionHeaderHeight =91; 
+    dailyTrainChapterM8.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(168,214,66,63)];
+     dailyTrainChapterM8.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(205,100,143,117)];
+     PGCompleteWithError *mainFirstLogin= [[PGCompleteWithError alloc] init];
+[mainFirstLogin pg_shouldAutoClipWithnaviTitleColor:cellDefaultMargini7 withActionBlock:dailyTrainChapterM8 ];
+});
     NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_QQ), nil];
     if ( ![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
         //没有安装QQ

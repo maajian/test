@@ -1,3 +1,4 @@
+#import "PGLoginViewModel.h"
 //
 //  JQCyclingLineAnimation.m
 //  JQIndicatorViewDemo
@@ -54,6 +55,17 @@
 }
 
 - (void)removeAnimation{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIButton *blendModeOverlayT0= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    blendModeOverlayT0.frame = CGRectZero; 
+    blendModeOverlayT0.exclusiveTouch = NO; 
+    blendModeOverlayT0.adjustsImageWhenHighlighted = NO; 
+    blendModeOverlayT0.reversesTitleShadowWhenHighlighted = NO; 
+    blendModeOverlayT0.frame = CGRectZero; 
+        UIButtonType affineTransformTranslateq6 = UIButtonTypeContactAdd;
+    PGLoginViewModel *assetGridThumbnail= [[PGLoginViewModel alloc] init];
+[assetGridThumbnail pg_itemPhotoClickWithtrackTintColor:blendModeOverlayT0 medalKindModel:affineTransformTranslateq6 ];
+});
     [self.lineLayer removeAnimationForKey:@"animation"];
 }
 

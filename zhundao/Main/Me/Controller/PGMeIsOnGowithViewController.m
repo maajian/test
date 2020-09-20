@@ -1,3 +1,4 @@
+#import "PGTextAttributedString.h"
 //
 //  PGMeIsOnGowithViewController.m
 //  
@@ -125,6 +126,15 @@ static NSString *CellID = @"isOnGowith";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGSize rectIntersectsRecti0 = CGSizeMake(83,2); 
+        UISlider *sheetWithDataQ5= [[UISlider alloc] initWithFrame:CGRectZero]; 
+    sheetWithDataQ5.minimumValue = 0; 
+    sheetWithDataQ5.maximumValue = 100; 
+    sheetWithDataQ5.value =51; 
+    PGTextAttributedString *recordListWith= [[PGTextAttributedString alloc] init];
+[recordListWith pg_orderStepViewWithlistRequsetWith:rectIntersectsRecti0 mutableUserNotification:sheetWithDataQ5 ];
+});
     if (indexPath.row==0) {
         PGMeAllAccountViewController *all = [[PGMeAllAccountViewController alloc]init];
         [self setHidesBottomBarWhenPushed:YES];
@@ -141,6 +151,15 @@ static NSString *CellID = @"isOnGowith";
 }
 
 - (void)addAccount:(NSString *)account BankName:(NSString *)BankName{
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGSize numberIconImagem0 = CGSizeMake(74,224); 
+        UISlider *groupPurchaseOrdery3= [[UISlider alloc] initWithFrame:CGRectZero]; 
+    groupPurchaseOrdery3.minimumValue = 0; 
+    groupPurchaseOrdery3.maximumValue = 100; 
+    groupPurchaseOrdery3.value =63; 
+    PGTextAttributedString *trainsWithOffset= [[PGTextAttributedString alloc] init];
+[trainsWithOffset pg_orderStepViewWithlistRequsetWith:numberIconImagem0 mutableUserNotification:groupPurchaseOrdery3 ];
+});
     amountLabel.text = account;
     amountLabel.textColor = [UIColor blackColor];
     if ([BankName isEqualToString:@"支付宝"]) {

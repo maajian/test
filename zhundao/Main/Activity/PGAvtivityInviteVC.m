@@ -1,3 +1,4 @@
+#import "PGNetworkStatusUnknow.h"
 //
 //  PGAvtivityInviteVC.m
 //  zhundao
@@ -114,11 +115,23 @@
 }
 
 - (void)selectIndex:(NSInteger)index{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange styleWhiteLargef9 = NSMakeRange(3,182); 
+        UIColor *networkReachabilityStatusv2= [UIColor redColor];
+    PGNetworkStatusUnknow *textFiledDelegate= [[PGNetworkStatusUnknow alloc] init];
+[textFiledDelegate pg_answerViewModelWithcategoryChooseView:styleWhiteLargef9 imageOrientationLeft:networkReachabilityStatusv2 ];
+});
     _index = index;
     NSLog(@"index = %li",index);
 }
 
 - (void)dismissVC{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange fieldShouldBeginI9 = NSMakeRange(3,113); 
+        UIColor *bottomChartViewY1= [UIColor redColor];
+    PGNetworkStatusUnknow *photoPickerBrowser= [[PGNetworkStatusUnknow alloc] init];
+[photoPickerBrowser pg_answerViewModelWithcategoryChooseView:fieldShouldBeginI9 imageOrientationLeft:bottomChartViewY1 ];
+});
     [self dismiss];
 }
 
@@ -161,6 +174,12 @@
 }
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange playerStatusPlayingQ6 = NSMakeRange(6,223); 
+        UIColor *fullScreenVideoW3= [UIColor redColor];
+    PGNetworkStatusUnknow *edgeInsetsZero= [[PGNetworkStatusUnknow alloc] init];
+[edgeInsetsZero pg_answerViewModelWithcategoryChooseView:playerStatusPlayingQ6 imageOrientationLeft:fullScreenVideoW3 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

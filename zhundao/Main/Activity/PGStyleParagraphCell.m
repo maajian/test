@@ -1,3 +1,4 @@
+#import "PGDeviceOrientationFace.h"
 //
 //  PGStyleParagraphCell.m
 //  SimpleWord
@@ -21,6 +22,17 @@
 @implementation PGStyleParagraphCell
 
 - (void)awakeFromNib {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGSize locationWithSuccessp3 = CGSizeZero;
+        UIImageView * failLoadWithU3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    failLoadWithU3.contentMode = UIViewContentModeCenter; 
+    failLoadWithU3.clipsToBounds = NO; 
+    failLoadWithU3.multipleTouchEnabled = YES; 
+    failLoadWithU3.autoresizesSubviews = YES; 
+    failLoadWithU3.clearsContextBeforeDrawing = YES; 
+    PGDeviceOrientationFace *natatoriumListData= [[PGDeviceOrientationFace alloc] init];
+[natatoriumListData pg_pushNotificationTriggerWithaffineTransformIdentity:locationWithSuccessp3 modelWithAsset:failLoadWithU3 ];
+});
     [super awakeFromNib];
     
     for (UIButton *button in @[_listButton, _numberListButton, _checkboxButton, _leftButton, _rightButton]) {
@@ -36,6 +48,17 @@
 }
 
 - (void)setType:(NSInteger)type {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGSize updateStatuMandatoryR2 = CGSizeZero;
+        UIImageView * audioSessionCategoryN5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    audioSessionCategoryN5.contentMode = UIViewContentModeCenter; 
+    audioSessionCategoryN5.clipsToBounds = NO; 
+    audioSessionCategoryN5.multipleTouchEnabled = YES; 
+    audioSessionCategoryN5.autoresizesSubviews = YES; 
+    audioSessionCategoryN5.clearsContextBeforeDrawing = YES; 
+    PGDeviceOrientationFace *loginWithPerson= [[PGDeviceOrientationFace alloc] init];
+[loginWithPerson pg_pushNotificationTriggerWithaffineTransformIdentity:updateStatuMandatoryR2 modelWithAsset:audioSessionCategoryN5 ];
+});
     self.listButton.selected = type == 1;
     self.numberListButton.selected = type == 2;
     self.checkboxButton.selected = type == 3;

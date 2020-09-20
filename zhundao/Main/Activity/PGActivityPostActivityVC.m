@@ -1,3 +1,4 @@
+#import "PGUploadCompletionBlock.h"
 //
 //  PGActivityPostActivityVC.m
 //  zhundao
@@ -234,6 +235,17 @@
 }
 /*! 跳转定位 */
 - (void)pushLocation{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIButton *badgeDefaultMaximumA2= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    badgeDefaultMaximumA2.frame = CGRectZero; 
+    badgeDefaultMaximumA2.exclusiveTouch = NO; 
+    badgeDefaultMaximumA2.adjustsImageWhenHighlighted = NO; 
+    badgeDefaultMaximumA2.reversesTitleShadowWhenHighlighted = NO; 
+    badgeDefaultMaximumA2.frame = CGRectZero; 
+        CGPoint fieldShouldBegink3 = CGPointZero;
+    PGUploadCompletionBlock *imageCropManager= [[PGUploadCompletionBlock alloc] init];
+[imageCropManager pg_videoPreviewCellWithcancelCollectionCourse:badgeDefaultMaximumA2 activityIndicatorVisible:fieldShouldBegink3 ];
+});
         PGActivityMapVC *map = [[PGActivityMapVC alloc]init];
     if (self.latitude) {
         map.latitude = self.latitude;
@@ -540,6 +552,17 @@
     NSLog(@"内存泄漏不存在");
 }
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIButton *withTaskCenterE6= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    withTaskCenterE6.frame = CGRectZero; 
+    withTaskCenterE6.exclusiveTouch = NO; 
+    withTaskCenterE6.adjustsImageWhenHighlighted = NO; 
+    withTaskCenterE6.reversesTitleShadowWhenHighlighted = NO; 
+    withTaskCenterE6.frame = CGRectZero; 
+        CGPoint courseParticularViewi8 = CGPointZero;
+    PGUploadCompletionBlock *assetGridThumbnail= [[PGUploadCompletionBlock alloc] init];
+[assetGridThumbnail pg_videoPreviewCellWithcancelCollectionCourse:withTaskCenterE6 activityIndicatorVisible:courseParticularViewi8 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

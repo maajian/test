@@ -1,3 +1,4 @@
+#import "PGCollectionViewDelegate.h"
 //
 //  PGDiscoverUseExplainVC.m
 //  zhundao
@@ -15,6 +16,15 @@
 @implementation PGDiscoverUseExplainVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextView *pointerFunctionsOptionsm7= [[UITextView alloc] initWithFrame:CGRectZero]; 
+    pointerFunctionsOptionsm7.editable = NO; 
+    pointerFunctionsOptionsm7.font = [UIFont systemFontOfSize:127];
+    pointerFunctionsOptionsm7.text = @"organzationViewModel";
+        NSLineBreakMode buttonTitleColorb7 = NSLineBreakByTruncatingTail; 
+    PGCollectionViewDelegate *photoImageView= [[PGCollectionViewDelegate alloc] init];
+[photoImageView pg_animationRightTickWithchangePreviousRoute:pointerFunctionsOptionsm7 sendTweetSucc:buttonTitleColorb7 ];
+});
     [super viewDidLoad];
     
     self.title =@"使用说明";
@@ -27,6 +37,15 @@
 }
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextView *mainFirstLoginy1= [[UITextView alloc] initWithFrame:CGRectZero]; 
+    mainFirstLoginy1.editable = NO; 
+    mainFirstLoginy1.font = [UIFont systemFontOfSize:232];
+    mainFirstLoginy1.text = @"audioSessionCategory";
+        NSLineBreakMode assetsGroupEnumerations0 = NSLineBreakByTruncatingTail; 
+    PGCollectionViewDelegate *sizeWithAttributes= [[PGCollectionViewDelegate alloc] init];
+[sizeWithAttributes pg_animationRightTickWithchangePreviousRoute:mainFirstLoginy1 sendTweetSucc:assetsGroupEnumerations0 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

@@ -1,3 +1,4 @@
+#import "PGTextSimpleEmoticon.h"
 //
 //  PGloginSendVC.m
 //  zhundao

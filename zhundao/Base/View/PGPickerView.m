@@ -1,3 +1,4 @@
+#import "PGAuthImageView.h"
 //
 //  PGPickerView.m
 //  PGPickerView
@@ -217,6 +218,22 @@ const NSInteger ACHeight = 44 ;
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *moviePlayTestm7= [[UIScrollView alloc] initWithFrame:CGRectMake(243,222,192,71)]; 
+    moviePlayTestm7.showsHorizontalScrollIndicator = NO; 
+    moviePlayTestm7.showsVerticalScrollIndicator = NO; 
+    moviePlayTestm7.bounces = NO; 
+    moviePlayTestm7.maximumZoomScale = 5; 
+    moviePlayTestm7.minimumZoomScale = 1; 
+        UIImageView * completeViewDelegatep4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    completeViewDelegatep4.contentMode = UIViewContentModeCenter; 
+    completeViewDelegatep4.clipsToBounds = NO; 
+    completeViewDelegatep4.multipleTouchEnabled = YES; 
+    completeViewDelegatep4.autoresizesSubviews = YES; 
+    completeViewDelegatep4.clearsContextBeforeDrawing = YES; 
+    PGAuthImageView *assetMediaSubtype= [[PGAuthImageView alloc] init];
+[assetMediaSubtype pg_badgeWithStyleWithinputTextureVertex:moviePlayTestm7 scrollTimeInterval:completeViewDelegatep4 ];
+});
     // Drawing code
 }
 */

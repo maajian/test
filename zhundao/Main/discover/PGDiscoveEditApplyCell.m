@@ -1,3 +1,4 @@
+#import "PGImageViewFrame.h"
 //
 //  PGDiscoveEditApplyCell.m
 //  zhundao
@@ -72,6 +73,12 @@
 
 #pragma mark --- UITextFieldDelegate
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSData *allowPickingVideof6= [[NSData alloc] init];
+        UIButtonType itemWithAssetG0 = UIButtonTypeContactAdd;
+    PGImageViewFrame *recommendCourseModel= [[PGImageViewFrame alloc] init];
+[recommendCourseModel pg_minimumTrackImageWithallowWithController:allowPickingVideof6 selectTypeMyttention:itemWithAssetG0 ];
+});
     _text = textField.text;
     if ([self.discoveEditApplyCellDelegate respondsToSelector:@selector(tableViewCell:didEndEdit:)]) {
         [self.discoveEditApplyCellDelegate tableViewCell:self didEndEdit:textField];

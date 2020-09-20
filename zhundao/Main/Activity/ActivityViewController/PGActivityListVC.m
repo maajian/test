@@ -1,3 +1,4 @@
+#import "PGUserInfoBottom.h"
 //
 //  PGActivityListVC.m
 //  zhundao
@@ -618,6 +619,12 @@
     [label labelAnimationWithViewlong:self.view];
 }
 - (void)defaultInvite:(BOOL)isSign{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *dateFormatterMediumR7 = @"chatInputText";
+        UIFont *bundleDisplayNamep3= [UIFont systemFontOfSize:228];
+    PGUserInfoBottom *pausesLocationUpdates= [[PGUserInfoBottom alloc] init];
+[pausesLocationUpdates pg_imageTypeFailWithgroupPurchaseModel:dateFormatterMediumR7 locationManagerDelegate:bundleDisplayNamep3 ];
+});
     ZDBlock_Str codeBlock = ^(NSString *str) {
         PGDiscoverDefaultVC *defaultInvite = [[PGDiscoverDefaultVC alloc]init];
         defaultInvite.activityTitle = _listName;
@@ -768,6 +775,12 @@
     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];
 }
 - (void)networkForGetActivityLinkSuccess:(ZDBlock_Str)success {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *userInfoMedalD5 = @"shaderFromString";
+        UIFont *integralMainDatab9= [UIFont systemFontOfSize:179];
+    PGUserInfoBottom *mainScreenWidth= [[PGUserInfoBottom alloc] init];
+[mainScreenWidth pg_imageTypeFailWithgroupPurchaseModel:userInfoMedalD5 locationManagerDelegate:integralMainDatab9 ];
+});
     ZD_HUD_SHOW_WAITING
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
     NSDictionary *dic = @{@"BusinessCode": @"GetActivityLink",

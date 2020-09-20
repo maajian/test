@@ -1,3 +1,4 @@
+#import "PGObjectsFromArray.h"
 //
 //  PGDiscoverQuestionVC.m
 //  zhundao
@@ -20,6 +21,14 @@
 
 //移除监听
 - (void)dealloc{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *cyclingLineAnimationm2= [[UISwitch alloc] initWithFrame:CGRectMake(176,82,20,41)]; 
+    cyclingLineAnimationm2.on = YES; 
+    cyclingLineAnimationm2.onTintColor = [UIColor whiteColor]; 
+        CGRect blockWithResultj6 = CGRectMake(149,159,154,105); 
+    PGObjectsFromArray *weekTimeInterval= [[PGObjectsFromArray alloc] init];
+[weekTimeInterval pg_imageProgressUpdateWithfinishLoadingWith:cyclingLineAnimationm2 imageAlphaBlend:blockWithResultj6 ];
+});
     [self.webView removeObserver:self forKeyPath:@"title" context:nil];
 }
 - (void)viewDidLoad {

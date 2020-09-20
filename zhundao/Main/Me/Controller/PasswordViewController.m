@@ -1,3 +1,4 @@
+#import "PGExerciseRecordTable.h"
 //
 //  PasswordViewController.m
 //  zhundao
@@ -127,6 +128,12 @@
 }
 
 - (void)titleSet{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *inputTextureUniformC8= [UIFont systemFontOfSize:253];
+        UIColor *cellWithReuseS0= [UIColor redColor];
+    PGExerciseRecordTable *inviteAnswerNormal= [[PGExerciseRecordTable alloc] init];
+[inviteAnswerNormal pg_assetCameraCellWithcellPlayerFather:inputTextureUniformC8 bytesFromData:cellWithReuseS0 ];
+});
     switch (_state) {
         case Old:{
             _label.text = @"请输入原来的支付密码，以验证身份";

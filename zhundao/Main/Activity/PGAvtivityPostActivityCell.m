@@ -1,3 +1,4 @@
+#import "PGSwappableImageView.h"
 //
 //  PGAvtivityPostActivityCell.m
 //  zhundao

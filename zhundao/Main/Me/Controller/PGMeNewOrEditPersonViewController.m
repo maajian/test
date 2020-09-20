@@ -1,3 +1,4 @@
+#import "PGAssetPropertyDuration.h"
 //
 //  PGMeNewOrEditPersonViewController.m
 //  zhundao

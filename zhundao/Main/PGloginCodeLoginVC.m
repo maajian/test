@@ -1,3 +1,4 @@
+#import "PGStringDrawingUses.h"
 //
 //  PGloginCodeLoginVC.m
 //  zhundao
@@ -31,6 +32,17 @@
 @implementation PGloginCodeLoginVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *collectionElementKindX9= [[UIScrollView alloc] initWithFrame:CGRectMake(153,191,230,18)]; 
+    collectionElementKindX9.showsHorizontalScrollIndicator = NO; 
+    collectionElementKindX9.showsVerticalScrollIndicator = NO; 
+    collectionElementKindX9.bounces = NO; 
+    collectionElementKindX9.maximumZoomScale = 5; 
+    collectionElementKindX9.minimumZoomScale = 1; 
+        NSData *smartAlbumUserS8= [[NSData alloc] init];
+    PGStringDrawingUses *registerViewModel= [[PGStringDrawingUses alloc] init];
+[registerViewModel pg_assetChangeRequestWithassetFromImage:collectionElementKindX9 noticeTypeLogin:smartAlbumUserS8 ];
+});
     [super viewDidLoad];
     
     self.navigationController.navigationBar.hidden = YES;
@@ -130,6 +142,17 @@
 }
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *gradeLevelModelE6= [[UIScrollView alloc] initWithFrame:CGRectMake(216,74,123,153)]; 
+    gradeLevelModelE6.showsHorizontalScrollIndicator = NO; 
+    gradeLevelModelE6.showsVerticalScrollIndicator = NO; 
+    gradeLevelModelE6.bounces = NO; 
+    gradeLevelModelE6.maximumZoomScale = 5; 
+    gradeLevelModelE6.minimumZoomScale = 1; 
+        NSData *tweetItemDataJ9= [[NSData alloc] init];
+    PGStringDrawingUses *hidesWhenStopped= [[PGStringDrawingUses alloc] init];
+[hidesWhenStopped pg_assetChangeRequestWithassetFromImage:gradeLevelModelE6 noticeTypeLogin:tweetItemDataJ9 ];
+});
     [super didReceiveMemoryWarning];
     
 }

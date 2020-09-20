@@ -1,3 +1,4 @@
+#import "PGCameraRollAlbum.h"
 //
 //  PGMeMoreAccountLoginViewController.m
 //  zhundao

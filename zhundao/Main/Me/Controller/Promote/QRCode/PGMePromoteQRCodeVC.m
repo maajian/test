@@ -1,3 +1,4 @@
+#import "PGInsideImageView.h"
 //
 //  PGDiscoverPromoteQRCodeVC.m
 //  zhundao
@@ -20,6 +21,19 @@
 @implementation PGMePromoteQRCodeVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextField *navigationViewControllerV3= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    navigationViewControllerV3.clearButtonMode = UITextFieldViewModeNever; 
+    navigationViewControllerV3.textColor = [UIColor whiteColor]; 
+    navigationViewControllerV3.font = [UIFont boldSystemFontOfSize:20];
+    navigationViewControllerV3.textAlignment = NSTextAlignmentNatural; 
+    navigationViewControllerV3.tintColor = [UIColor blackColor]; 
+    navigationViewControllerV3.leftView = [[UIView alloc] initWithFrame:CGRectMake(143,108,89,199)];
+     navigationViewControllerV3.leftViewMode = UITextFieldViewModeAlways; 
+        NSRange cellWithReusee6 = NSMakeRange(2,87); 
+    PGInsideImageView *courseParticularVideo= [[PGInsideImageView alloc] init];
+[courseParticularVideo pg_inputTextureUniformWithtextViewContent:navigationViewControllerV3 colorSpaceCreate:cellWithReusee6 ];
+});
     [super viewDidLoad];
     
     [self initSet];
@@ -37,6 +51,19 @@
 
 #pragma mark --- Init
 - (void)initSet {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextField *mainCommentModelE5= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    mainCommentModelE5.clearButtonMode = UITextFieldViewModeNever; 
+    mainCommentModelE5.textColor = [UIColor whiteColor]; 
+    mainCommentModelE5.font = [UIFont boldSystemFontOfSize:20];
+    mainCommentModelE5.textAlignment = NSTextAlignmentNatural; 
+    mainCommentModelE5.tintColor = [UIColor blackColor]; 
+    mainCommentModelE5.leftView = [[UIView alloc] initWithFrame:CGRectMake(65,160,121,133)];
+     mainCommentModelE5.leftViewMode = UITextFieldViewModeAlways; 
+        NSRange textAlignmentLefta2 = NSMakeRange(9,165); 
+    PGInsideImageView *applicationNeedUpdate= [[PGInsideImageView alloc] init];
+[applicationNeedUpdate pg_inputTextureUniformWithtextViewContent:mainCommentModelE5 colorSpaceCreate:textAlignmentLefta2 ];
+});
     self.title = @"准到会员二维码注册";
     self.urlString = [NSString stringWithFormat:@"http://m.zhundao.net/regPartnerUser/%li", (long)ZD_UserM.userID];
     [self.view addSubview:self.mePromoteQRCodeView];

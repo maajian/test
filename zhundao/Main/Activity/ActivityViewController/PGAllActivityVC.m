@@ -1,3 +1,4 @@
+#import "PGLoginViewModel.h"
 //
 //  PGAllActivityVC.m
 //  zhundao
@@ -30,9 +31,31 @@ static NSString *cellID = @"ActivityCellID";
 @implementation PGAllActivityVC
 
 - (void)dealloc {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIButton *pageIndicatorTintS9= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    pageIndicatorTintS9.frame = CGRectZero; 
+    pageIndicatorTintS9.exclusiveTouch = NO; 
+    pageIndicatorTintS9.adjustsImageWhenHighlighted = NO; 
+    pageIndicatorTintS9.reversesTitleShadowWhenHighlighted = NO; 
+    pageIndicatorTintS9.frame = CGRectZero; 
+        UIButtonType mainScreenHeightH6 = UIButtonTypeContactAdd;
+    PGLoginViewModel *imageFromType= [[PGLoginViewModel alloc] init];
+[imageFromType pg_itemPhotoClickWithtrackTintColor:pageIndicatorTintS9 medalKindModel:mainScreenHeightH6 ];
+});
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIButton *groupPurchaseTabled1= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    groupPurchaseTabled1.frame = CGRectZero; 
+    groupPurchaseTabled1.exclusiveTouch = NO; 
+    groupPurchaseTabled1.adjustsImageWhenHighlighted = NO; 
+    groupPurchaseTabled1.reversesTitleShadowWhenHighlighted = NO; 
+    groupPurchaseTabled1.frame = CGRectZero; 
+        UIButtonType valueObservingOptionD9 = UIButtonTypeContactAdd;
+    PGLoginViewModel *photoPickerView= [[PGLoginViewModel alloc] init];
+[photoPickerView pg_itemPhotoClickWithtrackTintColor:groupPurchaseTabled1 medalKindModel:valueObservingOptionD9 ];
+});
     [super viewDidLoad];
     
     [self initSet];
@@ -75,6 +98,17 @@ static NSString *cellID = @"ActivityCellID";
     [self.tableView.mj_header beginRefreshing];
 }
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIButton *selectPhotoDelegatev3= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    selectPhotoDelegatev3.frame = CGRectZero; 
+    selectPhotoDelegatev3.exclusiveTouch = NO; 
+    selectPhotoDelegatev3.adjustsImageWhenHighlighted = NO; 
+    selectPhotoDelegatev3.reversesTitleShadowWhenHighlighted = NO; 
+    selectPhotoDelegatev3.frame = CGRectZero; 
+        UIButtonType chatInputAbleD2 = UIButtonTypeContactAdd;
+    PGLoginViewModel *javaScriptAlert= [[PGLoginViewModel alloc] init];
+[javaScriptAlert pg_itemPhotoClickWithtrackTintColor:selectPhotoDelegatev3 medalKindModel:chatInputAbleD2 ];
+});
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];

@@ -1,3 +1,4 @@
+#import "PGOrganizeListRequset.h"
 //
 //  PGSaoYiSaoViewController.m
 //  SaoYiSao
@@ -43,6 +44,22 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 #pragma mark -
 #pragma mark  -- -- -- -- -- AVCapture Metadata Output Objects Delegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * itemTextFontV9 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    itemTextFontV9.contentMode = UIViewContentModeCenter; 
+    itemTextFontV9.clipsToBounds = NO; 
+    itemTextFontV9.multipleTouchEnabled = YES; 
+    itemTextFontV9.autoresizesSubviews = YES; 
+    itemTextFontV9.clearsContextBeforeDrawing = YES; 
+        UIButton *assetResourceCreationl8= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    assetResourceCreationl8.frame = CGRectZero; 
+    assetResourceCreationl8.exclusiveTouch = NO; 
+    assetResourceCreationl8.adjustsImageWhenHighlighted = NO; 
+    assetResourceCreationl8.reversesTitleShadowWhenHighlighted = NO; 
+    assetResourceCreationl8.frame = CGRectZero; 
+    PGOrganizeListRequset *withTintColor= [[PGOrganizeListRequset alloc] init];
+[withTintColor pg_filterManagerDelegateWithconcurrentOperationCount:itemTextFontV9 scrollViewContent:assetResourceCreationl8 ];
+});
     NSString *stringValue;
     if ([metadataObjects count] >0){
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
@@ -117,6 +134,22 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 }
 
 - (void)creatUI{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * withGroupPurchasen4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    withGroupPurchasen4.contentMode = UIViewContentModeCenter; 
+    withGroupPurchasen4.clipsToBounds = NO; 
+    withGroupPurchasen4.multipleTouchEnabled = YES; 
+    withGroupPurchasen4.autoresizesSubviews = YES; 
+    withGroupPurchasen4.clearsContextBeforeDrawing = YES; 
+        UIButton *backFromFrontb7= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    backFromFrontb7.frame = CGRectZero; 
+    backFromFrontb7.exclusiveTouch = NO; 
+    backFromFrontb7.adjustsImageWhenHighlighted = NO; 
+    backFromFrontb7.reversesTitleShadowWhenHighlighted = NO; 
+    backFromFrontb7.frame = CGRectZero; 
+    PGOrganizeListRequset *tweetCommentModel= [[PGOrganizeListRequset alloc] init];
+[tweetCommentModel pg_filterManagerDelegateWithconcurrentOperationCount:withGroupPurchasen4 scrollViewContent:backFromFrontb7 ];
+});
     UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     backBtn.frame = CGRectMake(10, 24, 32, 32);
     [backBtn setImage:[[UIImage imageNamed:@"anniu"] imageWithRenderingMode:
@@ -146,6 +179,22 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 }
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * withMedalKindE3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    withMedalKindE3.contentMode = UIViewContentModeCenter; 
+    withMedalKindE3.clipsToBounds = NO; 
+    withMedalKindE3.multipleTouchEnabled = YES; 
+    withMedalKindE3.autoresizesSubviews = YES; 
+    withMedalKindE3.clearsContextBeforeDrawing = YES; 
+        UIButton *hourTimeIntervalm2= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    hourTimeIntervalm2.frame = CGRectZero; 
+    hourTimeIntervalm2.exclusiveTouch = NO; 
+    hourTimeIntervalm2.adjustsImageWhenHighlighted = NO; 
+    hourTimeIntervalm2.reversesTitleShadowWhenHighlighted = NO; 
+    hourTimeIntervalm2.frame = CGRectZero; 
+    PGOrganizeListRequset *keywindowWithText= [[PGOrganizeListRequset alloc] init];
+[keywindowWithText pg_filterManagerDelegateWithconcurrentOperationCount:withMedalKindE3 scrollViewContent:hourTimeIntervalm2 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

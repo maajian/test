@@ -1,3 +1,4 @@
+#import "PGCaseInsensitiveSearch.h"
 //
 //  PGAvtivityInviteCollectionView.m
 //  zhundao

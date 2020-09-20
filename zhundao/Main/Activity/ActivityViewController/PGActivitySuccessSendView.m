@@ -1,3 +1,4 @@
+#import "PGScrollViewDeceleration.h"
 //
 //  PGActivitySuccessSendView.m
 //  zhundao

@@ -1,3 +1,4 @@
+#import "PGDailyCourseModel.h"
 //
 //  PGDiscoverPromoteCostomContactVC.m
 //  zhundao
@@ -33,6 +34,14 @@
 @implementation PGMePromoteCustomContactVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets errorWithStatusm7 = UIEdgeInsetsMake(85,86,72,40); 
+        UISwitch *videoSendIconb6= [[UISwitch alloc] initWithFrame:CGRectMake(215,69,178,62)]; 
+    videoSendIconb6.on = YES; 
+    videoSendIconb6.onTintColor = [UIColor whiteColor]; 
+    PGDailyCourseModel *receiveRemoteNotification= [[PGDailyCourseModel alloc] init];
+[receiveRemoteNotification pg_interfaceOrientationMaskWithtrainCommentModel:errorWithStatusm7 receiveMemoryWarning:videoSendIconb6 ];
+});
     [super viewDidLoad];
     
     [self initSet];
@@ -93,6 +102,14 @@
     }];
 }
 - (void)networkForNotice {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets assetExportSessiong1 = UIEdgeInsetsMake(166,98,117,128); 
+        UISwitch *courseChoicenessColumnistJ1= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    courseChoicenessColumnistJ1.on = YES; 
+    courseChoicenessColumnistJ1.onTintColor = [UIColor whiteColor]; 
+    PGDailyCourseModel *weekdayCalendarUnit= [[PGDailyCourseModel alloc] init];
+[weekdayCalendarUnit pg_interfaceOrientationMaskWithtrainCommentModel:assetExportSessiong1 receiveMemoryWarning:courseChoicenessColumnistJ1 ];
+});
     ZD_WeakSelf
     [self.viewModel getNoticeSuccess:^{
         [weakSelf.tableView reloadData];

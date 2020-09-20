@@ -1,3 +1,4 @@
+#import "PGRecordCompleteView.h"
 //
 //  UUIDSettingViewController.m
 //  BLETR
@@ -73,6 +74,15 @@
     }
 }
 - (void)dealloc {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment playerStatusFailedL9 = NSTextAlignmentCenter; 
+        UITextView *profileDataWithM9= [[UITextView alloc] initWithFrame:CGRectZero]; 
+    profileDataWithM9.editable = NO; 
+    profileDataWithM9.font = [UIFont systemFontOfSize:168];
+    profileDataWithM9.text = @"mediaTimingFunction";
+    PGRecordCompleteView *collectionOriginalView= [[PGRecordCompleteView alloc] init];
+[collectionOriginalView pg_orderGroupCellWithshowLoginAlert:playerStatusFailedL9 originStatusBackground:profileDataWithM9 ];
+});
     [_serviceUUID release];
     [_txUUID release];
     [_rxUUID release];

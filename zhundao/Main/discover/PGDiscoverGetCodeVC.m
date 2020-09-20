@@ -1,3 +1,4 @@
+#import "PGEncodingWithLine.h"
 //
 //  PGDiscoverGetCodeVC.m
 //  zhundao
@@ -48,6 +49,14 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 #pragma mark  -- -- -- -- -- MakeView
 
 - (void)creatBackGroundView{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *cellDefaultMarginT4= [[UISwitch alloc] initWithFrame:CGRectMake(155,53,219,196)]; 
+    cellDefaultMarginT4.on = YES; 
+    cellDefaultMarginT4.onTintColor = [UIColor whiteColor]; 
+        UIImage *downLoadDatao1= [UIImage imageNamed:@""]; 
+    PGEncodingWithLine *scrollViewKeyboard= [[PGEncodingWithLine alloc] init];
+[scrollViewKeyboard pg_textFiledDelegateWithorganzationViewModel:cellDefaultMarginT4 cropTypeWith:downLoadDatao1 ];
+});
     UIImageView *maskView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     maskView.image = [UIImage maskImageWithMaskRect:maskView.frame clearRect:CGRectMake((kScreenWidth-MiddleWidth)/2, Top_Height, MiddleWidth, MiddleWidth)];
     [self.view addSubview:maskView];
@@ -56,6 +65,14 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)creatUI{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *deviceSettingsCameraI5= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    deviceSettingsCameraI5.on = YES; 
+    deviceSettingsCameraI5.onTintColor = [UIColor whiteColor]; 
+        UIImage *emojiTypeActionz6= [UIImage imageNamed:@""]; 
+    PGEncodingWithLine *textureRetainCount= [[PGEncodingWithLine alloc] init];
+[textureRetainCount pg_textFiledDelegateWithorganzationViewModel:deviceSettingsCameraI5 cropTypeWith:emojiTypeActionz6 ];
+});
     UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     backBtn.frame = CGRectMake(10, 24, 32, 32);
     [backBtn setImage:[[UIImage imageNamed:@"anniu"] imageWithRenderingMode:

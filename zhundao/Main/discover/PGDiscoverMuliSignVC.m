@@ -1,3 +1,4 @@
+#import "PGSwimScrollView.h"
 //
 //  PGDiscoverMuliSignVC.m
 //  zhundao
@@ -121,6 +122,12 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
       [[PGSignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET addTime = '%@'  where VCode = '%@' AND signID = %li",timeStr,stringValue,(long)self.signID]];
 }
 - (void)netWorkWithstringValue:(NSString *)stringValue {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSData *attentionViewControllerr8= [[NSData alloc] init];
+        NSRange codeLoginViewo8 = NSMakeRange(8,65); 
+    PGSwimScrollView *gradeUserModel= [[PGSwimScrollView alloc] init];
+[gradeUserModel pg_paragraphStyleAttributeWithprimaryStudyData:attentionViewControllerr8 ringRotationAnimation:codeLoginViewo8 ];
+});
   NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByQrcode?accessKey=%@&vCode=%@&checkInId=%li&checkInWay=6",zhundaoApi,_acckey,stringValue,(long)self.signID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];

@@ -1,3 +1,4 @@
+#import "PGSliderFillColor.h"
 //
 //  PGDiscoveEditApplyFooterView.m
 //  zhundao

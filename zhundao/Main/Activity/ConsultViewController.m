@@ -1,3 +1,4 @@
+#import "PGInputViewContent.h"
 //
 //  ConsultViewController.m
 //  zhundao
@@ -261,9 +262,27 @@
     [self.view addSubview:headerView];
 }
 - (void)dealloc{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *weekTimeIntervalW6= [UIFont systemFontOfSize:15];
+        UITextView *taskCenterTablef7= [[UITextView alloc] initWithFrame:CGRectMake(205,213,28,161)]; 
+    taskCenterTablef7.editable = NO; 
+    taskCenterTablef7.font = [UIFont systemFontOfSize:129];
+    taskCenterTablef7.text = @"withVertexShader";
+    PGInputViewContent *withSessionPreset= [[PGInputViewContent alloc] init];
+[withSessionPreset pg_lightBlackColorWithfansWithUser:weekTimeIntervalW6 socialUserInfo:taskCenterTablef7 ];
+});
     NSLog(@"dealloc");
 }
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *captureSessionPresetB9= [UIFont systemFontOfSize:89];
+        UITextView *fromVideoFilej4= [[UITextView alloc] initWithFrame:CGRectZero]; 
+    fromVideoFilej4.editable = NO; 
+    fromVideoFilej4.font = [UIFont systemFontOfSize:169];
+    fromVideoFilej4.text = @"photoPickerPhoto";
+    PGInputViewContent *assetResourceLoading= [[PGInputViewContent alloc] init];
+[assetResourceLoading pg_lightBlackColorWithfansWithUser:captureSessionPresetB9 socialUserInfo:fromVideoFilej4 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -277,6 +296,15 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *finishLoadingWithD3= [UIFont systemFontOfSize:186];
+        UITextView *stringUsingEncodingj2= [[UITextView alloc] initWithFrame:CGRectMake(129,242,71,33)]; 
+    stringUsingEncodingj2.editable = NO; 
+    stringUsingEncodingj2.font = [UIFont systemFontOfSize:49];
+    stringUsingEncodingj2.text = @"dataReadingMapped";
+    PGInputViewContent *launchOptionsDirections= [[PGInputViewContent alloc] init];
+[launchOptionsDirections pg_lightBlackColorWithfansWithUser:finishLoadingWithD3 socialUserInfo:stringUsingEncodingj2 ];
+});
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

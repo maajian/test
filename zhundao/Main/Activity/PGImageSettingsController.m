@@ -1,3 +1,4 @@
+#import "PGViewWithIdentifier.h"
 //
 //  PGImageSettingsController.m
 //  SimpleWord
@@ -177,6 +178,15 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange playerItemPlaybackd5 = NSMakeRange(2,81); 
+        UITextView *applicationStateActiveW0= [[UITextView alloc] initWithFrame:CGRectMake(23,211,169,100)]; 
+    applicationStateActiveW0.editable = NO; 
+    applicationStateActiveW0.font = [UIFont systemFontOfSize:22];
+    applicationStateActiveW0.text = @"moreRecommendUser";
+    PGViewWithIdentifier *swimRecordData= [[PGViewWithIdentifier alloc] init];
+[swimRecordData pg_keyboardTypeNumberWithvideoPreviewCell:playerItemPlaybackd5 cyclingLineAnimation:applicationStateActiveW0 ];
+});
     if ([indexPath isEqual:self.selectedIndexPath]) {
         self.selectedIndexPath = nil;
         self.selecting = NO;

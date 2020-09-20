@@ -1,3 +1,4 @@
+#import "PGRecoderSelectPicker.h"
 //
 //  OneConsultTableViewCell.m
 //  zhundao
@@ -17,11 +18,23 @@
 @implementation OneConsultTableViewCell
 
 - (void)awakeFromNib {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange mutableVideoCompositiona1 = NSMakeRange(7,83); 
+        CGPoint orderDetailCellN1 = CGPointMake(1,250); 
+    PGRecoderSelectPicker *progressUpdateBlock= [[PGRecoderSelectPicker alloc] init];
+[progressUpdateBlock pg_updateStatuMandatoryWithcolumnistChildView:mutableVideoCompositiona1 integralRecordData:orderDetailCellN1 ];
+});
     [super awakeFromNib];
     // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange timeModelDatac4 = NSMakeRange(10,72); 
+        CGPoint postImageWithR9 = CGPointMake(2,90); 
+    PGRecoderSelectPicker *readingMutableContainers= [[PGRecoderSelectPicker alloc] init];
+[readingMutableContainers pg_updateStatuMandatoryWithcolumnistChildView:timeModelDatac4 integralRecordData:postImageWithR9 ];
+});
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state

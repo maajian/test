@@ -1,3 +1,4 @@
+#import "PGMainCommentData.h"
 //
 //  WGBDatePickerView.m
 //  DatePick
@@ -178,10 +179,26 @@
 }
 
 - (void)handleDateTopViewLeft {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewCellSeparatorStyle blendModeOverlaym0 = UITableViewCellSeparatorStyleNone; 
+        UIActivityIndicatorView *scrollViewContento6= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    scrollViewContento6.hidden = YES; 
+    scrollViewContento6.hidesWhenStopped = YES; 
+    PGMainCommentData *courseRecommendCell= [[PGMainCommentData alloc] init];
+[courseRecommendCell pg_badgeAnimTypeWithuploadCompletionBlock:blendModeOverlaym0 autoAdjustTrack:scrollViewContento6 ];
+});
     [self end];
 }
 
 - (void)handleDateTopViewRight {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewCellSeparatorStyle viewControllerContextd9 = UITableViewCellSeparatorStyleNone; 
+        UIActivityIndicatorView *authorizationStatusDeniedR4= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    authorizationStatusDeniedR4.hidden = YES; 
+    authorizationStatusDeniedR4.hidesWhenStopped = YES; 
+    PGMainCommentData *failProvisionalNavigation= [[PGMainCommentData alloc] init];
+[failProvisionalNavigation pg_badgeAnimTypeWithuploadCompletionBlock:viewControllerContextd9 autoAdjustTrack:authorizationStatusDeniedR4 ];
+});
 
     if (self.determineBlock) {
         self.determineBlock(self.dateP.date);

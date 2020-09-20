@@ -1,3 +1,4 @@
+#import "PGAssetsWithOptions.h"
 //
 //  PGStatisticsVC.m
 //  jingjing
@@ -61,6 +62,15 @@ ZDGetter_MutableArray(dataSource)
     [self.scrollView addSubview:self.bottomView];
 }
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISlider *remoteNotificationsWithX8= [[UISlider alloc] initWithFrame:CGRectZero]; 
+    remoteNotificationsWithX8.minimumValue = 0; 
+    remoteNotificationsWithX8.maximumValue = 100; 
+    remoteNotificationsWithX8.value =44; 
+        CGPoint imageTextureDelegateq4 = CGPointZero;
+    PGAssetsWithOptions *bundleDisplayName= [[PGAssetsWithOptions alloc] init];
+[bundleDisplayName pg_textFieldViewWithpresetsCompatibleWith:remoteNotificationsWithX8 calendarUnitYear:imageTextureDelegateq4 ];
+});
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];

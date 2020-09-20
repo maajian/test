@@ -1,3 +1,4 @@
+#import "PGDiscoveryViewController.h"
 //
 //  PGActivityPostEmailVC.m
 //  zhundao
@@ -115,6 +116,12 @@
 }
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewCellSeparatorStyle becomeActiveNotificationx0 = UITableViewCellSeparatorStyleNone; 
+        NSString *numberFormatterRoundJ8 = @"withMedalKind";
+    PGDiscoveryViewController *orderDetailView= [[PGDiscoveryViewController alloc] init];
+[orderDetailView pg_timesFromSliderWithscreenButtonClick:becomeActiveNotificationx0 withJsonString:numberFormatterRoundJ8 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

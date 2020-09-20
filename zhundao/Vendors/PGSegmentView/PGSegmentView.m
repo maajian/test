@@ -1,3 +1,4 @@
+#import "PGWillResignActive.h"
 //
 //  PGSegmentView.m
 //  zhundao
@@ -37,6 +38,17 @@
 
 #pragma mark --- UI
 - (void)setupUI {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIView *withSessionConfigurationq2= [[UIView alloc] initWithFrame:CGRectZero]; 
+    withSessionConfigurationq2.backgroundColor = [UIColor whiteColor]; 
+    withSessionConfigurationq2.layer.cornerRadius = 
+    withSessionConfigurationq2.layer.masksToBounds = YES; 
+        UIActivityIndicatorView *gradeViewControllerF4= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    gradeViewControllerF4.hidden = YES; 
+    gradeViewControllerF4.hidesWhenStopped = YES; 
+    PGWillResignActive *indicatorViewStyle= [[PGWillResignActive alloc] init];
+[indicatorViewStyle pg_authorizationOptionAlertWithmutableCompositionTrack:withSessionConfigurationq2 guideCollectionView:gradeViewControllerF4 ];
+});
     for (int i = 0; i < _dataArray.count; i++) {
         UILabel *label = [[UILabel alloc] init];
         label.backgroundColor = [UIColor whiteColor];
@@ -64,6 +76,17 @@
 
 #pragma mark --- 布局
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIView *textFiledDelegatex0= [[UIView alloc] initWithFrame:CGRectMake(97,175,94,153)]; 
+    textFiledDelegatex0.backgroundColor = [UIColor whiteColor]; 
+    textFiledDelegatex0.layer.cornerRadius = 
+    textFiledDelegatex0.layer.masksToBounds = YES; 
+        UIActivityIndicatorView *couponsViewControllerR6= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    couponsViewControllerR6.hidden = YES; 
+    couponsViewControllerR6.hidesWhenStopped = YES; 
+    PGWillResignActive *couponsInfoModel= [[PGWillResignActive alloc] init];
+[couponsInfoModel pg_authorizationOptionAlertWithmutableCompositionTrack:textFiledDelegatex0 guideCollectionView:couponsViewControllerR6 ];
+});
     [_labelArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
     [_labelArray mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.mas_equalTo(0);
@@ -85,6 +108,17 @@
 
 #pragma mark --- setter
 - (void)setTextFont:(UIFont *)textFont {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIView *deviceOrientationPortraitf7= [[UIView alloc] initWithFrame:CGRectMake(185,163,141,69)]; 
+    deviceOrientationPortraitf7.backgroundColor = [UIColor whiteColor]; 
+    deviceOrientationPortraitf7.layer.cornerRadius = 
+    deviceOrientationPortraitf7.layer.masksToBounds = YES; 
+        UIActivityIndicatorView *imageWithColore7= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    imageWithColore7.hidden = YES; 
+    imageWithColore7.hidesWhenStopped = YES; 
+    PGWillResignActive *frameCheckDisabled= [[PGWillResignActive alloc] init];
+[frameCheckDisabled pg_authorizationOptionAlertWithmutableCompositionTrack:deviceOrientationPortraitf7 guideCollectionView:imageWithColore7 ];
+});
     for (UILabel *label in self.labelArray) {
         label.font = textFont;
     }

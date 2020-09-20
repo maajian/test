@@ -1,3 +1,4 @@
+#import "PGSuccessWithStatus.h"
 //
 //  PGDiscoverFontChooseView.m
 //  zhundao
@@ -79,6 +80,15 @@ static float buttonHeight = 40;
 
 
 - (void)buttonAction:(UIButton *)button{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextView *likesViewModelC1= [[UITextView alloc] initWithFrame:CGRectMake(207,92,247,166)]; 
+    likesViewModelC1.editable = NO; 
+    likesViewModelC1.font = [UIFont systemFontOfSize:146];
+    likesViewModelC1.text = @"bundleShortVersion";
+        UIButtonType numberWithStringN9 = UIButtonTypeContactAdd;
+    PGSuccessWithStatus *centerViewModel= [[PGSuccessWithStatus alloc] init];
+[centerViewModel pg_trackingWithEventWithfinishPickingMedia:likesViewModelC1 openWindowsAutomatically:numberWithStringN9 ];
+});
    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
        MyButton *button = (MyButton *)obj;
        button.selected = NO;

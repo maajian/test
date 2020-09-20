@@ -1,3 +1,4 @@
+#import "PGCircleCropRadius.h"
 //
 //  PGMeMyWalletView.m
 //  zhundao
@@ -153,6 +154,17 @@
 
 #pragma mark 计算尺寸
 - (void)layoutSubviews{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle imageEdgeExtendf6 = UITableViewStylePlain; 
+        UIImageView * statusPhotoStreamK9 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    statusPhotoStreamK9.contentMode = UIViewContentModeCenter; 
+    statusPhotoStreamK9.clipsToBounds = NO; 
+    statusPhotoStreamK9.multipleTouchEnabled = YES; 
+    statusPhotoStreamK9.autoresizesSubviews = YES; 
+    statusPhotoStreamK9.clearsContextBeforeDrawing = YES; 
+    PGCircleCropRadius *itemPhotoClick= [[PGCircleCropRadius alloc] init];
+[itemPhotoClick pg_fansWithUserWithselectPhotoDelegate:imageEdgeExtendf6 failLoadingWith:statusPhotoStreamK9 ];
+});
     if (_withdrawButton) {
         float centerX = self.center.x;
         float topPad = (kScreenHeight -64 - 280)/2-80;
@@ -187,6 +199,17 @@
 }
 /*! 设置密码 */
 - (void)passWord{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle courseViewModelw7 = UITableViewStylePlain; 
+        UIImageView * titleLabelSelectededG0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    titleLabelSelectededG0.contentMode = UIViewContentModeCenter; 
+    titleLabelSelectededG0.clipsToBounds = NO; 
+    titleLabelSelectededG0.multipleTouchEnabled = YES; 
+    titleLabelSelectededG0.autoresizesSubviews = YES; 
+    titleLabelSelectededG0.clearsContextBeforeDrawing = YES; 
+    PGCircleCropRadius *pausesLocationUpdates= [[PGCircleCropRadius alloc] init];
+[pausesLocationUpdates pg_fansWithUserWithselectPhotoDelegate:courseViewModelw7 failLoadingWith:titleLabelSelectededG0 ];
+});
     if ([self.delegate respondsToSelector:@selector(setPassword)]) {
         [self.delegate setPassword];
     }
@@ -210,6 +233,17 @@
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle cacheUserInfoo6 = UITableViewStylePlain; 
+        UIImageView * separatorStyleNonet9 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    separatorStyleNonet9.contentMode = UIViewContentModeCenter; 
+    separatorStyleNonet9.clipsToBounds = NO; 
+    separatorStyleNonet9.multipleTouchEnabled = YES; 
+    separatorStyleNonet9.autoresizesSubviews = YES; 
+    separatorStyleNonet9.clearsContextBeforeDrawing = YES; 
+    PGCircleCropRadius *collectionViewScroll= [[PGCircleCropRadius alloc] init];
+[collectionViewScroll pg_fansWithUserWithselectPhotoDelegate:cacheUserInfoo6 failLoadingWith:separatorStyleNonet9 ];
+});
     // Drawing code
 }
 */

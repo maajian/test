@@ -1,3 +1,4 @@
+#import "PGUserCommentView.h"
 //
 //  PGAlertView.m
 //  PBimming
@@ -129,6 +130,22 @@
 }
 
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIButton *applicationIconBadger7= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    applicationIconBadger7.frame = CGRectZero; 
+    applicationIconBadger7.exclusiveTouch = NO; 
+    applicationIconBadger7.adjustsImageWhenHighlighted = NO; 
+    applicationIconBadger7.reversesTitleShadowWhenHighlighted = NO; 
+    applicationIconBadger7.frame = CGRectZero; 
+        UIImageView * captureFlashModeg4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    captureFlashModeg4.contentMode = UIViewContentModeCenter; 
+    captureFlashModeg4.clipsToBounds = NO; 
+    captureFlashModeg4.multipleTouchEnabled = YES; 
+    captureFlashModeg4.autoresizesSubviews = YES; 
+    captureFlashModeg4.clearsContextBeforeDrawing = YES; 
+    PGUserCommentView *imageSourceCopy= [[PGUserCommentView alloc] init];
+[imageSourceCopy pg_transformRotationAngleWithswimCircleItem:applicationIconBadger7 colorSpaceRelease:captureFlashModeg4 ];
+});
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
         make.width.mas_equalTo(kScreenWidth - 74);

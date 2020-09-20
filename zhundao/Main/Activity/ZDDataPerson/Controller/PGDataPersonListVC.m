@@ -1,3 +1,4 @@
+#import "PGPlayerStatePlaying.h"
 //
 //  PGDataPersonListVC.m
 //  jingjing
@@ -125,11 +126,27 @@
     _tableView.frame = CGRectMake(0,0, kScreenWidth, kScreenHeight);
 }
 - (void)willDismissSearchController:(UISearchController *)searchController {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *loginViewControllerA7= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    loginViewControllerA7.on = YES; 
+    loginViewControllerA7.onTintColor = [UIColor whiteColor]; 
+        NSString *withSessionConfigurationc9 = @"differenceBetweenRect";
+    PGPlayerStatePlaying *sheetWithData= [[PGPlayerStatePlaying alloc] init];
+[sheetWithData pg_scrollDirectionRightWithaxisTypeHorizontal:loginViewControllerA7 handpickViewController:withSessionConfigurationc9 ];
+});
     _tableView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight- 64);
 }
 
 #pragma mark UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *listWithCityz5= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    listWithCityz5.on = YES; 
+    listWithCityz5.onTintColor = [UIColor whiteColor]; 
+        NSString *maximumTrackImageH7 = @"infoBottomView";
+    PGPlayerStatePlaying *withRankMedal= [[PGPlayerStatePlaying alloc] init];
+[withRankMedal pg_scrollDirectionRightWithaxisTypeHorizontal:listWithCityz5 handpickViewController:maximumTrackImageH7 ];
+});
     [_viewModel.selectNameSource removeAllObjects];
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", [self.searchController.searchBar text]];
     NSArray *filterArray = [_viewModel.allNameSource filteredArrayUsingPredicate:preicate];

@@ -1,3 +1,4 @@
+#import "PGDeviceOrientationFace.h"
 //
 //  PGActivityEditWebVC.m
 //  zhundao

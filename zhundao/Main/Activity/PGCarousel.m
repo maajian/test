@@ -1,3 +1,4 @@
+#import "PGNaviTitleColor.h"
 //
 //  PGCarousel.m
 //  AJ轮播图
@@ -165,6 +166,17 @@ static NSString *cellID = @"cellID";
 }
 /*! 结束拖动 */
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *availableTextureIndexi0= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
+    availableTextureIndexi0.showsHorizontalScrollIndicator = NO; 
+    availableTextureIndexi0.showsVerticalScrollIndicator = NO; 
+    availableTextureIndexi0.bounces = NO; 
+    availableTextureIndexi0.maximumZoomScale = 5; 
+    availableTextureIndexi0.minimumZoomScale = 1; 
+        UIEdgeInsets exerciseRecordViewL1 = UIEdgeInsetsMake(207,142,109,75); 
+    PGNaviTitleColor *failProvisionalNavigation= [[PGNaviTitleColor alloc] init];
+[failProvisionalNavigation pg_asynchronouslyWithCompletionWithwithCourseParticular:availableTextureIndexi0 coachDetailModel:exerciseRecordViewL1 ];
+});
     if (_isScroll) {
          [self addTimer];
     }
@@ -189,6 +201,17 @@ static NSString *cellID = @"cellID";
 }
 
 - (void)setCurrentPageColor:(UIColor *)currentPageColor{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *groupWithPhotosX0= [[UIScrollView alloc] initWithFrame:CGRectMake(53,9,170,80)]; 
+    groupWithPhotosX0.showsHorizontalScrollIndicator = NO; 
+    groupWithPhotosX0.showsVerticalScrollIndicator = NO; 
+    groupWithPhotosX0.bounces = NO; 
+    groupWithPhotosX0.maximumZoomScale = 5; 
+    groupWithPhotosX0.minimumZoomScale = 1; 
+        UIEdgeInsets yearTimeIntervalL4 = UIEdgeInsetsMake(122,22,189,25); 
+    PGNaviTitleColor *stadiumViewModel= [[PGNaviTitleColor alloc] init];
+[stadiumViewModel pg_asynchronouslyWithCompletionWithwithCourseParticular:groupWithPhotosX0 coachDetailModel:yearTimeIntervalL4 ];
+});
     _pageControl.currentPageIndicatorTintColor = currentPageColor;
 }
 
@@ -196,6 +219,17 @@ static NSString *cellID = @"cellID";
     return _pageControl.currentPageIndicatorTintColor;
 }
 - (void)setHiddenPageCtr:(BOOL)hiddenPageCtr{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *columnistCategoryModeli1= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
+    columnistCategoryModeli1.showsHorizontalScrollIndicator = NO; 
+    columnistCategoryModeli1.showsVerticalScrollIndicator = NO; 
+    columnistCategoryModeli1.bounces = NO; 
+    columnistCategoryModeli1.maximumZoomScale = 5; 
+    columnistCategoryModeli1.minimumZoomScale = 1; 
+        UIEdgeInsets rightBottomPointd6 = UIEdgeInsetsMake(134,248,104,72); 
+    PGNaviTitleColor *orderStepView= [[PGNaviTitleColor alloc] init];
+[orderStepView pg_asynchronouslyWithCompletionWithwithCourseParticular:columnistCategoryModeli1 coachDetailModel:rightBottomPointd6 ];
+});
     _pageControl.hidden = hiddenPageCtr;
 }
 

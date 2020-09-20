@@ -1,3 +1,4 @@
+#import "PGTrainParticularStadium.h"
 //
 //  PGDataPersonAddVC.m
 //  jingjing

@@ -1,3 +1,4 @@
+#import "PGLoginViewModel.h"
 //
 //  PGActivityFeeViewController.m
 //  zhundao
@@ -32,6 +33,17 @@
 @implementation PGActivityFeeViewController
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIButton *playerStatusPlayingN5= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    playerStatusPlayingN5.frame = CGRectZero; 
+    playerStatusPlayingN5.exclusiveTouch = NO; 
+    playerStatusPlayingN5.adjustsImageWhenHighlighted = NO; 
+    playerStatusPlayingN5.reversesTitleShadowWhenHighlighted = NO; 
+    playerStatusPlayingN5.frame = CGRectZero; 
+        UIButtonType currentDownloadCountQ1 = UIButtonTypeContactAdd;
+    PGLoginViewModel *selectPhotoNavigation= [[PGLoginViewModel alloc] init];
+[selectPhotoNavigation pg_itemPhotoClickWithtrackTintColor:playerStatusPlayingN5 medalKindModel:currentDownloadCountQ1 ];
+});
     [super viewDidLoad];
     [self baseSetting];
     [self customBack];
@@ -243,6 +255,17 @@
 }
 #pragma mark --- PGActivityFeeCellDelegate
 - (void)PGActivityFeeCell:(PGActivityFeeCell *)PGActivityFeeCell showSwitchDidChange:(UISwitch *)showSwitch {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIButton *receiveScriptMessageO7= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    receiveScriptMessageO7.frame = CGRectZero; 
+    receiveScriptMessageO7.exclusiveTouch = NO; 
+    receiveScriptMessageO7.adjustsImageWhenHighlighted = NO; 
+    receiveScriptMessageO7.reversesTitleShadowWhenHighlighted = NO; 
+    receiveScriptMessageO7.frame = CGRectZero; 
+        UIButtonType fillModeBothW6 = UIButtonTypeContactAdd;
+    PGLoginViewModel *infoWithStatus= [[PGLoginViewModel alloc] init];
+[infoWithStatus pg_itemPhotoClickWithtrackTintColor:receiveScriptMessageO7 medalKindModel:fillModeBothW6 ];
+});
     if (self.dataArray.count > 1) {
         self.datadic = [self.dataArray[PGActivityFeeCell.textFIeld1.tag-100] mutableCopy];
         [self.datadic setObject:showSwitch.isOn ? @"0" : @"1" forKey:@"Status"];

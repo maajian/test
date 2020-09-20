@@ -1,3 +1,4 @@
+#import "PGMutableAttributedString.h"
 //
 //  PGDiscoverPromoteCustomContactHeaderView.m
 //  zhundao

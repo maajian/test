@@ -1,3 +1,4 @@
+#import "PGMedalWallTable.h"
 //
 //  PGActivityEditSignListVC.m
 //  zhundao
@@ -30,6 +31,12 @@
 @implementation PGActivityEditSignListVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets choicenessViewModelf9 = UIEdgeInsetsZero;
+        UITextFieldViewMode courseChoicenessColumnistj8 = UITextFieldViewModeAlways; 
+    PGMedalWallTable *autoresizingMaskInto= [[PGMedalWallTable alloc] init];
+[autoresizingMaskInto pg_articleDailyTrainWithplayerStateFailed:choicenessViewModelf9 strikethroughStyleAttribute:courseChoicenessColumnistj8 ];
+});
     [super viewDidLoad];
     [self baseSetting];
 }
@@ -425,6 +432,12 @@
 
 #pragma mark 保存 返回事件
 - (void)save {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets sizeWithAssetB6 = UIEdgeInsetsZero;
+        UITextFieldViewMode likeTweetSuccg9 = UITextFieldViewModeAlways; 
+    PGMedalWallTable *chooseStadiumView= [[PGMedalWallTable alloc] init];
+[chooseStadiumView pg_articleDailyTrainWithplayerStateFailed:sizeWithAssetB6 strikethroughStyleAttribute:likeTweetSuccg9 ];
+});
     [self.view endEditing:YES];
     NSDictionary *saveDic =  [_VM SaveWithRightMustArray:_rightMustArray leftMustArray:_leftMustArray baseArray:self.baseNameArray view:self.view];
     if (saveDic) {
@@ -512,6 +525,12 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets resetControlViewx3 = UIEdgeInsetsMake(214,57,228,114); 
+        UITextFieldViewMode textFieldWitht2 = UITextFieldViewModeAlways; 
+    PGMedalWallTable *courseParticularSection= [[PGMedalWallTable alloc] init];
+[courseParticularSection pg_articleDailyTrainWithplayerStateFailed:resetControlViewx3 strikethroughStyleAttribute:textFieldWitht2 ];
+});
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

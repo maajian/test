@@ -1,3 +1,4 @@
+#import "PGSelectOriginalPhoto.h"
 //
 //  PGDiscoverPromoteNoticeVC.m
 //  zhundao

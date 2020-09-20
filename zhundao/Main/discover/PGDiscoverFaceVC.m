@@ -1,3 +1,4 @@
+#import "PGWithRecommendCourse.h"
 //
 //  PGDiscoverFaceVC.m
 //  zhundao
@@ -27,6 +28,15 @@
 @implementation PGDiscoverFaceVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextView *chooseCellDelegatei5= [[UITextView alloc] initWithFrame:CGRectZero]; 
+    chooseCellDelegatei5.editable = NO; 
+    chooseCellDelegatei5.font = [UIFont systemFontOfSize:243];
+    chooseCellDelegatei5.text = @"organizeServiceModel";
+        NSLineBreakMode medalExplainViewA2 = NSLineBreakByTruncatingTail; 
+    PGWithRecommendCourse *modalPresentationNone= [[PGWithRecommendCourse alloc] init];
+[modalPresentationNone pg_medalDetailCellWithviewWidthPadding:chooseCellDelegatei5 dailyCourseTable:medalExplainViewA2 ];
+});
     [super viewDidLoad];
     self.title = @"人脸签到";
     [self.view addSubview:self.tableView];
@@ -143,6 +153,15 @@
 
 #pragma mark -------获取数据 
 - (void)getData{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextView *withDailyCourseA2= [[UITextView alloc] initWithFrame:CGRectMake(190,104,155,196)]; 
+    withDailyCourseA2.editable = NO; 
+    withDailyCourseA2.font = [UIFont systemFontOfSize:30];
+    withDailyCourseA2.text = @"viewContentSize";
+        NSLineBreakMode finishPickingVideoo9 = NSLineBreakByTruncatingTail; 
+    PGWithRecommendCourse *loopCommonModes= [[PGWithRecommendCourse alloc] init];
+[loopCommonModes pg_medalDetailCellWithviewWidthPadding:withDailyCourseA2 dailyCourseTable:finishPickingVideoo9 ];
+});
     [self.deviceArray removeAllObjects];
     [self.faceVM getListWithBlock:^(NSArray *dataArray) {
         NSLog(@"dic1 = %@",dataArray);
@@ -165,6 +184,15 @@
 
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextView *playerItemPlaybackD8= [[UITextView alloc] initWithFrame:CGRectZero]; 
+    playerItemPlaybackD8.editable = NO; 
+    playerItemPlaybackD8.font = [UIFont systemFontOfSize:107];
+    playerItemPlaybackD8.text = @"springWithDamping";
+        NSLineBreakMode courseClassTableC3 = NSLineBreakByTruncatingTail; 
+    PGWithRecommendCourse *trainWithOffset= [[PGWithRecommendCourse alloc] init];
+[trainWithOffset pg_medalDetailCellWithviewWidthPadding:playerItemPlaybackD8 dailyCourseTable:courseClassTableC3 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

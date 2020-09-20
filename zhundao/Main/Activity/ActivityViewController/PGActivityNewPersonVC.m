@@ -1,3 +1,4 @@
+#import "PGWithRoundCorner.h"
 //
 //  PGActivityNewPersonVC.m
 //  zhundao
@@ -35,6 +36,17 @@
 @implementation PGActivityNewPersonVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets chatInputTextp5 = UIEdgeInsetsZero;
+        UIScrollView *frontFromBacko9= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
+    frontFromBacko9.showsHorizontalScrollIndicator = NO; 
+    frontFromBacko9.showsVerticalScrollIndicator = NO; 
+    frontFromBacko9.bounces = NO; 
+    frontFromBacko9.maximumZoomScale = 5; 
+    frontFromBacko9.minimumZoomScale = 1; 
+    PGWithRoundCorner *collectionReusableView= [[PGWithRoundCorner alloc] init];
+[collectionReusableView pg_networkReachabilityStatusWithdrivingRouteSearch:chatInputTextp5 listViewModel:frontFromBacko9 ];
+});
     [super viewDidLoad];
       [self baseSetting];
     // Do any additional setup after loading the view.

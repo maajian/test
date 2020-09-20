@@ -1,3 +1,4 @@
+#import "PGTrainParticularModel.h"
 //
 //  PGDiscoverShakeTableViewDelegateObj.m
 //  zhundao

@@ -1,3 +1,4 @@
+#import "PGPhotoProgressView.h"
 //
 //  TYAlertView.m
 //  TYAlertControllerDemo

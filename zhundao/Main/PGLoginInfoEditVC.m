@@ -1,3 +1,4 @@
+#import "PGResizeAspectFill.h"
 //
 //  PGLoginInfoEditVC.m
 //  zhundao
@@ -25,6 +26,14 @@
 @implementation PGLoginInfoEditVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *kernAttributeNamee3= [[UISwitch alloc] initWithFrame:CGRectMake(1,40,20,249)]; 
+    kernAttributeNamee3.on = YES; 
+    kernAttributeNamee3.onTintColor = [UIColor whiteColor]; 
+        NSRange sectionFooterHeightc3 = NSMakeRange(8,227); 
+    PGResizeAspectFill *taskNeedFinish= [[PGResizeAspectFill alloc] init];
+[taskNeedFinish pg_socialMessageObjectWithloginWithUser:kernAttributeNamee3 countTableView:sectionFooterHeightc3 ];
+});
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden = YES;
     
@@ -59,11 +68,27 @@
 #pragma mark --- InfoEditViewDelegate
  // 返回
 - (void)backPop {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *customControlViewD8= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    customControlViewD8.on = YES; 
+    customControlViewD8.onTintColor = [UIColor whiteColor]; 
+        NSRange beautyParameterWithq9 = NSMakeRange(10,182); 
+    PGResizeAspectFill *changeReasonCategory= [[PGResizeAspectFill alloc] init];
+[changeReasonCategory pg_socialMessageObjectWithloginWithUser:customControlViewD8 countTableView:beautyParameterWithq9 ];
+});
     [self.navigationController popViewControllerAnimated:YES];
 }
 
  // 注册并登陆 
 - (void)finishEditWithName:(NSString *)name passWord:(NSString *)passWord {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *textInputNotificationW5= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    textInputNotificationW5.on = YES; 
+    textInputNotificationW5.onTintColor = [UIColor whiteColor]; 
+        NSRange fontAttributeNamep3 = NSMakeRange(3,122); 
+    PGResizeAspectFill *thumbnailFromImage= [[PGResizeAspectFill alloc] init];
+[thumbnailFromImage pg_socialMessageObjectWithloginWithUser:textInputNotificationW5 countTableView:fontAttributeNamep3 ];
+});
      MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_viewModel loginWirhCode:_code phoneStr:_phoneStr name:name passWord:passWord successBlock:^{
         [hud hideAnimated:YES afterDelay:0.5];

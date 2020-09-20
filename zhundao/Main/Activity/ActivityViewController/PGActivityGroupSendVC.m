@@ -1,3 +1,4 @@
+#import "PGNavigateItemWith.h"
 //
 //  PGActivityGroupSendVC.m
 //  zhundao
@@ -202,6 +203,19 @@
 
 #pragma mark --- action
 - (void)sureAction{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSLineBreakMode activityIndicatorVisiblem0 = NSLineBreakByTruncatingTail; 
+        UITextField *profileDataWithV5= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    profileDataWithV5.clearButtonMode = UITextFieldViewModeNever; 
+    profileDataWithV5.textColor = [UIColor whiteColor]; 
+    profileDataWithV5.font = [UIFont boldSystemFontOfSize:20];
+    profileDataWithV5.textAlignment = NSTextAlignmentNatural; 
+    profileDataWithV5.tintColor = [UIColor blackColor]; 
+    profileDataWithV5.leftView = [[UIView alloc] initWithFrame:CGRectMake(223,90,169,174)];
+     profileDataWithV5.leftViewMode = UITextFieldViewModeAlways; 
+    PGNavigateItemWith *scriptMessageHandler= [[PGNavigateItemWith alloc] init];
+[scriptMessageHandler pg_integralRecordDataWithstartCameraCapture:activityIndicatorVisiblem0 saveEmojiArray:profileDataWithV5 ];
+});
     [self.navigationController popViewControllerAnimated:YES];
 }
 

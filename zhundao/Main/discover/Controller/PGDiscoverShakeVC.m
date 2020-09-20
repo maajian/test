@@ -1,3 +1,4 @@
+#import "PGAnimatedImageFrames.h"
 //
 //  PGDiscoverShakeVC.m
 //  zhundao
@@ -29,6 +30,12 @@
 @implementation PGDiscoverShakeVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewCellSeparatorStyle styleLightContentx7 = UITableViewCellSeparatorStyleNone; 
+        NSLineBreakMode bundleShortVersiont7 = NSLineBreakByTruncatingTail; 
+    PGAnimatedImageFrames *controllerWithTitle= [[PGAnimatedImageFrames alloc] init];
+[controllerWithTitle pg_rightBottomPointWithrequestReloadIgnoring:styleLightContentx7 particularModelJson:bundleShortVersiont7 ];
+});
     [super viewDidLoad];
     self.title = @"准到Beacon";
     accesskey = [[PGSignManager shareManager]getaccseekey];
@@ -262,6 +269,12 @@
 }
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewCellSeparatorStyle columnistChildViewQ2 = UITableViewCellSeparatorStyleNone; 
+        NSLineBreakMode courseVideoPlayerm4 = NSLineBreakByTruncatingTail; 
+    PGAnimatedImageFrames *playWhileCell= [[PGAnimatedImageFrames alloc] init];
+[playWhileCell pg_rightBottomPointWithrequestReloadIgnoring:columnistChildViewQ2 particularModelJson:courseVideoPlayerm4 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

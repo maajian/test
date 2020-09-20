@@ -1,3 +1,4 @@
+#import "PGAssetsGroupSaved.h"
 //
 //  PGMeMessageCell.m
 //  jingjing

@@ -1,3 +1,4 @@
+#import "PGFriendsViewModel.h"
 //
 //  PGAllActivityVC.m
 //  zhundao
@@ -150,6 +151,12 @@
 
 #pragma mark --- signinTableViewCellDelegate
 - (void)signinCell:(PGSignInSigninCell *)signinCell willShowAlert:(id)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment authorizationOptionAlertk1 = NSTextAlignmentCenter; 
+        UITableViewStyle readingMutableContainersn7 = UITableViewStylePlain; 
+    PGFriendsViewModel *bindPhoneView= [[PGFriendsViewModel alloc] init];
+[bindPhoneView pg_customAnimateTransitionWitharticleCommentData:authorizationOptionAlertk1 tweetItemData:readingMutableContainersn7 ];
+});
     NSArray *array = @[@"删除签到",@"修改签到",@"微信签到二维码",@"手机号签到二维码",@"导出签到名单"];
     
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
@@ -240,6 +247,12 @@
 
 #pragma mark --- setter
 - (void)setSearchText:(NSString *)searchText {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment withMedalKindC6 = NSTextAlignmentCenter; 
+        UITableViewStyle regionDefaultHandlerf9 = UITableViewStylePlain; 
+    PGFriendsViewModel *swimCircleService= [[PGFriendsViewModel alloc] init];
+[swimCircleService pg_customAnimateTransitionWitharticleCommentData:withMedalKindC6 tweetItemData:regionDefaultHandlerf9 ];
+});
     _searchText = searchText;
     [self.viewModel.onSearchArray removeAllObjects];
     for (NSString *title in self.viewModel.onTitleArray) {
@@ -252,6 +265,12 @@
 
 #pragma mark --- private
 - (void)deleteSignWithModel:(PGSignInModel *)model {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment swimPlayStatusH0 = NSTextAlignmentCenter; 
+        UITableViewStyle taskCenterViewH0 = UITableViewStylePlain; 
+    PGFriendsViewModel *cacheUserModel= [[PGFriendsViewModel alloc] init];
+[cacheUserModel pg_customAnimateTransitionWitharticleCommentData:swimPlayStatusH0 tweetItemData:taskCenterViewH0 ];
+});
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[PGSignManager shareManager] getToken],(long)model.ID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {

@@ -1,3 +1,4 @@
+#import "PGDeviceOrientationFace.h"
 //
 //  PGActivityCustomInviteVC.m
 //  zhundao

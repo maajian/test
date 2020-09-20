@@ -1,3 +1,4 @@
+#import "PGNatatoriumBasicInfo.h"
 //
 //  PGDiscoverMuliPostData.m
 //  zhundao

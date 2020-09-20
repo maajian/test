@@ -1,3 +1,4 @@
+#import "PGUserDomainMask.h"
 //
 //  PGDiscoverMuliotherVC.m
 //  zhundao
@@ -20,6 +21,14 @@
 @implementation PGDiscoverMuliotherVC
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle viewCellIdentifierN5 = UITableViewStylePlain; 
+        UIActivityIndicatorView *userInfoWithm8= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    userInfoWithm8.hidden = YES; 
+    userInfoWithm8.hidesWhenStopped = YES; 
+    PGUserDomainMask *oscillatoryAnimationWith= [[PGUserDomainMask alloc] init];
+[oscillatoryAnimationWith pg_resourceWithTypeWithloginWithPerson:viewCellIdentifierN5 alipaySuccNotification:userInfoWithm8 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -149,6 +158,14 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle trainTableViewA7 = UITableViewStylePlain; 
+        UIActivityIndicatorView *javaScriptAlertf5= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    javaScriptAlertf5.hidden = YES; 
+    javaScriptAlertf5.hidesWhenStopped = YES; 
+    PGUserDomainMask *albumCloudShared= [[PGUserDomainMask alloc] init];
+[albumCloudShared pg_resourceWithTypeWithloginWithPerson:trainTableViewA7 alipaySuccNotification:javaScriptAlertf5 ];
+});
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

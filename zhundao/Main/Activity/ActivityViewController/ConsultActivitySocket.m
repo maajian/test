@@ -1,3 +1,4 @@
+#import "PGVideoRequestOptions.h"
 //
 //  ConsultActivitySocket.m
 //  zhundao
@@ -41,6 +42,15 @@
 
 /*! 断开连接 */
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISlider *swipeGestureRecognizerA3= [[UISlider alloc] initWithFrame:CGRectMake(224,125,44,6)]; 
+    swipeGestureRecognizerA3.minimumValue = 0; 
+    swipeGestureRecognizerA3.maximumValue = 100; 
+    swipeGestureRecognizerA3.value =15; 
+        UITextFieldViewMode couponsViewControllerH7 = UITextFieldViewModeAlways; 
+    PGVideoRequestOptions *separatorStyleSingle= [[PGVideoRequestOptions alloc] init];
+[separatorStyleSingle pg_hiddenScreenViewWithstatusSavePhotos:swipeGestureRecognizerA3 trainPropertyTrain:couponsViewControllerH7 ];
+});
     if (err) {
         NSLog(@"err = %@",err);
     }else{
@@ -50,6 +60,15 @@
 
 /*! 数据发送成功 */
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISlider *tweetItemModelr0= [[UISlider alloc] initWithFrame:CGRectZero]; 
+    tweetItemModelr0.minimumValue = 0; 
+    tweetItemModelr0.maximumValue = 100; 
+    tweetItemModelr0.value =55; 
+        UITextFieldViewMode organizeServiceModelf4 = UITextFieldViewModeAlways; 
+    PGVideoRequestOptions *colorSpaceCreate= [[PGVideoRequestOptions alloc] init];
+[colorSpaceCreate pg_hiddenScreenViewWithstatusSavePhotos:tweetItemModelr0 trainPropertyTrain:organizeServiceModelf4 ];
+});
     NSLog(@"成功发送数据");
     [sock readDataWithTimeout:-1 tag:tag];
 }

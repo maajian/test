@@ -1,3 +1,4 @@
+#import "PGModelWithAsset.h"
 //
 //  PGDiscoverFontstyleView.m
 //  zhundao

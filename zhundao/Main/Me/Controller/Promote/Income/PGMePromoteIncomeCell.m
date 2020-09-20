@@ -1,3 +1,4 @@
+#import "PGUploadCompletionBlock.h"
 //
 //  PGDiscoverPromoteIncomeCell.m
 //  zhundao

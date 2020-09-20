@@ -1,3 +1,4 @@
+#import "PGHorizontalScrollIndicator.h"
 //
 //  PGStyleColorCell.m
 //  SimpleWord
@@ -82,6 +83,22 @@
 }
 
 - (void)setColors:(NSArray *)colors {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * animatedImageViewo4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    animatedImageViewo4.contentMode = UIViewContentModeCenter; 
+    animatedImageViewo4.clipsToBounds = NO; 
+    animatedImageViewo4.multipleTouchEnabled = YES; 
+    animatedImageViewo4.autoresizesSubviews = YES; 
+    animatedImageViewo4.clearsContextBeforeDrawing = YES; 
+        UIImageView * moreColumnistChilde3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    moreColumnistChilde3.contentMode = UIViewContentModeCenter; 
+    moreColumnistChilde3.clipsToBounds = NO; 
+    moreColumnistChilde3.multipleTouchEnabled = YES; 
+    moreColumnistChilde3.autoresizesSubviews = YES; 
+    moreColumnistChilde3.clearsContextBeforeDrawing = YES; 
+    PGHorizontalScrollIndicator *keyboardTypeEmail= [[PGHorizontalScrollIndicator alloc] init];
+[keyboardTypeEmail pg_textAttributedStringWithcircleItemPhoto:animatedImageViewo4 classFromString:moreColumnistChilde3 ];
+});
     _colors = [colors copy];    
     [self.colorPickerView reloadData];
 }
@@ -89,6 +106,22 @@
 #pragma mark - set Color
 
 - (void)setSelectedColor:(UIColor *)selectedColor {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * timeFromDurationK0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    timeFromDurationK0.contentMode = UIViewContentModeCenter; 
+    timeFromDurationK0.clipsToBounds = NO; 
+    timeFromDurationK0.multipleTouchEnabled = YES; 
+    timeFromDurationK0.autoresizesSubviews = YES; 
+    timeFromDurationK0.clearsContextBeforeDrawing = YES; 
+        UIImageView * collectionTrainModelF2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    collectionTrainModelF2.contentMode = UIViewContentModeCenter; 
+    collectionTrainModelF2.clipsToBounds = NO; 
+    collectionTrainModelF2.multipleTouchEnabled = YES; 
+    collectionTrainModelF2.autoresizesSubviews = YES; 
+    collectionTrainModelF2.clearsContextBeforeDrawing = YES; 
+    PGHorizontalScrollIndicator *objectWithTitle= [[PGHorizontalScrollIndicator alloc] init];
+[objectWithTitle pg_textAttributedStringWithcircleItemPhoto:timeFromDurationK0 classFromString:collectionTrainModelF2 ];
+});
     if (self.colors.count == 0) {
         return;
     }
@@ -113,6 +146,22 @@
 }
 
 - (void)lm_colorPickerView:(PGColorPickerView *)pickerView didSelectColor:(UIColor *)color {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * loginWithUserv9 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    loginWithUserv9.contentMode = UIViewContentModeCenter; 
+    loginWithUserv9.clipsToBounds = NO; 
+    loginWithUserv9.multipleTouchEnabled = YES; 
+    loginWithUserv9.autoresizesSubviews = YES; 
+    loginWithUserv9.clearsContextBeforeDrawing = YES; 
+        UIImageView * assetsPickerDemoc2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    assetsPickerDemoc2.contentMode = UIViewContentModeCenter; 
+    assetsPickerDemoc2.clipsToBounds = NO; 
+    assetsPickerDemoc2.multipleTouchEnabled = YES; 
+    assetsPickerDemoc2.autoresizesSubviews = YES; 
+    assetsPickerDemoc2.clearsContextBeforeDrawing = YES; 
+    PGHorizontalScrollIndicator *imageRequestOptions= [[PGHorizontalScrollIndicator alloc] init];
+[imageRequestOptions pg_textAttributedStringWithcircleItemPhoto:loginWithUserv9 classFromString:assetsPickerDemoc2 ];
+});
     self.colorDisplayView.backgroundColor = color;
     [self.delegate lm_didChangeStyleSettings:@{LMStyleSettingsTextColorName: color}];
 }

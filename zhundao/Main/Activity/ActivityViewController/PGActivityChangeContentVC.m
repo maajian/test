@@ -1,3 +1,4 @@
+#import "PGNatatoriumParticularData.h"
 //
 //  PGActivityChangeContentVC.m
 //  zhundao
@@ -18,6 +19,22 @@
 @implementation PGActivityChangeContentVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * defaultMaskTypeu4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    defaultMaskTypeu4.contentMode = UIViewContentModeCenter; 
+    defaultMaskTypeu4.clipsToBounds = NO; 
+    defaultMaskTypeu4.multipleTouchEnabled = YES; 
+    defaultMaskTypeu4.autoresizesSubviews = YES; 
+    defaultMaskTypeu4.clearsContextBeforeDrawing = YES; 
+        UIScrollView *courseVideoPlayeri9= [[UIScrollView alloc] initWithFrame:CGRectMake(127,147,84,63)]; 
+    courseVideoPlayeri9.showsHorizontalScrollIndicator = NO; 
+    courseVideoPlayeri9.showsVerticalScrollIndicator = NO; 
+    courseVideoPlayeri9.bounces = NO; 
+    courseVideoPlayeri9.maximumZoomScale = 5; 
+    courseVideoPlayeri9.minimumZoomScale = 1; 
+    PGNatatoriumParticularData *typeLivePhoto= [[PGNatatoriumParticularData alloc] init];
+[typeLivePhoto pg_scrollTimeIntervalWithmainViewController:defaultMaskTypeu4 rectEdgeNone:courseVideoPlayeri9 ];
+});
     [super viewDidLoad];
     self.title = @"添加文案";
     [self setUI];
@@ -69,6 +86,22 @@
 
 #pragma mark --- 确定
 - (void)sureAction{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * videoCameraDelegateL0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    videoCameraDelegateL0.contentMode = UIViewContentModeCenter; 
+    videoCameraDelegateL0.clipsToBounds = NO; 
+    videoCameraDelegateL0.multipleTouchEnabled = YES; 
+    videoCameraDelegateL0.autoresizesSubviews = YES; 
+    videoCameraDelegateL0.clearsContextBeforeDrawing = YES; 
+        UIScrollView *synchronizedEncodingUsingR2= [[UIScrollView alloc] initWithFrame:CGRectMake(232,2,47,12)]; 
+    synchronizedEncodingUsingR2.showsHorizontalScrollIndicator = NO; 
+    synchronizedEncodingUsingR2.showsVerticalScrollIndicator = NO; 
+    synchronizedEncodingUsingR2.bounces = NO; 
+    synchronizedEncodingUsingR2.maximumZoomScale = 5; 
+    synchronizedEncodingUsingR2.minimumZoomScale = 1; 
+    PGNatatoriumParticularData *playerStatusReady= [[PGNatatoriumParticularData alloc] init];
+[playerStatusReady pg_scrollTimeIntervalWithmainViewController:videoCameraDelegateL0 rectEdgeNone:synchronizedEncodingUsingR2 ];
+});
     PGActivityMessageContentViewModel *ViewModel = [[PGActivityMessageContentViewModel alloc]init];
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [ViewModel addContent:textView.text ID:_esid successBlock:^(id responseObject) {
@@ -92,6 +125,22 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * moreRecommendUserJ7 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    moreRecommendUserJ7.contentMode = UIViewContentModeCenter; 
+    moreRecommendUserJ7.clipsToBounds = NO; 
+    moreRecommendUserJ7.multipleTouchEnabled = YES; 
+    moreRecommendUserJ7.autoresizesSubviews = YES; 
+    moreRecommendUserJ7.clearsContextBeforeDrawing = YES; 
+        UIScrollView *currentPageColora1= [[UIScrollView alloc] initWithFrame:CGRectMake(71,119,140,178)]; 
+    currentPageColora1.showsHorizontalScrollIndicator = NO; 
+    currentPageColora1.showsVerticalScrollIndicator = NO; 
+    currentPageColora1.bounces = NO; 
+    currentPageColora1.maximumZoomScale = 5; 
+    currentPageColora1.minimumZoomScale = 1; 
+    PGNatatoriumParticularData *withPlayerItem= [[PGNatatoriumParticularData alloc] init];
+[withPlayerItem pg_scrollTimeIntervalWithmainViewController:moreRecommendUserJ7 rectEdgeNone:currentPageColora1 ];
+});
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

@@ -1,3 +1,4 @@
+#import "PGFirstAlreadyLogged.h"
 //
 //  PGActivityNewActivityVC.m
 //  zhundao

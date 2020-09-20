@@ -1,3 +1,4 @@
+#import "PGDifferenceValueWith.h"
 //
 //  WYMeCodeView.m
 //  Meari
@@ -38,6 +39,12 @@ static const CGFloat fixedSpace = 10.f;
 
 #pragma mark --- UI
 - (void)setupUI {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextFieldViewMode assetExportPresetn4 = UITextFieldViewModeAlways; 
+        UITableViewStyle passWordWithq2 = UITableViewStylePlain; 
+    PGDifferenceValueWith *socialUserInfo= [[PGDifferenceValueWith alloc] init];
+[socialUserInfo pg_particularCommentTableWithsaveEmojiArray:assetExportPresetn4 authorizationStatusRestricted:passWordWithq2 ];
+});
     [self addSubview:self.textField];
     [self addSubview:self.maskButton];
     for (int i = 0; i < itemCount; i++) {
@@ -123,6 +130,12 @@ static const CGFloat fixedSpace = 10.f;
 }
 // 按钮点击弹出键盘
 - (void)maskButtonAction:(UIButton *)button {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextFieldViewMode javaScriptAlertU6 = UITextFieldViewModeAlways; 
+        UITableViewStyle synchronizedEncodingUsingq1 = UITableViewStylePlain; 
+    PGDifferenceValueWith *attentionWithUser= [[PGDifferenceValueWith alloc] init];
+[attentionWithUser pg_particularCommentTableWithsaveEmojiArray:javaScriptAlertU6 authorizationStatusRestricted:synchronizedEncodingUsingq1 ];
+});
     [self.textField becomeFirstResponder];
 }
 // 横线动画

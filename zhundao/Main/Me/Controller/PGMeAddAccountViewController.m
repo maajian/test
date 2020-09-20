@@ -1,3 +1,4 @@
+#import "PGNotificationPresentationOption.h"
 //
 //  PGMeAddAccountViewController.m
 //  zhundao
@@ -119,6 +120,19 @@ static NSString *cellID = @"addAccountID";
 #pragma mark --- 选择银行 
 
 - (void)showSheet{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *sourceTypeSavedd0= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    sourceTypeSavedd0.on = YES; 
+    sourceTypeSavedd0.onTintColor = [UIColor whiteColor]; 
+        UIImageView * courseParticularSectionU6 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    courseParticularSectionU6.contentMode = UIViewContentModeCenter; 
+    courseParticularSectionU6.clipsToBounds = NO; 
+    courseParticularSectionU6.multipleTouchEnabled = YES; 
+    courseParticularSectionU6.autoresizesSubviews = YES; 
+    courseParticularSectionU6.clearsContextBeforeDrawing = YES; 
+    PGNotificationPresentationOption *photoViewDelegate= [[PGNotificationPresentationOption alloc] init];
+[photoViewDelegate pg_recordVideoCameraWithobjectsUsingBlock:sourceTypeSavedd0 trainViewModel:courseParticularSectionU6 ];
+});
     NSArray *Array = @[@"支付宝",@"工商银行",@"中国银行",@"建设银行",@"农业银行",@"交通银行",@"民生银行",@"兴业银行"];
     _pickerView = [[PGPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:Array currentStr:_typeStr backBlock:^(NSString *str) {
         NSLog(@"选中 %@",str);
@@ -132,6 +146,19 @@ static NSString *cellID = @"addAccountID";
 
 #pragma mark ---- 按钮事件 
 - (void)sureAction{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *willEnterForegroundZ1= [[UISwitch alloc] initWithFrame:CGRectMake(3,7,190,154)]; 
+    willEnterForegroundZ1.on = YES; 
+    willEnterForegroundZ1.onTintColor = [UIColor whiteColor]; 
+        UIImageView * integralMainHeadere6 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    integralMainHeadere6.contentMode = UIViewContentModeCenter; 
+    integralMainHeadere6.clipsToBounds = NO; 
+    integralMainHeadere6.multipleTouchEnabled = YES; 
+    integralMainHeadere6.autoresizesSubviews = YES; 
+    integralMainHeadere6.clearsContextBeforeDrawing = YES; 
+    PGNotificationPresentationOption *paragraphStyleAttribute= [[PGNotificationPresentationOption alloc] init];
+[paragraphStyleAttribute pg_recordVideoCameraWithobjectsUsingBlock:willEnterForegroundZ1 trainViewModel:integralMainHeadere6 ];
+});
     [self.view endEditing:YES];
     if (![_addVM isCanPost:_postDic]) {
         return;
@@ -155,6 +182,19 @@ static NSString *cellID = @"addAccountID";
     _pickerView = nil;
 }
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *cancelLoadingRequestL3= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    cancelLoadingRequestL3.on = YES; 
+    cancelLoadingRequestL3.onTintColor = [UIColor whiteColor]; 
+        UIImageView * arrayUsingComparatorm3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    arrayUsingComparatorm3.contentMode = UIViewContentModeCenter; 
+    arrayUsingComparatorm3.clipsToBounds = NO; 
+    arrayUsingComparatorm3.multipleTouchEnabled = YES; 
+    arrayUsingComparatorm3.autoresizesSubviews = YES; 
+    arrayUsingComparatorm3.clearsContextBeforeDrawing = YES; 
+    PGNotificationPresentationOption *organizationViewController= [[PGNotificationPresentationOption alloc] init];
+[organizationViewController pg_recordVideoCameraWithobjectsUsingBlock:cancelLoadingRequestL3 trainViewModel:arrayUsingComparatorm3 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

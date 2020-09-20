@@ -1,3 +1,4 @@
+#import "PGSliderValueChanged.h"
 //
 //  PGActivityHTMLVC.m
 //  SimpleWord

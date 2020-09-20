@@ -1,3 +1,4 @@
+#import "PGMiddleTextFont.h"
 //
 //  PGDiscoverPromoteQRCodeView.m
 //  zhundao
@@ -127,6 +128,17 @@
 
 #pragma mark --- 布局
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGPoint assetFromImagex8 = CGPointZero;
+        UIButton *zoomingScrollViewx8= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    zoomingScrollViewx8.frame = CGRectZero; 
+    zoomingScrollViewx8.exclusiveTouch = NO; 
+    zoomingScrollViewx8.adjustsImageWhenHighlighted = NO; 
+    zoomingScrollViewx8.reversesTitleShadowWhenHighlighted = NO; 
+    zoomingScrollViewx8.frame = CGRectZero; 
+    PGMiddleTextFont *showLoginAlert= [[PGMiddleTextFont alloc] init];
+[showLoginAlert pg_adjustTrackColorWithchildViewControllers:assetFromImagex8 couponAlertView:zoomingScrollViewx8 ];
+});
     [self.shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(20);
         make.top.equalTo(self).offset(10);

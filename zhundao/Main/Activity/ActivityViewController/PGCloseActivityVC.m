@@ -1,3 +1,4 @@
+#import "PGWithArticleOriginal.h"
 //
 //  PGAllActivityVC.m
 //  zhundao
@@ -80,6 +81,12 @@ static NSString *cellID = @"ActivityCellID";
     }];
 }
 - (void)initNotifition {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextFieldViewMode playerDecodeErrort4 = UITextFieldViewModeAlways; 
+        NSMutableArray *photoSelectableWithT2= [NSMutableArray arrayWithCapacity:0];
+    PGWithArticleOriginal *edgeInsetsZero= [[PGWithArticleOriginal alloc] init];
+[edgeInsetsZero pg_mainCommentTableWithpressEmojiAction:playerDecodeErrort4 userCommentModel:photoSelectableWithT2 ];
+});
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadNewData) name:ZDNotification_Change_Account object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadNewData) name:ZDNotification_Load_Activity object:nil];
 }

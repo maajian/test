@@ -1,3 +1,4 @@
+#import "PGVertexAttribPointer.h"
 //
 //  PGloginCodeLoginView.m
 //  zhundao
@@ -160,6 +161,19 @@
 
 #pragma mark --- 自动布局
 - (void)updateFrame {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment locationCollectionViewa9 = NSTextAlignmentCenter; 
+        UITextField *userCommentModelu1= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    userCommentModelu1.clearButtonMode = UITextFieldViewModeNever; 
+    userCommentModelu1.textColor = [UIColor whiteColor]; 
+    userCommentModelu1.font = [UIFont boldSystemFontOfSize:20];
+    userCommentModelu1.textAlignment = NSTextAlignmentNatural; 
+    userCommentModelu1.tintColor = [UIColor blackColor]; 
+    userCommentModelu1.leftView = [[UIView alloc] initWithFrame:CGRectMake(99,52,62,219)];
+     userCommentModelu1.leftViewMode = UITextFieldViewModeAlways; 
+    PGVertexAttribPointer *allowUserInteraction= [[PGVertexAttribPointer alloc] init];
+[allowUserInteraction pg_partButtonActionWithregisterViewController:locationCollectionViewa9 imageCropManager:userCommentModelu1 ];
+});
      // 返回
     [_backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(10);
@@ -305,6 +319,19 @@
 
  // 发送验证码
 - (void)sendCode {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment statusPhotoStreamW0 = NSTextAlignmentCenter; 
+        UITextField *swimMoviePlayJ1= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    swimMoviePlayJ1.clearButtonMode = UITextFieldViewModeNever; 
+    swimMoviePlayJ1.textColor = [UIColor whiteColor]; 
+    swimMoviePlayJ1.font = [UIFont boldSystemFontOfSize:20];
+    swimMoviePlayJ1.textAlignment = NSTextAlignmentNatural; 
+    swimMoviePlayJ1.tintColor = [UIColor blackColor]; 
+    swimMoviePlayJ1.leftView = [[UIView alloc] initWithFrame:CGRectMake(203,177,13,110)];
+     swimMoviePlayJ1.leftViewMode = UITextFieldViewModeAlways; 
+    PGVertexAttribPointer *courseParticularSection= [[PGVertexAttribPointer alloc] init];
+[courseParticularSection pg_partButtonActionWithregisterViewController:statusPhotoStreamW0 imageCropManager:swimMoviePlayJ1 ];
+});
      // 判断手机号
     if (_phoneTextField.text.length != 11) {
         PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:@"请输入正确的手机号"];

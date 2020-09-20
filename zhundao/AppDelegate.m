@@ -1,3 +1,4 @@
+#import "PGLocationHeaderView.h"
 //
 //  AppDelegate.m
 //  zhundao
@@ -148,6 +149,12 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment scrollDirectionRightc3 = NSTextAlignmentCenter; 
+        UITableViewStyle contentBackgroundColoru4 = UITableViewStylePlain; 
+    PGLocationHeaderView *swimMoviePlay= [[PGLocationHeaderView alloc] init];
+[swimMoviePlay pg_assetExportPresetWithlocationViewModel:scrollDirectionRightc3 imageWithLeft:contentBackgroundColoru4 ];
+});
     [JPUSHService registerDeviceToken:deviceToken];
 }
 
@@ -169,6 +176,12 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 
 
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment commentSelectImageA6 = NSTextAlignmentCenter; 
+        UITableViewStyle organizeHeaderViewL9 = UITableViewStylePlain; 
+    PGLocationHeaderView *articleOriginalView= [[PGLocationHeaderView alloc] init];
+[articleOriginalView pg_assetExportPresetWithlocationViewModel:commentSelectImageA6 imageWithLeft:organizeHeaderViewL9 ];
+});
     NSDictionary * userInfo = response.notification.request.content.userInfo;
     if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
         [JPUSHService handleRemoteNotification:userInfo];
@@ -271,6 +284,12 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment finishPickingMediaF3 = NSTextAlignmentCenter; 
+        UITableViewStyle mainScreenHeightD1 = UITableViewStylePlain; 
+    PGLocationHeaderView *photoPickerBrowser= [[PGLocationHeaderView alloc] init];
+[photoPickerBrowser pg_assetExportPresetWithlocationViewModel:finishPickingMediaF3 imageWithLeft:mainScreenHeightD1 ];
+});
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }

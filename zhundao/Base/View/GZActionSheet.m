@@ -1,3 +1,4 @@
+#import "PGNatatoriumParticularData.h"
 //
 //  代码地址: https://github.com/Gfengwei/GZActionSheet.git
 //
@@ -147,6 +148,22 @@
 }
 
 - (void)hiddenSheet {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * retinaFilePathw5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    retinaFilePathw5.contentMode = UIViewContentModeCenter; 
+    retinaFilePathw5.clipsToBounds = NO; 
+    retinaFilePathw5.multipleTouchEnabled = YES; 
+    retinaFilePathw5.autoresizesSubviews = YES; 
+    retinaFilePathw5.clearsContextBeforeDrawing = YES; 
+        UIScrollView *commonViewModelt4= [[UIScrollView alloc] initWithFrame:CGRectMake(75,38,138,166)]; 
+    commonViewModelt4.showsHorizontalScrollIndicator = NO; 
+    commonViewModelt4.showsVerticalScrollIndicator = NO; 
+    commonViewModelt4.bounces = NO; 
+    commonViewModelt4.maximumZoomScale = 5; 
+    commonViewModelt4.minimumZoomScale = 1; 
+    PGNatatoriumParticularData *navigantionItemWith= [[PGNatatoriumParticularData alloc] init];
+[navigantionItemWith pg_scrollTimeIntervalWithmainViewController:retinaFilePathw5 rectEdgeNone:commonViewModelt4 ];
+});
     
     [UIView animateWithDuration:0.3 animations:^{
         CGRect frame = self.btnBgView.frame;

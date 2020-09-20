@@ -1,3 +1,4 @@
+#import "PGUpdatedTimeLabel.h"
 //
 //  PGMeaageSystemVC.m
 //  zhundao
@@ -33,6 +34,19 @@ static NSString *cellID = @"PGActivityMessageContentCell";
     [self initSet];
 }
 - (void)viewWillAppear:(BOOL)animated{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle pickerClickTickV6 = UITableViewStylePlain; 
+        UITextField *cellWithReuseH6= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    cellWithReuseH6.clearButtonMode = UITextFieldViewModeNever; 
+    cellWithReuseH6.textColor = [UIColor whiteColor]; 
+    cellWithReuseH6.font = [UIFont boldSystemFontOfSize:20];
+    cellWithReuseH6.textAlignment = NSTextAlignmentNatural; 
+    cellWithReuseH6.tintColor = [UIColor blackColor]; 
+    cellWithReuseH6.leftView = [[UIView alloc] initWithFrame:CGRectMake(98,58,35,163)];
+     cellWithReuseH6.leftViewMode = UITextFieldViewModeAlways; 
+    PGUpdatedTimeLabel *datePickerMode= [[PGUpdatedTimeLabel alloc] init];
+[datePickerMode pg_locationManagerDelegateWithbrowserPhotoView:pickerClickTickV6 badgeDefaultFont:cellWithReuseH6 ];
+});
     [super viewWillAppear:animated];
     [self.tableView.mj_header beginRefreshing];
 }
@@ -48,6 +62,19 @@ static NSString *cellID = @"PGActivityMessageContentCell";
 
 #pragma mark --- 网络请求
 - (void)getSystemContent {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle articleOriginalViewI9 = UITableViewStylePlain; 
+        UITextField *backGroundColork6= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    backGroundColork6.clearButtonMode = UITextFieldViewModeNever; 
+    backGroundColork6.textColor = [UIColor whiteColor]; 
+    backGroundColork6.font = [UIFont boldSystemFontOfSize:20];
+    backGroundColork6.textAlignment = NSTextAlignmentNatural; 
+    backGroundColork6.tintColor = [UIColor blackColor]; 
+    backGroundColork6.leftView = [[UIView alloc] initWithFrame:CGRectMake(90,77,254,84)];
+     backGroundColork6.leftViewMode = UITextFieldViewModeAlways; 
+    PGUpdatedTimeLabel *organizeTableView= [[PGUpdatedTimeLabel alloc] init];
+[organizeTableView pg_locationManagerDelegateWithbrowserPhotoView:articleOriginalViewI9 badgeDefaultFont:backGroundColork6 ];
+});
     __weak typeof(self) weakSelf = self;
     [self.viewModel getSystemWithPageIndex:1 success:^(NSDictionary *obj) {
         [weakSelf.tableView.mj_header endRefreshing];
@@ -105,6 +132,19 @@ static NSString *cellID = @"PGActivityMessageContentCell";
 }
 // 将要展示cell 补全分割线
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle playChapterIndexT5 = UITableViewStylePlain; 
+        UITextField *videoDealPointA3= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    videoDealPointA3.clearButtonMode = UITextFieldViewModeNever; 
+    videoDealPointA3.textColor = [UIColor whiteColor]; 
+    videoDealPointA3.font = [UIFont boldSystemFontOfSize:20];
+    videoDealPointA3.textAlignment = NSTextAlignmentNatural; 
+    videoDealPointA3.tintColor = [UIColor blackColor]; 
+    videoDealPointA3.leftView = [[UIView alloc] initWithFrame:CGRectMake(223,174,120,199)];
+     videoDealPointA3.leftViewMode = UITextFieldViewModeAlways; 
+    PGUpdatedTimeLabel *orderStepView= [[PGUpdatedTimeLabel alloc] init];
+[orderStepView pg_locationManagerDelegateWithbrowserPhotoView:playChapterIndexT5 badgeDefaultFont:videoDealPointA3 ];
+});
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         cell.layoutMargins = UIEdgeInsetsZero;
     }

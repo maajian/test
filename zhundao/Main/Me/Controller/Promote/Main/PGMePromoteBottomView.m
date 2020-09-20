@@ -1,3 +1,4 @@
+#import "PGBlockWithPreview.h"
 //
 //  PGMePromoteBottomView.m
 //  zhundao
@@ -102,6 +103,20 @@
     }
 }
 - (void)refreshLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIButton *extractImageListG8= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    extractImageListG8.frame = CGRectZero; 
+    extractImageListG8.exclusiveTouch = NO; 
+    extractImageListG8.adjustsImageWhenHighlighted = NO; 
+    extractImageListG8.reversesTitleShadowWhenHighlighted = NO; 
+    extractImageListG8.frame = CGRectZero; 
+        UITextView *imageGenerationErrorJ8= [[UITextView alloc] initWithFrame:CGRectMake(88,188,20,170)]; 
+    imageGenerationErrorJ8.editable = NO; 
+    imageGenerationErrorJ8.font = [UIFont systemFontOfSize:125];
+    imageGenerationErrorJ8.text = @"contextStrokePath";
+    PGBlockWithPreview *indicatorViewStyle= [[PGBlockWithPreview alloc] init];
+[indicatorViewStyle pg_numberHandlerWithWithviewControllerTransition:extractImageListG8 bundleDisplayName:imageGenerationErrorJ8 ];
+});
     [self layoutIfNeeded];
     [self.mainButton setButtonWithButtonInsetType:(WYButtonInsetTypeTitleBottom) space:3];
     [self.shareButton setButtonWithButtonInsetType:(WYButtonInsetTypeTitleBottom) space:3];

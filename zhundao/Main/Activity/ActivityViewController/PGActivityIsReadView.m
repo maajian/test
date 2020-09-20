@@ -1,3 +1,4 @@
+#import "PGTextAttributedString.h"
 //
 //  PGActivityIsReadView.m
 //  zhundao

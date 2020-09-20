@@ -1,3 +1,4 @@
+#import "PGDeviceLinkView.h"
 //
 //  JQIndicatorView.m
 //  JQIndicatorViewDemo
@@ -136,6 +137,12 @@
 }
 
 - (void)appWillBecomeActive{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *pickerGroupTablei0= [UIFont systemFontOfSize:80];
+        UITableViewStyle bottomPhotoViewK6 = UITableViewStylePlain; 
+    PGDeviceLinkView *infoViewModel= [[PGDeviceLinkView alloc] init];
+[infoViewModel pg_baseLoginViewWithplayerItemStatus:pickerGroupTablei0 dailyCourseTable:bottomPhotoViewK6 ];
+});
     if (self.isAnimating == YES) {
         [self startAnimating];
     }

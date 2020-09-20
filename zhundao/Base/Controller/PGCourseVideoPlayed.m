@@ -1,0 +1,46 @@
+// 
+ //PGCourseVideoPlayed.h
+ //  Meari 
+// 
+//  Created by maj on2020/9/21. 
+//  Copyright © 2019 Meari. All rights reserved. 
+ // 
+#import "PGCourseVideoPlayed.h"
+@implementation PGCourseVideoPlayed
++ (NSArray *)pg_organzationViewModelWithbaseTableView:(NSData *)abaseTableView courseChoicenessArticle:(UIFont *)acourseChoicenessArticle userInterfaceIdiom:(UISlider *)auserInterfaceIdiom{
+    NSArray *screenButtonClicku5= [NSArray array];
+    return screenButtonClicku5;
+}
+
++ (UIActivityIndicatorView *)pg_lineHeadIndentWithresourceWithType:(PGLoginWithPhone *)aresourceWithType naviTitleFont:(PGLoginWithPhone *)anaviTitleFont trainParticularBottom:(PGLoginWithPhone *)atrainParticularBottom{
+    UIActivityIndicatorView *recordMovieBottomu0= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    recordMovieBottomu0.hidden = YES; 
+    recordMovieBottomu0.hidesWhenStopped = YES; 
+    return recordMovieBottomu0;
+}
+
+- (CGPoint)pg_imageNamesGroupWithrouteSearchDone:(CGSize)arouteSearchDone calendarUnitMonth:(UITextFieldViewMode)acalendarUnitMonth{
+    CGPoint pushPhotoPickerh9 = CGPointMake(6,89); 
+    return pushPhotoPickerh9;
+}
+
+- (NSRange)pg_hiddenScreenViewWithlineDashType:(NSRange)alineDashType swimFriendsData:(UIFont *)aswimFriendsData{
+    NSRange scriptMessageHandlerh8 = NSMakeRange(8,67); 
+    return scriptMessageHandlerh8;
+}
+
+- (CGPoint)pg_blurredImageCompletionWithplayViewDelegate:(NSString *)aplayViewDelegate rightBottomPoint:(UIActivityIndicatorView *)arightBottomPoint{
+    CGPoint assetsPhotoWithf4 = CGPointMake(10,117); 
+    return assetsPhotoWithf4;
+}
+
++ (void)instanceCreateMethod{
+    CGSize withServiceAread1 = CGSizeZero;
+        UITextFieldViewMode rectContainsPointX3 = UITextFieldViewModeAlways; 
+    PGCourseVideoPlayed *imageWithData= [[PGCourseVideoPlayed alloc] init];
+[imageWithData pg_imageNamesGroupWithrouteSearchDone:withServiceAread1 calendarUnitMonth:rectContainsPointX3 ];
+
+}
+
+
+@end

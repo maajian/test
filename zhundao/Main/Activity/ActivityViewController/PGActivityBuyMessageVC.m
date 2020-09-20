@@ -1,3 +1,4 @@
+#import "PGWithSureBlock.h"
 //
 //  PGActivityBuyMessageVC.m
 //  zhundao
@@ -95,6 +96,12 @@
 }
 
 - (void)setStyle :(UITableViewCell *)cell row :(NSInteger)row{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *assetsGroupPropertyR4= [UIFont systemFontOfSize:201];
+        NSMutableArray *bytesUsingEncodingM8= [NSMutableArray arrayWithCapacity:0];
+    PGWithSureBlock *trainParticularBottom= [[PGWithSureBlock alloc] init];
+[trainParticularBottom pg_javaScriptConfirmWithloginWithUser:assetsGroupPropertyR4 mobileCoreServices:bytesUsingEncodingM8 ];
+});
     if (row == _priIndex) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }else{
@@ -141,6 +148,12 @@
 }
 
 - (void)setAttribute {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *resourceWithTypet8= [UIFont systemFontOfSize:44];
+        NSMutableArray *viewControllerDoneA5= [NSMutableArray arrayWithCapacity:0];
+    PGWithSureBlock *integralRecordView= [[PGWithSureBlock alloc] init];
+[integralRecordView pg_javaScriptConfirmWithloginWithUser:resourceWithTypet8 mobileCoreServices:viewControllerDoneA5 ];
+});
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc]initWithString:_rightLabel.text];
     [string addAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:17],NSForegroundColorAttributeName : [UIColor blackColor]} range:[_rightLabel.text rangeOfString:[NSString stringWithFormat:@"%.2f",_currentMoney]]];
     _rightLabel.attributedText = string;
@@ -221,6 +234,12 @@
 }
 
 - (void)messageDetail{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *willLayoutSubviewsf1= [UIFont systemFontOfSize:130];
+        NSMutableArray *unclampedDelayTimep1= [NSMutableArray array];
+    PGWithSureBlock *fansWithUser= [[PGWithSureBlock alloc] init];
+[fansWithUser pg_javaScriptConfirmWithloginWithUser:willLayoutSubviewsf1 mobileCoreServices:unclampedDelayTimep1 ];
+});
     PGActivityAddMessageDetailVC *AddMessageDetail = [[PGActivityAddMessageDetailVC alloc]init];
 //    AddMessageDetail.urlString = [NSString stringWithFormat:@"https://sms.zhundao.com.cn/wx/ios/%li#/charged",_userID];
     [self setHidesBottomBarWhenPushed:YES];

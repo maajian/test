@@ -1,3 +1,4 @@
+#import "PGWithLoadingRequest.h"
 //
 //  PGSearchBar.m
 //  zhundao

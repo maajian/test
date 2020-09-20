@@ -1,3 +1,4 @@
+#import "PGDeviceOrientationLandscape.h"
 //
 //  PGSignInOnePersonDataNetWork.m
 //  zhundao
@@ -15,6 +16,17 @@
 
 
 - (void)getNewList :(NSInteger)listID BackBlock :(backpopBlock)backBlock {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * codeLoginViewi6 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    codeLoginViewi6.contentMode = UIViewContentModeCenter; 
+    codeLoginViewi6.clipsToBounds = NO; 
+    codeLoginViewi6.multipleTouchEnabled = YES; 
+    codeLoginViewi6.autoresizesSubviews = YES; 
+    codeLoginViewi6.clearsContextBeforeDrawing = YES; 
+        NSRange objectsUsingBlockw9 = NSMakeRange(4,202); 
+    PGDeviceOrientationLandscape *orderGroupCell= [[PGDeviceOrientationLandscape alloc] init];
+[orderGroupCell pg_cellReuseIdentifierWithwithReuseIdentifier:codeLoginViewi6 sliderSeekTime:objectsUsingBlockw9 ];
+});
     NSString *listurl = [NSString stringWithFormat:@"%@api/PerActivity/PostActivityListed?accessKey=%@",zhundaoApi,[[PGSignManager shareManager] getaccseekey]];
     NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)listID],
                           @"pageSize":@"1000",

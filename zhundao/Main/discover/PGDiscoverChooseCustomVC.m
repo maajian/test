@@ -1,3 +1,4 @@
+#import "PGWithRoundCorner.h"
 //
 //  PGDiscoverChooseCustomVC.m
 //  zhundao

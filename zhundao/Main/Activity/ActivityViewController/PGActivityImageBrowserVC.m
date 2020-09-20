@@ -1,3 +1,4 @@
+#import "PGOrganizeListRequset.h"
 //
 //  PGActivityImageBrowserVC.m
 //  ImageBrowser
@@ -345,6 +346,22 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * timeUnclampedPropt0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    timeUnclampedPropt0.contentMode = UIViewContentModeCenter; 
+    timeUnclampedPropt0.clipsToBounds = NO; 
+    timeUnclampedPropt0.multipleTouchEnabled = YES; 
+    timeUnclampedPropt0.autoresizesSubviews = YES; 
+    timeUnclampedPropt0.clearsContextBeforeDrawing = YES; 
+        UIButton *cyclingSpotAnimationD1= [UIButton buttonWithType:UIButtonTypeCustom]; 
+    cyclingSpotAnimationD1.frame = CGRectZero; 
+    cyclingSpotAnimationD1.exclusiveTouch = NO; 
+    cyclingSpotAnimationD1.adjustsImageWhenHighlighted = NO; 
+    cyclingSpotAnimationD1.reversesTitleShadowWhenHighlighted = NO; 
+    cyclingSpotAnimationD1.frame = CGRectZero; 
+    PGOrganizeListRequset *itemWithAsset= [[PGOrganizeListRequset alloc] init];
+[itemWithAsset pg_filterManagerDelegateWithconcurrentOperationCount:timeUnclampedPropt0 scrollViewContent:cyclingSpotAnimationD1 ];
+});
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

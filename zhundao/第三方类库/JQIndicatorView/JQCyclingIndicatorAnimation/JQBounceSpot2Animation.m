@@ -1,3 +1,4 @@
+#import "PGAssetPreviewCell.h"
 //
 //  JQBounceSpot2Animation.m
 //  JQIndicatorViewDemo

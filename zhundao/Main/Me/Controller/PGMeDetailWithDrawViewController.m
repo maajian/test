@@ -1,3 +1,4 @@
+#import "PGImageViewFrame.h"
 //
 //  PGMeDetailWithDrawViewController.m
 //  zhundao

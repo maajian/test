@@ -1,3 +1,4 @@
+#import "PGMovieTestView.h"
 //
 //  JQMusic1Animation.m
 //  JQMusic1AnimationDemo
@@ -17,6 +18,12 @@
 @implementation JQMusic1Animation
 
 - (void)configAnimationAtLayer:(CALayer *)layer withTintColor:(UIColor *)color size:(CGSize)size{
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGRect userModelFromr6 = CGRectMake(179,34,151,234); 
+        UIImage *applicationWillEnterj3= [UIImage imageNamed:@""]; 
+    PGMovieTestView *sourceTypeSaved= [[PGMovieTestView alloc] init];
+[sourceTypeSaved pg_assetCollectionSubtypeWithcontextStrokePath:userModelFromr6 userCommentTable:applicationWillEnterj3 ];
+});
     CAReplicatorLayer *replicatorLayer = [CAReplicatorLayer layer];
     replicatorLayer.frame = CGRectMake(0, 0, size.width, size.height);
     replicatorLayer.position = CGPointMake(0, 0);

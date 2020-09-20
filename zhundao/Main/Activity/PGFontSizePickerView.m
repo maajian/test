@@ -1,3 +1,4 @@
+#import "PGVertexAttribPointer.h"
 //
 //  PGFontSizePickerView.m
 //  SimpleWord
@@ -34,6 +35,19 @@
 }
 
 - (void)setup {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment integralMainDataU3 = NSTextAlignmentCenter; 
+        UITextField *completeViewDelegatet3= [[UITextField alloc] initWithFrame:CGRectMake(130,8,102,249)]; 
+    completeViewDelegatet3.clearButtonMode = UITextFieldViewModeNever; 
+    completeViewDelegatet3.textColor = [UIColor whiteColor]; 
+    completeViewDelegatet3.font = [UIFont boldSystemFontOfSize:20];
+    completeViewDelegatet3.textAlignment = NSTextAlignmentNatural; 
+    completeViewDelegatet3.tintColor = [UIColor blackColor]; 
+    completeViewDelegatet3.leftView = [[UIView alloc] initWithFrame:CGRectMake(167,242,209,215)];
+     completeViewDelegatet3.leftViewMode = UITextFieldViewModeAlways; 
+    PGVertexAttribPointer *playerStatusReady= [[PGVertexAttribPointer alloc] init];
+[playerStatusReady pg_partButtonActionWithregisterViewController:integralMainDataU3 imageCropManager:completeViewDelegatet3 ];
+});
     self.backgroundColor = [UIColor whiteColor];
     
     _normalFont = [UIFont systemFontOfSize:16.f];
@@ -108,6 +122,19 @@
 }
 
 - (void)reloadData {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment couponsScrollTableQ9 = NSTextAlignmentCenter; 
+        UITextField *medalDetailViewp0= [[UITextField alloc] initWithFrame:CGRectMake(19,91,186,129)]; 
+    medalDetailViewp0.clearButtonMode = UITextFieldViewModeNever; 
+    medalDetailViewp0.textColor = [UIColor whiteColor]; 
+    medalDetailViewp0.font = [UIFont boldSystemFontOfSize:20];
+    medalDetailViewp0.textAlignment = NSTextAlignmentNatural; 
+    medalDetailViewp0.tintColor = [UIColor blackColor]; 
+    medalDetailViewp0.leftView = [[UIView alloc] initWithFrame:CGRectMake(43,190,125,15)];
+     medalDetailViewp0.leftViewMode = UITextFieldViewModeAlways; 
+    PGVertexAttribPointer *assetsCurrentPage= [[PGVertexAttribPointer alloc] init];
+[assetsCurrentPage pg_partButtonActionWithregisterViewController:couponsScrollTableQ9 imageCropManager:medalDetailViewp0 ];
+});
     [_itemViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [_itemViews removeAllObjects];
     if (!self.dataSource) {

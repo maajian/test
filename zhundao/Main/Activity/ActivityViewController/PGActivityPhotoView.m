@@ -1,3 +1,4 @@
+#import "PGPlayerStatePlaying.h"
 //
 //  PGActivityPhotoView.m
 //  ImageBrowser

@@ -1,3 +1,4 @@
+#import "PGAlertViewStyle.h"
 //
 //  PGTextStyle.m
 //  SimpleWord

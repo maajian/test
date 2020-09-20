@@ -1,3 +1,4 @@
+#import "PGViewWithIdentifier.h"
 //
 //  PGMeChooseGroupViewController.m
 //  zhundao
@@ -23,6 +24,15 @@
 @implementation PGMeChooseGroupViewController
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange recordListWithA4 = NSMakeRange(1,112); 
+        UITextView *assetsFromFetchu4= [[UITextView alloc] initWithFrame:CGRectZero]; 
+    assetsFromFetchu4.editable = NO; 
+    assetsFromFetchu4.font = [UIFont systemFontOfSize:166];
+    assetsFromFetchu4.text = @"gaussianBlurElement";
+    PGViewWithIdentifier *withVisualFormat= [[PGViewWithIdentifier alloc] init];
+[withVisualFormat pg_keyboardTypeNumberWithvideoPreviewCell:recordListWithA4 cyclingLineAnimation:assetsFromFetchu4 ];
+});
     [super viewDidLoad];
     [self baseSetting];
     // Do any additional setup after loading the view.

@@ -1,3 +1,4 @@
+#import "PGWithIntegralRecord.h"
 //
 //  PGOtherSignViewController.m
 //  zhundao
@@ -22,6 +23,24 @@
 @implementation PGOtherSignViewController
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * lineJoinMiterR5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    lineJoinMiterR5.contentMode = UIViewContentModeCenter; 
+    lineJoinMiterR5.clipsToBounds = NO; 
+    lineJoinMiterR5.multipleTouchEnabled = YES; 
+    lineJoinMiterR5.autoresizesSubviews = YES; 
+    lineJoinMiterR5.clearsContextBeforeDrawing = YES; 
+        UITextField *insetAdjustmentNeverE5= [[UITextField alloc] initWithFrame:CGRectMake(48,91,140,56)]; 
+    insetAdjustmentNeverE5.clearButtonMode = UITextFieldViewModeNever; 
+    insetAdjustmentNeverE5.textColor = [UIColor whiteColor]; 
+    insetAdjustmentNeverE5.font = [UIFont boldSystemFontOfSize:20];
+    insetAdjustmentNeverE5.textAlignment = NSTextAlignmentNatural; 
+    insetAdjustmentNeverE5.tintColor = [UIColor blackColor]; 
+    insetAdjustmentNeverE5.leftView = [[UIView alloc] initWithFrame:CGRectMake(28,133,187,87)];
+     insetAdjustmentNeverE5.leftViewMode = UITextFieldViewModeAlways; 
+    PGWithIntegralRecord *tweetItemModel= [[PGWithIntegralRecord alloc] init];
+[tweetItemModel pg_levelUserCollectionsWithlocationViewController:lineJoinMiterR5 selectTypeMyttention:insetAdjustmentNeverE5 ];
+});
     [super viewDidLoad];
     self.view.backgroundColor = ZDBackgroundColor;
     i = 0;

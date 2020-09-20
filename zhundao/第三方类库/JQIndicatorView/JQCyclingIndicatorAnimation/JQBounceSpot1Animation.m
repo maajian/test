@@ -1,3 +1,4 @@
+#import "PGAnimationRepeatTimes.h"
 //
 //  JQBounceSpot1Animation.m
 //  JQIndicatorViewDemo

@@ -1,3 +1,4 @@
+#import "PGRecommendUserTable.h"
 //
 //  PGDiscoverXYVC.m
 //  zhundao

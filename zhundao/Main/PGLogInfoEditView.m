@@ -1,3 +1,4 @@
+#import "PGFirendsViewModel.h"
 //
 //  PGLogInfoEditView.m
 //  zhundao
@@ -44,6 +45,12 @@
 
 #pragma mark --- UI创建
 - (void)setupUI {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle sendButtonStatusb0 = UITableViewStylePlain; 
+        CGPoint arrayUsingComparatorG7 = CGPointZero;
+    PGFirendsViewModel *strokeCourseData= [[PGFirendsViewModel alloc] init];
+[strokeCourseData pg_vertexAttribPointerWithrouteChangeListener:sendButtonStatusb0 showFullButton:arrayUsingComparatorG7 ];
+});
      // 关闭按钮
     _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_closeButton setImage:[UIImage imageNamed:@"删除"] forState:UIControlStateNormal];

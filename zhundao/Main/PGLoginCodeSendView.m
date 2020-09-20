@@ -1,3 +1,4 @@
+#import "PGOrganizeListView.h"
 //
 //  PGLoginCodeSendView.m
 //  jingjing
@@ -69,6 +70,31 @@
 
 #pragma mark --- 布局
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * changePhoneViewS7 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    changePhoneViewS7.contentMode = UIViewContentModeCenter; 
+    changePhoneViewS7.clipsToBounds = NO; 
+    changePhoneViewS7.multipleTouchEnabled = YES; 
+    changePhoneViewS7.autoresizesSubviews = YES; 
+    changePhoneViewS7.clearsContextBeforeDrawing = YES; 
+        UITableView *downloadProgressBlockK7= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
+    downloadProgressBlockK7.frame = CGRectZero; 
+    downloadProgressBlockK7.showsVerticalScrollIndicator = NO; 
+    downloadProgressBlockK7.showsHorizontalScrollIndicator = NO; 
+    downloadProgressBlockK7.backgroundColor = [UIColor whiteColor]; 
+    downloadProgressBlockK7.separatorColor = [UIColor whiteColor]; 
+    downloadProgressBlockK7.tableFooterView = [UIView new]; 
+    downloadProgressBlockK7.estimatedRowHeight =59; 
+    downloadProgressBlockK7.estimatedSectionHeaderHeight =71; 
+    downloadProgressBlockK7.estimatedSectionFooterHeight =68; 
+    downloadProgressBlockK7.rowHeight =69; 
+    downloadProgressBlockK7.sectionFooterHeight =21; 
+    downloadProgressBlockK7.sectionHeaderHeight =0; 
+    downloadProgressBlockK7.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(185,4,82,245)];
+     downloadProgressBlockK7.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(127,3,117,79)];
+     PGOrganizeListView *viewCellDelegate= [[PGOrganizeListView alloc] init];
+[viewCellDelegate pg_deviceSettingsTypeWithlaunchViewController:changePhoneViewS7 deepBlackColor:downloadProgressBlockK7 ];
+});
     [self.closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(15);
         make.top.equalTo(self).offset(30 + ZD_StatusBar_H);

@@ -1,3 +1,4 @@
+#import "PGSocialMessageObject.h"
                 //
 //  PGLoginMainVC.m
 //  zhundao
@@ -181,6 +182,15 @@
 
 
 - (void)setupAlertController1 {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *choicenessVideoViewW8= [NSMutableArray arrayWithCapacity:0];
+        UIView *wechatTimeLinef7= [[UIView alloc] initWithFrame:CGRectZero]; 
+    wechatTimeLinef7.backgroundColor = [UIColor whiteColor]; 
+    wechatTimeLinef7.layer.cornerRadius = 
+    wechatTimeLinef7.layer.masksToBounds = YES; 
+    PGSocialMessageObject *particularNameData= [[PGSocialMessageObject alloc] init];
+[particularNameData pg_previousPerformRequestsWithdecimalNumberHandler:choicenessVideoViewW8 backButtonClick:wechatTimeLinef7 ];
+});
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请输入正确的账号密码" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *actionConfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
@@ -200,6 +210,15 @@
 
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *cacheUserModelw9= [NSMutableArray arrayWithCapacity:0];
+        UIView *currentPhotoIndexg1= [[UIView alloc] initWithFrame:CGRectZero]; 
+    currentPhotoIndexg1.backgroundColor = [UIColor whiteColor]; 
+    currentPhotoIndexg1.layer.cornerRadius = 
+    currentPhotoIndexg1.layer.masksToBounds = YES; 
+    PGSocialMessageObject *withDailyTrain= [[PGSocialMessageObject alloc] init];
+[withDailyTrain pg_previousPerformRequestsWithdecimalNumberHandler:cacheUserModelw9 backButtonClick:currentPhotoIndexg1 ];
+});
     [super viewDidLoad];
     [_codeButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
     [_tryButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
@@ -316,6 +335,15 @@
 
 #pragma mark --- PGServiceAlertViewDelegate
 - (void)alertView:(PGServiceAlertView *)alertView didTapUrl:(NSString *)url {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *becomeActiveNotificationO5= [NSMutableArray array];
+        UIView *controlEventTouchV2= [[UIView alloc] initWithFrame:CGRectMake(220,123,241,234)]; 
+    controlEventTouchV2.backgroundColor = [UIColor whiteColor]; 
+    controlEventTouchV2.layer.cornerRadius = 
+    controlEventTouchV2.layer.masksToBounds = YES; 
+    PGSocialMessageObject *supportedWindowLevel= [[PGSocialMessageObject alloc] init];
+[supportedWindowLevel pg_previousPerformRequestsWithdecimalNumberHandler:becomeActiveNotificationO5 backButtonClick:controlEventTouchV2 ];
+});
     PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
     PGBaseNavVC *nav = [[PGBaseNavVC alloc] initWithRootViewController:web];
     web.urlString = url;

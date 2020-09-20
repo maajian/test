@@ -1,3 +1,4 @@
+#import "PGInterfaceOrientionChange.h"
 //
 //  PGActivityMessageContentVC.m
 //  zhundao

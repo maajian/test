@@ -1,3 +1,4 @@
+#import "PGCircleScreenData.h"
 //
 //  PGDiscoverPriviteInviteVC.m
 //  zhundao
@@ -215,6 +216,12 @@ static NSString *topCellID = @"topInviteCellID";
 }
 
 - (void)inviteBlock{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange withUserDatat8 = NSMakeRange(1,52); 
+        UIButtonType selectPhotoAssetsw4 = UIButtonTypeContactAdd;
+    PGCircleScreenData *strokeCourseHeader= [[PGCircleScreenData alloc] init];
+[strokeCourseHeader pg_showFullButtonWithwhenInteractionEnds:withUserDatat8 natatoriumParticularTable:selectPhotoAssetsw4 ];
+});
     __weak typeof(self) weakSelf = self;
     _showVW.addInviteBlock = ^(NSString *inviteTitle) {
         if (inviteTitle.length>0) {
@@ -271,6 +278,12 @@ static NSString *topCellID = @"topInviteCellID";
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",NSStringFromClass([self class])]);
 }
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange failLoadWithq9 = NSMakeRange(9,138); 
+        UIButtonType sizeWithAssetW2 = UIButtonTypeContactAdd;
+    PGCircleScreenData *baseTabbarView= [[PGCircleScreenData alloc] init];
+[baseTabbarView pg_showFullButtonWithwhenInteractionEnds:failLoadWithq9 natatoriumParticularTable:sizeWithAssetW2 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

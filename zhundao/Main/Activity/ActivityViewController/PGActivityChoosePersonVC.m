@@ -1,3 +1,4 @@
+#import "PGFullScreenPlay.h"
 //
 //  PGActivityChoosePersonVC.m
 //  zhundao
@@ -78,6 +79,19 @@
 
 #pragma mark --- ui创建
 - (void)setupUI{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextField *allowWithControllere5= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    allowWithControllere5.clearButtonMode = UITextFieldViewModeNever; 
+    allowWithControllere5.textColor = [UIColor whiteColor]; 
+    allowWithControllere5.font = [UIFont boldSystemFontOfSize:20];
+    allowWithControllere5.textAlignment = NSTextAlignmentNatural; 
+    allowWithControllere5.tintColor = [UIColor blackColor]; 
+    allowWithControllere5.leftView = [[UIView alloc] initWithFrame:CGRectMake(34,180,47,18)];
+     allowWithControllere5.leftViewMode = UITextFieldViewModeAlways; 
+        CGPoint readingAllowFragmentsY6 = CGPointMake(1,70); 
+    PGFullScreenPlay *bottomPhotoView= [[PGFullScreenPlay alloc] init];
+[bottomPhotoView pg_pickerCollectionViewWithrecommendCourseHeight:allowWithControllere5 pushNotificationTrigger:readingAllowFragmentsY6 ];
+});
     _readView = [[PGActivityIsReadView alloc]init];
     _readView.readDelegate = self;
     [self.view addSubview:self.tableView];
@@ -181,10 +195,36 @@
 #pragma mark --- readDelegate
 
 - (void)cancelSend{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextField *articleDailyTrainU5= [[UITextField alloc] initWithFrame:CGRectMake(89,144,210,31)]; 
+    articleDailyTrainU5.clearButtonMode = UITextFieldViewModeNever; 
+    articleDailyTrainU5.textColor = [UIColor whiteColor]; 
+    articleDailyTrainU5.font = [UIFont boldSystemFontOfSize:20];
+    articleDailyTrainU5.textAlignment = NSTextAlignmentNatural; 
+    articleDailyTrainU5.tintColor = [UIColor blackColor]; 
+    articleDailyTrainU5.leftView = [[UIView alloc] initWithFrame:CGRectMake(66,117,11,5)];
+     articleDailyTrainU5.leftViewMode = UITextFieldViewModeAlways; 
+        CGPoint courseParticularVideox6 = CGPointMake(8,213); 
+    PGFullScreenPlay *previousPerformRequests= [[PGFullScreenPlay alloc] init];
+[previousPerformRequests pg_pickerCollectionViewWithrecommendCourseHeight:articleDailyTrainU5 pushNotificationTrigger:courseParticularVideox6 ];
+});
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)nextStep{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextField *separatorStyleSingleo1= [[UITextField alloc] initWithFrame:CGRectMake(204,253,252,166)]; 
+    separatorStyleSingleo1.clearButtonMode = UITextFieldViewModeNever; 
+    separatorStyleSingleo1.textColor = [UIColor whiteColor]; 
+    separatorStyleSingleo1.font = [UIFont boldSystemFontOfSize:20];
+    separatorStyleSingleo1.textAlignment = NSTextAlignmentNatural; 
+    separatorStyleSingleo1.tintColor = [UIColor blackColor]; 
+    separatorStyleSingleo1.leftView = [[UIView alloc] initWithFrame:CGRectMake(89,236,154,26)];
+     separatorStyleSingleo1.leftViewMode = UITextFieldViewModeAlways; 
+        CGPoint badgeStyleNumberk4 = CGPointZero;
+    PGFullScreenPlay *withCommentObject= [[PGFullScreenPlay alloc] init];
+[withCommentObject pg_pickerCollectionViewWithrecommendCourseHeight:separatorStyleSingleo1 pushNotificationTrigger:badgeStyleNumberk4 ];
+});
     NSArray *lastSelectArray = [_tableView indexPathsForSelectedRows];
     PGActivityGroupSendVC *group = [[PGActivityGroupSendVC alloc]init];
     [self setHidesBottomBarWhenPushed:YES];

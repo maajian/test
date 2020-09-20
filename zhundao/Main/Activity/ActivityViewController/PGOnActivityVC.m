@@ -1,3 +1,4 @@
+#import "PGCurrentPlayChapter.h"
 //
 //  PGAllActivityVC.m
 //  zhundao
@@ -40,6 +41,15 @@ static NSString *cellID = @"ActivityCellID";
     [self initNotifition];
 }
 - (void)viewDidAppear:(BOOL)animated {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets playerStatusPlayingy9 = UIEdgeInsetsZero;
+        UIView *dataViewModelI8= [[UIView alloc] initWithFrame:CGRectZero]; 
+    dataViewModelI8.backgroundColor = [UIColor whiteColor]; 
+    dataViewModelI8.layer.cornerRadius = 
+    dataViewModelI8.layer.masksToBounds = YES; 
+    PGCurrentPlayChapter *playerStateFailed= [[PGCurrentPlayChapter alloc] init];
+[playerStateFailed pg_alertControllerStyleWithnetworkStatusUnknow:playerStatusPlayingy9 objectWithData:dataViewModelI8 ];
+});
     [super viewDidAppear:animated];
     [_tableView reloadData];
 }
@@ -75,6 +85,15 @@ static NSString *cellID = @"ActivityCellID";
     [self.tableView.mj_header beginRefreshing];
 }
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets gradeViewControllerg0 = UIEdgeInsetsZero;
+        UIView *stringFromDateb8= [[UIView alloc] initWithFrame:CGRectMake(110,70,73,60)]; 
+    stringFromDateb8.backgroundColor = [UIColor whiteColor]; 
+    stringFromDateb8.layer.cornerRadius = 
+    stringFromDateb8.layer.masksToBounds = YES; 
+    PGCurrentPlayChapter *buttonItemStyle= [[PGCurrentPlayChapter alloc] init];
+[buttonItemStyle pg_alertControllerStyleWithnetworkStatusUnknow:gradeViewControllerg0 objectWithData:stringFromDateb8 ];
+});
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
@@ -90,6 +109,15 @@ static NSString *cellID = @"ActivityCellID";
     [self networkForOnData];
 }
 - (void)loadMoreData {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets priousorLaterDateO5 = UIEdgeInsetsZero;
+        UIView *photoPickerCollectionX8= [[UIView alloc] initWithFrame:CGRectMake(145,217,21,28)]; 
+    photoPickerCollectionX8.backgroundColor = [UIColor whiteColor]; 
+    photoPickerCollectionX8.layer.cornerRadius = 
+    photoPickerCollectionX8.layer.masksToBounds = YES; 
+    PGCurrentPlayChapter *alertActionStyle= [[PGCurrentPlayChapter alloc] init];
+[alertActionStyle pg_alertControllerStyleWithnetworkStatusUnknow:priousorLaterDateO5 objectWithData:photoPickerCollectionX8 ];
+});
     _page += 1;
     [self networkForOnData];
 }

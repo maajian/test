@@ -1,3 +1,4 @@
+#import "PGDeviceOrientationFace.h"
 //
 //  PGWebViewController.m
 //  zhundao
@@ -45,6 +46,17 @@
     [indicator stopAnimating];
 }
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGSize articleCommentDataJ8 = CGSizeMake(86,182); 
+        UIImageView * taskNeedFinishE8 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    taskNeedFinishE8.contentMode = UIViewContentModeCenter; 
+    taskNeedFinishE8.clipsToBounds = NO; 
+    taskNeedFinishE8.multipleTouchEnabled = YES; 
+    taskNeedFinishE8.autoresizesSubviews = YES; 
+    taskNeedFinishE8.clearsContextBeforeDrawing = YES; 
+    PGDeviceOrientationFace *timeMakeWith= [[PGDeviceOrientationFace alloc] init];
+[timeMakeWith pg_pushNotificationTriggerWithaffineTransformIdentity:articleCommentDataJ8 modelWithAsset:taskNeedFinishE8 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

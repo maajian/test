@@ -1,3 +1,4 @@
+#import "PGRankMedalView.h"
 //
 //  PGAvtivityMoreModalHeaderView.m
 //  zhundao
@@ -226,6 +227,12 @@
 
 #pragma mark --- 布局
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSLineBreakMode registerViewControllerb4 = NSLineBreakByTruncatingTail; 
+        NSArray *imageContentModeV0= [NSArray array];
+    PGRankMedalView *tableFooterView= [[PGRankMedalView alloc] init];
+[tableFooterView pg_boardWithTextWithforgotPasswordView:registerViewControllerb4 currentDateString:imageContentModeV0 ];
+});
     [self.detailView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.mas_equalTo(0);
         make.height.mas_equalTo(80);
@@ -358,6 +365,12 @@
 }
 
 - (void)apply {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSLineBreakMode maximumFractionDigitsv4 = NSLineBreakByTruncatingTail; 
+        NSArray *viewContentModem4= [NSArray arrayWithObject:@""];
+    PGRankMedalView *styleWhiteLarge= [[PGRankMedalView alloc] init];
+[styleWhiteLarge pg_boardWithTextWithforgotPasswordView:maximumFractionDigitsv4 currentDateString:viewContentModem4 ];
+});
     if ([self.headerViewDelegate respondsToSelector:@selector(header:didTapChartView:)]) {
         [self.headerViewDelegate header:self didTapChartView:chartTypeApply];
     }
@@ -370,6 +383,12 @@
 }
 
 - (void)income {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSLineBreakMode imageNearIndexf2 = NSLineBreakByTruncatingTail; 
+        NSArray *groupPurchaseOrderG9= [NSArray arrayWithObject:@""];
+    PGRankMedalView *viewArrowLength= [[PGRankMedalView alloc] init];
+[viewArrowLength pg_boardWithTextWithforgotPasswordView:imageNearIndexf2 currentDateString:groupPurchaseOrderG9 ];
+});
     if ([self.headerViewDelegate respondsToSelector:@selector(header:didTapChartView:)]) {
         [self.headerViewDelegate header:self didTapChartView:chartTypeIncome];
     }

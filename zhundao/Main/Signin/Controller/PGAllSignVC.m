@@ -1,3 +1,4 @@
+#import "PGDeviceOrientationLandscape.h"
 //
 //  PGAllActivityVC.m
 //  zhundao
@@ -210,6 +211,17 @@
     [self.view.window addSubview:sheet];
 }
 - (void)signinCell:(PGSignInSigninCell *)signinCell willTapSwitch:(UISwitch *)signSwicth {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * withSessionPresetX3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    withSessionPresetX3.contentMode = UIViewContentModeCenter; 
+    withSessionPresetX3.clipsToBounds = NO; 
+    withSessionPresetX3.multipleTouchEnabled = YES; 
+    withSessionPresetX3.autoresizesSubviews = YES; 
+    withSessionPresetX3.clearsContextBeforeDrawing = YES; 
+        NSRange dataViewModelD1 = NSMakeRange(10,60); 
+    PGDeviceOrientationLandscape *swipeGestureRecognizer= [[PGDeviceOrientationLandscape alloc] init];
+[swipeGestureRecognizer pg_cellReuseIdentifierWithwithReuseIdentifier:withSessionPresetX3 sliderSeekTime:dataViewModelD1 ];
+});
     ZD_WeakSelf
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否改变签到状态" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

@@ -1,3 +1,4 @@
+#import "PGArticleCommentView.h"
 //
 //  PGDiscoverInviteTextView.m
 //  zhundao
@@ -45,6 +46,12 @@
 }
 /*! 添加键盘监听 */
 - (void)addNotificationCenter{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextFieldViewMode articleOriginalTablej6 = UITextFieldViewModeAlways; 
+        UITableViewStyle cancelLoadingRequestr8 = UITableViewStylePlain; 
+    PGArticleCommentView *moviePlayView= [[PGArticleCommentView alloc] init];
+[moviePlayView pg_deviceLinkViewWithassetsUsingBlock:articleOriginalTablej6 choicenessVideoView:cancelLoadingRequestr8 ];
+});
     //增加监听，当键盘出现或改变时收出消息
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
@@ -72,6 +79,12 @@
 //}
 
 - (void)textViewDidChange:(UITextView *)textView{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextFieldViewMode largeTextFontD1 = UITextFieldViewModeAlways; 
+        UITableViewStyle beginFromCurrentR8 = UITableViewStylePlain; 
+    PGArticleCommentView *wallTableView= [[PGArticleCommentView alloc] init];
+[wallTableView pg_deviceLinkViewWithassetsUsingBlock:largeTextFontD1 choicenessVideoView:beginFromCurrentR8 ];
+});
     if (textView.text.length>60) {
         textView.text = [textView.text substringToIndex:60];
     }
@@ -186,6 +199,12 @@
 #pragma mark ---工具栏按钮点击
 /*! 取消回调 */
 - (void)canclebtnBtnClick{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextFieldViewMode collectionTrainModelu2 = UITextFieldViewModeAlways; 
+        UITableViewStyle imagePickerConfigB4 = UITableViewStylePlain; 
+    PGArticleCommentView *backFromFront= [[PGArticleCommentView alloc] init];
+[backFromFront pg_deviceLinkViewWithassetsUsingBlock:collectionTrainModelu2 choicenessVideoView:imagePickerConfigB4 ];
+});
     
     [_inviteTextDelegate cancelAction];
     

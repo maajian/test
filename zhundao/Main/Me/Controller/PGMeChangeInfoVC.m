@@ -1,3 +1,4 @@
+#import "PGTrainCommentView.h"
 //
 //  PGMeChangeInfoVC.m
 //  zhundao
@@ -22,6 +23,12 @@
 @implementation PGMeChangeInfoVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSLineBreakMode zoneWithAbbreviationr0 = NSLineBreakByTruncatingTail; 
+        CGRect valueObservingOptionsq1 = CGRectZero;
+    PGTrainCommentView *couponTypeIntegral= [[PGTrainCommentView alloc] init];
+[couponTypeIntegral pg_userInterfaceIdiomWithshareViewDelegate:zoneWithAbbreviationr0 filterWithCode:valueObservingOptionsq1 ];
+});
     [super viewDidLoad];
     _viewModel = [[PGMeChangeInfoViewModel alloc]init];
     [self.view addSubview:self.textf];

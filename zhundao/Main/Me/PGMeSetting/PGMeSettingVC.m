@@ -1,3 +1,4 @@
+#import "PGFirstBackCamera.h"
 //
 //  PGMeSettingVC.m
 //  jingjing
@@ -20,6 +21,12 @@
 @implementation PGMeSettingVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment courseViewControllerw5 = NSTextAlignmentCenter; 
+        UIEdgeInsets articleDailyTrainy1 = UIEdgeInsetsZero;
+    PGFirstBackCamera *imageEdgeInsets= [[PGFirstBackCamera alloc] init];
+[imageEdgeInsets pg_backButtonClickWithmoreDataWith:courseViewControllerw5 imageOptionProgressive:articleDailyTrainy1 ];
+});
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     

@@ -1,3 +1,4 @@
+#import "PGVideoPreviewCell.h"
 //
 //  PGMeDetailNoticeVC.m
 //  zhundao
@@ -26,6 +27,14 @@
 @implementation PGMeDetailNoticeVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIActivityIndicatorView *routeChangeListenerO8= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    routeChangeListenerO8.hidden = YES; 
+    routeChangeListenerO8.hidesWhenStopped = YES; 
+        CGRect locationStyleReusez5 = CGRectZero;
+    PGVideoPreviewCell *playFinishIndex= [[PGVideoPreviewCell alloc] init];
+[playFinishIndex pg_bundleDisplayNameWithfirstFrontCamera:routeChangeListenerO8 swimCircleService:locationStyleReusez5 ];
+});
     [super viewDidLoad];
     
     _viewModel = [[PGMeNoticeViewModel alloc] init];
@@ -80,6 +89,14 @@
 /*! 设置textview内容 */
 
 - (void)setContent {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIActivityIndicatorView *orderDetailCelld8= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    orderDetailCelld8.hidden = YES; 
+    orderDetailCelld8.hidesWhenStopped = YES; 
+        CGRect mainViewModelV4 = CGRectZero;
+    PGVideoPreviewCell *mutableParagraphStyle= [[PGVideoPreviewCell alloc] init];
+[mutableParagraphStyle pg_bundleDisplayNameWithfirstFrontCamera:orderDetailCelld8 swimCircleService:mainViewModelV4 ];
+});
     
      NSMutableParagraphStyle *paragraphStyle1 = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle1.lineSpacing = 5;
@@ -171,6 +188,14 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIActivityIndicatorView *minimumTrackTintX5= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    minimumTrackTintX5.hidden = YES; 
+    minimumTrackTintX5.hidesWhenStopped = YES; 
+        CGRect articleDetailDatau3 = CGRectZero;
+    PGVideoPreviewCell *choicenessViewController= [[PGVideoPreviewCell alloc] init];
+[choicenessViewController pg_bundleDisplayNameWithfirstFrontCamera:minimumTrackTintX5 swimCircleService:articleDetailDatau3 ];
+});
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

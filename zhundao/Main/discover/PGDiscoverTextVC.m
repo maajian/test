@@ -1,3 +1,4 @@
+#import "PGScrollViewDeceleration.h"
 //
 //  PGDiscoverTextVC.m
 //  zhundao
@@ -17,6 +18,12 @@ static const NSInteger paragraphSpacing =10;
 @implementation PGDiscoverTextVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITextFieldViewMode playerStateStoppedP1 = UITextFieldViewModeAlways; 
+        NSTextAlignment recommendUserDatax4 = NSTextAlignmentCenter; 
+    PGScrollViewDeceleration *listRequsetWith= [[PGScrollViewDeceleration alloc] init];
+[listRequsetWith pg_viewWillHiddenWithmessageWithUser:playerStateStoppedP1 infoBottomView:recommendUserDatax4 ];
+});
     [super viewDidLoad];
     self.title = @"多点签到使用介绍";
     [self.view addSubview: self.textview];

@@ -1,3 +1,4 @@
+#import "PGLikesViewController.h"
 //
 //  PGImagePreviewController.m
 //  SimpleWord

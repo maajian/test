@@ -1,3 +1,4 @@
+#import "PGLineDashType.h"
 //
 //  PGAvtivityOneActivityVC.m
 //  zhundao
@@ -225,6 +226,12 @@
     }];
 }
 - (void)ishaveArray {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *recognizeSimultaneouslyWithU9 = @"withDailyCourse";
+        UIColor *taskCenterViewQ7= [UIColor redColor];
+    PGLineDashType *fillColorWith= [[PGLineDashType alloc] init];
+[fillColorWith pg_routeChangeListenerWithtrainParticularComment:recognizeSimultaneouslyWithU9 rangeAccessSupported:taskCenterViewQ7 ];
+});
     [self loadData];
 }
 
@@ -491,6 +498,12 @@
 }
 
 - (void)changeModelswitchButton :(UISwitch *)switchButton{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *photoPrevireViewD5 = @"forgotPasswordView";
+        UIColor *circleTweetCommentv7= [UIColor redColor];
+    PGLineDashType *pageIndicatorTint= [[PGLineDashType alloc] init];
+[pageIndicatorTint pg_routeChangeListenerWithtrainParticularComment:photoPrevireViewD5 rangeAccessSupported:circleTweetCommentv7 ];
+});
     NSString *changeStr = nil;
     if (switchButton.on) {
         changeStr = @"1";

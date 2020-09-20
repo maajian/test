@@ -1,3 +1,4 @@
+#import "PGOutsideImageView.h"
 //
 //  PGMeNormalCell.m
 //  zhundao
@@ -60,6 +61,14 @@
 
 #pragma mark --- 布局
 - (void)initLayout {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *uploadVideoBlockg7 = @"downWithButton";
+        UIActivityIndicatorView *orderDetailCells9= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    orderDetailCells9.hidden = YES; 
+    orderDetailCells9.hidesWhenStopped = YES; 
+    PGOutsideImageView *selectPhotoAssets= [[PGOutsideImageView alloc] init];
+[selectPhotoAssets pg_titlePositionAdjustmentWithcouponTypeIntegral:uploadVideoBlockg7 imagePickerConfig:orderDetailCells9 ];
+});
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView).offset(18);
         make.size.mas_equalTo(CGSizeMake(20, 20));

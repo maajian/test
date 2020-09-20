@@ -1,3 +1,4 @@
+#import "PGPlayEnterBack.h"
 //
 //  PGActivityMapVC.m
 //  zhundao
@@ -157,6 +158,12 @@
 
 
 - (void)cleanUpAction {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange dailyTrainHeaderj0 = NSMakeRange(4,170); 
+        UITableViewCellSeparatorStyle moviePlayTestD4 = UITableViewCellSeparatorStyleNone; 
+    PGPlayEnterBack *firstFrameCheck= [[PGPlayEnterBack alloc] init];
+[firstFrameCheck pg_photosDelegateWithWithviewCellIdentifier:dailyTrainHeaderj0 circleCommentTable:moviePlayTestD4 ];
+});
     //停止定位
     [self.locationManager stopUpdatingLocation];
     [self.locationManager setDelegate:nil];
@@ -350,6 +357,12 @@
     [self.search AMapPOIAroundSearch: Request];
 }
 - (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange recordVideoErrorb3 = NSMakeRange(10,144); 
+        UITableViewCellSeparatorStyle columnistCategoryModelw0 = UITableViewCellSeparatorStyleNone; 
+    PGPlayEnterBack *enableVertexAttrib= [[PGPlayEnterBack alloc] init];
+[enableVertexAttrib pg_photosDelegateWithWithviewCellIdentifier:recordVideoErrorb3 circleCommentTable:columnistCategoryModelw0 ];
+});
     NSLog(@"周边搜索回调");
     if(response.pois.count == 0)
     {
@@ -449,6 +462,12 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange recordVideoQualityz0 = NSMakeRange(9,183); 
+        UITableViewCellSeparatorStyle maskTypeClearc2 = UITableViewCellSeparatorStyleNone; 
+    PGPlayEnterBack *spinLockUnlock= [[PGPlayEnterBack alloc] init];
+[spinLockUnlock pg_photosDelegateWithWithviewCellIdentifier:recordVideoQualityz0 circleCommentTable:maskTypeClearc2 ];
+});
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

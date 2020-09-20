@@ -1,3 +1,4 @@
+#import "PGCameraRollAlbum.h"
 //
 //  PGDiscoverMultidropVC.m
 //  zhundao
@@ -52,6 +53,17 @@ static NSString *muliData =@"muliData";
 
  // 左边返回按钮
 - (void)leftItem {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UILabel *centerButtonClicka8= [[UILabel alloc] initWithFrame:CGRectZero]; 
+    centerButtonClicka8.text = @"strokeCourseModel";
+    centerButtonClicka8.textColor = [UIColor whiteColor]; 
+    centerButtonClicka8.font = [UIFont systemFontOfSize:72];
+    centerButtonClicka8.numberOfLines = 0; 
+    centerButtonClicka8.textAlignment = NSTextAlignmentCenter; 
+        NSTextAlignment viewContentModeu0 = NSTextAlignmentCenter; 
+    PGCameraRollAlbum *cancelLoadingRequest= [[PGCameraRollAlbum alloc] init];
+[cancelLoadingRequest pg_photoPickerCollectionWithdelaysTouchesBegan:centerButtonClicka8 itemsSupplementBack:viewContentModeu0 ];
+});
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:self action:@selector(backNav)];
     self.navigationItem.leftBarButtonItem = item;
 }
@@ -320,6 +332,17 @@ static NSString *muliData =@"muliData";
 }
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UILabel *pickerCollectionViewG1= [[UILabel alloc] initWithFrame:CGRectMake(239,53,170,219)]; 
+    pickerCollectionViewG1.text = @"progressDefaultSize";
+    pickerCollectionViewG1.textColor = [UIColor whiteColor]; 
+    pickerCollectionViewG1.font = [UIFont systemFontOfSize:157];
+    pickerCollectionViewG1.numberOfLines = 0; 
+    pickerCollectionViewG1.textAlignment = NSTextAlignmentCenter; 
+        NSTextAlignment viewContentModet8 = NSTextAlignmentCenter; 
+    PGCameraRollAlbum *rankMedalModel= [[PGCameraRollAlbum alloc] init];
+[rankMedalModel pg_photoPickerCollectionWithdelaysTouchesBegan:pickerCollectionViewG1 itemsSupplementBack:viewContentModet8 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

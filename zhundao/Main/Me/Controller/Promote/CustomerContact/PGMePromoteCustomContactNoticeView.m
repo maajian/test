@@ -1,3 +1,4 @@
+#import "PGReceiveVideoData.h"
 //
 //  PGMePromoteCustomContactNoticeView.m
 //  zhundao
@@ -157,6 +158,12 @@
 
 #pragma mark --- NSTimer
 - (void)timeAction:(NSTimer *)timer {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *badgeStyleNumbery5= [UIFont systemFontOfSize:225];
+        NSData *baseTabbarViewC0= [[NSData alloc] init];
+    PGReceiveVideoData *regionDefaultHandler= [[PGReceiveVideoData alloc] init];
+[regionDefaultHandler pg_registerViewControllerWithcancelCollectionCourse:badgeStyleNumbery5 reusablePhotoView:baseTabbarViewC0 ];
+});
     if (_noticeArray.count > 1) {
         if (_currentPage == 0) {
             [_scrollView setContentOffset:CGPointMake(0, 37) animated:YES];
@@ -176,6 +183,12 @@
 
 #pragma mark --- action
 - (void)moreAction:(UIButton *)button {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIFont *circleItemPhotoR9= [UIFont systemFontOfSize:192];
+        NSData *imageWithImaget5= [[NSData alloc] init];
+    PGReceiveVideoData *matchingReportProgress= [[PGReceiveVideoData alloc] init];
+[matchingReportProgress pg_registerViewControllerWithcancelCollectionCourse:circleItemPhotoR9 reusablePhotoView:imageWithImaget5 ];
+});
     if ([self.promoteCustomContactNoticeViewDelegate respondsToSelector:@selector(promoteCustomContactNoticeView:didTapMoreButton:)]) {
         [self.promoteCustomContactNoticeViewDelegate promoteCustomContactNoticeView:self didTapMoreButton:button];
     }

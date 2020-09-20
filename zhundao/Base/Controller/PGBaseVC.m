@@ -1,3 +1,4 @@
+#import "PGBottomShrinkPlay.h"
 //
 //  PGBaseVC.m
 //  zhundao

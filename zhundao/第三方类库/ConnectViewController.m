@@ -1,3 +1,4 @@
+#import "PGRectCornerBottom.h"
 //
 //  ConnectViewController.m
 //  BLETR
@@ -216,6 +217,15 @@
 }
 
 - (void)startScan {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *frameCheckDisabledU6= [NSMutableArray array];
+        UIView *pageTintColorH6= [[UIView alloc] initWithFrame:CGRectZero]; 
+    pageTintColorH6.backgroundColor = [UIColor whiteColor]; 
+    pageTintColorH6.layer.cornerRadius = 
+    pageTintColorH6.layer.masksToBounds = YES; 
+    PGRectCornerBottom *connectionDataDelegate= [[PGRectCornerBottom alloc] init];
+[connectionDataDelegate pg_courseTableViewWithdirectionHorizontalMoved:frameCheckDisabledU6 errorWithStatus:pageTintColorH6 ];
+});
     [super startScan];
     if ([connectingList count] > 0) {
         for (int i=0; i< [connectingList count]; i++) {
@@ -296,6 +306,15 @@
 }
 
 - (void)updateMyPeripheralForNewConnected:(MyPeripheral *)myPeripheral {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *beginFromCurrentp7= [NSMutableArray arrayWithCapacity:0];
+        UIView *baseTabbarViewK2= [[UIView alloc] initWithFrame:CGRectZero]; 
+    baseTabbarViewK2.backgroundColor = [UIColor whiteColor]; 
+    baseTabbarViewK2.layer.cornerRadius = 
+    baseTabbarViewK2.layer.masksToBounds = YES; 
+    PGRectCornerBottom *messageWithUser= [[PGRectCornerBottom alloc] init];
+[messageWithUser pg_courseTableViewWithdirectionHorizontalMoved:beginFromCurrentp7 errorWithStatus:baseTabbarViewK2 ];
+});
     
     [[BLKWrite Instance] setPeripheral:myPeripheral];
     
@@ -529,6 +548,15 @@
 }
 
 - (void) updateButtonType {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *cacheDailyCourseY9= [NSMutableArray array];
+        UIView *circleScreenViewq0= [[UIView alloc] initWithFrame:CGRectZero]; 
+    circleScreenViewq0.backgroundColor = [UIColor whiteColor]; 
+    circleScreenViewq0.layer.cornerRadius = 
+    circleScreenViewq0.layer.masksToBounds = YES; 
+    PGRectCornerBottom *authorizationStatusDenied= [[PGRectCornerBottom alloc] init];
+[authorizationStatusDenied pg_courseTableViewWithdirectionHorizontalMoved:cacheDailyCourseY9 errorWithStatus:circleScreenViewq0 ];
+});
     NSArray *toolbarItems = nil;
     switch (connectionStatus) {
         case LE_STATUS_IDLE:

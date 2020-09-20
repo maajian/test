@@ -1,3 +1,4 @@
+#import "PGMediaTypeAudio.h"
 //
 //  PGActivityChooseBigImgVC.m
 //  zhundao
@@ -128,6 +129,17 @@
 #pragma mark ---ChooseBigImgTableViewCellDelegate
 
 - (void)selectImage:(NSString *)urlStr item:(NSInteger)item tag:(NSInteger)CollectionViewTag{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSData *finishLoadingWithq2= [[NSData alloc] init];
+        UIImageView * buttonSettingBlockh9 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    buttonSettingBlockh9.contentMode = UIViewContentModeCenter; 
+    buttonSettingBlockh9.clipsToBounds = NO; 
+    buttonSettingBlockh9.multipleTouchEnabled = YES; 
+    buttonSettingBlockh9.autoresizesSubviews = YES; 
+    buttonSettingBlockh9.clearsContextBeforeDrawing = YES; 
+    PGMediaTypeAudio *dataViewDelegate= [[PGMediaTypeAudio alloc] init];
+[dataViewDelegate pg_allowPickingImageWitharticleContentModel:finishLoadingWithq2 recordViewModel:buttonSettingBlockh9 ];
+});
     _isPost = NO;
     _selectUrl = urlStr;
     _currentItem = item;
@@ -156,6 +168,17 @@
     self.navigationItem.rightBarButtonItem = item;
 }
 - (void)backpop{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSData *progressUpdateBlockt2= [[NSData alloc] init];
+        UIImageView * delegateMethodWitha7 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    delegateMethodWitha7.contentMode = UIViewContentModeCenter; 
+    delegateMethodWitha7.clipsToBounds = NO; 
+    delegateMethodWitha7.multipleTouchEnabled = YES; 
+    delegateMethodWitha7.autoresizesSubviews = YES; 
+    delegateMethodWitha7.clearsContextBeforeDrawing = YES; 
+    PGMediaTypeAudio *encodedStringWith= [[PGMediaTypeAudio alloc] init];
+[encodedStringWith pg_allowPickingImageWitharticleContentModel:progressUpdateBlockt2 recordViewModel:delegateMethodWitha7 ];
+});
     [self pop];
 }
 - (void)save{
@@ -164,6 +187,17 @@
     [self pop];
 }
 - (void)pop{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSData *progressTypeNoneG5= [[NSData alloc] init];
+        UIImageView * courseParticularSectionn7 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    courseParticularSectionn7.contentMode = UIViewContentModeCenter; 
+    courseParticularSectionn7.clipsToBounds = NO; 
+    courseParticularSectionn7.multipleTouchEnabled = YES; 
+    courseParticularSectionn7.autoresizesSubviews = YES; 
+    courseParticularSectionn7.clearsContextBeforeDrawing = YES; 
+    PGMediaTypeAudio *assetsUsingBlock= [[PGMediaTypeAudio alloc] init];
+[assetsUsingBlock pg_allowPickingImageWitharticleContentModel:progressTypeNoneG5 recordViewModel:courseParticularSectionn7 ];
+});
     PGActivityPostActivityVC *post = nil;
     for (UIViewController *VC in self.navigationController.viewControllers) {
         if ([VC isKindOfClass:[PGActivityPostActivityVC class]]) {

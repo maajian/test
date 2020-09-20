@@ -1,3 +1,4 @@
+#import "PGReachabilityStatusChange.h"
 //
 //  PGLoginCodeFixView.m
 //  jingjing
@@ -100,6 +101,12 @@
     return self.codeView.textField.text;
 }
 - (void)setPhoneStr:(NSString *)phoneStr {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment authorizationOptionAlertN9 = NSTextAlignmentCenter; 
+        UIButtonType pageIndicatorTintm4 = UIButtonTypeContactAdd;
+    PGReachabilityStatusChange *rankMedalModel= [[PGReachabilityStatusChange alloc] init];
+[rankMedalModel pg_groupPurchaseOrderWithauthorizationStatusAuthorized:authorizationOptionAlertN9 paragraphStyleAttribute:pageIndicatorTintm4 ];
+});
     _phoneStr = phoneStr;
     _phoneLabel.text = [NSString stringWithFormat:@"验证码已发送至 +86 %@", phoneStr];
 }

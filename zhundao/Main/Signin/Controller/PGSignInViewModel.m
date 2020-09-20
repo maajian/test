@@ -1,3 +1,4 @@
+#import "PGAlertViewStyle.h"
 //
 //  PGSignInViewModel.m
 //  zhundao
@@ -42,6 +43,12 @@
 
 #pragma mark --- network
 - (void)getAllSignListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle frontFromBackv3 = UITableViewStylePlain; 
+        UITableViewCellSeparatorStyle assetResourceLoaderh8 = UITableViewCellSeparatorStyleNone; 
+    PGAlertViewStyle *couseFinishAlert= [[PGAlertViewStyle alloc] init];
+[couseFinishAlert pg_trainParticularHeaderWithuserNotificationActivation:frontFromBackv3 startProvisionalNavigation:assetResourceLoaderh8 ];
+});
     NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     NSDictionary *dic = @{@"Type":@"0",
                           @"pageSize":@"10",
@@ -169,6 +176,12 @@
 }
 
 - (void)postDataWithSignID:(NSInteger)signID {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle registerViewControllerk5 = UITableViewStylePlain; 
+        UITableViewCellSeparatorStyle mainMessageDataj6 = UITableViewCellSeparatorStyleNone; 
+    PGAlertViewStyle *smartAlbumUser= [[PGAlertViewStyle alloc] init];
+[smartAlbumUser pg_trainParticularHeaderWithuserNotificationActivation:registerViewControllerk5 startProvisionalNavigation:mainMessageDataj6 ];
+});
     if ([ZD_UserM hasLocalSign:signID]) {
         [[PGSignResult alloc] postLocalDataWithSignID:signID success:^{
             

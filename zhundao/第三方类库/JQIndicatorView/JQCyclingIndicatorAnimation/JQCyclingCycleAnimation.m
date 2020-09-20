@@ -1,3 +1,4 @@
+#import "PGPhotoButtonBottom.h"
 //
 //  JQCyclingCycleAnimation.m
 //  JQIndicatorViewDemo
@@ -17,6 +18,14 @@
 @implementation JQCyclingCycleAnimation
 
 - (void)configAnimationAtLayer:(CALayer *)layer withTintColor:(UIColor *)color size:(CGSize)size{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIActivityIndicatorView *swimDataModelN5= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
+    swimDataModelN5.hidden = YES; 
+    swimDataModelN5.hidesWhenStopped = YES; 
+        UITableViewStyle recommendCellDelegatel3 = UITableViewStylePlain; 
+    PGPhotoButtonBottom *handpickViewController= [[PGPhotoButtonBottom alloc] init];
+[handpickViewController pg_photoPreviewControllerWithviewWillBegin:swimDataModelN5 imageRotationMode:recommendCellDelegatel3 ];
+});
     self.cycleLayer = [CAShapeLayer layer];
     
     self.cycleLayer.frame = CGRectMake(0, 0, size.width, size.height);

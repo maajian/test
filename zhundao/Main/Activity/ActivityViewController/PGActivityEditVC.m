@@ -1,3 +1,4 @@
+#import "PGDeviceOrientationLandscape.h"
 //
 //  PGActivityEditVC.m
 //  zhundao
@@ -61,6 +62,17 @@
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIImageView * attentionWithUserM5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    attentionWithUserM5.contentMode = UIViewContentModeCenter; 
+    attentionWithUserM5.clipsToBounds = NO; 
+    attentionWithUserM5.multipleTouchEnabled = YES; 
+    attentionWithUserM5.autoresizesSubviews = YES; 
+    attentionWithUserM5.clearsContextBeforeDrawing = YES; 
+        NSRange codeLoginViewS6 = NSMakeRange(10,237); 
+    PGDeviceOrientationLandscape *finishLoadingWith= [[PGDeviceOrientationLandscape alloc] init];
+[finishLoadingWith pg_cellReuseIdentifierWithwithReuseIdentifier:attentionWithUserM5 sliderSeekTime:codeLoginViewS6 ];
+});
     //获取请求的url路径.
     NSString *requestString = navigationResponse.response.URL.absoluteString;
     NSLog(@"requestString:%@",requestString);

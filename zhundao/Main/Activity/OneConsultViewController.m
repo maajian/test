@@ -1,3 +1,4 @@
+#import "PGLocationHeaderView.h"
 //
 //  OneConsultViewController.m
 //  zhundao
@@ -28,6 +29,12 @@
 @implementation OneConsultViewController
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment imageSourceCopyJ4 = NSTextAlignmentCenter; 
+        UITableViewStyle supportedWindowLevely7 = UITableViewStylePlain; 
+    PGLocationHeaderView *gradeCollectionView= [[PGLocationHeaderView alloc] init];
+[gradeCollectionView pg_assetExportPresetWithlocationViewModel:imageSourceCopyJ4 imageWithLeft:supportedWindowLevely7 ];
+});
     [super viewDidLoad];
     [self baseSetting];
     // Do any additional setup after loading the view.

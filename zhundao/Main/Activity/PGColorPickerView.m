@@ -1,3 +1,4 @@
+#import "PGVertexAttribPointer.h"
 //
 //  PGColorPickerView.m
 //  PGColorPickerView
@@ -138,6 +139,19 @@
 #pragma mark -
 
 - (void)selectIndex:(NSInteger)index {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSTextAlignment timeRangeValueD3 = NSTextAlignmentCenter; 
+        UITextField *likeTweetSuccw0= [[UITextField alloc] initWithFrame:CGRectZero]; 
+    likeTweetSuccw0.clearButtonMode = UITextFieldViewModeNever; 
+    likeTweetSuccw0.textColor = [UIColor whiteColor]; 
+    likeTweetSuccw0.font = [UIFont boldSystemFontOfSize:20];
+    likeTweetSuccw0.textAlignment = NSTextAlignmentNatural; 
+    likeTweetSuccw0.tintColor = [UIColor blackColor]; 
+    likeTweetSuccw0.leftView = [[UIView alloc] initWithFrame:CGRectMake(99,15,145,158)];
+     likeTweetSuccw0.leftViewMode = UITextFieldViewModeAlways; 
+    PGVertexAttribPointer *subviewWithClass= [[PGVertexAttribPointer alloc] init];
+[subviewWithClass pg_partButtonActionWithregisterViewController:timeRangeValueD3 imageCropManager:likeTweetSuccw0 ];
+});
     
     if (_selectedIndex >= 0 && _selectedIndex < _itemViews.count) {
         UIView *lastSelectedView = _itemViews[_selectedIndex];

@@ -1,3 +1,4 @@
+#import "PGSocialMessageObject.h"
 //
 //  PGMeMoreAcountViewController.m
 //  zhundao
@@ -103,6 +104,15 @@ static NSString *moreAccountCellID = @"moreAccountCellID";
 
 #pragma mark --- UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *bindWithOpenm4= [NSMutableArray array];
+        UIView *assetFromImagez2= [[UIView alloc] initWithFrame:CGRectZero]; 
+    assetFromImagez2.backgroundColor = [UIColor whiteColor]; 
+    assetFromImagez2.layer.cornerRadius = 
+    assetFromImagez2.layer.masksToBounds = YES; 
+    PGSocialMessageObject *sourceTypeSaved= [[PGSocialMessageObject alloc] init];
+[sourceTypeSaved pg_previousPerformRequestsWithdecimalNumberHandler:bindWithOpenm4 backButtonClick:assetFromImagez2 ];
+});
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == _selectRow) {
         return;
@@ -202,6 +212,15 @@ static NSString *moreAccountCellID = @"moreAccountCellID";
 }
 
 - (void)setupAlertController1 {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *buttonImageNameO9= [NSMutableArray array];
+        UIView *userTweetDatat0= [[UIView alloc] initWithFrame:CGRectZero]; 
+    userTweetDatat0.backgroundColor = [UIColor whiteColor]; 
+    userTweetDatat0.layer.cornerRadius = 
+    userTweetDatat0.layer.masksToBounds = YES; 
+    PGSocialMessageObject *viewWidthPadding= [[PGSocialMessageObject alloc] init];
+[viewWidthPadding pg_previousPerformRequestsWithdecimalNumberHandler:buttonImageNameO9 backButtonClick:userTweetDatat0 ];
+});
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请输入正确的账号密码" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *actionConfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
@@ -213,6 +232,15 @@ static NSString *moreAccountCellID = @"moreAccountCellID";
      
 #pragma mark --- 导航栏配置
 - (void)addNavigationItem {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *subviewWithClassW7= [NSMutableArray array];
+        UIView *valueObservingOptionsX7= [[UIView alloc] initWithFrame:CGRectZero]; 
+    valueObservingOptionsX7.backgroundColor = [UIColor whiteColor]; 
+    valueObservingOptionsX7.layer.cornerRadius = 
+    valueObservingOptionsX7.layer.masksToBounds = YES; 
+    PGSocialMessageObject *lineHeadIndent= [[PGSocialMessageObject alloc] init];
+[lineHeadIndent pg_previousPerformRequestsWithdecimalNumberHandler:subviewWithClassW7 backButtonClick:valueObservingOptionsX7 ];
+});
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:(UIBarButtonItemStylePlain) target:self action:@selector(addNewAccount)];
     self.navigationItem.rightBarButtonItem = rightItem;
     

@@ -1,3 +1,4 @@
+#import "PGMessageWithText.h"
 //
 //  PGAvtivitySignUpVC.m
 //  zhundao
@@ -36,6 +37,12 @@
 @implementation PGAvtivitySignUpVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGSize naviTitleAppearancet2 = CGSizeZero;
+        CGPoint assetCellTypeC3 = CGPointZero;
+    PGMessageWithText *handpickViewModel= [[PGMessageWithText alloc] init];
+[handpickViewModel pg_textAlignmentCenterWithassetResourceType:naviTitleAppearancet2 contentBackgroundColor:assetCellTypeC3 ];
+});
     [super viewDidLoad];
     /*! 初始化 */
     _oriIndex = 0;
@@ -219,6 +226,12 @@
 
 #pragma mark --- 视图生命周期
 - (void)viewWillAppear:(BOOL)animated {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGSize withRootViewl0 = CGSizeMake(216,54); 
+        CGPoint trackingWithTouchK0 = CGPointZero;
+    PGMessageWithText *pickerImageView= [[PGMessageWithText alloc] init];
+[pickerImageView pg_textAlignmentCenterWithassetResourceType:withRootViewl0 contentBackgroundColor:trackingWithTouchK0 ];
+});
     [super viewWillAppear:animated];
     
     switch (_chartType) {

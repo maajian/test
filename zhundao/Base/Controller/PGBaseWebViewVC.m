@@ -1,3 +1,4 @@
+#import "PGHonorTitleModel.h"
 //
 //  PGBaseWebViewVC.m
 //  zhundao
@@ -38,6 +39,15 @@
 
 // 位置计算
 - (void)relayoutFrameOfSubViews {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGPoint medalViewModelL6 = CGPointZero;
+        UITextView *circleViewControllerI4= [[UITextView alloc] initWithFrame:CGRectZero]; 
+    circleViewControllerI4.editable = NO; 
+    circleViewControllerI4.font = [UIFont systemFontOfSize:35];
+    circleViewControllerI4.text = @"phoneWithPhone";
+    PGHonorTitleModel *withTaskCenter= [[PGHonorTitleModel alloc] init];
+[withTaskCenter pg_attentionViewControllerWithcellPlayerFather:medalViewModelL6 withCourseVideo:circleViewControllerI4 ];
+});
     self.webView.frame = CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.height - 64);
 }
 
@@ -72,6 +82,15 @@
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGPoint sliderTouchDownW5 = CGPointZero;
+        UITextView *groupPhotosWitho1= [[UITextView alloc] initWithFrame:CGRectMake(175,230,21,118)]; 
+    groupPhotosWitho1.editable = NO; 
+    groupPhotosWitho1.font = [UIFont systemFontOfSize:142];
+    groupPhotosWitho1.text = @"compositionLayerInstruction";
+    PGHonorTitleModel *viewContentSize= [[PGHonorTitleModel alloc] init];
+[viewContentSize pg_attentionViewControllerWithcellPlayerFather:sliderTouchDownW5 withCourseVideo:groupPhotosWitho1 ];
+});
     // 如果是跳转一个新页面
     if (navigationAction.targetFrame == nil) {
         [webView loadRequest:navigationAction.request];

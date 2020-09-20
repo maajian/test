@@ -1,3 +1,4 @@
+#import "PGArticleContentModel.h"
 //
 //  PGAvtivityMoreModalCell.m
 //  zhundao
@@ -87,6 +88,15 @@
 
 #pragma mark --- setter
 - (void)setModel:(PGAvtivityMoreModalModel *)model {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIView *filterManagerDelegateq4= [[UIView alloc] initWithFrame:CGRectMake(225,153,173,251)]; 
+    filterManagerDelegateq4.backgroundColor = [UIColor whiteColor]; 
+    filterManagerDelegateq4.layer.cornerRadius = 
+    filterManagerDelegateq4.layer.masksToBounds = YES; 
+        CGSize statusCameraRollT0 = CGSizeMake(58,237); 
+    PGArticleContentModel *fillRuleEven= [[PGArticleContentModel alloc] init];
+[fillRuleEven pg_userContentControllerWithpreviewCollectionView:filterManagerDelegateq4 withMainComment:statusCameraRollT0 ];
+});
     _model = model;
     _titleLabel.text = _model.title;
     _imageView.image = [UIImage imageNamed:_model.imageStr];

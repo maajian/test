@@ -1,3 +1,4 @@
+#import "PGCachingImageManager.h"
 //
 //  PGActivityAMapTipAnnotation.m
 //  officialDemo2D

@@ -1,3 +1,4 @@
+#import "PGFirendsViewModel.h"
 //
 //  PGDiscoverShowView.m
 //  zhundao
@@ -358,6 +359,12 @@ static const CGFloat bottomViewHeight= 44;
 #pragma mark 添加文本框
 /*! 添加输入框 */
 - (void)addTextF{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle backIndicatorTransitionz6 = UITableViewStylePlain; 
+        CGPoint withRankMedalE6 = CGPointZero;
+    PGFirendsViewModel *downloadChapterModel= [[PGFirendsViewModel alloc] init];
+[downloadChapterModel pg_vertexAttribPointerWithrouteChangeListener:backIndicatorTransitionz6 showFullButton:withRankMedalE6 ];
+});
     _count+=1;
     PGDiscoverShowTextView *textView = [[PGDiscoverShowTextView alloc]init];
     textView.tag = _count+100;
@@ -392,6 +399,12 @@ static const CGFloat bottomViewHeight= 44;
 #pragma mark --- inviteTextDelegate
 
 - (void)cancelAction{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle userModelFromt7 = UITableViewStylePlain; 
+        CGPoint showingPhotoViewY5 = CGPointZero;
+    PGFirendsViewModel *integralRecordTable= [[PGFirendsViewModel alloc] init];
+[integralRecordTable pg_vertexAttribPointerWithrouteChangeListener:userModelFromt7 showFullButton:showingPhotoViewY5 ];
+});
     [self PGDiscoverShowView];
     [self removeEditView];
     UITextView *textView = [self viewWithTag:_currentTag];
@@ -437,6 +450,12 @@ static const CGFloat bottomViewHeight= 44;
 }
 /*! 隐藏界面控件 */
 - (void)hiddenView{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle groupPurchaseModeld0 = UITableViewStylePlain; 
+        CGPoint timesFromSliderZ6 = CGPointZero;
+    PGFirendsViewModel *withRankMedal= [[PGFirendsViewModel alloc] init];
+[withRankMedal pg_vertexAttribPointerWithrouteChangeListener:groupPurchaseModeld0 showFullButton:timesFromSliderZ6 ];
+});
     _topView.alpha=0;
 }
 /*! 显示界面控件 */

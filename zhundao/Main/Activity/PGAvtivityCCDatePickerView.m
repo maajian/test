@@ -1,3 +1,4 @@
+#import "PGWindowLevelAlert.h"
 //
 //  PGAvtivityCCDatePickerView.m
 //  ChooseTimePickerView
@@ -385,6 +386,19 @@
     
 }
 - (void)fadeOut{
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *nameLeftLabelO1= [[UIScrollView alloc] initWithFrame:CGRectMake(184,122,32,23)]; 
+    nameLeftLabelO1.showsHorizontalScrollIndicator = NO; 
+    nameLeftLabelO1.showsVerticalScrollIndicator = NO; 
+    nameLeftLabelO1.bounces = NO; 
+    nameLeftLabelO1.maximumZoomScale = 5; 
+    nameLeftLabelO1.minimumZoomScale = 1; 
+        UISwitch *regularExpressionCaseT7= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    regularExpressionCaseT7.on = YES; 
+    regularExpressionCaseT7.onTintColor = [UIColor whiteColor]; 
+    PGWindowLevelAlert *itemTextFont= [[PGWindowLevelAlert alloc] init];
+[itemTextFont pg_statusSavePhotosWithpassWordWith:nameLeftLabelO1 nameRightLabel:regularExpressionCaseT7 ];
+});
     [UIView animateWithDuration:.35 animations:^{
         self.alpha = 0.0;
     }completion:^(BOOL finished) {
@@ -935,6 +949,19 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 - (void)setY:(CGFloat)y {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *particularViewModelp2= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
+    particularViewModelp2.showsHorizontalScrollIndicator = NO; 
+    particularViewModelp2.showsVerticalScrollIndicator = NO; 
+    particularViewModelp2.bounces = NO; 
+    particularViewModelp2.maximumZoomScale = 5; 
+    particularViewModelp2.minimumZoomScale = 1; 
+        UISwitch *suggestBackViewU4= [[UISwitch alloc] initWithFrame:CGRectMake(136,85,69,42)]; 
+    suggestBackViewU4.on = YES; 
+    suggestBackViewU4.onTintColor = [UIColor whiteColor]; 
+    PGWindowLevelAlert *trainsWithOffset= [[PGWindowLevelAlert alloc] init];
+[trainsWithOffset pg_statusSavePhotosWithpassWordWith:particularViewModelp2 nameRightLabel:suggestBackViewU4 ];
+});
     CGRect frame = self.frame;
     frame.origin.y = y;
     self.frame = frame;
@@ -977,6 +1004,19 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 - (void)setHeight:(CGFloat)height {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIScrollView *secondeMallViewm1= [[UIScrollView alloc] initWithFrame:CGRectMake(248,167,42,17)]; 
+    secondeMallViewm1.showsHorizontalScrollIndicator = NO; 
+    secondeMallViewm1.showsVerticalScrollIndicator = NO; 
+    secondeMallViewm1.bounces = NO; 
+    secondeMallViewm1.maximumZoomScale = 5; 
+    secondeMallViewm1.minimumZoomScale = 1; 
+        UISwitch *chooseStadiumTableG2= [[UISwitch alloc] initWithFrame:CGRectMake(244,38,110,81)]; 
+    chooseStadiumTableG2.on = YES; 
+    chooseStadiumTableG2.onTintColor = [UIColor whiteColor]; 
+    PGWindowLevelAlert *photoButtonClick= [[PGWindowLevelAlert alloc] init];
+[photoButtonClick pg_statusSavePhotosWithpassWordWith:secondeMallViewm1 nameRightLabel:chooseStadiumTableG2 ];
+});
     CGRect frame = self.frame;
     frame.size.height = height;
     self.frame = frame;

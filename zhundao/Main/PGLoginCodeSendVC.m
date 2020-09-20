@@ -1,3 +1,4 @@
+#import "PGArticleContentModel.h"
 //
 //  PGLoginCodeSendVC.m
 //  jingjing
@@ -31,6 +32,15 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 - (void)viewWillDisappear:(BOOL)animated {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIView *reusableCellWithA7= [[UIView alloc] initWithFrame:CGRectMake(26,39,96,102)]; 
+    reusableCellWithA7.backgroundColor = [UIColor whiteColor]; 
+    reusableCellWithA7.layer.cornerRadius = 
+    reusableCellWithA7.layer.masksToBounds = YES; 
+        CGSize tableViewContentN3 = CGSizeMake(150,200); 
+    PGArticleContentModel *sliderSeekTime= [[PGArticleContentModel alloc] init];
+[sliderSeekTime pg_userContentControllerWithpreviewCollectionView:reusableCellWithA7 withMainComment:tableViewContentN3 ];
+});
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
@@ -72,6 +82,15 @@
 
 #pragma mark --- PGLoginCodeSendViewDelegate
 - (void)PGLoginCodeSendView:(PGLoginCodeSendView *)loginCodeSendView didTapCloseButton:(UIButton *)button {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIView *viewWillHiddenf5= [[UIView alloc] initWithFrame:CGRectMake(162,22,101,180)]; 
+    viewWillHiddenf5.backgroundColor = [UIColor whiteColor]; 
+    viewWillHiddenf5.layer.cornerRadius = 
+    viewWillHiddenf5.layer.masksToBounds = YES; 
+        CGSize normalTableViewr7 = CGSizeMake(233,51); 
+    PGArticleContentModel *ringRotationAnimation= [[PGArticleContentModel alloc] init];
+[ringRotationAnimation pg_userContentControllerWithpreviewCollectionView:viewWillHiddenf5 withMainComment:normalTableViewr7 ];
+});
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)PGLoginCodeSendView:(PGLoginCodeSendView *)loginCodeSendView didTapNextButton:(UIButton *)button {

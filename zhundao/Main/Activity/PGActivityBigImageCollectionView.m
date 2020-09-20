@@ -1,3 +1,4 @@
+#import "PGVideoWithScroll.h"
 //
 //  PGActivityBigImageCollectionView.m
 //  zhundao

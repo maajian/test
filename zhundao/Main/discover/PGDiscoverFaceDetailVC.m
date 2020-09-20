@@ -1,3 +1,4 @@
+#import "PGAlbumPickerController.h"
 //
 //  PGDiscoverFaceDetailVC.m
 //  zhundao
@@ -35,6 +36,12 @@
 @implementation PGDiscoverFaceDetailVC
 
 - (void)viewDidLoad {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *videoCameraInterfacem0= [NSMutableArray arrayWithCapacity:0];
+        UITableViewStyle reusableSupplementaryViewg7 = UITableViewStylePlain; 
+    PGAlbumPickerController *zoneWithAbbreviation= [[PGAlbumPickerController alloc] init];
+[zoneWithAbbreviation pg_routeSearchResponseWithshareImageObject:videoCameraInterfacem0 orderStepView:reusableSupplementaryViewg7 ];
+});
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     [self createRight];
@@ -282,6 +289,12 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *textAlignmentCenterK7= [NSMutableArray arrayWithCapacity:0];
+        UITableViewStyle dailyTrainChapterU7 = UITableViewStylePlain; 
+    PGAlbumPickerController *cellWithIndex= [[PGAlbumPickerController alloc] init];
+[cellWithIndex pg_routeSearchResponseWithshareImageObject:textAlignmentCenterK7 orderStepView:dailyTrainChapterU7 ];
+});
     [super viewWillDisappear:animated];
     if (_pickerView) {
         _pickerView = nil;

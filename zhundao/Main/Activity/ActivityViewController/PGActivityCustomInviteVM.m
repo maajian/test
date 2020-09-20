@@ -1,3 +1,4 @@
+#import "PGUserInfoBottom.h"
 //
 //  PGActivityCustomInviteVM.m
 //  zhundao

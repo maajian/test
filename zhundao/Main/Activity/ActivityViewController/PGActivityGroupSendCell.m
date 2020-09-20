@@ -1,3 +1,4 @@
+#import "PGResizeAspectFill.h"
 //
 //  PGActivityGroupSendCell.m
 //  zhundao
@@ -13,6 +14,14 @@
 @implementation PGActivityGroupSendCell
 
 - (void)awakeFromNib {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *imageProgressUpdated6= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    imageProgressUpdated6.on = YES; 
+    imageProgressUpdated6.onTintColor = [UIColor whiteColor]; 
+        NSRange allowsBackForwardb9 = NSMakeRange(5,178); 
+    PGResizeAspectFill *tableViewStyle= [[PGResizeAspectFill alloc] init];
+[tableViewStyle pg_socialMessageObjectWithloginWithUser:imageProgressUpdated6 countTableView:allowsBackForwardb9 ];
+});
     [super awakeFromNib];
     // Initialization code
 }

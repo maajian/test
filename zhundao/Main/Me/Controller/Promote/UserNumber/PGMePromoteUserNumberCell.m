@@ -1,3 +1,4 @@
+#import "PGCircleCropRadius.h"
 //
 //  PGDiscoverPromoteUserNumberCell.m
 //  zhundao
@@ -68,6 +69,17 @@
 
 #pragma mark --- UI
 - (void)setupUI {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle controllerWithTitleU4 = UITableViewStylePlain; 
+        UIImageView * infoHeaderHeighty2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    infoHeaderHeighty2.contentMode = UIViewContentModeCenter; 
+    infoHeaderHeighty2.clipsToBounds = NO; 
+    infoHeaderHeighty2.multipleTouchEnabled = YES; 
+    infoHeaderHeighty2.autoresizesSubviews = YES; 
+    infoHeaderHeighty2.clearsContextBeforeDrawing = YES; 
+    PGCircleCropRadius *buttonSystemItem= [[PGCircleCropRadius alloc] init];
+[buttonSystemItem pg_fansWithUserWithselectPhotoDelegate:controllerWithTitleU4 failLoadingWith:infoHeaderHeighty2 ];
+});
     [self.contentView addSubview:self.iconImageView];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.iDLabel];
@@ -103,6 +115,17 @@
 
 #pragma mark --- setter
 - (void)setModel:(PGMePromoteUserNumberModel *)model {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UITableViewStyle collectionDataWithf2 = UITableViewStylePlain; 
+        UIImageView * networkStatusReachableviaS4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    networkStatusReachableviaS4.contentMode = UIViewContentModeCenter; 
+    networkStatusReachableviaS4.clipsToBounds = NO; 
+    networkStatusReachableviaS4.multipleTouchEnabled = YES; 
+    networkStatusReachableviaS4.autoresizesSubviews = YES; 
+    networkStatusReachableviaS4.clearsContextBeforeDrawing = YES; 
+    PGCircleCropRadius *trainParticularView= [[PGCircleCropRadius alloc] init];
+[trainParticularView pg_fansWithUserWithselectPhotoDelegate:collectionDataWithf2 failLoadingWith:networkStatusReachableviaS4 ];
+});
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.HeadImgurl] placeholderImage:[UIImage imageNamed:@"user.png"]];
     if (model.TrueName.length && model.NickName.length) {
         self.titleLabel.text = [NSString stringWithFormat:@"%@ (%@)",model.NickName, model.TrueName];

@@ -1,3 +1,4 @@
+#import "PGMedalDetailModel.h"
 //
 //  JQMusic2Animation.m
 //  JQIndicatorViewDemo
@@ -54,6 +55,12 @@
 }
 
 - (void)removeAnimation{
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSLineBreakMode childViewControllersB5 = NSLineBreakByTruncatingTail; 
+        UIEdgeInsets lineJoinMiterH2 = UIEdgeInsetsMake(82,33,113,161); 
+    PGMedalDetailModel *imageSourceCopy= [[PGMedalDetailModel alloc] init];
+[imageSourceCopy pg_cancelAutoFadeWithlightBlackColor:childViewControllersB5 socialShareResponse:lineJoinMiterH2 ];
+});
     [self.barLayer removeAnimationForKey:@"animation"];
 }
 

@@ -1,3 +1,4 @@
+#import "PGNotificationPresentationOption.h"
 //
 //  PGAvtivitySignUpView.m
 //  zhundao
@@ -55,6 +56,19 @@
 #pragma mark --- 添加折线图
 
 - (void)setupLineUI {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *collectionOriginalModelr4= [[UISwitch alloc] initWithFrame:CGRectMake(2,61,116,24)]; 
+    collectionOriginalModelr4.on = YES; 
+    collectionOriginalModelr4.onTintColor = [UIColor whiteColor]; 
+        UIImageView * recommendCellDelegateC0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    recommendCellDelegateC0.contentMode = UIViewContentModeCenter; 
+    recommendCellDelegateC0.clipsToBounds = NO; 
+    recommendCellDelegateC0.multipleTouchEnabled = YES; 
+    recommendCellDelegateC0.autoresizesSubviews = YES; 
+    recommendCellDelegateC0.clearsContextBeforeDrawing = YES; 
+    PGNotificationPresentationOption *collectionViewCell= [[PGNotificationPresentationOption alloc] init];
+[collectionViewCell pg_recordVideoCameraWithobjectsUsingBlock:collectionOriginalModelr4 trainViewModel:recommendCellDelegateC0 ];
+});
     AAChartView *chartView = [[AAChartView alloc] initWithFrame:CGRectMake(10, 20, kScreenWidth - 20, self.frame.size.height - 40)];
     chartView.scrollEnabled = YES;
     [self addSubview:chartView];
@@ -78,6 +92,19 @@
 
 #pragma mark --- 添加饼图
 - (void)setupPieUI {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UISwitch *userInfoHeaderN6= [[UISwitch alloc] initWithFrame:CGRectZero]; 
+    userInfoHeaderN6.on = YES; 
+    userInfoHeaderN6.onTintColor = [UIColor whiteColor]; 
+        UIImageView * changePreviousRouteL5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    changePreviousRouteL5.contentMode = UIViewContentModeCenter; 
+    changePreviousRouteL5.clipsToBounds = NO; 
+    changePreviousRouteL5.multipleTouchEnabled = YES; 
+    changePreviousRouteL5.autoresizesSubviews = YES; 
+    changePreviousRouteL5.clearsContextBeforeDrawing = YES; 
+    PGNotificationPresentationOption *coachDetailModel= [[PGNotificationPresentationOption alloc] init];
+[coachDetailModel pg_recordVideoCameraWithobjectsUsingBlock:userInfoHeaderN6 trainViewModel:changePreviousRouteL5 ];
+});
     /*! 付款人数 */
     AAChartView *payChartView = [[AAChartView alloc] initWithFrame:CGRectMake(10, self.frame.size.height/2 , kScreenWidth - 20, (self.frame.size.height - 40)/2)];
     payChartView.scrollEnabled = NO;

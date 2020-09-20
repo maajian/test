@@ -1,3 +1,4 @@
+#import "PGOrderWithPayment.h"
 //
 //  PGDiscoverPrintVC.m
 //  zhundao
@@ -304,6 +305,12 @@
 
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSRange progressTypeDefaultN6 = NSMakeRange(4,96); 
+        NSString *photosDelegateWithv1 = @"updateStatuOptional";
+    PGOrderWithPayment *mutableParagraphStyle= [[PGOrderWithPayment alloc] init];
+[mutableParagraphStyle pg_weekTimeIntervalWithcourseScrollView:progressTypeDefaultN6 mainMessageView:photosDelegateWithv1 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

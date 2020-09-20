@@ -1,3 +1,4 @@
+#import "PGBottomShrinkPlay.h"
 //
 //  PGMeWithDrawViewController.m
 //  zhundao
@@ -26,6 +27,12 @@
 }
 
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSData *withAssetTracks7= [[NSData alloc] init];
+        UIFont *settingPassWorde1= [UIFont systemFontOfSize:241];
+    PGBottomShrinkPlay *userCommentModel= [[PGBottomShrinkPlay alloc] init];
+[userCommentModel pg_centerViewModelWithimageTypeFail:withAssetTracks7 dailyCourseModel:settingPassWorde1 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

@@ -1,3 +1,4 @@
+#import "PGBytesFromData.h"
 //
 //  PGMeChangeSexVC.m
 //  zhundao
@@ -114,6 +115,12 @@
 }
 
 - (void)save{
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGRect passWordWithC8 = CGRectZero;
+        UITextFieldViewMode metersTimeLabelc5 = UITextFieldViewModeAlways; 
+    PGBytesFromData *userModelFrom= [[PGBytesFromData alloc] init];
+[userModelFrom pg_maskViewFlagWithgroupPurchaseTable:passWordWithC8 circleItemShare:metersTimeLabelc5 ];
+});
     NSDictionary *sexDic = @{@"sex":@(_Sex)};
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"正在加载";
@@ -137,6 +144,12 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGRect objectsUsingBlocke9 = CGRectMake(47,4,73,69); 
+        UITextFieldViewMode originStatusBackgroundI3 = UITextFieldViewModeAlways; 
+    PGBytesFromData *groupPurchaseOrder= [[PGBytesFromData alloc] init];
+[groupPurchaseOrder pg_maskViewFlagWithgroupPurchaseTable:objectsUsingBlocke9 circleItemShare:originStatusBackgroundI3 ];
+});
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

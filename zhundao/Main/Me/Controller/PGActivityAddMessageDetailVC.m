@@ -1,3 +1,4 @@
+#import "PGBytesFromData.h"
 //
 //  PGActivityAddMessageDetailVC.m
 //  zhundao

@@ -1,3 +1,4 @@
+#import "PGStringFromData.h"
 //
 //
 //  Created by mythkiven on 15/11/12.
@@ -24,6 +25,17 @@
 
 #pragma mark － 默认邮箱
 - (void)setUpEmailSuffixArray {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGPoint collectionWithOffsetp0 = CGPointMake(6,165); 
+        UIScrollView *groupPurchaseModelh5= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
+    groupPurchaseModelh5.showsHorizontalScrollIndicator = NO; 
+    groupPurchaseModelh5.showsVerticalScrollIndicator = NO; 
+    groupPurchaseModelh5.bounces = NO; 
+    groupPurchaseModelh5.maximumZoomScale = 5; 
+    groupPurchaseModelh5.minimumZoomScale = 1; 
+    PGStringFromData *playerStatusFailed= [[PGStringFromData alloc] init];
+[playerStatusFailed pg_userInterfaceIdiomWithshaderFromString:collectionWithOffsetp0 inputTextureVertex:groupPurchaseModelh5 ];
+});
     self.mailsuffixData = @[
                             @"163.com",
                             @"126.com",
@@ -134,6 +146,17 @@
     self.pullTableView.backgroundColor =_mailBgColor;
 }
 - (void)setMLeftMargin:(CGFloat)margin {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGPoint noticeTypeLoginf6 = CGPointZero;
+        UIScrollView *buttonTitleColorr1= [[UIScrollView alloc] initWithFrame:CGRectMake(187,187,142,250)]; 
+    buttonTitleColorr1.showsHorizontalScrollIndicator = NO; 
+    buttonTitleColorr1.showsVerticalScrollIndicator = NO; 
+    buttonTitleColorr1.bounces = NO; 
+    buttonTitleColorr1.maximumZoomScale = 5; 
+    buttonTitleColorr1.minimumZoomScale = 1; 
+    PGStringFromData *networkReachabilityStatus= [[PGStringFromData alloc] init];
+[networkReachabilityStatus pg_userInterfaceIdiomWithshaderFromString:noticeTypeLoginf6 inputTextureVertex:buttonTitleColorr1 ];
+});
     _mLeftMargin = margin;
     [self.pullTableView reloadData];
 }
@@ -192,6 +215,17 @@
 }
 
 - (void)tapCell:(UIButton *)sender {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGPoint authorizationWithCompletioni9 = CGPointZero;
+        UIScrollView *dailyTrainChapterI1= [[UIScrollView alloc] initWithFrame:CGRectMake(1,18,12,144)]; 
+    dailyTrainChapterI1.showsHorizontalScrollIndicator = NO; 
+    dailyTrainChapterI1.showsVerticalScrollIndicator = NO; 
+    dailyTrainChapterI1.bounces = NO; 
+    dailyTrainChapterI1.maximumZoomScale = 5; 
+    dailyTrainChapterI1.minimumZoomScale = 1; 
+    PGStringFromData *resizeModeFast= [[PGStringFromData alloc] init];
+[resizeModeFast pg_userInterfaceIdiomWithshaderFromString:authorizationWithCompletioni9 inputTextureVertex:dailyTrainChapterI1 ];
+});
     NSString *formerStr = [self.text substringToIndex:[self.text rangeOfString:@"@"].location+1];
     self.text = [formerStr stringByAppendingString:self.matchedSuffixArray[sender.tag]];
     self.pullTableView.hidden = YES;

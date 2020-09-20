@@ -1,3 +1,4 @@
+#import "PGAssetPropertyDuration.h"
 //
 //  PGDiscoverMainVC.m
 //  zhundao
@@ -76,6 +77,17 @@
 
 /*! 自定义报名项 */
 - (void)pushToCostomVC {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGPoint javaScriptConfirmt5 = CGPointZero;
+        UIImageView * videoProcessingQueueb9 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
+    videoProcessingQueueb9.contentMode = UIViewContentModeCenter; 
+    videoProcessingQueueb9.clipsToBounds = NO; 
+    videoProcessingQueueb9.multipleTouchEnabled = YES; 
+    videoProcessingQueueb9.autoresizesSubviews = YES; 
+    videoProcessingQueueb9.clearsContextBeforeDrawing = YES; 
+    PGAssetPropertyDuration *videoWithAsset= [[PGAssetPropertyDuration alloc] init];
+[videoWithAsset pg_activityListWithWithfillRuleEven:javaScriptConfirmt5 collectionViewController:videoProcessingQueueb9 ];
+});
     PGDiscoverCustomApplyVC *customViewCtr = [[PGDiscoverCustomApplyVC alloc]init];
 //    PGDiscoverCustomVC *custom = [[PGDiscoverCustomVC alloc] init];
     [self.navigationController pushViewController:customViewCtr animated:YES];

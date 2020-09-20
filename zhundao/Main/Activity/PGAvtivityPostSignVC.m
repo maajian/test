@@ -1,3 +1,4 @@
+#import "PGDailyCourseModel.h"
 //
 //  PGAvtivityPostSignVC.m
 //  zhundao
@@ -260,6 +261,14 @@
     }
 }
 - (void)didReceiveMemoryWarning {
+dispatch_async(dispatch_get_main_queue(), ^{
+    UIEdgeInsets groupPurchaseViewM2 = UIEdgeInsetsMake(39,94,153,198); 
+        UISwitch *pickerViewDelegatem6= [[UISwitch alloc] initWithFrame:CGRectMake(36,94,144,212)]; 
+    pickerViewDelegatem6.on = YES; 
+    pickerViewDelegatem6.onTintColor = [UIColor whiteColor]; 
+    PGDailyCourseModel *taskCenterTable= [[PGDailyCourseModel alloc] init];
+[taskCenterTable pg_interfaceOrientationMaskWithtrainCommentModel:groupPurchaseViewM2 receiveMemoryWarning:pickerViewDelegatem6 ];
+});
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

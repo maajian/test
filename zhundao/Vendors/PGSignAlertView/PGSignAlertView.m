@@ -1,3 +1,4 @@
+#import "PGColumnistChildData.h"
 //
 //  PGSignAlertView.m
 //  zhundao
@@ -187,6 +188,17 @@
     [self animationOut];
 }
 - (void)sureAction:(UIButton *)button {
+dispatch_async(dispatch_get_main_queue(), ^{
+    NSMutableArray *baseLoginViewp0= [NSMutableArray array];
+        UIScrollView *dailyCourseTableo6= [[UIScrollView alloc] initWithFrame:CGRectMake(250,79,108,249)]; 
+    dailyCourseTableo6.showsHorizontalScrollIndicator = NO; 
+    dailyCourseTableo6.showsVerticalScrollIndicator = NO; 
+    dailyCourseTableo6.bounces = NO; 
+    dailyCourseTableo6.maximumZoomScale = 5; 
+    dailyCourseTableo6.minimumZoomScale = 1; 
+    PGColumnistChildData *videoPlayView= [[PGColumnistChildData alloc] init];
+[videoPlayView pg_statusPhotoStreamWithplayerDecodeError:baseLoginViewp0 settingViewController:dailyCourseTableo6 ];
+});
     if (_sureBlock) {
         _sureBlock();
     }

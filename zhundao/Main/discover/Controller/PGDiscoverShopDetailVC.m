@@ -1,3 +1,4 @@
+#import "PGViewImageFinish.h"
 //
 //  PGDiscoverShopDetailVC.m
 //  zhundao
@@ -21,6 +22,12 @@
 
 //移除监听
 - (void)dealloc{
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGRect successWithJsonh0 = CGRectMake(193,115,56,205); 
+        NSData *trainParticularViewo5= [[NSData alloc] init];
+    PGViewImageFinish *spinLockLock= [[PGViewImageFinish alloc] init];
+[spinLockLock pg_progressUpdateBlockWithimageGenerationError:successWithJsonh0 finishLoadWith:trainParticularViewo5 ];
+});
     [self.webView removeObserver:self forKeyPath:@"title" context:nil];
 }
 - (void)viewDidLoad {
@@ -37,6 +44,12 @@
 
 #pragma mark --- action
 - (void)shareAction {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGRect rangeAccessSupportedO4 = CGRectMake(55,2,150,117); 
+        NSData *textInputNotificationz9= [[NSData alloc] init];
+    PGViewImageFinish *forgotPasswordView= [[PGViewImageFinish alloc] init];
+[forgotPasswordView pg_progressUpdateBlockWithimageGenerationError:rangeAccessSupportedO4 finishLoadWith:textInputNotificationz9 ];
+});
     [[PGSignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_imageUrl]]] webpageUrl:self.urlString  withCTR:self Withtype:5];
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -48,6 +61,12 @@
     }
 }
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+dispatch_async(dispatch_get_main_queue(), ^{
+    CGRect downloadAlertViewm4 = CGRectMake(109,5,219,5); 
+        NSData *withDataArrayE9= [[NSData alloc] init];
+    PGViewImageFinish *delegateMethodWith= [[PGViewImageFinish alloc] init];
+[delegateMethodWith pg_progressUpdateBlockWithimageGenerationError:downloadAlertViewm4 finishLoadWith:withDataArrayE9 ];
+});
     _productId = 0;
     if ([navigationAction.request.URL.absoluteString containsString:@"market/detail"]) {
         self.urlString = navigationAction.request.URL.absoluteString;
