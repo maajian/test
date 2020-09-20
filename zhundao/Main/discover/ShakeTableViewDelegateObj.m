@@ -36,9 +36,8 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *array = @[@"图标",
-                       @"设备名称",
-                       @"ZDID",
-                       @"WXID",
+                       @"标题",
+                       @"设备ID",
                        @"购买时间",
                        @"绑定功能"];
     if (indexPath.row==0) {
@@ -154,7 +153,7 @@
             make.left.equalTo(_baseLabel).offset(5);
         }];
                 nameLabel.font = [UIFont systemFontOfSize:14];
-        nameLabel.text = _model.BeaconName;
+        nameLabel.text = _model.Title;
         nameLabel.textAlignment = NSTextAlignmentRight;
         nameLabel.textColor = [UIColor lightGrayColor];
         return cell;
@@ -206,63 +205,12 @@
              make.height.equalTo(@30);
         }];
                 nameLabel.font = [UIFont systemFontOfSize:14];
-        nameLabel.text = _model.BeaconID;
+        nameLabel.text = _model.DeviceId;
         nameLabel.textAlignment = NSTextAlignmentRight;
       nameLabel.textColor = [UIColor lightGrayColor];
         return cell;
     }
     else if (indexPath.row==3)
-    {
-        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier2"];
-        if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier2"];
-        }
-        for (UIView *subview in cell.subviews) {
-            NSLog(@"view = %@",cell.subviews);
-            if ([subview isKindOfClass:[UILabel class]]) {
-                [subview removeFromSuperview];
-            }
-            if ([subview isKindOfClass:[UIView class]]) {
-                [subview removeFromSuperview];
-            }
-        }
-        UILabel  *_baseLabel = [[UILabel alloc]initWithFrame:CGRectZero];
-        _baseLabel.font = [UIFont systemFontOfSize:14];
-        _baseLabel.textColor = [UIColor blackColor];
-        [cell addSubview:_baseLabel];
-        [_baseLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(cell);
-            make.left.mas_equalTo(cell).offset(10);
-            make.width.equalTo(@80);
-             make.height.equalTo(@30);
-        }];
-        _baseLabel.text = array[indexPath.row];
-        
-        UIView *view1 = [[UIView alloc]init];
-         view1.backgroundColor =ZDGrayColor;
-        [cell addSubview:view1];
-        [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(cell).offset(0);
-            make.height.equalTo(@0.5);
-            make.left.equalTo(cell).offset(10);
-            make.right.equalTo(cell).offset(0);
-        }];
-        UILabel *nameLabel = [[UILabel alloc]init];
-        [cell addSubview:nameLabel];
-        [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(cell);
-            make.right.equalTo(cell).offset(-10);
-            make.left.equalTo(_baseLabel).offset(5);
-             make.height.equalTo(@30);
-        }];
-                nameLabel.font = [UIFont systemFontOfSize:14];
-        nameLabel.text = _model.DeviceId;
-        nameLabel.textAlignment = NSTextAlignmentRight;
-       nameLabel.textColor = [UIColor lightGrayColor];
-        return cell;
-    }
-    else if (indexPath.row==4)
     {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier2"];
         if (!cell) {
@@ -309,7 +257,7 @@
             
         }];
         nameLabel.font = [UIFont systemFontOfSize:14];
-        nameLabel.text = [[Time alloc]leftYearStrWithStr:_model.AddTime];
+        nameLabel.text = [[Time alloc]leftYearStrWithStr:_model.BindTime];
         nameLabel.textAlignment = NSTextAlignmentRight;
         nameLabel.textColor = [UIColor lightGrayColor];
         return cell;
@@ -383,13 +331,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 5;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    if (indexPath.row==5&&indexPath.section==0) {
+    if (indexPath.row==4&&indexPath.section==0) {
         [_detailModelDelegate selectIndex:indexPath];
         mycell= [tableView cellForRowAtIndexPath:indexPath];
     }

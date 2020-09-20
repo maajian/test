@@ -281,13 +281,18 @@
 - (void)getEmail {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
-        NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
-        NSDictionary  *userdic = data[@"data"];
-        [[NSUserDefaults standardUserDefaults]setObject:userdic[@"email"] forKey:@"email"];
+        if ([obj[@"errcode"] integerValue] == 0) {
+            [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
+            [[NSUserDefaults standardUserDefaults]setObject:@(ZD_UserM.gradeId) forKey:@"GradeId"];
+            [[NSUserDefaults  standardUserDefaults]setObject:ZD_UserM.phone forKey:@"mobile"];
+            [[NSUserDefaults standardUserDefaults]setObject:ZD_UserM.email forKey:@"email"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
     } fail:^(NSError *error) {
-        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self getEmail];
+        });
     }];
 }
-
 
 @end

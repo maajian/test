@@ -69,7 +69,7 @@
     [BackView addSubview:label1];
     
     UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(imageViewMinX-20, imageViewMaxY, imageViewWidth+40, 40)];  // 扫码提示label
-    label2.text =[NSString stringWithFormat:@"扫一扫上面的二维码，进行%@",_labelStr];
+    label2.text = self.hideLabel ? [NSString stringWithFormat:@"扫一扫上面的二维码，进行%@",_labelStr] : @"";
     label2.font = [UIFont systemFontOfSize:13];
     label2.textColor = ZDGrayColor;
     label2.textAlignment = NSTextAlignmentCenter;

@@ -51,7 +51,7 @@ const static NSInteger cellHeight  = 44 ;
     if (self = [super initWithFrame:frame]) {
         self.dataArray = [dataArray mutableCopy];
         _title = [title copy];
-        if (_title){
+        if (_title.length){
             CGSize size = [_title boundingRectWithSize:CGSizeMake(kScreenWidth-40, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]} context:nil].size;
             titleHeight = size.height + 40;
         }
@@ -107,7 +107,7 @@ const static NSInteger cellHeight  = 44 ;
 - (UIView *)backView
 {
     if (!_backView ) {
-        _backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-ZD_TopBar_H)];
+        _backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
         _backView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cancelAction)];
         [_backView addGestureRecognizer:tap];
@@ -134,19 +134,17 @@ const static NSInteger cellHeight  = 44 ;
 - (void)createButton
 {
     for (int i = 0;  i < _buttonCount; i ++) {
-        @autoreleasepool {
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.frame = CGRectMake(0, titleHeight + 0.5 *( i +1) + (cellHeight- 0.5) * i , kWidth, cellHeight - 0.5);
-            [button setTitle:self.dataArray[i] forState:UIControlStateNormal];
-            [button setBackgroundColor:[UIColor whiteColor]];
-            [self.sheetView addSubview: button];
-            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            button.tag = 100 + i ;
-            [button addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
-            if (delete&&i == _buttonCount-1){
-                [button setTitleColor:[UIColor colorWithRed:233.f/256.f green:97.f/256.f blue:111.f/256.f alpha:1] forState:UIControlStateNormal];
-            }
-    }
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(0, titleHeight + 0.5 *( i +1) + (cellHeight- 0.5) * i , kWidth, cellHeight - 0.5);
+        [button setTitle:self.dataArray[i] forState:UIControlStateNormal];
+        [button setBackgroundColor:[UIColor whiteColor]];
+        [self.sheetView addSubview: button];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        button.tag = 100 + i ;
+        [button addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
+        if (delete&&i == _buttonCount-1){
+            [button setTitleColor:[UIColor colorWithRed:233.f/256.f green:97.f/256.f blue:111.f/256.f alpha:1] forState:UIControlStateNormal];
+        }
     }
 }
 

@@ -39,6 +39,7 @@ ZD_Singleton_Implementation(NetWorkManager)
     [[ZDNetWorkManager shareHTTPSessionManager] GET:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         succ(responseObject);
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
         if (error.code == -1011) {

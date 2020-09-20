@@ -60,7 +60,15 @@
                                                        action:action
                                              equalToImageSize:NO];
 }
-
++ (UIBarButtonItem *)moreItemWithTarget:(id)target action:(SEL)action {
+    return [UIBarButtonItem imageBarButtonItemWithNormalImage:@"nav_more"
+                                                renderingMode:UIImageRenderingModeAlwaysTemplate
+                                         highlightedImageName:nil
+                                             seletedImageName:nil
+                                                       Target:target
+                                                       action:action
+                                             equalToImageSize:NO];
+}
 
 #pragma mark --- 文本
 /**
