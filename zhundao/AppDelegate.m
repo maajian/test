@@ -7,13 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "ZDBaseNavVC.h"
-#import "ZDBaseTabbarVC.h"
-#import "ZDLoginMainVC.h"
-#import "ZDloginSendVC.h"
+#import "PGBaseNavVC.h"
+#import "PGBaseTabbarVC.h"
+#import "PGLoginMainVC.h"
+#import "PGloginSendVC.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "JPUSHService.h"
-#import "ZDloginMainViewModel.h"
+#import "PGloginMainViewModel.h"
 #import <UMCommon/UMCommon.h>
 #import <UMShare/UMShare.h>
 #import "WXApi.h"
@@ -41,7 +41,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    ZDLoginMainVC *login = [[ZDLoginMainVC alloc]init];
+    PGLoginMainVC *login = [[PGLoginMainVC alloc]init];
     NSString  *Unionid = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
     NSString *access = [[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
     NSString *mobile = [[NSUserDefaults standardUserDefaults]objectForKey:@"mobile"];
@@ -74,17 +74,17 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     
     //是否登录
     if (Unionid==nil&&access==nil) {
-        self.window.rootViewController = [[ZDBaseNavVC alloc] initWithRootViewController:login];;
+        self.window.rootViewController = [[PGBaseNavVC alloc] initWithRootViewController:login];;
     }
     if (access) {
-        ZDBaseTabbarVC *tabbar = [[ZDBaseTabbarVC alloc]init];
+        PGBaseTabbarVC *tabbar = [[PGBaseTabbarVC alloc]init];
         self.window.rootViewController = tabbar;
     }
     if (Unionid&&[mobile isEqualToString:@"<null>"]) {
-        self.window.rootViewController = [[ZDBaseNavVC alloc] initWithRootViewController:login];
+        self.window.rootViewController = [[PGBaseNavVC alloc] initWithRootViewController:login];
     }
     if (Unionid&&![mobile isEqualToString:@"<null>"]) {
-        ZDBaseTabbarVC *tabbar = [[ZDBaseTabbarVC alloc]init];
+        PGBaseTabbarVC *tabbar = [[PGBaseTabbarVC alloc]init];
         self.window.rootViewController = tabbar;
     }
     
@@ -107,16 +107,16 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 {
     NSInteger version = [[NSUserDefaults standardUserDefaults] integerForKey:kdbManagerVersion];
     if (version != 1) {
-        [[ZDSignManager shareManager] createDatabase];
-        if ([[ZDSignManager shareManager].dataBase open])
+        [[PGSignManager shareManager] createDatabase];
+        if ([[PGSignManager shareManager].dataBase open])
         {
             NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
-            [[ZDSignManager shareManager].dataBase executeUpdate:updateSql];
+            [[PGSignManager shareManager].dataBase executeUpdate:updateSql];
             NSString *updateSql1 = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
-            [[ZDSignManager shareManager].dataBase executeUpdate:updateSql1];
+            [[PGSignManager shareManager].dataBase executeUpdate:updateSql1];
             NSString *updateSql12 = [NSString stringWithFormat:@"DROP TABLE contact"];
-            [[ZDSignManager shareManager].dataBase executeUpdate:updateSql12];
-            [[ZDSignManager shareManager].dataBase close];
+            [[PGSignManager shareManager].dataBase executeUpdate:updateSql12];
+            [[PGSignManager shareManager].dataBase close];
         }
         [self saveDBVersion];
     }
@@ -259,7 +259,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             [[NSUserDefaults standardUserDefaults]synchronize];
             ZD_UserM.isAdmin = [obj[@"data"][@"role"] isEqualToString:@"admin"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                ZDBaseTabbarVC *tabbar = [[ZDBaseTabbarVC alloc] init];
+                PGBaseTabbarVC *tabbar = [[PGBaseTabbarVC alloc] init];
                 [UIApplication sharedApplication].delegate.window.rootViewController= tabbar;
             });
         } else {

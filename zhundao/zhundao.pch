@@ -9,8 +9,8 @@
 #ifndef zhundao_pch
 #define zhundao_pch
 
-#import "ZDHeader.h"
-#import "ZDConst.h"
+#import "PGHeader.h"
+#import "PGConst.h"
 //------------------------define----------------
 
 #define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
@@ -52,7 +52,7 @@
 #define ZDBlackColor2 [UIColor colorWithRed:68.0f/256.0f green:75.0f/256.0f blue:83.0f/256.0f alpha:1]
 #define ZDBlueColor [UIColor colorWithRed:71.0f/256.0f green:144.0f/256.0f blue:238.0f/256.0f alpha:1]
 
-#define ZDMediumFont(r) [UIFont systemMediumFonWithSize:r]
+#define PGMediumFont(r) [UIFont systemMediumFonWithSize:r]
 #define ZDSystemFont(r) [UIFont systemFontOfSize:r]
 #define ZDBoldFont(r) [UIFont boldSystemFontOfSize:r]
 

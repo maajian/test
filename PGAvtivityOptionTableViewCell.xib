@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="optionid" rowHeight="62" id="KGk-i7-Jjw" customClass="PGAvtivityOptionTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saoma-5.png" translatesAutoresizingMaskIntoConstraints="NO" id="SJu-5E-iM2">
+                        <rect key="frame" x="25" y="15" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="H2w-cL-UQ2"/>
+                            <constraint firstAttribute="width" constant="20" id="T07-py-aPl"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是生生世世 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58a-P6-8dh">
+                        <rect key="frame" x="50" y="11" width="250" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SJu-5E-iM2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="F8y-Lk-4tB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="58a-P6-8dh" secondAttribute="trailing" constant="5" id="U9u-kD-fGd"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="58a-P6-8dh" secondAttribute="bottom" id="VyX-mW-ADh"/>
+                    <constraint firstItem="58a-P6-8dh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="aSA-jP-Mnq"/>
+                    <constraint firstItem="SJu-5E-iM2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="rEX-fX-isv"/>
+                    <constraint firstItem="58a-P6-8dh" firstAttribute="leading" secondItem="SJu-5E-iM2" secondAttribute="trailing" constant="5" id="xsq-kS-bhw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageview" destination="SJu-5E-iM2" id="kRm-cK-fkF"/>
+                <outlet property="titleLabel" destination="58a-P6-8dh" id="tsK-Ej-4MO"/>
+            </connections>
+            <point key="canvasLocation" x="-7" y="30"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="saoma-5.png" width="15" height="15"/>
+    </resources>
+</document>

@@ -6,11 +6,11 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "ZDBaseVC.h"
+#import "PGBaseVC.h"
 
 #import "ConsultModel.h"
 
-@interface OneConsultViewController : ZDBaseVC
+@interface OneConsultViewController : PGBaseVC
 
 @property(nonatomic,strong)ConsultModel *model;
 /*! 时间字符串 */

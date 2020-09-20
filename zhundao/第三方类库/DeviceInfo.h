@@ -12,6 +12,6 @@
 @interface DeviceInfo : NSObject
 
 @property(retain) MyPeripheral *myPeripheral;
-//@property(retain) ViewController *ZDBaseTabbarVC;
+//@property(retain) ViewController *PGBaseTabbarVC;
 
 @end

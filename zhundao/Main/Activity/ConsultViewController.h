@@ -6,8 +6,8 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "ZDBaseVC.h"
+#import "PGBaseVC.h"
 
-@interface ConsultViewController : ZDBaseVC
+@interface ConsultViewController : PGBaseVC
 @property(nonatomic,assign)NSInteger acID;
 @end

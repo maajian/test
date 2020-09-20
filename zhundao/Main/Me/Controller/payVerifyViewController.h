@@ -6,8 +6,8 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "ZDBaseVC.h"
+#import "PGBaseVC.h"
 
-@interface payVerifyViewController : ZDBaseVC
+@interface payVerifyViewController : PGBaseVC
 
 @end

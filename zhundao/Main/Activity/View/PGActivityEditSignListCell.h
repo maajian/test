@@ -1,0 +1,15 @@
+//
+//  PGActivityEditSignListCell.h
+//  zhundao
+//
+//  Created by zhundao on 2017/6/20.
+//  Copyright © 2017年 zhundao. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface PGActivityEditSignListCell : UITableViewCell
+@property(nonatomic,copy)NSString *cellIndex;
+
+
+@end

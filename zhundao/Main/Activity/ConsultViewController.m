@@ -10,8 +10,8 @@
 #import "ConsultViewModel.h"
 #import "ConsultTableViewCell.h"
 #import "OneConsultViewController.h"
-#import "ZDHeaderChooseViewScrollView.h"
-#import "ZDNoDataScrollView.h"
+#import "PGHeaderChooseViewScrollView.h"
+#import "PGNoDataScrollView.h"
 @interface ConsultViewController ()<UITableViewDelegate,UITableViewDataSource>{
     Reachability *r;
 }
@@ -36,7 +36,7 @@
 /*! 滑块的index */
 @property(nonatomic,assign)NSInteger selectIndex ;
 /*! 空数据视图 */
-@property(nonatomic,strong)ZDNoDataScrollView *noDataView ;
+@property(nonatomic,strong)PGNoDataScrollView *noDataView ;
 @end
 
 @implementation ConsultViewController
@@ -97,9 +97,9 @@
         _hadArray = [hadAnswerArray copy];
         _notArray = [noAnswerArray copy];
         [weakSelf getDataArr];
-        [[ZDSignManager shareManager]saveData:dataArray name:[NSString stringWithFormat:@"allConsult%li",(long)self.acID]];
-        [[ZDSignManager shareManager]saveData:hadAnswerArray name:[NSString stringWithFormat:@"hadConsult%li",(long)self.acID]];
-        [[ZDSignManager shareManager]saveData:noAnswerArray name:[NSString stringWithFormat:@"notConsult%li",(long)self.acID]];
+        [[PGSignManager shareManager]saveData:dataArray name:[NSString stringWithFormat:@"allConsult%li",(long)self.acID]];
+        [[PGSignManager shareManager]saveData:hadAnswerArray name:[NSString stringWithFormat:@"hadConsult%li",(long)self.acID]];
+        [[PGSignManager shareManager]saveData:noAnswerArray name:[NSString stringWithFormat:@"notConsult%li",(long)self.acID]];
         _heightArray = [[weakVM getHeight:_dataArray]copy];
         _timeArray = [timeArray copy];
         [_tableView.mj_header endRefreshing];
@@ -108,9 +108,9 @@
 }
 
 - (void)notNet{
-    _allArray = [[ZDSignManager shareManager]getArray:[NSString stringWithFormat:@"allConsult%li",(long)self.acID]];
-    _hadArray = [[ZDSignManager shareManager]getArray:[NSString stringWithFormat:@"hadConsult%li",(long)self.acID]];
-    _notArray = [[ZDSignManager shareManager]getArray:[NSString stringWithFormat:@"notConsult%li",(long)self.acID]];
+    _allArray = [[PGSignManager shareManager]getArray:[NSString stringWithFormat:@"allConsult%li",(long)self.acID]];
+    _hadArray = [[PGSignManager shareManager]getArray:[NSString stringWithFormat:@"hadConsult%li",(long)self.acID]];
+    _notArray = [[PGSignManager shareManager]getArray:[NSString stringWithFormat:@"notConsult%li",(long)self.acID]];
     [self getDataArr];
     [self goTOLoadData];
     
@@ -176,9 +176,9 @@
     return _tableView;
 }
 
-- (ZDNoDataScrollView *)noDataView{
+- (PGNoDataScrollView *)noDataView{
     if (!_noDataView) {
-        _noDataView = [[ZDNoDataScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64-40) imageName:@"空数据-5" topText:@"还没有人咨询留言哦" bottomText:@"刷新一下试试"];
+        _noDataView = [[PGNoDataScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64-40) imageName:@"空数据-5" topText:@"还没有人咨询留言哦" bottomText:@"刷新一下试试"];
     }
     return _noDataView;
 }
@@ -231,7 +231,7 @@
                      @"已回复",
                      @"全 部",
                      ];
-    ZDHeaderChooseViewScrollView*headerView=[[ZDHeaderChooseViewScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+    PGHeaderChooseViewScrollView*headerView=[[PGHeaderChooseViewScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
     [headerView setUpTitleArray:array titleColor:nil titleSelectedColor:nil titleFontSize:0];
     headerView.btnChooseClickReturn = ^(NSInteger x) {
         _selectIndex = x;

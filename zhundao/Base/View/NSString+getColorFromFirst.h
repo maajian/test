@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ZDMeContactModel.h"
+#import "PGMeContactModel.h"
 @interface NSString (getColorFromFirst)
 - (UIColor *)getColorWithStr :(NSString *)str;
 @end

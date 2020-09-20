@@ -175,23 +175,23 @@
 {
     [self.view endEditing:YES];
     __weak typeof(self) weakSelf = self;
-    MBProgressHUD *hud = [ZDMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     if ([_answerStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length>0) {
         [self.oneVM postData:_model.ID answer:_answerStr IsRecommend:_isCommand postBlock:^(BOOL isSuccess) {
             [hud hideAnimated:YES];
             if (isSuccess) {
-                MBProgressHUD *hud1 = [ZDMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"发送成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+                MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"发送成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
                 [hud1 hideAnimated:YES afterDelay:1.5];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 });
             }else{
-                ZDMaskLabel *label = [[ZDMaskLabel alloc]initWithTitle:@"发送失败"];
+                PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:@"发送失败"];
                 [label labelAnimationWithViewlong:weakSelf.view];
             }
         }];
     }else{
-        ZDMaskLabel *label = [[ZDMaskLabel alloc]initWithTitle:@"内容不能为空"];
+        PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:@"内容不能为空"];
         [label labelAnimationWithViewlong:self.view];
     }
 }

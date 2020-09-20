@@ -6,7 +6,7 @@
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "ZDBaseVC.h"
+#import "PGBaseVC.h"
 
 typedef enum : NSUInteger {
     Old, //提现输入老密码
@@ -15,7 +15,7 @@ typedef enum : NSUInteger {
 } payState;
 
 
-@interface PasswordViewController : ZDBaseVC
+@interface PasswordViewController : PGBaseVC
 
 @property(nonatomic,assign)payState state;
 /*! 密码 */

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PGActivityShowPostImageVC">
+            <connections>
+                <outlet property="bigImageView" destination="JvG-7x-xeA" id="KUF-Cn-Cse"/>
+                <outlet property="changeButton" destination="nFa-Tc-D2g" id="txm-FN-e4b"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JvG-7x-xeA">
+                    <rect key="frame" x="0.0" y="233.5" width="375" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="VOc-mD-2fq"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFa-Tc-D2g">
+                    <rect key="frame" x="30" y="579" width="315" height="44"/>
+                    <color key="backgroundColor" red="0.99987119440000005" green="0.99998223779999995" blue="0.99984109399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="cEy-uH-dbl"/>
+                    </constraints>
+                    <state key="normal" title="更换封面">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="changeAction:" destination="-1" eventType="touchUpInside" id="SgI-Bc-fKW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="nFa-Tc-D2g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="ASW-EO-iCM"/>
+                <constraint firstAttribute="bottom" secondItem="nFa-Tc-D2g" secondAttribute="bottom" constant="44" id="BPn-nd-sbY"/>
+                <constraint firstAttribute="trailing" secondItem="nFa-Tc-D2g" secondAttribute="trailing" constant="30" id="QWN-7w-Ozx"/>
+                <constraint firstItem="JvG-7x-xeA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jdJ-3o-3du"/>
+                <constraint firstItem="JvG-7x-xeA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="muU-UJ-yDM"/>
+                <constraint firstAttribute="trailing" secondItem="JvG-7x-xeA" secondAttribute="trailing" id="tCE-hO-C6e"/>
+            </constraints>
+            <point key="canvasLocation" x="-8" y="42"/>
+        </view>
+    </objects>
+</document>
