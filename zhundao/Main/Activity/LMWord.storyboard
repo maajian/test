@@ -10,7 +10,7 @@
         <!--Style Settings Controller-->
         <scene sceneID="kzJ-VB-5vI">
             <objects>
-                <tableViewController storyboardIdentifier="style" id="vUd-pJ-0UN" customClass="ZDStyleSettingsController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="style" id="vUd-pJ-0UN" customClass="PGStyleSettingsController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="cmz-S1-OHM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,7 +400,7 @@
         <!--Image Settings Controller-->
         <scene sceneID="aJH-yr-EbY">
             <objects>
-                <viewController storyboardIdentifier="image" automaticallyAdjustsScrollViewInsets="NO" id="NrQ-hI-2KX" customClass="ZDImageSettingsController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="image" automaticallyAdjustsScrollViewInsets="NO" id="NrQ-hI-2KX" customClass="PGImageSettingsController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YPe-iF-CQR"/>
                         <viewControllerLayoutGuide type="bottom" id="CC6-3p-QOI"/>
@@ -546,7 +546,7 @@
         <!--Image Preview Controller-->
         <scene sceneID="faX-x7-8HK">
             <objects>
-                <viewController storyboardIdentifier="preview" id="lNM-jz-0oh" customClass="ZDImagePreviewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="preview" id="lNM-jz-0oh" customClass="PGImagePreviewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s6H-OA-5GP"/>
                         <viewControllerLayoutGuide type="bottom" id="KOZ-sZ-ko6"/>
