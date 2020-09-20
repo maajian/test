@@ -11,7 +11,7 @@
 
 @interface JQMusic2Animation ()
 
-@property CALayer *barLayer;
+@property (nonatomic, strong) CALayer *barLayer;
 
 @end
 

@@ -27,7 +27,6 @@ typedef NS_ENUM(NSInteger, JQIndicatorType){
 - (void)startAnimating;
 - (void)stopAnimating;
 
-@property BOOL isAnimating;
-
+@property (nonatomic, assign)  BOOL isAnimating;
 
 @end

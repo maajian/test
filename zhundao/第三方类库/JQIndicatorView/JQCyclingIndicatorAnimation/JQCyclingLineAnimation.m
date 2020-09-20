@@ -11,7 +11,7 @@
 
 @interface JQCyclingLineAnimation ()
 
-@property CALayer *lineLayer;
+@property (nonatomic, strong) CALayer *lineLayer;
 
 @end
 

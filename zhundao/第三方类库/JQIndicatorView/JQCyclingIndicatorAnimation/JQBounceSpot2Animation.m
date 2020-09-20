@@ -13,7 +13,7 @@
 
 @interface JQBounceSpot2Animation ()
 
-@property CALayer *spotLayer;
+@property (nonatomic, strong) CALayer *spotLayer;
 
 @end
 

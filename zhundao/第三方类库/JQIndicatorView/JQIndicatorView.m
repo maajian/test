@@ -21,10 +21,10 @@
 
 @interface JQIndicatorView ()
 
-@property id<JQIndicatorAnimationProtocol> animation;
-@property JQIndicatorType type;
-@property CGSize size;
-@property UIColor *loadingTintColor;
+@property (nonatomic, weak) id<JQIndicatorAnimationProtocol> animation;
+@property (nonatomic, assign) JQIndicatorType type;
+@property (nonatomic, assign) CGSize size;
+@property (nonatomic, strong) UIColor *loadingTintColor;
 
 - (void)setToNormalState;
 - (void)setToFadeOutState;

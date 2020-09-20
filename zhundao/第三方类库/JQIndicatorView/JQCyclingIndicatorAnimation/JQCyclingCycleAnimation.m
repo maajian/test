@@ -11,7 +11,7 @@
 
 @interface JQCyclingCycleAnimation ()
 
-@property CAShapeLayer *cycleLayer;
+@property (nonatomic, strong) CAShapeLayer *cycleLayer;
 
 @end
 
