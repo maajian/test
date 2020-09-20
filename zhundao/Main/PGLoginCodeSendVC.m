@@ -23,8 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -46,19 +46,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
     _loginCodeSendView = [[PGLoginCodeSendView alloc] init];
     _loginCodeSendView.loginCodeSendViewDelegate = self;
     [self.view addSubview:_loginCodeSendView];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     [_loginCodeSendView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
 }
 
 #pragma mark --- Network
-- (void)networkForCheckPhone {
+- (void)PG_networkForCheckPhone {
     NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
     NSDictionary *dic = @{@"BusinessCode": @"CheckPhone",
                           @"Data" : @{
@@ -99,7 +99,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         return;
     }
     [self.view endEditing:YES];
-    [self networkForCheckPhone];
+    [self PG_networkForCheckPhone];
 }
 
 @end

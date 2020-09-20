@@ -291,23 +291,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super viewWillAppear:animated];
     [self getAllConsult];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-dispatch_async(dispatch_get_main_queue(), ^{
-    UIFont *finishLoadingWithD3= [UIFont systemFontOfSize:186];
-        UITextView *stringUsingEncodingj2= [[UITextView alloc] initWithFrame:CGRectMake(129,242,71,33)]; 
-    stringUsingEncodingj2.editable = NO; 
-    stringUsingEncodingj2.font = [UIFont systemFontOfSize:49];
-    stringUsingEncodingj2.text = @"dataReadingMapped";
-    PGInputViewContent *launchOptionsDirections= [[PGInputViewContent alloc] init];
-[launchOptionsDirections pg_lightBlackColorWithfansWithUser:finishLoadingWithD3 socialUserInfo:stringUsingEncodingj2 ];
-});
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

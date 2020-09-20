@@ -65,37 +65,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-dispatch_async(dispatch_get_main_queue(), ^{
-    UISlider *customAnimateTransitionH7= [[UISlider alloc] initWithFrame:CGRectMake(177,13,32,133)]; 
-    customAnimateTransitionH7.minimumValue = 0; 
-    customAnimateTransitionH7.maximumValue = 100; 
-    customAnimateTransitionH7.value =57; 
-        UITableView *photoPickerPhotot3= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
-    photoPickerPhotot3.frame = CGRectZero; 
-    photoPickerPhotot3.showsVerticalScrollIndicator = NO; 
-    photoPickerPhotot3.showsHorizontalScrollIndicator = NO; 
-    photoPickerPhotot3.backgroundColor = [UIColor whiteColor]; 
-    photoPickerPhotot3.separatorColor = [UIColor whiteColor]; 
-    photoPickerPhotot3.tableFooterView = [UIView new]; 
-    photoPickerPhotot3.estimatedRowHeight =15; 
-    photoPickerPhotot3.estimatedSectionHeaderHeight =6; 
-    photoPickerPhotot3.estimatedSectionFooterHeight =58; 
-    photoPickerPhotot3.rowHeight =86; 
-    photoPickerPhotot3.sectionFooterHeight =11; 
-    photoPickerPhotot3.sectionHeaderHeight =58; 
-    photoPickerPhotot3.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(7,118,173,209)];
-     photoPickerPhotot3.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(146,242,183,229)];
-     PGVideoWithScroll *courseViewModel= [[PGVideoWithScroll alloc] init];
-[courseViewModel pg_pickerViewShowWithphotosDelegateWith:customAnimateTransitionH7 colorSpaceCreate:photoPickerPhotot3 ];
-});
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

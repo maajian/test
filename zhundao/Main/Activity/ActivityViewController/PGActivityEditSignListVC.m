@@ -520,20 +520,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation/
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-dispatch_async(dispatch_get_main_queue(), ^{
-    UIEdgeInsets resetControlViewx3 = UIEdgeInsetsMake(214,57,228,114); 
-        UITextFieldViewMode textFieldWitht2 = UITextFieldViewModeAlways; 
-    PGMedalWallTable *courseParticularSection= [[PGMedalWallTable alloc] init];
-[courseParticularSection pg_articleDailyTrainWithplayerStateFailed:resetControlViewx3 strikethroughStyleAttribute:textFieldWitht2 ];
-});
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

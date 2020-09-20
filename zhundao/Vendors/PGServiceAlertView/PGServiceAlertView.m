@@ -26,8 +26,8 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.frame = [UIScreen mainScreen].bounds;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
@@ -37,8 +37,8 @@
         self.frame = [UIScreen mainScreen].bounds;
         _cancelBlock = cancelBlock;
         _sureBlock = sureBlock;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
@@ -82,7 +82,7 @@
         [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
         [_cancelButton setTitleColor:ZDGrayColor forState:UIControlStateNormal];
         _cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        [_cancelButton addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_cancelButton addTarget:self action:@selector(PG_cancelAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
 }
@@ -95,13 +95,13 @@
         [_sureButton setTitle:@"确定" forState:UIControlStateNormal];
         [_sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _sureButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        [_sureButton addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_sureButton addTarget:self action:@selector(PG_sureAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _sureButton;
 }
 
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self addSubview:self.contentView];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.textView];
@@ -110,7 +110,7 @@
 }
 
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *articleOriginalModelO0= [NSMutableArray arrayWithCapacity:0];
         UIImage *withGradientTintB9= [UIImage imageNamed:@""]; 
@@ -224,14 +224,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 #pragma mark --- action
-- (void)cancelAction:(UIButton *)button {
+- (void)PG_cancelAction:(UIButton *)button {
     ZDDo_Block_Safe_Main(_cancelBlock);
     [self animationOut];
     if ([self.alertViewDelegate respondsToSelector:@selector(alertView:didTapCancelButton:)]) {
         [self.alertViewDelegate alertView:self didTapCancelButton:button];
     }
 }
-- (void)sureAction:(UIButton *)button {
+- (void)PG_sureAction:(UIButton *)button {
     [self animationOut];
     ZDDo_Block_Safe_Main(_sureBlock);
     if ([self.alertViewDelegate respondsToSelector:@selector(alertView:didTapSureButton:)]) {

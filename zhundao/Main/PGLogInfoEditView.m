@@ -37,14 +37,14 @@
 - (instancetype)initWithFrame:(CGRect)frame phoneStr:(NSString *)phoneStr{
     if (self = [super initWithFrame:frame]) {
         _phoneStr = phoneStr;
-        [self setupUI];
-        [self updateFrame];
+        [self PG_setupUI];
+        [self PG_updateFrame];
     }
     return self;
 }
 
 #pragma mark --- UI创建
-- (void)setupUI {
+- (void)PG_setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle sendButtonStatusb0 = UITableViewStylePlain; 
         CGPoint arrayUsingComparatorG7 = CGPointZero;
@@ -112,7 +112,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- 自动布局
-- (void)updateFrame {
+- (void)PG_updateFrame {
      // 返回按钮
     [_closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(10);
@@ -194,11 +194,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
 /** 下一步 */
 - (void)nextStep {
     if (self.nameTextField.text.length == 0) {
-        [self showAlert:@"姓名不能为空"];
+        [self PG_showAlert:@"姓名不能为空"];
     } else if (self.nameTextField.text.length > 15) {
-        [self showAlert:@"姓名不得超出15个字符"];
+        [self PG_showAlert:@"姓名不得超出15个字符"];
     } else if (self.passWordTextField.text.length < 6) {
-        [self showAlert:@"密码至少6个字符"];
+        [self PG_showAlert:@"密码至少6个字符"];
     } else {
         if ([self.infoEditViewDelegate respondsToSelector:@selector(finishEditWithName:passWord:)]) {
             [self.infoEditViewDelegate finishEditWithName:_nameTextField.text passWord:_passWordTextField.text];
@@ -207,7 +207,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- action
-- (void)showAlert:(NSString *)str {
+- (void)PG_showAlert:(NSString *)str {
     PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:str];
     [label labelAnimationWithViewlong:self];
 }

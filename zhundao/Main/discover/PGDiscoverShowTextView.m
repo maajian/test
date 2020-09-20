@@ -26,7 +26,7 @@
         self.scrollEnabled = NO;
         self.editable = NO;
         [self setSelectable:NO];
-        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(PG_longPress:)];
         longPress.delegate =self;
          [self addGestureRecognizer:longPress];
     }
@@ -41,7 +41,7 @@
     return YES;
 }
 
-- (void)longPress:(UILongPressGestureRecognizer *)gestureRecognizer{
+- (void)PG_longPress:(UILongPressGestureRecognizer *)gestureRecognizer{
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewCellSeparatorStyle commentObjectModelh9 = UITableViewCellSeparatorStyleNone; 
         NSArray *playerControlViewI8= [NSArray array];
@@ -52,10 +52,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         [gestureRecognizer.view becomeFirstResponder];
         UIMenuController *menu = [UIMenuController sharedMenuController];
-        UIMenuItem *item1 = [[UIMenuItem alloc]initWithTitle:@"居左" action:@selector(left:)];
-        UIMenuItem *item2 = [[UIMenuItem alloc]initWithTitle:@"居中" action:@selector(center:)];
-        UIMenuItem *item3 = [[UIMenuItem alloc]initWithTitle:@"居右" action:@selector(right:)];
-         UIMenuItem *item4 = [[UIMenuItem alloc]initWithTitle:@"删除" action:@selector(myDelete:)];
+        UIMenuItem *item1 = [[UIMenuItem alloc]initWithTitle:@"居左" action:@selector(PG_left:)];
+        UIMenuItem *item2 = [[UIMenuItem alloc]initWithTitle:@"居中" action:@selector(PG_center:)];
+        UIMenuItem *item3 = [[UIMenuItem alloc]initWithTitle:@"居右" action:@selector(PG_right:)];
+         UIMenuItem *item4 = [[UIMenuItem alloc]initWithTitle:@"删除" action:@selector(PG_myDelete:)];
         menu.menuItems =@[item1,item2,item3,item4];
         [menu setTargetRect:gestureRecognizer.view.bounds inView:gestureRecognizer.view];
         [menu setMenuVisible:YES animated:YES];
@@ -68,15 +68,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender
 {
-    if (action == @selector(myDelete:)
-        || action == @selector(center:)
-        ||action == @selector(left:)
-        ||action == @selector(right:)) {
+    if (action == @selector(PG_myDelete:)
+        || action == @selector(PG_center:)
+        ||action == @selector(PG_left:)
+        ||action == @selector(PG_right:)) {
         return YES;
     }
     return NO;
 }
-- (void)myDelete:(UIMenuController *)menu{
+- (void)PG_myDelete:(UIMenuController *)menu{
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewCellSeparatorStyle assetsPhotoWithz2 = UITableViewCellSeparatorStyleNone; 
         NSArray *assetFromVideop7= [NSArray array];
@@ -86,15 +86,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGDiscoverShowTextView *textView = [self viewWithTag:tag];
     [textView removeFromSuperview];
 }
-- (void)center:(UIMenuController *)menu{
+- (void)PG_center:(UIMenuController *)menu{
     PGDiscoverShowTextView *textView = [self viewWithTag:tag];
     textView.center = CGPointMake(kScreenWidth/2 , textView.center.y);
 }
-- (void)left:(UIMenuController *)menu{
+- (void)PG_left:(UIMenuController *)menu{
     PGDiscoverShowTextView *textView = [self viewWithTag:tag];
     textView.frame = CGRectMake(0, CGRectGetMinY(textView.frame), CGRectGetWidth(textView.frame), CGRectGetHeight(textView.frame));
 }
-- (void)right:(UIMenuController *)menu{
+- (void)PG_right:(UIMenuController *)menu{
     PGDiscoverShowTextView *textView = [self viewWithTag:tag];
     textView.frame = CGRectMake(kScreenWidth-CGRectGetWidth(textView.frame), CGRectGetMinY(textView.frame), CGRectGetWidth(textView.frame), CGRectGetHeight(textView.frame));
 }

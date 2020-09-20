@@ -25,7 +25,7 @@
     replicatorLayer.position = CGPointMake(0,0);
     replicatorLayer.backgroundColor = [UIColor clearColor].CGColor;
     [layer addSublayer:replicatorLayer];
-    [self addCyclingSpotAnimationLayerAtLayer:replicatorLayer withTintColor:color size:size];
+    [self PG_addCyclingSpotAnimationLayerAtLayer:replicatorLayer withTintColor:color size:size];
     
     NSInteger numOfDot = 4;
     replicatorLayer.instanceCount = numOfDot;
@@ -33,7 +33,7 @@
     replicatorLayer.instanceDelay = kJQBounceSpot2AnimationDuration/numOfDot;
 }
 
-- (void)addCyclingSpotAnimationLayerAtLayer:(CALayer *)layer withTintColor:(UIColor *)color size:(CGSize)size{
+- (void)PG_addCyclingSpotAnimationLayerAtLayer:(CALayer *)layer withTintColor:(UIColor *)color size:(CGSize)size{
     CGFloat radius = size.width/5;
     self.spotLayer = [CALayer layer];
     self.spotLayer.bounds = CGRectMake(0, 0, radius, radius);

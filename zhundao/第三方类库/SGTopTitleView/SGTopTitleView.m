@@ -76,7 +76,7 @@ static CGFloat const indicatorHeight = 3;
  *  @param font    文字的字体
  *  @param maxSize 文字的最大尺寸
  */
-- (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font maxSize:(CGSize)maxSize {
+- (CGSize)PG_sizeWithText:(NSString *)text font:(UIFont *)font maxSize:(CGSize)maxSize {
     NSDictionary *attrs = @{NSFontAttributeName : font};
     return [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
 }
@@ -118,12 +118,12 @@ static CGFloat const indicatorHeight = 3;
         [self.allTitleLabel addObject:_staticTitleLabel];
         
         // 添加点按手势
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(staticTitleClick:)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(PG_staticTitleClick:)];
         [_staticTitleLabel addGestureRecognizer:tap];
         
         // 默认选中第0个label
         if (j == 0) {
-            [self staticTitleClick:tap];
+            [self PG_staticTitleClick:tap];
         }
         
         [self addSubview:_staticTitleLabel];
@@ -141,7 +141,7 @@ static CGFloat const indicatorHeight = 3;
     
     // 指示器默认在第一个选中位置
     // 计算TitleLabel内容的Size
-    CGSize labelSize = [self sizeWithText:firstLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, labelH)];
+    CGSize labelSize = [self PG_sizeWithText:firstLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, labelH)];
     _indicatorView.SG_width = labelSize.width + kCellDefaultMargin * 2;
     _indicatorView.SG_centerX = firstLabel.SG_centerX;
     
@@ -152,7 +152,7 @@ static CGFloat const indicatorHeight = 3;
 }
 
 /** staticTitleClick的点击事件 */
-- (void)staticTitleClick:(UITapGestureRecognizer *)tap {
+- (void)PG_staticTitleClick:(UITapGestureRecognizer *)tap {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *photoScrollViewd3= [UIImage imageNamed:@""]; 
         NSData *foregroundColorAttributeO2= [[NSData alloc] init];
@@ -197,7 +197,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     // 改变指示器位置
     [UIView animateWithDuration:0.20 animations:^{
         // 计算内容的Size
-        CGSize labelSize = [self sizeWithText:_selectedTitleLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, self.frame.size.height - indicatorHeight)];
+        CGSize labelSize = [self PG_sizeWithText:_selectedTitleLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, self.frame.size.height - indicatorHeight)];
         self.indicatorView.SG_width = labelSize.width + kCellDefaultMargin * 2;
         self.indicatorView.SG_centerX = label.SG_centerX;
     }];
@@ -231,7 +231,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _scrollTitleLabel.highlightedTextColor = ZDMainColor;
         
         // 计算内容的Size
-        CGSize labelSize = [self sizeWithText:_scrollTitleLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, labelH)];
+        CGSize labelSize = [self PG_sizeWithText:_scrollTitleLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, labelH)];
         // 计算内容的宽度
         CGFloat labelW = 0;
         if (self.scrollTitleArr.count < 6) {
@@ -251,12 +251,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.allTitleLabel addObject:_scrollTitleLabel];
         
         // 添加点按手势
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollTitleClick:)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(PG_scrollTitleClick:)];
         [_scrollTitleLabel addGestureRecognizer:tap];
         
         // 默认选中第0个label
         if (i == 0) {
-            [self scrollTitleClick:tap];
+            [self PG_scrollTitleClick:tap];
         }
         
         [self addSubview:_scrollTitleLabel];
@@ -282,13 +282,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     
     // 指示器默认在第一个选中位置
     // 计算TitleLabel内容的Size
-    CGSize labelSize = [self sizeWithText:firstLabel.text font:labelFontOfSize maxSize:CGSizeMake(MAXFLOAT, labelH)];
+    CGSize labelSize = [self PG_sizeWithText:firstLabel.text font:labelFontOfSize maxSize:CGSizeMake(MAXFLOAT, labelH)];
     _indicatorView.SG_width = labelSize.width + kCellDefaultMargin * 2;
     _indicatorView.SG_centerX = firstLabel.SG_centerX;
 }
 
 /** scrollTitleClick的点击事件 */
-- (void)scrollTitleClick:(UITapGestureRecognizer *)tap {
+- (void)PG_scrollTitleClick:(UITapGestureRecognizer *)tap {
     // 0.获取选中的label
     UILabel *selLabel = (UILabel *)tap.view;
     

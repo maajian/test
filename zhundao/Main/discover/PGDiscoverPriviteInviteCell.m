@@ -19,7 +19,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self.contentView addSubview:self.leftLabel];
         [self.contentView addSubview:self.rightLabel];
-        [self updataFrame];
+        [self PG_updataFrame];
     }
     return self;
 }
@@ -42,7 +42,7 @@
 }
 
 
-- (void)updataFrame{
+- (void)PG_updataFrame{
     [_leftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(0);
         make.left.equalTo(self.contentView).offset(10);

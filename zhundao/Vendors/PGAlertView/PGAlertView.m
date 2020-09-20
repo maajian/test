@@ -77,14 +77,14 @@
         }
         _buttonCount = sureButtonTitle.length? 2 : 1;
          // 初始化UI
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
 
 #pragma mark --- UI创建
-- (void)setupUI {
+- (void)PG_setupUI {
      // 内容视图
     _contentView = [[UIView alloc]init];
     [self addSubview:_contentView];
@@ -129,7 +129,7 @@
     }
 }
 
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIButton *applicationIconBadger7= [UIButton buttonWithType:UIButtonTypeCustom]; 
     applicationIconBadger7.frame = CGRectZero; 

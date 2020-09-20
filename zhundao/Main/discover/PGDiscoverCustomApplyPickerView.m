@@ -29,8 +29,8 @@
         self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
         type = ZDCustomTypeOneText;
         _pickerArray = @[@"输入框",@"多文本",@"单选框",@"多选框",@"图片",@"下拉框",@"日期",@"数字"];
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
@@ -40,7 +40,7 @@
     if (!_bgView) {
         _bgView = [[UIView alloc] init];
         _bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-        [_bgView addTapGestureTarget:self action:@selector(cancleAction:)];
+        [_bgView addTapGestureTarget:self action:@selector(PG_cancleAction:)];
     }
     return _bgView;
 }
@@ -63,7 +63,7 @@
 - (UIButton *)sureButton  {
     if (!_sureButton) {
         _sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_sureButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_sureButton addTarget:self action:@selector(PG_confirmAction:) forControlEvents:UIControlEventTouchUpInside];
         [_sureButton setTitle:@"确定" forState:UIControlStateNormal];
         _sureButton.titleLabel.font = [UIFont systemFontOfSize:16];
         [_sureButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -75,7 +75,7 @@
         _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
         _cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        [_cancelButton addTarget:self action:@selector(cancleAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_cancelButton addTarget:self action:@selector(PG_cancleAction:) forControlEvents:UIControlEventTouchUpInside];
         [_cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     return _cancelButton;
@@ -92,7 +92,7 @@
 }
 
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self addSubview:self.bgView];
     [self.bgView  addSubview:self.contentView];
     [_contentView addSubview:self.lineView];
@@ -102,7 +102,7 @@
 }
 
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     __weak typeof(self) weakSelf = self;
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
@@ -196,13 +196,13 @@
 }
 
 #pragma mark --- action
-- (void)confirmAction:(UIButton *)button {
+- (void)PG_confirmAction:(UIButton *)button {
     [self removeFromSuperview];
     if ([_customApplyPickerViewDelegate respondsToSelector:@selector(customApplyPickerView:didSelectType:)]) {
         [_customApplyPickerViewDelegate customApplyPickerView:self didSelectType:type];
     }
 }
-- (void)cancleAction:(UIButton *)button {
+- (void)PG_cancleAction:(UIButton *)button {
     [self hide];
 }
 @end

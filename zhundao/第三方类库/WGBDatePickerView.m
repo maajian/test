@@ -71,7 +71,7 @@
         self.dateP.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_CHS_CN"];
 
 
-        [self.dateP addTarget:self action:@selector(handleDateP:) forControlEvents:UIControlEventValueChanged];
+        [self.dateP addTarget:self action:@selector(PG_handleDateP:) forControlEvents:UIControlEventValueChanged];
     }
     return _dateP;
 }
@@ -93,7 +93,7 @@
         [self.leftBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 //        self.leftBtn.backgroundColor=[UIColor cyanColor];
 
-        [self.leftBtn addTarget:self action:@selector(handleDateTopViewLeft) forControlEvents:UIControlEventTouchUpInside];
+        [self.leftBtn addTarget:self action:@selector(PG_handleDateTopViewLeft) forControlEvents:UIControlEventTouchUpInside];
     }
     return _leftBtn;
 }
@@ -108,7 +108,7 @@
         [self.rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 //        self.rightBtn.backgroundColor=[UIColor cyanColor];
         [self.rightBtn setTitle:@"确定" forState:UIControlStateNormal];
-        [self.rightBtn addTarget:self action:@selector(handleDateTopViewRight) forControlEvents:UIControlEventTouchUpInside];
+        [self.rightBtn addTarget:self action:@selector(PG_handleDateTopViewRight) forControlEvents:UIControlEventTouchUpInside];
     }
     return _rightBtn;
 }
@@ -178,7 +178,7 @@
 
 }
 
-- (void)handleDateTopViewLeft {
+- (void)PG_handleDateTopViewLeft {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewCellSeparatorStyle blendModeOverlaym0 = UITableViewCellSeparatorStyleNone; 
         UIActivityIndicatorView *scrollViewContento6= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
@@ -190,7 +190,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self end];
 }
 
-- (void)handleDateTopViewRight {
+- (void)PG_handleDateTopViewRight {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewCellSeparatorStyle viewControllerContextd9 = UITableViewCellSeparatorStyleNone; 
         UIActivityIndicatorView *authorizationStatusDeniedR4= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 

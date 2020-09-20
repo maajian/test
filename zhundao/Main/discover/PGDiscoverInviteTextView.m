@@ -39,13 +39,13 @@
         self.returnKeyType = UIReturnKeyDone;
         self.font = [UIFont systemFontOfSize:fontsize];
         self.textContainerInset = UIEdgeInsetsMake(30, 10, 0, 10);
-        [self addNotificationCenter];
-        [self setUpUI];
+        [self PG_addNotificationCenter];
+        [self PG_setUpUI];
     }
     return self;
 }
 /*! 添加键盘监听 */
-- (void)addNotificationCenter{
+- (void)PG_addNotificationCenter{
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode articleOriginalTablej6 = UITextFieldViewModeAlways; 
         UITableViewStyle cancelLoadingRequestr8 = UITableViewStylePlain; 
@@ -103,7 +103,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return YES;
 }
 
-- (void)setUpUI{
+- (void)PG_setUpUI{
     //初始化工具栏
     _toolView  = [[UIView alloc]init];
     [self addSubview:_toolView];
@@ -112,25 +112,25 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIButton *colorBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     colorBtn.frame = CGRectMake(originX-12, 7, 25, 25);
     [colorBtn setImage:[UIImage imageNamed:@"专属邀请函颜色"] forState:UIControlStateNormal];
-    [colorBtn addTarget:self action:@selector(colorBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [colorBtn addTarget:self action:@selector(PG_colorBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [_toolView addSubview:colorBtn];
 //    UIButton *fontBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    fontBtn.frame = CGRectMake(originX*5-12, 7, 25, 25);
 //    [fontBtn setImage:[UIImage imageNamed:@"专属邀请函字体"] forState:UIControlStateNormal];
-//    [fontBtn addTarget:self action:@selector(fontstyleBtnClick) forControlEvents:UIControlEventTouchUpInside];
+//    [fontBtn addTarget:self action:@selector(PG_fontstyleBtnClick) forControlEvents:UIControlEventTouchUpInside];
 //    [_toolView addSubview:fontBtn];
     
     UIButton *sizeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     sizeBtn.frame = CGRectMake(originX*3-12, 7, 25, 25);
     [sizeBtn setImage:[UIImage imageNamed:@"专属邀请函字体"] forState:UIControlStateNormal];
-    [sizeBtn addTarget:self action:@selector(fontsizeBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [sizeBtn addTarget:self action:@selector(PG_fontsizeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [_toolView addSubview:sizeBtn];
     
     UIButton *canclebtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [canclebtn setTitle:@"取消" forState:UIControlStateNormal];
     canclebtn.frame = CGRectMake(kScreenWidth/3*2 , 0, kScreenWidth/6, 40);
     [canclebtn setTitleColor:kColorA(249, 249, 249, 1) forState:UIControlStateNormal];
-    [canclebtn addTarget:self action:@selector(canclebtnBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [canclebtn addTarget:self action:@selector(PG_canclebtnBtnClick) forControlEvents:UIControlEventTouchUpInside];
     canclebtn.titleLabel.font = [UIFont systemFontOfSize:16];
     [_toolView addSubview:canclebtn];
     
@@ -142,13 +142,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     surebtn.titleLabel.font = [UIFont systemFontOfSize:16];
     [_toolView addSubview:surebtn];
     [self addSubview:_toolView];
-    [self addSubview:self.PGDiscoverColorView];
+    [self addSubview:self.PG_PGDiscoverColorView];
 }
 
 
-- (PGDiscoverColorView *)PGDiscoverColorView{
+- (PG_PGDiscoverColorView *)PG_PGDiscoverColorView{
     if (!_colorView) {
-        _colorView = [[PGDiscoverColorView alloc]initWithColor:_currentColor];
+        _colorView = [[PG_PGDiscoverColorView alloc]initWithColor:_currentColor];
         _colorView.colorDelegate = self;
         _colorView.hidden = YES;
     }
@@ -186,19 +186,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 #pragma mark--- 改变颜色
 
-- (void)colorViewCurrrentColor:(UIColor *)currentColor{
+- (void)PG_colorViewCurrrentColor:(UIColor *)currentColor{
     _currentColor = currentColor;
     self.textColor = _currentColor;
 }
 
-- (void)postFontsize:(float)fontsize{
+- (void)PG_postFontsize:(float)fontsize{
     _currentFontsize = fontsize;
     self.font = [UIFont systemFontOfSize:fontsize];
 }
 
 #pragma mark ---工具栏按钮点击
 /*! 取消回调 */
-- (void)canclebtnBtnClick{
+- (void)PG_canclebtnBtnClick{
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode collectionTrainModelu2 = UITextFieldViewModeAlways; 
         UITableViewStyle imagePickerConfigB4 = UITableViewStylePlain; 
@@ -210,13 +210,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     
 }
 /*! 颜色选择回调 */
-- (void)colorBtnClick{
+- (void)PG_colorBtnClick{
     _colorView.hidden = !_colorView.hidden;
     if (_fontChooseView) _fontChooseView.hidden= YES;
 }
 
 /*! 字体选择回调 */
-- (void)fontsizeBtnClick{
+- (void)PG_fontsizeBtnClick{
     _colorView.hidden = YES;
     if (!_fontChooseView) {
         _fontChooseView = [[PGDiscoverFontChooseView alloc]initWithFrame:CGRectMake(5, CGRectGetMinY(_toolView.frame)-40, kScreenWidth-10, 50) Fontsize:_currentFontsize];
@@ -227,13 +227,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     
 }
-- (void)fontstyleBtnClick{
+- (void)PG_fontstyleBtnClick{
     
 }
 /*! 确定编辑完成回调 */
 - (void)sureBtnClick{
     if ([self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length==0) {
-        [self canclebtnBtnClick];
+        [self PG_canclebtnBtnClick];
         return;
     }
     [_inviteTextDelegate sureBtnClick:self.text color:_currentColor fontsize:_currentFontsize];

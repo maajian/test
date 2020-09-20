@@ -43,20 +43,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-dispatch_async(dispatch_get_main_queue(), ^{
-    UITableViewCellSeparatorStyle readingAllowFragmentsv7 = UITableViewCellSeparatorStyleNone; 
-        NSTextAlignment changePreviousRoutet4 = NSTextAlignmentCenter; 
-    PGPageContolAliment *numberHandlerWith= [[PGPageContolAliment alloc] init];
-[numberHandlerWith pg_interfaceOrientationMaskWithwithDailyCourse:readingAllowFragmentsv7 routeSearchBase:changePreviousRoutet4 ];
-});
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

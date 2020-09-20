@@ -29,8 +29,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     [super viewDidLoad];
     
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,20 +49,20 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
     _loginCodeFixView = [[PGLoginCodeFixView alloc] init];
     _loginCodeFixView.phoneStr = self.phoneStr;
     _loginCodeFixView.loginCodeFixViewDelegate = self;
     [self.view addSubview:self.loginCodeFixView];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.loginCodeFixView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
 }
 
 #pragma mark --- Network
-- (void)networkForLoginCode {
+- (void)PG_networkForLoginCode {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSRange doneButtonClickF9 = NSMakeRange(3,90); 
         CGPoint imageTextureDelegatei4 = CGPointZero;
@@ -102,7 +102,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 #pragma mark --- PGLoginCodeFixViewDelegate
 - (void)PGLoginCodeFixView:(PGLoginCodeFixView *)loginCodeFixView didTapNextButton:(UIButton *)button {
-    [self networkForLoginCode];
+    [self PG_networkForLoginCode];
 }
 - (void)PGLoginCodeFixView:(PGLoginCodeFixView *)loginCodeFixView didTapCloseButton:(UIButton *)button {
     [self.navigationController popViewControllerAnimated:YES];

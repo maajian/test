@@ -120,30 +120,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-dispatch_async(dispatch_get_main_queue(), ^{
-    UIImageView * moreRecommendUserJ7 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
-    moreRecommendUserJ7.contentMode = UIViewContentModeCenter; 
-    moreRecommendUserJ7.clipsToBounds = NO; 
-    moreRecommendUserJ7.multipleTouchEnabled = YES; 
-    moreRecommendUserJ7.autoresizesSubviews = YES; 
-    moreRecommendUserJ7.clearsContextBeforeDrawing = YES; 
-        UIScrollView *currentPageColora1= [[UIScrollView alloc] initWithFrame:CGRectMake(71,119,140,178)]; 
-    currentPageColora1.showsHorizontalScrollIndicator = NO; 
-    currentPageColora1.showsVerticalScrollIndicator = NO; 
-    currentPageColora1.bounces = NO; 
-    currentPageColora1.maximumZoomScale = 5; 
-    currentPageColora1.minimumZoomScale = 1; 
-    PGNatatoriumParticularData *withPlayerItem= [[PGNatatoriumParticularData alloc] init];
-[withPlayerItem pg_scrollTimeIntervalWithmainViewController:moreRecommendUserJ7 rectEdgeNone:currentPageColora1 ];
-});
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

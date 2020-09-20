@@ -24,15 +24,15 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
 
 #pragma mark --- UI
-- (void)setupUI {
-    _closeButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"nav_close"] target:self action:@selector(closeAction:)];
+- (void)PG_setupUI {
+    _closeButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"nav_close"] target:self action:@selector(PG_closeAction:)];
     [self addSubview:_closeButton];
     
     _titleLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDBlackColor font:ZDSystemFont(28) numberOfLines:0 lineBreakMode:0 lineAlignment:0];
@@ -64,12 +64,12 @@
     _nextButton.layer.masksToBounds = YES;
     _nextButton.titleLabel.font = ZDSystemFont(14);
     [_nextButton setTitle:@"下一步" forState:UIControlStateNormal];
-    [_nextButton addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_nextButton addTarget:self action:@selector(PG_nextAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_nextButton];
 }
 
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImageView * changePhoneViewS7 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     changePhoneViewS7.contentMode = UIViewContentModeCenter; 
@@ -140,12 +140,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
 #pragma mark --- UITextFieldDelegate
 
 #pragma mark --- action
-- (void)closeAction:(UIButton *)button {
+- (void)PG_closeAction:(UIButton *)button {
     if ([self.loginCodeSendViewDelegate respondsToSelector:@selector(PGLoginCodeSendView:didTapCloseButton:)]) {
         [self.loginCodeSendViewDelegate PGLoginCodeSendView:self didTapCloseButton:button];
     }
 }
-- (void)nextAction:(UIButton *)nextButton {
+- (void)PG_nextAction:(UIButton *)nextButton {
     if ([self.loginCodeSendViewDelegate respondsToSelector:@selector(PGLoginCodeSendView:didTapNextButton:)]) {
         [self.loginCodeSendViewDelegate PGLoginCodeSendView:self didTapNextButton:nextButton];
     }

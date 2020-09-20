@@ -31,20 +31,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-dispatch_async(dispatch_get_main_queue(), ^{
-    UITableViewStyle errorWithStatusq3 = UITableViewStylePlain; 
-        CGPoint imageFromTypeC9 = CGPointMake(1,168); 
-    PGFirendsViewModel *orderDetailWith= [[PGFirendsViewModel alloc] init];
-[orderDetailWith pg_vertexAttribPointerWithrouteChangeListener:errorWithStatusq3 showFullButton:imageFromTypeC9 ];
-});
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

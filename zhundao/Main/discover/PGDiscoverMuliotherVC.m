@@ -153,22 +153,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [rootVC dismissViewControllerAnimated:YES completion:nil];
     
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-dispatch_async(dispatch_get_main_queue(), ^{
-    UITableViewStyle trainTableViewA7 = UITableViewStylePlain; 
-        UIActivityIndicatorView *javaScriptAlertf5= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
-    javaScriptAlertf5.hidden = YES; 
-    javaScriptAlertf5.hidesWhenStopped = YES; 
-    PGUserDomainMask *albumCloudShared= [[PGUserDomainMask alloc] init];
-[albumCloudShared pg_resourceWithTypeWithloginWithPerson:trainTableViewA7 alipaySuccNotification:javaScriptAlertf5 ];
-});
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

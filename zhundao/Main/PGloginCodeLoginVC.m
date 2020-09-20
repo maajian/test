@@ -83,11 +83,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     __weak typeof(self) weakSelf = self;
     [_viewModel sendCode:phoneStr successBlock:^{
          // 显示弹窗
-        [weakSelf showAlert:weakSelf.viewModel.sendCodeJson[@"errmsg"]];
+        [weakSelf PG_showAlert:weakSelf.viewModel.sendCodeJson[@"errmsg"]];
         weakSelf.code = weakSelf.viewModel.sendCodeJson[@"data"];
         
     } failBlock:^(NSString *error) {
-        [weakSelf showAlert:error];
+        [weakSelf PG_showAlert:error];
     }];
 }
 
@@ -103,7 +103,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_viewModel loginWirhCode:code phoneStr:phoneStr successBlock:^{
         [hud hideAnimated:YES afterDelay:0.5];
-        [self getGrade];
+        [self PG_getGrade];
         [ZD_UserM saveLoginTime];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -118,12 +118,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
             edit.code = code;
             [self.navigationController pushViewController:edit animated:YES];
         } else {
-            [self showAlert:error];
+            [self PG_showAlert:error];
         }
     }];
 }
 
-- (void)getGrade {
+- (void)PG_getGrade {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
@@ -136,7 +136,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 #pragma mark --- action
  // 弹窗
-- (void)showAlert:(NSString *)alert {
+- (void)PG_showAlert:(NSString *)alert {
     PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:alert];
     [label labelAnimationWithViewlong:self.view];
 }

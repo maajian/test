@@ -31,14 +31,14 @@ static const CGFloat fixedSpace = 10.f;
         _selectIndex = 0;
         _labelArray = [NSMutableArray array];
         _lineArray = [NSMutableArray array];
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
 
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode assetExportPresetn4 = UITextFieldViewModeAlways; 
         UITableViewStyle passWordWithq2 = UITableViewStylePlain; 
@@ -60,7 +60,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
@@ -80,7 +80,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 #pragma mark --- UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [self changeAnimation:textField];
+    [self PG_changeAnimation:textField];
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (_selectIndex >= 0 && _selectIndex < self.lineArray.count) {
@@ -105,7 +105,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- action
-- (void)textFieldEditingDidChanged:(UITextField *)textField {
+- (void)PG_textFieldEditingDidChanged:(UITextField *)textField {
     if ([textField.text isEqualToString:@""] && _selectIndex == itemCount - 1) {
         return;
     }
@@ -125,11 +125,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
         _selectIndex = itemCount - 1;
     }
-    [self removeAnimation:textField];
-    [self changeAnimation:textField];
+    [self PG_removeAnimation:textField];
+    [self PG_changeAnimation:textField];
 }
 // 按钮点击弹出键盘
-- (void)maskButtonAction:(UIButton *)button {
+- (void)PG_maskButtonAction:(UIButton *)button {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode javaScriptAlertU6 = UITextFieldViewModeAlways; 
         UITableViewStyle synchronizedEncodingUsingq1 = UITableViewStylePlain; 
@@ -139,7 +139,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.textField becomeFirstResponder];
 }
 // 横线动画
-- (void)lineAnimation:(UIView *)view {
+- (void)PG_lineAnimation:(UIView *)view {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
     animation.duration = 1;
     animation.repeatCount = HUGE_VALF;
@@ -161,7 +161,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         } else {
             // Fallback on earlier versions
         }
-        [_textField addTarget:self action:@selector(textFieldEditingDidChanged:) forControlEvents:(UIControlEventEditingChanged)];
+        [_textField addTarget:self action:@selector(PG_textFieldEditingDidChanged:) forControlEvents:(UIControlEventEditingChanged)];
     }
     return _textField;
 }
@@ -169,20 +169,20 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (!_maskButton) {
         _maskButton = [UIButton zd_button];
         _maskButton.backgroundColor = ZDBackgroundColor;
-        [_maskButton addTarget:self action:@selector(maskButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_maskButton addTarget:self action:@selector(PG_maskButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _maskButton;
 }
 
 #pragma mark --- public
-- (void)changeAnimation:(UITextField *)textField {
+- (void)PG_changeAnimation:(UITextField *)textField {
     if (self.isDelete) {
-        [self lineAnimation:self.lineArray[_selectIndex]];
+        [self PG_lineAnimation:self.lineArray[_selectIndex]];
     } else {
-        [self lineAnimation:self.lineArray[_selectIndex]];
+        [self PG_lineAnimation:self.lineArray[_selectIndex]];
     }
 }
-- (void)removeAnimation:(UITextField *)textField  {
+- (void)PG_removeAnimation:(UITextField *)textField  {
     if (self.isDelete) {
         [self.lineArray[_selectIndex == itemCount -1 ? _selectIndex : _selectIndex + 1].layer removeAllAnimations];
     } else {

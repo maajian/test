@@ -11,8 +11,8 @@
 #import "AppDelegate.h"
 
 @interface UUIDSettingViewController ()
-- (NSString *) getUuid: (NSString *)uuid;
-- (void) animateTextField: (UITextField *)textField up:(BOOL)up;
+- (NSString *) PG_getUuid: (NSString *)uuid;
+- (void) PG_animateTextField: (UITextField *)textField up:(BOOL)up;
 @end
 
 @implementation UUIDSettingViewController
@@ -133,11 +133,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
                     return;
                 }
                 else
-                    self.disUUID2Str = [self getUuid:[self.disUUID2 text]];
+                    self.disUUID2Str = [self PG_getUuid:[self.disUUID2 text]];
             }
             else
                 self.disUUID2Str = nil;
-            self.disUUID1Str = [self getUuid:[self.disUUID1 text]];
+            self.disUUID1Str = [self PG_getUuid:[self.disUUID1 text]];
             self.isDISUUIDAvailable = TRUE;
         }
     }
@@ -158,9 +158,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self.transTxUUIDStr release];
         if (self.transRxUUIDStr)
             [self.transRxUUIDStr release];
-        self.transServiceUUIDStr = [self getUuid:[self.serviceUUID text]];
-        self.transTxUUIDStr = [self getUuid:[self.txUUID text]];
-        self.transRxUUIDStr = [self getUuid:[self.rxUUID text]];
+        self.transServiceUUIDStr = [self PG_getUuid:[self.serviceUUID text]];
+        self.transTxUUIDStr = [self PG_getUuid:[self.txUUID text]];
+        self.transRxUUIDStr = [self PG_getUuid:[self.rxUUID text]];
         self.isUUIDAvailable = TRUE;
     }
     
@@ -184,7 +184,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.disUUID2 setText:@""];
 }
 
-- (NSString *) getUuid: (NSString *)uuid{
+- (NSString *) PG_getUuid: (NSString *)uuid{
     NSMutableString *data= [[NSMutableString alloc] init];
 
     [data setString:uuid];
@@ -197,7 +197,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return data;//[data autorelease];
 }
 
-- (void) animateTextField: (UITextField *)textField up:(BOOL)up{
+- (void) PG_animateTextField: (UITextField *)textField up:(BOOL)up{
     const int movementDistance = 90; // tweak as needed
     const float movementDuration = 0.3f; // tweak as needed
     
@@ -212,11 +212,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     if((textField == _rxUUID)||(textField == _disUUID1)||(textField == _disUUID2))
-        [self animateTextField:textField up:YES];
+        [self PG_animateTextField:textField up:YES];
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     if((textField == _rxUUID)||(textField == _disUUID1)||(textField == _disUUID2))
-       [self animateTextField:textField up:NO];
+       [self PG_animateTextField:textField up:NO];
 }
 @end

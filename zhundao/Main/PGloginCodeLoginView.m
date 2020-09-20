@@ -45,14 +45,14 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self setupUI];
-        [self updateFrame];
+        [self PG_setupUI];
+        [self PG_updateFrame];
     }
     return self;
 }
 
 #pragma mark --- UI创建
-- (void)setupUI {
+- (void)PG_setupUI {
      // 返回按钮
     _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_backButton setImage:[UIImage imageNamed:@"删除"] forState:UIControlStateNormal];
@@ -154,13 +154,13 @@
     _dontGetCodeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_dontGetCodeButton setTitle:@"无法获取验证码" forState:UIControlStateNormal];
     [_dontGetCodeButton setTitleColor:ZDMainColor forState:UIControlStateNormal];
-    [_dontGetCodeButton addTarget:self action:@selector(codeWeb) forControlEvents:UIControlEventTouchUpInside];
+    [_dontGetCodeButton addTarget:self action:@selector(PG_codeWeb) forControlEvents:UIControlEventTouchUpInside];
     _dontGetCodeButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:_dontGetCodeButton];
 }
 
 #pragma mark --- 自动布局
-- (void)updateFrame {
+- (void)PG_updateFrame {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSTextAlignment locationCollectionViewa9 = NSTextAlignmentCenter; 
         UITextField *userCommentModelu1= [[UITextField alloc] initWithFrame:CGRectZero]; 
@@ -389,7 +389,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
  // 无法获取验证码
-- (void)codeWeb {
+- (void)PG_codeWeb {
     if ([self.codeLoginViewDelegate respondsToSelector:@selector(goCodeWeb)]) {
         [self.codeLoginViewDelegate goCodeWeb];
     }

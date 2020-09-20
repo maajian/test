@@ -30,14 +30,14 @@
         self.backgroundColor = [UIColor whiteColor];
         _dataArray = dataArray;
         _labelArray = [NSMutableArray array];
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
 
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIView *withSessionConfigurationq2= [[UIView alloc] initWithFrame:CGRectZero]; 
     withSessionConfigurationq2.backgroundColor = [UIColor whiteColor]; 
@@ -58,7 +58,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         label.userInteractionEnabled = YES;
         label.tag = 100 + i;
         label.textAlignment = NSTextAlignmentCenter;
-        [label addTapGestureTarget:self action:@selector(labelAction:)];
+        [label addTapGestureTarget:self action:@selector(PG_labelAction:)];
         [self addSubview:label];
         [_labelArray addObject:label];
     }
@@ -75,7 +75,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIView *textFiledDelegatex0= [[UIView alloc] initWithFrame:CGRectMake(97,175,94,153)]; 
     textFiledDelegatex0.backgroundColor = [UIColor whiteColor]; 
@@ -131,7 +131,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)setCurrentIndex:(NSInteger)currentIndex {
     _currentIndex = currentIndex;
-    [self animationMoveWithCurrentIndex:currentIndex];
+    [self PG_animationMoveWithCurrentIndex:currentIndex];
 }
 - (void)setShowBottomLine:(BOOL)showBottomLine {
     _showBottomLine = showBottomLine;
@@ -139,17 +139,17 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- action
-- (void)labelAction:(UIGestureRecognizer *)gestureRecognizer {
+- (void)PG_labelAction:(UIGestureRecognizer *)gestureRecognizer {
     UILabel *label = (UILabel *)gestureRecognizer.view;
     NSInteger index = label.tag - 100;
-    [self animationMoveWithCurrentIndex:index];
+    [self PG_animationMoveWithCurrentIndex:index];
     if ([self.segmentViewDelegate respondsToSelector:@selector(segmentView:didSelectIndex:)]) {
         [self.segmentViewDelegate segmentView:self didSelectIndex:label.tag -100];
     }
 }
 
 #pragma mark --- animation
-- (void)animationMoveWithCurrentIndex:(NSInteger)index {
+- (void)PG_animationMoveWithCurrentIndex:(NSInteger)index {
     ZD_WeakSelf
     _labelArray[_priIndex].textColor = [UIColor blackColor];
     _labelArray[index].textColor = ZDMainColor;

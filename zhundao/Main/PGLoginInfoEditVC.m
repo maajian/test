@@ -92,7 +92,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
      MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_viewModel loginWirhCode:_code phoneStr:_phoneStr name:name passWord:passWord successBlock:^{
         [hud hideAnimated:YES afterDelay:0.5];
-        [self getGrade];
+        [self PG_getGrade];
         [ZD_UserM saveLoginTime];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -101,11 +101,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         });
     } failBlock:^(NSString *error) {
         [hud hideAnimated:YES];
-        [self showAlert:error];
+        [self PG_showAlert:error];
     }];
 }
 
-- (void)getGrade {
+- (void)PG_getGrade {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         [PGUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
@@ -113,13 +113,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
         NSDictionary  *userdic = data[@"data"];
         [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
     } fail:^(NSError *error) {
-        [self showAlert:error.description];
+        [self PG_showAlert:error.description];
     }];
 }
 
 #pragma mark --- action
 // 弹窗
-- (void)showAlert:(NSString *)alert {
+- (void)PG_showAlert:(NSString *)alert {
     PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:alert];
     [label labelAnimationWithViewlong:self.view];
 }
@@ -133,10 +133,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+
 */
 
 @end

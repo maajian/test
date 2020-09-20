@@ -25,8 +25,8 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
@@ -34,8 +34,8 @@
 #pragma mark --- lazyload
 
 #pragma mark --- UI
-- (void)setupUI {
-    _closeButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"nav_close"] target:self action:@selector(closeAction:)];
+- (void)PG_setupUI {
+    _closeButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"nav_close"] target:self action:@selector(PG_closeAction:)];
     [self addSubview:_closeButton];
     
     _titleLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDBlackColor font:ZDSystemFont(32) numberOfLines:0 lineBreakMode:0 lineAlignment:0];
@@ -58,12 +58,12 @@
     _sureButton.layer.masksToBounds = YES;
     _sureButton.titleLabel.font = ZDSystemFont(14);
     [_sureButton setTitle:@"下一步" forState:UIControlStateNormal];
-    [_sureButton addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_sureButton addTarget:self action:@selector(PG_nextAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_sureButton];
 }
 
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(15);
         make.top.equalTo(self).offset(30 + ZD_StatusBar_H);
@@ -112,12 +112,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- action
-- (void)closeAction:(UIButton *)button {
+- (void)PG_closeAction:(UIButton *)button {
     if ([self.loginCodeFixViewDelegate respondsToSelector:@selector(PGLoginCodeFixView:didTapCloseButton:)]) {
         [self.loginCodeFixViewDelegate PGLoginCodeFixView:self didTapCloseButton:button];
     }
 }
-- (void)nextAction:(UIButton *)nextButton {
+- (void)PG_nextAction:(UIButton *)nextButton {
     if ([self.loginCodeFixViewDelegate respondsToSelector:@selector(PGLoginCodeFixView:didTapNextButton:)]) {
         [self.loginCodeFixViewDelegate PGLoginCodeFixView:self didTapNextButton:nextButton];
     }

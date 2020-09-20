@@ -119,10 +119,10 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             [[PGSignManager shareManager].dataBase executeUpdate:updateSql12];
             [[PGSignManager shareManager].dataBase close];
         }
-        [self saveDBVersion];
+        [self PG_saveDBVersion];
     }
 }
-- (void)saveDBVersion {
+- (void)PG_saveDBVersion {
     [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kdbManagerVersion];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -246,7 +246,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             NSString *authUrl = @"https://api.weixin.qq.com/sns/oauth2/access_token";
             [ZD_NetWorkM getDataWithMethod:authUrl parameters:codeParam succ:^(NSDictionary *obj) {
                 if (ZD_SafeStringValue(obj[@"unionid"])) {
-                    [weakSelf loginWehchatWithUnionId:obj[@"unionid"]];
+                    [weakSelf PG_loginWehchatWithUnionId:obj[@"unionid"]];
                 }
             } fail:^(NSError *error) {
                 ZD_HUD_SHOW_ERROR_STATUS(@"微信登录失败")
@@ -255,7 +255,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 
-- (void)loginWehchatWithUnionId:(NSString *)unionId {
+- (void)PG_loginWehchatWithUnionId:(NSString *)unionId {
     NSDictionary *dic = @{@"BusinessCode": @"WxLogin",
                           @"Data" : @{
                                   @"unionId": unionId,

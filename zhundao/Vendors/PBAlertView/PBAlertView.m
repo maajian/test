@@ -70,15 +70,15 @@
         }
         _buttonCount = sureButtonTitle.length? 2 : 1;
          // 初始化UI
-        [self setupUI];
-        [self initLayout];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
+        [self PG_setupUI];
+        [self PG_initLayout];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PG_deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
     }
     return self;
 }
 
 #pragma mark --- UI创建
-- (void)setupUI {
+- (void)PG_setupUI {
      // 内容视图
     _contentView = [[UIView alloc]init];
     [self addSubview:_contentView];
@@ -123,7 +123,7 @@
     }
 }
 
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
         make.width.mas_equalTo(PB_ScreenWidth - 74);
@@ -200,7 +200,7 @@
 
 #pragma mark --- 屏幕旋转
  // 屏幕旋转通知实现
-- (void)deviceOrientationDidChange {
+- (void)PG_deviceOrientationDidChange {
     PB_WeakSelf
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if (UIInterfaceOrientationIsLandscape(orientation)) {

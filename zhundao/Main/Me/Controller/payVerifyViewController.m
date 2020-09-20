@@ -195,23 +195,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-dispatch_async(dispatch_get_main_queue(), ^{
-    UIFont *withUserDataH9= [UIFont systemFontOfSize:212];
-        UISlider *backGroundUsere7= [[UISlider alloc] initWithFrame:CGRectZero]; 
-    backGroundUsere7.minimumValue = 0; 
-    backGroundUsere7.maximumValue = 100; 
-    backGroundUsere7.value =21; 
-    PGWithSwimData *browserPhotoImage= [[PGWithSwimData alloc] init];
-[browserPhotoImage pg_bottomPhotoViewWithmainScreenWidth:withUserDataH9 dailyCourseTable:backGroundUsere7 ];
-});
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

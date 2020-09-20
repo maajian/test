@@ -167,12 +167,12 @@
     [super dealloc];
 }
 
-- (void) displayDevicesList {
+- (void) PG_displayDevicesList {
     [devicesTableView reloadData];
 }
 
-- (void) switchToMainFeaturePage {
-    NSLog(@"[ConnectViewController] switchToMainFeaturePage");
+- (void) PG_switchToMainFeaturePage {
+    NSLog(@"[ConnectViewController] PG_switchToMainFeaturePage");
 
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    if ([[[appDelegate navigationController] viewControllers] containsObject:[deviceInfo PGBaseTabbarVC]] == FALSE) {
@@ -207,7 +207,7 @@
         default:
             break;
     }
-    [self updateButtonType];
+    [self PG_updateButtonType];
 }
 
 - (IBAction)actionButtonCancelScan:(id)sender {
@@ -252,13 +252,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 
--(void)popToRootPage {
+-(void)PG_popToRootPage {
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    if (appDelegate.pageTransition == FALSE) {
 //        [[appDelegate navigationController] popToRootViewControllerAnimated:NO];
 //    }
 //    else {
-//        [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(popToRootPage) userInfo:nil repeats:NO];
+//        [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(PG_popToRootPage) userInfo:nil repeats:NO];
 //    }
 }
 
@@ -270,7 +270,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)updateMyPeripheralForDisconnect:(MyPeripheral *)myPeripheral {
     NSLog(@"updateMyPeripheralForDisconnect");//, %@", myPeripheral.advName);
     if (myPeripheral == controlPeripheral) {
-        [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(popToRootPage) userInfo:nil repeats:NO];
+        [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(PG_popToRootPage) userInfo:nil repeats:NO];
     }
     
     for (int idx =0; idx< [connectedDeviceInfo count]; idx++) {
@@ -295,8 +295,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         
     }
 
-    [self displayDevicesList];
-    [self updateButtonType];
+    [self PG_displayDevicesList];
+    [self PG_updateButtonType];
     
     if(connectionStatus == LE_STATUS_SCANNING){
         [self stopScan];
@@ -358,8 +358,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
             break;
         }
     }
-    [self displayDevicesList];
-    [self updateButtonType];
+    [self PG_displayDevicesList];
+    [self PG_updateButtonType];
 }
 
 // DataSource methods
@@ -472,7 +472,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 [refreshDeviceListTimer invalidate];
                 refreshDeviceListTimer = nil;
             }
-//            [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(switchToMainFeaturePage) userInfo:nil repeats:NO];
+//            [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(PG_switchToMainFeaturePage) userInfo:nil repeats:NO];
         }
             break;
         case 1:
@@ -490,8 +490,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 tmpPeripheral.connectStaus = MYPERIPHERAL_CONNECT_STATUS_CONNECTING;
                 [devicesList replaceObjectAtIndex:indexPath.row withObject:tmpPeripheral];
                 [connectingList addObject:tmpPeripheral];
-                [self displayDevicesList];
-                [self updateButtonType];
+                [self PG_displayDevicesList];
+                [self PG_updateButtonType];
             }
             break;
         }
@@ -543,11 +543,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     
     [self disconnectDevice:tmpPeripheral];
-    [self displayDevicesList];
-    [self updateButtonType];
+    [self PG_displayDevicesList];
+    [self PG_updateButtonType];
 }
 
-- (void) updateButtonType {
+- (void) PG_updateButtonType {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *cacheDailyCourseY9= [NSMutableArray array];
         UIView *circleScreenViewq0= [[UIView alloc] initWithFrame:CGRectZero]; 
