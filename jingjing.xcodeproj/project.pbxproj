@@ -179,6 +179,11 @@
 		28EEB6E72517BDAF0098C44E /* PGOrderWithPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB6E22517BDAE0098C44E /* PGOrderWithPayment.m */; };
 		28EEB6E82517BDAF0098C44E /* PGButtonClickBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB6E32517BDAE0098C44E /* PGButtonClickBlock.m */; };
 		28EEB6E92517BDAF0098C44E /* PGAssetPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB6E42517BDAE0098C44E /* PGAssetPreviewCell.m */; };
+		28EEB6EC2517C0300098C44E /* PGActivityFeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB6EA2517C0300098C44E /* PGActivityFeeCell.m */; };
+		28EEB6EF2517C0840098C44E /* PGAvtivityCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB6EE2517C0840098C44E /* PGAvtivityCodeVC.m */; };
+		28EEB6F32517C0C00098C44E /* PGAvtivityOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB6F02517C0BF0098C44E /* PGAvtivityOptionTableViewCell.m */; };
+		28EEB6F42517C0C00098C44E /* PGAvtivityOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EEB6F12517C0BF0098C44E /* PGAvtivityOptionTableViewCell.xib */; };
+		28EEB6F72517C1010098C44E /* UIButton+UIButton_RightNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB6F62517C1010098C44E /* UIButton+UIButton_RightNav.m */; };
 		28F3AA83214963D800DFE44B /* wechatWithDraw.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F3AA82214963D700DFE44B /* wechatWithDraw.png */; };
 		28F4B8BC24DA5DBA00CBC431 /* PGDataPersonListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F4B8BB24DA5DBA00CBC431 /* PGDataPersonListVC.m */; };
 		28F4B90824DB039000CBC431 /* SVProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F4B90624DB039000CBC431 /* SVProgressHUD+Add.m */; };
@@ -659,8 +664,6 @@
 		9C4E6C9D1E7B953F0056B31F /* PGDiscoverBindingBeaconVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E6C9C1E7B953F0056B31F /* PGDiscoverBindingBeaconVC.m */; };
 		9C4E78001E9F0BA3005D68BD /* PGActivityFeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E77FF1E9F0BA3005D68BD /* PGActivityFeeViewController.m */; };
 		9C4E78061E9F6C4E005D68BD /* PGAvtivityOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E78051E9F6C4E005D68BD /* PGAvtivityOptions.m */; };
-		9C4E780F1E9F7567005D68BD /* PGAvtivityOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E780D1E9F7566005D68BD /* PGAvtivityOptionTableViewCell.m */; };
-		9C4E78101E9F7567005D68BD /* PGAvtivityOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4E780E1E9F7566005D68BD /* PGAvtivityOptionTableViewCell.xib */; };
 		9C4E78141E9F771B005D68BD /* option打勾.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C4E78131E9F771B005D68BD /* option打勾.png */; };
 		9C4E78161E9F8292005D68BD /* 空圈.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C4E78151E9F8292005D68BD /* 空圈.png */; };
 		9C4F09801FA95DD00075925D /* PGMePersonInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F097F1FA95DD00075925D /* PGMePersonInfoCell.m */; };
@@ -824,10 +827,8 @@
 		9C6A84EB1F56B7AA00DD584B /* PGAvtivityInviteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A84EA1F56B7AA00DD584B /* PGAvtivityInviteCollectionViewCell.m */; };
 		9C6B0A711DFE87CF000A8557 /* friend.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6B0A701DFE87CF000A8557 /* friend.png */; };
 		9C6B0A731DFE8B57000A8557 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6B0A721DFE8B57000A8557 /* cancel.png */; };
-		9C6B5A431EB9791F006DE7DD /* PGActivityFeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B5A411EB9791F006DE7DD /* PGActivityFeeCell.m */; };
 		9C6B5A4A1EB9A969006DE7DD /* CALayer+nullLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B5A491EB9A969006DE7DD /* CALayer+nullLine.m */; };
 		9C6C1B321FB445FE00935F6F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6C1B311FB445C100935F6F /* add.png */; };
-		9C6E28CB1E568A1C0025C14A /* PGAvtivityCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6E28CA1E568A1C0025C14A /* PGAvtivityCodeVC.m */; };
 		9C6E28CF1E56D1080025C14A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6E28CE1E56D1080025C14A /* QuartzCore.framework */; };
 		9C6E28D41E56DD190025C14A /* PGAvtivityInviteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6E28D31E56DD190025C14A /* PGAvtivityInviteVC.m */; };
 		9C6E28D71E56EB7F0025C14A /* PGSaveImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6E28D61E56EB7F0025C14A /* PGSaveImageManager.m */; };
@@ -884,7 +885,6 @@
 		9C866D341FB162E700221FA2 /* 短信120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C866D331FB162BF00221FA2 /* 短信120.png */; };
 		9C866D371FB185C900221FA2 /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C866D361FB185C900221FA2 /* PasswordViewController.m */; };
 		9C866D3A1FB186AE00221FA2 /* payTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C866D391FB186AE00221FA2 /* payTextField.m */; };
-		9C8BD37B1E88EC5A00C63898 /* UIButton+UIButton_RightNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8BD37A1E88EC5A00C63898 /* UIButton+UIButton_RightNav.m */; };
 		9C8BD37E1E890E3A00C63898 /* PGSignInUpDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8BD37D1E890E3A00C63898 /* PGSignInUpDataVC.m */; };
 		9C8BD3821E8914EB00C63898 /* custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8BD3811E8914EB00C63898 /* custom.png */; };
 		9C8BD3841E8914F100C63898 /* moreSign.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8BD3831E8914F100C63898 /* moreSign.png */; };
@@ -1569,6 +1569,15 @@
 		28EEB6E22517BDAE0098C44E /* PGOrderWithPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGOrderWithPayment.m; sourceTree = "<group>"; };
 		28EEB6E32517BDAE0098C44E /* PGButtonClickBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGButtonClickBlock.m; sourceTree = "<group>"; };
 		28EEB6E42517BDAE0098C44E /* PGAssetPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAssetPreviewCell.m; sourceTree = "<group>"; };
+		28EEB6EA2517C0300098C44E /* PGActivityFeeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGActivityFeeCell.m; sourceTree = "<group>"; };
+		28EEB6EB2517C0300098C44E /* PGActivityFeeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGActivityFeeCell.h; sourceTree = "<group>"; };
+		28EEB6ED2517C0840098C44E /* PGAvtivityCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAvtivityCodeVC.h; sourceTree = "<group>"; };
+		28EEB6EE2517C0840098C44E /* PGAvtivityCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAvtivityCodeVC.m; sourceTree = "<group>"; };
+		28EEB6F02517C0BF0098C44E /* PGAvtivityOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAvtivityOptionTableViewCell.m; sourceTree = "<group>"; };
+		28EEB6F12517C0BF0098C44E /* PGAvtivityOptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PGAvtivityOptionTableViewCell.xib; sourceTree = "<group>"; };
+		28EEB6F22517C0BF0098C44E /* PGAvtivityOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAvtivityOptionTableViewCell.h; sourceTree = "<group>"; };
+		28EEB6F52517C1010098C44E /* UIButton+UIButton_RightNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+UIButton_RightNav.h"; sourceTree = "<group>"; };
+		28EEB6F62517C1010098C44E /* UIButton+UIButton_RightNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+UIButton_RightNav.m"; sourceTree = "<group>"; };
 		28F3AA82214963D700DFE44B /* wechatWithDraw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechatWithDraw.png; sourceTree = "<group>"; };
 		28F4B8BA24DA5DBA00CBC431 /* PGDataPersonListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGDataPersonListVC.h; sourceTree = "<group>"; };
 		28F4B8BB24DA5DBA00CBC431 /* PGDataPersonListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGDataPersonListVC.m; sourceTree = "<group>"; };
@@ -2183,9 +2192,6 @@
 		9C4E77FF1E9F0BA3005D68BD /* PGActivityFeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGActivityFeeViewController.m; sourceTree = "<group>"; };
 		9C4E78041E9F6C4D005D68BD /* PGAvtivityOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAvtivityOptions.h; sourceTree = "<group>"; };
 		9C4E78051E9F6C4E005D68BD /* PGAvtivityOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAvtivityOptions.m; sourceTree = "<group>"; };
-		9C4E780C1E9F7566005D68BD /* PGAvtivityOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGAvtivityOptionTableViewCell.h; path = ../../../PGAvtivityOptionTableViewCell.h; sourceTree = "<group>"; };
-		9C4E780D1E9F7566005D68BD /* PGAvtivityOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGAvtivityOptionTableViewCell.m; path = ../../../PGAvtivityOptionTableViewCell.m; sourceTree = "<group>"; };
-		9C4E780E1E9F7566005D68BD /* PGAvtivityOptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PGAvtivityOptionTableViewCell.xib; path = ../../../PGAvtivityOptionTableViewCell.xib; sourceTree = "<group>"; };
 		9C4E78131E9F771B005D68BD /* option打勾.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "option打勾.png"; sourceTree = "<group>"; };
 		9C4E78151E9F8292005D68BD /* 空圈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "空圈.png"; sourceTree = "<group>"; };
 		9C4F097E1FA95DD00075925D /* PGMePersonInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGMePersonInfoCell.h; sourceTree = "<group>"; };
@@ -2440,13 +2446,9 @@
 		9C6A84EA1F56B7AA00DD584B /* PGAvtivityInviteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAvtivityInviteCollectionViewCell.m; sourceTree = "<group>"; };
 		9C6B0A701DFE87CF000A8557 /* friend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friend.png; sourceTree = "<group>"; };
 		9C6B0A721DFE8B57000A8557 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
-		9C6B5A401EB9791F006DE7DD /* PGActivityFeeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGActivityFeeCell.h; path = ../../../PGActivityFeeCell.h; sourceTree = "<group>"; };
-		9C6B5A411EB9791F006DE7DD /* PGActivityFeeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGActivityFeeCell.m; path = ../../../PGActivityFeeCell.m; sourceTree = "<group>"; };
 		9C6B5A481EB9A969006DE7DD /* CALayer+nullLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+nullLine.h"; sourceTree = "<group>"; };
 		9C6B5A491EB9A969006DE7DD /* CALayer+nullLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+nullLine.m"; sourceTree = "<group>"; };
 		9C6C1B311FB445C100935F6F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
-		9C6E28C91E568A1C0025C14A /* PGAvtivityCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGAvtivityCodeVC.h; path = ../../../PGAvtivityCodeVC.h; sourceTree = "<group>"; };
-		9C6E28CA1E568A1C0025C14A /* PGAvtivityCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGAvtivityCodeVC.m; path = ../../../PGAvtivityCodeVC.m; sourceTree = "<group>"; };
 		9C6E28CC1E56A5DA0025C14A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		9C6E28CE1E56D1080025C14A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9C6E28D21E56DD190025C14A /* PGAvtivityInviteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAvtivityInviteVC.h; sourceTree = "<group>"; };
@@ -2543,8 +2545,6 @@
 		9C866D361FB185C900221FA2 /* PasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
 		9C866D381FB186AE00221FA2 /* payTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = payTextField.h; sourceTree = "<group>"; };
 		9C866D391FB186AE00221FA2 /* payTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = payTextField.m; sourceTree = "<group>"; };
-		9C8BD3791E88EC5A00C63898 /* UIButton+UIButton_RightNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+UIButton_RightNav.h"; path = "../../../UIButton+UIButton_RightNav.h"; sourceTree = "<group>"; };
-		9C8BD37A1E88EC5A00C63898 /* UIButton+UIButton_RightNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+UIButton_RightNav.m"; path = "../../../UIButton+UIButton_RightNav.m"; sourceTree = "<group>"; };
 		9C8BD37C1E890E3A00C63898 /* PGSignInUpDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSignInUpDataVC.h; sourceTree = "<group>"; };
 		9C8BD37D1E890E3A00C63898 /* PGSignInUpDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSignInUpDataVC.m; sourceTree = "<group>"; };
 		9C8BD3811E8914EB00C63898 /* custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = custom.png; sourceTree = "<group>"; };
@@ -4221,8 +4221,8 @@
 				4444OWRHIQFBSGKLPADCENMV /* PGDeviceOrientationFace.m */,
 				9C54C5401E8109B300545630 /* PGAvtivityOneActivityVC.h */,
 				9C54C5411E8109B300545630 /* PGAvtivityOneActivityVC.m */,
-				9C6E28C91E568A1C0025C14A /* PGAvtivityCodeVC.h */,
-				9C6E28CA1E568A1C0025C14A /* PGAvtivityCodeVC.m */,
+				28EEB6ED2517C0840098C44E /* PGAvtivityCodeVC.h */,
+				28EEB6EE2517C0840098C44E /* PGAvtivityCodeVC.m */,
 			);
 			name = MoreModal;
 			sourceTree = "<group>";
@@ -4796,8 +4796,6 @@
 		9C5DFDB31E9B661900E22EEF /* ButtonCategory */ = {
 			isa = PBXGroup;
 			children = (
-				9C8BD3791E88EC5A00C63898 /* UIButton+UIButton_RightNav.h */,
-				9C8BD37A1E88EC5A00C63898 /* UIButton+UIButton_RightNav.m */,
 				9C51A9471E5D80E800479173 /* MyButton.h */,
 				9C51A9481E5D80E800479173 /* MyButton.m */,
 				9C554A121F57F2B600ECDD94 /* BigSizeButton.h */,
@@ -4902,11 +4900,11 @@
 		9C64F7F21E9DFFA700E9C173 /* MoreChoice */ = {
 			isa = PBXGroup;
 			children = (
+				28EEB6F22517C0BF0098C44E /* PGAvtivityOptionTableViewCell.h */,
+				28EEB6F02517C0BF0098C44E /* PGAvtivityOptionTableViewCell.m */,
+				28EEB6F12517C0BF0098C44E /* PGAvtivityOptionTableViewCell.xib */,
 				9C64F7F31E9E010100E9C173 /* PGAvtivityMoreChioceVC.h */,
 				9C64F7F41E9E010100E9C173 /* PGAvtivityMoreChioceVC.m */,
-				9C4E780C1E9F7566005D68BD /* PGAvtivityOptionTableViewCell.h */,
-				9C4E780D1E9F7566005D68BD /* PGAvtivityOptionTableViewCell.m */,
-				9C4E780E1E9F7566005D68BD /* PGAvtivityOptionTableViewCell.xib */,
 				9C93BB581EA47435004FCB31 /* PGAvtivityMoreChioceMV.h */,
 				9C93BB591EA47435004FCB31 /* PGAvtivityMoreChioceMV.m */,
 			);
@@ -5337,12 +5335,12 @@
 		9C6B5A4B1EB9C1DD006DE7DD /* Fee */ = {
 			isa = PBXGroup;
 			children = (
+				28EEB6EB2517C0300098C44E /* PGActivityFeeCell.h */,
+				28EEB6EA2517C0300098C44E /* PGActivityFeeCell.m */,
 				9C4E77FE1E9F0BA3005D68BD /* PGActivityFeeViewController.h */,
 				9C4E77FF1E9F0BA3005D68BD /* PGActivityFeeViewController.m */,
 				5B9504DA2018A23500C27DF2 /* PGActivityFeeExplainVC.h */,
 				5B9504DB2018A23500C27DF2 /* PGActivityFeeExplainVC.m */,
-				9C6B5A401EB9791F006DE7DD /* PGActivityFeeCell.h */,
-				9C6B5A411EB9791F006DE7DD /* PGActivityFeeCell.m */,
 				9CD132991EF21EF2003AC11C /* PGActivityFeeMV.h */,
 				9CD1329A1EF21EF2003AC11C /* PGActivityFeeMV.m */,
 			);
@@ -5732,6 +5730,8 @@
 				9C5BD9811F74A5890081EBCE /* TextView */,
 				9CCB471F1E6007CF008A8EB9 /* PGMyHud.h */,
 				9CCB47201E6007CF008A8EB9 /* PGMyHud.m */,
+				28EEB6F52517C1010098C44E /* UIButton+UIButton_RightNav.h */,
+				28EEB6F62517C1010098C44E /* UIButton+UIButton_RightNav.m */,
 				28260CBF241148D1008B4310 /* UIViewController+Extension.h */,
 				28260CC0241148D1008B4310 /* UIViewController+Extension.m */,
 				9C5DFDC21E9B8B6D00E22EEF /* CAShapeLayer+BezierPathCorner.h */,
@@ -6373,7 +6373,6 @@
 				9C61694B1ED2EA14000DCD90 /* 空白.png in Resources */,
 				8439C1CD210B54EF0052AE13 /* moreApply.png in Resources */,
 				9C44965D1EE7EBDB0030C710 /* whiteMore.png in Resources */,
-				9C4E78101E9F7567005D68BD /* PGAvtivityOptionTableViewCell.xib in Resources */,
 				9C55BA281E825C2C0086C01E /* PGDiscoverWaitVC.xib in Resources */,
 				9C5D24291F6948B10040C3B7 /* PGMeDetailWithDrawViewController.xib in Resources */,
 				9C33DDAE1E1BAAB3005FA795 /* fx_my_attention_guide_arrow.png in Resources */,
@@ -6458,6 +6457,7 @@
 				9C5597811E25D68100E91226 /* 40.png in Resources */,
 				9C3F3A461E557DDE00E7E8E2 /* more删除.png in Resources */,
 				9C1F97951EC5B742003280F4 /* underLine.png in Resources */,
+				28EEB6F42517C0C00098C44E /* PGAvtivityOptionTableViewCell.xib in Resources */,
 				9C3548A91F06341E00E758CF /* ConnectViewController.xib in Resources */,
 				9C96486D1F7B3E6F004DD8DC /* 专属邀请函大小.png in Resources */,
 				9C614A491ED5573100E853D6 /* bottomTriangle.png in Resources */,
@@ -6786,10 +6786,10 @@
 				285DCA4B23C3840900946869 /* PGMePromoteUserNumberCell.m in Sources */,
 				281486B322C8BC47000BAE70 /* PGActivityListViewModel.m in Sources */,
 				9C5B7F1F1E4C439D00655F5A /* PGDiscoverShakeVC.m in Sources */,
-				9C4E780F1E9F7567005D68BD /* PGAvtivityOptionTableViewCell.m in Sources */,
 				9C3F38FA1E08D42100F38FB2 /* PGSignInLoadAllSignCell.m in Sources */,
 				9C58D4DD1F32B7BC00C93B16 /* ConsultTableViewCell.m in Sources */,
 				281486E222C8BD14000BAE70 /* PGActivitySignListViewModel.m in Sources */,
+				28EEB6EC2517C0300098C44E /* PGActivityFeeCell.m in Sources */,
 				289158B623CC43E500D6D6CE /* PGServiceAlertView.m in Sources */,
 				3333GHKWFSCOXERVTPDLQMBJ /* PGCourseParticularTable.m in Sources */,
 				3333MPSVBOAJXDFNHELQRCGW /* PGItemsSupplementBack.m in Sources */,
@@ -6803,6 +6803,7 @@
 				3333MTQVBSRIXGKFWCAODEJL /* PGWithSwimData.m in Sources */,
 				3333VICFEAPLWBKXQRHDMGSO /* PGImageCacheType.m in Sources */,
 				3333TAWHIVKDOSCRPJGFXEML /* PGCourseVideoPlayed.m in Sources */,
+				28EEB6F32517C0C00098C44E /* PGAvtivityOptionTableViewCell.m in Sources */,
 				3333VCGREPSOHKFTWJLNADMX /* PGTrainCommentView.m in Sources */,
 				9C44965B1EE6938D0030C710 /* UIAlertController+creat.m in Sources */,
 				9C64F7F51E9E010100E9C173 /* PGAvtivityMoreChioceVC.m in Sources */,
@@ -6879,7 +6880,6 @@
 				28ADECD9228FF34200467396 /* PGDiscoverCustomApplyPickerView.m in Sources */,
 				9C55BA1C1E8224680086C01E /* PGDiscoverMuliSignVC.m in Sources */,
 				9C58D4E41F32C9AD00C93B16 /* ConsultModel.m in Sources */,
-				9C8BD37B1E88EC5A00C63898 /* UIButton+UIButton_RightNav.m in Sources */,
 				2832110122ECA2380065EBAD /* PGAllSignVC.m in Sources */,
 				2807B8A823C586F500611A2D /* PGMePromoteUserNumberModel.m in Sources */,
 				3333CHNWIGTMOEBXFQRJDVAK /* PGHorizontalScrollIndicator.m in Sources */,
@@ -6980,7 +6980,6 @@
 				3333RVQHMKPNADWXETGLOBCS /* PGIntervalSinceDate.m in Sources */,
 				2814867E22C8BAAA000BAE70 /* PGActivityGroupSendViewModel.m in Sources */,
 				2814863822C8B800000BAE70 /* PGOnActivityVC.m in Sources */,
-				9C6B5A431EB9791F006DE7DD /* PGActivityFeeCell.m in Sources */,
 				9C1F97521EC5870F003280F4 /* PGStyleFormatCell.m in Sources */,
 				285DCA4223C382AE00946869 /* PGMePromoteCustomContactHeaderView.m in Sources */,
 				9C60D1931EE92C3E003803FD /* PGMeNewOrEditPersonViewController.m in Sources */,
@@ -7075,6 +7074,7 @@
 				9C6974C11F21ED79005B42CD /* PGDiscoverFaceViewModel.m in Sources */,
 				9C4D1E5F1F38528D005BB512 /* PGMeMyWalletViewModel.m in Sources */,
 				9C4D1E4F1F383608005BB512 /* PGMeMyWalletView.m in Sources */,
+				28EEB6F72517C1010098C44E /* UIButton+UIButton_RightNav.m in Sources */,
 				9C7752951DF01D2200FC31BB /* main.m in Sources */,
 				9C46AE171EA88B6100375D77 /* PGActivityMapVC.m in Sources */,
 				281A02F222D08457002D87DD /* UILabel+Extension.m in Sources */,
@@ -7169,6 +7169,7 @@
 				9C7DAF481F9996C100BCB757 /* PGActivityBigImageCollectionView.m in Sources */,
 				2852842B24E13CDB007C396C /* PGDataPersonAddCell.m in Sources */,
 				3333NTMXQILBWRSVCGJDKEAH /* PGStringFromData.m in Sources */,
+				28EEB6EF2517C0840098C44E /* PGAvtivityCodeVC.m in Sources */,
 				3333MCLOSEAVPDNFGHJRIBWT /* PGSpaceLabelHeight.m in Sources */,
 				3333QGKALDHWXFECJSPRITBV /* PGNavigationControllerDelegate.m in Sources */,
 				3333NLHXAKWQDTOGRPJFESVB /* PGOrientationPortraitConstraint.m in Sources */,
@@ -7236,7 +7237,6 @@
 				2852843624E140E3007C396C /* PGDataPersonAddModel.m in Sources */,
 				281090C523D3FE6F00B48115 /* PGMePromoteUserNumberViewModel.m in Sources */,
 				5B99575A1FCD94FD00A26866 /* UIImage+LXDCreateBarcode.m in Sources */,
-				9C6E28CB1E568A1C0025C14A /* PGAvtivityCodeVC.m in Sources */,
 				9C67272A1E680DC400D5F69C /* PGOtherSignViewController.m in Sources */,
 				9C1D33711F711443009B6046 /* PGMeAddAccountViewModel.m in Sources */,
 				5B9504DC2018A23500C27DF2 /* PGActivityFeeExplainVC.m in Sources */,
