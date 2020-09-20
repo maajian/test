@@ -1,5 +1,5 @@
 //
-//  OneConsultTableViewCell.h
+//  PGActivityOneConsultTableViewCell.h
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConsultModel.h"
-@interface OneConsultTableViewCell : UITableViewCell
+#import "PGActivityConsultModel.h"
+@interface PGActivityOneConsultTableViewCell : UITableViewCell
 /*! 内容 */
-@property(nonatomic,strong)ConsultModel *model;
+@property(nonatomic,strong)PGActivityConsultModel *model;
 /*! 头像 */
 @property(nonatomic,strong) UIImageView *imgView ;
 /*! 姓名 */

@@ -1,21 +1,21 @@
 #import "PGLocationHeaderView.h"
 //
-//  OneConsultViewController.m
+//  PGActivityOneConsultVC.m
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "OneConsultViewController.h"
+#import "PGActivityOneConsultVC.h"
 
-#import "OneConsultTableViewCell.h"
-#import "OneConsultViewModel.h"
-@interface OneConsultViewController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
+#import "PGActivityOneConsultTableViewCell.h"
+#import "PGActivityOneConsultViewModel.h"
+@interface PGActivityOneConsultVC ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 /*! tableview */
 @property(nonatomic,strong)UITableView *tableView;
 /*! viewmode */
-@property(nonatomic,strong)OneConsultViewModel *oneVM;
+@property(nonatomic,strong)PGActivityOneConsultViewModel *oneVM;
 /*! 第一个cell的文本高度 */
 @property(nonatomic,assign)float cellHeight;
 /*! textview的高度 */
@@ -26,7 +26,7 @@
 @property(nonatomic,assign)BOOL isCommand;
 @end
 
-@implementation OneConsultViewController
+@implementation PGActivityOneConsultVC
 
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -70,9 +70,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _tableView;
 }
-- (OneConsultViewModel *)oneVM{
+- (PGActivityOneConsultViewModel *)oneVM{
     if (!_oneVM) {
-        _oneVM = [[OneConsultViewModel alloc]init];
+        _oneVM = [[PGActivityOneConsultViewModel alloc]init];
     }
     return _oneVM;
 }
@@ -87,9 +87,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    OneConsultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"oneConsultID"];
+    PGActivityOneConsultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"oneConsultID"];
     if (!cell) {
-        cell = [[OneConsultTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"oneConsultID"];
+        cell = [[PGActivityOneConsultTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"oneConsultID"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.height = _cellHeight;

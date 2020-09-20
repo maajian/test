@@ -39,7 +39,7 @@
 }
 
 // 咨询
-+ (instancetype)consultModel {
++ (instancetype)PGActivityConsultModel {
     return [[self alloc] initWithImageStr:@"more咨询.png" title:@"活动咨询" type:MoreMoalTypeConsult];
 }
 

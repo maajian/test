@@ -43,7 +43,7 @@ typedef NS_ENUM(NSInteger, MoreMoalType) {
 // 名单列表
 + (instancetype)personListModel;
 // 咨询
-+ (instancetype)consultModel;
++ (instancetype)PGActivityConsultModel;
 // 活动链接
 + (instancetype)linkModel;
 // 报名截止

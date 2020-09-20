@@ -1,5 +1,5 @@
 //
-//  ConsultViewModel.h
+//  PGActivityConsultViewModel.h
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 typedef void(^getAllBlock) (NSArray *dataArray,NSArray *timeArray,NSArray *noAnswerArray,NSArray *hadAnswerArray);
-@interface ConsultViewModel : NSObject
+@interface PGActivityConsultViewModel : NSObject
 
 
 /*! 获取咨询列表 */

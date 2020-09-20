@@ -1,19 +1,19 @@
 #import "PGInputViewContent.h"
 //
-//  ConsultViewController.m
+//  PGActivityConsultViewController.m
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "ConsultViewController.h"
-#import "ConsultViewModel.h"
-#import "ConsultTableViewCell.h"
-#import "OneConsultViewController.h"
+#import "PGActivityConsultViewController.h"
+#import "PGActivityConsultViewModel.h"
+#import "PGActivityConsultTableViewCell.h"
+#import "PGActivityOneConsultVC.h"
 #import "PGHeaderChooseViewScrollView.h"
 #import "PGNoDataScrollView.h"
-@interface ConsultViewController ()<UITableViewDelegate,UITableViewDataSource>{
+@interface PGActivityConsultViewController ()<UITableViewDelegate,UITableViewDataSource>{
     Reachability *r;
 }
 /*! tableview */
@@ -21,7 +21,7 @@
 /*! 显示出来的模型数组 */
 @property(nonatomic,strong)NSMutableArray *dataArray;
 /*! 控制器的viewmodel */
-@property(nonatomic,strong)ConsultViewModel *viewModel;
+@property(nonatomic,strong)PGActivityConsultViewModel *viewModel;
 /*! 高度数组 */
 @property(nonatomic,strong)NSArray *heightArray;
 /*! 时间数组 */
@@ -40,7 +40,7 @@
 @property(nonatomic,strong)PGNoDataScrollView *noDataView ;
 @end
 
-@implementation ConsultViewController
+@implementation PGActivityConsultViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,7 +58,7 @@
     
     [self.view addSubview:self.tableView];
     self.view.backgroundColor = ZDBackgroundColor;
-    _viewModel = [[ConsultViewModel alloc]init];
+    _viewModel = [[PGActivityConsultViewModel alloc]init];
     [self firstLoad];
     [self reflsh];
 }
@@ -172,7 +172,7 @@
         _tableView.sectionFooterHeight = 20;
         _tableView.estimatedRowHeight = 64;
         _tableView.rowHeight = UITableViewAutomaticDimension;
-        [_tableView registerNib:[UINib nibWithNibName:@"ConsultTableViewCell" bundle:nil] forCellReuseIdentifier:@"consultID"];
+        [_tableView registerNib:[UINib nibWithNibName:@"PGActivityConsultTableViewCell" bundle:nil] forCellReuseIdentifier:@"consultID"];
     }
     return _tableView;
 }
@@ -192,9 +192,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *consultID = @"consultID";
-    ConsultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:consultID];
+    PGActivityConsultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:consultID];
     if (!cell) {
-        cell = [[ConsultTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:consultID];
+        cell = [[PGActivityConsultTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:consultID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.timeStr = self.timeArray[indexPath.row];
@@ -218,7 +218,7 @@
     return nil;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    OneConsultViewController *one = [[OneConsultViewController alloc]init];
+    PGActivityOneConsultVC *one = [[PGActivityOneConsultVC alloc]init];
     one.model = _dataArray[indexPath.row];
     one.timeStr = _timeArray[indexPath.row];
     [self setHidesBottomBarWhenPushed:YES];

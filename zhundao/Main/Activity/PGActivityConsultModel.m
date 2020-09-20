@@ -1,14 +1,14 @@
 //
-//  ConsultModel.m
+//  PGActivityConsultModel.m
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "ConsultModel.h"
+#import "PGActivityConsultModel.h"
 
-@implementation ConsultModel
+@implementation PGActivityConsultModel
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {

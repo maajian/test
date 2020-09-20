@@ -1,21 +1,21 @@
 //
-//  ConsultTableViewCell.m
+//  PGActivityConsultTableViewCell.m
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "ConsultTableViewCell.h"
+#import "PGActivityConsultTableViewCell.h"
 
-@implementation ConsultTableViewCell
+@implementation PGActivityConsultTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 
--(void)setModel:(ConsultModel *)model
+-(void)setModel:(PGActivityConsultModel *)model
 {
     if (model) {
         _model = model;

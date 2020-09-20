@@ -1,5 +1,5 @@
 //
-//  OneConsultViewModel.h
+//  PGActivityOneConsultViewModel.h
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 typedef void(^postBlock) (BOOL isSuccess);
-@interface OneConsultViewModel : NSObject
+@interface PGActivityOneConsultViewModel : NSObject
 
 
 /*!

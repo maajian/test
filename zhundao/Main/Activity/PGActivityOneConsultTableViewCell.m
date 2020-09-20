@@ -1,21 +1,21 @@
 #import "PGRecoderSelectPicker.h"
 //
-//  OneConsultTableViewCell.m
+//  PGActivityOneConsultTableViewCell.m
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "OneConsultTableViewCell.h"
-#import "OneConsultViewModel.h"
+#import "PGActivityOneConsultTableViewCell.h"
+#import "PGActivityOneConsultViewModel.h"
 
-@interface OneConsultTableViewCell()
+@interface PGActivityOneConsultTableViewCell()
 
 
 @end
 
-@implementation OneConsultTableViewCell
+@implementation PGActivityOneConsultTableViewCell
 
 - (void)awakeFromNib {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -40,7 +40,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     // Configure the view for the selected state
 }
 
-- (void)setModel:(ConsultModel *)model
+- (void)setModel:(PGActivityConsultModel *)model
 {
     if (model) {
         _model= model;

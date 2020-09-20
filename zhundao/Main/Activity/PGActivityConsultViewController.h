@@ -1,5 +1,5 @@
 //
-//  ConsultViewController.h
+//  PGActivityConsultViewController.h
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
@@ -8,6 +8,6 @@
 
 #import "PGBaseVC.h"
 
-@interface ConsultViewController : PGBaseVC
+@interface PGActivityConsultViewController : PGBaseVC
 @property(nonatomic,assign)NSInteger acID;
 @end

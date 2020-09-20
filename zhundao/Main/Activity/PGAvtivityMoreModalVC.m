@@ -14,7 +14,7 @@
 #import "PGAvtivityCodeVC.h"
 #import "PGAvtivityInviteVC.h"
 #import "PGActivityDetailActivityVC.h"
-#import "ConsultViewController.h"
+#import "PGActivityConsultViewController.h"
 #import <UShareUI/UShareUI.h>
 #import "WXApi.h"
 #import "PGAvtivityPostSignVC.h"
@@ -98,7 +98,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (ZD_UserM.isAdmin) {
         _dataArray = @[[PGAvtivityMoreModalModel editModel],
                         [PGAvtivityMoreModalModel personListModel],
-                        [PGAvtivityMoreModalModel consultModel],
+                        [PGAvtivityMoreModalModel PGActivityConsultModel],
                         [PGAvtivityMoreModalModel linkModel],
                         [PGAvtivityMoreModalModel applyEndModel],
                         [PGAvtivityMoreModalModel deleteModel],
@@ -425,7 +425,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 // 咨询
 - (void)consult {
-    ConsultViewController *consult = [[ConsultViewController alloc]init];
+    PGActivityConsultViewController *consult = [[PGActivityConsultViewController alloc]init];
     consult.acID = self.moreModel.ID;
     [self.navigationController pushViewController:consult animated:YES];
 }

@@ -1,5 +1,5 @@
 //
-//  OneConsultViewController.h
+//  PGActivityOneConsultVC.h
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
@@ -8,11 +8,11 @@
 
 #import "PGBaseVC.h"
 
-#import "ConsultModel.h"
+#import "PGActivityConsultModel.h"
 
-@interface OneConsultViewController : PGBaseVC
+@interface PGActivityOneConsultVC : PGBaseVC
 
-@property(nonatomic,strong)ConsultModel *model;
+@property(nonatomic,strong)PGActivityConsultModel *model;
 /*! 时间字符串 */
 @property(nonatomic,strong)NSString *timeStr;
 @end

@@ -1,5 +1,5 @@
 //
-//  ConsultTableViewCell.h
+//  PGActivityConsultTableViewCell.h
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConsultModel.h"
-@interface ConsultTableViewCell : UITableViewCell
+#import "PGActivityConsultModel.h"
+@interface PGActivityConsultTableViewCell : UITableViewCell
 /*! 内容 */
-@property(nonatomic,strong)ConsultModel *model;
+@property(nonatomic,strong)PGActivityConsultModel *model;
 /*! 头像 */
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 /*! 姓名 */

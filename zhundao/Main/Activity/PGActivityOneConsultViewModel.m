@@ -1,14 +1,14 @@
 //
-//  OneConsultViewModel.m
+//  PGActivityOneConsultViewModel.m
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "OneConsultViewModel.h"
+#import "PGActivityOneConsultViewModel.h"
 
-@implementation OneConsultViewModel
+@implementation PGActivityOneConsultViewModel
 
 //POST api/PerBase/ReplyConsult/{id}?accessKey={accessKey}&answer={answer}&IsRecommend={IsRecommend}
 

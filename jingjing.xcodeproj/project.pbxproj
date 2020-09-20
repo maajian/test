@@ -711,14 +711,14 @@
 		9C5849C81F46B9630078CB0E /* wallet.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5849C71F46B9630078CB0E /* wallet.png */; };
 		9C5849CA1F46B98C0078CB0E /* retroaction.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5849C91F46B98C0078CB0E /* retroaction.png */; };
 		9C5849CC1F46B9B10078CB0E /* 通知公告.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5849CB1F46B9B10078CB0E /* 通知公告.png */; };
-		9C58D4CF1F32B6BE00C93B16 /* ConsultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4CE1F32B6BE00C93B16 /* ConsultViewController.m */; };
-		9C58D4DD1F32B7BC00C93B16 /* ConsultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4DB1F32B7BC00C93B16 /* ConsultTableViewCell.m */; };
-		9C58D4DE1F32B7BC00C93B16 /* ConsultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C58D4DC1F32B7BC00C93B16 /* ConsultTableViewCell.xib */; };
-		9C58D4E11F32B7E400C93B16 /* ConsultViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4E01F32B7E400C93B16 /* ConsultViewModel.m */; };
-		9C58D4E41F32C9AD00C93B16 /* ConsultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4E31F32C9AD00C93B16 /* ConsultModel.m */; };
-		9C58D4EA1F33072000C93B16 /* OneConsultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4E91F33072000C93B16 /* OneConsultViewController.m */; };
-		9C58D4ED1F3308AC00C93B16 /* OneConsultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4EC1F3308AC00C93B16 /* OneConsultTableViewCell.m */; };
-		9C58D4F01F33094900C93B16 /* OneConsultViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4EF1F33094900C93B16 /* OneConsultViewModel.m */; };
+		9C58D4CF1F32B6BE00C93B16 /* PGActivityConsultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4CE1F32B6BE00C93B16 /* PGActivityConsultViewController.m */; };
+		9C58D4DD1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4DB1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.m */; };
+		9C58D4DE1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C58D4DC1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.xib */; };
+		9C58D4E11F32B7E400C93B16 /* PGActivityConsultViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4E01F32B7E400C93B16 /* PGActivityConsultViewModel.m */; };
+		9C58D4E41F32C9AD00C93B16 /* PGActivityConsultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4E31F32C9AD00C93B16 /* PGActivityConsultModel.m */; };
+		9C58D4EA1F33072000C93B16 /* PGActivityOneConsultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4E91F33072000C93B16 /* PGActivityOneConsultVC.m */; };
+		9C58D4ED1F3308AC00C93B16 /* PGActivityOneConsultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4EC1F3308AC00C93B16 /* PGActivityOneConsultTableViewCell.m */; };
+		9C58D4F01F33094900C93B16 /* PGActivityOneConsultViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C58D4EF1F33094900C93B16 /* PGActivityOneConsultViewModel.m */; };
 		9C5932B91EF11904004EC478 /* 分组.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5932B81EF11904004EC478 /* 分组.png */; };
 		9C5943B31EEA4E78000F1E55 /* PGNewOrEditMV.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5943B21EEA4E78000F1E55 /* PGNewOrEditMV.m */; };
 		9C594F4B1F6A125C0006CD5E /* PGDiscoverShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C594F4A1F6A125C0006CD5E /* PGDiscoverShowView.m */; };
@@ -2266,21 +2266,21 @@
 		9C5849C71F46B9630078CB0E /* wallet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet.png; sourceTree = "<group>"; };
 		9C5849C91F46B98C0078CB0E /* retroaction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retroaction.png; sourceTree = "<group>"; };
 		9C5849CB1F46B9B10078CB0E /* 通知公告.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "通知公告.png"; sourceTree = "<group>"; };
-		9C58D4CD1F32B6BE00C93B16 /* ConsultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsultViewController.h; sourceTree = "<group>"; };
-		9C58D4CE1F32B6BE00C93B16 /* ConsultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultViewController.m; sourceTree = "<group>"; };
-		9C58D4DA1F32B7BC00C93B16 /* ConsultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsultTableViewCell.h; sourceTree = "<group>"; };
-		9C58D4DB1F32B7BC00C93B16 /* ConsultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultTableViewCell.m; sourceTree = "<group>"; };
-		9C58D4DC1F32B7BC00C93B16 /* ConsultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultTableViewCell.xib; sourceTree = "<group>"; };
-		9C58D4DF1F32B7E400C93B16 /* ConsultViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsultViewModel.h; sourceTree = "<group>"; };
-		9C58D4E01F32B7E400C93B16 /* ConsultViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultViewModel.m; sourceTree = "<group>"; };
-		9C58D4E21F32C9AD00C93B16 /* ConsultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsultModel.h; sourceTree = "<group>"; };
-		9C58D4E31F32C9AD00C93B16 /* ConsultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultModel.m; sourceTree = "<group>"; };
-		9C58D4E81F33072000C93B16 /* OneConsultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneConsultViewController.h; sourceTree = "<group>"; };
-		9C58D4E91F33072000C93B16 /* OneConsultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneConsultViewController.m; sourceTree = "<group>"; };
-		9C58D4EB1F3308AC00C93B16 /* OneConsultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneConsultTableViewCell.h; sourceTree = "<group>"; };
-		9C58D4EC1F3308AC00C93B16 /* OneConsultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneConsultTableViewCell.m; sourceTree = "<group>"; };
-		9C58D4EE1F33094900C93B16 /* OneConsultViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneConsultViewModel.h; sourceTree = "<group>"; };
-		9C58D4EF1F33094900C93B16 /* OneConsultViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneConsultViewModel.m; sourceTree = "<group>"; };
+		9C58D4CD1F32B6BE00C93B16 /* PGActivityConsultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGActivityConsultViewController.h; sourceTree = "<group>"; };
+		9C58D4CE1F32B6BE00C93B16 /* PGActivityConsultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGActivityConsultViewController.m; sourceTree = "<group>"; };
+		9C58D4DA1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGActivityConsultTableViewCell.h; sourceTree = "<group>"; };
+		9C58D4DB1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGActivityConsultTableViewCell.m; sourceTree = "<group>"; };
+		9C58D4DC1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PGActivityConsultTableViewCell.xib; sourceTree = "<group>"; };
+		9C58D4DF1F32B7E400C93B16 /* PGActivityConsultViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGActivityConsultViewModel.h; sourceTree = "<group>"; };
+		9C58D4E01F32B7E400C93B16 /* PGActivityConsultViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGActivityConsultViewModel.m; sourceTree = "<group>"; };
+		9C58D4E21F32C9AD00C93B16 /* PGActivityConsultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGActivityConsultModel.h; sourceTree = "<group>"; };
+		9C58D4E31F32C9AD00C93B16 /* PGActivityConsultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGActivityConsultModel.m; sourceTree = "<group>"; };
+		9C58D4E81F33072000C93B16 /* PGActivityOneConsultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGActivityOneConsultVC.h; sourceTree = "<group>"; };
+		9C58D4E91F33072000C93B16 /* PGActivityOneConsultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGActivityOneConsultVC.m; sourceTree = "<group>"; };
+		9C58D4EB1F3308AC00C93B16 /* PGActivityOneConsultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGActivityOneConsultTableViewCell.h; sourceTree = "<group>"; };
+		9C58D4EC1F3308AC00C93B16 /* PGActivityOneConsultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGActivityOneConsultTableViewCell.m; sourceTree = "<group>"; };
+		9C58D4EE1F33094900C93B16 /* PGActivityOneConsultViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGActivityOneConsultViewModel.h; sourceTree = "<group>"; };
+		9C58D4EF1F33094900C93B16 /* PGActivityOneConsultViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGActivityOneConsultViewModel.m; sourceTree = "<group>"; };
 		9C5932B81EF11904004EC478 /* 分组.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分组.png"; sourceTree = "<group>"; };
 		9C5943B11EEA4E78000F1E55 /* PGNewOrEditMV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGNewOrEditMV.h; sourceTree = "<group>"; };
 		9C5943B21EEA4E78000F1E55 /* PGNewOrEditMV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGNewOrEditMV.m; sourceTree = "<group>"; };
@@ -4499,10 +4499,10 @@
 		9C58D4D31F32B70400C93B16 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				9C58D4DF1F32B7E400C93B16 /* ConsultViewModel.h */,
-				9C58D4E01F32B7E400C93B16 /* ConsultViewModel.m */,
-				9C58D4EE1F33094900C93B16 /* OneConsultViewModel.h */,
-				9C58D4EF1F33094900C93B16 /* OneConsultViewModel.m */,
+				9C58D4DF1F32B7E400C93B16 /* PGActivityConsultViewModel.h */,
+				9C58D4E01F32B7E400C93B16 /* PGActivityConsultViewModel.m */,
+				9C58D4EE1F33094900C93B16 /* PGActivityOneConsultViewModel.h */,
+				9C58D4EF1F33094900C93B16 /* PGActivityOneConsultViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -4510,11 +4510,11 @@
 		9C58D4D41F32B70600C93B16 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9C58D4DA1F32B7BC00C93B16 /* ConsultTableViewCell.h */,
-				9C58D4DB1F32B7BC00C93B16 /* ConsultTableViewCell.m */,
-				9C58D4DC1F32B7BC00C93B16 /* ConsultTableViewCell.xib */,
-				9C58D4EB1F3308AC00C93B16 /* OneConsultTableViewCell.h */,
-				9C58D4EC1F3308AC00C93B16 /* OneConsultTableViewCell.m */,
+				9C58D4DA1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.h */,
+				9C58D4DB1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.m */,
+				9C58D4DC1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.xib */,
+				9C58D4EB1F3308AC00C93B16 /* PGActivityOneConsultTableViewCell.h */,
+				9C58D4EC1F3308AC00C93B16 /* PGActivityOneConsultTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -4522,8 +4522,8 @@
 		9C58D4D51F32B70800C93B16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9C58D4E21F32C9AD00C93B16 /* ConsultModel.h */,
-				9C58D4E31F32C9AD00C93B16 /* ConsultModel.m */,
+				9C58D4E21F32C9AD00C93B16 /* PGActivityConsultModel.h */,
+				9C58D4E31F32C9AD00C93B16 /* PGActivityConsultModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -4531,10 +4531,10 @@
 		9C58D4D61F32B71500C93B16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9C58D4CD1F32B6BE00C93B16 /* ConsultViewController.h */,
-				9C58D4CE1F32B6BE00C93B16 /* ConsultViewController.m */,
-				9C58D4E81F33072000C93B16 /* OneConsultViewController.h */,
-				9C58D4E91F33072000C93B16 /* OneConsultViewController.m */,
+				9C58D4CD1F32B6BE00C93B16 /* PGActivityConsultViewController.h */,
+				9C58D4CE1F32B6BE00C93B16 /* PGActivityConsultViewController.m */,
+				9C58D4E81F33072000C93B16 /* PGActivityOneConsultVC.h */,
+				9C58D4E91F33072000C93B16 /* PGActivityOneConsultVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -6365,7 +6365,7 @@
 				843F54252129A5E700CBAC57 /* close.png in Resources */,
 				9C33DDAB1E1BA551005FA795 /* fx_guide_arrow_down.png in Resources */,
 				9CE41C281F6B6A900065D3F1 /* 地址.png in Resources */,
-				9C58D4DE1F32B7BC00C93B16 /* ConsultTableViewCell.xib in Resources */,
+				9C58D4DE1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.xib in Resources */,
 				9C614A4E1ED578FE00E853D6 /* PGMeGroupTableViewCell.xib in Resources */,
 				28482D4A24E5B8D300EA2542 /* moreOutput.png in Resources */,
 				9C1F97A21EC5BC31003280F4 /* 预览.png in Resources */,
@@ -6701,7 +6701,7 @@
 				3333RKBFXCOMANPSTGQDWHIE /* PGTrainParticularStadium.m in Sources */,
 				3333WHOKRABELGVDPMSCTFXI /* PGInputViewContent.m in Sources */,
 				3333LGOVWHMISXBERDCANTQP /* PGWithRoundCorner.m in Sources */,
-				9C58D4F01F33094900C93B16 /* OneConsultViewModel.m in Sources */,
+				9C58D4F01F33094900C93B16 /* PGActivityOneConsultViewModel.m in Sources */,
 				9C33DDA81E1BA0AF005FA795 /* GuideView.m in Sources */,
 				5B3BA391201106E400D8814D /* PGMeMoreAccountViewModel.m in Sources */,
 				282101AA24D8302A005E6EB6 /* PGLoginCodeFixView.m in Sources */,
@@ -6787,7 +6787,7 @@
 				281486B322C8BC47000BAE70 /* PGActivityListViewModel.m in Sources */,
 				9C5B7F1F1E4C439D00655F5A /* PGDiscoverShakeVC.m in Sources */,
 				9C3F38FA1E08D42100F38FB2 /* PGSignInLoadAllSignCell.m in Sources */,
-				9C58D4DD1F32B7BC00C93B16 /* ConsultTableViewCell.m in Sources */,
+				9C58D4DD1F32B7BC00C93B16 /* PGActivityConsultTableViewCell.m in Sources */,
 				281486E222C8BD14000BAE70 /* PGActivitySignListViewModel.m in Sources */,
 				28EEB6EC2517C0300098C44E /* PGActivityFeeCell.m in Sources */,
 				289158B623CC43E500D6D6CE /* PGServiceAlertView.m in Sources */,
@@ -6879,7 +6879,7 @@
 				9C1F97401EC586D4003280F4 /* PGTextHTMLParser.m in Sources */,
 				28ADECD9228FF34200467396 /* PGDiscoverCustomApplyPickerView.m in Sources */,
 				9C55BA1C1E8224680086C01E /* PGDiscoverMuliSignVC.m in Sources */,
-				9C58D4E41F32C9AD00C93B16 /* ConsultModel.m in Sources */,
+				9C58D4E41F32C9AD00C93B16 /* PGActivityConsultModel.m in Sources */,
 				2832110122ECA2380065EBAD /* PGAllSignVC.m in Sources */,
 				2807B8A823C586F500611A2D /* PGMePromoteUserNumberModel.m in Sources */,
 				3333CHNWIGTMOEBXFQRJDVAK /* PGHorizontalScrollIndicator.m in Sources */,
@@ -7041,7 +7041,7 @@
 				2814866322C8B9F9000BAE70 /* PGActivityMessageContentViewModel.m in Sources */,
 				841DAEBF20D34C8E006B0F65 /* PGloginCodeLoginView.m in Sources */,
 				28FFBCBC229ACDD200C4752E /* UIColor+Extension.m in Sources */,
-				9C58D4E11F32B7E400C93B16 /* ConsultViewModel.m in Sources */,
+				9C58D4E11F32B7E400C93B16 /* PGActivityConsultViewModel.m in Sources */,
 				5B9956E41FCD868000A26866 /* JQBounceSpot1Animation.m in Sources */,
 				2852842824E13CC3007C396C /* PGDataPersonAddVC.m in Sources */,
 				3333KDVTNLBXOFSHCJWGMERA /* PGUserCommentData.m in Sources */,
@@ -7094,7 +7094,7 @@
 				9C5420231E7299AF000E187D /* PGPostSignManager.m in Sources */,
 				2814868422C8BACD000BAE70 /* PGActivityEditVC.m in Sources */,
 				9C1F97341EC58677003280F4 /* PGImagePreviewController.m in Sources */,
-				9C58D4ED1F3308AC00C93B16 /* OneConsultTableViewCell.m in Sources */,
+				9C58D4ED1F3308AC00C93B16 /* PGActivityOneConsultTableViewCell.m in Sources */,
 				9CBE94971E49BAE700F072AE /* PGSignInXIugaisignVC.m in Sources */,
 				281486C422C8BC89000BAE70 /* PGActivityJPullCell.m in Sources */,
 				9CD1329B1EF21EF2003AC11C /* PGActivityFeeMV.m in Sources */,
@@ -7244,7 +7244,7 @@
 				9C866D371FB185C900221FA2 /* PasswordViewController.m in Sources */,
 				9C3F3A3B1E553FDD00E7E8E2 /* PGAvtivityMoreModalVC.m in Sources */,
 				2852843124E13CF8007C396C /* PGDataPersonAddViewModel.m in Sources */,
-				9C58D4CF1F32B6BE00C93B16 /* ConsultViewController.m in Sources */,
+				9C58D4CF1F32B6BE00C93B16 /* PGActivityConsultViewController.m in Sources */,
 				9C6277261ED3DD5A002787FA /* NSString+ChangeToPinyin.m in Sources */,
 				2884ABDD23F6658000A08DDD /* PGDiscoverShopDetailVC.m in Sources */,
 				9C5D242F1F695CF90040C3B7 /* PGDiscoverPriviteInviteVC.m in Sources */,
@@ -7300,7 +7300,7 @@
 				9C1D336B1F710029009B6046 /* PGMeAddAccountViewController.m in Sources */,
 				281486AC22C8BC2C000BAE70 /* PGActivityPrintVcodeCell.m in Sources */,
 				9C0A9CE71F04C8C2002C5F2F /* PGDiscoverPrintVC.m in Sources */,
-				9C58D4EA1F33072000C93B16 /* OneConsultViewController.m in Sources */,
+				9C58D4EA1F33072000C93B16 /* PGActivityOneConsultVC.m in Sources */,
 				9C866D3A1FB186AE00221FA2 /* payTextField.m in Sources */,
 				9C4658CB1E023B490039AFF6 /* PGloginSendVC.m in Sources */,
 				9C6F4F7A1F9F25CF0017BB6A /* PGActivityChooseBigImageViewModel.m in Sources */,

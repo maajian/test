@@ -1,15 +1,15 @@
 //
-//  ConsultViewModel.m
+//  PGActivityConsultViewModel.m
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
 //  Copyright © 2017年 zhundao. All rights reserved.
 //
 
-#import "ConsultViewModel.h"
-#import "ConsultModel.h"
+#import "PGActivityConsultViewModel.h"
+#import "PGActivityConsultModel.h"
 #import "Time.h"
-@implementation ConsultViewModel
+@implementation PGActivityConsultViewModel
 
 /*! 获取回复列表 */
 //POST api/PerBase/PstConsultList?accessKey={accessKey}
@@ -34,7 +34,7 @@
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array = dic[@"Data"];
         for (NSDictionary *datadic  in array) {
-            ConsultModel *model = [ConsultModel yy_modelWithJSON:datadic];
+            PGActivityConsultModel *model = [PGActivityConsultModel yy_modelWithJSON:datadic];
             [muarray addObject:model];
             if (model.IsReply) [hadArray addObject:model];
             else [notArray addObject:model];
@@ -53,7 +53,7 @@
 - (NSArray *)getHeight:(NSArray *)array
 {
     NSMutableArray *heightArray = [NSMutableArray array];
-    for (ConsultModel *model in array) {
+    for (PGActivityConsultModel *model in array) {
         NSString *str = model.Question;
         CGSize size = [str boundingRectWithSize:CGSizeMake(0.85*kScreenWidth-88, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:15]} context:nil].size;
         [heightArray addObject:@(size.height)];

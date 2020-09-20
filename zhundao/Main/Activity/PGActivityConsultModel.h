@@ -1,5 +1,5 @@
 //
-//  ConsultModel.h
+//  PGActivityConsultModel.h
 //  zhundao
 //
 //  Created by zhundao on 2017/8/3.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ConsultModel : NSObject<NSCoding>
+@interface PGActivityConsultModel : NSObject<NSCoding>
 /*! 添加时间 */
 @property(nonatomic,copy)NSString *AddTime;
 /*! 回复 */
