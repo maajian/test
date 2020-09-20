@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) NSRange *withRefreshingBlock;
 @property (nonatomic, readwrite, assign) UIButtonType *courseChoicenessColumnist;
 
-+ (UIImageView *)pg_uploadVideoBlockWithfinishLoadingWith:(UITextField *)afinishLoadingWith withStrokeCourse:(UITextView *)awithStrokeCourse cacheUserModel:(UIView *)acacheUserModel;
-+ (UIButton *)pg_sizeWithAssetWithcancelContentTouches:(PGNavigateItemWith *)acancelContentTouches swimCircleItem:(PGNavigateItemWith *)aswimCircleItem textBorderStyle:(PGNavigateItemWith *)atextBorderStyle;
-- (NSTextAlignment)pg_videoPreviewCellWithcancelCollectionCourse:(UIButton *)acancelCollectionCourse activityIndicatorVisible:(CGPoint)aactivityIndicatorVisible;
-- (CGPoint)pg_scrollViewKeyboardWithimageEdgeExtend:(UIButton *)aimageEdgeExtend selectOriginalPhoto:(UIButton *)aselectOriginalPhoto;
-- (UIButtonType)pg_chooseStadiumViewWithvalueImageRect:(UITextView *)avalueImageRect medalWallView:(NSString *)amedalWallView;
++ (UIImageView *)uploadVideoBlockWithfinishLoadingWith:(UITextField *)afinishLoadingWith withStrokeCourse:(UITextView *)awithStrokeCourse cacheUserModel:(UIView *)acacheUserModel;
++ (UIButton *)sizeWithAssetWithcancelContentTouches:(PGNavigateItemWith *)acancelContentTouches swimCircleItem:(PGNavigateItemWith *)aswimCircleItem textBorderStyle:(PGNavigateItemWith *)atextBorderStyle;
+- (NSTextAlignment)videoPreviewCellWithcancelCollectionCourse:(UIButton *)acancelCollectionCourse activityIndicatorVisible:(CGPoint)aactivityIndicatorVisible;
+- (CGPoint)scrollViewKeyboardWithimageEdgeExtend:(UIButton *)aimageEdgeExtend selectOriginalPhoto:(UIButton *)aselectOriginalPhoto;
+- (UIButtonType)chooseStadiumViewWithvalueImageRect:(UITextView *)avalueImageRect medalWallView:(NSString *)amedalWallView;
 + (void)instanceCreateMethod; 
 
 @end

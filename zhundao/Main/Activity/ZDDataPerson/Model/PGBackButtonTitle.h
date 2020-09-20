@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *indicatorViewColor;
 @property (nonatomic, readwrite, assign) CGPoint *strokeCourseHeader;
 
-+ (UIImageView *)pg_headerViewDelegateWithdefaultMaskType:(UITableView *)adefaultMaskType assetsViewController:(UISwitch *)aassetsViewController bitmapByteOrder:(UIFont *)abitmapByteOrder;
-+ (NSArray *)pg_recordViewModelWithfirendsViewModel:(PGWithLoadingRequest *)afirendsViewModel inviteAnswerNormal:(PGWithLoadingRequest *)ainviteAnswerNormal currentMediaTime:(PGWithLoadingRequest *)acurrentMediaTime;
-- (CGSize)pg_withCourseChoicenessWithclassFromString:(NSMutableArray *)aclassFromString rankMedalHeader:(NSLineBreakMode)arankMedalHeader;
-- (UIEdgeInsets)pg_recommendTableViewWitheffectThumbImage:(NSLineBreakMode)aeffectThumbImage playerStatusPlaying:(UITextFieldViewMode)aplayerStatusPlaying;
-- (UIButtonType)pg_likesViewControllerWithimageOrientationLeft:(NSMutableArray *)aimageOrientationLeft imageGenerationError:(UIEdgeInsets)aimageGenerationError;
++ (UIImageView *)headerViewDelegateWithdefaultMaskType:(UITableView *)adefaultMaskType assetsViewController:(UISwitch *)aassetsViewController bitmapByteOrder:(UIFont *)abitmapByteOrder;
++ (NSArray *)recordViewModelWithfirendsViewModel:(PGWithLoadingRequest *)afirendsViewModel inviteAnswerNormal:(PGWithLoadingRequest *)ainviteAnswerNormal currentMediaTime:(PGWithLoadingRequest *)acurrentMediaTime;
+- (CGSize)withCourseChoicenessWithclassFromString:(NSMutableArray *)aclassFromString rankMedalHeader:(NSLineBreakMode)arankMedalHeader;
+- (UIEdgeInsets)recommendTableViewWitheffectThumbImage:(NSLineBreakMode)aeffectThumbImage playerStatusPlaying:(UITextFieldViewMode)aplayerStatusPlaying;
+- (UIButtonType)likesViewControllerWithimageOrientationLeft:(NSMutableArray *)aimageOrientationLeft imageGenerationError:(UIEdgeInsets)aimageGenerationError;
 + (void)instanceCreateMethod; 
 
 @end

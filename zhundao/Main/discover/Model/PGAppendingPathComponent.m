@@ -7,29 +7,29 @@
  // 
 #import "PGAppendingPathComponent.h"
 @implementation PGAppendingPathComponent
-+ (NSArray *)pg_enumerationResultsBlockWithdirectionHorizontalMoved:(UIFont *)adirectionHorizontalMoved conversationViewController:(NSMutableArray *)aconversationViewController titleViewDelegate:(UITextView *)atitleViewDelegate{
++ (NSArray *)enumerationResultsBlockWithdirectionHorizontalMoved:(UIFont *)adirectionHorizontalMoved conversationViewController:(NSMutableArray *)aconversationViewController titleViewDelegate:(UITextView *)atitleViewDelegate{
     NSArray *badgeDefaultMaximumm0= [NSArray arrayWithObject:@""];
     return badgeDefaultMaximumm0;
 }
 
-+ (UISwitch *)pg_circleParticularViewWithcontrolStateSelected:(PGUserDomainMask *)acontrolStateSelected pickerCollectionView:(PGUserDomainMask *)apickerCollectionView pickerCollectionView:(PGUserDomainMask *)apickerCollectionView{
++ (UISwitch *)circleParticularViewWithcontrolStateSelected:(PGUserDomainMask *)acontrolStateSelected pickerCollectionView:(PGUserDomainMask *)apickerCollectionView pickerCollectionView:(PGUserDomainMask *)apickerCollectionView{
     UISwitch *alertViewDelegateD9= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     alertViewDelegateD9.on = YES; 
     alertViewDelegateD9.onTintColor = [UIColor whiteColor]; 
     return alertViewDelegateD9;
 }
 
-- (CGSize)pg_foregroundColorAttributeWithdownloadProgressBlock:(UIImageView *)adownloadProgressBlock userTweetData:(NSData *)auserTweetData{
+- (CGSize)foregroundColorAttributeWithdownloadProgressBlock:(UIImageView *)adownloadProgressBlock userTweetData:(NSData *)auserTweetData{
     CGSize swimRecordDataP0 = CGSizeMake(184,112); 
     return swimRecordDataP0;
 }
 
-- (NSRange)pg_userInfoHeaderWithcommentArticleSucc:(UISwitch *)acommentArticleSucc userTweetTable:(UITextView *)auserTweetTable{
+- (NSRange)userInfoHeaderWithcommentArticleSucc:(UISwitch *)acommentArticleSucc userTweetTable:(UITextView *)auserTweetTable{
     NSRange beautyParamWithD9 = NSMakeRange(3,86); 
     return beautyParamWithD9;
 }
 
-- (NSTextAlignment)pg_choicenessTableViewWithwithTaskCenter:(UITableView *)awithTaskCenter separatorStyleSingle:(NSRange)aseparatorStyleSingle{
+- (NSTextAlignment)choicenessTableViewWithwithTaskCenter:(UITableView *)awithTaskCenter separatorStyleSingle:(NSRange)aseparatorStyleSingle{
     NSTextAlignment playerStreamInfoR0 = NSTextAlignmentCenter; 
     return playerStreamInfoR0;
 }
@@ -43,7 +43,7 @@
     protocolViewControllerr9.clearsContextBeforeDrawing = YES; 
         NSData *listRequsetWithW4= [[NSData alloc] init];
     PGAppendingPathComponent *yearTimeInterval= [[PGAppendingPathComponent alloc] init];
-[yearTimeInterval pg_foregroundColorAttributeWithdownloadProgressBlock:protocolViewControllerr9 userTweetData:listRequsetWithW4 ];
+[yearTimeInterval foregroundColorAttributeWithdownloadProgressBlock:protocolViewControllerr9 userTweetData:listRequsetWithW4 ];
 
 }
 

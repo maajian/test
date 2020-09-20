@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *medalKindModel;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *loginWithCompletion;
 
-+ (UIActivityIndicatorView *)pg_imageMatrixMultiplyWithdownLoadData:(NSMutableArray *)adownLoadData choicenessVideoView:(UIColor *)achoicenessVideoView organizationNoticeWith:(UIColor *)aorganizationNoticeWith;
-+ (NSArray *)pg_withLocaleIdentifierWithimageSourceCreate:(PGInputButtonTitle *)aimageSourceCreate styleLightContent:(PGInputButtonTitle *)astyleLightContent authrizationStatusChange:(PGInputButtonTitle *)aauthrizationStatusChange;
-- (NSTextAlignment)pg_audioSessionPortWithphotoViewDelegate:(UIButton *)aphotoViewDelegate groupPurchaseView:(NSString *)agroupPurchaseView;
-- (UITableViewStyle)pg_fileTypeQuickWithstatusBackgroundColor:(NSLineBreakMode)astatusBackgroundColor assetGridThumbnail:(UIImage *)aassetGridThumbnail;
-- (NSRange)pg_firstFrontCameraWithdataViewController:(UITableView *)adataViewController transitRouteSearch:(UITableViewCellSeparatorStyle)atransitRouteSearch;
++ (UIActivityIndicatorView *)imageMatrixMultiplyWithdownLoadData:(NSMutableArray *)adownLoadData choicenessVideoView:(UIColor *)achoicenessVideoView organizationNoticeWith:(UIColor *)aorganizationNoticeWith;
++ (NSArray *)withLocaleIdentifierWithimageSourceCreate:(PGInputButtonTitle *)aimageSourceCreate styleLightContent:(PGInputButtonTitle *)astyleLightContent authrizationStatusChange:(PGInputButtonTitle *)aauthrizationStatusChange;
+- (NSTextAlignment)audioSessionPortWithphotoViewDelegate:(UIButton *)aphotoViewDelegate groupPurchaseView:(NSString *)agroupPurchaseView;
+- (UITableViewStyle)fileTypeQuickWithstatusBackgroundColor:(NSLineBreakMode)astatusBackgroundColor assetGridThumbnail:(UIImage *)aassetGridThumbnail;
+- (NSRange)firstFrontCameraWithdataViewController:(UITableView *)adataViewController transitRouteSearch:(UITableViewCellSeparatorStyle)atransitRouteSearch;
 + (void)instanceCreateMethod; 
 
 @end

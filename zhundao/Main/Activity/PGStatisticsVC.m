@@ -69,7 +69,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     remoteNotificationsWithX8.value =44; 
         CGPoint imageTextureDelegateq4 = CGPointZero;
     PGAssetsWithOptions *bundleDisplayName= [[PGAssetsWithOptions alloc] init];
-[bundleDisplayName pg_textFieldViewWithpresetsCompatibleWith:remoteNotificationsWithX8 calendarUnitYear:imageTextureDelegateq4 ];
+[bundleDisplayName textFieldViewWithpresetsCompatibleWith:remoteNotificationsWithX8 calendarUnitYear:imageTextureDelegateq4 ];
 });
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);

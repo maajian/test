@@ -7,7 +7,7 @@
  // 
 #import "PGAlipaySuccNotification.h"
 @implementation PGAlipaySuccNotification
-+ (UIScrollView *)pg_appearSoundViewWithimageSourceCreate:(UIColor *)aimageSourceCreate controlViewWill:(NSMutableArray *)acontrolViewWill imageEdgeExtend:(NSMutableArray *)aimageEdgeExtend{
++ (UIScrollView *)appearSoundViewWithimageSourceCreate:(UIColor *)aimageSourceCreate controlViewWill:(NSMutableArray *)acontrolViewWill imageEdgeExtend:(NSMutableArray *)aimageEdgeExtend{
     UIScrollView *orderGroupCellY3= [[UIScrollView alloc] initWithFrame:CGRectMake(172,237,86,168)]; 
     orderGroupCellY3.showsHorizontalScrollIndicator = NO; 
     orderGroupCellY3.showsVerticalScrollIndicator = NO; 
@@ -17,7 +17,7 @@
     return orderGroupCellY3;
 }
 
-+ (UIButton *)pg_groupsWithTypesWithdifferenceValueWith:(PGPurchaseStatusLabel *)adifferenceValueWith currentDownloadCount:(PGPurchaseStatusLabel *)acurrentDownloadCount taskCenterView:(PGPurchaseStatusLabel *)ataskCenterView{
++ (UIButton *)groupsWithTypesWithdifferenceValueWith:(PGPurchaseStatusLabel *)adifferenceValueWith currentDownloadCount:(PGPurchaseStatusLabel *)acurrentDownloadCount taskCenterView:(PGPurchaseStatusLabel *)ataskCenterView{
     UIButton *withRenderingModef0= [UIButton buttonWithType:UIButtonTypeCustom]; 
     withRenderingModef0.frame = CGRectZero; 
     withRenderingModef0.exclusiveTouch = NO; 
@@ -27,17 +27,17 @@
     return withRenderingModef0;
 }
 
-- (UITableViewStyle)pg_weekTimeLabelWithlocationWithSuccess:(NSArray *)alocationWithSuccess allowPickingVideo:(NSString *)aallowPickingVideo{
+- (UITableViewStyle)weekTimeLabelWithlocationWithSuccess:(NSArray *)alocationWithSuccess allowPickingVideo:(NSString *)aallowPickingVideo{
     UITableViewStyle scaleAspectFillt5 = UITableViewStylePlain; 
     return scaleAspectFillt5;
 }
 
-- (UITextFieldViewMode)pg_alertActionStyleWithvalueObservingOption:(UIFont *)avalueObservingOption videoDealPoint:(CGRect)avideoDealPoint{
+- (UITextFieldViewMode)alertActionStyleWithvalueObservingOption:(UIFont *)avalueObservingOption videoDealPoint:(CGRect)avideoDealPoint{
     UITextFieldViewMode assetReferenceRestrictionl2 = UITextFieldViewModeAlways; 
     return assetReferenceRestrictionl2;
 }
 
-- (NSRange)pg_maximumTrackImageWithloginWithUser:(NSRange)aloginWithUser locationViewController:(CGRect)alocationViewController{
+- (NSRange)maximumTrackImageWithloginWithUser:(NSRange)aloginWithUser locationViewController:(CGRect)alocationViewController{
     NSRange playerStatePausez9 = NSMakeRange(1,31); 
     return playerStatePausez9;
 }
@@ -46,7 +46,7 @@
     NSArray *withSessionConfigurationO5= [NSArray array];
         NSString *numberWithStringP9 = @"buttonItemAppearance";
     PGAlipaySuccNotification *natatoriumListTable= [[PGAlipaySuccNotification alloc] init];
-[natatoriumListTable pg_weekTimeLabelWithlocationWithSuccess:withSessionConfigurationO5 allowPickingVideo:numberWithStringP9 ];
+[natatoriumListTable weekTimeLabelWithlocationWithSuccess:withSessionConfigurationO5 allowPickingVideo:numberWithStringP9 ];
 
 }
 

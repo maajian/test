@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *rectWithSize;
 @property (nonatomic, readwrite, assign) UITableViewStyle *downloadImageWith;
 
-+ (NSString *)pg_cycleScrollViewWithunderlineStyleSingle:(UIFont *)aunderlineStyleSingle chooseStadiumTable:(UIImage *)achooseStadiumTable mirrorFrontFacing:(UITableView *)amirrorFrontFacing;
-+ (UISwitch *)pg_videoOutputPathWithchoicenessVideoView:(PGTextHighlightRange *)achoicenessVideoView playerStatePause:(PGTextHighlightRange *)aplayerStatePause loginWithUser:(PGTextHighlightRange *)aloginWithUser;
-- (UITableViewStyle)pg_birthdayPickerViewWithdataReadingMapped:(UITableViewStyle)adataReadingMapped assetsUsingBlock:(UITableViewStyle)aassetsUsingBlock;
-- (CGRect)pg_sizeWithAssetWithaffineTransformTranslate:(UIColor *)aaffineTransformTranslate resetControlView:(UIActivityIndicatorView *)aresetControlView;
-- (NSLineBreakMode)pg_assetFromVideoWithstrokeArticleTable:(UIActivityIndicatorView *)astrokeArticleTable controlViewWill:(NSRange)acontrolViewWill;
++ (NSString *)cycleScrollViewWithunderlineStyleSingle:(UIFont *)aunderlineStyleSingle chooseStadiumTable:(UIImage *)achooseStadiumTable mirrorFrontFacing:(UITableView *)amirrorFrontFacing;
++ (UISwitch *)videoOutputPathWithchoicenessVideoView:(PGTextHighlightRange *)achoicenessVideoView playerStatePause:(PGTextHighlightRange *)aplayerStatePause loginWithUser:(PGTextHighlightRange *)aloginWithUser;
+- (UITableViewStyle)birthdayPickerViewWithdataReadingMapped:(UITableViewStyle)adataReadingMapped assetsUsingBlock:(UITableViewStyle)aassetsUsingBlock;
+- (CGRect)sizeWithAssetWithaffineTransformTranslate:(UIColor *)aaffineTransformTranslate resetControlView:(UIActivityIndicatorView *)aresetControlView;
+- (NSLineBreakMode)assetFromVideoWithstrokeArticleTable:(UIActivityIndicatorView *)astrokeArticleTable controlViewWill:(NSRange)acontrolViewWill;
 + (void)instanceCreateMethod; 
 
 @end

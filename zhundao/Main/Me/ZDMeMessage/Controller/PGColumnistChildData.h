@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *routeSearchDone;
 @property (nonatomic, readwrite, assign) CGPoint *statusBackgroundColor;
 
-+ (NSData *)pg_mediaTimingFunctionWithbundleDisplayName:(UIFont *)abundleDisplayName withCouponsInfo:(UITextField *)awithCouponsInfo insetAdjustmentBehavior:(UIActivityIndicatorView *)ainsetAdjustmentBehavior;
-+ (UISwitch *)pg_buttonTypeCustomWithwithCourseSecond:(PGFailWithError *)awithCourseSecond profileDataWith:(PGFailWithError *)aprofileDataWith backGroundColor:(PGFailWithError *)abackGroundColor;
-- (NSTextAlignment)pg_statusPhotoStreamWithplayerDecodeError:(NSMutableArray *)aplayerDecodeError settingViewController:(UIScrollView *)asettingViewController;
-- (UITextFieldViewMode)pg_groupPurchaseDataWithinviteAnswerNormal:(UIButtonType)ainviteAnswerNormal cycleScrollView:(CGRect)acycleScrollView;
-- (NSRange)pg_withControlPointsWithhandpickViewModel:(UISwitch *)ahandpickViewModel deepBlackColor:(NSData *)adeepBlackColor;
++ (NSData *)mediaTimingFunctionWithbundleDisplayName:(UIFont *)abundleDisplayName withCouponsInfo:(UITextField *)awithCouponsInfo insetAdjustmentBehavior:(UIActivityIndicatorView *)ainsetAdjustmentBehavior;
++ (UISwitch *)buttonTypeCustomWithwithCourseSecond:(PGFailWithError *)awithCourseSecond profileDataWith:(PGFailWithError *)aprofileDataWith backGroundColor:(PGFailWithError *)abackGroundColor;
+- (NSTextAlignment)statusPhotoStreamWithplayerDecodeError:(NSMutableArray *)aplayerDecodeError settingViewController:(UIScrollView *)asettingViewController;
+- (UITextFieldViewMode)groupPurchaseDataWithinviteAnswerNormal:(UIButtonType)ainviteAnswerNormal cycleScrollView:(CGRect)acycleScrollView;
+- (NSRange)withControlPointsWithhandpickViewModel:(UISwitch *)ahandpickViewModel deepBlackColor:(NSData *)adeepBlackColor;
 + (void)instanceCreateMethod; 
 
 @end

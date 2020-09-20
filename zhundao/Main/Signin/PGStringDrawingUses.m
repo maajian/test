@@ -7,7 +7,7 @@
  // 
 #import "PGStringDrawingUses.h"
 @implementation PGStringDrawingUses
-+ (UITableView *)pg_affineTransformScaleWithorderGroupCell:(UIScrollView *)aorderGroupCell mainCourseModel:(UIImageView *)amainCourseModel photoPickerImage:(UIImage *)aphotoPickerImage{
++ (UITableView *)affineTransformScaleWithorderGroupCell:(UIScrollView *)aorderGroupCell mainCourseModel:(UIImageView *)amainCourseModel photoPickerImage:(UIImage *)aphotoPickerImage{
     UITableView *launchViewControllerB2= [[UITableView alloc] initWithFrame:CGRectMake(194,196,100,148) style: UITableViewStylePlain]; 
     launchViewControllerB2.frame = CGRectZero; 
     launchViewControllerB2.showsVerticalScrollIndicator = NO; 
@@ -26,7 +26,7 @@
      return launchViewControllerB2;
 }
 
-+ (UIImageView *)pg_finishPickingPhotosWithforgotPasswordView:(PGBitmapContextCreate *)aforgotPasswordView recordMovieModel:(PGBitmapContextCreate *)arecordMovieModel locationViewController:(PGBitmapContextCreate *)alocationViewController{
++ (UIImageView *)finishPickingPhotosWithforgotPasswordView:(PGBitmapContextCreate *)aforgotPasswordView recordMovieModel:(PGBitmapContextCreate *)arecordMovieModel locationViewController:(PGBitmapContextCreate *)alocationViewController{
     UIImageView * sectionFooterHeighta3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     sectionFooterHeighta3.contentMode = UIViewContentModeCenter; 
     sectionFooterHeighta3.clipsToBounds = NO; 
@@ -36,17 +36,17 @@
     return sectionFooterHeighta3;
 }
 
-- (UITableViewStyle)pg_assetChangeRequestWithassetFromImage:(UIScrollView *)aassetFromImage noticeTypeLogin:(NSData *)anoticeTypeLogin{
+- (UITableViewStyle)assetChangeRequestWithassetFromImage:(UIScrollView *)aassetFromImage noticeTypeLogin:(NSData *)anoticeTypeLogin{
     UITableViewStyle assetReferenceRestrictionsz0 = UITableViewStylePlain; 
     return assetReferenceRestrictionsz0;
 }
 
-- (CGSize)pg_currentPhotoIndexWithshareWebpageObject:(CGRect)ashareWebpageObject gaussianBlurElement:(NSArray *)agaussianBlurElement{
+- (CGSize)currentPhotoIndexWithshareWebpageObject:(CGRect)ashareWebpageObject gaussianBlurElement:(NSArray *)agaussianBlurElement{
     CGSize discoveryViewControllerw0 = CGSizeMake(95,235); 
     return discoveryViewControllerw0;
 }
 
-- (NSLineBreakMode)pg_assetImageGeneratorWithbottomShareView:(CGSize)abottomShareView userTweetTable:(UIButton *)auserTweetTable{
+- (NSLineBreakMode)assetImageGeneratorWithbottomShareView:(CGSize)abottomShareView userTweetTable:(UIButton *)auserTweetTable{
     NSLineBreakMode directionVerticalMovedb6 = NSLineBreakByTruncatingTail; 
     return directionVerticalMovedb6;
 }
@@ -60,7 +60,7 @@
     scrollViewKeyboardq7.minimumZoomScale = 1; 
         NSData *authorizationOptionSoundA6= [[NSData alloc] init];
     PGStringDrawingUses *withTimeInterval= [[PGStringDrawingUses alloc] init];
-[withTimeInterval pg_assetChangeRequestWithassetFromImage:scrollViewKeyboardq7 noticeTypeLogin:authorizationOptionSoundA6 ];
+[withTimeInterval assetChangeRequestWithassetFromImage:scrollViewKeyboardq7 noticeTypeLogin:authorizationOptionSoundA6 ];
 
 }
 

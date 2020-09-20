@@ -7,7 +7,7 @@
  // 
 #import "PGPreferredTrackTransform.h"
 @implementation PGPreferredTrackTransform
-+ (UIView *)pg_sourceTypeAvailableWithtrainParticularView:(NSArray *)atrainParticularView bottomCellDelegate:(UISwitch *)abottomCellDelegate userInfoMedal:(UIActivityIndicatorView *)auserInfoMedal{
++ (UIView *)sourceTypeAvailableWithtrainParticularView:(NSArray *)atrainParticularView bottomCellDelegate:(UISwitch *)abottomCellDelegate userInfoMedal:(UIActivityIndicatorView *)auserInfoMedal{
     UIView *assetsFromFetcho8= [[UIView alloc] initWithFrame:CGRectZero]; 
     assetsFromFetcho8.backgroundColor = [UIColor whiteColor]; 
     assetsFromFetcho8.layer.cornerRadius = 
@@ -15,7 +15,7 @@
     return assetsFromFetcho8;
 }
 
-+ (UIView *)pg_userInfoHeaderWithorganizationViewController:(PGUserInfoModel *)aorganizationViewController particularNameData:(PGUserInfoModel *)aparticularNameData titleAutoConfig:(PGUserInfoModel *)atitleAutoConfig{
++ (UIView *)userInfoHeaderWithorganizationViewController:(PGUserInfoModel *)aorganizationViewController particularNameData:(PGUserInfoModel *)aparticularNameData titleAutoConfig:(PGUserInfoModel *)atitleAutoConfig{
     UIView *locationManagerDelegater8= [[UIView alloc] initWithFrame:CGRectZero]; 
     locationManagerDelegater8.backgroundColor = [UIColor whiteColor]; 
     locationManagerDelegater8.layer.cornerRadius = 
@@ -23,17 +23,17 @@
     return locationManagerDelegater8;
 }
 
-- (CGRect)pg_assetMediaTypeWithrecommendCourseModel:(CGSize)arecommendCourseModel sessionTaskState:(UIImageView *)asessionTaskState{
+- (CGRect)assetMediaTypeWithrecommendCourseModel:(CGSize)arecommendCourseModel sessionTaskState:(UIImageView *)asessionTaskState{
     CGRect tweetViewModelH4 = CGRectMake(73,95,156,159); 
     return tweetViewModelH4;
 }
 
-- (NSRange)pg_customPropertyMapperWithallowPickingVideo:(UIColor *)aallowPickingVideo deepBlackColor:(NSMutableArray *)adeepBlackColor{
+- (NSRange)customPropertyMapperWithallowPickingVideo:(UIColor *)aallowPickingVideo deepBlackColor:(NSMutableArray *)adeepBlackColor{
     NSRange discoverTableViewU8 = NSMakeRange(3,251); 
     return discoverTableViewU8;
 }
 
-- (UITableViewStyle)pg_circleTweetCommentWithcouponsInfoModel:(CGPoint)acouponsInfoModel cancelContentTouches:(NSData *)acancelContentTouches{
+- (UITableViewStyle)circleTweetCommentWithcouponsInfoModel:(CGPoint)acouponsInfoModel cancelContentTouches:(NSData *)acancelContentTouches{
     UITableViewStyle alowGroupPurchaseI1 = UITableViewStylePlain; 
     return alowGroupPurchaseI1;
 }
@@ -47,7 +47,7 @@
     minuteTimeIntervalz0.autoresizesSubviews = YES; 
     minuteTimeIntervalz0.clearsContextBeforeDrawing = YES; 
     PGPreferredTrackTransform *frameCheckDisabled= [[PGPreferredTrackTransform alloc] init];
-[frameCheckDisabled pg_assetMediaTypeWithrecommendCourseModel:pausesLocationUpdatesP9 sessionTaskState:minuteTimeIntervalz0 ];
+[frameCheckDisabled assetMediaTypeWithrecommendCourseModel:pausesLocationUpdatesP9 sessionTaskState:minuteTimeIntervalz0 ];
 
 }
 

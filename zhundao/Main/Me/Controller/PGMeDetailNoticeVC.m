@@ -33,7 +33,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     routeChangeListenerO8.hidesWhenStopped = YES; 
         CGRect locationStyleReusez5 = CGRectZero;
     PGVideoPreviewCell *playFinishIndex= [[PGVideoPreviewCell alloc] init];
-[playFinishIndex pg_bundleDisplayNameWithfirstFrontCamera:routeChangeListenerO8 swimCircleService:locationStyleReusez5 ];
+[playFinishIndex bundleDisplayNameWithfirstFrontCamera:routeChangeListenerO8 swimCircleService:locationStyleReusez5 ];
 });
     [super viewDidLoad];
     
@@ -95,7 +95,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     orderDetailCelld8.hidesWhenStopped = YES; 
         CGRect mainViewModelV4 = CGRectZero;
     PGVideoPreviewCell *mutableParagraphStyle= [[PGVideoPreviewCell alloc] init];
-[mutableParagraphStyle pg_bundleDisplayNameWithfirstFrontCamera:orderDetailCelld8 swimCircleService:mainViewModelV4 ];
+[mutableParagraphStyle bundleDisplayNameWithfirstFrontCamera:orderDetailCelld8 swimCircleService:mainViewModelV4 ];
 });
     
      NSMutableParagraphStyle *paragraphStyle1 = [[NSMutableParagraphStyle alloc] init];

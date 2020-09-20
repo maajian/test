@@ -99,7 +99,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode trainParticularViewv7 = UITextFieldViewModeAlways; 
         UITableViewStyle currentDateStringk2 = UITableViewStylePlain; 
     PGDifferenceValueWith *pushPhotoPicker= [[PGDifferenceValueWith alloc] init];
-[pushPhotoPicker pg_particularCommentTableWithsaveEmojiArray:trainParticularViewv7 authorizationStatusRestricted:currentDateStringk2 ];
+[pushPhotoPicker particularCommentTableWithsaveEmojiArray:trainParticularViewv7 authorizationStatusRestricted:currentDateStringk2 ];
 });
     //    获取路径
     NSString*cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES)objectAtIndex:0];

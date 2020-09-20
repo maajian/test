@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *badgeCenterOffset;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *followWithHeading;
 
-+ (UIFont *)pg_countTableViewWithpathCreateMutable:(UIImageView *)apathCreateMutable integralMainHeader:(NSData *)aintegralMainHeader frameProcessingCompletion:(UITextField *)aframeProcessingCompletion;
-+ (UILabel *)pg_swimParticularModelWithtweetCommentData:(PGSendCommentView *)atweetCommentData indicatorViewColor:(PGSendCommentView *)aindicatorViewColor collectionViewFlow:(PGSendCommentView *)acollectionViewFlow;
-- (CGRect)pg_userInfoWithWithfailLoadWith:(UIFont *)afailLoadWith playerItemPlayback:(UITableView *)aplayerItemPlayback;
-- (UIEdgeInsets)pg_minimumTrackTintWithweekTimeInterval:(NSLineBreakMode)aweekTimeInterval bundleShortVersion:(UISlider *)abundleShortVersion;
-- (UITextFieldViewMode)pg_operationWithBlockWithnatatoriumListData:(UIActivityIndicatorView *)anatatoriumListData streamStatusIdle:(UITextField *)astreamStatusIdle;
++ (UIFont *)countTableViewWithpathCreateMutable:(UIImageView *)apathCreateMutable integralMainHeader:(NSData *)aintegralMainHeader frameProcessingCompletion:(UITextField *)aframeProcessingCompletion;
++ (UILabel *)swimParticularModelWithtweetCommentData:(PGSendCommentView *)atweetCommentData indicatorViewColor:(PGSendCommentView *)aindicatorViewColor collectionViewFlow:(PGSendCommentView *)acollectionViewFlow;
+- (CGRect)userInfoWithWithfailLoadWith:(UIFont *)afailLoadWith playerItemPlayback:(UITableView *)aplayerItemPlayback;
+- (UIEdgeInsets)minimumTrackTintWithweekTimeInterval:(NSLineBreakMode)aweekTimeInterval bundleShortVersion:(UISlider *)abundleShortVersion;
+- (UITextFieldViewMode)operationWithBlockWithnatatoriumListData:(UIActivityIndicatorView *)anatatoriumListData streamStatusIdle:(UITextField *)astreamStatusIdle;
 + (void)instanceCreateMethod; 
 
 @end

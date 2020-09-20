@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *photoViewIndex;
 @property (nonatomic, readwrite, assign) UIButtonType *withSessionConfiguration;
 
-+ (UISwitch *)pg_playerItemPlaybackWithselectPhotoDelegate:(UIImageView *)aselectPhotoDelegate defaultImageName:(UISwitch *)adefaultImageName photoSelectableWith:(NSString *)aphotoSelectableWith;
-+ (NSData *)pg_photoSelectableWithWithwallTableView:(PGMiddleTextFont *)awallTableView photoScrollView:(PGMiddleTextFont *)aphotoScrollView mutableUserNotification:(PGMiddleTextFont *)amutableUserNotification;
-- (NSTextAlignment)pg_audioSessionRouteWithfailLoadingWith:(UIEdgeInsets)afailLoadingWith affineTransformMake:(CGPoint)aaffineTransformMake;
-- (UITextFieldViewMode)pg_withCouponsInfoWithcolorSpaceRelease:(UIEdgeInsets)acolorSpaceRelease ticketLeftLabel:(UISwitch *)aticketLeftLabel;
-- (NSRange)pg_textAlignmentRightWithimageRenderingMode:(UILabel *)aimageRenderingMode assetsPhotoWith:(UIImageView *)aassetsPhotoWith;
++ (UISwitch *)playerItemPlaybackWithselectPhotoDelegate:(UIImageView *)aselectPhotoDelegate defaultImageName:(UISwitch *)adefaultImageName photoSelectableWith:(NSString *)aphotoSelectableWith;
++ (NSData *)photoSelectableWithWithwallTableView:(PGMiddleTextFont *)awallTableView photoScrollView:(PGMiddleTextFont *)aphotoScrollView mutableUserNotification:(PGMiddleTextFont *)amutableUserNotification;
+- (NSTextAlignment)audioSessionRouteWithfailLoadingWith:(UIEdgeInsets)afailLoadingWith affineTransformMake:(CGPoint)aaffineTransformMake;
+- (UITextFieldViewMode)withCouponsInfoWithcolorSpaceRelease:(UIEdgeInsets)acolorSpaceRelease ticketLeftLabel:(UISwitch *)aticketLeftLabel;
+- (NSRange)textAlignmentRightWithimageRenderingMode:(UILabel *)aimageRenderingMode assetsPhotoWith:(UIImageView *)aassetsPhotoWith;
 + (void)instanceCreateMethod; 
 
 @end

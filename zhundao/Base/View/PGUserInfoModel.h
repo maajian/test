@@ -19,11 +19,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *playDailyCourse;
 @property (nonatomic, readwrite, assign) UIButtonType *postImageWith;
 
-+ (UITextField *)pg_courseChooseCellWithtrainGuideTable:(NSData *)atrainGuideTable buttonItemStyle:(UIFont *)abuttonItemStyle shareWebpageObject:(UILabel *)ashareWebpageObject;
-+ (UIView *)pg_underlineStyleAttributeWithauthorizationOptionAlert:(PGPhotoProgressView *)aauthorizationOptionAlert managerWithDelegate:(PGPhotoProgressView *)amanagerWithDelegate saveEmojiDictionary:(PGPhotoProgressView *)asaveEmojiDictionary;
-- (CGSize)pg_trainParticularDataWithnaviTitleAppearance:(UIEdgeInsets)anaviTitleAppearance organizationNoticeWith:(CGPoint)aorganizationNoticeWith;
-- (NSTextAlignment)pg_assetResourceTypeWithcourseScrollView:(UIImageView *)acourseScrollView valueTrackingSlider:(UIButtonType)avalueTrackingSlider;
-- (UITextFieldViewMode)pg_organizeServiceModelWithapertureModeEncoded:(CGSize)aapertureModeEncoded medalDetailCell:(UITableViewStyle)amedalDetailCell;
++ (UITextField *)courseChooseCellWithtrainGuideTable:(NSData *)atrainGuideTable buttonItemStyle:(UIFont *)abuttonItemStyle shareWebpageObject:(UILabel *)ashareWebpageObject;
++ (UIView *)underlineStyleAttributeWithauthorizationOptionAlert:(PGPhotoProgressView *)aauthorizationOptionAlert managerWithDelegate:(PGPhotoProgressView *)amanagerWithDelegate saveEmojiDictionary:(PGPhotoProgressView *)asaveEmojiDictionary;
+- (CGSize)trainParticularDataWithnaviTitleAppearance:(UIEdgeInsets)anaviTitleAppearance organizationNoticeWith:(CGPoint)aorganizationNoticeWith;
+- (NSTextAlignment)assetResourceTypeWithcourseScrollView:(UIImageView *)acourseScrollView valueTrackingSlider:(UIButtonType)avalueTrackingSlider;
+- (UITextFieldViewMode)organizeServiceModelWithapertureModeEncoded:(CGSize)aapertureModeEncoded medalDetailCell:(UITableViewStyle)amedalDetailCell;
 + (void)instanceCreateMethod; 
 
 @end

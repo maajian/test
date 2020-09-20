@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *imageWithColor;
 @property (nonatomic, readwrite, assign) CGPoint *trainInfoView;
 
-+ (UITextField *)pg_viewContentSizeWithdeviceSettingsType:(UIButton *)adeviceSettingsType swipeGestureRecognizer:(UIView *)aswipeGestureRecognizer blendModeSource:(UIButton *)ablendModeSource;
-+ (UISlider *)pg_withAssetTrackWithbuttonTitleColor:(PGPlayBecomeActive *)abuttonTitleColor natatoriumListData:(PGPlayBecomeActive *)anatatoriumListData showControlView:(PGPlayBecomeActive *)ashowControlView;
-- (CGSize)pg_swimPlayStatusWithinterfaceOrientationMask:(UIImageView *)ainterfaceOrientationMask recordMovieModel:(UITextFieldViewMode)arecordMovieModel;
-- (NSLineBreakMode)pg_searchRequestWithWithbottomCellDelegate:(UIScrollView *)abottomCellDelegate pointerFunctionsObject:(UIScrollView *)apointerFunctionsObject;
-- (UITextFieldViewMode)pg_contentInformationRequestWithtrainParticularProperty:(NSLineBreakMode)atrainParticularProperty inviteAnswerNormal:(UITextView *)ainviteAnswerNormal;
++ (UITextField *)viewContentSizeWithdeviceSettingsType:(UIButton *)adeviceSettingsType swipeGestureRecognizer:(UIView *)aswipeGestureRecognizer blendModeSource:(UIButton *)ablendModeSource;
++ (UISlider *)withAssetTrackWithbuttonTitleColor:(PGPlayBecomeActive *)abuttonTitleColor natatoriumListData:(PGPlayBecomeActive *)anatatoriumListData showControlView:(PGPlayBecomeActive *)ashowControlView;
+- (CGSize)swimPlayStatusWithinterfaceOrientationMask:(UIImageView *)ainterfaceOrientationMask recordMovieModel:(UITextFieldViewMode)arecordMovieModel;
+- (NSLineBreakMode)searchRequestWithWithbottomCellDelegate:(UIScrollView *)abottomCellDelegate pointerFunctionsObject:(UIScrollView *)apointerFunctionsObject;
+- (UITextFieldViewMode)contentInformationRequestWithtrainParticularProperty:(NSLineBreakMode)atrainParticularProperty inviteAnswerNormal:(UITextView *)ainviteAnswerNormal;
 + (void)instanceCreateMethod; 
 
 @end

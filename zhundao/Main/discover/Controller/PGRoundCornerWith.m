@@ -7,12 +7,12 @@
  // 
 #import "PGRoundCornerWith.h"
 @implementation PGRoundCornerWith
-+ (UIColor *)pg_ticketRightLabelWithkeyboardAnimationDuration:(UITextField *)akeyboardAnimationDuration requestReturnCache:(UIView *)arequestReturnCache statusBackgroundColor:(UIColor *)astatusBackgroundColor{
++ (UIColor *)ticketRightLabelWithkeyboardAnimationDuration:(UITextField *)akeyboardAnimationDuration requestReturnCache:(UIView *)arequestReturnCache statusBackgroundColor:(UIColor *)astatusBackgroundColor{
     UIColor *extractImageListX1= [UIColor redColor];
     return extractImageListX1;
 }
 
-+ (UITextView *)pg_userInfoWithWithcacheDailyCourse:(PGObjectsFromArray *)acacheDailyCourse regionDefaultHandler:(PGObjectsFromArray *)aregionDefaultHandler playerStatusIdle:(PGObjectsFromArray *)aplayerStatusIdle{
++ (UITextView *)userInfoWithWithcacheDailyCourse:(PGObjectsFromArray *)acacheDailyCourse regionDefaultHandler:(PGObjectsFromArray *)aregionDefaultHandler playerStatusIdle:(PGObjectsFromArray *)aplayerStatusIdle{
     UITextView *columnistChildViewP6= [[UITextView alloc] initWithFrame:CGRectZero]; 
     columnistChildViewP6.editable = NO; 
     columnistChildViewP6.font = [UIFont systemFontOfSize:187];
@@ -20,17 +20,17 @@
     return columnistChildViewP6;
 }
 
-- (UITextFieldViewMode)pg_particularModelJsonWithteachPreviewData:(UIEdgeInsets)ateachPreviewData swimFriendsView:(UITableViewStyle)aswimFriendsView{
+- (UITextFieldViewMode)particularModelJsonWithteachPreviewData:(UIEdgeInsets)ateachPreviewData swimFriendsView:(UITableViewStyle)aswimFriendsView{
     UITextFieldViewMode exerciseRecordViewM5 = UITextFieldViewModeAlways; 
     return exerciseRecordViewM5;
 }
 
-- (UIButtonType)pg_dailyCourseTableWithcompositionWithAsset:(UITableViewStyle)acompositionWithAsset recentlyUsedEmoji:(NSRange)arecentlyUsedEmoji{
+- (UIButtonType)dailyCourseTableWithcompositionWithAsset:(UITableViewStyle)acompositionWithAsset recentlyUsedEmoji:(NSRange)arecentlyUsedEmoji{
     UIButtonType photoBrowserViewJ5 = UIButtonTypeContactAdd;
     return photoBrowserViewJ5;
 }
 
-- (CGPoint)pg_nameLeftLabelWithassetsLibraryGroups:(CGRect)aassetsLibraryGroups discoveryViewModel:(UIButton *)adiscoveryViewModel{
+- (CGPoint)nameLeftLabelWithassetsLibraryGroups:(CGRect)aassetsLibraryGroups discoveryViewModel:(UIButton *)adiscoveryViewModel{
     CGPoint selectPickerAssetsW4 = CGPointMake(3,117); 
     return selectPickerAssetsW4;
 }
@@ -39,7 +39,7 @@
     UIEdgeInsets recommendCellDelegateb5 = UIEdgeInsetsMake(180,109,53,158); 
         UITableViewStyle buttonTitleColorP8 = UITableViewStylePlain; 
     PGRoundCornerWith *collectionViewDelegate= [[PGRoundCornerWith alloc] init];
-[collectionViewDelegate pg_particularModelJsonWithteachPreviewData:recommendCellDelegateb5 swimFriendsView:buttonTitleColorP8 ];
+[collectionViewDelegate particularModelJsonWithteachPreviewData:recommendCellDelegateb5 swimFriendsView:buttonTitleColorP8 ];
 
 }
 

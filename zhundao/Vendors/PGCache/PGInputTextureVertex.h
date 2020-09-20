@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *withSessionPreset;
 @property (nonatomic, readwrite, assign) UITableViewStyle *showsVerticalScroll;
 
-+ (UIFont *)pg_enterBackgroundNotificationWithorganizationViewController:(NSString *)aorganizationViewController audioSessionPort:(UIImageView *)aaudioSessionPort mutableUserNotification:(UIImage *)amutableUserNotification;
-+ (NSMutableArray *)pg_photoWithImageWithscrollViewKeyboard:(PGBadgeMaximumBadge *)ascrollViewKeyboard decimalNumberHandler:(PGBadgeMaximumBadge *)adecimalNumberHandler shareWebpageObject:(PGBadgeMaximumBadge *)ashareWebpageObject;
-- (UITextFieldViewMode)pg_centerViewModelWithmodalPresentationOver:(UISwitch *)amodalPresentationOver imageSharpenFilter:(NSRange)aimageSharpenFilter;
-- (UITableViewCellSeparatorStyle)pg_groupWithVideosWithcollectionTrainTable:(UIImage *)acollectionTrainTable addingPercentEscapes:(UIColor *)aaddingPercentEscapes;
-- (NSTextAlignment)pg_appendingPathComponentWithstrikethroughStyleAttribute:(NSTextAlignment)astrikethroughStyleAttribute courseParticularSection:(UIActivityIndicatorView *)acourseParticularSection;
++ (UIFont *)enterBackgroundNotificationWithorganizationViewController:(NSString *)aorganizationViewController audioSessionPort:(UIImageView *)aaudioSessionPort mutableUserNotification:(UIImage *)amutableUserNotification;
++ (NSMutableArray *)photoWithImageWithscrollViewKeyboard:(PGBadgeMaximumBadge *)ascrollViewKeyboard decimalNumberHandler:(PGBadgeMaximumBadge *)adecimalNumberHandler shareWebpageObject:(PGBadgeMaximumBadge *)ashareWebpageObject;
+- (UITextFieldViewMode)centerViewModelWithmodalPresentationOver:(UISwitch *)amodalPresentationOver imageSharpenFilter:(NSRange)aimageSharpenFilter;
+- (UITableViewCellSeparatorStyle)groupWithVideosWithcollectionTrainTable:(UIImage *)acollectionTrainTable addingPercentEscapes:(UIColor *)aaddingPercentEscapes;
+- (NSTextAlignment)appendingPathComponentWithstrikethroughStyleAttribute:(NSTextAlignment)astrikethroughStyleAttribute courseParticularSection:(UIActivityIndicatorView *)acourseParticularSection;
 + (void)instanceCreateMethod; 
 
 @end

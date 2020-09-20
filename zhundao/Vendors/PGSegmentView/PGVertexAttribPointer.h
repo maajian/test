@@ -18,11 +18,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *medalDetailCell;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *commentObjectModel;
 
-+ (UIActivityIndicatorView *)pg_showControlViewWithrecordMovieBottom:(UIButton *)arecordMovieBottom keyboardWillChange:(UITextField *)akeyboardWillChange unclampedDelayTime:(UITableView *)aunclampedDelayTime;
-+ (UIFont *)pg_delegateMethodWithWitharticleCourseParticular:(PGSwimingCommonSense *)aarticleCourseParticular withUserComment:(PGSwimingCommonSense *)awithUserComment playerStatusReady:(PGSwimingCommonSense *)aplayerStatusReady;
-- (UITableViewCellSeparatorStyle)pg_partButtonActionWithregisterViewController:(NSTextAlignment)aregisterViewController imageCropManager:(UITextField *)aimageCropManager;
-- (NSLineBreakMode)pg_loginMainViewWithbuttonImageName:(NSArray *)abuttonImageName currentMediaTime:(UITextView *)acurrentMediaTime;
-- (CGSize)pg_spinLockLockWithhideControlView:(UIScrollView *)ahideControlView browserPhotoScroll:(CGPoint)abrowserPhotoScroll;
++ (UIActivityIndicatorView *)showControlViewWithrecordMovieBottom:(UIButton *)arecordMovieBottom keyboardWillChange:(UITextField *)akeyboardWillChange unclampedDelayTime:(UITableView *)aunclampedDelayTime;
++ (UIFont *)delegateMethodWithWitharticleCourseParticular:(PGSwimingCommonSense *)aarticleCourseParticular withUserComment:(PGSwimingCommonSense *)awithUserComment playerStatusReady:(PGSwimingCommonSense *)aplayerStatusReady;
+- (UITableViewCellSeparatorStyle)partButtonActionWithregisterViewController:(NSTextAlignment)aregisterViewController imageCropManager:(UITextField *)aimageCropManager;
+- (NSLineBreakMode)loginMainViewWithbuttonImageName:(NSArray *)abuttonImageName currentMediaTime:(UITextView *)acurrentMediaTime;
+- (CGSize)spinLockLockWithhideControlView:(UIScrollView *)ahideControlView browserPhotoScroll:(CGPoint)abrowserPhotoScroll;
 + (void)instanceCreateMethod; 
 
 @end

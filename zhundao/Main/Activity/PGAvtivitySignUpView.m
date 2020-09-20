@@ -67,7 +67,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     recommendCellDelegateC0.autoresizesSubviews = YES; 
     recommendCellDelegateC0.clearsContextBeforeDrawing = YES; 
     PGNotificationPresentationOption *collectionViewCell= [[PGNotificationPresentationOption alloc] init];
-[collectionViewCell pg_recordVideoCameraWithobjectsUsingBlock:collectionOriginalModelr4 trainViewModel:recommendCellDelegateC0 ];
+[collectionViewCell recordVideoCameraWithobjectsUsingBlock:collectionOriginalModelr4 trainViewModel:recommendCellDelegateC0 ];
 });
     AAChartView *chartView = [[AAChartView alloc] initWithFrame:CGRectMake(10, 20, kScreenWidth - 20, self.frame.size.height - 40)];
     chartView.scrollEnabled = YES;
@@ -103,7 +103,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     changePreviousRouteL5.autoresizesSubviews = YES; 
     changePreviousRouteL5.clearsContextBeforeDrawing = YES; 
     PGNotificationPresentationOption *coachDetailModel= [[PGNotificationPresentationOption alloc] init];
-[coachDetailModel pg_recordVideoCameraWithobjectsUsingBlock:userInfoHeaderN6 trainViewModel:changePreviousRouteL5 ];
+[coachDetailModel recordVideoCameraWithobjectsUsingBlock:userInfoHeaderN6 trainViewModel:changePreviousRouteL5 ];
 });
     /*! 付款人数 */
     AAChartView *payChartView = [[AAChartView alloc] initWithFrame:CGRectMake(10, self.frame.size.height/2 , kScreenWidth - 20, (self.frame.size.height - 40)/2)];

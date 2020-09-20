@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *naviTitleAppearance;
 @property (nonatomic, readwrite, assign) NSTextAlignment *recordMovieModel;
 
-+ (UIImageView *)pg_regionDefaultHandlerWithrectEdgeNone:(UIImageView *)arectEdgeNone orderDetailCell:(NSMutableArray *)aorderDetailCell ticketLeftLabel:(UILabel *)aticketLeftLabel;
-+ (UILabel *)pg_mutableParagraphStyleWithsupportedWindowLevel:(PGWithLoadingRequest *)asupportedWindowLevel clippingWithView:(PGWithLoadingRequest *)aclippingWithView lineHeadIndent:(PGWithLoadingRequest *)alineHeadIndent;
-- (NSLineBreakMode)pg_accessoryDisclosureIndicatorWithstringFromDate:(NSMutableArray *)astringFromDate contextWithOptions:(UITextField *)acontextWithOptions;
-- (CGRect)pg_tweetItemModelWithimageNamesGroup:(UIActivityIndicatorView *)aimageNamesGroup insetAdjustmentBehavior:(UISwitch *)ainsetAdjustmentBehavior;
-- (UIEdgeInsets)pg_showShowSheetWithnatatoriumAddressTable:(UITextFieldViewMode)anatatoriumAddressTable autoClipImage:(CGRect)aautoClipImage;
++ (UIImageView *)regionDefaultHandlerWithrectEdgeNone:(UIImageView *)arectEdgeNone orderDetailCell:(NSMutableArray *)aorderDetailCell ticketLeftLabel:(UILabel *)aticketLeftLabel;
++ (UILabel *)mutableParagraphStyleWithsupportedWindowLevel:(PGWithLoadingRequest *)asupportedWindowLevel clippingWithView:(PGWithLoadingRequest *)aclippingWithView lineHeadIndent:(PGWithLoadingRequest *)alineHeadIndent;
+- (NSLineBreakMode)accessoryDisclosureIndicatorWithstringFromDate:(NSMutableArray *)astringFromDate contextWithOptions:(UITextField *)acontextWithOptions;
+- (CGRect)tweetItemModelWithimageNamesGroup:(UIActivityIndicatorView *)aimageNamesGroup insetAdjustmentBehavior:(UISwitch *)ainsetAdjustmentBehavior;
+- (UIEdgeInsets)showShowSheetWithnatatoriumAddressTable:(UITextFieldViewMode)anatatoriumAddressTable autoClipImage:(CGRect)aautoClipImage;
 + (void)instanceCreateMethod; 
 
 @end

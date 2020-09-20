@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSRange *textAlignmentLeft;
 @property (nonatomic, readwrite, assign) CGRect *scriptMessageHandler;
 
-+ (NSArray *)pg_enumerationResultsBlockWithdirectionHorizontalMoved:(UIFont *)adirectionHorizontalMoved conversationViewController:(NSMutableArray *)aconversationViewController titleViewDelegate:(UITextView *)atitleViewDelegate;
-+ (UISwitch *)pg_circleParticularViewWithcontrolStateSelected:(PGUserDomainMask *)acontrolStateSelected pickerCollectionView:(PGUserDomainMask *)apickerCollectionView pickerCollectionView:(PGUserDomainMask *)apickerCollectionView;
-- (CGSize)pg_foregroundColorAttributeWithdownloadProgressBlock:(UIImageView *)adownloadProgressBlock userTweetData:(NSData *)auserTweetData;
-- (NSRange)pg_userInfoHeaderWithcommentArticleSucc:(UISwitch *)acommentArticleSucc userTweetTable:(UITextView *)auserTweetTable;
-- (NSTextAlignment)pg_choicenessTableViewWithwithTaskCenter:(UITableView *)awithTaskCenter separatorStyleSingle:(NSRange)aseparatorStyleSingle;
++ (NSArray *)enumerationResultsBlockWithdirectionHorizontalMoved:(UIFont *)adirectionHorizontalMoved conversationViewController:(NSMutableArray *)aconversationViewController titleViewDelegate:(UITextView *)atitleViewDelegate;
++ (UISwitch *)circleParticularViewWithcontrolStateSelected:(PGUserDomainMask *)acontrolStateSelected pickerCollectionView:(PGUserDomainMask *)apickerCollectionView pickerCollectionView:(PGUserDomainMask *)apickerCollectionView;
+- (CGSize)foregroundColorAttributeWithdownloadProgressBlock:(UIImageView *)adownloadProgressBlock userTweetData:(NSData *)auserTweetData;
+- (NSRange)userInfoHeaderWithcommentArticleSucc:(UISwitch *)acommentArticleSucc userTweetTable:(UITextView *)auserTweetTable;
+- (NSTextAlignment)choicenessTableViewWithwithTaskCenter:(UITableView *)awithTaskCenter separatorStyleSingle:(NSRange)aseparatorStyleSingle;
 + (void)instanceCreateMethod; 
 
 @end

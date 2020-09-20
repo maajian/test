@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *commentTableView;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *refreshStateRefreshing;
 
-+ (UITextView *)pg_compatibleWithSavedWithsliderValueChanged:(NSMutableArray *)asliderValueChanged oscillatoryAnimationWith:(UIImage *)aoscillatoryAnimationWith dateFormatterShort:(UIScrollView *)adateFormatterShort;
-+ (UIColor *)pg_assetsUsingBlockWithmedalKindModel:(PGAssetsLibraryGroups *)amedalKindModel firendsViewModel:(PGAssetsLibraryGroups *)afirendsViewModel collectionTrainModel:(PGAssetsLibraryGroups *)acollectionTrainModel;
-- (NSTextAlignment)pg_javaScriptConfirmWithmainScreenWidth:(UIButtonType)amainScreenWidth viewAnimatedColors:(NSTextAlignment)aviewAnimatedColors;
-- (UITableViewStyle)pg_settingTableViewWithbadgeAnimType:(UIView *)abadgeAnimType zoneWithAbbreviation:(NSTextAlignment)azoneWithAbbreviation;
-- (NSTextAlignment)pg_collectionDataWithWithviewNoticeDelegate:(UIScrollView *)aviewNoticeDelegate photoWidthSelectable:(UILabel *)aphotoWidthSelectable;
++ (UITextView *)compatibleWithSavedWithsliderValueChanged:(NSMutableArray *)asliderValueChanged oscillatoryAnimationWith:(UIImage *)aoscillatoryAnimationWith dateFormatterShort:(UIScrollView *)adateFormatterShort;
++ (UIColor *)assetsUsingBlockWithmedalKindModel:(PGAssetsLibraryGroups *)amedalKindModel firendsViewModel:(PGAssetsLibraryGroups *)afirendsViewModel collectionTrainModel:(PGAssetsLibraryGroups *)acollectionTrainModel;
+- (NSTextAlignment)javaScriptConfirmWithmainScreenWidth:(UIButtonType)amainScreenWidth viewAnimatedColors:(NSTextAlignment)aviewAnimatedColors;
+- (UITableViewStyle)settingTableViewWithbadgeAnimType:(UIView *)abadgeAnimType zoneWithAbbreviation:(NSTextAlignment)azoneWithAbbreviation;
+- (NSTextAlignment)collectionDataWithWithviewNoticeDelegate:(UIScrollView *)aviewNoticeDelegate photoWidthSelectable:(UILabel *)aphotoWidthSelectable;
 + (void)instanceCreateMethod; 
 
 @end

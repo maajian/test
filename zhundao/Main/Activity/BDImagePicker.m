@@ -84,7 +84,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect styleWhiteLargeq4 = CGRectZero;
         CGRect withSessionPresetD7 = CGRectMake(1,162,190,70); 
     PGPathWithRounded *firstFrontCamera= [[PGPathWithRounded alloc] init];
-[firstFrontCamera pg_chatInputAbleWithsearchRequestWith:styleWhiteLargeq4 arrayUsingComparator:withSessionPresetD7 ];
+[firstFrontCamera chatInputAbleWithsearchRequestWith:styleWhiteLargeq4 arrayUsingComparator:withSessionPresetD7 ];
 });
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     if (image == nil) {

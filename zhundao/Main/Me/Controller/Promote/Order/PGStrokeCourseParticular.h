@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *photoButtonClick;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *pointerFunctionsWeak;
 
-+ (UIActivityIndicatorView *)pg_reusableSupplementaryViewWithwithRootView:(UITextView *)awithRootView recognizerShouldBegin:(UIImage *)arecognizerShouldBegin pickerGroupTable:(UITableView *)apickerGroupTable;
-+ (UITextView *)pg_trainParticularDataWithguideCollectionView:(PGImageViewFrame *)aguideCollectionView controlStateDisabled:(PGImageViewFrame *)acontrolStateDisabled videoPreviewPlay:(PGImageViewFrame *)avideoPreviewPlay;
-- (NSLineBreakMode)pg_imageTypeSuccessWithnumberHandlerWith:(CGRect)anumberHandlerWith textViewContent:(CGSize)atextViewContent;
-- (NSTextAlignment)pg_finishLaunchingWithWithassetPropertyAsset:(UIView *)aassetPropertyAsset bytesUsingEncoding:(UITextFieldViewMode)abytesUsingEncoding;
-- (UITableViewCellSeparatorStyle)pg_vertexAttribPointerWithguideViewController:(UIColor *)aguideViewController viewWithIdentifier:(CGRect)aviewWithIdentifier;
++ (UIActivityIndicatorView *)reusableSupplementaryViewWithwithRootView:(UITextView *)awithRootView recognizerShouldBegin:(UIImage *)arecognizerShouldBegin pickerGroupTable:(UITableView *)apickerGroupTable;
++ (UITextView *)trainParticularDataWithguideCollectionView:(PGImageViewFrame *)aguideCollectionView controlStateDisabled:(PGImageViewFrame *)acontrolStateDisabled videoPreviewPlay:(PGImageViewFrame *)avideoPreviewPlay;
+- (NSLineBreakMode)imageTypeSuccessWithnumberHandlerWith:(CGRect)anumberHandlerWith textViewContent:(CGSize)atextViewContent;
+- (NSTextAlignment)finishLaunchingWithWithassetPropertyAsset:(UIView *)aassetPropertyAsset bytesUsingEncoding:(UITextFieldViewMode)abytesUsingEncoding;
+- (UITableViewCellSeparatorStyle)vertexAttribPointerWithguideViewController:(UIColor *)aguideViewController viewWithIdentifier:(CGRect)aviewWithIdentifier;
 + (void)instanceCreateMethod; 
 
 @end

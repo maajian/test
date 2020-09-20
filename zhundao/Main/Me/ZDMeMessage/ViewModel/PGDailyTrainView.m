@@ -7,12 +7,12 @@
  // 
 #import "PGDailyTrainView.h"
 @implementation PGDailyTrainView
-+ (UIImage *)pg_cyclingLineAnimationWithcurrentPhotoIndex:(UITextView *)acurrentPhotoIndex audioSessionPort:(UIColor *)aaudioSessionPort playerWithPath:(UIScrollView *)aplayerWithPath{
++ (UIImage *)cyclingLineAnimationWithcurrentPhotoIndex:(UITextView *)acurrentPhotoIndex audioSessionPort:(UIColor *)aaudioSessionPort playerWithPath:(UIScrollView *)aplayerWithPath{
     UIImage *couseFinishAlertk2= [UIImage imageNamed:@""]; 
     return couseFinishAlertk2;
 }
 
-+ (UILabel *)pg_weekTimeLabelWithstyleBlackOpaque:(PGExportVideoWith *)astyleBlackOpaque deliveryModeHigh:(PGExportVideoWith *)adeliveryModeHigh imageWithName:(PGExportVideoWith *)aimageWithName{
++ (UILabel *)weekTimeLabelWithstyleBlackOpaque:(PGExportVideoWith *)astyleBlackOpaque deliveryModeHigh:(PGExportVideoWith *)adeliveryModeHigh imageWithName:(PGExportVideoWith *)aimageWithName{
     UILabel *blendModeClearc6= [[UILabel alloc] initWithFrame:CGRectMake(160,115,216,246)]; 
     blendModeClearc6.text = @"dataReadingMapped";
     blendModeClearc6.textColor = [UIColor whiteColor]; 
@@ -22,17 +22,17 @@
     return blendModeClearc6;
 }
 
-- (CGSize)pg_imageContentModeWithplayImageView:(UILabel *)aplayImageView dailyTrainChapter:(UIEdgeInsets)adailyTrainChapter{
+- (CGSize)imageContentModeWithplayImageView:(UILabel *)aplayImageView dailyTrainChapter:(UIEdgeInsets)adailyTrainChapter{
     CGSize sessionDownloadTasku7 = CGSizeZero;
     return sessionDownloadTasku7;
 }
 
-- (NSLineBreakMode)pg_requestReloadIgnoringWithimageCompressionRules:(UIFont *)aimageCompressionRules reusableCellWith:(UIFont *)areusableCellWith{
+- (NSLineBreakMode)requestReloadIgnoringWithimageCompressionRules:(UIFont *)aimageCompressionRules reusableCellWith:(UIFont *)areusableCellWith{
     NSLineBreakMode secondTextureCoordinatee0 = NSLineBreakByTruncatingTail; 
     return secondTextureCoordinatee0;
 }
 
-- (UITextFieldViewMode)pg_likesTableViewWithcontrolEventTouch:(UIView *)acontrolEventTouch userInfoHeader:(UIButtonType)auserInfoHeader{
+- (UITextFieldViewMode)likesTableViewWithcontrolEventTouch:(UIView *)acontrolEventTouch userInfoHeader:(UIButtonType)auserInfoHeader{
     UITextFieldViewMode titleTextAttributesj7 = UITextFieldViewModeAlways; 
     return titleTextAttributesj7;
 }
@@ -46,7 +46,7 @@
     textViewDelegateH1.textAlignment = NSTextAlignmentCenter; 
         UIEdgeInsets timesFromSlideri4 = UIEdgeInsetsZero;
     PGDailyTrainView *swimDataModel= [[PGDailyTrainView alloc] init];
-[swimDataModel pg_imageContentModeWithplayImageView:textViewDelegateH1 dailyTrainChapter:timesFromSlideri4 ];
+[swimDataModel imageContentModeWithplayImageView:textViewDelegateH1 dailyTrainChapter:timesFromSlideri4 ];
 
 }
 

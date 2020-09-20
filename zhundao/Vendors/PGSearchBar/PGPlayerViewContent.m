@@ -7,7 +7,7 @@
  // 
 #import "PGPlayerViewContent.h"
 @implementation PGPlayerViewContent
-+ (UIImageView *)pg_guideBottomViewWithpathWithRect:(UITextField *)apathWithRect refreshStateIdle:(UITableView *)arefreshStateIdle cachingHighQuality:(UIColor *)acachingHighQuality{
++ (UIImageView *)guideBottomViewWithpathWithRect:(UITextField *)apathWithRect refreshStateIdle:(UITableView *)arefreshStateIdle cachingHighQuality:(UIColor *)acachingHighQuality{
     UIImageView * strokeCourseHeaderW0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     strokeCourseHeaderW0.contentMode = UIViewContentModeCenter; 
     strokeCourseHeaderW0.clipsToBounds = NO; 
@@ -17,22 +17,22 @@
     return strokeCourseHeaderW0;
 }
 
-+ (NSString *)pg_subviewWithClassWithrecordVideoCamera:(PGRecoderSelectPicker *)arecordVideoCamera connectionDataDelegate:(PGRecoderSelectPicker *)aconnectionDataDelegate smartAlbumUser:(PGRecoderSelectPicker *)asmartAlbumUser{
++ (NSString *)subviewWithClassWithrecordVideoCamera:(PGRecoderSelectPicker *)arecordVideoCamera connectionDataDelegate:(PGRecoderSelectPicker *)aconnectionDataDelegate smartAlbumUser:(PGRecoderSelectPicker *)asmartAlbumUser{
     NSString *tableViewContentn4 = @"strokeArticleTable";
     return tableViewContentn4;
 }
 
-- (NSLineBreakMode)pg_alertWithControllerWithimageMatrixMultiply:(CGSize)aimageMatrixMultiply phoneWithPhone:(NSLineBreakMode)aphoneWithPhone{
+- (NSLineBreakMode)alertWithControllerWithimageMatrixMultiply:(CGSize)aimageMatrixMultiply phoneWithPhone:(NSLineBreakMode)aphoneWithPhone{
     NSLineBreakMode gradeCollectionViewJ4 = NSLineBreakByTruncatingTail; 
     return gradeCollectionViewJ4;
 }
 
-- (UITableViewCellSeparatorStyle)pg_followWithHeadingWithchoicenessTableView:(UIImage *)achoicenessTableView photoViewIndex:(NSArray *)aphotoViewIndex{
+- (UITableViewCellSeparatorStyle)followWithHeadingWithchoicenessTableView:(UIImage *)achoicenessTableView photoViewIndex:(NSArray *)aphotoViewIndex{
     UITableViewCellSeparatorStyle withJsonStringV7 = UITableViewCellSeparatorStyleNone; 
     return withJsonStringV7;
 }
 
-- (NSTextAlignment)pg_fillRuleEvenWithrecommendCollectionView:(NSArray *)arecommendCollectionView currentShortDate:(UIEdgeInsets)acurrentShortDate{
+- (NSTextAlignment)fillRuleEvenWithrecommendCollectionView:(NSArray *)arecommendCollectionView currentShortDate:(UIEdgeInsets)acurrentShortDate{
     NSTextAlignment trackingWithTouchq9 = NSTextAlignmentCenter; 
     return trackingWithTouchq9;
 }
@@ -41,7 +41,7 @@
     CGSize playerStatusPausev4 = CGSizeMake(193,181); 
         NSLineBreakMode javaScriptTextF8 = NSLineBreakByTruncatingTail; 
     PGPlayerViewContent *selectPhotoNavigation= [[PGPlayerViewContent alloc] init];
-[selectPhotoNavigation pg_alertWithControllerWithimageMatrixMultiply:playerStatusPausev4 phoneWithPhone:javaScriptTextF8 ];
+[selectPhotoNavigation alertWithControllerWithimageMatrixMultiply:playerStatusPausev4 phoneWithPhone:javaScriptTextF8 ];
 
 }
 

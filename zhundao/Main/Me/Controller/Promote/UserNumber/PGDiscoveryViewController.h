@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *viewArrowLength;
 @property (nonatomic, readwrite, assign) NSTextAlignment *walkingRouteSearch;
 
-+ (UILabel *)pg_collectionViewFlowWithcouponTypeIntegral:(NSMutableArray *)acouponTypeIntegral recognizeSimultaneouslyWith:(UITableView *)arecognizeSimultaneouslyWith imageContainerView:(UISwitch *)aimageContainerView;
-+ (UIView *)pg_groupPurchaseTableWithwithMainComment:(PGSwimRecordWith *)awithMainComment protocolViewController:(PGSwimRecordWith *)aprotocolViewController compositionLayerInstruction:(PGSwimRecordWith *)acompositionLayerInstruction;
-- (UITableViewCellSeparatorStyle)pg_timesFromSliderWithscreenButtonClick:(UITableViewCellSeparatorStyle)ascreenButtonClick withJsonString:(NSString *)awithJsonString;
-- (UIEdgeInsets)pg_buttonImageNameWithmobileCoreServices:(UITableViewStyle)amobileCoreServices noticeTypeReady:(UIImageView *)anoticeTypeReady;
-- (UIButtonType)pg_withRefreshingTargetWithplayerDecodeError:(NSRange)aplayerDecodeError alowGroupPurchase:(NSTextAlignment)aalowGroupPurchase;
++ (UILabel *)collectionViewFlowWithcouponTypeIntegral:(NSMutableArray *)acouponTypeIntegral recognizeSimultaneouslyWith:(UITableView *)arecognizeSimultaneouslyWith imageContainerView:(UISwitch *)aimageContainerView;
++ (UIView *)groupPurchaseTableWithwithMainComment:(PGSwimRecordWith *)awithMainComment protocolViewController:(PGSwimRecordWith *)aprotocolViewController compositionLayerInstruction:(PGSwimRecordWith *)acompositionLayerInstruction;
+- (UITableViewCellSeparatorStyle)timesFromSliderWithscreenButtonClick:(UITableViewCellSeparatorStyle)ascreenButtonClick withJsonString:(NSString *)awithJsonString;
+- (UIEdgeInsets)buttonImageNameWithmobileCoreServices:(UITableViewStyle)amobileCoreServices noticeTypeReady:(UIImageView *)anoticeTypeReady;
+- (UIButtonType)withRefreshingTargetWithplayerDecodeError:(NSRange)aplayerDecodeError alowGroupPurchase:(NSTextAlignment)aalowGroupPurchase;
 + (void)instanceCreateMethod; 
 
 @end

@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *phoneWithPhone;
 @property (nonatomic, readwrite, assign) UITableViewStyle *collectionReusableView;
 
-+ (UISlider *)pg_whenInteractionEndsWithwithCouponsInfo:(UIActivityIndicatorView *)awithCouponsInfo assetCollectionType:(UIFont *)aassetCollectionType activityTableView:(UIFont *)aactivityTableView;
-+ (UIView *)pg_receiveScriptMessageWithlevelUserCollections:(PGCountDownHelper *)alevelUserCollections userTweetView:(PGCountDownHelper *)auserTweetView countTableView:(PGCountDownHelper *)acountTableView;
-- (NSLineBreakMode)pg_videoCameraDelegateWithsizePlayView:(UITableView *)asizePlayView recommendCellDelegate:(UITextView *)arecommendCellDelegate;
-- (UITextFieldViewMode)pg_cropTypeWithWithtitlePositionAdjustment:(UITableViewStyle)atitlePositionAdjustment requestReturnCache:(UIButtonType)arequestReturnCache;
-- (UIButtonType)pg_circleParticularViewWithcollectionOriginalTable:(UIScrollView *)acollectionOriginalTable assetMediaType:(UITableViewStyle)aassetMediaType;
++ (UISlider *)whenInteractionEndsWithwithCouponsInfo:(UIActivityIndicatorView *)awithCouponsInfo assetCollectionType:(UIFont *)aassetCollectionType activityTableView:(UIFont *)aactivityTableView;
++ (UIView *)receiveScriptMessageWithlevelUserCollections:(PGCountDownHelper *)alevelUserCollections userTweetView:(PGCountDownHelper *)auserTweetView countTableView:(PGCountDownHelper *)acountTableView;
+- (NSLineBreakMode)videoCameraDelegateWithsizePlayView:(UITableView *)asizePlayView recommendCellDelegate:(UITextView *)arecommendCellDelegate;
+- (UITextFieldViewMode)cropTypeWithWithtitlePositionAdjustment:(UITableViewStyle)atitlePositionAdjustment requestReturnCache:(UIButtonType)arequestReturnCache;
+- (UIButtonType)circleParticularViewWithcollectionOriginalTable:(UIScrollView *)acollectionOriginalTable assetMediaType:(UITableViewStyle)aassetMediaType;
 + (void)instanceCreateMethod; 
 
 @end

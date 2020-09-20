@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) NSRange *likeTweetSucc;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *gradeUserModel;
 
-+ (NSArray *)pg_collectionViewFlowWithregularExpressionCase:(UIActivityIndicatorView *)aregularExpressionCase gaussianBlurElement:(UITableView *)agaussianBlurElement separatorStyleSingle:(NSArray *)aseparatorStyleSingle;
-+ (UIImage *)pg_enumerationResultsBlockWithloginWithCompletion:(PGPickerViewData *)aloginWithCompletion tableViewScroll:(PGPickerViewData *)atableViewScroll sliderValueChanged:(PGPickerViewData *)asliderValueChanged;
-- (UITableViewStyle)pg_animatedImageViewWithcourseCachaData:(CGRect)acourseCachaData coachDetailView:(UIView *)acoachDetailView;
-- (UITableViewCellSeparatorStyle)pg_cacheCourseParticularWithpickingOriginalPhoto:(UITableViewStyle)apickingOriginalPhoto ticketRightLabel:(UIImage *)aticketRightLabel;
-- (UIButtonType)pg_textInputNotificationWithcommentObjectModel:(NSMutableArray *)acommentObjectModel playViewDelegate:(CGSize)aplayViewDelegate;
++ (NSArray *)collectionViewFlowWithregularExpressionCase:(UIActivityIndicatorView *)aregularExpressionCase gaussianBlurElement:(UITableView *)agaussianBlurElement separatorStyleSingle:(NSArray *)aseparatorStyleSingle;
++ (UIImage *)enumerationResultsBlockWithloginWithCompletion:(PGPickerViewData *)aloginWithCompletion tableViewScroll:(PGPickerViewData *)atableViewScroll sliderValueChanged:(PGPickerViewData *)asliderValueChanged;
+- (UITableViewStyle)animatedImageViewWithcourseCachaData:(CGRect)acourseCachaData coachDetailView:(UIView *)acoachDetailView;
+- (UITableViewCellSeparatorStyle)cacheCourseParticularWithpickingOriginalPhoto:(UITableViewStyle)apickingOriginalPhoto ticketRightLabel:(UIImage *)aticketRightLabel;
+- (UIButtonType)textInputNotificationWithcommentObjectModel:(NSMutableArray *)acommentObjectModel playViewDelegate:(CGSize)aplayViewDelegate;
 + (void)instanceCreateMethod; 
 
 @end

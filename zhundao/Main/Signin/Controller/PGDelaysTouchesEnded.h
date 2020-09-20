@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *sliderSeekTime;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *shouldAutoClip;
 
-+ (UISwitch *)pg_organizeServiceModelWithtextLabelHidden:(NSMutableArray *)atextLabelHidden guideBottomView:(UIButton *)aguideBottomView reusableAnnotationView:(UISlider *)areusableAnnotationView;
-+ (UITextField *)pg_backIndicatorTransitionWithpushPhotoPicker:(PGStringFromData *)apushPhotoPicker pushPhotoPicker:(PGStringFromData *)apushPhotoPicker imageWithData:(PGStringFromData *)aimageWithData;
-- (NSLineBreakMode)pg_autoClipImageWithorganzationViewModel:(UIScrollView *)aorganzationViewModel couponsScrollTable:(NSString *)acouponsScrollTable;
-- (CGSize)pg_coachDetailModelWithfinishLoadWith:(UISlider *)afinishLoadWith actionSheetDelegate:(UIButton *)aactionSheetDelegate;
-- (CGRect)pg_commonToolVedioWithrecordListWith:(NSTextAlignment)arecordListWith imageSourceCreate:(NSRange)aimageSourceCreate;
++ (UISwitch *)organizeServiceModelWithtextLabelHidden:(NSMutableArray *)atextLabelHidden guideBottomView:(UIButton *)aguideBottomView reusableAnnotationView:(UISlider *)areusableAnnotationView;
++ (UITextField *)backIndicatorTransitionWithpushPhotoPicker:(PGStringFromData *)apushPhotoPicker pushPhotoPicker:(PGStringFromData *)apushPhotoPicker imageWithData:(PGStringFromData *)aimageWithData;
+- (NSLineBreakMode)autoClipImageWithorganzationViewModel:(UIScrollView *)aorganzationViewModel couponsScrollTable:(NSString *)acouponsScrollTable;
+- (CGSize)coachDetailModelWithfinishLoadWith:(UISlider *)afinishLoadWith actionSheetDelegate:(UIButton *)aactionSheetDelegate;
+- (CGRect)commonToolVedioWithrecordListWith:(NSTextAlignment)arecordListWith imageSourceCreate:(NSRange)aimageSourceCreate;
 + (void)instanceCreateMethod; 
 
 @end

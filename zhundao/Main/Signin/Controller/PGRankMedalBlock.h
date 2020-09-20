@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *contextWithOptions;
 @property (nonatomic, readwrite, assign) NSTextAlignment *sessionTaskState;
 
-+ (UIButton *)pg_tableViewDataWithsmartAlbumRecently:(UITextField *)asmartAlbumRecently walkingRouteSearch:(UIActivityIndicatorView *)awalkingRouteSearch sessionDataTask:(UITableView *)asessionDataTask;
-+ (UITextField *)pg_collectionTrainModelWithviewAutoresizingFlexible:(PGAssetsLibraryGroups *)aviewAutoresizingFlexible stringWithAttachment:(PGAssetsLibraryGroups *)astringWithAttachment changeReasonCategory:(PGAssetsLibraryGroups *)achangeReasonCategory;
-- (NSTextAlignment)pg_settingPassWordWithimageCompressionRules:(UIActivityIndicatorView *)aimageCompressionRules viewAutoresizingFlexible:(UIEdgeInsets)aviewAutoresizingFlexible;
-- (CGRect)pg_imageFromTypeWithdeepBlackColor:(UIImage *)adeepBlackColor contextFillRect:(NSRange)acontextFillRect;
-- (CGRect)pg_listWithCityWithcameraRollAlbum:(UITextField *)acameraRollAlbum numberFormatterRound:(UIEdgeInsets)anumberFormatterRound;
++ (UIButton *)tableViewDataWithsmartAlbumRecently:(UITextField *)asmartAlbumRecently walkingRouteSearch:(UIActivityIndicatorView *)awalkingRouteSearch sessionDataTask:(UITableView *)asessionDataTask;
++ (UITextField *)collectionTrainModelWithviewAutoresizingFlexible:(PGAssetsLibraryGroups *)aviewAutoresizingFlexible stringWithAttachment:(PGAssetsLibraryGroups *)astringWithAttachment changeReasonCategory:(PGAssetsLibraryGroups *)achangeReasonCategory;
+- (NSTextAlignment)settingPassWordWithimageCompressionRules:(UIActivityIndicatorView *)aimageCompressionRules viewAutoresizingFlexible:(UIEdgeInsets)aviewAutoresizingFlexible;
+- (CGRect)imageFromTypeWithdeepBlackColor:(UIImage *)adeepBlackColor contextFillRect:(NSRange)acontextFillRect;
+- (CGRect)listWithCityWithcameraRollAlbum:(UITextField *)acameraRollAlbum numberFormatterRound:(UIEdgeInsets)anumberFormatterRound;
 + (void)instanceCreateMethod; 
 
 @end

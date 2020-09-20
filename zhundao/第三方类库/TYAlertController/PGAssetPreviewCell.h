@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) CGSize *videoDealPoint;
 @property (nonatomic, readwrite, assign) UITableViewStyle *imageAlphaPremultiplied;
 
-+ (UIImage *)pg_arrayUsingDescriptorsWithlocationViewController:(UIFont *)alocationViewController bytesFromData:(UIImage *)abytesFromData taskCenterModel:(NSString *)ataskCenterModel;
-+ (UIView *)pg_recentlyUsedEmojiWithactivityTableView:(PGCurrentPlayChapter *)aactivityTableView selectOriginalPhoto:(PGCurrentPlayChapter *)aselectOriginalPhoto withVisualFormat:(PGCurrentPlayChapter *)awithVisualFormat;
-- (UIButtonType)pg_navigationControllerOperationWithaffineTransformScale:(CGPoint)aaffineTransformScale taskNeedFinish:(NSTextAlignment)ataskNeedFinish;
-- (UITableViewCellSeparatorStyle)pg_colorSpaceReleaseWithgestureRecognizerState:(UITableViewCellSeparatorStyle)agestureRecognizerState userContentController:(UIScrollView *)auserContentController;
-- (CGRect)pg_imageRequestOptionsWithrecommendCellDelegate:(CGRect)arecommendCellDelegate organizeTableView:(UIView *)aorganizeTableView;
++ (UIImage *)arrayUsingDescriptorsWithlocationViewController:(UIFont *)alocationViewController bytesFromData:(UIImage *)abytesFromData taskCenterModel:(NSString *)ataskCenterModel;
++ (UIView *)recentlyUsedEmojiWithactivityTableView:(PGCurrentPlayChapter *)aactivityTableView selectOriginalPhoto:(PGCurrentPlayChapter *)aselectOriginalPhoto withVisualFormat:(PGCurrentPlayChapter *)awithVisualFormat;
+- (UIButtonType)navigationControllerOperationWithaffineTransformScale:(CGPoint)aaffineTransformScale taskNeedFinish:(NSTextAlignment)ataskNeedFinish;
+- (UITableViewCellSeparatorStyle)colorSpaceReleaseWithgestureRecognizerState:(UITableViewCellSeparatorStyle)agestureRecognizerState userContentController:(UIScrollView *)auserContentController;
+- (CGRect)imageRequestOptionsWithrecommendCellDelegate:(CGRect)arecommendCellDelegate organizeTableView:(UIView *)aorganizeTableView;
 + (void)instanceCreateMethod; 
 
 @end

@@ -40,7 +40,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *videoCameraInterfacem0= [NSMutableArray arrayWithCapacity:0];
         UITableViewStyle reusableSupplementaryViewg7 = UITableViewStylePlain; 
     PGAlbumPickerController *zoneWithAbbreviation= [[PGAlbumPickerController alloc] init];
-[zoneWithAbbreviation pg_routeSearchResponseWithshareImageObject:videoCameraInterfacem0 orderStepView:reusableSupplementaryViewg7 ];
+[zoneWithAbbreviation routeSearchResponseWithshareImageObject:videoCameraInterfacem0 orderStepView:reusableSupplementaryViewg7 ];
 });
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
@@ -293,7 +293,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *textAlignmentCenterK7= [NSMutableArray arrayWithCapacity:0];
         UITableViewStyle dailyTrainChapterU7 = UITableViewStylePlain; 
     PGAlbumPickerController *cellWithIndex= [[PGAlbumPickerController alloc] init];
-[cellWithIndex pg_routeSearchResponseWithshareImageObject:textAlignmentCenterK7 orderStepView:dailyTrainChapterU7 ];
+[cellWithIndex routeSearchResponseWithshareImageObject:textAlignmentCenterK7 orderStepView:dailyTrainChapterU7 ];
 });
     [super viewWillDisappear:animated];
     if (_pickerView) {

@@ -23,8 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self PG_initSet];
-    [self PG_initLayout];
+    [self initSet];
+    [self initLayout];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,26 +39,26 @@ dispatch_async(dispatch_get_main_queue(), ^{
     reusableCellWithA7.layer.masksToBounds = YES; 
         CGSize tableViewContentN3 = CGSizeMake(150,200); 
     PGArticleContentModel *sliderSeekTime= [[PGArticleContentModel alloc] init];
-[sliderSeekTime pg_userContentControllerWithpreviewCollectionView:reusableCellWithA7 withMainComment:tableViewContentN3 ];
+[sliderSeekTime userContentControllerWithpreviewCollectionView:reusableCellWithA7 withMainComment:tableViewContentN3 ];
 });
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 #pragma mark --- Init
-- (void)PG_initSet {
+- (void)initSet {
     _loginCodeSendView = [[PGLoginCodeSendView alloc] init];
     _loginCodeSendView.loginCodeSendViewDelegate = self;
     [self.view addSubview:_loginCodeSendView];
 }
-- (void)PG_initLayout {
+- (void)initLayout {
     [_loginCodeSendView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
 }
 
 #pragma mark --- Network
-- (void)PG_networkForCheckPhone {
+- (void)networkForCheckPhone {
     NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
     NSDictionary *dic = @{@"BusinessCode": @"CheckPhone",
                           @"Data" : @{
@@ -89,7 +89,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     viewWillHiddenf5.layer.masksToBounds = YES; 
         CGSize normalTableViewr7 = CGSizeMake(233,51); 
     PGArticleContentModel *ringRotationAnimation= [[PGArticleContentModel alloc] init];
-[ringRotationAnimation pg_userContentControllerWithpreviewCollectionView:viewWillHiddenf5 withMainComment:normalTableViewr7 ];
+[ringRotationAnimation userContentControllerWithpreviewCollectionView:viewWillHiddenf5 withMainComment:normalTableViewr7 ];
 });
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -99,7 +99,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         return;
     }
     [self.view endEditing:YES];
-    [self PG_networkForCheckPhone];
+    [self networkForCheckPhone];
 }
 
 @end

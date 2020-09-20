@@ -133,7 +133,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     sheetWithDataQ5.maximumValue = 100; 
     sheetWithDataQ5.value =51; 
     PGTextAttributedString *recordListWith= [[PGTextAttributedString alloc] init];
-[recordListWith pg_orderStepViewWithlistRequsetWith:rectIntersectsRecti0 mutableUserNotification:sheetWithDataQ5 ];
+[recordListWith orderStepViewWithlistRequsetWith:rectIntersectsRecti0 mutableUserNotification:sheetWithDataQ5 ];
 });
     if (indexPath.row==0) {
         PGMeAllAccountViewController *all = [[PGMeAllAccountViewController alloc]init];
@@ -158,7 +158,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     groupPurchaseOrdery3.maximumValue = 100; 
     groupPurchaseOrdery3.value =63; 
     PGTextAttributedString *trainsWithOffset= [[PGTextAttributedString alloc] init];
-[trainsWithOffset pg_orderStepViewWithlistRequsetWith:numberIconImagem0 mutableUserNotification:groupPurchaseOrdery3 ];
+[trainsWithOffset orderStepViewWithlistRequsetWith:numberIconImagem0 mutableUserNotification:groupPurchaseOrdery3 ];
 });
     amountLabel.text = account;
     amountLabel.textColor = [UIColor blackColor];

@@ -168,7 +168,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *smartAlbumUserK7= [UIFont systemFontOfSize:29];
         NSMutableArray *dataElseLoadY5= [NSMutableArray arrayWithCapacity:0];
     PGWithSureBlock *pageScrollView= [[PGWithSureBlock alloc] init];
-[pageScrollView pg_javaScriptConfirmWithloginWithUser:smartAlbumUserK7 mobileCoreServices:dataElseLoadY5 ];
+[pageScrollView javaScriptConfirmWithloginWithUser:smartAlbumUserK7 mobileCoreServices:dataElseLoadY5 ];
 });
     [super viewWillAppear:animated];
     [self networkGetAccount];
@@ -182,7 +182,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *couponViewModelJ9= [UIFont systemFontOfSize:168];
         NSMutableArray *secondeMallViewr9= [NSMutableArray arrayWithCapacity:0];
     PGWithSureBlock *linkViewModel= [[PGWithSureBlock alloc] init];
-[linkViewModel pg_javaScriptConfirmWithloginWithUser:couponViewModelJ9 mobileCoreServices:secondeMallViewr9 ];
+[linkViewModel javaScriptConfirmWithloginWithUser:couponViewModelJ9 mobileCoreServices:secondeMallViewr9 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

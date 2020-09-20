@@ -7,7 +7,7 @@
  // 
 #import "PGUserCommentView.h"
 @implementation PGUserCommentView
-+ (UITextField *)pg_rectEdgeNoneWithdownloadImageWith:(UIColor *)adownloadImageWith trainTableView:(UISwitch *)atrainTableView reusablePhotoView:(UITextView *)areusablePhotoView{
++ (UITextField *)rectEdgeNoneWithdownloadImageWith:(UIColor *)adownloadImageWith trainTableView:(UISwitch *)atrainTableView reusablePhotoView:(UITextView *)areusablePhotoView{
     UITextField *changeReasonCategoryX0= [[UITextField alloc] initWithFrame:CGRectZero]; 
     changeReasonCategoryX0.clearButtonMode = UITextFieldViewModeNever; 
     changeReasonCategoryX0.textColor = [UIColor whiteColor]; 
@@ -19,24 +19,24 @@
     return changeReasonCategoryX0;
 }
 
-+ (UISwitch *)pg_notificationPresentationOptionsWithprogressTypeDefault:(PGGroupPurchaseData *)aprogressTypeDefault cancelContentTouches:(PGGroupPurchaseData *)acancelContentTouches withGradientTint:(PGGroupPurchaseData *)awithGradientTint{
++ (UISwitch *)notificationPresentationOptionsWithprogressTypeDefault:(PGGroupPurchaseData *)aprogressTypeDefault cancelContentTouches:(PGGroupPurchaseData *)acancelContentTouches withGradientTint:(PGGroupPurchaseData *)awithGradientTint{
     UISwitch *defaultMaskTypeS8= [[UISwitch alloc] initWithFrame:CGRectMake(172,227,155,239)]; 
     defaultMaskTypeS8.on = YES; 
     defaultMaskTypeS8.onTintColor = [UIColor whiteColor]; 
     return defaultMaskTypeS8;
 }
 
-- (UIEdgeInsets)pg_transformRotationAngleWithswimCircleItem:(UIButton *)aswimCircleItem colorSpaceRelease:(UIImageView *)acolorSpaceRelease{
+- (UIEdgeInsets)transformRotationAngleWithswimCircleItem:(UIButton *)aswimCircleItem colorSpaceRelease:(UIImageView *)acolorSpaceRelease{
     UIEdgeInsets infoBottomViews3 = UIEdgeInsetsZero;
     return infoBottomViews3;
 }
 
-- (CGPoint)pg_couponTypeActivityWithnaviTitleFont:(UIEdgeInsets)anaviTitleFont authorizationWithCompletion:(UITextView *)aauthorizationWithCompletion{
+- (CGPoint)couponTypeActivityWithnaviTitleFont:(UIEdgeInsets)anaviTitleFont authorizationWithCompletion:(UITextView *)aauthorizationWithCompletion{
     CGPoint replayTypeNormalG3 = CGPointMake(10,122); 
     return replayTypeNormalG3;
 }
 
-- (UIEdgeInsets)pg_crashReportEnabledWithassetImageGenerator:(UITableViewStyle)aassetImageGenerator bytesUsingEncoding:(UIColor *)abytesUsingEncoding{
+- (UIEdgeInsets)crashReportEnabledWithassetImageGenerator:(UITableViewStyle)aassetImageGenerator bytesUsingEncoding:(UIColor *)abytesUsingEncoding{
     UIEdgeInsets bottomShareViewv1 = UIEdgeInsetsZero;
     return bottomShareViewv1;
 }
@@ -55,7 +55,7 @@
     downloadImageWithW3.autoresizesSubviews = YES; 
     downloadImageWithW3.clearsContextBeforeDrawing = YES; 
     PGUserCommentView *openWindowsAutomatically= [[PGUserCommentView alloc] init];
-[openWindowsAutomatically pg_transformRotationAngleWithswimCircleItem:timeFromDurationk4 colorSpaceRelease:downloadImageWithW3 ];
+[openWindowsAutomatically transformRotationAngleWithswimCircleItem:timeFromDurationk4 colorSpaceRelease:downloadImageWithW3 ];
 
 }
 

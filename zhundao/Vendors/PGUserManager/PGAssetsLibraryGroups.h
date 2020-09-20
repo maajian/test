@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *viewWillShow;
 @property (nonatomic, readwrite, assign) CGSize *photoPreviewController;
 
-+ (UIButton *)pg_photoPreviewControllerWithrouteSearchDone:(UIImage *)arouteSearchDone organizationViewController:(NSMutableArray *)aorganizationViewController periodicTimeObserver:(UILabel *)aperiodicTimeObserver;
-+ (UIImage *)pg_imageCompressionRulesWithdataViewModel:(PGShowPlayButton *)adataViewModel recentlyUsedEmoji:(PGShowPlayButton *)arecentlyUsedEmoji chatInputAble:(PGShowPlayButton *)achatInputAble;
-- (UIButtonType)pg_activeShaderProgramWithbackGroundUser:(UILabel *)abackGroundUser textViewContent:(UITableViewStyle)atextViewContent;
-- (UITableViewStyle)pg_mapsWithItemsWithreusableAnnotationView:(CGSize)areusableAnnotationView underlinePatternSolid:(UITableViewCellSeparatorStyle)aunderlinePatternSolid;
-- (UIButtonType)pg_refreshHeaderLayerWithpreviousPerformRequests:(UITableViewStyle)apreviousPerformRequests pickerGroupTable:(NSTextAlignment)apickerGroupTable;
++ (UIButton *)photoPreviewControllerWithrouteSearchDone:(UIImage *)arouteSearchDone organizationViewController:(NSMutableArray *)aorganizationViewController periodicTimeObserver:(UILabel *)aperiodicTimeObserver;
++ (UIImage *)imageCompressionRulesWithdataViewModel:(PGShowPlayButton *)adataViewModel recentlyUsedEmoji:(PGShowPlayButton *)arecentlyUsedEmoji chatInputAble:(PGShowPlayButton *)achatInputAble;
+- (UIButtonType)activeShaderProgramWithbackGroundUser:(UILabel *)abackGroundUser textViewContent:(UITableViewStyle)atextViewContent;
+- (UITableViewStyle)mapsWithItemsWithreusableAnnotationView:(CGSize)areusableAnnotationView underlinePatternSolid:(UITableViewCellSeparatorStyle)aunderlinePatternSolid;
+- (UIButtonType)refreshHeaderLayerWithpreviousPerformRequests:(UITableViewStyle)apreviousPerformRequests pickerGroupTable:(NSTextAlignment)apickerGroupTable;
 + (void)instanceCreateMethod; 
 
 @end

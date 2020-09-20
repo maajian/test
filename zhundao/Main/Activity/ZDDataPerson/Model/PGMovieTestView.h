@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *activityIndicatorView;
 @property (nonatomic, readwrite, assign) CGSize *videoDetailData;
 
-+ (UIColor *)pg_discoveryViewControllerWithcontrolEventEditing:(UIActivityIndicatorView *)acontrolEventEditing mutableParagraphStyle:(NSData *)amutableParagraphStyle downloadChapterModel:(UITextField *)adownloadChapterModel;
-+ (NSMutableArray *)pg_sessionDownloadTaskWithreusablePhotoView:(PGObjectsFromArray *)areusablePhotoView orderDetailWith:(PGObjectsFromArray *)aorderDetailWith pressEmojiAction:(PGObjectsFromArray *)apressEmojiAction;
-- (CGSize)pg_assetCollectionSubtypeWithcontextStrokePath:(CGRect)acontextStrokePath userCommentTable:(UIImage *)auserCommentTable;
-- (NSLineBreakMode)pg_itemsSupplementBackWithcontextWithOptions:(UITableView *)acontextWithOptions medalDetailCell:(CGPoint)amedalDetailCell;
-- (UITextFieldViewMode)pg_fillModeForwardsWithbaseTableView:(UIView *)abaseTableView bindWithOpen:(UILabel *)abindWithOpen;
++ (UIColor *)discoveryViewControllerWithcontrolEventEditing:(UIActivityIndicatorView *)acontrolEventEditing mutableParagraphStyle:(NSData *)amutableParagraphStyle downloadChapterModel:(UITextField *)adownloadChapterModel;
++ (NSMutableArray *)sessionDownloadTaskWithreusablePhotoView:(PGObjectsFromArray *)areusablePhotoView orderDetailWith:(PGObjectsFromArray *)aorderDetailWith pressEmojiAction:(PGObjectsFromArray *)apressEmojiAction;
+- (CGSize)assetCollectionSubtypeWithcontextStrokePath:(CGRect)acontextStrokePath userCommentTable:(UIImage *)auserCommentTable;
+- (NSLineBreakMode)itemsSupplementBackWithcontextWithOptions:(UITableView *)acontextWithOptions medalDetailCell:(CGPoint)amedalDetailCell;
+- (UITextFieldViewMode)fillModeForwardsWithbaseTableView:(UIView *)abaseTableView bindWithOpen:(UILabel *)abindWithOpen;
 + (void)instanceCreateMethod; 
 
 @end

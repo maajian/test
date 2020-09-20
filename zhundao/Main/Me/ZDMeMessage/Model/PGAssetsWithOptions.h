@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *trainFinishAlert;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *pushPhotoPicker;
 
-+ (UIButton *)pg_currentMediaTimeWithassetCellType:(UIImageView *)aassetCellType connectionDataDelegate:(UIColor *)aconnectionDataDelegate lineJoinMiter:(UIImageView *)alineJoinMiter;
-+ (UIButton *)pg_groupPurchaseOrderWithviewContentOffset:(PGCourseParticularTable *)aviewContentOffset dailyTrainData:(PGCourseParticularTable *)adailyTrainData assetFromFetch:(PGCourseParticularTable *)aassetFromFetch;
-- (UIButtonType)pg_textFieldViewWithpresetsCompatibleWith:(UISlider *)apresetsCompatibleWith calendarUnitYear:(CGPoint)acalendarUnitYear;
-- (NSLineBreakMode)pg_applicationLaunchOptionsWithcouponsInfoData:(NSMutableArray *)acouponsInfoData viewContentOffset:(NSRange)aviewContentOffset;
-- (CGPoint)pg_videoImageExtractorWithwithRootView:(CGPoint)awithRootView imageProcessingContext:(UITableViewCellSeparatorStyle)aimageProcessingContext;
++ (UIButton *)currentMediaTimeWithassetCellType:(UIImageView *)aassetCellType connectionDataDelegate:(UIColor *)aconnectionDataDelegate lineJoinMiter:(UIImageView *)alineJoinMiter;
++ (UIButton *)groupPurchaseOrderWithviewContentOffset:(PGCourseParticularTable *)aviewContentOffset dailyTrainData:(PGCourseParticularTable *)adailyTrainData assetFromFetch:(PGCourseParticularTable *)aassetFromFetch;
+- (UIButtonType)textFieldViewWithpresetsCompatibleWith:(UISlider *)apresetsCompatibleWith calendarUnitYear:(CGPoint)acalendarUnitYear;
+- (NSLineBreakMode)applicationLaunchOptionsWithcouponsInfoData:(NSMutableArray *)acouponsInfoData viewContentOffset:(NSRange)aviewContentOffset;
+- (CGPoint)videoImageExtractorWithwithRootView:(CGPoint)awithRootView imageProcessingContext:(UITableViewCellSeparatorStyle)aimageProcessingContext;
 + (void)instanceCreateMethod; 
 
 @end

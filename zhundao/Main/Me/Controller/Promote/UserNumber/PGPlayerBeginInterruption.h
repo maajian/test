@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *rootViewController;
 @property (nonatomic, readwrite, assign) CGRect *locationViewModel;
 
-+ (NSData *)pg_pageIndicatorTintWithmedalExplainView:(UITableView *)amedalExplainView courseViewModel:(UITextView *)acourseViewModel showControlView:(UILabel *)ashowControlView;
-+ (NSString *)pg_dataViewModelWithlayerTintColor:(PGTextAttributedString *)alayerTintColor successWithStatus:(PGTextAttributedString *)asuccessWithStatus updateStatuMandatory:(PGTextAttributedString *)aupdateStatuMandatory;
-- (NSTextAlignment)pg_blurredImageCompletionWithblendModeSource:(CGRect)ablendModeSource photoPrevireView:(NSData *)aphotoPrevireView;
-- (UITableViewCellSeparatorStyle)pg_moviePlayTestWithmoreTrainDara:(UIButton *)amoreTrainDara streamStatusReady:(UIEdgeInsets)astreamStatusReady;
-- (UITableViewStyle)pg_receiveLocalNotificationWithorderStepView:(NSTextAlignment)aorderStepView extractImageList:(UITableViewCellSeparatorStyle)aextractImageList;
++ (NSData *)pageIndicatorTintWithmedalExplainView:(UITableView *)amedalExplainView courseViewModel:(UITextView *)acourseViewModel showControlView:(UILabel *)ashowControlView;
++ (NSString *)dataViewModelWithlayerTintColor:(PGTextAttributedString *)alayerTintColor successWithStatus:(PGTextAttributedString *)asuccessWithStatus updateStatuMandatory:(PGTextAttributedString *)aupdateStatuMandatory;
+- (NSTextAlignment)blurredImageCompletionWithblendModeSource:(CGRect)ablendModeSource photoPrevireView:(NSData *)aphotoPrevireView;
+- (UITableViewCellSeparatorStyle)moviePlayTestWithmoreTrainDara:(UIButton *)amoreTrainDara streamStatusReady:(UIEdgeInsets)astreamStatusReady;
+- (UITableViewStyle)receiveLocalNotificationWithorderStepView:(NSTextAlignment)aorderStepView extractImageList:(UITableViewCellSeparatorStyle)aextractImageList;
 + (void)instanceCreateMethod; 
 
 @end

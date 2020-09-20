@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *swipeGestureRecognizer;
 @property (nonatomic, readwrite, assign) NSRange *blockCropMode;
 
-+ (UITextField *)pg_userCommentModelWithrefreshStatePulling:(UITableView *)arefreshStatePulling fromVideoView:(NSMutableArray *)afromVideoView authorizationStatusDenied:(UITextField *)aauthorizationStatusDenied;
-+ (UIButton *)pg_imageRenderingModeWithnaviTitleAppearance:(PGCollectionViewDelegate *)anaviTitleAppearance javaScriptConfirm:(PGCollectionViewDelegate *)ajavaScriptConfirm recommendCellDelegate:(PGCollectionViewDelegate *)arecommendCellDelegate;
-- (NSRange)pg_centerViewModelWithimageTypeFail:(NSData *)aimageTypeFail dailyCourseModel:(UIFont *)adailyCourseModel;
-- (CGSize)pg_playerStreamInfoWithrefreshStateIdle:(UIView *)arefreshStateIdle trainParticularHeader:(CGSize)atrainParticularHeader;
-- (NSTextAlignment)pg_recordVideoCameraWithnumberWithString:(CGSize)anumberWithString normalTableView:(UIButton *)anormalTableView;
++ (UITextField *)userCommentModelWithrefreshStatePulling:(UITableView *)arefreshStatePulling fromVideoView:(NSMutableArray *)afromVideoView authorizationStatusDenied:(UITextField *)aauthorizationStatusDenied;
++ (UIButton *)imageRenderingModeWithnaviTitleAppearance:(PGCollectionViewDelegate *)anaviTitleAppearance javaScriptConfirm:(PGCollectionViewDelegate *)ajavaScriptConfirm recommendCellDelegate:(PGCollectionViewDelegate *)arecommendCellDelegate;
+- (NSRange)centerViewModelWithimageTypeFail:(NSData *)aimageTypeFail dailyCourseModel:(UIFont *)adailyCourseModel;
+- (CGSize)playerStreamInfoWithrefreshStateIdle:(UIView *)arefreshStateIdle trainParticularHeader:(CGSize)atrainParticularHeader;
+- (NSTextAlignment)recordVideoCameraWithnumberWithString:(CGSize)anumberWithString normalTableView:(UIButton *)anormalTableView;
 + (void)instanceCreateMethod; 
 
 @end

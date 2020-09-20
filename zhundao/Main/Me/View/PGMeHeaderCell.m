@@ -82,7 +82,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     differenceBetweenRecti6.on = YES; 
     differenceBetweenRecti6.onTintColor = [UIColor whiteColor]; 
     PGDailyCourseModel *originStatusBackground= [[PGDailyCourseModel alloc] init];
-[originStatusBackground pg_interfaceOrientationMaskWithtrainCommentModel:userTweetViewC8 receiveMemoryWarning:differenceBetweenRecti6 ];
+[originStatusBackground interfaceOrientationMaskWithtrainCommentModel:userTweetViewC8 receiveMemoryWarning:differenceBetweenRecti6 ];
 });
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
@@ -114,7 +114,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     keyboardWillHidei9.on = YES; 
     keyboardWillHidei9.onTintColor = [UIColor whiteColor]; 
     PGDailyCourseModel *registerViewModel= [[PGDailyCourseModel alloc] init];
-[registerViewModel pg_interfaceOrientationMaskWithtrainCommentModel:boardWithTextH3 receiveMemoryWarning:keyboardWillHidei9 ];
+[registerViewModel interfaceOrientationMaskWithtrainCommentModel:boardWithTextH3 receiveMemoryWarning:keyboardWillHidei9 ];
 });
     _model = model;
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:ZD_UserM.headImgUrl] placeholderImage:[UIImage imageNamed:@"user"]];
@@ -131,7 +131,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     withPlayerItemn8.on = YES; 
     withPlayerItemn8.onTintColor = [UIColor whiteColor]; 
     PGDailyCourseModel *statusCameraRoll= [[PGDailyCourseModel alloc] init];
-[statusCameraRoll pg_interfaceOrientationMaskWithtrainCommentModel:styleLightContentD0 receiveMemoryWarning:withPlayerItemn8 ];
+[statusCameraRoll interfaceOrientationMaskWithtrainCommentModel:styleLightContentD0 receiveMemoryWarning:withPlayerItemn8 ];
 });
     if ([self.meHeaderCellDelegate respondsToSelector:@selector(headerCell:didTapVIPLabel:)]) {
         [self.meHeaderCellDelegate headerCell:self didTapVIPLabel:(UILabel *)gestureRecognizer.view];

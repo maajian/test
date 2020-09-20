@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) CGSize *locationManagerDelegate;
 @property (nonatomic, readwrite, assign) NSTextAlignment *pictureImageName;
 
-+ (UILabel *)pg_tableViewScrollWithlineFragmentOrigin:(NSString *)alineFragmentOrigin childViewController:(UIImageView *)achildViewController deliveryModeAutomatic:(UIImage *)adeliveryModeAutomatic;
-+ (UISlider *)pg_guideCollectionViewWithtaskCenterModel:(PGDeviceOrientationFace *)ataskCenterModel resizeModeFast:(PGDeviceOrientationFace *)aresizeModeFast swimRecordWith:(PGDeviceOrientationFace *)aswimRecordWith;
-- (CGRect)pg_userInterfaceIdiomWithshareViewDelegate:(NSLineBreakMode)ashareViewDelegate filterWithCode:(CGRect)afilterWithCode;
-- (UITableViewCellSeparatorStyle)pg_imageRotationModeWithinputTextureVertex:(UIColor *)ainputTextureVertex sizeWithAttributes:(UIButton *)asizeWithAttributes;
-- (NSRange)pg_extraLightEffectWithdateFormatterShort:(CGPoint)adateFormatterShort doneButtonClick:(UIFont *)adoneButtonClick;
++ (UILabel *)tableViewScrollWithlineFragmentOrigin:(NSString *)alineFragmentOrigin childViewController:(UIImageView *)achildViewController deliveryModeAutomatic:(UIImage *)adeliveryModeAutomatic;
++ (UISlider *)guideCollectionViewWithtaskCenterModel:(PGDeviceOrientationFace *)ataskCenterModel resizeModeFast:(PGDeviceOrientationFace *)aresizeModeFast swimRecordWith:(PGDeviceOrientationFace *)aswimRecordWith;
+- (CGRect)userInterfaceIdiomWithshareViewDelegate:(NSLineBreakMode)ashareViewDelegate filterWithCode:(CGRect)afilterWithCode;
+- (UITableViewCellSeparatorStyle)imageRotationModeWithinputTextureVertex:(UIColor *)ainputTextureVertex sizeWithAttributes:(UIButton *)asizeWithAttributes;
+- (NSRange)extraLightEffectWithdateFormatterShort:(CGPoint)adateFormatterShort doneButtonClick:(UIFont *)adoneButtonClick;
 + (void)instanceCreateMethod; 
 
 @end

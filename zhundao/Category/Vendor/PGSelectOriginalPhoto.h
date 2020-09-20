@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) CGSize *imageSourceThumbnail;
 @property (nonatomic, readwrite, assign) CGPoint *viewCornerRadius;
 
-+ (UIScrollView *)pg_levalInfoModelWithcacheCourseParticular:(UIFont *)acacheCourseParticular weekTimeLabel:(UIButton *)aweekTimeLabel withCourseVideo:(UIFont *)awithCourseVideo;
-+ (UIButton *)pg_paragraphStyleAttributeWithcustomAnimateTransition:(PGMutableTrackWith *)acustomAnimateTransition doneButtonClick:(PGMutableTrackWith *)adoneButtonClick taskCenterTable:(PGMutableTrackWith *)ataskCenterTable;
-- (UITableViewStyle)pg_photoPrevireViewWithhandpickViewModel:(CGRect)ahandpickViewModel photoPickerCollection:(NSString *)aphotoPickerCollection;
-- (UIButtonType)pg_sendButtonStatusWithlaunchViewController:(UITableView *)alaunchViewController numberWithString:(UIEdgeInsets)anumberWithString;
-- (UIButtonType)pg_timeUnclampedPropWithbadgeWithStyle:(UIEdgeInsets)abadgeWithStyle numberBadgeWith:(NSData *)anumberBadgeWith;
++ (UIScrollView *)levalInfoModelWithcacheCourseParticular:(UIFont *)acacheCourseParticular weekTimeLabel:(UIButton *)aweekTimeLabel withCourseVideo:(UIFont *)awithCourseVideo;
++ (UIButton *)paragraphStyleAttributeWithcustomAnimateTransition:(PGMutableTrackWith *)acustomAnimateTransition doneButtonClick:(PGMutableTrackWith *)adoneButtonClick taskCenterTable:(PGMutableTrackWith *)ataskCenterTable;
+- (UITableViewStyle)photoPrevireViewWithhandpickViewModel:(CGRect)ahandpickViewModel photoPickerCollection:(NSString *)aphotoPickerCollection;
+- (UIButtonType)sendButtonStatusWithlaunchViewController:(UITableView *)alaunchViewController numberWithString:(UIEdgeInsets)anumberWithString;
+- (UIButtonType)timeUnclampedPropWithbadgeWithStyle:(UIEdgeInsets)abadgeWithStyle numberBadgeWith:(NSData *)anumberBadgeWith;
 + (void)instanceCreateMethod; 
 
 @end

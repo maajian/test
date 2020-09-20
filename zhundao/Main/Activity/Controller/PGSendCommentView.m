@@ -7,7 +7,7 @@
  // 
 #import "PGSendCommentView.h"
 @implementation PGSendCommentView
-+ (UITextView *)pg_cellWithReuseWithpickerColletionView:(UIFont *)apickerColletionView integralRecordTable:(UIImage *)aintegralRecordTable birthdayPickerView:(UIScrollView *)abirthdayPickerView{
++ (UITextView *)cellWithReuseWithpickerColletionView:(UIFont *)apickerColletionView integralRecordTable:(UIImage *)aintegralRecordTable birthdayPickerView:(UIScrollView *)abirthdayPickerView{
     UITextView *photosBytesWitho3= [[UITextView alloc] initWithFrame:CGRectZero]; 
     photosBytesWitho3.editable = NO; 
     photosBytesWitho3.font = [UIFont systemFontOfSize:169];
@@ -15,7 +15,7 @@
     return photosBytesWitho3;
 }
 
-+ (UILabel *)pg_shrinkRightBottomWithviewControllerContext:(PGPathWithRounded *)aviewControllerContext collectionViewController:(PGPathWithRounded *)acollectionViewController suggestBackView:(PGPathWithRounded *)asuggestBackView{
++ (UILabel *)shrinkRightBottomWithviewControllerContext:(PGPathWithRounded *)aviewControllerContext collectionViewController:(PGPathWithRounded *)acollectionViewController suggestBackView:(PGPathWithRounded *)asuggestBackView{
     UILabel *cellReuseIdentifierj9= [[UILabel alloc] initWithFrame:CGRectZero]; 
     cellReuseIdentifierj9.text = @"actionSheetDelegate";
     cellReuseIdentifierj9.textColor = [UIColor whiteColor]; 
@@ -25,17 +25,17 @@
     return cellReuseIdentifierj9;
 }
 
-- (UITableViewStyle)pg_contextDrawImageWithnumberBadgeWith:(UIButton *)anumberBadgeWith modalPresentationOver:(UIEdgeInsets)amodalPresentationOver{
+- (UITableViewStyle)contextDrawImageWithnumberBadgeWith:(UIButton *)anumberBadgeWith modalPresentationOver:(UIEdgeInsets)amodalPresentationOver{
     UITableViewStyle gradeViewModelO1 = UITableViewStylePlain; 
     return gradeViewModelO1;
 }
 
-- (CGRect)pg_playViewModelWithforgotPasswordView:(UITableView *)aforgotPasswordView underlineStyleSingle:(UIButton *)aunderlineStyleSingle{
+- (CGRect)playViewModelWithforgotPasswordView:(UITableView *)aforgotPasswordView underlineStyleSingle:(UIButton *)aunderlineStyleSingle{
     CGRect remoteNotificationsWithN0 = CGRectMake(100,175,151,244); 
     return remoteNotificationsWithN0;
 }
 
-- (NSLineBreakMode)pg_couponsInfoDataWithtransitRouteSearch:(UIButton *)atransitRouteSearch controlStateNormal:(UITableView *)acontrolStateNormal{
+- (NSLineBreakMode)couponsInfoDataWithtransitRouteSearch:(UIButton *)atransitRouteSearch controlStateNormal:(UITableView *)acontrolStateNormal{
     NSLineBreakMode withSessionConfigurationv4 = NSLineBreakByTruncatingTail; 
     return withSessionConfigurationv4;
 }
@@ -49,7 +49,7 @@
     appendingPathComponentU9.frame = CGRectZero; 
         UIEdgeInsets blurWithRadiusG9 = UIEdgeInsetsMake(219,13,127,10); 
     PGSendCommentView *photoStreamAlbum= [[PGSendCommentView alloc] init];
-[photoStreamAlbum pg_contextDrawImageWithnumberBadgeWith:appendingPathComponentU9 modalPresentationOver:blurWithRadiusG9 ];
+[photoStreamAlbum contextDrawImageWithnumberBadgeWith:appendingPathComponentU9 modalPresentationOver:blurWithRadiusG9 ];
 
 }
 

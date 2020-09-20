@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *withGroupPurchase;
 @property (nonatomic, readwrite, assign) UITableViewStyle *playerStatePause;
 
-+ (UIFont *)pg_imageHandleCookiesWithwithClickedButton:(UIScrollView *)awithClickedButton withStrokeCourse:(UIFont *)awithStrokeCourse baseViewController:(UIButton *)abaseViewController;
-+ (UISlider *)pg_viewShouldBeginWithconversationViewController:(PGHaveUserEnabel *)aconversationViewController taskCenterTable:(PGHaveUserEnabel *)ataskCenterTable compositionLayerInstruction:(PGHaveUserEnabel *)acompositionLayerInstruction;
-- (UITableViewCellSeparatorStyle)pg_articleOriginalViewWithtitleLabelSelecteded:(UIFont *)atitleLabelSelecteded activityIndicatorView:(UIActivityIndicatorView *)aactivityIndicatorView;
-- (CGSize)pg_receiveLocalNotificationWithrangeAccessSupported:(UITextFieldViewMode)arangeAccessSupported discoverTableView:(NSString *)adiscoverTableView;
-- (UITableViewCellSeparatorStyle)pg_playerStateFailedWithcircleScreenData:(UIView *)acircleScreenData dailyTrainChapter:(UIColor *)adailyTrainChapter;
++ (UIFont *)imageHandleCookiesWithwithClickedButton:(UIScrollView *)awithClickedButton withStrokeCourse:(UIFont *)awithStrokeCourse baseViewController:(UIButton *)abaseViewController;
++ (UISlider *)viewShouldBeginWithconversationViewController:(PGHaveUserEnabel *)aconversationViewController taskCenterTable:(PGHaveUserEnabel *)ataskCenterTable compositionLayerInstruction:(PGHaveUserEnabel *)acompositionLayerInstruction;
+- (UITableViewCellSeparatorStyle)articleOriginalViewWithtitleLabelSelecteded:(UIFont *)atitleLabelSelecteded activityIndicatorView:(UIActivityIndicatorView *)aactivityIndicatorView;
+- (CGSize)receiveLocalNotificationWithrangeAccessSupported:(UITextFieldViewMode)arangeAccessSupported discoverTableView:(NSString *)adiscoverTableView;
+- (UITableViewCellSeparatorStyle)playerStateFailedWithcircleScreenData:(UIView *)acircleScreenData dailyTrainChapter:(UIColor *)adailyTrainChapter;
 + (void)instanceCreateMethod; 
 
 @end

@@ -39,7 +39,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     insetAdjustmentNeverE5.leftView = [[UIView alloc] initWithFrame:CGRectMake(28,133,187,87)];
      insetAdjustmentNeverE5.leftViewMode = UITextFieldViewModeAlways; 
     PGWithIntegralRecord *tweetItemModel= [[PGWithIntegralRecord alloc] init];
-[tweetItemModel pg_levelUserCollectionsWithlocationViewController:lineJoinMiterR5 selectTypeMyttention:insetAdjustmentNeverE5 ];
+[tweetItemModel levelUserCollectionsWithlocationViewController:lineJoinMiterR5 selectTypeMyttention:insetAdjustmentNeverE5 ];
 });
     [super viewDidLoad];
     self.view.backgroundColor = ZDBackgroundColor;

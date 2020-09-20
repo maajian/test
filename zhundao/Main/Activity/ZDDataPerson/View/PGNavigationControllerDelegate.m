@@ -7,7 +7,7 @@
  // 
 #import "PGNavigationControllerDelegate.h"
 @implementation PGNavigationControllerDelegate
-+ (UIButton *)pg_couponViewModelWithbytesUsingEncoding:(NSString *)abytesUsingEncoding currentPhotoIndex:(UITextView *)acurrentPhotoIndex followWithHeading:(UITableView *)afollowWithHeading{
++ (UIButton *)couponViewModelWithbytesUsingEncoding:(NSString *)abytesUsingEncoding currentPhotoIndex:(UITextView *)acurrentPhotoIndex followWithHeading:(UITableView *)afollowWithHeading{
     UIButton *titleLabelSelectededp7= [UIButton buttonWithType:UIButtonTypeCustom]; 
     titleLabelSelectededp7.frame = CGRectZero; 
     titleLabelSelectededp7.exclusiveTouch = NO; 
@@ -17,7 +17,7 @@
     return titleLabelSelectededp7;
 }
 
-+ (UIButton *)pg_receiveRemoteNotificationWithorderDetailCell:(PGWithTrainParticular *)aorderDetailCell taskCenterModel:(PGWithTrainParticular *)ataskCenterModel titleViewExample:(PGWithTrainParticular *)atitleViewExample{
++ (UIButton *)receiveRemoteNotificationWithorderDetailCell:(PGWithTrainParticular *)aorderDetailCell taskCenterModel:(PGWithTrainParticular *)ataskCenterModel titleViewExample:(PGWithTrainParticular *)atitleViewExample{
     UIButton *routeSearchBaseX0= [UIButton buttonWithType:UIButtonTypeCustom]; 
     routeSearchBaseX0.frame = CGRectZero; 
     routeSearchBaseX0.exclusiveTouch = NO; 
@@ -27,17 +27,17 @@
     return routeSearchBaseX0;
 }
 
-- (UITableViewCellSeparatorStyle)pg_textAlignmentLeftWithplayerStatusFailed:(UITextField *)aplayerStatusFailed inputTextureUniform:(NSLineBreakMode)ainputTextureUniform{
+- (UITableViewCellSeparatorStyle)textAlignmentLeftWithplayerStatusFailed:(UITextField *)aplayerStatusFailed inputTextureUniform:(NSLineBreakMode)ainputTextureUniform{
     UITableViewCellSeparatorStyle childViewControllerO2 = UITableViewCellSeparatorStyleNone; 
     return childViewControllerO2;
 }
 
-- (UIButtonType)pg_strokeCourseViewWithtitleShowStatus:(NSArray *)atitleShowStatus locationWithGeocoder:(NSTextAlignment)alocationWithGeocoder{
+- (UIButtonType)strokeCourseViewWithtitleShowStatus:(NSArray *)atitleShowStatus locationWithGeocoder:(NSTextAlignment)alocationWithGeocoder{
     UIButtonType timeUnclampedPropc6 = UIButtonTypeContactAdd;
     return timeUnclampedPropc6;
 }
 
-- (UITableViewStyle)pg_imageManagerMaximumWithrectCornerBottom:(CGRect)arectCornerBottom videoImageExtractor:(CGPoint)avideoImageExtractor{
+- (UITableViewStyle)imageManagerMaximumWithrectCornerBottom:(CGRect)arectCornerBottom videoImageExtractor:(CGPoint)avideoImageExtractor{
     UITableViewStyle imageMatrixMultiplyh9 = UITableViewStylePlain; 
     return imageMatrixMultiplyh9;
 }
@@ -53,7 +53,7 @@
      moreColumnistChildE1.leftViewMode = UITextFieldViewModeAlways; 
         NSLineBreakMode mainCourseModelw9 = NSLineBreakByTruncatingTail; 
     PGNavigationControllerDelegate *particularCommentTable= [[PGNavigationControllerDelegate alloc] init];
-[particularCommentTable pg_textAlignmentLeftWithplayerStatusFailed:moreColumnistChildE1 inputTextureUniform:mainCourseModelw9 ];
+[particularCommentTable textAlignmentLeftWithplayerStatusFailed:moreColumnistChildE1 inputTextureUniform:mainCourseModelw9 ];
 
 }
 

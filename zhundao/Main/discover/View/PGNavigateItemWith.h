@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *statusWithBlock;
 @property (nonatomic, readwrite, assign) UIButtonType *titleLabelSelecteded;
 
-+ (UISlider *)pg_fieldShouldBeginWithsliderTouchBegan:(UIFont *)asliderTouchBegan pickerCollectionView:(UIImageView *)apickerCollectionView trackingWithTouch:(UIFont *)atrackingWithTouch;
-+ (UITextField *)pg_couponsInfoDataWithprogressTypeNone:(PGPointerFunctionsStrong *)aprogressTypeNone pressEmojiAction:(PGPointerFunctionsStrong *)apressEmojiAction lineBreakMode:(PGPointerFunctionsStrong *)alineBreakMode;
-- (CGPoint)pg_integralRecordDataWithstartCameraCapture:(NSLineBreakMode)astartCameraCapture saveEmojiArray:(UITextField *)asaveEmojiArray;
-- (CGSize)pg_playerStateFailedWithplayerStatePause:(CGSize)aplayerStatePause effectThumbImage:(CGRect)aeffectThumbImage;
-- (NSTextAlignment)pg_affineTransformTranslateWithorderGroupCell:(UIButton *)aorderGroupCell timeRangeFrom:(UIActivityIndicatorView *)atimeRangeFrom;
++ (UISlider *)fieldShouldBeginWithsliderTouchBegan:(UIFont *)asliderTouchBegan pickerCollectionView:(UIImageView *)apickerCollectionView trackingWithTouch:(UIFont *)atrackingWithTouch;
++ (UITextField *)couponsInfoDataWithprogressTypeNone:(PGPointerFunctionsStrong *)aprogressTypeNone pressEmojiAction:(PGPointerFunctionsStrong *)apressEmojiAction lineBreakMode:(PGPointerFunctionsStrong *)alineBreakMode;
+- (CGPoint)integralRecordDataWithstartCameraCapture:(NSLineBreakMode)astartCameraCapture saveEmojiArray:(UITextField *)asaveEmojiArray;
+- (CGSize)playerStateFailedWithplayerStatePause:(CGSize)aplayerStatePause effectThumbImage:(CGRect)aeffectThumbImage;
+- (NSTextAlignment)affineTransformTranslateWithorderGroupCell:(UIButton *)aorderGroupCell timeRangeFrom:(UIActivityIndicatorView *)atimeRangeFrom;
 + (void)instanceCreateMethod; 
 
 @end

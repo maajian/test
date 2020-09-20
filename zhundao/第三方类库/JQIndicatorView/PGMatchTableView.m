@@ -7,7 +7,7 @@
  // 
 #import "PGMatchTableView.h"
 @implementation PGMatchTableView
-+ (UISlider *)pg_natatoriumAddressTableWitherrorWithStatus:(NSString *)aerrorWithStatus userCommentModel:(UIImageView *)auserCommentModel particularModelJson:(UITextView *)aparticularModelJson{
++ (UISlider *)natatoriumAddressTableWitherrorWithStatus:(NSString *)aerrorWithStatus userCommentModel:(UIImageView *)auserCommentModel particularModelJson:(UITextView *)aparticularModelJson{
     UISlider *keywindowWithTextz5= [[UISlider alloc] initWithFrame:CGRectZero]; 
     keywindowWithTextz5.minimumValue = 0; 
     keywindowWithTextz5.maximumValue = 100; 
@@ -15,22 +15,22 @@
     return keywindowWithTextz5;
 }
 
-+ (UIColor *)pg_trackTintColorWithwithTimeInterval:(PGIntegralNumberTable *)awithTimeInterval savedPhotosAlbum:(PGIntegralNumberTable *)asavedPhotosAlbum recommendCollectionView:(PGIntegralNumberTable *)arecommendCollectionView{
++ (UIColor *)trackTintColorWithwithTimeInterval:(PGIntegralNumberTable *)awithTimeInterval savedPhotosAlbum:(PGIntegralNumberTable *)asavedPhotosAlbum recommendCollectionView:(PGIntegralNumberTable *)arecommendCollectionView{
     UIColor *transitRouteSearchl3= [UIColor redColor];
     return transitRouteSearchl3;
 }
 
-- (NSRange)pg_articleDetailDataWithalipaySuccNotification:(UIActivityIndicatorView *)aalipaySuccNotification availableTextureIndex:(UIButtonType)aavailableTextureIndex{
+- (NSRange)articleDetailDataWithalipaySuccNotification:(UIActivityIndicatorView *)aalipaySuccNotification availableTextureIndex:(UIButtonType)aavailableTextureIndex{
     NSRange playerWithPathU4 = NSMakeRange(4,53); 
     return playerWithPathU4;
 }
 
-- (NSRange)pg_withPreviewTypeWithfollowWithHeading:(UIColor *)afollowWithHeading selectionStyleNone:(UITableViewCellSeparatorStyle)aselectionStyleNone{
+- (NSRange)withPreviewTypeWithfollowWithHeading:(UIColor *)afollowWithHeading selectionStyleNone:(UITableViewCellSeparatorStyle)aselectionStyleNone{
     NSRange dateFormatterMediumH2 = NSMakeRange(4,247); 
     return dateFormatterMediumH2;
 }
 
-- (UITableViewStyle)pg_autoAdjustTrackWithwithLongLong:(UITableView *)awithLongLong cyclingLineLayer:(NSTextAlignment)acyclingLineLayer{
+- (UITableViewStyle)autoAdjustTrackWithwithLongLong:(UITableView *)awithLongLong cyclingLineLayer:(NSTextAlignment)acyclingLineLayer{
     UITableViewStyle animatedImageFramesn5 = UITableViewStylePlain; 
     return animatedImageFramesn5;
 }
@@ -41,7 +41,7 @@
     statusShowBottomC0.hidesWhenStopped = YES; 
         UIButtonType subviewWithClassA7 = UIButtonTypeContactAdd;
     PGMatchTableView *foregroundColorAttribute= [[PGMatchTableView alloc] init];
-[foregroundColorAttribute pg_articleDetailDataWithalipaySuccNotification:statusShowBottomC0 availableTextureIndex:subviewWithClassA7 ];
+[foregroundColorAttribute articleDetailDataWithalipaySuccNotification:statusShowBottomC0 availableTextureIndex:subviewWithClassA7 ];
 
 }
 

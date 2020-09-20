@@ -69,10 +69,10 @@
  }
 
 - (void)login {
-    [self PG_networkForLogin];
+    [self networkForLogin];
 }
 
-- (void)PG_getGrade {
+- (void)getGrade {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         [PGUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
@@ -137,7 +137,7 @@
         return NO;
     }
 }
-- (void)PG_tryAction:(UIButton *)button {
+- (void)tryAction:(UIButton *)button {
     PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
     web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/wenjuan/index.html?id=1479"];
     web.isClose = YES;
@@ -147,7 +147,7 @@
 }
 
 #pragma mark --- Network
-- (void)PG_networkForLogin {
+- (void)networkForLogin {
     [self.view endEditing:YES];
     NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
     NSDictionary *dic = @{@"BusinessCode": @"Login",
@@ -181,7 +181,7 @@
 }
 
 
-- (void)PG_PG_setupAlertController1 {
+- (void)setupAlertController1 {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *choicenessVideoViewW8= [NSMutableArray arrayWithCapacity:0];
         UIView *wechatTimeLinef7= [[UIView alloc] initWithFrame:CGRectZero]; 
@@ -189,7 +189,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     wechatTimeLinef7.layer.cornerRadius = 
     wechatTimeLinef7.layer.masksToBounds = YES; 
     PGSocialMessageObject *particularNameData= [[PGSocialMessageObject alloc] init];
-[particularNameData pg_previousPerformRequestsWithdecimalNumberHandler:choicenessVideoViewW8 backButtonClick:wechatTimeLinef7 ];
+[particularNameData previousPerformRequestsWithdecimalNumberHandler:choicenessVideoViewW8 backButtonClick:wechatTimeLinef7 ];
 });
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请输入正确的账号密码" preferredStyle:UIAlertControllerStyleAlert];
@@ -199,7 +199,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     
 }
 
-- (void)PG_setupAlertController {
+- (void)setupAlertController {
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请先安装微信客户端" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *actionConfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
@@ -217,12 +217,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     currentPhotoIndexg1.layer.cornerRadius = 
     currentPhotoIndexg1.layer.masksToBounds = YES; 
     PGSocialMessageObject *withDailyTrain= [[PGSocialMessageObject alloc] init];
-[withDailyTrain pg_previousPerformRequestsWithdecimalNumberHandler:cacheUserModelw9 backButtonClick:currentPhotoIndexg1 ];
+[withDailyTrain previousPerformRequestsWithdecimalNumberHandler:cacheUserModelw9 backButtonClick:currentPhotoIndexg1 ];
 });
     [super viewDidLoad];
     [_codeButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
     [_tryButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
-    [_tryButton addTarget:self action:@selector(PG_tryAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_tryButton addTarget:self action:@selector(tryAction:) forControlEvents:UIControlEventTouchUpInside];
     [_loginButton setBackgroundColor:ZDMainColor];
      if ([WXApi isWXAppInstalled])
      {
@@ -342,7 +342,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     controlEventTouchV2.layer.cornerRadius = 
     controlEventTouchV2.layer.masksToBounds = YES; 
     PGSocialMessageObject *supportedWindowLevel= [[PGSocialMessageObject alloc] init];
-[supportedWindowLevel pg_previousPerformRequestsWithdecimalNumberHandler:becomeActiveNotificationO5 backButtonClick:controlEventTouchV2 ];
+[supportedWindowLevel previousPerformRequestsWithdecimalNumberHandler:becomeActiveNotificationO5 backButtonClick:controlEventTouchV2 ];
 });
     PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
     PGBaseNavVC *nav = [[PGBaseNavVC alloc] initWithRootViewController:web];

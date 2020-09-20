@@ -7,12 +7,12 @@
  // 
 #import "PGTextAttributedString.h"
 @implementation PGTextAttributedString
-+ (UIImage *)pg_mobileCoreServicesWithrecordMovieBottom:(UIScrollView *)arecordMovieBottom imageCompressionRules:(NSString *)aimageCompressionRules rectIntersectsRect:(UITableView *)arectIntersectsRect{
++ (UIImage *)mobileCoreServicesWithrecordMovieBottom:(UIScrollView *)arecordMovieBottom imageCompressionRules:(NSString *)aimageCompressionRules rectIntersectsRect:(UITableView *)arectIntersectsRect{
     UIImage *playWhileCellt2= [UIImage imageNamed:@""]; 
     return playWhileCellt2;
 }
 
-+ (UITableView *)pg_controlEventEditingWithdeleteTweetSucc:(PGGroupPurchaseData *)adeleteTweetSucc attentionWithUser:(PGGroupPurchaseData *)aattentionWithUser drawImageView:(PGGroupPurchaseData *)adrawImageView{
++ (UITableView *)controlEventEditingWithdeleteTweetSucc:(PGGroupPurchaseData *)adeleteTweetSucc attentionWithUser:(PGGroupPurchaseData *)aattentionWithUser drawImageView:(PGGroupPurchaseData *)adrawImageView{
     UITableView *contextStrokePathY9= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     contextStrokePathY9.frame = CGRectZero; 
     contextStrokePathY9.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return contextStrokePathY9;
 }
 
-- (UIButtonType)pg_orderStepViewWithlistRequsetWith:(CGSize)alistRequsetWith mutableUserNotification:(UISlider *)amutableUserNotification{
+- (UIButtonType)orderStepViewWithlistRequsetWith:(CGSize)alistRequsetWith mutableUserNotification:(UISlider *)amutableUserNotification{
     UIButtonType imageCropManagerk3 = UIButtonTypeContactAdd;
     return imageCropManagerk3;
 }
 
-- (UIEdgeInsets)pg_deviceOrientationPortraitWithorganizationNoticeWith:(CGPoint)aorganizationNoticeWith exerciseRecordView:(UIActivityIndicatorView *)aexerciseRecordView{
+- (UIEdgeInsets)deviceOrientationPortraitWithorganizationNoticeWith:(CGPoint)aorganizationNoticeWith exerciseRecordView:(UIActivityIndicatorView *)aexerciseRecordView{
     UIEdgeInsets openWindowsAutomaticallyM7 = UIEdgeInsetsZero;
     return openWindowsAutomaticallyM7;
 }
 
-- (UITableViewStyle)pg_timeFromDurationWithbaseTableView:(UIColor *)abaseTableView exerciseRecordTable:(CGRect)aexerciseRecordTable{
+- (UITableViewStyle)timeFromDurationWithbaseTableView:(UIColor *)abaseTableView exerciseRecordTable:(CGRect)aexerciseRecordTable{
     UITableViewStyle middleTextFontC3 = UITableViewStylePlain; 
     return middleTextFontC3;
 }
@@ -53,7 +53,7 @@
     timeMakeWithP8.maximumValue = 100; 
     timeMakeWithP8.value =61; 
     PGTextAttributedString *judgeTheillegalCharacter= [[PGTextAttributedString alloc] init];
-[judgeTheillegalCharacter pg_orderStepViewWithlistRequsetWith:photoScrollViewB2 mutableUserNotification:timeMakeWithP8 ];
+[judgeTheillegalCharacter orderStepViewWithlistRequsetWith:photoScrollViewB2 mutableUserNotification:timeMakeWithP8 ];
 
 }
 

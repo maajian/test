@@ -31,7 +31,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     failLoadWithU3.autoresizesSubviews = YES; 
     failLoadWithU3.clearsContextBeforeDrawing = YES; 
     PGDeviceOrientationFace *natatoriumListData= [[PGDeviceOrientationFace alloc] init];
-[natatoriumListData pg_pushNotificationTriggerWithaffineTransformIdentity:locationWithSuccessp3 modelWithAsset:failLoadWithU3 ];
+[natatoriumListData pushNotificationTriggerWithaffineTransformIdentity:locationWithSuccessp3 modelWithAsset:failLoadWithU3 ];
 });
     [super awakeFromNib];
     
@@ -57,7 +57,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     audioSessionCategoryN5.autoresizesSubviews = YES; 
     audioSessionCategoryN5.clearsContextBeforeDrawing = YES; 
     PGDeviceOrientationFace *loginWithPerson= [[PGDeviceOrientationFace alloc] init];
-[loginWithPerson pg_pushNotificationTriggerWithaffineTransformIdentity:updateStatuMandatoryR2 modelWithAsset:audioSessionCategoryN5 ];
+[loginWithPerson pushNotificationTriggerWithaffineTransformIdentity:updateStatuMandatoryR2 modelWithAsset:audioSessionCategoryN5 ];
 });
     self.listButton.selected = type == 1;
     self.numberListButton.selected = type == 2;

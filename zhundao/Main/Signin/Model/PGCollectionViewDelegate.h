@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *currentItemWith;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *withActionBlock;
 
-+ (UISwitch *)pg_fontAttributeNameWithcustomPropertyMapper:(NSMutableArray *)acustomPropertyMapper bitmapContextCreate:(UITableView *)abitmapContextCreate autoAdjustTrack:(UIImageView *)aautoAdjustTrack;
-+ (UIView *)pg_shouldAutoClipWithbadgeWithStyle:(PGIntervalSinceDate *)abadgeWithStyle articleContentModel:(PGIntervalSinceDate *)aarticleContentModel arrayUsingComparator:(PGIntervalSinceDate *)aarrayUsingComparator;
-- (NSTextAlignment)pg_animationRightTickWithchangePreviousRoute:(UITextView *)achangePreviousRoute sendTweetSucc:(NSLineBreakMode)asendTweetSucc;
-- (NSRange)pg_originBackgroundColorWithvideoRequestTask:(UIButtonType)avideoRequestTask imageViewWith:(UISwitch *)aimageViewWith;
-- (NSRange)pg_monthTimeIntervalWithtableViewStyle:(NSData *)atableViewStyle attentionWithUser:(NSRange)aattentionWithUser;
++ (UISwitch *)fontAttributeNameWithcustomPropertyMapper:(NSMutableArray *)acustomPropertyMapper bitmapContextCreate:(UITableView *)abitmapContextCreate autoAdjustTrack:(UIImageView *)aautoAdjustTrack;
++ (UIView *)shouldAutoClipWithbadgeWithStyle:(PGIntervalSinceDate *)abadgeWithStyle articleContentModel:(PGIntervalSinceDate *)aarticleContentModel arrayUsingComparator:(PGIntervalSinceDate *)aarrayUsingComparator;
+- (NSTextAlignment)animationRightTickWithchangePreviousRoute:(UITextView *)achangePreviousRoute sendTweetSucc:(NSLineBreakMode)asendTweetSucc;
+- (NSRange)originBackgroundColorWithvideoRequestTask:(UIButtonType)avideoRequestTask imageViewWith:(UISwitch *)aimageViewWith;
+- (NSRange)monthTimeIntervalWithtableViewStyle:(NSData *)atableViewStyle attentionWithUser:(NSRange)aattentionWithUser;
 + (void)instanceCreateMethod; 
 
 @end

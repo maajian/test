@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *swimCircleItem;
 @property (nonatomic, readwrite, assign) UITableViewStyle *groupWithVideos;
 
-+ (UITextView *)pg_attentionViewModelWithmedalDetailCell:(UIFont *)amedalDetailCell linkViewModel:(UIFont *)alinkViewModel showingPhotoView:(UIView *)ashowingPhotoView;
-+ (UILabel *)pg_backgroundLocationUpdatesWithauthorizationOptionAlert:(PGUpdateUserLocation *)aauthorizationOptionAlert rankMedalInfo:(PGUpdateUserLocation *)arankMedalInfo imageSharpenFilter:(PGUpdateUserLocation *)aimageSharpenFilter;
-- (NSLineBreakMode)pg_playerWithPathWithcouseFinishAlert:(UIButtonType)acouseFinishAlert downLoadData:(CGSize)adownLoadData;
-- (UIButtonType)pg_wechatTimeLineWithshowFullButton:(UIImageView *)ashowFullButton replayUserNick:(UIEdgeInsets)areplayUserNick;
-- (NSLineBreakMode)pg_currentViewControllerWithswimRecordData:(UIColor *)aswimRecordData discountCouponView:(UIView *)adiscountCouponView;
++ (UITextView *)attentionViewModelWithmedalDetailCell:(UIFont *)amedalDetailCell linkViewModel:(UIFont *)alinkViewModel showingPhotoView:(UIView *)ashowingPhotoView;
++ (UILabel *)backgroundLocationUpdatesWithauthorizationOptionAlert:(PGUpdateUserLocation *)aauthorizationOptionAlert rankMedalInfo:(PGUpdateUserLocation *)arankMedalInfo imageSharpenFilter:(PGUpdateUserLocation *)aimageSharpenFilter;
+- (NSLineBreakMode)playerWithPathWithcouseFinishAlert:(UIButtonType)acouseFinishAlert downLoadData:(CGSize)adownLoadData;
+- (UIButtonType)wechatTimeLineWithshowFullButton:(UIImageView *)ashowFullButton replayUserNick:(UIEdgeInsets)areplayUserNick;
+- (NSLineBreakMode)currentViewControllerWithswimRecordData:(UIColor *)aswimRecordData discountCouponView:(UIView *)adiscountCouponView;
 + (void)instanceCreateMethod; 
 
 @end

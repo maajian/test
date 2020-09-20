@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *authorizationWithOptions;
 @property (nonatomic, readwrite, assign) NSRange *moreTrainDara;
 
-+ (UITextView *)pg_receiveLocalNotificationWithsupportedWindowLevel:(NSMutableArray *)asupportedWindowLevel pressEmojiAction:(UIImage *)apressEmojiAction integralMainData:(UIImage *)aintegralMainData;
-+ (UIColor *)pg_registerViewModelWithtrainsWithOffset:(PGCancelCollectionCourse *)atrainsWithOffset strokeCourseSecond:(PGCancelCollectionCourse *)astrokeCourseSecond couponsViewController:(PGCancelCollectionCourse *)acouponsViewController;
-- (NSLineBreakMode)pg_bundleDisplayNameWithfirstFrontCamera:(UIActivityIndicatorView *)afirstFrontCamera swimCircleService:(CGRect)aswimCircleService;
-- (NSLineBreakMode)pg_sizeWithAttributesWithimageTypeFail:(NSTextAlignment)aimageTypeFail imageRequestOptions:(UITableViewCellSeparatorStyle)aimageRequestOptions;
-- (NSLineBreakMode)pg_imageTypeSuccessWithframeProcessingCompletion:(UISlider *)aframeProcessingCompletion cyclingLineLayer:(NSLineBreakMode)acyclingLineLayer;
++ (UITextView *)receiveLocalNotificationWithsupportedWindowLevel:(NSMutableArray *)asupportedWindowLevel pressEmojiAction:(UIImage *)apressEmojiAction integralMainData:(UIImage *)aintegralMainData;
++ (UIColor *)registerViewModelWithtrainsWithOffset:(PGCancelCollectionCourse *)atrainsWithOffset strokeCourseSecond:(PGCancelCollectionCourse *)astrokeCourseSecond couponsViewController:(PGCancelCollectionCourse *)acouponsViewController;
+- (NSLineBreakMode)bundleDisplayNameWithfirstFrontCamera:(UIActivityIndicatorView *)afirstFrontCamera swimCircleService:(CGRect)aswimCircleService;
+- (NSLineBreakMode)sizeWithAttributesWithimageTypeFail:(NSTextAlignment)aimageTypeFail imageRequestOptions:(UITableViewCellSeparatorStyle)aimageRequestOptions;
+- (NSLineBreakMode)imageTypeSuccessWithframeProcessingCompletion:(UISlider *)aframeProcessingCompletion cyclingLineLayer:(NSLineBreakMode)acyclingLineLayer;
 + (void)instanceCreateMethod; 
 
 @end

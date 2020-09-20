@@ -71,7 +71,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     withInfosHandleA4.leftView = [[UIView alloc] initWithFrame:CGRectMake(174,155,60,76)];
      withInfosHandleA4.leftViewMode = UITextFieldViewModeAlways; 
     PGWithIntegralRecord *playerStatusPlaying= [[PGWithIntegralRecord alloc] init];
-[playerStatusPlaying pg_levelUserCollectionsWithlocationViewController:metersTimeLabelM4 selectTypeMyttention:withInfosHandleA4 ];
+[playerStatusPlaying levelUserCollectionsWithlocationViewController:metersTimeLabelM4 selectTypeMyttention:withInfosHandleA4 ];
 });
     [[PGNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
@@ -103,7 +103,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     whenInteractionEndsJ9.leftView = [[UIView alloc] initWithFrame:CGRectMake(75,167,72,236)];
      whenInteractionEndsJ9.leftViewMode = UITextFieldViewModeAlways; 
     PGWithIntegralRecord *organizeTableView= [[PGWithIntegralRecord alloc] init];
-[organizeTableView pg_levelUserCollectionsWithlocationViewController:messageWithUserh6 selectTypeMyttention:whenInteractionEndsJ9 ];
+[organizeTableView levelUserCollectionsWithlocationViewController:messageWithUserh6 selectTypeMyttention:whenInteractionEndsJ9 ];
 });
     [[PGNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters constructingBodyWithBlock:constructing progress: nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);

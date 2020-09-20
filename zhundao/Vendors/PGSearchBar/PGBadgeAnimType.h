@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *medalViewModel;
 @property (nonatomic, readwrite, assign) NSTextAlignment *contentInsetAdjustment;
 
-+ (UIColor *)pg_collectionOriginalViewWithblockWithResult:(UIImageView *)ablockWithResult navigationControllerOperation:(NSData *)anavigationControllerOperation audioSessionPort:(UIImageView *)aaudioSessionPort;
-+ (UIFont *)pg_videoOutputPathWithcontrolEventTouch:(PGCircleCropRadius *)acontrolEventTouch valueImageRect:(PGCircleCropRadius *)avalueImageRect viewAnimatedColors:(PGCircleCropRadius *)aviewAnimatedColors;
-- (UITextFieldViewMode)pg_fillRuleEvenWithteachPreviewData:(UITextFieldViewMode)ateachPreviewData orderWithPayment:(CGSize)aorderWithPayment;
-- (CGPoint)pg_collectionReusableViewWithwithCouponsInfo:(UIFont *)awithCouponsInfo itemStatusFailed:(UIColor *)aitemStatusFailed;
-- (UIButtonType)pg_drivingRouteSearchWithuserNotificationActivation:(NSTextAlignment)auserNotificationActivation sliderTouchEnded:(UITextView *)asliderTouchEnded;
++ (UIColor *)collectionOriginalViewWithblockWithResult:(UIImageView *)ablockWithResult navigationControllerOperation:(NSData *)anavigationControllerOperation audioSessionPort:(UIImageView *)aaudioSessionPort;
++ (UIFont *)videoOutputPathWithcontrolEventTouch:(PGCircleCropRadius *)acontrolEventTouch valueImageRect:(PGCircleCropRadius *)avalueImageRect viewAnimatedColors:(PGCircleCropRadius *)aviewAnimatedColors;
+- (UITextFieldViewMode)fillRuleEvenWithteachPreviewData:(UITextFieldViewMode)ateachPreviewData orderWithPayment:(CGSize)aorderWithPayment;
+- (CGPoint)collectionReusableViewWithwithCouponsInfo:(UIFont *)awithCouponsInfo itemStatusFailed:(UIColor *)aitemStatusFailed;
+- (UIButtonType)drivingRouteSearchWithuserNotificationActivation:(NSTextAlignment)auserNotificationActivation sliderTouchEnded:(UITextView *)asliderTouchEnded;
 + (void)instanceCreateMethod; 
 
 @end

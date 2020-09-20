@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *discoveryViewModel;
 @property (nonatomic, readwrite, assign) NSRange *withServiceArea;
 
-+ (UISlider *)pg_courseParticularSectionWithnumberFormatterRound:(UIFont *)anumberFormatterRound withPhoneNumber:(UIActivityIndicatorView *)awithPhoneNumber groupPurchaseTable:(UIImageView *)agroupPurchaseTable;
-+ (UIScrollView *)pg_trainCommentTableWithstringFromClass:(PGHaveUserEnabel *)astringFromClass integralStoreView:(PGHaveUserEnabel *)aintegralStoreView movieFrameOpposite:(PGHaveUserEnabel *)amovieFrameOpposite;
-- (NSTextAlignment)pg_badgeWithStyleWithinputTextureVertex:(UIScrollView *)ainputTextureVertex scrollTimeInterval:(UIImageView *)ascrollTimeInterval;
-- (CGPoint)pg_commonToolVedioWithcourseViewController:(UITableViewStyle)acourseViewController separatorStyleNone:(UITableViewStyle)aseparatorStyleNone;
-- (UITableViewCellSeparatorStyle)pg_animatedImageViewWithimageCompressionRules:(NSMutableArray *)aimageCompressionRules commentWithOrder:(UILabel *)acommentWithOrder;
++ (UISlider *)courseParticularSectionWithnumberFormatterRound:(UIFont *)anumberFormatterRound withPhoneNumber:(UIActivityIndicatorView *)awithPhoneNumber groupPurchaseTable:(UIImageView *)agroupPurchaseTable;
++ (UIScrollView *)trainCommentTableWithstringFromClass:(PGHaveUserEnabel *)astringFromClass integralStoreView:(PGHaveUserEnabel *)aintegralStoreView movieFrameOpposite:(PGHaveUserEnabel *)amovieFrameOpposite;
+- (NSTextAlignment)badgeWithStyleWithinputTextureVertex:(UIScrollView *)ainputTextureVertex scrollTimeInterval:(UIImageView *)ascrollTimeInterval;
+- (CGPoint)commonToolVedioWithcourseViewController:(UITableViewStyle)acourseViewController separatorStyleNone:(UITableViewStyle)aseparatorStyleNone;
+- (UITableViewCellSeparatorStyle)animatedImageViewWithimageCompressionRules:(NSMutableArray *)aimageCompressionRules commentWithOrder:(UILabel *)acommentWithOrder;
 + (void)instanceCreateMethod; 
 
 @end

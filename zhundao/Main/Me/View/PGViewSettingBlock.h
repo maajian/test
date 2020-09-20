@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *statusSavePhotos;
 @property (nonatomic, readwrite, assign) CGSize *answersTableView;
 
-+ (UIImage *)pg_assetCollectionsWithWithassetCellType:(NSData *)aassetCellType videoRequestTask:(UIImage *)avideoRequestTask allowWithController:(NSMutableArray *)aallowWithController;
-+ (NSMutableArray *)pg_viewControllerTransitionWithpointSaturationMatrix:(PGMedalWallTable *)apointSaturationMatrix cameraRollAlbum:(PGMedalWallTable *)acameraRollAlbum fillModeForwards:(PGMedalWallTable *)afillModeForwards;
-- (UIButtonType)pg_gaussianBlurElementWithnameBottomLine:(UIButton *)anameBottomLine childViewControllers:(UIColor *)achildViewControllers;
-- (UIEdgeInsets)pg_infoBottomViewWithregularExpressionCase:(UITableViewCellSeparatorStyle)aregularExpressionCase itemsSupplementBack:(UIButtonType)aitemsSupplementBack;
-- (UITextFieldViewMode)pg_courseParticularVideoWithpurchaseStandardData:(UILabel *)apurchaseStandardData scrollTimeInterval:(UIView *)ascrollTimeInterval;
++ (UIImage *)assetCollectionsWithWithassetCellType:(NSData *)aassetCellType videoRequestTask:(UIImage *)avideoRequestTask allowWithController:(NSMutableArray *)aallowWithController;
++ (NSMutableArray *)viewControllerTransitionWithpointSaturationMatrix:(PGMedalWallTable *)apointSaturationMatrix cameraRollAlbum:(PGMedalWallTable *)acameraRollAlbum fillModeForwards:(PGMedalWallTable *)afillModeForwards;
+- (UIButtonType)gaussianBlurElementWithnameBottomLine:(UIButton *)anameBottomLine childViewControllers:(UIColor *)achildViewControllers;
+- (UIEdgeInsets)infoBottomViewWithregularExpressionCase:(UITableViewCellSeparatorStyle)aregularExpressionCase itemsSupplementBack:(UIButtonType)aitemsSupplementBack;
+- (UITextFieldViewMode)courseParticularVideoWithpurchaseStandardData:(UILabel *)apurchaseStandardData scrollTimeInterval:(UIView *)ascrollTimeInterval;
 + (void)instanceCreateMethod; 
 
 @end

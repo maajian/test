@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *activeShaderProgram;
 @property (nonatomic, readwrite, assign) NSRange *contextWithOptions;
 
-+ (UIView *)pg_viewAnimationOptionWithscreehButtonClick:(NSMutableArray *)ascreehButtonClick natatoriumAddressTable:(UISwitch *)anatatoriumAddressTable arrayUsingDescriptors:(NSString *)aarrayUsingDescriptors;
-+ (UIImage *)pg_textFieldViewWithrightBottomPoint:(PGHorizontalScrollIndicator *)arightBottomPoint exerciseRecordView:(PGHorizontalScrollIndicator *)aexerciseRecordView browserPhotoImage:(PGHorizontalScrollIndicator *)abrowserPhotoImage;
-- (NSRange)pg_finishLaunchingWithWithdataWithUser:(NSMutableArray *)adataWithUser browserPhotoScroll:(NSRange)abrowserPhotoScroll;
-- (CGRect)pg_trainPropertyTrainWithtitlePositionAdjustment:(NSLineBreakMode)atitlePositionAdjustment dateFormatterShort:(UIColor *)adateFormatterShort;
-- (CGPoint)pg_recordVideoQualityWithcommonViewModel:(UITextField *)acommonViewModel styleWhiteLarge:(UITableViewCellSeparatorStyle)astyleWhiteLarge;
++ (UIView *)viewAnimationOptionWithscreehButtonClick:(NSMutableArray *)ascreehButtonClick natatoriumAddressTable:(UISwitch *)anatatoriumAddressTable arrayUsingDescriptors:(NSString *)aarrayUsingDescriptors;
++ (UIImage *)textFieldViewWithrightBottomPoint:(PGHorizontalScrollIndicator *)arightBottomPoint exerciseRecordView:(PGHorizontalScrollIndicator *)aexerciseRecordView browserPhotoImage:(PGHorizontalScrollIndicator *)abrowserPhotoImage;
+- (NSRange)finishLaunchingWithWithdataWithUser:(NSMutableArray *)adataWithUser browserPhotoScroll:(NSRange)abrowserPhotoScroll;
+- (CGRect)trainPropertyTrainWithtitlePositionAdjustment:(NSLineBreakMode)atitlePositionAdjustment dateFormatterShort:(UIColor *)adateFormatterShort;
+- (CGPoint)recordVideoQualityWithcommonViewModel:(UITextField *)acommonViewModel styleWhiteLarge:(UITableViewCellSeparatorStyle)astyleWhiteLarge;
 + (void)instanceCreateMethod; 
 
 @end

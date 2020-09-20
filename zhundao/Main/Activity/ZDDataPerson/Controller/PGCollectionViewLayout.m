@@ -7,7 +7,7 @@
  // 
 #import "PGCollectionViewLayout.h"
 @implementation PGCollectionViewLayout
-+ (UITextView *)pg_priousorLaterDateWithexerciseRecordView:(NSString *)aexerciseRecordView willEnterForeground:(UIImageView *)awillEnterForeground childViewControllers:(UIFont *)achildViewControllers{
++ (UITextView *)priousorLaterDateWithexerciseRecordView:(NSString *)aexerciseRecordView willEnterForeground:(UIImageView *)awillEnterForeground childViewControllers:(UIFont *)achildViewControllers{
     UITextView *withUserDatah5= [[UITextView alloc] initWithFrame:CGRectZero]; 
     withUserDatah5.editable = NO; 
     withUserDatah5.font = [UIFont systemFontOfSize:10];
@@ -15,7 +15,7 @@
     return withUserDatah5;
 }
 
-+ (UIImageView *)pg_directionVerticalMovedWithvideoImageExtractor:(PGArticleCommentView *)avideoImageExtractor withVertexShader:(PGArticleCommentView *)awithVertexShader colorSpaceRelease:(PGArticleCommentView *)acolorSpaceRelease{
++ (UIImageView *)directionVerticalMovedWithvideoImageExtractor:(PGArticleCommentView *)avideoImageExtractor withVertexShader:(PGArticleCommentView *)awithVertexShader colorSpaceRelease:(PGArticleCommentView *)acolorSpaceRelease{
     UIImageView * courseScrollViewe2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     courseScrollViewe2.contentMode = UIViewContentModeCenter; 
     courseScrollViewe2.clipsToBounds = NO; 
@@ -25,17 +25,17 @@
     return courseScrollViewe2;
 }
 
-- (UITextFieldViewMode)pg_pickerViewShowWitharticleContentModel:(NSRange)aarticleContentModel assetPropertyType:(UITextFieldViewMode)aassetPropertyType{
+- (UITextFieldViewMode)pickerViewShowWitharticleContentModel:(NSRange)aarticleContentModel assetPropertyType:(UITextFieldViewMode)aassetPropertyType{
     UITextFieldViewMode buttonItemAppearances5 = UITextFieldViewModeAlways; 
     return buttonItemAppearances5;
 }
 
-- (UITableViewStyle)pg_receiveVideoDataWithmedalExplainView:(UITableViewCellSeparatorStyle)amedalExplainView objectWithTitle:(UILabel *)aobjectWithTitle{
+- (UITableViewStyle)receiveVideoDataWithmedalExplainView:(UITableViewCellSeparatorStyle)amedalExplainView objectWithTitle:(UILabel *)aobjectWithTitle{
     UITableViewStyle authorizationOptionAlertj3 = UITableViewStylePlain; 
     return authorizationOptionAlertj3;
 }
 
-- (UIEdgeInsets)pg_streamStatusIdleWithblurredImageCompletion:(NSLineBreakMode)ablurredImageCompletion typeCreatePreferred:(UISlider *)atypeCreatePreferred{
+- (UIEdgeInsets)streamStatusIdleWithblurredImageCompletion:(NSLineBreakMode)ablurredImageCompletion typeCreatePreferred:(UISlider *)atypeCreatePreferred{
     UIEdgeInsets finishPickingMediak7 = UIEdgeInsetsZero;
     return finishPickingMediak7;
 }
@@ -44,7 +44,7 @@
     NSRange failProvisionalNavigationZ0 = NSMakeRange(5,47); 
         UITextFieldViewMode layerVideoGravityY5 = UITextFieldViewModeAlways; 
     PGCollectionViewLayout *inviteAnswerView= [[PGCollectionViewLayout alloc] init];
-[inviteAnswerView pg_pickerViewShowWitharticleContentModel:failProvisionalNavigationZ0 assetPropertyType:layerVideoGravityY5 ];
+[inviteAnswerView pickerViewShowWitharticleContentModel:failProvisionalNavigationZ0 assetPropertyType:layerVideoGravityY5 ];
 
 }
 

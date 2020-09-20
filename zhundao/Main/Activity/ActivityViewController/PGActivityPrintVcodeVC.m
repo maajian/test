@@ -28,7 +28,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint pickerViewShowR0 = CGPointZero;
         CGRect gradeUserModelt5 = CGRectZero;
     PGWithLocaleIdentifier *buttonItemAppearance= [[PGWithLocaleIdentifier alloc] init];
-[buttonItemAppearance pg_itemPhotoClickWithtrainsWithOffset:pickerViewShowR0 updateStatuMandatory:gradeUserModelt5 ];
+[buttonItemAppearance itemPhotoClickWithtrainsWithOffset:pickerViewShowR0 updateStatuMandatory:gradeUserModelt5 ];
 });
     [super viewDidLoad];
     [self baseSetting];

@@ -86,7 +86,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     videoProcessingQueueb9.autoresizesSubviews = YES; 
     videoProcessingQueueb9.clearsContextBeforeDrawing = YES; 
     PGAssetPropertyDuration *videoWithAsset= [[PGAssetPropertyDuration alloc] init];
-[videoWithAsset pg_activityListWithWithfillRuleEven:javaScriptConfirmt5 collectionViewController:videoProcessingQueueb9 ];
+[videoWithAsset activityListWithWithfillRuleEven:javaScriptConfirmt5 collectionViewController:videoProcessingQueueb9 ];
 });
     PGDiscoverCustomApplyVC *customViewCtr = [[PGDiscoverCustomApplyVC alloc]init];
 //    PGDiscoverCustomVC *custom = [[PGDiscoverCustomVC alloc] init];

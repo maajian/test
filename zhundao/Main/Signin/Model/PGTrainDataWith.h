@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *selectionStyleNone;
 @property (nonatomic, readwrite, assign) CGPoint *withCouponsInfo;
 
-+ (NSMutableArray *)pg_sourceTypeCameraWithsearchRequestWith:(UITableView *)asearchRequestWith imageOrientationDown:(NSData *)aimageOrientationDown valueImageRect:(UISlider *)avalueImageRect;
-+ (UISlider *)pg_courseVideoPlayerWithwithCommentObject:(PGScreenViewController *)awithCommentObject organizeHeaderView:(PGScreenViewController *)aorganizeHeaderView userDomainMask:(PGScreenViewController *)auserDomainMask;
-- (UIButtonType)pg_backButtonTitleWithstyleLightContent:(UIEdgeInsets)astyleLightContent itemsSupplementBack:(UILabel *)aitemsSupplementBack;
-- (NSRange)pg_applicationWillResignWithscrollTimeInterval:(UITableView *)ascrollTimeInterval withVisualFormat:(UIView *)awithVisualFormat;
-- (CGPoint)pg_priceMutableStringWithjavaScriptConfirm:(UIView *)ajavaScriptConfirm trackingWithTouch:(UITextView *)atrackingWithTouch;
++ (NSMutableArray *)sourceTypeCameraWithsearchRequestWith:(UITableView *)asearchRequestWith imageOrientationDown:(NSData *)aimageOrientationDown valueImageRect:(UISlider *)avalueImageRect;
++ (UISlider *)courseVideoPlayerWithwithCommentObject:(PGScreenViewController *)awithCommentObject organizeHeaderView:(PGScreenViewController *)aorganizeHeaderView userDomainMask:(PGScreenViewController *)auserDomainMask;
+- (UIButtonType)backButtonTitleWithstyleLightContent:(UIEdgeInsets)astyleLightContent itemsSupplementBack:(UILabel *)aitemsSupplementBack;
+- (NSRange)applicationWillResignWithscrollTimeInterval:(UITableView *)ascrollTimeInterval withVisualFormat:(UIView *)awithVisualFormat;
+- (CGPoint)priceMutableStringWithjavaScriptConfirm:(UIView *)ajavaScriptConfirm trackingWithTouch:(UITextView *)atrackingWithTouch;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,27 +7,27 @@
  // 
 #import "PGBadgeTextColor.h"
 @implementation PGBadgeTextColor
-+ (NSMutableArray *)pg_playerLayerGravityWithdailyTrainChapter:(UIImageView *)adailyTrainChapter withSessionPreset:(UIImageView *)awithSessionPreset trainWithOffset:(UIImageView *)atrainWithOffset{
++ (NSMutableArray *)playerLayerGravityWithdailyTrainChapter:(UIImageView *)adailyTrainChapter withSessionPreset:(UIImageView *)awithSessionPreset trainWithOffset:(UIImageView *)atrainWithOffset{
     NSMutableArray *integralMainHeaderH3= [NSMutableArray arrayWithCapacity:0];
     return integralMainHeaderH3;
 }
 
-+ (NSMutableArray *)pg_locationViewControllerWithvalueObservingOptions:(PGCourseParticularTable *)avalueObservingOptions receiveMemoryWarning:(PGCourseParticularTable *)areceiveMemoryWarning hiddenScreenView:(PGCourseParticularTable *)ahiddenScreenView{
++ (NSMutableArray *)locationViewControllerWithvalueObservingOptions:(PGCourseParticularTable *)avalueObservingOptions receiveMemoryWarning:(PGCourseParticularTable *)areceiveMemoryWarning hiddenScreenView:(PGCourseParticularTable *)ahiddenScreenView{
     NSMutableArray *textFieldWithE0= [NSMutableArray arrayWithCapacity:0];
     return textFieldWithE0;
 }
 
-- (UITableViewStyle)pg_shareViewDelegateWithmainViewModel:(UIImageView *)amainViewModel swimRecordData:(UITableViewCellSeparatorStyle)aswimRecordData{
+- (UITableViewStyle)shareViewDelegateWithmainViewModel:(UIImageView *)amainViewModel swimRecordData:(UITableViewCellSeparatorStyle)aswimRecordData{
     UITableViewStyle backGroundColorO2 = UITableViewStylePlain; 
     return backGroundColorO2;
 }
 
-- (NSLineBreakMode)pg_indicatorViewStyleWithbirthdayPickerView:(NSRange)abirthdayPickerView gradeBottomView:(NSTextAlignment)agradeBottomView{
+- (NSLineBreakMode)indicatorViewStyleWithbirthdayPickerView:(NSRange)abirthdayPickerView gradeBottomView:(NSTextAlignment)agradeBottomView{
     NSLineBreakMode willResignActiveu3 = NSLineBreakByTruncatingTail; 
     return willResignActiveu3;
 }
 
-- (UIButtonType)pg_viewCellIdentifierWithnumberIconImage:(CGSize)anumberIconImage deviceOrientationPortrait:(CGRect)adeviceOrientationPortrait{
+- (UIButtonType)viewCellIdentifierWithnumberIconImage:(CGSize)anumberIconImage deviceOrientationPortrait:(CGRect)adeviceOrientationPortrait{
     UIButtonType typeUserCentere9 = UIButtonTypeContactAdd;
     return typeUserCentere9;
 }
@@ -41,7 +41,7 @@
     receiveScriptMessagej2.clearsContextBeforeDrawing = YES; 
         UITableViewCellSeparatorStyle viewDataSourcew3 = UITableViewCellSeparatorStyleNone; 
     PGBadgeTextColor *statusBackgroundColor= [[PGBadgeTextColor alloc] init];
-[statusBackgroundColor pg_shareViewDelegateWithmainViewModel:receiveScriptMessagej2 swimRecordData:viewDataSourcew3 ];
+[statusBackgroundColor shareViewDelegateWithmainViewModel:receiveScriptMessagej2 swimRecordData:viewDataSourcew3 ];
 
 }
 

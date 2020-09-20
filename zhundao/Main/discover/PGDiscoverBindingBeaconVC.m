@@ -58,7 +58,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     assetResourceCreationl8.reversesTitleShadowWhenHighlighted = NO; 
     assetResourceCreationl8.frame = CGRectZero; 
     PGOrganizeListRequset *withTintColor= [[PGOrganizeListRequset alloc] init];
-[withTintColor pg_filterManagerDelegateWithconcurrentOperationCount:itemTextFontV9 scrollViewContent:assetResourceCreationl8 ];
+[withTintColor filterManagerDelegateWithconcurrentOperationCount:itemTextFontV9 scrollViewContent:assetResourceCreationl8 ];
 });
     NSString *stringValue;
     if ([metadataObjects count] >0){
@@ -148,7 +148,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     backFromFrontb7.reversesTitleShadowWhenHighlighted = NO; 
     backFromFrontb7.frame = CGRectZero; 
     PGOrganizeListRequset *tweetCommentModel= [[PGOrganizeListRequset alloc] init];
-[tweetCommentModel pg_filterManagerDelegateWithconcurrentOperationCount:withGroupPurchasen4 scrollViewContent:backFromFrontb7 ];
+[tweetCommentModel filterManagerDelegateWithconcurrentOperationCount:withGroupPurchasen4 scrollViewContent:backFromFrontb7 ];
 });
     UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     backBtn.frame = CGRectMake(10, 24, 32, 32);
@@ -193,7 +193,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     hourTimeIntervalm2.reversesTitleShadowWhenHighlighted = NO; 
     hourTimeIntervalm2.frame = CGRectZero; 
     PGOrganizeListRequset *keywindowWithText= [[PGOrganizeListRequset alloc] init];
-[keywindowWithText pg_filterManagerDelegateWithconcurrentOperationCount:withMedalKindE3 scrollViewContent:hourTimeIntervalm2 ];
+[keywindowWithText filterManagerDelegateWithconcurrentOperationCount:withMedalKindE3 scrollViewContent:hourTimeIntervalm2 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

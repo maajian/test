@@ -7,12 +7,12 @@
  // 
 #import "PGPurchaseStatusLabel.h"
 @implementation PGPurchaseStatusLabel
-+ (NSString *)pg_recommendTableViewWithnaviTitleAppearance:(NSString *)anaviTitleAppearance defaultImageName:(NSString *)adefaultImageName tweetItemModel:(UIImageView *)atweetItemModel{
++ (NSString *)recommendTableViewWithnaviTitleAppearance:(NSString *)anaviTitleAppearance defaultImageName:(NSString *)adefaultImageName tweetItemModel:(UIImageView *)atweetItemModel{
     NSString *guidePageControlR2 = @"secondeMallView";
     return guidePageControlR2;
 }
 
-+ (UITextField *)pg_refreshStateIdleWithforgotPasswordView:(PGImageViewFrame *)aforgotPasswordView lightBlackColor:(PGImageViewFrame *)alightBlackColor adjustTrackColor:(PGImageViewFrame *)aadjustTrackColor{
++ (UITextField *)refreshStateIdleWithforgotPasswordView:(PGImageViewFrame *)aforgotPasswordView lightBlackColor:(PGImageViewFrame *)alightBlackColor adjustTrackColor:(PGImageViewFrame *)aadjustTrackColor{
     UITextField *couponsViewControllerm2= [[UITextField alloc] initWithFrame:CGRectMake(80,201,49,104)]; 
     couponsViewControllerm2.clearButtonMode = UITextFieldViewModeNever; 
     couponsViewControllerm2.textColor = [UIColor whiteColor]; 
@@ -24,17 +24,17 @@
     return couponsViewControllerm2;
 }
 
-- (UITextFieldViewMode)pg_profileDataWithWithassetReferenceRestriction:(UIActivityIndicatorView *)aassetReferenceRestriction textureWithVertices:(UILabel *)atextureWithVertices{
+- (UITextFieldViewMode)profileDataWithWithassetReferenceRestriction:(UIActivityIndicatorView *)aassetReferenceRestriction textureWithVertices:(UILabel *)atextureWithVertices{
     UITextFieldViewMode listWithCityJ2 = UITextFieldViewModeAlways; 
     return listWithCityJ2;
 }
 
-- (NSLineBreakMode)pg_styleBlackOpaqueWithrecommendDiscountTable:(UIView *)arecommendDiscountTable fullScreenPlay:(CGRect)afullScreenPlay{
+- (NSLineBreakMode)styleBlackOpaqueWithrecommendDiscountTable:(UIView *)arecommendDiscountTable fullScreenPlay:(CGRect)afullScreenPlay{
     NSLineBreakMode collectionViewControllerc7 = NSLineBreakByTruncatingTail; 
     return collectionViewControllerc7;
 }
 
-- (UITableViewStyle)pg_assetResourceLoaderWithnameBottomLine:(UITextFieldViewMode)anameBottomLine videoDetailData:(UITableViewStyle)avideoDetailData{
+- (UITableViewStyle)assetResourceLoaderWithnameBottomLine:(UITextFieldViewMode)anameBottomLine videoDetailData:(UITableViewStyle)avideoDetailData{
     UITableViewStyle photoPickerAssetsk9 = UITableViewStylePlain; 
     return photoPickerAssetsk9;
 }
@@ -50,7 +50,7 @@
     stadiumViewModelo1.numberOfLines = 0; 
     stadiumViewModelo1.textAlignment = NSTextAlignmentCenter; 
     PGPurchaseStatusLabel *imageWithImage= [[PGPurchaseStatusLabel alloc] init];
-[imageWithImage pg_profileDataWithWithassetReferenceRestriction:socialShareResponsew2 textureWithVertices:stadiumViewModelo1 ];
+[imageWithImage profileDataWithWithassetReferenceRestriction:socialShareResponsew2 textureWithVertices:stadiumViewModelo1 ];
 
 }
 

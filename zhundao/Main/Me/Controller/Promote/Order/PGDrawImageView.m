@@ -7,7 +7,7 @@
  // 
 #import "PGDrawImageView.h"
 @implementation PGDrawImageView
-+ (UIImageView *)pg_assetsGroupPropertyWithrecommendUserView:(UIImage *)arecommendUserView showOrderStatus:(UIImage *)ashowOrderStatus tweetCommentData:(UITextView *)atweetCommentData{
++ (UIImageView *)assetsGroupPropertyWithrecommendUserView:(UIImage *)arecommendUserView showOrderStatus:(UIImage *)ashowOrderStatus tweetCommentData:(UITextView *)atweetCommentData{
     UIImageView * headerFooterViewq6 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     headerFooterViewq6.contentMode = UIViewContentModeCenter; 
     headerFooterViewq6.clipsToBounds = NO; 
@@ -17,22 +17,22 @@
     return headerFooterViewq6;
 }
 
-+ (NSMutableArray *)pg_videoCameraDelegateWithauthorizationStatusDenied:(PGIntervalSinceDate *)aauthorizationStatusDenied gaussianBlurElement:(PGIntervalSinceDate *)agaussianBlurElement mediaTypeVideo:(PGIntervalSinceDate *)amediaTypeVideo{
++ (NSMutableArray *)videoCameraDelegateWithauthorizationStatusDenied:(PGIntervalSinceDate *)aauthorizationStatusDenied gaussianBlurElement:(PGIntervalSinceDate *)agaussianBlurElement mediaTypeVideo:(PGIntervalSinceDate *)amediaTypeVideo{
     NSMutableArray *couponTypeActivityO8= [NSMutableArray array];
     return couponTypeActivityO8;
 }
 
-- (UITableViewCellSeparatorStyle)pg_withStrokeCourseWithaxisTypeHorizontal:(CGSize)aaxisTypeHorizontal imageViewWith:(CGSize)aimageViewWith{
+- (UITableViewCellSeparatorStyle)withStrokeCourseWithaxisTypeHorizontal:(CGSize)aaxisTypeHorizontal imageViewWith:(CGSize)aimageViewWith{
     UITableViewCellSeparatorStyle withMedalKindi9 = UITableViewCellSeparatorStyleNone; 
     return withMedalKindi9;
 }
 
-- (UITextFieldViewMode)pg_imageEdgeExtendWithimageRequestOptions:(UIButtonType)aimageRequestOptions contentBackgroundColor:(UITextView *)acontentBackgroundColor{
+- (UITextFieldViewMode)imageEdgeExtendWithimageRequestOptions:(UIButtonType)aimageRequestOptions contentBackgroundColor:(UITextView *)acontentBackgroundColor{
     UITextFieldViewMode arrayUsingDescriptorsy1 = UITextFieldViewModeAlways; 
     return arrayUsingDescriptorsy1;
 }
 
-- (CGSize)pg_gradeViewControllerWithdifferenceValueWith:(UITextFieldViewMode)adifferenceValueWith bundleDisplayName:(UITableView *)abundleDisplayName{
+- (CGSize)gradeViewControllerWithdifferenceValueWith:(UITextFieldViewMode)adifferenceValueWith bundleDisplayName:(UITableView *)abundleDisplayName{
     CGSize userInfoMedalX9 = CGSizeMake(220,46); 
     return userInfoMedalX9;
 }
@@ -41,7 +41,7 @@
     CGSize courseViewModelf4 = CGSizeZero;
         CGSize couponsScrollTableL7 = CGSizeZero;
     PGDrawImageView *activityIndicatorVisible= [[PGDrawImageView alloc] init];
-[activityIndicatorVisible pg_withStrokeCourseWithaxisTypeHorizontal:courseViewModelf4 imageViewWith:couponsScrollTableL7 ];
+[activityIndicatorVisible withStrokeCourseWithaxisTypeHorizontal:courseViewModelf4 imageViewWith:couponsScrollTableL7 ];
 
 }
 

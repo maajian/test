@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *noticeTypeLogin;
 @property (nonatomic, readwrite, assign) UITableViewStyle *loginWithPhone;
 
-+ (UIColor *)pg_fieldEdeitingChangingWithsendTweetView:(UIButton *)asendTweetView dailyCourseDetail:(UIFont *)adailyCourseDetail beautyParamWith:(NSMutableArray *)abeautyParamWith;
-+ (NSData *)pg_mallViewModelWithtextBorderStyle:(PGFailWithError *)atextBorderStyle courseDetailView:(PGFailWithError *)acourseDetailView pointerFunctionsWeak:(PGFailWithError *)apointerFunctionsWeak;
-- (UITextFieldViewMode)pg_deviceLinkViewWithassetsUsingBlock:(UITextFieldViewMode)aassetsUsingBlock choicenessVideoView:(UITableViewStyle)achoicenessVideoView;
-- (UITableViewCellSeparatorStyle)pg_backGroundUserWithgroupPurchaseOrder:(NSRange)agroupPurchaseOrder circleScreenData:(NSTextAlignment)acircleScreenData;
-- (NSLineBreakMode)pg_timerWithTimeWithmessageWithUser:(UIButton *)amessageWithUser pageLabelPage:(UIView *)apageLabelPage;
++ (UIColor *)fieldEdeitingChangingWithsendTweetView:(UIButton *)asendTweetView dailyCourseDetail:(UIFont *)adailyCourseDetail beautyParamWith:(NSMutableArray *)abeautyParamWith;
++ (NSData *)mallViewModelWithtextBorderStyle:(PGFailWithError *)atextBorderStyle courseDetailView:(PGFailWithError *)acourseDetailView pointerFunctionsWeak:(PGFailWithError *)apointerFunctionsWeak;
+- (UITextFieldViewMode)deviceLinkViewWithassetsUsingBlock:(UITextFieldViewMode)aassetsUsingBlock choicenessVideoView:(UITableViewStyle)achoicenessVideoView;
+- (UITableViewCellSeparatorStyle)backGroundUserWithgroupPurchaseOrder:(NSRange)agroupPurchaseOrder circleScreenData:(NSTextAlignment)acircleScreenData;
+- (NSLineBreakMode)timerWithTimeWithmessageWithUser:(UIButton *)amessageWithUser pageLabelPage:(UIView *)apageLabelPage;
 + (void)instanceCreateMethod; 
 
 @end

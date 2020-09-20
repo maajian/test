@@ -7,12 +7,12 @@
  // 
 #import "PGWithContainerSize.h"
 @implementation PGWithContainerSize
-+ (UIImage *)pg_frameWithIndexWithlineBreakMode:(UIImageView *)alineBreakMode sliderValueChanged:(NSData *)asliderValueChanged lineDashType:(UIImage *)alineDashType{
++ (UIImage *)frameWithIndexWithlineBreakMode:(UIImageView *)alineBreakMode sliderValueChanged:(NSData *)asliderValueChanged lineDashType:(UIImage *)alineDashType{
     UIImage *withRootViewF9= [UIImage imageNamed:@""]; 
     return withRootViewF9;
 }
 
-+ (UIButton *)pg_mainMessageDataWithfullScreenPlay:(PGFriendsViewModel *)afullScreenPlay swimRecordData:(PGFriendsViewModel *)aswimRecordData authorizationOptionBadge:(PGFriendsViewModel *)aauthorizationOptionBadge{
++ (UIButton *)mainMessageDataWithfullScreenPlay:(PGFriendsViewModel *)afullScreenPlay swimRecordData:(PGFriendsViewModel *)aswimRecordData authorizationOptionBadge:(PGFriendsViewModel *)aauthorizationOptionBadge{
     UIButton *photoViewDelegaten0= [UIButton buttonWithType:UIButtonTypeCustom]; 
     photoViewDelegaten0.frame = CGRectZero; 
     photoViewDelegaten0.exclusiveTouch = NO; 
@@ -22,17 +22,17 @@
     return photoViewDelegaten0;
 }
 
-- (CGRect)pg_changeFrameNotificationWithwithRenderingMode:(UITextView *)awithRenderingMode colorSpaceCreate:(UISwitch *)acolorSpaceCreate{
+- (CGRect)changeFrameNotificationWithwithRenderingMode:(UITextView *)awithRenderingMode colorSpaceCreate:(UISwitch *)acolorSpaceCreate{
     CGRect chooseStadiumViewY0 = CGRectZero;
     return chooseStadiumViewY0;
 }
 
-- (UIEdgeInsets)pg_exerciseParticularViewWithtrainsWithOffset:(UIImageView *)atrainsWithOffset choicenessVideoView:(NSLineBreakMode)achoicenessVideoView{
+- (UIEdgeInsets)exerciseParticularViewWithtrainsWithOffset:(UIImageView *)atrainsWithOffset choicenessVideoView:(NSLineBreakMode)achoicenessVideoView{
     UIEdgeInsets defaultImageNameu9 = UIEdgeInsetsMake(89,129,251,237); 
     return defaultImageNameu9;
 }
 
-- (UITableViewCellSeparatorStyle)pg_mainViewControllerWithvideoPlayView:(NSArray *)avideoPlayView withRankMedal:(NSArray *)awithRankMedal{
+- (UITableViewCellSeparatorStyle)mainViewControllerWithvideoPlayView:(NSArray *)avideoPlayView withRankMedal:(NSArray *)awithRankMedal{
     UITableViewCellSeparatorStyle circleTweetCommentA0 = UITableViewCellSeparatorStyleNone; 
     return circleTweetCommentA0;
 }
@@ -46,7 +46,7 @@
     viewAnimatedColorsq1.on = YES; 
     viewAnimatedColorsq1.onTintColor = [UIColor whiteColor]; 
     PGWithContainerSize *locationManagerDelegate= [[PGWithContainerSize alloc] init];
-[locationManagerDelegate pg_changeFrameNotificationWithwithRenderingMode:photoScrollViewU3 colorSpaceCreate:viewAnimatedColorsq1 ];
+[locationManagerDelegate changeFrameNotificationWithwithRenderingMode:photoScrollViewU3 colorSpaceCreate:viewAnimatedColorsq1 ];
 
 }
 

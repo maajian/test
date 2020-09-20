@@ -107,7 +107,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSString *refreshHeaderLayerg3 = @"shareInfoView";
         UIButtonType discoveryViewModelY1 = UIButtonTypeContactAdd;
     PGWithTweetItem *retinaFilePath= [[PGWithTweetItem alloc] init];
-[retinaFilePath pg_courseParticularVideoWithuserInfoHeader:refreshHeaderLayerg3 bottomPhotoView:discoveryViewModelY1 ];
+[retinaFilePath courseParticularVideoWithuserInfoHeader:refreshHeaderLayerg3 bottomPhotoView:discoveryViewModelY1 ];
 });
     [self.contentView addSubview:self.shadowView];
     [self.shadowView addSubview:self.cornerView];

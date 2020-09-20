@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) CGSize *userDomainMask;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *cellWithIndex;
 
-+ (UIImage *)pg_successWithStatusWithfullScreenPlay:(UIButton *)afullScreenPlay followWithHeading:(NSString *)afollowWithHeading courseVideoPlayed:(UILabel *)acourseVideoPlayed;
-+ (UIImageView *)pg_finishLoadWithWithtrainInfoView:(PGCancelCollectionChoiceness *)atrainInfoView deviceOrientationUnknown:(PGCancelCollectionChoiceness *)adeviceOrientationUnknown lineDashType:(PGCancelCollectionChoiceness *)alineDashType;
-- (UITableViewStyle)pg_statusWithBlockWithfullScreenVideo:(UIImageView *)afullScreenVideo withSessionPreset:(CGSize)awithSessionPreset;
-- (NSLineBreakMode)pg_receiveMemoryWarningWithfieldShouldBegin:(UITableViewStyle)afieldShouldBegin navigationControllerDelegate:(NSData *)anavigationControllerDelegate;
-- (CGPoint)pg_postImageWithWithauthorizationOptionBadge:(UIImageView *)aauthorizationOptionBadge courseChooseCell:(NSRange)acourseChooseCell;
++ (UIImage *)successWithStatusWithfullScreenPlay:(UIButton *)afullScreenPlay followWithHeading:(NSString *)afollowWithHeading courseVideoPlayed:(UILabel *)acourseVideoPlayed;
++ (UIImageView *)finishLoadWithWithtrainInfoView:(PGCancelCollectionChoiceness *)atrainInfoView deviceOrientationUnknown:(PGCancelCollectionChoiceness *)adeviceOrientationUnknown lineDashType:(PGCancelCollectionChoiceness *)alineDashType;
+- (UITableViewStyle)statusWithBlockWithfullScreenVideo:(UIImageView *)afullScreenVideo withSessionPreset:(CGSize)awithSessionPreset;
+- (NSLineBreakMode)receiveMemoryWarningWithfieldShouldBegin:(UITableViewStyle)afieldShouldBegin navigationControllerDelegate:(NSData *)anavigationControllerDelegate;
+- (CGPoint)postImageWithWithauthorizationOptionBadge:(UIImageView *)aauthorizationOptionBadge courseChooseCell:(NSRange)acourseChooseCell;
 + (void)instanceCreateMethod; 
 
 @end

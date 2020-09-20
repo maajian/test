@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSRange *discoveryViewModel;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *deleteTweetSucc;
 
-+ (UIFont *)pg_pressEmojiActionWithprofileDataWith:(NSMutableArray *)aprofileDataWith cyclingLineAnimation:(UITextField *)acyclingLineAnimation photoBrowserView:(UITextField *)aphotoBrowserView;
-+ (UIFont *)pg_userContentControllerWithticketRightLabel:(PGDelaysTouchesEnded *)aticketRightLabel statusBackgroundColor:(PGDelaysTouchesEnded *)astatusBackgroundColor blockCropMode:(PGDelaysTouchesEnded *)ablockCropMode;
-- (CGSize)pg_adjustTrackColorWithreplayUserNick:(UIImageView *)areplayUserNick videoWithAsset:(UITableViewCellSeparatorStyle)avideoWithAsset;
-- (CGSize)pg_controlStateHighlightedWithcompleteViewDelegate:(NSRange)acompleteViewDelegate replayUserNick:(UITableViewStyle)areplayUserNick;
-- (NSLineBreakMode)pg_rankMedalModelWithcouponTypeCourse:(CGSize)acouponTypeCourse saveVideoPath:(UILabel *)asaveVideoPath;
++ (UIFont *)pressEmojiActionWithprofileDataWith:(NSMutableArray *)aprofileDataWith cyclingLineAnimation:(UITextField *)acyclingLineAnimation photoBrowserView:(UITextField *)aphotoBrowserView;
++ (UIFont *)userContentControllerWithticketRightLabel:(PGDelaysTouchesEnded *)aticketRightLabel statusBackgroundColor:(PGDelaysTouchesEnded *)astatusBackgroundColor blockCropMode:(PGDelaysTouchesEnded *)ablockCropMode;
+- (CGSize)adjustTrackColorWithreplayUserNick:(UIImageView *)areplayUserNick videoWithAsset:(UITableViewCellSeparatorStyle)avideoWithAsset;
+- (CGSize)controlStateHighlightedWithcompleteViewDelegate:(NSRange)acompleteViewDelegate replayUserNick:(UITableViewStyle)areplayUserNick;
+- (NSLineBreakMode)rankMedalModelWithcouponTypeCourse:(CGSize)acouponTypeCourse saveVideoPath:(UILabel *)asaveVideoPath;
 + (void)instanceCreateMethod; 
 
 @end

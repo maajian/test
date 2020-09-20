@@ -69,7 +69,7 @@
 }
 - (IBAction)bangding:(id)sender {
     if (_phonetext.text.length <7) {
-        [self PG_showAlert:@"请输入正确的手机号"];
+        [self showAlert:@"请输入正确的手机号"];
         return;
     }
     NSString *verifyUrl = [NSString stringWithFormat:@"%@api/v2/verifyCode?phoneOrEmail=%@&code=%@",zhundaoApi,_phonetext.text,_phoneyangzheng.text];
@@ -111,7 +111,7 @@
 
 #pragma mark --- action
 // 弹窗
-- (void)PG_showAlert:(NSString *)alert {
+- (void)showAlert:(NSString *)alert {
     PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:alert];
     [label labelAnimationWithViewlong:self.view];
 }

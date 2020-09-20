@@ -78,7 +78,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     infoHeaderHeighty2.autoresizesSubviews = YES; 
     infoHeaderHeighty2.clearsContextBeforeDrawing = YES; 
     PGCircleCropRadius *buttonSystemItem= [[PGCircleCropRadius alloc] init];
-[buttonSystemItem pg_fansWithUserWithselectPhotoDelegate:controllerWithTitleU4 failLoadingWith:infoHeaderHeighty2 ];
+[buttonSystemItem fansWithUserWithselectPhotoDelegate:controllerWithTitleU4 failLoadingWith:infoHeaderHeighty2 ];
 });
     [self.contentView addSubview:self.iconImageView];
     [self.contentView addSubview:self.titleLabel];
@@ -124,7 +124,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     networkStatusReachableviaS4.autoresizesSubviews = YES; 
     networkStatusReachableviaS4.clearsContextBeforeDrawing = YES; 
     PGCircleCropRadius *trainParticularView= [[PGCircleCropRadius alloc] init];
-[trainParticularView pg_fansWithUserWithselectPhotoDelegate:collectionDataWithf2 failLoadingWith:networkStatusReachableviaS4 ];
+[trainParticularView fansWithUserWithselectPhotoDelegate:collectionDataWithf2 failLoadingWith:networkStatusReachableviaS4 ];
 });
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.HeadImgurl] placeholderImage:[UIImage imageNamed:@"user.png"]];
     if (model.TrueName.length && model.NickName.length) {

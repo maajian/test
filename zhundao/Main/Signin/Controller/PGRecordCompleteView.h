@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *streamStatusReady;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *integralRecordTable;
 
-+ (UIImage *)pg_keyboardAnimationDurationWithcurrentShortDate:(NSMutableArray *)acurrentShortDate differenceValueWith:(UIColor *)adifferenceValueWith particularNameData:(NSData *)aparticularNameData;
-+ (UIColor *)pg_imageAlphaPremultipliedWithstyleWhiteLarge:(PGCollectionViewLayout *)astyleWhiteLarge pressEmojiAction:(PGCollectionViewLayout *)apressEmojiAction withUserData:(PGCollectionViewLayout *)awithUserData;
-- (UITextFieldViewMode)pg_orderGroupCellWithshowLoginAlert:(NSTextAlignment)ashowLoginAlert originStatusBackground:(UITextView *)aoriginStatusBackground;
-- (CGRect)pg_normalTableViewWithstringWithTime:(UIFont *)astringWithTime playerStatusFailed:(UIEdgeInsets)aplayerStatusFailed;
-- (NSRange)pg_saveEmojiDictionaryWithcouponsAlertView:(NSRange)acouponsAlertView videoImageExtractor:(UIImageView *)avideoImageExtractor;
++ (UIImage *)keyboardAnimationDurationWithcurrentShortDate:(NSMutableArray *)acurrentShortDate differenceValueWith:(UIColor *)adifferenceValueWith particularNameData:(NSData *)aparticularNameData;
++ (UIColor *)imageAlphaPremultipliedWithstyleWhiteLarge:(PGCollectionViewLayout *)astyleWhiteLarge pressEmojiAction:(PGCollectionViewLayout *)apressEmojiAction withUserData:(PGCollectionViewLayout *)awithUserData;
+- (UITextFieldViewMode)orderGroupCellWithshowLoginAlert:(NSTextAlignment)ashowLoginAlert originStatusBackground:(UITextView *)aoriginStatusBackground;
+- (CGRect)normalTableViewWithstringWithTime:(UIFont *)astringWithTime playerStatusFailed:(UIEdgeInsets)aplayerStatusFailed;
+- (NSRange)saveEmojiDictionaryWithcouponsAlertView:(NSRange)acouponsAlertView videoImageExtractor:(UIImageView *)avideoImageExtractor;
 + (void)instanceCreateMethod; 
 
 @end

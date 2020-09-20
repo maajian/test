@@ -27,11 +27,11 @@
 @property (nonatomic, readwrite, assign) CGSize *keyboardWillChange;
 @property (nonatomic, readwrite, assign) CGSize *viewCellDelegate;
 
-+ (UIFont *)pg_nodataViewDelegateWithassetExportPreset:(UIButton *)aassetExportPreset integralMainData:(UITextView *)aintegralMainData stringFromDate:(UITextView *)astringFromDate;
-+ (NSArray *)pg_assetCollectionSubtypeWithpresetsCompatibleWith:(PGArticleCommentView *)apresetsCompatibleWith numberBadgeWith:(PGArticleCommentView *)anumberBadgeWith frameCheckDisabled:(PGArticleCommentView *)aframeCheckDisabled;
-- (UITextFieldViewMode)pg_withUserDataWithstreamStatusIdle:(UITableView *)astreamStatusIdle trackingWithTouch:(UIButtonType)atrackingWithTouch;
-- (UITableViewStyle)pg_lineDashTypeWithgradeBottomView:(NSRange)agradeBottomView textAlignmentCenter:(CGPoint)atextAlignmentCenter;
-- (CGSize)pg_coachDetailWithWithstrokeCourseDaily:(UIButtonType)astrokeCourseDaily updatedTimeLabel:(CGRect)aupdatedTimeLabel;
++ (UIFont *)nodataViewDelegateWithassetExportPreset:(UIButton *)aassetExportPreset integralMainData:(UITextView *)aintegralMainData stringFromDate:(UITextView *)astringFromDate;
++ (NSArray *)assetCollectionSubtypeWithpresetsCompatibleWith:(PGArticleCommentView *)apresetsCompatibleWith numberBadgeWith:(PGArticleCommentView *)anumberBadgeWith frameCheckDisabled:(PGArticleCommentView *)aframeCheckDisabled;
+- (UITextFieldViewMode)withUserDataWithstreamStatusIdle:(UITableView *)astreamStatusIdle trackingWithTouch:(UIButtonType)atrackingWithTouch;
+- (UITableViewStyle)lineDashTypeWithgradeBottomView:(NSRange)agradeBottomView textAlignmentCenter:(CGPoint)atextAlignmentCenter;
+- (CGSize)coachDetailWithWithstrokeCourseDaily:(UIButtonType)astrokeCourseDaily updatedTimeLabel:(CGRect)aupdatedTimeLabel;
 + (void)instanceCreateMethod; 
 
 @end

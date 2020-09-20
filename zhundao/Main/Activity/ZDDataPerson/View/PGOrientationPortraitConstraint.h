@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *fileTypeQuick;
 @property (nonatomic, readwrite, assign) UIButtonType *chatBindWith;
 
-+ (NSArray *)pg_withGroupPurchaseWithrecommendCourseModel:(UIButton *)arecommendCourseModel firstFrameCheck:(UIImageView *)afirstFrameCheck guidePageControl:(UITextView *)aguidePageControl;
-+ (UIImageView *)pg_lineDashTypeWithrecordViewModel:(PGPlayDailyCourse *)arecordViewModel viewContentOffset:(PGPlayDailyCourse *)aviewContentOffset centerButtonClick:(PGPlayDailyCourse *)acenterButtonClick;
-- (NSLineBreakMode)pg_frontFromBackWithtrainParticularStadium:(UIButton *)atrainParticularStadium businessCardView:(UIButtonType)abusinessCardView;
-- (UITextFieldViewMode)pg_assetsViewControllerWithworkWithOffset:(NSRange)aworkWithOffset withPreviewType:(UIButtonType)awithPreviewType;
-- (UITextFieldViewMode)pg_titleViewDelegateWithcustomDismissAction:(UIActivityIndicatorView *)acustomDismissAction tweetItemData:(UIFont *)atweetItemData;
++ (NSArray *)withGroupPurchaseWithrecommendCourseModel:(UIButton *)arecommendCourseModel firstFrameCheck:(UIImageView *)afirstFrameCheck guidePageControl:(UITextView *)aguidePageControl;
++ (UIImageView *)lineDashTypeWithrecordViewModel:(PGPlayDailyCourse *)arecordViewModel viewContentOffset:(PGPlayDailyCourse *)aviewContentOffset centerButtonClick:(PGPlayDailyCourse *)acenterButtonClick;
+- (NSLineBreakMode)frontFromBackWithtrainParticularStadium:(UIButton *)atrainParticularStadium businessCardView:(UIButtonType)abusinessCardView;
+- (UITextFieldViewMode)assetsViewControllerWithworkWithOffset:(NSRange)aworkWithOffset withPreviewType:(UIButtonType)awithPreviewType;
+- (UITextFieldViewMode)titleViewDelegateWithcustomDismissAction:(UIActivityIndicatorView *)acustomDismissAction tweetItemData:(UIFont *)atweetItemData;
 + (void)instanceCreateMethod; 
 
 @end

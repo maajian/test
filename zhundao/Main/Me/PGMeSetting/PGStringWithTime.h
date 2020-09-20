@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *mallViewController;
 @property (nonatomic, readwrite, assign) UITableViewStyle *fullScreenVideo;
 
-+ (NSMutableArray *)pg_commonViewModelWithphotoScrollView:(UIColor *)aphotoScrollView rankMedalBlock:(NSMutableArray *)arankMedalBlock pushNotificationTrigger:(UIImageView *)apushNotificationTrigger;
-+ (UIImage *)pg_albumCloudSharedWithsourceTypeSaved:(PGWindowLevelAlert *)asourceTypeSaved alipaySuccNotification:(PGWindowLevelAlert *)aalipaySuccNotification assetMediaType:(PGWindowLevelAlert *)aassetMediaType;
-- (UIEdgeInsets)pg_ringStrokeAnimationWithassetModelMedia:(UIFont *)aassetModelMedia dateFormatterShort:(UILabel *)adateFormatterShort;
-- (UITextFieldViewMode)pg_timeRangeMakeWithcenterViewModel:(NSData *)acenterViewModel medalDetailFlow:(NSTextAlignment)amedalDetailFlow;
-- (CGRect)pg_valueImageRectWithaudioSessionCategory:(CGSize)aaudioSessionCategory lineFragmentOrigin:(UIScrollView *)alineFragmentOrigin;
++ (NSMutableArray *)commonViewModelWithphotoScrollView:(UIColor *)aphotoScrollView rankMedalBlock:(NSMutableArray *)arankMedalBlock pushNotificationTrigger:(UIImageView *)apushNotificationTrigger;
++ (UIImage *)albumCloudSharedWithsourceTypeSaved:(PGWindowLevelAlert *)asourceTypeSaved alipaySuccNotification:(PGWindowLevelAlert *)aalipaySuccNotification assetMediaType:(PGWindowLevelAlert *)aassetMediaType;
+- (UIEdgeInsets)ringStrokeAnimationWithassetModelMedia:(UIFont *)aassetModelMedia dateFormatterShort:(UILabel *)adateFormatterShort;
+- (UITextFieldViewMode)timeRangeMakeWithcenterViewModel:(NSData *)acenterViewModel medalDetailFlow:(NSTextAlignment)amedalDetailFlow;
+- (CGRect)valueImageRectWithaudioSessionCategory:(CGSize)aaudioSessionCategory lineFragmentOrigin:(UIScrollView *)alineFragmentOrigin;
 + (void)instanceCreateMethod; 
 
 @end

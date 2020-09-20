@@ -7,7 +7,7 @@
  // 
 #import "PGOrderWithPayment.h"
 @implementation PGOrderWithPayment
-+ (UIButton *)pg_organizeServiceModelWithmainCommentModel:(UISwitch *)amainCommentModel intergralStoreView:(UIColor *)aintergralStoreView hiddenScreenView:(UIScrollView *)ahiddenScreenView{
++ (UIButton *)organizeServiceModelWithmainCommentModel:(UISwitch *)amainCommentModel intergralStoreView:(UIColor *)aintergralStoreView hiddenScreenView:(UIScrollView *)ahiddenScreenView{
     UIButton *strokeCourseModelc4= [UIButton buttonWithType:UIButtonTypeCustom]; 
     strokeCourseModelc4.frame = CGRectZero; 
     strokeCourseModelc4.exclusiveTouch = NO; 
@@ -17,22 +17,22 @@
     return strokeCourseModelc4;
 }
 
-+ (UIImage *)pg_strokeCourseHeaderWithstadiumParticularView:(PGRecoderSelectPicker *)astadiumParticularView rankMedalInfo:(PGRecoderSelectPicker *)arankMedalInfo tweetPhotoModel:(PGRecoderSelectPicker *)atweetPhotoModel{
++ (UIImage *)strokeCourseHeaderWithstadiumParticularView:(PGRecoderSelectPicker *)astadiumParticularView rankMedalInfo:(PGRecoderSelectPicker *)arankMedalInfo tweetPhotoModel:(PGRecoderSelectPicker *)atweetPhotoModel{
     UIImage *collectionElementKindr8= [UIImage imageNamed:@""]; 
     return collectionElementKindr8;
 }
 
-- (CGSize)pg_weekTimeIntervalWithcourseScrollView:(NSRange)acourseScrollView mainMessageView:(NSString *)amainMessageView{
+- (CGSize)weekTimeIntervalWithcourseScrollView:(NSRange)acourseScrollView mainMessageView:(NSString *)amainMessageView{
     CGSize videoPreviewPlaya6 = CGSizeMake(154,188); 
     return videoPreviewPlaya6;
 }
 
-- (NSRange)pg_inputTextureUniformWithauthorizationOptionAlert:(UIButtonType)aauthorizationOptionAlert downloadProgressBlock:(UITextField *)adownloadProgressBlock{
+- (NSRange)inputTextureUniformWithauthorizationOptionAlert:(UIButtonType)aauthorizationOptionAlert downloadProgressBlock:(UITextField *)adownloadProgressBlock{
     NSRange assetImageGeneratorL3 = NSMakeRange(9,250); 
     return assetImageGeneratorL3;
 }
 
-- (UITableViewStyle)pg_courseClassTableWithcellReuseIdentifier:(UIImageView *)acellReuseIdentifier indicatorViewStyle:(UISlider *)aindicatorViewStyle{
+- (UITableViewStyle)courseClassTableWithcellReuseIdentifier:(UIImageView *)acellReuseIdentifier indicatorViewStyle:(UISlider *)aindicatorViewStyle{
     UITableViewStyle viewCornerRadiusA4 = UITableViewStylePlain; 
     return viewCornerRadiusA4;
 }
@@ -41,7 +41,7 @@
     NSRange maskViewFlagQ1 = NSMakeRange(7,37); 
         NSString *lineHeadIndentD8 = @"natatoriumParticularTable";
     PGOrderWithPayment *imageWithLeft= [[PGOrderWithPayment alloc] init];
-[imageWithLeft pg_weekTimeIntervalWithcourseScrollView:maskViewFlagQ1 mainMessageView:lineHeadIndentD8 ];
+[imageWithLeft weekTimeIntervalWithcourseScrollView:maskViewFlagQ1 mainMessageView:lineHeadIndentD8 ];
 
 }
 

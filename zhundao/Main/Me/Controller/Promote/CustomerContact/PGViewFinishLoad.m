@@ -7,29 +7,29 @@
  // 
 #import "PGViewFinishLoad.h"
 @implementation PGViewFinishLoad
-+ (UIActivityIndicatorView *)pg_imageMatrixMultiplyWithdownLoadData:(NSMutableArray *)adownLoadData choicenessVideoView:(UIColor *)achoicenessVideoView organizationNoticeWith:(UIColor *)aorganizationNoticeWith{
++ (UIActivityIndicatorView *)imageMatrixMultiplyWithdownLoadData:(NSMutableArray *)adownLoadData choicenessVideoView:(UIColor *)achoicenessVideoView organizationNoticeWith:(UIColor *)aorganizationNoticeWith{
     UIActivityIndicatorView *pathWithRectb5= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     pathWithRectb5.hidden = YES; 
     pathWithRectb5.hidesWhenStopped = YES; 
     return pathWithRectb5;
 }
 
-+ (NSArray *)pg_withLocaleIdentifierWithimageSourceCreate:(PGInputButtonTitle *)aimageSourceCreate styleLightContent:(PGInputButtonTitle *)astyleLightContent authrizationStatusChange:(PGInputButtonTitle *)aauthrizationStatusChange{
++ (NSArray *)withLocaleIdentifierWithimageSourceCreate:(PGInputButtonTitle *)aimageSourceCreate styleLightContent:(PGInputButtonTitle *)astyleLightContent authrizationStatusChange:(PGInputButtonTitle *)aauthrizationStatusChange{
     NSArray *collectionViewCelli2= [NSArray array];
     return collectionViewCelli2;
 }
 
-- (NSTextAlignment)pg_audioSessionPortWithphotoViewDelegate:(UIButton *)aphotoViewDelegate groupPurchaseView:(NSString *)agroupPurchaseView{
+- (NSTextAlignment)audioSessionPortWithphotoViewDelegate:(UIButton *)aphotoViewDelegate groupPurchaseView:(NSString *)agroupPurchaseView{
     NSTextAlignment withMediaTypec6 = NSTextAlignmentCenter; 
     return withMediaTypec6;
 }
 
-- (UITableViewStyle)pg_fileTypeQuickWithstatusBackgroundColor:(NSLineBreakMode)astatusBackgroundColor assetGridThumbnail:(UIImage *)aassetGridThumbnail{
+- (UITableViewStyle)fileTypeQuickWithstatusBackgroundColor:(NSLineBreakMode)astatusBackgroundColor assetGridThumbnail:(UIImage *)aassetGridThumbnail{
     UITableViewStyle locationStyleReused2 = UITableViewStylePlain; 
     return locationStyleReused2;
 }
 
-- (NSRange)pg_firstFrontCameraWithdataViewController:(UITableView *)adataViewController transitRouteSearch:(UITableViewCellSeparatorStyle)atransitRouteSearch{
+- (NSRange)firstFrontCameraWithdataViewController:(UITableView *)adataViewController transitRouteSearch:(UITableViewCellSeparatorStyle)atransitRouteSearch{
     NSRange reusableAnnotationViewZ4 = NSMakeRange(9,222); 
     return reusableAnnotationViewZ4;
 }
@@ -43,7 +43,7 @@
     nameLeftLabelw9.frame = CGRectZero; 
         NSString *titleTextAttributesx5 = @"zoneWithAbbreviation";
     PGViewFinishLoad *priceMutableString= [[PGViewFinishLoad alloc] init];
-[priceMutableString pg_audioSessionPortWithphotoViewDelegate:nameLeftLabelw9 groupPurchaseView:titleTextAttributesx5 ];
+[priceMutableString audioSessionPortWithphotoViewDelegate:nameLeftLabelw9 groupPurchaseView:titleTextAttributesx5 ];
 
 }
 

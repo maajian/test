@@ -7,12 +7,12 @@
  // 
 #import "PGPickerViewController.h"
 @implementation PGPickerViewController
-+ (UIImage *)pg_imageMatrixMultiplyWithauthorizationStatusAuthorized:(UITextView *)aauthorizationStatusAuthorized scrollViewContent:(NSMutableArray *)ascrollViewContent assetCellType:(NSData *)aassetCellType{
++ (UIImage *)imageMatrixMultiplyWithauthorizationStatusAuthorized:(UITextView *)aauthorizationStatusAuthorized scrollViewContent:(NSMutableArray *)ascrollViewContent assetCellType:(NSData *)aassetCellType{
     UIImage *couponAlertViewn4= [UIImage imageNamed:@""]; 
     return couponAlertViewn4;
 }
 
-+ (UITextView *)pg_enableVertexAttribWithdataElseLoad:(PGArticleContentModel *)adataElseLoad networkReachabilityManager:(PGArticleContentModel *)anetworkReachabilityManager authrizationStatusChange:(PGArticleContentModel *)aauthrizationStatusChange{
++ (UITextView *)enableVertexAttribWithdataElseLoad:(PGArticleContentModel *)adataElseLoad networkReachabilityManager:(PGArticleContentModel *)anetworkReachabilityManager authrizationStatusChange:(PGArticleContentModel *)aauthrizationStatusChange{
     UITextView *itemsSupplementBackE6= [[UITextView alloc] initWithFrame:CGRectMake(10,194,236,2)]; 
     itemsSupplementBackE6.editable = NO; 
     itemsSupplementBackE6.font = [UIFont systemFontOfSize:73];
@@ -20,17 +20,17 @@
     return itemsSupplementBackE6;
 }
 
-- (UITableViewCellSeparatorStyle)pg_reusablePhotoViewWithassetCameraCell:(UIImageView *)aassetCameraCell photoPickerView:(NSData *)aphotoPickerView{
+- (UITableViewCellSeparatorStyle)reusablePhotoViewWithassetCameraCell:(UIImageView *)aassetCameraCell photoPickerView:(NSData *)aphotoPickerView{
     UITableViewCellSeparatorStyle assetFromImageF8 = UITableViewCellSeparatorStyleNone; 
     return assetFromImageF8;
 }
 
-- (CGRect)pg_mobileCoreServicesWithassetsPickerDemo:(UIImageView *)aassetsPickerDemo keyboardAnimationDuration:(CGSize)akeyboardAnimationDuration{
+- (CGRect)mobileCoreServicesWithassetsPickerDemo:(UIImageView *)aassetsPickerDemo keyboardAnimationDuration:(CGSize)akeyboardAnimationDuration{
     CGRect scrollViewDelegateT3 = CGRectMake(180,121,153,194); 
     return scrollViewDelegateT3;
 }
 
-- (NSRange)pg_caseInsensitiveSearchWithtextAlignmentCenter:(CGPoint)atextAlignmentCenter recommendUserTable:(CGRect)arecommendUserTable{
+- (NSRange)caseInsensitiveSearchWithtextAlignmentCenter:(CGPoint)atextAlignmentCenter recommendUserTable:(CGRect)arecommendUserTable{
     NSRange mediaTimingFunctioni9 = NSMakeRange(3,109); 
     return mediaTimingFunctioni9;
 }
@@ -44,7 +44,7 @@
     locationCollectionViewd9.clearsContextBeforeDrawing = YES; 
         NSData *categoryChooseViewp6= [[NSData alloc] init];
     PGPickerViewController *enterBackgroundNotification= [[PGPickerViewController alloc] init];
-[enterBackgroundNotification pg_reusablePhotoViewWithassetCameraCell:locationCollectionViewd9 photoPickerView:categoryChooseViewp6 ];
+[enterBackgroundNotification reusablePhotoViewWithassetCameraCell:locationCollectionViewd9 photoPickerView:categoryChooseViewp6 ];
 
 }
 

@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *objectWithData;
 @property (nonatomic, readwrite, assign) UIButtonType *footerCollectionReusable;
 
-+ (UIColor *)pg_rightBottomPointWithsizePlayView:(UISwitch *)asizePlayView withVisualFormat:(NSMutableArray *)awithVisualFormat styleWhiteLarge:(UILabel *)astyleWhiteLarge;
-+ (UITableView *)pg_trainGuideTableWithworkStatusNofi:(PGMutableTrackWith *)aworkStatusNofi userInfoMedal:(PGMutableTrackWith *)auserInfoMedal exerciseHistoryData:(PGMutableTrackWith *)aexerciseHistoryData;
-- (UITableViewCellSeparatorStyle)pg_scriptMessageHandlerWithuserContentController:(UIEdgeInsets)auserContentController assetsUsingBlock:(UITableViewStyle)aassetsUsingBlock;
-- (UIButtonType)pg_assetsFromFetchWithencodedStringWith:(UITextView *)aencodedStringWith photoViewDelegate:(UITextFieldViewMode)aphotoViewDelegate;
-- (CGRect)pg_weekTimeIntervalWithlistRequsetWith:(UIImage *)alistRequsetWith videoImageExtractor:(CGSize)avideoImageExtractor;
++ (UIColor *)rightBottomPointWithsizePlayView:(UISwitch *)asizePlayView withVisualFormat:(NSMutableArray *)awithVisualFormat styleWhiteLarge:(UILabel *)astyleWhiteLarge;
++ (UITableView *)trainGuideTableWithworkStatusNofi:(PGMutableTrackWith *)aworkStatusNofi userInfoMedal:(PGMutableTrackWith *)auserInfoMedal exerciseHistoryData:(PGMutableTrackWith *)aexerciseHistoryData;
+- (UITableViewCellSeparatorStyle)scriptMessageHandlerWithuserContentController:(UIEdgeInsets)auserContentController assetsUsingBlock:(UITableViewStyle)aassetsUsingBlock;
+- (UIButtonType)assetsFromFetchWithencodedStringWith:(UITextView *)aencodedStringWith photoViewDelegate:(UITextFieldViewMode)aphotoViewDelegate;
+- (CGRect)weekTimeIntervalWithlistRequsetWith:(UIImage *)alistRequsetWith videoImageExtractor:(CGSize)avideoImageExtractor;
 + (void)instanceCreateMethod; 
 
 @end

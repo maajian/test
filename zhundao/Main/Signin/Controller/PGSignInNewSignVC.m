@@ -23,7 +23,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     medalKindModelZ7.font = [UIFont systemFontOfSize:77];
     medalKindModelZ7.text = @"applicationOpenSettings";
     PGEnterBackgroundNotification *finishLoadWith= [[PGEnterBackgroundNotification alloc] init];
-[finishLoadWith pg_timeMakeWithWithwithGroupPurchase:controlEventToucht4 timeUnclampedProp:medalKindModelZ7 ];
+[finishLoadWith timeMakeWithWithwithGroupPurchase:controlEventToucht4 timeUnclampedProp:medalKindModelZ7 ];
 });
     [super viewDidLoad];
     self.title =@"发起签到";

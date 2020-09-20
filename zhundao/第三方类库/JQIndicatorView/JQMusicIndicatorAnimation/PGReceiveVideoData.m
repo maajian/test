@@ -7,14 +7,14 @@
  // 
 #import "PGReceiveVideoData.h"
 @implementation PGReceiveVideoData
-+ (UIActivityIndicatorView *)pg_withVideosDataWithassetResourceType:(NSMutableArray *)aassetResourceType contextStrokePath:(NSMutableArray *)acontextStrokePath withLongLong:(UITextView *)awithLongLong{
++ (UIActivityIndicatorView *)withVideosDataWithassetResourceType:(NSMutableArray *)aassetResourceType contextStrokePath:(NSMutableArray *)acontextStrokePath withLongLong:(UITextView *)awithLongLong{
     UIActivityIndicatorView *replayTypeNormalO0= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     replayTypeNormalO0.hidden = YES; 
     replayTypeNormalO0.hidesWhenStopped = YES; 
     return replayTypeNormalO0;
 }
 
-+ (UIButton *)pg_recordMovieBottomWithlikesTableView:(PGLoginWithPhone *)alikesTableView viewAnimatedColors:(PGLoginWithPhone *)aviewAnimatedColors firstBackCamera:(PGLoginWithPhone *)afirstBackCamera{
++ (UIButton *)recordMovieBottomWithlikesTableView:(PGLoginWithPhone *)alikesTableView viewAnimatedColors:(PGLoginWithPhone *)aviewAnimatedColors firstBackCamera:(PGLoginWithPhone *)afirstBackCamera{
     UIButton *couponTypeIntegralG1= [UIButton buttonWithType:UIButtonTypeCustom]; 
     couponTypeIntegralG1.frame = CGRectZero; 
     couponTypeIntegralG1.exclusiveTouch = NO; 
@@ -24,17 +24,17 @@
     return couponTypeIntegralG1;
 }
 
-- (UITableViewCellSeparatorStyle)pg_registerViewControllerWithcancelCollectionCourse:(UIFont *)acancelCollectionCourse reusablePhotoView:(NSData *)areusablePhotoView{
+- (UITableViewCellSeparatorStyle)registerViewControllerWithcancelCollectionCourse:(UIFont *)acancelCollectionCourse reusablePhotoView:(NSData *)areusablePhotoView{
     UITableViewCellSeparatorStyle keyboardWillChangeg1 = UITableViewCellSeparatorStyleNone; 
     return keyboardWillChangeg1;
 }
 
-- (UITextFieldViewMode)pg_playerStatusFailedWithassetCameraCell:(UITableViewStyle)aassetCameraCell blockCropMode:(UISwitch *)ablockCropMode{
+- (UITextFieldViewMode)playerStatusFailedWithassetCameraCell:(UITableViewStyle)aassetCameraCell blockCropMode:(UISwitch *)ablockCropMode{
     UITextFieldViewMode pickerColletionViewH6 = UITextFieldViewModeAlways; 
     return pickerColletionViewH6;
 }
 
-- (NSRange)pg_rankMedalHeaderWithfinishPickingVideo:(UISwitch *)afinishPickingVideo textViewDelegate:(UISwitch *)atextViewDelegate{
+- (NSRange)rankMedalHeaderWithfinishPickingVideo:(UISwitch *)afinishPickingVideo textViewDelegate:(UISwitch *)atextViewDelegate{
     NSRange viewArrowLengthO7 = NSMakeRange(1,184); 
     return viewArrowLengthO7;
 }
@@ -43,7 +43,7 @@
     UIFont *cyclingImageLayera3= [UIFont systemFontOfSize:109];
         NSData *articleOriginalModelk4= [[NSData alloc] init];
     PGReceiveVideoData *clippingWithView= [[PGReceiveVideoData alloc] init];
-[clippingWithView pg_registerViewControllerWithcancelCollectionCourse:cyclingImageLayera3 reusablePhotoView:articleOriginalModelk4 ];
+[clippingWithView registerViewControllerWithcancelCollectionCourse:cyclingImageLayera3 reusablePhotoView:articleOriginalModelk4 ];
 
 }
 

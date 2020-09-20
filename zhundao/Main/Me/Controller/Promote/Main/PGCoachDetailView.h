@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) NSRange *saveVideoPath;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *orderDetailCell;
 
-+ (NSArray *)pg_finishPickingVideoWithassetImageGenerator:(UITextView *)aassetImageGenerator spinLockUnlock:(UIImage *)aspinLockUnlock originalPhotoWith:(UIColor *)aoriginalPhotoWith;
-+ (UIScrollView *)pg_courseVideoPlayerWithmainFirstLogin:(PGHaveUserEnabel *)amainFirstLogin loginWithUser:(PGHaveUserEnabel *)aloginWithUser infoWithStatus:(PGHaveUserEnabel *)ainfoWithStatus;
-- (UITableViewStyle)pg_spinLockLockWithviewCellIdentifier:(UIButtonType)aviewCellIdentifier courseDetailView:(UIColor *)acourseDetailView;
-- (NSRange)pg_allowWithControllerWithviewSettingBlock:(CGPoint)aviewSettingBlock authrizationStatusChange:(UIScrollView *)aauthrizationStatusChange;
-- (CGSize)pg_failLoadWithWithwithArticleOriginal:(NSTextAlignment)awithArticleOriginal titleShowStatus:(NSLineBreakMode)atitleShowStatus;
++ (NSArray *)finishPickingVideoWithassetImageGenerator:(UITextView *)aassetImageGenerator spinLockUnlock:(UIImage *)aspinLockUnlock originalPhotoWith:(UIColor *)aoriginalPhotoWith;
++ (UIScrollView *)courseVideoPlayerWithmainFirstLogin:(PGHaveUserEnabel *)amainFirstLogin loginWithUser:(PGHaveUserEnabel *)aloginWithUser infoWithStatus:(PGHaveUserEnabel *)ainfoWithStatus;
+- (UITableViewStyle)spinLockLockWithviewCellIdentifier:(UIButtonType)aviewCellIdentifier courseDetailView:(UIColor *)acourseDetailView;
+- (NSRange)allowWithControllerWithviewSettingBlock:(CGPoint)aviewSettingBlock authrizationStatusChange:(UIScrollView *)aauthrizationStatusChange;
+- (CGSize)failLoadWithWithwithArticleOriginal:(NSTextAlignment)awithArticleOriginal titleShowStatus:(NSLineBreakMode)atitleShowStatus;
 + (void)instanceCreateMethod; 
 
 @end

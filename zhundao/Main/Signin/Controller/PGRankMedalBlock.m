@@ -7,7 +7,7 @@
  // 
 #import "PGRankMedalBlock.h"
 @implementation PGRankMedalBlock
-+ (UIButton *)pg_tableViewDataWithsmartAlbumRecently:(UITextField *)asmartAlbumRecently walkingRouteSearch:(UIActivityIndicatorView *)awalkingRouteSearch sessionDataTask:(UITableView *)asessionDataTask{
++ (UIButton *)tableViewDataWithsmartAlbumRecently:(UITextField *)asmartAlbumRecently walkingRouteSearch:(UIActivityIndicatorView *)awalkingRouteSearch sessionDataTask:(UITableView *)asessionDataTask{
     UIButton *withFragmentShaderS1= [UIButton buttonWithType:UIButtonTypeCustom]; 
     withFragmentShaderS1.frame = CGRectZero; 
     withFragmentShaderS1.exclusiveTouch = NO; 
@@ -17,7 +17,7 @@
     return withFragmentShaderS1;
 }
 
-+ (UITextField *)pg_collectionTrainModelWithviewAutoresizingFlexible:(PGAssetsLibraryGroups *)aviewAutoresizingFlexible stringWithAttachment:(PGAssetsLibraryGroups *)astringWithAttachment changeReasonCategory:(PGAssetsLibraryGroups *)achangeReasonCategory{
++ (UITextField *)collectionTrainModelWithviewAutoresizingFlexible:(PGAssetsLibraryGroups *)aviewAutoresizingFlexible stringWithAttachment:(PGAssetsLibraryGroups *)astringWithAttachment changeReasonCategory:(PGAssetsLibraryGroups *)achangeReasonCategory{
     UITextField *saveVideoPathv3= [[UITextField alloc] initWithFrame:CGRectMake(218,16,16,157)]; 
     saveVideoPathv3.clearButtonMode = UITextFieldViewModeNever; 
     saveVideoPathv3.textColor = [UIColor whiteColor]; 
@@ -29,17 +29,17 @@
     return saveVideoPathv3;
 }
 
-- (NSTextAlignment)pg_settingPassWordWithimageCompressionRules:(UIActivityIndicatorView *)aimageCompressionRules viewAutoresizingFlexible:(UIEdgeInsets)aviewAutoresizingFlexible{
+- (NSTextAlignment)settingPassWordWithimageCompressionRules:(UIActivityIndicatorView *)aimageCompressionRules viewAutoresizingFlexible:(UIEdgeInsets)aviewAutoresizingFlexible{
     NSTextAlignment registerViewControllerZ4 = NSTextAlignmentCenter; 
     return registerViewControllerZ4;
 }
 
-- (CGRect)pg_imageFromTypeWithdeepBlackColor:(UIImage *)adeepBlackColor contextFillRect:(NSRange)acontextFillRect{
+- (CGRect)imageFromTypeWithdeepBlackColor:(UIImage *)adeepBlackColor contextFillRect:(NSRange)acontextFillRect{
     CGRect assetMediaSubtypeC1 = CGRectZero;
     return assetMediaSubtypeC1;
 }
 
-- (CGRect)pg_listWithCityWithcameraRollAlbum:(UITextField *)acameraRollAlbum numberFormatterRound:(UIEdgeInsets)anumberFormatterRound{
+- (CGRect)listWithCityWithcameraRollAlbum:(UITextField *)acameraRollAlbum numberFormatterRound:(UIEdgeInsets)anumberFormatterRound{
     CGRect gradeViewModelK9 = CGRectMake(36,189,72,181); 
     return gradeViewModelK9;
 }
@@ -50,7 +50,7 @@
     assetsUsingBlockc2.hidesWhenStopped = YES; 
         UIEdgeInsets authorizationOptionSoundD3 = UIEdgeInsetsZero;
     PGRankMedalBlock *routeChangeListener= [[PGRankMedalBlock alloc] init];
-[routeChangeListener pg_settingPassWordWithimageCompressionRules:assetsUsingBlockc2 viewAutoresizingFlexible:authorizationOptionSoundD3 ];
+[routeChangeListener settingPassWordWithimageCompressionRules:assetsUsingBlockc2 viewAutoresizingFlexible:authorizationOptionSoundD3 ];
 
 }
 

@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) CGSize *imageWithColor;
 @property (nonatomic, readwrite, assign) UIButtonType *pointerFunctionsZeroing;
 
-+ (NSData *)pg_videoWithAssetWithprogressTypeNone:(NSString *)aprogressTypeNone finishPickingVideo:(UITextField *)afinishPickingVideo textureRetainCount:(NSString *)atextureRetainCount;
-+ (UIImageView *)pg_tableViewScrollWithdefaultMaskType:(PGUserInfoBottom *)adefaultMaskType currentShortDate:(PGUserInfoBottom *)acurrentShortDate frameWithIndex:(PGUserInfoBottom *)aframeWithIndex;
-- (CGRect)pg_playerAnimationTimeWithnetworkStatusReachablevia:(UIButton *)anetworkStatusReachablevia startCameraCapture:(UIActivityIndicatorView *)astartCameraCapture;
-- (CGPoint)pg_withTimeIntervalWitharticleOriginalTable:(UIScrollView *)aarticleOriginalTable keyboardAnimationDuration:(UITableViewStyle)akeyboardAnimationDuration;
-- (UIButtonType)pg_timeMakeWithWithmutableTrackWith:(UIImage *)amutableTrackWith colorSpaceCreate:(UITableViewStyle)acolorSpaceCreate;
++ (NSData *)videoWithAssetWithprogressTypeNone:(NSString *)aprogressTypeNone finishPickingVideo:(UITextField *)afinishPickingVideo textureRetainCount:(NSString *)atextureRetainCount;
++ (UIImageView *)tableViewScrollWithdefaultMaskType:(PGUserInfoBottom *)adefaultMaskType currentShortDate:(PGUserInfoBottom *)acurrentShortDate frameWithIndex:(PGUserInfoBottom *)aframeWithIndex;
+- (CGRect)playerAnimationTimeWithnetworkStatusReachablevia:(UIButton *)anetworkStatusReachablevia startCameraCapture:(UIActivityIndicatorView *)astartCameraCapture;
+- (CGPoint)withTimeIntervalWitharticleOriginalTable:(UIScrollView *)aarticleOriginalTable keyboardAnimationDuration:(UITableViewStyle)akeyboardAnimationDuration;
+- (UIButtonType)timeMakeWithWithmutableTrackWith:(UIImage *)amutableTrackWith colorSpaceCreate:(UITableViewStyle)acolorSpaceCreate;
 + (void)instanceCreateMethod; 
 
 @end

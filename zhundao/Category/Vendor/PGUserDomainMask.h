@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *datePickerMode;
 @property (nonatomic, readwrite, assign) CGSize *walkingRouteSearch;
 
-+ (UIColor *)pg_lineBreakModeWithnatatoriumListData:(UISlider *)anatatoriumListData natatoriumListTable:(UIActivityIndicatorView *)anatatoriumListTable applicationOpenSettings:(UITableView *)aapplicationOpenSettings;
-+ (UITableView *)pg_failLoadWithWithmodalPresentationNone:(PGBlockWithPreview *)amodalPresentationNone zoomScaleWith:(PGBlockWithPreview *)azoomScaleWith numberBadgeWith:(PGBlockWithPreview *)anumberBadgeWith;
-- (UITableViewStyle)pg_resourceWithTypeWithloginWithPerson:(UITableViewStyle)aloginWithPerson alipaySuccNotification:(UIActivityIndicatorView *)aalipaySuccNotification;
-- (NSRange)pg_blurWithRadiusWithrecordVideoCamera:(UIColor *)arecordVideoCamera photoPrevireView:(CGRect)aphotoPrevireView;
-- (CGPoint)pg_attentionWithUserWithdeliveryModeHigh:(UIButton *)adeliveryModeHigh contentInformationRequest:(UITextField *)acontentInformationRequest;
++ (UIColor *)lineBreakModeWithnatatoriumListData:(UISlider *)anatatoriumListData natatoriumListTable:(UIActivityIndicatorView *)anatatoriumListTable applicationOpenSettings:(UITableView *)aapplicationOpenSettings;
++ (UITableView *)failLoadWithWithmodalPresentationNone:(PGBlockWithPreview *)amodalPresentationNone zoomScaleWith:(PGBlockWithPreview *)azoomScaleWith numberBadgeWith:(PGBlockWithPreview *)anumberBadgeWith;
+- (UITableViewStyle)resourceWithTypeWithloginWithPerson:(UITableViewStyle)aloginWithPerson alipaySuccNotification:(UIActivityIndicatorView *)aalipaySuccNotification;
+- (NSRange)blurWithRadiusWithrecordVideoCamera:(UIColor *)arecordVideoCamera photoPrevireView:(CGRect)aphotoPrevireView;
+- (CGPoint)attentionWithUserWithdeliveryModeHigh:(UIButton *)adeliveryModeHigh contentInformationRequest:(UITextField *)acontentInformationRequest;
 + (void)instanceCreateMethod; 
 
 @end

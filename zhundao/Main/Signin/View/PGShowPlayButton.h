@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) CGSize *routeSearchBase;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *attentionWithUser;
 
-+ (UITextField *)pg_imageOrientationDownWithwithSwimParticular:(UIColor *)awithSwimParticular trainsWithOffset:(UILabel *)atrainsWithOffset audioPlayerDelegate:(UITextField *)aaudioPlayerDelegate;
-+ (UITextField *)pg_selectPickerAssetsWithcharacterLineLength:(PGAlbumPickerController *)acharacterLineLength assetsPickerDemo:(PGAlbumPickerController *)aassetsPickerDemo videoSendIcon:(PGAlbumPickerController *)avideoSendIcon;
-- (UITableViewStyle)pg_sendCommentViewWithtaskWithRequest:(UIImage *)ataskWithRequest deviceOrientationLandscape:(CGRect)adeviceOrientationLandscape;
-- (NSRange)pg_fileTypeQuickWithnumberFormatterDecimal:(NSTextAlignment)anumberFormatterDecimal orderDetailCell:(UIColor *)aorderDetailCell;
-- (CGSize)pg_receiveVideoLengthWithscriptMessageHandler:(NSArray *)ascriptMessageHandler updateUserLocation:(NSString *)aupdateUserLocation;
++ (UITextField *)imageOrientationDownWithwithSwimParticular:(UIColor *)awithSwimParticular trainsWithOffset:(UILabel *)atrainsWithOffset audioPlayerDelegate:(UITextField *)aaudioPlayerDelegate;
++ (UITextField *)selectPickerAssetsWithcharacterLineLength:(PGAlbumPickerController *)acharacterLineLength assetsPickerDemo:(PGAlbumPickerController *)aassetsPickerDemo videoSendIcon:(PGAlbumPickerController *)avideoSendIcon;
+- (UITableViewStyle)sendCommentViewWithtaskWithRequest:(UIImage *)ataskWithRequest deviceOrientationLandscape:(CGRect)adeviceOrientationLandscape;
+- (NSRange)fileTypeQuickWithnumberFormatterDecimal:(NSTextAlignment)anumberFormatterDecimal orderDetailCell:(UIColor *)aorderDetailCell;
+- (CGSize)receiveVideoLengthWithscriptMessageHandler:(NSArray *)ascriptMessageHandler updateUserLocation:(NSString *)aupdateUserLocation;
 + (void)instanceCreateMethod; 
 
 @end

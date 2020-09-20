@@ -132,7 +132,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *inputTextureUniformC8= [UIFont systemFontOfSize:253];
         UIColor *cellWithReuseS0= [UIColor redColor];
     PGExerciseRecordTable *inviteAnswerNormal= [[PGExerciseRecordTable alloc] init];
-[inviteAnswerNormal pg_assetCameraCellWithcellPlayerFather:inputTextureUniformC8 bytesFromData:cellWithReuseS0 ];
+[inviteAnswerNormal assetCameraCellWithcellPlayerFather:inputTextureUniformC8 bytesFromData:cellWithReuseS0 ];
 });
     switch (_state) {
         case Old:{

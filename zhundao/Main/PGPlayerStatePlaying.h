@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) NSRange *layerTintColor;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *connectionDataDelegate;
 
-+ (NSMutableArray *)pg_nameLeftLabelWithstadiumParticularView:(UITextField *)astadiumParticularView typeLivePhoto:(NSMutableArray *)atypeLivePhoto failProvisionalNavigation:(UIImageView *)afailProvisionalNavigation;
-+ (UISwitch *)pg_selectPhotoDelegateWithdailyCourseDetail:(PGReachabilityStatusChange *)adailyCourseDetail availableSpaceBytes:(PGReachabilityStatusChange *)aavailableSpaceBytes mallViewModel:(PGReachabilityStatusChange *)amallViewModel;
-- (NSLineBreakMode)pg_scrollDirectionRightWithaxisTypeHorizontal:(UISwitch *)aaxisTypeHorizontal handpickViewController:(NSString *)ahandpickViewController;
-- (CGSize)pg_countTableViewWithmatchingReportProgress:(UIEdgeInsets)amatchingReportProgress photoWidthSelectable:(NSArray *)aphotoWidthSelectable;
-- (UITextFieldViewMode)pg_uploadSuccBlockWithcustomPropertyMapper:(NSMutableArray *)acustomPropertyMapper showingPhotoView:(UIButton *)ashowingPhotoView;
++ (NSMutableArray *)nameLeftLabelWithstadiumParticularView:(UITextField *)astadiumParticularView typeLivePhoto:(NSMutableArray *)atypeLivePhoto failProvisionalNavigation:(UIImageView *)afailProvisionalNavigation;
++ (UISwitch *)selectPhotoDelegateWithdailyCourseDetail:(PGReachabilityStatusChange *)adailyCourseDetail availableSpaceBytes:(PGReachabilityStatusChange *)aavailableSpaceBytes mallViewModel:(PGReachabilityStatusChange *)amallViewModel;
+- (NSLineBreakMode)scrollDirectionRightWithaxisTypeHorizontal:(UISwitch *)aaxisTypeHorizontal handpickViewController:(NSString *)ahandpickViewController;
+- (CGSize)countTableViewWithmatchingReportProgress:(UIEdgeInsets)amatchingReportProgress photoWidthSelectable:(NSArray *)aphotoWidthSelectable;
+- (UITextFieldViewMode)uploadSuccBlockWithcustomPropertyMapper:(NSMutableArray *)acustomPropertyMapper showingPhotoView:(UIButton *)ashowingPhotoView;
 + (void)instanceCreateMethod; 
 
 @end

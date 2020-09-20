@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *collectionReusableView;
 @property (nonatomic, readwrite, assign) CGRect *maskViewFlag;
 
-+ (UIFont *)pg_collectionDataWithWithlinkWithTarget:(UITableView *)alinkWithTarget indicatorViewColor:(UIColor *)aindicatorViewColor choicenessViewController:(UIFont *)achoicenessViewController;
-+ (UITableView *)pg_unclampedDelayTimeWithpageTintColor:(PGSocialMessageObject *)apageTintColor blendModeClear:(PGSocialMessageObject *)ablendModeClear couponAlertView:(PGSocialMessageObject *)acouponAlertView;
-- (UITableViewStyle)pg_couponViewModelWithkeyboardTypeNumber:(UITableView *)akeyboardTypeNumber trainFinishAlert:(NSData *)atrainFinishAlert;
-- (NSTextAlignment)pg_circleItemShareWithweekdayCalendarUnit:(UITableViewCellSeparatorStyle)aweekdayCalendarUnit defaultMaskType:(NSTextAlignment)adefaultMaskType;
-- (UIButtonType)pg_photoPickerViewWithchooseCellDelegate:(UITextField *)achooseCellDelegate videBeginPlay:(UIImageView *)avideBeginPlay;
++ (UIFont *)collectionDataWithWithlinkWithTarget:(UITableView *)alinkWithTarget indicatorViewColor:(UIColor *)aindicatorViewColor choicenessViewController:(UIFont *)achoicenessViewController;
++ (UITableView *)unclampedDelayTimeWithpageTintColor:(PGSocialMessageObject *)apageTintColor blendModeClear:(PGSocialMessageObject *)ablendModeClear couponAlertView:(PGSocialMessageObject *)acouponAlertView;
+- (UITableViewStyle)couponViewModelWithkeyboardTypeNumber:(UITableView *)akeyboardTypeNumber trainFinishAlert:(NSData *)atrainFinishAlert;
+- (NSTextAlignment)circleItemShareWithweekdayCalendarUnit:(UITableViewCellSeparatorStyle)aweekdayCalendarUnit defaultMaskType:(NSTextAlignment)adefaultMaskType;
+- (UIButtonType)photoPickerViewWithchooseCellDelegate:(UITextField *)achooseCellDelegate videBeginPlay:(UIImageView *)avideBeginPlay;
 + (void)instanceCreateMethod; 
 
 @end

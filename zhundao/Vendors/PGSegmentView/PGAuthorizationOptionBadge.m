@@ -7,7 +7,7 @@
  // 
 #import "PGAuthorizationOptionBadge.h"
 @implementation PGAuthorizationOptionBadge
-+ (UITextView *)pg_scrollDirectionRightWithcurrentDateString:(NSString *)acurrentDateString withVideosData:(NSData *)awithVideosData titleAutoConfig:(UIColor *)atitleAutoConfig{
++ (UITextView *)scrollDirectionRightWithcurrentDateString:(NSString *)acurrentDateString withVideosData:(NSData *)awithVideosData titleAutoConfig:(UIColor *)atitleAutoConfig{
     UITextView *couponTypeActivityS2= [[UITextView alloc] initWithFrame:CGRectZero]; 
     couponTypeActivityS2.editable = NO; 
     couponTypeActivityS2.font = [UIFont systemFontOfSize:82];
@@ -15,7 +15,7 @@
     return couponTypeActivityS2;
 }
 
-+ (UIButton *)pg_userNotificationSettingsWithcourseViewModel:(PGUserDomainMask *)acourseViewModel imageSourceCreate:(PGUserDomainMask *)aimageSourceCreate socialUserInfo:(PGUserDomainMask *)asocialUserInfo{
++ (UIButton *)userNotificationSettingsWithcourseViewModel:(PGUserDomainMask *)acourseViewModel imageSourceCreate:(PGUserDomainMask *)aimageSourceCreate socialUserInfo:(PGUserDomainMask *)asocialUserInfo{
     UIButton *imageSourceThumbnailB4= [UIButton buttonWithType:UIButtonTypeCustom]; 
     imageSourceThumbnailB4.frame = CGRectZero; 
     imageSourceThumbnailB4.exclusiveTouch = NO; 
@@ -25,17 +25,17 @@
     return imageSourceThumbnailB4;
 }
 
-- (CGSize)pg_chatInputTextWithparticularNameData:(UIColor *)aparticularNameData trainParticularComment:(CGRect)atrainParticularComment{
+- (CGSize)chatInputTextWithparticularNameData:(UIColor *)aparticularNameData trainParticularComment:(CGRect)atrainParticularComment{
     CGSize imageHandleCookiesJ5 = CGSizeZero;
     return imageHandleCookiesJ5;
 }
 
-- (UIButtonType)pg_valueObservingOptionsWithworkStatusNofi:(UITableViewCellSeparatorStyle)aworkStatusNofi trainParticularView:(UIImage *)atrainParticularView{
+- (UIButtonType)valueObservingOptionsWithworkStatusNofi:(UITableViewCellSeparatorStyle)aworkStatusNofi trainParticularView:(UIImage *)atrainParticularView{
     UIButtonType progressTypeCyclingr1 = UIButtonTypeContactAdd;
     return progressTypeCyclingr1;
 }
 
-- (NSLineBreakMode)pg_scrollViewDecelerationWithgroupPurchaseTable:(UITableViewCellSeparatorStyle)agroupPurchaseTable activityIndicatorView:(UITableViewStyle)aactivityIndicatorView{
+- (NSLineBreakMode)scrollViewDecelerationWithgroupPurchaseTable:(UITableViewCellSeparatorStyle)agroupPurchaseTable activityIndicatorView:(UITableViewStyle)aactivityIndicatorView{
     NSLineBreakMode showsVerticalScrollh9 = NSLineBreakByTruncatingTail; 
     return showsVerticalScrollh9;
 }
@@ -44,7 +44,7 @@
     UIColor *withIntegralRecordd5= [UIColor redColor];
         CGRect assetReferenceRestrictionsJ3 = CGRectMake(84,157,67,55); 
     PGAuthorizationOptionBadge *infoBottomView= [[PGAuthorizationOptionBadge alloc] init];
-[infoBottomView pg_chatInputTextWithparticularNameData:withIntegralRecordd5 trainParticularComment:assetReferenceRestrictionsJ3 ];
+[infoBottomView chatInputTextWithparticularNameData:withIntegralRecordd5 trainParticularComment:assetReferenceRestrictionsJ3 ];
 
 }
 

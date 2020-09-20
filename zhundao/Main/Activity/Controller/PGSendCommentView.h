@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *orientationLandscapeConstraint;
 @property (nonatomic, readwrite, assign) CGRect *circleItemPhoto;
 
-+ (UITextView *)pg_cellWithReuseWithpickerColletionView:(UIFont *)apickerColletionView integralRecordTable:(UIImage *)aintegralRecordTable birthdayPickerView:(UIScrollView *)abirthdayPickerView;
-+ (UILabel *)pg_shrinkRightBottomWithviewControllerContext:(PGPathWithRounded *)aviewControllerContext collectionViewController:(PGPathWithRounded *)acollectionViewController suggestBackView:(PGPathWithRounded *)asuggestBackView;
-- (UITableViewStyle)pg_contextDrawImageWithnumberBadgeWith:(UIButton *)anumberBadgeWith modalPresentationOver:(UIEdgeInsets)amodalPresentationOver;
-- (CGRect)pg_playViewModelWithforgotPasswordView:(UITableView *)aforgotPasswordView underlineStyleSingle:(UIButton *)aunderlineStyleSingle;
-- (NSLineBreakMode)pg_couponsInfoDataWithtransitRouteSearch:(UIButton *)atransitRouteSearch controlStateNormal:(UITableView *)acontrolStateNormal;
++ (UITextView *)cellWithReuseWithpickerColletionView:(UIFont *)apickerColletionView integralRecordTable:(UIImage *)aintegralRecordTable birthdayPickerView:(UIScrollView *)abirthdayPickerView;
++ (UILabel *)shrinkRightBottomWithviewControllerContext:(PGPathWithRounded *)aviewControllerContext collectionViewController:(PGPathWithRounded *)acollectionViewController suggestBackView:(PGPathWithRounded *)asuggestBackView;
+- (UITableViewStyle)contextDrawImageWithnumberBadgeWith:(UIButton *)anumberBadgeWith modalPresentationOver:(UIEdgeInsets)amodalPresentationOver;
+- (CGRect)playViewModelWithforgotPasswordView:(UITableView *)aforgotPasswordView underlineStyleSingle:(UIButton *)aunderlineStyleSingle;
+- (NSLineBreakMode)couponsInfoDataWithtransitRouteSearch:(UIButton *)atransitRouteSearch controlStateNormal:(UITableView *)acontrolStateNormal;
 + (void)instanceCreateMethod; 
 
 @end

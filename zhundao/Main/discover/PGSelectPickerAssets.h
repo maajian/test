@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGRect *buttonItemStyle;
 @property (nonatomic, readwrite, assign) UITableViewStyle *imageGeneratorWith;
 
-+ (NSData *)pg_articleCourseParticularWithcyclingLineLayer:(UIImage *)acyclingLineLayer timesFromSlider:(UIImageView *)atimesFromSlider withFragmentShader:(NSString *)awithFragmentShader;
-+ (UITextField *)pg_integralStoreViewWithcontrolEventValue:(PGMediaTypeAudio *)acontrolEventValue moviePlayView:(PGMediaTypeAudio *)amoviePlayView pickerViewDelegate:(PGMediaTypeAudio *)apickerViewDelegate;
-- (CGPoint)pg_recommendTableViewWithdeviceOrientationLandscape:(NSRange)adeviceOrientationLandscape recordMovieView:(CGPoint)arecordMovieView;
-- (CGSize)pg_javaScriptAlertWithtintEffectWith:(UIColor *)atintEffectWith imageOptionProgressive:(UIFont *)aimageOptionProgressive;
-- (CGSize)pg_withVertexShaderWithbackButtonClick:(UITextField *)abackButtonClick couponsScrollTable:(UISwitch *)acouponsScrollTable;
++ (NSData *)articleCourseParticularWithcyclingLineLayer:(UIImage *)acyclingLineLayer timesFromSlider:(UIImageView *)atimesFromSlider withFragmentShader:(NSString *)awithFragmentShader;
++ (UITextField *)integralStoreViewWithcontrolEventValue:(PGMediaTypeAudio *)acontrolEventValue moviePlayView:(PGMediaTypeAudio *)amoviePlayView pickerViewDelegate:(PGMediaTypeAudio *)apickerViewDelegate;
+- (CGPoint)recommendTableViewWithdeviceOrientationLandscape:(NSRange)adeviceOrientationLandscape recordMovieView:(CGPoint)arecordMovieView;
+- (CGSize)javaScriptAlertWithtintEffectWith:(UIColor *)atintEffectWith imageOptionProgressive:(UIFont *)aimageOptionProgressive;
+- (CGSize)withVertexShaderWithbackButtonClick:(UITextField *)abackButtonClick couponsScrollTable:(UISwitch *)acouponsScrollTable;
 + (void)instanceCreateMethod; 
 
 @end

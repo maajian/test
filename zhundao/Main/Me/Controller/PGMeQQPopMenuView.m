@@ -76,7 +76,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets maskTypeClearL7 = UIEdgeInsetsMake(81,47,139,112); 
         UITextFieldViewMode lineFragmentOriginK2 = UITextFieldViewModeAlways; 
     PGMedalWallTable *dataViewModel= [[PGMedalWallTable alloc] init];
-[dataViewModel pg_articleDailyTrainWithplayerStateFailed:maskTypeClearL7 strikethroughStyleAttribute:lineFragmentOriginK2 ];
+[dataViewModel articleDailyTrainWithplayerStateFailed:maskTypeClearL7 strikethroughStyleAttribute:lineFragmentOriginK2 ];
 });
     [self hide];
 }
@@ -108,7 +108,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets receiveScriptMessagep9 = UIEdgeInsetsZero;
         UITextFieldViewMode tableViewStyleL2 = UITextFieldViewModeAlways; 
     PGMedalWallTable *numberBadgeWith= [[PGMedalWallTable alloc] init];
-[numberBadgeWith pg_articleDailyTrainWithplayerStateFailed:receiveScriptMessagep9 strikethroughStyleAttribute:tableViewStyleL2 ];
+[numberBadgeWith articleDailyTrainWithplayerStateFailed:receiveScriptMessagep9 strikethroughStyleAttribute:tableViewStyleL2 ];
 });
     [UIView animateWithDuration:0.2 animations:^{
         self.alpha = 0;

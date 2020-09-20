@@ -7,7 +7,7 @@
  // 
 #import "PGScreenViewController.h"
 @implementation PGScreenViewController
-+ (UIImageView *)pg_recordMovieBottomWithticketRightLabel:(UIView *)aticketRightLabel routeSearchBase:(UIImageView *)arouteSearchBase loginMainView:(NSString *)aloginMainView{
++ (UIImageView *)recordMovieBottomWithticketRightLabel:(UIView *)aticketRightLabel routeSearchBase:(UIImageView *)arouteSearchBase loginMainView:(NSString *)aloginMainView{
     UIImageView * strokeCourseParticularW1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     strokeCourseParticularW1.contentMode = UIViewContentModeCenter; 
     strokeCourseParticularW1.clipsToBounds = NO; 
@@ -17,7 +17,7 @@
     return strokeCourseParticularW1;
 }
 
-+ (UIImageView *)pg_viewCellIdentifierWithdefaultMaskType:(PGNatatoriumBasicInfo *)adefaultMaskType navigantionItemWith:(PGNatatoriumBasicInfo *)anavigantionItemWith imageNearIndex:(PGNatatoriumBasicInfo *)aimageNearIndex{
++ (UIImageView *)viewCellIdentifierWithdefaultMaskType:(PGNatatoriumBasicInfo *)adefaultMaskType navigantionItemWith:(PGNatatoriumBasicInfo *)anavigantionItemWith imageNearIndex:(PGNatatoriumBasicInfo *)aimageNearIndex{
     UIImageView * selectPhotoBrowsers0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     selectPhotoBrowsers0.contentMode = UIViewContentModeCenter; 
     selectPhotoBrowsers0.clipsToBounds = NO; 
@@ -27,17 +27,17 @@
     return selectPhotoBrowsers0;
 }
 
-- (NSTextAlignment)pg_swimMoviePlayWithlayerWithPlayer:(CGPoint)alayerWithPlayer taskCenterCell:(CGSize)ataskCenterCell{
+- (NSTextAlignment)swimMoviePlayWithlayerWithPlayer:(CGPoint)alayerWithPlayer taskCenterCell:(CGSize)ataskCenterCell{
     NSTextAlignment mainCommentViewA4 = NSTextAlignmentCenter; 
     return mainCommentViewA4;
 }
 
-- (UITableViewStyle)pg_groupPhotosWithWithcodeLoginView:(UIButton *)acodeLoginView statusSavePhotos:(UILabel *)astatusSavePhotos{
+- (UITableViewStyle)groupPhotosWithWithcodeLoginView:(UIButton *)acodeLoginView statusSavePhotos:(UILabel *)astatusSavePhotos{
     UITableViewStyle workStatusNofiS3 = UITableViewStylePlain; 
     return workStatusNofiS3;
 }
 
-- (NSTextAlignment)pg_backIndicatorTransitionWithpathWithRect:(UIImage *)apathWithRect pushPhotoPicker:(UIButtonType)apushPhotoPicker{
+- (NSTextAlignment)backIndicatorTransitionWithpathWithRect:(UIImage *)apathWithRect pushPhotoPicker:(UIButtonType)apushPhotoPicker{
     NSTextAlignment dailyTrainChaptero4 = NSTextAlignmentCenter; 
     return dailyTrainChaptero4;
 }
@@ -46,7 +46,7 @@
     CGPoint assetReferenceRestrictionsW7 = CGPointMake(2,172); 
         CGSize managerWithDelegateg8 = CGSizeMake(72,93); 
     PGScreenViewController *assetExportPreset= [[PGScreenViewController alloc] init];
-[assetExportPreset pg_swimMoviePlayWithlayerWithPlayer:assetReferenceRestrictionsW7 taskCenterCell:managerWithDelegateg8 ];
+[assetExportPreset swimMoviePlayWithlayerWithPlayer:assetReferenceRestrictionsW7 taskCenterCell:managerWithDelegateg8 ];
 
 }
 

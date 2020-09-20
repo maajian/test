@@ -7,7 +7,7 @@
  // 
 #import "PGWithCalendarIdentifier.h"
 @implementation PGWithCalendarIdentifier
-+ (UISlider *)pg_audioPlayerDelegateWithassetFromImage:(NSMutableArray *)aassetFromImage finishLoadingWith:(UITextView *)afinishLoadingWith backGroundUser:(UIColor *)abackGroundUser{
++ (UISlider *)audioPlayerDelegateWithassetFromImage:(NSMutableArray *)aassetFromImage finishLoadingWith:(UITextView *)afinishLoadingWith backGroundUser:(UIColor *)abackGroundUser{
     UISlider *javaScriptConfirmF1= [[UISlider alloc] initWithFrame:CGRectMake(87,97,207,99)]; 
     javaScriptConfirmF1.minimumValue = 0; 
     javaScriptConfirmF1.maximumValue = 100; 
@@ -15,7 +15,7 @@
     return javaScriptConfirmF1;
 }
 
-+ (UITableView *)pg_ringStrokeAnimationWithcollectionTrainTable:(PGGradeBottomView *)acollectionTrainTable sendTweetSucc:(PGGradeBottomView *)asendTweetSucc baseLoginView:(PGGradeBottomView *)abaseLoginView{
++ (UITableView *)ringStrokeAnimationWithcollectionTrainTable:(PGGradeBottomView *)acollectionTrainTable sendTweetSucc:(PGGradeBottomView *)asendTweetSucc baseLoginView:(PGGradeBottomView *)abaseLoginView{
     UITableView *mainCommentModell6= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     mainCommentModell6.frame = CGRectZero; 
     mainCommentModell6.showsVerticalScrollIndicator = NO; 
@@ -34,17 +34,17 @@
      return mainCommentModell6;
 }
 
-- (CGPoint)pg_enableVertexAttribWithshaderFromString:(NSMutableArray *)ashaderFromString backgroundLayerColor:(UIEdgeInsets)abackgroundLayerColor{
+- (CGPoint)enableVertexAttribWithshaderFromString:(NSMutableArray *)ashaderFromString backgroundLayerColor:(UIEdgeInsets)abackgroundLayerColor{
     CGPoint playerStatusFailedZ6 = CGPointMake(2,26); 
     return playerStatusFailedZ6;
 }
 
-- (NSLineBreakMode)pg_likesViewModelWithalertControllerStyle:(CGRect)aalertControllerStyle arrayUsingSelector:(UILabel *)aarrayUsingSelector{
+- (NSLineBreakMode)likesViewModelWithalertControllerStyle:(CGRect)aalertControllerStyle arrayUsingSelector:(UILabel *)aarrayUsingSelector{
     NSLineBreakMode controlViewWillm2 = NSLineBreakByTruncatingTail; 
     return controlViewWillm2;
 }
 
-- (NSTextAlignment)pg_photoPreviewViewWithnatatoriumAddressTable:(CGSize)anatatoriumAddressTable collectionViewCell:(NSLineBreakMode)acollectionViewCell{
+- (NSTextAlignment)photoPreviewViewWithnatatoriumAddressTable:(CGSize)anatatoriumAddressTable collectionViewCell:(NSLineBreakMode)acollectionViewCell{
     NSTextAlignment moreRecommendUserP2 = NSTextAlignmentCenter; 
     return moreRecommendUserP2;
 }
@@ -53,7 +53,7 @@
     NSMutableArray *contextStrokePathK8= [NSMutableArray arrayWithCapacity:0];
         UIEdgeInsets courseChoicenessColumnistR5 = UIEdgeInsetsZero;
     PGWithCalendarIdentifier *courseChoicenessArticle= [[PGWithCalendarIdentifier alloc] init];
-[courseChoicenessArticle pg_enableVertexAttribWithshaderFromString:contextStrokePathK8 backgroundLayerColor:courseChoicenessColumnistR5 ];
+[courseChoicenessArticle enableVertexAttribWithshaderFromString:contextStrokePathK8 backgroundLayerColor:courseChoicenessColumnistR5 ];
 
 }
 

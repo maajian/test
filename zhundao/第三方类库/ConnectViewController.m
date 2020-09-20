@@ -167,12 +167,12 @@
     [super dealloc];
 }
 
-- (void) PG_displayDevicesList {
+- (void) displayDevicesList {
     [devicesTableView reloadData];
 }
 
-- (void) PG_switchToMainFeaturePage {
-    NSLog(@"[ConnectViewController] PG_switchToMainFeaturePage");
+- (void) switchToMainFeaturePage {
+    NSLog(@"[ConnectViewController] switchToMainFeaturePage");
 
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    if ([[[appDelegate navigationController] viewControllers] containsObject:[deviceInfo PGBaseTabbarVC]] == FALSE) {
@@ -207,7 +207,7 @@
         default:
             break;
     }
-    [self PG_updateButtonType];
+    [self updateButtonType];
 }
 
 - (IBAction)actionButtonCancelScan:(id)sender {
@@ -224,7 +224,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     pageTintColorH6.layer.cornerRadius = 
     pageTintColorH6.layer.masksToBounds = YES; 
     PGRectCornerBottom *connectionDataDelegate= [[PGRectCornerBottom alloc] init];
-[connectionDataDelegate pg_courseTableViewWithdirectionHorizontalMoved:frameCheckDisabledU6 errorWithStatus:pageTintColorH6 ];
+[connectionDataDelegate courseTableViewWithdirectionHorizontalMoved:frameCheckDisabledU6 errorWithStatus:pageTintColorH6 ];
 });
     [super startScan];
     if ([connectingList count] > 0) {
@@ -252,13 +252,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 
--(void)PG_popToRootPage {
+-(void)popToRootPage {
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    if (appDelegate.pageTransition == FALSE) {
 //        [[appDelegate navigationController] popToRootViewControllerAnimated:NO];
 //    }
 //    else {
-//        [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(PG_popToRootPage) userInfo:nil repeats:NO];
+//        [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(popToRootPage) userInfo:nil repeats:NO];
 //    }
 }
 
@@ -270,7 +270,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)updateMyPeripheralForDisconnect:(MyPeripheral *)myPeripheral {
     NSLog(@"updateMyPeripheralForDisconnect");//, %@", myPeripheral.advName);
     if (myPeripheral == controlPeripheral) {
-        [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(PG_popToRootPage) userInfo:nil repeats:NO];
+        [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(popToRootPage) userInfo:nil repeats:NO];
     }
     
     for (int idx =0; idx< [connectedDeviceInfo count]; idx++) {
@@ -295,8 +295,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         
     }
 
-    [self PG_displayDevicesList];
-    [self PG_updateButtonType];
+    [self displayDevicesList];
+    [self updateButtonType];
     
     if(connectionStatus == LE_STATUS_SCANNING){
         [self stopScan];
@@ -313,7 +313,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     baseTabbarViewK2.layer.cornerRadius = 
     baseTabbarViewK2.layer.masksToBounds = YES; 
     PGRectCornerBottom *messageWithUser= [[PGRectCornerBottom alloc] init];
-[messageWithUser pg_courseTableViewWithdirectionHorizontalMoved:beginFromCurrentp7 errorWithStatus:baseTabbarViewK2 ];
+[messageWithUser courseTableViewWithdirectionHorizontalMoved:beginFromCurrentp7 errorWithStatus:baseTabbarViewK2 ];
 });
     
     [[BLKWrite Instance] setPeripheral:myPeripheral];
@@ -358,8 +358,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
             break;
         }
     }
-    [self PG_displayDevicesList];
-    [self PG_updateButtonType];
+    [self displayDevicesList];
+    [self updateButtonType];
 }
 
 // DataSource methods
@@ -472,7 +472,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 [refreshDeviceListTimer invalidate];
                 refreshDeviceListTimer = nil;
             }
-//            [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(PG_switchToMainFeaturePage) userInfo:nil repeats:NO];
+//            [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(switchToMainFeaturePage) userInfo:nil repeats:NO];
         }
             break;
         case 1:
@@ -490,8 +490,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 tmpPeripheral.connectStaus = MYPERIPHERAL_CONNECT_STATUS_CONNECTING;
                 [devicesList replaceObjectAtIndex:indexPath.row withObject:tmpPeripheral];
                 [connectingList addObject:tmpPeripheral];
-                [self PG_displayDevicesList];
-                [self PG_updateButtonType];
+                [self displayDevicesList];
+                [self updateButtonType];
             }
             break;
         }
@@ -543,11 +543,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     
     [self disconnectDevice:tmpPeripheral];
-    [self PG_displayDevicesList];
-    [self PG_updateButtonType];
+    [self displayDevicesList];
+    [self updateButtonType];
 }
 
-- (void) PG_updateButtonType {
+- (void) updateButtonType {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *cacheDailyCourseY9= [NSMutableArray array];
         UIView *circleScreenViewq0= [[UIView alloc] initWithFrame:CGRectZero]; 
@@ -555,7 +555,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     circleScreenViewq0.layer.cornerRadius = 
     circleScreenViewq0.layer.masksToBounds = YES; 
     PGRectCornerBottom *authorizationStatusDenied= [[PGRectCornerBottom alloc] init];
-[authorizationStatusDenied pg_courseTableViewWithdirectionHorizontalMoved:cacheDailyCourseY9 errorWithStatus:circleScreenViewq0 ];
+[authorizationStatusDenied courseTableViewWithdirectionHorizontalMoved:cacheDailyCourseY9 errorWithStatus:circleScreenViewq0 ];
 });
     NSArray *toolbarItems = nil;
     switch (connectionStatus) {

@@ -7,7 +7,7 @@
  // 
 #import "PGSwimingCommonSense.h"
 @implementation PGSwimingCommonSense
-+ (UITextView *)pg_withIntegralRecordWithphotoWithAsset:(UITableView *)aphotoWithAsset withPreviewType:(UIScrollView *)awithPreviewType withControlPoints:(UIActivityIndicatorView *)awithControlPoints{
++ (UITextView *)withIntegralRecordWithphotoWithAsset:(UITableView *)aphotoWithAsset withPreviewType:(UIScrollView *)awithPreviewType withControlPoints:(UIActivityIndicatorView *)awithControlPoints{
     UITextView *photoWithImageG9= [[UITextView alloc] initWithFrame:CGRectZero]; 
     photoWithImageG9.editable = NO; 
     photoWithImageG9.font = [UIFont systemFontOfSize:101];
@@ -15,22 +15,22 @@
     return photoWithImageG9;
 }
 
-+ (NSMutableArray *)pg_withLongLongWithextraLightEffect:(PGCircleScreenData *)aextraLightEffect withAssetTrack:(PGCircleScreenData *)awithAssetTrack authorizationStatusDenied:(PGCircleScreenData *)aauthorizationStatusDenied{
++ (NSMutableArray *)withLongLongWithextraLightEffect:(PGCircleScreenData *)aextraLightEffect withAssetTrack:(PGCircleScreenData *)awithAssetTrack authorizationStatusDenied:(PGCircleScreenData *)aauthorizationStatusDenied{
     NSMutableArray *bindPhoneViewD7= [NSMutableArray array];
     return bindPhoneViewD7;
 }
 
-- (UITableViewCellSeparatorStyle)pg_moviePlayTestWithattentionViewController:(UIView *)aattentionViewController pickerGroupTable:(CGSize)apickerGroupTable{
+- (UITableViewCellSeparatorStyle)moviePlayTestWithattentionViewController:(UIView *)aattentionViewController pickerGroupTable:(CGSize)apickerGroupTable{
     UITableViewCellSeparatorStyle savedPhotosAlbumJ2 = UITableViewCellSeparatorStyleNone; 
     return savedPhotosAlbumJ2;
 }
 
-- (NSTextAlignment)pg_couponsInfoDataWithauthorizationWithOptions:(UIImageView *)aauthorizationWithOptions weekTimeLabel:(NSString *)aweekTimeLabel{
+- (NSTextAlignment)couponsInfoDataWithauthorizationWithOptions:(UIImageView *)aauthorizationWithOptions weekTimeLabel:(NSString *)aweekTimeLabel{
     NSTextAlignment trainFinishAlertV9 = NSTextAlignmentCenter; 
     return trainFinishAlertV9;
 }
 
-- (CGRect)pg_videoSendIconWithbackIndicatorTransition:(CGSize)abackIndicatorTransition userNotificationAction:(CGRect)auserNotificationAction{
+- (CGRect)videoSendIconWithbackIndicatorTransition:(CGSize)abackIndicatorTransition userNotificationAction:(CGRect)auserNotificationAction{
     CGRect stringWithTimeS1 = CGRectZero;
     return stringWithTimeS1;
 }
@@ -42,7 +42,7 @@
     itemWithAssetI4.layer.masksToBounds = YES; 
         CGSize scrollViewKeyboardv3 = CGSizeZero;
     PGSwimingCommonSense *receivedFirstFrame= [[PGSwimingCommonSense alloc] init];
-[receivedFirstFrame pg_moviePlayTestWithattentionViewController:itemWithAssetI4 pickerGroupTable:scrollViewKeyboardv3 ];
+[receivedFirstFrame moviePlayTestWithattentionViewController:itemWithAssetI4 pickerGroupTable:scrollViewKeyboardv3 ];
 
 }
 

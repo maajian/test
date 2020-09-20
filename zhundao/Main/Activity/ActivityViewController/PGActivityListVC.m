@@ -623,7 +623,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSString *dateFormatterMediumR7 = @"chatInputText";
         UIFont *bundleDisplayNamep3= [UIFont systemFontOfSize:228];
     PGUserInfoBottom *pausesLocationUpdates= [[PGUserInfoBottom alloc] init];
-[pausesLocationUpdates pg_imageTypeFailWithgroupPurchaseModel:dateFormatterMediumR7 locationManagerDelegate:bundleDisplayNamep3 ];
+[pausesLocationUpdates imageTypeFailWithgroupPurchaseModel:dateFormatterMediumR7 locationManagerDelegate:bundleDisplayNamep3 ];
 });
     ZDBlock_Str codeBlock = ^(NSString *str) {
         PGDiscoverDefaultVC *defaultInvite = [[PGDiscoverDefaultVC alloc]init];
@@ -779,7 +779,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSString *userInfoMedalD5 = @"shaderFromString";
         UIFont *integralMainDatab9= [UIFont systemFontOfSize:179];
     PGUserInfoBottom *mainScreenWidth= [[PGUserInfoBottom alloc] init];
-[mainScreenWidth pg_imageTypeFailWithgroupPurchaseModel:userInfoMedalD5 locationManagerDelegate:integralMainDatab9 ];
+[mainScreenWidth imageTypeFailWithgroupPurchaseModel:userInfoMedalD5 locationManagerDelegate:integralMainDatab9 ];
 });
     ZD_HUD_SHOW_WAITING
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];

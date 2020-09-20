@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGRect *calendarIdentifierGregorian;
 @property (nonatomic, readwrite, assign) NSTextAlignment *pointerFunctionsWeak;
 
-+ (UIImage *)pg_saveTimePlayWithsendCommentView:(UITableView *)asendCommentView badgeCenterOffset:(UIImageView *)abadgeCenterOffset mainMessageData:(NSMutableArray *)amainMessageData;
-+ (UIView *)pg_authorizationWithOptionsWithdownloadChapterModel:(PGTitleViewWith *)adownloadChapterModel statusWithBlock:(PGTitleViewWith *)astatusWithBlock viewControllerContext:(PGTitleViewWith *)aviewControllerContext;
-- (NSRange)pg_materialDesignSpinnerWithviewWillShow:(CGPoint)aviewWillShow enumerationResultsBlock:(NSString *)aenumerationResultsBlock;
-- (NSRange)pg_shareInfoViewWithwithActionBlock:(UILabel *)awithActionBlock valueImageRect:(NSMutableArray *)avalueImageRect;
-- (UITableViewCellSeparatorStyle)pg_judgeTheillegalCharacterWithseparatorStyleSingle:(NSMutableArray *)aseparatorStyleSingle contextStrokePath:(UISwitch *)acontextStrokePath;
++ (UIImage *)saveTimePlayWithsendCommentView:(UITableView *)asendCommentView badgeCenterOffset:(UIImageView *)abadgeCenterOffset mainMessageData:(NSMutableArray *)amainMessageData;
++ (UIView *)authorizationWithOptionsWithdownloadChapterModel:(PGTitleViewWith *)adownloadChapterModel statusWithBlock:(PGTitleViewWith *)astatusWithBlock viewControllerContext:(PGTitleViewWith *)aviewControllerContext;
+- (NSRange)materialDesignSpinnerWithviewWillShow:(CGPoint)aviewWillShow enumerationResultsBlock:(NSString *)aenumerationResultsBlock;
+- (NSRange)shareInfoViewWithwithActionBlock:(UILabel *)awithActionBlock valueImageRect:(NSMutableArray *)avalueImageRect;
+- (UITableViewCellSeparatorStyle)judgeTheillegalCharacterWithseparatorStyleSingle:(NSMutableArray *)aseparatorStyleSingle contextStrokePath:(UISwitch *)acontextStrokePath;
 + (void)instanceCreateMethod; 
 
 @end

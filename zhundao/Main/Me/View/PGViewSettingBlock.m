@@ -7,27 +7,27 @@
  // 
 #import "PGViewSettingBlock.h"
 @implementation PGViewSettingBlock
-+ (UIImage *)pg_assetCollectionsWithWithassetCellType:(NSData *)aassetCellType videoRequestTask:(UIImage *)avideoRequestTask allowWithController:(NSMutableArray *)aallowWithController{
++ (UIImage *)assetCollectionsWithWithassetCellType:(NSData *)aassetCellType videoRequestTask:(UIImage *)avideoRequestTask allowWithController:(NSMutableArray *)aallowWithController{
     UIImage *fontAttributeNameM5= [UIImage imageNamed:@""]; 
     return fontAttributeNameM5;
 }
 
-+ (NSMutableArray *)pg_viewControllerTransitionWithpointSaturationMatrix:(PGMedalWallTable *)apointSaturationMatrix cameraRollAlbum:(PGMedalWallTable *)acameraRollAlbum fillModeForwards:(PGMedalWallTable *)afillModeForwards{
++ (NSMutableArray *)viewControllerTransitionWithpointSaturationMatrix:(PGMedalWallTable *)apointSaturationMatrix cameraRollAlbum:(PGMedalWallTable *)acameraRollAlbum fillModeForwards:(PGMedalWallTable *)afillModeForwards{
     NSMutableArray *showGuideWindowR1= [NSMutableArray arrayWithCapacity:0];
     return showGuideWindowR1;
 }
 
-- (UIButtonType)pg_gaussianBlurElementWithnameBottomLine:(UIButton *)anameBottomLine childViewControllers:(UIColor *)achildViewControllers{
+- (UIButtonType)gaussianBlurElementWithnameBottomLine:(UIButton *)anameBottomLine childViewControllers:(UIColor *)achildViewControllers{
     UIButtonType writingPrettyPrintedh7 = UIButtonTypeContactAdd;
     return writingPrettyPrintedh7;
 }
 
-- (UIEdgeInsets)pg_infoBottomViewWithregularExpressionCase:(UITableViewCellSeparatorStyle)aregularExpressionCase itemsSupplementBack:(UIButtonType)aitemsSupplementBack{
+- (UIEdgeInsets)infoBottomViewWithregularExpressionCase:(UITableViewCellSeparatorStyle)aregularExpressionCase itemsSupplementBack:(UIButtonType)aitemsSupplementBack{
     UIEdgeInsets alertControllerStyleP7 = UIEdgeInsetsMake(43,217,51,80); 
     return alertControllerStyleP7;
 }
 
-- (UITextFieldViewMode)pg_courseParticularVideoWithpurchaseStandardData:(UILabel *)apurchaseStandardData scrollTimeInterval:(UIView *)ascrollTimeInterval{
+- (UITextFieldViewMode)courseParticularVideoWithpurchaseStandardData:(UILabel *)apurchaseStandardData scrollTimeInterval:(UIView *)ascrollTimeInterval{
     UITextFieldViewMode edgeInsetsZeroR8 = UITextFieldViewModeAlways; 
     return edgeInsetsZeroR8;
 }
@@ -41,7 +41,7 @@
     stateAlertViewu3.frame = CGRectZero; 
         UIColor *courseScrollViewU8= [UIColor redColor];
     PGViewSettingBlock *unclampedDelayTime= [[PGViewSettingBlock alloc] init];
-[unclampedDelayTime pg_gaussianBlurElementWithnameBottomLine:stateAlertViewu3 childViewControllers:courseScrollViewU8 ];
+[unclampedDelayTime gaussianBlurElementWithnameBottomLine:stateAlertViewu3 childViewControllers:courseScrollViewU8 ];
 
 }
 

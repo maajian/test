@@ -7,7 +7,7 @@
  // 
 #import "PGMainViewController.h"
 @implementation PGMainViewController
-+ (UIView *)pg_withStrokeCourseWithassetFromVideo:(UIFont *)aassetFromVideo groupWithPhotos:(UIImageView *)agroupWithPhotos failLoadWith:(UITableView *)afailLoadWith{
++ (UIView *)withStrokeCourseWithassetFromVideo:(UIFont *)aassetFromVideo groupWithPhotos:(UIImageView *)agroupWithPhotos failLoadWith:(UITableView *)afailLoadWith{
     UIView *uploadSuccBlockm0= [[UIView alloc] initWithFrame:CGRectMake(140,227,78,239)]; 
     uploadSuccBlockm0.backgroundColor = [UIColor whiteColor]; 
     uploadSuccBlockm0.layer.cornerRadius = 
@@ -15,24 +15,24 @@
     return uploadSuccBlockm0;
 }
 
-+ (UISwitch *)pg_bottomChartViewWithallowPickingVideo:(PGCourseVideoPlayed *)aallowPickingVideo exerciseHistoryData:(PGCourseVideoPlayed *)aexerciseHistoryData commentObjectModel:(PGCourseVideoPlayed *)acommentObjectModel{
++ (UISwitch *)bottomChartViewWithallowPickingVideo:(PGCourseVideoPlayed *)aallowPickingVideo exerciseHistoryData:(PGCourseVideoPlayed *)aexerciseHistoryData commentObjectModel:(PGCourseVideoPlayed *)acommentObjectModel{
     UISwitch *blendModeClearQ1= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     blendModeClearQ1.on = YES; 
     blendModeClearQ1.onTintColor = [UIColor whiteColor]; 
     return blendModeClearQ1;
 }
 
-- (CGRect)pg_minimumFractionDigitsWithapplicationNeedUpdate:(UISlider *)aapplicationNeedUpdate sendTweetSucc:(UITextFieldViewMode)asendTweetSucc{
+- (CGRect)minimumFractionDigitsWithapplicationNeedUpdate:(UISlider *)aapplicationNeedUpdate sendTweetSucc:(UITextFieldViewMode)asendTweetSucc{
     CGRect enableVertexAttribw3 = CGRectZero;
     return enableVertexAttribw3;
 }
 
-- (NSRange)pg_finishPickingVideoWithassetCollectionsWith:(UITextFieldViewMode)aassetCollectionsWith stadiumParticularView:(UIButton *)astadiumParticularView{
+- (NSRange)finishPickingVideoWithassetCollectionsWith:(UITextFieldViewMode)aassetCollectionsWith stadiumParticularView:(UIButton *)astadiumParticularView{
     NSRange finishLoadWithB7 = NSMakeRange(4,184); 
     return finishLoadWithB7;
 }
 
-- (NSTextAlignment)pg_typeUserCenterWithfirstFrameCheck:(UITextView *)afirstFrameCheck affineTransformIdentity:(UITableViewCellSeparatorStyle)aaffineTransformIdentity{
+- (NSTextAlignment)typeUserCenterWithfirstFrameCheck:(UITextView *)afirstFrameCheck affineTransformIdentity:(UITableViewCellSeparatorStyle)aaffineTransformIdentity{
     NSTextAlignment blendModeDestinationZ9 = NSTextAlignmentCenter; 
     return blendModeDestinationZ9;
 }
@@ -44,7 +44,7 @@
     childViewModelQ0.value =39; 
         UITextFieldViewMode baseTabbarViewn4 = UITextFieldViewModeAlways; 
     PGMainViewController *launchOptionsDirections= [[PGMainViewController alloc] init];
-[launchOptionsDirections pg_minimumFractionDigitsWithapplicationNeedUpdate:childViewModelQ0 sendTweetSucc:baseTabbarViewn4 ];
+[launchOptionsDirections minimumFractionDigitsWithapplicationNeedUpdate:childViewModelQ0 sendTweetSucc:baseTabbarViewn4 ];
 
 }
 

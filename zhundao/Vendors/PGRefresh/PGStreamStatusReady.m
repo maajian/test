@@ -7,12 +7,12 @@
  // 
 #import "PGStreamStatusReady.h"
 @implementation PGStreamStatusReady
-+ (UIFont *)pg_countTableViewWithpathCreateMutable:(UIImageView *)apathCreateMutable integralMainHeader:(NSData *)aintegralMainHeader frameProcessingCompletion:(UITextField *)aframeProcessingCompletion{
++ (UIFont *)countTableViewWithpathCreateMutable:(UIImageView *)apathCreateMutable integralMainHeader:(NSData *)aintegralMainHeader frameProcessingCompletion:(UITextField *)aframeProcessingCompletion{
     UIFont *numberWithStringo1= [UIFont systemFontOfSize:220];
     return numberWithStringo1;
 }
 
-+ (UILabel *)pg_swimParticularModelWithtweetCommentData:(PGSendCommentView *)atweetCommentData indicatorViewColor:(PGSendCommentView *)aindicatorViewColor collectionViewFlow:(PGSendCommentView *)acollectionViewFlow{
++ (UILabel *)swimParticularModelWithtweetCommentData:(PGSendCommentView *)atweetCommentData indicatorViewColor:(PGSendCommentView *)aindicatorViewColor collectionViewFlow:(PGSendCommentView *)acollectionViewFlow{
     UILabel *browserPhotoViewD4= [[UILabel alloc] initWithFrame:CGRectMake(168,213,232,93)]; 
     browserPhotoViewD4.text = @"sectionHeaderHeight";
     browserPhotoViewD4.textColor = [UIColor whiteColor]; 
@@ -22,17 +22,17 @@
     return browserPhotoViewD4;
 }
 
-- (CGRect)pg_userInfoWithWithfailLoadWith:(UIFont *)afailLoadWith playerItemPlayback:(UITableView *)aplayerItemPlayback{
+- (CGRect)userInfoWithWithfailLoadWith:(UIFont *)afailLoadWith playerItemPlayback:(UITableView *)aplayerItemPlayback{
     CGRect updatedTimeLabelu6 = CGRectMake(244,66,176,238); 
     return updatedTimeLabelu6;
 }
 
-- (UIEdgeInsets)pg_minimumTrackTintWithweekTimeInterval:(NSLineBreakMode)aweekTimeInterval bundleShortVersion:(UISlider *)abundleShortVersion{
+- (UIEdgeInsets)minimumTrackTintWithweekTimeInterval:(NSLineBreakMode)aweekTimeInterval bundleShortVersion:(UISlider *)abundleShortVersion{
     UIEdgeInsets photoBrowserViewT3 = UIEdgeInsetsZero;
     return photoBrowserViewT3;
 }
 
-- (UITextFieldViewMode)pg_operationWithBlockWithnatatoriumListData:(UIActivityIndicatorView *)anatatoriumListData streamStatusIdle:(UITextField *)astreamStatusIdle{
+- (UITextFieldViewMode)operationWithBlockWithnatatoriumListData:(UIActivityIndicatorView *)anatatoriumListData streamStatusIdle:(UITextField *)astreamStatusIdle{
     UITextFieldViewMode receivedFirstFramec1 = UITextFieldViewModeAlways; 
     return receivedFirstFramec1;
 }
@@ -55,7 +55,7 @@
     browserPhotoScrollN5.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(231,74,191,53)];
      browserPhotoScrollN5.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(212,160,103,91)];
      PGStreamStatusReady *regionDefaultHandler= [[PGStreamStatusReady alloc] init];
-[regionDefaultHandler pg_userInfoWithWithfailLoadWith:shareWebpageObjecth6 playerItemPlayback:browserPhotoScrollN5 ];
+[regionDefaultHandler userInfoWithWithfailLoadWith:shareWebpageObjecth6 playerItemPlayback:browserPhotoScrollN5 ];
 
 }
 

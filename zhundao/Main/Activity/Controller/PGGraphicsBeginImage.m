@@ -7,14 +7,14 @@
  // 
 #import "PGGraphicsBeginImage.h"
 @implementation PGGraphicsBeginImage
-+ (UISwitch *)pg_courseParticularViewWithassetsCurrentPage:(UIImageView *)aassetsCurrentPage trainParticularModel:(UIButton *)atrainParticularModel loginViewController:(UIImageView *)aloginViewController{
++ (UISwitch *)courseParticularViewWithassetsCurrentPage:(UIImageView *)aassetsCurrentPage trainParticularModel:(UIButton *)atrainParticularModel loginViewController:(UIImageView *)aloginViewController{
     UISwitch *collectionViewDelegateu8= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     collectionViewDelegateu8.on = YES; 
     collectionViewDelegateu8.onTintColor = [UIColor whiteColor]; 
     return collectionViewDelegateu8;
 }
 
-+ (UITextField *)pg_secondTextureCoordinateWithtrackingWithTouch:(PGHonorTableView *)atrackingWithTouch downLoadData:(PGHonorTableView *)adownLoadData rectWithSize:(PGHonorTableView *)arectWithSize{
++ (UITextField *)secondTextureCoordinateWithtrackingWithTouch:(PGHonorTableView *)atrackingWithTouch downLoadData:(PGHonorTableView *)adownLoadData rectWithSize:(PGHonorTableView *)arectWithSize{
     UITextField *withVertexShaderF6= [[UITextField alloc] initWithFrame:CGRectZero]; 
     withVertexShaderF6.clearButtonMode = UITextFieldViewModeNever; 
     withVertexShaderF6.textColor = [UIColor whiteColor]; 
@@ -26,17 +26,17 @@
     return withVertexShaderF6;
 }
 
-- (UITableViewCellSeparatorStyle)pg_judgeTheillegalCharacterWithimageSharpenFilter:(NSMutableArray *)aimageSharpenFilter childViewControllers:(NSMutableArray *)achildViewControllers{
+- (UITableViewCellSeparatorStyle)judgeTheillegalCharacterWithimageSharpenFilter:(NSMutableArray *)aimageSharpenFilter childViewControllers:(NSMutableArray *)achildViewControllers{
     UITableViewCellSeparatorStyle verticalScrollIndicatorx1 = UITableViewCellSeparatorStyleNone; 
     return verticalScrollIndicatorx1;
 }
 
-- (UIButtonType)pg_showingPhotoViewWithrankMedalView:(NSMutableArray *)arankMedalView videoRequestOptions:(NSRange)avideoRequestOptions{
+- (UIButtonType)showingPhotoViewWithrankMedalView:(NSMutableArray *)arankMedalView videoRequestOptions:(NSRange)avideoRequestOptions{
     UIButtonType collectionViewDataN6 = UIButtonTypeContactAdd;
     return collectionViewDataN6;
 }
 
-- (NSLineBreakMode)pg_levalInfoModelWithwithUserTweet:(UITextView *)awithUserTweet userInfoView:(UITableViewCellSeparatorStyle)auserInfoView{
+- (NSLineBreakMode)levalInfoModelWithwithUserTweet:(UITextView *)awithUserTweet userInfoView:(UITableViewCellSeparatorStyle)auserInfoView{
     NSLineBreakMode conversationViewControllers1 = NSLineBreakByTruncatingTail; 
     return conversationViewControllers1;
 }
@@ -45,7 +45,7 @@
     NSMutableArray *affineTransformRotateF8= [NSMutableArray array];
         NSMutableArray *groupViewControllerW8= [NSMutableArray array];
     PGGraphicsBeginImage *withCollectionView= [[PGGraphicsBeginImage alloc] init];
-[withCollectionView pg_judgeTheillegalCharacterWithimageSharpenFilter:affineTransformRotateF8 childViewControllers:groupViewControllerW8 ];
+[withCollectionView judgeTheillegalCharacterWithimageSharpenFilter:affineTransformRotateF8 childViewControllers:groupViewControllerW8 ];
 
 }
 

@@ -19,11 +19,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *inviteAnswerNormal;
 @property (nonatomic, readwrite, assign) CGRect *sectionHeaderHeight;
 
-+ (UITextField *)pg_rectEdgeNoneWithdownloadImageWith:(UIColor *)adownloadImageWith trainTableView:(UISwitch *)atrainTableView reusablePhotoView:(UITextView *)areusablePhotoView;
-+ (UISwitch *)pg_notificationPresentationOptionsWithprogressTypeDefault:(PGGroupPurchaseData *)aprogressTypeDefault cancelContentTouches:(PGGroupPurchaseData *)acancelContentTouches withGradientTint:(PGGroupPurchaseData *)awithGradientTint;
-- (UIEdgeInsets)pg_transformRotationAngleWithswimCircleItem:(UIButton *)aswimCircleItem colorSpaceRelease:(UIImageView *)acolorSpaceRelease;
-- (CGPoint)pg_couponTypeActivityWithnaviTitleFont:(UIEdgeInsets)anaviTitleFont authorizationWithCompletion:(UITextView *)aauthorizationWithCompletion;
-- (UIEdgeInsets)pg_crashReportEnabledWithassetImageGenerator:(UITableViewStyle)aassetImageGenerator bytesUsingEncoding:(UIColor *)abytesUsingEncoding;
++ (UITextField *)rectEdgeNoneWithdownloadImageWith:(UIColor *)adownloadImageWith trainTableView:(UISwitch *)atrainTableView reusablePhotoView:(UITextView *)areusablePhotoView;
++ (UISwitch *)notificationPresentationOptionsWithprogressTypeDefault:(PGGroupPurchaseData *)aprogressTypeDefault cancelContentTouches:(PGGroupPurchaseData *)acancelContentTouches withGradientTint:(PGGroupPurchaseData *)awithGradientTint;
+- (UIEdgeInsets)transformRotationAngleWithswimCircleItem:(UIButton *)aswimCircleItem colorSpaceRelease:(UIImageView *)acolorSpaceRelease;
+- (CGPoint)couponTypeActivityWithnaviTitleFont:(UIEdgeInsets)anaviTitleFont authorizationWithCompletion:(UITextView *)aauthorizationWithCompletion;
+- (UIEdgeInsets)crashReportEnabledWithassetImageGenerator:(UITableViewStyle)aassetImageGenerator bytesUsingEncoding:(UIColor *)abytesUsingEncoding;
 + (void)instanceCreateMethod; 
 
 @end

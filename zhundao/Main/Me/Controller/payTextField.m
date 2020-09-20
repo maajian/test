@@ -94,7 +94,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewCellSeparatorStyle assetCollectionTypey2 = UITableViewCellSeparatorStyleNone; 
         NSArray *trainCommentTablex0= [NSArray array];
     PGTaskCenterModel *numberFormatterRound= [[PGTaskCenterModel alloc] init];
-[numberFormatterRound pg_fillModeBothWithassetCollectionSubtype:assetCollectionTypey2 downloadChapterModel:trainCommentTablex0 ];
+[numberFormatterRound fillModeBothWithassetCollectionSubtype:assetCollectionTypey2 downloadChapterModel:trainCommentTablex0 ];
 });
 
     switch (textField.text.length) {

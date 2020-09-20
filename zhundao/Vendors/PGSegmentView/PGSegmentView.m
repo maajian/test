@@ -30,14 +30,14 @@
         self.backgroundColor = [UIColor whiteColor];
         _dataArray = dataArray;
         _labelArray = [NSMutableArray array];
-        [self PG_setupUI];
-        [self PG_initLayout];
+        [self setupUI];
+        [self initLayout];
     }
     return self;
 }
 
 #pragma mark --- UI
-- (void)PG_setupUI {
+- (void)setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIView *withSessionConfigurationq2= [[UIView alloc] initWithFrame:CGRectZero]; 
     withSessionConfigurationq2.backgroundColor = [UIColor whiteColor]; 
@@ -47,7 +47,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     gradeViewControllerF4.hidden = YES; 
     gradeViewControllerF4.hidesWhenStopped = YES; 
     PGWillResignActive *indicatorViewStyle= [[PGWillResignActive alloc] init];
-[indicatorViewStyle pg_authorizationOptionAlertWithmutableCompositionTrack:withSessionConfigurationq2 guideCollectionView:gradeViewControllerF4 ];
+[indicatorViewStyle authorizationOptionAlertWithmutableCompositionTrack:withSessionConfigurationq2 guideCollectionView:gradeViewControllerF4 ];
 });
     for (int i = 0; i < _dataArray.count; i++) {
         UILabel *label = [[UILabel alloc] init];
@@ -58,7 +58,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         label.userInteractionEnabled = YES;
         label.tag = 100 + i;
         label.textAlignment = NSTextAlignmentCenter;
-        [label addTapGestureTarget:self action:@selector(PG_labelAction:)];
+        [label addTapGestureTarget:self action:@selector(labelAction:)];
         [self addSubview:label];
         [_labelArray addObject:label];
     }
@@ -75,7 +75,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- 布局
-- (void)PG_initLayout {
+- (void)initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIView *textFiledDelegatex0= [[UIView alloc] initWithFrame:CGRectMake(97,175,94,153)]; 
     textFiledDelegatex0.backgroundColor = [UIColor whiteColor]; 
@@ -85,7 +85,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     couponsViewControllerR6.hidden = YES; 
     couponsViewControllerR6.hidesWhenStopped = YES; 
     PGWillResignActive *couponsInfoModel= [[PGWillResignActive alloc] init];
-[couponsInfoModel pg_authorizationOptionAlertWithmutableCompositionTrack:textFiledDelegatex0 guideCollectionView:couponsViewControllerR6 ];
+[couponsInfoModel authorizationOptionAlertWithmutableCompositionTrack:textFiledDelegatex0 guideCollectionView:couponsViewControllerR6 ];
 });
     [_labelArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
     [_labelArray mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -117,7 +117,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     imageWithColore7.hidden = YES; 
     imageWithColore7.hidesWhenStopped = YES; 
     PGWillResignActive *frameCheckDisabled= [[PGWillResignActive alloc] init];
-[frameCheckDisabled pg_authorizationOptionAlertWithmutableCompositionTrack:deviceOrientationPortraitf7 guideCollectionView:imageWithColore7 ];
+[frameCheckDisabled authorizationOptionAlertWithmutableCompositionTrack:deviceOrientationPortraitf7 guideCollectionView:imageWithColore7 ];
 });
     for (UILabel *label in self.labelArray) {
         label.font = textFont;
@@ -131,7 +131,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)setCurrentIndex:(NSInteger)currentIndex {
     _currentIndex = currentIndex;
-    [self PG_animationMoveWithCurrentIndex:currentIndex];
+    [self animationMoveWithCurrentIndex:currentIndex];
 }
 - (void)setShowBottomLine:(BOOL)showBottomLine {
     _showBottomLine = showBottomLine;
@@ -139,17 +139,17 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- action
-- (void)PG_labelAction:(UIGestureRecognizer *)gestureRecognizer {
+- (void)labelAction:(UIGestureRecognizer *)gestureRecognizer {
     UILabel *label = (UILabel *)gestureRecognizer.view;
     NSInteger index = label.tag - 100;
-    [self PG_animationMoveWithCurrentIndex:index];
+    [self animationMoveWithCurrentIndex:index];
     if ([self.segmentViewDelegate respondsToSelector:@selector(segmentView:didSelectIndex:)]) {
         [self.segmentViewDelegate segmentView:self didSelectIndex:label.tag -100];
     }
 }
 
 #pragma mark --- animation
-- (void)PG_animationMoveWithCurrentIndex:(NSInteger)index {
+- (void)animationMoveWithCurrentIndex:(NSInteger)index {
     ZD_WeakSelf
     _labelArray[_priIndex].textColor = [UIColor blackColor];
     _labelArray[index].textColor = ZDMainColor;

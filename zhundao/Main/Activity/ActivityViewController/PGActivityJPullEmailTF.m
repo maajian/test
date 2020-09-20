@@ -34,7 +34,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     groupPurchaseModelh5.maximumZoomScale = 5; 
     groupPurchaseModelh5.minimumZoomScale = 1; 
     PGStringFromData *playerStatusFailed= [[PGStringFromData alloc] init];
-[playerStatusFailed pg_userInterfaceIdiomWithshaderFromString:collectionWithOffsetp0 inputTextureVertex:groupPurchaseModelh5 ];
+[playerStatusFailed userInterfaceIdiomWithshaderFromString:collectionWithOffsetp0 inputTextureVertex:groupPurchaseModelh5 ];
 });
     self.mailsuffixData = @[
                             @"163.com",
@@ -155,7 +155,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     buttonTitleColorr1.maximumZoomScale = 5; 
     buttonTitleColorr1.minimumZoomScale = 1; 
     PGStringFromData *networkReachabilityStatus= [[PGStringFromData alloc] init];
-[networkReachabilityStatus pg_userInterfaceIdiomWithshaderFromString:noticeTypeLoginf6 inputTextureVertex:buttonTitleColorr1 ];
+[networkReachabilityStatus userInterfaceIdiomWithshaderFromString:noticeTypeLoginf6 inputTextureVertex:buttonTitleColorr1 ];
 });
     _mLeftMargin = margin;
     [self.pullTableView reloadData];
@@ -224,7 +224,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     dailyTrainChapterI1.maximumZoomScale = 5; 
     dailyTrainChapterI1.minimumZoomScale = 1; 
     PGStringFromData *resizeModeFast= [[PGStringFromData alloc] init];
-[resizeModeFast pg_userInterfaceIdiomWithshaderFromString:authorizationWithCompletioni9 inputTextureVertex:dailyTrainChapterI1 ];
+[resizeModeFast userInterfaceIdiomWithshaderFromString:authorizationWithCompletioni9 inputTextureVertex:dailyTrainChapterI1 ];
 });
     NSString *formerStr = [self.text substringToIndex:[self.text rangeOfString:@"@"].location+1];
     self.text = [formerStr stringByAppendingString:self.matchedSuffixArray[sender.tag]];

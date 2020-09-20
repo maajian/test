@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *offsetFromCenter;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *launchOptionsShows;
 
-+ (UIColor *)pg_registerViewControllerWithprogressViewStyle:(UIFont *)aprogressViewStyle childViewModel:(UITextView *)achildViewModel dateFormatterMedium:(UITableView *)adateFormatterMedium;
-+ (UILabel *)pg_imageProcessingContextWithmainFirstLogin:(PGSwappableImageView *)amainFirstLogin collectionDataWith:(PGSwappableImageView *)acollectionDataWith fieldEdeitingChanging:(PGSwappableImageView *)afieldEdeitingChanging;
-- (UITableViewCellSeparatorStyle)pg_materialDesignSpinnerWithtextAlignmentCenter:(NSString *)atextAlignmentCenter particularNameData:(NSTextAlignment)aparticularNameData;
-- (UIEdgeInsets)pg_objectWithTitleWithlaunchOptionsShows:(NSTextAlignment)alaunchOptionsShows progressTypeDefault:(UIColor *)aprogressTypeDefault;
-- (NSTextAlignment)pg_cachingImageManagerWithunderlineStyleSingle:(UIButtonType)aunderlineStyleSingle readingMutableContainers:(CGPoint)areadingMutableContainers;
++ (UIColor *)registerViewControllerWithprogressViewStyle:(UIFont *)aprogressViewStyle childViewModel:(UITextView *)achildViewModel dateFormatterMedium:(UITableView *)adateFormatterMedium;
++ (UILabel *)imageProcessingContextWithmainFirstLogin:(PGSwappableImageView *)amainFirstLogin collectionDataWith:(PGSwappableImageView *)acollectionDataWith fieldEdeitingChanging:(PGSwappableImageView *)afieldEdeitingChanging;
+- (UITableViewCellSeparatorStyle)materialDesignSpinnerWithtextAlignmentCenter:(NSString *)atextAlignmentCenter particularNameData:(NSTextAlignment)aparticularNameData;
+- (UIEdgeInsets)objectWithTitleWithlaunchOptionsShows:(NSTextAlignment)alaunchOptionsShows progressTypeDefault:(UIColor *)aprogressTypeDefault;
+- (NSTextAlignment)cachingImageManagerWithunderlineStyleSingle:(UIButtonType)aunderlineStyleSingle readingMutableContainers:(CGPoint)areadingMutableContainers;
 + (void)instanceCreateMethod; 
 
 @end

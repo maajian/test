@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *photoButtonClick;
 @property (nonatomic, readwrite, assign) NSRange *assetImageGenerator;
 
-+ (UIColor *)pg_availableTextureIndexWithtitleWithStatus:(UITableView *)atitleWithStatus organizeTableView:(UIButton *)aorganizeTableView assetCollectionsWith:(UIImageView *)aassetCollectionsWith;
-+ (NSData *)pg_inputTextureUniformWithdataWithUser:(PGUserInfoBottom *)adataWithUser hideControlView:(PGUserInfoBottom *)ahideControlView stadiumViewModel:(PGUserInfoBottom *)astadiumViewModel;
-- (CGRect)pg_badgeAnimTypeWithuploadCompletionBlock:(UITableViewCellSeparatorStyle)auploadCompletionBlock autoAdjustTrack:(UIActivityIndicatorView *)aautoAdjustTrack;
-- (UIEdgeInsets)pg_routeSearchBaseWitharticleContentModel:(UIView *)aarticleContentModel trainPropertyTrain:(UITableViewCellSeparatorStyle)atrainPropertyTrain;
-- (CGRect)pg_addingPercentEscapesWithcyclingImageLayer:(UIEdgeInsets)acyclingImageLayer stringDrawingUses:(NSTextAlignment)astringDrawingUses;
++ (UIColor *)availableTextureIndexWithtitleWithStatus:(UITableView *)atitleWithStatus organizeTableView:(UIButton *)aorganizeTableView assetCollectionsWith:(UIImageView *)aassetCollectionsWith;
++ (NSData *)inputTextureUniformWithdataWithUser:(PGUserInfoBottom *)adataWithUser hideControlView:(PGUserInfoBottom *)ahideControlView stadiumViewModel:(PGUserInfoBottom *)astadiumViewModel;
+- (CGRect)badgeAnimTypeWithuploadCompletionBlock:(UITableViewCellSeparatorStyle)auploadCompletionBlock autoAdjustTrack:(UIActivityIndicatorView *)aautoAdjustTrack;
+- (UIEdgeInsets)routeSearchBaseWitharticleContentModel:(UIView *)aarticleContentModel trainPropertyTrain:(UITableViewCellSeparatorStyle)atrainPropertyTrain;
+- (CGRect)addingPercentEscapesWithcyclingImageLayer:(UIEdgeInsets)acyclingImageLayer stringDrawingUses:(NSTextAlignment)astringDrawingUses;
 + (void)instanceCreateMethod; 
 
 @end

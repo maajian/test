@@ -44,7 +44,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     reusableCellWithk1.maximumZoomScale = 5; 
     reusableCellWithk1.minimumZoomScale = 1; 
     PGSelectorFromString *tintEffectWith= [[PGSelectorFromString alloc] init];
-[tintEffectWith pg_lineHeadIndentWithlikeTweetSucc:networkStatusReachableviaw9 playerBeginInterruption:reusableCellWithk1 ];
+[tintEffectWith lineHeadIndentWithlikeTweetSucc:networkStatusReachableviaw9 playerBeginInterruption:reusableCellWithk1 ];
 });
     button.selected = !button.selected;
     
@@ -73,7 +73,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     fileTypeQuickH5.maximumZoomScale = 5; 
     fileTypeQuickH5.minimumZoomScale = 1; 
     PGSelectorFromString *finishPickingVideo= [[PGSelectorFromString alloc] init];
-[finishPickingVideo pg_lineHeadIndentWithlikeTweetSucc:tweetPhotoModelx5 playerBeginInterruption:fileTypeQuickH5 ];
+[finishPickingVideo lineHeadIndentWithlikeTweetSucc:tweetPhotoModelx5 playerBeginInterruption:fileTypeQuickH5 ];
 });
     self.italicButton.selected = italic;
 }

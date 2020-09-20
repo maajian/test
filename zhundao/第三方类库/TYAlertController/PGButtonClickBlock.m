@@ -7,27 +7,27 @@
  // 
 #import "PGButtonClickBlock.h"
 @implementation PGButtonClickBlock
-+ (NSData *)pg_guideViewControllerWithadjustTrackColor:(UIImageView *)aadjustTrackColor beautyParamWith:(NSArray *)abeautyParamWith backFromFront:(UITableView *)abackFromFront{
++ (NSData *)guideViewControllerWithadjustTrackColor:(UIImageView *)aadjustTrackColor beautyParamWith:(NSArray *)abeautyParamWith backFromFront:(UITableView *)abackFromFront{
     NSData *trainInfoViewS1= [[NSData alloc] init];
     return trainInfoViewS1;
 }
 
-+ (UIColor *)pg_delegateMethodWithWithplayerStatusIdle:(PGWithRoundCorner *)aplayerStatusIdle sheetWithData:(PGWithRoundCorner *)asheetWithData applicationNeedUpdate:(PGWithRoundCorner *)aapplicationNeedUpdate{
++ (UIColor *)delegateMethodWithWithplayerStatusIdle:(PGWithRoundCorner *)aplayerStatusIdle sheetWithData:(PGWithRoundCorner *)asheetWithData applicationNeedUpdate:(PGWithRoundCorner *)aapplicationNeedUpdate{
     UIColor *swipeGestureRecognizerI3= [UIColor redColor];
     return swipeGestureRecognizerI3;
 }
 
-- (NSLineBreakMode)pg_playWhileCellWithimageSourceThumbnail:(UITableViewCellSeparatorStyle)aimageSourceThumbnail effectColorAlpha:(UILabel *)aeffectColorAlpha{
+- (NSLineBreakMode)playWhileCellWithimageSourceThumbnail:(UITableViewCellSeparatorStyle)aimageSourceThumbnail effectColorAlpha:(UILabel *)aeffectColorAlpha{
     NSLineBreakMode rankMedalInfoe0 = NSLineBreakByTruncatingTail; 
     return rankMedalInfoe0;
 }
 
-- (CGSize)pg_cyclingImageLayerWithcontrollerWithTitle:(UITableViewCellSeparatorStyle)acontrollerWithTitle imageWithLeft:(CGPoint)aimageWithLeft{
+- (CGSize)cyclingImageLayerWithcontrollerWithTitle:(UITableViewCellSeparatorStyle)acontrollerWithTitle imageWithLeft:(CGPoint)aimageWithLeft{
     CGSize matchTableViewO6 = CGSizeMake(61,198); 
     return matchTableViewO6;
 }
 
-- (UITableViewStyle)pg_remoteNotificationsWithWithimageAlphaPremultiplied:(UITableViewCellSeparatorStyle)aimageAlphaPremultiplied protocolViewController:(NSArray *)aprotocolViewController{
+- (UITableViewStyle)remoteNotificationsWithWithimageAlphaPremultiplied:(UITableViewCellSeparatorStyle)aimageAlphaPremultiplied protocolViewController:(NSArray *)aprotocolViewController{
     UITableViewStyle spinLockLockb0 = UITableViewStylePlain; 
     return spinLockLockb0;
 }
@@ -41,7 +41,7 @@
     imageAlphaPremultipliedB8.numberOfLines = 0; 
     imageAlphaPremultipliedB8.textAlignment = NSTextAlignmentCenter; 
     PGButtonClickBlock *imageNearIndex= [[PGButtonClickBlock alloc] init];
-[imageNearIndex pg_playWhileCellWithimageSourceThumbnail:scriptMessageHandlerq8 effectColorAlpha:imageAlphaPremultipliedB8 ];
+[imageNearIndex playWhileCellWithimageSourceThumbnail:scriptMessageHandlerq8 effectColorAlpha:imageAlphaPremultipliedB8 ];
 
 }
 

@@ -28,11 +28,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *currentViewController;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *orderInfoTable;
 
-+ (NSArray *)pg_courseCachaDataWithnaviTitleAppearance:(UITextView *)anaviTitleAppearance commentTableView:(NSMutableArray *)acommentTableView completeViewDelegate:(UIColor *)acompleteViewDelegate;
-+ (NSArray *)pg_zoomingScrollViewWithdataReadingMapped:(PGMedalDetailModel *)adataReadingMapped imageRotationSwaps:(PGMedalDetailModel *)aimageRotationSwaps teachPreviewData:(PGMedalDetailModel *)ateachPreviewData;
-- (CGSize)pg_maskViewFlagWithgroupPurchaseTable:(CGRect)agroupPurchaseTable circleItemShare:(UITextFieldViewMode)acircleItemShare;
-- (UIButtonType)pg_sendTweetSuccWithitemStatusFailed:(UILabel *)aitemStatusFailed blendModeDestination:(NSTextAlignment)ablendModeDestination;
-- (UIEdgeInsets)pg_mainFirstLoginWithframeCheckDisabled:(NSTextAlignment)aframeCheckDisabled titleTextAttributes:(UITableViewCellSeparatorStyle)atitleTextAttributes;
++ (NSArray *)courseCachaDataWithnaviTitleAppearance:(UITextView *)anaviTitleAppearance commentTableView:(NSMutableArray *)acommentTableView completeViewDelegate:(UIColor *)acompleteViewDelegate;
++ (NSArray *)zoomingScrollViewWithdataReadingMapped:(PGMedalDetailModel *)adataReadingMapped imageRotationSwaps:(PGMedalDetailModel *)aimageRotationSwaps teachPreviewData:(PGMedalDetailModel *)ateachPreviewData;
+- (CGSize)maskViewFlagWithgroupPurchaseTable:(CGRect)agroupPurchaseTable circleItemShare:(UITextFieldViewMode)acircleItemShare;
+- (UIButtonType)sendTweetSuccWithitemStatusFailed:(UILabel *)aitemStatusFailed blendModeDestination:(NSTextAlignment)ablendModeDestination;
+- (UIEdgeInsets)mainFirstLoginWithframeCheckDisabled:(NSTextAlignment)aframeCheckDisabled titleTextAttributes:(UITableViewCellSeparatorStyle)atitleTextAttributes;
 + (void)instanceCreateMethod; 
 
 @end

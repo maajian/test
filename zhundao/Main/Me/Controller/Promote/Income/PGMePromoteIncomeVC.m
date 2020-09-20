@@ -60,7 +60,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSRange categoryChooseViewd0 = NSMakeRange(1,61); 
         NSString *imageWithImageW0 = @"assetPropertyType";
     PGOrderWithPayment *assetsPhotoWith= [[PGOrderWithPayment alloc] init];
-[assetsPhotoWith pg_weekTimeIntervalWithcourseScrollView:categoryChooseViewd0 mainMessageView:imageWithImageW0 ];
+[assetsPhotoWith weekTimeIntervalWithcourseScrollView:categoryChooseViewd0 mainMessageView:imageWithImageW0 ];
 });
     self.title = @"我的收益";
     [self.view addSubview:self.tableView];
@@ -70,7 +70,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSRange showFullButtonI4 = NSMakeRange(9,69); 
         NSString *tweetViewModelN2 = @"assetPropertyType";
     PGOrderWithPayment *childViewControllers= [[PGOrderWithPayment alloc] init];
-[childViewControllers pg_weekTimeIntervalWithcourseScrollView:showFullButtonI4 mainMessageView:tweetViewModelN2 ];
+[childViewControllers weekTimeIntervalWithcourseScrollView:showFullButtonI4 mainMessageView:tweetViewModelN2 ];
 });
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.trailing.equalTo(self.view);

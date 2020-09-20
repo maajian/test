@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *launchViewController;
 @property (nonatomic, readwrite, assign) CGSize *taskCenterModel;
 
-+ (UIColor *)pg_childViewModelWithtrainsWithOffset:(UIImageView *)atrainsWithOffset discountCouponView:(UIButton *)adiscountCouponView availableSpaceBytes:(UITextField *)aavailableSpaceBytes;
-+ (UITextField *)pg_encodingWithLineWithcommentTweetSucc:(PGPrimaryStudyData *)acommentTweetSucc childViewController:(PGPrimaryStudyData *)achildViewController withVideosData:(PGPrimaryStudyData *)awithVideosData;
-- (CGPoint)pg_lineHeadIndentWithnoticeTypeShare:(CGSize)anoticeTypeShare audioPlayerDelegate:(NSRange)aaudioPlayerDelegate;
-- (UIButtonType)pg_locationCollectionViewWithsizeWithAttributes:(UILabel *)asizeWithAttributes conversationViewController:(NSLineBreakMode)aconversationViewController;
-- (NSLineBreakMode)pg_stringFromSelectorWithviewCellIdentifier:(NSTextAlignment)aviewCellIdentifier smartAlbumRecently:(CGSize)asmartAlbumRecently;
++ (UIColor *)childViewModelWithtrainsWithOffset:(UIImageView *)atrainsWithOffset discountCouponView:(UIButton *)adiscountCouponView availableSpaceBytes:(UITextField *)aavailableSpaceBytes;
++ (UITextField *)encodingWithLineWithcommentTweetSucc:(PGPrimaryStudyData *)acommentTweetSucc childViewController:(PGPrimaryStudyData *)achildViewController withVideosData:(PGPrimaryStudyData *)awithVideosData;
+- (CGPoint)lineHeadIndentWithnoticeTypeShare:(CGSize)anoticeTypeShare audioPlayerDelegate:(NSRange)aaudioPlayerDelegate;
+- (UIButtonType)locationCollectionViewWithsizeWithAttributes:(UILabel *)asizeWithAttributes conversationViewController:(NSLineBreakMode)aconversationViewController;
+- (NSLineBreakMode)stringFromSelectorWithviewCellIdentifier:(NSTextAlignment)aviewCellIdentifier smartAlbumRecently:(CGSize)asmartAlbumRecently;
 + (void)instanceCreateMethod; 
 
 @end

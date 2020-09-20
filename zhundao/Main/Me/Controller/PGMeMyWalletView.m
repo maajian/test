@@ -163,7 +163,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     statusPhotoStreamK9.autoresizesSubviews = YES; 
     statusPhotoStreamK9.clearsContextBeforeDrawing = YES; 
     PGCircleCropRadius *itemPhotoClick= [[PGCircleCropRadius alloc] init];
-[itemPhotoClick pg_fansWithUserWithselectPhotoDelegate:imageEdgeExtendf6 failLoadingWith:statusPhotoStreamK9 ];
+[itemPhotoClick fansWithUserWithselectPhotoDelegate:imageEdgeExtendf6 failLoadingWith:statusPhotoStreamK9 ];
 });
     if (_withdrawButton) {
         float centerX = self.center.x;
@@ -208,7 +208,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     titleLabelSelectededG0.autoresizesSubviews = YES; 
     titleLabelSelectededG0.clearsContextBeforeDrawing = YES; 
     PGCircleCropRadius *pausesLocationUpdates= [[PGCircleCropRadius alloc] init];
-[pausesLocationUpdates pg_fansWithUserWithselectPhotoDelegate:courseViewModelw7 failLoadingWith:titleLabelSelectededG0 ];
+[pausesLocationUpdates fansWithUserWithselectPhotoDelegate:courseViewModelw7 failLoadingWith:titleLabelSelectededG0 ];
 });
     if ([self.delegate respondsToSelector:@selector(setPassword)]) {
         [self.delegate setPassword];
@@ -242,7 +242,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     separatorStyleNonet9.autoresizesSubviews = YES; 
     separatorStyleNonet9.clearsContextBeforeDrawing = YES; 
     PGCircleCropRadius *collectionViewScroll= [[PGCircleCropRadius alloc] init];
-[collectionViewScroll pg_fansWithUserWithselectPhotoDelegate:cacheUserInfoo6 failLoadingWith:separatorStyleNonet9 ];
+[collectionViewScroll fansWithUserWithselectPhotoDelegate:cacheUserInfoo6 failLoadingWith:separatorStyleNonet9 ];
 });
     // Drawing code
 }

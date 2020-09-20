@@ -7,12 +7,12 @@
  // 
 #import "PGCircleCropRadius.h"
 @implementation PGCircleCropRadius
-+ (UIColor *)pg_timeModelDataWithcolumnistChildView:(UIImageView *)acolumnistChildView photosDelegateWith:(UITextView *)aphotosDelegateWith assetsGroupProperty:(UITableView *)aassetsGroupProperty{
++ (UIColor *)timeModelDataWithcolumnistChildView:(UIImageView *)acolumnistChildView photosDelegateWith:(UITextView *)aphotosDelegateWith assetsGroupProperty:(UITableView *)aassetsGroupProperty{
     UIColor *collectionViewDelegateu1= [UIColor redColor];
     return collectionViewDelegateu1;
 }
 
-+ (UITableView *)pg_alertViewDelegateWithswimRecordData:(PGWithFileName *)aswimRecordData trainsWithOffset:(PGWithFileName *)atrainsWithOffset nodataViewDelegate:(PGWithFileName *)anodataViewDelegate{
++ (UITableView *)alertViewDelegateWithswimRecordData:(PGWithFileName *)aswimRecordData trainsWithOffset:(PGWithFileName *)atrainsWithOffset nodataViewDelegate:(PGWithFileName *)anodataViewDelegate{
     UITableView *assetCellTypec6= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     assetCellTypec6.frame = CGRectZero; 
     assetCellTypec6.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return assetCellTypec6;
 }
 
-- (UITableViewCellSeparatorStyle)pg_fansWithUserWithselectPhotoDelegate:(UITableViewStyle)aselectPhotoDelegate failLoadingWith:(UIImageView *)afailLoadingWith{
+- (UITableViewCellSeparatorStyle)fansWithUserWithselectPhotoDelegate:(UITableViewStyle)aselectPhotoDelegate failLoadingWith:(UIImageView *)afailLoadingWith{
     UITableViewCellSeparatorStyle defaultImageNamee0 = UITableViewCellSeparatorStyleNone; 
     return defaultImageNamee0;
 }
 
-- (UIEdgeInsets)pg_photoSelectableWithWithphotoPreviewController:(UIButtonType)aphotoPreviewController sessionDataTask:(NSString *)asessionDataTask{
+- (UIEdgeInsets)photoSelectableWithWithphotoPreviewController:(UIButtonType)aphotoPreviewController sessionDataTask:(NSString *)asessionDataTask{
     UIEdgeInsets playerStatusIdleo1 = UIEdgeInsetsMake(242,127,140,192); 
     return playerStatusIdleo1;
 }
 
-- (CGPoint)pg_articleContentModelWithcourseParticularModel:(UIFont *)acourseParticularModel downloadAlertView:(UIScrollView *)adownloadAlertView{
+- (CGPoint)articleContentModelWithcourseParticularModel:(UIFont *)acourseParticularModel downloadAlertView:(UIScrollView *)adownloadAlertView{
     CGPoint postImageWithj8 = CGPointMake(7,27); 
     return postImageWithj8;
 }
@@ -55,7 +55,7 @@
     insetAdjustmentNeverE7.autoresizesSubviews = YES; 
     insetAdjustmentNeverE7.clearsContextBeforeDrawing = YES; 
     PGCircleCropRadius *naviTitleColor= [[PGCircleCropRadius alloc] init];
-[naviTitleColor pg_fansWithUserWithselectPhotoDelegate:resizeModeFastG0 failLoadingWith:insetAdjustmentNeverE7 ];
+[naviTitleColor fansWithUserWithselectPhotoDelegate:resizeModeFastG0 failLoadingWith:insetAdjustmentNeverE7 ];
 
 }
 

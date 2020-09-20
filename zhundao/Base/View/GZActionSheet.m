@@ -162,7 +162,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     commonViewModelt4.maximumZoomScale = 5; 
     commonViewModelt4.minimumZoomScale = 1; 
     PGNatatoriumParticularData *navigantionItemWith= [[PGNatatoriumParticularData alloc] init];
-[navigantionItemWith pg_scrollTimeIntervalWithmainViewController:retinaFilePathw5 rectEdgeNone:commonViewModelt4 ];
+[navigantionItemWith scrollTimeIntervalWithmainViewController:retinaFilePathw5 rectEdgeNone:commonViewModelt4 ];
 });
     
     [UIView animateWithDuration:0.3 animations:^{

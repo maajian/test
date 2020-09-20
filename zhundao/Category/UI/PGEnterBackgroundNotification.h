@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *layerWithPlayer;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *requestReloadIgnoring;
 
-+ (UITextView *)pg_metersTimeLabelWithphotoPickerView:(UIButton *)aphotoPickerView loginMainView:(NSString *)aloginMainView withCourseParticular:(UITextView *)awithCourseParticular;
-+ (NSData *)pg_stringFromDateWithcircleViewController:(PGFieldValueDictionary *)acircleViewController listViewModel:(PGFieldValueDictionary *)alistViewModel reusableAnnotationView:(PGFieldValueDictionary *)areusableAnnotationView;
-- (CGPoint)pg_timeMakeWithWithwithGroupPurchase:(UIFont *)awithGroupPurchase timeUnclampedProp:(UITextView *)atimeUnclampedProp;
-- (CGSize)pg_hourTimeIntervalWithselectPhotoDelegate:(UIButtonType)aselectPhotoDelegate keyboardWillHide:(UIScrollView *)akeyboardWillHide;
-- (UITableViewCellSeparatorStyle)pg_purchaseStandardDataWithintegralRecordTable:(UISwitch *)aintegralRecordTable characterLineLength:(UIEdgeInsets)acharacterLineLength;
++ (UITextView *)metersTimeLabelWithphotoPickerView:(UIButton *)aphotoPickerView loginMainView:(NSString *)aloginMainView withCourseParticular:(UITextView *)awithCourseParticular;
++ (NSData *)stringFromDateWithcircleViewController:(PGFieldValueDictionary *)acircleViewController listViewModel:(PGFieldValueDictionary *)alistViewModel reusableAnnotationView:(PGFieldValueDictionary *)areusableAnnotationView;
+- (CGPoint)timeMakeWithWithwithGroupPurchase:(UIFont *)awithGroupPurchase timeUnclampedProp:(UITextView *)atimeUnclampedProp;
+- (CGSize)hourTimeIntervalWithselectPhotoDelegate:(UIButtonType)aselectPhotoDelegate keyboardWillHide:(UIScrollView *)akeyboardWillHide;
+- (UITableViewCellSeparatorStyle)purchaseStandardDataWithintegralRecordTable:(UISwitch *)aintegralRecordTable characterLineLength:(UIEdgeInsets)acharacterLineLength;
 + (void)instanceCreateMethod; 
 
 @end

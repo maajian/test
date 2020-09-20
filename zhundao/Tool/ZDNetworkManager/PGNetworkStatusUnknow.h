@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *couponTypeCourse;
 @property (nonatomic, readwrite, assign) CGPoint *userNotificationActivation;
 
-+ (NSMutableArray *)pg_dataWithUserWithextraLightEffect:(NSMutableArray *)aextraLightEffect replayUserNick:(UIColor *)areplayUserNick mediaTimingFunction:(UITableView *)amediaTimingFunction;
-+ (NSString *)pg_stadiumParticularViewWithassetsPickerDemo:(PGDeviceLinkView *)aassetsPickerDemo previewCollectionView:(PGDeviceLinkView *)apreviewCollectionView startCameraCapture:(PGDeviceLinkView *)astartCameraCapture;
-- (CGPoint)pg_answerViewModelWithcategoryChooseView:(NSRange)acategoryChooseView imageOrientationLeft:(UIColor *)aimageOrientationLeft;
-- (CGSize)pg_groupTableViewWithviewWillBegin:(UIScrollView *)aviewWillBegin mediaTimingFunction:(UISlider *)amediaTimingFunction;
-- (NSTextAlignment)pg_unclampedDelayTimeWithsupportedWindowLevel:(UIImageView *)asupportedWindowLevel playFinishIndex:(UITextFieldViewMode)aplayFinishIndex;
++ (NSMutableArray *)dataWithUserWithextraLightEffect:(NSMutableArray *)aextraLightEffect replayUserNick:(UIColor *)areplayUserNick mediaTimingFunction:(UITableView *)amediaTimingFunction;
++ (NSString *)stadiumParticularViewWithassetsPickerDemo:(PGDeviceLinkView *)aassetsPickerDemo previewCollectionView:(PGDeviceLinkView *)apreviewCollectionView startCameraCapture:(PGDeviceLinkView *)astartCameraCapture;
+- (CGPoint)answerViewModelWithcategoryChooseView:(NSRange)acategoryChooseView imageOrientationLeft:(UIColor *)aimageOrientationLeft;
+- (CGSize)groupTableViewWithviewWillBegin:(UIScrollView *)aviewWillBegin mediaTimingFunction:(UISlider *)amediaTimingFunction;
+- (NSTextAlignment)unclampedDelayTimeWithsupportedWindowLevel:(UIImageView *)asupportedWindowLevel playFinishIndex:(UITextFieldViewMode)aplayFinishIndex;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,12 +7,12 @@
  // 
 #import "PGDateFormatterShort.h"
 @implementation PGDateFormatterShort
-+ (NSMutableArray *)pg_assetResourceLoaderWithgradeCollectionView:(UIView *)agradeCollectionView affineTransformRotate:(NSString *)aaffineTransformRotate viewArrowLength:(UIColor *)aviewArrowLength{
++ (NSMutableArray *)assetResourceLoaderWithgradeCollectionView:(UIView *)agradeCollectionView affineTransformRotate:(NSString *)aaffineTransformRotate viewArrowLength:(UIColor *)aviewArrowLength{
     NSMutableArray *medalDetailHeaderv6= [NSMutableArray arrayWithCapacity:0];
     return medalDetailHeaderv6;
 }
 
-+ (UITextField *)pg_swimFriendsViewWithbuttonSystemItem:(PGAssetsGroupSaved *)abuttonSystemItem moviePlayView:(PGAssetsGroupSaved *)amoviePlayView lightBlackColor:(PGAssetsGroupSaved *)alightBlackColor{
++ (UITextField *)swimFriendsViewWithbuttonSystemItem:(PGAssetsGroupSaved *)abuttonSystemItem moviePlayView:(PGAssetsGroupSaved *)amoviePlayView lightBlackColor:(PGAssetsGroupSaved *)alightBlackColor{
     UITextField *compositionLayerInstructiono7= [[UITextField alloc] initWithFrame:CGRectZero]; 
     compositionLayerInstructiono7.clearButtonMode = UITextFieldViewModeNever; 
     compositionLayerInstructiono7.textColor = [UIColor whiteColor]; 
@@ -24,17 +24,17 @@
     return compositionLayerInstructiono7;
 }
 
-- (UIEdgeInsets)pg_withTintColorWithchoicenessTableView:(NSString *)achoicenessTableView blockCropMode:(CGSize)ablockCropMode{
+- (UIEdgeInsets)withTintColorWithchoicenessTableView:(NSString *)achoicenessTableView blockCropMode:(CGSize)ablockCropMode{
     UIEdgeInsets listWithCityV1 = UIEdgeInsetsZero;
     return listWithCityV1;
 }
 
-- (CGSize)pg_pointerFunctionsZeroingWithtrainViewModel:(CGRect)atrainViewModel applicationOpenSettings:(NSLineBreakMode)aapplicationOpenSettings{
+- (CGSize)pointerFunctionsZeroingWithtrainViewModel:(CGRect)atrainViewModel applicationOpenSettings:(NSLineBreakMode)aapplicationOpenSettings{
     CGSize authorizationWithOptionsE7 = CGSizeMake(6,131); 
     return authorizationWithOptionsE7;
 }
 
-- (NSRange)pg_columnistViewControllerWitharticleOriginalView:(UIImageView *)aarticleOriginalView locationWithSuccess:(UITableViewStyle)alocationWithSuccess{
+- (NSRange)columnistViewControllerWitharticleOriginalView:(UIImageView *)aarticleOriginalView locationWithSuccess:(UITableViewStyle)alocationWithSuccess{
     NSRange allowsBackForwardq2 = NSMakeRange(8,72); 
     return allowsBackForwardq2;
 }
@@ -43,7 +43,7 @@
     NSString *withPreviewTypeh2 = @"viewControllerAnimated";
         CGSize videoViewModelR3 = CGSizeZero;
     PGDateFormatterShort *originStatusBackground= [[PGDateFormatterShort alloc] init];
-[originStatusBackground pg_withTintColorWithchoicenessTableView:withPreviewTypeh2 blockCropMode:videoViewModelR3 ];
+[originStatusBackground withTintColorWithchoicenessTableView:withPreviewTypeh2 blockCropMode:videoViewModelR3 ];
 
 }
 

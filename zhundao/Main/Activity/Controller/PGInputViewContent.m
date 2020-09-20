@@ -7,7 +7,7 @@
  // 
 #import "PGInputViewContent.h"
 @implementation PGInputViewContent
-+ (UITableView *)pg_withSwimParticularWithimageWithImages:(UIImageView *)aimageWithImages itemStatusFailed:(UILabel *)aitemStatusFailed viewCellDelegate:(UIActivityIndicatorView *)aviewCellDelegate{
++ (UITableView *)withSwimParticularWithimageWithImages:(UIImageView *)aimageWithImages itemStatusFailed:(UILabel *)aitemStatusFailed viewCellDelegate:(UIActivityIndicatorView *)aviewCellDelegate{
     UITableView *discountCouponTableX1= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     discountCouponTableX1.frame = CGRectZero; 
     discountCouponTableX1.showsVerticalScrollIndicator = NO; 
@@ -26,22 +26,22 @@
      return discountCouponTableX1;
 }
 
-+ (NSArray *)pg_contentsUserReviewsWithtableFooterView:(PGInputTextureVertex *)atableFooterView bottomPhotoView:(PGInputTextureVertex *)abottomPhotoView socialShareResponse:(PGInputTextureVertex *)asocialShareResponse{
++ (NSArray *)contentsUserReviewsWithtableFooterView:(PGInputTextureVertex *)atableFooterView bottomPhotoView:(PGInputTextureVertex *)abottomPhotoView socialShareResponse:(PGInputTextureVertex *)asocialShareResponse{
     NSArray *assetPreferPreciseq7= [NSArray arrayWithObject:@""];
     return assetPreferPreciseq7;
 }
 
-- (NSTextAlignment)pg_lightBlackColorWithfansWithUser:(UIFont *)afansWithUser socialUserInfo:(UITextView *)asocialUserInfo{
+- (NSTextAlignment)lightBlackColorWithfansWithUser:(UIFont *)afansWithUser socialUserInfo:(UITextView *)asocialUserInfo{
     NSTextAlignment sliderTouchDownl1 = NSTextAlignmentCenter; 
     return sliderTouchDownl1;
 }
 
-- (NSTextAlignment)pg_groupWithPhotosWithlocationManagerDelegate:(UISlider *)alocationManagerDelegate showsVerticalScroll:(UISlider *)ashowsVerticalScroll{
+- (NSTextAlignment)groupWithPhotosWithlocationManagerDelegate:(UISlider *)alocationManagerDelegate showsVerticalScroll:(UISlider *)ashowsVerticalScroll{
     NSTextAlignment receiveLocalNotificationx8 = NSTextAlignmentCenter; 
     return receiveLocalNotificationx8;
 }
 
-- (CGRect)pg_viewWillHiddenWithcharacterLineLength:(UIImageView *)acharacterLineLength imageEdgeExtend:(UITextFieldViewMode)aimageEdgeExtend{
+- (CGRect)viewWillHiddenWithcharacterLineLength:(UIImageView *)acharacterLineLength imageEdgeExtend:(UITextFieldViewMode)aimageEdgeExtend{
     CGRect titlePositionAdjustmenth1 = CGRectZero;
     return titlePositionAdjustmenth1;
 }
@@ -53,7 +53,7 @@
     receiveVideoLengths9.font = [UIFont systemFontOfSize:219];
     receiveVideoLengths9.text = @"appearSoundView";
     PGInputViewContent *medalExplainView= [[PGInputViewContent alloc] init];
-[medalExplainView pg_lightBlackColorWithfansWithUser:playerStatusPlayingG3 socialUserInfo:receiveVideoLengths9 ];
+[medalExplainView lightBlackColorWithfansWithUser:playerStatusPlayingG3 socialUserInfo:receiveVideoLengths9 ];
 
 }
 

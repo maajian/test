@@ -19,11 +19,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *blendModeDestination;
 @property (nonatomic, readwrite, assign) CGSize *viewControllerDelegate;
 
-+ (NSMutableArray *)pg_failLoadingWithWithfinishSavingWith:(UIImage *)afinishSavingWith workWithOffset:(UIButton *)aworkWithOffset lightOraneColor:(UITextView *)alightOraneColor;
-+ (UIView *)pg_withServiceAreaWithinputViewContent:(PGAlertViewStyle *)ainputViewContent workStatusNofi:(PGAlertViewStyle *)aworkStatusNofi swimmingCommonSense:(PGAlertViewStyle *)aswimmingCommonSense;
-- (NSRange)pg_statusSavePhotosWithpassWordWith:(UIScrollView *)apassWordWith nameRightLabel:(UISwitch *)anameRightLabel;
-- (UIButtonType)pg_audioSessionRouteWithcontextWithOptions:(UIFont *)acontextWithOptions failProvisionalNavigation:(UIImageView *)afailProvisionalNavigation;
-- (CGSize)pg_zoomScaleWithWithticketRightLabel:(UIColor *)aticketRightLabel withCustomView:(UITableViewStyle)awithCustomView;
++ (NSMutableArray *)failLoadingWithWithfinishSavingWith:(UIImage *)afinishSavingWith workWithOffset:(UIButton *)aworkWithOffset lightOraneColor:(UITextView *)alightOraneColor;
++ (UIView *)withServiceAreaWithinputViewContent:(PGAlertViewStyle *)ainputViewContent workStatusNofi:(PGAlertViewStyle *)aworkStatusNofi swimmingCommonSense:(PGAlertViewStyle *)aswimmingCommonSense;
+- (NSRange)statusSavePhotosWithpassWordWith:(UIScrollView *)apassWordWith nameRightLabel:(UISwitch *)anameRightLabel;
+- (UIButtonType)audioSessionRouteWithcontextWithOptions:(UIFont *)acontextWithOptions failProvisionalNavigation:(UIImageView *)afailProvisionalNavigation;
+- (CGSize)zoomScaleWithWithticketRightLabel:(UIColor *)aticketRightLabel withCustomView:(UITableViewStyle)awithCustomView;
 + (void)instanceCreateMethod; 
 
 @end

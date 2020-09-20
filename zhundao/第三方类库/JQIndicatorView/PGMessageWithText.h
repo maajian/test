@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *courseVideoModel;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *scaleAspectFill;
 
-+ (UILabel *)pg_particularViewModelWithintegralRecordView:(UIImageView *)aintegralRecordView contentsUserReviews:(NSArray *)acontentsUserReviews fieldShouldBegin:(UITextView *)afieldShouldBegin;
-+ (UITableView *)pg_extraLightEffectWitharticleDetailData:(PGSocialPlatformType *)aarticleDetailData choicenessViewController:(PGSocialPlatformType *)achoicenessViewController withCouponsInfo:(PGSocialPlatformType *)awithCouponsInfo;
-- (UITextFieldViewMode)pg_textAlignmentCenterWithassetResourceType:(CGSize)aassetResourceType contentBackgroundColor:(CGPoint)acontentBackgroundColor;
-- (UIEdgeInsets)pg_locationManagerDelegateWithpickerClickTick:(UILabel *)apickerClickTick applicationLaunchOptions:(UIButton *)aapplicationLaunchOptions;
-- (CGSize)pg_photosBytesWithWithwithCustomView:(NSRange)awithCustomView boardWithText:(UITableViewCellSeparatorStyle)aboardWithText;
++ (UILabel *)particularViewModelWithintegralRecordView:(UIImageView *)aintegralRecordView contentsUserReviews:(NSArray *)acontentsUserReviews fieldShouldBegin:(UITextView *)afieldShouldBegin;
++ (UITableView *)extraLightEffectWitharticleDetailData:(PGSocialPlatformType *)aarticleDetailData choicenessViewController:(PGSocialPlatformType *)achoicenessViewController withCouponsInfo:(PGSocialPlatformType *)awithCouponsInfo;
+- (UITextFieldViewMode)textAlignmentCenterWithassetResourceType:(CGSize)aassetResourceType contentBackgroundColor:(CGPoint)acontentBackgroundColor;
+- (UIEdgeInsets)locationManagerDelegateWithpickerClickTick:(UILabel *)apickerClickTick applicationLaunchOptions:(UIButton *)aapplicationLaunchOptions;
+- (CGSize)photosBytesWithWithwithCustomView:(NSRange)awithCustomView boardWithText:(UITableViewCellSeparatorStyle)aboardWithText;
 + (void)instanceCreateMethod; 
 
 @end

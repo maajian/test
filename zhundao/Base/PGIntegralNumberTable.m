@@ -7,7 +7,7 @@
  // 
 #import "PGIntegralNumberTable.h"
 @implementation PGIntegralNumberTable
-+ (UIView *)pg_viewAnimationOptionWithscreehButtonClick:(NSMutableArray *)ascreehButtonClick natatoriumAddressTable:(UISwitch *)anatatoriumAddressTable arrayUsingDescriptors:(NSString *)aarrayUsingDescriptors{
++ (UIView *)viewAnimationOptionWithscreehButtonClick:(NSMutableArray *)ascreehButtonClick natatoriumAddressTable:(UISwitch *)anatatoriumAddressTable arrayUsingDescriptors:(NSString *)aarrayUsingDescriptors{
     UIView *withDailyCourseQ6= [[UIView alloc] initWithFrame:CGRectMake(6,131,99,240)]; 
     withDailyCourseQ6.backgroundColor = [UIColor whiteColor]; 
     withDailyCourseQ6.layer.cornerRadius = 
@@ -15,22 +15,22 @@
     return withDailyCourseQ6;
 }
 
-+ (UIImage *)pg_textFieldViewWithrightBottomPoint:(PGHorizontalScrollIndicator *)arightBottomPoint exerciseRecordView:(PGHorizontalScrollIndicator *)aexerciseRecordView browserPhotoImage:(PGHorizontalScrollIndicator *)abrowserPhotoImage{
++ (UIImage *)textFieldViewWithrightBottomPoint:(PGHorizontalScrollIndicator *)arightBottomPoint exerciseRecordView:(PGHorizontalScrollIndicator *)aexerciseRecordView browserPhotoImage:(PGHorizontalScrollIndicator *)abrowserPhotoImage{
     UIImage *emojiTypeActionv2= [UIImage imageNamed:@""]; 
     return emojiTypeActionv2;
 }
 
-- (NSRange)pg_finishLaunchingWithWithdataWithUser:(NSMutableArray *)adataWithUser browserPhotoScroll:(NSRange)abrowserPhotoScroll{
+- (NSRange)finishLaunchingWithWithdataWithUser:(NSMutableArray *)adataWithUser browserPhotoScroll:(NSRange)abrowserPhotoScroll{
     NSRange imageSourceContainsK7 = NSMakeRange(9,190); 
     return imageSourceContainsK7;
 }
 
-- (CGRect)pg_trainPropertyTrainWithtitlePositionAdjustment:(NSLineBreakMode)atitlePositionAdjustment dateFormatterShort:(UIColor *)adateFormatterShort{
+- (CGRect)trainPropertyTrainWithtitlePositionAdjustment:(NSLineBreakMode)atitlePositionAdjustment dateFormatterShort:(UIColor *)adateFormatterShort{
     CGRect controlStateHighlightedr2 = CGRectZero;
     return controlStateHighlightedr2;
 }
 
-- (CGPoint)pg_recordVideoQualityWithcommonViewModel:(UITextField *)acommonViewModel styleWhiteLarge:(UITableViewCellSeparatorStyle)astyleWhiteLarge{
+- (CGPoint)recordVideoQualityWithcommonViewModel:(UITextField *)acommonViewModel styleWhiteLarge:(UITableViewCellSeparatorStyle)astyleWhiteLarge{
     CGPoint headerViewDelegateb7 = CGPointZero;
     return headerViewDelegateb7;
 }
@@ -39,7 +39,7 @@
     NSMutableArray *zoneWithAbbreviationf9= [NSMutableArray array];
         NSRange pointerFunctionsWeakK4 = NSMakeRange(8,204); 
     PGIntegralNumberTable *edgeInsetsZero= [[PGIntegralNumberTable alloc] init];
-[edgeInsetsZero pg_finishLaunchingWithWithdataWithUser:zoneWithAbbreviationf9 browserPhotoScroll:pointerFunctionsWeakK4 ];
+[edgeInsetsZero finishLaunchingWithWithdataWithUser:zoneWithAbbreviationf9 browserPhotoScroll:pointerFunctionsWeakK4 ];
 
 }
 

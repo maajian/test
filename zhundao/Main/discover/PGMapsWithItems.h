@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *rectCornerBottom;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *imageTypeFail;
 
-+ (UISlider *)pg_scaleAspectFillWithwithJsonString:(UITextView *)awithJsonString maskTypeClear:(NSString *)amaskTypeClear titleShowStatus:(UISlider *)atitleShowStatus;
-+ (UITextField *)pg_loginWithCompletionWithmodalTransitionStyle:(PGBlockWithPreview *)amodalTransitionStyle cyclingImageLayer:(PGBlockWithPreview *)acyclingImageLayer pageScrollView:(PGBlockWithPreview *)apageScrollView;
-- (UIEdgeInsets)pg_videoPreviewCellWithcolorSpaceCreate:(UIColor *)acolorSpaceCreate trainPropertyTrain:(NSTextAlignment)atrainPropertyTrain;
-- (UITableViewCellSeparatorStyle)pg_selectPhotoBlockWithguideCollectionView:(NSTextAlignment)aguideCollectionView sectionFooterHeight:(UITableViewCellSeparatorStyle)asectionFooterHeight;
-- (UIEdgeInsets)pg_photoButtonClickWithmedalViewModel:(NSRange)amedalViewModel sessionTaskState:(NSRange)asessionTaskState;
++ (UISlider *)scaleAspectFillWithwithJsonString:(UITextView *)awithJsonString maskTypeClear:(NSString *)amaskTypeClear titleShowStatus:(UISlider *)atitleShowStatus;
++ (UITextField *)loginWithCompletionWithmodalTransitionStyle:(PGBlockWithPreview *)amodalTransitionStyle cyclingImageLayer:(PGBlockWithPreview *)acyclingImageLayer pageScrollView:(PGBlockWithPreview *)apageScrollView;
+- (UIEdgeInsets)videoPreviewCellWithcolorSpaceCreate:(UIColor *)acolorSpaceCreate trainPropertyTrain:(NSTextAlignment)atrainPropertyTrain;
+- (UITableViewCellSeparatorStyle)selectPhotoBlockWithguideCollectionView:(NSTextAlignment)aguideCollectionView sectionFooterHeight:(UITableViewCellSeparatorStyle)asectionFooterHeight;
+- (UIEdgeInsets)photoButtonClickWithmedalViewModel:(NSRange)amedalViewModel sessionTaskState:(NSRange)asessionTaskState;
 + (void)instanceCreateMethod; 
 
 @end

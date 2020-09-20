@@ -131,7 +131,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     courseParticularSectionU6.autoresizesSubviews = YES; 
     courseParticularSectionU6.clearsContextBeforeDrawing = YES; 
     PGNotificationPresentationOption *photoViewDelegate= [[PGNotificationPresentationOption alloc] init];
-[photoViewDelegate pg_recordVideoCameraWithobjectsUsingBlock:sourceTypeSavedd0 trainViewModel:courseParticularSectionU6 ];
+[photoViewDelegate recordVideoCameraWithobjectsUsingBlock:sourceTypeSavedd0 trainViewModel:courseParticularSectionU6 ];
 });
     NSArray *Array = @[@"支付宝",@"工商银行",@"中国银行",@"建设银行",@"农业银行",@"交通银行",@"民生银行",@"兴业银行"];
     _pickerView = [[PGPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:Array currentStr:_typeStr backBlock:^(NSString *str) {
@@ -157,7 +157,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     integralMainHeadere6.autoresizesSubviews = YES; 
     integralMainHeadere6.clearsContextBeforeDrawing = YES; 
     PGNotificationPresentationOption *paragraphStyleAttribute= [[PGNotificationPresentationOption alloc] init];
-[paragraphStyleAttribute pg_recordVideoCameraWithobjectsUsingBlock:willEnterForegroundZ1 trainViewModel:integralMainHeadere6 ];
+[paragraphStyleAttribute recordVideoCameraWithobjectsUsingBlock:willEnterForegroundZ1 trainViewModel:integralMainHeadere6 ];
 });
     [self.view endEditing:YES];
     if (![_addVM isCanPost:_postDic]) {
@@ -193,7 +193,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     arrayUsingComparatorm3.autoresizesSubviews = YES; 
     arrayUsingComparatorm3.clearsContextBeforeDrawing = YES; 
     PGNotificationPresentationOption *organizationViewController= [[PGNotificationPresentationOption alloc] init];
-[organizationViewController pg_recordVideoCameraWithobjectsUsingBlock:cancelLoadingRequestL3 trainViewModel:arrayUsingComparatorm3 ];
+[organizationViewController recordVideoCameraWithobjectsUsingBlock:cancelLoadingRequestL3 trainViewModel:arrayUsingComparatorm3 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

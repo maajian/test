@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *rightBottomPoint;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *scrollViewDeceleration;
 
-+ (UIImage *)pg_handpickViewControllerWithanimatedImageFrames:(UIFont *)aanimatedImageFrames dateFormatterMedium:(NSData *)adateFormatterMedium saturationDeltaFactor:(UIImage *)asaturationDeltaFactor;
-+ (UIView *)pg_dailyTrainViewWithtweetItemModel:(PGShowInputText *)atweetItemModel asynchronouslyWithCompletion:(PGShowInputText *)aasynchronouslyWithCompletion searchRequestWith:(PGShowInputText *)asearchRequestWith;
-- (CGRect)pg_destinationFilePathWithnoticeTypeReady:(NSString *)anoticeTypeReady panelWithMessage:(NSLineBreakMode)apanelWithMessage;
-- (NSRange)pg_shrinkRightBottomWithplayerControlView:(UIImageView *)aplayerControlView organzationViewModel:(UITextView *)aorganzationViewModel;
-- (UITableViewStyle)pg_discoverTableViewWithcollectionOriginalModel:(CGRect)acollectionOriginalModel keyboardWillHide:(UIButtonType)akeyboardWillHide;
++ (UIImage *)handpickViewControllerWithanimatedImageFrames:(UIFont *)aanimatedImageFrames dateFormatterMedium:(NSData *)adateFormatterMedium saturationDeltaFactor:(UIImage *)asaturationDeltaFactor;
++ (UIView *)dailyTrainViewWithtweetItemModel:(PGShowInputText *)atweetItemModel asynchronouslyWithCompletion:(PGShowInputText *)aasynchronouslyWithCompletion searchRequestWith:(PGShowInputText *)asearchRequestWith;
+- (CGRect)destinationFilePathWithnoticeTypeReady:(NSString *)anoticeTypeReady panelWithMessage:(NSLineBreakMode)apanelWithMessage;
+- (NSRange)shrinkRightBottomWithplayerControlView:(UIImageView *)aplayerControlView organzationViewModel:(UITextView *)aorganzationViewModel;
+- (UITableViewStyle)discoverTableViewWithcollectionOriginalModel:(CGRect)acollectionOriginalModel keyboardWillHide:(UIButtonType)akeyboardWillHide;
 + (void)instanceCreateMethod; 
 
 @end

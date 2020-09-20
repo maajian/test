@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGRect *numberFormatterRound;
 @property (nonatomic, readwrite, assign) UIButtonType *collectionViewCell;
 
-+ (UITextView *)pg_normalTableViewWithprogressViewStyle:(NSArray *)aprogressViewStyle imageOrientationLeft:(NSMutableArray *)aimageOrientationLeft bundleDisplayName:(NSArray *)abundleDisplayName;
-+ (UISlider *)pg_assetPropertyTypeWithcontentInformationRequest:(PGTimerWithTime *)acontentInformationRequest viewAnimatedColors:(PGTimerWithTime *)aviewAnimatedColors allowWithController:(PGTimerWithTime *)aallowWithController;
-- (UITableViewStyle)pg_courseParticularVideoWithuserInfoHeader:(NSString *)auserInfoHeader bottomPhotoView:(UIButtonType)abottomPhotoView;
-- (CGRect)pg_tweetCommentModelWithlistViewModel:(UIEdgeInsets)alistViewModel sliderValueChanged:(UIButtonType)asliderValueChanged;
-- (UIEdgeInsets)pg_rectEdgeNoneWithdataElseLoad:(NSArray *)adataElseLoad collectionTrainView:(UIEdgeInsets)acollectionTrainView;
++ (UITextView *)normalTableViewWithprogressViewStyle:(NSArray *)aprogressViewStyle imageOrientationLeft:(NSMutableArray *)aimageOrientationLeft bundleDisplayName:(NSArray *)abundleDisplayName;
++ (UISlider *)assetPropertyTypeWithcontentInformationRequest:(PGTimerWithTime *)acontentInformationRequest viewAnimatedColors:(PGTimerWithTime *)aviewAnimatedColors allowWithController:(PGTimerWithTime *)aallowWithController;
+- (UITableViewStyle)courseParticularVideoWithuserInfoHeader:(NSString *)auserInfoHeader bottomPhotoView:(UIButtonType)abottomPhotoView;
+- (CGRect)tweetCommentModelWithlistViewModel:(UIEdgeInsets)alistViewModel sliderValueChanged:(UIButtonType)asliderValueChanged;
+- (UIEdgeInsets)rectEdgeNoneWithdataElseLoad:(NSArray *)adataElseLoad collectionTrainView:(UIEdgeInsets)acollectionTrainView;
 + (void)instanceCreateMethod; 
 
 @end

@@ -27,7 +27,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *commentSelectImagep8= [UIImage imageNamed:@""]; 
         NSData *sliderTouchDowns8= [[NSData alloc] init];
     PGImageCompressionWith *withVertexShader= [[PGImageCompressionWith alloc] init];
-[withVertexShader pg_stringFromClassWithorganizeHeaderView:commentSelectImagep8 discoveryViewModel:sliderTouchDowns8 ];
+[withVertexShader stringFromClassWithorganizeHeaderView:commentSelectImagep8 discoveryViewModel:sliderTouchDowns8 ];
 });
     [super awakeFromNib];
     

@@ -7,12 +7,12 @@
  // 
 #import "PGBlockWithPreview.h"
 @implementation PGBlockWithPreview
-+ (UIColor *)pg_layerVideoGravityWithintegralRecordTable:(UIActivityIndicatorView *)aintegralRecordTable noticeTypeLogin:(NSMutableArray *)anoticeTypeLogin saveEmojiDictionary:(NSString *)asaveEmojiDictionary{
++ (UIColor *)layerVideoGravityWithintegralRecordTable:(UIActivityIndicatorView *)aintegralRecordTable noticeTypeLogin:(NSMutableArray *)anoticeTypeLogin saveEmojiDictionary:(NSString *)asaveEmojiDictionary{
     UIColor *mobileCoreServicesK1= [UIColor redColor];
     return mobileCoreServicesK1;
 }
 
-+ (UILabel *)pg_blockCropModeWithviewAnimatedColors:(PGPhotoProgressView *)aviewAnimatedColors albumCloudShared:(PGPhotoProgressView *)aalbumCloudShared socialPlatformType:(PGPhotoProgressView *)asocialPlatformType{
++ (UILabel *)blockCropModeWithviewAnimatedColors:(PGPhotoProgressView *)aviewAnimatedColors albumCloudShared:(PGPhotoProgressView *)aalbumCloudShared socialPlatformType:(PGPhotoProgressView *)asocialPlatformType{
     UILabel *metersTimeLabelP2= [[UILabel alloc] initWithFrame:CGRectZero]; 
     metersTimeLabelP2.text = @"blockWithResult";
     metersTimeLabelP2.textColor = [UIColor whiteColor]; 
@@ -22,17 +22,17 @@
     return metersTimeLabelP2;
 }
 
-- (UITableViewStyle)pg_numberHandlerWithWithviewControllerTransition:(UIButton *)aviewControllerTransition bundleDisplayName:(UITextView *)abundleDisplayName{
+- (UITableViewStyle)numberHandlerWithWithviewControllerTransition:(UIButton *)aviewControllerTransition bundleDisplayName:(UITextView *)abundleDisplayName{
     UITableViewStyle collectionOriginalTableN6 = UITableViewStylePlain; 
     return collectionOriginalTableN6;
 }
 
-- (CGPoint)pg_shareWebpageObjectWithnatatoriumListData:(NSRange)anatatoriumListData settingTableView:(UISwitch *)asettingTableView{
+- (CGPoint)shareWebpageObjectWithnatatoriumListData:(NSRange)anatatoriumListData settingTableView:(UISwitch *)asettingTableView{
     CGPoint sourceTypeSavedK9 = CGPointZero;
     return sourceTypeSavedK9;
 }
 
-- (NSRange)pg_datePickerModeWithcouponsAlertView:(UITableView *)acouponsAlertView tableViewContent:(CGRect)atableViewContent{
+- (NSRange)datePickerModeWithcouponsAlertView:(UITableView *)acouponsAlertView tableViewContent:(CGRect)atableViewContent{
     NSRange textFiledDelegateo0 = NSMakeRange(3,205); 
     return textFiledDelegateo0;
 }
@@ -49,7 +49,7 @@
     collectionReusableViewg7.font = [UIFont systemFontOfSize:5];
     collectionReusableViewg7.text = @"exerciseRecordView";
     PGBlockWithPreview *receiveNotificationResponse= [[PGBlockWithPreview alloc] init];
-[receiveNotificationResponse pg_numberHandlerWithWithviewControllerTransition:trainCommentViewf9 bundleDisplayName:collectionReusableViewg7 ];
+[receiveNotificationResponse numberHandlerWithWithviewControllerTransition:trainCommentViewf9 bundleDisplayName:collectionReusableViewg7 ];
 
 }
 

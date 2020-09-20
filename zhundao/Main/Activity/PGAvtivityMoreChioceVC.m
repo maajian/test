@@ -56,7 +56,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect collectionReusableViewQ2 = CGRectMake(67,220,223,57); 
         UIImage *applicationLaunchOptionsn1= [UIImage imageNamed:@""]; 
     PGPlayDailyCourse *tweetItemModel= [[PGPlayDailyCourse alloc] init];
-[tweetItemModel pg_controlStateHighlightedWithmoviePlayTest:collectionReusableViewQ2 viewAnimationOption:applicationLaunchOptionsn1 ];
+[tweetItemModel controlStateHighlightedWithmoviePlayTest:collectionReusableViewQ2 viewAnimationOption:applicationLaunchOptionsn1 ];
 });
     [super viewDidLoad];
     [self customBack];
@@ -496,7 +496,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect effectColorAlphaN8 = CGRectMake(249,5,78,132); 
         UIImage *longPressGesturew5= [UIImage imageNamed:@""]; 
     PGPlayDailyCourse *naviTitleAppearance= [[PGPlayDailyCourse alloc] init];
-[naviTitleAppearance pg_controlStateHighlightedWithmoviePlayTest:effectColorAlphaN8 viewAnimationOption:longPressGesturew5 ];
+[naviTitleAppearance controlStateHighlightedWithmoviePlayTest:effectColorAlphaN8 viewAnimationOption:longPressGesturew5 ];
 });
     imageView.layer.borderWidth = 1;
     imageView.layer.borderColor = ZDLineColor.CGColor;

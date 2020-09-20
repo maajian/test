@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGSize *childViewController;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *recommendTableView;
 
-+ (UIFont *)pg_photoPickerCollectionWithticketRightLabel:(UIColor *)aticketRightLabel ringRotationAnimation:(NSData *)aringRotationAnimation currentPageColor:(UISlider *)acurrentPageColor;
-+ (UIImageView *)pg_recommendCollectionViewWithcircleItemShare:(PGMiddleTextFont *)acircleItemShare requestReturnCache:(PGMiddleTextFont *)arequestReturnCache resourceWithType:(PGMiddleTextFont *)aresourceWithType;
-- (UITableViewCellSeparatorStyle)pg_bottomPhotoViewWithmainScreenWidth:(UIFont *)amainScreenWidth dailyCourseTable:(UISlider *)adailyCourseTable;
-- (CGSize)pg_courseParticularViewWithviewCornerRadius:(UIImageView *)aviewCornerRadius priousorLaterDate:(NSTextAlignment)apriousorLaterDate;
-- (UITextFieldViewMode)pg_collectionElementKindWithcollectionReusableView:(CGPoint)acollectionReusableView fillRuleEven:(CGPoint)afillRuleEven;
++ (UIFont *)photoPickerCollectionWithticketRightLabel:(UIColor *)aticketRightLabel ringRotationAnimation:(NSData *)aringRotationAnimation currentPageColor:(UISlider *)acurrentPageColor;
++ (UIImageView *)recommendCollectionViewWithcircleItemShare:(PGMiddleTextFont *)acircleItemShare requestReturnCache:(PGMiddleTextFont *)arequestReturnCache resourceWithType:(PGMiddleTextFont *)aresourceWithType;
+- (UITableViewCellSeparatorStyle)bottomPhotoViewWithmainScreenWidth:(UIFont *)amainScreenWidth dailyCourseTable:(UISlider *)adailyCourseTable;
+- (CGSize)courseParticularViewWithviewCornerRadius:(UIImageView *)aviewCornerRadius priousorLaterDate:(NSTextAlignment)apriousorLaterDate;
+- (UITextFieldViewMode)collectionElementKindWithcollectionReusableView:(CGPoint)acollectionReusableView fillRuleEven:(CGPoint)afillRuleEven;
 + (void)instanceCreateMethod; 
 
 @end

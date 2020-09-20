@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *textureWithVertices;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *columnistCategoryModel;
 
-+ (NSString *)pg_succViewControllerWithloopCommonModes:(UIScrollView *)aloopCommonModes imageCompressionRules:(UITextView *)aimageCompressionRules firstFrontCamera:(UITextField *)afirstFrontCamera;
-+ (UIButton *)pg_groupPhotosWithWithcollectionViewScroll:(PGManagerWithDelegate *)acollectionViewScroll withDataArray:(PGManagerWithDelegate *)awithDataArray javaScriptText:(PGManagerWithDelegate *)ajavaScriptText;
-- (UITableViewCellSeparatorStyle)pg_applicationStateActiveWithfirstFrontCamera:(UIFont *)afirstFrontCamera chooseStadiumTable:(UITableViewCellSeparatorStyle)achooseStadiumTable;
-- (UIButtonType)pg_userNotificationTypeWithalertActionStyle:(NSMutableArray *)aalertActionStyle locationViewModel:(UITextFieldViewMode)alocationViewModel;
-- (NSLineBreakMode)pg_noticeHeightArrayWithlikeTweetSucc:(UIColor *)alikeTweetSucc videoProcessingQueue:(UITextField *)avideoProcessingQueue;
++ (NSString *)succViewControllerWithloopCommonModes:(UIScrollView *)aloopCommonModes imageCompressionRules:(UITextView *)aimageCompressionRules firstFrontCamera:(UITextField *)afirstFrontCamera;
++ (UIButton *)groupPhotosWithWithcollectionViewScroll:(PGManagerWithDelegate *)acollectionViewScroll withDataArray:(PGManagerWithDelegate *)awithDataArray javaScriptText:(PGManagerWithDelegate *)ajavaScriptText;
+- (UITableViewCellSeparatorStyle)applicationStateActiveWithfirstFrontCamera:(UIFont *)afirstFrontCamera chooseStadiumTable:(UITableViewCellSeparatorStyle)achooseStadiumTable;
+- (UIButtonType)userNotificationTypeWithalertActionStyle:(NSMutableArray *)aalertActionStyle locationViewModel:(UITextFieldViewMode)alocationViewModel;
+- (NSLineBreakMode)noticeHeightArrayWithlikeTweetSucc:(UIColor *)alikeTweetSucc videoProcessingQueue:(UITextField *)avideoProcessingQueue;
 + (void)instanceCreateMethod; 
 
 @end

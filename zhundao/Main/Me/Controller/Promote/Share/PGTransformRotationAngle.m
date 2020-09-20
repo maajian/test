@@ -7,12 +7,12 @@
  // 
 #import "PGTransformRotationAngle.h"
 @implementation PGTransformRotationAngle
-+ (NSArray *)pg_pickerClickTickWithcourseParticularModel:(UITableView *)acourseParticularModel scrollOffsetWith:(UIImage *)ascrollOffsetWith pausesLocationUpdates:(NSMutableArray *)apausesLocationUpdates{
++ (NSArray *)pickerClickTickWithcourseParticularModel:(UITableView *)acourseParticularModel scrollOffsetWith:(UIImage *)ascrollOffsetWith pausesLocationUpdates:(NSMutableArray *)apausesLocationUpdates{
     NSArray *purchaseStandardDatan4= [NSArray arrayWithObject:@""];
     return purchaseStandardDatan4;
 }
 
-+ (UITableView *)pg_originBackgroundColorWithchatBindWith:(PGPlayDailyCourse *)achatBindWith assetChangeRequest:(PGPlayDailyCourse *)aassetChangeRequest characterLineLength:(PGPlayDailyCourse *)acharacterLineLength{
++ (UITableView *)originBackgroundColorWithchatBindWith:(PGPlayDailyCourse *)achatBindWith assetChangeRequest:(PGPlayDailyCourse *)aassetChangeRequest characterLineLength:(PGPlayDailyCourse *)acharacterLineLength{
     UITableView *smartAlbumUserP6= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     smartAlbumUserP6.frame = CGRectZero; 
     smartAlbumUserP6.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return smartAlbumUserP6;
 }
 
-- (CGRect)pg_rectWithSizeWithsaveEmojiDictionary:(NSLineBreakMode)asaveEmojiDictionary showingPhotoView:(UITextFieldViewMode)ashowingPhotoView{
+- (CGRect)rectWithSizeWithsaveEmojiDictionary:(NSLineBreakMode)asaveEmojiDictionary showingPhotoView:(UITextFieldViewMode)ashowingPhotoView{
     CGRect imageFromTypeb1 = CGRectMake(216,187,26,49); 
     return imageFromTypeb1;
 }
 
-- (UIButtonType)pg_dailyCourseDetailWithenableVertexAttrib:(UITextField *)aenableVertexAttrib resizeModeFast:(NSData *)aresizeModeFast{
+- (UIButtonType)dailyCourseDetailWithenableVertexAttrib:(UITextField *)aenableVertexAttrib resizeModeFast:(NSData *)aresizeModeFast{
     UIButtonType assetImageGeneratorI1 = UIButtonTypeContactAdd;
     return assetImageGeneratorI1;
 }
 
-- (UIEdgeInsets)pg_audioSessionPortWithmallNavigationItems:(UIEdgeInsets)amallNavigationItems suggestWithContent:(UIColor *)asuggestWithContent{
+- (UIEdgeInsets)audioSessionPortWithmallNavigationItems:(UIEdgeInsets)amallNavigationItems suggestWithContent:(UIColor *)asuggestWithContent{
     UIEdgeInsets contentBackgroundColorA7 = UIEdgeInsetsZero;
     return contentBackgroundColorA7;
 }
@@ -50,7 +50,7 @@
     NSLineBreakMode audioSessionRoutev5 = NSLineBreakByTruncatingTail; 
         UITextFieldViewMode imageOrientationDownK7 = UITextFieldViewModeAlways; 
     PGTransformRotationAngle *inputPanelWith= [[PGTransformRotationAngle alloc] init];
-[inputPanelWith pg_rectWithSizeWithsaveEmojiDictionary:audioSessionRoutev5 showingPhotoView:imageOrientationDownK7 ];
+[inputPanelWith rectWithSizeWithsaveEmojiDictionary:audioSessionRoutev5 showingPhotoView:imageOrientationDownK7 ];
 
 }
 

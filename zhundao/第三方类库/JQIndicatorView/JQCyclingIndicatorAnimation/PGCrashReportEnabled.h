@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *purchaseStandardData;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *hiddenShowSheet;
 
-+ (NSString *)pg_secondTextureCoordinateWithfansWithUser:(NSString *)afansWithUser trainParticularComment:(UIButton *)atrainParticularComment frameWithIndex:(UIFont *)aframeWithIndex;
-+ (UIActivityIndicatorView *)pg_photoScrollViewWithviewAnimatedColors:(PGChooseViewDelegate *)aviewAnimatedColors textLabelHidden:(PGChooseViewDelegate *)atextLabelHidden moreDataWith:(PGChooseViewDelegate *)amoreDataWith;
-- (UITextFieldViewMode)pg_integralStoreViewWithverticalScrollIndicator:(NSArray *)averticalScrollIndicator imageWithImage:(CGRect)aimageWithImage;
-- (UITableViewCellSeparatorStyle)pg_imageTypeFailWithapplicationIconBadge:(NSLineBreakMode)aapplicationIconBadge itemStatusFailed:(CGPoint)aitemStatusFailed;
-- (UIEdgeInsets)pg_cacheDailyCourseWithassetCameraCell:(UITableViewStyle)aassetCameraCell clippingWithView:(UIButton *)aclippingWithView;
++ (NSString *)secondTextureCoordinateWithfansWithUser:(NSString *)afansWithUser trainParticularComment:(UIButton *)atrainParticularComment frameWithIndex:(UIFont *)aframeWithIndex;
++ (UIActivityIndicatorView *)photoScrollViewWithviewAnimatedColors:(PGChooseViewDelegate *)aviewAnimatedColors textLabelHidden:(PGChooseViewDelegate *)atextLabelHidden moreDataWith:(PGChooseViewDelegate *)amoreDataWith;
+- (UITextFieldViewMode)integralStoreViewWithverticalScrollIndicator:(NSArray *)averticalScrollIndicator imageWithImage:(CGRect)aimageWithImage;
+- (UITableViewCellSeparatorStyle)imageTypeFailWithapplicationIconBadge:(NSLineBreakMode)aapplicationIconBadge itemStatusFailed:(CGPoint)aitemStatusFailed;
+- (UIEdgeInsets)cacheDailyCourseWithassetCameraCell:(UITableViewStyle)aassetCameraCell clippingWithView:(UIButton *)aclippingWithView;
 + (void)instanceCreateMethod; 
 
 @end

@@ -55,7 +55,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     taskNeedFinishE8.autoresizesSubviews = YES; 
     taskNeedFinishE8.clearsContextBeforeDrawing = YES; 
     PGDeviceOrientationFace *timeMakeWith= [[PGDeviceOrientationFace alloc] init];
-[timeMakeWith pg_pushNotificationTriggerWithaffineTransformIdentity:articleCommentDataJ8 modelWithAsset:taskNeedFinishE8 ];
+[timeMakeWith pushNotificationTriggerWithaffineTransformIdentity:articleCommentDataJ8 modelWithAsset:taskNeedFinishE8 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

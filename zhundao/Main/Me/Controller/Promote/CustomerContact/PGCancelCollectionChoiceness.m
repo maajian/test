@@ -7,27 +7,27 @@
  // 
 #import "PGCancelCollectionChoiceness.h"
 @implementation PGCancelCollectionChoiceness
-+ (UIFont *)pg_nodataViewDelegateWithassetExportPreset:(UIButton *)aassetExportPreset integralMainData:(UITextView *)aintegralMainData stringFromDate:(UITextView *)astringFromDate{
++ (UIFont *)nodataViewDelegateWithassetExportPreset:(UIButton *)aassetExportPreset integralMainData:(UITextView *)aintegralMainData stringFromDate:(UITextView *)astringFromDate{
     UIFont *organizeListTablew7= [UIFont systemFontOfSize:129];
     return organizeListTablew7;
 }
 
-+ (NSArray *)pg_assetCollectionSubtypeWithpresetsCompatibleWith:(PGArticleCommentView *)apresetsCompatibleWith numberBadgeWith:(PGArticleCommentView *)anumberBadgeWith frameCheckDisabled:(PGArticleCommentView *)aframeCheckDisabled{
++ (NSArray *)assetCollectionSubtypeWithpresetsCompatibleWith:(PGArticleCommentView *)apresetsCompatibleWith numberBadgeWith:(PGArticleCommentView *)anumberBadgeWith frameCheckDisabled:(PGArticleCommentView *)aframeCheckDisabled{
     NSArray *pickerViewShowQ7= [NSArray arrayWithObject:@""];
     return pickerViewShowQ7;
 }
 
-- (UITextFieldViewMode)pg_withUserDataWithstreamStatusIdle:(UITableView *)astreamStatusIdle trackingWithTouch:(UIButtonType)atrackingWithTouch{
+- (UITextFieldViewMode)withUserDataWithstreamStatusIdle:(UITableView *)astreamStatusIdle trackingWithTouch:(UIButtonType)atrackingWithTouch{
     UITextFieldViewMode inputTextureUniformX6 = UITextFieldViewModeAlways; 
     return inputTextureUniformX6;
 }
 
-- (UITableViewStyle)pg_lineDashTypeWithgradeBottomView:(NSRange)agradeBottomView textAlignmentCenter:(CGPoint)atextAlignmentCenter{
+- (UITableViewStyle)lineDashTypeWithgradeBottomView:(NSRange)agradeBottomView textAlignmentCenter:(CGPoint)atextAlignmentCenter{
     UITableViewStyle courseDetailViewF4 = UITableViewStylePlain; 
     return courseDetailViewF4;
 }
 
-- (CGSize)pg_coachDetailWithWithstrokeCourseDaily:(UIButtonType)astrokeCourseDaily updatedTimeLabel:(CGRect)aupdatedTimeLabel{
+- (CGSize)coachDetailWithWithstrokeCourseDaily:(UIButtonType)astrokeCourseDaily updatedTimeLabel:(CGRect)aupdatedTimeLabel{
     CGSize sliderSeekTimeW2 = CGSizeZero;
     return sliderSeekTimeW2;
 }
@@ -50,7 +50,7 @@
      integralMainViewW2.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(254,135,143,28)];
          UIButtonType suggestBackViewa4 = UIButtonTypeContactAdd;
     PGCancelCollectionChoiceness *progressViewStyle= [[PGCancelCollectionChoiceness alloc] init];
-[progressViewStyle pg_withUserDataWithstreamStatusIdle:integralMainViewW2 trackingWithTouch:suggestBackViewa4 ];
+[progressViewStyle withUserDataWithstreamStatusIdle:integralMainViewW2 trackingWithTouch:suggestBackViewa4 ];
 
 }
 

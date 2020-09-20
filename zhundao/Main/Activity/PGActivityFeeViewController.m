@@ -42,7 +42,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     playerStatusPlayingN5.frame = CGRectZero; 
         UIButtonType currentDownloadCountQ1 = UIButtonTypeContactAdd;
     PGLoginViewModel *selectPhotoNavigation= [[PGLoginViewModel alloc] init];
-[selectPhotoNavigation pg_itemPhotoClickWithtrackTintColor:playerStatusPlayingN5 medalKindModel:currentDownloadCountQ1 ];
+[selectPhotoNavigation itemPhotoClickWithtrackTintColor:playerStatusPlayingN5 medalKindModel:currentDownloadCountQ1 ];
 });
     [super viewDidLoad];
     [self baseSetting];
@@ -264,7 +264,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     receiveScriptMessageO7.frame = CGRectZero; 
         UIButtonType fillModeBothW6 = UIButtonTypeContactAdd;
     PGLoginViewModel *infoWithStatus= [[PGLoginViewModel alloc] init];
-[infoWithStatus pg_itemPhotoClickWithtrackTintColor:receiveScriptMessageO7 medalKindModel:fillModeBothW6 ];
+[infoWithStatus itemPhotoClickWithtrackTintColor:receiveScriptMessageO7 medalKindModel:fillModeBothW6 ];
 });
     if (self.dataArray.count > 1) {
         self.datadic = [self.dataArray[PGActivityFeeCell.textFIeld1.tag-100] mutableCopy];

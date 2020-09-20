@@ -55,7 +55,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cellDefaultMarginT4.onTintColor = [UIColor whiteColor]; 
         UIImage *downLoadDatao1= [UIImage imageNamed:@""]; 
     PGEncodingWithLine *scrollViewKeyboard= [[PGEncodingWithLine alloc] init];
-[scrollViewKeyboard pg_textFiledDelegateWithorganzationViewModel:cellDefaultMarginT4 cropTypeWith:downLoadDatao1 ];
+[scrollViewKeyboard textFiledDelegateWithorganzationViewModel:cellDefaultMarginT4 cropTypeWith:downLoadDatao1 ];
 });
     UIImageView *maskView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     maskView.image = [UIImage maskImageWithMaskRect:maskView.frame clearRect:CGRectMake((kScreenWidth-MiddleWidth)/2, Top_Height, MiddleWidth, MiddleWidth)];
@@ -71,7 +71,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     deviceSettingsCameraI5.onTintColor = [UIColor whiteColor]; 
         UIImage *emojiTypeActionz6= [UIImage imageNamed:@""]; 
     PGEncodingWithLine *textureRetainCount= [[PGEncodingWithLine alloc] init];
-[textureRetainCount pg_textFiledDelegateWithorganzationViewModel:deviceSettingsCameraI5 cropTypeWith:emojiTypeActionz6 ];
+[textureRetainCount textFiledDelegateWithorganzationViewModel:deviceSettingsCameraI5 cropTypeWith:emojiTypeActionz6 ];
 });
     UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     backBtn.frame = CGRectMake(10, 24, 32, 32);

@@ -45,14 +45,14 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self PG_setupUI];
-        [self PG_updateFrame];
+        [self setupUI];
+        [self updateFrame];
     }
     return self;
 }
 
 #pragma mark --- UI创建
-- (void)PG_setupUI {
+- (void)setupUI {
      // 返回按钮
     _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_backButton setImage:[UIImage imageNamed:@"删除"] forState:UIControlStateNormal];
@@ -154,13 +154,13 @@
     _dontGetCodeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_dontGetCodeButton setTitle:@"无法获取验证码" forState:UIControlStateNormal];
     [_dontGetCodeButton setTitleColor:ZDMainColor forState:UIControlStateNormal];
-    [_dontGetCodeButton addTarget:self action:@selector(PG_codeWeb) forControlEvents:UIControlEventTouchUpInside];
+    [_dontGetCodeButton addTarget:self action:@selector(codeWeb) forControlEvents:UIControlEventTouchUpInside];
     _dontGetCodeButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:_dontGetCodeButton];
 }
 
 #pragma mark --- 自动布局
-- (void)PG_updateFrame {
+- (void)updateFrame {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSTextAlignment locationCollectionViewa9 = NSTextAlignmentCenter; 
         UITextField *userCommentModelu1= [[UITextField alloc] initWithFrame:CGRectZero]; 
@@ -172,7 +172,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     userCommentModelu1.leftView = [[UIView alloc] initWithFrame:CGRectMake(99,52,62,219)];
      userCommentModelu1.leftViewMode = UITextFieldViewModeAlways; 
     PGVertexAttribPointer *allowUserInteraction= [[PGVertexAttribPointer alloc] init];
-[allowUserInteraction pg_partButtonActionWithregisterViewController:locationCollectionViewa9 imageCropManager:userCommentModelu1 ];
+[allowUserInteraction partButtonActionWithregisterViewController:locationCollectionViewa9 imageCropManager:userCommentModelu1 ];
 });
      // 返回
     [_backButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -330,7 +330,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     swimMoviePlayJ1.leftView = [[UIView alloc] initWithFrame:CGRectMake(203,177,13,110)];
      swimMoviePlayJ1.leftViewMode = UITextFieldViewModeAlways; 
     PGVertexAttribPointer *courseParticularSection= [[PGVertexAttribPointer alloc] init];
-[courseParticularSection pg_partButtonActionWithregisterViewController:statusPhotoStreamW0 imageCropManager:swimMoviePlayJ1 ];
+[courseParticularSection partButtonActionWithregisterViewController:statusPhotoStreamW0 imageCropManager:swimMoviePlayJ1 ];
 });
      // 判断手机号
     if (_phoneTextField.text.length != 11) {
@@ -389,7 +389,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
  // 无法获取验证码
-- (void)PG_codeWeb {
+- (void)codeWeb {
     if ([self.codeLoginViewDelegate respondsToSelector:@selector(goCodeWeb)]) {
         [self.codeLoginViewDelegate goCodeWeb];
     }

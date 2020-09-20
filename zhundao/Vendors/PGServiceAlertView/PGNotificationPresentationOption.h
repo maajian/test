@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *attentionViewController;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *filterManagerInited;
 
-+ (UIScrollView *)pg_arrayUsingDescriptorsWithphotoPickerBrowser:(UIActivityIndicatorView *)aphotoPickerBrowser progressUpdateBlock:(UISlider *)aprogressUpdateBlock finishPickingMedia:(UITextView *)afinishPickingMedia;
-+ (UIImage *)pg_recommendCourseHeightWithsendTweetSucc:(PGSocialMessageObject *)asendTweetSucc dailyCourseDetail:(PGSocialMessageObject *)adailyCourseDetail medalDetailCell:(PGSocialMessageObject *)amedalDetailCell;
-- (NSRange)pg_recordVideoCameraWithobjectsUsingBlock:(UISwitch *)aobjectsUsingBlock trainViewModel:(UIImageView *)atrainViewModel;
-- (CGRect)pg_collectionViewDataWithnoticeTypeLogin:(NSRange)anoticeTypeLogin assetMediaSubtype:(UIScrollView *)aassetMediaSubtype;
-- (UITableViewCellSeparatorStyle)pg_hiddenShowSheetWithimageProcessingContext:(NSLineBreakMode)aimageProcessingContext asynchronouslyWithCompletion:(UIEdgeInsets)aasynchronouslyWithCompletion;
++ (UIScrollView *)arrayUsingDescriptorsWithphotoPickerBrowser:(UIActivityIndicatorView *)aphotoPickerBrowser progressUpdateBlock:(UISlider *)aprogressUpdateBlock finishPickingMedia:(UITextView *)afinishPickingMedia;
++ (UIImage *)recommendCourseHeightWithsendTweetSucc:(PGSocialMessageObject *)asendTweetSucc dailyCourseDetail:(PGSocialMessageObject *)adailyCourseDetail medalDetailCell:(PGSocialMessageObject *)amedalDetailCell;
+- (NSRange)recordVideoCameraWithobjectsUsingBlock:(UISwitch *)aobjectsUsingBlock trainViewModel:(UIImageView *)atrainViewModel;
+- (CGRect)collectionViewDataWithnoticeTypeLogin:(NSRange)anoticeTypeLogin assetMediaSubtype:(UIScrollView *)aassetMediaSubtype;
+- (UITableViewCellSeparatorStyle)hiddenShowSheetWithimageProcessingContext:(NSLineBreakMode)aimageProcessingContext asynchronouslyWithCompletion:(UIEdgeInsets)aasynchronouslyWithCompletion;
 + (void)instanceCreateMethod; 
 
 @end

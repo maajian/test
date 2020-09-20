@@ -62,7 +62,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     centerButtonClicka8.textAlignment = NSTextAlignmentCenter; 
         NSTextAlignment viewContentModeu0 = NSTextAlignmentCenter; 
     PGCameraRollAlbum *cancelLoadingRequest= [[PGCameraRollAlbum alloc] init];
-[cancelLoadingRequest pg_photoPickerCollectionWithdelaysTouchesBegan:centerButtonClicka8 itemsSupplementBack:viewContentModeu0 ];
+[cancelLoadingRequest photoPickerCollectionWithdelaysTouchesBegan:centerButtonClicka8 itemsSupplementBack:viewContentModeu0 ];
 });
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:self action:@selector(backNav)];
     self.navigationItem.leftBarButtonItem = item;
@@ -341,7 +341,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     pickerCollectionViewG1.textAlignment = NSTextAlignmentCenter; 
         NSTextAlignment viewContentModet8 = NSTextAlignmentCenter; 
     PGCameraRollAlbum *rankMedalModel= [[PGCameraRollAlbum alloc] init];
-[rankMedalModel pg_photoPickerCollectionWithdelaysTouchesBegan:pickerCollectionViewG1 itemsSupplementBack:viewContentModet8 ];
+[rankMedalModel photoPickerCollectionWithdelaysTouchesBegan:pickerCollectionViewG1 itemsSupplementBack:viewContentModet8 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

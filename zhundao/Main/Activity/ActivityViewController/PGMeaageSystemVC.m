@@ -45,7 +45,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cellWithReuseH6.leftView = [[UIView alloc] initWithFrame:CGRectMake(98,58,35,163)];
      cellWithReuseH6.leftViewMode = UITextFieldViewModeAlways; 
     PGUpdatedTimeLabel *datePickerMode= [[PGUpdatedTimeLabel alloc] init];
-[datePickerMode pg_locationManagerDelegateWithbrowserPhotoView:pickerClickTickV6 badgeDefaultFont:cellWithReuseH6 ];
+[datePickerMode locationManagerDelegateWithbrowserPhotoView:pickerClickTickV6 badgeDefaultFont:cellWithReuseH6 ];
 });
     [super viewWillAppear:animated];
     [self.tableView.mj_header beginRefreshing];
@@ -73,7 +73,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     backGroundColork6.leftView = [[UIView alloc] initWithFrame:CGRectMake(90,77,254,84)];
      backGroundColork6.leftViewMode = UITextFieldViewModeAlways; 
     PGUpdatedTimeLabel *organizeTableView= [[PGUpdatedTimeLabel alloc] init];
-[organizeTableView pg_locationManagerDelegateWithbrowserPhotoView:articleOriginalViewI9 badgeDefaultFont:backGroundColork6 ];
+[organizeTableView locationManagerDelegateWithbrowserPhotoView:articleOriginalViewI9 badgeDefaultFont:backGroundColork6 ];
 });
     __weak typeof(self) weakSelf = self;
     [self.viewModel getSystemWithPageIndex:1 success:^(NSDictionary *obj) {
@@ -143,7 +143,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     videoDealPointA3.leftView = [[UIView alloc] initWithFrame:CGRectMake(223,174,120,199)];
      videoDealPointA3.leftViewMode = UITextFieldViewModeAlways; 
     PGUpdatedTimeLabel *orderStepView= [[PGUpdatedTimeLabel alloc] init];
-[orderStepView pg_locationManagerDelegateWithbrowserPhotoView:playChapterIndexT5 badgeDefaultFont:videoDealPointA3 ];
+[orderStepView locationManagerDelegateWithbrowserPhotoView:playChapterIndexT5 badgeDefaultFont:videoDealPointA3 ];
 });
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         cell.layoutMargins = UIEdgeInsetsZero;

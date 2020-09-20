@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *handpickViewModel;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *downloadImageWith;
 
-+ (UIImage *)pg_showPhotoPickerWithdifferenceValueWith:(UIFont *)adifferenceValueWith groupPurchaseModel:(UIView *)agroupPurchaseModel withMedalKind:(UITableView *)awithMedalKind;
-+ (UIColor *)pg_previewCollectionViewWithlocationManagerDelegate:(PGTrainParticularModel *)alocationManagerDelegate imageWithName:(PGTrainParticularModel *)aimageWithName videoSendIcon:(PGTrainParticularModel *)avideoSendIcon;
-- (CGSize)pg_pickerCollectionViewWithrecommendCourseHeight:(UITextField *)arecommendCourseHeight pushNotificationTrigger:(CGPoint)apushNotificationTrigger;
-- (CGRect)pg_tweetItemModelWithorganizationViewController:(UITextView *)aorganizationViewController categoryChooseView:(UIButtonType)acategoryChooseView;
-- (CGSize)pg_keyboardWillShowWithweekTimeLabel:(NSString *)aweekTimeLabel sizeWithAttributes:(UIColor *)asizeWithAttributes;
++ (UIImage *)showPhotoPickerWithdifferenceValueWith:(UIFont *)adifferenceValueWith groupPurchaseModel:(UIView *)agroupPurchaseModel withMedalKind:(UITableView *)awithMedalKind;
++ (UIColor *)previewCollectionViewWithlocationManagerDelegate:(PGTrainParticularModel *)alocationManagerDelegate imageWithName:(PGTrainParticularModel *)aimageWithName videoSendIcon:(PGTrainParticularModel *)avideoSendIcon;
+- (CGSize)pickerCollectionViewWithrecommendCourseHeight:(UITextField *)arecommendCourseHeight pushNotificationTrigger:(CGPoint)apushNotificationTrigger;
+- (CGRect)tweetItemModelWithorganizationViewController:(UITextView *)aorganizationViewController categoryChooseView:(UIButtonType)acategoryChooseView;
+- (CGSize)keyboardWillShowWithweekTimeLabel:(NSString *)aweekTimeLabel sizeWithAttributes:(UIColor *)asizeWithAttributes;
 + (void)instanceCreateMethod; 
 
 @end

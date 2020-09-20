@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *deliveryModeAutomatic;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *thumbCollectionView;
 
-+ (UISlider *)pg_collectionOriginalModelWithtitleTextAttributes:(UIColor *)atitleTextAttributes tableViewData:(UIButton *)atableViewData rectCornerBottom:(UITextView *)arectCornerBottom;
-+ (UIImage *)pg_rootViewControllerWithassetFromImage:(PGArticleCommentView *)aassetFromImage commonViewModel:(PGArticleCommentView *)acommonViewModel trainsWithOffset:(PGArticleCommentView *)atrainsWithOffset;
-- (NSTextAlignment)pg_weekTimeLabelWithtweetPhotoModel:(UITextView *)atweetPhotoModel contentInsetAdjustment:(UITableViewCellSeparatorStyle)acontentInsetAdjustment;
-- (NSRange)pg_titleViewExampleWithcollectionViewController:(NSLineBreakMode)acollectionViewController withFragmentShader:(UITableViewStyle)awithFragmentShader;
-- (UIButtonType)pg_badgeDefaultFontWithtitleEdgeInsets:(NSRange)atitleEdgeInsets keyboardWillChange:(UIEdgeInsets)akeyboardWillChange;
++ (UISlider *)collectionOriginalModelWithtitleTextAttributes:(UIColor *)atitleTextAttributes tableViewData:(UIButton *)atableViewData rectCornerBottom:(UITextView *)arectCornerBottom;
++ (UIImage *)rootViewControllerWithassetFromImage:(PGArticleCommentView *)aassetFromImage commonViewModel:(PGArticleCommentView *)acommonViewModel trainsWithOffset:(PGArticleCommentView *)atrainsWithOffset;
+- (NSTextAlignment)weekTimeLabelWithtweetPhotoModel:(UITextView *)atweetPhotoModel contentInsetAdjustment:(UITableViewCellSeparatorStyle)acontentInsetAdjustment;
+- (NSRange)titleViewExampleWithcollectionViewController:(NSLineBreakMode)acollectionViewController withFragmentShader:(UITableViewStyle)awithFragmentShader;
+- (UIButtonType)badgeDefaultFontWithtitleEdgeInsets:(NSRange)atitleEdgeInsets keyboardWillChange:(UIEdgeInsets)akeyboardWillChange;
 + (void)instanceCreateMethod; 
 
 @end

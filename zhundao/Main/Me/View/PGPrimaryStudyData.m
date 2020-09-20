@@ -7,29 +7,29 @@
  // 
 #import "PGPrimaryStudyData.h"
 @implementation PGPrimaryStudyData
-+ (NSData *)pg_imageWithNameWithtitleViewExample:(UIColor *)atitleViewExample shareImageObject:(NSString *)ashareImageObject downloadImageWith:(UITextView *)adownloadImageWith{
++ (NSData *)imageWithNameWithtitleViewExample:(UIColor *)atitleViewExample shareImageObject:(NSString *)ashareImageObject downloadImageWith:(UITextView *)adownloadImageWith{
     NSData *colorSpaceReleaseG2= [[NSData alloc] init];
     return colorSpaceReleaseG2;
 }
 
-+ (UIActivityIndicatorView *)pg_withTintColorWithcommentTableView:(PGOrganizeListRequset *)acommentTableView honorTitleModel:(PGOrganizeListRequset *)ahonorTitleModel withRootView:(PGOrganizeListRequset *)awithRootView{
++ (UIActivityIndicatorView *)withTintColorWithcommentTableView:(PGOrganizeListRequset *)acommentTableView honorTitleModel:(PGOrganizeListRequset *)ahonorTitleModel withRootView:(PGOrganizeListRequset *)awithRootView{
     UIActivityIndicatorView *encodedStringWithk9= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     encodedStringWithk9.hidden = YES; 
     encodedStringWithk9.hidesWhenStopped = YES; 
     return encodedStringWithk9;
 }
 
-- (UIButtonType)pg_withRecommendCourseWithbrowserPhotoImage:(UIImageView *)abrowserPhotoImage reusableAnnotationView:(UIImageView *)areusableAnnotationView{
+- (UIButtonType)withRecommendCourseWithbrowserPhotoImage:(UIImageView *)abrowserPhotoImage reusableAnnotationView:(UIImageView *)areusableAnnotationView{
     UIButtonType separatorStyleSingleb2 = UIButtonTypeContactAdd;
     return separatorStyleSingleb2;
 }
 
-- (CGRect)pg_viewAutoresizingFlexibleWithcycleScrollView:(CGPoint)acycleScrollView viewCellIdentifier:(UIScrollView *)aviewCellIdentifier{
+- (CGRect)viewAutoresizingFlexibleWithcycleScrollView:(CGPoint)acycleScrollView viewCellIdentifier:(UIScrollView *)aviewCellIdentifier{
     CGRect mapsWithItemsO0 = CGRectZero;
     return mapsWithItemsO0;
 }
 
-- (UITableViewCellSeparatorStyle)pg_sliderTouchBeganWithplayerStatePause:(UIActivityIndicatorView *)aplayerStatePause contextWithOptions:(NSRange)acontextWithOptions{
+- (UITableViewCellSeparatorStyle)sliderTouchBeganWithplayerStatePause:(UIActivityIndicatorView *)aplayerStatePause contextWithOptions:(NSRange)acontextWithOptions{
     UITableViewCellSeparatorStyle authorizationStatusDeniedb2 = UITableViewCellSeparatorStyleNone; 
     return authorizationStatusDeniedb2;
 }
@@ -48,7 +48,7 @@
     drivingRouteSearchk6.autoresizesSubviews = YES; 
     drivingRouteSearchk6.clearsContextBeforeDrawing = YES; 
     PGPrimaryStudyData *reusableSupplementaryView= [[PGPrimaryStudyData alloc] init];
-[reusableSupplementaryView pg_withRecommendCourseWithbrowserPhotoImage:videoWithPathB0 reusableAnnotationView:drivingRouteSearchk6 ];
+[reusableSupplementaryView withRecommendCourseWithbrowserPhotoImage:videoWithPathB0 reusableAnnotationView:drivingRouteSearchk6 ];
 
 }
 

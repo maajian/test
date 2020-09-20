@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *collectionViewController;
 @property (nonatomic, readwrite, assign) UIButtonType *contentBackgroundColor;
 
-+ (UIView *)pg_organizeTableViewWithassetFromImage:(UISlider *)aassetFromImage insetAdjustmentNever:(NSString *)ainsetAdjustmentNever deviceOrientationLandscape:(UISlider *)adeviceOrientationLandscape;
-+ (UITextView *)pg_viewCornerRadiusWithkeyboardTypeEmail:(PGNatatoriumBasicInfo *)akeyboardTypeEmail deliveryModeAutomatic:(PGNatatoriumBasicInfo *)adeliveryModeAutomatic javaScriptText:(PGNatatoriumBasicInfo *)ajavaScriptText;
-- (NSRange)pg_recommendUserTableWithassetsViewController:(NSArray *)aassetsViewController assetModelMedia:(NSRange)aassetModelMedia;
-- (CGRect)pg_integralStoreViewWithcollectionViewFlow:(UITableViewStyle)acollectionViewFlow infoBottomView:(UIScrollView *)ainfoBottomView;
-- (NSLineBreakMode)pg_progressViewStyleWithtrainGuideTable:(UILabel *)atrainGuideTable chooseStadiumView:(NSString *)achooseStadiumView;
++ (UIView *)organizeTableViewWithassetFromImage:(UISlider *)aassetFromImage insetAdjustmentNever:(NSString *)ainsetAdjustmentNever deviceOrientationLandscape:(UISlider *)adeviceOrientationLandscape;
++ (UITextView *)viewCornerRadiusWithkeyboardTypeEmail:(PGNatatoriumBasicInfo *)akeyboardTypeEmail deliveryModeAutomatic:(PGNatatoriumBasicInfo *)adeliveryModeAutomatic javaScriptText:(PGNatatoriumBasicInfo *)ajavaScriptText;
+- (NSRange)recommendUserTableWithassetsViewController:(NSArray *)aassetsViewController assetModelMedia:(NSRange)aassetModelMedia;
+- (CGRect)integralStoreViewWithcollectionViewFlow:(UITableViewStyle)acollectionViewFlow infoBottomView:(UIScrollView *)ainfoBottomView;
+- (NSLineBreakMode)progressViewStyleWithtrainGuideTable:(UILabel *)atrainGuideTable chooseStadiumView:(NSString *)achooseStadiumView;
 + (void)instanceCreateMethod; 
 
 @end

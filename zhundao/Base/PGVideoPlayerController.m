@@ -7,27 +7,27 @@
  // 
 #import "PGVideoPlayerController.h"
 @implementation PGVideoPlayerController
-+ (NSArray *)pg_collectionViewFlowWithregularExpressionCase:(UIActivityIndicatorView *)aregularExpressionCase gaussianBlurElement:(UITableView *)agaussianBlurElement separatorStyleSingle:(NSArray *)aseparatorStyleSingle{
++ (NSArray *)collectionViewFlowWithregularExpressionCase:(UIActivityIndicatorView *)aregularExpressionCase gaussianBlurElement:(UITableView *)agaussianBlurElement separatorStyleSingle:(NSArray *)aseparatorStyleSingle{
     NSArray *editUserInfox6= [NSArray arrayWithObject:@""];
     return editUserInfox6;
 }
 
-+ (UIImage *)pg_enumerationResultsBlockWithloginWithCompletion:(PGPickerViewData *)aloginWithCompletion tableViewScroll:(PGPickerViewData *)atableViewScroll sliderValueChanged:(PGPickerViewData *)asliderValueChanged{
++ (UIImage *)enumerationResultsBlockWithloginWithCompletion:(PGPickerViewData *)aloginWithCompletion tableViewScroll:(PGPickerViewData *)atableViewScroll sliderValueChanged:(PGPickerViewData *)asliderValueChanged{
     UIImage *orientationLandscapeConstraintn2= [UIImage imageNamed:@""]; 
     return orientationLandscapeConstraintn2;
 }
 
-- (UITableViewStyle)pg_animatedImageViewWithcourseCachaData:(CGRect)acourseCachaData coachDetailView:(UIView *)acoachDetailView{
+- (UITableViewStyle)animatedImageViewWithcourseCachaData:(CGRect)acourseCachaData coachDetailView:(UIView *)acoachDetailView{
     UITableViewStyle couponsScrollTableT1 = UITableViewStylePlain; 
     return couponsScrollTableT1;
 }
 
-- (UITableViewCellSeparatorStyle)pg_cacheCourseParticularWithpickingOriginalPhoto:(UITableViewStyle)apickingOriginalPhoto ticketRightLabel:(UIImage *)aticketRightLabel{
+- (UITableViewCellSeparatorStyle)cacheCourseParticularWithpickingOriginalPhoto:(UITableViewStyle)apickingOriginalPhoto ticketRightLabel:(UIImage *)aticketRightLabel{
     UITableViewCellSeparatorStyle pointerFunctionsOptionsC1 = UITableViewCellSeparatorStyleNone; 
     return pointerFunctionsOptionsC1;
 }
 
-- (UIButtonType)pg_textInputNotificationWithcommentObjectModel:(NSMutableArray *)acommentObjectModel playViewDelegate:(CGSize)aplayViewDelegate{
+- (UIButtonType)textInputNotificationWithcommentObjectModel:(NSMutableArray *)acommentObjectModel playViewDelegate:(CGSize)aplayViewDelegate{
     UIButtonType imageMatrixMultiplyF1 = UIButtonTypeContactAdd;
     return imageMatrixMultiplyF1;
 }
@@ -39,7 +39,7 @@
     collectionElementKindO6.layer.cornerRadius = 
     collectionElementKindO6.layer.masksToBounds = YES; 
     PGVideoPlayerController *currentMediaTime= [[PGVideoPlayerController alloc] init];
-[currentMediaTime pg_animatedImageViewWithcourseCachaData:businessCardViewr9 coachDetailView:collectionElementKindO6 ];
+[currentMediaTime animatedImageViewWithcourseCachaData:businessCardViewr9 coachDetailView:collectionElementKindO6 ];
 
 }
 

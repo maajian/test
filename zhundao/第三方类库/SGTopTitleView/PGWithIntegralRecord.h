@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *rectCornerBottom;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *selectedPhotoBytes;
 
-+ (NSMutableArray *)pg_collectionDataWithWithphotoPrevireView:(NSMutableArray *)aphotoPrevireView taskWithRequest:(NSData *)ataskWithRequest photoButtonBottom:(UIColor *)aphotoButtonBottom;
-+ (UILabel *)pg_failLoadingWithWithmainScreenHeight:(PGInputTextureVertex *)amainScreenHeight pickerGroupTable:(PGInputTextureVertex *)apickerGroupTable shareWebpageObject:(PGInputTextureVertex *)ashareWebpageObject;
-- (UIEdgeInsets)pg_levelUserCollectionsWithlocationViewController:(UIImageView *)alocationViewController selectTypeMyttention:(UITextField *)aselectTypeMyttention;
-- (UIEdgeInsets)pg_deliveryModeHighWithjavaScriptAlert:(CGSize)ajavaScriptAlert sessionDataTask:(NSLineBreakMode)asessionDataTask;
-- (UIButtonType)pg_panelWithMessageWithuserCommentModel:(UIButtonType)auserCommentModel numberFormatterDecimal:(CGRect)anumberFormatterDecimal;
++ (NSMutableArray *)collectionDataWithWithphotoPrevireView:(NSMutableArray *)aphotoPrevireView taskWithRequest:(NSData *)ataskWithRequest photoButtonBottom:(UIColor *)aphotoButtonBottom;
++ (UILabel *)failLoadingWithWithmainScreenHeight:(PGInputTextureVertex *)amainScreenHeight pickerGroupTable:(PGInputTextureVertex *)apickerGroupTable shareWebpageObject:(PGInputTextureVertex *)ashareWebpageObject;
+- (UIEdgeInsets)levelUserCollectionsWithlocationViewController:(UIImageView *)alocationViewController selectTypeMyttention:(UITextField *)aselectTypeMyttention;
+- (UIEdgeInsets)deliveryModeHighWithjavaScriptAlert:(CGSize)ajavaScriptAlert sessionDataTask:(NSLineBreakMode)asessionDataTask;
+- (UIButtonType)panelWithMessageWithuserCommentModel:(UIButtonType)auserCommentModel numberFormatterDecimal:(CGRect)anumberFormatterDecimal;
 + (void)instanceCreateMethod; 
 
 @end

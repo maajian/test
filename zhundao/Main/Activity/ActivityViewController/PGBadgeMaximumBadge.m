@@ -7,7 +7,7 @@
  // 
 #import "PGBadgeMaximumBadge.h"
 @implementation PGBadgeMaximumBadge
-+ (UITableView *)pg_differenceValueWithWithphotoPickerGroup:(UIImage *)aphotoPickerGroup sendTweetSucc:(UITextField *)asendTweetSucc trainDataWith:(UIColor *)atrainDataWith{
++ (UITableView *)differenceValueWithWithphotoPickerGroup:(UIImage *)aphotoPickerGroup sendTweetSucc:(UITextField *)asendTweetSucc trainDataWith:(UIColor *)atrainDataWith{
     UITableView *receiveRemoteNotificationZ0= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     receiveRemoteNotificationZ0.frame = CGRectZero; 
     receiveRemoteNotificationZ0.showsVerticalScrollIndicator = NO; 
@@ -26,7 +26,7 @@
      return receiveRemoteNotificationZ0;
 }
 
-+ (UIButton *)pg_mallViewModelWithsourceTypeSaved:(PGDeviceOrientationFace *)asourceTypeSaved integralRecordModel:(PGDeviceOrientationFace *)aintegralRecordModel integralMainView:(PGDeviceOrientationFace *)aintegralMainView{
++ (UIButton *)mallViewModelWithsourceTypeSaved:(PGDeviceOrientationFace *)asourceTypeSaved integralRecordModel:(PGDeviceOrientationFace *)aintegralRecordModel integralMainView:(PGDeviceOrientationFace *)aintegralMainView{
     UIButton *itemTextFontc8= [UIButton buttonWithType:UIButtonTypeCustom]; 
     itemTextFontc8.frame = CGRectZero; 
     itemTextFontc8.exclusiveTouch = NO; 
@@ -36,17 +36,17 @@
     return itemTextFontc8;
 }
 
-- (NSTextAlignment)pg_photoButtonBottomWithsizeWithAttributes:(NSLineBreakMode)asizeWithAttributes rootViewController:(UIEdgeInsets)arootViewController{
+- (NSTextAlignment)photoButtonBottomWithsizeWithAttributes:(NSLineBreakMode)asizeWithAttributes rootViewController:(UIEdgeInsets)arootViewController{
     NSTextAlignment hidesWhenStoppedR6 = NSTextAlignmentCenter; 
     return hidesWhenStoppedR6;
 }
 
-- (NSRange)pg_weekTimeIntervalWithparticularDetailTable:(UITableViewStyle)aparticularDetailTable assetCollectionSubtype:(UILabel *)aassetCollectionSubtype{
+- (NSRange)weekTimeIntervalWithparticularDetailTable:(UITableViewStyle)aparticularDetailTable assetCollectionSubtype:(UILabel *)aassetCollectionSubtype{
     NSRange particularDetailTableW6 = NSMakeRange(8,79); 
     return particularDetailTableW6;
 }
 
-- (UIButtonType)pg_maskTypeClearWithcouponsInfoData:(UISwitch *)acouponsInfoData styleLightContent:(NSLineBreakMode)astyleLightContent{
+- (UIButtonType)maskTypeClearWithcouponsInfoData:(UISwitch *)acouponsInfoData styleLightContent:(NSLineBreakMode)astyleLightContent{
     UIButtonType hiddenScreenViewU7 = UIButtonTypeContactAdd;
     return hiddenScreenViewU7;
 }
@@ -55,7 +55,7 @@
     NSLineBreakMode animatedImageFramesx9 = NSLineBreakByTruncatingTail; 
         UIEdgeInsets userCommentTabled9 = UIEdgeInsetsZero;
     PGBadgeMaximumBadge *selectPhotoCommon= [[PGBadgeMaximumBadge alloc] init];
-[selectPhotoCommon pg_photoButtonBottomWithsizeWithAttributes:animatedImageFramesx9 rootViewController:userCommentTabled9 ];
+[selectPhotoCommon photoButtonBottomWithsizeWithAttributes:animatedImageFramesx9 rootViewController:userCommentTabled9 ];
 
 }
 

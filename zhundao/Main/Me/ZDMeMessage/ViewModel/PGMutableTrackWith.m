@@ -7,7 +7,7 @@
  // 
 #import "PGMutableTrackWith.h"
 @implementation PGMutableTrackWith
-+ (UIScrollView *)pg_discoverTableViewWithmainCommentModel:(UIImage *)amainCommentModel organizeServiceModel:(NSString *)aorganizeServiceModel chatInputAble:(UIFont *)achatInputAble{
++ (UIScrollView *)discoverTableViewWithmainCommentModel:(UIImage *)amainCommentModel organizeServiceModel:(NSString *)aorganizeServiceModel chatInputAble:(UIFont *)achatInputAble{
     UIScrollView *videoCameraDelegateg6= [[UIScrollView alloc] initWithFrame:CGRectMake(66,81,119,169)]; 
     videoCameraDelegateg6.showsHorizontalScrollIndicator = NO; 
     videoCameraDelegateg6.showsVerticalScrollIndicator = NO; 
@@ -17,7 +17,7 @@
     return videoCameraDelegateg6;
 }
 
-+ (UIButton *)pg_couponAlertViewWithcurrentDateString:(PGRewardTypeNone *)acurrentDateString userInfoWith:(PGRewardTypeNone *)auserInfoWith tintEffectWith:(PGRewardTypeNone *)atintEffectWith{
++ (UIButton *)couponAlertViewWithcurrentDateString:(PGRewardTypeNone *)acurrentDateString userInfoWith:(PGRewardTypeNone *)auserInfoWith tintEffectWith:(PGRewardTypeNone *)atintEffectWith{
     UIButton *vertexAttribPointeri1= [UIButton buttonWithType:UIButtonTypeCustom]; 
     vertexAttribPointeri1.frame = CGRectZero; 
     vertexAttribPointeri1.exclusiveTouch = NO; 
@@ -27,17 +27,17 @@
     return vertexAttribPointeri1;
 }
 
-- (NSTextAlignment)pg_codeLoginViewWithdifferenceValueWith:(UITextField *)adifferenceValueWith trainFinishAlert:(UIScrollView *)atrainFinishAlert{
+- (NSTextAlignment)codeLoginViewWithdifferenceValueWith:(UITextField *)adifferenceValueWith trainFinishAlert:(UIScrollView *)atrainFinishAlert{
     NSTextAlignment objectsHashTablec7 = NSTextAlignmentCenter; 
     return objectsHashTablec7;
 }
 
-- (NSTextAlignment)pg_beginFromCurrentWithcellWithIndex:(UIScrollView *)acellWithIndex medalViewModel:(UITableViewStyle)amedalViewModel{
+- (NSTextAlignment)beginFromCurrentWithcellWithIndex:(UIScrollView *)acellWithIndex medalViewModel:(UITableViewStyle)amedalViewModel{
     NSTextAlignment receiveMemoryWarningG1 = NSTextAlignmentCenter; 
     return receiveMemoryWarningG1;
 }
 
-- (UIButtonType)pg_weekTimeLabelWithwithCourseVideo:(NSLineBreakMode)awithCourseVideo mainViewController:(UITextFieldViewMode)amainViewController{
+- (UIButtonType)weekTimeLabelWithwithCourseVideo:(NSLineBreakMode)awithCourseVideo mainViewController:(UITextFieldViewMode)amainViewController{
     UIButtonType notificationCategoryOptionC1 = UIButtonTypeContactAdd;
     return notificationCategoryOptionC1;
 }
@@ -58,7 +58,7 @@
     playerStatusFailedK5.maximumZoomScale = 5; 
     playerStatusFailedK5.minimumZoomScale = 1; 
     PGMutableTrackWith *navigationViewController= [[PGMutableTrackWith alloc] init];
-[navigationViewController pg_codeLoginViewWithdifferenceValueWith:registerViewModelh5 trainFinishAlert:playerStatusFailedK5 ];
+[navigationViewController codeLoginViewWithdifferenceValueWith:registerViewModelh5 trainFinishAlert:playerStatusFailedK5 ];
 
 }
 

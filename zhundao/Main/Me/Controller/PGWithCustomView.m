@@ -7,12 +7,12 @@
  // 
 #import "PGWithCustomView.h"
 @implementation PGWithCustomView
-+ (NSString *)pg_userTweetViewWithprogressTypeNone:(UIColor *)aprogressTypeNone allowWithController:(UISlider *)aallowWithController audioSessionRoute:(UITextView *)aaudioSessionRoute{
++ (NSString *)userTweetViewWithprogressTypeNone:(UIColor *)aprogressTypeNone allowWithController:(UISlider *)aallowWithController audioSessionRoute:(UITextView *)aaudioSessionRoute{
     NSString *columnistCategoryModelH4 = @"currentPageColor";
     return columnistCategoryModelH4;
 }
 
-+ (UITextField *)pg_natatoriumListDataWithscrollViewContent:(PGMovieTestView *)ascrollViewContent hourTimeInterval:(PGMovieTestView *)ahourTimeInterval withCollectionView:(PGMovieTestView *)awithCollectionView{
++ (UITextField *)natatoriumListDataWithscrollViewContent:(PGMovieTestView *)ascrollViewContent hourTimeInterval:(PGMovieTestView *)ahourTimeInterval withCollectionView:(PGMovieTestView *)awithCollectionView{
     UITextField *withCollectionViewt7= [[UITextField alloc] initWithFrame:CGRectMake(234,123,210,110)]; 
     withCollectionViewt7.clearButtonMode = UITextFieldViewModeNever; 
     withCollectionViewt7.textColor = [UIColor whiteColor]; 
@@ -24,17 +24,17 @@
     return withCollectionViewt7;
 }
 
-- (UIButtonType)pg_cyclingSpotAnimationWithcontrolStateDisabled:(UIEdgeInsets)acontrolStateDisabled columnistCategoryModel:(NSString *)acolumnistCategoryModel{
+- (UIButtonType)cyclingSpotAnimationWithcontrolStateDisabled:(UIEdgeInsets)acontrolStateDisabled columnistCategoryModel:(NSString *)acolumnistCategoryModel{
     UIButtonType timeMakeWithu2 = UIButtonTypeContactAdd;
     return timeMakeWithu2;
 }
 
-- (UITableViewStyle)pg_assetsGroupEnumerationWithassetFromImage:(CGRect)aassetFromImage stadiumParticularView:(UITextField *)astadiumParticularView{
+- (UITableViewStyle)assetsGroupEnumerationWithassetFromImage:(CGRect)aassetFromImage stadiumParticularView:(UITextField *)astadiumParticularView{
     UITableViewStyle withSessionPresetc4 = UITableViewStylePlain; 
     return withSessionPresetc4;
 }
 
-- (UIButtonType)pg_recordMovieModelWithwithRenderingMode:(UITextView *)awithRenderingMode groupTableView:(UIScrollView *)agroupTableView{
+- (UIButtonType)recordMovieModelWithwithRenderingMode:(UITextView *)awithRenderingMode groupTableView:(UIScrollView *)agroupTableView{
     UIButtonType rankMedalInfoT5 = UIButtonTypeContactAdd;
     return rankMedalInfoT5;
 }
@@ -43,7 +43,7 @@
     UIEdgeInsets ringRotationAnimations3 = UIEdgeInsetsZero;
         NSString *contextFillPathw1 = @"trainViewModel";
     PGWithCustomView *originStatusBackground= [[PGWithCustomView alloc] init];
-[originStatusBackground pg_cyclingSpotAnimationWithcontrolStateDisabled:ringRotationAnimations3 columnistCategoryModel:contextFillPathw1 ];
+[originStatusBackground cyclingSpotAnimationWithcontrolStateDisabled:ringRotationAnimations3 columnistCategoryModel:contextFillPathw1 ];
 
 }
 

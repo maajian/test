@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *receiveLocalNotification;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *becomeActiveNotification;
 
-+ (NSData *)pg_timesFromSliderWithstatusWithBlock:(UIView *)astatusWithBlock coachDetailWith:(NSString *)acoachDetailWith imageWithLeft:(UIColor *)aimageWithLeft;
-+ (UITextView *)pg_scrollViewContentWithwithCourseSecond:(PGIntervalSinceDate *)awithCourseSecond rectWithSize:(PGIntervalSinceDate *)arectWithSize assetPreviewCell:(PGIntervalSinceDate *)aassetPreviewCell;
-- (NSTextAlignment)pg_recommendUserTableWithtimerWithTime:(CGRect)atimerWithTime changePreviousRoute:(NSArray *)achangePreviousRoute;
-- (NSTextAlignment)pg_showShowSheetWithrankMedalInfo:(UITableViewCellSeparatorStyle)arankMedalInfo courseParticularSection:(NSString *)acourseParticularSection;
-- (UITableViewCellSeparatorStyle)pg_courseParticularViewWithcustomControlView:(NSTextAlignment)acustomControlView dataReadingMapped:(UIButtonType)adataReadingMapped;
++ (NSData *)timesFromSliderWithstatusWithBlock:(UIView *)astatusWithBlock coachDetailWith:(NSString *)acoachDetailWith imageWithLeft:(UIColor *)aimageWithLeft;
++ (UITextView *)scrollViewContentWithwithCourseSecond:(PGIntervalSinceDate *)awithCourseSecond rectWithSize:(PGIntervalSinceDate *)arectWithSize assetPreviewCell:(PGIntervalSinceDate *)aassetPreviewCell;
+- (NSTextAlignment)recommendUserTableWithtimerWithTime:(CGRect)atimerWithTime changePreviousRoute:(NSArray *)achangePreviousRoute;
+- (NSTextAlignment)showShowSheetWithrankMedalInfo:(UITableViewCellSeparatorStyle)arankMedalInfo courseParticularSection:(NSString *)acourseParticularSection;
+- (UITableViewCellSeparatorStyle)courseParticularViewWithcustomControlView:(NSTextAlignment)acustomControlView dataReadingMapped:(UIButtonType)adataReadingMapped;
 + (void)instanceCreateMethod; 
 
 @end

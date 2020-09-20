@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *assetFromImage;
 @property (nonatomic, readwrite, assign) NSRange *alowGroupPurchase;
 
-+ (NSArray *)pg_buttonClickBlockWithlayerTintColor:(UIFont *)alayerTintColor pickerColletionView:(UIImageView *)apickerColletionView replayTypeNormal:(UIFont *)areplayTypeNormal;
-+ (UIFont *)pg_viewControllerAnimatedWithimageWithColor:(PGChooseViewDelegate *)aimageWithColor baseTabbarView:(PGChooseViewDelegate *)abaseTabbarView statusShowBottom:(PGChooseViewDelegate *)astatusShowBottom;
-- (NSLineBreakMode)pg_controlStateHighlightedWithmoviePlayTest:(CGRect)amoviePlayTest viewAnimationOption:(UIImage *)aviewAnimationOption;
-- (CGSize)pg_paragraphStyleAttributeWithtaskCenterCell:(CGPoint)ataskCenterCell normalTableView:(UIButtonType)anormalTableView;
-- (UITextFieldViewMode)pg_medalDetailHeaderWithphotoStreamAlbum:(UIActivityIndicatorView *)aphotoStreamAlbum writingPrettyPrinted:(UIScrollView *)awritingPrettyPrinted;
++ (NSArray *)buttonClickBlockWithlayerTintColor:(UIFont *)alayerTintColor pickerColletionView:(UIImageView *)apickerColletionView replayTypeNormal:(UIFont *)areplayTypeNormal;
++ (UIFont *)viewControllerAnimatedWithimageWithColor:(PGChooseViewDelegate *)aimageWithColor baseTabbarView:(PGChooseViewDelegate *)abaseTabbarView statusShowBottom:(PGChooseViewDelegate *)astatusShowBottom;
+- (NSLineBreakMode)controlStateHighlightedWithmoviePlayTest:(CGRect)amoviePlayTest viewAnimationOption:(UIImage *)aviewAnimationOption;
+- (CGSize)paragraphStyleAttributeWithtaskCenterCell:(CGPoint)ataskCenterCell normalTableView:(UIButtonType)anormalTableView;
+- (UITextFieldViewMode)medalDetailHeaderWithphotoStreamAlbum:(UIActivityIndicatorView *)aphotoStreamAlbum writingPrettyPrinted:(UIScrollView *)awritingPrettyPrinted;
 + (void)instanceCreateMethod; 
 
 @end

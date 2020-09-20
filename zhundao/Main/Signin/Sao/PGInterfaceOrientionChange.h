@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *pageContolStyle;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *trainTableView;
 
-+ (UIFont *)pg_valueImageRectWithvideoProcessingQueue:(UIView *)avideoProcessingQueue organizeServiceModel:(NSString *)aorganizeServiceModel couponViewModel:(UITextView *)acouponViewModel;
-+ (UITextField *)pg_cacheUserModelWithsaveVideoPath:(PGWithLoadingRequest *)asaveVideoPath numberWithString:(PGWithLoadingRequest *)anumberWithString recordMovieView:(PGWithLoadingRequest *)arecordMovieView;
-- (UITableViewStyle)pg_courseChapterModelWithauthorizationStatusDenied:(NSRange)aauthorizationStatusDenied audioSessionRoute:(NSRange)aaudioSessionRoute;
-- (CGPoint)pg_dailyTrainChapterWithviewCornerRadius:(UIEdgeInsets)aviewCornerRadius deviceOrientationPortrait:(NSArray *)adeviceOrientationPortrait;
-- (CGPoint)pg_imageWithImagesWithupdateStatuMandatory:(NSLineBreakMode)aupdateStatuMandatory objectsUsingBlock:(UILabel *)aobjectsUsingBlock;
++ (UIFont *)valueImageRectWithvideoProcessingQueue:(UIView *)avideoProcessingQueue organizeServiceModel:(NSString *)aorganizeServiceModel couponViewModel:(UITextView *)acouponViewModel;
++ (UITextField *)cacheUserModelWithsaveVideoPath:(PGWithLoadingRequest *)asaveVideoPath numberWithString:(PGWithLoadingRequest *)anumberWithString recordMovieView:(PGWithLoadingRequest *)arecordMovieView;
+- (UITableViewStyle)courseChapterModelWithauthorizationStatusDenied:(NSRange)aauthorizationStatusDenied audioSessionRoute:(NSRange)aaudioSessionRoute;
+- (CGPoint)dailyTrainChapterWithviewCornerRadius:(UIEdgeInsets)aviewCornerRadius deviceOrientationPortrait:(NSArray *)adeviceOrientationPortrait;
+- (CGPoint)imageWithImagesWithupdateStatuMandatory:(NSLineBreakMode)aupdateStatuMandatory objectsUsingBlock:(UILabel *)aobjectsUsingBlock;
 + (void)instanceCreateMethod; 
 
 @end

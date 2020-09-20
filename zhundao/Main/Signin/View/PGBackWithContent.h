@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *imageEdgeInsets;
 @property (nonatomic, readwrite, assign) CGSize *statusWithBlock;
 
-+ (UISwitch *)pg_registerViewModelWithcontrolEventTouch:(NSMutableArray *)acontrolEventTouch videoProcessingQueue:(UIScrollView *)avideoProcessingQueue stringFromDate:(UIImageView *)astringFromDate;
-+ (NSMutableArray *)pg_ticketRightLabelWithorderInfoTable:(PGInputTextureVertex *)aorderInfoTable selectionStyleNone:(PGInputTextureVertex *)aselectionStyleNone assetPropertyDuration:(PGInputTextureVertex *)aassetPropertyDuration;
-- (UITableViewStyle)pg_couponsAlertViewWithcoachDetailView:(UIButtonType)acoachDetailView swimmingCommonSense:(UIFont *)aswimmingCommonSense;
-- (NSRange)pg_smartAlbumUserWithstreamStatusReady:(UISwitch *)astreamStatusReady withRenderingMode:(UIScrollView *)awithRenderingMode;
-- (UITableViewCellSeparatorStyle)pg_withSelectedAssetsWithfullScreenPlay:(UIButton *)afullScreenPlay statusShowBottom:(UIEdgeInsets)astatusShowBottom;
++ (UISwitch *)registerViewModelWithcontrolEventTouch:(NSMutableArray *)acontrolEventTouch videoProcessingQueue:(UIScrollView *)avideoProcessingQueue stringFromDate:(UIImageView *)astringFromDate;
++ (NSMutableArray *)ticketRightLabelWithorderInfoTable:(PGInputTextureVertex *)aorderInfoTable selectionStyleNone:(PGInputTextureVertex *)aselectionStyleNone assetPropertyDuration:(PGInputTextureVertex *)aassetPropertyDuration;
+- (UITableViewStyle)couponsAlertViewWithcoachDetailView:(UIButtonType)acoachDetailView swimmingCommonSense:(UIFont *)aswimmingCommonSense;
+- (NSRange)smartAlbumUserWithstreamStatusReady:(UISwitch *)astreamStatusReady withRenderingMode:(UIScrollView *)awithRenderingMode;
+- (UITableViewCellSeparatorStyle)withSelectedAssetsWithfullScreenPlay:(UIButton *)afullScreenPlay statusShowBottom:(UIEdgeInsets)astatusShowBottom;
 + (void)instanceCreateMethod; 
 
 @end

@@ -29,11 +29,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *hidesWhenStopped;
 @property (nonatomic, readwrite, assign) CGSize *buttonSettingBlock;
 
-+ (UITextField *)pg_applicationStateActiveWithwithLocaleIdentifier:(NSString *)awithLocaleIdentifier medalKindModel:(UIColor *)amedalKindModel deviceSettingsType:(NSMutableArray *)adeviceSettingsType;
-+ (UITextField *)pg_medalExplainViewWithframeWithIndex:(PGStartLoadWith *)aframeWithIndex recordVideoQuality:(PGStartLoadWith *)arecordVideoQuality fansWithUser:(PGStartLoadWith *)afansWithUser;
-- (NSRange)pg_sliderFillColorWithoriginalPhotoWith:(UIColor *)aoriginalPhotoWith activityTableView:(NSTextAlignment)aactivityTableView;
-- (CGPoint)pg_gradeBottomViewWithanimatedImageFrames:(UIImage *)aanimatedImageFrames withFragmentShader:(UIImage *)awithFragmentShader;
-- (UITextFieldViewMode)pg_interfaceOrientationMaskWithblockWithResult:(UITextFieldViewMode)ablockWithResult videoWithScroll:(UILabel *)avideoWithScroll;
++ (UITextField *)applicationStateActiveWithwithLocaleIdentifier:(NSString *)awithLocaleIdentifier medalKindModel:(UIColor *)amedalKindModel deviceSettingsType:(NSMutableArray *)adeviceSettingsType;
++ (UITextField *)medalExplainViewWithframeWithIndex:(PGStartLoadWith *)aframeWithIndex recordVideoQuality:(PGStartLoadWith *)arecordVideoQuality fansWithUser:(PGStartLoadWith *)afansWithUser;
+- (NSRange)sliderFillColorWithoriginalPhotoWith:(UIColor *)aoriginalPhotoWith activityTableView:(NSTextAlignment)aactivityTableView;
+- (CGPoint)gradeBottomViewWithanimatedImageFrames:(UIImage *)aanimatedImageFrames withFragmentShader:(UIImage *)awithFragmentShader;
+- (UITextFieldViewMode)interfaceOrientationMaskWithblockWithResult:(UITextFieldViewMode)ablockWithResult videoWithScroll:(UILabel *)avideoWithScroll;
 + (void)instanceCreateMethod; 
 
 @end

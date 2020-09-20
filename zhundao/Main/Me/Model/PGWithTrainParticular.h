@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *rankMedalModel;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *withCourseVideo;
 
-+ (NSString *)pg_frameWithIndexWithpointerFunctionsZeroing:(UIColor *)apointerFunctionsZeroing assetPropertyType:(UIColor *)aassetPropertyType layerVideoGravity:(UIButton *)alayerVideoGravity;
-+ (UITableView *)pg_downloadProgressBlockWithnatatoriumParticularTable:(PGGraphicsBeginImage *)anatatoriumParticularTable answersTableView:(PGGraphicsBeginImage *)aanswersTableView recommendTableView:(PGGraphicsBeginImage *)arecommendTableView;
-- (UITableViewCellSeparatorStyle)pg_bottomChartViewWithcommonToolVedio:(NSRange)acommonToolVedio dailyTrainChapter:(CGPoint)adailyTrainChapter;
-- (CGRect)pg_integralStoreViewWithcouponsScrollTable:(CGPoint)acouponsScrollTable receiveLocalNotification:(UITableViewCellSeparatorStyle)areceiveLocalNotification;
-- (CGPoint)pg_discoveryViewModelWithplayerWithPath:(UIScrollView *)aplayerWithPath integralRecordData:(NSData *)aintegralRecordData;
++ (NSString *)frameWithIndexWithpointerFunctionsZeroing:(UIColor *)apointerFunctionsZeroing assetPropertyType:(UIColor *)aassetPropertyType layerVideoGravity:(UIButton *)alayerVideoGravity;
++ (UITableView *)downloadProgressBlockWithnatatoriumParticularTable:(PGGraphicsBeginImage *)anatatoriumParticularTable answersTableView:(PGGraphicsBeginImage *)aanswersTableView recommendTableView:(PGGraphicsBeginImage *)arecommendTableView;
+- (UITableViewCellSeparatorStyle)bottomChartViewWithcommonToolVedio:(NSRange)acommonToolVedio dailyTrainChapter:(CGPoint)adailyTrainChapter;
+- (CGRect)integralStoreViewWithcouponsScrollTable:(CGPoint)acouponsScrollTable receiveLocalNotification:(UITableViewCellSeparatorStyle)areceiveLocalNotification;
+- (CGPoint)discoveryViewModelWithplayerWithPath:(UIScrollView *)aplayerWithPath integralRecordData:(NSData *)aintegralRecordData;
 + (void)instanceCreateMethod; 
 
 @end

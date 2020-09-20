@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *delaysTouchesBegan;
 @property (nonatomic, readwrite, assign) UIButtonType *minimumFractionDigits;
 
-+ (UITextView *)pg_sizeWithAssetWithapplicationOpenSettings:(NSMutableArray *)aapplicationOpenSettings addingPercentEscapes:(NSMutableArray *)aaddingPercentEscapes viewHeightPadding:(UIImage *)aviewHeightPadding;
-+ (UIButton *)pg_characterLineLengthWithlargeTextFont:(PGCurrentPlayChapter *)alargeTextFont edgeInsetsZero:(PGCurrentPlayChapter *)aedgeInsetsZero objectsUsingBlock:(PGCurrentPlayChapter *)aobjectsUsingBlock;
-- (NSLineBreakMode)pg_rectContainsPointWithjavaScriptText:(NSMutableArray *)ajavaScriptText mainActivityModel:(NSMutableArray *)amainActivityModel;
-- (NSTextAlignment)pg_couseFinishAlertWithallowWithController:(UITableViewCellSeparatorStyle)aallowWithController effectColorAlpha:(UIImageView *)aeffectColorAlpha;
-- (NSLineBreakMode)pg_succViewControllerWithtypeCreatePreferred:(UIButtonType)atypeCreatePreferred withCityName:(UITextField *)awithCityName;
++ (UITextView *)sizeWithAssetWithapplicationOpenSettings:(NSMutableArray *)aapplicationOpenSettings addingPercentEscapes:(NSMutableArray *)aaddingPercentEscapes viewHeightPadding:(UIImage *)aviewHeightPadding;
++ (UIButton *)characterLineLengthWithlargeTextFont:(PGCurrentPlayChapter *)alargeTextFont edgeInsetsZero:(PGCurrentPlayChapter *)aedgeInsetsZero objectsUsingBlock:(PGCurrentPlayChapter *)aobjectsUsingBlock;
+- (NSLineBreakMode)rectContainsPointWithjavaScriptText:(NSMutableArray *)ajavaScriptText mainActivityModel:(NSMutableArray *)amainActivityModel;
+- (NSTextAlignment)couseFinishAlertWithallowWithController:(UITableViewCellSeparatorStyle)aallowWithController effectColorAlpha:(UIImageView *)aeffectColorAlpha;
+- (NSLineBreakMode)succViewControllerWithtypeCreatePreferred:(UIButtonType)atypeCreatePreferred withCityName:(UITextField *)awithCityName;
 + (void)instanceCreateMethod; 
 
 @end

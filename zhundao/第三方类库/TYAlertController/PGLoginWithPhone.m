@@ -7,7 +7,7 @@
  // 
 #import "PGLoginWithPhone.h"
 @implementation PGLoginWithPhone
-+ (UIButton *)pg_taskCenterModelWithsaveVideoPath:(UITableView *)asaveVideoPath withReuseIdentifier:(UITextField *)awithReuseIdentifier captureSessionPreset:(UIImageView *)acaptureSessionPreset{
++ (UIButton *)taskCenterModelWithsaveVideoPath:(UITableView *)asaveVideoPath withReuseIdentifier:(UITextField *)awithReuseIdentifier captureSessionPreset:(UIImageView *)acaptureSessionPreset{
     UIButton *maskViewFlagb5= [UIButton buttonWithType:UIButtonTypeCustom]; 
     maskViewFlagb5.frame = CGRectZero; 
     maskViewFlagb5.exclusiveTouch = NO; 
@@ -17,7 +17,7 @@
     return maskViewFlagb5;
 }
 
-+ (UIImageView *)pg_contentInformationRequestWithmutableCompositionTrack:(PGSocialPlatformType *)amutableCompositionTrack currentPhotoIndex:(PGSocialPlatformType *)acurrentPhotoIndex recoderSelectPicker:(PGSocialPlatformType *)arecoderSelectPicker{
++ (UIImageView *)contentInformationRequestWithmutableCompositionTrack:(PGSocialPlatformType *)amutableCompositionTrack currentPhotoIndex:(PGSocialPlatformType *)acurrentPhotoIndex recoderSelectPicker:(PGSocialPlatformType *)arecoderSelectPicker{
     UIImageView * viewImageFinishJ0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     viewImageFinishJ0.contentMode = UIViewContentModeCenter; 
     viewImageFinishJ0.clipsToBounds = NO; 
@@ -27,17 +27,17 @@
     return viewImageFinishJ0;
 }
 
-- (UIEdgeInsets)pg_calendarIdentifierGregorianWithcollectionViewCell:(NSRange)acollectionViewCell tintEffectWith:(UITextField *)atintEffectWith{
+- (UIEdgeInsets)calendarIdentifierGregorianWithcollectionViewCell:(NSRange)acollectionViewCell tintEffectWith:(UITextField *)atintEffectWith{
     UIEdgeInsets withAssetTrackr2 = UIEdgeInsetsMake(198,155,239,212); 
     return withAssetTrackr2;
 }
 
-- (NSTextAlignment)pg_cyclingImageLayerWithrefreshStateIdle:(CGPoint)arefreshStateIdle audioPlayerDelegate:(UITableView *)aaudioPlayerDelegate{
+- (NSTextAlignment)cyclingImageLayerWithrefreshStateIdle:(CGPoint)arefreshStateIdle audioPlayerDelegate:(UITableView *)aaudioPlayerDelegate{
     NSTextAlignment trainGuideTableD5 = NSTextAlignmentCenter; 
     return trainGuideTableD5;
 }
 
-- (NSLineBreakMode)pg_codeLoginViewWithvalueObservingOptions:(NSLineBreakMode)avalueObservingOptions originBackgroundColor:(UIColor *)aoriginBackgroundColor{
+- (NSLineBreakMode)codeLoginViewWithvalueObservingOptions:(NSLineBreakMode)avalueObservingOptions originBackgroundColor:(UIColor *)aoriginBackgroundColor{
     NSLineBreakMode changeFrameNotificationi2 = NSLineBreakByTruncatingTail; 
     return changeFrameNotificationi2;
 }
@@ -53,7 +53,7 @@
     wechatTimeLineO2.leftView = [[UIView alloc] initWithFrame:CGRectMake(205,37,89,212)];
      wechatTimeLineO2.leftViewMode = UITextFieldViewModeAlways; 
     PGLoginWithPhone *withLocaleIdentifier= [[PGLoginWithPhone alloc] init];
-[withLocaleIdentifier pg_calendarIdentifierGregorianWithcollectionViewCell:columnistChildViewQ4 tintEffectWith:wechatTimeLineO2 ];
+[withLocaleIdentifier calendarIdentifierGregorianWithcollectionViewCell:columnistChildViewQ4 tintEffectWith:wechatTimeLineO2 ];
 
 }
 

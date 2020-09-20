@@ -7,7 +7,7 @@
  // 
 #import "PGWithControlPoints.h"
 @implementation PGWithControlPoints
-+ (UIImageView *)pg_couponsScrollTableWithaffineTransformIdentity:(UIColor *)aaffineTransformIdentity cellDefaultMargin:(UITableView *)acellDefaultMargin withSureBlock:(UIColor *)awithSureBlock{
++ (UIImageView *)couponsScrollTableWithaffineTransformIdentity:(UIColor *)aaffineTransformIdentity cellDefaultMargin:(UITableView *)acellDefaultMargin withSureBlock:(UIColor *)awithSureBlock{
     UIImageView * appendingPathComponentl5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     appendingPathComponentl5.contentMode = UIViewContentModeCenter; 
     appendingPathComponentl5.clipsToBounds = NO; 
@@ -17,7 +17,7 @@
     return appendingPathComponentl5;
 }
 
-+ (UIView *)pg_dataCollectionViewWithwithActionBlock:(PGRoundCornerWith *)awithActionBlock swimRecordData:(PGRoundCornerWith *)aswimRecordData swimRecordData:(PGRoundCornerWith *)aswimRecordData{
++ (UIView *)dataCollectionViewWithwithActionBlock:(PGRoundCornerWith *)awithActionBlock swimRecordData:(PGRoundCornerWith *)aswimRecordData swimRecordData:(PGRoundCornerWith *)aswimRecordData{
     UIView *progressUpdateBlockg9= [[UIView alloc] initWithFrame:CGRectMake(29,74,11,179)]; 
     progressUpdateBlockg9.backgroundColor = [UIColor whiteColor]; 
     progressUpdateBlockg9.layer.cornerRadius = 
@@ -25,17 +25,17 @@
     return progressUpdateBlockg9;
 }
 
-- (CGSize)pg_activeShaderProgramWithworkWithOffset:(UITextFieldViewMode)aworkWithOffset pickerImageView:(NSLineBreakMode)apickerImageView{
+- (CGSize)activeShaderProgramWithworkWithOffset:(UITextFieldViewMode)aworkWithOffset pickerImageView:(NSLineBreakMode)apickerImageView{
     CGSize withSureBlockT6 = CGSizeMake(238,223); 
     return withSureBlockT6;
 }
 
-- (CGSize)pg_commentViewModelWithorganizationViewController:(CGPoint)aorganizationViewController tweetCommentModel:(UIActivityIndicatorView *)atweetCommentModel{
+- (CGSize)commentViewModelWithorganizationViewController:(CGPoint)aorganizationViewController tweetCommentModel:(UIActivityIndicatorView *)atweetCommentModel{
     CGSize swimFriendsViewL4 = CGSizeMake(249,194); 
     return swimFriendsViewL4;
 }
 
-- (UITextFieldViewMode)pg_editUserInfoWithcircleParticularView:(NSString *)acircleParticularView withVisualFormat:(NSRange)awithVisualFormat{
+- (UITextFieldViewMode)editUserInfoWithcircleParticularView:(NSString *)acircleParticularView withVisualFormat:(NSRange)awithVisualFormat{
     UITextFieldViewMode mainActivityModelM2 = UITextFieldViewModeAlways; 
     return mainActivityModelM2;
 }
@@ -44,7 +44,7 @@
     UITextFieldViewMode mainScreenHeightq1 = UITextFieldViewModeAlways; 
         NSLineBreakMode cacheUserInfop2 = NSLineBreakByTruncatingTail; 
     PGWithControlPoints *videoOutputPath= [[PGWithControlPoints alloc] init];
-[videoOutputPath pg_activeShaderProgramWithworkWithOffset:mainScreenHeightq1 pickerImageView:cacheUserInfop2 ];
+[videoOutputPath activeShaderProgramWithworkWithOffset:mainScreenHeightq1 pickerImageView:cacheUserInfop2 ];
 
 }
 

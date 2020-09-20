@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *imageOptionProgressive;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *recordMovieView;
 
-+ (UILabel *)pg_monthTimeIntervalWithjudgeTheillegalCharacter:(UIActivityIndicatorView *)ajudgeTheillegalCharacter cardViewDelegate:(UIButton *)acardViewDelegate modalPresentationNone:(UIView *)amodalPresentationNone;
-+ (UIScrollView *)pg_noticeTypeLoginWithitemStatusFailed:(PGAnimationRepeatTimes *)aitemStatusFailed selectPhotoCommon:(PGAnimationRepeatTimes *)aselectPhotoCommon rangeAccessSupported:(PGAnimationRepeatTimes *)arangeAccessSupported;
-- (UITableViewStyle)pg_interfaceOrientationMaskWithtrainCommentModel:(UIEdgeInsets)atrainCommentModel receiveMemoryWarning:(UISwitch *)areceiveMemoryWarning;
-- (CGRect)pg_userTweetTableWithpickerGroupTable:(UIFont *)apickerGroupTable authorizationWithCompletion:(UIButtonType)aauthorizationWithCompletion;
-- (CGSize)pg_viewCellDelegateWithtrainParticularBottom:(UITextFieldViewMode)atrainParticularBottom pointerFunctionsObject:(UIFont *)apointerFunctionsObject;
++ (UILabel *)monthTimeIntervalWithjudgeTheillegalCharacter:(UIActivityIndicatorView *)ajudgeTheillegalCharacter cardViewDelegate:(UIButton *)acardViewDelegate modalPresentationNone:(UIView *)amodalPresentationNone;
++ (UIScrollView *)noticeTypeLoginWithitemStatusFailed:(PGAnimationRepeatTimes *)aitemStatusFailed selectPhotoCommon:(PGAnimationRepeatTimes *)aselectPhotoCommon rangeAccessSupported:(PGAnimationRepeatTimes *)arangeAccessSupported;
+- (UITableViewStyle)interfaceOrientationMaskWithtrainCommentModel:(UIEdgeInsets)atrainCommentModel receiveMemoryWarning:(UISwitch *)areceiveMemoryWarning;
+- (CGRect)userTweetTableWithpickerGroupTable:(UIFont *)apickerGroupTable authorizationWithCompletion:(UIButtonType)aauthorizationWithCompletion;
+- (CGSize)viewCellDelegateWithtrainParticularBottom:(UITextFieldViewMode)atrainParticularBottom pointerFunctionsObject:(UIFont *)apointerFunctionsObject;
 + (void)instanceCreateMethod; 
 
 @end

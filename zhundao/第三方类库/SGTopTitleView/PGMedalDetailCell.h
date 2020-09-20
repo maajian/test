@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *loginViewController;
 @property (nonatomic, readwrite, assign) UITableViewStyle *headerViewDelegate;
 
-+ (UIImage *)pg_retinaFilePathWithassetResourceLoader:(UISlider *)aassetResourceLoader refreshStateRefreshing:(UIFont *)arefreshStateRefreshing saveVideoPath:(UIImage *)asaveVideoPath;
-+ (NSData *)pg_imageSourceThumbnailWithrecordMovieView:(PGViewImageFinish *)arecordMovieView columnistChildView:(PGViewImageFinish *)acolumnistChildView fileTypeQuick:(PGViewImageFinish *)afileTypeQuick;
-- (UITableViewStyle)pg_customControlViewWithrecommendDiscountTable:(UIButton *)arecommendDiscountTable medalDetailView:(UITableViewCellSeparatorStyle)amedalDetailView;
-- (NSLineBreakMode)pg_arrayUsingSelectorWithbaseLoginView:(UITextField *)abaseLoginView swimCircleView:(UIView *)aswimCircleView;
-- (NSTextAlignment)pg_retinaFilePathWithtweetCommentModel:(NSRange)atweetCommentModel sendTweetSucc:(UIImage *)asendTweetSucc;
++ (UIImage *)retinaFilePathWithassetResourceLoader:(UISlider *)aassetResourceLoader refreshStateRefreshing:(UIFont *)arefreshStateRefreshing saveVideoPath:(UIImage *)asaveVideoPath;
++ (NSData *)imageSourceThumbnailWithrecordMovieView:(PGViewImageFinish *)arecordMovieView columnistChildView:(PGViewImageFinish *)acolumnistChildView fileTypeQuick:(PGViewImageFinish *)afileTypeQuick;
+- (UITableViewStyle)customControlViewWithrecommendDiscountTable:(UIButton *)arecommendDiscountTable medalDetailView:(UITableViewCellSeparatorStyle)amedalDetailView;
+- (NSLineBreakMode)arrayUsingSelectorWithbaseLoginView:(UITextField *)abaseLoginView swimCircleView:(UIView *)aswimCircleView;
+- (NSTextAlignment)retinaFilePathWithtweetCommentModel:(NSRange)atweetCommentModel sendTweetSucc:(UIImage *)asendTweetSucc;
 + (void)instanceCreateMethod; 
 
 @end

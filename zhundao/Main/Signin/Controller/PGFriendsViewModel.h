@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) CGSize *windowLevelAlert;
 @property (nonatomic, readwrite, assign) UITableViewStyle *withLongLong;
 
-+ (UIScrollView *)pg_receivedSecondFrameWithreceiveVideoData:(UIImageView *)areceiveVideoData cardViewDelegate:(UITextField *)acardViewDelegate contextFillPath:(UITextView *)acontextFillPath;
-+ (UISlider *)pg_underlineStyleSingleWithmainScreenHeight:(PGLoginWithPhone *)amainScreenHeight trainInfoView:(PGLoginWithPhone *)atrainInfoView medalDetailModel:(PGLoginWithPhone *)amedalDetailModel;
-- (CGRect)pg_customAnimateTransitionWitharticleCommentData:(NSTextAlignment)aarticleCommentData tweetItemData:(UITableViewStyle)atweetItemData;
-- (CGSize)pg_natatoriumParticularDataWithguideCollectionView:(NSRange)aguideCollectionView cameraRollAlbum:(UIView *)acameraRollAlbum;
-- (UITableViewCellSeparatorStyle)pg_pausesLocationUpdatesWithlocationWithSuccess:(NSTextAlignment)alocationWithSuccess finishSavingWith:(UIButtonType)afinishSavingWith;
++ (UIScrollView *)receivedSecondFrameWithreceiveVideoData:(UIImageView *)areceiveVideoData cardViewDelegate:(UITextField *)acardViewDelegate contextFillPath:(UITextView *)acontextFillPath;
++ (UISlider *)underlineStyleSingleWithmainScreenHeight:(PGLoginWithPhone *)amainScreenHeight trainInfoView:(PGLoginWithPhone *)atrainInfoView medalDetailModel:(PGLoginWithPhone *)amedalDetailModel;
+- (CGRect)customAnimateTransitionWitharticleCommentData:(NSTextAlignment)aarticleCommentData tweetItemData:(UITableViewStyle)atweetItemData;
+- (CGSize)natatoriumParticularDataWithguideCollectionView:(NSRange)aguideCollectionView cameraRollAlbum:(UIView *)acameraRollAlbum;
+- (UITableViewCellSeparatorStyle)pausesLocationUpdatesWithlocationWithSuccess:(NSTextAlignment)alocationWithSuccess finishSavingWith:(UIButtonType)afinishSavingWith;
 + (void)instanceCreateMethod; 
 
 @end

@@ -26,9 +26,9 @@
 @property (nonatomic, assign) CGSize size;
 @property (nonatomic, strong) UIColor *loadingTintColor;
 
-- (void)PG_setToNormalState;
-- (void)PG_setToFadeOutState;
-- (void)PG_fadeOutWithAnimation:(BOOL)animated;
+- (void)setToNormalState;
+- (void)setToFadeOutState;
+- (void)fadeOutWithAnimation:(BOOL)animated;
 
 @end
 
@@ -47,8 +47,8 @@
         self.type = type;
         self.loadingTintColor = color;
         self.size = size;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PG_appWillEnterBackground) name:UIApplicationWillResignActiveNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PG_appWillBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterBackground) name:UIApplicationWillResignActiveNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
     }
     
     return self;
@@ -58,8 +58,8 @@
 
 - (void)startAnimating{
     self.layer.sublayers = nil;
-    [self PG_setToNormalState];
-    self.animation = [self PG_animationForIndicatorType:self.type];
+    [self setToNormalState];
+    self.animation = [self animationForIndicatorType:self.type];
     if ([self.animation respondsToSelector:@selector(configAnimationAtLayer:withTintColor:size:)]) {
         
         [self.animation configAnimationAtLayer:self.layer withTintColor:self.loadingTintColor size:self.size];
@@ -74,12 +74,12 @@
             self.isAnimating = NO;
             self.animation = nil;
         }
-        [self PG_fadeOutWithAnimation:YES];
+        [self fadeOutWithAnimation:YES];
         [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
 }
 
-- (id<JQIndicatorAnimationProtocol>)PG_animationForIndicatorType:(JQIndicatorType)type{
+- (id<JQIndicatorAnimationProtocol>)animationForIndicatorType:(JQIndicatorType)type{
     switch (type) {
         case JQIndicatorTypeMusic1:
             return [[JQMusic1Animation alloc] init];
@@ -100,19 +100,19 @@
 
 #pragma mark - Indicator animation methods
 
-- (void)PG_setToNormalState{
+- (void)setToNormalState{
     self.layer.backgroundColor = [UIColor grayColor].CGColor;
     self.layer.speed = 1.0f;
     self.layer.opacity = 1.0;
 }
 
-- (void)PG_setToFadeOutState{
+- (void)setToFadeOutState{
     self.layer.backgroundColor = [UIColor clearColor].CGColor;
     self.layer.sublayers = nil;
     self.layer.opacity = 0.f;
 }
 
-- (void)PG_fadeOutWithAnimation:(BOOL)animated{
+- (void)fadeOutWithAnimation:(BOOL)animated{
     if (animated) {
         CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
         fadeAnimation.delegate = self;
@@ -125,23 +125,23 @@
 
 #pragma mark - CAAnimation delegate
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    [self PG_setToFadeOutState];
+    [self setToFadeOutState];
 }
 
 #pragma mark - Did enter background
 
-- (void)PG_appWillEnterBackground{
+- (void)appWillEnterBackground{
     if (self.isAnimating == YES) {
         [self.animation removeAnimation];
     }
 }
 
-- (void)PG_appWillBecomeActive{
+- (void)appWillBecomeActive{
 dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *pickerGroupTablei0= [UIFont systemFontOfSize:80];
         UITableViewStyle bottomPhotoViewK6 = UITableViewStylePlain; 
     PGDeviceLinkView *infoViewModel= [[PGDeviceLinkView alloc] init];
-[infoViewModel pg_baseLoginViewWithplayerItemStatus:pickerGroupTablei0 dailyCourseTable:bottomPhotoViewK6 ];
+[infoViewModel baseLoginViewWithplayerItemStatus:pickerGroupTablei0 dailyCourseTable:bottomPhotoViewK6 ];
 });
     if (self.isAnimating == YES) {
         [self startAnimating];

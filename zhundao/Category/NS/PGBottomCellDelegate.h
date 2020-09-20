@@ -19,11 +19,11 @@
 @property (nonatomic, readwrite, assign) NSRange *answersTableView;
 @property (nonatomic, readwrite, assign) UIButtonType *imageContainerView;
 
-+ (UITextField *)pg_discoverTableViewWithrectContainsPoint:(UITextView *)arectContainsPoint swimmingCommonSense:(UIColor *)aswimmingCommonSense photoWithImage:(NSMutableArray *)aphotoWithImage;
-+ (NSArray *)pg_withActionBlockWithfirstBackCamera:(PGViewFinishLoad *)afirstBackCamera socialUserInfo:(PGViewFinishLoad *)asocialUserInfo viewCellDelegate:(PGViewFinishLoad *)aviewCellDelegate;
-- (UIEdgeInsets)pg_taskCenterViewWithcontextWithOptions:(UIImageView *)acontextWithOptions itemTextColor:(UIButton *)aitemTextColor;
-- (NSTextAlignment)pg_originStatusBackgroundWithnetworkStatusReachablevia:(NSString *)anetworkStatusReachablevia textViewContent:(UIEdgeInsets)atextViewContent;
-- (CGPoint)pg_articleOriginalModelWithcommentTweetSucc:(UIView *)acommentTweetSucc authorizationOptionAlert:(UITableViewCellSeparatorStyle)aauthorizationOptionAlert;
++ (UITextField *)discoverTableViewWithrectContainsPoint:(UITextView *)arectContainsPoint swimmingCommonSense:(UIColor *)aswimmingCommonSense photoWithImage:(NSMutableArray *)aphotoWithImage;
++ (NSArray *)withActionBlockWithfirstBackCamera:(PGViewFinishLoad *)afirstBackCamera socialUserInfo:(PGViewFinishLoad *)asocialUserInfo viewCellDelegate:(PGViewFinishLoad *)aviewCellDelegate;
+- (UIEdgeInsets)taskCenterViewWithcontextWithOptions:(UIImageView *)acontextWithOptions itemTextColor:(UIButton *)aitemTextColor;
+- (NSTextAlignment)originStatusBackgroundWithnetworkStatusReachablevia:(NSString *)anetworkStatusReachablevia textViewContent:(UIEdgeInsets)atextViewContent;
+- (CGPoint)articleOriginalModelWithcommentTweetSucc:(UIView *)acommentTweetSucc authorizationOptionAlert:(UITableViewCellSeparatorStyle)aauthorizationOptionAlert;
 + (void)instanceCreateMethod; 
 
 @end

@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) CGRect *titleAutoConfig;
 @property (nonatomic, readwrite, assign) UIButtonType *rankMedalBlock;
 
-+ (UIImage *)pg_mobileCoreServicesWithrecordMovieBottom:(UIScrollView *)arecordMovieBottom imageCompressionRules:(NSString *)aimageCompressionRules rectIntersectsRect:(UITableView *)arectIntersectsRect;
-+ (UITableView *)pg_controlEventEditingWithdeleteTweetSucc:(PGGroupPurchaseData *)adeleteTweetSucc attentionWithUser:(PGGroupPurchaseData *)aattentionWithUser drawImageView:(PGGroupPurchaseData *)adrawImageView;
-- (UIButtonType)pg_orderStepViewWithlistRequsetWith:(CGSize)alistRequsetWith mutableUserNotification:(UISlider *)amutableUserNotification;
-- (UIEdgeInsets)pg_deviceOrientationPortraitWithorganizationNoticeWith:(CGPoint)aorganizationNoticeWith exerciseRecordView:(UIActivityIndicatorView *)aexerciseRecordView;
-- (UITableViewStyle)pg_timeFromDurationWithbaseTableView:(UIColor *)abaseTableView exerciseRecordTable:(CGRect)aexerciseRecordTable;
++ (UIImage *)mobileCoreServicesWithrecordMovieBottom:(UIScrollView *)arecordMovieBottom imageCompressionRules:(NSString *)aimageCompressionRules rectIntersectsRect:(UITableView *)arectIntersectsRect;
++ (UITableView *)controlEventEditingWithdeleteTweetSucc:(PGGroupPurchaseData *)adeleteTweetSucc attentionWithUser:(PGGroupPurchaseData *)aattentionWithUser drawImageView:(PGGroupPurchaseData *)adrawImageView;
+- (UIButtonType)orderStepViewWithlistRequsetWith:(CGSize)alistRequsetWith mutableUserNotification:(UISlider *)amutableUserNotification;
+- (UIEdgeInsets)deviceOrientationPortraitWithorganizationNoticeWith:(CGPoint)aorganizationNoticeWith exerciseRecordView:(UIActivityIndicatorView *)aexerciseRecordView;
+- (UITableViewStyle)timeFromDurationWithbaseTableView:(UIColor *)abaseTableView exerciseRecordTable:(CGRect)aexerciseRecordTable;
 + (void)instanceCreateMethod; 
 
 @end

@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSRange *reusableHeaderFooter;
 @property (nonatomic, readwrite, assign) NSTextAlignment *coachDetailModel;
 
-+ (UISlider *)pg_audioPlayerDelegateWithassetFromImage:(NSMutableArray *)aassetFromImage finishLoadingWith:(UITextView *)afinishLoadingWith backGroundUser:(UIColor *)abackGroundUser;
-+ (UITableView *)pg_ringStrokeAnimationWithcollectionTrainTable:(PGGradeBottomView *)acollectionTrainTable sendTweetSucc:(PGGradeBottomView *)asendTweetSucc baseLoginView:(PGGradeBottomView *)abaseLoginView;
-- (CGPoint)pg_enableVertexAttribWithshaderFromString:(NSMutableArray *)ashaderFromString backgroundLayerColor:(UIEdgeInsets)abackgroundLayerColor;
-- (NSLineBreakMode)pg_likesViewModelWithalertControllerStyle:(CGRect)aalertControllerStyle arrayUsingSelector:(UILabel *)aarrayUsingSelector;
-- (NSTextAlignment)pg_photoPreviewViewWithnatatoriumAddressTable:(CGSize)anatatoriumAddressTable collectionViewCell:(NSLineBreakMode)acollectionViewCell;
++ (UISlider *)audioPlayerDelegateWithassetFromImage:(NSMutableArray *)aassetFromImage finishLoadingWith:(UITextView *)afinishLoadingWith backGroundUser:(UIColor *)abackGroundUser;
++ (UITableView *)ringStrokeAnimationWithcollectionTrainTable:(PGGradeBottomView *)acollectionTrainTable sendTweetSucc:(PGGradeBottomView *)asendTweetSucc baseLoginView:(PGGradeBottomView *)abaseLoginView;
+- (CGPoint)enableVertexAttribWithshaderFromString:(NSMutableArray *)ashaderFromString backgroundLayerColor:(UIEdgeInsets)abackgroundLayerColor;
+- (NSLineBreakMode)likesViewModelWithalertControllerStyle:(CGRect)aalertControllerStyle arrayUsingSelector:(UILabel *)aarrayUsingSelector;
+- (NSTextAlignment)photoPreviewViewWithnatatoriumAddressTable:(CGSize)anatatoriumAddressTable collectionViewCell:(NSLineBreakMode)acollectionViewCell;
 + (void)instanceCreateMethod; 
 
 @end

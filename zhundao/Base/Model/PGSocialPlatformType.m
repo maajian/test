@@ -7,12 +7,12 @@
  // 
 #import "PGSocialPlatformType.h"
 @implementation PGSocialPlatformType
-+ (NSString *)pg_guidePageControlWithsavedPhotosAlbum:(UIScrollView *)asavedPhotosAlbum pageTintColor:(UITableView *)apageTintColor withAssetTrack:(UIImageView *)awithAssetTrack{
++ (NSString *)guidePageControlWithsavedPhotosAlbum:(UIScrollView *)asavedPhotosAlbum pageTintColor:(UITableView *)apageTintColor withAssetTrack:(UIImageView *)awithAssetTrack{
     NSString *categoryChooseViewX0 = @"circleViewModel";
     return categoryChooseViewX0;
 }
 
-+ (UIView *)pg_navigationControllerDelegateWithphotoPickerCollection:(PGFailWithError *)aphotoPickerCollection attentionWithUser:(PGFailWithError *)aattentionWithUser viewImageFinish:(PGFailWithError *)aviewImageFinish{
++ (UIView *)navigationControllerDelegateWithphotoPickerCollection:(PGFailWithError *)aphotoPickerCollection attentionWithUser:(PGFailWithError *)aattentionWithUser viewImageFinish:(PGFailWithError *)aviewImageFinish{
     UIView *medalDetailCellx2= [[UIView alloc] initWithFrame:CGRectZero]; 
     medalDetailCellx2.backgroundColor = [UIColor whiteColor]; 
     medalDetailCellx2.layer.cornerRadius = 
@@ -20,17 +20,17 @@
     return medalDetailCellx2;
 }
 
-- (CGRect)pg_streamStatusReadyWithmainCourseModel:(UITableView *)amainCourseModel kernAttributeName:(NSData *)akernAttributeName{
+- (CGRect)streamStatusReadyWithmainCourseModel:(UITableView *)amainCourseModel kernAttributeName:(NSData *)akernAttributeName{
     CGRect photoWidthSelectableY6 = CGRectMake(137,246,37,202); 
     return photoWidthSelectableY6;
 }
 
-- (UIEdgeInsets)pg_medalKindModelWithsourceTypeSaved:(UIActivityIndicatorView *)asourceTypeSaved textureCoordinateAttribute:(NSRange)atextureCoordinateAttribute{
+- (UIEdgeInsets)medalKindModelWithsourceTypeSaved:(UIActivityIndicatorView *)asourceTypeSaved textureCoordinateAttribute:(NSRange)atextureCoordinateAttribute{
     UIEdgeInsets choicenessViewModelb8 = UIEdgeInsetsZero;
     return choicenessViewModelb8;
 }
 
-- (CGPoint)pg_gradeViewModelWithregisterViewController:(UIEdgeInsets)aregisterViewController objectsUsingBlock:(CGSize)aobjectsUsingBlock{
+- (CGPoint)gradeViewModelWithregisterViewController:(UIEdgeInsets)aregisterViewController objectsUsingBlock:(CGSize)aobjectsUsingBlock{
     CGPoint ticketRightLabelq7 = CGPointMake(2,84); 
     return ticketRightLabelq7;
 }
@@ -53,7 +53,7 @@
      linkViewModelN7.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(4,120,130,61)];
          NSData *buttonClickBlockv9= [[NSData alloc] init];
     PGSocialPlatformType *choicenessViewController= [[PGSocialPlatformType alloc] init];
-[choicenessViewController pg_streamStatusReadyWithmainCourseModel:linkViewModelN7 kernAttributeName:buttonClickBlockv9 ];
+[choicenessViewController streamStatusReadyWithmainCourseModel:linkViewModelN7 kernAttributeName:buttonClickBlockv9 ];
 
 }
 

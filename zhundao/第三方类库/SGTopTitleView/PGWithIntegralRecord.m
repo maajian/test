@@ -7,12 +7,12 @@
  // 
 #import "PGWithIntegralRecord.h"
 @implementation PGWithIntegralRecord
-+ (NSMutableArray *)pg_collectionDataWithWithphotoPrevireView:(NSMutableArray *)aphotoPrevireView taskWithRequest:(NSData *)ataskWithRequest photoButtonBottom:(UIColor *)aphotoButtonBottom{
++ (NSMutableArray *)collectionDataWithWithphotoPrevireView:(NSMutableArray *)aphotoPrevireView taskWithRequest:(NSData *)ataskWithRequest photoButtonBottom:(UIColor *)aphotoButtonBottom{
     NSMutableArray *activityTableViewQ6= [NSMutableArray arrayWithCapacity:0];
     return activityTableViewQ6;
 }
 
-+ (UILabel *)pg_failLoadingWithWithmainScreenHeight:(PGInputTextureVertex *)amainScreenHeight pickerGroupTable:(PGInputTextureVertex *)apickerGroupTable shareWebpageObject:(PGInputTextureVertex *)ashareWebpageObject{
++ (UILabel *)failLoadingWithWithmainScreenHeight:(PGInputTextureVertex *)amainScreenHeight pickerGroupTable:(PGInputTextureVertex *)apickerGroupTable shareWebpageObject:(PGInputTextureVertex *)ashareWebpageObject{
     UILabel *numberFormatterDecimalx2= [[UILabel alloc] initWithFrame:CGRectZero]; 
     numberFormatterDecimalx2.text = @"spinLockUnlock";
     numberFormatterDecimalx2.textColor = [UIColor whiteColor]; 
@@ -22,17 +22,17 @@
     return numberFormatterDecimalx2;
 }
 
-- (UIEdgeInsets)pg_levelUserCollectionsWithlocationViewController:(UIImageView *)alocationViewController selectTypeMyttention:(UITextField *)aselectTypeMyttention{
+- (UIEdgeInsets)levelUserCollectionsWithlocationViewController:(UIImageView *)alocationViewController selectTypeMyttention:(UITextField *)aselectTypeMyttention{
     UIEdgeInsets photoButtonBottomE4 = UIEdgeInsetsZero;
     return photoButtonBottomE4;
 }
 
-- (UIEdgeInsets)pg_deliveryModeHighWithjavaScriptAlert:(CGSize)ajavaScriptAlert sessionDataTask:(NSLineBreakMode)asessionDataTask{
+- (UIEdgeInsets)deliveryModeHighWithjavaScriptAlert:(CGSize)ajavaScriptAlert sessionDataTask:(NSLineBreakMode)asessionDataTask{
     UIEdgeInsets couponsInfoDataE9 = UIEdgeInsetsZero;
     return couponsInfoDataE9;
 }
 
-- (UIButtonType)pg_panelWithMessageWithuserCommentModel:(UIButtonType)auserCommentModel numberFormatterDecimal:(CGRect)anumberFormatterDecimal{
+- (UIButtonType)panelWithMessageWithuserCommentModel:(UIButtonType)auserCommentModel numberFormatterDecimal:(CGRect)anumberFormatterDecimal{
     UIButtonType refreshStateIdlej6 = UIButtonTypeContactAdd;
     return refreshStateIdlej6;
 }
@@ -53,7 +53,7 @@
     assetCreationRequestb7.leftView = [[UIView alloc] initWithFrame:CGRectMake(222,200,225,163)];
      assetCreationRequestb7.leftViewMode = UITextFieldViewModeAlways; 
     PGWithIntegralRecord *defaultImageName= [[PGWithIntegralRecord alloc] init];
-[defaultImageName pg_levelUserCollectionsWithlocationViewController:viewControllerAnimatedj4 selectTypeMyttention:assetCreationRequestb7 ];
+[defaultImageName levelUserCollectionsWithlocationViewController:viewControllerAnimatedj4 selectTypeMyttention:assetCreationRequestb7 ];
 
 }
 

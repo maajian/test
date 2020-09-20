@@ -48,7 +48,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     dataViewModelI8.layer.cornerRadius = 
     dataViewModelI8.layer.masksToBounds = YES; 
     PGCurrentPlayChapter *playerStateFailed= [[PGCurrentPlayChapter alloc] init];
-[playerStateFailed pg_alertControllerStyleWithnetworkStatusUnknow:playerStatusPlayingy9 objectWithData:dataViewModelI8 ];
+[playerStateFailed alertControllerStyleWithnetworkStatusUnknow:playerStatusPlayingy9 objectWithData:dataViewModelI8 ];
 });
     [super viewDidAppear:animated];
     [_tableView reloadData];
@@ -92,7 +92,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     stringFromDateb8.layer.cornerRadius = 
     stringFromDateb8.layer.masksToBounds = YES; 
     PGCurrentPlayChapter *buttonItemStyle= [[PGCurrentPlayChapter alloc] init];
-[buttonItemStyle pg_alertControllerStyleWithnetworkStatusUnknow:gradeViewControllerg0 objectWithData:stringFromDateb8 ];
+[buttonItemStyle alertControllerStyleWithnetworkStatusUnknow:gradeViewControllerg0 objectWithData:stringFromDateb8 ];
 });
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -116,7 +116,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     photoPickerCollectionX8.layer.cornerRadius = 
     photoPickerCollectionX8.layer.masksToBounds = YES; 
     PGCurrentPlayChapter *alertActionStyle= [[PGCurrentPlayChapter alloc] init];
-[alertActionStyle pg_alertControllerStyleWithnetworkStatusUnknow:priousorLaterDateO5 objectWithData:photoPickerCollectionX8 ];
+[alertActionStyle alertControllerStyleWithnetworkStatusUnknow:priousorLaterDateO5 objectWithData:photoPickerCollectionX8 ];
 });
     _page += 1;
     [self networkForOnData];

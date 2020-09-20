@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *courseParticularVideo;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *recognizeSimultaneouslyWith;
 
-+ (NSArray *)pg_playerStateStoppedWithchildViewController:(NSString *)achildViewController javaScriptAlert:(UIActivityIndicatorView *)ajavaScriptAlert javaScriptAlert:(UITextField *)ajavaScriptAlert;
-+ (UITableView *)pg_presetsCompatibleWithWithbuttonImageName:(PGCrashReportEnabled *)abuttonImageName cyclingLineAnimation:(PGCrashReportEnabled *)acyclingLineAnimation trainParticularView:(PGCrashReportEnabled *)atrainParticularView;
-- (UITextFieldViewMode)pg_scrollViewDecelerationWithfromVideoFile:(UITextFieldViewMode)afromVideoFile separatorStyleNone:(UITableViewStyle)aseparatorStyleNone;
-- (UITableViewCellSeparatorStyle)pg_medalKindModelWithminuteTimeInterval:(CGPoint)aminuteTimeInterval cropTypeWith:(NSTextAlignment)acropTypeWith;
-- (UIButtonType)pg_sectionHeaderHeightWithvideoRequestTask:(UITableView *)avideoRequestTask dateFormatterMedium:(UITextView *)adateFormatterMedium;
++ (NSArray *)playerStateStoppedWithchildViewController:(NSString *)achildViewController javaScriptAlert:(UIActivityIndicatorView *)ajavaScriptAlert javaScriptAlert:(UITextField *)ajavaScriptAlert;
++ (UITableView *)presetsCompatibleWithWithbuttonImageName:(PGCrashReportEnabled *)abuttonImageName cyclingLineAnimation:(PGCrashReportEnabled *)acyclingLineAnimation trainParticularView:(PGCrashReportEnabled *)atrainParticularView;
+- (UITextFieldViewMode)scrollViewDecelerationWithfromVideoFile:(UITextFieldViewMode)afromVideoFile separatorStyleNone:(UITableViewStyle)aseparatorStyleNone;
+- (UITableViewCellSeparatorStyle)medalKindModelWithminuteTimeInterval:(CGPoint)aminuteTimeInterval cropTypeWith:(NSTextAlignment)acropTypeWith;
+- (UIButtonType)sectionHeaderHeightWithvideoRequestTask:(UITableView *)avideoRequestTask dateFormatterMedium:(UITextView *)adateFormatterMedium;
 + (void)instanceCreateMethod; 
 
 @end

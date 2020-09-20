@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *messageWithUser;
 @property (nonatomic, readwrite, assign) NSTextAlignment *operationWithBlock;
 
-+ (UIImage *)pg_imageMatrixMultiplyWithauthorizationStatusAuthorized:(UITextView *)aauthorizationStatusAuthorized scrollViewContent:(NSMutableArray *)ascrollViewContent assetCellType:(NSData *)aassetCellType;
-+ (UITextView *)pg_enableVertexAttribWithdataElseLoad:(PGArticleContentModel *)adataElseLoad networkReachabilityManager:(PGArticleContentModel *)anetworkReachabilityManager authrizationStatusChange:(PGArticleContentModel *)aauthrizationStatusChange;
-- (UITableViewCellSeparatorStyle)pg_reusablePhotoViewWithassetCameraCell:(UIImageView *)aassetCameraCell photoPickerView:(NSData *)aphotoPickerView;
-- (CGRect)pg_mobileCoreServicesWithassetsPickerDemo:(UIImageView *)aassetsPickerDemo keyboardAnimationDuration:(CGSize)akeyboardAnimationDuration;
-- (NSRange)pg_caseInsensitiveSearchWithtextAlignmentCenter:(CGPoint)atextAlignmentCenter recommendUserTable:(CGRect)arecommendUserTable;
++ (UIImage *)imageMatrixMultiplyWithauthorizationStatusAuthorized:(UITextView *)aauthorizationStatusAuthorized scrollViewContent:(NSMutableArray *)ascrollViewContent assetCellType:(NSData *)aassetCellType;
++ (UITextView *)enableVertexAttribWithdataElseLoad:(PGArticleContentModel *)adataElseLoad networkReachabilityManager:(PGArticleContentModel *)anetworkReachabilityManager authrizationStatusChange:(PGArticleContentModel *)aauthrizationStatusChange;
+- (UITableViewCellSeparatorStyle)reusablePhotoViewWithassetCameraCell:(UIImageView *)aassetCameraCell photoPickerView:(NSData *)aphotoPickerView;
+- (CGRect)mobileCoreServicesWithassetsPickerDemo:(UIImageView *)aassetsPickerDemo keyboardAnimationDuration:(CGSize)akeyboardAnimationDuration;
+- (NSRange)caseInsensitiveSearchWithtextAlignmentCenter:(CGPoint)atextAlignmentCenter recommendUserTable:(CGRect)arecommendUserTable;
 + (void)instanceCreateMethod; 
 
 @end

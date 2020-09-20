@@ -7,7 +7,7 @@
  // 
 #import "PGInputButtonTitle.h"
 @implementation PGInputButtonTitle
-+ (UIButton *)pg_imagePickerConfigWithsecondeMallView:(UIImage *)asecondeMallView stringUsingEncoding:(UITextField *)astringUsingEncoding titleShowStatus:(UITableView *)atitleShowStatus{
++ (UIButton *)imagePickerConfigWithsecondeMallView:(UIImage *)asecondeMallView stringUsingEncoding:(UITextField *)astringUsingEncoding titleShowStatus:(UITableView *)atitleShowStatus{
     UIButton *assetMediaTypeB4= [UIButton buttonWithType:UIButtonTypeCustom]; 
     assetMediaTypeB4.frame = CGRectZero; 
     assetMediaTypeB4.exclusiveTouch = NO; 
@@ -17,7 +17,7 @@
     return assetMediaTypeB4;
 }
 
-+ (UITextField *)pg_articleDailyTrainWithuploadVideoBlock:(PGScreenViewController *)auploadVideoBlock fromVideoView:(PGScreenViewController *)afromVideoView circleItemPhoto:(PGScreenViewController *)acircleItemPhoto{
++ (UITextField *)articleDailyTrainWithuploadVideoBlock:(PGScreenViewController *)auploadVideoBlock fromVideoView:(PGScreenViewController *)afromVideoView circleItemPhoto:(PGScreenViewController *)acircleItemPhoto{
     UITextField *commonViewModele6= [[UITextField alloc] initWithFrame:CGRectZero]; 
     commonViewModele6.clearButtonMode = UITextFieldViewModeNever; 
     commonViewModele6.textColor = [UIColor whiteColor]; 
@@ -29,17 +29,17 @@
     return commonViewModele6;
 }
 
-- (NSTextAlignment)pg_scrollViewKeyboardWithselectTypeUser:(UILabel *)aselectTypeUser assetPropertyDuration:(NSRange)aassetPropertyDuration{
+- (NSTextAlignment)scrollViewKeyboardWithselectTypeUser:(UILabel *)aselectTypeUser assetPropertyDuration:(NSRange)aassetPropertyDuration{
     NSTextAlignment moreColumnistChildk0 = NSTextAlignmentCenter; 
     return moreColumnistChildk0;
 }
 
-- (UITableViewStyle)pg_sectionHeaderHeightWithcouponAlertView:(UISlider *)acouponAlertView sendCommentView:(UIActivityIndicatorView *)asendCommentView{
+- (UITableViewStyle)sectionHeaderHeightWithcouponAlertView:(UISlider *)acouponAlertView sendCommentView:(UIActivityIndicatorView *)asendCommentView{
     UITableViewStyle trainParticularModelo4 = UITableViewStylePlain; 
     return trainParticularModelo4;
 }
 
-- (CGPoint)pg_badgeAnimTypeWithindicatorViewColor:(NSLineBreakMode)aindicatorViewColor baseTableView:(CGSize)abaseTableView{
+- (CGPoint)badgeAnimTypeWithindicatorViewColor:(NSLineBreakMode)aindicatorViewColor baseTableView:(CGSize)abaseTableView{
     CGPoint controlEventEditingT0 = CGPointZero;
     return controlEventEditingT0;
 }
@@ -53,7 +53,7 @@
     backgroundLocationUpdatesk8.textAlignment = NSTextAlignmentCenter; 
         NSRange mapsWithItemsc6 = NSMakeRange(5,52); 
     PGInputButtonTitle *secondTextureCoordinate= [[PGInputButtonTitle alloc] init];
-[secondTextureCoordinate pg_scrollViewKeyboardWithselectTypeUser:backgroundLocationUpdatesk8 assetPropertyDuration:mapsWithItemsc6 ];
+[secondTextureCoordinate scrollViewKeyboardWithselectTypeUser:backgroundLocationUpdatesk8 assetPropertyDuration:mapsWithItemsc6 ];
 
 }
 

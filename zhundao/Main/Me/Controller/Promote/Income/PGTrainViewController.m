@@ -7,7 +7,7 @@
  // 
 #import "PGTrainViewController.h"
 @implementation PGTrainViewController
-+ (UITextField *)pg_photoPreviewControllerWithassetImageGenerator:(NSData *)aassetImageGenerator playerBeginInterruption:(NSData *)aplayerBeginInterruption dailyTrainDetail:(UIFont *)adailyTrainDetail{
++ (UITextField *)photoPreviewControllerWithassetImageGenerator:(NSData *)aassetImageGenerator playerBeginInterruption:(NSData *)aplayerBeginInterruption dailyTrainDetail:(UIFont *)adailyTrainDetail{
     UITextField *withSelectedAssetsS4= [[UITextField alloc] initWithFrame:CGRectMake(186,242,112,102)]; 
     withSelectedAssetsS4.clearButtonMode = UITextFieldViewModeNever; 
     withSelectedAssetsS4.textColor = [UIColor whiteColor]; 
@@ -19,22 +19,22 @@
     return withSelectedAssetsS4;
 }
 
-+ (NSArray *)pg_recognizeSimultaneouslyWithWithplayWhileCell:(PGWithLoadingRequest *)aplayWhileCell styleBlackOpaque:(PGWithLoadingRequest *)astyleBlackOpaque badgeStyleNumber:(PGWithLoadingRequest *)abadgeStyleNumber{
++ (NSArray *)recognizeSimultaneouslyWithWithplayWhileCell:(PGWithLoadingRequest *)aplayWhileCell styleBlackOpaque:(PGWithLoadingRequest *)astyleBlackOpaque badgeStyleNumber:(PGWithLoadingRequest *)abadgeStyleNumber{
     NSArray *strokeCourseModelw7= [NSArray arrayWithObject:@""];
     return strokeCourseModelw7;
 }
 
-- (NSLineBreakMode)pg_minimumFractionDigitsWithselectTypeMyttention:(UIEdgeInsets)aselectTypeMyttention notificationPresentationOption:(UIButtonType)anotificationPresentationOption{
+- (NSLineBreakMode)minimumFractionDigitsWithselectTypeMyttention:(UIEdgeInsets)aselectTypeMyttention notificationPresentationOption:(UIButtonType)anotificationPresentationOption{
     NSLineBreakMode couponsInfoDataU7 = NSLineBreakByTruncatingTail; 
     return couponsInfoDataU7;
 }
 
-- (UIEdgeInsets)pg_userNotificationActivationWithblockCropMode:(UISlider *)ablockCropMode differenceValueWith:(UITextView *)adifferenceValueWith{
+- (UIEdgeInsets)userNotificationActivationWithblockCropMode:(UISlider *)ablockCropMode differenceValueWith:(UITextView *)adifferenceValueWith{
     UIEdgeInsets backIndicatorImageX0 = UIEdgeInsetsZero;
     return backIndicatorImageX0;
 }
 
-- (NSRange)pg_browserPhotoScrollWithclassFromString:(NSArray *)aclassFromString dataViewDelegate:(UITableViewCellSeparatorStyle)adataViewDelegate{
+- (NSRange)browserPhotoScrollWithclassFromString:(NSArray *)aclassFromString dataViewDelegate:(UITableViewCellSeparatorStyle)adataViewDelegate{
     NSRange dailyTrainViewv4 = NSMakeRange(1,73); 
     return dailyTrainViewv4;
 }
@@ -43,7 +43,7 @@
     UIEdgeInsets withCityNameL4 = UIEdgeInsetsZero;
         UIButtonType teachPreviewDatas7 = UIButtonTypeContactAdd;
     PGTrainViewController *arrayUsingDescriptors= [[PGTrainViewController alloc] init];
-[arrayUsingDescriptors pg_minimumFractionDigitsWithselectTypeMyttention:withCityNameL4 notificationPresentationOption:teachPreviewDatas7 ];
+[arrayUsingDescriptors minimumFractionDigitsWithselectTypeMyttention:withCityNameL4 notificationPresentationOption:teachPreviewDatas7 ];
 
 }
 

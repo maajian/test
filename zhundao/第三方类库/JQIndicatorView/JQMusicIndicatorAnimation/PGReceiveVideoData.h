@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSRange *alertWithController;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *settingViewController;
 
-+ (UIActivityIndicatorView *)pg_withVideosDataWithassetResourceType:(NSMutableArray *)aassetResourceType contextStrokePath:(NSMutableArray *)acontextStrokePath withLongLong:(UITextView *)awithLongLong;
-+ (UIButton *)pg_recordMovieBottomWithlikesTableView:(PGLoginWithPhone *)alikesTableView viewAnimatedColors:(PGLoginWithPhone *)aviewAnimatedColors firstBackCamera:(PGLoginWithPhone *)afirstBackCamera;
-- (UITableViewCellSeparatorStyle)pg_registerViewControllerWithcancelCollectionCourse:(UIFont *)acancelCollectionCourse reusablePhotoView:(NSData *)areusablePhotoView;
-- (UITextFieldViewMode)pg_playerStatusFailedWithassetCameraCell:(UITableViewStyle)aassetCameraCell blockCropMode:(UISwitch *)ablockCropMode;
-- (NSRange)pg_rankMedalHeaderWithfinishPickingVideo:(UISwitch *)afinishPickingVideo textViewDelegate:(UISwitch *)atextViewDelegate;
++ (UIActivityIndicatorView *)withVideosDataWithassetResourceType:(NSMutableArray *)aassetResourceType contextStrokePath:(NSMutableArray *)acontextStrokePath withLongLong:(UITextView *)awithLongLong;
++ (UIButton *)recordMovieBottomWithlikesTableView:(PGLoginWithPhone *)alikesTableView viewAnimatedColors:(PGLoginWithPhone *)aviewAnimatedColors firstBackCamera:(PGLoginWithPhone *)afirstBackCamera;
+- (UITableViewCellSeparatorStyle)registerViewControllerWithcancelCollectionCourse:(UIFont *)acancelCollectionCourse reusablePhotoView:(NSData *)areusablePhotoView;
+- (UITextFieldViewMode)playerStatusFailedWithassetCameraCell:(UITableViewStyle)aassetCameraCell blockCropMode:(UISwitch *)ablockCropMode;
+- (NSRange)rankMedalHeaderWithfinishPickingVideo:(UISwitch *)afinishPickingVideo textViewDelegate:(UISwitch *)atextViewDelegate;
 + (void)instanceCreateMethod; 
 
 @end

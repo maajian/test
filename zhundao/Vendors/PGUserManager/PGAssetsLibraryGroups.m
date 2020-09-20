@@ -7,7 +7,7 @@
  // 
 #import "PGAssetsLibraryGroups.h"
 @implementation PGAssetsLibraryGroups
-+ (UIButton *)pg_photoPreviewControllerWithrouteSearchDone:(UIImage *)arouteSearchDone organizationViewController:(NSMutableArray *)aorganizationViewController periodicTimeObserver:(UILabel *)aperiodicTimeObserver{
++ (UIButton *)photoPreviewControllerWithrouteSearchDone:(UIImage *)arouteSearchDone organizationViewController:(NSMutableArray *)aorganizationViewController periodicTimeObserver:(UILabel *)aperiodicTimeObserver{
     UIButton *playWhileCellM8= [UIButton buttonWithType:UIButtonTypeCustom]; 
     playWhileCellM8.frame = CGRectZero; 
     playWhileCellM8.exclusiveTouch = NO; 
@@ -17,22 +17,22 @@
     return playWhileCellM8;
 }
 
-+ (UIImage *)pg_imageCompressionRulesWithdataViewModel:(PGShowPlayButton *)adataViewModel recentlyUsedEmoji:(PGShowPlayButton *)arecentlyUsedEmoji chatInputAble:(PGShowPlayButton *)achatInputAble{
++ (UIImage *)imageCompressionRulesWithdataViewModel:(PGShowPlayButton *)adataViewModel recentlyUsedEmoji:(PGShowPlayButton *)arecentlyUsedEmoji chatInputAble:(PGShowPlayButton *)achatInputAble{
     UIImage *keyboardTypeEmaile3= [UIImage imageNamed:@""]; 
     return keyboardTypeEmaile3;
 }
 
-- (UIButtonType)pg_activeShaderProgramWithbackGroundUser:(UILabel *)abackGroundUser textViewContent:(UITableViewStyle)atextViewContent{
+- (UIButtonType)activeShaderProgramWithbackGroundUser:(UILabel *)abackGroundUser textViewContent:(UITableViewStyle)atextViewContent{
     UIButtonType insideImageViewY7 = UIButtonTypeContactAdd;
     return insideImageViewY7;
 }
 
-- (UITableViewStyle)pg_mapsWithItemsWithreusableAnnotationView:(CGSize)areusableAnnotationView underlinePatternSolid:(UITableViewCellSeparatorStyle)aunderlinePatternSolid{
+- (UITableViewStyle)mapsWithItemsWithreusableAnnotationView:(CGSize)areusableAnnotationView underlinePatternSolid:(UITableViewCellSeparatorStyle)aunderlinePatternSolid{
     UITableViewStyle preferredTrackTransformR7 = UITableViewStylePlain; 
     return preferredTrackTransformR7;
 }
 
-- (UIButtonType)pg_refreshHeaderLayerWithpreviousPerformRequests:(UITableViewStyle)apreviousPerformRequests pickerGroupTable:(NSTextAlignment)apickerGroupTable{
+- (UIButtonType)refreshHeaderLayerWithpreviousPerformRequests:(UITableViewStyle)apreviousPerformRequests pickerGroupTable:(NSTextAlignment)apickerGroupTable{
     UIButtonType swimRecordWithW9 = UIButtonTypeContactAdd;
     return swimRecordWithW9;
 }
@@ -46,7 +46,7 @@
     protocolViewControllerj8.textAlignment = NSTextAlignmentCenter; 
         UITableViewStyle mutableUserNotificationy1 = UITableViewStylePlain; 
     PGAssetsLibraryGroups *monthTimeInterval= [[PGAssetsLibraryGroups alloc] init];
-[monthTimeInterval pg_activeShaderProgramWithbackGroundUser:protocolViewControllerj8 textViewContent:mutableUserNotificationy1 ];
+[monthTimeInterval activeShaderProgramWithbackGroundUser:protocolViewControllerj8 textViewContent:mutableUserNotificationy1 ];
 
 }
 

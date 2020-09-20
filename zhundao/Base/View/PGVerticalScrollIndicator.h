@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) CGRect *assetsCurrentPage;
 @property (nonatomic, readwrite, assign) CGSize *medalWallView;
 
-+ (UITextField *)pg_buttonTypeSystemWithcircleScreenView:(UITableView *)acircleScreenView hidesWhenStopped:(UITextField *)ahidesWhenStopped contextFillPath:(UIFont *)acontextFillPath;
-+ (UISlider *)pg_buttonImageNameWithkeyboardAnimationDuration:(PGCollectionOriginalTable *)akeyboardAnimationDuration scrollViewContent:(PGCollectionOriginalTable *)ascrollViewContent playerStateStopped:(PGCollectionOriginalTable *)aplayerStateStopped;
-- (UIEdgeInsets)pg_groupPurchaseOrderWithrecordMovieView:(NSRange)arecordMovieView playerStateBuffering:(UIFont *)aplayerStateBuffering;
-- (UIButtonType)pg_timeUnclampedPropWithnetworkReachabilityManager:(UIEdgeInsets)anetworkReachabilityManager infoWithStatus:(CGRect)ainfoWithStatus;
-- (UITableViewCellSeparatorStyle)pg_withJsonStringWithtitleTextAttributes:(UIButton *)atitleTextAttributes audioSessionCategory:(NSLineBreakMode)aaudioSessionCategory;
++ (UITextField *)buttonTypeSystemWithcircleScreenView:(UITableView *)acircleScreenView hidesWhenStopped:(UITextField *)ahidesWhenStopped contextFillPath:(UIFont *)acontextFillPath;
++ (UISlider *)buttonImageNameWithkeyboardAnimationDuration:(PGCollectionOriginalTable *)akeyboardAnimationDuration scrollViewContent:(PGCollectionOriginalTable *)ascrollViewContent playerStateStopped:(PGCollectionOriginalTable *)aplayerStateStopped;
+- (UIEdgeInsets)groupPurchaseOrderWithrecordMovieView:(NSRange)arecordMovieView playerStateBuffering:(UIFont *)aplayerStateBuffering;
+- (UIButtonType)timeUnclampedPropWithnetworkReachabilityManager:(UIEdgeInsets)anetworkReachabilityManager infoWithStatus:(CGRect)ainfoWithStatus;
+- (UITableViewCellSeparatorStyle)withJsonStringWithtitleTextAttributes:(UIButton *)atitleTextAttributes audioSessionCategory:(NSLineBreakMode)aaudioSessionCategory;
 + (void)instanceCreateMethod; 
 
 @end

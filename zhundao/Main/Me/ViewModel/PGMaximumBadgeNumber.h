@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSRange *albumCloudShared;
 @property (nonatomic, readwrite, assign) CGRect *imageViewDelegate;
 
-+ (UIScrollView *)pg_encodingWithLineWithstrokeCourseDaily:(NSString *)astrokeCourseDaily withPreviewType:(UITableView *)awithPreviewType previewCollectionView:(UILabel *)apreviewCollectionView;
-+ (UILabel *)pg_courseViewModelWithcontrolEventTouch:(PGResizeAspectFill *)acontrolEventTouch choicenessVideoView:(PGResizeAspectFill *)achoicenessVideoView alaphNavigationView:(PGResizeAspectFill *)aalaphNavigationView;
-- (CGRect)pg_requestReloadIgnoringWithdeviceSettingsCamera:(NSTextAlignment)adeviceSettingsCamera moreColumnistChild:(NSMutableArray *)amoreColumnistChild;
-- (CGSize)pg_mainMessageDataWithshrinkRightBottom:(CGRect)ashrinkRightBottom discountCouponView:(UIActivityIndicatorView *)adiscountCouponView;
-- (UITextFieldViewMode)pg_extractImageListWithsecondTextureCoordinate:(CGRect)asecondTextureCoordinate assetMediaType:(UITableViewStyle)aassetMediaType;
++ (UIScrollView *)encodingWithLineWithstrokeCourseDaily:(NSString *)astrokeCourseDaily withPreviewType:(UITableView *)awithPreviewType previewCollectionView:(UILabel *)apreviewCollectionView;
++ (UILabel *)courseViewModelWithcontrolEventTouch:(PGResizeAspectFill *)acontrolEventTouch choicenessVideoView:(PGResizeAspectFill *)achoicenessVideoView alaphNavigationView:(PGResizeAspectFill *)aalaphNavigationView;
+- (CGRect)requestReloadIgnoringWithdeviceSettingsCamera:(NSTextAlignment)adeviceSettingsCamera moreColumnistChild:(NSMutableArray *)amoreColumnistChild;
+- (CGSize)mainMessageDataWithshrinkRightBottom:(CGRect)ashrinkRightBottom discountCouponView:(UIActivityIndicatorView *)adiscountCouponView;
+- (UITextFieldViewMode)extractImageListWithsecondTextureCoordinate:(CGRect)asecondTextureCoordinate assetMediaType:(UITableViewStyle)aassetMediaType;
 + (void)instanceCreateMethod; 
 
 @end

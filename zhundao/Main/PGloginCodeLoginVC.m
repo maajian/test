@@ -41,7 +41,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     collectionElementKindX9.minimumZoomScale = 1; 
         NSData *smartAlbumUserS8= [[NSData alloc] init];
     PGStringDrawingUses *registerViewModel= [[PGStringDrawingUses alloc] init];
-[registerViewModel pg_assetChangeRequestWithassetFromImage:collectionElementKindX9 noticeTypeLogin:smartAlbumUserS8 ];
+[registerViewModel assetChangeRequestWithassetFromImage:collectionElementKindX9 noticeTypeLogin:smartAlbumUserS8 ];
 });
     [super viewDidLoad];
     
@@ -83,11 +83,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     __weak typeof(self) weakSelf = self;
     [_viewModel sendCode:phoneStr successBlock:^{
          // 显示弹窗
-        [weakSelf PG_showAlert:weakSelf.viewModel.sendCodeJson[@"errmsg"]];
+        [weakSelf showAlert:weakSelf.viewModel.sendCodeJson[@"errmsg"]];
         weakSelf.code = weakSelf.viewModel.sendCodeJson[@"data"];
         
     } failBlock:^(NSString *error) {
-        [weakSelf PG_showAlert:error];
+        [weakSelf showAlert:error];
     }];
 }
 
@@ -103,7 +103,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_viewModel loginWirhCode:code phoneStr:phoneStr successBlock:^{
         [hud hideAnimated:YES afterDelay:0.5];
-        [self PG_getGrade];
+        [self getGrade];
         [ZD_UserM saveLoginTime];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -118,12 +118,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
             edit.code = code;
             [self.navigationController pushViewController:edit animated:YES];
         } else {
-            [self PG_showAlert:error];
+            [self showAlert:error];
         }
     }];
 }
 
-- (void)PG_getGrade {
+- (void)getGrade {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
@@ -136,7 +136,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 #pragma mark --- action
  // 弹窗
-- (void)PG_showAlert:(NSString *)alert {
+- (void)showAlert:(NSString *)alert {
     PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:alert];
     [label labelAnimationWithViewlong:self.view];
 }
@@ -151,7 +151,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     gradeLevelModelE6.minimumZoomScale = 1; 
         NSData *tweetItemDataJ9= [[NSData alloc] init];
     PGStringDrawingUses *hidesWhenStopped= [[PGStringDrawingUses alloc] init];
-[hidesWhenStopped pg_assetChangeRequestWithassetFromImage:gradeLevelModelE6 noticeTypeLogin:tweetItemDataJ9 ];
+[hidesWhenStopped assetChangeRequestWithassetFromImage:gradeLevelModelE6 noticeTypeLogin:tweetItemDataJ9 ];
 });
     [super didReceiveMemoryWarning];
     

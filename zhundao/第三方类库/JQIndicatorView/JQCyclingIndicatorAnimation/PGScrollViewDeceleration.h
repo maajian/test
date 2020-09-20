@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *sheetWithData;
 @property (nonatomic, readwrite, assign) NSRange *activityIndicatorVisible;
 
-+ (UIActivityIndicatorView *)pg_streamStatusConnectingWithviewDataSource:(UIColor *)aviewDataSource guideCollectionView:(UITextView *)aguideCollectionView listViewModel:(UIColor *)alistViewModel;
-+ (UISwitch *)pg_viewCellDelegateWithtypeLivePhoto:(PGNatatoriumParticularData *)atypeLivePhoto organizeNoticeModel:(PGNatatoriumParticularData *)aorganizeNoticeModel taskWithRequest:(PGNatatoriumParticularData *)ataskWithRequest;
-- (NSLineBreakMode)pg_viewWillHiddenWithmessageWithUser:(UITextFieldViewMode)amessageWithUser infoBottomView:(NSTextAlignment)ainfoBottomView;
-- (CGRect)pg_guideViewControllerWithcouponsScrollTable:(UITableViewCellSeparatorStyle)acouponsScrollTable directionHorizontalMoved:(NSRange)adirectionHorizontalMoved;
-- (CGSize)pg_stateAlertViewWithmainCommentView:(NSLineBreakMode)amainCommentView taskWithRequest:(UITextField *)ataskWithRequest;
++ (UIActivityIndicatorView *)streamStatusConnectingWithviewDataSource:(UIColor *)aviewDataSource guideCollectionView:(UITextView *)aguideCollectionView listViewModel:(UIColor *)alistViewModel;
++ (UISwitch *)viewCellDelegateWithtypeLivePhoto:(PGNatatoriumParticularData *)atypeLivePhoto organizeNoticeModel:(PGNatatoriumParticularData *)aorganizeNoticeModel taskWithRequest:(PGNatatoriumParticularData *)ataskWithRequest;
+- (NSLineBreakMode)viewWillHiddenWithmessageWithUser:(UITextFieldViewMode)amessageWithUser infoBottomView:(NSTextAlignment)ainfoBottomView;
+- (CGRect)guideViewControllerWithcouponsScrollTable:(UITableViewCellSeparatorStyle)acouponsScrollTable directionHorizontalMoved:(NSRange)adirectionHorizontalMoved;
+- (CGSize)stateAlertViewWithmainCommentView:(NSLineBreakMode)amainCommentView taskWithRequest:(UITextField *)ataskWithRequest;
 + (void)instanceCreateMethod; 
 
 @end

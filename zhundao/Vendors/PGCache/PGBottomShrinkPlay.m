@@ -7,7 +7,7 @@
  // 
 #import "PGBottomShrinkPlay.h"
 @implementation PGBottomShrinkPlay
-+ (UITextField *)pg_userCommentModelWithrefreshStatePulling:(UITableView *)arefreshStatePulling fromVideoView:(NSMutableArray *)afromVideoView authorizationStatusDenied:(UITextField *)aauthorizationStatusDenied{
++ (UITextField *)userCommentModelWithrefreshStatePulling:(UITableView *)arefreshStatePulling fromVideoView:(NSMutableArray *)afromVideoView authorizationStatusDenied:(UITextField *)aauthorizationStatusDenied{
     UITextField *routeSearchDoner8= [[UITextField alloc] initWithFrame:CGRectMake(63,114,225,78)]; 
     routeSearchDoner8.clearButtonMode = UITextFieldViewModeNever; 
     routeSearchDoner8.textColor = [UIColor whiteColor]; 
@@ -19,7 +19,7 @@
     return routeSearchDoner8;
 }
 
-+ (UIButton *)pg_imageRenderingModeWithnaviTitleAppearance:(PGCollectionViewDelegate *)anaviTitleAppearance javaScriptConfirm:(PGCollectionViewDelegate *)ajavaScriptConfirm recommendCellDelegate:(PGCollectionViewDelegate *)arecommendCellDelegate{
++ (UIButton *)imageRenderingModeWithnaviTitleAppearance:(PGCollectionViewDelegate *)anaviTitleAppearance javaScriptConfirm:(PGCollectionViewDelegate *)ajavaScriptConfirm recommendCellDelegate:(PGCollectionViewDelegate *)arecommendCellDelegate{
     UIButton *locationCollectionViewy2= [UIButton buttonWithType:UIButtonTypeCustom]; 
     locationCollectionViewy2.frame = CGRectZero; 
     locationCollectionViewy2.exclusiveTouch = NO; 
@@ -29,17 +29,17 @@
     return locationCollectionViewy2;
 }
 
-- (NSRange)pg_centerViewModelWithimageTypeFail:(NSData *)aimageTypeFail dailyCourseModel:(UIFont *)adailyCourseModel{
+- (NSRange)centerViewModelWithimageTypeFail:(NSData *)aimageTypeFail dailyCourseModel:(UIFont *)adailyCourseModel{
     NSRange commentObjectModelg1 = NSMakeRange(9,148); 
     return commentObjectModelg1;
 }
 
-- (CGSize)pg_playerStreamInfoWithrefreshStateIdle:(UIView *)arefreshStateIdle trainParticularHeader:(CGSize)atrainParticularHeader{
+- (CGSize)playerStreamInfoWithrefreshStateIdle:(UIView *)arefreshStateIdle trainParticularHeader:(CGSize)atrainParticularHeader{
     CGSize trainParticularBottomS0 = CGSizeMake(31,199); 
     return trainParticularBottomS0;
 }
 
-- (NSTextAlignment)pg_recordVideoCameraWithnumberWithString:(CGSize)anumberWithString normalTableView:(UIButton *)anormalTableView{
+- (NSTextAlignment)recordVideoCameraWithnumberWithString:(CGSize)anumberWithString normalTableView:(UIButton *)anormalTableView{
     NSTextAlignment tableViewDelegateN8 = NSTextAlignmentCenter; 
     return tableViewDelegateN8;
 }
@@ -48,7 +48,7 @@
     NSData *userViewModelZ9= [[NSData alloc] init];
         UIFont *exerciseRecordTableb3= [UIFont systemFontOfSize:80];
     PGBottomShrinkPlay *itemsSupplementBack= [[PGBottomShrinkPlay alloc] init];
-[itemsSupplementBack pg_centerViewModelWithimageTypeFail:userViewModelZ9 dailyCourseModel:exerciseRecordTableb3 ];
+[itemsSupplementBack centerViewModelWithimageTypeFail:userViewModelZ9 dailyCourseModel:exerciseRecordTableb3 ];
 
 }
 

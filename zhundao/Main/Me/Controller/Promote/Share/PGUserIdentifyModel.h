@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *updateUserLocation;
 @property (nonatomic, readwrite, assign) NSRange *sliderTouchBegan;
 
-+ (UISwitch *)pg_integralMainViewWithplayerStateBuffering:(UIImageView *)aplayerStateBuffering mutableVideoComposition:(UIFont *)amutableVideoComposition loginMainView:(UITextView *)aloginMainView;
-+ (UIButton *)pg_recommendCourseHeightWithmallViewModel:(PGCurrentPlayChapter *)amallViewModel contextFillPath:(PGCurrentPlayChapter *)acontextFillPath assetPreferPrecise:(PGCurrentPlayChapter *)aassetPreferPrecise;
-- (NSTextAlignment)pg_naviTitleColorWithdelaysTouchesEnded:(UITextField *)adelaysTouchesEnded listRequsetWith:(UIActivityIndicatorView *)alistRequsetWith;
-- (NSTextAlignment)pg_customAnimateTransitionWithstadiumParticularView:(CGPoint)astadiumParticularView mutableCompositionTrack:(CGSize)amutableCompositionTrack;
-- (NSRange)pg_timeRangeMakeWithdownVideoData:(NSRange)adownVideoData finishPickingVideo:(NSTextAlignment)afinishPickingVideo;
++ (UISwitch *)integralMainViewWithplayerStateBuffering:(UIImageView *)aplayerStateBuffering mutableVideoComposition:(UIFont *)amutableVideoComposition loginMainView:(UITextView *)aloginMainView;
++ (UIButton *)recommendCourseHeightWithmallViewModel:(PGCurrentPlayChapter *)amallViewModel contextFillPath:(PGCurrentPlayChapter *)acontextFillPath assetPreferPrecise:(PGCurrentPlayChapter *)aassetPreferPrecise;
+- (NSTextAlignment)naviTitleColorWithdelaysTouchesEnded:(UITextField *)adelaysTouchesEnded listRequsetWith:(UIActivityIndicatorView *)alistRequsetWith;
+- (NSTextAlignment)customAnimateTransitionWithstadiumParticularView:(CGPoint)astadiumParticularView mutableCompositionTrack:(CGSize)amutableCompositionTrack;
+- (NSRange)timeRangeMakeWithdownVideoData:(NSRange)adownVideoData finishPickingVideo:(NSTextAlignment)afinishPickingVideo;
 + (void)instanceCreateMethod; 
 
 @end

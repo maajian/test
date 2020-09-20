@@ -7,7 +7,7 @@
  // 
 #import "PGCourseChooseCell.h"
 @implementation PGCourseChooseCell
-+ (UISlider *)pg_alowGroupPurchaseWithuserInfoView:(UIImageView *)auserInfoView withGroupPurchase:(NSData *)awithGroupPurchase clippingWithView:(NSString *)aclippingWithView{
++ (UISlider *)alowGroupPurchaseWithuserInfoView:(UIImageView *)auserInfoView withGroupPurchase:(NSData *)awithGroupPurchase clippingWithView:(NSString *)aclippingWithView{
     UISlider *notificationCategoryOptione5= [[UISlider alloc] initWithFrame:CGRectMake(205,138,192,98)]; 
     notificationCategoryOptione5.minimumValue = 0; 
     notificationCategoryOptione5.maximumValue = 100; 
@@ -15,7 +15,7 @@
     return notificationCategoryOptione5;
 }
 
-+ (UIView *)pg_decimalNumberHandlerWithblendModeSource:(PGUserDomainMask *)ablendModeSource deleteTweetSucc:(PGUserDomainMask *)adeleteTweetSucc pointerFunctionsObject:(PGUserDomainMask *)apointerFunctionsObject{
++ (UIView *)decimalNumberHandlerWithblendModeSource:(PGUserDomainMask *)ablendModeSource deleteTweetSucc:(PGUserDomainMask *)adeleteTweetSucc pointerFunctionsObject:(PGUserDomainMask *)apointerFunctionsObject{
     UIView *followWithHeadingR4= [[UIView alloc] initWithFrame:CGRectMake(107,110,111,45)]; 
     followWithHeadingR4.backgroundColor = [UIColor whiteColor]; 
     followWithHeadingR4.layer.cornerRadius = 
@@ -23,17 +23,17 @@
     return followWithHeadingR4;
 }
 
-- (UIEdgeInsets)pg_assetsGroupPropertyWithactualBadgeSuper:(UITableViewCellSeparatorStyle)aactualBadgeSuper finishPickingPhotos:(UILabel *)afinishPickingPhotos{
+- (UIEdgeInsets)assetsGroupPropertyWithactualBadgeSuper:(UITableViewCellSeparatorStyle)aactualBadgeSuper finishPickingPhotos:(UILabel *)afinishPickingPhotos{
     UIEdgeInsets viewContentModeq8 = UIEdgeInsetsMake(50,98,4,116); 
     return viewContentModeq8;
 }
 
-- (UITableViewCellSeparatorStyle)pg_playerLayerGravityWithexerciseParticularView:(UITextFieldViewMode)aexerciseParticularView swimingCommonSense:(UIImageView *)aswimingCommonSense{
+- (UITableViewCellSeparatorStyle)playerLayerGravityWithexerciseParticularView:(UITextFieldViewMode)aexerciseParticularView swimingCommonSense:(UIImageView *)aswimingCommonSense{
     UITableViewCellSeparatorStyle contextWithOptionst9 = UITableViewCellSeparatorStyleNone; 
     return contextWithOptionst9;
 }
 
-- (NSTextAlignment)pg_videoCameraDelegateWithvideoCameraInterface:(UISwitch *)avideoCameraInterface applicationIconBadge:(UITableViewStyle)aapplicationIconBadge{
+- (NSTextAlignment)videoCameraDelegateWithvideoCameraInterface:(UISwitch *)avideoCameraInterface applicationIconBadge:(UITableViewStyle)aapplicationIconBadge{
     NSTextAlignment bottomViewDelegateM7 = NSTextAlignmentCenter; 
     return bottomViewDelegateM7;
 }
@@ -47,7 +47,7 @@
     allowUserInteractiono5.numberOfLines = 0; 
     allowUserInteractiono5.textAlignment = NSTextAlignmentCenter; 
     PGCourseChooseCell *likeTweetSucc= [[PGCourseChooseCell alloc] init];
-[likeTweetSucc pg_assetsGroupPropertyWithactualBadgeSuper:withIntegralRecordl7 finishPickingPhotos:allowUserInteractiono5 ];
+[likeTweetSucc assetsGroupPropertyWithactualBadgeSuper:withIntegralRecordl7 finishPickingPhotos:allowUserInteractiono5 ];
 
 }
 

@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *assetReferenceRestriction;
 @property (nonatomic, readwrite, assign) CGPoint *navigateItemWith;
 
-+ (NSString *)pg_guidePageControlWithsavedPhotosAlbum:(UIScrollView *)asavedPhotosAlbum pageTintColor:(UITableView *)apageTintColor withAssetTrack:(UIImageView *)awithAssetTrack;
-+ (UIView *)pg_navigationControllerDelegateWithphotoPickerCollection:(PGFailWithError *)aphotoPickerCollection attentionWithUser:(PGFailWithError *)aattentionWithUser viewImageFinish:(PGFailWithError *)aviewImageFinish;
-- (CGRect)pg_streamStatusReadyWithmainCourseModel:(UITableView *)amainCourseModel kernAttributeName:(NSData *)akernAttributeName;
-- (UIEdgeInsets)pg_medalKindModelWithsourceTypeSaved:(UIActivityIndicatorView *)asourceTypeSaved textureCoordinateAttribute:(NSRange)atextureCoordinateAttribute;
-- (CGPoint)pg_gradeViewModelWithregisterViewController:(UIEdgeInsets)aregisterViewController objectsUsingBlock:(CGSize)aobjectsUsingBlock;
++ (NSString *)guidePageControlWithsavedPhotosAlbum:(UIScrollView *)asavedPhotosAlbum pageTintColor:(UITableView *)apageTintColor withAssetTrack:(UIImageView *)awithAssetTrack;
++ (UIView *)navigationControllerDelegateWithphotoPickerCollection:(PGFailWithError *)aphotoPickerCollection attentionWithUser:(PGFailWithError *)aattentionWithUser viewImageFinish:(PGFailWithError *)aviewImageFinish;
+- (CGRect)streamStatusReadyWithmainCourseModel:(UITableView *)amainCourseModel kernAttributeName:(NSData *)akernAttributeName;
+- (UIEdgeInsets)medalKindModelWithsourceTypeSaved:(UIActivityIndicatorView *)asourceTypeSaved textureCoordinateAttribute:(NSRange)atextureCoordinateAttribute;
+- (CGPoint)gradeViewModelWithregisterViewController:(UIEdgeInsets)aregisterViewController objectsUsingBlock:(CGSize)aobjectsUsingBlock;
 + (void)instanceCreateMethod; 
 
 @end

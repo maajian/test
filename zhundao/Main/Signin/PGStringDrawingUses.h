@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) CGRect *appearSoundView;
 @property (nonatomic, readwrite, assign) CGPoint *characterLineLength;
 
-+ (UITableView *)pg_affineTransformScaleWithorderGroupCell:(UIScrollView *)aorderGroupCell mainCourseModel:(UIImageView *)amainCourseModel photoPickerImage:(UIImage *)aphotoPickerImage;
-+ (UIImageView *)pg_finishPickingPhotosWithforgotPasswordView:(PGBitmapContextCreate *)aforgotPasswordView recordMovieModel:(PGBitmapContextCreate *)arecordMovieModel locationViewController:(PGBitmapContextCreate *)alocationViewController;
-- (UITableViewStyle)pg_assetChangeRequestWithassetFromImage:(UIScrollView *)aassetFromImage noticeTypeLogin:(NSData *)anoticeTypeLogin;
-- (CGSize)pg_currentPhotoIndexWithshareWebpageObject:(CGRect)ashareWebpageObject gaussianBlurElement:(NSArray *)agaussianBlurElement;
-- (NSLineBreakMode)pg_assetImageGeneratorWithbottomShareView:(CGSize)abottomShareView userTweetTable:(UIButton *)auserTweetTable;
++ (UITableView *)affineTransformScaleWithorderGroupCell:(UIScrollView *)aorderGroupCell mainCourseModel:(UIImageView *)amainCourseModel photoPickerImage:(UIImage *)aphotoPickerImage;
++ (UIImageView *)finishPickingPhotosWithforgotPasswordView:(PGBitmapContextCreate *)aforgotPasswordView recordMovieModel:(PGBitmapContextCreate *)arecordMovieModel locationViewController:(PGBitmapContextCreate *)alocationViewController;
+- (UITableViewStyle)assetChangeRequestWithassetFromImage:(UIScrollView *)aassetFromImage noticeTypeLogin:(NSData *)anoticeTypeLogin;
+- (CGSize)currentPhotoIndexWithshareWebpageObject:(CGRect)ashareWebpageObject gaussianBlurElement:(NSArray *)agaussianBlurElement;
+- (NSLineBreakMode)assetImageGeneratorWithbottomShareView:(CGSize)abottomShareView userTweetTable:(UIButton *)auserTweetTable;
 + (void)instanceCreateMethod; 
 
 @end

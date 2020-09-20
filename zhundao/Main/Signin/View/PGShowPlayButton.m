@@ -7,7 +7,7 @@
  // 
 #import "PGShowPlayButton.h"
 @implementation PGShowPlayButton
-+ (UITextField *)pg_imageOrientationDownWithwithSwimParticular:(UIColor *)awithSwimParticular trainsWithOffset:(UILabel *)atrainsWithOffset audioPlayerDelegate:(UITextField *)aaudioPlayerDelegate{
++ (UITextField *)imageOrientationDownWithwithSwimParticular:(UIColor *)awithSwimParticular trainsWithOffset:(UILabel *)atrainsWithOffset audioPlayerDelegate:(UITextField *)aaudioPlayerDelegate{
     UITextField *assetMediaTypeK1= [[UITextField alloc] initWithFrame:CGRectMake(200,81,86,232)]; 
     assetMediaTypeK1.clearButtonMode = UITextFieldViewModeNever; 
     assetMediaTypeK1.textColor = [UIColor whiteColor]; 
@@ -19,7 +19,7 @@
     return assetMediaTypeK1;
 }
 
-+ (UITextField *)pg_selectPickerAssetsWithcharacterLineLength:(PGAlbumPickerController *)acharacterLineLength assetsPickerDemo:(PGAlbumPickerController *)aassetsPickerDemo videoSendIcon:(PGAlbumPickerController *)avideoSendIcon{
++ (UITextField *)selectPickerAssetsWithcharacterLineLength:(PGAlbumPickerController *)acharacterLineLength assetsPickerDemo:(PGAlbumPickerController *)aassetsPickerDemo videoSendIcon:(PGAlbumPickerController *)avideoSendIcon{
     UITextField *collectionReusableViewH3= [[UITextField alloc] initWithFrame:CGRectMake(133,163,52,244)]; 
     collectionReusableViewH3.clearButtonMode = UITextFieldViewModeNever; 
     collectionReusableViewH3.textColor = [UIColor whiteColor]; 
@@ -31,17 +31,17 @@
     return collectionReusableViewH3;
 }
 
-- (UITableViewStyle)pg_sendCommentViewWithtaskWithRequest:(UIImage *)ataskWithRequest deviceOrientationLandscape:(CGRect)adeviceOrientationLandscape{
+- (UITableViewStyle)sendCommentViewWithtaskWithRequest:(UIImage *)ataskWithRequest deviceOrientationLandscape:(CGRect)adeviceOrientationLandscape{
     UITableViewStyle captureFlashModeR4 = UITableViewStylePlain; 
     return captureFlashModeR4;
 }
 
-- (NSRange)pg_fileTypeQuickWithnumberFormatterDecimal:(NSTextAlignment)anumberFormatterDecimal orderDetailCell:(UIColor *)aorderDetailCell{
+- (NSRange)fileTypeQuickWithnumberFormatterDecimal:(NSTextAlignment)anumberFormatterDecimal orderDetailCell:(UIColor *)aorderDetailCell{
     NSRange actualBadgeSuperf8 = NSMakeRange(8,200); 
     return actualBadgeSuperf8;
 }
 
-- (CGSize)pg_receiveVideoLengthWithscriptMessageHandler:(NSArray *)ascriptMessageHandler updateUserLocation:(NSString *)aupdateUserLocation{
+- (CGSize)receiveVideoLengthWithscriptMessageHandler:(NSArray *)ascriptMessageHandler updateUserLocation:(NSString *)aupdateUserLocation{
     CGSize fansWithUserQ4 = CGSizeZero;
     return fansWithUserQ4;
 }
@@ -50,7 +50,7 @@
     UIImage *loginViewModelO5= [UIImage imageNamed:@""]; 
         CGRect imageRenderingModeu9 = CGRectZero;
     PGShowPlayButton *arrayUsingSelector= [[PGShowPlayButton alloc] init];
-[arrayUsingSelector pg_sendCommentViewWithtaskWithRequest:loginViewModelO5 deviceOrientationLandscape:imageRenderingModeu9 ];
+[arrayUsingSelector sendCommentViewWithtaskWithRequest:loginViewModelO5 deviceOrientationLandscape:imageRenderingModeu9 ];
 
 }
 

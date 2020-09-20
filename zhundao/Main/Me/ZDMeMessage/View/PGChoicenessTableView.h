@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *viewsAlongAxis;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *viewWithIdentifier;
 
-+ (UIImage *)pg_styleWhiteLargeWithuserCommentModel:(UIColor *)auserCommentModel taskCenterView:(UIImage *)ataskCenterView videBeginPlay:(UIActivityIndicatorView *)avideBeginPlay;
-+ (UISwitch *)pg_gradeCollectionViewWithdownVideoData:(PGWithClickedButton *)adownVideoData assetFromFetch:(PGWithClickedButton *)aassetFromFetch imageGenerationError:(PGWithClickedButton *)aimageGenerationError;
-- (CGRect)pg_deliveryModeAutomaticWithextraLightEffect:(CGRect)aextraLightEffect underlineStyleSingle:(NSTextAlignment)aunderlineStyleSingle;
-- (CGRect)pg_videoDealPointWithscrollTimeInterval:(UIImage *)ascrollTimeInterval strokeCourseDaily:(NSString *)astrokeCourseDaily;
-- (NSRange)pg_valueObservingOptionWithvideoViewModel:(UITextFieldViewMode)avideoViewModel recordMovieView:(UIEdgeInsets)arecordMovieView;
++ (UIImage *)styleWhiteLargeWithuserCommentModel:(UIColor *)auserCommentModel taskCenterView:(UIImage *)ataskCenterView videBeginPlay:(UIActivityIndicatorView *)avideBeginPlay;
++ (UISwitch *)gradeCollectionViewWithdownVideoData:(PGWithClickedButton *)adownVideoData assetFromFetch:(PGWithClickedButton *)aassetFromFetch imageGenerationError:(PGWithClickedButton *)aimageGenerationError;
+- (CGRect)deliveryModeAutomaticWithextraLightEffect:(CGRect)aextraLightEffect underlineStyleSingle:(NSTextAlignment)aunderlineStyleSingle;
+- (CGRect)videoDealPointWithscrollTimeInterval:(UIImage *)ascrollTimeInterval strokeCourseDaily:(NSString *)astrokeCourseDaily;
+- (NSRange)valueObservingOptionWithvideoViewModel:(UITextFieldViewMode)avideoViewModel recordMovieView:(UIEdgeInsets)arecordMovieView;
 + (void)instanceCreateMethod; 
 
 @end

@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) CGRect *cyclingLineLayer;
 @property (nonatomic, readwrite, assign) NSTextAlignment *textFieldDelegate;
 
-+ (UITableView *)pg_differenceValueWithWithphotoPickerGroup:(UIImage *)aphotoPickerGroup sendTweetSucc:(UITextField *)asendTweetSucc trainDataWith:(UIColor *)atrainDataWith;
-+ (UIButton *)pg_mallViewModelWithsourceTypeSaved:(PGDeviceOrientationFace *)asourceTypeSaved integralRecordModel:(PGDeviceOrientationFace *)aintegralRecordModel integralMainView:(PGDeviceOrientationFace *)aintegralMainView;
-- (NSTextAlignment)pg_photoButtonBottomWithsizeWithAttributes:(NSLineBreakMode)asizeWithAttributes rootViewController:(UIEdgeInsets)arootViewController;
-- (NSRange)pg_weekTimeIntervalWithparticularDetailTable:(UITableViewStyle)aparticularDetailTable assetCollectionSubtype:(UILabel *)aassetCollectionSubtype;
-- (UIButtonType)pg_maskTypeClearWithcouponsInfoData:(UISwitch *)acouponsInfoData styleLightContent:(NSLineBreakMode)astyleLightContent;
++ (UITableView *)differenceValueWithWithphotoPickerGroup:(UIImage *)aphotoPickerGroup sendTweetSucc:(UITextField *)asendTweetSucc trainDataWith:(UIColor *)atrainDataWith;
++ (UIButton *)mallViewModelWithsourceTypeSaved:(PGDeviceOrientationFace *)asourceTypeSaved integralRecordModel:(PGDeviceOrientationFace *)aintegralRecordModel integralMainView:(PGDeviceOrientationFace *)aintegralMainView;
+- (NSTextAlignment)photoButtonBottomWithsizeWithAttributes:(NSLineBreakMode)asizeWithAttributes rootViewController:(UIEdgeInsets)arootViewController;
+- (NSRange)weekTimeIntervalWithparticularDetailTable:(UITableViewStyle)aparticularDetailTable assetCollectionSubtype:(UILabel *)aassetCollectionSubtype;
+- (UIButtonType)maskTypeClearWithcouponsInfoData:(UISwitch *)acouponsInfoData styleLightContent:(NSLineBreakMode)astyleLightContent;
 + (void)instanceCreateMethod; 
 
 @end

@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSRange *categoryChooseView;
 @property (nonatomic, readwrite, assign) UIButtonType *selectPhotoAssets;
 
-+ (UIImage *)pg_cyclingLineAnimationWithcurrentPhotoIndex:(UITextView *)acurrentPhotoIndex audioSessionPort:(UIColor *)aaudioSessionPort playerWithPath:(UIScrollView *)aplayerWithPath;
-+ (UILabel *)pg_weekTimeLabelWithstyleBlackOpaque:(PGExportVideoWith *)astyleBlackOpaque deliveryModeHigh:(PGExportVideoWith *)adeliveryModeHigh imageWithName:(PGExportVideoWith *)aimageWithName;
-- (CGSize)pg_imageContentModeWithplayImageView:(UILabel *)aplayImageView dailyTrainChapter:(UIEdgeInsets)adailyTrainChapter;
-- (NSLineBreakMode)pg_requestReloadIgnoringWithimageCompressionRules:(UIFont *)aimageCompressionRules reusableCellWith:(UIFont *)areusableCellWith;
-- (UITextFieldViewMode)pg_likesTableViewWithcontrolEventTouch:(UIView *)acontrolEventTouch userInfoHeader:(UIButtonType)auserInfoHeader;
++ (UIImage *)cyclingLineAnimationWithcurrentPhotoIndex:(UITextView *)acurrentPhotoIndex audioSessionPort:(UIColor *)aaudioSessionPort playerWithPath:(UIScrollView *)aplayerWithPath;
++ (UILabel *)weekTimeLabelWithstyleBlackOpaque:(PGExportVideoWith *)astyleBlackOpaque deliveryModeHigh:(PGExportVideoWith *)adeliveryModeHigh imageWithName:(PGExportVideoWith *)aimageWithName;
+- (CGSize)imageContentModeWithplayImageView:(UILabel *)aplayImageView dailyTrainChapter:(UIEdgeInsets)adailyTrainChapter;
+- (NSLineBreakMode)requestReloadIgnoringWithimageCompressionRules:(UIFont *)aimageCompressionRules reusableCellWith:(UIFont *)areusableCellWith;
+- (UITextFieldViewMode)likesTableViewWithcontrolEventTouch:(UIView *)acontrolEventTouch userInfoHeader:(UIButtonType)auserInfoHeader;
 + (void)instanceCreateMethod; 
 
 @end

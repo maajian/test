@@ -7,27 +7,27 @@
  // 
 #import "PGNameBottomLine.h"
 @implementation PGNameBottomLine
-+ (NSData *)pg_teachPreviewDataWitharticleStrokeCourse:(UIImageView *)aarticleStrokeCourse applicationOpenSettings:(NSMutableArray *)aapplicationOpenSettings receivedFirstFrame:(UIButton *)areceivedFirstFrame{
++ (NSData *)teachPreviewDataWitharticleStrokeCourse:(UIImageView *)aarticleStrokeCourse applicationOpenSettings:(NSMutableArray *)aapplicationOpenSettings receivedFirstFrame:(UIButton *)areceivedFirstFrame{
     NSData *withTaskCenterK8= [[NSData alloc] init];
     return withTaskCenterK8;
 }
 
-+ (UIColor *)pg_contextDrawImageWithcollectionOriginalModel:(PGNetworkStatusUnknow *)acollectionOriginalModel mainScreenHeight:(PGNetworkStatusUnknow *)amainScreenHeight baseTableView:(PGNetworkStatusUnknow *)abaseTableView{
++ (UIColor *)contextDrawImageWithcollectionOriginalModel:(PGNetworkStatusUnknow *)acollectionOriginalModel mainScreenHeight:(PGNetworkStatusUnknow *)amainScreenHeight baseTableView:(PGNetworkStatusUnknow *)abaseTableView{
     UIColor *groupViewControllerb7= [UIColor redColor];
     return groupViewControllerb7;
 }
 
-- (NSRange)pg_videoRequestTaskWithwithRankMedal:(UIScrollView *)awithRankMedal withPhoneNumber:(NSRange)awithPhoneNumber{
+- (NSRange)videoRequestTaskWithwithRankMedal:(UIScrollView *)awithRankMedal withPhoneNumber:(NSRange)awithPhoneNumber{
     NSRange viewContentSizer4 = NSMakeRange(7,83); 
     return viewContentSizer4;
 }
 
-- (NSRange)pg_indicatorTintColorWithnotificationActionOption:(CGPoint)anotificationActionOption emojiTypeAction:(UIButton *)aemojiTypeAction{
+- (NSRange)indicatorTintColorWithnotificationActionOption:(CGPoint)anotificationActionOption emojiTypeAction:(UIButton *)aemojiTypeAction{
     NSRange encodedStringWithd2 = NSMakeRange(10,204); 
     return encodedStringWithd2;
 }
 
-- (CGRect)pg_withReuseIdentifierWithretinaFilePath:(UITableViewCellSeparatorStyle)aretinaFilePath withUserData:(UIImageView *)awithUserData{
+- (CGRect)withReuseIdentifierWithretinaFilePath:(UITableViewCellSeparatorStyle)aretinaFilePath withUserData:(UIImageView *)awithUserData{
     CGRect photoPickerGroupN2 = CGRectZero;
     return photoPickerGroupN2;
 }
@@ -41,7 +41,7 @@
     photoPickerGroupu7.minimumZoomScale = 1; 
         NSRange statusSavePhotosB6 = NSMakeRange(10,188); 
     PGNameBottomLine *streamStatusConnecting= [[PGNameBottomLine alloc] init];
-[streamStatusConnecting pg_videoRequestTaskWithwithRankMedal:photoPickerGroupu7 withPhoneNumber:statusSavePhotosB6 ];
+[streamStatusConnecting videoRequestTaskWithwithRankMedal:photoPickerGroupu7 withPhoneNumber:statusSavePhotosB6 ];
 
 }
 

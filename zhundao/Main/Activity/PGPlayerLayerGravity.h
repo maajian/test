@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *articleOriginalModel;
 @property (nonatomic, readwrite, assign) NSTextAlignment *caseInsensitiveSearch;
 
-+ (UISwitch *)pg_mainScreenHeightWithdecimalNumberHandler:(UIFont *)adecimalNumberHandler badgeDefaultMaximum:(UILabel *)abadgeDefaultMaximum textAlignmentRight:(NSArray *)atextAlignmentRight;
-+ (UIImage *)pg_moreDataWithWithauthorizationOptionAlert:(PGRouteSearchResponse *)aauthorizationOptionAlert withTintColor:(PGRouteSearchResponse *)awithTintColor viewWillBegin:(PGRouteSearchResponse *)aviewWillBegin;
-- (UITableViewCellSeparatorStyle)pg_rectContainsPointWithnameLeftLabel:(UITableViewStyle)anameLeftLabel uploadVideoBlock:(CGRect)auploadVideoBlock;
-- (CGPoint)pg_collectionViewScrollWithtableViewContent:(UITextView *)atableViewContent photoLoadingView:(UIButtonType)aphotoLoadingView;
-- (NSLineBreakMode)pg_collectionElementKindWithchangeFrameNotification:(UITextFieldViewMode)achangeFrameNotification dataCollectionView:(NSRange)adataCollectionView;
++ (UISwitch *)mainScreenHeightWithdecimalNumberHandler:(UIFont *)adecimalNumberHandler badgeDefaultMaximum:(UILabel *)abadgeDefaultMaximum textAlignmentRight:(NSArray *)atextAlignmentRight;
++ (UIImage *)moreDataWithWithauthorizationOptionAlert:(PGRouteSearchResponse *)aauthorizationOptionAlert withTintColor:(PGRouteSearchResponse *)awithTintColor viewWillBegin:(PGRouteSearchResponse *)aviewWillBegin;
+- (UITableViewCellSeparatorStyle)rectContainsPointWithnameLeftLabel:(UITableViewStyle)anameLeftLabel uploadVideoBlock:(CGRect)auploadVideoBlock;
+- (CGPoint)collectionViewScrollWithtableViewContent:(UITextView *)atableViewContent photoLoadingView:(UIButtonType)aphotoLoadingView;
+- (NSLineBreakMode)collectionElementKindWithchangeFrameNotification:(UITextFieldViewMode)achangeFrameNotification dataCollectionView:(NSRange)adataCollectionView;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,7 +7,7 @@
  // 
 #import "PGNavigateItemWith.h"
 @implementation PGNavigateItemWith
-+ (UISlider *)pg_fieldShouldBeginWithsliderTouchBegan:(UIFont *)asliderTouchBegan pickerCollectionView:(UIImageView *)apickerCollectionView trackingWithTouch:(UIFont *)atrackingWithTouch{
++ (UISlider *)fieldShouldBeginWithsliderTouchBegan:(UIFont *)asliderTouchBegan pickerCollectionView:(UIImageView *)apickerCollectionView trackingWithTouch:(UIFont *)atrackingWithTouch{
     UISlider *moviePlayViewh3= [[UISlider alloc] initWithFrame:CGRectMake(75,109,251,41)]; 
     moviePlayViewh3.minimumValue = 0; 
     moviePlayViewh3.maximumValue = 100; 
@@ -15,7 +15,7 @@
     return moviePlayViewh3;
 }
 
-+ (UITextField *)pg_couponsInfoDataWithprogressTypeNone:(PGPointerFunctionsStrong *)aprogressTypeNone pressEmojiAction:(PGPointerFunctionsStrong *)apressEmojiAction lineBreakMode:(PGPointerFunctionsStrong *)alineBreakMode{
++ (UITextField *)couponsInfoDataWithprogressTypeNone:(PGPointerFunctionsStrong *)aprogressTypeNone pressEmojiAction:(PGPointerFunctionsStrong *)apressEmojiAction lineBreakMode:(PGPointerFunctionsStrong *)alineBreakMode{
     UITextField *withCourseChoicenessF5= [[UITextField alloc] initWithFrame:CGRectZero]; 
     withCourseChoicenessF5.clearButtonMode = UITextFieldViewModeNever; 
     withCourseChoicenessF5.textColor = [UIColor whiteColor]; 
@@ -27,17 +27,17 @@
     return withCourseChoicenessF5;
 }
 
-- (CGPoint)pg_integralRecordDataWithstartCameraCapture:(NSLineBreakMode)astartCameraCapture saveEmojiArray:(UITextField *)asaveEmojiArray{
+- (CGPoint)integralRecordDataWithstartCameraCapture:(NSLineBreakMode)astartCameraCapture saveEmojiArray:(UITextField *)asaveEmojiArray{
     CGPoint playerControlViewj5 = CGPointZero;
     return playerControlViewj5;
 }
 
-- (CGSize)pg_playerStateFailedWithplayerStatePause:(CGSize)aplayerStatePause effectThumbImage:(CGRect)aeffectThumbImage{
+- (CGSize)playerStateFailedWithplayerStatePause:(CGSize)aplayerStatePause effectThumbImage:(CGRect)aeffectThumbImage{
     CGSize gradeViewControllere4 = CGSizeZero;
     return gradeViewControllere4;
 }
 
-- (NSTextAlignment)pg_affineTransformTranslateWithorderGroupCell:(UIButton *)aorderGroupCell timeRangeFrom:(UIActivityIndicatorView *)atimeRangeFrom{
+- (NSTextAlignment)affineTransformTranslateWithorderGroupCell:(UIButton *)aorderGroupCell timeRangeFrom:(UIActivityIndicatorView *)atimeRangeFrom{
     NSTextAlignment cancelAutoFadeN2 = NSTextAlignmentCenter; 
     return cancelAutoFadeN2;
 }
@@ -53,7 +53,7 @@
     replayUserNickc6.leftView = [[UIView alloc] initWithFrame:CGRectMake(151,94,232,110)];
      replayUserNickc6.leftViewMode = UITextFieldViewModeAlways; 
     PGNavigateItemWith *imageRequestOptions= [[PGNavigateItemWith alloc] init];
-[imageRequestOptions pg_integralRecordDataWithstartCameraCapture:numberFormatterRoundR1 saveEmojiArray:replayUserNickc6 ];
+[imageRequestOptions integralRecordDataWithstartCameraCapture:numberFormatterRoundR1 saveEmojiArray:replayUserNickc6 ];
 
 }
 

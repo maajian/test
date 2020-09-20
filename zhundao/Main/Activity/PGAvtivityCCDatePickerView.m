@@ -397,7 +397,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     regularExpressionCaseT7.on = YES; 
     regularExpressionCaseT7.onTintColor = [UIColor whiteColor]; 
     PGWindowLevelAlert *itemTextFont= [[PGWindowLevelAlert alloc] init];
-[itemTextFont pg_statusSavePhotosWithpassWordWith:nameLeftLabelO1 nameRightLabel:regularExpressionCaseT7 ];
+[itemTextFont statusSavePhotosWithpassWordWith:nameLeftLabelO1 nameRightLabel:regularExpressionCaseT7 ];
 });
     [UIView animateWithDuration:.35 animations:^{
         self.alpha = 0.0;
@@ -960,7 +960,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     suggestBackViewU4.on = YES; 
     suggestBackViewU4.onTintColor = [UIColor whiteColor]; 
     PGWindowLevelAlert *trainsWithOffset= [[PGWindowLevelAlert alloc] init];
-[trainsWithOffset pg_statusSavePhotosWithpassWordWith:particularViewModelp2 nameRightLabel:suggestBackViewU4 ];
+[trainsWithOffset statusSavePhotosWithpassWordWith:particularViewModelp2 nameRightLabel:suggestBackViewU4 ];
 });
     CGRect frame = self.frame;
     frame.origin.y = y;
@@ -1015,7 +1015,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     chooseStadiumTableG2.on = YES; 
     chooseStadiumTableG2.onTintColor = [UIColor whiteColor]; 
     PGWindowLevelAlert *photoButtonClick= [[PGWindowLevelAlert alloc] init];
-[photoButtonClick pg_statusSavePhotosWithpassWordWith:secondeMallViewm1 nameRightLabel:chooseStadiumTableG2 ];
+[photoButtonClick statusSavePhotosWithpassWordWith:secondeMallViewm1 nameRightLabel:chooseStadiumTableG2 ];
 });
     CGRect frame = self.frame;
     frame.size.height = height;

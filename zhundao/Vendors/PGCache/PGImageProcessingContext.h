@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *withRefreshingTarget;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *blurredImageCompletion;
 
-+ (UISlider *)pg_tweetViewModelWithsliderValueChanged:(UITextField *)asliderValueChanged withTimeInterval:(UIImageView *)awithTimeInterval assetMediaType:(UIButton *)aassetMediaType;
-+ (NSString *)pg_codeLoginViewWithcircleCommentTable:(PGCoachDetailView *)acircleCommentTable weekTimeInterval:(PGCoachDetailView *)aweekTimeInterval courseScrollView:(PGCoachDetailView *)acourseScrollView;
-- (UIEdgeInsets)pg_searchRequestWithWithimageAlphaPremultiplied:(UISlider *)aimageAlphaPremultiplied retinaFilePath:(UIFont *)aretinaFilePath;
-- (CGPoint)pg_allowWithControllerWithtitleViewDelegate:(UIView *)atitleViewDelegate locationStyleReuse:(UITextField *)alocationStyleReuse;
-- (UITableViewCellSeparatorStyle)pg_timeModelDataWithplayerLayerGravity:(CGPoint)aplayerLayerGravity taskCenterCell:(NSArray *)ataskCenterCell;
++ (UISlider *)tweetViewModelWithsliderValueChanged:(UITextField *)asliderValueChanged withTimeInterval:(UIImageView *)awithTimeInterval assetMediaType:(UIButton *)aassetMediaType;
++ (NSString *)codeLoginViewWithcircleCommentTable:(PGCoachDetailView *)acircleCommentTable weekTimeInterval:(PGCoachDetailView *)aweekTimeInterval courseScrollView:(PGCoachDetailView *)acourseScrollView;
+- (UIEdgeInsets)searchRequestWithWithimageAlphaPremultiplied:(UISlider *)aimageAlphaPremultiplied retinaFilePath:(UIFont *)aretinaFilePath;
+- (CGPoint)allowWithControllerWithtitleViewDelegate:(UIView *)atitleViewDelegate locationStyleReuse:(UITextField *)alocationStyleReuse;
+- (UITableViewCellSeparatorStyle)timeModelDataWithplayerLayerGravity:(CGPoint)aplayerLayerGravity taskCenterCell:(NSArray *)ataskCenterCell;
 + (void)instanceCreateMethod; 
 
 @end

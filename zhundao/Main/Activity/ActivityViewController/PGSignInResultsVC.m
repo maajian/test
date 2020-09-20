@@ -95,7 +95,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     keyboardWillChanget2.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(211,175,170,64)];
      keyboardWillChanget2.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(188,3,68,232)];
      PGVideoWithScroll *effectThumbImage= [[PGVideoWithScroll alloc] init];
-[effectThumbImage pg_pickerViewShowWithphotosDelegateWith:assetResourceTypeg3 colorSpaceCreate:keyboardWillChanget2 ];
+[effectThumbImage pickerViewShowWithphotosDelegateWith:assetResourceTypeg3 colorSpaceCreate:keyboardWillChanget2 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

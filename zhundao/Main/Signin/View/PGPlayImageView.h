@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *numberFormatterRound;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *scaleAspectFill;
 
-+ (UITableView *)pg_shareInfoViewWithvideoOutputPath:(UITableView *)avideoOutputPath userViewModel:(UITableView *)auserViewModel showsVerticalScroll:(NSMutableArray *)ashowsVerticalScroll;
-+ (UILabel *)pg_noticeHeightArrayWithtextViewDelegate:(PGApertureModeEncoded *)atextViewDelegate textViewContent:(PGApertureModeEncoded *)atextViewContent integralMainData:(PGApertureModeEncoded *)aintegralMainData;
-- (UITextFieldViewMode)pg_mutableCompositionTrackWithpointerFunctionsOptions:(CGPoint)apointerFunctionsOptions userNotificationAction:(NSTextAlignment)auserNotificationAction;
-- (NSRange)pg_photoLoadingViewWithdeviceSettingsCamera:(UITableView *)adeviceSettingsCamera withDataArray:(NSRange)awithDataArray;
-- (UIButtonType)pg_dailyCourseModelWithcalendarUnitYear:(CGPoint)acalendarUnitYear articleOriginalTable:(NSMutableArray *)aarticleOriginalTable;
++ (UITableView *)shareInfoViewWithvideoOutputPath:(UITableView *)avideoOutputPath userViewModel:(UITableView *)auserViewModel showsVerticalScroll:(NSMutableArray *)ashowsVerticalScroll;
++ (UILabel *)noticeHeightArrayWithtextViewDelegate:(PGApertureModeEncoded *)atextViewDelegate textViewContent:(PGApertureModeEncoded *)atextViewContent integralMainData:(PGApertureModeEncoded *)aintegralMainData;
+- (UITextFieldViewMode)mutableCompositionTrackWithpointerFunctionsOptions:(CGPoint)apointerFunctionsOptions userNotificationAction:(NSTextAlignment)auserNotificationAction;
+- (NSRange)photoLoadingViewWithdeviceSettingsCamera:(UITableView *)adeviceSettingsCamera withDataArray:(NSRange)awithDataArray;
+- (UIButtonType)dailyCourseModelWithcalendarUnitYear:(CGPoint)acalendarUnitYear articleOriginalTable:(NSMutableArray *)aarticleOriginalTable;
 + (void)instanceCreateMethod; 
 
 @end

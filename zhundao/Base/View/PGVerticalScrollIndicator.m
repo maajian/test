@@ -7,7 +7,7 @@
  // 
 #import "PGVerticalScrollIndicator.h"
 @implementation PGVerticalScrollIndicator
-+ (UITextField *)pg_buttonTypeSystemWithcircleScreenView:(UITableView *)acircleScreenView hidesWhenStopped:(UITextField *)ahidesWhenStopped contextFillPath:(UIFont *)acontextFillPath{
++ (UITextField *)buttonTypeSystemWithcircleScreenView:(UITableView *)acircleScreenView hidesWhenStopped:(UITextField *)ahidesWhenStopped contextFillPath:(UIFont *)acontextFillPath{
     UITextField *photoLoadingViewf0= [[UITextField alloc] initWithFrame:CGRectZero]; 
     photoLoadingViewf0.clearButtonMode = UITextFieldViewModeNever; 
     photoLoadingViewf0.textColor = [UIColor whiteColor]; 
@@ -19,7 +19,7 @@
     return photoLoadingViewf0;
 }
 
-+ (UISlider *)pg_buttonImageNameWithkeyboardAnimationDuration:(PGCollectionOriginalTable *)akeyboardAnimationDuration scrollViewContent:(PGCollectionOriginalTable *)ascrollViewContent playerStateStopped:(PGCollectionOriginalTable *)aplayerStateStopped{
++ (UISlider *)buttonImageNameWithkeyboardAnimationDuration:(PGCollectionOriginalTable *)akeyboardAnimationDuration scrollViewContent:(PGCollectionOriginalTable *)ascrollViewContent playerStateStopped:(PGCollectionOriginalTable *)aplayerStateStopped{
     UISlider *integralRecordDataZ7= [[UISlider alloc] initWithFrame:CGRectMake(68,106,93,111)]; 
     integralRecordDataZ7.minimumValue = 0; 
     integralRecordDataZ7.maximumValue = 100; 
@@ -27,17 +27,17 @@
     return integralRecordDataZ7;
 }
 
-- (UIEdgeInsets)pg_groupPurchaseOrderWithrecordMovieView:(NSRange)arecordMovieView playerStateBuffering:(UIFont *)aplayerStateBuffering{
+- (UIEdgeInsets)groupPurchaseOrderWithrecordMovieView:(NSRange)arecordMovieView playerStateBuffering:(UIFont *)aplayerStateBuffering{
     UIEdgeInsets timeRangeFromP0 = UIEdgeInsetsMake(178,109,5,213); 
     return timeRangeFromP0;
 }
 
-- (UIButtonType)pg_timeUnclampedPropWithnetworkReachabilityManager:(UIEdgeInsets)anetworkReachabilityManager infoWithStatus:(CGRect)ainfoWithStatus{
+- (UIButtonType)timeUnclampedPropWithnetworkReachabilityManager:(UIEdgeInsets)anetworkReachabilityManager infoWithStatus:(CGRect)ainfoWithStatus{
     UIButtonType doneButtonClickS3 = UIButtonTypeContactAdd;
     return doneButtonClickS3;
 }
 
-- (UITableViewCellSeparatorStyle)pg_withJsonStringWithtitleTextAttributes:(UIButton *)atitleTextAttributes audioSessionCategory:(NSLineBreakMode)aaudioSessionCategory{
+- (UITableViewCellSeparatorStyle)withJsonStringWithtitleTextAttributes:(UIButton *)atitleTextAttributes audioSessionCategory:(NSLineBreakMode)aaudioSessionCategory{
     UITableViewCellSeparatorStyle viewContentOffsetP6 = UITableViewCellSeparatorStyleNone; 
     return viewContentOffsetP6;
 }
@@ -46,7 +46,7 @@
     NSRange commonViewModelH3 = NSMakeRange(3,174); 
         UIFont *adjustTrackColori2= [UIFont systemFontOfSize:211];
     PGVerticalScrollIndicator *foregroundColorAttribute= [[PGVerticalScrollIndicator alloc] init];
-[foregroundColorAttribute pg_groupPurchaseOrderWithrecordMovieView:commonViewModelH3 playerStateBuffering:adjustTrackColori2 ];
+[foregroundColorAttribute groupPurchaseOrderWithrecordMovieView:commonViewModelH3 playerStateBuffering:adjustTrackColori2 ];
 
 }
 

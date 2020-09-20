@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) CGRect *exerciseHistoryData;
 @property (nonatomic, readwrite, assign) NSTextAlignment *cancelAutoFade;
 
-+ (UIFont *)pg_assetsFromFetchWithframeProcessingCompletion:(UIFont *)aframeProcessingCompletion textFieldWith:(UITextView *)atextFieldWith refreshStatePulling:(UIImage *)arefreshStatePulling;
-+ (NSString *)pg_itemsSupplementBackWithmallNavigationItems:(PGManagerWithDelegate *)amallNavigationItems navigationControllerOperation:(PGManagerWithDelegate *)anavigationControllerOperation bundleDisplayName:(PGManagerWithDelegate *)abundleDisplayName;
-- (UITableViewCellSeparatorStyle)pg_backIndicatorTransitionWithselectPhotoNavigation:(UIEdgeInsets)aselectPhotoNavigation fillColorWith:(UITableViewStyle)afillColorWith;
-- (NSTextAlignment)pg_tableViewStyleWithaffineTransformTranslate:(NSData *)aaffineTransformTranslate affineTransformScale:(UIFont *)aaffineTransformScale;
-- (CGRect)pg_assetFromFetchWithintegralStoreView:(UIScrollView *)aintegralStoreView deviceOrientationChange:(NSArray *)adeviceOrientationChange;
++ (UIFont *)assetsFromFetchWithframeProcessingCompletion:(UIFont *)aframeProcessingCompletion textFieldWith:(UITextView *)atextFieldWith refreshStatePulling:(UIImage *)arefreshStatePulling;
++ (NSString *)itemsSupplementBackWithmallNavigationItems:(PGManagerWithDelegate *)amallNavigationItems navigationControllerOperation:(PGManagerWithDelegate *)anavigationControllerOperation bundleDisplayName:(PGManagerWithDelegate *)abundleDisplayName;
+- (UITableViewCellSeparatorStyle)backIndicatorTransitionWithselectPhotoNavigation:(UIEdgeInsets)aselectPhotoNavigation fillColorWith:(UITableViewStyle)afillColorWith;
+- (NSTextAlignment)tableViewStyleWithaffineTransformTranslate:(NSData *)aaffineTransformTranslate affineTransformScale:(UIFont *)aaffineTransformScale;
+- (CGRect)assetFromFetchWithintegralStoreView:(UIScrollView *)aintegralStoreView deviceOrientationChange:(NSArray *)adeviceOrientationChange;
 + (void)instanceCreateMethod; 
 
 @end

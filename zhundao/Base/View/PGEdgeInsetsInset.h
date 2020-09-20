@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGRect *willEnterForeground;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *badgeCenterOffset;
 
-+ (UIScrollView *)pg_authorizationStatusRestrictedWithmutableVideoComposition:(NSMutableArray *)amutableVideoComposition buttonTypeSystem:(NSMutableArray *)abuttonTypeSystem trainParticularHeader:(UITextField *)atrainParticularHeader;
-+ (UIColor *)pg_articleDetailDataWithcameraRollAlbum:(PGBottomLineLabel *)acameraRollAlbum pointerFunctionsObject:(PGBottomLineLabel *)apointerFunctionsObject recentlyUsedEmoji:(PGBottomLineLabel *)arecentlyUsedEmoji;
-- (UITableViewStyle)pg_backIndicatorTransitionWithassetsPhotoWith:(NSTextAlignment)aassetsPhotoWith assetCollectionSubtype:(UITextView *)aassetCollectionSubtype;
-- (CGSize)pg_mallNavigationItemsWithkeyboardTypeEmail:(CGPoint)akeyboardTypeEmail imageRotationMode:(UIScrollView *)aimageRotationMode;
-- (NSRange)pg_courseCachaDataWithrankMedalBlock:(NSRange)arankMedalBlock infoViewModel:(UIView *)ainfoViewModel;
++ (UIScrollView *)authorizationStatusRestrictedWithmutableVideoComposition:(NSMutableArray *)amutableVideoComposition buttonTypeSystem:(NSMutableArray *)abuttonTypeSystem trainParticularHeader:(UITextField *)atrainParticularHeader;
++ (UIColor *)articleDetailDataWithcameraRollAlbum:(PGBottomLineLabel *)acameraRollAlbum pointerFunctionsObject:(PGBottomLineLabel *)apointerFunctionsObject recentlyUsedEmoji:(PGBottomLineLabel *)arecentlyUsedEmoji;
+- (UITableViewStyle)backIndicatorTransitionWithassetsPhotoWith:(NSTextAlignment)aassetsPhotoWith assetCollectionSubtype:(UITextView *)aassetCollectionSubtype;
+- (CGSize)mallNavigationItemsWithkeyboardTypeEmail:(CGPoint)akeyboardTypeEmail imageRotationMode:(UIScrollView *)aimageRotationMode;
+- (NSRange)courseCachaDataWithrankMedalBlock:(NSRange)arankMedalBlock infoViewModel:(UIView *)ainfoViewModel;
 + (void)instanceCreateMethod; 
 
 @end

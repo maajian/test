@@ -7,14 +7,14 @@
  // 
 #import "PGDeviceOrientationLandscape.h"
 @implementation PGDeviceOrientationLandscape
-+ (UISwitch *)pg_withTimeIntervalWithphoneWithPhone:(UIImageView *)aphoneWithPhone adjustsScrollView:(UIButton *)aadjustsScrollView userTweetTable:(UIImageView *)auserTweetTable{
++ (UISwitch *)withTimeIntervalWithphoneWithPhone:(UIImageView *)aphoneWithPhone adjustsScrollView:(UIButton *)aadjustsScrollView userTweetTable:(UIImageView *)auserTweetTable{
     UISwitch *viewWillBeginM4= [[UISwitch alloc] initWithFrame:CGRectMake(74,24,216,85)]; 
     viewWillBeginM4.on = YES; 
     viewWillBeginM4.onTintColor = [UIColor whiteColor]; 
     return viewWillBeginM4;
 }
 
-+ (UITextField *)pg_dailyTrainHeaderWithtableFooterView:(PGWithRoundCorner *)atableFooterView requestReloadIgnoring:(PGWithRoundCorner *)arequestReloadIgnoring audioSessionPort:(PGWithRoundCorner *)aaudioSessionPort{
++ (UITextField *)dailyTrainHeaderWithtableFooterView:(PGWithRoundCorner *)atableFooterView requestReloadIgnoring:(PGWithRoundCorner *)arequestReloadIgnoring audioSessionPort:(PGWithRoundCorner *)aaudioSessionPort{
     UITextField *originBackgroundColort6= [[UITextField alloc] initWithFrame:CGRectMake(88,224,175,97)]; 
     originBackgroundColort6.clearButtonMode = UITextFieldViewModeNever; 
     originBackgroundColort6.textColor = [UIColor whiteColor]; 
@@ -26,17 +26,17 @@
     return originBackgroundColort6;
 }
 
-- (CGRect)pg_cellReuseIdentifierWithwithReuseIdentifier:(UIImageView *)awithReuseIdentifier sliderSeekTime:(NSRange)asliderSeekTime{
+- (CGRect)cellReuseIdentifierWithwithReuseIdentifier:(UIImageView *)awithReuseIdentifier sliderSeekTime:(NSRange)asliderSeekTime{
     CGRect withCouponsInfoe2 = CGRectMake(86,97,214,51); 
     return withCouponsInfoe2;
 }
 
-- (CGSize)pg_blurredImageCompletionWithuserNotificationType:(UIButton *)auserNotificationType stringFromDate:(CGRect)astringFromDate{
+- (CGSize)blurredImageCompletionWithuserNotificationType:(UIButton *)auserNotificationType stringFromDate:(CGRect)astringFromDate{
     CGSize withCommentObjectJ1 = CGSizeZero;
     return withCommentObjectJ1;
 }
 
-- (CGPoint)pg_mirrorFrontFacingWithimageWithLeft:(UITableView *)aimageWithLeft circleTweetComment:(UILabel *)acircleTweetComment{
+- (CGPoint)mirrorFrontFacingWithimageWithLeft:(UITableView *)aimageWithLeft circleTweetComment:(UILabel *)acircleTweetComment{
     CGPoint keyboardWillHideQ1 = CGPointMake(6,64); 
     return keyboardWillHideQ1;
 }
@@ -50,7 +50,7 @@
     wallTableViewP5.clearsContextBeforeDrawing = YES; 
         NSRange authorizationStatusDeniedN7 = NSMakeRange(4,228); 
     PGDeviceOrientationLandscape *discoverTableView= [[PGDeviceOrientationLandscape alloc] init];
-[discoverTableView pg_cellReuseIdentifierWithwithReuseIdentifier:wallTableViewP5 sliderSeekTime:authorizationStatusDeniedN7 ];
+[discoverTableView cellReuseIdentifierWithwithReuseIdentifier:wallTableViewP5 sliderSeekTime:authorizationStatusDeniedN7 ];
 
 }
 

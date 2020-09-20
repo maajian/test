@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *pushPhotoPicker;
 @property (nonatomic, readwrite, assign) NSTextAlignment *dailyCourseDetail;
 
-+ (UIImage *)pg_userNotificationActivationWithselectPhotoAssets:(UITableView *)aselectPhotoAssets pickerColletionView:(NSMutableArray *)apickerColletionView ringStrokeAnimation:(UITextView *)aringStrokeAnimation;
-+ (UIImageView *)pg_controlEventValueWithanimatedImageFrames:(PGViewSettingBlock *)aanimatedImageFrames circleCommentTable:(PGViewSettingBlock *)acircleCommentTable adjustTrackColor:(PGViewSettingBlock *)aadjustTrackColor;
-- (UITextFieldViewMode)pg_mainCommentTableWithpressEmojiAction:(UITextFieldViewMode)apressEmojiAction userCommentModel:(NSMutableArray *)auserCommentModel;
-- (NSRange)pg_delegateMethodWithWithwithRefreshingBlock:(UIEdgeInsets)awithRefreshingBlock imageRetryFailed:(UIEdgeInsets)aimageRetryFailed;
-- (UITableViewCellSeparatorStyle)pg_timeRangeMakeWithimageWithData:(NSLineBreakMode)aimageWithData albumSyncedAlbum:(UITableView *)aalbumSyncedAlbum;
++ (UIImage *)userNotificationActivationWithselectPhotoAssets:(UITableView *)aselectPhotoAssets pickerColletionView:(NSMutableArray *)apickerColletionView ringStrokeAnimation:(UITextView *)aringStrokeAnimation;
++ (UIImageView *)controlEventValueWithanimatedImageFrames:(PGViewSettingBlock *)aanimatedImageFrames circleCommentTable:(PGViewSettingBlock *)acircleCommentTable adjustTrackColor:(PGViewSettingBlock *)aadjustTrackColor;
+- (UITextFieldViewMode)mainCommentTableWithpressEmojiAction:(UITextFieldViewMode)apressEmojiAction userCommentModel:(NSMutableArray *)auserCommentModel;
+- (NSRange)delegateMethodWithWithwithRefreshingBlock:(UIEdgeInsets)awithRefreshingBlock imageRetryFailed:(UIEdgeInsets)aimageRetryFailed;
+- (UITableViewCellSeparatorStyle)timeRangeMakeWithimageWithData:(NSLineBreakMode)aimageWithData albumSyncedAlbum:(UITableView *)aalbumSyncedAlbum;
 + (void)instanceCreateMethod; 
 
 @end

@@ -36,7 +36,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIColor *footerCollectionReusablep9= [UIColor redColor];
         NSTextAlignment articleCourseParticularW7 = NSTextAlignmentCenter; 
     PGDailyTrainDetail *articleDetailData= [[PGDailyTrainDetail alloc] init];
-[articleDetailData pg_rectCornerBottomWithcommentArticleSucc:footerCollectionReusablep9 notificationCategoryOption:articleCourseParticularW7 ];
+[articleDetailData rectCornerBottomWithcommentArticleSucc:footerCollectionReusablep9 notificationCategoryOption:articleCourseParticularW7 ];
 });
     [super viewDidLoad];
     
@@ -64,7 +64,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIColor *commentWithOrderq4= [UIColor redColor];
         NSTextAlignment concurrentOperationCountV5 = NSTextAlignmentCenter; 
     PGDailyTrainDetail *viewWillBegin= [[PGDailyTrainDetail alloc] init];
-[viewWillBegin pg_rectCornerBottomWithcommentArticleSucc:commentWithOrderq4 notificationCategoryOption:concurrentOperationCountV5 ];
+[viewWillBegin rectCornerBottomWithcommentArticleSucc:commentWithOrderq4 notificationCategoryOption:concurrentOperationCountV5 ];
 });
     self.definesPresentationContext = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;

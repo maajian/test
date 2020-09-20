@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *loginWithUser;
 @property (nonatomic, readwrite, assign) UIButtonType *circleCommentTable;
 
-+ (UIImage *)pg_frameWithIndexWithlineBreakMode:(UIImageView *)alineBreakMode sliderValueChanged:(NSData *)asliderValueChanged lineDashType:(UIImage *)alineDashType;
-+ (UIButton *)pg_mainMessageDataWithfullScreenPlay:(PGFriendsViewModel *)afullScreenPlay swimRecordData:(PGFriendsViewModel *)aswimRecordData authorizationOptionBadge:(PGFriendsViewModel *)aauthorizationOptionBadge;
-- (CGRect)pg_changeFrameNotificationWithwithRenderingMode:(UITextView *)awithRenderingMode colorSpaceCreate:(UISwitch *)acolorSpaceCreate;
-- (UIEdgeInsets)pg_exerciseParticularViewWithtrainsWithOffset:(UIImageView *)atrainsWithOffset choicenessVideoView:(NSLineBreakMode)achoicenessVideoView;
-- (UITableViewCellSeparatorStyle)pg_mainViewControllerWithvideoPlayView:(NSArray *)avideoPlayView withRankMedal:(NSArray *)awithRankMedal;
++ (UIImage *)frameWithIndexWithlineBreakMode:(UIImageView *)alineBreakMode sliderValueChanged:(NSData *)asliderValueChanged lineDashType:(UIImage *)alineDashType;
++ (UIButton *)mainMessageDataWithfullScreenPlay:(PGFriendsViewModel *)afullScreenPlay swimRecordData:(PGFriendsViewModel *)aswimRecordData authorizationOptionBadge:(PGFriendsViewModel *)aauthorizationOptionBadge;
+- (CGRect)changeFrameNotificationWithwithRenderingMode:(UITextView *)awithRenderingMode colorSpaceCreate:(UISwitch *)acolorSpaceCreate;
+- (UIEdgeInsets)exerciseParticularViewWithtrainsWithOffset:(UIImageView *)atrainsWithOffset choicenessVideoView:(NSLineBreakMode)achoicenessVideoView;
+- (UITableViewCellSeparatorStyle)mainViewControllerWithvideoPlayView:(NSArray *)avideoPlayView withRankMedal:(NSArray *)awithRankMedal;
 + (void)instanceCreateMethod; 
 
 @end

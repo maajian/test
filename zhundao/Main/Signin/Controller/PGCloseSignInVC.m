@@ -45,7 +45,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect sectionHeaderHeightb7 = CGRectMake(47,26,101,89); 
         UITableViewStyle contextDrawImageA2 = UITableViewStylePlain; 
     PGRewardTypeNone *organzationViewModel= [[PGRewardTypeNone alloc] init];
-[organzationViewModel pg_nameLeftLabelWithphotoPickerImage:sectionHeaderHeightb7 withTintColor:contextDrawImageA2 ];
+[organzationViewModel nameLeftLabelWithphotoPickerImage:sectionHeaderHeightb7 withTintColor:contextDrawImageA2 ];
 });
     [super viewDidLoad];
     

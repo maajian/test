@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) CGRect *captureSessionPreset;
 @property (nonatomic, readwrite, assign) NSTextAlignment *locationWithGeocoder;
 
-+ (NSString *)pg_dataViewDelegateWithviewWillBegin:(UIView *)aviewWillBegin withGradientTint:(UIColor *)awithGradientTint viewHeightPadding:(NSData *)aviewHeightPadding;
-+ (UIFont *)pg_imageWithLeftWithconcurrentOperationCount:(PGScreenViewController *)aconcurrentOperationCount couponTypeIntegral:(PGScreenViewController *)acouponTypeIntegral noticeTypeShare:(PGScreenViewController *)anoticeTypeShare;
-- (UIButtonType)pg_stringFromClassWithorganizeHeaderView:(UIImage *)aorganizeHeaderView discoveryViewModel:(NSData *)adiscoveryViewModel;
-- (NSLineBreakMode)pg_cacheUserInfoWithregularExpressionCase:(CGRect)aregularExpressionCase playerStateStopped:(UISlider *)aplayerStateStopped;
-- (UITableViewStyle)pg_couponsScrollTableWithviewCellIdentifier:(UITextFieldViewMode)aviewCellIdentifier trackTintColor:(UIImage *)atrackTintColor;
++ (NSString *)dataViewDelegateWithviewWillBegin:(UIView *)aviewWillBegin withGradientTint:(UIColor *)awithGradientTint viewHeightPadding:(NSData *)aviewHeightPadding;
++ (UIFont *)imageWithLeftWithconcurrentOperationCount:(PGScreenViewController *)aconcurrentOperationCount couponTypeIntegral:(PGScreenViewController *)acouponTypeIntegral noticeTypeShare:(PGScreenViewController *)anoticeTypeShare;
+- (UIButtonType)stringFromClassWithorganizeHeaderView:(UIImage *)aorganizeHeaderView discoveryViewModel:(NSData *)adiscoveryViewModel;
+- (NSLineBreakMode)cacheUserInfoWithregularExpressionCase:(CGRect)aregularExpressionCase playerStateStopped:(UISlider *)aplayerStateStopped;
+- (UITableViewStyle)couponsScrollTableWithviewCellIdentifier:(UITextFieldViewMode)aviewCellIdentifier trackTintColor:(UIImage *)atrackTintColor;
 + (void)instanceCreateMethod; 
 
 @end

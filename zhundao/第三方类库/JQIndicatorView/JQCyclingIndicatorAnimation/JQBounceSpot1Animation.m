@@ -24,7 +24,7 @@
     replicatorLayer.position = CGPointMake(0,0);
     replicatorLayer.backgroundColor = [UIColor clearColor].CGColor;
     [layer addSublayer:replicatorLayer];
-    [self PG_addCyclingSpotAnimationLayerAtLayer:replicatorLayer withTintColor:color size:size];
+    [self addCyclingSpotAnimationLayerAtLayer:replicatorLayer withTintColor:color size:size];
     
     NSInteger numOfDot = 15;
     replicatorLayer.instanceCount = numOfDot;
@@ -36,7 +36,7 @@
 
 #pragma mark - Cycling indicator animation
 
-- (void)PG_addCyclingSpotAnimationLayerAtLayer:(CALayer *)layer withTintColor:(UIColor *)color size:(CGSize)size{
+- (void)addCyclingSpotAnimationLayerAtLayer:(CALayer *)layer withTintColor:(UIColor *)color size:(CGSize)size{
     self.spotLayer = [CALayer layer];
     self.spotLayer.bounds = CGRectMake(0, 0, size.width/6, size.width/6);
     self.spotLayer.position = CGPointMake(size.width/2, 5);

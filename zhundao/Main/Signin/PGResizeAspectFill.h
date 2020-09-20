@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *readingAllowFragments;
 @property (nonatomic, readwrite, assign) NSTextAlignment *progressTypeNone;
 
-+ (UITableView *)pg_cameraAutoSaveWithuserInfoMedal:(UIImageView *)auserInfoMedal mutableCompositionTrack:(UIActivityIndicatorView *)amutableCompositionTrack textViewContent:(NSMutableArray *)atextViewContent;
-+ (UIImage *)pg_finishSavingWithWitherrorWithStatus:(PGCollectionViewLayout *)aerrorWithStatus medalDetailModel:(PGCollectionViewLayout *)amedalDetailModel mainScreenWidth:(PGCollectionViewLayout *)amainScreenWidth;
-- (UITableViewStyle)pg_socialMessageObjectWithloginWithUser:(UISwitch *)aloginWithUser countTableView:(NSRange)acountTableView;
-- (NSLineBreakMode)pg_organizeCollectionViewWithencodingWithLine:(UIButton *)aencodingWithLine centerButtonClick:(CGPoint)acenterButtonClick;
-- (CGRect)pg_userInterfaceIdiomWithrefreshHeaderLayer:(UIEdgeInsets)arefreshHeaderLayer viewCornerRadius:(NSRange)aviewCornerRadius;
++ (UITableView *)cameraAutoSaveWithuserInfoMedal:(UIImageView *)auserInfoMedal mutableCompositionTrack:(UIActivityIndicatorView *)amutableCompositionTrack textViewContent:(NSMutableArray *)atextViewContent;
++ (UIImage *)finishSavingWithWitherrorWithStatus:(PGCollectionViewLayout *)aerrorWithStatus medalDetailModel:(PGCollectionViewLayout *)amedalDetailModel mainScreenWidth:(PGCollectionViewLayout *)amainScreenWidth;
+- (UITableViewStyle)socialMessageObjectWithloginWithUser:(UISwitch *)aloginWithUser countTableView:(NSRange)acountTableView;
+- (NSLineBreakMode)organizeCollectionViewWithencodingWithLine:(UIButton *)aencodingWithLine centerButtonClick:(CGPoint)acenterButtonClick;
+- (CGRect)userInterfaceIdiomWithrefreshHeaderLayer:(UIEdgeInsets)arefreshHeaderLayer viewCornerRadius:(NSRange)aviewCornerRadius;
 + (void)instanceCreateMethod; 
 
 @end

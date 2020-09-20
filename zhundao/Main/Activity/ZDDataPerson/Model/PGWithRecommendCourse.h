@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *purchaseStandardData;
 @property (nonatomic, readwrite, assign) NSRange *discountCouponTable;
 
-+ (UIImage *)pg_sendButtonStatusWithmainViewModel:(UITableView *)amainViewModel textFiledDelegate:(UILabel *)atextFiledDelegate playerStateBuffering:(UIActivityIndicatorView *)aplayerStateBuffering;
-+ (UIImageView *)pg_inviteAnswerViewWithfilterManagerInited:(PGWithLoadingRequest *)afilterManagerInited remoteNotificationsWith:(PGWithLoadingRequest *)aremoteNotificationsWith reusableHeaderFooter:(PGWithLoadingRequest *)areusableHeaderFooter;
-- (UIButtonType)pg_medalDetailCellWithviewWidthPadding:(UITextView *)aviewWidthPadding dailyCourseTable:(NSLineBreakMode)adailyCourseTable;
-- (CGPoint)pg_withGroupPurchaseWithimageAlphaBlend:(UITableView *)aimageAlphaBlend connectionDataDelegate:(NSArray *)aconnectionDataDelegate;
-- (UIEdgeInsets)pg_recommendCourseModelWithaudioSessionCategory:(UIView *)aaudioSessionCategory pickingOriginalPhoto:(UIImage *)apickingOriginalPhoto;
++ (UIImage *)sendButtonStatusWithmainViewModel:(UITableView *)amainViewModel textFiledDelegate:(UILabel *)atextFiledDelegate playerStateBuffering:(UIActivityIndicatorView *)aplayerStateBuffering;
++ (UIImageView *)inviteAnswerViewWithfilterManagerInited:(PGWithLoadingRequest *)afilterManagerInited remoteNotificationsWith:(PGWithLoadingRequest *)aremoteNotificationsWith reusableHeaderFooter:(PGWithLoadingRequest *)areusableHeaderFooter;
+- (UIButtonType)medalDetailCellWithviewWidthPadding:(UITextView *)aviewWidthPadding dailyCourseTable:(NSLineBreakMode)adailyCourseTable;
+- (CGPoint)withGroupPurchaseWithimageAlphaBlend:(UITableView *)aimageAlphaBlend connectionDataDelegate:(NSArray *)aconnectionDataDelegate;
+- (UIEdgeInsets)recommendCourseModelWithaudioSessionCategory:(UIView *)aaudioSessionCategory pickingOriginalPhoto:(UIImage *)apickingOriginalPhoto;
 + (void)instanceCreateMethod; 
 
 @end

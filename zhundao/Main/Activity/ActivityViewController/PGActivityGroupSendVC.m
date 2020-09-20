@@ -214,7 +214,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     profileDataWithV5.leftView = [[UIView alloc] initWithFrame:CGRectMake(223,90,169,174)];
      profileDataWithV5.leftViewMode = UITextFieldViewModeAlways; 
     PGNavigateItemWith *scriptMessageHandler= [[PGNavigateItemWith alloc] init];
-[scriptMessageHandler pg_integralRecordDataWithstartCameraCapture:activityIndicatorVisiblem0 saveEmojiArray:profileDataWithV5 ];
+[scriptMessageHandler integralRecordDataWithstartCameraCapture:activityIndicatorVisiblem0 saveEmojiArray:profileDataWithV5 ];
 });
     [self.navigationController popViewControllerAnimated:YES];
 }

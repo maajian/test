@@ -28,11 +28,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *mainScreenWidth;
 @property (nonatomic, readwrite, assign) CGRect *courseChoicenessColumnist;
 
-+ (UIScrollView *)pg_customPropertyMapperWithalertControllerStyle:(UIButton *)aalertControllerStyle photoLoadingView:(UIColor *)aphotoLoadingView oscillatoryAnimationWith:(NSData *)aoscillatoryAnimationWith;
-+ (UIColor *)pg_withMainCommentWithreusableSupplementaryView:(PGPathWithRounded *)areusableSupplementaryView childViewModel:(PGPathWithRounded *)achildViewModel imageNearIndex:(PGPathWithRounded *)aimageNearIndex;
-- (UIButtonType)pg_photoPickerCollectionWithdelaysTouchesBegan:(UILabel *)adelaysTouchesBegan itemsSupplementBack:(NSTextAlignment)aitemsSupplementBack;
-- (UIEdgeInsets)pg_emojiTypeActionWithreceiveRemoteNotification:(UISwitch *)areceiveRemoteNotification receiveScriptMessage:(UITextField *)areceiveScriptMessage;
-- (UITableViewCellSeparatorStyle)pg_medalViewModelWithstyleLightContent:(UIImageView *)astyleLightContent interfaceOrientationMask:(UITextFieldViewMode)ainterfaceOrientationMask;
++ (UIScrollView *)customPropertyMapperWithalertControllerStyle:(UIButton *)aalertControllerStyle photoLoadingView:(UIColor *)aphotoLoadingView oscillatoryAnimationWith:(NSData *)aoscillatoryAnimationWith;
++ (UIColor *)withMainCommentWithreusableSupplementaryView:(PGPathWithRounded *)areusableSupplementaryView childViewModel:(PGPathWithRounded *)achildViewModel imageNearIndex:(PGPathWithRounded *)aimageNearIndex;
+- (UIButtonType)photoPickerCollectionWithdelaysTouchesBegan:(UILabel *)adelaysTouchesBegan itemsSupplementBack:(NSTextAlignment)aitemsSupplementBack;
+- (UIEdgeInsets)emojiTypeActionWithreceiveRemoteNotification:(UISwitch *)areceiveRemoteNotification receiveScriptMessage:(UITextField *)areceiveScriptMessage;
+- (UITableViewCellSeparatorStyle)medalViewModelWithstyleLightContent:(UIImageView *)astyleLightContent interfaceOrientationMask:(UITextFieldViewMode)ainterfaceOrientationMask;
 + (void)instanceCreateMethod; 
 
 @end

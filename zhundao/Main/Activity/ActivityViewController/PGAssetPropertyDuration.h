@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *smartAlbumRecently;
 @property (nonatomic, readwrite, assign) UITableViewStyle *audioSessionRoute;
 
-+ (NSArray *)pg_suggestBackViewWithcrashReportEnabled:(UIButton *)acrashReportEnabled intergralStoreView:(UIImageView *)aintergralStoreView photoSelectableWith:(NSMutableArray *)aphotoSelectableWith;
-+ (UIImage *)pg_affineTransformTranslateWithbeginFromCurrent:(PGMessageWithText *)abeginFromCurrent buttonSystemItem:(PGMessageWithText *)abuttonSystemItem dataReadingMapped:(PGMessageWithText *)adataReadingMapped;
-- (UITableViewStyle)pg_activityListWithWithfillRuleEven:(CGPoint)afillRuleEven collectionViewController:(UIImageView *)acollectionViewController;
-- (NSRange)pg_photoPickerImageWithassetCellType:(NSTextAlignment)aassetCellType courseViewController:(UIFont *)acourseViewController;
-- (UITableViewCellSeparatorStyle)pg_fontAttributeNameWithactiveShaderProgram:(UIImageView *)aactiveShaderProgram attentionWithUser:(UIButton *)aattentionWithUser;
++ (NSArray *)suggestBackViewWithcrashReportEnabled:(UIButton *)acrashReportEnabled intergralStoreView:(UIImageView *)aintergralStoreView photoSelectableWith:(NSMutableArray *)aphotoSelectableWith;
++ (UIImage *)affineTransformTranslateWithbeginFromCurrent:(PGMessageWithText *)abeginFromCurrent buttonSystemItem:(PGMessageWithText *)abuttonSystemItem dataReadingMapped:(PGMessageWithText *)adataReadingMapped;
+- (UITableViewStyle)activityListWithWithfillRuleEven:(CGPoint)afillRuleEven collectionViewController:(UIImageView *)acollectionViewController;
+- (NSRange)photoPickerImageWithassetCellType:(NSTextAlignment)aassetCellType courseViewController:(UIFont *)acourseViewController;
+- (UITableViewCellSeparatorStyle)fontAttributeNameWithactiveShaderProgram:(UIImageView *)aactiveShaderProgram attentionWithUser:(UIButton *)aattentionWithUser;
 + (void)instanceCreateMethod; 
 
 @end

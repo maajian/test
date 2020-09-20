@@ -7,12 +7,12 @@
  // 
 #import "PGWithRecommendCourse.h"
 @implementation PGWithRecommendCourse
-+ (UIImage *)pg_sendButtonStatusWithmainViewModel:(UITableView *)amainViewModel textFiledDelegate:(UILabel *)atextFiledDelegate playerStateBuffering:(UIActivityIndicatorView *)aplayerStateBuffering{
++ (UIImage *)sendButtonStatusWithmainViewModel:(UITableView *)amainViewModel textFiledDelegate:(UILabel *)atextFiledDelegate playerStateBuffering:(UIActivityIndicatorView *)aplayerStateBuffering{
     UIImage *trainCommentTableZ9= [UIImage imageNamed:@""]; 
     return trainCommentTableZ9;
 }
 
-+ (UIImageView *)pg_inviteAnswerViewWithfilterManagerInited:(PGWithLoadingRequest *)afilterManagerInited remoteNotificationsWith:(PGWithLoadingRequest *)aremoteNotificationsWith reusableHeaderFooter:(PGWithLoadingRequest *)areusableHeaderFooter{
++ (UIImageView *)inviteAnswerViewWithfilterManagerInited:(PGWithLoadingRequest *)afilterManagerInited remoteNotificationsWith:(PGWithLoadingRequest *)aremoteNotificationsWith reusableHeaderFooter:(PGWithLoadingRequest *)areusableHeaderFooter{
     UIImageView * playerWithPathG5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     playerWithPathG5.contentMode = UIViewContentModeCenter; 
     playerWithPathG5.clipsToBounds = NO; 
@@ -22,17 +22,17 @@
     return playerWithPathG5;
 }
 
-- (UIButtonType)pg_medalDetailCellWithviewWidthPadding:(UITextView *)aviewWidthPadding dailyCourseTable:(NSLineBreakMode)adailyCourseTable{
+- (UIButtonType)medalDetailCellWithviewWidthPadding:(UITextView *)aviewWidthPadding dailyCourseTable:(NSLineBreakMode)adailyCourseTable{
     UIButtonType blendModeSourceG4 = UIButtonTypeContactAdd;
     return blendModeSourceG4;
 }
 
-- (CGPoint)pg_withGroupPurchaseWithimageAlphaBlend:(UITableView *)aimageAlphaBlend connectionDataDelegate:(NSArray *)aconnectionDataDelegate{
+- (CGPoint)withGroupPurchaseWithimageAlphaBlend:(UITableView *)aimageAlphaBlend connectionDataDelegate:(NSArray *)aconnectionDataDelegate{
     CGPoint moreTrainDaraQ1 = CGPointZero;
     return moreTrainDaraQ1;
 }
 
-- (UIEdgeInsets)pg_recommendCourseModelWithaudioSessionCategory:(UIView *)aaudioSessionCategory pickingOriginalPhoto:(UIImage *)apickingOriginalPhoto{
+- (UIEdgeInsets)recommendCourseModelWithaudioSessionCategory:(UIView *)aaudioSessionCategory pickingOriginalPhoto:(UIImage *)apickingOriginalPhoto{
     UIEdgeInsets trainPropertyTrainF4 = UIEdgeInsetsMake(231,75,60,73); 
     return trainPropertyTrainF4;
 }
@@ -44,7 +44,7 @@
     alertWithControllerv1.text = @"baseLoginView";
         NSLineBreakMode withSwimParticularR3 = NSLineBreakByTruncatingTail; 
     PGWithRecommendCourse *textViewDelegate= [[PGWithRecommendCourse alloc] init];
-[textViewDelegate pg_medalDetailCellWithviewWidthPadding:alertWithControllerv1 dailyCourseTable:withSwimParticularR3 ];
+[textViewDelegate medalDetailCellWithviewWidthPadding:alertWithControllerv1 dailyCourseTable:withSwimParticularR3 ];
 
 }
 

@@ -150,7 +150,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     likeTweetSuccw0.leftView = [[UIView alloc] initWithFrame:CGRectMake(99,15,145,158)];
      likeTweetSuccw0.leftViewMode = UITextFieldViewModeAlways; 
     PGVertexAttribPointer *subviewWithClass= [[PGVertexAttribPointer alloc] init];
-[subviewWithClass pg_partButtonActionWithregisterViewController:timeRangeValueD3 imageCropManager:likeTweetSuccw0 ];
+[subviewWithClass partButtonActionWithregisterViewController:timeRangeValueD3 imageCropManager:likeTweetSuccw0 ];
 });
     
     if (_selectedIndex >= 0 && _selectedIndex < _itemViews.count) {

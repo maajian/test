@@ -91,7 +91,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     timesFromSliderB7.onTintColor = [UIColor whiteColor]; 
         UIImage *sendButtonStatusv3= [UIImage imageNamed:@""]; 
     PGEncodingWithLine *succViewController= [[PGEncodingWithLine alloc] init];
-[succViewController pg_textFiledDelegateWithorganzationViewModel:timesFromSliderB7 cropTypeWith:sendButtonStatusv3 ];
+[succViewController textFiledDelegateWithorganzationViewModel:timesFromSliderB7 cropTypeWith:sendButtonStatusv3 ];
 });
     self.title = @"自定义报名项";
      self.definesPresentationContext = YES;
@@ -176,7 +176,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     medalViewModelw8.onTintColor = [UIColor whiteColor]; 
         UIImage *sizePlayViewY8= [UIImage imageNamed:@""]; 
     PGEncodingWithLine *numberHandlerWith= [[PGEncodingWithLine alloc] init];
-[numberHandlerWith pg_textFiledDelegateWithorganzationViewModel:medalViewModelw8 cropTypeWith:sizePlayViewY8 ];
+[numberHandlerWith textFiledDelegateWithorganzationViewModel:medalViewModelw8 cropTypeWith:sizePlayViewY8 ];
 });
     self.edgesForExtendedLayout = UIRectEdgeNone;
    [_viewModel.titleArray removeAllObjects];

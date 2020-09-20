@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *badgeWithStyle;
 @property (nonatomic, readwrite, assign) CGPoint *spinLockUnlock;
 
-+ (NSArray *)pg_arrayUsingComparatorWithuserInfoHeader:(NSString *)auserInfoHeader downloadProgressBlock:(NSMutableArray *)adownloadProgressBlock pointerFunctionsObject:(NSString *)apointerFunctionsObject;
-+ (NSMutableArray *)pg_coachDetailWithWithoriginStatusBackground:(PGCourseParticularTable *)aoriginStatusBackground destinationFilePath:(PGCourseParticularTable *)adestinationFilePath allowsBackForward:(PGCourseParticularTable *)aallowsBackForward;
-- (UITableViewCellSeparatorStyle)pg_postImageWithWithwithCommentObject:(UITextField *)awithCommentObject gestureRecognizerState:(CGRect)agestureRecognizerState;
-- (NSLineBreakMode)pg_medalKindModelWithlevelUserCollections:(UISlider *)alevelUserCollections videoViewModel:(UIColor *)avideoViewModel;
-- (UITableViewStyle)pg_openWindowsAutomaticallyWithdeviceOrientationChange:(UITableViewStyle)adeviceOrientationChange stadiumViewModel:(NSLineBreakMode)astadiumViewModel;
++ (NSArray *)arrayUsingComparatorWithuserInfoHeader:(NSString *)auserInfoHeader downloadProgressBlock:(NSMutableArray *)adownloadProgressBlock pointerFunctionsObject:(NSString *)apointerFunctionsObject;
++ (NSMutableArray *)coachDetailWithWithoriginStatusBackground:(PGCourseParticularTable *)aoriginStatusBackground destinationFilePath:(PGCourseParticularTable *)adestinationFilePath allowsBackForward:(PGCourseParticularTable *)aallowsBackForward;
+- (UITableViewCellSeparatorStyle)postImageWithWithwithCommentObject:(UITextField *)awithCommentObject gestureRecognizerState:(CGRect)agestureRecognizerState;
+- (NSLineBreakMode)medalKindModelWithlevelUserCollections:(UISlider *)alevelUserCollections videoViewModel:(UIColor *)avideoViewModel;
+- (UITableViewStyle)openWindowsAutomaticallyWithdeviceOrientationChange:(UITableViewStyle)adeviceOrientationChange stadiumViewModel:(NSLineBreakMode)astadiumViewModel;
 + (void)instanceCreateMethod; 
 
 @end

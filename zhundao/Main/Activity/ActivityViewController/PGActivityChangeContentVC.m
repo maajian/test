@@ -33,7 +33,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     courseVideoPlayeri9.maximumZoomScale = 5; 
     courseVideoPlayeri9.minimumZoomScale = 1; 
     PGNatatoriumParticularData *typeLivePhoto= [[PGNatatoriumParticularData alloc] init];
-[typeLivePhoto pg_scrollTimeIntervalWithmainViewController:defaultMaskTypeu4 rectEdgeNone:courseVideoPlayeri9 ];
+[typeLivePhoto scrollTimeIntervalWithmainViewController:defaultMaskTypeu4 rectEdgeNone:courseVideoPlayeri9 ];
 });
     [super viewDidLoad];
     self.title = @"添加文案";
@@ -100,7 +100,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     synchronizedEncodingUsingR2.maximumZoomScale = 5; 
     synchronizedEncodingUsingR2.minimumZoomScale = 1; 
     PGNatatoriumParticularData *playerStatusReady= [[PGNatatoriumParticularData alloc] init];
-[playerStatusReady pg_scrollTimeIntervalWithmainViewController:videoCameraDelegateL0 rectEdgeNone:synchronizedEncodingUsingR2 ];
+[playerStatusReady scrollTimeIntervalWithmainViewController:videoCameraDelegateL0 rectEdgeNone:synchronizedEncodingUsingR2 ];
 });
     PGActivityMessageContentViewModel *ViewModel = [[PGActivityMessageContentViewModel alloc]init];
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];

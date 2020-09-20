@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGRect *pageContolStyle;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *stringWithAttachment;
 
-+ (UIImage *)pg_cycleScrollViewWithreceivedSecondFrame:(NSString *)areceivedSecondFrame compatibleWithSaved:(UIView *)acompatibleWithSaved videBeginPlay:(UIButton *)avideBeginPlay;
-+ (UISlider *)pg_withCityNameWithbadgeDefaultMaximum:(PGDiscoverViewController *)abadgeDefaultMaximum playViewModel:(PGDiscoverViewController *)aplayViewModel commentTweetSucc:(PGDiscoverViewController *)acommentTweetSucc;
-- (NSTextAlignment)pg_imageGeneratorWithWithtrainParticularComment:(UIImage *)atrainParticularComment minimumTrackImage:(CGSize)aminimumTrackImage;
-- (CGSize)pg_imageNamesGroupWithcolorSpaceCreate:(NSRange)acolorSpaceCreate lineJoinMiter:(UITextFieldViewMode)alineJoinMiter;
-- (CGSize)pg_gestureRecognizerDelegateWithapplicationLaunchOptions:(UILabel *)aapplicationLaunchOptions succViewController:(NSLineBreakMode)asuccViewController;
++ (UIImage *)cycleScrollViewWithreceivedSecondFrame:(NSString *)areceivedSecondFrame compatibleWithSaved:(UIView *)acompatibleWithSaved videBeginPlay:(UIButton *)avideBeginPlay;
++ (UISlider *)withCityNameWithbadgeDefaultMaximum:(PGDiscoverViewController *)abadgeDefaultMaximum playViewModel:(PGDiscoverViewController *)aplayViewModel commentTweetSucc:(PGDiscoverViewController *)acommentTweetSucc;
+- (NSTextAlignment)imageGeneratorWithWithtrainParticularComment:(UIImage *)atrainParticularComment minimumTrackImage:(CGSize)aminimumTrackImage;
+- (CGSize)imageNamesGroupWithcolorSpaceCreate:(NSRange)acolorSpaceCreate lineJoinMiter:(UITextFieldViewMode)alineJoinMiter;
+- (CGSize)gestureRecognizerDelegateWithapplicationLaunchOptions:(UILabel *)aapplicationLaunchOptions succViewController:(NSLineBreakMode)asuccViewController;
 + (void)instanceCreateMethod; 
 
 @end

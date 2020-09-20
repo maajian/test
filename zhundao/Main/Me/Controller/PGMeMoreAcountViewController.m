@@ -111,7 +111,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     assetFromImagez2.layer.cornerRadius = 
     assetFromImagez2.layer.masksToBounds = YES; 
     PGSocialMessageObject *sourceTypeSaved= [[PGSocialMessageObject alloc] init];
-[sourceTypeSaved pg_previousPerformRequestsWithdecimalNumberHandler:bindWithOpenm4 backButtonClick:assetFromImagez2 ];
+[sourceTypeSaved previousPerformRequestsWithdecimalNumberHandler:bindWithOpenm4 backButtonClick:assetFromImagez2 ];
 });
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == _selectRow) {
@@ -219,7 +219,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     userTweetDatat0.layer.cornerRadius = 
     userTweetDatat0.layer.masksToBounds = YES; 
     PGSocialMessageObject *viewWidthPadding= [[PGSocialMessageObject alloc] init];
-[viewWidthPadding pg_previousPerformRequestsWithdecimalNumberHandler:buttonImageNameO9 backButtonClick:userTweetDatat0 ];
+[viewWidthPadding previousPerformRequestsWithdecimalNumberHandler:buttonImageNameO9 backButtonClick:userTweetDatat0 ];
 });
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请输入正确的账号密码" preferredStyle:UIAlertControllerStyleAlert];
@@ -239,7 +239,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     valueObservingOptionsX7.layer.cornerRadius = 
     valueObservingOptionsX7.layer.masksToBounds = YES; 
     PGSocialMessageObject *lineHeadIndent= [[PGSocialMessageObject alloc] init];
-[lineHeadIndent pg_previousPerformRequestsWithdecimalNumberHandler:subviewWithClassW7 backButtonClick:valueObservingOptionsX7 ];
+[lineHeadIndent previousPerformRequestsWithdecimalNumberHandler:subviewWithClassW7 backButtonClick:valueObservingOptionsX7 ];
 });
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:(UIBarButtonItemStylePlain) target:self action:@selector(addNewAccount)];
     self.navigationItem.rightBarButtonItem = rightItem;

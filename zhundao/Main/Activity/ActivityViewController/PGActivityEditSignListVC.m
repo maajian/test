@@ -35,7 +35,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets choicenessViewModelf9 = UIEdgeInsetsZero;
         UITextFieldViewMode courseChoicenessColumnistj8 = UITextFieldViewModeAlways; 
     PGMedalWallTable *autoresizingMaskInto= [[PGMedalWallTable alloc] init];
-[autoresizingMaskInto pg_articleDailyTrainWithplayerStateFailed:choicenessViewModelf9 strikethroughStyleAttribute:courseChoicenessColumnistj8 ];
+[autoresizingMaskInto articleDailyTrainWithplayerStateFailed:choicenessViewModelf9 strikethroughStyleAttribute:courseChoicenessColumnistj8 ];
 });
     [super viewDidLoad];
     [self baseSetting];
@@ -436,7 +436,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets sizeWithAssetB6 = UIEdgeInsetsZero;
         UITextFieldViewMode likeTweetSuccg9 = UITextFieldViewModeAlways; 
     PGMedalWallTable *chooseStadiumView= [[PGMedalWallTable alloc] init];
-[chooseStadiumView pg_articleDailyTrainWithplayerStateFailed:sizeWithAssetB6 strikethroughStyleAttribute:likeTweetSuccg9 ];
+[chooseStadiumView articleDailyTrainWithplayerStateFailed:sizeWithAssetB6 strikethroughStyleAttribute:likeTweetSuccg9 ];
 });
     [self.view endEditing:YES];
     NSDictionary *saveDic =  [_VM SaveWithRightMustArray:_rightMustArray leftMustArray:_leftMustArray baseArray:self.baseNameArray view:self.view];

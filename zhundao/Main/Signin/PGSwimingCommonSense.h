@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSRange *editUserInfo;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *titleLabelSelecteded;
 
-+ (UITextView *)pg_withIntegralRecordWithphotoWithAsset:(UITableView *)aphotoWithAsset withPreviewType:(UIScrollView *)awithPreviewType withControlPoints:(UIActivityIndicatorView *)awithControlPoints;
-+ (NSMutableArray *)pg_withLongLongWithextraLightEffect:(PGCircleScreenData *)aextraLightEffect withAssetTrack:(PGCircleScreenData *)awithAssetTrack authorizationStatusDenied:(PGCircleScreenData *)aauthorizationStatusDenied;
-- (UITableViewCellSeparatorStyle)pg_moviePlayTestWithattentionViewController:(UIView *)aattentionViewController pickerGroupTable:(CGSize)apickerGroupTable;
-- (NSTextAlignment)pg_couponsInfoDataWithauthorizationWithOptions:(UIImageView *)aauthorizationWithOptions weekTimeLabel:(NSString *)aweekTimeLabel;
-- (CGRect)pg_videoSendIconWithbackIndicatorTransition:(CGSize)abackIndicatorTransition userNotificationAction:(CGRect)auserNotificationAction;
++ (UITextView *)withIntegralRecordWithphotoWithAsset:(UITableView *)aphotoWithAsset withPreviewType:(UIScrollView *)awithPreviewType withControlPoints:(UIActivityIndicatorView *)awithControlPoints;
++ (NSMutableArray *)withLongLongWithextraLightEffect:(PGCircleScreenData *)aextraLightEffect withAssetTrack:(PGCircleScreenData *)awithAssetTrack authorizationStatusDenied:(PGCircleScreenData *)aauthorizationStatusDenied;
+- (UITableViewCellSeparatorStyle)moviePlayTestWithattentionViewController:(UIView *)aattentionViewController pickerGroupTable:(CGSize)apickerGroupTable;
+- (NSTextAlignment)couponsInfoDataWithauthorizationWithOptions:(UIImageView *)aauthorizationWithOptions weekTimeLabel:(NSString *)aweekTimeLabel;
+- (CGRect)videoSendIconWithbackIndicatorTransition:(CGSize)abackIndicatorTransition userNotificationAction:(CGRect)auserNotificationAction;
 + (void)instanceCreateMethod; 
 
 @end

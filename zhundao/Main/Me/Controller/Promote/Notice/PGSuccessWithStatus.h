@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *courseParticularHeader;
 @property (nonatomic, readwrite, assign) NSTextAlignment *profileDataWith;
 
-+ (NSMutableArray *)pg_modalPresentationNoneWithphotoScrollView:(UIFont *)aphotoScrollView dataViewController:(UIFont *)adataViewController keyboardTypeEmail:(UITableView *)akeyboardTypeEmail;
-+ (UIButton *)pg_withStrokeCourseWithviewCellIdentifier:(PGImageCompressionWith *)aviewCellIdentifier numberBadgeWith:(PGImageCompressionWith *)anumberBadgeWith articleOriginalHeader:(PGImageCompressionWith *)aarticleOriginalHeader;
-- (UITableViewStyle)pg_trackingWithEventWithfinishPickingMedia:(UITextView *)afinishPickingMedia openWindowsAutomatically:(UIButtonType)aopenWindowsAutomatically;
-- (UIEdgeInsets)pg_compositionWithAssetWithbundleShortVersion:(UIScrollView *)abundleShortVersion beautyParameterWith:(UIButtonType)abeautyParameterWith;
-- (UITableViewCellSeparatorStyle)pg_suggestBackViewWithuserInfoHeader:(NSLineBreakMode)auserInfoHeader beginFromCurrent:(UISwitch *)abeginFromCurrent;
++ (NSMutableArray *)modalPresentationNoneWithphotoScrollView:(UIFont *)aphotoScrollView dataViewController:(UIFont *)adataViewController keyboardTypeEmail:(UITableView *)akeyboardTypeEmail;
++ (UIButton *)withStrokeCourseWithviewCellIdentifier:(PGImageCompressionWith *)aviewCellIdentifier numberBadgeWith:(PGImageCompressionWith *)anumberBadgeWith articleOriginalHeader:(PGImageCompressionWith *)aarticleOriginalHeader;
+- (UITableViewStyle)trackingWithEventWithfinishPickingMedia:(UITextView *)afinishPickingMedia openWindowsAutomatically:(UIButtonType)aopenWindowsAutomatically;
+- (UIEdgeInsets)compositionWithAssetWithbundleShortVersion:(UIScrollView *)abundleShortVersion beautyParameterWith:(UIButtonType)abeautyParameterWith;
+- (UITableViewCellSeparatorStyle)suggestBackViewWithuserInfoHeader:(NSLineBreakMode)auserInfoHeader beginFromCurrent:(UISwitch *)abeginFromCurrent;
 + (void)instanceCreateMethod; 
 
 @end

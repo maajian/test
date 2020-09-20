@@ -7,12 +7,12 @@
  // 
 #import "PGTrainParticularProperty.h"
 @implementation PGTrainParticularProperty
-+ (NSArray *)pg_playerStateStoppedWithchildViewController:(NSString *)achildViewController javaScriptAlert:(UIActivityIndicatorView *)ajavaScriptAlert javaScriptAlert:(UITextField *)ajavaScriptAlert{
++ (NSArray *)playerStateStoppedWithchildViewController:(NSString *)achildViewController javaScriptAlert:(UIActivityIndicatorView *)ajavaScriptAlert javaScriptAlert:(UITextField *)ajavaScriptAlert{
     NSArray *swimFriendsDataN3= [NSArray array];
     return swimFriendsDataN3;
 }
 
-+ (UITableView *)pg_presetsCompatibleWithWithbuttonImageName:(PGCrashReportEnabled *)abuttonImageName cyclingLineAnimation:(PGCrashReportEnabled *)acyclingLineAnimation trainParticularView:(PGCrashReportEnabled *)atrainParticularView{
++ (UITableView *)presetsCompatibleWithWithbuttonImageName:(PGCrashReportEnabled *)abuttonImageName cyclingLineAnimation:(PGCrashReportEnabled *)acyclingLineAnimation trainParticularView:(PGCrashReportEnabled *)atrainParticularView{
     UITableView *groupWithPhotosW0= [[UITableView alloc] initWithFrame:CGRectMake(119,39,196,140) style: UITableViewStylePlain]; 
     groupWithPhotosW0.frame = CGRectZero; 
     groupWithPhotosW0.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return groupWithPhotosW0;
 }
 
-- (UITextFieldViewMode)pg_scrollViewDecelerationWithfromVideoFile:(UITextFieldViewMode)afromVideoFile separatorStyleNone:(UITableViewStyle)aseparatorStyleNone{
+- (UITextFieldViewMode)scrollViewDecelerationWithfromVideoFile:(UITextFieldViewMode)afromVideoFile separatorStyleNone:(UITableViewStyle)aseparatorStyleNone{
     UITextFieldViewMode affineTransformMakei6 = UITextFieldViewModeAlways; 
     return affineTransformMakei6;
 }
 
-- (UITableViewCellSeparatorStyle)pg_medalKindModelWithminuteTimeInterval:(CGPoint)aminuteTimeInterval cropTypeWith:(NSTextAlignment)acropTypeWith{
+- (UITableViewCellSeparatorStyle)medalKindModelWithminuteTimeInterval:(CGPoint)aminuteTimeInterval cropTypeWith:(NSTextAlignment)acropTypeWith{
     UITableViewCellSeparatorStyle springWithDampingx5 = UITableViewCellSeparatorStyleNone; 
     return springWithDampingx5;
 }
 
-- (UIButtonType)pg_sectionHeaderHeightWithvideoRequestTask:(UITableView *)avideoRequestTask dateFormatterMedium:(UITextView *)adateFormatterMedium{
+- (UIButtonType)sectionHeaderHeightWithvideoRequestTask:(UITableView *)avideoRequestTask dateFormatterMedium:(UITextView *)adateFormatterMedium{
     UIButtonType firstFrontCameraw6 = UIButtonTypeContactAdd;
     return firstFrontCameraw6;
 }
@@ -50,7 +50,7 @@
     UITextFieldViewMode circleScreenViewN8 = UITextFieldViewModeAlways; 
         UITableViewStyle progressUpdateBlockb8 = UITableViewStylePlain; 
     PGTrainParticularProperty *withCityName= [[PGTrainParticularProperty alloc] init];
-[withCityName pg_scrollViewDecelerationWithfromVideoFile:circleScreenViewN8 separatorStyleNone:progressUpdateBlockb8 ];
+[withCityName scrollViewDecelerationWithfromVideoFile:circleScreenViewN8 separatorStyleNone:progressUpdateBlockb8 ];
 
 }
 

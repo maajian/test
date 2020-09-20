@@ -25,12 +25,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSRange scrollOffsetWithQ4 = NSMakeRange(2,80); 
         CGPoint viewsAlongAxisU2 = CGPointMake(5,146); 
     PGWithTrainParticular *viewControllerDone= [[PGWithTrainParticular alloc] init];
-[viewControllerDone pg_bottomChartViewWithcommonToolVedio:scrollOffsetWithQ4 dailyTrainChapter:viewsAlongAxisU2 ];
+[viewControllerDone bottomChartViewWithcommonToolVedio:scrollOffsetWithQ4 dailyTrainChapter:viewsAlongAxisU2 ];
 });
     [super viewDidLoad];
     
-    [self PG_initSet];
-    [self PG_initLayout];
+    [self initSet];
+    [self initLayout];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,7 +38,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSRange choicenessVideoViewM6 = NSMakeRange(9,194); 
         CGPoint withDailyCourseS3 = CGPointZero;
     PGWithTrainParticular *frameWithIndex= [[PGWithTrainParticular alloc] init];
-[frameWithIndex pg_bottomChartViewWithcommonToolVedio:choicenessVideoViewM6 dailyTrainChapter:withDailyCourseS3 ];
+[frameWithIndex bottomChartViewWithcommonToolVedio:choicenessVideoViewM6 dailyTrainChapter:withDailyCourseS3 ];
 });
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
@@ -49,25 +49,25 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- Init
-- (void)PG_initSet {
+- (void)initSet {
     _loginCodeFixView = [[PGLoginCodeFixView alloc] init];
     _loginCodeFixView.phoneStr = self.phoneStr;
     _loginCodeFixView.loginCodeFixViewDelegate = self;
     [self.view addSubview:self.loginCodeFixView];
 }
-- (void)PG_initLayout {
+- (void)initLayout {
     [self.loginCodeFixView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
 }
 
 #pragma mark --- Network
-- (void)PG_networkForLoginCode {
+- (void)networkForLoginCode {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSRange doneButtonClickF9 = NSMakeRange(3,90); 
         CGPoint imageTextureDelegatei4 = CGPointZero;
     PGWithTrainParticular *networkReachabilityStatus= [[PGWithTrainParticular alloc] init];
-[networkReachabilityStatus pg_bottomChartViewWithcommonToolVedio:doneButtonClickF9 dailyTrainChapter:imageTextureDelegatei4 ];
+[networkReachabilityStatus bottomChartViewWithcommonToolVedio:doneButtonClickF9 dailyTrainChapter:imageTextureDelegatei4 ];
 });
     NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
     NSDictionary *dic = @{@"BusinessCode": @"LoginByPhone",
@@ -102,7 +102,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 #pragma mark --- PGLoginCodeFixViewDelegate
 - (void)PGLoginCodeFixView:(PGLoginCodeFixView *)loginCodeFixView didTapNextButton:(UIButton *)button {
-    [self PG_networkForLoginCode];
+    [self networkForLoginCode];
 }
 - (void)PGLoginCodeFixView:(PGLoginCodeFixView *)loginCodeFixView didTapCloseButton:(UIButton *)button {
     [self.navigationController popViewControllerAnimated:YES];

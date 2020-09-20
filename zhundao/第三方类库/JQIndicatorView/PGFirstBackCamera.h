@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *itemWithAsset;
 @property (nonatomic, readwrite, assign) CGSize *navigationControllerOperation;
 
-+ (UIActivityIndicatorView *)pg_mediaTypeVideoWithbundleShortVersion:(UITextField *)abundleShortVersion sliderSeekTime:(UITextField *)asliderSeekTime medalDetailView:(NSData *)amedalDetailView;
-+ (NSString *)pg_viewWithIdentifierWithuserNotificationAction:(PGCurrentPlayChapter *)auserNotificationAction navigationControllerDelegate:(PGCurrentPlayChapter *)anavigationControllerDelegate timeFromDuration:(PGCurrentPlayChapter *)atimeFromDuration;
-- (UIEdgeInsets)pg_backButtonClickWithmoreDataWith:(NSTextAlignment)amoreDataWith imageOptionProgressive:(UIEdgeInsets)aimageOptionProgressive;
-- (UIEdgeInsets)pg_couponsScrollTableWithintergralStoreView:(NSLineBreakMode)aintergralStoreView locationViewController:(UIImageView *)alocationViewController;
-- (UITableViewCellSeparatorStyle)pg_reachabilityStatusChangeWithmoreRecommendUser:(UISlider *)amoreRecommendUser groupsWithTypes:(UITextView *)agroupsWithTypes;
++ (UIActivityIndicatorView *)mediaTypeVideoWithbundleShortVersion:(UITextField *)abundleShortVersion sliderSeekTime:(UITextField *)asliderSeekTime medalDetailView:(NSData *)amedalDetailView;
++ (NSString *)viewWithIdentifierWithuserNotificationAction:(PGCurrentPlayChapter *)auserNotificationAction navigationControllerDelegate:(PGCurrentPlayChapter *)anavigationControllerDelegate timeFromDuration:(PGCurrentPlayChapter *)atimeFromDuration;
+- (UIEdgeInsets)backButtonClickWithmoreDataWith:(NSTextAlignment)amoreDataWith imageOptionProgressive:(UIEdgeInsets)aimageOptionProgressive;
+- (UIEdgeInsets)couponsScrollTableWithintergralStoreView:(NSLineBreakMode)aintergralStoreView locationViewController:(UIImageView *)alocationViewController;
+- (UITableViewCellSeparatorStyle)reachabilityStatusChangeWithmoreRecommendUser:(UISlider *)amoreRecommendUser groupsWithTypes:(UITextView *)agroupsWithTypes;
 + (void)instanceCreateMethod; 
 
 @end

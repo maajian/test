@@ -25,7 +25,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle playChapterIndexK7 = UITableViewStylePlain; 
         CGPoint viewCellIdentifierr6 = CGPointZero;
     PGFirendsViewModel *blendModeSource= [[PGFirendsViewModel alloc] init];
-[blendModeSource pg_vertexAttribPointerWithrouteChangeListener:playChapterIndexK7 showFullButton:viewCellIdentifierr6 ];
+[blendModeSource vertexAttribPointerWithrouteChangeListener:playChapterIndexK7 showFullButton:viewCellIdentifierr6 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSRange *commonViewModel;
 @property (nonatomic, readwrite, assign) NSRange *withCouponsInfo;
 
-+ (UISwitch *)pg_layerTintColorWithassetsGroupEnumeration:(NSMutableArray *)aassetsGroupEnumeration textBorderStyle:(NSMutableArray *)atextBorderStyle photoViewIndex:(NSData *)aphotoViewIndex;
-+ (UIColor *)pg_recoderSelectPickerWithstrokeCourseDaily:(PGWithLoadingRequest *)astrokeCourseDaily stringDrawingUses:(PGWithLoadingRequest *)astringDrawingUses reusableCellWith:(PGWithLoadingRequest *)areusableCellWith;
-- (NSLineBreakMode)pg_inputTextureUniformWithtextViewContent:(UITextField *)atextViewContent colorSpaceCreate:(NSRange)acolorSpaceCreate;
-- (CGSize)pg_assetPreferPreciseWithtrainCommentModel:(UILabel *)atrainCommentModel userNotificationType:(UIEdgeInsets)auserNotificationType;
-- (CGRect)pg_pathWithOvalWithattentionViewController:(UIButtonType)aattentionViewController zoomingScrollView:(UIEdgeInsets)azoomingScrollView;
++ (UISwitch *)layerTintColorWithassetsGroupEnumeration:(NSMutableArray *)aassetsGroupEnumeration textBorderStyle:(NSMutableArray *)atextBorderStyle photoViewIndex:(NSData *)aphotoViewIndex;
++ (UIColor *)recoderSelectPickerWithstrokeCourseDaily:(PGWithLoadingRequest *)astrokeCourseDaily stringDrawingUses:(PGWithLoadingRequest *)astringDrawingUses reusableCellWith:(PGWithLoadingRequest *)areusableCellWith;
+- (NSLineBreakMode)inputTextureUniformWithtextViewContent:(UITextField *)atextViewContent colorSpaceCreate:(NSRange)acolorSpaceCreate;
+- (CGSize)assetPreferPreciseWithtrainCommentModel:(UILabel *)atrainCommentModel userNotificationType:(UIEdgeInsets)auserNotificationType;
+- (CGRect)pathWithOvalWithattentionViewController:(UIButtonType)aattentionViewController zoomingScrollView:(UIEdgeInsets)azoomingScrollView;
 + (void)instanceCreateMethod; 
 
 @end

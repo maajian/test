@@ -20,7 +20,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     imageProgressUpdated6.onTintColor = [UIColor whiteColor]; 
         NSRange allowsBackForwardb9 = NSMakeRange(5,178); 
     PGResizeAspectFill *tableViewStyle= [[PGResizeAspectFill alloc] init];
-[tableViewStyle pg_socialMessageObjectWithloginWithUser:imageProgressUpdated6 countTableView:allowsBackForwardb9 ];
+[tableViewStyle socialMessageObjectWithloginWithUser:imageProgressUpdated6 countTableView:allowsBackForwardb9 ];
 });
     [super awakeFromNib];
     // Initialization code

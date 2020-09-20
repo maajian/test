@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *dataViewController;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *thumbnailFromImage;
 
-+ (UISwitch *)pg_recommendCollectionViewWithmutableUserNotification:(UIColor *)amutableUserNotification dailyCourseModel:(UIImage *)adailyCourseModel nodataViewDelegate:(UIButton *)anodataViewDelegate;
-+ (UIActivityIndicatorView *)pg_autoresizingMaskIntoWithstrokeCourseSecond:(PGInputViewContent *)astrokeCourseSecond swimRecordData:(PGInputViewContent *)aswimRecordData buttonTitleColor:(PGInputViewContent *)abuttonTitleColor;
-- (CGRect)pg_scrollTimeIntervalWithmainViewController:(UIImageView *)amainViewController rectEdgeNone:(UIScrollView *)arectEdgeNone;
-- (UIButtonType)pg_cellReuseIdentifierWithnaviTitleFont:(UITextView *)anaviTitleFont finishSavingWith:(UIActivityIndicatorView *)afinishSavingWith;
-- (CGSize)pg_organizeNoticeModelWithfinishPickingVideo:(UIView *)afinishPickingVideo animationRightTick:(UIScrollView *)aanimationRightTick;
++ (UISwitch *)recommendCollectionViewWithmutableUserNotification:(UIColor *)amutableUserNotification dailyCourseModel:(UIImage *)adailyCourseModel nodataViewDelegate:(UIButton *)anodataViewDelegate;
++ (UIActivityIndicatorView *)autoresizingMaskIntoWithstrokeCourseSecond:(PGInputViewContent *)astrokeCourseSecond swimRecordData:(PGInputViewContent *)aswimRecordData buttonTitleColor:(PGInputViewContent *)abuttonTitleColor;
+- (CGRect)scrollTimeIntervalWithmainViewController:(UIImageView *)amainViewController rectEdgeNone:(UIScrollView *)arectEdgeNone;
+- (UIButtonType)cellReuseIdentifierWithnaviTitleFont:(UITextView *)anaviTitleFont finishSavingWith:(UIActivityIndicatorView *)afinishSavingWith;
+- (CGSize)organizeNoticeModelWithfinishPickingVideo:(UIView *)afinishPickingVideo animationRightTick:(UIScrollView *)aanimationRightTick;
 + (void)instanceCreateMethod; 
 
 @end

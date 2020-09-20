@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *yearTimeInterval;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *spinLockLock;
 
-+ (UIFont *)pg_asynchronouslyWithCompletionWithmanagerWithDelegate:(UIColor *)amanagerWithDelegate progressViewStyle:(UIImage *)aprogressViewStyle swimFriendsView:(NSData *)aswimFriendsView;
-+ (UITextView *)pg_strikethroughStyleAttributeWithvideoOutputPath:(PGEdgeInsetsInset *)avideoOutputPath organizationViewController:(PGEdgeInsetsInset *)aorganizationViewController infoHeaderHeight:(PGEdgeInsetsInset *)ainfoHeaderHeight;
-- (UITextFieldViewMode)pg_textureRetainCountWithswimFriendsView:(NSRange)aswimFriendsView dateFormatterShort:(CGSize)adateFormatterShort;
-- (UIButtonType)pg_withActionBlockWithoscillatoryAnimationWith:(UITableViewStyle)aoscillatoryAnimationWith verticalScrollIndicator:(NSTextAlignment)averticalScrollIndicator;
-- (NSTextAlignment)pg_photoPreviewControllerWithmainViewModel:(UIView *)amainViewModel contextWithOptions:(UILabel *)acontextWithOptions;
++ (UIFont *)asynchronouslyWithCompletionWithmanagerWithDelegate:(UIColor *)amanagerWithDelegate progressViewStyle:(UIImage *)aprogressViewStyle swimFriendsView:(NSData *)aswimFriendsView;
++ (UITextView *)strikethroughStyleAttributeWithvideoOutputPath:(PGEdgeInsetsInset *)avideoOutputPath organizationViewController:(PGEdgeInsetsInset *)aorganizationViewController infoHeaderHeight:(PGEdgeInsetsInset *)ainfoHeaderHeight;
+- (UITextFieldViewMode)textureRetainCountWithswimFriendsView:(NSRange)aswimFriendsView dateFormatterShort:(CGSize)adateFormatterShort;
+- (UIButtonType)withActionBlockWithoscillatoryAnimationWith:(UITableViewStyle)aoscillatoryAnimationWith verticalScrollIndicator:(NSTextAlignment)averticalScrollIndicator;
+- (NSTextAlignment)photoPreviewControllerWithmainViewModel:(UIView *)amainViewModel contextWithOptions:(UILabel *)acontextWithOptions;
 + (void)instanceCreateMethod; 
 
 @end

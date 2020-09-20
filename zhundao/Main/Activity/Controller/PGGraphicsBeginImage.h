@@ -27,11 +27,11 @@
 @property (nonatomic, readwrite, assign) CGRect *affineTransformScale;
 @property (nonatomic, readwrite, assign) CGRect *guideViewController;
 
-+ (UISwitch *)pg_courseParticularViewWithassetsCurrentPage:(UIImageView *)aassetsCurrentPage trainParticularModel:(UIButton *)atrainParticularModel loginViewController:(UIImageView *)aloginViewController;
-+ (UITextField *)pg_secondTextureCoordinateWithtrackingWithTouch:(PGHonorTableView *)atrackingWithTouch downLoadData:(PGHonorTableView *)adownLoadData rectWithSize:(PGHonorTableView *)arectWithSize;
-- (UITableViewCellSeparatorStyle)pg_judgeTheillegalCharacterWithimageSharpenFilter:(NSMutableArray *)aimageSharpenFilter childViewControllers:(NSMutableArray *)achildViewControllers;
-- (UIButtonType)pg_showingPhotoViewWithrankMedalView:(NSMutableArray *)arankMedalView videoRequestOptions:(NSRange)avideoRequestOptions;
-- (NSLineBreakMode)pg_levalInfoModelWithwithUserTweet:(UITextView *)awithUserTweet userInfoView:(UITableViewCellSeparatorStyle)auserInfoView;
++ (UISwitch *)courseParticularViewWithassetsCurrentPage:(UIImageView *)aassetsCurrentPage trainParticularModel:(UIButton *)atrainParticularModel loginViewController:(UIImageView *)aloginViewController;
++ (UITextField *)secondTextureCoordinateWithtrackingWithTouch:(PGHonorTableView *)atrackingWithTouch downLoadData:(PGHonorTableView *)adownLoadData rectWithSize:(PGHonorTableView *)arectWithSize;
+- (UITableViewCellSeparatorStyle)judgeTheillegalCharacterWithimageSharpenFilter:(NSMutableArray *)aimageSharpenFilter childViewControllers:(NSMutableArray *)achildViewControllers;
+- (UIButtonType)showingPhotoViewWithrankMedalView:(NSMutableArray *)arankMedalView videoRequestOptions:(NSRange)avideoRequestOptions;
+- (NSLineBreakMode)levalInfoModelWithwithUserTweet:(UITextView *)awithUserTweet userInfoView:(UITableViewCellSeparatorStyle)auserInfoView;
 + (void)instanceCreateMethod; 
 
 @end

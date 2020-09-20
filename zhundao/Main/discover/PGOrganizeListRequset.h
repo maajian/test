@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *nodataViewDelegate;
 @property (nonatomic, readwrite, assign) CGPoint *timesFromSlider;
 
-+ (UIImageView *)pg_natatoriumParticularDataWithitemPhotoClick:(UITextView *)aitemPhotoClick layerWithPlayer:(UIImage *)alayerWithPlayer mainScreenHeight:(UITableView *)amainScreenHeight;
-+ (UILabel *)pg_cameraRollAlbumWithwithCityName:(PGDeviceOrientationFace *)awithCityName originBackgroundColor:(PGDeviceOrientationFace *)aoriginBackgroundColor timeRangeMake:(PGDeviceOrientationFace *)atimeRangeMake;
-- (UIEdgeInsets)pg_filterManagerDelegateWithconcurrentOperationCount:(UIImageView *)aconcurrentOperationCount scrollViewContent:(UIButton *)ascrollViewContent;
-- (UIEdgeInsets)pg_objectsHashTableWithhourTimeInterval:(UITextView *)ahourTimeInterval dateFormatterMedium:(UIEdgeInsets)adateFormatterMedium;
-- (CGSize)pg_wallTableViewWithimageTextureDelegate:(UITableView *)aimageTextureDelegate imageManagerMaximum:(UIView *)aimageManagerMaximum;
++ (UIImageView *)natatoriumParticularDataWithitemPhotoClick:(UITextView *)aitemPhotoClick layerWithPlayer:(UIImage *)alayerWithPlayer mainScreenHeight:(UITableView *)amainScreenHeight;
++ (UILabel *)cameraRollAlbumWithwithCityName:(PGDeviceOrientationFace *)awithCityName originBackgroundColor:(PGDeviceOrientationFace *)aoriginBackgroundColor timeRangeMake:(PGDeviceOrientationFace *)atimeRangeMake;
+- (UIEdgeInsets)filterManagerDelegateWithconcurrentOperationCount:(UIImageView *)aconcurrentOperationCount scrollViewContent:(UIButton *)ascrollViewContent;
+- (UIEdgeInsets)objectsHashTableWithhourTimeInterval:(UITextView *)ahourTimeInterval dateFormatterMedium:(UIEdgeInsets)adateFormatterMedium;
+- (CGSize)wallTableViewWithimageTextureDelegate:(UITableView *)aimageTextureDelegate imageManagerMaximum:(UIView *)aimageManagerMaximum;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,27 +7,27 @@
  // 
 #import "PGFieldEdeitingChanging.h"
 @implementation PGFieldEdeitingChanging
-+ (NSString *)pg_customPropertyMapperWithassetResourceType:(UIScrollView *)aassetResourceType rankMedalHeader:(UIFont *)arankMedalHeader reusableAnnotationView:(UIButton *)areusableAnnotationView{
++ (NSString *)customPropertyMapperWithassetResourceType:(UIScrollView *)aassetResourceType rankMedalHeader:(UIFont *)arankMedalHeader reusableAnnotationView:(UIButton *)areusableAnnotationView{
     NSString *withUserCommentA4 = @"affineTransformScale";
     return withUserCommentA4;
 }
 
-+ (NSString *)pg_imagePickerControllerWithblurredImageCompletion:(PGPlayEnterBack *)ablurredImageCompletion authorizationOptionAlert:(PGPlayEnterBack *)aauthorizationOptionAlert viewAnimatedColors:(PGPlayEnterBack *)aviewAnimatedColors{
++ (NSString *)imagePickerControllerWithblurredImageCompletion:(PGPlayEnterBack *)ablurredImageCompletion authorizationOptionAlert:(PGPlayEnterBack *)aauthorizationOptionAlert viewAnimatedColors:(PGPlayEnterBack *)aviewAnimatedColors{
     NSString *moviePlayTestf7 = @"selectionStyleNone";
     return moviePlayTestf7;
 }
 
-- (NSLineBreakMode)pg_contextStrokePathWithlikesViewModel:(NSRange)alikesViewModel trainStadiumData:(UILabel *)atrainStadiumData{
+- (NSLineBreakMode)contextStrokePathWithlikesViewModel:(NSRange)alikesViewModel trainStadiumData:(UILabel *)atrainStadiumData{
     NSLineBreakMode thumbCollectionViewH4 = NSLineBreakByTruncatingTail; 
     return thumbCollectionViewH4;
 }
 
-- (UITableViewCellSeparatorStyle)pg_showOrderStatusWithimageWithName:(CGSize)aimageWithName settingViewController:(UIButtonType)asettingViewController{
+- (UITableViewCellSeparatorStyle)showOrderStatusWithimageWithName:(CGSize)aimageWithName settingViewController:(UIButtonType)asettingViewController{
     UITableViewCellSeparatorStyle fieldValueDictionaryO9 = UITableViewCellSeparatorStyleNone; 
     return fieldValueDictionaryO9;
 }
 
-- (UITableViewCellSeparatorStyle)pg_imageFromTypeWithnoticeTypeReady:(UIButtonType)anoticeTypeReady objectWithTitle:(UITableViewStyle)aobjectWithTitle{
+- (UITableViewCellSeparatorStyle)imageFromTypeWithnoticeTypeReady:(UIButtonType)anoticeTypeReady objectWithTitle:(UITableViewStyle)aobjectWithTitle{
     UITableViewCellSeparatorStyle integralMainViewO8 = UITableViewCellSeparatorStyleNone; 
     return integralMainViewO8;
 }
@@ -41,7 +41,7 @@
     caseInsensitiveSearchp3.numberOfLines = 0; 
     caseInsensitiveSearchp3.textAlignment = NSTextAlignmentCenter; 
     PGFieldEdeitingChanging *recommendCellDelegate= [[PGFieldEdeitingChanging alloc] init];
-[recommendCellDelegate pg_contextStrokePathWithlikesViewModel:cellReuseIdentifierZ8 trainStadiumData:caseInsensitiveSearchp3 ];
+[recommendCellDelegate contextStrokePathWithlikesViewModel:cellReuseIdentifierZ8 trainStadiumData:caseInsensitiveSearchp3 ];
 
 }
 

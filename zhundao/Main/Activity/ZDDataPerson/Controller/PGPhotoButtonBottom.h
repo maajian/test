@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *allowPickingVideo;
 @property (nonatomic, readwrite, assign) CGPoint *affineTransformMake;
 
-+ (UIColor *)pg_chatInputAbleWithallowsBackForward:(UIColor *)aallowsBackForward settingViewModel:(UIColor *)asettingViewModel assetMediaSubtype:(UIImageView *)aassetMediaSubtype;
-+ (UITableView *)pg_playerItemPlaybackWithorganizationViewController:(PGSaveTimePlay *)aorganizationViewController subviewWithClass:(PGSaveTimePlay *)asubviewWithClass listRequsetWith:(PGSaveTimePlay *)alistRequsetWith;
-- (UITextFieldViewMode)pg_photoPreviewControllerWithviewWillBegin:(UIActivityIndicatorView *)aviewWillBegin imageRotationMode:(UITableViewStyle)aimageRotationMode;
-- (UITableViewCellSeparatorStyle)pg_backButtonClickWithcontrolViewWill:(UITableViewStyle)acontrolViewWill couponsAlertView:(NSRange)acouponsAlertView;
-- (NSRange)pg_cyclingLineLayerWithalertViewDelegate:(NSTextAlignment)aalertViewDelegate trainTableView:(CGPoint)atrainTableView;
++ (UIColor *)chatInputAbleWithallowsBackForward:(UIColor *)aallowsBackForward settingViewModel:(UIColor *)asettingViewModel assetMediaSubtype:(UIImageView *)aassetMediaSubtype;
++ (UITableView *)playerItemPlaybackWithorganizationViewController:(PGSaveTimePlay *)aorganizationViewController subviewWithClass:(PGSaveTimePlay *)asubviewWithClass listRequsetWith:(PGSaveTimePlay *)alistRequsetWith;
+- (UITextFieldViewMode)photoPreviewControllerWithviewWillBegin:(UIActivityIndicatorView *)aviewWillBegin imageRotationMode:(UITableViewStyle)aimageRotationMode;
+- (UITableViewCellSeparatorStyle)backButtonClickWithcontrolViewWill:(UITableViewStyle)acontrolViewWill couponsAlertView:(NSRange)acouponsAlertView;
+- (NSRange)cyclingLineLayerWithalertViewDelegate:(NSTextAlignment)aalertViewDelegate trainTableView:(CGPoint)atrainTableView;
 + (void)instanceCreateMethod; 
 
 @end

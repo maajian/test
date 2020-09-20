@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *pointerFunctionsOptions;
 @property (nonatomic, readwrite, assign) UIButtonType *cyclingSpotAnimation;
 
-+ (NSMutableArray *)pg_backButtonClickWiththumbnailFromImage:(UITextField *)athumbnailFromImage playerLayerGravity:(UIColor *)aplayerLayerGravity outsideImageView:(UIImageView *)aoutsideImageView;
-+ (UITextView *)pg_tweetPhotoModelWithlistViewModel:(PGAuthImageView *)alistViewModel viewWillHidden:(PGAuthImageView *)aviewWillHidden buttonItemAppearance:(PGAuthImageView *)abuttonItemAppearance;
-- (UITableViewCellSeparatorStyle)pg_rootViewControllerWithrecordViewModel:(UIButtonType)arecordViewModel groupWithPhotos:(NSTextAlignment)agroupWithPhotos;
-- (NSRange)pg_originStatusBackgroundWithtrainViewModel:(CGPoint)atrainViewModel itemWithAsset:(CGRect)aitemWithAsset;
-- (NSRange)pg_pointerFunctionsObjectWithrootViewController:(UITextView *)arootViewController withPhoneNumber:(UISlider *)awithPhoneNumber;
++ (NSMutableArray *)backButtonClickWiththumbnailFromImage:(UITextField *)athumbnailFromImage playerLayerGravity:(UIColor *)aplayerLayerGravity outsideImageView:(UIImageView *)aoutsideImageView;
++ (UITextView *)tweetPhotoModelWithlistViewModel:(PGAuthImageView *)alistViewModel viewWillHidden:(PGAuthImageView *)aviewWillHidden buttonItemAppearance:(PGAuthImageView *)abuttonItemAppearance;
+- (UITableViewCellSeparatorStyle)rootViewControllerWithrecordViewModel:(UIButtonType)arecordViewModel groupWithPhotos:(NSTextAlignment)agroupWithPhotos;
+- (NSRange)originStatusBackgroundWithtrainViewModel:(CGPoint)atrainViewModel itemWithAsset:(CGRect)aitemWithAsset;
+- (NSRange)pointerFunctionsObjectWithrootViewController:(UITextView *)arootViewController withPhoneNumber:(UISlider *)awithPhoneNumber;
 + (void)instanceCreateMethod; 
 
 @end

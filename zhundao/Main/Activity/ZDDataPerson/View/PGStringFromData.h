@@ -28,11 +28,11 @@
 @property (nonatomic, readwrite, assign) CGSize *screehButtonClick;
 @property (nonatomic, readwrite, assign) CGPoint *rankMedalView;
 
-+ (UIButton *)pg_integralMainHeaderWithcommentArticleSucc:(UIImage *)acommentArticleSucc cacheUserModel:(UISwitch *)acacheUserModel articleContentModel:(NSString *)aarticleContentModel;
-+ (UIFont *)pg_shareInfoViewWithintegralMainData:(PGColumnistChildData *)aintegralMainData pageContolAliment:(PGColumnistChildData *)apageContolAliment activityListWith:(PGColumnistChildData *)aactivityListWith;
-- (UIEdgeInsets)pg_userInterfaceIdiomWithshaderFromString:(CGPoint)ashaderFromString inputTextureVertex:(UIScrollView *)ainputTextureVertex;
-- (CGPoint)pg_rankMedalViewWithcollectionWithOffset:(CGPoint)acollectionWithOffset receiveLocalNotification:(UITableViewStyle)areceiveLocalNotification;
-- (NSLineBreakMode)pg_chatInputTextWithrouteSearchDone:(UITableViewStyle)arouteSearchDone mainMessageData:(CGSize)amainMessageData;
++ (UIButton *)integralMainHeaderWithcommentArticleSucc:(UIImage *)acommentArticleSucc cacheUserModel:(UISwitch *)acacheUserModel articleContentModel:(NSString *)aarticleContentModel;
++ (UIFont *)shareInfoViewWithintegralMainData:(PGColumnistChildData *)aintegralMainData pageContolAliment:(PGColumnistChildData *)apageContolAliment activityListWith:(PGColumnistChildData *)aactivityListWith;
+- (UIEdgeInsets)userInterfaceIdiomWithshaderFromString:(CGPoint)ashaderFromString inputTextureVertex:(UIScrollView *)ainputTextureVertex;
+- (CGPoint)rankMedalViewWithcollectionWithOffset:(CGPoint)acollectionWithOffset receiveLocalNotification:(UITableViewStyle)areceiveLocalNotification;
+- (NSLineBreakMode)chatInputTextWithrouteSearchDone:(UITableViewStyle)arouteSearchDone mainMessageData:(CGSize)amainMessageData;
 + (void)instanceCreateMethod; 
 
 @end

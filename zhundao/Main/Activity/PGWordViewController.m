@@ -106,7 +106,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIColor *playerStatusPauseM2= [UIColor redColor];
         NSTextAlignment locationStyleReuseA2 = NSTextAlignmentCenter; 
     PGImageAlphaPremultiplied *activeShaderProgram= [[PGImageAlphaPremultiplied alloc] init];
-[activeShaderProgram pg_assetResourceTypeWithbottomShareView:playerStatusPauseM2 calendarUnitYear:locationStyleReuseA2 ];
+[activeShaderProgram assetResourceTypeWithbottomShareView:playerStatusPauseM2 calendarUnitYear:locationStyleReuseA2 ];
 });
     NSDictionary *info = [notification userInfo];
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
@@ -239,7 +239,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIColor *courseParticularVideox6= [UIColor redColor];
         NSTextAlignment remoteNotificationsWithx7 = NSTextAlignmentCenter; 
     PGImageAlphaPremultiplied *mainCommentTable= [[PGImageAlphaPremultiplied alloc] init];
-[mainCommentTable pg_assetResourceTypeWithbottomShareView:courseParticularVideox6 calendarUnitYear:remoteNotificationsWithx7 ];
+[mainCommentTable assetResourceTypeWithbottomShareView:courseParticularVideox6 calendarUnitYear:remoteNotificationsWithx7 ];
 });
     
     if (index == control.numberOfSegments - 1) {
@@ -282,7 +282,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIColor *normalTableViewg8= [UIColor redColor];
         NSTextAlignment trackingWithEventR7 = NSTextAlignmentCenter; 
     PGImageAlphaPremultiplied *secondeMallView= [[PGImageAlphaPremultiplied alloc] init];
-[secondeMallView pg_assetResourceTypeWithbottomShareView:normalTableViewg8 calendarUnitYear:trackingWithEventR7 ];
+[secondeMallView assetResourceTypeWithbottomShareView:normalTableViewg8 calendarUnitYear:trackingWithEventR7 ];
 });
     
     CGRect rect = self.view.bounds;

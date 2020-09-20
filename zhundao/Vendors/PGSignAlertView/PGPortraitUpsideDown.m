@@ -7,12 +7,12 @@
  // 
 #import "PGPortraitUpsideDown.h"
 @implementation PGPortraitUpsideDown
-+ (NSString *)pg_collectionTrainModelWithassetMediaSubtype:(UIButton *)aassetMediaSubtype assetCollectionType:(UITextField *)aassetCollectionType headerFooterView:(UIImage *)aheaderFooterView{
++ (NSString *)collectionTrainModelWithassetMediaSubtype:(UIButton *)aassetMediaSubtype assetCollectionType:(UITextField *)aassetCollectionType headerFooterView:(UIImage *)aheaderFooterView{
     NSString *viewWillHiddenl7 = @"videoCameraDelegate";
     return viewWillHiddenl7;
 }
 
-+ (UITextView *)pg_backGroundUserWithtweetCommentModel:(PGTrainDataWith *)atweetCommentModel trainFinishAlert:(PGTrainDataWith *)atrainFinishAlert videoCameraDelegate:(PGTrainDataWith *)avideoCameraDelegate{
++ (UITextView *)backGroundUserWithtweetCommentModel:(PGTrainDataWith *)atweetCommentModel trainFinishAlert:(PGTrainDataWith *)atrainFinishAlert videoCameraDelegate:(PGTrainDataWith *)avideoCameraDelegate{
     UITextView *routeSearchBasea5= [[UITextView alloc] initWithFrame:CGRectMake(252,205,229,31)]; 
     routeSearchBasea5.editable = NO; 
     routeSearchBasea5.font = [UIFont systemFontOfSize:179];
@@ -20,17 +20,17 @@
     return routeSearchBasea5;
 }
 
-- (NSLineBreakMode)pg_pathWithOvalWithcontrolEventTouch:(NSMutableArray *)acontrolEventTouch choicenessViewController:(UIColor *)achoicenessViewController{
+- (NSLineBreakMode)pathWithOvalWithcontrolEventTouch:(NSMutableArray *)acontrolEventTouch choicenessViewController:(UIColor *)achoicenessViewController{
     NSLineBreakMode categoryChooseViewW1 = NSLineBreakByTruncatingTail; 
     return categoryChooseViewW1;
 }
 
-- (CGPoint)pg_calendarUnitMonthWithstatusSavePhotos:(UIScrollView *)astatusSavePhotos affineTransformMake:(UITableViewStyle)aaffineTransformMake{
+- (CGPoint)calendarUnitMonthWithstatusSavePhotos:(UIScrollView *)astatusSavePhotos affineTransformMake:(UITableViewStyle)aaffineTransformMake{
     CGPoint medalExplainVieww2 = CGPointZero;
     return medalExplainVieww2;
 }
 
-- (NSRange)pg_withRefreshingTargetWithmovieFrameOpposite:(NSString *)amovieFrameOpposite routeSearchBase:(CGPoint)arouteSearchBase{
+- (NSRange)withRefreshingTargetWithmovieFrameOpposite:(NSString *)amovieFrameOpposite routeSearchBase:(CGPoint)arouteSearchBase{
     NSRange imageOptionProgressiveY4 = NSMakeRange(8,212); 
     return imageOptionProgressiveY4;
 }
@@ -39,7 +39,7 @@
     NSMutableArray *userTweetTableW6= [NSMutableArray array];
         UIColor *footerCollectionReusables8= [UIColor redColor];
     PGPortraitUpsideDown *recommendCourseModel= [[PGPortraitUpsideDown alloc] init];
-[recommendCourseModel pg_pathWithOvalWithcontrolEventTouch:userTweetTableW6 choicenessViewController:footerCollectionReusables8 ];
+[recommendCourseModel pathWithOvalWithcontrolEventTouch:userTweetTableW6 choicenessViewController:footerCollectionReusables8 ];
 
 }
 

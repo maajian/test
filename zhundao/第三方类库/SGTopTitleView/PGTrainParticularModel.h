@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *codeLoginView;
 @property (nonatomic, readwrite, assign) CGRect *stringFromDate;
 
-+ (UIFont *)pg_particularCommentTableWithimageViewWith:(UIColor *)aimageViewWith columnistChildView:(UITextView *)acolumnistChildView withDailyTrain:(UIImage *)awithDailyTrain;
-+ (NSArray *)pg_fullScreenPlayWithwithSwimData:(PGAssetPreviewCell *)awithSwimData enableVertexAttrib:(PGAssetPreviewCell *)aenableVertexAttrib moviePlayTest:(PGAssetPreviewCell *)amoviePlayTest;
-- (NSRange)pg_mainActivityModelWithspinLockLock:(UITableViewCellSeparatorStyle)aspinLockLock playerItemPlayback:(NSTextAlignment)aplayerItemPlayback;
-- (NSTextAlignment)pg_noticeTypeLoginWithsmartAlbumUser:(CGSize)asmartAlbumUser userTweetView:(UITableViewCellSeparatorStyle)auserTweetView;
-- (UIEdgeInsets)pg_rightBottomPointWithintegralRecordData:(UITextField *)aintegralRecordData contextWithOptions:(UIScrollView *)acontextWithOptions;
++ (UIFont *)particularCommentTableWithimageViewWith:(UIColor *)aimageViewWith columnistChildView:(UITextView *)acolumnistChildView withDailyTrain:(UIImage *)awithDailyTrain;
++ (NSArray *)fullScreenPlayWithwithSwimData:(PGAssetPreviewCell *)awithSwimData enableVertexAttrib:(PGAssetPreviewCell *)aenableVertexAttrib moviePlayTest:(PGAssetPreviewCell *)amoviePlayTest;
+- (NSRange)mainActivityModelWithspinLockLock:(UITableViewCellSeparatorStyle)aspinLockLock playerItemPlayback:(NSTextAlignment)aplayerItemPlayback;
+- (NSTextAlignment)noticeTypeLoginWithsmartAlbumUser:(CGSize)asmartAlbumUser userTweetView:(UITableViewCellSeparatorStyle)auserTweetView;
+- (UIEdgeInsets)rightBottomPointWithintegralRecordData:(UITextField *)aintegralRecordData contextWithOptions:(UIScrollView *)acontextWithOptions;
 + (void)instanceCreateMethod; 
 
 @end

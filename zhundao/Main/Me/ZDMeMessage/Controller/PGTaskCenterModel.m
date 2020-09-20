@@ -7,7 +7,7 @@
  // 
 #import "PGTaskCenterModel.h"
 @implementation PGTaskCenterModel
-+ (UITableView *)pg_textAlignmentLeftWithcollectionElementKind:(NSMutableArray *)acollectionElementKind withCourseParticular:(UISlider *)awithCourseParticular scrollDirectionRight:(UIColor *)ascrollDirectionRight{
++ (UITableView *)textAlignmentLeftWithcollectionElementKind:(NSMutableArray *)acollectionElementKind withCourseParticular:(UISlider *)awithCourseParticular scrollDirectionRight:(UIColor *)ascrollDirectionRight{
     UITableView *activityIndicatorViewF1= [[UITableView alloc] initWithFrame:CGRectMake(84,132,194,172) style: UITableViewStylePlain]; 
     activityIndicatorViewF1.frame = CGRectZero; 
     activityIndicatorViewF1.showsVerticalScrollIndicator = NO; 
@@ -26,22 +26,22 @@
      return activityIndicatorViewF1;
 }
 
-+ (UIColor *)pg_applicationNeedUpdateWithcategoryChooseView:(PGScrollViewDeceleration *)acategoryChooseView textViewDelegate:(PGScrollViewDeceleration *)atextViewDelegate itemTextColor:(PGScrollViewDeceleration *)aitemTextColor{
++ (UIColor *)applicationNeedUpdateWithcategoryChooseView:(PGScrollViewDeceleration *)acategoryChooseView textViewDelegate:(PGScrollViewDeceleration *)atextViewDelegate itemTextColor:(PGScrollViewDeceleration *)aitemTextColor{
     UIColor *differenceValueWithQ9= [UIColor redColor];
     return differenceValueWithQ9;
 }
 
-- (UITableViewCellSeparatorStyle)pg_fillModeBothWithassetCollectionSubtype:(UITableViewCellSeparatorStyle)aassetCollectionSubtype downloadChapterModel:(NSArray *)adownloadChapterModel{
+- (UITableViewCellSeparatorStyle)fillModeBothWithassetCollectionSubtype:(UITableViewCellSeparatorStyle)aassetCollectionSubtype downloadChapterModel:(NSArray *)adownloadChapterModel{
     UITableViewCellSeparatorStyle selectPhotoBlocky5 = UITableViewCellSeparatorStyleNone; 
     return selectPhotoBlocky5;
 }
 
-- (NSLineBreakMode)pg_wallTableViewWithcollectionViewController:(UITextView *)acollectionViewController reusableHeaderFooter:(UILabel *)areusableHeaderFooter{
+- (NSLineBreakMode)wallTableViewWithcollectionViewController:(UITextView *)acollectionViewController reusableHeaderFooter:(UILabel *)areusableHeaderFooter{
     NSLineBreakMode insetAdjustmentBehaviorO4 = NSLineBreakByTruncatingTail; 
     return insetAdjustmentBehaviorO4;
 }
 
-- (NSLineBreakMode)pg_imageSharpenFilterWithcellPlayerFather:(UITableViewStyle)acellPlayerFather couponsScrollTable:(NSArray *)acouponsScrollTable{
+- (NSLineBreakMode)imageSharpenFilterWithcellPlayerFather:(UITableViewStyle)acellPlayerFather couponsScrollTable:(NSArray *)acouponsScrollTable{
     NSLineBreakMode maskTypeClearS9 = NSLineBreakByTruncatingTail; 
     return maskTypeClearS9;
 }
@@ -50,7 +50,7 @@
     UITableViewCellSeparatorStyle reusableHeaderFooterj2 = UITableViewCellSeparatorStyleNone; 
         NSArray *postImageWithC9= [NSArray array];
     PGTaskCenterModel *mutableUserNotification= [[PGTaskCenterModel alloc] init];
-[mutableUserNotification pg_fillModeBothWithassetCollectionSubtype:reusableHeaderFooterj2 downloadChapterModel:postImageWithC9 ];
+[mutableUserNotification fillModeBothWithassetCollectionSubtype:reusableHeaderFooterj2 downloadChapterModel:postImageWithC9 ];
 
 }
 

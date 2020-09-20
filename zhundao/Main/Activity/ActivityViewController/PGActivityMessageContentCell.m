@@ -50,7 +50,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSLineBreakMode sourceTypePhoton6 = NSLineBreakByTruncatingTail; 
         CGRect baseLoginViewT5 = CGRectMake(117,78,249,186); 
     PGCourseVideoPlaying *playerStatusPause= [[PGCourseVideoPlaying alloc] init];
-[playerStatusPause pg_backGroundColorWithbirthdayPickerView:sourceTypePhoton6 textureRetainCount:baseLoginViewT5 ];
+[playerStatusPause backGroundColorWithbirthdayPickerView:sourceTypePhoton6 textureRetainCount:baseLoginViewT5 ];
 });
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.statusLabel];

@@ -17,11 +17,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *courseCachaData;
 @property (nonatomic, readwrite, assign) CGPoint *courseParticularModel;
 
-+ (UIScrollView *)pg_protocolViewControllerWithcyclingLineLayer:(NSMutableArray *)acyclingLineLayer locationCollectionView:(UISwitch *)alocationCollectionView textFiledDelegate:(UITextField *)atextFiledDelegate;
-+ (NSData *)pg_showOrderStatusWitharticleOriginalHeader:(PGAlertViewStyle *)aarticleOriginalHeader userModelFrom:(PGAlertViewStyle *)auserModelFrom playerStatusFailed:(PGAlertViewStyle *)aplayerStatusFailed;
-- (UITableViewCellSeparatorStyle)pg_imageTypeSuccessWithmaximumBadgeNumber:(UIButtonType)amaximumBadgeNumber locationViewController:(NSTextAlignment)alocationViewController;
-- (NSLineBreakMode)pg_assetMediaTypeWithconnectionDataDelegate:(CGPoint)aconnectionDataDelegate assetFromImage:(CGRect)aassetFromImage;
-- (NSLineBreakMode)pg_reusableSupplementaryViewWithscrollViewContent:(UIScrollView *)ascrollViewContent mallViewModel:(NSString *)amallViewModel;
++ (UIScrollView *)protocolViewControllerWithcyclingLineLayer:(NSMutableArray *)acyclingLineLayer locationCollectionView:(UISwitch *)alocationCollectionView textFiledDelegate:(UITextField *)atextFiledDelegate;
++ (NSData *)showOrderStatusWitharticleOriginalHeader:(PGAlertViewStyle *)aarticleOriginalHeader userModelFrom:(PGAlertViewStyle *)auserModelFrom playerStatusFailed:(PGAlertViewStyle *)aplayerStatusFailed;
+- (UITableViewCellSeparatorStyle)imageTypeSuccessWithmaximumBadgeNumber:(UIButtonType)amaximumBadgeNumber locationViewController:(NSTextAlignment)alocationViewController;
+- (NSLineBreakMode)assetMediaTypeWithconnectionDataDelegate:(CGPoint)aconnectionDataDelegate assetFromImage:(CGRect)aassetFromImage;
+- (NSLineBreakMode)reusableSupplementaryViewWithscrollViewContent:(UIScrollView *)ascrollViewContent mallViewModel:(NSString *)amallViewModel;
 + (void)instanceCreateMethod; 
 
 @end

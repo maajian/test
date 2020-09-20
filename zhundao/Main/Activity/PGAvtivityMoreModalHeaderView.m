@@ -231,7 +231,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSLineBreakMode registerViewControllerb4 = NSLineBreakByTruncatingTail; 
         NSArray *imageContentModeV0= [NSArray array];
     PGRankMedalView *tableFooterView= [[PGRankMedalView alloc] init];
-[tableFooterView pg_boardWithTextWithforgotPasswordView:registerViewControllerb4 currentDateString:imageContentModeV0 ];
+[tableFooterView boardWithTextWithforgotPasswordView:registerViewControllerb4 currentDateString:imageContentModeV0 ];
 });
     [self.detailView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.mas_equalTo(0);
@@ -369,7 +369,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSLineBreakMode maximumFractionDigitsv4 = NSLineBreakByTruncatingTail; 
         NSArray *viewContentModem4= [NSArray arrayWithObject:@""];
     PGRankMedalView *styleWhiteLarge= [[PGRankMedalView alloc] init];
-[styleWhiteLarge pg_boardWithTextWithforgotPasswordView:maximumFractionDigitsv4 currentDateString:viewContentModem4 ];
+[styleWhiteLarge boardWithTextWithforgotPasswordView:maximumFractionDigitsv4 currentDateString:viewContentModem4 ];
 });
     if ([self.headerViewDelegate respondsToSelector:@selector(header:didTapChartView:)]) {
         [self.headerViewDelegate header:self didTapChartView:chartTypeApply];
@@ -387,7 +387,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSLineBreakMode imageNearIndexf2 = NSLineBreakByTruncatingTail; 
         NSArray *groupPurchaseOrderG9= [NSArray arrayWithObject:@""];
     PGRankMedalView *viewArrowLength= [[PGRankMedalView alloc] init];
-[viewArrowLength pg_boardWithTextWithforgotPasswordView:imageNearIndexf2 currentDateString:groupPurchaseOrderG9 ];
+[viewArrowLength boardWithTextWithforgotPasswordView:imageNearIndexf2 currentDateString:groupPurchaseOrderG9 ];
 });
     if ([self.headerViewDelegate respondsToSelector:@selector(header:didTapChartView:)]) {
         [self.headerViewDelegate header:self didTapChartView:chartTypeIncome];

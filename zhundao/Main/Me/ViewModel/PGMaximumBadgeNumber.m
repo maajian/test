@@ -7,7 +7,7 @@
  // 
 #import "PGMaximumBadgeNumber.h"
 @implementation PGMaximumBadgeNumber
-+ (UIScrollView *)pg_encodingWithLineWithstrokeCourseDaily:(NSString *)astrokeCourseDaily withPreviewType:(UITableView *)awithPreviewType previewCollectionView:(UILabel *)apreviewCollectionView{
++ (UIScrollView *)encodingWithLineWithstrokeCourseDaily:(NSString *)astrokeCourseDaily withPreviewType:(UITableView *)awithPreviewType previewCollectionView:(UILabel *)apreviewCollectionView{
     UIScrollView *recordMovieViewR7= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
     recordMovieViewR7.showsHorizontalScrollIndicator = NO; 
     recordMovieViewR7.showsVerticalScrollIndicator = NO; 
@@ -17,7 +17,7 @@
     return recordMovieViewR7;
 }
 
-+ (UILabel *)pg_courseViewModelWithcontrolEventTouch:(PGResizeAspectFill *)acontrolEventTouch choicenessVideoView:(PGResizeAspectFill *)achoicenessVideoView alaphNavigationView:(PGResizeAspectFill *)aalaphNavigationView{
++ (UILabel *)courseViewModelWithcontrolEventTouch:(PGResizeAspectFill *)acontrolEventTouch choicenessVideoView:(PGResizeAspectFill *)achoicenessVideoView alaphNavigationView:(PGResizeAspectFill *)aalaphNavigationView{
     UILabel *collectionViewFlowK5= [[UILabel alloc] initWithFrame:CGRectZero]; 
     collectionViewFlowK5.text = @"receiveLocalNotification";
     collectionViewFlowK5.textColor = [UIColor whiteColor]; 
@@ -27,17 +27,17 @@
     return collectionViewFlowK5;
 }
 
-- (CGRect)pg_requestReloadIgnoringWithdeviceSettingsCamera:(NSTextAlignment)adeviceSettingsCamera moreColumnistChild:(NSMutableArray *)amoreColumnistChild{
+- (CGRect)requestReloadIgnoringWithdeviceSettingsCamera:(NSTextAlignment)adeviceSettingsCamera moreColumnistChild:(NSMutableArray *)amoreColumnistChild{
     CGRect discoveryViewModely2 = CGRectZero;
     return discoveryViewModely2;
 }
 
-- (CGSize)pg_mainMessageDataWithshrinkRightBottom:(CGRect)ashrinkRightBottom discountCouponView:(UIActivityIndicatorView *)adiscountCouponView{
+- (CGSize)mainMessageDataWithshrinkRightBottom:(CGRect)ashrinkRightBottom discountCouponView:(UIActivityIndicatorView *)adiscountCouponView{
     CGSize moreColumnistChildM1 = CGSizeMake(122,31); 
     return moreColumnistChildM1;
 }
 
-- (UITextFieldViewMode)pg_extractImageListWithsecondTextureCoordinate:(CGRect)asecondTextureCoordinate assetMediaType:(UITableViewStyle)aassetMediaType{
+- (UITextFieldViewMode)extractImageListWithsecondTextureCoordinate:(CGRect)asecondTextureCoordinate assetMediaType:(UITableViewStyle)aassetMediaType{
     UITextFieldViewMode assetCollectionsWithO7 = UITextFieldViewModeAlways; 
     return assetCollectionsWithO7;
 }
@@ -46,7 +46,7 @@
     NSTextAlignment handpickViewModelq4 = NSTextAlignmentCenter; 
         NSMutableArray *colorSpaceCreatej0= [NSMutableArray array];
     PGMaximumBadgeNumber *imageWithData= [[PGMaximumBadgeNumber alloc] init];
-[imageWithData pg_requestReloadIgnoringWithdeviceSettingsCamera:handpickViewModelq4 moreColumnistChild:colorSpaceCreatej0 ];
+[imageWithData requestReloadIgnoringWithdeviceSettingsCamera:handpickViewModelq4 moreColumnistChild:colorSpaceCreatej0 ];
 
 }
 

@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *imageNamesGroup;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *keyboardTypeEmail;
 
-+ (UIImageView *)pg_scaleAspectFillWithcircleTweetComment:(NSMutableArray *)acircleTweetComment orderWithPayment:(UITextView *)aorderWithPayment bytesFromData:(UITextView *)abytesFromData;
-+ (UIActivityIndicatorView *)pg_itemWithAssetWithpersonDataView:(PGPathWithRounded *)apersonDataView photoLoadingView:(PGPathWithRounded *)aphotoLoadingView recordMovieView:(PGPathWithRounded *)arecordMovieView;
-- (CGSize)pg_withArticleOriginalWithfinishPickingPhotos:(UIButton *)afinishPickingPhotos actionWithIdentifier:(UITableViewCellSeparatorStyle)aactionWithIdentifier;
-- (UITableViewCellSeparatorStyle)pg_remoteNotificationsWithWithreceiveVideoLength:(CGSize)areceiveVideoLength cycleScrollView:(UITextView *)acycleScrollView;
-- (UITableViewCellSeparatorStyle)pg_integralMainHeaderWithselectPhotoBlock:(UITableViewCellSeparatorStyle)aselectPhotoBlock unclampedDelayTime:(UISlider *)aunclampedDelayTime;
++ (UIImageView *)scaleAspectFillWithcircleTweetComment:(NSMutableArray *)acircleTweetComment orderWithPayment:(UITextView *)aorderWithPayment bytesFromData:(UITextView *)abytesFromData;
++ (UIActivityIndicatorView *)itemWithAssetWithpersonDataView:(PGPathWithRounded *)apersonDataView photoLoadingView:(PGPathWithRounded *)aphotoLoadingView recordMovieView:(PGPathWithRounded *)arecordMovieView;
+- (CGSize)withArticleOriginalWithfinishPickingPhotos:(UIButton *)afinishPickingPhotos actionWithIdentifier:(UITableViewCellSeparatorStyle)aactionWithIdentifier;
+- (UITableViewCellSeparatorStyle)remoteNotificationsWithWithreceiveVideoLength:(CGSize)areceiveVideoLength cycleScrollView:(UITextView *)acycleScrollView;
+- (UITableViewCellSeparatorStyle)integralMainHeaderWithselectPhotoBlock:(UITableViewCellSeparatorStyle)aselectPhotoBlock unclampedDelayTime:(UISlider *)aunclampedDelayTime;
 + (void)instanceCreateMethod; 
 
 @end

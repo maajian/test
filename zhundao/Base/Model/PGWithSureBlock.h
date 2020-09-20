@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *swimDataModel;
 @property (nonatomic, readwrite, assign) UITableViewStyle *guideBottomView;
 
-+ (NSData *)pg_trainParticularCommentWitharrayUsingDescriptors:(UITextField *)aarrayUsingDescriptors selectTypeUser:(UIImage *)aselectTypeUser filterManagerDelegate:(UIImageView *)afilterManagerDelegate;
-+ (UILabel *)pg_navigantionItemWithWithhonorTitleModel:(PGSocialPlatformType *)ahonorTitleModel locationCollectionView:(PGSocialPlatformType *)alocationCollectionView loginViewController:(PGSocialPlatformType *)aloginViewController;
-- (UIEdgeInsets)pg_javaScriptConfirmWithloginWithUser:(UIFont *)aloginWithUser mobileCoreServices:(NSMutableArray *)amobileCoreServices;
-- (UIButtonType)pg_ringStrokeAnimationWithtrainParticularHeader:(UISlider *)atrainParticularHeader videoRequestOptions:(UIFont *)avideoRequestOptions;
-- (CGSize)pg_textViewContentWithchangeReasonCategory:(CGRect)achangeReasonCategory couponViewModel:(UIView *)acouponViewModel;
++ (NSData *)trainParticularCommentWitharrayUsingDescriptors:(UITextField *)aarrayUsingDescriptors selectTypeUser:(UIImage *)aselectTypeUser filterManagerDelegate:(UIImageView *)afilterManagerDelegate;
++ (UILabel *)navigantionItemWithWithhonorTitleModel:(PGSocialPlatformType *)ahonorTitleModel locationCollectionView:(PGSocialPlatformType *)alocationCollectionView loginViewController:(PGSocialPlatformType *)aloginViewController;
+- (UIEdgeInsets)javaScriptConfirmWithloginWithUser:(UIFont *)aloginWithUser mobileCoreServices:(NSMutableArray *)amobileCoreServices;
+- (UIButtonType)ringStrokeAnimationWithtrainParticularHeader:(UISlider *)atrainParticularHeader videoRequestOptions:(UIFont *)avideoRequestOptions;
+- (CGSize)textViewContentWithchangeReasonCategory:(CGRect)achangeReasonCategory couponViewModel:(UIView *)acouponViewModel;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,31 +7,31 @@
  // 
 #import "PGNatatoriumParticularData.h"
 @implementation PGNatatoriumParticularData
-+ (UISwitch *)pg_recommendCollectionViewWithmutableUserNotification:(UIColor *)amutableUserNotification dailyCourseModel:(UIImage *)adailyCourseModel nodataViewDelegate:(UIButton *)anodataViewDelegate{
++ (UISwitch *)recommendCollectionViewWithmutableUserNotification:(UIColor *)amutableUserNotification dailyCourseModel:(UIImage *)adailyCourseModel nodataViewDelegate:(UIButton *)anodataViewDelegate{
     UISwitch *autoAdjustTrackd3= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     autoAdjustTrackd3.on = YES; 
     autoAdjustTrackd3.onTintColor = [UIColor whiteColor]; 
     return autoAdjustTrackd3;
 }
 
-+ (UIActivityIndicatorView *)pg_autoresizingMaskIntoWithstrokeCourseSecond:(PGInputViewContent *)astrokeCourseSecond swimRecordData:(PGInputViewContent *)aswimRecordData buttonTitleColor:(PGInputViewContent *)abuttonTitleColor{
++ (UIActivityIndicatorView *)autoresizingMaskIntoWithstrokeCourseSecond:(PGInputViewContent *)astrokeCourseSecond swimRecordData:(PGInputViewContent *)aswimRecordData buttonTitleColor:(PGInputViewContent *)abuttonTitleColor{
     UIActivityIndicatorView *secondTextureCoordinateS2= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     secondTextureCoordinateS2.hidden = YES; 
     secondTextureCoordinateS2.hidesWhenStopped = YES; 
     return secondTextureCoordinateS2;
 }
 
-- (CGRect)pg_scrollTimeIntervalWithmainViewController:(UIImageView *)amainViewController rectEdgeNone:(UIScrollView *)arectEdgeNone{
+- (CGRect)scrollTimeIntervalWithmainViewController:(UIImageView *)amainViewController rectEdgeNone:(UIScrollView *)arectEdgeNone{
     CGRect controlEventTouchC2 = CGRectMake(234,204,105,209); 
     return controlEventTouchC2;
 }
 
-- (UIButtonType)pg_cellReuseIdentifierWithnaviTitleFont:(UITextView *)anaviTitleFont finishSavingWith:(UIActivityIndicatorView *)afinishSavingWith{
+- (UIButtonType)cellReuseIdentifierWithnaviTitleFont:(UITextView *)anaviTitleFont finishSavingWith:(UIActivityIndicatorView *)afinishSavingWith{
     UIButtonType assetResourceLoadingE2 = UIButtonTypeContactAdd;
     return assetResourceLoadingE2;
 }
 
-- (CGSize)pg_organizeNoticeModelWithfinishPickingVideo:(UIView *)afinishPickingVideo animationRightTick:(UIScrollView *)aanimationRightTick{
+- (CGSize)organizeNoticeModelWithfinishPickingVideo:(UIView *)afinishPickingVideo animationRightTick:(UIScrollView *)aanimationRightTick{
     CGSize finishPickingVideol5 = CGSizeMake(126,245); 
     return finishPickingVideol5;
 }
@@ -50,7 +50,7 @@
     showOrderStatusi3.maximumZoomScale = 5; 
     showOrderStatusi3.minimumZoomScale = 1; 
     PGNatatoriumParticularData *assetFromImage= [[PGNatatoriumParticularData alloc] init];
-[assetFromImage pg_scrollTimeIntervalWithmainViewController:shaderFromStringr2 rectEdgeNone:showOrderStatusi3 ];
+[assetFromImage scrollTimeIntervalWithmainViewController:shaderFromStringr2 rectEdgeNone:showOrderStatusi3 ];
 
 }
 

@@ -175,7 +175,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     availableTextureIndexi0.minimumZoomScale = 1; 
         UIEdgeInsets exerciseRecordViewL1 = UIEdgeInsetsMake(207,142,109,75); 
     PGNaviTitleColor *failProvisionalNavigation= [[PGNaviTitleColor alloc] init];
-[failProvisionalNavigation pg_asynchronouslyWithCompletionWithwithCourseParticular:availableTextureIndexi0 coachDetailModel:exerciseRecordViewL1 ];
+[failProvisionalNavigation asynchronouslyWithCompletionWithwithCourseParticular:availableTextureIndexi0 coachDetailModel:exerciseRecordViewL1 ];
 });
     if (_isScroll) {
          [self addTimer];
@@ -210,7 +210,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     groupWithPhotosX0.minimumZoomScale = 1; 
         UIEdgeInsets yearTimeIntervalL4 = UIEdgeInsetsMake(122,22,189,25); 
     PGNaviTitleColor *stadiumViewModel= [[PGNaviTitleColor alloc] init];
-[stadiumViewModel pg_asynchronouslyWithCompletionWithwithCourseParticular:groupWithPhotosX0 coachDetailModel:yearTimeIntervalL4 ];
+[stadiumViewModel asynchronouslyWithCompletionWithwithCourseParticular:groupWithPhotosX0 coachDetailModel:yearTimeIntervalL4 ];
 });
     _pageControl.currentPageIndicatorTintColor = currentPageColor;
 }
@@ -228,7 +228,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     columnistCategoryModeli1.minimumZoomScale = 1; 
         UIEdgeInsets rightBottomPointd6 = UIEdgeInsetsMake(134,248,104,72); 
     PGNaviTitleColor *orderStepView= [[PGNaviTitleColor alloc] init];
-[orderStepView pg_asynchronouslyWithCompletionWithwithCourseParticular:columnistCategoryModeli1 coachDetailModel:rightBottomPointd6 ];
+[orderStepView asynchronouslyWithCompletionWithwithCourseParticular:columnistCategoryModeli1 coachDetailModel:rightBottomPointd6 ];
 });
     _pageControl.hidden = hiddenPageCtr;
 }

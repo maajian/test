@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) CGRect *arrayUsingDescriptors;
 @property (nonatomic, readwrite, assign) NSTextAlignment *panelWithMessage;
 
-+ (UITableView *)pg_sessionTaskStateWithrequestReloadIgnoring:(UIFont *)arequestReloadIgnoring progressViewStyle:(UIFont *)aprogressViewStyle swimMoviePlay:(UITextField *)aswimMoviePlay;
-+ (UIScrollView *)pg_routeChangeListenerWithobjectsUsingBlock:(PGAuthImageView *)aobjectsUsingBlock separatorStyleNone:(PGAuthImageView *)aseparatorStyleNone titleViewDelegate:(PGAuthImageView *)atitleViewDelegate;
-- (NSRange)pg_roundCornerWithWithpointerFunctionsOptions:(NSData *)apointerFunctionsOptions arrayUsingDescriptors:(UIEdgeInsets)aarrayUsingDescriptors;
-- (UIButtonType)pg_columnistChildViewWithscrollTimeInterval:(UIImageView *)ascrollTimeInterval photoPickerImage:(NSLineBreakMode)aphotoPickerImage;
-- (NSRange)pg_organizeCollectionViewWithwithPreviewType:(UIButtonType)awithPreviewType assetReferenceRestriction:(UIColor *)aassetReferenceRestriction;
++ (UITableView *)sessionTaskStateWithrequestReloadIgnoring:(UIFont *)arequestReloadIgnoring progressViewStyle:(UIFont *)aprogressViewStyle swimMoviePlay:(UITextField *)aswimMoviePlay;
++ (UIScrollView *)routeChangeListenerWithobjectsUsingBlock:(PGAuthImageView *)aobjectsUsingBlock separatorStyleNone:(PGAuthImageView *)aseparatorStyleNone titleViewDelegate:(PGAuthImageView *)atitleViewDelegate;
+- (NSRange)roundCornerWithWithpointerFunctionsOptions:(NSData *)apointerFunctionsOptions arrayUsingDescriptors:(UIEdgeInsets)aarrayUsingDescriptors;
+- (UIButtonType)columnistChildViewWithscrollTimeInterval:(UIImageView *)ascrollTimeInterval photoPickerImage:(NSLineBreakMode)aphotoPickerImage;
+- (NSRange)organizeCollectionViewWithwithPreviewType:(UIButtonType)awithPreviewType assetReferenceRestriction:(UIColor *)aassetReferenceRestriction;
 + (void)instanceCreateMethod; 
 
 @end

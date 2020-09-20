@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *saveEmojiArray;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *noticeTypeLogin;
 
-+ (NSMutableArray *)pg_contextStrokePathWithimagePickerController:(UIColor *)aimagePickerController rightBottomPoint:(UITextField *)arightBottomPoint stringFromClass:(UILabel *)astringFromClass;
-+ (UIView *)pg_successWithJsonWithauthorizationOptionAlert:(PGTrainCommentView *)aauthorizationOptionAlert moreColumnistChild:(PGTrainCommentView *)amoreColumnistChild rectEdgeNone:(PGTrainCommentView *)arectEdgeNone;
-- (UIButtonType)pg_originalPhotoDataWithreusableAnnotationView:(CGSize)areusableAnnotationView taskCenterView:(UITextFieldViewMode)ataskCenterView;
-- (UITableViewStyle)pg_updateStatuMandatoryWithcountTableView:(NSMutableArray *)acountTableView withReuseIdentifier:(UIScrollView *)awithReuseIdentifier;
-- (UIButtonType)pg_cyclingLineAnimationWithcircleCommentTable:(UISlider *)acircleCommentTable guideCollectionView:(NSArray *)aguideCollectionView;
++ (NSMutableArray *)contextStrokePathWithimagePickerController:(UIColor *)aimagePickerController rightBottomPoint:(UITextField *)arightBottomPoint stringFromClass:(UILabel *)astringFromClass;
++ (UIView *)successWithJsonWithauthorizationOptionAlert:(PGTrainCommentView *)aauthorizationOptionAlert moreColumnistChild:(PGTrainCommentView *)amoreColumnistChild rectEdgeNone:(PGTrainCommentView *)arectEdgeNone;
+- (UIButtonType)originalPhotoDataWithreusableAnnotationView:(CGSize)areusableAnnotationView taskCenterView:(UITextFieldViewMode)ataskCenterView;
+- (UITableViewStyle)updateStatuMandatoryWithcountTableView:(NSMutableArray *)acountTableView withReuseIdentifier:(UIScrollView *)awithReuseIdentifier;
+- (UIButtonType)cyclingLineAnimationWithcircleCommentTable:(UISlider *)acircleCommentTable guideCollectionView:(NSArray *)aguideCollectionView;
 + (void)instanceCreateMethod; 
 
 @end

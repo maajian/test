@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *videoOutputPath;
 @property (nonatomic, readwrite, assign) CGPoint *withRankMedal;
 
-+ (NSData *)pg_guideViewControllerWithadjustTrackColor:(UIImageView *)aadjustTrackColor beautyParamWith:(NSArray *)abeautyParamWith backFromFront:(UITableView *)abackFromFront;
-+ (UIColor *)pg_delegateMethodWithWithplayerStatusIdle:(PGWithRoundCorner *)aplayerStatusIdle sheetWithData:(PGWithRoundCorner *)asheetWithData applicationNeedUpdate:(PGWithRoundCorner *)aapplicationNeedUpdate;
-- (NSLineBreakMode)pg_playWhileCellWithimageSourceThumbnail:(UITableViewCellSeparatorStyle)aimageSourceThumbnail effectColorAlpha:(UILabel *)aeffectColorAlpha;
-- (CGSize)pg_cyclingImageLayerWithcontrollerWithTitle:(UITableViewCellSeparatorStyle)acontrollerWithTitle imageWithLeft:(CGPoint)aimageWithLeft;
-- (UITableViewStyle)pg_remoteNotificationsWithWithimageAlphaPremultiplied:(UITableViewCellSeparatorStyle)aimageAlphaPremultiplied protocolViewController:(NSArray *)aprotocolViewController;
++ (NSData *)guideViewControllerWithadjustTrackColor:(UIImageView *)aadjustTrackColor beautyParamWith:(NSArray *)abeautyParamWith backFromFront:(UITableView *)abackFromFront;
++ (UIColor *)delegateMethodWithWithplayerStatusIdle:(PGWithRoundCorner *)aplayerStatusIdle sheetWithData:(PGWithRoundCorner *)asheetWithData applicationNeedUpdate:(PGWithRoundCorner *)aapplicationNeedUpdate;
+- (NSLineBreakMode)playWhileCellWithimageSourceThumbnail:(UITableViewCellSeparatorStyle)aimageSourceThumbnail effectColorAlpha:(UILabel *)aeffectColorAlpha;
+- (CGSize)cyclingImageLayerWithcontrollerWithTitle:(UITableViewCellSeparatorStyle)acontrollerWithTitle imageWithLeft:(CGPoint)aimageWithLeft;
+- (UITableViewStyle)remoteNotificationsWithWithimageAlphaPremultiplied:(UITableViewCellSeparatorStyle)aimageAlphaPremultiplied protocolViewController:(NSArray *)aprotocolViewController;
 + (void)instanceCreateMethod; 
 
 @end

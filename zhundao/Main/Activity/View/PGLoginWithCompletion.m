@@ -7,27 +7,27 @@
  // 
 #import "PGLoginWithCompletion.h"
 @implementation PGLoginWithCompletion
-+ (NSData *)pg_decimalNumberHandlerWithdataWithUser:(UIScrollView *)adataWithUser assetFromVideo:(UIActivityIndicatorView *)aassetFromVideo couponViewModel:(NSString *)acouponViewModel{
++ (NSData *)decimalNumberHandlerWithdataWithUser:(UIScrollView *)adataWithUser assetFromVideo:(UIActivityIndicatorView *)aassetFromVideo couponViewModel:(NSString *)acouponViewModel{
     NSData *likeTweetSuccw0= [[NSData alloc] init];
     return likeTweetSuccw0;
 }
 
-+ (NSMutableArray *)pg_colorSpaceReleaseWithassetsPhotoWith:(PGLoginViewModel *)aassetsPhotoWith selectPhotoNavigation:(PGLoginViewModel *)aselectPhotoNavigation pointSaturationMatrix:(PGLoginViewModel *)apointSaturationMatrix{
++ (NSMutableArray *)colorSpaceReleaseWithassetsPhotoWith:(PGLoginViewModel *)aassetsPhotoWith selectPhotoNavigation:(PGLoginViewModel *)aselectPhotoNavigation pointSaturationMatrix:(PGLoginViewModel *)apointSaturationMatrix{
     NSMutableArray *levalInfoModelN4= [NSMutableArray arrayWithCapacity:0];
     return levalInfoModelN4;
 }
 
-- (CGPoint)pg_commentArticleSuccWithselectedPhotoBytes:(UILabel *)aselectedPhotoBytes gestureRecognizerDelegate:(NSData *)agestureRecognizerDelegate{
+- (CGPoint)commentArticleSuccWithselectedPhotoBytes:(UILabel *)aselectedPhotoBytes gestureRecognizerDelegate:(NSData *)agestureRecognizerDelegate{
     CGPoint uploadSuccBlockT8 = CGPointMake(2,64); 
     return uploadSuccBlockT8;
 }
 
-- (CGPoint)pg_locationCollectionViewWithimageWithImages:(CGPoint)aimageWithImages keyboardTypeEmail:(UITextFieldViewMode)akeyboardTypeEmail{
+- (CGPoint)locationCollectionViewWithimageWithImages:(CGPoint)aimageWithImages keyboardTypeEmail:(UITextFieldViewMode)akeyboardTypeEmail{
     CGPoint imageRequestOptionsw5 = CGPointMake(3,73); 
     return imageRequestOptionsw5;
 }
 
-- (UITableViewCellSeparatorStyle)pg_imageAlphaPremultipliedWithchatInputText:(CGRect)achatInputText natatoriumParticularTable:(NSData *)anatatoriumParticularTable{
+- (UITableViewCellSeparatorStyle)imageAlphaPremultipliedWithchatInputText:(CGRect)achatInputText natatoriumParticularTable:(NSData *)anatatoriumParticularTable{
     UITableViewCellSeparatorStyle viewDataSourceY3 = UITableViewCellSeparatorStyleNone; 
     return viewDataSourceY3;
 }
@@ -41,7 +41,7 @@
     workStatusNofiZ3.textAlignment = NSTextAlignmentCenter; 
         NSData *backGroundUserW1= [[NSData alloc] init];
     PGLoginWithCompletion *imageContainerView= [[PGLoginWithCompletion alloc] init];
-[imageContainerView pg_commentArticleSuccWithselectedPhotoBytes:workStatusNofiZ3 gestureRecognizerDelegate:backGroundUserW1 ];
+[imageContainerView commentArticleSuccWithselectedPhotoBytes:workStatusNofiZ3 gestureRecognizerDelegate:backGroundUserW1 ];
 
 }
 

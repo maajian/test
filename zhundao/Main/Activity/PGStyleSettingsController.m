@@ -46,7 +46,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     naviTitleFontG7.value =75; 
         UIFont *ringStrokeAnimationU4= [UIFont systemFontOfSize:203];
     PGImageProcessingContext *imageContentMode= [[PGImageProcessingContext alloc] init];
-[imageContentMode pg_searchRequestWithWithimageAlphaPremultiplied:naviTitleFontG7 retinaFilePath:ringStrokeAnimationU4 ];
+[imageContentMode searchRequestWithWithimageAlphaPremultiplied:naviTitleFontG7 retinaFilePath:ringStrokeAnimationU4 ];
 });
     [super viewDidLayoutSubviews];
     if (_needReload) {
@@ -62,7 +62,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     commentWithOrderu6.value =88; 
         UIFont *allowPickingVideoR8= [UIFont systemFontOfSize:13];
     PGImageProcessingContext *discountNodataView= [[PGImageProcessingContext alloc] init];
-[discountNodataView pg_searchRequestWithWithimageAlphaPremultiplied:commentWithOrderu6 retinaFilePath:allowPickingVideoR8 ];
+[discountNodataView searchRequestWithWithimageAlphaPremultiplied:commentWithOrderu6 retinaFilePath:allowPickingVideoR8 ];
 });
     [self.tableView reloadData];
     _needReload = NO;
@@ -78,7 +78,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     contentInformationRequestV6.value =89; 
         UIFont *withCollectionViewZ2= [UIFont systemFontOfSize:12];
     PGImageProcessingContext *collectionViewData= [[PGImageProcessingContext alloc] init];
-[collectionViewData pg_searchRequestWithWithimageAlphaPremultiplied:contentInformationRequestV6 retinaFilePath:withCollectionViewZ2 ];
+[collectionViewData searchRequestWithWithimageAlphaPremultiplied:contentInformationRequestV6 retinaFilePath:withCollectionViewZ2 ];
 });
     _textStyle = textStyle;
     _needReload = YES;

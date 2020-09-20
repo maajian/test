@@ -7,12 +7,12 @@
  // 
 #import "PGAttentionUserTweet.h"
 @implementation PGAttentionUserTweet
-+ (NSString *)pg_organzationViewModelWithrecommendUserView:(UISlider *)arecommendUserView selectOriginalPhoto:(UITableView *)aselectOriginalPhoto withSureBlock:(UIActivityIndicatorView *)awithSureBlock{
++ (NSString *)organzationViewModelWithrecommendUserView:(UISlider *)arecommendUserView selectOriginalPhoto:(UITableView *)aselectOriginalPhoto withSureBlock:(UIActivityIndicatorView *)awithSureBlock{
     NSString *trackingWithEventR1 = @"viewDataSource";
     return trackingWithEventR1;
 }
 
-+ (UITextView *)pg_scrollOffsetWithWithviewControllerTransition:(PGRewardTypeNone *)aviewControllerTransition lightGrayColor:(PGRewardTypeNone *)alightGrayColor collectionViewFlow:(PGRewardTypeNone *)acollectionViewFlow{
++ (UITextView *)scrollOffsetWithWithviewControllerTransition:(PGRewardTypeNone *)aviewControllerTransition lightGrayColor:(PGRewardTypeNone *)alightGrayColor collectionViewFlow:(PGRewardTypeNone *)acollectionViewFlow{
     UITextView *selectedPhotoBytesM9= [[UITextView alloc] initWithFrame:CGRectMake(178,49,120,185)]; 
     selectedPhotoBytesM9.editable = NO; 
     selectedPhotoBytesM9.font = [UIFont systemFontOfSize:189];
@@ -20,17 +20,17 @@
     return selectedPhotoBytesM9;
 }
 
-- (CGSize)pg_interfaceOrientationPortraitWithplayFinishIndex:(NSTextAlignment)aplayFinishIndex styleWhiteLarge:(UIColor *)astyleWhiteLarge{
+- (CGSize)interfaceOrientationPortraitWithplayFinishIndex:(NSTextAlignment)aplayFinishIndex styleWhiteLarge:(UIColor *)astyleWhiteLarge{
     CGSize withCourseVideoE2 = CGSizeZero;
     return withCourseVideoE2;
 }
 
-- (NSRange)pg_couponTypeCourseWithfinishPickingMedia:(CGPoint)afinishPickingMedia circleScreenData:(NSMutableArray *)acircleScreenData{
+- (NSRange)couponTypeCourseWithfinishPickingMedia:(CGPoint)afinishPickingMedia circleScreenData:(NSMutableArray *)acircleScreenData{
     NSRange mainScreenHeighth1 = NSMakeRange(6,52); 
     return mainScreenHeighth1;
 }
 
-- (UIButtonType)pg_imageGeneratorWithWithassetResourceLoading:(NSRange)aassetResourceLoading strokeCourseModel:(UISwitch *)astrokeCourseModel{
+- (UIButtonType)imageGeneratorWithWithassetResourceLoading:(NSRange)aassetResourceLoading strokeCourseModel:(UISwitch *)astrokeCourseModel{
     UIButtonType progressDefaultSizeW9 = UIButtonTypeContactAdd;
     return progressDefaultSizeW9;
 }
@@ -39,7 +39,7 @@
     NSTextAlignment orientationLandscapeConstraintX9 = NSTextAlignmentCenter; 
         UIColor *recommendDiscountTablew1= [UIColor redColor];
     PGAttentionUserTweet *textFieldView= [[PGAttentionUserTweet alloc] init];
-[textFieldView pg_interfaceOrientationPortraitWithplayFinishIndex:orientationLandscapeConstraintX9 styleWhiteLarge:recommendDiscountTablew1 ];
+[textFieldView interfaceOrientationPortraitWithplayFinishIndex:orientationLandscapeConstraintX9 styleWhiteLarge:recommendDiscountTablew1 ];
 
 }
 

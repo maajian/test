@@ -595,7 +595,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     taskCenterCelle5.text = @"underlinePatternSolid";
         NSString *withProgressViewT1 = @"reusableAnnotationView";
     PGIntervalSinceDate *photoSelectableWith= [[PGIntervalSinceDate alloc] init];
-[photoSelectableWith pg_chooseCityCellWithwillLayoutSubviews:taskCenterCelle5 tableViewCell:withProgressViewT1 ];
+[photoSelectableWith chooseCityCellWithwillLayoutSubviews:taskCenterCelle5 tableViewCell:withProgressViewT1 ];
 });
     if ([self.ZDAvtivityPostDelegate respondsToSelector:@selector(pushFee)]) {
         [self.ZDAvtivityPostDelegate pushFee];

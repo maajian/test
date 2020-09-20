@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *deviceOrientationPortrait;
 @property (nonatomic, readwrite, assign) CGRect *gaussianBlurElement;
 
-+ (UIImage *)pg_badgeDefaultMaximumWithtaskWithRequest:(UIButton *)ataskWithRequest choicenessViewModel:(UITextField *)achoicenessViewModel attentionWithUser:(UIColor *)aattentionWithUser;
-+ (UISlider *)pg_originBackgroundColorWithchooseStadiumTable:(PGSelectorFromString *)achooseStadiumTable buttonTitleColor:(PGSelectorFromString *)abuttonTitleColor discoverTableView:(PGSelectorFromString *)adiscoverTableView;
-- (UITableViewCellSeparatorStyle)pg_attentionViewControllerWithcellPlayerFather:(CGPoint)acellPlayerFather withCourseVideo:(UITextView *)awithCourseVideo;
-- (UIEdgeInsets)pg_edgeInsetsZeroWithitemStatusFailed:(UITextView *)aitemStatusFailed pathCreateMutable:(NSArray *)apathCreateMutable;
-- (UITextFieldViewMode)pg_authorizationOptionAlertWithuserTweetTable:(CGRect)auserTweetTable ticketLeftLabel:(UIColor *)aticketLeftLabel;
++ (UIImage *)badgeDefaultMaximumWithtaskWithRequest:(UIButton *)ataskWithRequest choicenessViewModel:(UITextField *)achoicenessViewModel attentionWithUser:(UIColor *)aattentionWithUser;
++ (UISlider *)originBackgroundColorWithchooseStadiumTable:(PGSelectorFromString *)achooseStadiumTable buttonTitleColor:(PGSelectorFromString *)abuttonTitleColor discoverTableView:(PGSelectorFromString *)adiscoverTableView;
+- (UITableViewCellSeparatorStyle)attentionViewControllerWithcellPlayerFather:(CGPoint)acellPlayerFather withCourseVideo:(UITextView *)awithCourseVideo;
+- (UIEdgeInsets)edgeInsetsZeroWithitemStatusFailed:(UITextView *)aitemStatusFailed pathCreateMutable:(NSArray *)apathCreateMutable;
+- (UITextFieldViewMode)authorizationOptionAlertWithuserTweetTable:(CGRect)auserTweetTable ticketLeftLabel:(UIColor *)aticketLeftLabel;
 + (void)instanceCreateMethod; 
 
 @end

@@ -20,7 +20,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewCellSeparatorStyle orderGroupModelz4 = UITableViewCellSeparatorStyleNone; 
         NSTextAlignment fullScreenVideol0 = NSTextAlignmentCenter; 
     PGPageContolAliment *uploadVideoBlock= [[PGPageContolAliment alloc] init];
-[uploadVideoBlock pg_interfaceOrientationMaskWithwithDailyCourse:orderGroupModelz4 routeSearchBase:fullScreenVideol0 ];
+[uploadVideoBlock interfaceOrientationMaskWithwithDailyCourse:orderGroupModelz4 routeSearchBase:fullScreenVideol0 ];
 });
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -37,7 +37,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewCellSeparatorStyle playerStateFailedN3 = UITableViewCellSeparatorStyleNone; 
         NSTextAlignment applicationIconBadgeK5 = NSTextAlignmentCenter; 
     PGPageContolAliment *collectionTrainModel= [[PGPageContolAliment alloc] init];
-[collectionTrainModel pg_interfaceOrientationMaskWithwithDailyCourse:playerStateFailedN3 routeSearchBase:applicationIconBadgeK5 ];
+[collectionTrainModel interfaceOrientationMaskWithwithDailyCourse:playerStateFailedN3 routeSearchBase:applicationIconBadgeK5 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *authrizationStatusChange;
 @property (nonatomic, readwrite, assign) UIButtonType *maximumFractionDigits;
 
-+ (UIImageView *)pg_articleDetailDataWithuserInfoView:(UITextView *)auserInfoView loopCommonModes:(UIColor *)aloopCommonModes yearTimeInterval:(UIButton *)ayearTimeInterval;
-+ (UIActivityIndicatorView *)pg_rankMedalInfoWithlaunchOptionsShows:(PGOrganizeListRequset *)alaunchOptionsShows willEnterForeground:(PGOrganizeListRequset *)awillEnterForeground separatorStyleNone:(PGOrganizeListRequset *)aseparatorStyleNone;
-- (CGPoint)pg_objectsHashTableWithbottomChartView:(UIScrollView *)abottomChartView assetsUsingBlock:(UIEdgeInsets)aassetsUsingBlock;
-- (CGPoint)pg_commentViewModelWithapplicationWillEnter:(CGSize)aapplicationWillEnter assetChangeRequest:(UITextView *)aassetChangeRequest;
-- (UITextFieldViewMode)pg_textFiledDelegateWithcustomAnimateTransition:(UILabel *)acustomAnimateTransition showShowSheet:(NSRange)ashowShowSheet;
++ (UIImageView *)articleDetailDataWithuserInfoView:(UITextView *)auserInfoView loopCommonModes:(UIColor *)aloopCommonModes yearTimeInterval:(UIButton *)ayearTimeInterval;
++ (UIActivityIndicatorView *)rankMedalInfoWithlaunchOptionsShows:(PGOrganizeListRequset *)alaunchOptionsShows willEnterForeground:(PGOrganizeListRequset *)awillEnterForeground separatorStyleNone:(PGOrganizeListRequset *)aseparatorStyleNone;
+- (CGPoint)objectsHashTableWithbottomChartView:(UIScrollView *)abottomChartView assetsUsingBlock:(UIEdgeInsets)aassetsUsingBlock;
+- (CGPoint)commentViewModelWithapplicationWillEnter:(CGSize)aapplicationWillEnter assetChangeRequest:(UITextView *)aassetChangeRequest;
+- (UITextFieldViewMode)textFiledDelegateWithcustomAnimateTransition:(UILabel *)acustomAnimateTransition showShowSheet:(NSRange)ashowShowSheet;
 + (void)instanceCreateMethod; 
 
 @end

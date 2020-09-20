@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) NSRange *requestReloadIgnoring;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *audioPlayerDelegate;
 
-+ (UITableView *)pg_imageOrientationLeftWithuserTweetTable:(UIImageView *)auserTweetTable withSwimData:(UISwitch *)awithSwimData screehButtonClick:(UIImageView *)ascreehButtonClick;
-+ (UISlider *)pg_receiveRemoteNotificationWithimageWithData:(PGCancelCollectionChoiceness *)aimageWithData bytesUsingEncoding:(PGCancelCollectionChoiceness *)abytesUsingEncoding finishSavingWith:(PGCancelCollectionChoiceness *)afinishSavingWith;
-- (UIButtonType)pg_activityIndicatorViewWithplayerDecodeError:(UIScrollView *)aplayerDecodeError browserPhotoView:(UIActivityIndicatorView *)abrowserPhotoView;
-- (UIButtonType)pg_taskCenterModelWithrecommendCourseHeight:(NSMutableArray *)arecommendCourseHeight tweetCommentModel:(UILabel *)atweetCommentModel;
-- (UIEdgeInsets)pg_movieFrameOppositeWithwithMedalKind:(UIButton *)awithMedalKind mediaTypeVideo:(UIButtonType)amediaTypeVideo;
++ (UITableView *)imageOrientationLeftWithuserTweetTable:(UIImageView *)auserTweetTable withSwimData:(UISwitch *)awithSwimData screehButtonClick:(UIImageView *)ascreehButtonClick;
++ (UISlider *)receiveRemoteNotificationWithimageWithData:(PGCancelCollectionChoiceness *)aimageWithData bytesUsingEncoding:(PGCancelCollectionChoiceness *)abytesUsingEncoding finishSavingWith:(PGCancelCollectionChoiceness *)afinishSavingWith;
+- (UIButtonType)activityIndicatorViewWithplayerDecodeError:(UIScrollView *)aplayerDecodeError browserPhotoView:(UIActivityIndicatorView *)abrowserPhotoView;
+- (UIButtonType)taskCenterModelWithrecommendCourseHeight:(NSMutableArray *)arecommendCourseHeight tweetCommentModel:(UILabel *)atweetCommentModel;
+- (UIEdgeInsets)movieFrameOppositeWithwithMedalKind:(UIButton *)awithMedalKind mediaTypeVideo:(UIButtonType)amediaTypeVideo;
 + (void)instanceCreateMethod; 
 
 @end

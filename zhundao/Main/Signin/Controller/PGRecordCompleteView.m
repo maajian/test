@@ -7,27 +7,27 @@
  // 
 #import "PGRecordCompleteView.h"
 @implementation PGRecordCompleteView
-+ (UIImage *)pg_keyboardAnimationDurationWithcurrentShortDate:(NSMutableArray *)acurrentShortDate differenceValueWith:(UIColor *)adifferenceValueWith particularNameData:(NSData *)aparticularNameData{
++ (UIImage *)keyboardAnimationDurationWithcurrentShortDate:(NSMutableArray *)acurrentShortDate differenceValueWith:(UIColor *)adifferenceValueWith particularNameData:(NSData *)aparticularNameData{
     UIImage *pointSaturationMatrixU3= [UIImage imageNamed:@""]; 
     return pointSaturationMatrixU3;
 }
 
-+ (UIColor *)pg_imageAlphaPremultipliedWithstyleWhiteLarge:(PGCollectionViewLayout *)astyleWhiteLarge pressEmojiAction:(PGCollectionViewLayout *)apressEmojiAction withUserData:(PGCollectionViewLayout *)awithUserData{
++ (UIColor *)imageAlphaPremultipliedWithstyleWhiteLarge:(PGCollectionViewLayout *)astyleWhiteLarge pressEmojiAction:(PGCollectionViewLayout *)apressEmojiAction withUserData:(PGCollectionViewLayout *)awithUserData{
     UIColor *imageRotationModet0= [UIColor redColor];
     return imageRotationModet0;
 }
 
-- (UITextFieldViewMode)pg_orderGroupCellWithshowLoginAlert:(NSTextAlignment)ashowLoginAlert originStatusBackground:(UITextView *)aoriginStatusBackground{
+- (UITextFieldViewMode)orderGroupCellWithshowLoginAlert:(NSTextAlignment)ashowLoginAlert originStatusBackground:(UITextView *)aoriginStatusBackground{
     UITextFieldViewMode courseParticularHeaderg7 = UITextFieldViewModeAlways; 
     return courseParticularHeaderg7;
 }
 
-- (CGRect)pg_normalTableViewWithstringWithTime:(UIFont *)astringWithTime playerStatusFailed:(UIEdgeInsets)aplayerStatusFailed{
+- (CGRect)normalTableViewWithstringWithTime:(UIFont *)astringWithTime playerStatusFailed:(UIEdgeInsets)aplayerStatusFailed{
     CGRect conversationViewControllerG9 = CGRectMake(175,32,170,186); 
     return conversationViewControllerG9;
 }
 
-- (NSRange)pg_saveEmojiDictionaryWithcouponsAlertView:(NSRange)acouponsAlertView videoImageExtractor:(UIImageView *)avideoImageExtractor{
+- (NSRange)saveEmojiDictionaryWithcouponsAlertView:(NSRange)acouponsAlertView videoImageExtractor:(UIImageView *)avideoImageExtractor{
     NSRange imageWithColorj7 = NSMakeRange(9,198); 
     return imageWithColorj7;
 }
@@ -39,7 +39,7 @@
     thumbCollectionViewq4.font = [UIFont systemFontOfSize:8];
     thumbCollectionViewq4.text = @"originalPhotoWith";
     PGRecordCompleteView *strokeCourseData= [[PGRecordCompleteView alloc] init];
-[strokeCourseData pg_orderGroupCellWithshowLoginAlert:collectionViewCellp2 originStatusBackground:thumbCollectionViewq4 ];
+[strokeCourseData orderGroupCellWithshowLoginAlert:collectionViewCellp2 originStatusBackground:thumbCollectionViewq4 ];
 
 }
 

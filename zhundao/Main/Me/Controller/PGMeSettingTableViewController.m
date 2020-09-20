@@ -76,7 +76,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect controllerWithTitleL3 = CGRectMake(30,66,146,178); 
         CGSize taskCenterVieww4 = CGSizeZero;
     PGStrokeCourseParticular *paragraphStyleAttribute= [[PGStrokeCourseParticular alloc] init];
-[paragraphStyleAttribute pg_imageTypeSuccessWithnumberHandlerWith:controllerWithTitleL3 textViewContent:taskCenterVieww4 ];
+[paragraphStyleAttribute imageTypeSuccessWithnumberHandlerWith:controllerWithTitleL3 textViewContent:taskCenterVieww4 ];
 });
     [super viewDidLoad];
     _tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f,0.0f, _tableview.bounds.size.width,15.0f)];
@@ -109,7 +109,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect medalExplainViewm2 = CGRectMake(72,204,195,152); 
         CGSize cellWithReuseE4 = CGSizeZero;
     PGStrokeCourseParticular *courseViewModel= [[PGStrokeCourseParticular alloc] init];
-[courseViewModel pg_imageTypeSuccessWithnumberHandlerWith:medalExplainViewm2 textViewContent:cellWithReuseE4 ];
+[courseViewModel imageTypeSuccessWithnumberHandlerWith:medalExplainViewm2 textViewContent:cellWithReuseE4 ];
 });
     PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
     web.urlString = @"https://www.zhundao.net/service/help/detail/207";

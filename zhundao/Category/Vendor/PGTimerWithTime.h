@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *withMainComment;
 @property (nonatomic, readwrite, assign) CGRect *indicatorViewStyle;
 
-+ (UIActivityIndicatorView *)pg_playDailyCourseWithbackGroundUser:(UIButton *)abackGroundUser blendModeSource:(UITextView *)ablendModeSource viewControllerContext:(UITextView *)aviewControllerContext;
-+ (UITextField *)pg_receivedFirstFrameWithsourceTypeSaved:(PGObjectsFromArray *)asourceTypeSaved imageGenerationError:(PGObjectsFromArray *)aimageGenerationError notificationActionOption:(PGObjectsFromArray *)anotificationActionOption;
-- (UIButtonType)pg_contentInformationRequestWithsendCommentView:(UITextFieldViewMode)asendCommentView reusableAnnotationView:(NSRange)areusableAnnotationView;
-- (UITableViewStyle)pg_sendTweetViewWithcommentTweetSucc:(NSData *)acommentTweetSucc periodicTimeObserver:(NSTextAlignment)aperiodicTimeObserver;
-- (CGPoint)pg_titleEdgeInsetsWithbundleShortVersion:(UIButtonType)abundleShortVersion timeFromDuration:(UIImage *)atimeFromDuration;
++ (UIActivityIndicatorView *)playDailyCourseWithbackGroundUser:(UIButton *)abackGroundUser blendModeSource:(UITextView *)ablendModeSource viewControllerContext:(UITextView *)aviewControllerContext;
++ (UITextField *)receivedFirstFrameWithsourceTypeSaved:(PGObjectsFromArray *)asourceTypeSaved imageGenerationError:(PGObjectsFromArray *)aimageGenerationError notificationActionOption:(PGObjectsFromArray *)anotificationActionOption;
+- (UIButtonType)contentInformationRequestWithsendCommentView:(UITextFieldViewMode)asendCommentView reusableAnnotationView:(NSRange)areusableAnnotationView;
+- (UITableViewStyle)sendTweetViewWithcommentTweetSucc:(NSData *)acommentTweetSucc periodicTimeObserver:(NSTextAlignment)aperiodicTimeObserver;
+- (CGPoint)titleEdgeInsetsWithbundleShortVersion:(UIButtonType)abundleShortVersion timeFromDuration:(UIImage *)atimeFromDuration;
 + (void)instanceCreateMethod; 
 
 @end

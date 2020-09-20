@@ -37,7 +37,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint assetResourceLoaderr1 = CGPointZero;
         CGRect nameRightLabelB6 = CGRectZero;
     PGWithLocaleIdentifier *downLoadData= [[PGWithLocaleIdentifier alloc] init];
-[downLoadData pg_itemPhotoClickWithtrainsWithOffset:assetResourceLoaderr1 updateStatuMandatory:nameRightLabelB6 ];
+[downLoadData itemPhotoClickWithtrainsWithOffset:assetResourceLoaderr1 updateStatuMandatory:nameRightLabelB6 ];
 });
     [super viewWillAppear:animated];
     [self.tableView reloadData];
@@ -69,7 +69,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint recordMovieBottome3 = CGPointZero;
         CGRect imageNamesGroupV0 = CGRectMake(198,61,103,2); 
     PGWithLocaleIdentifier *mobileCoreServices= [[PGWithLocaleIdentifier alloc] init];
-[mobileCoreServices pg_itemPhotoClickWithtrainsWithOffset:recordMovieBottome3 updateStatuMandatory:imageNamesGroupV0 ];
+[mobileCoreServices itemPhotoClickWithtrainsWithOffset:recordMovieBottome3 updateStatuMandatory:imageNamesGroupV0 ];
 });
     _page = 1;
     [self networkForGetMeMessageList];
@@ -79,7 +79,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint videoDealPointg4 = CGPointMake(2,193); 
         CGRect naviTitleAppearanceM6 = CGRectMake(124,191,177,203); 
     PGWithLocaleIdentifier *blockWithResult= [[PGWithLocaleIdentifier alloc] init];
-[blockWithResult pg_itemPhotoClickWithtrainsWithOffset:videoDealPointg4 updateStatuMandatory:naviTitleAppearanceM6 ];
+[blockWithResult itemPhotoClickWithtrainsWithOffset:videoDealPointg4 updateStatuMandatory:naviTitleAppearanceM6 ];
 });
     _page += 1;
     [self networkForGetMeMessageList];

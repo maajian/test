@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *trainParticularData;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *assetsGroupProperty;
 
-+ (UITextField *)pg_applicationLaunchOptionsWithcouponViewModel:(UIColor *)acouponViewModel discoverTableView:(UIButton *)adiscoverTableView headerFooterView:(NSString *)aheaderFooterView;
-+ (UILabel *)pg_videoImageExtractorWithphotosBytesWith:(PGBottomCellDelegate *)aphotosBytesWith reachabilityStatusChange:(PGBottomCellDelegate *)areachabilityStatusChange cancelLoadingRequest:(PGBottomCellDelegate *)acancelLoadingRequest;
-- (CGSize)pg_indicatorViewStyleWithupdateStatuMandatory:(UIEdgeInsets)aupdateStatuMandatory textureWithVertices:(NSArray *)atextureWithVertices;
-- (UITableViewStyle)pg_childViewModelWithimageSourceCopy:(CGPoint)aimageSourceCopy collectionReusableView:(UIImageView *)acollectionReusableView;
-- (CGSize)pg_viewArrowLengthWithwithMediaType:(UITextView *)awithMediaType routeSearchDone:(CGSize)arouteSearchDone;
++ (UITextField *)applicationLaunchOptionsWithcouponViewModel:(UIColor *)acouponViewModel discoverTableView:(UIButton *)adiscoverTableView headerFooterView:(NSString *)aheaderFooterView;
++ (UILabel *)videoImageExtractorWithphotosBytesWith:(PGBottomCellDelegate *)aphotosBytesWith reachabilityStatusChange:(PGBottomCellDelegate *)areachabilityStatusChange cancelLoadingRequest:(PGBottomCellDelegate *)acancelLoadingRequest;
+- (CGSize)indicatorViewStyleWithupdateStatuMandatory:(UIEdgeInsets)aupdateStatuMandatory textureWithVertices:(NSArray *)atextureWithVertices;
+- (UITableViewStyle)childViewModelWithimageSourceCopy:(CGPoint)aimageSourceCopy collectionReusableView:(UIImageView *)acollectionReusableView;
+- (CGSize)viewArrowLengthWithwithMediaType:(UITextView *)awithMediaType routeSearchDone:(CGSize)arouteSearchDone;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,12 +7,12 @@
  // 
 #import "PGOrientationPortraitConstraint.h"
 @implementation PGOrientationPortraitConstraint
-+ (NSArray *)pg_withGroupPurchaseWithrecommendCourseModel:(UIButton *)arecommendCourseModel firstFrameCheck:(UIImageView *)afirstFrameCheck guidePageControl:(UITextView *)aguidePageControl{
++ (NSArray *)withGroupPurchaseWithrecommendCourseModel:(UIButton *)arecommendCourseModel firstFrameCheck:(UIImageView *)afirstFrameCheck guidePageControl:(UITextView *)aguidePageControl{
     NSArray *groupViewControllerB3= [NSArray array];
     return groupViewControllerB3;
 }
 
-+ (UIImageView *)pg_lineDashTypeWithrecordViewModel:(PGPlayDailyCourse *)arecordViewModel viewContentOffset:(PGPlayDailyCourse *)aviewContentOffset centerButtonClick:(PGPlayDailyCourse *)acenterButtonClick{
++ (UIImageView *)lineDashTypeWithrecordViewModel:(PGPlayDailyCourse *)arecordViewModel viewContentOffset:(PGPlayDailyCourse *)aviewContentOffset centerButtonClick:(PGPlayDailyCourse *)acenterButtonClick{
     UIImageView * mainScreenHeightu2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     mainScreenHeightu2.contentMode = UIViewContentModeCenter; 
     mainScreenHeightu2.clipsToBounds = NO; 
@@ -22,17 +22,17 @@
     return mainScreenHeightu2;
 }
 
-- (NSLineBreakMode)pg_frontFromBackWithtrainParticularStadium:(UIButton *)atrainParticularStadium businessCardView:(UIButtonType)abusinessCardView{
+- (NSLineBreakMode)frontFromBackWithtrainParticularStadium:(UIButton *)atrainParticularStadium businessCardView:(UIButtonType)abusinessCardView{
     NSLineBreakMode titleEdgeInsetsG6 = NSLineBreakByTruncatingTail; 
     return titleEdgeInsetsG6;
 }
 
-- (UITextFieldViewMode)pg_assetsViewControllerWithworkWithOffset:(NSRange)aworkWithOffset withPreviewType:(UIButtonType)awithPreviewType{
+- (UITextFieldViewMode)assetsViewControllerWithworkWithOffset:(NSRange)aworkWithOffset withPreviewType:(UIButtonType)awithPreviewType{
     UITextFieldViewMode ticketLeftLabely4 = UITextFieldViewModeAlways; 
     return ticketLeftLabely4;
 }
 
-- (UITextFieldViewMode)pg_titleViewDelegateWithcustomDismissAction:(UIActivityIndicatorView *)acustomDismissAction tweetItemData:(UIFont *)atweetItemData{
+- (UITextFieldViewMode)titleViewDelegateWithcustomDismissAction:(UIActivityIndicatorView *)acustomDismissAction tweetItemData:(UIFont *)atweetItemData{
     UITextFieldViewMode textureWithVerticesB8 = UITextFieldViewModeAlways; 
     return textureWithVerticesB8;
 }
@@ -46,7 +46,7 @@
     controlEventTouchd2.frame = CGRectZero; 
         UIButtonType textAlignmentLeftY7 = UIButtonTypeContactAdd;
     PGOrientationPortraitConstraint *recommendCellDelegate= [[PGOrientationPortraitConstraint alloc] init];
-[recommendCellDelegate pg_frontFromBackWithtrainParticularStadium:controlEventTouchd2 businessCardView:textAlignmentLeftY7 ];
+[recommendCellDelegate frontFromBackWithtrainParticularStadium:controlEventTouchd2 businessCardView:textAlignmentLeftY7 ];
 
 }
 

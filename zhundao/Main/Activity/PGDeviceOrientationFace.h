@@ -19,11 +19,11 @@
 @property (nonatomic, readwrite, assign) CGSize *valueObservingOptions;
 @property (nonatomic, readwrite, assign) CGPoint *playEnterBack;
 
-+ (UIColor *)pg_availableTextureIndexWithvideoViewModel:(NSString *)avideoViewModel alertWithTitle:(NSMutableArray *)aalertWithTitle groupPurchaseModel:(UIImageView *)agroupPurchaseModel;
-+ (UIButton *)pg_organizeListViewWithcyclingSpotAnimation:(PGCurrentPlayChapter *)acyclingSpotAnimation styleWhiteLarge:(PGCurrentPlayChapter *)astyleWhiteLarge spaceLabelHeight:(PGCurrentPlayChapter *)aspaceLabelHeight;
-- (UIButtonType)pg_pushNotificationTriggerWithaffineTransformIdentity:(CGSize)aaffineTransformIdentity modelWithAsset:(UIImageView *)amodelWithAsset;
-- (CGPoint)pg_assetReferenceRestrictionsWithimageSharpenFilter:(UIColor *)aimageSharpenFilter videoPlayView:(UIView *)avideoPlayView;
-- (NSRange)pg_pathCreateMutableWithchildViewControllers:(NSData *)achildViewControllers bitmapByteOrder:(UISwitch *)abitmapByteOrder;
++ (UIColor *)availableTextureIndexWithvideoViewModel:(NSString *)avideoViewModel alertWithTitle:(NSMutableArray *)aalertWithTitle groupPurchaseModel:(UIImageView *)agroupPurchaseModel;
++ (UIButton *)organizeListViewWithcyclingSpotAnimation:(PGCurrentPlayChapter *)acyclingSpotAnimation styleWhiteLarge:(PGCurrentPlayChapter *)astyleWhiteLarge spaceLabelHeight:(PGCurrentPlayChapter *)aspaceLabelHeight;
+- (UIButtonType)pushNotificationTriggerWithaffineTransformIdentity:(CGSize)aaffineTransformIdentity modelWithAsset:(UIImageView *)amodelWithAsset;
+- (CGPoint)assetReferenceRestrictionsWithimageSharpenFilter:(UIColor *)aimageSharpenFilter videoPlayView:(UIView *)avideoPlayView;
+- (NSRange)pathCreateMutableWithchildViewControllers:(NSData *)achildViewControllers bitmapByteOrder:(UISwitch *)abitmapByteOrder;
 + (void)instanceCreateMethod; 
 
 @end

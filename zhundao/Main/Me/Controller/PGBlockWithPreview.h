@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGRect *imageRotationMode;
 @property (nonatomic, readwrite, assign) CGSize *launchViewController;
 
-+ (UIColor *)pg_layerVideoGravityWithintegralRecordTable:(UIActivityIndicatorView *)aintegralRecordTable noticeTypeLogin:(NSMutableArray *)anoticeTypeLogin saveEmojiDictionary:(NSString *)asaveEmojiDictionary;
-+ (UILabel *)pg_blockCropModeWithviewAnimatedColors:(PGPhotoProgressView *)aviewAnimatedColors albumCloudShared:(PGPhotoProgressView *)aalbumCloudShared socialPlatformType:(PGPhotoProgressView *)asocialPlatformType;
-- (UITableViewStyle)pg_numberHandlerWithWithviewControllerTransition:(UIButton *)aviewControllerTransition bundleDisplayName:(UITextView *)abundleDisplayName;
-- (CGPoint)pg_shareWebpageObjectWithnatatoriumListData:(NSRange)anatatoriumListData settingTableView:(UISwitch *)asettingTableView;
-- (NSRange)pg_datePickerModeWithcouponsAlertView:(UITableView *)acouponsAlertView tableViewContent:(CGRect)atableViewContent;
++ (UIColor *)layerVideoGravityWithintegralRecordTable:(UIActivityIndicatorView *)aintegralRecordTable noticeTypeLogin:(NSMutableArray *)anoticeTypeLogin saveEmojiDictionary:(NSString *)asaveEmojiDictionary;
++ (UILabel *)blockCropModeWithviewAnimatedColors:(PGPhotoProgressView *)aviewAnimatedColors albumCloudShared:(PGPhotoProgressView *)aalbumCloudShared socialPlatformType:(PGPhotoProgressView *)asocialPlatformType;
+- (UITableViewStyle)numberHandlerWithWithviewControllerTransition:(UIButton *)aviewControllerTransition bundleDisplayName:(UITextView *)abundleDisplayName;
+- (CGPoint)shareWebpageObjectWithnatatoriumListData:(NSRange)anatatoriumListData settingTableView:(UISwitch *)asettingTableView;
+- (NSRange)datePickerModeWithcouponsAlertView:(UITableView *)acouponsAlertView tableViewContent:(CGRect)atableViewContent;
 + (void)instanceCreateMethod; 
 
 @end

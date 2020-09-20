@@ -41,7 +41,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGSize naviTitleAppearancet2 = CGSizeZero;
         CGPoint assetCellTypeC3 = CGPointZero;
     PGMessageWithText *handpickViewModel= [[PGMessageWithText alloc] init];
-[handpickViewModel pg_textAlignmentCenterWithassetResourceType:naviTitleAppearancet2 contentBackgroundColor:assetCellTypeC3 ];
+[handpickViewModel textAlignmentCenterWithassetResourceType:naviTitleAppearancet2 contentBackgroundColor:assetCellTypeC3 ];
 });
     [super viewDidLoad];
     /*! 初始化 */
@@ -230,7 +230,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGSize withRootViewl0 = CGSizeMake(216,54); 
         CGPoint trackingWithTouchK0 = CGPointZero;
     PGMessageWithText *pickerImageView= [[PGMessageWithText alloc] init];
-[pickerImageView pg_textAlignmentCenterWithassetResourceType:withRootViewl0 contentBackgroundColor:trackingWithTouchK0 ];
+[pickerImageView textAlignmentCenterWithassetResourceType:withRootViewl0 contentBackgroundColor:trackingWithTouchK0 ];
 });
     [super viewWillAppear:animated];
     

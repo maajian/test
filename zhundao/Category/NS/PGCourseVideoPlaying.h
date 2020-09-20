@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *withSessionPreset;
 @property (nonatomic, readwrite, assign) NSTextAlignment *selectOriginalPhoto;
 
-+ (UISlider *)pg_mainCommentTableWithwithRefreshingTarget:(UITextField *)awithRefreshingTarget viewAnimationOption:(UISwitch *)aviewAnimationOption photoPickerCollection:(UIFont *)aphotoPickerCollection;
-+ (UIScrollView *)pg_groupPurchaseOrderWitheffectColorAlpha:(PGRankMedalView *)aeffectColorAlpha remoteNotificationsWith:(PGRankMedalView *)aremoteNotificationsWith dataViewController:(PGRankMedalView *)adataViewController;
-- (CGPoint)pg_backGroundColorWithbirthdayPickerView:(NSLineBreakMode)abirthdayPickerView textureRetainCount:(CGRect)atextureRetainCount;
-- (NSLineBreakMode)pg_cyclingLineAnimationWithvertexAttribPointer:(UIButton *)avertexAttribPointer courseParticularHeader:(UISwitch *)acourseParticularHeader;
-- (CGSize)pg_registerViewModelWithzoneWithAbbreviation:(NSRange)azoneWithAbbreviation playerItemPlayback:(CGPoint)aplayerItemPlayback;
++ (UISlider *)mainCommentTableWithwithRefreshingTarget:(UITextField *)awithRefreshingTarget viewAnimationOption:(UISwitch *)aviewAnimationOption photoPickerCollection:(UIFont *)aphotoPickerCollection;
++ (UIScrollView *)groupPurchaseOrderWitheffectColorAlpha:(PGRankMedalView *)aeffectColorAlpha remoteNotificationsWith:(PGRankMedalView *)aremoteNotificationsWith dataViewController:(PGRankMedalView *)adataViewController;
+- (CGPoint)backGroundColorWithbirthdayPickerView:(NSLineBreakMode)abirthdayPickerView textureRetainCount:(CGRect)atextureRetainCount;
+- (NSLineBreakMode)cyclingLineAnimationWithvertexAttribPointer:(UIButton *)avertexAttribPointer courseParticularHeader:(UISwitch *)acourseParticularHeader;
+- (CGSize)registerViewModelWithzoneWithAbbreviation:(NSRange)azoneWithAbbreviation playerItemPlayback:(CGPoint)aplayerItemPlayback;
 + (void)instanceCreateMethod; 
 
 @end

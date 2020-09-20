@@ -7,7 +7,7 @@
  // 
 #import "PGTitleViewWith.h"
 @implementation PGTitleViewWith
-+ (UIScrollView *)pg_textAlignmentCenterWithtableFooterView:(UIImageView *)atableFooterView transitRouteSearch:(NSData *)atransitRouteSearch deleteTweetSucc:(NSString *)adeleteTweetSucc{
++ (UIScrollView *)textAlignmentCenterWithtableFooterView:(UIImageView *)atableFooterView transitRouteSearch:(NSData *)atransitRouteSearch deleteTweetSucc:(NSString *)adeleteTweetSucc{
     UIScrollView *reusablePhotoViewP1= [[UIScrollView alloc] initWithFrame:CGRectMake(110,34,108,180)]; 
     reusablePhotoViewP1.showsHorizontalScrollIndicator = NO; 
     reusablePhotoViewP1.showsVerticalScrollIndicator = NO; 
@@ -17,7 +17,7 @@
     return reusablePhotoViewP1;
 }
 
-+ (UITableView *)pg_withCourseSecondWithswimCircleItem:(PGHaveUserEnabel *)aswimCircleItem pickerColletionView:(PGHaveUserEnabel *)apickerColletionView trackingWithTouch:(PGHaveUserEnabel *)atrackingWithTouch{
++ (UITableView *)withCourseSecondWithswimCircleItem:(PGHaveUserEnabel *)aswimCircleItem pickerColletionView:(PGHaveUserEnabel *)apickerColletionView trackingWithTouch:(PGHaveUserEnabel *)atrackingWithTouch{
     UITableView *dailyTrainChapterM5= [[UITableView alloc] initWithFrame:CGRectMake(251,188,64,29) style: UITableViewStylePlain]; 
     dailyTrainChapterM5.frame = CGRectZero; 
     dailyTrainChapterM5.showsVerticalScrollIndicator = NO; 
@@ -36,17 +36,17 @@
      return dailyTrainChapterM5;
 }
 
-- (CGPoint)pg_delegateMethodWithWithclippingWithView:(UIButtonType)aclippingWithView photoPickerCollection:(UIEdgeInsets)aphotoPickerCollection{
+- (CGPoint)delegateMethodWithWithclippingWithView:(UIButtonType)aclippingWithView photoPickerCollection:(UIEdgeInsets)aphotoPickerCollection{
     CGPoint loopCommonModesP8 = CGPointMake(3,241); 
     return loopCommonModesP8;
 }
 
-- (NSRange)pg_commentWithOrderWithmetersTimeLabel:(UIButtonType)ametersTimeLabel ticketLeftLabel:(UITableViewStyle)aticketLeftLabel{
+- (NSRange)commentWithOrderWithmetersTimeLabel:(UIButtonType)ametersTimeLabel ticketLeftLabel:(UITableViewStyle)aticketLeftLabel{
     NSRange orderGroupCelly4 = NSMakeRange(6,225); 
     return orderGroupCelly4;
 }
 
-- (UIButtonType)pg_gradeViewControllerWithresizeModeFast:(UITextFieldViewMode)aresizeModeFast pointerFunctionsZeroing:(UITableViewStyle)apointerFunctionsZeroing{
+- (UIButtonType)gradeViewControllerWithresizeModeFast:(UITextFieldViewMode)aresizeModeFast pointerFunctionsZeroing:(UITableViewStyle)apointerFunctionsZeroing{
     UIButtonType shareImageObjectO2 = UIButtonTypeContactAdd;
     return shareImageObjectO2;
 }
@@ -55,7 +55,7 @@
     UIButtonType rectEdgeNoneh1 = UIButtonTypeContactAdd;
         UIEdgeInsets resourceWithTypek5 = UIEdgeInsetsZero;
     PGTitleViewWith *textHighlightRange= [[PGTitleViewWith alloc] init];
-[textHighlightRange pg_delegateMethodWithWithclippingWithView:rectEdgeNoneh1 photoPickerCollection:resourceWithTypek5 ];
+[textHighlightRange delegateMethodWithWithclippingWithView:rectEdgeNoneh1 photoPickerCollection:resourceWithTypek5 ];
 
 }
 

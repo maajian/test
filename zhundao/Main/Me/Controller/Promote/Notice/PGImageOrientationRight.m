@@ -7,12 +7,12 @@
  // 
 #import "PGImageOrientationRight.h"
 @implementation PGImageOrientationRight
-+ (NSData *)pg_videoWithAssetWithprogressTypeNone:(NSString *)aprogressTypeNone finishPickingVideo:(UITextField *)afinishPickingVideo textureRetainCount:(NSString *)atextureRetainCount{
++ (NSData *)videoWithAssetWithprogressTypeNone:(NSString *)aprogressTypeNone finishPickingVideo:(UITextField *)afinishPickingVideo textureRetainCount:(NSString *)atextureRetainCount{
     NSData *tweetCommentModelj1= [[NSData alloc] init];
     return tweetCommentModelj1;
 }
 
-+ (UIImageView *)pg_tableViewScrollWithdefaultMaskType:(PGUserInfoBottom *)adefaultMaskType currentShortDate:(PGUserInfoBottom *)acurrentShortDate frameWithIndex:(PGUserInfoBottom *)aframeWithIndex{
++ (UIImageView *)tableViewScrollWithdefaultMaskType:(PGUserInfoBottom *)adefaultMaskType currentShortDate:(PGUserInfoBottom *)acurrentShortDate frameWithIndex:(PGUserInfoBottom *)aframeWithIndex{
     UIImageView * filterManagerDelegateU6 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     filterManagerDelegateU6.contentMode = UIViewContentModeCenter; 
     filterManagerDelegateU6.clipsToBounds = NO; 
@@ -22,17 +22,17 @@
     return filterManagerDelegateU6;
 }
 
-- (CGRect)pg_playerAnimationTimeWithnetworkStatusReachablevia:(UIButton *)anetworkStatusReachablevia startCameraCapture:(UIActivityIndicatorView *)astartCameraCapture{
+- (CGRect)playerAnimationTimeWithnetworkStatusReachablevia:(UIButton *)anetworkStatusReachablevia startCameraCapture:(UIActivityIndicatorView *)astartCameraCapture{
     CGRect imageManagerMaximumB0 = CGRectMake(153,100,208,115); 
     return imageManagerMaximumB0;
 }
 
-- (CGPoint)pg_withTimeIntervalWitharticleOriginalTable:(UIScrollView *)aarticleOriginalTable keyboardAnimationDuration:(UITableViewStyle)akeyboardAnimationDuration{
+- (CGPoint)withTimeIntervalWitharticleOriginalTable:(UIScrollView *)aarticleOriginalTable keyboardAnimationDuration:(UITableViewStyle)akeyboardAnimationDuration{
     CGPoint showsVerticalScrollp5 = CGPointZero;
     return showsVerticalScrollp5;
 }
 
-- (UIButtonType)pg_timeMakeWithWithmutableTrackWith:(UIImage *)amutableTrackWith colorSpaceCreate:(UITableViewStyle)acolorSpaceCreate{
+- (UIButtonType)timeMakeWithWithmutableTrackWith:(UIImage *)amutableTrackWith colorSpaceCreate:(UITableViewStyle)acolorSpaceCreate{
     UIButtonType loginWithUserv6 = UIButtonTypeContactAdd;
     return loginWithUserv6;
 }
@@ -48,7 +48,7 @@
     sliderFillColorM8.hidden = YES; 
     sliderFillColorM8.hidesWhenStopped = YES; 
     PGImageOrientationRight *sectionHeaderHeight= [[PGImageOrientationRight alloc] init];
-[sectionHeaderHeight pg_playerAnimationTimeWithnetworkStatusReachablevia:courseRecommendCellJ4 startCameraCapture:sliderFillColorM8 ];
+[sectionHeaderHeight playerAnimationTimeWithnetworkStatusReachablevia:courseRecommendCellJ4 startCameraCapture:sliderFillColorM8 ];
 
 }
 

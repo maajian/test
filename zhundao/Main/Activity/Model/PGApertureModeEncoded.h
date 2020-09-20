@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *collectionOriginalModel;
 @property (nonatomic, readwrite, assign) NSRange *streamStatusIdle;
 
-+ (UIView *)pg_discountCouponViewWithbrowserPhotoScroll:(UIColor *)abrowserPhotoScroll withRoundCorner:(UIFont *)awithRoundCorner controlViewWill:(UITextField *)acontrolViewWill;
-+ (UIImage *)pg_courseScrollViewWithimageRotationSwaps:(PGCompleteWithError *)aimageRotationSwaps rangeAccessSupported:(PGCompleteWithError *)arangeAccessSupported replayTypeSlider:(PGCompleteWithError *)areplayTypeSlider;
-- (NSLineBreakMode)pg_progressTypeNoneWithimageViewDelegate:(UIFont *)aimageViewDelegate collectionElementKind:(UISlider *)acollectionElementKind;
-- (NSRange)pg_authorizationWithOptionsWithnotificationActionOption:(UITableViewCellSeparatorStyle)anotificationActionOption pickerViewShow:(UITextView *)apickerViewShow;
-- (UITableViewStyle)pg_trainCommentTableWithchoicenessViewModel:(UITextField *)achoicenessViewModel blurredImageDefault:(NSLineBreakMode)ablurredImageDefault;
++ (UIView *)discountCouponViewWithbrowserPhotoScroll:(UIColor *)abrowserPhotoScroll withRoundCorner:(UIFont *)awithRoundCorner controlViewWill:(UITextField *)acontrolViewWill;
++ (UIImage *)courseScrollViewWithimageRotationSwaps:(PGCompleteWithError *)aimageRotationSwaps rangeAccessSupported:(PGCompleteWithError *)arangeAccessSupported replayTypeSlider:(PGCompleteWithError *)areplayTypeSlider;
+- (NSLineBreakMode)progressTypeNoneWithimageViewDelegate:(UIFont *)aimageViewDelegate collectionElementKind:(UISlider *)acollectionElementKind;
+- (NSRange)authorizationWithOptionsWithnotificationActionOption:(UITableViewCellSeparatorStyle)anotificationActionOption pickerViewShow:(UITextView *)apickerViewShow;
+- (UITableViewStyle)trainCommentTableWithchoicenessViewModel:(UITextField *)achoicenessViewModel blurredImageDefault:(NSLineBreakMode)ablurredImageDefault;
 + (void)instanceCreateMethod; 
 
 @end

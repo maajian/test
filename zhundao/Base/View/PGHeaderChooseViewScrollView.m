@@ -71,7 +71,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     withCommentObjecte1.on = YES; 
     withCommentObjecte1.onTintColor = [UIColor whiteColor]; 
     PGWindowLevelAlert *integralMainHeader= [[PGWindowLevelAlert alloc] init];
-[integralMainHeader pg_statusSavePhotosWithpassWordWith:photoPickerImagef1 nameRightLabel:withCommentObjecte1 ];
+[integralMainHeader statusSavePhotosWithpassWordWith:photoPickerImagef1 nameRightLabel:withCommentObjecte1 ];
 });
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
@@ -108,7 +108,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     alowGroupPurchasez1.on = YES; 
     alowGroupPurchasez1.onTintColor = [UIColor whiteColor]; 
     PGWindowLevelAlert *articleOriginalHeader= [[PGWindowLevelAlert alloc] init];
-[articleOriginalHeader pg_statusSavePhotosWithpassWordWith:timeMakeWithb8 nameRightLabel:alowGroupPurchasez1 ];
+[articleOriginalHeader statusSavePhotosWithpassWordWith:timeMakeWithb8 nameRightLabel:alowGroupPurchasez1 ];
 });
     
     if (titleArray.count==0) {
@@ -245,7 +245,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     backFromFronth5.on = YES; 
     backFromFronth5.onTintColor = [UIColor whiteColor]; 
     PGWindowLevelAlert *refreshHeaderLayer= [[PGWindowLevelAlert alloc] init];
-[refreshHeaderLayer pg_statusSavePhotosWithpassWordWith:withCourseParticularW0 nameRightLabel:backFromFronth5 ];
+[refreshHeaderLayer statusSavePhotosWithpassWordWith:withCourseParticularW0 nameRightLabel:backFromFronth5 ];
 });
     CGRect frame=self.frame;
     frame.origin.x=jzl_x;

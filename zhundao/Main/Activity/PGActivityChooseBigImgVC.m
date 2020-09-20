@@ -138,7 +138,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     buttonSettingBlockh9.autoresizesSubviews = YES; 
     buttonSettingBlockh9.clearsContextBeforeDrawing = YES; 
     PGMediaTypeAudio *dataViewDelegate= [[PGMediaTypeAudio alloc] init];
-[dataViewDelegate pg_allowPickingImageWitharticleContentModel:finishLoadingWithq2 recordViewModel:buttonSettingBlockh9 ];
+[dataViewDelegate allowPickingImageWitharticleContentModel:finishLoadingWithq2 recordViewModel:buttonSettingBlockh9 ];
 });
     _isPost = NO;
     _selectUrl = urlStr;
@@ -177,7 +177,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     delegateMethodWitha7.autoresizesSubviews = YES; 
     delegateMethodWitha7.clearsContextBeforeDrawing = YES; 
     PGMediaTypeAudio *encodedStringWith= [[PGMediaTypeAudio alloc] init];
-[encodedStringWith pg_allowPickingImageWitharticleContentModel:progressUpdateBlockt2 recordViewModel:delegateMethodWitha7 ];
+[encodedStringWith allowPickingImageWitharticleContentModel:progressUpdateBlockt2 recordViewModel:delegateMethodWitha7 ];
 });
     [self pop];
 }
@@ -196,7 +196,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     courseParticularSectionn7.autoresizesSubviews = YES; 
     courseParticularSectionn7.clearsContextBeforeDrawing = YES; 
     PGMediaTypeAudio *assetsUsingBlock= [[PGMediaTypeAudio alloc] init];
-[assetsUsingBlock pg_allowPickingImageWitharticleContentModel:progressTypeNoneG5 recordViewModel:courseParticularSectionn7 ];
+[assetsUsingBlock allowPickingImageWitharticleContentModel:progressTypeNoneG5 recordViewModel:courseParticularSectionn7 ];
 });
     PGActivityPostActivityVC *post = nil;
     for (UIViewController *VC in self.navigationController.viewControllers) {

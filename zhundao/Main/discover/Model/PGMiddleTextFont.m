@@ -7,12 +7,12 @@
  // 
 #import "PGMiddleTextFont.h"
 @implementation PGMiddleTextFont
-+ (NSArray *)pg_lightGrayColorWitheffectColorAlpha:(UITableView *)aeffectColorAlpha currentShortDate:(NSMutableArray *)acurrentShortDate autoClipImage:(UITextView *)aautoClipImage{
++ (NSArray *)lightGrayColorWitheffectColorAlpha:(UITableView *)aeffectColorAlpha currentShortDate:(NSMutableArray *)acurrentShortDate autoClipImage:(UITextView *)aautoClipImage{
     NSArray *groupPhotosWithp9= [NSArray array];
     return groupPhotosWithp9;
 }
 
-+ (UITextField *)pg_sliderFillColorWithimageNearIndex:(PGRouteSearchResponse *)aimageNearIndex circleItemShare:(PGRouteSearchResponse *)acircleItemShare courseVideoPlayer:(PGRouteSearchResponse *)acourseVideoPlayer{
++ (UITextField *)sliderFillColorWithimageNearIndex:(PGRouteSearchResponse *)aimageNearIndex circleItemShare:(PGRouteSearchResponse *)acircleItemShare courseVideoPlayer:(PGRouteSearchResponse *)acourseVideoPlayer{
     UITextField *stringFromClassU4= [[UITextField alloc] initWithFrame:CGRectZero]; 
     stringFromClassU4.clearButtonMode = UITextFieldViewModeNever; 
     stringFromClassU4.textColor = [UIColor whiteColor]; 
@@ -24,17 +24,17 @@
     return stringFromClassU4;
 }
 
-- (UITableViewCellSeparatorStyle)pg_adjustTrackColorWithchildViewControllers:(CGPoint)achildViewControllers couponAlertView:(UIButton *)acouponAlertView{
+- (UITableViewCellSeparatorStyle)adjustTrackColorWithchildViewControllers:(CGPoint)achildViewControllers couponAlertView:(UIButton *)acouponAlertView{
     UITableViewCellSeparatorStyle buttonTitleColorM4 = UITableViewCellSeparatorStyleNone; 
     return buttonTitleColorM4;
 }
 
-- (UIEdgeInsets)pg_alertViewDelegateWithmodalPresentationNone:(UIButtonType)amodalPresentationNone playDailyCourse:(UISlider *)aplayDailyCourse{
+- (UIEdgeInsets)alertViewDelegateWithmodalPresentationNone:(UIButtonType)amodalPresentationNone playDailyCourse:(UISlider *)aplayDailyCourse{
     UIEdgeInsets receiveMemoryWarningS1 = UIEdgeInsetsMake(156,17,192,169); 
     return receiveMemoryWarningS1;
 }
 
-- (UITableViewStyle)pg_imageCompressionRulesWithswimPlayStatus:(UIScrollView *)aswimPlayStatus pushNotificationTrigger:(CGRect)apushNotificationTrigger{
+- (UITableViewStyle)imageCompressionRulesWithswimPlayStatus:(UIScrollView *)aswimPlayStatus pushNotificationTrigger:(CGRect)apushNotificationTrigger{
     UITableViewStyle sendButtonStatusj4 = UITableViewStylePlain; 
     return sendButtonStatusj4;
 }
@@ -48,7 +48,7 @@
     willEnterForegroundb1.reversesTitleShadowWhenHighlighted = NO; 
     willEnterForegroundb1.frame = CGRectZero; 
     PGMiddleTextFont *applicationLaunchOptions= [[PGMiddleTextFont alloc] init];
-[applicationLaunchOptions pg_adjustTrackColorWithchildViewControllers:colorSpaceCreateM1 couponAlertView:willEnterForegroundb1 ];
+[applicationLaunchOptions adjustTrackColorWithchildViewControllers:colorSpaceCreateM1 couponAlertView:willEnterForegroundb1 ];
 
 }
 

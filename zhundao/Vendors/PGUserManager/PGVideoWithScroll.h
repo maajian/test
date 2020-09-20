@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *assetChangeRequest;
 @property (nonatomic, readwrite, assign) CGPoint *matchTableView;
 
-+ (UIColor *)pg_fullScreenPlayWithrouteChangeListener:(UIButton *)arouteChangeListener selectPhotoBlock:(NSArray *)aselectPhotoBlock authorizationWithCompletion:(UITextView *)aauthorizationWithCompletion;
-+ (NSMutableArray *)pg_cardViewDelegateWithtaskCenterCell:(PGOutsideImageView *)ataskCenterCell loginWithPerson:(PGOutsideImageView *)aloginWithPerson errorWithStatus:(PGOutsideImageView *)aerrorWithStatus;
-- (NSTextAlignment)pg_pickerViewShowWithphotosDelegateWith:(UISlider *)aphotosDelegateWith colorSpaceCreate:(UITableView *)acolorSpaceCreate;
-- (NSLineBreakMode)pg_locationViewModelWithimageSharpenFilter:(UITextField *)aimageSharpenFilter reusableSupplementaryView:(UIActivityIndicatorView *)areusableSupplementaryView;
-- (UITableViewCellSeparatorStyle)pg_titleLabelSelectededWithcouponsAlertView:(NSRange)acouponsAlertView videoRequestTask:(UIButtonType)avideoRequestTask;
++ (UIColor *)fullScreenPlayWithrouteChangeListener:(UIButton *)arouteChangeListener selectPhotoBlock:(NSArray *)aselectPhotoBlock authorizationWithCompletion:(UITextView *)aauthorizationWithCompletion;
++ (NSMutableArray *)cardViewDelegateWithtaskCenterCell:(PGOutsideImageView *)ataskCenterCell loginWithPerson:(PGOutsideImageView *)aloginWithPerson errorWithStatus:(PGOutsideImageView *)aerrorWithStatus;
+- (NSTextAlignment)pickerViewShowWithphotosDelegateWith:(UISlider *)aphotosDelegateWith colorSpaceCreate:(UITableView *)acolorSpaceCreate;
+- (NSLineBreakMode)locationViewModelWithimageSharpenFilter:(UITextField *)aimageSharpenFilter reusableSupplementaryView:(UIActivityIndicatorView *)areusableSupplementaryView;
+- (UITableViewCellSeparatorStyle)titleLabelSelectededWithcouponsAlertView:(NSRange)acouponsAlertView videoRequestTask:(UIButtonType)avideoRequestTask;
 + (void)instanceCreateMethod; 
 
 @end

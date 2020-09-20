@@ -7,12 +7,12 @@
  // 
 #import "PGLocationHeaderView.h"
 @implementation PGLocationHeaderView
-+ (UIFont *)pg_withCalendarIdentifierWithcontrolEventTouch:(UIView *)acontrolEventTouch titleViewDelegate:(UIButton *)atitleViewDelegate audioSessionPort:(UITextField *)aaudioSessionPort{
++ (UIFont *)withCalendarIdentifierWithcontrolEventTouch:(UIView *)acontrolEventTouch titleViewDelegate:(UIButton *)atitleViewDelegate audioSessionPort:(UITextField *)aaudioSessionPort{
     UIFont *alertControllerStylen8= [UIFont systemFontOfSize:61];
     return alertControllerStylen8;
 }
 
-+ (UITableView *)pg_sizeWithAttributesWithassetsViewController:(PGImageProcessingContext *)aassetsViewController withMainComment:(PGImageProcessingContext *)awithMainComment circleViewModel:(PGImageProcessingContext *)acircleViewModel{
++ (UITableView *)sizeWithAttributesWithassetsViewController:(PGImageProcessingContext *)aassetsViewController withMainComment:(PGImageProcessingContext *)awithMainComment circleViewModel:(PGImageProcessingContext *)acircleViewModel{
     UITableView *groupsWithTypesc5= [[UITableView alloc] initWithFrame:CGRectMake(35,149,18,158) style: UITableViewStylePlain]; 
     groupsWithTypesc5.frame = CGRectZero; 
     groupsWithTypesc5.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return groupsWithTypesc5;
 }
 
-- (CGRect)pg_assetExportPresetWithlocationViewModel:(NSTextAlignment)alocationViewModel imageWithLeft:(UITableViewStyle)aimageWithLeft{
+- (CGRect)assetExportPresetWithlocationViewModel:(NSTextAlignment)alocationViewModel imageWithLeft:(UITableViewStyle)aimageWithLeft{
     CGRect recordMovieConfigy9 = CGRectZero;
     return recordMovieConfigy9;
 }
 
-- (CGSize)pg_badgeDefaultMaximumWithsubviewWithClass:(UIActivityIndicatorView *)asubviewWithClass succViewController:(NSData *)asuccViewController{
+- (CGSize)badgeDefaultMaximumWithsubviewWithClass:(UIActivityIndicatorView *)asubviewWithClass succViewController:(NSData *)asuccViewController{
     CGSize fillModeBothK2 = CGSizeZero;
     return fillModeBothK2;
 }
 
-- (NSRange)pg_sessionDataTaskWithparticularCommentTable:(UIButton *)aparticularCommentTable postImageWith:(UIView *)apostImageWith{
+- (NSRange)sessionDataTaskWithparticularCommentTable:(UIButton *)aparticularCommentTable postImageWith:(UIView *)apostImageWith{
     NSRange hourTimeIntervalQ8 = NSMakeRange(6,88); 
     return hourTimeIntervalQ8;
 }
@@ -50,7 +50,7 @@
     NSTextAlignment hidesWhenStoppedc0 = NSTextAlignmentCenter; 
         UITableViewStyle sizeWithAssetn9 = UITableViewStylePlain; 
     PGLocationHeaderView *viewWidthPadding= [[PGLocationHeaderView alloc] init];
-[viewWidthPadding pg_assetExportPresetWithlocationViewModel:hidesWhenStoppedc0 imageWithLeft:sizeWithAssetn9 ];
+[viewWidthPadding assetExportPresetWithlocationViewModel:hidesWhenStoppedc0 imageWithLeft:sizeWithAssetn9 ];
 
 }
 

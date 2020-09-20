@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSRange *changePhoneView;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *modalPresentationNone;
 
-+ (UIColor *)pg_hidesWhenStoppedWithcellWithIndex:(UITextView *)acellWithIndex strokeArticleTable:(UIView *)astrokeArticleTable dailyTrainView:(UISwitch *)adailyTrainView;
-+ (UIButton *)pg_movieTestViewWithtaskWithRequest:(PGIdentityLabelLeft *)ataskWithRequest mutableCompositionTrack:(PGIdentityLabelLeft *)amutableCompositionTrack exportVideoWith:(PGIdentityLabelLeft *)aexportVideoWith;
-- (UIButtonType)pg_chatInputAbleWithsearchRequestWith:(CGRect)asearchRequestWith arrayUsingComparator:(CGRect)aarrayUsingComparator;
-- (UITextFieldViewMode)pg_contentBackgroundColorWithexerciseRecordView:(UIView *)aexerciseRecordView deleteTweetSucc:(NSTextAlignment)adeleteTweetSucc;
-- (NSLineBreakMode)pg_levalInfoModelWithnatatoriumAddressTable:(CGPoint)anatatoriumAddressTable groupPurchaseTable:(UITableViewStyle)agroupPurchaseTable;
++ (UIColor *)hidesWhenStoppedWithcellWithIndex:(UITextView *)acellWithIndex strokeArticleTable:(UIView *)astrokeArticleTable dailyTrainView:(UISwitch *)adailyTrainView;
++ (UIButton *)movieTestViewWithtaskWithRequest:(PGIdentityLabelLeft *)ataskWithRequest mutableCompositionTrack:(PGIdentityLabelLeft *)amutableCompositionTrack exportVideoWith:(PGIdentityLabelLeft *)aexportVideoWith;
+- (UIButtonType)chatInputAbleWithsearchRequestWith:(CGRect)asearchRequestWith arrayUsingComparator:(CGRect)aarrayUsingComparator;
+- (UITextFieldViewMode)contentBackgroundColorWithexerciseRecordView:(UIView *)aexerciseRecordView deleteTweetSucc:(NSTextAlignment)adeleteTweetSucc;
+- (NSLineBreakMode)levalInfoModelWithnatatoriumAddressTable:(CGPoint)anatatoriumAddressTable groupPurchaseTable:(UITableViewStyle)agroupPurchaseTable;
 + (void)instanceCreateMethod; 
 
 @end

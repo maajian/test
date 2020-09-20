@@ -7,7 +7,7 @@
  // 
 #import "PGLineWithProgress.h"
 @implementation PGLineWithProgress
-+ (UITextField *)pg_dailyCourseDetailWithorganizeTableView:(UITableView *)aorganizeTableView mirrorFrontFacing:(NSMutableArray *)amirrorFrontFacing viewCellIdentifier:(UIButton *)aviewCellIdentifier{
++ (UITextField *)dailyCourseDetailWithorganizeTableView:(UITableView *)aorganizeTableView mirrorFrontFacing:(NSMutableArray *)amirrorFrontFacing viewCellIdentifier:(UIButton *)aviewCellIdentifier{
     UITextField *locationHeaderViewq2= [[UITextField alloc] initWithFrame:CGRectZero]; 
     locationHeaderViewq2.clearButtonMode = UITextFieldViewModeNever; 
     locationHeaderViewq2.textColor = [UIColor whiteColor]; 
@@ -19,7 +19,7 @@
     return locationHeaderViewq2;
 }
 
-+ (UITextView *)pg_discountCouponViewWithtextViewDelegate:(PGRecoderSelectPicker *)atextViewDelegate lineDashType:(PGRecoderSelectPicker *)alineDashType cancelContentTouches:(PGRecoderSelectPicker *)acancelContentTouches{
++ (UITextView *)discountCouponViewWithtextViewDelegate:(PGRecoderSelectPicker *)atextViewDelegate lineDashType:(PGRecoderSelectPicker *)alineDashType cancelContentTouches:(PGRecoderSelectPicker *)acancelContentTouches{
     UITextView *withCityNamef5= [[UITextView alloc] initWithFrame:CGRectZero]; 
     withCityNamef5.editable = NO; 
     withCityNamef5.font = [UIFont systemFontOfSize:104];
@@ -27,17 +27,17 @@
     return withCityNamef5;
 }
 
-- (CGSize)pg_reusableAnnotationViewWithsettingViewController:(NSRange)asettingViewController viewCellIdentifier:(NSArray *)aviewCellIdentifier{
+- (CGSize)reusableAnnotationViewWithsettingViewController:(NSRange)asettingViewController viewCellIdentifier:(NSArray *)aviewCellIdentifier{
     CGSize videoViewModelf0 = CGSizeZero;
     return videoViewModelf0;
 }
 
-- (UIButtonType)pg_adjustsScrollViewWithorganizeHeaderView:(CGPoint)aorganizeHeaderView assetChangeRequest:(UILabel *)aassetChangeRequest{
+- (UIButtonType)adjustsScrollViewWithorganizeHeaderView:(CGPoint)aorganizeHeaderView assetChangeRequest:(UILabel *)aassetChangeRequest{
     UIButtonType blendModeClearC2 = UIButtonTypeContactAdd;
     return blendModeClearC2;
 }
 
-- (UIButtonType)pg_imageOrientationDownWithencodingWithLine:(UITableViewStyle)aencodingWithLine springWithDamping:(UITableView *)aspringWithDamping{
+- (UIButtonType)imageOrientationDownWithencodingWithLine:(UITableViewStyle)aencodingWithLine springWithDamping:(UITableView *)aspringWithDamping{
     UIButtonType titleTextAttributess7 = UIButtonTypeContactAdd;
     return titleTextAttributess7;
 }
@@ -46,7 +46,7 @@
     NSRange baseTabbarViewG1 = NSMakeRange(8,248); 
         NSArray *smartAlbumRecentlyt9= [NSArray array];
     PGLineWithProgress *messageWithUser= [[PGLineWithProgress alloc] init];
-[messageWithUser pg_reusableAnnotationViewWithsettingViewController:baseTabbarViewG1 viewCellIdentifier:smartAlbumRecentlyt9 ];
+[messageWithUser reusableAnnotationViewWithsettingViewController:baseTabbarViewG1 viewCellIdentifier:smartAlbumRecentlyt9 ];
 
 }
 

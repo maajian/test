@@ -7,12 +7,12 @@
  // 
 #import "PGNatatoriumBasicInfo.h"
 @implementation PGNatatoriumBasicInfo
-+ (NSArray *)pg_mediaTimingFunctionWithspinLockUnlock:(NSArray *)aspinLockUnlock downVideoData:(NSArray *)adownVideoData uploadSuccBlock:(NSMutableArray *)auploadSuccBlock{
++ (NSArray *)mediaTimingFunctionWithspinLockUnlock:(NSArray *)aspinLockUnlock downVideoData:(NSArray *)adownVideoData uploadSuccBlock:(NSMutableArray *)auploadSuccBlock{
     NSArray *badgeDefaultMaximumR0= [NSArray array];
     return badgeDefaultMaximumR0;
 }
 
-+ (UIButton *)pg_trainPropertyTrainWithvalueImageRect:(PGWithFileName *)avalueImageRect maskTypeClear:(PGWithFileName *)amaskTypeClear itemTextFont:(PGWithFileName *)aitemTextFont{
++ (UIButton *)trainPropertyTrainWithvalueImageRect:(PGWithFileName *)avalueImageRect maskTypeClear:(PGWithFileName *)amaskTypeClear itemTextFont:(PGWithFileName *)aitemTextFont{
     UIButton *videoCameraInterfaceT4= [UIButton buttonWithType:UIButtonTypeCustom]; 
     videoCameraInterfaceT4.frame = CGRectZero; 
     videoCameraInterfaceT4.exclusiveTouch = NO; 
@@ -22,17 +22,17 @@
     return videoCameraInterfaceT4;
 }
 
-- (CGSize)pg_bundleDisplayNameWithcodeLoginView:(UILabel *)acodeLoginView withRecommendCourse:(UIButton *)awithRecommendCourse{
+- (CGSize)bundleDisplayNameWithcodeLoginView:(UILabel *)acodeLoginView withRecommendCourse:(UIButton *)awithRecommendCourse{
     CGSize contextFillRectL6 = CGSizeZero;
     return contextFillRectL6;
 }
 
-- (UIEdgeInsets)pg_viewAnimatedColorsWithtaskCenterTable:(UITableViewStyle)ataskCenterTable withControlPoints:(UITextFieldViewMode)awithControlPoints{
+- (UIEdgeInsets)viewAnimatedColorsWithtaskCenterTable:(UITableViewStyle)ataskCenterTable withControlPoints:(UITextFieldViewMode)awithControlPoints{
     UIEdgeInsets applicationNeedUpdateU5 = UIEdgeInsetsMake(63,33,255,128); 
     return applicationNeedUpdateU5;
 }
 
-- (CGRect)pg_titleShowStatusWithlinkViewModel:(UIFont *)alinkViewModel textAlignmentRight:(NSTextAlignment)atextAlignmentRight{
+- (CGRect)titleShowStatusWithlinkViewModel:(UIFont *)alinkViewModel textAlignmentRight:(NSTextAlignment)atextAlignmentRight{
     CGRect answerViewModelB2 = CGRectMake(225,105,191,140); 
     return answerViewModelB2;
 }
@@ -51,7 +51,7 @@
     fromVideoFilee7.reversesTitleShadowWhenHighlighted = NO; 
     fromVideoFilee7.frame = CGRectZero; 
     PGNatatoriumBasicInfo *interfaceOrientionChange= [[PGNatatoriumBasicInfo alloc] init];
-[interfaceOrientionChange pg_bundleDisplayNameWithcodeLoginView:withCommentObjectu2 withRecommendCourse:fromVideoFilee7 ];
+[interfaceOrientionChange bundleDisplayNameWithcodeLoginView:withCommentObjectu2 withRecommendCourse:fromVideoFilee7 ];
 
 }
 

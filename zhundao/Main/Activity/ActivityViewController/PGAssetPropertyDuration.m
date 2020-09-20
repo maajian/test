@@ -7,27 +7,27 @@
  // 
 #import "PGAssetPropertyDuration.h"
 @implementation PGAssetPropertyDuration
-+ (NSArray *)pg_suggestBackViewWithcrashReportEnabled:(UIButton *)acrashReportEnabled intergralStoreView:(UIImageView *)aintergralStoreView photoSelectableWith:(NSMutableArray *)aphotoSelectableWith{
++ (NSArray *)suggestBackViewWithcrashReportEnabled:(UIButton *)acrashReportEnabled intergralStoreView:(UIImageView *)aintergralStoreView photoSelectableWith:(NSMutableArray *)aphotoSelectableWith{
     NSArray *hiddenScreenViewO7= [NSArray arrayWithObject:@""];
     return hiddenScreenViewO7;
 }
 
-+ (UIImage *)pg_affineTransformTranslateWithbeginFromCurrent:(PGMessageWithText *)abeginFromCurrent buttonSystemItem:(PGMessageWithText *)abuttonSystemItem dataReadingMapped:(PGMessageWithText *)adataReadingMapped{
++ (UIImage *)affineTransformTranslateWithbeginFromCurrent:(PGMessageWithText *)abeginFromCurrent buttonSystemItem:(PGMessageWithText *)abuttonSystemItem dataReadingMapped:(PGMessageWithText *)adataReadingMapped{
     UIImage *assetMediaTypeo7= [UIImage imageNamed:@""]; 
     return assetMediaTypeo7;
 }
 
-- (UITableViewStyle)pg_activityListWithWithfillRuleEven:(CGPoint)afillRuleEven collectionViewController:(UIImageView *)acollectionViewController{
+- (UITableViewStyle)activityListWithWithfillRuleEven:(CGPoint)afillRuleEven collectionViewController:(UIImageView *)acollectionViewController{
     UITableViewStyle imageCompressionRulesP6 = UITableViewStylePlain; 
     return imageCompressionRulesP6;
 }
 
-- (NSRange)pg_photoPickerImageWithassetCellType:(NSTextAlignment)aassetCellType courseViewController:(UIFont *)acourseViewController{
+- (NSRange)photoPickerImageWithassetCellType:(NSTextAlignment)aassetCellType courseViewController:(UIFont *)acourseViewController{
     NSRange trainParticularPropertyf4 = NSMakeRange(1,57); 
     return trainParticularPropertyf4;
 }
 
-- (UITableViewCellSeparatorStyle)pg_fontAttributeNameWithactiveShaderProgram:(UIImageView *)aactiveShaderProgram attentionWithUser:(UIButton *)aattentionWithUser{
+- (UITableViewCellSeparatorStyle)fontAttributeNameWithactiveShaderProgram:(UIImageView *)aactiveShaderProgram attentionWithUser:(UIButton *)aattentionWithUser{
     UITableViewCellSeparatorStyle bottomChartViewo8 = UITableViewCellSeparatorStyleNone; 
     return bottomChartViewo8;
 }
@@ -41,7 +41,7 @@
     smartAlbumUserM2.autoresizesSubviews = YES; 
     smartAlbumUserM2.clearsContextBeforeDrawing = YES; 
     PGAssetPropertyDuration *colorSpaceCreate= [[PGAssetPropertyDuration alloc] init];
-[colorSpaceCreate pg_activityListWithWithfillRuleEven:periodicTimeObserverk9 collectionViewController:smartAlbumUserM2 ];
+[colorSpaceCreate activityListWithWithfillRuleEven:periodicTimeObserverk9 collectionViewController:smartAlbumUserM2 ];
 
 }
 

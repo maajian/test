@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *imageTypeFail;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *pathCloseSubpath;
 
-+ (UIFont *)pg_withCalendarIdentifierWithcontrolEventTouch:(UIView *)acontrolEventTouch titleViewDelegate:(UIButton *)atitleViewDelegate audioSessionPort:(UITextField *)aaudioSessionPort;
-+ (UITableView *)pg_sizeWithAttributesWithassetsViewController:(PGImageProcessingContext *)aassetsViewController withMainComment:(PGImageProcessingContext *)awithMainComment circleViewModel:(PGImageProcessingContext *)acircleViewModel;
-- (CGRect)pg_assetExportPresetWithlocationViewModel:(NSTextAlignment)alocationViewModel imageWithLeft:(UITableViewStyle)aimageWithLeft;
-- (CGSize)pg_badgeDefaultMaximumWithsubviewWithClass:(UIActivityIndicatorView *)asubviewWithClass succViewController:(NSData *)asuccViewController;
-- (NSRange)pg_sessionDataTaskWithparticularCommentTable:(UIButton *)aparticularCommentTable postImageWith:(UIView *)apostImageWith;
++ (UIFont *)withCalendarIdentifierWithcontrolEventTouch:(UIView *)acontrolEventTouch titleViewDelegate:(UIButton *)atitleViewDelegate audioSessionPort:(UITextField *)aaudioSessionPort;
++ (UITableView *)sizeWithAttributesWithassetsViewController:(PGImageProcessingContext *)aassetsViewController withMainComment:(PGImageProcessingContext *)awithMainComment circleViewModel:(PGImageProcessingContext *)acircleViewModel;
+- (CGRect)assetExportPresetWithlocationViewModel:(NSTextAlignment)alocationViewModel imageWithLeft:(UITableViewStyle)aimageWithLeft;
+- (CGSize)badgeDefaultMaximumWithsubviewWithClass:(UIActivityIndicatorView *)asubviewWithClass succViewController:(NSData *)asuccViewController;
+- (NSRange)sessionDataTaskWithparticularCommentTable:(UIButton *)aparticularCommentTable postImageWith:(UIView *)apostImageWith;
 + (void)instanceCreateMethod; 
 
 @end

@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *courseChoicenessArticle;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *hiddenScreenView;
 
-+ (UITextView *)pg_taskCenterModelWithintegralRecordTable:(UISwitch *)aintegralRecordTable downLoadData:(UISwitch *)adownLoadData cardViewDelegate:(UIFont *)acardViewDelegate;
-+ (UITextView *)pg_discoveryViewControllerWithbitmapByteOrder:(PGCountDownHelper *)abitmapByteOrder couponsInfoData:(PGCountDownHelper *)acouponsInfoData scrollViewKeyboard:(PGCountDownHelper *)ascrollViewKeyboard;
-- (CGSize)pg_previousPerformRequestsWithdecimalNumberHandler:(NSMutableArray *)adecimalNumberHandler backButtonClick:(UIView *)abackButtonClick;
-- (NSRange)pg_originBackgroundColorWithexerciseHistoryData:(CGRect)aexerciseHistoryData assetCreationRequest:(CGPoint)aassetCreationRequest;
-- (UIButtonType)pg_userContentControllerWithorderGroupCell:(UITableViewCellSeparatorStyle)aorderGroupCell launchOptionsDirections:(UITableView *)alaunchOptionsDirections;
++ (UITextView *)taskCenterModelWithintegralRecordTable:(UISwitch *)aintegralRecordTable downLoadData:(UISwitch *)adownLoadData cardViewDelegate:(UIFont *)acardViewDelegate;
++ (UITextView *)discoveryViewControllerWithbitmapByteOrder:(PGCountDownHelper *)abitmapByteOrder couponsInfoData:(PGCountDownHelper *)acouponsInfoData scrollViewKeyboard:(PGCountDownHelper *)ascrollViewKeyboard;
+- (CGSize)previousPerformRequestsWithdecimalNumberHandler:(NSMutableArray *)adecimalNumberHandler backButtonClick:(UIView *)abackButtonClick;
+- (NSRange)originBackgroundColorWithexerciseHistoryData:(CGRect)aexerciseHistoryData assetCreationRequest:(CGPoint)aassetCreationRequest;
+- (UIButtonType)userContentControllerWithorderGroupCell:(UITableViewCellSeparatorStyle)aorderGroupCell launchOptionsDirections:(UITableView *)alaunchOptionsDirections;
 + (void)instanceCreateMethod; 
 
 @end

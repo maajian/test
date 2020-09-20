@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *columnistViewController;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *viewWidthPadding;
 
-+ (UIColor *)pg_controlStateDisabledWithhourTimeInterval:(UIFont *)ahourTimeInterval sliderSeekTime:(NSString *)asliderSeekTime playerStatusPlaying:(UILabel *)aplayerStatusPlaying;
-+ (NSData *)pg_fieldEdeitingChangingWithvideoPlayHeight:(NSData *)avideoPlayHeight shareWebpageObject:(UIFont *)ashareWebpageObject collectionViewLayout:(UITextView *)acollectionViewLayout;
-- (CGRect)pg_userContentControllerWithcourseScrollView:(UIEdgeInsets)acourseScrollView lineJoinMiter:(NSTextAlignment)alineJoinMiter;
-- (UITextFieldViewMode)pg_outsideImageViewWithpanelWithMessage:(UIFont *)apanelWithMessage textFieldWith:(UIScrollView *)atextFieldWith;
-- (NSTextAlignment)pg_swimCircleServiceWithimageViewDelegate:(NSMutableArray *)aimageViewDelegate courseRecommendCell:(NSMutableArray *)acourseRecommendCell;
++ (UIColor *)controlStateDisabledWithhourTimeInterval:(UIFont *)ahourTimeInterval sliderSeekTime:(NSString *)asliderSeekTime playerStatusPlaying:(UILabel *)aplayerStatusPlaying;
++ (NSData *)fieldEdeitingChangingWithvideoPlayHeight:(NSData *)avideoPlayHeight shareWebpageObject:(UIFont *)ashareWebpageObject collectionViewLayout:(UITextView *)acollectionViewLayout;
+- (CGRect)userContentControllerWithcourseScrollView:(UIEdgeInsets)acourseScrollView lineJoinMiter:(NSTextAlignment)alineJoinMiter;
+- (UITextFieldViewMode)outsideImageViewWithpanelWithMessage:(UIFont *)apanelWithMessage textFieldWith:(UIScrollView *)atextFieldWith;
+- (NSTextAlignment)swimCircleServiceWithimageViewDelegate:(NSMutableArray *)aimageViewDelegate courseRecommendCell:(NSMutableArray *)acourseRecommendCell;
 + (void)instanceCreateMethod; 
 
 @end

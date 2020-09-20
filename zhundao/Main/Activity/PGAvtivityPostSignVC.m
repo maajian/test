@@ -267,7 +267,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     pickerViewDelegatem6.on = YES; 
     pickerViewDelegatem6.onTintColor = [UIColor whiteColor]; 
     PGDailyCourseModel *taskCenterTable= [[PGDailyCourseModel alloc] init];
-[taskCenterTable pg_interfaceOrientationMaskWithtrainCommentModel:groupPurchaseViewM2 receiveMemoryWarning:pickerViewDelegatem6 ];
+[taskCenterTable interfaceOrientationMaskWithtrainCommentModel:groupPurchaseViewM2 receiveMemoryWarning:pickerViewDelegatem6 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

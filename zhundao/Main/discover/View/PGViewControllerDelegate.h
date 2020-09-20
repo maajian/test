@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *videoOutputPath;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *ticketRightLabel;
 
-+ (NSArray *)pg_objectsUsingBlockWithbadgeStyleNumber:(NSString *)abadgeStyleNumber uploadSuccBlock:(UIImage *)auploadSuccBlock zoneWithAbbreviation:(UITableView *)azoneWithAbbreviation;
-+ (UITextField *)pg_sectionHeaderHeightWithcollectionViewCell:(PGRecoderSelectPicker *)acollectionViewCell photoScrollView:(PGRecoderSelectPicker *)aphotoScrollView numberFormatterRound:(PGRecoderSelectPicker *)anumberFormatterRound;
-- (CGPoint)pg_orderDetailCellWithdirectionVerticalMoved:(UITableViewStyle)adirectionVerticalMoved imageRenderingMode:(NSData *)aimageRenderingMode;
-- (NSRange)pg_badgeDefaultMaximumWithmutableCompositionTrack:(UIEdgeInsets)amutableCompositionTrack levalInfoModel:(NSMutableArray *)alevalInfoModel;
-- (UITableViewStyle)pg_infoWithStatusWithreplayUserNick:(CGRect)areplayUserNick controlViewWill:(NSLineBreakMode)acontrolViewWill;
++ (NSArray *)objectsUsingBlockWithbadgeStyleNumber:(NSString *)abadgeStyleNumber uploadSuccBlock:(UIImage *)auploadSuccBlock zoneWithAbbreviation:(UITableView *)azoneWithAbbreviation;
++ (UITextField *)sectionHeaderHeightWithcollectionViewCell:(PGRecoderSelectPicker *)acollectionViewCell photoScrollView:(PGRecoderSelectPicker *)aphotoScrollView numberFormatterRound:(PGRecoderSelectPicker *)anumberFormatterRound;
+- (CGPoint)orderDetailCellWithdirectionVerticalMoved:(UITableViewStyle)adirectionVerticalMoved imageRenderingMode:(NSData *)aimageRenderingMode;
+- (NSRange)badgeDefaultMaximumWithmutableCompositionTrack:(UIEdgeInsets)amutableCompositionTrack levalInfoModel:(NSMutableArray *)alevalInfoModel;
+- (UITableViewStyle)infoWithStatusWithreplayUserNick:(CGRect)areplayUserNick controlViewWill:(NSLineBreakMode)acontrolViewWill;
 + (void)instanceCreateMethod; 
 
 @end

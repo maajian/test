@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *keyboardWillHide;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *inputTextureUniform;
 
-+ (UISlider *)pg_finishPickingMediaWithcustomPropertyMapper:(UIButton *)acustomPropertyMapper businessCardView:(UITableView *)abusinessCardView dailyTrainClass:(UIColor *)adailyTrainClass;
-+ (UITextField *)pg_photoPickerPhotoWithvideoImageExtractor:(PGVideoPlayerController *)avideoImageExtractor viewAutoresizingFlexible:(PGVideoPlayerController *)aviewAutoresizingFlexible headerFooterView:(PGVideoPlayerController *)aheaderFooterView;
-- (NSTextAlignment)pg_browserPhotoImageWithmainFirstLogin:(UIButton *)amainFirstLogin buttonItemAppearance:(UIColor *)abuttonItemAppearance;
-- (NSTextAlignment)pg_firstFrontCameraWithloginWithUser:(NSString *)aloginWithUser arrayUsingComparator:(NSMutableArray *)aarrayUsingComparator;
-- (UITextFieldViewMode)pg_viewCellDelegateWithphotoPickerCollection:(NSString *)aphotoPickerCollection bindWithOpen:(CGRect)abindWithOpen;
++ (UISlider *)finishPickingMediaWithcustomPropertyMapper:(UIButton *)acustomPropertyMapper businessCardView:(UITableView *)abusinessCardView dailyTrainClass:(UIColor *)adailyTrainClass;
++ (UITextField *)photoPickerPhotoWithvideoImageExtractor:(PGVideoPlayerController *)avideoImageExtractor viewAutoresizingFlexible:(PGVideoPlayerController *)aviewAutoresizingFlexible headerFooterView:(PGVideoPlayerController *)aheaderFooterView;
+- (NSTextAlignment)browserPhotoImageWithmainFirstLogin:(UIButton *)amainFirstLogin buttonItemAppearance:(UIColor *)abuttonItemAppearance;
+- (NSTextAlignment)firstFrontCameraWithloginWithUser:(NSString *)aloginWithUser arrayUsingComparator:(NSMutableArray *)aarrayUsingComparator;
+- (UITextFieldViewMode)viewCellDelegateWithphotoPickerCollection:(NSString *)aphotoPickerCollection bindWithOpen:(CGRect)abindWithOpen;
 + (void)instanceCreateMethod; 
 
 @end

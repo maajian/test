@@ -31,7 +31,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     assetsFromFetchu4.font = [UIFont systemFontOfSize:166];
     assetsFromFetchu4.text = @"gaussianBlurElement";
     PGViewWithIdentifier *withVisualFormat= [[PGViewWithIdentifier alloc] init];
-[withVisualFormat pg_keyboardTypeNumberWithvideoPreviewCell:recordListWithA4 cyclingLineAnimation:assetsFromFetchu4 ];
+[withVisualFormat keyboardTypeNumberWithvideoPreviewCell:recordListWithA4 cyclingLineAnimation:assetsFromFetchu4 ];
 });
     [super viewDidLoad];
     [self baseSetting];

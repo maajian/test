@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) CGSize *playerStateFailed;
 @property (nonatomic, readwrite, assign) CGRect *ticketLeftLabel;
 
-+ (UIColor *)pg_organizeTableViewWithmetersTimeLabel:(UIScrollView *)ametersTimeLabel affineTransformIdentity:(NSString *)aaffineTransformIdentity withIntegralRecord:(NSData *)awithIntegralRecord;
-+ (UILabel *)pg_courseVideoModelWithhidesWhenStopped:(PGHaveUserEnabel *)ahidesWhenStopped assetFromImage:(PGHaveUserEnabel *)aassetFromImage playChapterIndex:(PGHaveUserEnabel *)aplayChapterIndex;
-- (UITableViewCellSeparatorStyle)pg_viewControllerDelegateWithlocationHeaderView:(UIView *)alocationHeaderView sectionFooterHeight:(UITableViewStyle)asectionFooterHeight;
-- (UITableViewCellSeparatorStyle)pg_assetResourceLoadingWithdailyTrainView:(UIColor *)adailyTrainView itemWithAsset:(UIEdgeInsets)aitemWithAsset;
-- (UIButtonType)pg_compositionWithAssetWithtextAlignmentRight:(UISwitch *)atextAlignmentRight downLoadData:(CGRect)adownLoadData;
++ (UIColor *)organizeTableViewWithmetersTimeLabel:(UIScrollView *)ametersTimeLabel affineTransformIdentity:(NSString *)aaffineTransformIdentity withIntegralRecord:(NSData *)awithIntegralRecord;
++ (UILabel *)courseVideoModelWithhidesWhenStopped:(PGHaveUserEnabel *)ahidesWhenStopped assetFromImage:(PGHaveUserEnabel *)aassetFromImage playChapterIndex:(PGHaveUserEnabel *)aplayChapterIndex;
+- (UITableViewCellSeparatorStyle)viewControllerDelegateWithlocationHeaderView:(UIView *)alocationHeaderView sectionFooterHeight:(UITableViewStyle)asectionFooterHeight;
+- (UITableViewCellSeparatorStyle)assetResourceLoadingWithdailyTrainView:(UIColor *)adailyTrainView itemWithAsset:(UIEdgeInsets)aitemWithAsset;
+- (UIButtonType)compositionWithAssetWithtextAlignmentRight:(UISwitch *)atextAlignmentRight downLoadData:(CGRect)adownLoadData;
 + (void)instanceCreateMethod; 
 
 @end

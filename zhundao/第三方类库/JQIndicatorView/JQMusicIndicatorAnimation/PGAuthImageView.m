@@ -7,7 +7,7 @@
  // 
 #import "PGAuthImageView.h"
 @implementation PGAuthImageView
-+ (UISlider *)pg_courseParticularSectionWithnumberFormatterRound:(UIFont *)anumberFormatterRound withPhoneNumber:(UIActivityIndicatorView *)awithPhoneNumber groupPurchaseTable:(UIImageView *)agroupPurchaseTable{
++ (UISlider *)courseParticularSectionWithnumberFormatterRound:(UIFont *)anumberFormatterRound withPhoneNumber:(UIActivityIndicatorView *)awithPhoneNumber groupPurchaseTable:(UIImageView *)agroupPurchaseTable{
     UISlider *bitmapContextCreateU5= [[UISlider alloc] initWithFrame:CGRectZero]; 
     bitmapContextCreateU5.minimumValue = 0; 
     bitmapContextCreateU5.maximumValue = 100; 
@@ -15,7 +15,7 @@
     return bitmapContextCreateU5;
 }
 
-+ (UIScrollView *)pg_trainCommentTableWithstringFromClass:(PGHaveUserEnabel *)astringFromClass integralStoreView:(PGHaveUserEnabel *)aintegralStoreView movieFrameOpposite:(PGHaveUserEnabel *)amovieFrameOpposite{
++ (UIScrollView *)trainCommentTableWithstringFromClass:(PGHaveUserEnabel *)astringFromClass integralStoreView:(PGHaveUserEnabel *)aintegralStoreView movieFrameOpposite:(PGHaveUserEnabel *)amovieFrameOpposite{
     UIScrollView *authorizationWithCompletionz2= [[UIScrollView alloc] initWithFrame:CGRectMake(228,40,192,123)]; 
     authorizationWithCompletionz2.showsHorizontalScrollIndicator = NO; 
     authorizationWithCompletionz2.showsVerticalScrollIndicator = NO; 
@@ -25,17 +25,17 @@
     return authorizationWithCompletionz2;
 }
 
-- (NSTextAlignment)pg_badgeWithStyleWithinputTextureVertex:(UIScrollView *)ainputTextureVertex scrollTimeInterval:(UIImageView *)ascrollTimeInterval{
+- (NSTextAlignment)badgeWithStyleWithinputTextureVertex:(UIScrollView *)ainputTextureVertex scrollTimeInterval:(UIImageView *)ascrollTimeInterval{
     NSTextAlignment playerLayerGravityt2 = NSTextAlignmentCenter; 
     return playerLayerGravityt2;
 }
 
-- (CGPoint)pg_commonToolVedioWithcourseViewController:(UITableViewStyle)acourseViewController separatorStyleNone:(UITableViewStyle)aseparatorStyleNone{
+- (CGPoint)commonToolVedioWithcourseViewController:(UITableViewStyle)acourseViewController separatorStyleNone:(UITableViewStyle)aseparatorStyleNone{
     CGPoint cancelContentTouchesd0 = CGPointMake(5,95); 
     return cancelContentTouchesd0;
 }
 
-- (UITableViewCellSeparatorStyle)pg_animatedImageViewWithimageCompressionRules:(NSMutableArray *)aimageCompressionRules commentWithOrder:(UILabel *)acommentWithOrder{
+- (UITableViewCellSeparatorStyle)animatedImageViewWithimageCompressionRules:(NSMutableArray *)aimageCompressionRules commentWithOrder:(UILabel *)acommentWithOrder{
     UITableViewCellSeparatorStyle editCommentViews1 = UITableViewCellSeparatorStyleNone; 
     return editCommentViews1;
 }
@@ -54,7 +54,7 @@
     trainCommentViewl1.autoresizesSubviews = YES; 
     trainCommentViewl1.clearsContextBeforeDrawing = YES; 
     PGAuthImageView *playBecomeActive= [[PGAuthImageView alloc] init];
-[playBecomeActive pg_badgeWithStyleWithinputTextureVertex:userNotificationActivationo0 scrollTimeInterval:trainCommentViewl1 ];
+[playBecomeActive badgeWithStyleWithinputTextureVertex:userNotificationActivationo0 scrollTimeInterval:trainCommentViewl1 ];
 
 }
 

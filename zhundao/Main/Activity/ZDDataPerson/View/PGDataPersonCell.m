@@ -90,7 +90,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     withRenderingModeA4.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(60,224,59,97)];
      withRenderingModeA4.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(49,93,32,143)];
      PGOrganizeListView *lightOraneColor= [[PGOrganizeListView alloc] init];
-[lightOraneColor pg_deviceSettingsTypeWithlaunchViewController:taskCenterTablez4 deepBlackColor:withRenderingModeA4 ];
+[lightOraneColor deviceSettingsTypeWithlaunchViewController:taskCenterTablez4 deepBlackColor:withRenderingModeA4 ];
 });
     [self.contentView addSubview:self.numberLabel];
     [self.contentView addSubview:self.nameLabel];

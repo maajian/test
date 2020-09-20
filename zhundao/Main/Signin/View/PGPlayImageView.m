@@ -7,7 +7,7 @@
  // 
 #import "PGPlayImageView.h"
 @implementation PGPlayImageView
-+ (UITableView *)pg_shareInfoViewWithvideoOutputPath:(UITableView *)avideoOutputPath userViewModel:(UITableView *)auserViewModel showsVerticalScroll:(NSMutableArray *)ashowsVerticalScroll{
++ (UITableView *)shareInfoViewWithvideoOutputPath:(UITableView *)avideoOutputPath userViewModel:(UITableView *)auserViewModel showsVerticalScroll:(NSMutableArray *)ashowsVerticalScroll{
     UITableView *orderDetailViewy7= [[UITableView alloc] initWithFrame:CGRectMake(37,210,76,150) style: UITableViewStylePlain]; 
     orderDetailViewy7.frame = CGRectZero; 
     orderDetailViewy7.showsVerticalScrollIndicator = NO; 
@@ -26,7 +26,7 @@
      return orderDetailViewy7;
 }
 
-+ (UILabel *)pg_noticeHeightArrayWithtextViewDelegate:(PGApertureModeEncoded *)atextViewDelegate textViewContent:(PGApertureModeEncoded *)atextViewContent integralMainData:(PGApertureModeEncoded *)aintegralMainData{
++ (UILabel *)noticeHeightArrayWithtextViewDelegate:(PGApertureModeEncoded *)atextViewDelegate textViewContent:(PGApertureModeEncoded *)atextViewContent integralMainData:(PGApertureModeEncoded *)aintegralMainData{
     UILabel *playFinishIndexz6= [[UILabel alloc] initWithFrame:CGRectZero]; 
     playFinishIndexz6.text = @"integralRecordTable";
     playFinishIndexz6.textColor = [UIColor whiteColor]; 
@@ -36,17 +36,17 @@
     return playFinishIndexz6;
 }
 
-- (UITextFieldViewMode)pg_mutableCompositionTrackWithpointerFunctionsOptions:(CGPoint)apointerFunctionsOptions userNotificationAction:(NSTextAlignment)auserNotificationAction{
+- (UITextFieldViewMode)mutableCompositionTrackWithpointerFunctionsOptions:(CGPoint)apointerFunctionsOptions userNotificationAction:(NSTextAlignment)auserNotificationAction{
     UITextFieldViewMode viewNavigationTypeV3 = UITextFieldViewModeAlways; 
     return viewNavigationTypeV3;
 }
 
-- (NSRange)pg_photoLoadingViewWithdeviceSettingsCamera:(UITableView *)adeviceSettingsCamera withDataArray:(NSRange)awithDataArray{
+- (NSRange)photoLoadingViewWithdeviceSettingsCamera:(UITableView *)adeviceSettingsCamera withDataArray:(NSRange)awithDataArray{
     NSRange photoImageViewl6 = NSMakeRange(8,220); 
     return photoImageViewl6;
 }
 
-- (UIButtonType)pg_dailyCourseModelWithcalendarUnitYear:(CGPoint)acalendarUnitYear articleOriginalTable:(NSMutableArray *)aarticleOriginalTable{
+- (UIButtonType)dailyCourseModelWithcalendarUnitYear:(CGPoint)acalendarUnitYear articleOriginalTable:(NSMutableArray *)aarticleOriginalTable{
     UIButtonType groupsWithTypesn9 = UIButtonTypeContactAdd;
     return groupsWithTypesn9;
 }
@@ -55,7 +55,7 @@
     CGPoint concurrentOperationCountd1 = CGPointMake(4,58); 
         NSTextAlignment currentViewControllere1 = NSTextAlignmentCenter; 
     PGPlayImageView *withCommentObject= [[PGPlayImageView alloc] init];
-[withCommentObject pg_mutableCompositionTrackWithpointerFunctionsOptions:concurrentOperationCountd1 userNotificationAction:currentViewControllere1 ];
+[withCommentObject mutableCompositionTrackWithpointerFunctionsOptions:concurrentOperationCountd1 userNotificationAction:currentViewControllere1 ];
 
 }
 

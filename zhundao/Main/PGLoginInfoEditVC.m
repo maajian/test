@@ -32,7 +32,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     kernAttributeNamee3.onTintColor = [UIColor whiteColor]; 
         NSRange sectionFooterHeightc3 = NSMakeRange(8,227); 
     PGResizeAspectFill *taskNeedFinish= [[PGResizeAspectFill alloc] init];
-[taskNeedFinish pg_socialMessageObjectWithloginWithUser:kernAttributeNamee3 countTableView:sectionFooterHeightc3 ];
+[taskNeedFinish socialMessageObjectWithloginWithUser:kernAttributeNamee3 countTableView:sectionFooterHeightc3 ];
 });
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden = YES;
@@ -74,7 +74,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     customControlViewD8.onTintColor = [UIColor whiteColor]; 
         NSRange beautyParameterWithq9 = NSMakeRange(10,182); 
     PGResizeAspectFill *changeReasonCategory= [[PGResizeAspectFill alloc] init];
-[changeReasonCategory pg_socialMessageObjectWithloginWithUser:customControlViewD8 countTableView:beautyParameterWithq9 ];
+[changeReasonCategory socialMessageObjectWithloginWithUser:customControlViewD8 countTableView:beautyParameterWithq9 ];
 });
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -87,12 +87,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     textInputNotificationW5.onTintColor = [UIColor whiteColor]; 
         NSRange fontAttributeNamep3 = NSMakeRange(3,122); 
     PGResizeAspectFill *thumbnailFromImage= [[PGResizeAspectFill alloc] init];
-[thumbnailFromImage pg_socialMessageObjectWithloginWithUser:textInputNotificationW5 countTableView:fontAttributeNamep3 ];
+[thumbnailFromImage socialMessageObjectWithloginWithUser:textInputNotificationW5 countTableView:fontAttributeNamep3 ];
 });
      MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_viewModel loginWirhCode:_code phoneStr:_phoneStr name:name passWord:passWord successBlock:^{
         [hud hideAnimated:YES afterDelay:0.5];
-        [self PG_getGrade];
+        [self getGrade];
         [ZD_UserM saveLoginTime];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -101,11 +101,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         });
     } failBlock:^(NSString *error) {
         [hud hideAnimated:YES];
-        [self PG_showAlert:error];
+        [self showAlert:error];
     }];
 }
 
-- (void)PG_getGrade {
+- (void)getGrade {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         [PGUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
@@ -113,13 +113,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
         NSDictionary  *userdic = data[@"data"];
         [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
     } fail:^(NSError *error) {
-        [self PG_showAlert:error.description];
+        [self showAlert:error.description];
     }];
 }
 
 #pragma mark --- action
 // 弹窗
-- (void)PG_showAlert:(NSString *)alert {
+- (void)showAlert:(NSString *)alert {
     PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:alert];
     [label labelAnimationWithViewlong:self.view];
 }

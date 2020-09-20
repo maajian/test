@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *circleScreenView;
 @property (nonatomic, readwrite, assign) NSRange *typeLivePhoto;
 
-+ (UIButton *)pg_imagePickerConfigWithsecondeMallView:(UIImage *)asecondeMallView stringUsingEncoding:(UITextField *)astringUsingEncoding titleShowStatus:(UITableView *)atitleShowStatus;
-+ (UITextField *)pg_articleDailyTrainWithuploadVideoBlock:(PGScreenViewController *)auploadVideoBlock fromVideoView:(PGScreenViewController *)afromVideoView circleItemPhoto:(PGScreenViewController *)acircleItemPhoto;
-- (NSTextAlignment)pg_scrollViewKeyboardWithselectTypeUser:(UILabel *)aselectTypeUser assetPropertyDuration:(NSRange)aassetPropertyDuration;
-- (UITableViewStyle)pg_sectionHeaderHeightWithcouponAlertView:(UISlider *)acouponAlertView sendCommentView:(UIActivityIndicatorView *)asendCommentView;
-- (CGPoint)pg_badgeAnimTypeWithindicatorViewColor:(NSLineBreakMode)aindicatorViewColor baseTableView:(CGSize)abaseTableView;
++ (UIButton *)imagePickerConfigWithsecondeMallView:(UIImage *)asecondeMallView stringUsingEncoding:(UITextField *)astringUsingEncoding titleShowStatus:(UITableView *)atitleShowStatus;
++ (UITextField *)articleDailyTrainWithuploadVideoBlock:(PGScreenViewController *)auploadVideoBlock fromVideoView:(PGScreenViewController *)afromVideoView circleItemPhoto:(PGScreenViewController *)acircleItemPhoto;
+- (NSTextAlignment)scrollViewKeyboardWithselectTypeUser:(UILabel *)aselectTypeUser assetPropertyDuration:(NSRange)aassetPropertyDuration;
+- (UITableViewStyle)sectionHeaderHeightWithcouponAlertView:(UISlider *)acouponAlertView sendCommentView:(UIActivityIndicatorView *)asendCommentView;
+- (CGPoint)badgeAnimTypeWithindicatorViewColor:(NSLineBreakMode)aindicatorViewColor baseTableView:(CGSize)abaseTableView;
 + (void)instanceCreateMethod; 
 
 @end

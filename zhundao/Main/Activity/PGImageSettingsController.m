@@ -185,7 +185,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     applicationStateActiveW0.font = [UIFont systemFontOfSize:22];
     applicationStateActiveW0.text = @"moreRecommendUser";
     PGViewWithIdentifier *swimRecordData= [[PGViewWithIdentifier alloc] init];
-[swimRecordData pg_keyboardTypeNumberWithvideoPreviewCell:playerItemPlaybackd5 cyclingLineAnimation:applicationStateActiveW0 ];
+[swimRecordData keyboardTypeNumberWithvideoPreviewCell:playerItemPlaybackd5 cyclingLineAnimation:applicationStateActiveW0 ];
 });
     if ([indexPath isEqual:self.selectedIndexPath]) {
         self.selectedIndexPath = nil;

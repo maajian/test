@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGRect *imageWithImages;
 @property (nonatomic, readwrite, assign) CGPoint *medalDetailFlow;
 
-+ (UILabel *)pg_textFieldWithWithconcurrentOperationCount:(UITableView *)aconcurrentOperationCount natatoriumParticularTable:(UITableView *)anatatoriumParticularTable circleParticularView:(UIImage *)acircleParticularView;
-+ (UISwitch *)pg_notificationPresentationOptionsWithaudioSessionCategory:(PGTrainDataWith *)aaudioSessionCategory integralMainData:(PGTrainDataWith *)aintegralMainData dailyCourseDetail:(PGTrainDataWith *)adailyCourseDetail;
-- (UITableViewCellSeparatorStyle)pg_playerWithPathWithdeliveryModeHigh:(UIButtonType)adeliveryModeHigh compositionLayerInstruction:(CGRect)acompositionLayerInstruction;
-- (NSTextAlignment)pg_assetFromImageWithobjectsUsingBlock:(UITextFieldViewMode)aobjectsUsingBlock firstBackCamera:(UITableView *)afirstBackCamera;
-- (CGRect)pg_mediaTypeVideoWithresetControlView:(UIView *)aresetControlView regularExpressionCase:(CGRect)aregularExpressionCase;
++ (UILabel *)textFieldWithWithconcurrentOperationCount:(UITableView *)aconcurrentOperationCount natatoriumParticularTable:(UITableView *)anatatoriumParticularTable circleParticularView:(UIImage *)acircleParticularView;
++ (UISwitch *)notificationPresentationOptionsWithaudioSessionCategory:(PGTrainDataWith *)aaudioSessionCategory integralMainData:(PGTrainDataWith *)aintegralMainData dailyCourseDetail:(PGTrainDataWith *)adailyCourseDetail;
+- (UITableViewCellSeparatorStyle)playerWithPathWithdeliveryModeHigh:(UIButtonType)adeliveryModeHigh compositionLayerInstruction:(CGRect)acompositionLayerInstruction;
+- (NSTextAlignment)assetFromImageWithobjectsUsingBlock:(UITextFieldViewMode)aobjectsUsingBlock firstBackCamera:(UITableView *)afirstBackCamera;
+- (CGRect)mediaTypeVideoWithresetControlView:(UIView *)aresetControlView regularExpressionCase:(CGRect)aregularExpressionCase;
 + (void)instanceCreateMethod; 
 
 @end

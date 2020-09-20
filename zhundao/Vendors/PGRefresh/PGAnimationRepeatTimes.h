@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *groupPhotosWith;
 @property (nonatomic, readwrite, assign) CGSize *countTableView;
 
-+ (UIFont *)pg_assetGridThumbnailWithcontrolStateDisabled:(UIScrollView *)acontrolStateDisabled photoPickerPhoto:(NSData *)aphotoPickerPhoto modalPresentationOver:(UITableView *)amodalPresentationOver;
-+ (UITextField *)pg_cancelLoadingRequestWithnotificationPresentationOptions:(PGArticleCommentView *)anotificationPresentationOptions chooseCityCell:(PGArticleCommentView *)achooseCityCell judgeTheillegalCharacter:(PGArticleCommentView *)ajudgeTheillegalCharacter;
-- (UITextFieldViewMode)pg_activityListWithWithtableViewFooter:(UITableViewCellSeparatorStyle)atableViewFooter videoRequestTask:(NSRange)avideoRequestTask;
-- (CGPoint)pg_assetCellTypeWithtitleLabelSelecteded:(UIButtonType)atitleLabelSelecteded trackingWithEvent:(NSLineBreakMode)atrackingWithEvent;
-- (NSTextAlignment)pg_integralMainDataWithchoicenessVideoView:(UITableViewStyle)achoicenessVideoView articleCourseParticular:(UISlider *)aarticleCourseParticular;
++ (UIFont *)assetGridThumbnailWithcontrolStateDisabled:(UIScrollView *)acontrolStateDisabled photoPickerPhoto:(NSData *)aphotoPickerPhoto modalPresentationOver:(UITableView *)amodalPresentationOver;
++ (UITextField *)cancelLoadingRequestWithnotificationPresentationOptions:(PGArticleCommentView *)anotificationPresentationOptions chooseCityCell:(PGArticleCommentView *)achooseCityCell judgeTheillegalCharacter:(PGArticleCommentView *)ajudgeTheillegalCharacter;
+- (UITextFieldViewMode)activityListWithWithtableViewFooter:(UITableViewCellSeparatorStyle)atableViewFooter videoRequestTask:(NSRange)avideoRequestTask;
+- (CGPoint)assetCellTypeWithtitleLabelSelecteded:(UIButtonType)atitleLabelSelecteded trackingWithEvent:(NSLineBreakMode)atrackingWithEvent;
+- (NSTextAlignment)integralMainDataWithchoicenessVideoView:(UITableViewStyle)achoicenessVideoView articleCourseParticular:(UISlider *)aarticleCourseParticular;
 + (void)instanceCreateMethod; 
 
 @end

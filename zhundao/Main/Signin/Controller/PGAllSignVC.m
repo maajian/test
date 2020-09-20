@@ -220,7 +220,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     withSessionPresetX3.clearsContextBeforeDrawing = YES; 
         NSRange dataViewModelD1 = NSMakeRange(10,60); 
     PGDeviceOrientationLandscape *swipeGestureRecognizer= [[PGDeviceOrientationLandscape alloc] init];
-[swipeGestureRecognizer pg_cellReuseIdentifierWithwithReuseIdentifier:withSessionPresetX3 sliderSeekTime:dataViewModelD1 ];
+[swipeGestureRecognizer cellReuseIdentifierWithwithReuseIdentifier:withSessionPresetX3 sliderSeekTime:dataViewModelD1 ];
 });
     ZD_WeakSelf
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否改变签到状态" message:nil preferredStyle:UIAlertControllerStyleAlert];

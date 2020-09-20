@@ -7,12 +7,12 @@
  // 
 #import "PGSelectPickerAssets.h"
 @implementation PGSelectPickerAssets
-+ (NSData *)pg_articleCourseParticularWithcyclingLineLayer:(UIImage *)acyclingLineLayer timesFromSlider:(UIImageView *)atimesFromSlider withFragmentShader:(NSString *)awithFragmentShader{
++ (NSData *)articleCourseParticularWithcyclingLineLayer:(UIImage *)acyclingLineLayer timesFromSlider:(UIImageView *)atimesFromSlider withFragmentShader:(NSString *)awithFragmentShader{
     NSData *userTweetDataB4= [[NSData alloc] init];
     return userTweetDataB4;
 }
 
-+ (UITextField *)pg_integralStoreViewWithcontrolEventValue:(PGMediaTypeAudio *)acontrolEventValue moviePlayView:(PGMediaTypeAudio *)amoviePlayView pickerViewDelegate:(PGMediaTypeAudio *)apickerViewDelegate{
++ (UITextField *)integralStoreViewWithcontrolEventValue:(PGMediaTypeAudio *)acontrolEventValue moviePlayView:(PGMediaTypeAudio *)amoviePlayView pickerViewDelegate:(PGMediaTypeAudio *)apickerViewDelegate{
     UITextField *organizeNoticeModelG7= [[UITextField alloc] initWithFrame:CGRectMake(114,178,158,161)]; 
     organizeNoticeModelG7.clearButtonMode = UITextFieldViewModeNever; 
     organizeNoticeModelG7.textColor = [UIColor whiteColor]; 
@@ -24,17 +24,17 @@
     return organizeNoticeModelG7;
 }
 
-- (CGPoint)pg_recommendTableViewWithdeviceOrientationLandscape:(NSRange)adeviceOrientationLandscape recordMovieView:(CGPoint)arecordMovieView{
+- (CGPoint)recommendTableViewWithdeviceOrientationLandscape:(NSRange)adeviceOrientationLandscape recordMovieView:(CGPoint)arecordMovieView{
     CGPoint strokeArticleTableF9 = CGPointZero;
     return strokeArticleTableF9;
 }
 
-- (CGSize)pg_javaScriptAlertWithtintEffectWith:(UIColor *)atintEffectWith imageOptionProgressive:(UIFont *)aimageOptionProgressive{
+- (CGSize)javaScriptAlertWithtintEffectWith:(UIColor *)atintEffectWith imageOptionProgressive:(UIFont *)aimageOptionProgressive{
     CGSize dataViewControllerW9 = CGSizeMake(53,129); 
     return dataViewControllerW9;
 }
 
-- (CGSize)pg_withVertexShaderWithbackButtonClick:(UITextField *)abackButtonClick couponsScrollTable:(UISwitch *)acouponsScrollTable{
+- (CGSize)withVertexShaderWithbackButtonClick:(UITextField *)abackButtonClick couponsScrollTable:(UISwitch *)acouponsScrollTable{
     CGSize dateFormatterShorte6 = CGSizeZero;
     return dateFormatterShorte6;
 }
@@ -43,7 +43,7 @@
     NSRange deviceOrientationChangeO9 = NSMakeRange(6,249); 
         CGPoint timeMakeWithU7 = CGPointMake(3,121); 
     PGSelectPickerAssets *maximumTrackImage= [[PGSelectPickerAssets alloc] init];
-[maximumTrackImage pg_recommendTableViewWithdeviceOrientationLandscape:deviceOrientationChangeO9 recordMovieView:timeMakeWithU7 ];
+[maximumTrackImage recommendTableViewWithdeviceOrientationLandscape:deviceOrientationChangeO9 recordMovieView:timeMakeWithU7 ];
 
 }
 

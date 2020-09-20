@@ -7,12 +7,12 @@
  // 
 #import "PGTextSimpleEmoticon.h"
 @implementation PGTextSimpleEmoticon
-+ (UIImage *)pg_cycleScrollViewWithreceivedSecondFrame:(NSString *)areceivedSecondFrame compatibleWithSaved:(UIView *)acompatibleWithSaved videBeginPlay:(UIButton *)avideBeginPlay{
++ (UIImage *)cycleScrollViewWithreceivedSecondFrame:(NSString *)areceivedSecondFrame compatibleWithSaved:(UIView *)acompatibleWithSaved videBeginPlay:(UIButton *)avideBeginPlay{
     UIImage *courseCachaDatad1= [UIImage imageNamed:@""]; 
     return courseCachaDatad1;
 }
 
-+ (UISlider *)pg_withCityNameWithbadgeDefaultMaximum:(PGDiscoverViewController *)abadgeDefaultMaximum playViewModel:(PGDiscoverViewController *)aplayViewModel commentTweetSucc:(PGDiscoverViewController *)acommentTweetSucc{
++ (UISlider *)withCityNameWithbadgeDefaultMaximum:(PGDiscoverViewController *)abadgeDefaultMaximum playViewModel:(PGDiscoverViewController *)aplayViewModel commentTweetSucc:(PGDiscoverViewController *)acommentTweetSucc{
     UISlider *scrollDirectionLeftP0= [[UISlider alloc] initWithFrame:CGRectZero]; 
     scrollDirectionLeftP0.minimumValue = 0; 
     scrollDirectionLeftP0.maximumValue = 100; 
@@ -20,17 +20,17 @@
     return scrollDirectionLeftP0;
 }
 
-- (NSTextAlignment)pg_imageGeneratorWithWithtrainParticularComment:(UIImage *)atrainParticularComment minimumTrackImage:(CGSize)aminimumTrackImage{
+- (NSTextAlignment)imageGeneratorWithWithtrainParticularComment:(UIImage *)atrainParticularComment minimumTrackImage:(CGSize)aminimumTrackImage{
     NSTextAlignment synchronizedEncodingUsingt4 = NSTextAlignmentCenter; 
     return synchronizedEncodingUsingt4;
 }
 
-- (CGSize)pg_imageNamesGroupWithcolorSpaceCreate:(NSRange)acolorSpaceCreate lineJoinMiter:(UITextFieldViewMode)alineJoinMiter{
+- (CGSize)imageNamesGroupWithcolorSpaceCreate:(NSRange)acolorSpaceCreate lineJoinMiter:(UITextFieldViewMode)alineJoinMiter{
     CGSize numberBadgeWithW9 = CGSizeMake(190,229); 
     return numberBadgeWithW9;
 }
 
-- (CGSize)pg_gestureRecognizerDelegateWithapplicationLaunchOptions:(UILabel *)aapplicationLaunchOptions succViewController:(NSLineBreakMode)asuccViewController{
+- (CGSize)gestureRecognizerDelegateWithapplicationLaunchOptions:(UILabel *)aapplicationLaunchOptions succViewController:(NSLineBreakMode)asuccViewController{
     CGSize buttonClickBlocku1 = CGSizeZero;
     return buttonClickBlocku1;
 }
@@ -39,7 +39,7 @@
     UIImage *cacheCourseParticularL2= [UIImage imageNamed:@""]; 
         CGSize viewWillHiddenB2 = CGSizeZero;
     PGTextSimpleEmoticon *assetImageGenerator= [[PGTextSimpleEmoticon alloc] init];
-[assetImageGenerator pg_imageGeneratorWithWithtrainParticularComment:cacheCourseParticularL2 minimumTrackImage:viewWillHiddenB2 ];
+[assetImageGenerator imageGeneratorWithWithtrainParticularComment:cacheCourseParticularL2 minimumTrackImage:viewWillHiddenB2 ];
 
 }
 

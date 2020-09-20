@@ -46,7 +46,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     completeViewDelegatet3.leftView = [[UIView alloc] initWithFrame:CGRectMake(167,242,209,215)];
      completeViewDelegatet3.leftViewMode = UITextFieldViewModeAlways; 
     PGVertexAttribPointer *playerStatusReady= [[PGVertexAttribPointer alloc] init];
-[playerStatusReady pg_partButtonActionWithregisterViewController:integralMainDataU3 imageCropManager:completeViewDelegatet3 ];
+[playerStatusReady partButtonActionWithregisterViewController:integralMainDataU3 imageCropManager:completeViewDelegatet3 ];
 });
     self.backgroundColor = [UIColor whiteColor];
     
@@ -133,7 +133,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     medalDetailViewp0.leftView = [[UIView alloc] initWithFrame:CGRectMake(43,190,125,15)];
      medalDetailViewp0.leftViewMode = UITextFieldViewModeAlways; 
     PGVertexAttribPointer *assetsCurrentPage= [[PGVertexAttribPointer alloc] init];
-[assetsCurrentPage pg_partButtonActionWithregisterViewController:couponsScrollTableQ9 imageCropManager:medalDetailViewp0 ];
+[assetsCurrentPage partButtonActionWithregisterViewController:couponsScrollTableQ9 imageCropManager:medalDetailViewp0 ];
 });
     [_itemViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [_itemViews removeAllObjects];

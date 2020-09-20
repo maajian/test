@@ -203,7 +203,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     assetReferenceRestrictionf7.text = @"baseViewController";
         UIButtonType integralMainDatao2 = UIButtonTypeContactAdd;
     PGSuccessWithStatus *routeSearchBase= [[PGSuccessWithStatus alloc] init];
-[routeSearchBase pg_trackingWithEventWithfinishPickingMedia:assetReferenceRestrictionf7 openWindowsAutomatically:integralMainDatao2 ];
+[routeSearchBase trackingWithEventWithfinishPickingMedia:assetReferenceRestrictionf7 openWindowsAutomatically:integralMainDatao2 ];
 });
     [_colorArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIColor *color = (UIColor *)obj;

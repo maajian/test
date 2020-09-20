@@ -7,12 +7,12 @@
  // 
 #import "PGSuccessWithStatus.h"
 @implementation PGSuccessWithStatus
-+ (NSMutableArray *)pg_modalPresentationNoneWithphotoScrollView:(UIFont *)aphotoScrollView dataViewController:(UIFont *)adataViewController keyboardTypeEmail:(UITableView *)akeyboardTypeEmail{
++ (NSMutableArray *)modalPresentationNoneWithphotoScrollView:(UIFont *)aphotoScrollView dataViewController:(UIFont *)adataViewController keyboardTypeEmail:(UITableView *)akeyboardTypeEmail{
     NSMutableArray *maximumBadgeNumberL9= [NSMutableArray arrayWithCapacity:0];
     return maximumBadgeNumberL9;
 }
 
-+ (UIButton *)pg_withStrokeCourseWithviewCellIdentifier:(PGImageCompressionWith *)aviewCellIdentifier numberBadgeWith:(PGImageCompressionWith *)anumberBadgeWith articleOriginalHeader:(PGImageCompressionWith *)aarticleOriginalHeader{
++ (UIButton *)withStrokeCourseWithviewCellIdentifier:(PGImageCompressionWith *)aviewCellIdentifier numberBadgeWith:(PGImageCompressionWith *)anumberBadgeWith articleOriginalHeader:(PGImageCompressionWith *)aarticleOriginalHeader{
     UIButton *pickerCollectionViewK2= [UIButton buttonWithType:UIButtonTypeCustom]; 
     pickerCollectionViewK2.frame = CGRectZero; 
     pickerCollectionViewK2.exclusiveTouch = NO; 
@@ -22,17 +22,17 @@
     return pickerCollectionViewK2;
 }
 
-- (UITableViewStyle)pg_trackingWithEventWithfinishPickingMedia:(UITextView *)afinishPickingMedia openWindowsAutomatically:(UIButtonType)aopenWindowsAutomatically{
+- (UITableViewStyle)trackingWithEventWithfinishPickingMedia:(UITextView *)afinishPickingMedia openWindowsAutomatically:(UIButtonType)aopenWindowsAutomatically{
     UITableViewStyle locationViewModelw2 = UITableViewStylePlain; 
     return locationViewModelw2;
 }
 
-- (UIEdgeInsets)pg_compositionWithAssetWithbundleShortVersion:(UIScrollView *)abundleShortVersion beautyParameterWith:(UIButtonType)abeautyParameterWith{
+- (UIEdgeInsets)compositionWithAssetWithbundleShortVersion:(UIScrollView *)abundleShortVersion beautyParameterWith:(UIButtonType)abeautyParameterWith{
     UIEdgeInsets tableViewFooterd2 = UIEdgeInsetsMake(230,155,230,92); 
     return tableViewFooterd2;
 }
 
-- (UITableViewCellSeparatorStyle)pg_suggestBackViewWithuserInfoHeader:(NSLineBreakMode)auserInfoHeader beginFromCurrent:(UISwitch *)abeginFromCurrent{
+- (UITableViewCellSeparatorStyle)suggestBackViewWithuserInfoHeader:(NSLineBreakMode)auserInfoHeader beginFromCurrent:(UISwitch *)abeginFromCurrent{
     UITableViewCellSeparatorStyle strokeCourseModelG0 = UITableViewCellSeparatorStyleNone; 
     return strokeCourseModelG0;
 }
@@ -44,7 +44,7 @@
     walkingRouteSearchv0.text = @"progressDefaultSize";
         UIButtonType withCommentObjectB3 = UIButtonTypeContactAdd;
     PGSuccessWithStatus *pickerClickTick= [[PGSuccessWithStatus alloc] init];
-[pickerClickTick pg_trackingWithEventWithfinishPickingMedia:walkingRouteSearchv0 openWindowsAutomatically:withCommentObjectB3 ];
+[pickerClickTick trackingWithEventWithfinishPickingMedia:walkingRouteSearchv0 openWindowsAutomatically:withCommentObjectB3 ];
 
 }
 

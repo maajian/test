@@ -77,14 +77,14 @@
         }
         _buttonCount = sureButtonTitle.length? 2 : 1;
          // 初始化UI
-        [self PG_setupUI];
-        [self PG_initLayout];
+        [self setupUI];
+        [self initLayout];
     }
     return self;
 }
 
 #pragma mark --- UI创建
-- (void)PG_setupUI {
+- (void)setupUI {
      // 内容视图
     _contentView = [[UIView alloc]init];
     [self addSubview:_contentView];
@@ -129,7 +129,7 @@
     }
 }
 
-- (void)PG_initLayout {
+- (void)initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIButton *applicationIconBadger7= [UIButton buttonWithType:UIButtonTypeCustom]; 
     applicationIconBadger7.frame = CGRectZero; 
@@ -144,7 +144,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     captureFlashModeg4.autoresizesSubviews = YES; 
     captureFlashModeg4.clearsContextBeforeDrawing = YES; 
     PGUserCommentView *imageSourceCopy= [[PGUserCommentView alloc] init];
-[imageSourceCopy pg_transformRotationAngleWithswimCircleItem:applicationIconBadger7 colorSpaceRelease:captureFlashModeg4 ];
+[imageSourceCopy transformRotationAngleWithswimCircleItem:applicationIconBadger7 colorSpaceRelease:captureFlashModeg4 ];
 });
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);

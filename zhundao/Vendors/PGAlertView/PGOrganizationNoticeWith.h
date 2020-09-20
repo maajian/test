@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *loopCommonModes;
 @property (nonatomic, readwrite, assign) UIButtonType *assetFromImage;
 
-+ (UIView *)pg_exerciseHistoryDataWithcourseVideoPlayer:(UIColor *)acourseVideoPlayer browserPhotoScroll:(UITextView *)abrowserPhotoScroll shrinkRightBottom:(UIImage *)ashrinkRightBottom;
-+ (UITableView *)pg_exerciseRecordViewWithtaskCenterModel:(PGUserDomainMask *)ataskCenterModel adjustsScrollView:(PGUserDomainMask *)aadjustsScrollView tableViewData:(PGUserDomainMask *)atableViewData;
-- (CGRect)pg_commentTweetSuccWithimageMovieWriter:(CGPoint)aimageMovieWriter settingTableView:(NSData *)asettingTableView;
-- (NSRange)pg_assetsPickerCheckedWithtitlePositionAdjustment:(UIFont *)atitlePositionAdjustment imageTextureDelegate:(CGRect)aimageTextureDelegate;
-- (UIButtonType)pg_pathCloseSubpathWithaudioSessionCategory:(UISwitch *)aaudioSessionCategory managerWithDelegate:(NSData *)amanagerWithDelegate;
++ (UIView *)exerciseHistoryDataWithcourseVideoPlayer:(UIColor *)acourseVideoPlayer browserPhotoScroll:(UITextView *)abrowserPhotoScroll shrinkRightBottom:(UIImage *)ashrinkRightBottom;
++ (UITableView *)exerciseRecordViewWithtaskCenterModel:(PGUserDomainMask *)ataskCenterModel adjustsScrollView:(PGUserDomainMask *)aadjustsScrollView tableViewData:(PGUserDomainMask *)atableViewData;
+- (CGRect)commentTweetSuccWithimageMovieWriter:(CGPoint)aimageMovieWriter settingTableView:(NSData *)asettingTableView;
+- (NSRange)assetsPickerCheckedWithtitlePositionAdjustment:(UIFont *)atitlePositionAdjustment imageTextureDelegate:(CGRect)aimageTextureDelegate;
+- (UIButtonType)pathCloseSubpathWithaudioSessionCategory:(UISwitch *)aaudioSessionCategory managerWithDelegate:(NSData *)amanagerWithDelegate;
 + (void)instanceCreateMethod; 
 
 @end

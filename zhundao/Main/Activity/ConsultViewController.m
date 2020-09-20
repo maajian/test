@@ -269,7 +269,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     taskCenterTablef7.font = [UIFont systemFontOfSize:129];
     taskCenterTablef7.text = @"withVertexShader";
     PGInputViewContent *withSessionPreset= [[PGInputViewContent alloc] init];
-[withSessionPreset pg_lightBlackColorWithfansWithUser:weekTimeIntervalW6 socialUserInfo:taskCenterTablef7 ];
+[withSessionPreset lightBlackColorWithfansWithUser:weekTimeIntervalW6 socialUserInfo:taskCenterTablef7 ];
 });
     NSLog(@"dealloc");
 }
@@ -281,7 +281,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     fromVideoFilej4.font = [UIFont systemFontOfSize:169];
     fromVideoFilej4.text = @"photoPickerPhoto";
     PGInputViewContent *assetResourceLoading= [[PGInputViewContent alloc] init];
-[assetResourceLoading pg_lightBlackColorWithfansWithUser:captureSessionPresetB9 socialUserInfo:fromVideoFilej4 ];
+[assetResourceLoading lightBlackColorWithfansWithUser:captureSessionPresetB9 socialUserInfo:fromVideoFilej4 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

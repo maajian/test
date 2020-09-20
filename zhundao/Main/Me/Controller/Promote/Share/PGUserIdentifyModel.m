@@ -7,14 +7,14 @@
  // 
 #import "PGUserIdentifyModel.h"
 @implementation PGUserIdentifyModel
-+ (UISwitch *)pg_integralMainViewWithplayerStateBuffering:(UIImageView *)aplayerStateBuffering mutableVideoComposition:(UIFont *)amutableVideoComposition loginMainView:(UITextView *)aloginMainView{
++ (UISwitch *)integralMainViewWithplayerStateBuffering:(UIImageView *)aplayerStateBuffering mutableVideoComposition:(UIFont *)amutableVideoComposition loginMainView:(UITextView *)aloginMainView{
     UISwitch *trainGuideTablep3= [[UISwitch alloc] initWithFrame:CGRectMake(7,100,128,190)]; 
     trainGuideTablep3.on = YES; 
     trainGuideTablep3.onTintColor = [UIColor whiteColor]; 
     return trainGuideTablep3;
 }
 
-+ (UIButton *)pg_recommendCourseHeightWithmallViewModel:(PGCurrentPlayChapter *)amallViewModel contextFillPath:(PGCurrentPlayChapter *)acontextFillPath assetPreferPrecise:(PGCurrentPlayChapter *)aassetPreferPrecise{
++ (UIButton *)recommendCourseHeightWithmallViewModel:(PGCurrentPlayChapter *)amallViewModel contextFillPath:(PGCurrentPlayChapter *)acontextFillPath assetPreferPrecise:(PGCurrentPlayChapter *)aassetPreferPrecise{
     UIButton *controllerWithTitleE2= [UIButton buttonWithType:UIButtonTypeCustom]; 
     controllerWithTitleE2.frame = CGRectZero; 
     controllerWithTitleE2.exclusiveTouch = NO; 
@@ -24,17 +24,17 @@
     return controllerWithTitleE2;
 }
 
-- (NSTextAlignment)pg_naviTitleColorWithdelaysTouchesEnded:(UITextField *)adelaysTouchesEnded listRequsetWith:(UIActivityIndicatorView *)alistRequsetWith{
+- (NSTextAlignment)naviTitleColorWithdelaysTouchesEnded:(UITextField *)adelaysTouchesEnded listRequsetWith:(UIActivityIndicatorView *)alistRequsetWith{
     NSTextAlignment pageLabelPageZ8 = NSTextAlignmentCenter; 
     return pageLabelPageZ8;
 }
 
-- (NSTextAlignment)pg_customAnimateTransitionWithstadiumParticularView:(CGPoint)astadiumParticularView mutableCompositionTrack:(CGSize)amutableCompositionTrack{
+- (NSTextAlignment)customAnimateTransitionWithstadiumParticularView:(CGPoint)astadiumParticularView mutableCompositionTrack:(CGSize)amutableCompositionTrack{
     NSTextAlignment keyboardAnimationDurationK2 = NSTextAlignmentCenter; 
     return keyboardAnimationDurationK2;
 }
 
-- (NSRange)pg_timeRangeMakeWithdownVideoData:(NSRange)adownVideoData finishPickingVideo:(NSTextAlignment)afinishPickingVideo{
+- (NSRange)timeRangeMakeWithdownVideoData:(NSRange)adownVideoData finishPickingVideo:(NSTextAlignment)afinishPickingVideo{
     NSRange circleScreenDatap8 = NSMakeRange(6,187); 
     return circleScreenDatap8;
 }
@@ -52,7 +52,7 @@
     selectPhotoPickert3.hidden = YES; 
     selectPhotoPickert3.hidesWhenStopped = YES; 
     PGUserIdentifyModel *collectionOriginalTable= [[PGUserIdentifyModel alloc] init];
-[collectionOriginalTable pg_naviTitleColorWithdelaysTouchesEnded:withLoadingRequestv6 listRequsetWith:selectPhotoPickert3 ];
+[collectionOriginalTable naviTitleColorWithdelaysTouchesEnded:withLoadingRequestv6 listRequsetWith:selectPhotoPickert3 ];
 
 }
 

@@ -162,7 +162,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSRange dailyTrainHeaderj0 = NSMakeRange(4,170); 
         UITableViewCellSeparatorStyle moviePlayTestD4 = UITableViewCellSeparatorStyleNone; 
     PGPlayEnterBack *firstFrameCheck= [[PGPlayEnterBack alloc] init];
-[firstFrameCheck pg_photosDelegateWithWithviewCellIdentifier:dailyTrainHeaderj0 circleCommentTable:moviePlayTestD4 ];
+[firstFrameCheck photosDelegateWithWithviewCellIdentifier:dailyTrainHeaderj0 circleCommentTable:moviePlayTestD4 ];
 });
     //停止定位
     [self.locationManager stopUpdatingLocation];
@@ -361,7 +361,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSRange recordVideoErrorb3 = NSMakeRange(10,144); 
         UITableViewCellSeparatorStyle columnistCategoryModelw0 = UITableViewCellSeparatorStyleNone; 
     PGPlayEnterBack *enableVertexAttrib= [[PGPlayEnterBack alloc] init];
-[enableVertexAttrib pg_photosDelegateWithWithviewCellIdentifier:recordVideoErrorb3 circleCommentTable:columnistCategoryModelw0 ];
+[enableVertexAttrib photosDelegateWithWithviewCellIdentifier:recordVideoErrorb3 circleCommentTable:columnistCategoryModelw0 ];
 });
     NSLog(@"周边搜索回调");
     if(response.pois.count == 0)

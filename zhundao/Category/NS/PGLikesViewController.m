@@ -7,7 +7,7 @@
  // 
 #import "PGLikesViewController.h"
 @implementation PGLikesViewController
-+ (UISlider *)pg_finishPickingMediaWithcustomPropertyMapper:(UIButton *)acustomPropertyMapper businessCardView:(UITableView *)abusinessCardView dailyTrainClass:(UIColor *)adailyTrainClass{
++ (UISlider *)finishPickingMediaWithcustomPropertyMapper:(UIButton *)acustomPropertyMapper businessCardView:(UITableView *)abusinessCardView dailyTrainClass:(UIColor *)adailyTrainClass{
     UISlider *stateAlertViewH9= [[UISlider alloc] initWithFrame:CGRectMake(49,55,28,28)]; 
     stateAlertViewH9.minimumValue = 0; 
     stateAlertViewH9.maximumValue = 100; 
@@ -15,7 +15,7 @@
     return stateAlertViewH9;
 }
 
-+ (UITextField *)pg_photoPickerPhotoWithvideoImageExtractor:(PGVideoPlayerController *)avideoImageExtractor viewAutoresizingFlexible:(PGVideoPlayerController *)aviewAutoresizingFlexible headerFooterView:(PGVideoPlayerController *)aheaderFooterView{
++ (UITextField *)photoPickerPhotoWithvideoImageExtractor:(PGVideoPlayerController *)avideoImageExtractor viewAutoresizingFlexible:(PGVideoPlayerController *)aviewAutoresizingFlexible headerFooterView:(PGVideoPlayerController *)aheaderFooterView{
     UITextField *bottomChartVieww5= [[UITextField alloc] initWithFrame:CGRectMake(215,161,171,185)]; 
     bottomChartVieww5.clearButtonMode = UITextFieldViewModeNever; 
     bottomChartVieww5.textColor = [UIColor whiteColor]; 
@@ -27,17 +27,17 @@
     return bottomChartVieww5;
 }
 
-- (NSTextAlignment)pg_browserPhotoImageWithmainFirstLogin:(UIButton *)amainFirstLogin buttonItemAppearance:(UIColor *)abuttonItemAppearance{
+- (NSTextAlignment)browserPhotoImageWithmainFirstLogin:(UIButton *)amainFirstLogin buttonItemAppearance:(UIColor *)abuttonItemAppearance{
     NSTextAlignment screenButtonClickM8 = NSTextAlignmentCenter; 
     return screenButtonClickM8;
 }
 
-- (NSTextAlignment)pg_firstFrontCameraWithloginWithUser:(NSString *)aloginWithUser arrayUsingComparator:(NSMutableArray *)aarrayUsingComparator{
+- (NSTextAlignment)firstFrontCameraWithloginWithUser:(NSString *)aloginWithUser arrayUsingComparator:(NSMutableArray *)aarrayUsingComparator{
     NSTextAlignment assetCollectionTypeW0 = NSTextAlignmentCenter; 
     return assetCollectionTypeW0;
 }
 
-- (UITextFieldViewMode)pg_viewCellDelegateWithphotoPickerCollection:(NSString *)aphotoPickerCollection bindWithOpen:(CGRect)abindWithOpen{
+- (UITextFieldViewMode)viewCellDelegateWithphotoPickerCollection:(NSString *)aphotoPickerCollection bindWithOpen:(CGRect)abindWithOpen{
     UITextFieldViewMode failLoadWithw4 = UITextFieldViewModeAlways; 
     return failLoadWithw4;
 }
@@ -51,7 +51,7 @@
     commonViewModeld9.frame = CGRectZero; 
         UIColor *passWordWithP2= [UIColor redColor];
     PGLikesViewController *videoWithPath= [[PGLikesViewController alloc] init];
-[videoWithPath pg_browserPhotoImageWithmainFirstLogin:commonViewModeld9 buttonItemAppearance:passWordWithP2 ];
+[videoWithPath browserPhotoImageWithmainFirstLogin:commonViewModeld9 buttonItemAppearance:passWordWithP2 ];
 
 }
 

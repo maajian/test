@@ -55,7 +55,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets periodicTimeObserverq4 = UIEdgeInsetsMake(107,227,148,163); 
         UIButtonType statusBackgroundColorR1 = UIButtonTypeContactAdd;
     PGTrainViewController *textAlignmentCenter= [[PGTrainViewController alloc] init];
-[textAlignmentCenter pg_minimumFractionDigitsWithselectTypeMyttention:periodicTimeObserverq4 notificationPresentationOption:statusBackgroundColorR1 ];
+[textAlignmentCenter minimumFractionDigitsWithselectTypeMyttention:periodicTimeObserverq4 notificationPresentationOption:statusBackgroundColorR1 ];
 });
     if(@available(iOS 11.0, *)) {
         self.navigationItem.hidesSearchBarWhenScrolling=YES;
@@ -99,7 +99,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets underlineStyleSinglea1 = UIEdgeInsetsZero;
         UIButtonType dailyTrainClassJ1 = UIButtonTypeContactAdd;
     PGTrainViewController *textureCoordinateAttribute= [[PGTrainViewController alloc] init];
-[textureCoordinateAttribute pg_minimumFractionDigitsWithselectTypeMyttention:underlineStyleSinglea1 notificationPresentationOption:dailyTrainClassJ1 ];
+[textureCoordinateAttribute minimumFractionDigitsWithselectTypeMyttention:underlineStyleSinglea1 notificationPresentationOption:dailyTrainClassJ1 ];
 });
     ZD_WeakSelf
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -278,7 +278,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets partButtonActionz2 = UIEdgeInsetsZero;
         UIButtonType tweetCommentDataS3 = UIButtonTypeContactAdd;
     PGTrainViewController *textAlignmentLeft= [[PGTrainViewController alloc] init];
-[textAlignmentLeft pg_minimumFractionDigitsWithselectTypeMyttention:partButtonActionz2 notificationPresentationOption:tweetCommentDataS3 ];
+[textAlignmentLeft minimumFractionDigitsWithselectTypeMyttention:partButtonActionz2 notificationPresentationOption:tweetCommentDataS3 ];
 });
     ZD_WeakSelf
     [self.viewModel getMeMessageListSuccess:^(NSInteger obj) {

@@ -46,7 +46,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     circleViewControllerI4.font = [UIFont systemFontOfSize:35];
     circleViewControllerI4.text = @"phoneWithPhone";
     PGHonorTitleModel *withTaskCenter= [[PGHonorTitleModel alloc] init];
-[withTaskCenter pg_attentionViewControllerWithcellPlayerFather:medalViewModelL6 withCourseVideo:circleViewControllerI4 ];
+[withTaskCenter attentionViewControllerWithcellPlayerFather:medalViewModelL6 withCourseVideo:circleViewControllerI4 ];
 });
     self.webView.frame = CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.height - 64);
 }
@@ -89,7 +89,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     groupPhotosWitho1.font = [UIFont systemFontOfSize:142];
     groupPhotosWitho1.text = @"compositionLayerInstruction";
     PGHonorTitleModel *viewContentSize= [[PGHonorTitleModel alloc] init];
-[viewContentSize pg_attentionViewControllerWithcellPlayerFather:sliderTouchDownW5 withCourseVideo:groupPhotosWitho1 ];
+[viewContentSize attentionViewControllerWithcellPlayerFather:sliderTouchDownW5 withCourseVideo:groupPhotosWitho1 ];
 });
     // 如果是跳转一个新页面
     if (navigationAction.targetFrame == nil) {

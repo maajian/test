@@ -38,7 +38,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect controllerWithTitlel5 = CGRectZero;
         NSData *delaysTouchesBeganh2= [[NSData alloc] init];
     PGViewImageFinish *taskCenterCell= [[PGViewImageFinish alloc] init];
-[taskCenterCell pg_progressUpdateBlockWithimageGenerationError:controllerWithTitlel5 finishLoadWith:delaysTouchesBeganh2 ];
+[taskCenterCell progressUpdateBlockWithimageGenerationError:controllerWithTitlel5 finishLoadWith:delaysTouchesBeganh2 ];
 });
     [super viewDidLoad];
     
@@ -144,7 +144,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect withSwimParticularC9 = CGRectMake(104,37,222,56); 
         NSData *beautyParamWithM5= [[NSData alloc] init];
     PGViewImageFinish *answerViewModel= [[PGViewImageFinish alloc] init];
-[answerViewModel pg_progressUpdateBlockWithimageGenerationError:withSwimParticularC9 finishLoadWith:beautyParamWithM5 ];
+[answerViewModel progressUpdateBlockWithimageGenerationError:withSwimParticularC9 finishLoadWith:beautyParamWithM5 ];
 });
     NSInteger index = [self.tableView indexPathForCell:tableViewCell].row;
     [self.viewModel.dataArray replaceObjectAtIndex:index withObject:textField.text];

@@ -7,7 +7,7 @@
  // 
 #import "PGIntergralStoreView.h"
 @implementation PGIntergralStoreView
-+ (UITableView *)pg_withCalendarIdentifierWithfailProvisionalNavigation:(UITableView *)afailProvisionalNavigation circleScreenView:(UIView *)acircleScreenView savedPhotosAlbum:(UIButton *)asavedPhotosAlbum{
++ (UITableView *)withCalendarIdentifierWithfailProvisionalNavigation:(UITableView *)afailProvisionalNavigation circleScreenView:(UIView *)acircleScreenView savedPhotosAlbum:(UIButton *)asavedPhotosAlbum{
     UITableView *inputTextureUniformZ9= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     inputTextureUniformZ9.frame = CGRectZero; 
     inputTextureUniformZ9.showsVerticalScrollIndicator = NO; 
@@ -26,7 +26,7 @@
      return inputTextureUniformZ9;
 }
 
-+ (UIButton *)pg_viewCellIdentifierWithlistWithCity:(PGMutableTrackWith *)alistWithCity imagePickerConfig:(PGMutableTrackWith *)aimagePickerConfig videoProcessingQueue:(PGMutableTrackWith *)avideoProcessingQueue{
++ (UIButton *)viewCellIdentifierWithlistWithCity:(PGMutableTrackWith *)alistWithCity imagePickerConfig:(PGMutableTrackWith *)aimagePickerConfig videoProcessingQueue:(PGMutableTrackWith *)avideoProcessingQueue{
     UIButton *minimumTrackImageB5= [UIButton buttonWithType:UIButtonTypeCustom]; 
     minimumTrackImageB5.frame = CGRectZero; 
     minimumTrackImageB5.exclusiveTouch = NO; 
@@ -36,17 +36,17 @@
     return minimumTrackImageB5;
 }
 
-- (NSLineBreakMode)pg_rectIntersectsRectWithcachingHighQuality:(NSLineBreakMode)acachingHighQuality withRefreshingTarget:(NSData *)awithRefreshingTarget{
+- (NSLineBreakMode)rectIntersectsRectWithcachingHighQuality:(NSLineBreakMode)acachingHighQuality withRefreshingTarget:(NSData *)awithRefreshingTarget{
     NSLineBreakMode commentObjectModeld6 = NSLineBreakByTruncatingTail; 
     return commentObjectModeld6;
 }
 
-- (CGSize)pg_courseChoicenessColumnistWithviewControllerDone:(NSTextAlignment)aviewControllerDone medalDetailView:(NSMutableArray *)amedalDetailView{
+- (CGSize)courseChoicenessColumnistWithviewControllerDone:(NSTextAlignment)aviewControllerDone medalDetailView:(NSMutableArray *)amedalDetailView{
     CGSize viewAutoresizingFlexibleF1 = CGSizeZero;
     return viewAutoresizingFlexibleF1;
 }
 
-- (UITableViewStyle)pg_navigantionItemWithWithimageCropManager:(UIImage *)aimageCropManager backgroundLayerColor:(UITextView *)abackgroundLayerColor{
+- (UITableViewStyle)navigantionItemWithWithimageCropManager:(UIImage *)aimageCropManager backgroundLayerColor:(UITextView *)abackgroundLayerColor{
     UITableViewStyle assetExportSessionn8 = UITableViewStylePlain; 
     return assetExportSessionn8;
 }
@@ -55,7 +55,7 @@
     NSLineBreakMode trainViewModelN3 = NSLineBreakByTruncatingTail; 
         NSData *progressViewStyleo6= [[NSData alloc] init];
     PGIntergralStoreView *progressViewStyle= [[PGIntergralStoreView alloc] init];
-[progressViewStyle pg_rectIntersectsRectWithcachingHighQuality:trainViewModelN3 withRefreshingTarget:progressViewStyleo6 ];
+[progressViewStyle rectIntersectsRectWithcachingHighQuality:trainViewModelN3 withRefreshingTarget:progressViewStyleo6 ];
 
 }
 

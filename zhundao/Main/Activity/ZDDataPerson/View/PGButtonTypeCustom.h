@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGRect *withSessionPreset;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *shouldAutoClip;
 
-+ (UIButton *)pg_exerciseHistoryDataWithassetsGroupProperty:(UIFont *)aassetsGroupProperty itemsSupplementBack:(UITextField *)aitemsSupplementBack keyboardWillHide:(NSString *)akeyboardWillHide;
-+ (UILabel *)pg_medalDetailFlowWithimageViewWith:(PGSelectPickerAssets *)aimageViewWith photosBytesWith:(PGSelectPickerAssets *)aphotosBytesWith firendsViewModel:(PGSelectPickerAssets *)afirendsViewModel;
-- (UIButtonType)pg_nameLeftLabelWithtweetItemData:(NSLineBreakMode)atweetItemData viewWillHidden:(NSRange)aviewWillHidden;
-- (CGSize)pg_videoViewModelWithimageRotationSwaps:(UITableViewCellSeparatorStyle)aimageRotationSwaps assetPropertyDuration:(UITextFieldViewMode)aassetPropertyDuration;
-- (CGSize)pg_viewContentSizeWithtypeUserCenter:(NSRange)atypeUserCenter pickingOriginalPhoto:(CGRect)apickingOriginalPhoto;
++ (UIButton *)exerciseHistoryDataWithassetsGroupProperty:(UIFont *)aassetsGroupProperty itemsSupplementBack:(UITextField *)aitemsSupplementBack keyboardWillHide:(NSString *)akeyboardWillHide;
++ (UILabel *)medalDetailFlowWithimageViewWith:(PGSelectPickerAssets *)aimageViewWith photosBytesWith:(PGSelectPickerAssets *)aphotosBytesWith firendsViewModel:(PGSelectPickerAssets *)afirendsViewModel;
+- (UIButtonType)nameLeftLabelWithtweetItemData:(NSLineBreakMode)atweetItemData viewWillHidden:(NSRange)aviewWillHidden;
+- (CGSize)videoViewModelWithimageRotationSwaps:(UITableViewCellSeparatorStyle)aimageRotationSwaps assetPropertyDuration:(UITextFieldViewMode)aassetPropertyDuration;
+- (CGSize)viewContentSizeWithtypeUserCenter:(NSRange)atypeUserCenter pickingOriginalPhoto:(CGRect)apickingOriginalPhoto;
 + (void)instanceCreateMethod; 
 
 @end

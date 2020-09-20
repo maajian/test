@@ -31,19 +31,19 @@ static const CGFloat fixedSpace = 10.f;
         _selectIndex = 0;
         _labelArray = [NSMutableArray array];
         _lineArray = [NSMutableArray array];
-        [self PG_setupUI];
-        [self PG_initLayout];
+        [self setupUI];
+        [self initLayout];
     }
     return self;
 }
 
 #pragma mark --- UI
-- (void)PG_setupUI {
+- (void)setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode assetExportPresetn4 = UITextFieldViewModeAlways; 
         UITableViewStyle passWordWithq2 = UITableViewStylePlain; 
     PGDifferenceValueWith *socialUserInfo= [[PGDifferenceValueWith alloc] init];
-[socialUserInfo pg_particularCommentTableWithsaveEmojiArray:assetExportPresetn4 authorizationStatusRestricted:passWordWithq2 ];
+[socialUserInfo particularCommentTableWithsaveEmojiArray:assetExportPresetn4 authorizationStatusRestricted:passWordWithq2 ];
 });
     [self addSubview:self.textField];
     [self addSubview:self.maskButton];
@@ -60,7 +60,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- 布局
-- (void)PG_initLayout {
+- (void)initLayout {
     [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
@@ -80,7 +80,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 #pragma mark --- UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [self PG_changeAnimation:textField];
+    [self changeAnimation:textField];
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (_selectIndex >= 0 && _selectIndex < self.lineArray.count) {
@@ -105,7 +105,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- action
-- (void)PG_textFieldEditingDidChanged:(UITextField *)textField {
+- (void)textFieldEditingDidChanged:(UITextField *)textField {
     if ([textField.text isEqualToString:@""] && _selectIndex == itemCount - 1) {
         return;
     }
@@ -125,21 +125,21 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
         _selectIndex = itemCount - 1;
     }
-    [self PG_removeAnimation:textField];
-    [self PG_changeAnimation:textField];
+    [self removeAnimation:textField];
+    [self changeAnimation:textField];
 }
 // 按钮点击弹出键盘
-- (void)PG_maskButtonAction:(UIButton *)button {
+- (void)maskButtonAction:(UIButton *)button {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode javaScriptAlertU6 = UITextFieldViewModeAlways; 
         UITableViewStyle synchronizedEncodingUsingq1 = UITableViewStylePlain; 
     PGDifferenceValueWith *attentionWithUser= [[PGDifferenceValueWith alloc] init];
-[attentionWithUser pg_particularCommentTableWithsaveEmojiArray:javaScriptAlertU6 authorizationStatusRestricted:synchronizedEncodingUsingq1 ];
+[attentionWithUser particularCommentTableWithsaveEmojiArray:javaScriptAlertU6 authorizationStatusRestricted:synchronizedEncodingUsingq1 ];
 });
     [self.textField becomeFirstResponder];
 }
 // 横线动画
-- (void)PG_lineAnimation:(UIView *)view {
+- (void)lineAnimation:(UIView *)view {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
     animation.duration = 1;
     animation.repeatCount = HUGE_VALF;
@@ -161,7 +161,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         } else {
             // Fallback on earlier versions
         }
-        [_textField addTarget:self action:@selector(PG_textFieldEditingDidChanged:) forControlEvents:(UIControlEventEditingChanged)];
+        [_textField addTarget:self action:@selector(textFieldEditingDidChanged:) forControlEvents:(UIControlEventEditingChanged)];
     }
     return _textField;
 }
@@ -169,20 +169,20 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (!_maskButton) {
         _maskButton = [UIButton zd_button];
         _maskButton.backgroundColor = ZDBackgroundColor;
-        [_maskButton addTarget:self action:@selector(PG_maskButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_maskButton addTarget:self action:@selector(maskButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _maskButton;
 }
 
 #pragma mark --- public
-- (void)PG_changeAnimation:(UITextField *)textField {
+- (void)changeAnimation:(UITextField *)textField {
     if (self.isDelete) {
-        [self PG_lineAnimation:self.lineArray[_selectIndex]];
+        [self lineAnimation:self.lineArray[_selectIndex]];
     } else {
-        [self PG_lineAnimation:self.lineArray[_selectIndex]];
+        [self lineAnimation:self.lineArray[_selectIndex]];
     }
 }
-- (void)PG_removeAnimation:(UITextField *)textField  {
+- (void)removeAnimation:(UITextField *)textField  {
     if (self.isDelete) {
         [self.lineArray[_selectIndex == itemCount -1 ? _selectIndex : _selectIndex + 1].layer removeAllAnimations];
     } else {

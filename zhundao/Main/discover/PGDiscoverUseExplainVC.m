@@ -23,7 +23,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     pointerFunctionsOptionsm7.text = @"organzationViewModel";
         NSLineBreakMode buttonTitleColorb7 = NSLineBreakByTruncatingTail; 
     PGCollectionViewDelegate *photoImageView= [[PGCollectionViewDelegate alloc] init];
-[photoImageView pg_animationRightTickWithchangePreviousRoute:pointerFunctionsOptionsm7 sendTweetSucc:buttonTitleColorb7 ];
+[photoImageView animationRightTickWithchangePreviousRoute:pointerFunctionsOptionsm7 sendTweetSucc:buttonTitleColorb7 ];
 });
     [super viewDidLoad];
     
@@ -44,7 +44,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     mainFirstLoginy1.text = @"audioSessionCategory";
         NSLineBreakMode assetsGroupEnumerations0 = NSLineBreakByTruncatingTail; 
     PGCollectionViewDelegate *sizeWithAttributes= [[PGCollectionViewDelegate alloc] init];
-[sizeWithAttributes pg_animationRightTickWithchangePreviousRoute:mainFirstLoginy1 sendTweetSucc:assetsGroupEnumerations0 ];
+[sizeWithAttributes animationRightTickWithchangePreviousRoute:mainFirstLoginy1 sendTweetSucc:assetsGroupEnumerations0 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

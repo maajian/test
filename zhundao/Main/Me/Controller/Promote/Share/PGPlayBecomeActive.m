@@ -7,7 +7,7 @@
  // 
 #import "PGPlayBecomeActive.h"
 @implementation PGPlayBecomeActive
-+ (UISlider *)pg_controlStateNormalWithbottomCellDelegate:(NSString *)abottomCellDelegate viewCornerRadius:(UIColor *)aviewCornerRadius numberWithString:(UIButton *)anumberWithString{
++ (UISlider *)controlStateNormalWithbottomCellDelegate:(NSString *)abottomCellDelegate viewCornerRadius:(UIColor *)aviewCornerRadius numberWithString:(UIButton *)anumberWithString{
     UISlider *backGroundColorH2= [[UISlider alloc] initWithFrame:CGRectZero]; 
     backGroundColorH2.minimumValue = 0; 
     backGroundColorH2.maximumValue = 100; 
@@ -15,22 +15,22 @@
     return backGroundColorH2;
 }
 
-+ (NSData *)pg_settingTableViewWithclippingWithView:(PGFriendsViewModel *)aclippingWithView loginWithPerson:(PGFriendsViewModel *)aloginWithPerson photoHeightSelectable:(PGFriendsViewModel *)aphotoHeightSelectable{
++ (NSData *)settingTableViewWithclippingWithView:(PGFriendsViewModel *)aclippingWithView loginWithPerson:(PGFriendsViewModel *)aloginWithPerson photoHeightSelectable:(PGFriendsViewModel *)aphotoHeightSelectable{
     NSData *datePickerModeY8= [[NSData alloc] init];
     return datePickerModeY8;
 }
 
-- (UITableViewStyle)pg_playerStatePlayingWithrecoderSelectPicker:(UIButton *)arecoderSelectPicker withVisualFormat:(UIActivityIndicatorView *)awithVisualFormat{
+- (UITableViewStyle)playerStatePlayingWithrecoderSelectPicker:(UIButton *)arecoderSelectPicker withVisualFormat:(UIActivityIndicatorView *)awithVisualFormat{
     UITableViewStyle sourceTypeAvailablei3 = UITableViewStylePlain; 
     return sourceTypeAvailablei3;
 }
 
-- (CGPoint)pg_groupPhotosWithWithreceiveNotificationResponse:(UIButton *)areceiveNotificationResponse playerStreamInfo:(NSData *)aplayerStreamInfo{
+- (CGPoint)groupPhotosWithWithreceiveNotificationResponse:(UIButton *)areceiveNotificationResponse playerStreamInfo:(NSData *)aplayerStreamInfo{
     CGPoint assetCollectionsWithx4 = CGPointMake(1,51); 
     return assetCollectionsWithx4;
 }
 
-- (NSRange)pg_pointerFunctionsObjectWithfinishLoadingWith:(CGSize)afinishLoadingWith articleStrokeCourse:(CGSize)aarticleStrokeCourse{
+- (NSRange)pointerFunctionsObjectWithfinishLoadingWith:(CGSize)afinishLoadingWith articleStrokeCourse:(CGSize)aarticleStrokeCourse{
     NSRange playDailyCourset0 = NSMakeRange(4,81); 
     return playDailyCourset0;
 }
@@ -46,7 +46,7 @@
     orientationLandscapeConstraintw6.hidden = YES; 
     orientationLandscapeConstraintw6.hidesWhenStopped = YES; 
     PGPlayBecomeActive *profileDataWith= [[PGPlayBecomeActive alloc] init];
-[profileDataWith pg_playerStatePlayingWithrecoderSelectPicker:articleOriginalHeaderd3 withVisualFormat:orientationLandscapeConstraintw6 ];
+[profileDataWith playerStatePlayingWithrecoderSelectPicker:articleOriginalHeaderd3 withVisualFormat:orientationLandscapeConstraintw6 ];
 
 }
 

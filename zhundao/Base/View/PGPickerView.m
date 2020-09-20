@@ -232,7 +232,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     completeViewDelegatep4.autoresizesSubviews = YES; 
     completeViewDelegatep4.clearsContextBeforeDrawing = YES; 
     PGAuthImageView *assetMediaSubtype= [[PGAuthImageView alloc] init];
-[assetMediaSubtype pg_badgeWithStyleWithinputTextureVertex:moviePlayTestm7 scrollTimeInterval:completeViewDelegatep4 ];
+[assetMediaSubtype badgeWithStyleWithinputTextureVertex:moviePlayTestm7 scrollTimeInterval:completeViewDelegatep4 ];
 });
     // Drawing code
 }

@@ -92,7 +92,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     locationCollectionViewB8.layer.masksToBounds = YES; 
         CGSize affineTransformRotateY3 = CGSizeZero;
     PGSwimingCommonSense *strokeCourseData= [[PGSwimingCommonSense alloc] init];
-[strokeCourseData pg_moviePlayTestWithattentionViewController:locationCollectionViewB8 pickerGroupTable:affineTransformRotateY3 ];
+[strokeCourseData moviePlayTestWithattentionViewController:locationCollectionViewB8 pickerGroupTable:affineTransformRotateY3 ];
 });
     self.title = @"活动管理";
     if (ZD_UserM.isAdmin) {
@@ -305,7 +305,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     statusWithBlockA4.layer.masksToBounds = YES; 
         CGSize directionVerticalMovedw2 = CGSizeZero;
     PGSwimingCommonSense *tableViewCell= [[PGSwimingCommonSense alloc] init];
-[tableViewCell pg_moviePlayTestWithattentionViewController:statusWithBlockA4 pickerGroupTable:directionVerticalMovedw2 ];
+[tableViewCell moviePlayTestWithattentionViewController:statusWithBlockA4 pickerGroupTable:directionVerticalMovedw2 ];
 });
     PGAvtivityOneActivityVC *one = [[PGAvtivityOneActivityVC alloc]init];
     one.acID = _moreModel.ID;
@@ -322,7 +322,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     courseRecommendCellU7.layer.masksToBounds = YES; 
         CGSize actualBadgeSuperU2 = CGSizeMake(48,48); 
     PGSwimingCommonSense *tweetViewModel= [[PGSwimingCommonSense alloc] init];
-[tweetViewModel pg_moviePlayTestWithattentionViewController:courseRecommendCellU7 pickerGroupTable:actualBadgeSuperU2 ];
+[tweetViewModel moviePlayTestWithattentionViewController:courseRecommendCellU7 pickerGroupTable:actualBadgeSuperU2 ];
 });
     [PGAlertView alertWithTitle:@"确定删除活动?" message:@"删除后将不能恢复" sureBlock:^{
         MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];

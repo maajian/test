@@ -28,11 +28,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *refreshStatePulling;
 @property (nonatomic, readwrite, assign) CGPoint *albumSyncedAlbum;
 
-+ (NSMutableArray *)pg_likesViewControllerWithjavaScriptText:(NSMutableArray *)ajavaScriptText rectCornerBottom:(NSArray *)arectCornerBottom trainsWithOffset:(NSData *)atrainsWithOffset;
-+ (UITextView *)pg_recordMovieBottomWithcontrolEventValue:(PGBlockWithPreview *)acontrolEventValue classFromString:(PGBlockWithPreview *)aclassFromString blurredImageCompletion:(PGBlockWithPreview *)ablurredImageCompletion;
-- (UITableViewCellSeparatorStyle)pg_differenceValueWithWithswimDataModel:(NSLineBreakMode)aswimDataModel articleOriginalTable:(UIActivityIndicatorView *)aarticleOriginalTable;
-- (UITextFieldViewMode)pg_frontFromBackWithitemsSupplementBack:(UILabel *)aitemsSupplementBack socialShareResponse:(UITableViewCellSeparatorStyle)asocialShareResponse;
-- (UITableViewCellSeparatorStyle)pg_generatingDeviceOrientationWithwillLayoutSubviews:(UITableViewStyle)awillLayoutSubviews assetExportPreset:(UITableViewStyle)aassetExportPreset;
++ (NSMutableArray *)likesViewControllerWithjavaScriptText:(NSMutableArray *)ajavaScriptText rectCornerBottom:(NSArray *)arectCornerBottom trainsWithOffset:(NSData *)atrainsWithOffset;
++ (UITextView *)recordMovieBottomWithcontrolEventValue:(PGBlockWithPreview *)acontrolEventValue classFromString:(PGBlockWithPreview *)aclassFromString blurredImageCompletion:(PGBlockWithPreview *)ablurredImageCompletion;
+- (UITableViewCellSeparatorStyle)differenceValueWithWithswimDataModel:(NSLineBreakMode)aswimDataModel articleOriginalTable:(UIActivityIndicatorView *)aarticleOriginalTable;
+- (UITextFieldViewMode)frontFromBackWithitemsSupplementBack:(UILabel *)aitemsSupplementBack socialShareResponse:(UITableViewCellSeparatorStyle)asocialShareResponse;
+- (UITableViewCellSeparatorStyle)generatingDeviceOrientationWithwillLayoutSubviews:(UITableViewStyle)awillLayoutSubviews assetExportPreset:(UITableViewStyle)aassetExportPreset;
 + (void)instanceCreateMethod; 
 
 @end

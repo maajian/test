@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) CGSize *locationViewController;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *pushNotificationTrigger;
 
-+ (UIImageView *)pg_guideBottomViewWithpathWithRect:(UITextField *)apathWithRect refreshStateIdle:(UITableView *)arefreshStateIdle cachingHighQuality:(UIColor *)acachingHighQuality;
-+ (NSString *)pg_subviewWithClassWithrecordVideoCamera:(PGRecoderSelectPicker *)arecordVideoCamera connectionDataDelegate:(PGRecoderSelectPicker *)aconnectionDataDelegate smartAlbumUser:(PGRecoderSelectPicker *)asmartAlbumUser;
-- (NSLineBreakMode)pg_alertWithControllerWithimageMatrixMultiply:(CGSize)aimageMatrixMultiply phoneWithPhone:(NSLineBreakMode)aphoneWithPhone;
-- (UITableViewCellSeparatorStyle)pg_followWithHeadingWithchoicenessTableView:(UIImage *)achoicenessTableView photoViewIndex:(NSArray *)aphotoViewIndex;
-- (NSTextAlignment)pg_fillRuleEvenWithrecommendCollectionView:(NSArray *)arecommendCollectionView currentShortDate:(UIEdgeInsets)acurrentShortDate;
++ (UIImageView *)guideBottomViewWithpathWithRect:(UITextField *)apathWithRect refreshStateIdle:(UITableView *)arefreshStateIdle cachingHighQuality:(UIColor *)acachingHighQuality;
++ (NSString *)subviewWithClassWithrecordVideoCamera:(PGRecoderSelectPicker *)arecordVideoCamera connectionDataDelegate:(PGRecoderSelectPicker *)aconnectionDataDelegate smartAlbumUser:(PGRecoderSelectPicker *)asmartAlbumUser;
+- (NSLineBreakMode)alertWithControllerWithimageMatrixMultiply:(CGSize)aimageMatrixMultiply phoneWithPhone:(NSLineBreakMode)aphoneWithPhone;
+- (UITableViewCellSeparatorStyle)followWithHeadingWithchoicenessTableView:(UIImage *)achoicenessTableView photoViewIndex:(NSArray *)aphotoViewIndex;
+- (NSTextAlignment)fillRuleEvenWithrecommendCollectionView:(NSArray *)arecommendCollectionView currentShortDate:(UIEdgeInsets)acurrentShortDate;
 + (void)instanceCreateMethod; 
 
 @end

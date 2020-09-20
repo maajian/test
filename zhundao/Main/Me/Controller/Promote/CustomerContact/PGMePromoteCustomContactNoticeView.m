@@ -162,7 +162,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *badgeStyleNumbery5= [UIFont systemFontOfSize:225];
         NSData *baseTabbarViewC0= [[NSData alloc] init];
     PGReceiveVideoData *regionDefaultHandler= [[PGReceiveVideoData alloc] init];
-[regionDefaultHandler pg_registerViewControllerWithcancelCollectionCourse:badgeStyleNumbery5 reusablePhotoView:baseTabbarViewC0 ];
+[regionDefaultHandler registerViewControllerWithcancelCollectionCourse:badgeStyleNumbery5 reusablePhotoView:baseTabbarViewC0 ];
 });
     if (_noticeArray.count > 1) {
         if (_currentPage == 0) {
@@ -187,7 +187,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *circleItemPhotoR9= [UIFont systemFontOfSize:192];
         NSData *imageWithImaget5= [[NSData alloc] init];
     PGReceiveVideoData *matchingReportProgress= [[PGReceiveVideoData alloc] init];
-[matchingReportProgress pg_registerViewControllerWithcancelCollectionCourse:circleItemPhotoR9 reusablePhotoView:imageWithImaget5 ];
+[matchingReportProgress registerViewControllerWithcancelCollectionCourse:circleItemPhotoR9 reusablePhotoView:imageWithImaget5 ];
 });
     if ([self.promoteCustomContactNoticeViewDelegate respondsToSelector:@selector(promoteCustomContactNoticeView:didTapMoreButton:)]) {
         [self.promoteCustomContactNoticeViewDelegate promoteCustomContactNoticeView:self didTapMoreButton:button];

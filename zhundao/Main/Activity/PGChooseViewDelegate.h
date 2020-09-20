@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *minimumTrackTint;
 @property (nonatomic, readwrite, assign) UIButtonType *progressTypeDefault;
 
-+ (UIScrollView *)pg_previewCollectionViewWithrecommendUserTable:(UITextField *)arecommendUserTable showOrderStatus:(UITextView *)ashowOrderStatus titleShowStatus:(NSString *)atitleShowStatus;
-+ (NSString *)pg_textAttributedStringWithcourseParticularSection:(PGAlertWithTitle *)acourseParticularSection photoPickerGroup:(PGAlertWithTitle *)aphotoPickerGroup contentInsetAdjustment:(PGAlertWithTitle *)acontentInsetAdjustment;
-- (UITableViewStyle)pg_spinLockUnlockWithtrainTableView:(UIView *)atrainTableView recognizerShouldBegin:(UIImage *)arecognizerShouldBegin;
-- (UIEdgeInsets)pg_swimCircleViewWithuserInfoWith:(NSTextAlignment)auserInfoWith blendModeSource:(UISlider *)ablendModeSource;
-- (UITextFieldViewMode)pg_fragmentShaderStringWithassetPropertyDuration:(UIView *)aassetPropertyDuration backButtonClick:(UITextField *)abackButtonClick;
++ (UIScrollView *)previewCollectionViewWithrecommendUserTable:(UITextField *)arecommendUserTable showOrderStatus:(UITextView *)ashowOrderStatus titleShowStatus:(NSString *)atitleShowStatus;
++ (NSString *)textAttributedStringWithcourseParticularSection:(PGAlertWithTitle *)acourseParticularSection photoPickerGroup:(PGAlertWithTitle *)aphotoPickerGroup contentInsetAdjustment:(PGAlertWithTitle *)acontentInsetAdjustment;
+- (UITableViewStyle)spinLockUnlockWithtrainTableView:(UIView *)atrainTableView recognizerShouldBegin:(UIImage *)arecognizerShouldBegin;
+- (UIEdgeInsets)swimCircleViewWithuserInfoWith:(NSTextAlignment)auserInfoWith blendModeSource:(UISlider *)ablendModeSource;
+- (UITextFieldViewMode)fragmentShaderStringWithassetPropertyDuration:(UIView *)aassetPropertyDuration backButtonClick:(UITextField *)abackButtonClick;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,7 +7,7 @@
  // 
 #import "PGAnimatedImageFrames.h"
 @implementation PGAnimatedImageFrames
-+ (UITableView *)pg_tableViewContentWithstyleLightContent:(NSMutableArray *)astyleLightContent defaultMaskType:(UIButton *)adefaultMaskType courseViewController:(NSMutableArray *)acourseViewController{
++ (UITableView *)tableViewContentWithstyleLightContent:(NSMutableArray *)astyleLightContent defaultMaskType:(UIButton *)adefaultMaskType courseViewController:(NSMutableArray *)acourseViewController{
     UITableView *withDataArrayT2= [[UITableView alloc] initWithFrame:CGRectMake(57,91,209,254) style: UITableViewStylePlain]; 
     withDataArrayT2.frame = CGRectZero; 
     withDataArrayT2.showsVerticalScrollIndicator = NO; 
@@ -26,22 +26,22 @@
      return withDataArrayT2;
 }
 
-+ (NSArray *)pg_stringUsingEncodingWithnatatoriumParticularTable:(PGTitleAutoConfig *)anatatoriumParticularTable commentArticleSucc:(PGTitleAutoConfig *)acommentArticleSucc sectionHeaderHeight:(PGTitleAutoConfig *)asectionHeaderHeight{
++ (NSArray *)stringUsingEncodingWithnatatoriumParticularTable:(PGTitleAutoConfig *)anatatoriumParticularTable commentArticleSucc:(PGTitleAutoConfig *)acommentArticleSucc sectionHeaderHeight:(PGTitleAutoConfig *)asectionHeaderHeight{
     NSArray *interfaceOrientationMaskz1= [NSArray array];
     return interfaceOrientationMaskz1;
 }
 
-- (CGRect)pg_rightBottomPointWithrequestReloadIgnoring:(UITableViewCellSeparatorStyle)arequestReloadIgnoring particularModelJson:(NSLineBreakMode)aparticularModelJson{
+- (CGRect)rightBottomPointWithrequestReloadIgnoring:(UITableViewCellSeparatorStyle)arequestReloadIgnoring particularModelJson:(NSLineBreakMode)aparticularModelJson{
     CGRect integralMainDataH4 = CGRectZero;
     return integralMainDataH4;
 }
 
-- (NSTextAlignment)pg_withRenderingModeWithleftNavigationItem:(UISwitch *)aleftNavigationItem gestureRecognizerDelegate:(NSTextAlignment)agestureRecognizerDelegate{
+- (NSTextAlignment)withRenderingModeWithleftNavigationItem:(UISwitch *)aleftNavigationItem gestureRecognizerDelegate:(NSTextAlignment)agestureRecognizerDelegate{
     NSTextAlignment moreTrainDarat0 = NSTextAlignmentCenter; 
     return moreTrainDarat0;
 }
 
-- (UITextFieldViewMode)pg_fansWithUserWithselectedPhotoBytes:(UITableViewCellSeparatorStyle)aselectedPhotoBytes assetExportPreset:(UISwitch *)aassetExportPreset{
+- (UITextFieldViewMode)fansWithUserWithselectedPhotoBytes:(UITableViewCellSeparatorStyle)aselectedPhotoBytes assetExportPreset:(UISwitch *)aassetExportPreset{
     UITextFieldViewMode updatedTimeLabelu7 = UITextFieldViewModeAlways; 
     return updatedTimeLabelu7;
 }
@@ -50,7 +50,7 @@
     UITableViewCellSeparatorStyle withRenderingModeS8 = UITableViewCellSeparatorStyleNone; 
         NSLineBreakMode socialShareResponseg5 = NSLineBreakByTruncatingTail; 
     PGAnimatedImageFrames *photoSelectableWith= [[PGAnimatedImageFrames alloc] init];
-[photoSelectableWith pg_rightBottomPointWithrequestReloadIgnoring:withRenderingModeS8 particularModelJson:socialShareResponseg5 ];
+[photoSelectableWith rightBottomPointWithrequestReloadIgnoring:withRenderingModeS8 particularModelJson:socialShareResponseg5 ];
 
 }
 

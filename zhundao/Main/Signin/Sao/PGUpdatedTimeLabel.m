@@ -7,7 +7,7 @@
  // 
 #import "PGUpdatedTimeLabel.h"
 @implementation PGUpdatedTimeLabel
-+ (UIView *)pg_imageRotationModeWithheaderFooterView:(UILabel *)aheaderFooterView imageRetryFailed:(NSData *)aimageRetryFailed countTableView:(NSData *)acountTableView{
++ (UIView *)imageRotationModeWithheaderFooterView:(UILabel *)aheaderFooterView imageRetryFailed:(NSData *)aimageRetryFailed countTableView:(NSData *)acountTableView{
     UIView *couponsScrollTableE6= [[UIView alloc] initWithFrame:CGRectZero]; 
     couponsScrollTableE6.backgroundColor = [UIColor whiteColor]; 
     couponsScrollTableE6.layer.cornerRadius = 
@@ -15,7 +15,7 @@
     return couponsScrollTableE6;
 }
 
-+ (UILabel *)pg_natatoriumAddressTableWithassetFromImage:(PGHaveUserEnabel *)aassetFromImage chooseStadiumView:(PGHaveUserEnabel *)achooseStadiumView allowPickingImage:(PGHaveUserEnabel *)aallowPickingImage{
++ (UILabel *)natatoriumAddressTableWithassetFromImage:(PGHaveUserEnabel *)aassetFromImage chooseStadiumView:(PGHaveUserEnabel *)achooseStadiumView allowPickingImage:(PGHaveUserEnabel *)aallowPickingImage{
     UILabel *deviceOrientationChangeq3= [[UILabel alloc] initWithFrame:CGRectZero]; 
     deviceOrientationChangeq3.text = @"javaScriptAlert";
     deviceOrientationChangeq3.textColor = [UIColor whiteColor]; 
@@ -25,17 +25,17 @@
     return deviceOrientationChangeq3;
 }
 
-- (UITableViewStyle)pg_locationManagerDelegateWithbrowserPhotoView:(UITableViewStyle)abrowserPhotoView badgeDefaultFont:(UITextField *)abadgeDefaultFont{
+- (UITableViewStyle)locationManagerDelegateWithbrowserPhotoView:(UITableViewStyle)abrowserPhotoView badgeDefaultFont:(UITextField *)abadgeDefaultFont{
     UITableViewStyle integralStoreViewz6 = UITableViewStylePlain; 
     return integralStoreViewz6;
 }
 
-- (UITableViewCellSeparatorStyle)pg_courseCachaDataWithclassFromString:(UIEdgeInsets)aclassFromString presetsCompatibleWith:(NSLineBreakMode)apresetsCompatibleWith{
+- (UITableViewCellSeparatorStyle)courseCachaDataWithclassFromString:(UIEdgeInsets)aclassFromString presetsCompatibleWith:(NSLineBreakMode)apresetsCompatibleWith{
     UITableViewCellSeparatorStyle photoPickerImagem2 = UITableViewCellSeparatorStyleNone; 
     return photoPickerImagem2;
 }
 
-- (CGSize)pg_dataViewDelegateWithmedalWallView:(UIImageView *)amedalWallView gaussianBlurElement:(UIScrollView *)agaussianBlurElement{
+- (CGSize)dataViewDelegateWithmedalWallView:(UIImageView *)amedalWallView gaussianBlurElement:(UIScrollView *)agaussianBlurElement{
     CGSize imageOrientationDownY9 = CGSizeZero;
     return imageOrientationDownY9;
 }
@@ -51,7 +51,7 @@
     tableViewCellI7.leftView = [[UIView alloc] initWithFrame:CGRectMake(187,195,123,197)];
      tableViewCellI7.leftViewMode = UITextFieldViewModeAlways; 
     PGUpdatedTimeLabel *medalExplainView= [[PGUpdatedTimeLabel alloc] init];
-[medalExplainView pg_locationManagerDelegateWithbrowserPhotoView:sectionHeaderHeightL5 badgeDefaultFont:tableViewCellI7 ];
+[medalExplainView locationManagerDelegateWithbrowserPhotoView:sectionHeaderHeightL5 badgeDefaultFont:tableViewCellI7 ];
 
 }
 

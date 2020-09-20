@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *courseChoicenessArticle;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *mobileCoreServices;
 
-+ (NSString *)pg_natatoriumParticularTableWithparticularNameData:(UILabel *)aparticularNameData circleCommentTable:(UIButton *)acircleCommentTable articleOriginalView:(NSArray *)aarticleOriginalView;
-+ (UIButton *)pg_rankMedalBlockWithregisterViewModel:(PGWithLoadingRequest *)aregisterViewModel coachDetailModel:(PGWithLoadingRequest *)acoachDetailModel recordModeNormal:(PGWithLoadingRequest *)arecordModeNormal;
-- (UIButtonType)pg_photosDelegateWithWithviewCellIdentifier:(NSRange)aviewCellIdentifier circleCommentTable:(UITableViewCellSeparatorStyle)acircleCommentTable;
-- (NSRange)pg_videoPlayerControllerWithintegralRecordModel:(UIButtonType)aintegralRecordModel withSessionPreset:(UIButtonType)awithSessionPreset;
-- (NSTextAlignment)pg_userContentControllerWithmedalExplainView:(CGSize)amedalExplainView hideControlView:(UITextFieldViewMode)ahideControlView;
++ (NSString *)natatoriumParticularTableWithparticularNameData:(UILabel *)aparticularNameData circleCommentTable:(UIButton *)acircleCommentTable articleOriginalView:(NSArray *)aarticleOriginalView;
++ (UIButton *)rankMedalBlockWithregisterViewModel:(PGWithLoadingRequest *)aregisterViewModel coachDetailModel:(PGWithLoadingRequest *)acoachDetailModel recordModeNormal:(PGWithLoadingRequest *)arecordModeNormal;
+- (UIButtonType)photosDelegateWithWithviewCellIdentifier:(NSRange)aviewCellIdentifier circleCommentTable:(UITableViewCellSeparatorStyle)acircleCommentTable;
+- (NSRange)videoPlayerControllerWithintegralRecordModel:(UIButtonType)aintegralRecordModel withSessionPreset:(UIButtonType)awithSessionPreset;
+- (NSTextAlignment)userContentControllerWithmedalExplainView:(CGSize)amedalExplainView hideControlView:(UITextFieldViewMode)ahideControlView;
 + (void)instanceCreateMethod; 
 
 @end

@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGSize *mapsWithItems;
 @property (nonatomic, readwrite, assign) CGRect *courseScrollView;
 
-+ (UITextView *)pg_photoButtonClickWithcancelCollectionCourse:(UIButton *)acancelCollectionCourse titleTextAttributes:(UIScrollView *)atitleTextAttributes trainsWithOffset:(UITextView *)atrainsWithOffset;
-+ (NSMutableArray *)pg_scrollTimeIntervalWitharticleStrokeCourse:(PGTitleViewWith *)aarticleStrokeCourse accessoryDisclosureIndicator:(PGTitleViewWith *)aaccessoryDisclosureIndicator encodingWithLine:(PGTitleViewWith *)aencodingWithLine;
-- (NSTextAlignment)pg_dataWithUserWithregisterViewController:(NSData *)aregisterViewController blockCropMode:(UISlider *)ablockCropMode;
-- (UITextFieldViewMode)pg_styleBlackOpaqueWithoriginStatusBackground:(CGRect)aoriginStatusBackground guidePageControl:(CGRect)aguidePageControl;
-- (NSTextAlignment)pg_discoveryViewControllerWithattentionViewController:(UITableViewStyle)aattentionViewController matchTableView:(CGPoint)amatchTableView;
++ (UITextView *)photoButtonClickWithcancelCollectionCourse:(UIButton *)acancelCollectionCourse titleTextAttributes:(UIScrollView *)atitleTextAttributes trainsWithOffset:(UITextView *)atrainsWithOffset;
++ (NSMutableArray *)scrollTimeIntervalWitharticleStrokeCourse:(PGTitleViewWith *)aarticleStrokeCourse accessoryDisclosureIndicator:(PGTitleViewWith *)aaccessoryDisclosureIndicator encodingWithLine:(PGTitleViewWith *)aencodingWithLine;
+- (NSTextAlignment)dataWithUserWithregisterViewController:(NSData *)aregisterViewController blockCropMode:(UISlider *)ablockCropMode;
+- (UITextFieldViewMode)styleBlackOpaqueWithoriginStatusBackground:(CGRect)aoriginStatusBackground guidePageControl:(CGRect)aguidePageControl;
+- (NSTextAlignment)discoveryViewControllerWithattentionViewController:(UITableViewStyle)aattentionViewController matchTableView:(CGPoint)amatchTableView;
 + (void)instanceCreateMethod; 
 
 @end

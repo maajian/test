@@ -95,7 +95,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIButtonType integralRecordViewN5 = UIButtonTypeContactAdd;
         UIEdgeInsets imageSourceCopyO5 = UIEdgeInsetsZero;
     PGTitleViewWith *recordModeNormal= [[PGTitleViewWith alloc] init];
-[recordModeNormal pg_delegateMethodWithWithclippingWithView:integralRecordViewN5 photoPickerCollection:imageSourceCopyO5 ];
+[recordModeNormal delegateMethodWithWithclippingWithView:integralRecordViewN5 photoPickerCollection:imageSourceCopyO5 ];
 });
     self.title = @"准到合伙人";
      [_scrollView setContentOffset:CGPointMake(0, 0)];

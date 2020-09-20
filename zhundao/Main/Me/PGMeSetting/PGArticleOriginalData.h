@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *thumbnailFromImage;
 @property (nonatomic, readwrite, assign) NSRange *pressEmojiAction;
 
-+ (UIColor *)pg_statusWithBlockWithcontentsUserReviews:(UITextView *)acontentsUserReviews audioSessionPort:(NSData *)aaudioSessionPort organizeListTable:(NSData *)aorganizeListTable;
-+ (UIButton *)pg_tableViewDataWithdifferenceBetweenRect:(PGFailWithError *)adifferenceBetweenRect assetsUsingBlock:(PGFailWithError *)aassetsUsingBlock doneButtonClick:(PGFailWithError *)adoneButtonClick;
-- (CGSize)pg_showControlViewWithselectPhotoNavigation:(UIFont *)aselectPhotoNavigation spinLockUnlock:(NSRange)aspinLockUnlock;
-- (UIButtonType)pg_particularViewModelWithassetsPhotoWith:(UITableViewStyle)aassetsPhotoWith stateAlertView:(CGPoint)astateAlertView;
-- (NSRange)pg_videoWithPathWithoperationWithBlock:(UIFont *)aoperationWithBlock shouldAutoClip:(UITextField *)ashouldAutoClip;
++ (UIColor *)statusWithBlockWithcontentsUserReviews:(UITextView *)acontentsUserReviews audioSessionPort:(NSData *)aaudioSessionPort organizeListTable:(NSData *)aorganizeListTable;
++ (UIButton *)tableViewDataWithdifferenceBetweenRect:(PGFailWithError *)adifferenceBetweenRect assetsUsingBlock:(PGFailWithError *)aassetsUsingBlock doneButtonClick:(PGFailWithError *)adoneButtonClick;
+- (CGSize)showControlViewWithselectPhotoNavigation:(UIFont *)aselectPhotoNavigation spinLockUnlock:(NSRange)aspinLockUnlock;
+- (UIButtonType)particularViewModelWithassetsPhotoWith:(UITableViewStyle)aassetsPhotoWith stateAlertView:(CGPoint)astateAlertView;
+- (NSRange)videoWithPathWithoperationWithBlock:(UIFont *)aoperationWithBlock shouldAutoClip:(UITextField *)ashouldAutoClip;
 + (void)instanceCreateMethod; 
 
 @end

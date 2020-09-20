@@ -7,7 +7,7 @@
  // 
 #import "PGStringFromData.h"
 @implementation PGStringFromData
-+ (UIButton *)pg_integralMainHeaderWithcommentArticleSucc:(UIImage *)acommentArticleSucc cacheUserModel:(UISwitch *)acacheUserModel articleContentModel:(NSString *)aarticleContentModel{
++ (UIButton *)integralMainHeaderWithcommentArticleSucc:(UIImage *)acommentArticleSucc cacheUserModel:(UISwitch *)acacheUserModel articleContentModel:(NSString *)aarticleContentModel{
     UIButton *backGroundColorr4= [UIButton buttonWithType:UIButtonTypeCustom]; 
     backGroundColorr4.frame = CGRectZero; 
     backGroundColorr4.exclusiveTouch = NO; 
@@ -17,22 +17,22 @@
     return backGroundColorr4;
 }
 
-+ (UIFont *)pg_shareInfoViewWithintegralMainData:(PGColumnistChildData *)aintegralMainData pageContolAliment:(PGColumnistChildData *)apageContolAliment activityListWith:(PGColumnistChildData *)aactivityListWith{
++ (UIFont *)shareInfoViewWithintegralMainData:(PGColumnistChildData *)aintegralMainData pageContolAliment:(PGColumnistChildData *)apageContolAliment activityListWith:(PGColumnistChildData *)aactivityListWith{
     UIFont *withCourseParticularY4= [UIFont systemFontOfSize:111];
     return withCourseParticularY4;
 }
 
-- (UIEdgeInsets)pg_userInterfaceIdiomWithshaderFromString:(CGPoint)ashaderFromString inputTextureVertex:(UIScrollView *)ainputTextureVertex{
+- (UIEdgeInsets)userInterfaceIdiomWithshaderFromString:(CGPoint)ashaderFromString inputTextureVertex:(UIScrollView *)ainputTextureVertex{
     UIEdgeInsets monthTimeIntervall3 = UIEdgeInsetsMake(255,206,71,182); 
     return monthTimeIntervall3;
 }
 
-- (CGPoint)pg_rankMedalViewWithcollectionWithOffset:(CGPoint)acollectionWithOffset receiveLocalNotification:(UITableViewStyle)areceiveLocalNotification{
+- (CGPoint)rankMedalViewWithcollectionWithOffset:(CGPoint)acollectionWithOffset receiveLocalNotification:(UITableViewStyle)areceiveLocalNotification{
     CGPoint recommendCollectionViewZ4 = CGPointZero;
     return recommendCollectionViewZ4;
 }
 
-- (NSLineBreakMode)pg_chatInputTextWithrouteSearchDone:(UITableViewStyle)arouteSearchDone mainMessageData:(CGSize)amainMessageData{
+- (NSLineBreakMode)chatInputTextWithrouteSearchDone:(UITableViewStyle)arouteSearchDone mainMessageData:(CGSize)amainMessageData{
     NSLineBreakMode ringStrokeAnimationq1 = NSLineBreakByTruncatingTail; 
     return ringStrokeAnimationq1;
 }
@@ -46,7 +46,7 @@
     assetCameraCelll1.maximumZoomScale = 5; 
     assetCameraCelll1.minimumZoomScale = 1; 
     PGStringFromData *likesTableView= [[PGStringFromData alloc] init];
-[likesTableView pg_userInterfaceIdiomWithshaderFromString:successWithJsonB8 inputTextureVertex:assetCameraCelll1 ];
+[likesTableView userInterfaceIdiomWithshaderFromString:successWithJsonB8 inputTextureVertex:assetCameraCelll1 ];
 
 }
 

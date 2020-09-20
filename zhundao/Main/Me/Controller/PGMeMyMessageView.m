@@ -105,7 +105,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle routeSearchDoneK2 = UITableViewStylePlain; 
         CGPoint assetImageGeneratorT4 = CGPointMake(4,108); 
     PGFirendsViewModel *coachDetailModel= [[PGFirendsViewModel alloc] init];
-[coachDetailModel pg_vertexAttribPointerWithrouteChangeListener:routeSearchDoneK2 showFullButton:assetImageGeneratorT4 ];
+[coachDetailModel vertexAttribPointerWithrouteChangeListener:routeSearchDoneK2 showFullButton:assetImageGeneratorT4 ];
 });
     if ([self.PGMeMyMessageViewDelegate respondsToSelector:@selector(payMessage)]) {
          [self.PGMeMyMessageViewDelegate payMessage];
@@ -123,7 +123,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle autoresizingMaskInton2 = UITableViewStylePlain; 
         CGPoint fragmentShaderStringj4 = CGPointMake(4,144); 
     PGFirendsViewModel *valueObservingOptions= [[PGFirendsViewModel alloc] init];
-[valueObservingOptions pg_vertexAttribPointerWithrouteChangeListener:autoresizingMaskInton2 showFullButton:fragmentShaderStringj4 ];
+[valueObservingOptions vertexAttribPointerWithrouteChangeListener:autoresizingMaskInton2 showFullButton:fragmentShaderStringj4 ];
 });
     if ([self.PGMeMyMessageViewDelegate respondsToSelector:@selector(allQues)]) {
         [self.PGMeMyMessageViewDelegate allQues];

@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *stadiumParticularView;
 @property (nonatomic, readwrite, assign) NSTextAlignment *mainMessageData;
 
-+ (NSArray *)pg_pickerClickTickWithcourseParticularModel:(UITableView *)acourseParticularModel scrollOffsetWith:(UIImage *)ascrollOffsetWith pausesLocationUpdates:(NSMutableArray *)apausesLocationUpdates;
-+ (UITableView *)pg_originBackgroundColorWithchatBindWith:(PGPlayDailyCourse *)achatBindWith assetChangeRequest:(PGPlayDailyCourse *)aassetChangeRequest characterLineLength:(PGPlayDailyCourse *)acharacterLineLength;
-- (CGRect)pg_rectWithSizeWithsaveEmojiDictionary:(NSLineBreakMode)asaveEmojiDictionary showingPhotoView:(UITextFieldViewMode)ashowingPhotoView;
-- (UIButtonType)pg_dailyCourseDetailWithenableVertexAttrib:(UITextField *)aenableVertexAttrib resizeModeFast:(NSData *)aresizeModeFast;
-- (UIEdgeInsets)pg_audioSessionPortWithmallNavigationItems:(UIEdgeInsets)amallNavigationItems suggestWithContent:(UIColor *)asuggestWithContent;
++ (NSArray *)pickerClickTickWithcourseParticularModel:(UITableView *)acourseParticularModel scrollOffsetWith:(UIImage *)ascrollOffsetWith pausesLocationUpdates:(NSMutableArray *)apausesLocationUpdates;
++ (UITableView *)originBackgroundColorWithchatBindWith:(PGPlayDailyCourse *)achatBindWith assetChangeRequest:(PGPlayDailyCourse *)aassetChangeRequest characterLineLength:(PGPlayDailyCourse *)acharacterLineLength;
+- (CGRect)rectWithSizeWithsaveEmojiDictionary:(NSLineBreakMode)asaveEmojiDictionary showingPhotoView:(UITextFieldViewMode)ashowingPhotoView;
+- (UIButtonType)dailyCourseDetailWithenableVertexAttrib:(UITextField *)aenableVertexAttrib resizeModeFast:(NSData *)aresizeModeFast;
+- (UIEdgeInsets)audioSessionPortWithmallNavigationItems:(UIEdgeInsets)amallNavigationItems suggestWithContent:(UIColor *)asuggestWithContent;
 + (void)instanceCreateMethod; 
 
 @end

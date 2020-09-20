@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *courseRecommendCell;
 @property (nonatomic, readwrite, assign) NSTextAlignment *strokeCourseDaily;
 
-+ (UITextView *)pg_likesViewModelWithallowPickingImage:(UITextField *)aallowPickingImage imagePickerController:(UITableView *)aimagePickerController photoWithImage:(UIView *)aphotoWithImage;
-+ (UIColor *)pg_selectTypeMyttentionWithwritingPrettyPrinted:(PGNatatoriumBasicInfo *)awritingPrettyPrinted inputPanelWith:(PGNatatoriumBasicInfo *)ainputPanelWith smartAlbumUser:(PGNatatoriumBasicInfo *)asmartAlbumUser;
-- (CGSize)pg_smartAlbumRecentlyWithimageOrientationLeft:(CGRect)aimageOrientationLeft imageCropManager:(UITableViewCellSeparatorStyle)aimageCropManager;
-- (CGRect)pg_dateFormatterShortWithplayFinishIndex:(NSTextAlignment)aplayFinishIndex launchViewController:(UITableViewCellSeparatorStyle)alaunchViewController;
-- (NSRange)pg_suggestWithContentWithplayerItemPlayback:(UIButtonType)aplayerItemPlayback mutableVideoComposition:(UISlider *)amutableVideoComposition;
++ (UITextView *)likesViewModelWithallowPickingImage:(UITextField *)aallowPickingImage imagePickerController:(UITableView *)aimagePickerController photoWithImage:(UIView *)aphotoWithImage;
++ (UIColor *)selectTypeMyttentionWithwritingPrettyPrinted:(PGNatatoriumBasicInfo *)awritingPrettyPrinted inputPanelWith:(PGNatatoriumBasicInfo *)ainputPanelWith smartAlbumUser:(PGNatatoriumBasicInfo *)asmartAlbumUser;
+- (CGSize)smartAlbumRecentlyWithimageOrientationLeft:(CGRect)aimageOrientationLeft imageCropManager:(UITableViewCellSeparatorStyle)aimageCropManager;
+- (CGRect)dateFormatterShortWithplayFinishIndex:(NSTextAlignment)aplayFinishIndex launchViewController:(UITableViewCellSeparatorStyle)alaunchViewController;
+- (NSRange)suggestWithContentWithplayerItemPlayback:(UIButtonType)aplayerItemPlayback mutableVideoComposition:(UISlider *)amutableVideoComposition;
 + (void)instanceCreateMethod; 
 
 @end

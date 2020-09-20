@@ -7,12 +7,12 @@
  // 
 #import "PGCompositionWithAsset.h"
 @implementation PGCompositionWithAsset
-+ (UIFont *)pg_dailyTrainClassWithorganzationViewModel:(NSArray *)aorganzationViewModel itemTextColor:(UISlider *)aitemTextColor swimPlayStatus:(UITextField *)aswimPlayStatus{
++ (UIFont *)dailyTrainClassWithorganzationViewModel:(NSArray *)aorganzationViewModel itemTextColor:(UISlider *)aitemTextColor swimPlayStatus:(UITextField *)aswimPlayStatus{
     UIFont *statusBackgroundColorI9= [UIFont systemFontOfSize:2];
     return statusBackgroundColorI9;
 }
 
-+ (UITextField *)pg_trainParticularStadiumWithlightBlackColor:(PGFailWithError *)alightBlackColor controlEventValue:(PGFailWithError *)acontrolEventValue circleScreenView:(PGFailWithError *)acircleScreenView{
++ (UITextField *)trainParticularStadiumWithlightBlackColor:(PGFailWithError *)alightBlackColor controlEventValue:(PGFailWithError *)acontrolEventValue circleScreenView:(PGFailWithError *)acircleScreenView{
     UITextField *imageSourceThumbnailk8= [[UITextField alloc] initWithFrame:CGRectZero]; 
     imageSourceThumbnailk8.clearButtonMode = UITextFieldViewModeNever; 
     imageSourceThumbnailk8.textColor = [UIColor whiteColor]; 
@@ -24,17 +24,17 @@
     return imageSourceThumbnailk8;
 }
 
-- (CGRect)pg_photosBytesWithWithbadgeDefaultFont:(UIImage *)abadgeDefaultFont timeRangeValue:(UITableViewStyle)atimeRangeValue{
+- (CGRect)photosBytesWithWithbadgeDefaultFont:(UIImage *)abadgeDefaultFont timeRangeValue:(UITableViewStyle)atimeRangeValue{
     CGRect dailyTrainDataA4 = CGRectZero;
     return dailyTrainDataA4;
 }
 
-- (UITableViewStyle)pg_scrollViewDelegateWithviewContentSize:(UIButton *)aviewContentSize nameBottomLine:(NSTextAlignment)anameBottomLine{
+- (UITableViewStyle)scrollViewDelegateWithviewContentSize:(UIButton *)aviewContentSize nameBottomLine:(NSTextAlignment)anameBottomLine{
     UITableViewStyle registerViewControllerS7 = UITableViewStylePlain; 
     return registerViewControllerS7;
 }
 
-- (NSRange)pg_withStrokeCourseWithuserTweetData:(UIColor *)auserTweetData updateStatuMandatory:(NSTextAlignment)aupdateStatuMandatory{
+- (NSRange)withStrokeCourseWithuserTweetData:(UIColor *)auserTweetData updateStatuMandatory:(NSTextAlignment)aupdateStatuMandatory{
     NSRange readingAllowFragmentsd2 = NSMakeRange(2,226); 
     return readingAllowFragmentsd2;
 }
@@ -43,7 +43,7 @@
     UIImage *videoDealPointa4= [UIImage imageNamed:@""]; 
         UITableViewStyle collectionWithOffsetY9 = UITableViewStylePlain; 
     PGCompositionWithAsset *imageWithLeft= [[PGCompositionWithAsset alloc] init];
-[imageWithLeft pg_photosBytesWithWithbadgeDefaultFont:videoDealPointa4 timeRangeValue:collectionWithOffsetY9 ];
+[imageWithLeft photosBytesWithWithbadgeDefaultFont:videoDealPointa4 timeRangeValue:collectionWithOffsetY9 ];
 
 }
 

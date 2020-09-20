@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) CGRect *wallTableView;
 @property (nonatomic, readwrite, assign) NSTextAlignment *userTweetView;
 
-+ (UISlider *)pg_photoViewIndexWithrightBottomPoint:(NSMutableArray *)arightBottomPoint javaScriptConfirm:(UIFont *)ajavaScriptConfirm taskCenterView:(UIButton *)ataskCenterView;
-+ (UIActivityIndicatorView *)pg_integralRecordDataWithblendModeDestination:(PGMutableTrackWith *)ablendModeDestination maskTypeClear:(PGMutableTrackWith *)amaskTypeClear pickerImageView:(PGMutableTrackWith *)apickerImageView;
-- (UITextFieldViewMode)pg_javaScriptTextWithalertControllerStyle:(NSString *)aalertControllerStyle styleWhiteLarge:(UITextView *)astyleWhiteLarge;
-- (CGPoint)pg_effectColorAlphaWithnumberHandlerWith:(UITextFieldViewMode)anumberHandlerWith stringUsingEncoding:(UIButtonType)astringUsingEncoding;
-- (UITableViewStyle)pg_playerItemStatusWithfillModeForwards:(UIActivityIndicatorView *)afillModeForwards collectionViewData:(UIColor *)acollectionViewData;
++ (UISlider *)photoViewIndexWithrightBottomPoint:(NSMutableArray *)arightBottomPoint javaScriptConfirm:(UIFont *)ajavaScriptConfirm taskCenterView:(UIButton *)ataskCenterView;
++ (UIActivityIndicatorView *)integralRecordDataWithblendModeDestination:(PGMutableTrackWith *)ablendModeDestination maskTypeClear:(PGMutableTrackWith *)amaskTypeClear pickerImageView:(PGMutableTrackWith *)apickerImageView;
+- (UITextFieldViewMode)javaScriptTextWithalertControllerStyle:(NSString *)aalertControllerStyle styleWhiteLarge:(UITextView *)astyleWhiteLarge;
+- (CGPoint)effectColorAlphaWithnumberHandlerWith:(UITextFieldViewMode)anumberHandlerWith stringUsingEncoding:(UIButtonType)astringUsingEncoding;
+- (UITableViewStyle)playerItemStatusWithfillModeForwards:(UIActivityIndicatorView *)afillModeForwards collectionViewData:(UIColor *)acollectionViewData;
 + (void)instanceCreateMethod; 
 
 @end

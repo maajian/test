@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *lineJoinMiter;
 @property (nonatomic, readwrite, assign) UITableViewStyle *assetCreationRequest;
 
-+ (UILabel *)pg_viewShouldBeginWithsourceTypePhoto:(UITextField *)asourceTypePhoto showGuideWindow:(UIImageView *)ashowGuideWindow delaysTouchesEnded:(UIButton *)adelaysTouchesEnded;
-+ (UIImage *)pg_uploadCompletionBlockWithviewDataSource:(PGAlbumPickerController *)aviewDataSource chooseViewDelegate:(PGAlbumPickerController *)achooseViewDelegate dataElseLoad:(PGAlbumPickerController *)adataElseLoad;
-- (UIButtonType)pg_minimumTrackImageWithallowWithController:(NSData *)aallowWithController selectTypeMyttention:(UIButtonType)aselectTypeMyttention;
-- (CGPoint)pg_groupPurchaseViewWithnoticeHeightArray:(UIImageView *)anoticeHeightArray backButtonClick:(UIView *)abackButtonClick;
-- (CGSize)pg_numberFormatterRoundWithtrainInfoView:(NSTextAlignment)atrainInfoView valueImageRect:(NSTextAlignment)avalueImageRect;
++ (UILabel *)viewShouldBeginWithsourceTypePhoto:(UITextField *)asourceTypePhoto showGuideWindow:(UIImageView *)ashowGuideWindow delaysTouchesEnded:(UIButton *)adelaysTouchesEnded;
++ (UIImage *)uploadCompletionBlockWithviewDataSource:(PGAlbumPickerController *)aviewDataSource chooseViewDelegate:(PGAlbumPickerController *)achooseViewDelegate dataElseLoad:(PGAlbumPickerController *)adataElseLoad;
+- (UIButtonType)minimumTrackImageWithallowWithController:(NSData *)aallowWithController selectTypeMyttention:(UIButtonType)aselectTypeMyttention;
+- (CGPoint)groupPurchaseViewWithnoticeHeightArray:(UIImageView *)anoticeHeightArray backButtonClick:(UIView *)abackButtonClick;
+- (CGSize)numberFormatterRoundWithtrainInfoView:(NSTextAlignment)atrainInfoView valueImageRect:(NSTextAlignment)avalueImageRect;
 + (void)instanceCreateMethod; 
 
 @end

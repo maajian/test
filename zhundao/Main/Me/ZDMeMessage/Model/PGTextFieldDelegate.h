@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGSize *integralStoreView;
 @property (nonatomic, readwrite, assign) UIButtonType *shouldAutoClip;
 
-+ (NSArray *)pg_userNotificationActivationWithtimeRangeValue:(UIColor *)atimeRangeValue replayTypeSlider:(UITableView *)areplayTypeSlider mainScreenWidth:(UITableView *)amainScreenWidth;
-+ (UIFont *)pg_withGradientTintWithchatInputText:(PGWithFileName *)achatInputText delaysTouchesEnded:(PGWithFileName *)adelaysTouchesEnded recognizeSimultaneouslyWith:(PGWithFileName *)arecognizeSimultaneouslyWith;
-- (UITableViewStyle)pg_controlStateHighlightedWithlinkWithTarget:(UIActivityIndicatorView *)alinkWithTarget partButtonAction:(UITextView *)apartButtonAction;
-- (CGSize)pg_userInfoWithWithfragmentShaderString:(UIActivityIndicatorView *)afragmentShaderString shrinkRightBottom:(CGSize)ashrinkRightBottom;
-- (UITextFieldViewMode)pg_selectPhotoCommonWithuserDomainMask:(NSLineBreakMode)auserDomainMask scrollViewContent:(NSRange)ascrollViewContent;
++ (NSArray *)userNotificationActivationWithtimeRangeValue:(UIColor *)atimeRangeValue replayTypeSlider:(UITableView *)areplayTypeSlider mainScreenWidth:(UITableView *)amainScreenWidth;
++ (UIFont *)withGradientTintWithchatInputText:(PGWithFileName *)achatInputText delaysTouchesEnded:(PGWithFileName *)adelaysTouchesEnded recognizeSimultaneouslyWith:(PGWithFileName *)arecognizeSimultaneouslyWith;
+- (UITableViewStyle)controlStateHighlightedWithlinkWithTarget:(UIActivityIndicatorView *)alinkWithTarget partButtonAction:(UITextView *)apartButtonAction;
+- (CGSize)userInfoWithWithfragmentShaderString:(UIActivityIndicatorView *)afragmentShaderString shrinkRightBottom:(CGSize)ashrinkRightBottom;
+- (UITextFieldViewMode)selectPhotoCommonWithuserDomainMask:(NSLineBreakMode)auserDomainMask scrollViewContent:(NSRange)ascrollViewContent;
 + (void)instanceCreateMethod; 
 
 @end

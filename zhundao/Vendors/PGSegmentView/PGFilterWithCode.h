@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *assetMediaSubtype;
 @property (nonatomic, readwrite, assign) NSRange *withDailyTrain;
 
-+ (UIColor *)pg_groupPurchaseModelWithbuttonSystemItem:(NSMutableArray *)abuttonSystemItem userInfoMedal:(UITextView *)auserInfoMedal groupPurchaseView:(NSMutableArray *)agroupPurchaseView;
-+ (UITextView *)pg_bindWithOpenWithtableViewStyle:(PGCachingImageManager *)atableViewStyle courseViewController:(PGCachingImageManager *)acourseViewController socialShareResponse:(PGCachingImageManager *)asocialShareResponse;
-- (NSTextAlignment)pg_videBeginPlayWithfrontFromBack:(UISwitch *)afrontFromBack orderStepView:(CGPoint)aorderStepView;
-- (NSRange)pg_bundleShortVersionWithmainCommentTable:(UIEdgeInsets)amainCommentTable couponTypeIntegral:(NSMutableArray *)acouponTypeIntegral;
-- (UITableViewCellSeparatorStyle)pg_navigantionItemWithWithplayFinishIndex:(UITextView *)aplayFinishIndex natatoriumListTable:(NSTextAlignment)anatatoriumListTable;
++ (UIColor *)groupPurchaseModelWithbuttonSystemItem:(NSMutableArray *)abuttonSystemItem userInfoMedal:(UITextView *)auserInfoMedal groupPurchaseView:(NSMutableArray *)agroupPurchaseView;
++ (UITextView *)bindWithOpenWithtableViewStyle:(PGCachingImageManager *)atableViewStyle courseViewController:(PGCachingImageManager *)acourseViewController socialShareResponse:(PGCachingImageManager *)asocialShareResponse;
+- (NSTextAlignment)videBeginPlayWithfrontFromBack:(UISwitch *)afrontFromBack orderStepView:(CGPoint)aorderStepView;
+- (NSRange)bundleShortVersionWithmainCommentTable:(UIEdgeInsets)amainCommentTable couponTypeIntegral:(NSMutableArray *)acouponTypeIntegral;
+- (UITableViewCellSeparatorStyle)navigantionItemWithWithplayFinishIndex:(UITextView *)aplayFinishIndex natatoriumListTable:(NSTextAlignment)anatatoriumListTable;
 + (void)instanceCreateMethod; 
 
 @end

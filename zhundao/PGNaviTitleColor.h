@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *audioSessionRoute;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *integralMainHeader;
 
-+ (UITextField *)pg_deviceSettingsCameraWithdataWithUser:(UIActivityIndicatorView *)adataWithUser extractImageList:(UIActivityIndicatorView *)aextractImageList blendModeDestination:(UITextField *)ablendModeDestination;
-+ (UISlider *)pg_courseParticularHeaderWithimageHandleCookies:(PGUserIdentifyModel *)aimageHandleCookies showShowSheet:(PGUserIdentifyModel *)ashowShowSheet layerWithPlayer:(PGUserIdentifyModel *)alayerWithPlayer;
-- (UITableViewCellSeparatorStyle)pg_asynchronouslyWithCompletionWithwithCourseParticular:(UIScrollView *)awithCourseParticular coachDetailModel:(UIEdgeInsets)acoachDetailModel;
-- (UITableViewCellSeparatorStyle)pg_backButtonClickWithwithRootView:(UITableViewStyle)awithRootView imageSourceCreate:(CGRect)aimageSourceCreate;
-- (NSTextAlignment)pg_requestReturnCacheWithtextBorderStyle:(NSData *)atextBorderStyle customAnimateTransition:(NSLineBreakMode)acustomAnimateTransition;
++ (UITextField *)deviceSettingsCameraWithdataWithUser:(UIActivityIndicatorView *)adataWithUser extractImageList:(UIActivityIndicatorView *)aextractImageList blendModeDestination:(UITextField *)ablendModeDestination;
++ (UISlider *)courseParticularHeaderWithimageHandleCookies:(PGUserIdentifyModel *)aimageHandleCookies showShowSheet:(PGUserIdentifyModel *)ashowShowSheet layerWithPlayer:(PGUserIdentifyModel *)alayerWithPlayer;
+- (UITableViewCellSeparatorStyle)asynchronouslyWithCompletionWithwithCourseParticular:(UIScrollView *)awithCourseParticular coachDetailModel:(UIEdgeInsets)acoachDetailModel;
+- (UITableViewCellSeparatorStyle)backButtonClickWithwithRootView:(UITableViewStyle)awithRootView imageSourceCreate:(CGRect)aimageSourceCreate;
+- (NSTextAlignment)requestReturnCacheWithtextBorderStyle:(NSData *)atextBorderStyle customAnimateTransition:(NSLineBreakMode)acustomAnimateTransition;
 + (void)instanceCreateMethod; 
 
 @end

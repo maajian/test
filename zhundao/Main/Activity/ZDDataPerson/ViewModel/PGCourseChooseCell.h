@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) CGRect *medalWallView;
 @property (nonatomic, readwrite, assign) UIButtonType *imageEdgeExtend;
 
-+ (UISlider *)pg_alowGroupPurchaseWithuserInfoView:(UIImageView *)auserInfoView withGroupPurchase:(NSData *)awithGroupPurchase clippingWithView:(NSString *)aclippingWithView;
-+ (UIView *)pg_decimalNumberHandlerWithblendModeSource:(PGUserDomainMask *)ablendModeSource deleteTweetSucc:(PGUserDomainMask *)adeleteTweetSucc pointerFunctionsObject:(PGUserDomainMask *)apointerFunctionsObject;
-- (UIEdgeInsets)pg_assetsGroupPropertyWithactualBadgeSuper:(UITableViewCellSeparatorStyle)aactualBadgeSuper finishPickingPhotos:(UILabel *)afinishPickingPhotos;
-- (UITableViewCellSeparatorStyle)pg_playerLayerGravityWithexerciseParticularView:(UITextFieldViewMode)aexerciseParticularView swimingCommonSense:(UIImageView *)aswimingCommonSense;
-- (NSTextAlignment)pg_videoCameraDelegateWithvideoCameraInterface:(UISwitch *)avideoCameraInterface applicationIconBadge:(UITableViewStyle)aapplicationIconBadge;
++ (UISlider *)alowGroupPurchaseWithuserInfoView:(UIImageView *)auserInfoView withGroupPurchase:(NSData *)awithGroupPurchase clippingWithView:(NSString *)aclippingWithView;
++ (UIView *)decimalNumberHandlerWithblendModeSource:(PGUserDomainMask *)ablendModeSource deleteTweetSucc:(PGUserDomainMask *)adeleteTweetSucc pointerFunctionsObject:(PGUserDomainMask *)apointerFunctionsObject;
+- (UIEdgeInsets)assetsGroupPropertyWithactualBadgeSuper:(UITableViewCellSeparatorStyle)aactualBadgeSuper finishPickingPhotos:(UILabel *)afinishPickingPhotos;
+- (UITableViewCellSeparatorStyle)playerLayerGravityWithexerciseParticularView:(UITextFieldViewMode)aexerciseParticularView swimingCommonSense:(UIImageView *)aswimingCommonSense;
+- (NSTextAlignment)videoCameraDelegateWithvideoCameraInterface:(UISwitch *)avideoCameraInterface applicationIconBadge:(UITableViewStyle)aapplicationIconBadge;
 + (void)instanceCreateMethod; 
 
 @end

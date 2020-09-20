@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *userDomainMask;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *imageRotationSwaps;
 
-+ (UILabel *)pg_attentionViewControllerWithkeyboardTypeEmail:(UITextView *)akeyboardTypeEmail objectsHashTable:(NSMutableArray *)aobjectsHashTable dailyTrainHeader:(UIButton *)adailyTrainHeader;
-+ (UIActivityIndicatorView *)pg_particularViewModelWithtitleEdgeInsets:(PGFailWithError *)atitleEdgeInsets selectPhotoDelegate:(PGFailWithError *)aselectPhotoDelegate originBackgroundColor:(PGFailWithError *)aoriginBackgroundColor;
-- (UITableViewStyle)pg_cycleScrollViewWithcustomDismissAction:(UISlider *)acustomDismissAction playerDecodeError:(UITableViewCellSeparatorStyle)aplayerDecodeError;
-- (UITableViewStyle)pg_imageWithNameWithrefreshStateIdle:(CGPoint)arefreshStateIdle intervalSinceDate:(UIColor *)aintervalSinceDate;
-- (CGSize)pg_likesTableViewWithimageWithName:(NSMutableArray *)aimageWithName allowsBackForward:(NSLineBreakMode)aallowsBackForward;
++ (UILabel *)attentionViewControllerWithkeyboardTypeEmail:(UITextView *)akeyboardTypeEmail objectsHashTable:(NSMutableArray *)aobjectsHashTable dailyTrainHeader:(UIButton *)adailyTrainHeader;
++ (UIActivityIndicatorView *)particularViewModelWithtitleEdgeInsets:(PGFailWithError *)atitleEdgeInsets selectPhotoDelegate:(PGFailWithError *)aselectPhotoDelegate originBackgroundColor:(PGFailWithError *)aoriginBackgroundColor;
+- (UITableViewStyle)cycleScrollViewWithcustomDismissAction:(UISlider *)acustomDismissAction playerDecodeError:(UITableViewCellSeparatorStyle)aplayerDecodeError;
+- (UITableViewStyle)imageWithNameWithrefreshStateIdle:(CGPoint)arefreshStateIdle intervalSinceDate:(UIColor *)aintervalSinceDate;
+- (CGSize)likesTableViewWithimageWithName:(NSMutableArray *)aimageWithName allowsBackForward:(NSLineBreakMode)aallowsBackForward;
 + (void)instanceCreateMethod; 
 
 @end

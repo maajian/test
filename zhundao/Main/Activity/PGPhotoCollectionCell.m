@@ -27,7 +27,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     fontAttributeNamej4.textAlignment = NSTextAlignmentCenter; 
         UIEdgeInsets succViewControllerZ7 = UIEdgeInsetsZero;
     PGDailyTrainView *styleLightContent= [[PGDailyTrainView alloc] init];
-[styleLightContent pg_imageContentModeWithplayImageView:fontAttributeNamej4 dailyTrainChapter:succViewControllerZ7 ];
+[styleLightContent imageContentModeWithplayImageView:fontAttributeNamej4 dailyTrainChapter:succViewControllerZ7 ];
 });
     [super setSelected:selected];
     self.selectedImageView.hidden = !selected;

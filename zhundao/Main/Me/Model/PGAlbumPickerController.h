@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *imageAlphaBlend;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *photoPickerGroup;
 
-+ (UIActivityIndicatorView *)pg_modalPresentationNoneWithimageWithImage:(UIImage *)aimageWithImage trainParticularProperty:(UIButton *)atrainParticularProperty resizeAspectFill:(UIFont *)aresizeAspectFill;
-+ (UITextView *)pg_strokeCourseDailyWithcalendarUnitYear:(PGDeviceOrientationFace *)acalendarUnitYear bindPhoneView:(PGDeviceOrientationFace *)abindPhoneView uploadSuccBlock:(PGDeviceOrientationFace *)auploadSuccBlock;
-- (CGSize)pg_routeSearchResponseWithshareImageObject:(NSMutableArray *)ashareImageObject orderStepView:(UITableViewStyle)aorderStepView;
-- (NSTextAlignment)pg_trainWithOffsetWithbrowserPhotoImage:(UITableViewCellSeparatorStyle)abrowserPhotoImage recommendUserData:(UITableViewCellSeparatorStyle)arecommendUserData;
-- (NSRange)pg_showFullButtonWitharticleDailyTrain:(UITextFieldViewMode)aarticleDailyTrain materialDesignSpinner:(NSTextAlignment)amaterialDesignSpinner;
++ (UIActivityIndicatorView *)modalPresentationNoneWithimageWithImage:(UIImage *)aimageWithImage trainParticularProperty:(UIButton *)atrainParticularProperty resizeAspectFill:(UIFont *)aresizeAspectFill;
++ (UITextView *)strokeCourseDailyWithcalendarUnitYear:(PGDeviceOrientationFace *)acalendarUnitYear bindPhoneView:(PGDeviceOrientationFace *)abindPhoneView uploadSuccBlock:(PGDeviceOrientationFace *)auploadSuccBlock;
+- (CGSize)routeSearchResponseWithshareImageObject:(NSMutableArray *)ashareImageObject orderStepView:(UITableViewStyle)aorderStepView;
+- (NSTextAlignment)trainWithOffsetWithbrowserPhotoImage:(UITableViewCellSeparatorStyle)abrowserPhotoImage recommendUserData:(UITableViewCellSeparatorStyle)arecommendUserData;
+- (NSRange)showFullButtonWitharticleDailyTrain:(UITextFieldViewMode)aarticleDailyTrain materialDesignSpinner:(NSTextAlignment)amaterialDesignSpinner;
 + (void)instanceCreateMethod; 
 
 @end

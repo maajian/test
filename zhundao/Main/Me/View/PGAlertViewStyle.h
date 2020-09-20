@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSRange *assetResourceCreation;
 @property (nonatomic, readwrite, assign) UIButtonType *strokeCourseView;
 
-+ (NSArray *)pg_userViewModelWithtrainParticularStadium:(UIImage *)atrainParticularStadium saveEmojiDictionary:(NSData *)asaveEmojiDictionary changePreviousRoute:(NSArray *)achangePreviousRoute;
-+ (UIFont *)pg_handpickViewModelWithphotoWithImage:(PGCircleCropRadius *)aphotoWithImage childViewModel:(PGCircleCropRadius *)achildViewModel followWithHeading:(PGCircleCropRadius *)afollowWithHeading;
-- (NSLineBreakMode)pg_trainParticularHeaderWithuserNotificationActivation:(UITableViewStyle)auserNotificationActivation startProvisionalNavigation:(UITableViewCellSeparatorStyle)astartProvisionalNavigation;
-- (NSRange)pg_pageContolAlimentWithmaterialDesignSpinner:(UITableViewStyle)amaterialDesignSpinner fieldShouldBegin:(NSArray *)afieldShouldBegin;
-- (CGSize)pg_courseParticularViewWithdeviceOrientationPortrait:(UIEdgeInsets)adeviceOrientationPortrait loginWithCompletion:(UISwitch *)aloginWithCompletion;
++ (NSArray *)userViewModelWithtrainParticularStadium:(UIImage *)atrainParticularStadium saveEmojiDictionary:(NSData *)asaveEmojiDictionary changePreviousRoute:(NSArray *)achangePreviousRoute;
++ (UIFont *)handpickViewModelWithphotoWithImage:(PGCircleCropRadius *)aphotoWithImage childViewModel:(PGCircleCropRadius *)achildViewModel followWithHeading:(PGCircleCropRadius *)afollowWithHeading;
+- (NSLineBreakMode)trainParticularHeaderWithuserNotificationActivation:(UITableViewStyle)auserNotificationActivation startProvisionalNavigation:(UITableViewCellSeparatorStyle)astartProvisionalNavigation;
+- (NSRange)pageContolAlimentWithmaterialDesignSpinner:(UITableViewStyle)amaterialDesignSpinner fieldShouldBegin:(NSArray *)afieldShouldBegin;
+- (CGSize)courseParticularViewWithdeviceOrientationPortrait:(UIEdgeInsets)adeviceOrientationPortrait loginWithCompletion:(UISwitch *)aloginWithCompletion;
 + (void)instanceCreateMethod; 
 
 @end

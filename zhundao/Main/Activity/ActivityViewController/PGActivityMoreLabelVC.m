@@ -27,7 +27,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
      trainParticularBottomj9.leftViewMode = UITextFieldViewModeAlways; 
         CGRect sectionFooterHeightL1 = CGRectMake(250,8,155,113); 
     PGGuideBottomView *uploadSuccBlock= [[PGGuideBottomView alloc] init];
-[uploadSuccBlock pg_postImageWithWithwithCommentObject:trainParticularBottomj9 gestureRecognizerState:sectionFooterHeightL1 ];
+[uploadSuccBlock postImageWithWithwithCommentObject:trainParticularBottomj9 gestureRecognizerState:sectionFooterHeightL1 ];
 });
     [super viewDidLoad];
     self.view.backgroundColor = ZDBackgroundColor;
@@ -55,7 +55,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
      scriptMessageHandlerA8.leftViewMode = UITextFieldViewModeAlways; 
         CGRect backButtonClickF5 = CGRectZero;
     PGGuideBottomView *withLongLong= [[PGGuideBottomView alloc] init];
-[withLongLong pg_postImageWithWithwithCommentObject:scriptMessageHandlerA8 gestureRecognizerState:backButtonClickF5 ];
+[withLongLong postImageWithWithwithCommentObject:scriptMessageHandlerA8 gestureRecognizerState:backButtonClickF5 ];
 });
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(-8, 20, 80, 44)];
     UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(backAction)];
@@ -133,7 +133,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
      currentDateStringb3.leftViewMode = UITextFieldViewModeAlways; 
         CGRect cropTypeWithU0 = CGRectZero;
     PGGuideBottomView *mutableParagraphStyle= [[PGGuideBottomView alloc] init];
-[mutableParagraphStyle pg_postImageWithWithwithCommentObject:currentDateStringb3 gestureRecognizerState:cropTypeWithU0 ];
+[mutableParagraphStyle postImageWithWithwithCommentObject:currentDateStringb3 gestureRecognizerState:cropTypeWithU0 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

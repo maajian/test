@@ -45,7 +45,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *notificationCategoryOptionk7= [UIFont systemFontOfSize:97];
         NSRange naviTitleFonte7 = NSMakeRange(4,192); 
     PGArticleOriginalData *integralRecordTable= [[PGArticleOriginalData alloc] init];
-[integralRecordTable pg_showControlViewWithselectPhotoNavigation:notificationCategoryOptionk7 spinLockUnlock:naviTitleFonte7 ];
+[integralRecordTable showControlViewWithselectPhotoNavigation:notificationCategoryOptionk7 spinLockUnlock:naviTitleFonte7 ];
 });
     self.title = @"通知公告";
     [self.view addSubview:self.tableView];
@@ -84,7 +84,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *controlViewWillz0= [UIFont systemFontOfSize:61];
         NSRange insetAdjustmentNeverc3 = NSMakeRange(6,154); 
     PGArticleOriginalData *audioPlayerDelegate= [[PGArticleOriginalData alloc] init];
-[audioPlayerDelegate pg_showControlViewWithselectPhotoNavigation:controlViewWillz0 spinLockUnlock:insetAdjustmentNeverc3 ];
+[audioPlayerDelegate showControlViewWithselectPhotoNavigation:controlViewWillz0 spinLockUnlock:insetAdjustmentNeverc3 ];
 });
     __weak typeof(_noticeVM) weakVM = _noticeVM;
     JQIndicatorView *indicator = [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
@@ -128,7 +128,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *scrollDirectionRightw8= [UIFont systemFontOfSize:56];
         NSRange affineTransformMakeA6 = NSMakeRange(4,217); 
     PGArticleOriginalData *exerciseRecordView= [[PGArticleOriginalData alloc] init];
-[exerciseRecordView pg_showControlViewWithselectPhotoNavigation:scrollDirectionRightw8 spinLockUnlock:affineTransformMakeA6 ];
+[exerciseRecordView showControlViewWithselectPhotoNavigation:scrollDirectionRightw8 spinLockUnlock:affineTransformMakeA6 ];
 });
    _dataArray =  [[_noticeVM getData] mutableCopy];
     if (_dataArray.count==0) {

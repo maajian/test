@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSRange *activityListWith;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *circleViewController;
 
-+ (UIView *)pg_userNotificationCenterWithassetPropertyType:(UIButton *)aassetPropertyType cameraAutoSave:(NSString *)acameraAutoSave controllerWithTitle:(UIFont *)acontrollerWithTitle;
-+ (UILabel *)pg_timeModelDataWithmainMessageView:(PGBottomShrinkPlay *)amainMessageView stringFromSelector:(PGBottomShrinkPlay *)astringFromSelector pushNotificationTrigger:(PGBottomShrinkPlay *)apushNotificationTrigger;
-- (UITableViewCellSeparatorStyle)pg_groupPurchaseOrderWithauthorizationStatusAuthorized:(NSTextAlignment)aauthorizationStatusAuthorized paragraphStyleAttribute:(UIButtonType)aparagraphStyleAttribute;
-- (NSTextAlignment)pg_groupPurchaseModelWithprofileDataWith:(CGRect)aprofileDataWith navigantionItemWith:(UIButtonType)anavigantionItemWith;
-- (NSRange)pg_customDismissActionWithcircleViewModel:(NSString *)acircleViewModel valueTrackingSlider:(UIEdgeInsets)avalueTrackingSlider;
++ (UIView *)userNotificationCenterWithassetPropertyType:(UIButton *)aassetPropertyType cameraAutoSave:(NSString *)acameraAutoSave controllerWithTitle:(UIFont *)acontrollerWithTitle;
++ (UILabel *)timeModelDataWithmainMessageView:(PGBottomShrinkPlay *)amainMessageView stringFromSelector:(PGBottomShrinkPlay *)astringFromSelector pushNotificationTrigger:(PGBottomShrinkPlay *)apushNotificationTrigger;
+- (UITableViewCellSeparatorStyle)groupPurchaseOrderWithauthorizationStatusAuthorized:(NSTextAlignment)aauthorizationStatusAuthorized paragraphStyleAttribute:(UIButtonType)aparagraphStyleAttribute;
+- (NSTextAlignment)groupPurchaseModelWithprofileDataWith:(CGRect)aprofileDataWith navigantionItemWith:(UIButtonType)anavigantionItemWith;
+- (NSRange)customDismissActionWithcircleViewModel:(NSString *)acircleViewModel valueTrackingSlider:(UIEdgeInsets)avalueTrackingSlider;
 + (void)instanceCreateMethod; 
 
 @end

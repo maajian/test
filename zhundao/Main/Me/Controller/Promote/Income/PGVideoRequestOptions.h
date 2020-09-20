@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGRect *deviceOrientationChange;
 @property (nonatomic, readwrite, assign) NSTextAlignment *whenInteractionEnds;
 
-+ (UISwitch *)pg_rectEdgeNoneWithuserInfoHeader:(UIImage *)auserInfoHeader itemTextFont:(NSMutableArray *)aitemTextFont sectionHeaderHeight:(NSString *)asectionHeaderHeight;
-+ (UIActivityIndicatorView *)pg_cancelContentTouchesWithsourceTypeCamera:(PGInsideImageView *)asourceTypeCamera videoProcessingQueue:(PGInsideImageView *)avideoProcessingQueue activityListWith:(PGInsideImageView *)aactivityListWith;
-- (UITableViewStyle)pg_hiddenScreenViewWithstatusSavePhotos:(UISlider *)astatusSavePhotos trainPropertyTrain:(UITextFieldViewMode)atrainPropertyTrain;
-- (CGRect)pg_pausesLocationUpdatesWithsessionDataTask:(UITableView *)asessionDataTask imageSourceContains:(UITextField *)aimageSourceContains;
-- (NSRange)pg_streamStatusConnectingWithactionWithIdentifier:(UITableViewCellSeparatorStyle)aactionWithIdentifier controlEventEditing:(NSMutableArray *)acontrolEventEditing;
++ (UISwitch *)rectEdgeNoneWithuserInfoHeader:(UIImage *)auserInfoHeader itemTextFont:(NSMutableArray *)aitemTextFont sectionHeaderHeight:(NSString *)asectionHeaderHeight;
++ (UIActivityIndicatorView *)cancelContentTouchesWithsourceTypeCamera:(PGInsideImageView *)asourceTypeCamera videoProcessingQueue:(PGInsideImageView *)avideoProcessingQueue activityListWith:(PGInsideImageView *)aactivityListWith;
+- (UITableViewStyle)hiddenScreenViewWithstatusSavePhotos:(UISlider *)astatusSavePhotos trainPropertyTrain:(UITextFieldViewMode)atrainPropertyTrain;
+- (CGRect)pausesLocationUpdatesWithsessionDataTask:(UITableView *)asessionDataTask imageSourceContains:(UITextField *)aimageSourceContains;
+- (NSRange)streamStatusConnectingWithactionWithIdentifier:(UITableViewCellSeparatorStyle)aactionWithIdentifier controlEventEditing:(NSMutableArray *)acontrolEventEditing;
 + (void)instanceCreateMethod; 
 
 @end

@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *networkReachabilityManager;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *movieFrameOpposite;
 
-+ (UIColor *)pg_assetsCurrentPageWithyearTimeInterval:(UIColor *)ayearTimeInterval modalPresentationOver:(UIColor *)amodalPresentationOver pageContolStyle:(UISlider *)apageContolStyle;
-+ (NSData *)pg_settingViewControllerWithadjustsScrollView:(PGMatchTableView *)aadjustsScrollView keyboardWillShow:(PGMatchTableView *)akeyboardWillShow pageTintColor:(PGMatchTableView *)apageTintColor;
-- (UITableViewCellSeparatorStyle)pg_selectionStyleNoneWithrecordMovieModel:(UITableViewStyle)arecordMovieModel photoStreamAlbum:(UIActivityIndicatorView *)aphotoStreamAlbum;
-- (UIButtonType)pg_javaScriptAlertWithtrainParticularHeader:(UITableViewStyle)atrainParticularHeader backgroundLayerColor:(UIView *)abackgroundLayerColor;
-- (CGRect)pg_navigationControllerOperationWithlocationViewModel:(NSRange)alocationViewModel clippingWithView:(NSLineBreakMode)aclippingWithView;
++ (UIColor *)assetsCurrentPageWithyearTimeInterval:(UIColor *)ayearTimeInterval modalPresentationOver:(UIColor *)amodalPresentationOver pageContolStyle:(UISlider *)apageContolStyle;
++ (NSData *)settingViewControllerWithadjustsScrollView:(PGMatchTableView *)aadjustsScrollView keyboardWillShow:(PGMatchTableView *)akeyboardWillShow pageTintColor:(PGMatchTableView *)apageTintColor;
+- (UITableViewCellSeparatorStyle)selectionStyleNoneWithrecordMovieModel:(UITableViewStyle)arecordMovieModel photoStreamAlbum:(UIActivityIndicatorView *)aphotoStreamAlbum;
+- (UIButtonType)javaScriptAlertWithtrainParticularHeader:(UITableViewStyle)atrainParticularHeader backgroundLayerColor:(UIView *)abackgroundLayerColor;
+- (CGRect)navigationControllerOperationWithlocationViewModel:(NSRange)alocationViewModel clippingWithView:(NSLineBreakMode)aclippingWithView;
 + (void)instanceCreateMethod; 
 
 @end

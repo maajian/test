@@ -7,7 +7,7 @@
  // 
 #import "PGEncodingWithLine.h"
 @implementation PGEncodingWithLine
-+ (UIScrollView *)pg_noticeTypeShareWithfillColorWith:(UITableView *)afillColorWith receivedFirstFrame:(UIImageView *)areceivedFirstFrame underlineStyleAttribute:(UIColor *)aunderlineStyleAttribute{
++ (UIScrollView *)noticeTypeShareWithfillColorWith:(UITableView *)afillColorWith receivedFirstFrame:(UIImageView *)areceivedFirstFrame underlineStyleAttribute:(UIColor *)aunderlineStyleAttribute{
     UIScrollView *imageRenderingModeq2= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
     imageRenderingModeq2.showsHorizontalScrollIndicator = NO; 
     imageRenderingModeq2.showsVerticalScrollIndicator = NO; 
@@ -17,24 +17,24 @@
     return imageRenderingModeq2;
 }
 
-+ (UIActivityIndicatorView *)pg_pathWithOvalWithvideoPreviewPlay:(PGWithTweetItem *)avideoPreviewPlay textViewContent:(PGWithTweetItem *)atextViewContent chooseStadiumTable:(PGWithTweetItem *)achooseStadiumTable{
++ (UIActivityIndicatorView *)pathWithOvalWithvideoPreviewPlay:(PGWithTweetItem *)avideoPreviewPlay textViewContent:(PGWithTweetItem *)atextViewContent chooseStadiumTable:(PGWithTweetItem *)achooseStadiumTable{
     UIActivityIndicatorView *videoDealPointe9= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     videoDealPointe9.hidden = YES; 
     videoDealPointe9.hidesWhenStopped = YES; 
     return videoDealPointe9;
 }
 
-- (NSRange)pg_textFiledDelegateWithorganzationViewModel:(UISwitch *)aorganzationViewModel cropTypeWith:(UIImage *)acropTypeWith{
+- (NSRange)textFiledDelegateWithorganzationViewModel:(UISwitch *)aorganzationViewModel cropTypeWith:(UIImage *)acropTypeWith{
     NSRange imageOrientationDownJ5 = NSMakeRange(9,105); 
     return imageOrientationDownJ5;
 }
 
-- (CGPoint)pg_imageOptionProgressiveWithdailyTrainClass:(UITableView *)adailyTrainClass pickerImageView:(UIView *)apickerImageView{
+- (CGPoint)imageOptionProgressiveWithdailyTrainClass:(UITableView *)adailyTrainClass pickerImageView:(UIView *)apickerImageView{
     CGPoint searchRequestWithA8 = CGPointMake(9,212); 
     return searchRequestWithA8;
 }
 
-- (NSLineBreakMode)pg_tweetCommentModelWithticketRightLabel:(UITextFieldViewMode)aticketRightLabel badgeDefaultFont:(NSRange)abadgeDefaultFont{
+- (NSLineBreakMode)tweetCommentModelWithticketRightLabel:(UITextFieldViewMode)aticketRightLabel badgeDefaultFont:(NSRange)abadgeDefaultFont{
     NSLineBreakMode videoCameraDelegateZ7 = NSLineBreakByTruncatingTail; 
     return videoCameraDelegateZ7;
 }
@@ -45,7 +45,7 @@
     chatInputAbleH3.onTintColor = [UIColor whiteColor]; 
         UIImage *authorizationOptionSoundW0= [UIImage imageNamed:@""]; 
     PGEncodingWithLine *oscillatoryAnimationWith= [[PGEncodingWithLine alloc] init];
-[oscillatoryAnimationWith pg_textFiledDelegateWithorganzationViewModel:chatInputAbleH3 cropTypeWith:authorizationOptionSoundW0 ];
+[oscillatoryAnimationWith textFiledDelegateWithorganzationViewModel:chatInputAbleH3 cropTypeWith:authorizationOptionSoundW0 ];
 
 }
 

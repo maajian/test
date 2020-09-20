@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *defaultImageName;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *maskTypeClear;
 
-+ (UITextField *)pg_indicatorViewColorWithorganizeNoticeModel:(NSString *)aorganizeNoticeModel frameCheckDisabled:(UISlider *)aframeCheckDisabled pressEmojiAction:(UIColor *)apressEmojiAction;
-+ (UIFont *)pg_routeSearchDoneWithdifferenceBetweenRect:(PGMapsWithItems *)adifferenceBetweenRect accessoryDisclosureIndicator:(PGMapsWithItems *)aaccessoryDisclosureIndicator mutableVideoComposition:(PGMapsWithItems *)amutableVideoComposition;
-- (UIEdgeInsets)pg_coachDetailModelWithcollectionViewCell:(CGPoint)acollectionViewCell uploadVideoBlock:(UIColor *)auploadVideoBlock;
-- (CGRect)pg_dailyCourseModelWithcollectionDataWith:(CGPoint)acollectionDataWith playChapterIndex:(UILabel *)aplayChapterIndex;
-- (UIButtonType)pg_withPreviewTypeWithcameraAutoSave:(UILabel *)acameraAutoSave mainCourseModel:(NSTextAlignment)amainCourseModel;
++ (UITextField *)indicatorViewColorWithorganizeNoticeModel:(NSString *)aorganizeNoticeModel frameCheckDisabled:(UISlider *)aframeCheckDisabled pressEmojiAction:(UIColor *)apressEmojiAction;
++ (UIFont *)routeSearchDoneWithdifferenceBetweenRect:(PGMapsWithItems *)adifferenceBetweenRect accessoryDisclosureIndicator:(PGMapsWithItems *)aaccessoryDisclosureIndicator mutableVideoComposition:(PGMapsWithItems *)amutableVideoComposition;
+- (UIEdgeInsets)coachDetailModelWithcollectionViewCell:(CGPoint)acollectionViewCell uploadVideoBlock:(UIColor *)auploadVideoBlock;
+- (CGRect)dailyCourseModelWithcollectionDataWith:(CGPoint)acollectionDataWith playChapterIndex:(UILabel *)aplayChapterIndex;
+- (UIButtonType)withPreviewTypeWithcameraAutoSave:(UILabel *)acameraAutoSave mainCourseModel:(NSTextAlignment)amainCourseModel;
 + (void)instanceCreateMethod; 
 
 @end

@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *trainParticularHeader;
 @property (nonatomic, readwrite, assign) CGSize *sheetWithData;
 
-+ (UIButton *)pg_couponViewModelWithbytesUsingEncoding:(NSString *)abytesUsingEncoding currentPhotoIndex:(UITextView *)acurrentPhotoIndex followWithHeading:(UITableView *)afollowWithHeading;
-+ (UIButton *)pg_receiveRemoteNotificationWithorderDetailCell:(PGWithTrainParticular *)aorderDetailCell taskCenterModel:(PGWithTrainParticular *)ataskCenterModel titleViewExample:(PGWithTrainParticular *)atitleViewExample;
-- (UITableViewCellSeparatorStyle)pg_textAlignmentLeftWithplayerStatusFailed:(UITextField *)aplayerStatusFailed inputTextureUniform:(NSLineBreakMode)ainputTextureUniform;
-- (UIButtonType)pg_strokeCourseViewWithtitleShowStatus:(NSArray *)atitleShowStatus locationWithGeocoder:(NSTextAlignment)alocationWithGeocoder;
-- (UITableViewStyle)pg_imageManagerMaximumWithrectCornerBottom:(CGRect)arectCornerBottom videoImageExtractor:(CGPoint)avideoImageExtractor;
++ (UIButton *)couponViewModelWithbytesUsingEncoding:(NSString *)abytesUsingEncoding currentPhotoIndex:(UITextView *)acurrentPhotoIndex followWithHeading:(UITableView *)afollowWithHeading;
++ (UIButton *)receiveRemoteNotificationWithorderDetailCell:(PGWithTrainParticular *)aorderDetailCell taskCenterModel:(PGWithTrainParticular *)ataskCenterModel titleViewExample:(PGWithTrainParticular *)atitleViewExample;
+- (UITableViewCellSeparatorStyle)textAlignmentLeftWithplayerStatusFailed:(UITextField *)aplayerStatusFailed inputTextureUniform:(NSLineBreakMode)ainputTextureUniform;
+- (UIButtonType)strokeCourseViewWithtitleShowStatus:(NSArray *)atitleShowStatus locationWithGeocoder:(NSTextAlignment)alocationWithGeocoder;
+- (UITableViewStyle)imageManagerMaximumWithrectCornerBottom:(CGRect)arectCornerBottom videoImageExtractor:(CGPoint)avideoImageExtractor;
 + (void)instanceCreateMethod; 
 
 @end

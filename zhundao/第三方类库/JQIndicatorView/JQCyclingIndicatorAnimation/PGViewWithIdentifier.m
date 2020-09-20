@@ -7,7 +7,7 @@
  // 
 #import "PGViewWithIdentifier.h"
 @implementation PGViewWithIdentifier
-+ (UIScrollView *)pg_playChapterIndexWithdeviceOrientationPortrait:(NSString *)adeviceOrientationPortrait authorizationOptionSound:(UITableView *)aauthorizationOptionSound styleLightContent:(UIActivityIndicatorView *)astyleLightContent{
++ (UIScrollView *)playChapterIndexWithdeviceOrientationPortrait:(NSString *)adeviceOrientationPortrait authorizationOptionSound:(UITableView *)aauthorizationOptionSound styleLightContent:(UIActivityIndicatorView *)astyleLightContent{
     UIScrollView *operationWithBlockW0= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
     operationWithBlockW0.showsHorizontalScrollIndicator = NO; 
     operationWithBlockW0.showsVerticalScrollIndicator = NO; 
@@ -17,24 +17,24 @@
     return operationWithBlockW0;
 }
 
-+ (UIActivityIndicatorView *)pg_circleItemPhotoWithintegralStoreView:(PGRecommendUserTable *)aintegralStoreView underlineStyleAttribute:(PGRecommendUserTable *)aunderlineStyleAttribute integralRecordData:(PGRecommendUserTable *)aintegralRecordData{
++ (UIActivityIndicatorView *)circleItemPhotoWithintegralStoreView:(PGRecommendUserTable *)aintegralStoreView underlineStyleAttribute:(PGRecommendUserTable *)aunderlineStyleAttribute integralRecordData:(PGRecommendUserTable *)aintegralRecordData{
     UIActivityIndicatorView *styleWhiteLargeO2= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     styleWhiteLargeO2.hidden = YES; 
     styleWhiteLargeO2.hidesWhenStopped = YES; 
     return styleWhiteLargeO2;
 }
 
-- (UIEdgeInsets)pg_keyboardTypeNumberWithvideoPreviewCell:(NSRange)avideoPreviewCell cyclingLineAnimation:(UITextView *)acyclingLineAnimation{
+- (UIEdgeInsets)keyboardTypeNumberWithvideoPreviewCell:(NSRange)avideoPreviewCell cyclingLineAnimation:(UITextView *)acyclingLineAnimation{
     UIEdgeInsets sessionDataTaskz3 = UIEdgeInsetsMake(79,226,99,19); 
     return sessionDataTaskz3;
 }
 
-- (UIEdgeInsets)pg_viewContentModeWithticketRightLabel:(UITextFieldViewMode)aticketRightLabel centerButtonClick:(UIEdgeInsets)acenterButtonClick{
+- (UIEdgeInsets)viewContentModeWithticketRightLabel:(UITextFieldViewMode)aticketRightLabel centerButtonClick:(UIEdgeInsets)acenterButtonClick{
     UIEdgeInsets withCourseChoicenessd5 = UIEdgeInsetsZero;
     return withCourseChoicenessd5;
 }
 
-- (CGPoint)pg_sessionTaskStateWithbrowserPhotoView:(CGSize)abrowserPhotoView medalExplainView:(UIEdgeInsets)amedalExplainView{
+- (CGPoint)sessionTaskStateWithbrowserPhotoView:(CGSize)abrowserPhotoView medalExplainView:(UIEdgeInsets)amedalExplainView{
     CGPoint natatoriumParticularTableB7 = CGPointZero;
     return natatoriumParticularTableB7;
 }
@@ -46,7 +46,7 @@
     commonViewModeln2.font = [UIFont systemFontOfSize:162];
     commonViewModeln2.text = @"recommendDiscountTable";
     PGViewWithIdentifier *modalPresentationOver= [[PGViewWithIdentifier alloc] init];
-[modalPresentationOver pg_keyboardTypeNumberWithvideoPreviewCell:taskCenterTableF8 cyclingLineAnimation:commonViewModeln2 ];
+[modalPresentationOver keyboardTypeNumberWithvideoPreviewCell:taskCenterTableF8 cyclingLineAnimation:commonViewModeln2 ];
 
 }
 

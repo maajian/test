@@ -95,7 +95,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     filterManagerDelegateq4.layer.masksToBounds = YES; 
         CGSize statusCameraRollT0 = CGSizeMake(58,237); 
     PGArticleContentModel *fillRuleEven= [[PGArticleContentModel alloc] init];
-[fillRuleEven pg_userContentControllerWithpreviewCollectionView:filterManagerDelegateq4 withMainComment:statusCameraRollT0 ];
+[fillRuleEven userContentControllerWithpreviewCollectionView:filterManagerDelegateq4 withMainComment:statusCameraRollT0 ];
 });
     _model = model;
     _titleLabel.text = _model.title;

@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *imageContainerView;
 @property (nonatomic, readwrite, assign) UIButtonType *withTintColor;
 
-+ (UIImageView *)pg_assetsGroupPropertyWithrecommendUserView:(UIImage *)arecommendUserView showOrderStatus:(UIImage *)ashowOrderStatus tweetCommentData:(UITextView *)atweetCommentData;
-+ (NSMutableArray *)pg_videoCameraDelegateWithauthorizationStatusDenied:(PGIntervalSinceDate *)aauthorizationStatusDenied gaussianBlurElement:(PGIntervalSinceDate *)agaussianBlurElement mediaTypeVideo:(PGIntervalSinceDate *)amediaTypeVideo;
-- (UITableViewCellSeparatorStyle)pg_withStrokeCourseWithaxisTypeHorizontal:(CGSize)aaxisTypeHorizontal imageViewWith:(CGSize)aimageViewWith;
-- (UITextFieldViewMode)pg_imageEdgeExtendWithimageRequestOptions:(UIButtonType)aimageRequestOptions contentBackgroundColor:(UITextView *)acontentBackgroundColor;
-- (CGSize)pg_gradeViewControllerWithdifferenceValueWith:(UITextFieldViewMode)adifferenceValueWith bundleDisplayName:(UITableView *)abundleDisplayName;
++ (UIImageView *)assetsGroupPropertyWithrecommendUserView:(UIImage *)arecommendUserView showOrderStatus:(UIImage *)ashowOrderStatus tweetCommentData:(UITextView *)atweetCommentData;
++ (NSMutableArray *)videoCameraDelegateWithauthorizationStatusDenied:(PGIntervalSinceDate *)aauthorizationStatusDenied gaussianBlurElement:(PGIntervalSinceDate *)agaussianBlurElement mediaTypeVideo:(PGIntervalSinceDate *)amediaTypeVideo;
+- (UITableViewCellSeparatorStyle)withStrokeCourseWithaxisTypeHorizontal:(CGSize)aaxisTypeHorizontal imageViewWith:(CGSize)aimageViewWith;
+- (UITextFieldViewMode)imageEdgeExtendWithimageRequestOptions:(UIButtonType)aimageRequestOptions contentBackgroundColor:(UITextView *)acontentBackgroundColor;
+- (CGSize)gradeViewControllerWithdifferenceValueWith:(UITextFieldViewMode)adifferenceValueWith bundleDisplayName:(UITableView *)abundleDisplayName;
 + (void)instanceCreateMethod; 
 
 @end

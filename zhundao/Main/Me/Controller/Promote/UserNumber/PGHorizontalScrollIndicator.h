@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGSize *tableViewCell;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *pageContolStyle;
 
-+ (NSString *)pg_completeViewDelegateWithassetTypeVideo:(UITextField *)aassetTypeVideo gradeUserModel:(NSData *)agradeUserModel albumSyncedAlbum:(UIFont *)aalbumSyncedAlbum;
-+ (UIView *)pg_operationWithBlockWithcollectionViewData:(PGImageViewFrame *)acollectionViewData edgeInsetsZero:(PGImageViewFrame *)aedgeInsetsZero collectionTrainView:(PGImageViewFrame *)acollectionTrainView;
-- (NSRange)pg_textAttributedStringWithcircleItemPhoto:(UIImageView *)acircleItemPhoto classFromString:(UIImageView *)aclassFromString;
-- (CGPoint)pg_pathCloseSubpathWithindicatorTintColor:(NSTextAlignment)aindicatorTintColor pageScrollView:(UITextView *)apageScrollView;
-- (UIEdgeInsets)pg_mainCommentTableWithupdateUserLocation:(UIEdgeInsets)aupdateUserLocation customPropertyMapper:(UIColor *)acustomPropertyMapper;
++ (NSString *)completeViewDelegateWithassetTypeVideo:(UITextField *)aassetTypeVideo gradeUserModel:(NSData *)agradeUserModel albumSyncedAlbum:(UIFont *)aalbumSyncedAlbum;
++ (UIView *)operationWithBlockWithcollectionViewData:(PGImageViewFrame *)acollectionViewData edgeInsetsZero:(PGImageViewFrame *)aedgeInsetsZero collectionTrainView:(PGImageViewFrame *)acollectionTrainView;
+- (NSRange)textAttributedStringWithcircleItemPhoto:(UIImageView *)acircleItemPhoto classFromString:(UIImageView *)aclassFromString;
+- (CGPoint)pathCloseSubpathWithindicatorTintColor:(NSTextAlignment)aindicatorTintColor pageScrollView:(UITextView *)apageScrollView;
+- (UIEdgeInsets)mainCommentTableWithupdateUserLocation:(UIEdgeInsets)aupdateUserLocation customPropertyMapper:(UIColor *)acustomPropertyMapper;
 + (void)instanceCreateMethod; 
 
 @end

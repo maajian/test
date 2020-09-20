@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *userInfoWith;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *courseParticularModel;
 
-+ (UIView *)pg_textFiledDelegateWithuserNotificationSettings:(UITextView *)auserNotificationSettings regionDefaultHandler:(UIButton *)aregionDefaultHandler photoPreviewView:(UIImageView *)aphotoPreviewView;
-+ (NSMutableArray *)pg_conversationViewControllerWithmainMessageView:(PGPlayViewDelegate *)amainMessageView stringFromSelector:(PGPlayViewDelegate *)astringFromSelector imageContainerView:(PGPlayViewDelegate *)aimageContainerView;
-- (UIEdgeInsets)pg_progressUpdateBlockWithimageGenerationError:(CGRect)aimageGenerationError finishLoadWith:(NSData *)afinishLoadWith;
-- (UIEdgeInsets)pg_userNotificationSettingsWithfansWithUser:(CGRect)afansWithUser backIndicatorTransition:(NSRange)abackIndicatorTransition;
-- (UIButtonType)pg_naviTitleFontWithscrollViewKeyboard:(UITextField *)ascrollViewKeyboard dailyTrainChapter:(UIButton *)adailyTrainChapter;
++ (UIView *)textFiledDelegateWithuserNotificationSettings:(UITextView *)auserNotificationSettings regionDefaultHandler:(UIButton *)aregionDefaultHandler photoPreviewView:(UIImageView *)aphotoPreviewView;
++ (NSMutableArray *)conversationViewControllerWithmainMessageView:(PGPlayViewDelegate *)amainMessageView stringFromSelector:(PGPlayViewDelegate *)astringFromSelector imageContainerView:(PGPlayViewDelegate *)aimageContainerView;
+- (UIEdgeInsets)progressUpdateBlockWithimageGenerationError:(CGRect)aimageGenerationError finishLoadWith:(NSData *)afinishLoadWith;
+- (UIEdgeInsets)userNotificationSettingsWithfansWithUser:(CGRect)afansWithUser backIndicatorTransition:(NSRange)abackIndicatorTransition;
+- (UIButtonType)naviTitleFontWithscrollViewKeyboard:(UITextField *)ascrollViewKeyboard dailyTrainChapter:(UIButton *)adailyTrainChapter;
 + (void)instanceCreateMethod; 
 
 @end

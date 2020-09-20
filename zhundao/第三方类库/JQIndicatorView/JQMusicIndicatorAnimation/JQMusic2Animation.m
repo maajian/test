@@ -24,7 +24,7 @@
     replicatorLayer.backgroundColor = [UIColor clearColor].CGColor;
     [layer addSublayer:replicatorLayer];
     
-    [self PG_addMusicBarAnimationLayerAtLayer:replicatorLayer withSize:size tintColor:color];
+    [self addMusicBarAnimationLayerAtLayer:replicatorLayer withSize:size tintColor:color];
     replicatorLayer.instanceCount = 3;
     replicatorLayer.instanceDelay = 0.2;
     replicatorLayer.instanceTransform = CATransform3DMakeTranslation(size.width*3/10, 0.f, 0.f);
@@ -34,7 +34,7 @@
 #pragma mark - Music Indicator animation
 
 
-- (void)PG_addMusicBarAnimationLayerAtLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)color{
+- (void)addMusicBarAnimationLayerAtLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)color{
     CGFloat width = size.width/5;
     CGFloat height = size.height - 20;
     self.barLayer = [CALayer layer];
@@ -59,7 +59,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSLineBreakMode childViewControllersB5 = NSLineBreakByTruncatingTail; 
         UIEdgeInsets lineJoinMiterH2 = UIEdgeInsetsMake(82,33,113,161); 
     PGMedalDetailModel *imageSourceCopy= [[PGMedalDetailModel alloc] init];
-[imageSourceCopy pg_cancelAutoFadeWithlightBlackColor:childViewControllersB5 socialShareResponse:lineJoinMiterH2 ];
+[imageSourceCopy cancelAutoFadeWithlightBlackColor:childViewControllersB5 socialShareResponse:lineJoinMiterH2 ];
 });
     [self.barLayer removeAnimationForKey:@"animation"];
 }

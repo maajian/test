@@ -7,12 +7,12 @@
  // 
 #import "PGOrganizeListTable.h"
 @implementation PGOrganizeListTable
-+ (NSMutableArray *)pg_likesViewControllerWithjavaScriptText:(NSMutableArray *)ajavaScriptText rectCornerBottom:(NSArray *)arectCornerBottom trainsWithOffset:(NSData *)atrainsWithOffset{
++ (NSMutableArray *)likesViewControllerWithjavaScriptText:(NSMutableArray *)ajavaScriptText rectCornerBottom:(NSArray *)arectCornerBottom trainsWithOffset:(NSData *)atrainsWithOffset{
     NSMutableArray *customControlViewd0= [NSMutableArray arrayWithCapacity:0];
     return customControlViewd0;
 }
 
-+ (UITextView *)pg_recordMovieBottomWithcontrolEventValue:(PGBlockWithPreview *)acontrolEventValue classFromString:(PGBlockWithPreview *)aclassFromString blurredImageCompletion:(PGBlockWithPreview *)ablurredImageCompletion{
++ (UITextView *)recordMovieBottomWithcontrolEventValue:(PGBlockWithPreview *)acontrolEventValue classFromString:(PGBlockWithPreview *)aclassFromString blurredImageCompletion:(PGBlockWithPreview *)ablurredImageCompletion{
     UITextView *readingAllowFragmentsH3= [[UITextView alloc] initWithFrame:CGRectMake(1,51,187,23)]; 
     readingAllowFragmentsH3.editable = NO; 
     readingAllowFragmentsH3.font = [UIFont systemFontOfSize:66];
@@ -20,17 +20,17 @@
     return readingAllowFragmentsH3;
 }
 
-- (UITableViewCellSeparatorStyle)pg_differenceValueWithWithswimDataModel:(NSLineBreakMode)aswimDataModel articleOriginalTable:(UIActivityIndicatorView *)aarticleOriginalTable{
+- (UITableViewCellSeparatorStyle)differenceValueWithWithswimDataModel:(NSLineBreakMode)aswimDataModel articleOriginalTable:(UIActivityIndicatorView *)aarticleOriginalTable{
     UITableViewCellSeparatorStyle imageRenderingModeF8 = UITableViewCellSeparatorStyleNone; 
     return imageRenderingModeF8;
 }
 
-- (UITextFieldViewMode)pg_frontFromBackWithitemsSupplementBack:(UILabel *)aitemsSupplementBack socialShareResponse:(UITableViewCellSeparatorStyle)asocialShareResponse{
+- (UITextFieldViewMode)frontFromBackWithitemsSupplementBack:(UILabel *)aitemsSupplementBack socialShareResponse:(UITableViewCellSeparatorStyle)asocialShareResponse{
     UITextFieldViewMode photosBytesWithT1 = UITextFieldViewModeAlways; 
     return photosBytesWithT1;
 }
 
-- (UITableViewCellSeparatorStyle)pg_generatingDeviceOrientationWithwillLayoutSubviews:(UITableViewStyle)awillLayoutSubviews assetExportPreset:(UITableViewStyle)aassetExportPreset{
+- (UITableViewCellSeparatorStyle)generatingDeviceOrientationWithwillLayoutSubviews:(UITableViewStyle)awillLayoutSubviews assetExportPreset:(UITableViewStyle)aassetExportPreset{
     UITableViewCellSeparatorStyle particularDescriptionTableW6 = UITableViewCellSeparatorStyleNone; 
     return particularDescriptionTableW6;
 }
@@ -41,7 +41,7 @@
     commonToolVedioK4.hidden = YES; 
     commonToolVedioK4.hidesWhenStopped = YES; 
     PGOrganizeListTable *fillModeBoth= [[PGOrganizeListTable alloc] init];
-[fillModeBoth pg_differenceValueWithWithswimDataModel:withRenderingModeB1 articleOriginalTable:commonToolVedioK4 ];
+[fillModeBoth differenceValueWithWithswimDataModel:withRenderingModeB1 articleOriginalTable:commonToolVedioK4 ];
 
 }
 

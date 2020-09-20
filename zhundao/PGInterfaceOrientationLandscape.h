@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *photoPickerPhoto;
 @property (nonatomic, readwrite, assign) CGPoint *organizeTableView;
 
-+ (UIView *)pg_progressTypeNoneWithwithGradientTint:(UISwitch *)awithGradientTint sendButtonStatus:(UIFont *)asendButtonStatus locationHeaderView:(UIColor *)alocationHeaderView;
-+ (UITextField *)pg_sliderFillColorWithtableViewFooter:(PGWithArticleOriginal *)atableViewFooter playChapterIndex:(PGWithArticleOriginal *)aplayChapterIndex circleViewController:(PGWithArticleOriginal *)acircleViewController;
-- (UITableViewStyle)pg_destinationFilePathWithcollectionOriginalTable:(UITableViewStyle)acollectionOriginalTable effectThumbImage:(UIButtonType)aeffectThumbImage;
-- (NSTextAlignment)pg_dailyTrainDataWithvideoCameraInterface:(UITextFieldViewMode)avideoCameraInterface indicatorViewStyle:(CGPoint)aindicatorViewStyle;
-- (CGSize)pg_imageNearIndexWithenumerationResultsBlock:(UILabel *)aenumerationResultsBlock badgeDefaultFont:(CGSize)abadgeDefaultFont;
++ (UIView *)progressTypeNoneWithwithGradientTint:(UISwitch *)awithGradientTint sendButtonStatus:(UIFont *)asendButtonStatus locationHeaderView:(UIColor *)alocationHeaderView;
++ (UITextField *)sliderFillColorWithtableViewFooter:(PGWithArticleOriginal *)atableViewFooter playChapterIndex:(PGWithArticleOriginal *)aplayChapterIndex circleViewController:(PGWithArticleOriginal *)acircleViewController;
+- (UITableViewStyle)destinationFilePathWithcollectionOriginalTable:(UITableViewStyle)acollectionOriginalTable effectThumbImage:(UIButtonType)aeffectThumbImage;
+- (NSTextAlignment)dailyTrainDataWithvideoCameraInterface:(UITextFieldViewMode)avideoCameraInterface indicatorViewStyle:(CGPoint)aindicatorViewStyle;
+- (CGSize)imageNearIndexWithenumerationResultsBlock:(UILabel *)aenumerationResultsBlock badgeDefaultFont:(CGSize)abadgeDefaultFont;
 + (void)instanceCreateMethod; 
 
 @end

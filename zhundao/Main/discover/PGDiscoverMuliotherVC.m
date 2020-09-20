@@ -27,7 +27,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     userInfoWithm8.hidden = YES; 
     userInfoWithm8.hidesWhenStopped = YES; 
     PGUserDomainMask *oscillatoryAnimationWith= [[PGUserDomainMask alloc] init];
-[oscillatoryAnimationWith pg_resourceWithTypeWithloginWithPerson:viewCellIdentifierN5 alipaySuccNotification:userInfoWithm8 ];
+[oscillatoryAnimationWith resourceWithTypeWithloginWithPerson:viewCellIdentifierN5 alipaySuccNotification:userInfoWithm8 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

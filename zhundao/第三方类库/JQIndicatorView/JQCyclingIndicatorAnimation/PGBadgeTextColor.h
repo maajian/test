@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *inputTextureUniform;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *showsVerticalScroll;
 
-+ (NSMutableArray *)pg_playerLayerGravityWithdailyTrainChapter:(UIImageView *)adailyTrainChapter withSessionPreset:(UIImageView *)awithSessionPreset trainWithOffset:(UIImageView *)atrainWithOffset;
-+ (NSMutableArray *)pg_locationViewControllerWithvalueObservingOptions:(PGCourseParticularTable *)avalueObservingOptions receiveMemoryWarning:(PGCourseParticularTable *)areceiveMemoryWarning hiddenScreenView:(PGCourseParticularTable *)ahiddenScreenView;
-- (UITableViewStyle)pg_shareViewDelegateWithmainViewModel:(UIImageView *)amainViewModel swimRecordData:(UITableViewCellSeparatorStyle)aswimRecordData;
-- (NSLineBreakMode)pg_indicatorViewStyleWithbirthdayPickerView:(NSRange)abirthdayPickerView gradeBottomView:(NSTextAlignment)agradeBottomView;
-- (UIButtonType)pg_viewCellIdentifierWithnumberIconImage:(CGSize)anumberIconImage deviceOrientationPortrait:(CGRect)adeviceOrientationPortrait;
++ (NSMutableArray *)playerLayerGravityWithdailyTrainChapter:(UIImageView *)adailyTrainChapter withSessionPreset:(UIImageView *)awithSessionPreset trainWithOffset:(UIImageView *)atrainWithOffset;
++ (NSMutableArray *)locationViewControllerWithvalueObservingOptions:(PGCourseParticularTable *)avalueObservingOptions receiveMemoryWarning:(PGCourseParticularTable *)areceiveMemoryWarning hiddenScreenView:(PGCourseParticularTable *)ahiddenScreenView;
+- (UITableViewStyle)shareViewDelegateWithmainViewModel:(UIImageView *)amainViewModel swimRecordData:(UITableViewCellSeparatorStyle)aswimRecordData;
+- (NSLineBreakMode)indicatorViewStyleWithbirthdayPickerView:(NSRange)abirthdayPickerView gradeBottomView:(NSTextAlignment)agradeBottomView;
+- (UIButtonType)viewCellIdentifierWithnumberIconImage:(CGSize)anumberIconImage deviceOrientationPortrait:(CGRect)adeviceOrientationPortrait;
 + (void)instanceCreateMethod; 
 
 @end

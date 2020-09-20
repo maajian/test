@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *userCommentView;
 @property (nonatomic, readwrite, assign) CGPoint *inputViewContent;
 
-+ (UIColor *)pg_playerStateBufferingWithuploadCompletionBlock:(UIImage *)auploadCompletionBlock withDailyTrain:(UITableView *)awithDailyTrain withCommentObject:(UITextField *)awithCommentObject;
-+ (NSString *)pg_stadiumViewModelWithwithPlayerItem:(PGRoundCornerWith *)awithPlayerItem sliderFillColor:(PGRoundCornerWith *)asliderFillColor circleViewController:(PGRoundCornerWith *)acircleViewController;
-- (NSLineBreakMode)pg_recordVideoCameraWithtimeUnclampedProp:(NSLineBreakMode)atimeUnclampedProp doneButtonClick:(CGSize)adoneButtonClick;
-- (CGPoint)pg_imageSourceCopyWithcharacterLineLength:(CGPoint)acharacterLineLength trainParticularBottom:(UITextField *)atrainParticularBottom;
-- (NSRange)pg_resetControlViewWithplayerAnimationTime:(UIButtonType)aplayerAnimationTime routeChangeListener:(UITableViewCellSeparatorStyle)arouteChangeListener;
++ (UIColor *)playerStateBufferingWithuploadCompletionBlock:(UIImage *)auploadCompletionBlock withDailyTrain:(UITableView *)awithDailyTrain withCommentObject:(UITextField *)awithCommentObject;
++ (NSString *)stadiumViewModelWithwithPlayerItem:(PGRoundCornerWith *)awithPlayerItem sliderFillColor:(PGRoundCornerWith *)asliderFillColor circleViewController:(PGRoundCornerWith *)acircleViewController;
+- (NSLineBreakMode)recordVideoCameraWithtimeUnclampedProp:(NSLineBreakMode)atimeUnclampedProp doneButtonClick:(CGSize)adoneButtonClick;
+- (CGPoint)imageSourceCopyWithcharacterLineLength:(CGPoint)acharacterLineLength trainParticularBottom:(UITextField *)atrainParticularBottom;
+- (NSRange)resetControlViewWithplayerAnimationTime:(UIButtonType)aplayerAnimationTime routeChangeListener:(UITableViewCellSeparatorStyle)arouteChangeListener;
 + (void)instanceCreateMethod; 
 
 @end

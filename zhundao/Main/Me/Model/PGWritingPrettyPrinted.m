@@ -7,7 +7,7 @@
  // 
 #import "PGWritingPrettyPrinted.h"
 @implementation PGWritingPrettyPrinted
-+ (UITextField *)pg_decimalNumberHandlerWithcommentObjectModel:(UITableView *)acommentObjectModel pickerImageView:(NSData *)apickerImageView editUserInfo:(UIButton *)aeditUserInfo{
++ (UITextField *)decimalNumberHandlerWithcommentObjectModel:(UITableView *)acommentObjectModel pickerImageView:(NSData *)apickerImageView editUserInfo:(UIButton *)aeditUserInfo{
     UITextField *firstFrameCheckP0= [[UITextField alloc] initWithFrame:CGRectMake(25,17,145,107)]; 
     firstFrameCheckP0.clearButtonMode = UITextFieldViewModeNever; 
     firstFrameCheckP0.textColor = [UIColor whiteColor]; 
@@ -19,22 +19,22 @@
     return firstFrameCheckP0;
 }
 
-+ (UIImage *)pg_currentItemWithWithassetResourceType:(PGViewWillShow *)aassetResourceType deleteTweetSucc:(PGViewWillShow *)adeleteTweetSucc organzationViewModel:(PGViewWillShow *)aorganzationViewModel{
++ (UIImage *)currentItemWithWithassetResourceType:(PGViewWillShow *)aassetResourceType deleteTweetSucc:(PGViewWillShow *)adeleteTweetSucc organzationViewModel:(PGViewWillShow *)aorganzationViewModel{
     UIImage *listViewModelO3= [UIImage imageNamed:@""]; 
     return listViewModelO3;
 }
 
-- (UITableViewStyle)pg_viewContentModeWithnodataViewDelegate:(CGRect)anodataViewDelegate underlinePatternSolid:(NSRange)aunderlinePatternSolid{
+- (UITableViewStyle)viewContentModeWithnodataViewDelegate:(CGRect)anodataViewDelegate underlinePatternSolid:(NSRange)aunderlinePatternSolid{
     UITableViewStyle columnistViewControllerp5 = UITableViewStylePlain; 
     return columnistViewControllerp5;
 }
 
-- (UITableViewStyle)pg_firstFrameCheckWithwithGradientTint:(UITableView *)awithGradientTint browserPhotoImage:(UIImageView *)abrowserPhotoImage{
+- (UITableViewStyle)firstFrameCheckWithwithGradientTint:(UITableView *)awithGradientTint browserPhotoImage:(UIImageView *)abrowserPhotoImage{
     UITableViewStyle columnistChildViewM0 = UITableViewStylePlain; 
     return columnistChildViewM0;
 }
 
-- (CGPoint)pg_screenButtonClickWithpushNotificationTrigger:(CGRect)apushNotificationTrigger tweetItemModel:(UIImageView *)atweetItemModel{
+- (CGPoint)screenButtonClickWithpushNotificationTrigger:(CGRect)apushNotificationTrigger tweetItemModel:(UIImageView *)atweetItemModel{
     CGPoint cacheDailyCourses3 = CGPointZero;
     return cacheDailyCourses3;
 }
@@ -43,7 +43,7 @@
     CGRect modalPresentationNoney2 = CGRectMake(78,72,148,141); 
         NSRange ticketRightLabelb2 = NSMakeRange(3,113); 
     PGWritingPrettyPrinted *withActivityIndicator= [[PGWritingPrettyPrinted alloc] init];
-[withActivityIndicator pg_viewContentModeWithnodataViewDelegate:modalPresentationNoney2 underlinePatternSolid:ticketRightLabelb2 ];
+[withActivityIndicator viewContentModeWithnodataViewDelegate:modalPresentationNoney2 underlinePatternSolid:ticketRightLabelb2 ];
 
 }
 

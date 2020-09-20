@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *assetResourceCreation;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *videoDetailData;
 
-+ (UITableView *)pg_withSwimParticularWithimageWithImages:(UIImageView *)aimageWithImages itemStatusFailed:(UILabel *)aitemStatusFailed viewCellDelegate:(UIActivityIndicatorView *)aviewCellDelegate;
-+ (NSArray *)pg_contentsUserReviewsWithtableFooterView:(PGInputTextureVertex *)atableFooterView bottomPhotoView:(PGInputTextureVertex *)abottomPhotoView socialShareResponse:(PGInputTextureVertex *)asocialShareResponse;
-- (NSTextAlignment)pg_lightBlackColorWithfansWithUser:(UIFont *)afansWithUser socialUserInfo:(UITextView *)asocialUserInfo;
-- (NSTextAlignment)pg_groupWithPhotosWithlocationManagerDelegate:(UISlider *)alocationManagerDelegate showsVerticalScroll:(UISlider *)ashowsVerticalScroll;
-- (CGRect)pg_viewWillHiddenWithcharacterLineLength:(UIImageView *)acharacterLineLength imageEdgeExtend:(UITextFieldViewMode)aimageEdgeExtend;
++ (UITableView *)withSwimParticularWithimageWithImages:(UIImageView *)aimageWithImages itemStatusFailed:(UILabel *)aitemStatusFailed viewCellDelegate:(UIActivityIndicatorView *)aviewCellDelegate;
++ (NSArray *)contentsUserReviewsWithtableFooterView:(PGInputTextureVertex *)atableFooterView bottomPhotoView:(PGInputTextureVertex *)abottomPhotoView socialShareResponse:(PGInputTextureVertex *)asocialShareResponse;
+- (NSTextAlignment)lightBlackColorWithfansWithUser:(UIFont *)afansWithUser socialUserInfo:(UITextView *)asocialUserInfo;
+- (NSTextAlignment)groupWithPhotosWithlocationManagerDelegate:(UISlider *)alocationManagerDelegate showsVerticalScroll:(UISlider *)ashowsVerticalScroll;
+- (CGRect)viewWillHiddenWithcharacterLineLength:(UIImageView *)acharacterLineLength imageEdgeExtend:(UITextFieldViewMode)aimageEdgeExtend;
 + (void)instanceCreateMethod; 
 
 @end

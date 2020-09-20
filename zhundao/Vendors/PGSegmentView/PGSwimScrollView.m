@@ -7,27 +7,27 @@
  // 
 #import "PGSwimScrollView.h"
 @implementation PGSwimScrollView
-+ (UIFont *)pg_trackingWithTouchWithcolorSpaceCreate:(UITextView *)acolorSpaceCreate photoPreviewController:(UITextField *)aphotoPreviewController authorizationWithOptions:(UIColor *)aauthorizationWithOptions{
++ (UIFont *)trackingWithTouchWithcolorSpaceCreate:(UITextView *)acolorSpaceCreate photoPreviewController:(UITextField *)aphotoPreviewController authorizationWithOptions:(UIColor *)aauthorizationWithOptions{
     UIFont *sliderValueChangedZ7= [UIFont systemFontOfSize:143];
     return sliderValueChangedZ7;
 }
 
-+ (UIColor *)pg_videoSendIconWithplayImageView:(PGScreenViewController *)aplayImageView contextWithOptions:(PGScreenViewController *)acontextWithOptions cellWithIndex:(PGScreenViewController *)acellWithIndex{
++ (UIColor *)videoSendIconWithplayImageView:(PGScreenViewController *)aplayImageView contextWithOptions:(PGScreenViewController *)acontextWithOptions cellWithIndex:(PGScreenViewController *)acellWithIndex{
     UIColor *trainTableViewD4= [UIColor redColor];
     return trainTableViewD4;
 }
 
-- (UIButtonType)pg_paragraphStyleAttributeWithprimaryStudyData:(NSData *)aprimaryStudyData ringRotationAnimation:(NSRange)aringRotationAnimation{
+- (UIButtonType)paragraphStyleAttributeWithprimaryStudyData:(NSData *)aprimaryStudyData ringRotationAnimation:(NSRange)aringRotationAnimation{
     UIButtonType videoPreviewPlayO2 = UIButtonTypeContactAdd;
     return videoPreviewPlayO2;
 }
 
-- (CGPoint)pg_titleLabelSelectededWithswimmingCommonSense:(UIView *)aswimmingCommonSense ticketLeftLabel:(UISlider *)aticketLeftLabel{
+- (CGPoint)titleLabelSelectededWithswimmingCommonSense:(UIView *)aswimmingCommonSense ticketLeftLabel:(UISlider *)aticketLeftLabel{
     CGPoint withSessionPresetb7 = CGPointZero;
     return withSessionPresetb7;
 }
 
-- (UITextFieldViewMode)pg_replayTypeSliderWithnavigateItemWith:(UITableView *)anavigateItemWith taskCenterModel:(CGPoint)ataskCenterModel{
+- (UITextFieldViewMode)replayTypeSliderWithnavigateItemWith:(UITableView *)anavigateItemWith taskCenterModel:(CGPoint)ataskCenterModel{
     UITextFieldViewMode withCouponsInfoj9 = UITextFieldViewModeAlways; 
     return withCouponsInfoj9;
 }
@@ -36,7 +36,7 @@
     NSData *orderGroupCells3= [[NSData alloc] init];
         NSRange discoverViewControllerE6 = NSMakeRange(5,113); 
     PGSwimScrollView *maskTypeClear= [[PGSwimScrollView alloc] init];
-[maskTypeClear pg_paragraphStyleAttributeWithprimaryStudyData:orderGroupCells3 ringRotationAnimation:discoverViewControllerE6 ];
+[maskTypeClear paragraphStyleAttributeWithprimaryStudyData:orderGroupCells3 ringRotationAnimation:discoverViewControllerE6 ];
 
 }
 

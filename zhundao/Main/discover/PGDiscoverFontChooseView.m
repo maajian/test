@@ -21,14 +21,14 @@ static float buttonHeight = 40;
 - (instancetype)initWithFrame:(CGRect)frame Fontsize :(float )fontsize{
     if (self = [super initWithFrame:frame]) {
          _fontsize = fontsize;
-        [self PG_setupUI];
+        [self setupUI];
     }
     return self;
 }
 
 
 /*! UI创建 */
-- (void)PG_setupUI{
+- (void)setupUI{
     float buttonWidth = (kScreenWidth - CGRectGetMinX(self.frame)*2)/8;
     float triangleCenter = kScreenWidth/3*2/6*3-5;
     NSArray *array = @[@"11",@"13",@"15",@"17",@"19",@"21",@"23",@"25"];
@@ -65,7 +65,7 @@ static float buttonHeight = 40;
     /*! 创建按钮 */
     @autoreleasepool {
         for (int i = 0; i <8; i++) {
-            UIButton *button = [MyButton initWithButtonFrame:CGRectMake(i *buttonWidth, 0, buttonWidth, buttonHeight) title:array[i] textcolor:[UIColor whiteColor] Target:self action:@selector(PG_buttonAction:) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
+            UIButton *button = [MyButton initWithButtonFrame:CGRectMake(i *buttonWidth, 0, buttonWidth, buttonHeight) title:array[i] textcolor:[UIColor whiteColor] Target:self action:@selector(buttonAction:) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [button setTitleColor:kColorA(98, 167, 245, 1) forState:UIControlStateSelected];
             if (changeIndex ==i) {
@@ -79,7 +79,7 @@ static float buttonHeight = 40;
 }
 
 
-- (void)PG_buttonAction:(UIButton *)button{
+- (void)buttonAction:(UIButton *)button{
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextView *likesViewModelC1= [[UITextView alloc] initWithFrame:CGRectMake(207,92,247,166)]; 
     likesViewModelC1.editable = NO; 
@@ -87,7 +87,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     likesViewModelC1.text = @"bundleShortVersion";
         UIButtonType numberWithStringN9 = UIButtonTypeContactAdd;
     PGSuccessWithStatus *centerViewModel= [[PGSuccessWithStatus alloc] init];
-[centerViewModel pg_trackingWithEventWithfinishPickingMedia:likesViewModelC1 openWindowsAutomatically:numberWithStringN9 ];
+[centerViewModel trackingWithEventWithfinishPickingMedia:likesViewModelC1 openWindowsAutomatically:numberWithStringN9 ];
 });
    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
        MyButton *button = (MyButton *)obj;

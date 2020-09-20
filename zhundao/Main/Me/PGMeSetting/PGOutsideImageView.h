@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *pageTintColor;
 @property (nonatomic, readwrite, assign) NSTextAlignment *headerViewDelegate;
 
-+ (UILabel *)pg_effectColorAlphaWithsizePlayView:(NSString *)asizePlayView viewControllerTransition:(UIButton *)aviewControllerTransition activityIndicatorVisible:(UIColor *)aactivityIndicatorVisible;
-+ (UIActivityIndicatorView *)pg_courseViewModelWithassetResourceType:(PGShowPlayButton *)aassetResourceType videoSendIcon:(PGShowPlayButton *)avideoSendIcon integralRecordView:(PGShowPlayButton *)aintegralRecordView;
-- (UITableViewStyle)pg_titlePositionAdjustmentWithcouponTypeIntegral:(NSString *)acouponTypeIntegral imagePickerConfig:(UIActivityIndicatorView *)aimagePickerConfig;
-- (CGPoint)pg_strokeCourseHeaderWithimageRenderingMode:(UIImageView *)aimageRenderingMode viewControllerDone:(UIView *)aviewControllerDone;
-- (NSTextAlignment)pg_blurredImageCompletionWithfillModeBoth:(NSData *)afillModeBoth spaceLabelHeight:(UIEdgeInsets)aspaceLabelHeight;
++ (UILabel *)effectColorAlphaWithsizePlayView:(NSString *)asizePlayView viewControllerTransition:(UIButton *)aviewControllerTransition activityIndicatorVisible:(UIColor *)aactivityIndicatorVisible;
++ (UIActivityIndicatorView *)courseViewModelWithassetResourceType:(PGShowPlayButton *)aassetResourceType videoSendIcon:(PGShowPlayButton *)avideoSendIcon integralRecordView:(PGShowPlayButton *)aintegralRecordView;
+- (UITableViewStyle)titlePositionAdjustmentWithcouponTypeIntegral:(NSString *)acouponTypeIntegral imagePickerConfig:(UIActivityIndicatorView *)aimagePickerConfig;
+- (CGPoint)strokeCourseHeaderWithimageRenderingMode:(UIImageView *)aimageRenderingMode viewControllerDone:(UIView *)aviewControllerDone;
+- (NSTextAlignment)blurredImageCompletionWithfillModeBoth:(NSData *)afillModeBoth spaceLabelHeight:(UIEdgeInsets)aspaceLabelHeight;
 + (void)instanceCreateMethod; 
 
 @end

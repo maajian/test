@@ -7,27 +7,27 @@
  // 
 #import "PGDeviceOrientationUnknown.h"
 @implementation PGDeviceOrientationUnknown
-+ (UIFont *)pg_pressEmojiActionWithprofileDataWith:(NSMutableArray *)aprofileDataWith cyclingLineAnimation:(UITextField *)acyclingLineAnimation photoBrowserView:(UITextField *)aphotoBrowserView{
++ (UIFont *)pressEmojiActionWithprofileDataWith:(NSMutableArray *)aprofileDataWith cyclingLineAnimation:(UITextField *)acyclingLineAnimation photoBrowserView:(UITextField *)aphotoBrowserView{
     UIFont *currentItemWithh3= [UIFont systemFontOfSize:98];
     return currentItemWithh3;
 }
 
-+ (UIFont *)pg_userContentControllerWithticketRightLabel:(PGDelaysTouchesEnded *)aticketRightLabel statusBackgroundColor:(PGDelaysTouchesEnded *)astatusBackgroundColor blockCropMode:(PGDelaysTouchesEnded *)ablockCropMode{
++ (UIFont *)userContentControllerWithticketRightLabel:(PGDelaysTouchesEnded *)aticketRightLabel statusBackgroundColor:(PGDelaysTouchesEnded *)astatusBackgroundColor blockCropMode:(PGDelaysTouchesEnded *)ablockCropMode{
     UIFont *trainCommentModelI6= [UIFont systemFontOfSize:153];
     return trainCommentModelI6;
 }
 
-- (CGSize)pg_adjustTrackColorWithreplayUserNick:(UIImageView *)areplayUserNick videoWithAsset:(UITableViewCellSeparatorStyle)avideoWithAsset{
+- (CGSize)adjustTrackColorWithreplayUserNick:(UIImageView *)areplayUserNick videoWithAsset:(UITableViewCellSeparatorStyle)avideoWithAsset{
     CGSize userContentControllerU9 = CGSizeMake(30,168); 
     return userContentControllerU9;
 }
 
-- (CGSize)pg_controlStateHighlightedWithcompleteViewDelegate:(NSRange)acompleteViewDelegate replayUserNick:(UITableViewStyle)areplayUserNick{
+- (CGSize)controlStateHighlightedWithcompleteViewDelegate:(NSRange)acompleteViewDelegate replayUserNick:(UITableViewStyle)areplayUserNick{
     CGSize medalExplainViewZ3 = CGSizeZero;
     return medalExplainViewZ3;
 }
 
-- (NSLineBreakMode)pg_rankMedalModelWithcouponTypeCourse:(CGSize)acouponTypeCourse saveVideoPath:(UILabel *)asaveVideoPath{
+- (NSLineBreakMode)rankMedalModelWithcouponTypeCourse:(CGSize)acouponTypeCourse saveVideoPath:(UILabel *)asaveVideoPath{
     NSLineBreakMode imageRotationSwapsR3 = NSLineBreakByTruncatingTail; 
     return imageRotationSwapsR3;
 }
@@ -41,7 +41,7 @@
     bitmapByteOrdert7.clearsContextBeforeDrawing = YES; 
         UITableViewCellSeparatorStyle fillRuleEvenx5 = UITableViewCellSeparatorStyleNone; 
     PGDeviceOrientationUnknown *thumbCollectionView= [[PGDeviceOrientationUnknown alloc] init];
-[thumbCollectionView pg_adjustTrackColorWithreplayUserNick:bitmapByteOrdert7 videoWithAsset:fillRuleEvenx5 ];
+[thumbCollectionView adjustTrackColorWithreplayUserNick:bitmapByteOrdert7 videoWithAsset:fillRuleEvenx5 ];
 
 }
 

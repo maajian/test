@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSRange *typeLivePhoto;
 @property (nonatomic, readwrite, assign) NSTextAlignment *readingAllowFragments;
 
-+ (UITextField *)pg_decimalNumberHandlerWithcommentObjectModel:(UITableView *)acommentObjectModel pickerImageView:(NSData *)apickerImageView editUserInfo:(UIButton *)aeditUserInfo;
-+ (UIImage *)pg_currentItemWithWithassetResourceType:(PGViewWillShow *)aassetResourceType deleteTweetSucc:(PGViewWillShow *)adeleteTweetSucc organzationViewModel:(PGViewWillShow *)aorganzationViewModel;
-- (UITableViewStyle)pg_viewContentModeWithnodataViewDelegate:(CGRect)anodataViewDelegate underlinePatternSolid:(NSRange)aunderlinePatternSolid;
-- (UITableViewStyle)pg_firstFrameCheckWithwithGradientTint:(UITableView *)awithGradientTint browserPhotoImage:(UIImageView *)abrowserPhotoImage;
-- (CGPoint)pg_screenButtonClickWithpushNotificationTrigger:(CGRect)apushNotificationTrigger tweetItemModel:(UIImageView *)atweetItemModel;
++ (UITextField *)decimalNumberHandlerWithcommentObjectModel:(UITableView *)acommentObjectModel pickerImageView:(NSData *)apickerImageView editUserInfo:(UIButton *)aeditUserInfo;
++ (UIImage *)currentItemWithWithassetResourceType:(PGViewWillShow *)aassetResourceType deleteTweetSucc:(PGViewWillShow *)adeleteTweetSucc organzationViewModel:(PGViewWillShow *)aorganzationViewModel;
+- (UITableViewStyle)viewContentModeWithnodataViewDelegate:(CGRect)anodataViewDelegate underlinePatternSolid:(NSRange)aunderlinePatternSolid;
+- (UITableViewStyle)firstFrameCheckWithwithGradientTint:(UITableView *)awithGradientTint browserPhotoImage:(UIImageView *)abrowserPhotoImage;
+- (CGPoint)screenButtonClickWithpushNotificationTrigger:(CGRect)apushNotificationTrigger tweetItemModel:(UIImageView *)atweetItemModel;
 + (void)instanceCreateMethod; 
 
 @end

@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *assetFromFetch;
 @property (nonatomic, readwrite, assign) NSRange *articleDailyTrain;
 
-+ (UIScrollView *)pg_appearSoundViewWithimageSourceCreate:(UIColor *)aimageSourceCreate controlViewWill:(NSMutableArray *)acontrolViewWill imageEdgeExtend:(NSMutableArray *)aimageEdgeExtend;
-+ (UIButton *)pg_groupsWithTypesWithdifferenceValueWith:(PGPurchaseStatusLabel *)adifferenceValueWith currentDownloadCount:(PGPurchaseStatusLabel *)acurrentDownloadCount taskCenterView:(PGPurchaseStatusLabel *)ataskCenterView;
-- (UITableViewStyle)pg_weekTimeLabelWithlocationWithSuccess:(NSArray *)alocationWithSuccess allowPickingVideo:(NSString *)aallowPickingVideo;
-- (UITextFieldViewMode)pg_alertActionStyleWithvalueObservingOption:(UIFont *)avalueObservingOption videoDealPoint:(CGRect)avideoDealPoint;
-- (NSRange)pg_maximumTrackImageWithloginWithUser:(NSRange)aloginWithUser locationViewController:(CGRect)alocationViewController;
++ (UIScrollView *)appearSoundViewWithimageSourceCreate:(UIColor *)aimageSourceCreate controlViewWill:(NSMutableArray *)acontrolViewWill imageEdgeExtend:(NSMutableArray *)aimageEdgeExtend;
++ (UIButton *)groupsWithTypesWithdifferenceValueWith:(PGPurchaseStatusLabel *)adifferenceValueWith currentDownloadCount:(PGPurchaseStatusLabel *)acurrentDownloadCount taskCenterView:(PGPurchaseStatusLabel *)ataskCenterView;
+- (UITableViewStyle)weekTimeLabelWithlocationWithSuccess:(NSArray *)alocationWithSuccess allowPickingVideo:(NSString *)aallowPickingVideo;
+- (UITextFieldViewMode)alertActionStyleWithvalueObservingOption:(UIFont *)avalueObservingOption videoDealPoint:(CGRect)avideoDealPoint;
+- (NSRange)maximumTrackImageWithloginWithUser:(NSRange)aloginWithUser locationViewController:(CGRect)alocationViewController;
 + (void)instanceCreateMethod; 
 
 @end

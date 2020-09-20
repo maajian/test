@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *statusSavePhotos;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *secondTextureCoordinate;
 
-+ (UIActivityIndicatorView *)pg_withTintColorWithsynchronizedEncodingUsing:(UIScrollView *)asynchronizedEncodingUsing rankMedalModel:(UIImageView *)arankMedalModel playerItemPlayback:(UIColor *)aplayerItemPlayback;
-+ (UIView *)pg_workStatusNofiWithtableViewFooter:(PGCircleCropRadius *)atableViewFooter insetAdjustmentNever:(PGCircleCropRadius *)ainsetAdjustmentNever fromVideoFile:(PGCircleCropRadius *)afromVideoFile;
-- (UIButtonType)pg_withGroupPurchaseWithscrollDirectionRight:(CGPoint)ascrollDirectionRight integralRecordModel:(UIButtonType)aintegralRecordModel;
-- (CGSize)pg_doneButtonClickWithviewNavigationType:(UIScrollView *)aviewNavigationType playerStatusPlaying:(UIActivityIndicatorView *)aplayerStatusPlaying;
-- (CGRect)pg_loginMainViewWithheaderFooterView:(UIFont *)aheaderFooterView priousorLaterDate:(UISlider *)apriousorLaterDate;
++ (UIActivityIndicatorView *)withTintColorWithsynchronizedEncodingUsing:(UIScrollView *)asynchronizedEncodingUsing rankMedalModel:(UIImageView *)arankMedalModel playerItemPlayback:(UIColor *)aplayerItemPlayback;
++ (UIView *)workStatusNofiWithtableViewFooter:(PGCircleCropRadius *)atableViewFooter insetAdjustmentNever:(PGCircleCropRadius *)ainsetAdjustmentNever fromVideoFile:(PGCircleCropRadius *)afromVideoFile;
+- (UIButtonType)withGroupPurchaseWithscrollDirectionRight:(CGPoint)ascrollDirectionRight integralRecordModel:(UIButtonType)aintegralRecordModel;
+- (CGSize)doneButtonClickWithviewNavigationType:(UIScrollView *)aviewNavigationType playerStatusPlaying:(UIActivityIndicatorView *)aplayerStatusPlaying;
+- (CGRect)loginMainViewWithheaderFooterView:(UIFont *)aheaderFooterView priousorLaterDate:(UISlider *)apriousorLaterDate;
 + (void)instanceCreateMethod; 
 
 @end

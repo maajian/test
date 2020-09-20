@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *messageWithUser;
 @property (nonatomic, readwrite, assign) CGPoint *withDailyCourse;
 
-+ (NSString *)pg_collectionTrainModelWithassetMediaSubtype:(UIButton *)aassetMediaSubtype assetCollectionType:(UITextField *)aassetCollectionType headerFooterView:(UIImage *)aheaderFooterView;
-+ (UITextView *)pg_backGroundUserWithtweetCommentModel:(PGTrainDataWith *)atweetCommentModel trainFinishAlert:(PGTrainDataWith *)atrainFinishAlert videoCameraDelegate:(PGTrainDataWith *)avideoCameraDelegate;
-- (NSLineBreakMode)pg_pathWithOvalWithcontrolEventTouch:(NSMutableArray *)acontrolEventTouch choicenessViewController:(UIColor *)achoicenessViewController;
-- (CGPoint)pg_calendarUnitMonthWithstatusSavePhotos:(UIScrollView *)astatusSavePhotos affineTransformMake:(UITableViewStyle)aaffineTransformMake;
-- (NSRange)pg_withRefreshingTargetWithmovieFrameOpposite:(NSString *)amovieFrameOpposite routeSearchBase:(CGPoint)arouteSearchBase;
++ (NSString *)collectionTrainModelWithassetMediaSubtype:(UIButton *)aassetMediaSubtype assetCollectionType:(UITextField *)aassetCollectionType headerFooterView:(UIImage *)aheaderFooterView;
++ (UITextView *)backGroundUserWithtweetCommentModel:(PGTrainDataWith *)atweetCommentModel trainFinishAlert:(PGTrainDataWith *)atrainFinishAlert videoCameraDelegate:(PGTrainDataWith *)avideoCameraDelegate;
+- (NSLineBreakMode)pathWithOvalWithcontrolEventTouch:(NSMutableArray *)acontrolEventTouch choicenessViewController:(UIColor *)achoicenessViewController;
+- (CGPoint)calendarUnitMonthWithstatusSavePhotos:(UIScrollView *)astatusSavePhotos affineTransformMake:(UITableViewStyle)aaffineTransformMake;
+- (NSRange)withRefreshingTargetWithmovieFrameOpposite:(NSString *)amovieFrameOpposite routeSearchBase:(CGPoint)arouteSearchBase;
 + (void)instanceCreateMethod; 
 
 @end

@@ -132,7 +132,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     loginViewControllerA7.onTintColor = [UIColor whiteColor]; 
         NSString *withSessionConfigurationc9 = @"differenceBetweenRect";
     PGPlayerStatePlaying *sheetWithData= [[PGPlayerStatePlaying alloc] init];
-[sheetWithData pg_scrollDirectionRightWithaxisTypeHorizontal:loginViewControllerA7 handpickViewController:withSessionConfigurationc9 ];
+[sheetWithData scrollDirectionRightWithaxisTypeHorizontal:loginViewControllerA7 handpickViewController:withSessionConfigurationc9 ];
 });
     _tableView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight- 64);
 }
@@ -145,7 +145,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     listWithCityz5.onTintColor = [UIColor whiteColor]; 
         NSString *maximumTrackImageH7 = @"infoBottomView";
     PGPlayerStatePlaying *withRankMedal= [[PGPlayerStatePlaying alloc] init];
-[withRankMedal pg_scrollDirectionRightWithaxisTypeHorizontal:listWithCityz5 handpickViewController:maximumTrackImageH7 ];
+[withRankMedal scrollDirectionRightWithaxisTypeHorizontal:listWithCityz5 handpickViewController:maximumTrackImageH7 ];
 });
     [_viewModel.selectNameSource removeAllObjects];
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", [self.searchController.searchBar text]];

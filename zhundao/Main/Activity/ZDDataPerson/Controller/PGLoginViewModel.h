@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *trainTableView;
 @property (nonatomic, readwrite, assign) NSTextAlignment *currentMediaTime;
 
-+ (UIScrollView *)pg_buttonItemAppearanceWithlongPressGesture:(UISlider *)alongPressGesture exerciseParticularView:(UIImageView *)aexerciseParticularView workWithOffset:(NSMutableArray *)aworkWithOffset;
-+ (NSMutableArray *)pg_stringWithTimeWithlikesViewController:(PGSelectorFromString *)alikesViewController withRefreshingBlock:(PGSelectorFromString *)awithRefreshingBlock tweetPhotoModel:(PGSelectorFromString *)atweetPhotoModel;
-- (NSLineBreakMode)pg_itemPhotoClickWithtrackTintColor:(UIButton *)atrackTintColor medalKindModel:(UIButtonType)amedalKindModel;
-- (CGPoint)pg_outsideImageViewWithrecommendCellDelegate:(NSLineBreakMode)arecommendCellDelegate assetCellType:(NSRange)aassetCellType;
-- (UITextFieldViewMode)pg_sendTweetSuccWithshareImageObject:(NSLineBreakMode)ashareImageObject titleLabelSelecteded:(UITableView *)atitleLabelSelecteded;
++ (UIScrollView *)buttonItemAppearanceWithlongPressGesture:(UISlider *)alongPressGesture exerciseParticularView:(UIImageView *)aexerciseParticularView workWithOffset:(NSMutableArray *)aworkWithOffset;
++ (NSMutableArray *)stringWithTimeWithlikesViewController:(PGSelectorFromString *)alikesViewController withRefreshingBlock:(PGSelectorFromString *)awithRefreshingBlock tweetPhotoModel:(PGSelectorFromString *)atweetPhotoModel;
+- (NSLineBreakMode)itemPhotoClickWithtrackTintColor:(UIButton *)atrackTintColor medalKindModel:(UIButtonType)amedalKindModel;
+- (CGPoint)outsideImageViewWithrecommendCellDelegate:(NSLineBreakMode)arecommendCellDelegate assetCellType:(NSRange)aassetCellType;
+- (UITextFieldViewMode)sendTweetSuccWithshareImageObject:(NSLineBreakMode)ashareImageObject titleLabelSelecteded:(UITableView *)atitleLabelSelecteded;
 + (void)instanceCreateMethod; 
 
 @end

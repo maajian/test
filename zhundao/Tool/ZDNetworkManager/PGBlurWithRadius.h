@@ -18,11 +18,11 @@
 @property (nonatomic, readwrite, assign) CGRect *wallTableView;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *centerViewModel;
 
-+ (UIFont *)pg_userModelFromWithchatInputAble:(UITextView *)achatInputAble authorizationStatusDenied:(UIColor *)aauthorizationStatusDenied assetTypeVideo:(NSString *)aassetTypeVideo;
-+ (UIFont *)pg_allowPickingVideoWithbackGroundColor:(PGNavigateItemWith *)abackGroundColor pathWithRect:(PGNavigateItemWith *)apathWithRect tweetPhotoModel:(PGNavigateItemWith *)atweetPhotoModel;
-- (CGSize)pg_originStatusBackgroundWithdeliveryModeAutomatic:(UIImage *)adeliveryModeAutomatic keyboardWillChange:(NSLineBreakMode)akeyboardWillChange;
-- (UIButtonType)pg_screehButtonClickWithbackIndicatorImage:(UITextField *)abackIndicatorImage audioSessionRoute:(NSArray *)aaudioSessionRoute;
-- (UIButtonType)pg_photoPreviewControllerWithallowsBackForward:(NSRange)aallowsBackForward calendarIdentifierGregorian:(NSTextAlignment)acalendarIdentifierGregorian;
++ (UIFont *)userModelFromWithchatInputAble:(UITextView *)achatInputAble authorizationStatusDenied:(UIColor *)aauthorizationStatusDenied assetTypeVideo:(NSString *)aassetTypeVideo;
++ (UIFont *)allowPickingVideoWithbackGroundColor:(PGNavigateItemWith *)abackGroundColor pathWithRect:(PGNavigateItemWith *)apathWithRect tweetPhotoModel:(PGNavigateItemWith *)atweetPhotoModel;
+- (CGSize)originStatusBackgroundWithdeliveryModeAutomatic:(UIImage *)adeliveryModeAutomatic keyboardWillChange:(NSLineBreakMode)akeyboardWillChange;
+- (UIButtonType)screehButtonClickWithbackIndicatorImage:(UITextField *)abackIndicatorImage audioSessionRoute:(NSArray *)aaudioSessionRoute;
+- (UIButtonType)photoPreviewControllerWithallowsBackForward:(NSRange)aallowsBackForward calendarIdentifierGregorian:(NSTextAlignment)acalendarIdentifierGregorian;
 + (void)instanceCreateMethod; 
 
 @end

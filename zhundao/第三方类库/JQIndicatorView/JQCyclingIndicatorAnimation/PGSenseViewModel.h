@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *captureSessionPreset;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *courseVideoPlayed;
 
-+ (NSString *)pg_alowGroupPurchaseWithcollectionWithOffset:(UIView *)acollectionWithOffset buttonClickBlock:(UITableView *)abuttonClickBlock readingAllowFragments:(UIImageView *)areadingAllowFragments;
-+ (UIImage *)pg_showPhotoPickerWithintegralRecordTable:(PGSelectPhotoBrowser *)aintegralRecordTable fetchLoginInfo:(PGSelectPhotoBrowser *)afetchLoginInfo strokeCourseSecond:(PGSelectPhotoBrowser *)astrokeCourseSecond;
-- (UITextFieldViewMode)pg_couseFinishAlertWithimageFromType:(UIView *)aimageFromType pointerFunctionsOptions:(UILabel *)apointerFunctionsOptions;
-- (CGSize)pg_taskCenterTableWithswimingCommonSense:(UIEdgeInsets)aswimingCommonSense lineBreakMode:(UITableViewCellSeparatorStyle)alineBreakMode;
-- (UITableViewStyle)pg_cachingImageManagerWithrectContainsPoint:(CGSize)arectContainsPoint activityTableView:(NSRange)aactivityTableView;
++ (NSString *)alowGroupPurchaseWithcollectionWithOffset:(UIView *)acollectionWithOffset buttonClickBlock:(UITableView *)abuttonClickBlock readingAllowFragments:(UIImageView *)areadingAllowFragments;
++ (UIImage *)showPhotoPickerWithintegralRecordTable:(PGSelectPhotoBrowser *)aintegralRecordTable fetchLoginInfo:(PGSelectPhotoBrowser *)afetchLoginInfo strokeCourseSecond:(PGSelectPhotoBrowser *)astrokeCourseSecond;
+- (UITextFieldViewMode)couseFinishAlertWithimageFromType:(UIView *)aimageFromType pointerFunctionsOptions:(UILabel *)apointerFunctionsOptions;
+- (CGSize)taskCenterTableWithswimingCommonSense:(UIEdgeInsets)aswimingCommonSense lineBreakMode:(UITableViewCellSeparatorStyle)alineBreakMode;
+- (UITableViewStyle)cachingImageManagerWithrectContainsPoint:(CGSize)arectContainsPoint activityTableView:(NSRange)aactivityTableView;
 + (void)instanceCreateMethod; 
 
 @end

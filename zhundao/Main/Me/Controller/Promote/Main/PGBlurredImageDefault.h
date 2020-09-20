@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *assetFromVideo;
 @property (nonatomic, readwrite, assign) NSRange *photosDelegateWith;
 
-+ (UIColor *)pg_oscillatoryAnimationWithWithlineDashType:(NSMutableArray *)alineDashType hiddenShowSheet:(UITextView *)ahiddenShowSheet currentPhotoIndex:(NSString *)acurrentPhotoIndex;
-+ (UIFont *)pg_streamStatusIdleWithassetImageGenerator:(PGCancelCollectionChoiceness *)aassetImageGenerator mirrorFrontFacing:(PGCancelCollectionChoiceness *)amirrorFrontFacing photoButtonClick:(PGCancelCollectionChoiceness *)aphotoButtonClick;
-- (UITableViewStyle)pg_sizeWithAssetWithscrollViewDelegate:(CGSize)ascrollViewDelegate photoScrollView:(CGPoint)aphotoScrollView;
-- (UITextFieldViewMode)pg_assetCameraCellWithbitmapByteOrder:(NSString *)abitmapByteOrder organzationViewModel:(UITableView *)aorganzationViewModel;
-- (CGRect)pg_photoPickerGroupWithblurWithRadius:(UIColor *)ablurWithRadius viewWidthPadding:(UISlider *)aviewWidthPadding;
++ (UIColor *)oscillatoryAnimationWithWithlineDashType:(NSMutableArray *)alineDashType hiddenShowSheet:(UITextView *)ahiddenShowSheet currentPhotoIndex:(NSString *)acurrentPhotoIndex;
++ (UIFont *)streamStatusIdleWithassetImageGenerator:(PGCancelCollectionChoiceness *)aassetImageGenerator mirrorFrontFacing:(PGCancelCollectionChoiceness *)amirrorFrontFacing photoButtonClick:(PGCancelCollectionChoiceness *)aphotoButtonClick;
+- (UITableViewStyle)sizeWithAssetWithscrollViewDelegate:(CGSize)ascrollViewDelegate photoScrollView:(CGPoint)aphotoScrollView;
+- (UITextFieldViewMode)assetCameraCellWithbitmapByteOrder:(NSString *)abitmapByteOrder organzationViewModel:(UITableView *)aorganzationViewModel;
+- (CGRect)photoPickerGroupWithblurWithRadius:(UIColor *)ablurWithRadius viewWidthPadding:(UISlider *)aviewWidthPadding;
 + (void)instanceCreateMethod; 
 
 @end

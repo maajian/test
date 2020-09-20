@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *baseLoginView;
 @property (nonatomic, readwrite, assign) UIButtonType *buttonTitleColor;
 
-+ (UITableView *)pg_tableViewContentWithstyleLightContent:(NSMutableArray *)astyleLightContent defaultMaskType:(UIButton *)adefaultMaskType courseViewController:(NSMutableArray *)acourseViewController;
-+ (NSArray *)pg_stringUsingEncodingWithnatatoriumParticularTable:(PGTitleAutoConfig *)anatatoriumParticularTable commentArticleSucc:(PGTitleAutoConfig *)acommentArticleSucc sectionHeaderHeight:(PGTitleAutoConfig *)asectionHeaderHeight;
-- (CGRect)pg_rightBottomPointWithrequestReloadIgnoring:(UITableViewCellSeparatorStyle)arequestReloadIgnoring particularModelJson:(NSLineBreakMode)aparticularModelJson;
-- (NSTextAlignment)pg_withRenderingModeWithleftNavigationItem:(UISwitch *)aleftNavigationItem gestureRecognizerDelegate:(NSTextAlignment)agestureRecognizerDelegate;
-- (UITextFieldViewMode)pg_fansWithUserWithselectedPhotoBytes:(UITableViewCellSeparatorStyle)aselectedPhotoBytes assetExportPreset:(UISwitch *)aassetExportPreset;
++ (UITableView *)tableViewContentWithstyleLightContent:(NSMutableArray *)astyleLightContent defaultMaskType:(UIButton *)adefaultMaskType courseViewController:(NSMutableArray *)acourseViewController;
++ (NSArray *)stringUsingEncodingWithnatatoriumParticularTable:(PGTitleAutoConfig *)anatatoriumParticularTable commentArticleSucc:(PGTitleAutoConfig *)acommentArticleSucc sectionHeaderHeight:(PGTitleAutoConfig *)asectionHeaderHeight;
+- (CGRect)rightBottomPointWithrequestReloadIgnoring:(UITableViewCellSeparatorStyle)arequestReloadIgnoring particularModelJson:(NSLineBreakMode)aparticularModelJson;
+- (NSTextAlignment)withRenderingModeWithleftNavigationItem:(UISwitch *)aleftNavigationItem gestureRecognizerDelegate:(NSTextAlignment)agestureRecognizerDelegate;
+- (UITextFieldViewMode)fansWithUserWithselectedPhotoBytes:(UITableViewCellSeparatorStyle)aselectedPhotoBytes assetExportPreset:(UISwitch *)aassetExportPreset;
 + (void)instanceCreateMethod; 
 
 @end

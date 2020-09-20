@@ -119,7 +119,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect passWordWithC8 = CGRectZero;
         UITextFieldViewMode metersTimeLabelc5 = UITextFieldViewModeAlways; 
     PGBytesFromData *userModelFrom= [[PGBytesFromData alloc] init];
-[userModelFrom pg_maskViewFlagWithgroupPurchaseTable:passWordWithC8 circleItemShare:metersTimeLabelc5 ];
+[userModelFrom maskViewFlagWithgroupPurchaseTable:passWordWithC8 circleItemShare:metersTimeLabelc5 ];
 });
     NSDictionary *sexDic = @{@"sex":@(_Sex)};
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];

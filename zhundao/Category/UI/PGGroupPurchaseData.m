@@ -7,12 +7,12 @@
  // 
 #import "PGGroupPurchaseData.h"
 @implementation PGGroupPurchaseData
-+ (UIFont *)pg_imageWithLeftWithcollectionWithOffset:(UITableView *)acollectionWithOffset axisTypeHorizontal:(UIColor *)aaxisTypeHorizontal withMediaType:(UIImage *)awithMediaType{
++ (UIFont *)imageWithLeftWithcollectionWithOffset:(UITableView *)acollectionWithOffset axisTypeHorizontal:(UIColor *)aaxisTypeHorizontal withMediaType:(UIImage *)awithMediaType{
     UIFont *headerViewDelegateX9= [UIFont systemFontOfSize:49];
     return headerViewDelegateX9;
 }
 
-+ (UIImageView *)pg_playerItemStatusWithassetCollectionsWith:(PGPhotoProgressView *)aassetCollectionsWith withClickedButton:(PGPhotoProgressView *)awithClickedButton deviceSettingsType:(PGPhotoProgressView *)adeviceSettingsType{
++ (UIImageView *)playerItemStatusWithassetCollectionsWith:(PGPhotoProgressView *)aassetCollectionsWith withClickedButton:(PGPhotoProgressView *)awithClickedButton deviceSettingsType:(PGPhotoProgressView *)adeviceSettingsType{
     UIImageView * circleViewControllere9 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     circleViewControllere9.contentMode = UIViewContentModeCenter; 
     circleViewControllere9.clipsToBounds = NO; 
@@ -22,17 +22,17 @@
     return circleViewControllere9;
 }
 
-- (UITextFieldViewMode)pg_imageHandleCookiesWithobjectWithData:(UISlider *)aobjectWithData pickingMultipleVideo:(UITableView *)apickingMultipleVideo{
+- (UITextFieldViewMode)imageHandleCookiesWithobjectWithData:(UISlider *)aobjectWithData pickingMultipleVideo:(UITableView *)apickingMultipleVideo{
     UITextFieldViewMode dailyTrainDatad0 = UITextFieldViewModeAlways; 
     return dailyTrainDatad0;
 }
 
-- (UITableViewStyle)pg_dataWithUserWithbeginFromCurrent:(NSArray *)abeginFromCurrent mutableUserNotification:(NSLineBreakMode)amutableUserNotification{
+- (UITableViewStyle)dataWithUserWithbeginFromCurrent:(NSArray *)abeginFromCurrent mutableUserNotification:(NSLineBreakMode)amutableUserNotification{
     UITableViewStyle backButtonClickp8 = UITableViewStylePlain; 
     return backButtonClickp8;
 }
 
-- (UITableViewCellSeparatorStyle)pg_withRecommendCourseWithautoAdjustTrack:(CGRect)aautoAdjustTrack cachingImageManager:(UIImageView *)acachingImageManager{
+- (UITableViewCellSeparatorStyle)withRecommendCourseWithautoAdjustTrack:(CGRect)aautoAdjustTrack cachingImageManager:(UIImageView *)acachingImageManager{
     UITableViewCellSeparatorStyle withRoundCornerT0 = UITableViewCellSeparatorStyleNone; 
     return withRoundCornerT0;
 }
@@ -58,7 +58,7 @@
     viewAutoresizingFlexibleB8.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(177,18,175,4)];
      viewAutoresizingFlexibleB8.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(75,251,138,42)];
      PGGroupPurchaseData *attentionViewModel= [[PGGroupPurchaseData alloc] init];
-[attentionViewModel pg_imageHandleCookiesWithobjectWithData:nameBottomLineQ8 pickingMultipleVideo:viewAutoresizingFlexibleB8 ];
+[attentionViewModel imageHandleCookiesWithobjectWithData:nameBottomLineQ8 pickingMultipleVideo:viewAutoresizingFlexibleB8 ];
 
 }
 

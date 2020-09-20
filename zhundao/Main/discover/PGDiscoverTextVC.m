@@ -22,7 +22,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode playerStateStoppedP1 = UITextFieldViewModeAlways; 
         NSTextAlignment recommendUserDatax4 = NSTextAlignmentCenter; 
     PGScrollViewDeceleration *listRequsetWith= [[PGScrollViewDeceleration alloc] init];
-[listRequsetWith pg_viewWillHiddenWithmessageWithUser:playerStateStoppedP1 infoBottomView:recommendUserDatax4 ];
+[listRequsetWith viewWillHiddenWithmessageWithUser:playerStateStoppedP1 infoBottomView:recommendUserDatax4 ];
 });
     [super viewDidLoad];
     self.title = @"多点签到使用介绍";

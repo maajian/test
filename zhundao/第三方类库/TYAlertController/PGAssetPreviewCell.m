@@ -7,12 +7,12 @@
  // 
 #import "PGAssetPreviewCell.h"
 @implementation PGAssetPreviewCell
-+ (UIImage *)pg_arrayUsingDescriptorsWithlocationViewController:(UIFont *)alocationViewController bytesFromData:(UIImage *)abytesFromData taskCenterModel:(NSString *)ataskCenterModel{
++ (UIImage *)arrayUsingDescriptorsWithlocationViewController:(UIFont *)alocationViewController bytesFromData:(UIImage *)abytesFromData taskCenterModel:(NSString *)ataskCenterModel{
     UIImage *photoHeightSelectablei5= [UIImage imageNamed:@""]; 
     return photoHeightSelectablei5;
 }
 
-+ (UIView *)pg_recentlyUsedEmojiWithactivityTableView:(PGCurrentPlayChapter *)aactivityTableView selectOriginalPhoto:(PGCurrentPlayChapter *)aselectOriginalPhoto withVisualFormat:(PGCurrentPlayChapter *)awithVisualFormat{
++ (UIView *)recentlyUsedEmojiWithactivityTableView:(PGCurrentPlayChapter *)aactivityTableView selectOriginalPhoto:(PGCurrentPlayChapter *)aselectOriginalPhoto withVisualFormat:(PGCurrentPlayChapter *)awithVisualFormat{
     UIView *playerStatusPlayingb0= [[UIView alloc] initWithFrame:CGRectZero]; 
     playerStatusPlayingb0.backgroundColor = [UIColor whiteColor]; 
     playerStatusPlayingb0.layer.cornerRadius = 
@@ -20,17 +20,17 @@
     return playerStatusPlayingb0;
 }
 
-- (UIButtonType)pg_navigationControllerOperationWithaffineTransformScale:(CGPoint)aaffineTransformScale taskNeedFinish:(NSTextAlignment)ataskNeedFinish{
+- (UIButtonType)navigationControllerOperationWithaffineTransformScale:(CGPoint)aaffineTransformScale taskNeedFinish:(NSTextAlignment)ataskNeedFinish{
     UIButtonType becomeActiveNotificationq1 = UIButtonTypeContactAdd;
     return becomeActiveNotificationq1;
 }
 
-- (UITableViewCellSeparatorStyle)pg_colorSpaceReleaseWithgestureRecognizerState:(UITableViewCellSeparatorStyle)agestureRecognizerState userContentController:(UIScrollView *)auserContentController{
+- (UITableViewCellSeparatorStyle)colorSpaceReleaseWithgestureRecognizerState:(UITableViewCellSeparatorStyle)agestureRecognizerState userContentController:(UIScrollView *)auserContentController{
     UITableViewCellSeparatorStyle alertActionStyleu7 = UITableViewCellSeparatorStyleNone; 
     return alertActionStyleu7;
 }
 
-- (CGRect)pg_imageRequestOptionsWithrecommendCellDelegate:(CGRect)arecommendCellDelegate organizeTableView:(UIView *)aorganizeTableView{
+- (CGRect)imageRequestOptionsWithrecommendCellDelegate:(CGRect)arecommendCellDelegate organizeTableView:(UIView *)aorganizeTableView{
     CGRect backgroundLocationUpdatess4 = CGRectZero;
     return backgroundLocationUpdatess4;
 }
@@ -39,7 +39,7 @@
     CGPoint frameCheckDisabledc3 = CGPointZero;
         NSTextAlignment medalWallViewh9 = NSTextAlignmentCenter; 
     PGAssetPreviewCell *playerStatePlaying= [[PGAssetPreviewCell alloc] init];
-[playerStatePlaying pg_navigationControllerOperationWithaffineTransformScale:frameCheckDisabledc3 taskNeedFinish:medalWallViewh9 ];
+[playerStatePlaying navigationControllerOperationWithaffineTransformScale:frameCheckDisabledc3 taskNeedFinish:medalWallViewh9 ];
 
 }
 

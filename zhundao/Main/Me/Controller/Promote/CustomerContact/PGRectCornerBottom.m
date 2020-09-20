@@ -7,12 +7,12 @@
  // 
 #import "PGRectCornerBottom.h"
 @implementation PGRectCornerBottom
-+ (UIImage *)pg_assetsFromFetchWithpickerGroupTable:(NSString *)apickerGroupTable controllerWithTitle:(UIActivityIndicatorView *)acontrollerWithTitle withReuseIdentifier:(UITableView *)awithReuseIdentifier{
++ (UIImage *)assetsFromFetchWithpickerGroupTable:(NSString *)apickerGroupTable controllerWithTitle:(UIActivityIndicatorView *)acontrollerWithTitle withReuseIdentifier:(UITableView *)awithReuseIdentifier{
     UIImage *hourTimeIntervalF5= [UIImage imageNamed:@""]; 
     return hourTimeIntervalF5;
 }
 
-+ (UIImageView *)pg_audioSessionPortWithwithSwimParticular:(PGNatatoriumListView *)awithSwimParticular gestureRecognizerState:(PGNatatoriumListView *)agestureRecognizerState blockCropMode:(PGNatatoriumListView *)ablockCropMode{
++ (UIImageView *)audioSessionPortWithwithSwimParticular:(PGNatatoriumListView *)awithSwimParticular gestureRecognizerState:(PGNatatoriumListView *)agestureRecognizerState blockCropMode:(PGNatatoriumListView *)ablockCropMode{
     UIImageView * bottomShareViewx1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     bottomShareViewx1.contentMode = UIViewContentModeCenter; 
     bottomShareViewx1.clipsToBounds = NO; 
@@ -22,17 +22,17 @@
     return bottomShareViewx1;
 }
 
-- (UIButtonType)pg_courseTableViewWithdirectionHorizontalMoved:(NSMutableArray *)adirectionHorizontalMoved errorWithStatus:(UIView *)aerrorWithStatus{
+- (UIButtonType)courseTableViewWithdirectionHorizontalMoved:(NSMutableArray *)adirectionHorizontalMoved errorWithStatus:(UIView *)aerrorWithStatus{
     UIButtonType assetsPickerCheckedG1 = UIButtonTypeContactAdd;
     return assetsPickerCheckedG1;
 }
 
-- (UITableViewCellSeparatorStyle)pg_footerCollectionReusableWithjavaScriptConfirm:(UIButton *)ajavaScriptConfirm selectPhotoBlock:(UITableViewCellSeparatorStyle)aselectPhotoBlock{
+- (UITableViewCellSeparatorStyle)footerCollectionReusableWithjavaScriptConfirm:(UIButton *)ajavaScriptConfirm selectPhotoBlock:(UITableViewCellSeparatorStyle)aselectPhotoBlock{
     UITableViewCellSeparatorStyle naviTitleAppearanceC3 = UITableViewCellSeparatorStyleNone; 
     return naviTitleAppearanceC3;
 }
 
-- (UITableViewCellSeparatorStyle)pg_baseLoginViewWithappearSoundView:(UITableViewCellSeparatorStyle)aappearSoundView lineFragmentOrigin:(UIColor *)alineFragmentOrigin{
+- (UITableViewCellSeparatorStyle)baseLoginViewWithappearSoundView:(UITableViewCellSeparatorStyle)aappearSoundView lineFragmentOrigin:(UIColor *)alineFragmentOrigin{
     UITableViewCellSeparatorStyle withUserCommentj2 = UITableViewCellSeparatorStyleNone; 
     return withUserCommentj2;
 }
@@ -44,7 +44,7 @@
     assetImageGeneratorz0.layer.cornerRadius = 
     assetImageGeneratorz0.layer.masksToBounds = YES; 
     PGRectCornerBottom *routeSearchDone= [[PGRectCornerBottom alloc] init];
-[routeSearchDone pg_courseTableViewWithdirectionHorizontalMoved:forgotPasswordViewG4 errorWithStatus:assetImageGeneratorz0 ];
+[routeSearchDone courseTableViewWithdirectionHorizontalMoved:forgotPasswordViewG4 errorWithStatus:assetImageGeneratorz0 ];
 
 }
 

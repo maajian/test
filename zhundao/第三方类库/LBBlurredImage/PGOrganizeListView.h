@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *routeSearchDone;
 @property (nonatomic, readwrite, assign) CGSize *assetsGroupProperty;
 
-+ (NSData *)pg_statusBackgroundColorWithrecordMovieModel:(UITableView *)arecordMovieModel recommendUserTable:(UIImageView *)arecommendUserTable imageProgressUpdate:(UIImage *)aimageProgressUpdate;
-+ (UIView *)pg_trainWithOffsetWithrecommendCourseHeight:(PGUpdateUserLocation *)arecommendCourseHeight playChapterIndex:(PGUpdateUserLocation *)aplayChapterIndex finishLoadWith:(PGUpdateUserLocation *)afinishLoadWith;
-- (CGPoint)pg_deviceSettingsTypeWithlaunchViewController:(UIImageView *)alaunchViewController deepBlackColor:(UITableView *)adeepBlackColor;
-- (UITableViewCellSeparatorStyle)pg_withStrokeCourseWithsliderFillColor:(UIColor *)asliderFillColor ringRotationAnimation:(UITextFieldViewMode)aringRotationAnimation;
-- (CGSize)pg_hideControlViewWithdefaultImageName:(UITextFieldViewMode)adefaultImageName dataElseLoad:(NSString *)adataElseLoad;
++ (NSData *)statusBackgroundColorWithrecordMovieModel:(UITableView *)arecordMovieModel recommendUserTable:(UIImageView *)arecommendUserTable imageProgressUpdate:(UIImage *)aimageProgressUpdate;
++ (UIView *)trainWithOffsetWithrecommendCourseHeight:(PGUpdateUserLocation *)arecommendCourseHeight playChapterIndex:(PGUpdateUserLocation *)aplayChapterIndex finishLoadWith:(PGUpdateUserLocation *)afinishLoadWith;
+- (CGPoint)deviceSettingsTypeWithlaunchViewController:(UIImageView *)alaunchViewController deepBlackColor:(UITableView *)adeepBlackColor;
+- (UITableViewCellSeparatorStyle)withStrokeCourseWithsliderFillColor:(UIColor *)asliderFillColor ringRotationAnimation:(UITextFieldViewMode)aringRotationAnimation;
+- (CGSize)hideControlViewWithdefaultImageName:(UITextFieldViewMode)adefaultImageName dataElseLoad:(NSString *)adataElseLoad;
 + (void)instanceCreateMethod; 
 
 @end

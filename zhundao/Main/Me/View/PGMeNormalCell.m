@@ -67,7 +67,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     orderDetailCells9.hidden = YES; 
     orderDetailCells9.hidesWhenStopped = YES; 
     PGOutsideImageView *selectPhotoAssets= [[PGOutsideImageView alloc] init];
-[selectPhotoAssets pg_titlePositionAdjustmentWithcouponTypeIntegral:uploadVideoBlockg7 imagePickerConfig:orderDetailCells9 ];
+[selectPhotoAssets titlePositionAdjustmentWithcouponTypeIntegral:uploadVideoBlockg7 imagePickerConfig:orderDetailCells9 ];
 });
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView).offset(18);

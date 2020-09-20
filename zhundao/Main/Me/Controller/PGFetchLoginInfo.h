@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *chatBindWith;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *actionSheetDelegate;
 
-+ (UIView *)pg_playerWithPathWithcourseVideoPlayer:(UILabel *)acourseVideoPlayer numberIconImage:(NSData *)anumberIconImage separatorStyleSingle:(UIImage *)aseparatorStyleSingle;
-+ (NSString *)pg_withRefreshingTargetWithcourseScrollView:(PGScreenViewController *)acourseScrollView settingTableView:(PGScreenViewController *)asettingTableView gestureRecognizerState:(PGScreenViewController *)agestureRecognizerState;
-- (CGRect)pg_imageRequestOptionsWithimageViewWith:(CGPoint)aimageViewWith withVisualFormat:(UITextFieldViewMode)awithVisualFormat;
-- (CGSize)pg_authorizationWithOptionsWithvideoWithAsset:(UIFont *)avideoWithAsset keywindowWithText:(UIActivityIndicatorView *)akeywindowWithText;
-- (UIButtonType)pg_withContainerSizeWithcourseRecommendCell:(CGPoint)acourseRecommendCell minimumTrackImage:(UISlider *)aminimumTrackImage;
++ (UIView *)playerWithPathWithcourseVideoPlayer:(UILabel *)acourseVideoPlayer numberIconImage:(NSData *)anumberIconImage separatorStyleSingle:(UIImage *)aseparatorStyleSingle;
++ (NSString *)withRefreshingTargetWithcourseScrollView:(PGScreenViewController *)acourseScrollView settingTableView:(PGScreenViewController *)asettingTableView gestureRecognizerState:(PGScreenViewController *)agestureRecognizerState;
+- (CGRect)imageRequestOptionsWithimageViewWith:(CGPoint)aimageViewWith withVisualFormat:(UITextFieldViewMode)awithVisualFormat;
+- (CGSize)authorizationWithOptionsWithvideoWithAsset:(UIFont *)avideoWithAsset keywindowWithText:(UIActivityIndicatorView *)akeywindowWithText;
+- (UIButtonType)withContainerSizeWithcourseRecommendCell:(CGPoint)acourseRecommendCell minimumTrackImage:(UISlider *)aminimumTrackImage;
 + (void)instanceCreateMethod; 
 
 @end

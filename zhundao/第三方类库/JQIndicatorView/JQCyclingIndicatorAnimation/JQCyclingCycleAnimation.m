@@ -24,7 +24,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     swimDataModelN5.hidesWhenStopped = YES; 
         UITableViewStyle recommendCellDelegatel3 = UITableViewStylePlain; 
     PGPhotoButtonBottom *handpickViewController= [[PGPhotoButtonBottom alloc] init];
-[handpickViewController pg_photoPreviewControllerWithviewWillBegin:swimDataModelN5 imageRotationMode:recommendCellDelegatel3 ];
+[handpickViewController photoPreviewControllerWithviewWillBegin:swimDataModelN5 imageRotationMode:recommendCellDelegatel3 ];
 });
     self.cycleLayer = [CAShapeLayer layer];
     

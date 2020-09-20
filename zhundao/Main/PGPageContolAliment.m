@@ -7,7 +7,7 @@
  // 
 #import "PGPageContolAliment.h"
 @implementation PGPageContolAliment
-+ (UIButton *)pg_medalDetailCellWithscriptMessageHandler:(UIButton *)ascriptMessageHandler taskCenterView:(NSArray *)ataskCenterView imageContentMode:(UIFont *)aimageContentMode{
++ (UIButton *)medalDetailCellWithscriptMessageHandler:(UIButton *)ascriptMessageHandler taskCenterView:(NSArray *)ataskCenterView imageContentMode:(UIFont *)aimageContentMode{
     UIButton *pointerFunctionsOptionsZ0= [UIButton buttonWithType:UIButtonTypeCustom]; 
     pointerFunctionsOptionsZ0.frame = CGRectZero; 
     pointerFunctionsOptionsZ0.exclusiveTouch = NO; 
@@ -17,7 +17,7 @@
     return pointerFunctionsOptionsZ0;
 }
 
-+ (UITableView *)pg_locationCollectionViewWithlistRequsetWith:(PGWithContainerSize *)alistRequsetWith settingViewModel:(PGWithContainerSize *)asettingViewModel imageEdgeExtend:(PGWithContainerSize *)aimageEdgeExtend{
++ (UITableView *)locationCollectionViewWithlistRequsetWith:(PGWithContainerSize *)alistRequsetWith settingViewModel:(PGWithContainerSize *)asettingViewModel imageEdgeExtend:(PGWithContainerSize *)aimageEdgeExtend{
     UITableView *tableFooterViewN3= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     tableFooterViewN3.frame = CGRectZero; 
     tableFooterViewN3.showsVerticalScrollIndicator = NO; 
@@ -36,17 +36,17 @@
      return tableFooterViewN3;
 }
 
-- (UIButtonType)pg_interfaceOrientationMaskWithwithDailyCourse:(UITableViewCellSeparatorStyle)awithDailyCourse routeSearchBase:(NSTextAlignment)arouteSearchBase{
+- (UIButtonType)interfaceOrientationMaskWithwithDailyCourse:(UITableViewCellSeparatorStyle)awithDailyCourse routeSearchBase:(NSTextAlignment)arouteSearchBase{
     UIButtonType contextDrawImagez0 = UIButtonTypeContactAdd;
     return contextDrawImagez0;
 }
 
-- (UIEdgeInsets)pg_imageEdgeInsetsWithselectPhotoNavigation:(UIActivityIndicatorView *)aselectPhotoNavigation videoCameraDelegate:(UIActivityIndicatorView *)avideoCameraDelegate{
+- (UIEdgeInsets)imageEdgeInsetsWithselectPhotoNavigation:(UIActivityIndicatorView *)aselectPhotoNavigation videoCameraDelegate:(UIActivityIndicatorView *)avideoCameraDelegate{
     UIEdgeInsets bundleShortVersiony2 = UIEdgeInsetsMake(163,238,141,162); 
     return bundleShortVersiony2;
 }
 
-- (UIButtonType)pg_bytesUsingEncodingWithdifferenceValueWith:(UIImageView *)adifferenceValueWith mainCommentModel:(UIImage *)amainCommentModel{
+- (UIButtonType)bytesUsingEncodingWithdifferenceValueWith:(UIImageView *)adifferenceValueWith mainCommentModel:(UIImage *)amainCommentModel{
     UIButtonType withVisualFormatq8 = UIButtonTypeContactAdd;
     return withVisualFormatq8;
 }
@@ -55,7 +55,7 @@
     UITableViewCellSeparatorStyle recordVideoErrorh9 = UITableViewCellSeparatorStyleNone; 
         NSTextAlignment orderDetailViewl7 = NSTextAlignmentCenter; 
     PGPageContolAliment *recordMovieView= [[PGPageContolAliment alloc] init];
-[recordMovieView pg_interfaceOrientationMaskWithwithDailyCourse:recordVideoErrorh9 routeSearchBase:orderDetailViewl7 ];
+[recordMovieView interfaceOrientationMaskWithwithDailyCourse:recordVideoErrorh9 routeSearchBase:orderDetailViewl7 ];
 
 }
 

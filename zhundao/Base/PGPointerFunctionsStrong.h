@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *trainFinishAlert;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *pathCreateMutable;
 
-+ (UIActivityIndicatorView *)pg_discountNodataViewWithassetsCurrentPage:(NSMutableArray *)aassetsCurrentPage suggestWithContent:(UITableView *)asuggestWithContent settingPassWord:(UISlider *)asettingPassWord;
-+ (NSArray *)pg_navigationViewControllerWithrecordMovieConfig:(PGAlertWithTitle *)arecordMovieConfig valueTrackingSlider:(PGAlertWithTitle *)avalueTrackingSlider sheetWithData:(PGAlertWithTitle *)asheetWithData;
-- (NSTextAlignment)pg_classFromStringWithimageSourceThumbnail:(NSData *)aimageSourceThumbnail trainPropertyTrain:(NSArray *)atrainPropertyTrain;
-- (UITableViewStyle)pg_resizeModeFastWithobjectsHashTable:(UITableViewStyle)aobjectsHashTable groupTableView:(UISwitch *)agroupTableView;
-- (NSTextAlignment)pg_userNotificationActivationWithtrainFinishAlert:(UIButtonType)atrainFinishAlert progressTypeNone:(NSLineBreakMode)aprogressTypeNone;
++ (UIActivityIndicatorView *)discountNodataViewWithassetsCurrentPage:(NSMutableArray *)aassetsCurrentPage suggestWithContent:(UITableView *)asuggestWithContent settingPassWord:(UISlider *)asettingPassWord;
++ (NSArray *)navigationViewControllerWithrecordMovieConfig:(PGAlertWithTitle *)arecordMovieConfig valueTrackingSlider:(PGAlertWithTitle *)avalueTrackingSlider sheetWithData:(PGAlertWithTitle *)asheetWithData;
+- (NSTextAlignment)classFromStringWithimageSourceThumbnail:(NSData *)aimageSourceThumbnail trainPropertyTrain:(NSArray *)atrainPropertyTrain;
+- (UITableViewStyle)resizeModeFastWithobjectsHashTable:(UITableViewStyle)aobjectsHashTable groupTableView:(UISwitch *)agroupTableView;
+- (NSTextAlignment)userNotificationActivationWithtrainFinishAlert:(UIButtonType)atrainFinishAlert progressTypeNone:(NSLineBreakMode)aprogressTypeNone;
 + (void)instanceCreateMethod; 
 
 @end

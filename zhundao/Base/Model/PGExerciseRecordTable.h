@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *succViewController;
 @property (nonatomic, readwrite, assign) UITableViewStyle *tweetViewModel;
 
-+ (NSArray *)pg_customAnimateTransitionWithmedalDetailView:(NSData *)amedalDetailView secondFrameCheck:(NSData *)asecondFrameCheck columnistChildView:(UIImageView *)acolumnistChildView;
-+ (UISwitch *)pg_stringWithAttachmentWithpathWithRect:(PGTrainViewController *)apathWithRect navigationControllerOperation:(PGTrainViewController *)anavigationControllerOperation assetCameraCell:(PGTrainViewController *)aassetCameraCell;
-- (CGRect)pg_assetCameraCellWithcellPlayerFather:(UIFont *)acellPlayerFather bytesFromData:(UIColor *)abytesFromData;
-- (NSRange)pg_keyboardWillShowWithtitleViewDelegate:(UIEdgeInsets)atitleViewDelegate tableViewContent:(NSTextAlignment)atableViewContent;
-- (UITableViewStyle)pg_strokeCourseModelWithbeautyParameterWith:(NSTextAlignment)abeautyParameterWith assetPropertyType:(UITextFieldViewMode)aassetPropertyType;
++ (NSArray *)customAnimateTransitionWithmedalDetailView:(NSData *)amedalDetailView secondFrameCheck:(NSData *)asecondFrameCheck columnistChildView:(UIImageView *)acolumnistChildView;
++ (UISwitch *)stringWithAttachmentWithpathWithRect:(PGTrainViewController *)apathWithRect navigationControllerOperation:(PGTrainViewController *)anavigationControllerOperation assetCameraCell:(PGTrainViewController *)aassetCameraCell;
+- (CGRect)assetCameraCellWithcellPlayerFather:(UIFont *)acellPlayerFather bytesFromData:(UIColor *)abytesFromData;
+- (NSRange)keyboardWillShowWithtitleViewDelegate:(UIEdgeInsets)atitleViewDelegate tableViewContent:(NSTextAlignment)atableViewContent;
+- (UITableViewStyle)strokeCourseModelWithbeautyParameterWith:(NSTextAlignment)abeautyParameterWith assetPropertyType:(UITextFieldViewMode)aassetPropertyType;
 + (void)instanceCreateMethod; 
 
 @end

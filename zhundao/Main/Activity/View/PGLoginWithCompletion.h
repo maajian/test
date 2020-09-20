@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *withSwimData;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *natatoriumListData;
 
-+ (NSData *)pg_decimalNumberHandlerWithdataWithUser:(UIScrollView *)adataWithUser assetFromVideo:(UIActivityIndicatorView *)aassetFromVideo couponViewModel:(NSString *)acouponViewModel;
-+ (NSMutableArray *)pg_colorSpaceReleaseWithassetsPhotoWith:(PGLoginViewModel *)aassetsPhotoWith selectPhotoNavigation:(PGLoginViewModel *)aselectPhotoNavigation pointSaturationMatrix:(PGLoginViewModel *)apointSaturationMatrix;
-- (CGPoint)pg_commentArticleSuccWithselectedPhotoBytes:(UILabel *)aselectedPhotoBytes gestureRecognizerDelegate:(NSData *)agestureRecognizerDelegate;
-- (CGPoint)pg_locationCollectionViewWithimageWithImages:(CGPoint)aimageWithImages keyboardTypeEmail:(UITextFieldViewMode)akeyboardTypeEmail;
-- (UITableViewCellSeparatorStyle)pg_imageAlphaPremultipliedWithchatInputText:(CGRect)achatInputText natatoriumParticularTable:(NSData *)anatatoriumParticularTable;
++ (NSData *)decimalNumberHandlerWithdataWithUser:(UIScrollView *)adataWithUser assetFromVideo:(UIActivityIndicatorView *)aassetFromVideo couponViewModel:(NSString *)acouponViewModel;
++ (NSMutableArray *)colorSpaceReleaseWithassetsPhotoWith:(PGLoginViewModel *)aassetsPhotoWith selectPhotoNavigation:(PGLoginViewModel *)aselectPhotoNavigation pointSaturationMatrix:(PGLoginViewModel *)apointSaturationMatrix;
+- (CGPoint)commentArticleSuccWithselectedPhotoBytes:(UILabel *)aselectedPhotoBytes gestureRecognizerDelegate:(NSData *)agestureRecognizerDelegate;
+- (CGPoint)locationCollectionViewWithimageWithImages:(CGPoint)aimageWithImages keyboardTypeEmail:(UITextFieldViewMode)akeyboardTypeEmail;
+- (UITableViewCellSeparatorStyle)imageAlphaPremultipliedWithchatInputText:(CGRect)achatInputText natatoriumParticularTable:(NSData *)anatatoriumParticularTable;
 + (void)instanceCreateMethod; 
 
 @end

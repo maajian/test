@@ -7,27 +7,27 @@
  // 
 #import "PGWithRoundCorner.h"
 @implementation PGWithRoundCorner
-+ (UIImage *)pg_styleBlackOpaqueWithtimerWithTime:(UIColor *)atimerWithTime particularDetailTable:(NSData *)aparticularDetailTable operationWithBlock:(UIView *)aoperationWithBlock{
++ (UIImage *)styleBlackOpaqueWithtimerWithTime:(UIColor *)atimerWithTime particularDetailTable:(NSData *)aparticularDetailTable operationWithBlock:(UIView *)aoperationWithBlock{
     UIImage *recommendCourseModelm1= [UIImage imageNamed:@""]; 
     return recommendCourseModelm1;
 }
 
-+ (NSArray *)pg_assetPropertyDurationWithintegralMainView:(PGSelectPhotoBrowser *)aintegralMainView natatoriumAddressTable:(PGSelectPhotoBrowser *)anatatoriumAddressTable organizeListTable:(PGSelectPhotoBrowser *)aorganizeListTable{
++ (NSArray *)assetPropertyDurationWithintegralMainView:(PGSelectPhotoBrowser *)aintegralMainView natatoriumAddressTable:(PGSelectPhotoBrowser *)anatatoriumAddressTable organizeListTable:(PGSelectPhotoBrowser *)aorganizeListTable{
     NSArray *stadiumViewModelG4= [NSArray arrayWithObject:@""];
     return stadiumViewModelG4;
 }
 
-- (NSLineBreakMode)pg_networkReachabilityStatusWithdrivingRouteSearch:(UIEdgeInsets)adrivingRouteSearch listViewModel:(UIScrollView *)alistViewModel{
+- (NSLineBreakMode)networkReachabilityStatusWithdrivingRouteSearch:(UIEdgeInsets)adrivingRouteSearch listViewModel:(UIScrollView *)alistViewModel{
     NSLineBreakMode blurWithRadiusG4 = NSLineBreakByTruncatingTail; 
     return blurWithRadiusG4;
 }
 
-- (UITextFieldViewMode)pg_effectThumbImageWithtransitRouteSearch:(UITextField *)atransitRouteSearch filterManagerInited:(UIView *)afilterManagerInited{
+- (UITextFieldViewMode)effectThumbImageWithtransitRouteSearch:(UITextField *)atransitRouteSearch filterManagerInited:(UIView *)afilterManagerInited{
     UITextFieldViewMode blurWithRadiusM4 = UITextFieldViewModeAlways; 
     return blurWithRadiusM4;
 }
 
-- (CGSize)pg_mainScreenWidthWithsliderTouchEnded:(UITextFieldViewMode)asliderTouchEnded couponsInfoData:(UITextView *)acouponsInfoData{
+- (CGSize)mainScreenWidthWithsliderTouchEnded:(UITextFieldViewMode)asliderTouchEnded couponsInfoData:(UITextView *)acouponsInfoData{
     CGSize linkViewModelT1 = CGSizeMake(128,192); 
     return linkViewModelT1;
 }
@@ -41,7 +41,7 @@
     contextStrokePathm0.maximumZoomScale = 5; 
     contextStrokePathm0.minimumZoomScale = 1; 
     PGWithRoundCorner *selectPhotoBlock= [[PGWithRoundCorner alloc] init];
-[selectPhotoBlock pg_networkReachabilityStatusWithdrivingRouteSearch:dailyCourseDetailg4 listViewModel:contextStrokePathm0 ];
+[selectPhotoBlock networkReachabilityStatusWithdrivingRouteSearch:dailyCourseDetailg4 listViewModel:contextStrokePathm0 ];
 
 }
 

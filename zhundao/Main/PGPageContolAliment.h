@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *customAnimateTransition;
 @property (nonatomic, readwrite, assign) UIButtonType *userTweetData;
 
-+ (UIButton *)pg_medalDetailCellWithscriptMessageHandler:(UIButton *)ascriptMessageHandler taskCenterView:(NSArray *)ataskCenterView imageContentMode:(UIFont *)aimageContentMode;
-+ (UITableView *)pg_locationCollectionViewWithlistRequsetWith:(PGWithContainerSize *)alistRequsetWith settingViewModel:(PGWithContainerSize *)asettingViewModel imageEdgeExtend:(PGWithContainerSize *)aimageEdgeExtend;
-- (UIButtonType)pg_interfaceOrientationMaskWithwithDailyCourse:(UITableViewCellSeparatorStyle)awithDailyCourse routeSearchBase:(NSTextAlignment)arouteSearchBase;
-- (UIEdgeInsets)pg_imageEdgeInsetsWithselectPhotoNavigation:(UIActivityIndicatorView *)aselectPhotoNavigation videoCameraDelegate:(UIActivityIndicatorView *)avideoCameraDelegate;
-- (UIButtonType)pg_bytesUsingEncodingWithdifferenceValueWith:(UIImageView *)adifferenceValueWith mainCommentModel:(UIImage *)amainCommentModel;
++ (UIButton *)medalDetailCellWithscriptMessageHandler:(UIButton *)ascriptMessageHandler taskCenterView:(NSArray *)ataskCenterView imageContentMode:(UIFont *)aimageContentMode;
++ (UITableView *)locationCollectionViewWithlistRequsetWith:(PGWithContainerSize *)alistRequsetWith settingViewModel:(PGWithContainerSize *)asettingViewModel imageEdgeExtend:(PGWithContainerSize *)aimageEdgeExtend;
+- (UIButtonType)interfaceOrientationMaskWithwithDailyCourse:(UITableViewCellSeparatorStyle)awithDailyCourse routeSearchBase:(NSTextAlignment)arouteSearchBase;
+- (UIEdgeInsets)imageEdgeInsetsWithselectPhotoNavigation:(UIActivityIndicatorView *)aselectPhotoNavigation videoCameraDelegate:(UIActivityIndicatorView *)avideoCameraDelegate;
+- (UIButtonType)bytesUsingEncodingWithdifferenceValueWith:(UIImageView *)adifferenceValueWith mainCommentModel:(UIImage *)amainCommentModel;
 + (void)instanceCreateMethod; 
 
 @end

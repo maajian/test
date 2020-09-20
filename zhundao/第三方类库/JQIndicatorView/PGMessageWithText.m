@@ -7,7 +7,7 @@
  // 
 #import "PGMessageWithText.h"
 @implementation PGMessageWithText
-+ (UILabel *)pg_particularViewModelWithintegralRecordView:(UIImageView *)aintegralRecordView contentsUserReviews:(NSArray *)acontentsUserReviews fieldShouldBegin:(UITextView *)afieldShouldBegin{
++ (UILabel *)particularViewModelWithintegralRecordView:(UIImageView *)aintegralRecordView contentsUserReviews:(NSArray *)acontentsUserReviews fieldShouldBegin:(UITextView *)afieldShouldBegin{
     UILabel *recordViewModelc6= [[UILabel alloc] initWithFrame:CGRectZero]; 
     recordViewModelc6.text = @"viewImageFinish";
     recordViewModelc6.textColor = [UIColor whiteColor]; 
@@ -17,7 +17,7 @@
     return recordViewModelc6;
 }
 
-+ (UITableView *)pg_extraLightEffectWitharticleDetailData:(PGSocialPlatformType *)aarticleDetailData choicenessViewController:(PGSocialPlatformType *)achoicenessViewController withCouponsInfo:(PGSocialPlatformType *)awithCouponsInfo{
++ (UITableView *)extraLightEffectWitharticleDetailData:(PGSocialPlatformType *)aarticleDetailData choicenessViewController:(PGSocialPlatformType *)achoicenessViewController withCouponsInfo:(PGSocialPlatformType *)awithCouponsInfo{
     UITableView *keyboardAnimationDurationb3= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     keyboardAnimationDurationb3.frame = CGRectZero; 
     keyboardAnimationDurationb3.showsVerticalScrollIndicator = NO; 
@@ -36,17 +36,17 @@
      return keyboardAnimationDurationb3;
 }
 
-- (UITextFieldViewMode)pg_textAlignmentCenterWithassetResourceType:(CGSize)aassetResourceType contentBackgroundColor:(CGPoint)acontentBackgroundColor{
+- (UITextFieldViewMode)textAlignmentCenterWithassetResourceType:(CGSize)aassetResourceType contentBackgroundColor:(CGPoint)acontentBackgroundColor{
     UITextFieldViewMode objectsUsingBlockN3 = UITextFieldViewModeAlways; 
     return objectsUsingBlockN3;
 }
 
-- (UIEdgeInsets)pg_locationManagerDelegateWithpickerClickTick:(UILabel *)apickerClickTick applicationLaunchOptions:(UIButton *)aapplicationLaunchOptions{
+- (UIEdgeInsets)locationManagerDelegateWithpickerClickTick:(UILabel *)apickerClickTick applicationLaunchOptions:(UIButton *)aapplicationLaunchOptions{
     UIEdgeInsets withSessionConfiguratione3 = UIEdgeInsetsZero;
     return withSessionConfiguratione3;
 }
 
-- (CGSize)pg_photosBytesWithWithwithCustomView:(NSRange)awithCustomView boardWithText:(UITableViewCellSeparatorStyle)aboardWithText{
+- (CGSize)photosBytesWithWithwithCustomView:(NSRange)awithCustomView boardWithText:(UITableViewCellSeparatorStyle)aboardWithText{
     CGSize tweetCommentDatan3 = CGSizeMake(151,191); 
     return tweetCommentDatan3;
 }
@@ -55,7 +55,7 @@
     CGSize photoWidthSelectablel9 = CGSizeMake(12,135); 
         CGPoint cancelContentTouchesX4 = CGPointZero;
     PGMessageWithText *requestReloadIgnoring= [[PGMessageWithText alloc] init];
-[requestReloadIgnoring pg_textAlignmentCenterWithassetResourceType:photoWidthSelectablel9 contentBackgroundColor:cancelContentTouchesX4 ];
+[requestReloadIgnoring textAlignmentCenterWithassetResourceType:photoWidthSelectablel9 contentBackgroundColor:cancelContentTouchesX4 ];
 
 }
 

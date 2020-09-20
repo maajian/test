@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *userInterfaceIdiom;
 @property (nonatomic, readwrite, assign) NSTextAlignment *profileDataWith;
 
-+ (UITextField *)pg_couponsInfoModelWithteachPreviewData:(UITableView *)ateachPreviewData exerciseRecordTable:(UIButton *)aexerciseRecordTable trainParticularModel:(UIColor *)atrainParticularModel;
-+ (UITextField *)pg_currentShortDateWithwithCalendarIdentifier:(PGWithFileName *)awithCalendarIdentifier withRenderingMode:(PGWithFileName *)awithRenderingMode blendModeOverlay:(PGWithFileName *)ablendModeOverlay;
-- (UITableViewCellSeparatorStyle)pg_imageProgressUpdateWithfinishLoadingWith:(UISwitch *)afinishLoadingWith imageAlphaBlend:(CGRect)aimageAlphaBlend;
-- (CGRect)pg_indicatorViewStyleWithedgeInsetsZero:(UIButton *)aedgeInsetsZero profileDataWith:(UIEdgeInsets)aprofileDataWith;
-- (CGSize)pg_stringFromDateWithunderlineStyleAttribute:(UISwitch *)aunderlineStyleAttribute cachingImageManager:(CGRect)acachingImageManager;
++ (UITextField *)couponsInfoModelWithteachPreviewData:(UITableView *)ateachPreviewData exerciseRecordTable:(UIButton *)aexerciseRecordTable trainParticularModel:(UIColor *)atrainParticularModel;
++ (UITextField *)currentShortDateWithwithCalendarIdentifier:(PGWithFileName *)awithCalendarIdentifier withRenderingMode:(PGWithFileName *)awithRenderingMode blendModeOverlay:(PGWithFileName *)ablendModeOverlay;
+- (UITableViewCellSeparatorStyle)imageProgressUpdateWithfinishLoadingWith:(UISwitch *)afinishLoadingWith imageAlphaBlend:(CGRect)aimageAlphaBlend;
+- (CGRect)indicatorViewStyleWithedgeInsetsZero:(UIButton *)aedgeInsetsZero profileDataWith:(UIEdgeInsets)aprofileDataWith;
+- (CGSize)stringFromDateWithunderlineStyleAttribute:(UISwitch *)aunderlineStyleAttribute cachingImageManager:(CGRect)acachingImageManager;
 + (void)instanceCreateMethod; 
 
 @end

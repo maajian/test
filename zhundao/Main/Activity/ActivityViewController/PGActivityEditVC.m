@@ -71,7 +71,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     attentionWithUserM5.clearsContextBeforeDrawing = YES; 
         NSRange codeLoginViewS6 = NSMakeRange(10,237); 
     PGDeviceOrientationLandscape *finishLoadingWith= [[PGDeviceOrientationLandscape alloc] init];
-[finishLoadingWith pg_cellReuseIdentifierWithwithReuseIdentifier:attentionWithUserM5 sliderSeekTime:codeLoginViewS6 ];
+[finishLoadingWith cellReuseIdentifierWithwithReuseIdentifier:attentionWithUserM5 sliderSeekTime:codeLoginViewS6 ];
 });
     //获取请求的url路径.
     NSString *requestString = navigationResponse.response.URL.absoluteString;

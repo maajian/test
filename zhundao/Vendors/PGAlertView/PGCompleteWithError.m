@@ -7,7 +7,7 @@
  // 
 #import "PGCompleteWithError.h"
 @implementation PGCompleteWithError
-+ (UITableView *)pg_currentPhotoIndexWithdataCollectionView:(UITextView *)adataCollectionView timeFromDuration:(UITextView *)atimeFromDuration categoryChooseView:(NSMutableArray *)acategoryChooseView{
++ (UITableView *)currentPhotoIndexWithdataCollectionView:(UITextView *)adataCollectionView timeFromDuration:(UITextView *)atimeFromDuration categoryChooseView:(NSMutableArray *)acategoryChooseView{
     UITableView *showLoginAlertf3= [[UITableView alloc] initWithFrame:CGRectMake(163,5,225,159) style: UITableViewStylePlain]; 
     showLoginAlertf3.frame = CGRectZero; 
     showLoginAlertf3.showsVerticalScrollIndicator = NO; 
@@ -26,22 +26,22 @@
      return showLoginAlertf3;
 }
 
-+ (NSArray *)pg_discountCouponViewWithuserTweetView:(PGBlockWithPreview *)auserTweetView colorSpaceRelease:(PGBlockWithPreview *)acolorSpaceRelease photoPickerGroup:(PGBlockWithPreview *)aphotoPickerGroup{
++ (NSArray *)discountCouponViewWithuserTweetView:(PGBlockWithPreview *)auserTweetView colorSpaceRelease:(PGBlockWithPreview *)acolorSpaceRelease photoPickerGroup:(PGBlockWithPreview *)aphotoPickerGroup{
     NSArray *withTrainParticularZ7= [NSArray array];
     return withTrainParticularZ7;
 }
 
-- (NSTextAlignment)pg_shouldAutoClipWithnaviTitleColor:(NSString *)anaviTitleColor withActionBlock:(UITableView *)awithActionBlock{
+- (NSTextAlignment)shouldAutoClipWithnaviTitleColor:(NSString *)anaviTitleColor withActionBlock:(UITableView *)awithActionBlock{
     NSTextAlignment captureSessionPresetF5 = NSTextAlignmentCenter; 
     return captureSessionPresetF5;
 }
 
-- (NSLineBreakMode)pg_coachDetailWithWithfetchLoginInfo:(CGPoint)afetchLoginInfo mainScreenWidth:(NSLineBreakMode)amainScreenWidth{
+- (NSLineBreakMode)coachDetailWithWithfetchLoginInfo:(CGPoint)afetchLoginInfo mainScreenWidth:(NSLineBreakMode)amainScreenWidth{
     NSLineBreakMode currentMediaTimew7 = NSLineBreakByTruncatingTail; 
     return currentMediaTimew7;
 }
 
-- (CGSize)pg_titleEdgeInsetsWithcolorSpaceRelease:(UIButton *)acolorSpaceRelease imageProcessingContext:(NSTextAlignment)aimageProcessingContext{
+- (CGSize)titleEdgeInsetsWithcolorSpaceRelease:(UIButton *)acolorSpaceRelease imageProcessingContext:(NSTextAlignment)aimageProcessingContext{
     CGSize mainActivityModelK7 = CGSizeMake(197,44); 
     return mainActivityModelK7;
 }
@@ -64,7 +64,7 @@
     searchRequestWitht3.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(148,10,131,225)];
      searchRequestWitht3.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(88,196,28,22)];
      PGCompleteWithError *cacheUserModel= [[PGCompleteWithError alloc] init];
-[cacheUserModel pg_shouldAutoClipWithnaviTitleColor:deviceOrientationUnknownN6 withActionBlock:searchRequestWitht3 ];
+[cacheUserModel shouldAutoClipWithnaviTitleColor:deviceOrientationUnknownN6 withActionBlock:searchRequestWitht3 ];
 
 }
 

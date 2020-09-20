@@ -7,7 +7,7 @@
  // 
 #import "PGSliderFillColor.h"
 @implementation PGSliderFillColor
-+ (UITextField *)pg_indicatorViewColorWithorganizeNoticeModel:(NSString *)aorganizeNoticeModel frameCheckDisabled:(UISlider *)aframeCheckDisabled pressEmojiAction:(UIColor *)apressEmojiAction{
++ (UITextField *)indicatorViewColorWithorganizeNoticeModel:(NSString *)aorganizeNoticeModel frameCheckDisabled:(UISlider *)aframeCheckDisabled pressEmojiAction:(UIColor *)apressEmojiAction{
     UITextField *backFromFrontI0= [[UITextField alloc] initWithFrame:CGRectMake(52,30,103,10)]; 
     backFromFrontI0.clearButtonMode = UITextFieldViewModeNever; 
     backFromFrontI0.textColor = [UIColor whiteColor]; 
@@ -19,22 +19,22 @@
     return backFromFrontI0;
 }
 
-+ (UIFont *)pg_routeSearchDoneWithdifferenceBetweenRect:(PGMapsWithItems *)adifferenceBetweenRect accessoryDisclosureIndicator:(PGMapsWithItems *)aaccessoryDisclosureIndicator mutableVideoComposition:(PGMapsWithItems *)amutableVideoComposition{
++ (UIFont *)routeSearchDoneWithdifferenceBetweenRect:(PGMapsWithItems *)adifferenceBetweenRect accessoryDisclosureIndicator:(PGMapsWithItems *)aaccessoryDisclosureIndicator mutableVideoComposition:(PGMapsWithItems *)amutableVideoComposition{
     UIFont *pickerGroupTablel4= [UIFont systemFontOfSize:195];
     return pickerGroupTablel4;
 }
 
-- (UIEdgeInsets)pg_coachDetailModelWithcollectionViewCell:(CGPoint)acollectionViewCell uploadVideoBlock:(UIColor *)auploadVideoBlock{
+- (UIEdgeInsets)coachDetailModelWithcollectionViewCell:(CGPoint)acollectionViewCell uploadVideoBlock:(UIColor *)auploadVideoBlock{
     UIEdgeInsets pushPhotoPickerY8 = UIEdgeInsetsZero;
     return pushPhotoPickerY8;
 }
 
-- (CGRect)pg_dailyCourseModelWithcollectionDataWith:(CGPoint)acollectionDataWith playChapterIndex:(UILabel *)aplayChapterIndex{
+- (CGRect)dailyCourseModelWithcollectionDataWith:(CGPoint)acollectionDataWith playChapterIndex:(UILabel *)aplayChapterIndex{
     CGRect messageWithUserX3 = CGRectZero;
     return messageWithUserX3;
 }
 
-- (UIButtonType)pg_withPreviewTypeWithcameraAutoSave:(UILabel *)acameraAutoSave mainCourseModel:(NSTextAlignment)amainCourseModel{
+- (UIButtonType)withPreviewTypeWithcameraAutoSave:(UILabel *)acameraAutoSave mainCourseModel:(NSTextAlignment)amainCourseModel{
     UIButtonType sendTweetViews3 = UIButtonTypeContactAdd;
     return sendTweetViews3;
 }
@@ -43,7 +43,7 @@
     CGPoint dailyTrainHeaderx6 = CGPointZero;
         UIColor *dataViewControllerG6= [UIColor redColor];
     PGSliderFillColor *firstFrontCamera= [[PGSliderFillColor alloc] init];
-[firstFrontCamera pg_coachDetailModelWithcollectionViewCell:dailyTrainHeaderx6 uploadVideoBlock:dataViewControllerG6 ];
+[firstFrontCamera coachDetailModelWithcollectionViewCell:dailyTrainHeaderx6 uploadVideoBlock:dataViewControllerG6 ];
 
 }
 

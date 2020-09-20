@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *backFromFront;
 @property (nonatomic, readwrite, assign) NSTextAlignment *orderStepView;
 
-+ (UIView *)pg_subviewWithClassWithdailyTrainView:(UISwitch *)adailyTrainView buttonTypeSystem:(UIView *)abuttonTypeSystem collectionElementKind:(UIColor *)acollectionElementKind;
-+ (UIImage *)pg_sessionTaskStateWithinfoBottomView:(PGPrimaryStudyData *)ainfoBottomView delegateMethodWith:(PGPrimaryStudyData *)adelegateMethodWith columnistViewController:(PGPrimaryStudyData *)acolumnistViewController;
-- (UITableViewCellSeparatorStyle)pg_photoWithAssetWithtextInputNotification:(NSLineBreakMode)atextInputNotification boardWithText:(UIButton *)aboardWithText;
-- (CGRect)pg_columnistChildViewWithbackButtonClick:(UILabel *)abackButtonClick pageTintColor:(UITableViewCellSeparatorStyle)apageTintColor;
-- (CGRect)pg_mapsWithItemsWithstatusShowBottom:(CGSize)astatusShowBottom infoWithStatus:(UITableViewCellSeparatorStyle)ainfoWithStatus;
++ (UIView *)subviewWithClassWithdailyTrainView:(UISwitch *)adailyTrainView buttonTypeSystem:(UIView *)abuttonTypeSystem collectionElementKind:(UIColor *)acollectionElementKind;
++ (UIImage *)sessionTaskStateWithinfoBottomView:(PGPrimaryStudyData *)ainfoBottomView delegateMethodWith:(PGPrimaryStudyData *)adelegateMethodWith columnistViewController:(PGPrimaryStudyData *)acolumnistViewController;
+- (UITableViewCellSeparatorStyle)photoWithAssetWithtextInputNotification:(NSLineBreakMode)atextInputNotification boardWithText:(UIButton *)aboardWithText;
+- (CGRect)columnistChildViewWithbackButtonClick:(UILabel *)abackButtonClick pageTintColor:(UITableViewCellSeparatorStyle)apageTintColor;
+- (CGRect)mapsWithItemsWithstatusShowBottom:(CGSize)astatusShowBottom infoWithStatus:(UITableViewCellSeparatorStyle)ainfoWithStatus;
 + (void)instanceCreateMethod; 
 
 @end

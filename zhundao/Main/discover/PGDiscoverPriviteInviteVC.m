@@ -120,7 +120,7 @@ static NSString *topCellID = @"topInviteCellID";
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
     view.backgroundColor = ZDBackgroundColor;
     if (section==1) {
-        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth - 80, 10, 60, 40) title:@"使用说明" textcolor:ZDHeaderTitleColor Target:self action:@selector(PG_useExplain) BackgroundColor:[UIColor clearColor] cornerRadius:0 masksToBounds:0];
+        UIButton *button = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth - 80, 10, 60, 40) title:@"使用说明" textcolor:ZDHeaderTitleColor Target:self action:@selector(useExplain) BackgroundColor:[UIColor clearColor] cornerRadius:0 masksToBounds:0];
         button.titleLabel.font = KweixinFont(13);
             [view addSubview:button];
         
@@ -149,7 +149,7 @@ static NSString *topCellID = @"topInviteCellID";
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self PG_deleteInvite:indexPath.row];
+        [self deleteInvite:indexPath.row];
     }
 }
 
@@ -203,7 +203,7 @@ static NSString *topCellID = @"topInviteCellID";
             _showVW = [[PGDiscoverShowView alloc]initWithImage:[_viewModel writeImage:_dataArray[indexPath.row]] name:_dataArray[indexPath.row]];
             [[UIApplication sharedApplication].keyWindow addSubview:_showVW];
             [_showVW fadeIn];
-            [self PG_inviteBlock];
+            [self inviteBlock];
             [self selectIndex:indexPath.row];
         }
     }
@@ -215,31 +215,31 @@ static NSString *topCellID = @"topInviteCellID";
     [_tableView reloadData];
 }
 
-- (void)PG_inviteBlock{
+- (void)inviteBlock{
 dispatch_async(dispatch_get_main_queue(), ^{
     NSRange withUserDatat8 = NSMakeRange(1,52); 
         UIButtonType selectPhotoAssetsw4 = UIButtonTypeContactAdd;
     PGCircleScreenData *strokeCourseHeader= [[PGCircleScreenData alloc] init];
-[strokeCourseHeader pg_showFullButtonWithwhenInteractionEnds:withUserDatat8 natatoriumParticularTable:selectPhotoAssetsw4 ];
+[strokeCourseHeader showFullButtonWithwhenInteractionEnds:withUserDatat8 natatoriumParticularTable:selectPhotoAssetsw4 ];
 });
     __weak typeof(self) weakSelf = self;
     _showVW.addInviteBlock = ^(NSString *inviteTitle) {
         if (inviteTitle.length>0) {
-            [weakSelf PG_reloadView];
+            [weakSelf reloadView];
         }
     };
 }
 
-- (void)PG_useExplain{
-    PGDiscoverUseExplainVC *PG_useExplain = [[PGDiscoverUseExplainVC alloc] init];
-    PG_useExplain.urlString = @"https://mp.weixin.qq.com/s/GZSjVE_KQuNKBOX6Yox57g";
+- (void)useExplain{
+    PGDiscoverUseExplainVC *useExplain = [[PGDiscoverUseExplainVC alloc] init];
+    useExplain.urlString = @"https://mp.weixin.qq.com/s/GZSjVE_KQuNKBOX6Yox57g";
     [self setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:PG_useExplain animated:YES];
+    [self.navigationController pushViewController:useExplain animated:YES];
 }
 
 #pragma mark---reload
 
-- (void)PG_reloadView{
+- (void)reloadView{
     NSDictionary *dic = [self.viewModel writeNameFromPlist];
     [self.dataArray removeAllObjects];
     [_dataArray addObject:@"星空模版（报名二维码）"];
@@ -249,7 +249,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 #pragma mark --- 删除邀请函
 
-- (void)PG_deleteInvite:(NSInteger)index{
+- (void)deleteInvite:(NSInteger)index{
     if (index==_index) {
         [_viewModel savaCurrentIndex:0];
         _index = 0;
@@ -282,7 +282,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSRange failLoadWithq9 = NSMakeRange(9,138); 
         UIButtonType sizeWithAssetW2 = UIButtonTypeContactAdd;
     PGCircleScreenData *baseTabbarView= [[PGCircleScreenData alloc] init];
-[baseTabbarView pg_showFullButtonWithwhenInteractionEnds:failLoadWithq9 natatoriumParticularTable:sizeWithAssetW2 ];
+[baseTabbarView showFullButtonWithwhenInteractionEnds:failLoadWithq9 natatoriumParticularTable:sizeWithAssetW2 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

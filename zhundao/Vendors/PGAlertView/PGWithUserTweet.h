@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *backgroundLocationUpdates;
 @property (nonatomic, readwrite, assign) UIButtonType *deviceOrientationPortrait;
 
-+ (UISlider *)pg_replayTypeSliderWithimageMovieWriter:(NSString *)aimageMovieWriter courseParticularView:(UIImage *)acourseParticularView textAlignmentLeft:(NSData *)atextAlignmentLeft;
-+ (UITextField *)pg_moreTrainDaraWithchildViewController:(PGPlayViewDelegate *)achildViewController moviePlayView:(PGPlayViewDelegate *)amoviePlayView guideBottomView:(PGPlayViewDelegate *)aguideBottomView;
-- (UITableViewStyle)pg_networkStatusUnknowWithimageCropManager:(UIActivityIndicatorView *)aimageCropManager circleCommentTable:(NSLineBreakMode)acircleCommentTable;
-- (UITextFieldViewMode)pg_userInfoMedalWithcouponsViewController:(CGPoint)acouponsViewController readingMutableContainers:(NSRange)areadingMutableContainers;
-- (CGSize)pg_pageContolStyleWithorderDetailView:(UISlider *)aorderDetailView applicationIconBadge:(CGPoint)aapplicationIconBadge;
++ (UISlider *)replayTypeSliderWithimageMovieWriter:(NSString *)aimageMovieWriter courseParticularView:(UIImage *)acourseParticularView textAlignmentLeft:(NSData *)atextAlignmentLeft;
++ (UITextField *)moreTrainDaraWithchildViewController:(PGPlayViewDelegate *)achildViewController moviePlayView:(PGPlayViewDelegate *)amoviePlayView guideBottomView:(PGPlayViewDelegate *)aguideBottomView;
+- (UITableViewStyle)networkStatusUnknowWithimageCropManager:(UIActivityIndicatorView *)aimageCropManager circleCommentTable:(NSLineBreakMode)acircleCommentTable;
+- (UITextFieldViewMode)userInfoMedalWithcouponsViewController:(CGPoint)acouponsViewController readingMutableContainers:(NSRange)areadingMutableContainers;
+- (CGSize)pageContolStyleWithorderDetailView:(UISlider *)aorderDetailView applicationIconBadge:(CGPoint)aapplicationIconBadge;
 + (void)instanceCreateMethod; 
 
 @end

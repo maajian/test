@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSRange *paragraphStyleAttribute;
 @property (nonatomic, readwrite, assign) NSTextAlignment *couponsInfoData;
 
-+ (UIColor *)pg_timeModelDataWithcolumnistChildView:(UIImageView *)acolumnistChildView photosDelegateWith:(UITextView *)aphotosDelegateWith assetsGroupProperty:(UITableView *)aassetsGroupProperty;
-+ (UITableView *)pg_alertViewDelegateWithswimRecordData:(PGWithFileName *)aswimRecordData trainsWithOffset:(PGWithFileName *)atrainsWithOffset nodataViewDelegate:(PGWithFileName *)anodataViewDelegate;
-- (UITableViewCellSeparatorStyle)pg_fansWithUserWithselectPhotoDelegate:(UITableViewStyle)aselectPhotoDelegate failLoadingWith:(UIImageView *)afailLoadingWith;
-- (UIEdgeInsets)pg_photoSelectableWithWithphotoPreviewController:(UIButtonType)aphotoPreviewController sessionDataTask:(NSString *)asessionDataTask;
-- (CGPoint)pg_articleContentModelWithcourseParticularModel:(UIFont *)acourseParticularModel downloadAlertView:(UIScrollView *)adownloadAlertView;
++ (UIColor *)timeModelDataWithcolumnistChildView:(UIImageView *)acolumnistChildView photosDelegateWith:(UITextView *)aphotosDelegateWith assetsGroupProperty:(UITableView *)aassetsGroupProperty;
++ (UITableView *)alertViewDelegateWithswimRecordData:(PGWithFileName *)aswimRecordData trainsWithOffset:(PGWithFileName *)atrainsWithOffset nodataViewDelegate:(PGWithFileName *)anodataViewDelegate;
+- (UITableViewCellSeparatorStyle)fansWithUserWithselectPhotoDelegate:(UITableViewStyle)aselectPhotoDelegate failLoadingWith:(UIImageView *)afailLoadingWith;
+- (UIEdgeInsets)photoSelectableWithWithphotoPreviewController:(UIButtonType)aphotoPreviewController sessionDataTask:(NSString *)asessionDataTask;
+- (CGPoint)articleContentModelWithcourseParticularModel:(UIFont *)acourseParticularModel downloadAlertView:(UIScrollView *)adownloadAlertView;
 + (void)instanceCreateMethod; 
 
 @end

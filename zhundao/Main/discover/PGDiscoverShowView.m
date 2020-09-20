@@ -363,7 +363,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle backIndicatorTransitionz6 = UITableViewStylePlain; 
         CGPoint withRankMedalE6 = CGPointZero;
     PGFirendsViewModel *downloadChapterModel= [[PGFirendsViewModel alloc] init];
-[downloadChapterModel pg_vertexAttribPointerWithrouteChangeListener:backIndicatorTransitionz6 showFullButton:withRankMedalE6 ];
+[downloadChapterModel vertexAttribPointerWithrouteChangeListener:backIndicatorTransitionz6 showFullButton:withRankMedalE6 ];
 });
     _count+=1;
     PGDiscoverShowTextView *textView = [[PGDiscoverShowTextView alloc]init];
@@ -403,7 +403,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle userModelFromt7 = UITableViewStylePlain; 
         CGPoint showingPhotoViewY5 = CGPointZero;
     PGFirendsViewModel *integralRecordTable= [[PGFirendsViewModel alloc] init];
-[integralRecordTable pg_vertexAttribPointerWithrouteChangeListener:userModelFromt7 showFullButton:showingPhotoViewY5 ];
+[integralRecordTable vertexAttribPointerWithrouteChangeListener:userModelFromt7 showFullButton:showingPhotoViewY5 ];
 });
     [self PGDiscoverShowView];
     [self removeEditView];
@@ -454,7 +454,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle groupPurchaseModeld0 = UITableViewStylePlain; 
         CGPoint timesFromSliderZ6 = CGPointZero;
     PGFirendsViewModel *withRankMedal= [[PGFirendsViewModel alloc] init];
-[withRankMedal pg_vertexAttribPointerWithrouteChangeListener:groupPurchaseModeld0 showFullButton:timesFromSliderZ6 ];
+[withRankMedal vertexAttribPointerWithrouteChangeListener:groupPurchaseModeld0 showFullButton:timesFromSliderZ6 ];
 });
     _topView.alpha=0;
 }

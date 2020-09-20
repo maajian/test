@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGSize *collectionTrainTable;
 @property (nonatomic, readwrite, assign) NSTextAlignment *courseVideoPlaying;
 
-+ (UISwitch *)pg_currentShortDateWithoscillatoryAnimationWith:(NSData *)aoscillatoryAnimationWith selectPhotoDelegate:(NSData *)aselectPhotoDelegate alertViewDelegate:(UIColor *)aalertViewDelegate;
-+ (UIFont *)pg_userInfoViewWithnumberBadgeWith:(PGMessageWithText *)anumberBadgeWith assetReferenceRestriction:(PGMessageWithText *)aassetReferenceRestriction itemPhotoClick:(PGMessageWithText *)aitemPhotoClick;
-- (NSTextAlignment)pg_chooseStadiumTableWithshowShowSheet:(UITableViewStyle)ashowShowSheet customDismissAction:(NSData *)acustomDismissAction;
-- (UITextFieldViewMode)pg_styleBlackOpaqueWithintegralMainView:(CGPoint)aintegralMainView groupTableView:(NSData *)agroupTableView;
-- (UIButtonType)pg_buttonItemStyleWithcancelLoadingRequest:(UISlider *)acancelLoadingRequest withCourseParticular:(NSString *)awithCourseParticular;
++ (UISwitch *)currentShortDateWithoscillatoryAnimationWith:(NSData *)aoscillatoryAnimationWith selectPhotoDelegate:(NSData *)aselectPhotoDelegate alertViewDelegate:(UIColor *)aalertViewDelegate;
++ (UIFont *)userInfoViewWithnumberBadgeWith:(PGMessageWithText *)anumberBadgeWith assetReferenceRestriction:(PGMessageWithText *)aassetReferenceRestriction itemPhotoClick:(PGMessageWithText *)aitemPhotoClick;
+- (NSTextAlignment)chooseStadiumTableWithshowShowSheet:(UITableViewStyle)ashowShowSheet customDismissAction:(NSData *)acustomDismissAction;
+- (UITextFieldViewMode)styleBlackOpaqueWithintegralMainView:(CGPoint)aintegralMainView groupTableView:(NSData *)agroupTableView;
+- (UIButtonType)buttonItemStyleWithcancelLoadingRequest:(UISlider *)acancelLoadingRequest withCourseParticular:(NSString *)awithCourseParticular;
 + (void)instanceCreateMethod; 
 
 @end

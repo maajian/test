@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSRange *subviewWithClass;
 @property (nonatomic, readwrite, assign) UITableViewStyle *photoScrollView;
 
-+ (UIImageView *)pg_withSelectedAssetsWithspaceLabelHeight:(UISwitch *)aspaceLabelHeight finishLaunchingWith:(UITextField *)afinishLaunchingWith maskTypeClear:(UITableView *)amaskTypeClear;
-+ (UITableView *)pg_downLoadDataWithcontrolEventTouch:(PGSelectPickerAssets *)acontrolEventTouch assetReferenceRestrictions:(PGSelectPickerAssets *)aassetReferenceRestrictions maximumFractionDigits:(PGSelectPickerAssets *)amaximumFractionDigits;
-- (CGSize)pg_whenInteractionEndsWithapplicationOpenSettings:(CGPoint)aapplicationOpenSettings levalInfoModel:(NSTextAlignment)alevalInfoModel;
-- (UITableViewCellSeparatorStyle)pg_coachDetailWithWithfinishLaunchingWith:(NSRange)afinishLaunchingWith previousPerformRequests:(UIButtonType)apreviousPerformRequests;
-- (CGPoint)pg_workStatusNofiWithwithSelectedAssets:(UIImage *)awithSelectedAssets textAlignmentCenter:(CGPoint)atextAlignmentCenter;
++ (UIImageView *)withSelectedAssetsWithspaceLabelHeight:(UISwitch *)aspaceLabelHeight finishLaunchingWith:(UITextField *)afinishLaunchingWith maskTypeClear:(UITableView *)amaskTypeClear;
++ (UITableView *)downLoadDataWithcontrolEventTouch:(PGSelectPickerAssets *)acontrolEventTouch assetReferenceRestrictions:(PGSelectPickerAssets *)aassetReferenceRestrictions maximumFractionDigits:(PGSelectPickerAssets *)amaximumFractionDigits;
+- (CGSize)whenInteractionEndsWithapplicationOpenSettings:(CGPoint)aapplicationOpenSettings levalInfoModel:(NSTextAlignment)alevalInfoModel;
+- (UITableViewCellSeparatorStyle)coachDetailWithWithfinishLaunchingWith:(NSRange)afinishLaunchingWith previousPerformRequests:(UIButtonType)apreviousPerformRequests;
+- (CGPoint)workStatusNofiWithwithSelectedAssets:(UIImage *)awithSelectedAssets textAlignmentCenter:(CGPoint)atextAlignmentCenter;
 + (void)instanceCreateMethod; 
 
 @end

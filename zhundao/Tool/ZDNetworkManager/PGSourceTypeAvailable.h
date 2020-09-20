@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *natatoriumListView;
 @property (nonatomic, readwrite, assign) CGRect *selectPhotoAssets;
 
-+ (UISlider *)pg_interfaceOrientionChangeWithcollectionOriginalTable:(UIImage *)acollectionOriginalTable generatingDeviceOrientation:(UIFont *)ageneratingDeviceOrientation textViewDelegate:(UIColor *)atextViewDelegate;
-+ (NSMutableArray *)pg_tableViewFooterWithimageGenerationError:(PGPathWithRounded *)aimageGenerationError videoViewModel:(PGPathWithRounded *)avideoViewModel circleViewController:(PGPathWithRounded *)acircleViewController;
-- (UIEdgeInsets)pg_receiveRemoteNotificationWithreusableSupplementaryView:(CGPoint)areusableSupplementaryView assetFromFetch:(UIButtonType)aassetFromFetch;
-- (CGSize)pg_imageRotationSwapsWithexerciseParticularView:(UIView *)aexerciseParticularView couponTypeCourse:(CGSize)acouponTypeCourse;
-- (UIEdgeInsets)pg_indicatorViewColorWithdailyTrainChapter:(NSTextAlignment)adailyTrainChapter recordVideoError:(CGRect)arecordVideoError;
++ (UISlider *)interfaceOrientionChangeWithcollectionOriginalTable:(UIImage *)acollectionOriginalTable generatingDeviceOrientation:(UIFont *)ageneratingDeviceOrientation textViewDelegate:(UIColor *)atextViewDelegate;
++ (NSMutableArray *)tableViewFooterWithimageGenerationError:(PGPathWithRounded *)aimageGenerationError videoViewModel:(PGPathWithRounded *)avideoViewModel circleViewController:(PGPathWithRounded *)acircleViewController;
+- (UIEdgeInsets)receiveRemoteNotificationWithreusableSupplementaryView:(CGPoint)areusableSupplementaryView assetFromFetch:(UIButtonType)aassetFromFetch;
+- (CGSize)imageRotationSwapsWithexerciseParticularView:(UIView *)aexerciseParticularView couponTypeCourse:(CGSize)acouponTypeCourse;
+- (UIEdgeInsets)indicatorViewColorWithdailyTrainChapter:(NSTextAlignment)adailyTrainChapter recordVideoError:(CGRect)arecordVideoError;
 + (void)instanceCreateMethod; 
 
 @end

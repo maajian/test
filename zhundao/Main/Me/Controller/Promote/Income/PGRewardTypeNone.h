@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *couponsInfoData;
 @property (nonatomic, readwrite, assign) UITableViewStyle *viewContentMode;
 
-+ (UISlider *)pg_sectionHeaderHeightWithauthorizationStatusDenied:(UIImage *)aauthorizationStatusDenied underlineStyleAttribute:(UIImageView *)aunderlineStyleAttribute rectIntersectsRect:(UITextField *)arectIntersectsRect;
-+ (UIView *)pg_circleParticularViewWithbuttonTitleColor:(PGFailWithError *)abuttonTitleColor medalViewModel:(PGFailWithError *)amedalViewModel actualBadgeSuper:(PGFailWithError *)aactualBadgeSuper;
-- (CGPoint)pg_nameLeftLabelWithphotoPickerImage:(CGRect)aphotoPickerImage withTintColor:(UITableViewStyle)awithTintColor;
-- (NSRange)pg_becomeActiveNotificationWithmedalDetailHeader:(UITextView *)amedalDetailHeader withLoadingRequest:(UITextField *)awithLoadingRequest;
-- (NSLineBreakMode)pg_metersTimeLabelWithchatBindWith:(NSTextAlignment)achatBindWith orderGroupModel:(UIFont *)aorderGroupModel;
++ (UISlider *)sectionHeaderHeightWithauthorizationStatusDenied:(UIImage *)aauthorizationStatusDenied underlineStyleAttribute:(UIImageView *)aunderlineStyleAttribute rectIntersectsRect:(UITextField *)arectIntersectsRect;
++ (UIView *)circleParticularViewWithbuttonTitleColor:(PGFailWithError *)abuttonTitleColor medalViewModel:(PGFailWithError *)amedalViewModel actualBadgeSuper:(PGFailWithError *)aactualBadgeSuper;
+- (CGPoint)nameLeftLabelWithphotoPickerImage:(CGRect)aphotoPickerImage withTintColor:(UITableViewStyle)awithTintColor;
+- (NSRange)becomeActiveNotificationWithmedalDetailHeader:(UITextView *)amedalDetailHeader withLoadingRequest:(UITextField *)awithLoadingRequest;
+- (NSLineBreakMode)metersTimeLabelWithchatBindWith:(NSTextAlignment)achatBindWith orderGroupModel:(UIFont *)aorderGroupModel;
 + (void)instanceCreateMethod; 
 
 @end

@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSRange *scrollViewDeceleration;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *recordMovieBottom;
 
-+ (UISwitch *)pg_swimCircleViewWithapplicationIconBadge:(UIColor *)aapplicationIconBadge attentionUserTweet:(UILabel *)aattentionUserTweet bottomPhotoView:(NSString *)abottomPhotoView;
-+ (NSArray *)pg_purchaseStatusLabelWithscreehButtonClick:(PGFailWithError *)ascreehButtonClick encodedStringWith:(PGFailWithError *)aencodedStringWith tintEffectWith:(PGFailWithError *)atintEffectWith;
-- (UITableViewCellSeparatorStyle)pg_alertControllerStyleWithnetworkStatusUnknow:(UIEdgeInsets)anetworkStatusUnknow objectWithData:(UIView *)aobjectWithData;
-- (UIButtonType)pg_insetAdjustmentBehaviorWithapplicationOpenSettings:(NSString *)aapplicationOpenSettings rankMedalBlock:(UISlider *)arankMedalBlock;
-- (CGSize)pg_moviePlayTestWithforegroundColorAttribute:(NSData *)aforegroundColorAttribute guideViewController:(CGPoint)aguideViewController;
++ (UISwitch *)swimCircleViewWithapplicationIconBadge:(UIColor *)aapplicationIconBadge attentionUserTweet:(UILabel *)aattentionUserTweet bottomPhotoView:(NSString *)abottomPhotoView;
++ (NSArray *)purchaseStatusLabelWithscreehButtonClick:(PGFailWithError *)ascreehButtonClick encodedStringWith:(PGFailWithError *)aencodedStringWith tintEffectWith:(PGFailWithError *)atintEffectWith;
+- (UITableViewCellSeparatorStyle)alertControllerStyleWithnetworkStatusUnknow:(UIEdgeInsets)anetworkStatusUnknow objectWithData:(UIView *)aobjectWithData;
+- (UIButtonType)insetAdjustmentBehaviorWithapplicationOpenSettings:(NSString *)aapplicationOpenSettings rankMedalBlock:(UISlider *)arankMedalBlock;
+- (CGSize)moviePlayTestWithforegroundColorAttribute:(NSData *)aforegroundColorAttribute guideViewController:(CGPoint)aguideViewController;
 + (void)instanceCreateMethod; 
 
 @end

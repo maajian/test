@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *articleCourseParticular;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *badgeDefaultMaximum;
 
-+ (UIView *)pg_mainMessageViewWithfinishLoadingWith:(UIImage *)afinishLoadingWith photoPickerBrowser:(UIView *)aphotoPickerBrowser bytesUsingEncoding:(UITableView *)abytesUsingEncoding;
-+ (UITextField *)pg_enableVertexAttribWithrecordVideoError:(PGPrimaryStudyData *)arecordVideoError pickerGroupTable:(PGPrimaryStudyData *)apickerGroupTable cacheDailyCourse:(PGPrimaryStudyData *)acacheDailyCourse;
-- (UITableViewStyle)pg_updateStatuMandatoryWithcolumnistChildView:(NSRange)acolumnistChildView integralRecordData:(CGPoint)aintegralRecordData;
-- (CGRect)pg_requestReturnCacheWithassetsPickerDemo:(UILabel *)aassetsPickerDemo receiveScriptMessage:(CGPoint)areceiveScriptMessage;
-- (CGSize)pg_mainCommentViewWithwithVertexShader:(NSData *)awithVertexShader cancelAutoFade:(CGRect)acancelAutoFade;
++ (UIView *)mainMessageViewWithfinishLoadingWith:(UIImage *)afinishLoadingWith photoPickerBrowser:(UIView *)aphotoPickerBrowser bytesUsingEncoding:(UITableView *)abytesUsingEncoding;
++ (UITextField *)enableVertexAttribWithrecordVideoError:(PGPrimaryStudyData *)arecordVideoError pickerGroupTable:(PGPrimaryStudyData *)apickerGroupTable cacheDailyCourse:(PGPrimaryStudyData *)acacheDailyCourse;
+- (UITableViewStyle)updateStatuMandatoryWithcolumnistChildView:(NSRange)acolumnistChildView integralRecordData:(CGPoint)aintegralRecordData;
+- (CGRect)requestReturnCacheWithassetsPickerDemo:(UILabel *)aassetsPickerDemo receiveScriptMessage:(CGPoint)areceiveScriptMessage;
+- (CGSize)mainCommentViewWithwithVertexShader:(NSData *)awithVertexShader cancelAutoFade:(CGRect)acancelAutoFade;
 + (void)instanceCreateMethod; 
 
 @end

@@ -64,7 +64,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     monthTimeIntervalL0.textAlignment = NSTextAlignmentCenter; 
         NSRange userTrackingModeq3 = NSMakeRange(6,45); 
     PGInputButtonTitle *buttonItemStyle= [[PGInputButtonTitle alloc] init];
-[buttonItemStyle pg_scrollViewKeyboardWithselectTypeUser:monthTimeIntervalL0 assetPropertyDuration:userTrackingModeq3 ];
+[buttonItemStyle scrollViewKeyboardWithselectTypeUser:monthTimeIntervalL0 assetPropertyDuration:userTrackingModeq3 ];
 });
     self.title = @"我的订单";
     [self.view addSubview:self.tableView];
@@ -87,7 +87,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     arrayUsingDescriptorsk6.textAlignment = NSTextAlignmentCenter; 
         NSRange pathCreateMutableu3 = NSMakeRange(3,149); 
     PGInputButtonTitle *assetTypeVideo= [[PGInputButtonTitle alloc] init];
-[assetTypeVideo pg_scrollViewKeyboardWithselectTypeUser:arrayUsingDescriptorsk6 assetPropertyDuration:pathCreateMutableu3 ];
+[assetTypeVideo scrollViewKeyboardWithselectTypeUser:arrayUsingDescriptorsk6 assetPropertyDuration:pathCreateMutableu3 ];
 });
     ZD_WeakSelf
     [self.viewModel getOrderSuccess:^{

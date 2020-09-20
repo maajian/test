@@ -7,12 +7,12 @@
  // 
 #import "PGWithTrainParticular.h"
 @implementation PGWithTrainParticular
-+ (NSString *)pg_frameWithIndexWithpointerFunctionsZeroing:(UIColor *)apointerFunctionsZeroing assetPropertyType:(UIColor *)aassetPropertyType layerVideoGravity:(UIButton *)alayerVideoGravity{
++ (NSString *)frameWithIndexWithpointerFunctionsZeroing:(UIColor *)apointerFunctionsZeroing assetPropertyType:(UIColor *)aassetPropertyType layerVideoGravity:(UIButton *)alayerVideoGravity{
     NSString *imageCropManagerI4 = @"assetReferenceRestriction";
     return imageCropManagerI4;
 }
 
-+ (UITableView *)pg_downloadProgressBlockWithnatatoriumParticularTable:(PGGraphicsBeginImage *)anatatoriumParticularTable answersTableView:(PGGraphicsBeginImage *)aanswersTableView recommendTableView:(PGGraphicsBeginImage *)arecommendTableView{
++ (UITableView *)downloadProgressBlockWithnatatoriumParticularTable:(PGGraphicsBeginImage *)anatatoriumParticularTable answersTableView:(PGGraphicsBeginImage *)aanswersTableView recommendTableView:(PGGraphicsBeginImage *)arecommendTableView{
     UITableView *keyboardTypeNumberZ7= [[UITableView alloc] initWithFrame:CGRectMake(81,6,107,30) style: UITableViewStylePlain]; 
     keyboardTypeNumberZ7.frame = CGRectZero; 
     keyboardTypeNumberZ7.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return keyboardTypeNumberZ7;
 }
 
-- (UITableViewCellSeparatorStyle)pg_bottomChartViewWithcommonToolVedio:(NSRange)acommonToolVedio dailyTrainChapter:(CGPoint)adailyTrainChapter{
+- (UITableViewCellSeparatorStyle)bottomChartViewWithcommonToolVedio:(NSRange)acommonToolVedio dailyTrainChapter:(CGPoint)adailyTrainChapter{
     UITableViewCellSeparatorStyle titleWithStatusx9 = UITableViewCellSeparatorStyleNone; 
     return titleWithStatusx9;
 }
 
-- (CGRect)pg_integralStoreViewWithcouponsScrollTable:(CGPoint)acouponsScrollTable receiveLocalNotification:(UITableViewCellSeparatorStyle)areceiveLocalNotification{
+- (CGRect)integralStoreViewWithcouponsScrollTable:(CGPoint)acouponsScrollTable receiveLocalNotification:(UITableViewCellSeparatorStyle)areceiveLocalNotification{
     CGRect interfaceOrientationMaskP1 = CGRectZero;
     return interfaceOrientationMaskP1;
 }
 
-- (CGPoint)pg_discoveryViewModelWithplayerWithPath:(UIScrollView *)aplayerWithPath integralRecordData:(NSData *)aintegralRecordData{
+- (CGPoint)discoveryViewModelWithplayerWithPath:(UIScrollView *)aplayerWithPath integralRecordData:(NSData *)aintegralRecordData{
     CGPoint lineHeadIndentH7 = CGPointZero;
     return lineHeadIndentH7;
 }
@@ -50,7 +50,7 @@
     NSRange locationHeaderViewf3 = NSMakeRange(1,148); 
         CGPoint videoRequestTaskS1 = CGPointZero;
     PGWithTrainParticular *swimCircleService= [[PGWithTrainParticular alloc] init];
-[swimCircleService pg_bottomChartViewWithcommonToolVedio:locationHeaderViewf3 dailyTrainChapter:videoRequestTaskS1 ];
+[swimCircleService bottomChartViewWithcommonToolVedio:locationHeaderViewf3 dailyTrainChapter:videoRequestTaskS1 ];
 
 }
 

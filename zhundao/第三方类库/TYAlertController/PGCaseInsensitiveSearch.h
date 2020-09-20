@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) CGSize *recordMovieView;
 @property (nonatomic, readwrite, assign) UITableViewStyle *gestureRecognizerDelegate;
 
-+ (UITableView *)pg_workStatusNofiWithsliderSeekTime:(UITextView *)asliderSeekTime stadiumViewModel:(UIColor *)astadiumViewModel mainScreenWidth:(UIFont *)amainScreenWidth;
-+ (UITableView *)pg_shareViewDelegateWithlayerWithPlayer:(PGIntervalSinceDate *)alayerWithPlayer numberBadgeWith:(PGIntervalSinceDate *)anumberBadgeWith deviceSettingsCamera:(PGIntervalSinceDate *)adeviceSettingsCamera;
-- (CGRect)pg_reusablePhotoViewWithshrinkRightBottom:(NSMutableArray *)ashrinkRightBottom levalInfoModel:(UIImage *)alevalInfoModel;
-- (UIButtonType)pg_taskCenterViewWithspringWithDamping:(CGSize)aspringWithDamping sessionDataTask:(UITableViewStyle)asessionDataTask;
-- (UIEdgeInsets)pg_enableVertexAttribWithfromVideoView:(NSArray *)afromVideoView likeTweetSucc:(UIImageView *)alikeTweetSucc;
++ (UITableView *)workStatusNofiWithsliderSeekTime:(UITextView *)asliderSeekTime stadiumViewModel:(UIColor *)astadiumViewModel mainScreenWidth:(UIFont *)amainScreenWidth;
++ (UITableView *)shareViewDelegateWithlayerWithPlayer:(PGIntervalSinceDate *)alayerWithPlayer numberBadgeWith:(PGIntervalSinceDate *)anumberBadgeWith deviceSettingsCamera:(PGIntervalSinceDate *)adeviceSettingsCamera;
+- (CGRect)reusablePhotoViewWithshrinkRightBottom:(NSMutableArray *)ashrinkRightBottom levalInfoModel:(UIImage *)alevalInfoModel;
+- (UIButtonType)taskCenterViewWithspringWithDamping:(CGSize)aspringWithDamping sessionDataTask:(UITableViewStyle)asessionDataTask;
+- (UIEdgeInsets)enableVertexAttribWithfromVideoView:(NSArray *)afromVideoView likeTweetSucc:(UIImageView *)alikeTweetSucc;
 + (void)instanceCreateMethod; 
 
 @end

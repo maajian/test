@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *originalPhotoData;
 @property (nonatomic, readwrite, assign) NSTextAlignment *withVertexShader;
 
-+ (UIFont *)pg_dailyTrainClassWithorganzationViewModel:(NSArray *)aorganzationViewModel itemTextColor:(UISlider *)aitemTextColor swimPlayStatus:(UITextField *)aswimPlayStatus;
-+ (UITextField *)pg_trainParticularStadiumWithlightBlackColor:(PGFailWithError *)alightBlackColor controlEventValue:(PGFailWithError *)acontrolEventValue circleScreenView:(PGFailWithError *)acircleScreenView;
-- (CGRect)pg_photosBytesWithWithbadgeDefaultFont:(UIImage *)abadgeDefaultFont timeRangeValue:(UITableViewStyle)atimeRangeValue;
-- (UITableViewStyle)pg_scrollViewDelegateWithviewContentSize:(UIButton *)aviewContentSize nameBottomLine:(NSTextAlignment)anameBottomLine;
-- (NSRange)pg_withStrokeCourseWithuserTweetData:(UIColor *)auserTweetData updateStatuMandatory:(NSTextAlignment)aupdateStatuMandatory;
++ (UIFont *)dailyTrainClassWithorganzationViewModel:(NSArray *)aorganzationViewModel itemTextColor:(UISlider *)aitemTextColor swimPlayStatus:(UITextField *)aswimPlayStatus;
++ (UITextField *)trainParticularStadiumWithlightBlackColor:(PGFailWithError *)alightBlackColor controlEventValue:(PGFailWithError *)acontrolEventValue circleScreenView:(PGFailWithError *)acircleScreenView;
+- (CGRect)photosBytesWithWithbadgeDefaultFont:(UIImage *)abadgeDefaultFont timeRangeValue:(UITableViewStyle)atimeRangeValue;
+- (UITableViewStyle)scrollViewDelegateWithviewContentSize:(UIButton *)aviewContentSize nameBottomLine:(NSTextAlignment)anameBottomLine;
+- (NSRange)withStrokeCourseWithuserTweetData:(UIColor *)auserTweetData updateStatuMandatory:(NSTextAlignment)aupdateStatuMandatory;
 + (void)instanceCreateMethod; 
 
 @end

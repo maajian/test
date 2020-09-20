@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *animatedImageView;
 @property (nonatomic, readwrite, assign) UIButtonType *noticeTypeLogin;
 
-+ (UIScrollView *)pg_textAlignmentCenterWithtableFooterView:(UIImageView *)atableFooterView transitRouteSearch:(NSData *)atransitRouteSearch deleteTweetSucc:(NSString *)adeleteTweetSucc;
-+ (UITableView *)pg_withCourseSecondWithswimCircleItem:(PGHaveUserEnabel *)aswimCircleItem pickerColletionView:(PGHaveUserEnabel *)apickerColletionView trackingWithTouch:(PGHaveUserEnabel *)atrackingWithTouch;
-- (CGPoint)pg_delegateMethodWithWithclippingWithView:(UIButtonType)aclippingWithView photoPickerCollection:(UIEdgeInsets)aphotoPickerCollection;
-- (NSRange)pg_commentWithOrderWithmetersTimeLabel:(UIButtonType)ametersTimeLabel ticketLeftLabel:(UITableViewStyle)aticketLeftLabel;
-- (UIButtonType)pg_gradeViewControllerWithresizeModeFast:(UITextFieldViewMode)aresizeModeFast pointerFunctionsZeroing:(UITableViewStyle)apointerFunctionsZeroing;
++ (UIScrollView *)textAlignmentCenterWithtableFooterView:(UIImageView *)atableFooterView transitRouteSearch:(NSData *)atransitRouteSearch deleteTweetSucc:(NSString *)adeleteTweetSucc;
++ (UITableView *)withCourseSecondWithswimCircleItem:(PGHaveUserEnabel *)aswimCircleItem pickerColletionView:(PGHaveUserEnabel *)apickerColletionView trackingWithTouch:(PGHaveUserEnabel *)atrackingWithTouch;
+- (CGPoint)delegateMethodWithWithclippingWithView:(UIButtonType)aclippingWithView photoPickerCollection:(UIEdgeInsets)aphotoPickerCollection;
+- (NSRange)commentWithOrderWithmetersTimeLabel:(UIButtonType)ametersTimeLabel ticketLeftLabel:(UITableViewStyle)aticketLeftLabel;
+- (UIButtonType)gradeViewControllerWithresizeModeFast:(UITextFieldViewMode)aresizeModeFast pointerFunctionsZeroing:(UITableViewStyle)apointerFunctionsZeroing;
 + (void)instanceCreateMethod; 
 
 @end

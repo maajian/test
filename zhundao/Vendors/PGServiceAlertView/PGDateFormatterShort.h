@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *lineBreakMode;
 @property (nonatomic, readwrite, assign) UIButtonType *blockCropMode;
 
-+ (NSMutableArray *)pg_assetResourceLoaderWithgradeCollectionView:(UIView *)agradeCollectionView affineTransformRotate:(NSString *)aaffineTransformRotate viewArrowLength:(UIColor *)aviewArrowLength;
-+ (UITextField *)pg_swimFriendsViewWithbuttonSystemItem:(PGAssetsGroupSaved *)abuttonSystemItem moviePlayView:(PGAssetsGroupSaved *)amoviePlayView lightBlackColor:(PGAssetsGroupSaved *)alightBlackColor;
-- (UIEdgeInsets)pg_withTintColorWithchoicenessTableView:(NSString *)achoicenessTableView blockCropMode:(CGSize)ablockCropMode;
-- (CGSize)pg_pointerFunctionsZeroingWithtrainViewModel:(CGRect)atrainViewModel applicationOpenSettings:(NSLineBreakMode)aapplicationOpenSettings;
-- (NSRange)pg_columnistViewControllerWitharticleOriginalView:(UIImageView *)aarticleOriginalView locationWithSuccess:(UITableViewStyle)alocationWithSuccess;
++ (NSMutableArray *)assetResourceLoaderWithgradeCollectionView:(UIView *)agradeCollectionView affineTransformRotate:(NSString *)aaffineTransformRotate viewArrowLength:(UIColor *)aviewArrowLength;
++ (UITextField *)swimFriendsViewWithbuttonSystemItem:(PGAssetsGroupSaved *)abuttonSystemItem moviePlayView:(PGAssetsGroupSaved *)amoviePlayView lightBlackColor:(PGAssetsGroupSaved *)alightBlackColor;
+- (UIEdgeInsets)withTintColorWithchoicenessTableView:(NSString *)achoicenessTableView blockCropMode:(CGSize)ablockCropMode;
+- (CGSize)pointerFunctionsZeroingWithtrainViewModel:(CGRect)atrainViewModel applicationOpenSettings:(NSLineBreakMode)aapplicationOpenSettings;
+- (NSRange)columnistViewControllerWitharticleOriginalView:(UIImageView *)aarticleOriginalView locationWithSuccess:(UITableViewStyle)alocationWithSuccess;
 + (void)instanceCreateMethod; 
 
 @end

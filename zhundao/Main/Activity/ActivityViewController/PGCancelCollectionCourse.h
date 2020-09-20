@@ -27,11 +27,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *imageContainerView;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *assetCreationRequest;
 
-+ (UIButton *)pg_addingPercentEscapesWithorderDetailCell:(UITextView *)aorderDetailCell assetsPickerChecked:(NSString *)aassetsPickerChecked pressEmojiAction:(UIImageView *)apressEmojiAction;
-+ (NSData *)pg_imageCropManagerWithtweetCommentModel:(PGMedalDetailModel *)atweetCommentModel stateAlertView:(PGMedalDetailModel *)astateAlertView fromVideoFile:(PGMedalDetailModel *)afromVideoFile;
-- (NSRange)pg_contentInsetAdjustmentWithregionDefaultHandler:(CGSize)aregionDefaultHandler locationWithSuccess:(UIScrollView *)alocationWithSuccess;
-- (UIEdgeInsets)pg_tweetPhotoModelWithrectEdgeNone:(NSLineBreakMode)arectEdgeNone reusableSupplementaryView:(UITableView *)areusableSupplementaryView;
-- (UITextFieldViewMode)pg_baseLoginViewWithfrontFromBack:(CGPoint)afrontFromBack sourceTypeSaved:(NSRange)asourceTypeSaved;
++ (UIButton *)addingPercentEscapesWithorderDetailCell:(UITextView *)aorderDetailCell assetsPickerChecked:(NSString *)aassetsPickerChecked pressEmojiAction:(UIImageView *)apressEmojiAction;
++ (NSData *)imageCropManagerWithtweetCommentModel:(PGMedalDetailModel *)atweetCommentModel stateAlertView:(PGMedalDetailModel *)astateAlertView fromVideoFile:(PGMedalDetailModel *)afromVideoFile;
+- (NSRange)contentInsetAdjustmentWithregionDefaultHandler:(CGSize)aregionDefaultHandler locationWithSuccess:(UIScrollView *)alocationWithSuccess;
+- (UIEdgeInsets)tweetPhotoModelWithrectEdgeNone:(NSLineBreakMode)arectEdgeNone reusableSupplementaryView:(UITableView *)areusableSupplementaryView;
+- (UITextFieldViewMode)baseLoginViewWithfrontFromBack:(CGPoint)afrontFromBack sourceTypeSaved:(NSRange)asourceTypeSaved;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,7 +7,7 @@
  // 
 #import "PGTrainParticularStadium.h"
 @implementation PGTrainParticularStadium
-+ (UIImageView *)pg_withSelectedAssetsWithspaceLabelHeight:(UISwitch *)aspaceLabelHeight finishLaunchingWith:(UITextField *)afinishLaunchingWith maskTypeClear:(UITableView *)amaskTypeClear{
++ (UIImageView *)withSelectedAssetsWithspaceLabelHeight:(UISwitch *)aspaceLabelHeight finishLaunchingWith:(UITextField *)afinishLaunchingWith maskTypeClear:(UITableView *)amaskTypeClear{
     UIImageView * willEnterForegroundX1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     willEnterForegroundX1.contentMode = UIViewContentModeCenter; 
     willEnterForegroundX1.clipsToBounds = NO; 
@@ -17,7 +17,7 @@
     return willEnterForegroundX1;
 }
 
-+ (UITableView *)pg_downLoadDataWithcontrolEventTouch:(PGSelectPickerAssets *)acontrolEventTouch assetReferenceRestrictions:(PGSelectPickerAssets *)aassetReferenceRestrictions maximumFractionDigits:(PGSelectPickerAssets *)amaximumFractionDigits{
++ (UITableView *)downLoadDataWithcontrolEventTouch:(PGSelectPickerAssets *)acontrolEventTouch assetReferenceRestrictions:(PGSelectPickerAssets *)aassetReferenceRestrictions maximumFractionDigits:(PGSelectPickerAssets *)amaximumFractionDigits{
     UITableView *followWithHeadings3= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     followWithHeadings3.frame = CGRectZero; 
     followWithHeadings3.showsVerticalScrollIndicator = NO; 
@@ -36,17 +36,17 @@
      return followWithHeadings3;
 }
 
-- (CGSize)pg_whenInteractionEndsWithapplicationOpenSettings:(CGPoint)aapplicationOpenSettings levalInfoModel:(NSTextAlignment)alevalInfoModel{
+- (CGSize)whenInteractionEndsWithapplicationOpenSettings:(CGPoint)aapplicationOpenSettings levalInfoModel:(NSTextAlignment)alevalInfoModel{
     CGSize withPhoneNumberd6 = CGSizeZero;
     return withPhoneNumberd6;
 }
 
-- (UITableViewCellSeparatorStyle)pg_coachDetailWithWithfinishLaunchingWith:(NSRange)afinishLaunchingWith previousPerformRequests:(UIButtonType)apreviousPerformRequests{
+- (UITableViewCellSeparatorStyle)coachDetailWithWithfinishLaunchingWith:(NSRange)afinishLaunchingWith previousPerformRequests:(UIButtonType)apreviousPerformRequests{
     UITableViewCellSeparatorStyle swimmingCommonSenseg1 = UITableViewCellSeparatorStyleNone; 
     return swimmingCommonSenseg1;
 }
 
-- (CGPoint)pg_workStatusNofiWithwithSelectedAssets:(UIImage *)awithSelectedAssets textAlignmentCenter:(CGPoint)atextAlignmentCenter{
+- (CGPoint)workStatusNofiWithwithSelectedAssets:(UIImage *)awithSelectedAssets textAlignmentCenter:(CGPoint)atextAlignmentCenter{
     CGPoint weekTimeIntervalW5 = CGPointZero;
     return weekTimeIntervalW5;
 }
@@ -55,7 +55,7 @@
     CGPoint smartAlbumRecentlyK4 = CGPointMake(1,74); 
         NSTextAlignment collectionViewCellx6 = NSTextAlignmentCenter; 
     PGTrainParticularStadium *alertControllerStyle= [[PGTrainParticularStadium alloc] init];
-[alertControllerStyle pg_whenInteractionEndsWithapplicationOpenSettings:smartAlbumRecentlyK4 levalInfoModel:collectionViewCellx6 ];
+[alertControllerStyle whenInteractionEndsWithapplicationOpenSettings:smartAlbumRecentlyK4 levalInfoModel:collectionViewCellx6 ];
 
 }
 

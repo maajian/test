@@ -7,12 +7,12 @@
  // 
 #import "PGManagerWithDelegate.h"
 @implementation PGManagerWithDelegate
-+ (UIColor *)pg_rightBottomPointWithsizePlayView:(UISwitch *)asizePlayView withVisualFormat:(NSMutableArray *)awithVisualFormat styleWhiteLarge:(UILabel *)astyleWhiteLarge{
++ (UIColor *)rightBottomPointWithsizePlayView:(UISwitch *)asizePlayView withVisualFormat:(NSMutableArray *)awithVisualFormat styleWhiteLarge:(UILabel *)astyleWhiteLarge{
     UIColor *stringUsingEncodingf0= [UIColor redColor];
     return stringUsingEncodingf0;
 }
 
-+ (UITableView *)pg_trainGuideTableWithworkStatusNofi:(PGMutableTrackWith *)aworkStatusNofi userInfoMedal:(PGMutableTrackWith *)auserInfoMedal exerciseHistoryData:(PGMutableTrackWith *)aexerciseHistoryData{
++ (UITableView *)trainGuideTableWithworkStatusNofi:(PGMutableTrackWith *)aworkStatusNofi userInfoMedal:(PGMutableTrackWith *)auserInfoMedal exerciseHistoryData:(PGMutableTrackWith *)aexerciseHistoryData{
     UITableView *swipeGestureRecognizerm4= [[UITableView alloc] initWithFrame:CGRectMake(159,95,12,222) style: UITableViewStylePlain]; 
     swipeGestureRecognizerm4.frame = CGRectZero; 
     swipeGestureRecognizerm4.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return swipeGestureRecognizerm4;
 }
 
-- (UITableViewCellSeparatorStyle)pg_scriptMessageHandlerWithuserContentController:(UIEdgeInsets)auserContentController assetsUsingBlock:(UITableViewStyle)aassetsUsingBlock{
+- (UITableViewCellSeparatorStyle)scriptMessageHandlerWithuserContentController:(UIEdgeInsets)auserContentController assetsUsingBlock:(UITableViewStyle)aassetsUsingBlock{
     UITableViewCellSeparatorStyle videoPreviewPlayT9 = UITableViewCellSeparatorStyleNone; 
     return videoPreviewPlayT9;
 }
 
-- (UIButtonType)pg_assetsFromFetchWithencodedStringWith:(UITextView *)aencodedStringWith photoViewDelegate:(UITextFieldViewMode)aphotoViewDelegate{
+- (UIButtonType)assetsFromFetchWithencodedStringWith:(UITextView *)aencodedStringWith photoViewDelegate:(UITextFieldViewMode)aphotoViewDelegate{
     UIButtonType viewControllerTransitionv1 = UIButtonTypeContactAdd;
     return viewControllerTransitionv1;
 }
 
-- (CGRect)pg_weekTimeIntervalWithlistRequsetWith:(UIImage *)alistRequsetWith videoImageExtractor:(CGSize)avideoImageExtractor{
+- (CGRect)weekTimeIntervalWithlistRequsetWith:(UIImage *)alistRequsetWith videoImageExtractor:(CGSize)avideoImageExtractor{
     CGRect integralRecordModelH6 = CGRectMake(80,70,171,217); 
     return integralRecordModelH6;
 }
@@ -50,7 +50,7 @@
     UIEdgeInsets userCommentModell4 = UIEdgeInsetsZero;
         UITableViewStyle rightBottomPointl6 = UITableViewStylePlain; 
     PGManagerWithDelegate *numberFormatterDecimal= [[PGManagerWithDelegate alloc] init];
-[numberFormatterDecimal pg_scriptMessageHandlerWithuserContentController:userCommentModell4 assetsUsingBlock:rightBottomPointl6 ];
+[numberFormatterDecimal scriptMessageHandlerWithuserContentController:userCommentModell4 assetsUsingBlock:rightBottomPointl6 ];
 
 }
 

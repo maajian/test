@@ -37,19 +37,19 @@
 - (instancetype)initWithFrame:(CGRect)frame phoneStr:(NSString *)phoneStr{
     if (self = [super initWithFrame:frame]) {
         _phoneStr = phoneStr;
-        [self PG_setupUI];
-        [self PG_updateFrame];
+        [self setupUI];
+        [self updateFrame];
     }
     return self;
 }
 
 #pragma mark --- UI创建
-- (void)PG_setupUI {
+- (void)setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle sendButtonStatusb0 = UITableViewStylePlain; 
         CGPoint arrayUsingComparatorG7 = CGPointZero;
     PGFirendsViewModel *strokeCourseData= [[PGFirendsViewModel alloc] init];
-[strokeCourseData pg_vertexAttribPointerWithrouteChangeListener:sendButtonStatusb0 showFullButton:arrayUsingComparatorG7 ];
+[strokeCourseData vertexAttribPointerWithrouteChangeListener:sendButtonStatusb0 showFullButton:arrayUsingComparatorG7 ];
 });
      // 关闭按钮
     _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -112,7 +112,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- 自动布局
-- (void)PG_updateFrame {
+- (void)updateFrame {
      // 返回按钮
     [_closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(10);
@@ -194,11 +194,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
 /** 下一步 */
 - (void)nextStep {
     if (self.nameTextField.text.length == 0) {
-        [self PG_showAlert:@"姓名不能为空"];
+        [self showAlert:@"姓名不能为空"];
     } else if (self.nameTextField.text.length > 15) {
-        [self PG_showAlert:@"姓名不得超出15个字符"];
+        [self showAlert:@"姓名不得超出15个字符"];
     } else if (self.passWordTextField.text.length < 6) {
-        [self PG_showAlert:@"密码至少6个字符"];
+        [self showAlert:@"密码至少6个字符"];
     } else {
         if ([self.infoEditViewDelegate respondsToSelector:@selector(finishEditWithName:passWord:)]) {
             [self.infoEditViewDelegate finishEditWithName:_nameTextField.text passWord:_passWordTextField.text];
@@ -207,7 +207,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark --- action
-- (void)PG_showAlert:(NSString *)str {
+- (void)showAlert:(NSString *)str {
     PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:str];
     [label labelAnimationWithViewlong:self];
 }

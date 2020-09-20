@@ -125,7 +125,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint sizePlayViewD5 = CGPointZero;
         UIButtonType withRankMedalG8 = UIButtonTypeContactAdd;
     PGSourceTypeAvailable *withReuseIdentifier= [[PGSourceTypeAvailable alloc] init];
-[withReuseIdentifier pg_receiveRemoteNotificationWithreusableSupplementaryView:sizePlayViewD5 assetFromFetch:withRankMedalG8 ];
+[withReuseIdentifier receiveRemoteNotificationWithreusableSupplementaryView:sizePlayViewD5 assetFromFetch:withRankMedalG8 ];
 });
     [UIView animateWithDuration:0.25 animations:^{
         self.alpha = 0.01;
@@ -141,7 +141,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint childViewModelX5 = CGPointZero;
         UIButtonType remoteNotificationsWithT4 = UIButtonTypeContactAdd;
     PGSourceTypeAvailable *classFromString= [[PGSourceTypeAvailable alloc] init];
-[classFromString pg_receiveRemoteNotificationWithreusableSupplementaryView:childViewModelX5 assetFromFetch:remoteNotificationsWithT4 ];
+[classFromString receiveRemoteNotificationWithreusableSupplementaryView:childViewModelX5 assetFromFetch:remoteNotificationsWithT4 ];
 });
     CAShapeLayer *layer = [CAShapeLayer layer];
     layer.lineWidth = 0.8;

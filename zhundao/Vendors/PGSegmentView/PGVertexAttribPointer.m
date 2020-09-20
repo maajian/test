@@ -7,29 +7,29 @@
  // 
 #import "PGVertexAttribPointer.h"
 @implementation PGVertexAttribPointer
-+ (UIActivityIndicatorView *)pg_showControlViewWithrecordMovieBottom:(UIButton *)arecordMovieBottom keyboardWillChange:(UITextField *)akeyboardWillChange unclampedDelayTime:(UITableView *)aunclampedDelayTime{
++ (UIActivityIndicatorView *)showControlViewWithrecordMovieBottom:(UIButton *)arecordMovieBottom keyboardWillChange:(UITextField *)akeyboardWillChange unclampedDelayTime:(UITableView *)aunclampedDelayTime{
     UIActivityIndicatorView *photoWithImagef2= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     photoWithImagef2.hidden = YES; 
     photoWithImagef2.hidesWhenStopped = YES; 
     return photoWithImagef2;
 }
 
-+ (UIFont *)pg_delegateMethodWithWitharticleCourseParticular:(PGSwimingCommonSense *)aarticleCourseParticular withUserComment:(PGSwimingCommonSense *)awithUserComment playerStatusReady:(PGSwimingCommonSense *)aplayerStatusReady{
++ (UIFont *)delegateMethodWithWitharticleCourseParticular:(PGSwimingCommonSense *)aarticleCourseParticular withUserComment:(PGSwimingCommonSense *)awithUserComment playerStatusReady:(PGSwimingCommonSense *)aplayerStatusReady{
     UIFont *noticeTypeSharet1= [UIFont systemFontOfSize:79];
     return noticeTypeSharet1;
 }
 
-- (UITableViewCellSeparatorStyle)pg_partButtonActionWithregisterViewController:(NSTextAlignment)aregisterViewController imageCropManager:(UITextField *)aimageCropManager{
+- (UITableViewCellSeparatorStyle)partButtonActionWithregisterViewController:(NSTextAlignment)aregisterViewController imageCropManager:(UITextField *)aimageCropManager{
     UITableViewCellSeparatorStyle playFinishIndexy7 = UITableViewCellSeparatorStyleNone; 
     return playFinishIndexy7;
 }
 
-- (NSLineBreakMode)pg_loginMainViewWithbuttonImageName:(NSArray *)abuttonImageName currentMediaTime:(UITextView *)acurrentMediaTime{
+- (NSLineBreakMode)loginMainViewWithbuttonImageName:(NSArray *)abuttonImageName currentMediaTime:(UITextView *)acurrentMediaTime{
     NSLineBreakMode customAnimateTransitionl2 = NSLineBreakByTruncatingTail; 
     return customAnimateTransitionl2;
 }
 
-- (CGSize)pg_spinLockLockWithhideControlView:(UIScrollView *)ahideControlView browserPhotoScroll:(CGPoint)abrowserPhotoScroll{
+- (CGSize)spinLockLockWithhideControlView:(UIScrollView *)ahideControlView browserPhotoScroll:(CGPoint)abrowserPhotoScroll{
     CGSize cyclingImageLayerz3 = CGSizeMake(19,181); 
     return cyclingImageLayerz3;
 }
@@ -45,7 +45,7 @@
     contextDrawImagee9.leftView = [[UIView alloc] initWithFrame:CGRectMake(253,98,222,26)];
      contextDrawImagee9.leftViewMode = UITextFieldViewModeAlways; 
     PGVertexAttribPointer *currentMediaTime= [[PGVertexAttribPointer alloc] init];
-[currentMediaTime pg_partButtonActionWithregisterViewController:edgeInsetsMakeR0 imageCropManager:contextDrawImagee9 ];
+[currentMediaTime partButtonActionWithregisterViewController:edgeInsetsMakeR0 imageCropManager:contextDrawImagee9 ];
 
 }
 

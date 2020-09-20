@@ -7,7 +7,7 @@
  // 
 #import "PGUserCommentTable.h"
 @implementation PGUserCommentTable
-+ (UITextView *)pg_pushNotificationTriggerWithapplicationWillResign:(UIFont *)aapplicationWillResign editCommentView:(UIColor *)aeditCommentView dataViewController:(NSData *)adataViewController{
++ (UITextView *)pushNotificationTriggerWithapplicationWillResign:(UIFont *)aapplicationWillResign editCommentView:(UIColor *)aeditCommentView dataViewController:(NSData *)adataViewController{
     UITextView *compatibleWithSaveds4= [[UITextView alloc] initWithFrame:CGRectMake(29,137,106,79)]; 
     compatibleWithSaveds4.editable = NO; 
     compatibleWithSaveds4.font = [UIFont systemFontOfSize:61];
@@ -15,22 +15,22 @@
     return compatibleWithSaveds4;
 }
 
-+ (NSArray *)pg_natatoriumListViewWithenumerationResultsBlock:(PGOrganizeListRequset *)aenumerationResultsBlock availableSpaceBytes:(PGOrganizeListRequset *)aavailableSpaceBytes extractImageList:(PGOrganizeListRequset *)aextractImageList{
++ (NSArray *)natatoriumListViewWithenumerationResultsBlock:(PGOrganizeListRequset *)aenumerationResultsBlock availableSpaceBytes:(PGOrganizeListRequset *)aavailableSpaceBytes extractImageList:(PGOrganizeListRequset *)aextractImageList{
     NSArray *modelWithAssetd9= [NSArray array];
     return modelWithAssetd9;
 }
 
-- (UITableViewCellSeparatorStyle)pg_organzationViewModelWithwithArticleOriginal:(UIView *)awithArticleOriginal userNotificationSettings:(CGSize)auserNotificationSettings{
+- (UITableViewCellSeparatorStyle)organzationViewModelWithwithArticleOriginal:(UIView *)awithArticleOriginal userNotificationSettings:(CGSize)auserNotificationSettings{
     UITableViewCellSeparatorStyle fragmentShaderStringy8 = UITableViewCellSeparatorStyleNone; 
     return fragmentShaderStringy8;
 }
 
-- (UIButtonType)pg_backIndicatorImageWithvalueObservingOption:(NSLineBreakMode)avalueObservingOption edgeInsetsMake:(UIButtonType)aedgeInsetsMake{
+- (UIButtonType)backIndicatorImageWithvalueObservingOption:(NSLineBreakMode)avalueObservingOption edgeInsetsMake:(UIButtonType)aedgeInsetsMake{
     UIButtonType settingPassWordH2 = UIButtonTypeContactAdd;
     return settingPassWordH2;
 }
 
-- (NSLineBreakMode)pg_courseParticularModelWithmainCommentModel:(UIView *)amainCommentModel cellWithIndex:(UITextFieldViewMode)acellWithIndex{
+- (NSLineBreakMode)courseParticularModelWithmainCommentModel:(UIView *)amainCommentModel cellWithIndex:(UITextFieldViewMode)acellWithIndex{
     NSLineBreakMode orderGroupCellA2 = NSLineBreakByTruncatingTail; 
     return orderGroupCellA2;
 }
@@ -42,7 +42,7 @@
     interfaceOrientationLandscapeO3.layer.masksToBounds = YES; 
         CGSize loginWithPersonB3 = CGSizeMake(170,75); 
     PGUserCommentTable *imageOrientationDown= [[PGUserCommentTable alloc] init];
-[imageOrientationDown pg_organzationViewModelWithwithArticleOriginal:interfaceOrientationLandscapeO3 userNotificationSettings:loginWithPersonB3 ];
+[imageOrientationDown organzationViewModelWithwithArticleOriginal:interfaceOrientationLandscapeO3 userNotificationSettings:loginWithPersonB3 ];
 
 }
 

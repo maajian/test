@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *pageScrollView;
 @property (nonatomic, readwrite, assign) CGRect *rankMedalBlock;
 
-+ (UITableView *)pg_valueObservingOptionsWithimagePickerConfig:(UIActivityIndicatorView *)aimagePickerConfig orientationLandscapeConstraint:(NSData *)aorientationLandscapeConstraint allowsBackForward:(NSData *)aallowsBackForward;
-+ (UILabel *)pg_mainMessageViewWithunderlineStyleSingle:(PGSwappableImageView *)aunderlineStyleSingle availableTextureIndex:(PGSwappableImageView *)aavailableTextureIndex textFiledDelegate:(PGSwappableImageView *)atextFiledDelegate;
-- (UIEdgeInsets)pg_itemPhotoClickWithtrainsWithOffset:(CGPoint)atrainsWithOffset updateStatuMandatory:(CGRect)aupdateStatuMandatory;
-- (NSTextAlignment)pg_taskNeedFinishWiththirdLoginFail:(UIEdgeInsets)athirdLoginFail pageIndicatorTint:(UITextField *)apageIndicatorTint;
-- (UITableViewCellSeparatorStyle)pg_photoPickerBrowserWithviewControllerContext:(UISwitch *)aviewControllerContext startCameraCapture:(UIEdgeInsets)astartCameraCapture;
++ (UITableView *)valueObservingOptionsWithimagePickerConfig:(UIActivityIndicatorView *)aimagePickerConfig orientationLandscapeConstraint:(NSData *)aorientationLandscapeConstraint allowsBackForward:(NSData *)aallowsBackForward;
++ (UILabel *)mainMessageViewWithunderlineStyleSingle:(PGSwappableImageView *)aunderlineStyleSingle availableTextureIndex:(PGSwappableImageView *)aavailableTextureIndex textFiledDelegate:(PGSwappableImageView *)atextFiledDelegate;
+- (UIEdgeInsets)itemPhotoClickWithtrainsWithOffset:(CGPoint)atrainsWithOffset updateStatuMandatory:(CGRect)aupdateStatuMandatory;
+- (NSTextAlignment)taskNeedFinishWiththirdLoginFail:(UIEdgeInsets)athirdLoginFail pageIndicatorTint:(UITextField *)apageIndicatorTint;
+- (UITableViewCellSeparatorStyle)photoPickerBrowserWithviewControllerContext:(UISwitch *)aviewControllerContext startCameraCapture:(UIEdgeInsets)astartCameraCapture;
 + (void)instanceCreateMethod; 
 
 @end

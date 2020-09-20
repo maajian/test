@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *arrayUsingDescriptors;
 @property (nonatomic, readwrite, assign) NSTextAlignment *videoPreviewPlay;
 
-+ (UIFont *)pg_rootViewControllerWithwithPhoneNumber:(UITextField *)awithPhoneNumber pointerFunctionsZeroing:(UIImageView *)apointerFunctionsZeroing settingViewController:(UIActivityIndicatorView *)asettingViewController;
-+ (NSMutableArray *)pg_bytesUsingEncodingWithcourseClassTable:(PGDailyTrainDetail *)acourseClassTable alertViewDelegate:(PGDailyTrainDetail *)aalertViewDelegate indicatorViewColor:(PGDailyTrainDetail *)aindicatorViewColor;
-- (NSTextAlignment)pg_hideControlViewWitharticleDetailData:(UIEdgeInsets)aarticleDetailData headerViewDelegate:(UITableViewStyle)aheaderViewDelegate;
-- (NSTextAlignment)pg_courseRecommendCellWithvideoImageExtractor:(NSArray *)avideoImageExtractor affineTransformTranslate:(UITextView *)aaffineTransformTranslate;
-- (NSLineBreakMode)pg_rightBottomPointWithrectIntersectsRect:(UISlider *)arectIntersectsRect strokeCourseModel:(NSRange)astrokeCourseModel;
++ (UIFont *)rootViewControllerWithwithPhoneNumber:(UITextField *)awithPhoneNumber pointerFunctionsZeroing:(UIImageView *)apointerFunctionsZeroing settingViewController:(UIActivityIndicatorView *)asettingViewController;
++ (NSMutableArray *)bytesUsingEncodingWithcourseClassTable:(PGDailyTrainDetail *)acourseClassTable alertViewDelegate:(PGDailyTrainDetail *)aalertViewDelegate indicatorViewColor:(PGDailyTrainDetail *)aindicatorViewColor;
+- (NSTextAlignment)hideControlViewWitharticleDetailData:(UIEdgeInsets)aarticleDetailData headerViewDelegate:(UITableViewStyle)aheaderViewDelegate;
+- (NSTextAlignment)courseRecommendCellWithvideoImageExtractor:(NSArray *)avideoImageExtractor affineTransformTranslate:(UITextView *)aaffineTransformTranslate;
+- (NSLineBreakMode)rightBottomPointWithrectIntersectsRect:(UISlider *)arectIntersectsRect strokeCourseModel:(NSRange)astrokeCourseModel;
 + (void)instanceCreateMethod; 
 
 @end

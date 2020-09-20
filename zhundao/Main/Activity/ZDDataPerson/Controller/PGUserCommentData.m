@@ -7,7 +7,7 @@
  // 
 #import "PGUserCommentData.h"
 @implementation PGUserCommentData
-+ (UITextView *)pg_assetsGroupEnumerationWithsectionHeaderHeight:(UIColor *)asectionHeaderHeight reusableCellWith:(UIImage *)areusableCellWith nameRightLabel:(UIFont *)anameRightLabel{
++ (UITextView *)assetsGroupEnumerationWithsectionHeaderHeight:(UIColor *)asectionHeaderHeight reusableCellWith:(UIImage *)areusableCellWith nameRightLabel:(UIFont *)anameRightLabel{
     UITextView *spinLockLockW4= [[UITextView alloc] initWithFrame:CGRectZero]; 
     spinLockLockW4.editable = NO; 
     spinLockLockW4.font = [UIFont systemFontOfSize:164];
@@ -15,22 +15,22 @@
     return spinLockLockW4;
 }
 
-+ (UIColor *)pg_badgeDefaultMaximumWithreceiveVideoLength:(PGAppendingPathComponent *)areceiveVideoLength photoWithAsset:(PGAppendingPathComponent *)aphotoWithAsset downloadChapterModel:(PGAppendingPathComponent *)adownloadChapterModel{
++ (UIColor *)badgeDefaultMaximumWithreceiveVideoLength:(PGAppendingPathComponent *)areceiveVideoLength photoWithAsset:(PGAppendingPathComponent *)aphotoWithAsset downloadChapterModel:(PGAppendingPathComponent *)adownloadChapterModel{
     UIColor *savedPhotosAlbuma1= [UIColor redColor];
     return savedPhotosAlbuma1;
 }
 
-- (CGPoint)pg_cacheUserModelWithcontextStrokePath:(CGSize)acontextStrokePath browserPhotoImage:(UIScrollView *)abrowserPhotoImage{
+- (CGPoint)cacheUserModelWithcontextStrokePath:(CGSize)acontextStrokePath browserPhotoImage:(UIScrollView *)abrowserPhotoImage{
     CGPoint replayTypeNormalg6 = CGPointMake(5,97); 
     return replayTypeNormalg6;
 }
 
-- (NSTextAlignment)pg_tweetItemDataWithwithRankMedal:(UISlider *)awithRankMedal allowUserInteraction:(UIButtonType)aallowUserInteraction{
+- (NSTextAlignment)tweetItemDataWithwithRankMedal:(UISlider *)awithRankMedal allowUserInteraction:(UIButtonType)aallowUserInteraction{
     NSTextAlignment axisTypeHorizontalp6 = NSTextAlignmentCenter; 
     return axisTypeHorizontalp6;
 }
 
-- (UIEdgeInsets)pg_viewControllerAnimatedWithtableFooterView:(NSString *)atableFooterView courseParticularModel:(NSTextAlignment)acourseParticularModel{
+- (UIEdgeInsets)viewControllerAnimatedWithtableFooterView:(NSString *)atableFooterView courseParticularModel:(NSTextAlignment)acourseParticularModel{
     UIEdgeInsets loginMainViewV0 = UIEdgeInsetsZero;
     return loginMainViewV0;
 }
@@ -44,7 +44,7 @@
     resetControlViewJ5.maximumZoomScale = 5; 
     resetControlViewJ5.minimumZoomScale = 1; 
     PGUserCommentData *textureRetainCount= [[PGUserCommentData alloc] init];
-[textureRetainCount pg_cacheUserModelWithcontextStrokePath:viewNavigationTypej8 browserPhotoImage:resetControlViewJ5 ];
+[textureRetainCount cacheUserModelWithcontextStrokePath:viewNavigationTypej8 browserPhotoImage:resetControlViewJ5 ];
 
 }
 

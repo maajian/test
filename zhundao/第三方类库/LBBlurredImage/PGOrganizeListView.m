@@ -7,12 +7,12 @@
  // 
 #import "PGOrganizeListView.h"
 @implementation PGOrganizeListView
-+ (NSData *)pg_statusBackgroundColorWithrecordMovieModel:(UITableView *)arecordMovieModel recommendUserTable:(UIImageView *)arecommendUserTable imageProgressUpdate:(UIImage *)aimageProgressUpdate{
++ (NSData *)statusBackgroundColorWithrecordMovieModel:(UITableView *)arecordMovieModel recommendUserTable:(UIImageView *)arecommendUserTable imageProgressUpdate:(UIImage *)aimageProgressUpdate{
     NSData *withCourseVideoS5= [[NSData alloc] init];
     return withCourseVideoS5;
 }
 
-+ (UIView *)pg_trainWithOffsetWithrecommendCourseHeight:(PGUpdateUserLocation *)arecommendCourseHeight playChapterIndex:(PGUpdateUserLocation *)aplayChapterIndex finishLoadWith:(PGUpdateUserLocation *)afinishLoadWith{
++ (UIView *)trainWithOffsetWithrecommendCourseHeight:(PGUpdateUserLocation *)arecommendCourseHeight playChapterIndex:(PGUpdateUserLocation *)aplayChapterIndex finishLoadWith:(PGUpdateUserLocation *)afinishLoadWith{
     UIView *withControlPointsy9= [[UIView alloc] initWithFrame:CGRectMake(138,57,44,99)]; 
     withControlPointsy9.backgroundColor = [UIColor whiteColor]; 
     withControlPointsy9.layer.cornerRadius = 
@@ -20,17 +20,17 @@
     return withControlPointsy9;
 }
 
-- (CGPoint)pg_deviceSettingsTypeWithlaunchViewController:(UIImageView *)alaunchViewController deepBlackColor:(UITableView *)adeepBlackColor{
+- (CGPoint)deviceSettingsTypeWithlaunchViewController:(UIImageView *)alaunchViewController deepBlackColor:(UITableView *)adeepBlackColor{
     CGPoint viewsAlongAxisz7 = CGPointZero;
     return viewsAlongAxisz7;
 }
 
-- (UITableViewCellSeparatorStyle)pg_withStrokeCourseWithsliderFillColor:(UIColor *)asliderFillColor ringRotationAnimation:(UITextFieldViewMode)aringRotationAnimation{
+- (UITableViewCellSeparatorStyle)withStrokeCourseWithsliderFillColor:(UIColor *)asliderFillColor ringRotationAnimation:(UITextFieldViewMode)aringRotationAnimation{
     UITableViewCellSeparatorStyle withMedalKindK0 = UITableViewCellSeparatorStyleNone; 
     return withMedalKindK0;
 }
 
-- (CGSize)pg_hideControlViewWithdefaultImageName:(UITextFieldViewMode)adefaultImageName dataElseLoad:(NSString *)adataElseLoad{
+- (CGSize)hideControlViewWithdefaultImageName:(UITextFieldViewMode)adefaultImageName dataElseLoad:(NSString *)adataElseLoad{
     CGSize playerStateStoppedj7 = CGSizeMake(41,153); 
     return playerStateStoppedj7;
 }
@@ -58,7 +58,7 @@
     trackTintColorn4.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(26,204,177,205)];
      trackTintColorn4.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(59,37,86,206)];
      PGOrganizeListView *videoOutputPath= [[PGOrganizeListView alloc] init];
-[videoOutputPath pg_deviceSettingsTypeWithlaunchViewController:alipaySuccNotificationw9 deepBlackColor:trackTintColorn4 ];
+[videoOutputPath deviceSettingsTypeWithlaunchViewController:alipaySuccNotificationw9 deepBlackColor:trackTintColorn4 ];
 
 }
 

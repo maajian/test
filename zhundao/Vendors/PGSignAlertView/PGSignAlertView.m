@@ -47,8 +47,8 @@
         _sureTitle = sureTitle;
         _title = title;
         _messageTitle = messageTitle;
-        [self PG_setupUI];
-        [self PG_initLayout];
+        [self setupUI];
+        [self initLayout];
     }
     return self;
 }
@@ -90,7 +90,7 @@
         _cancelButton.layer.masksToBounds = YES;
         [_cancelButton setTitle:_cancelTitle forState:UIControlStateNormal];
         [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_cancelButton addTarget:self action:@selector(PG_cancelAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_cancelButton addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
 }
@@ -103,21 +103,21 @@
         _sureButton.titleLabel.font = [UIFont systemFontOfSize:16];
         [_sureButton setTitle:_sureTitle forState:UIControlStateNormal];
         [_sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_sureButton addTarget:self action:@selector(PG_sureAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_sureButton addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _sureButton;
 }
 - (UIButton *)closeButton {
     if (!_closeButton) {
         if (!_closeButton) {
-            _closeButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"com_delete"] target:self action:@selector(PG_closeAction:)];
+            _closeButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"com_delete"] target:self action:@selector(closeAction:)];
         }
     }
     return _closeButton;
 }
 
 #pragma mark --- UI
-- (void)PG_setupUI {
+- (void)setupUI {
     [self addSubview:self.bgView];
     [self.bgView addSubview:self.contentView];
     [self.contentView addSubview:self.titleLabel];
@@ -128,7 +128,7 @@
 }
 
 #pragma mark --- 布局
-- (void)PG_initLayout {
+- (void)initLayout {
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
@@ -181,13 +181,13 @@
 }
 
 #pragma mark --- action
-- (void)PG_cancelAction:(UIButton *)button {
+- (void)cancelAction:(UIButton *)button {
     if (_cancelBlock) {
         _cancelBlock();
     }
     [self animationOut];
 }
-- (void)PG_sureAction:(UIButton *)button {
+- (void)sureAction:(UIButton *)button {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *baseLoginViewp0= [NSMutableArray array];
         UIScrollView *dailyCourseTableo6= [[UIScrollView alloc] initWithFrame:CGRectMake(250,79,108,249)]; 
@@ -197,14 +197,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
     dailyCourseTableo6.maximumZoomScale = 5; 
     dailyCourseTableo6.minimumZoomScale = 1; 
     PGColumnistChildData *videoPlayView= [[PGColumnistChildData alloc] init];
-[videoPlayView pg_statusPhotoStreamWithplayerDecodeError:baseLoginViewp0 settingViewController:dailyCourseTableo6 ];
+[videoPlayView statusPhotoStreamWithplayerDecodeError:baseLoginViewp0 settingViewController:dailyCourseTableo6 ];
 });
     if (_sureBlock) {
         _sureBlock();
     }
     [self animationOut];
 }
-- (void)PG_closeAction:(UIButton *)button {
+- (void)closeAction:(UIButton *)button {
     if (_cancelBlock) {
         _cancelBlock();
     }

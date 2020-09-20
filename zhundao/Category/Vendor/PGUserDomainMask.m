@@ -7,12 +7,12 @@
  // 
 #import "PGUserDomainMask.h"
 @implementation PGUserDomainMask
-+ (UIColor *)pg_lineBreakModeWithnatatoriumListData:(UISlider *)anatatoriumListData natatoriumListTable:(UIActivityIndicatorView *)anatatoriumListTable applicationOpenSettings:(UITableView *)aapplicationOpenSettings{
++ (UIColor *)lineBreakModeWithnatatoriumListData:(UISlider *)anatatoriumListData natatoriumListTable:(UIActivityIndicatorView *)anatatoriumListTable applicationOpenSettings:(UITableView *)aapplicationOpenSettings{
     UIColor *assetPreferPrecised7= [UIColor redColor];
     return assetPreferPrecised7;
 }
 
-+ (UITableView *)pg_failLoadWithWithmodalPresentationNone:(PGBlockWithPreview *)amodalPresentationNone zoomScaleWith:(PGBlockWithPreview *)azoomScaleWith numberBadgeWith:(PGBlockWithPreview *)anumberBadgeWith{
++ (UITableView *)failLoadWithWithmodalPresentationNone:(PGBlockWithPreview *)amodalPresentationNone zoomScaleWith:(PGBlockWithPreview *)azoomScaleWith numberBadgeWith:(PGBlockWithPreview *)anumberBadgeWith{
     UITableView *completeViewDelegatev1= [[UITableView alloc] initWithFrame:CGRectMake(130,121,184,108) style: UITableViewStylePlain]; 
     completeViewDelegatev1.frame = CGRectZero; 
     completeViewDelegatev1.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return completeViewDelegatev1;
 }
 
-- (UITableViewStyle)pg_resourceWithTypeWithloginWithPerson:(UITableViewStyle)aloginWithPerson alipaySuccNotification:(UIActivityIndicatorView *)aalipaySuccNotification{
+- (UITableViewStyle)resourceWithTypeWithloginWithPerson:(UITableViewStyle)aloginWithPerson alipaySuccNotification:(UIActivityIndicatorView *)aalipaySuccNotification{
     UITableViewStyle enumerationResultsBlockb0 = UITableViewStylePlain; 
     return enumerationResultsBlockb0;
 }
 
-- (NSRange)pg_blurWithRadiusWithrecordVideoCamera:(UIColor *)arecordVideoCamera photoPrevireView:(CGRect)aphotoPrevireView{
+- (NSRange)blurWithRadiusWithrecordVideoCamera:(UIColor *)arecordVideoCamera photoPrevireView:(CGRect)aphotoPrevireView{
     NSRange articleDetailDataV6 = NSMakeRange(5,130); 
     return articleDetailDataV6;
 }
 
-- (CGPoint)pg_attentionWithUserWithdeliveryModeHigh:(UIButton *)adeliveryModeHigh contentInformationRequest:(UITextField *)acontentInformationRequest{
+- (CGPoint)attentionWithUserWithdeliveryModeHigh:(UIButton *)adeliveryModeHigh contentInformationRequest:(UITextField *)acontentInformationRequest{
     CGPoint courseParticularSectionk4 = CGPointZero;
     return courseParticularSectionk4;
 }
@@ -52,7 +52,7 @@
     contextStrokePathE7.hidden = YES; 
     contextStrokePathE7.hidesWhenStopped = YES; 
     PGUserDomainMask *photosBytesWith= [[PGUserDomainMask alloc] init];
-[photosBytesWith pg_resourceWithTypeWithloginWithPerson:showShowSheetT1 alipaySuccNotification:contextStrokePathE7 ];
+[photosBytesWith resourceWithTypeWithloginWithPerson:showShowSheetT1 alipaySuccNotification:contextStrokePathE7 ];
 
 }
 

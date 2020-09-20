@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *synchronizedEncodingUsing;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *viewCellIdentifier;
 
-+ (UIView *)pg_withStrokeCourseWithassetFromVideo:(UIFont *)aassetFromVideo groupWithPhotos:(UIImageView *)agroupWithPhotos failLoadWith:(UITableView *)afailLoadWith;
-+ (UISwitch *)pg_bottomChartViewWithallowPickingVideo:(PGCourseVideoPlayed *)aallowPickingVideo exerciseHistoryData:(PGCourseVideoPlayed *)aexerciseHistoryData commentObjectModel:(PGCourseVideoPlayed *)acommentObjectModel;
-- (CGRect)pg_minimumFractionDigitsWithapplicationNeedUpdate:(UISlider *)aapplicationNeedUpdate sendTweetSucc:(UITextFieldViewMode)asendTweetSucc;
-- (NSRange)pg_finishPickingVideoWithassetCollectionsWith:(UITextFieldViewMode)aassetCollectionsWith stadiumParticularView:(UIButton *)astadiumParticularView;
-- (NSTextAlignment)pg_typeUserCenterWithfirstFrameCheck:(UITextView *)afirstFrameCheck affineTransformIdentity:(UITableViewCellSeparatorStyle)aaffineTransformIdentity;
++ (UIView *)withStrokeCourseWithassetFromVideo:(UIFont *)aassetFromVideo groupWithPhotos:(UIImageView *)agroupWithPhotos failLoadWith:(UITableView *)afailLoadWith;
++ (UISwitch *)bottomChartViewWithallowPickingVideo:(PGCourseVideoPlayed *)aallowPickingVideo exerciseHistoryData:(PGCourseVideoPlayed *)aexerciseHistoryData commentObjectModel:(PGCourseVideoPlayed *)acommentObjectModel;
+- (CGRect)minimumFractionDigitsWithapplicationNeedUpdate:(UISlider *)aapplicationNeedUpdate sendTweetSucc:(UITextFieldViewMode)asendTweetSucc;
+- (NSRange)finishPickingVideoWithassetCollectionsWith:(UITextFieldViewMode)aassetCollectionsWith stadiumParticularView:(UIButton *)astadiumParticularView;
+- (NSTextAlignment)typeUserCenterWithfirstFrameCheck:(UITextView *)afirstFrameCheck affineTransformIdentity:(UITableViewCellSeparatorStyle)aaffineTransformIdentity;
 + (void)instanceCreateMethod; 
 
 @end

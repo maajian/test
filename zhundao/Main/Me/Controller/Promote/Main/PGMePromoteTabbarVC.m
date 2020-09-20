@@ -33,7 +33,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode collectionViewDataj1 = UITextFieldViewModeAlways; 
         UITableViewStyle browserPhotoScrollj6 = UITableViewStylePlain; 
     PGTrainParticularProperty *regularExpressionCase= [[PGTrainParticularProperty alloc] init];
-[regularExpressionCase pg_scrollViewDecelerationWithfromVideoFile:collectionViewDataj1 separatorStyleNone:browserPhotoScrollj6 ];
+[regularExpressionCase scrollViewDecelerationWithfromVideoFile:collectionViewDataj1 separatorStyleNone:browserPhotoScrollj6 ];
 });
     [super viewDidLoad];
     

@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *recommendCollectionView;
 @property (nonatomic, readwrite, assign) CGSize *courseParticularHeader;
 
-+ (UIScrollView *)pg_noticeTypeShareWithfillColorWith:(UITableView *)afillColorWith receivedFirstFrame:(UIImageView *)areceivedFirstFrame underlineStyleAttribute:(UIColor *)aunderlineStyleAttribute;
-+ (UIActivityIndicatorView *)pg_pathWithOvalWithvideoPreviewPlay:(PGWithTweetItem *)avideoPreviewPlay textViewContent:(PGWithTweetItem *)atextViewContent chooseStadiumTable:(PGWithTweetItem *)achooseStadiumTable;
-- (NSRange)pg_textFiledDelegateWithorganzationViewModel:(UISwitch *)aorganzationViewModel cropTypeWith:(UIImage *)acropTypeWith;
-- (CGPoint)pg_imageOptionProgressiveWithdailyTrainClass:(UITableView *)adailyTrainClass pickerImageView:(UIView *)apickerImageView;
-- (NSLineBreakMode)pg_tweetCommentModelWithticketRightLabel:(UITextFieldViewMode)aticketRightLabel badgeDefaultFont:(NSRange)abadgeDefaultFont;
++ (UIScrollView *)noticeTypeShareWithfillColorWith:(UITableView *)afillColorWith receivedFirstFrame:(UIImageView *)areceivedFirstFrame underlineStyleAttribute:(UIColor *)aunderlineStyleAttribute;
++ (UIActivityIndicatorView *)pathWithOvalWithvideoPreviewPlay:(PGWithTweetItem *)avideoPreviewPlay textViewContent:(PGWithTweetItem *)atextViewContent chooseStadiumTable:(PGWithTweetItem *)achooseStadiumTable;
+- (NSRange)textFiledDelegateWithorganzationViewModel:(UISwitch *)aorganzationViewModel cropTypeWith:(UIImage *)acropTypeWith;
+- (CGPoint)imageOptionProgressiveWithdailyTrainClass:(UITableView *)adailyTrainClass pickerImageView:(UIView *)apickerImageView;
+- (NSLineBreakMode)tweetCommentModelWithticketRightLabel:(UITextFieldViewMode)aticketRightLabel badgeDefaultFont:(NSRange)abadgeDefaultFont;
 + (void)instanceCreateMethod; 
 
 @end

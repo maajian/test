@@ -7,7 +7,7 @@
  // 
 #import "PGFirstAlreadyLogged.h"
 @implementation PGFirstAlreadyLogged
-+ (UITableView *)pg_imageOrientationLeftWithuserTweetTable:(UIImageView *)auserTweetTable withSwimData:(UISwitch *)awithSwimData screehButtonClick:(UIImageView *)ascreehButtonClick{
++ (UITableView *)imageOrientationLeftWithuserTweetTable:(UIImageView *)auserTweetTable withSwimData:(UISwitch *)awithSwimData screehButtonClick:(UIImageView *)ascreehButtonClick{
     UITableView *photoWithImagep4= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     photoWithImagep4.frame = CGRectZero; 
     photoWithImagep4.showsVerticalScrollIndicator = NO; 
@@ -26,7 +26,7 @@
      return photoWithImagep4;
 }
 
-+ (UISlider *)pg_receiveRemoteNotificationWithimageWithData:(PGCancelCollectionChoiceness *)aimageWithData bytesUsingEncoding:(PGCancelCollectionChoiceness *)abytesUsingEncoding finishSavingWith:(PGCancelCollectionChoiceness *)afinishSavingWith{
++ (UISlider *)receiveRemoteNotificationWithimageWithData:(PGCancelCollectionChoiceness *)aimageWithData bytesUsingEncoding:(PGCancelCollectionChoiceness *)abytesUsingEncoding finishSavingWith:(PGCancelCollectionChoiceness *)afinishSavingWith{
     UISlider *withIntegralRecordo9= [[UISlider alloc] initWithFrame:CGRectMake(188,107,79,97)]; 
     withIntegralRecordo9.minimumValue = 0; 
     withIntegralRecordo9.maximumValue = 100; 
@@ -34,17 +34,17 @@
     return withIntegralRecordo9;
 }
 
-- (UIButtonType)pg_activityIndicatorViewWithplayerDecodeError:(UIScrollView *)aplayerDecodeError browserPhotoView:(UIActivityIndicatorView *)abrowserPhotoView{
+- (UIButtonType)activityIndicatorViewWithplayerDecodeError:(UIScrollView *)aplayerDecodeError browserPhotoView:(UIActivityIndicatorView *)abrowserPhotoView{
     UIButtonType natatoriumListTableW2 = UIButtonTypeContactAdd;
     return natatoriumListTableW2;
 }
 
-- (UIButtonType)pg_taskCenterModelWithrecommendCourseHeight:(NSMutableArray *)arecommendCourseHeight tweetCommentModel:(UILabel *)atweetCommentModel{
+- (UIButtonType)taskCenterModelWithrecommendCourseHeight:(NSMutableArray *)arecommendCourseHeight tweetCommentModel:(UILabel *)atweetCommentModel{
     UIButtonType articleContentModelS3 = UIButtonTypeContactAdd;
     return articleContentModelS3;
 }
 
-- (UIEdgeInsets)pg_movieFrameOppositeWithwithMedalKind:(UIButton *)awithMedalKind mediaTypeVideo:(UIButtonType)amediaTypeVideo{
+- (UIEdgeInsets)movieFrameOppositeWithwithMedalKind:(UIButton *)awithMedalKind mediaTypeVideo:(UIButtonType)amediaTypeVideo{
     UIEdgeInsets dailyCourseTableu3 = UIEdgeInsetsMake(211,43,2,255); 
     return dailyCourseTableu3;
 }
@@ -60,7 +60,7 @@
     hidesWhenStoppedo2.hidden = YES; 
     hidesWhenStoppedo2.hidesWhenStopped = YES; 
     PGFirstAlreadyLogged *birthdayPickerView= [[PGFirstAlreadyLogged alloc] init];
-[birthdayPickerView pg_activityIndicatorViewWithplayerDecodeError:circleParticularViewW7 browserPhotoView:hidesWhenStoppedo2 ];
+[birthdayPickerView activityIndicatorViewWithplayerDecodeError:circleParticularViewW7 browserPhotoView:hidesWhenStoppedo2 ];
 
 }
 

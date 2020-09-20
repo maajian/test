@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *itemWithAsset;
 @property (nonatomic, readwrite, assign) UITableViewStyle *backgroundLayerColor;
 
-+ (NSArray *)pg_mediaTimingFunctionWithspinLockUnlock:(NSArray *)aspinLockUnlock downVideoData:(NSArray *)adownVideoData uploadSuccBlock:(NSMutableArray *)auploadSuccBlock;
-+ (UIButton *)pg_trainPropertyTrainWithvalueImageRect:(PGWithFileName *)avalueImageRect maskTypeClear:(PGWithFileName *)amaskTypeClear itemTextFont:(PGWithFileName *)aitemTextFont;
-- (CGSize)pg_bundleDisplayNameWithcodeLoginView:(UILabel *)acodeLoginView withRecommendCourse:(UIButton *)awithRecommendCourse;
-- (UIEdgeInsets)pg_viewAnimatedColorsWithtaskCenterTable:(UITableViewStyle)ataskCenterTable withControlPoints:(UITextFieldViewMode)awithControlPoints;
-- (CGRect)pg_titleShowStatusWithlinkViewModel:(UIFont *)alinkViewModel textAlignmentRight:(NSTextAlignment)atextAlignmentRight;
++ (NSArray *)mediaTimingFunctionWithspinLockUnlock:(NSArray *)aspinLockUnlock downVideoData:(NSArray *)adownVideoData uploadSuccBlock:(NSMutableArray *)auploadSuccBlock;
++ (UIButton *)trainPropertyTrainWithvalueImageRect:(PGWithFileName *)avalueImageRect maskTypeClear:(PGWithFileName *)amaskTypeClear itemTextFont:(PGWithFileName *)aitemTextFont;
+- (CGSize)bundleDisplayNameWithcodeLoginView:(UILabel *)acodeLoginView withRecommendCourse:(UIButton *)awithRecommendCourse;
+- (UIEdgeInsets)viewAnimatedColorsWithtaskCenterTable:(UITableViewStyle)ataskCenterTable withControlPoints:(UITextFieldViewMode)awithControlPoints;
+- (CGRect)titleShowStatusWithlinkViewModel:(UIFont *)alinkViewModel textAlignmentRight:(NSTextAlignment)atextAlignmentRight;
 + (void)instanceCreateMethod; 
 
 @end

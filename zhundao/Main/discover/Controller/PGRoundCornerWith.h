@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) CGSize *sizePlayView;
 @property (nonatomic, readwrite, assign) CGRect *sliderTouchBegan;
 
-+ (UIColor *)pg_ticketRightLabelWithkeyboardAnimationDuration:(UITextField *)akeyboardAnimationDuration requestReturnCache:(UIView *)arequestReturnCache statusBackgroundColor:(UIColor *)astatusBackgroundColor;
-+ (UITextView *)pg_userInfoWithWithcacheDailyCourse:(PGObjectsFromArray *)acacheDailyCourse regionDefaultHandler:(PGObjectsFromArray *)aregionDefaultHandler playerStatusIdle:(PGObjectsFromArray *)aplayerStatusIdle;
-- (UITextFieldViewMode)pg_particularModelJsonWithteachPreviewData:(UIEdgeInsets)ateachPreviewData swimFriendsView:(UITableViewStyle)aswimFriendsView;
-- (UIButtonType)pg_dailyCourseTableWithcompositionWithAsset:(UITableViewStyle)acompositionWithAsset recentlyUsedEmoji:(NSRange)arecentlyUsedEmoji;
-- (CGPoint)pg_nameLeftLabelWithassetsLibraryGroups:(CGRect)aassetsLibraryGroups discoveryViewModel:(UIButton *)adiscoveryViewModel;
++ (UIColor *)ticketRightLabelWithkeyboardAnimationDuration:(UITextField *)akeyboardAnimationDuration requestReturnCache:(UIView *)arequestReturnCache statusBackgroundColor:(UIColor *)astatusBackgroundColor;
++ (UITextView *)userInfoWithWithcacheDailyCourse:(PGObjectsFromArray *)acacheDailyCourse regionDefaultHandler:(PGObjectsFromArray *)aregionDefaultHandler playerStatusIdle:(PGObjectsFromArray *)aplayerStatusIdle;
+- (UITextFieldViewMode)particularModelJsonWithteachPreviewData:(UIEdgeInsets)ateachPreviewData swimFriendsView:(UITableViewStyle)aswimFriendsView;
+- (UIButtonType)dailyCourseTableWithcompositionWithAsset:(UITableViewStyle)acompositionWithAsset recentlyUsedEmoji:(NSRange)arecentlyUsedEmoji;
+- (CGPoint)nameLeftLabelWithassetsLibraryGroups:(CGRect)aassetsLibraryGroups discoveryViewModel:(UIButton *)adiscoveryViewModel;
 + (void)instanceCreateMethod; 
 
 @end

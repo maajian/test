@@ -244,7 +244,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     badgeDefaultMaximumA2.frame = CGRectZero; 
         CGPoint fieldShouldBegink3 = CGPointZero;
     PGUploadCompletionBlock *imageCropManager= [[PGUploadCompletionBlock alloc] init];
-[imageCropManager pg_videoPreviewCellWithcancelCollectionCourse:badgeDefaultMaximumA2 activityIndicatorVisible:fieldShouldBegink3 ];
+[imageCropManager videoPreviewCellWithcancelCollectionCourse:badgeDefaultMaximumA2 activityIndicatorVisible:fieldShouldBegink3 ];
 });
         PGActivityMapVC *map = [[PGActivityMapVC alloc]init];
     if (self.latitude) {
@@ -561,7 +561,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     withTaskCenterE6.frame = CGRectZero; 
         CGPoint courseParticularViewi8 = CGPointZero;
     PGUploadCompletionBlock *assetGridThumbnail= [[PGUploadCompletionBlock alloc] init];
-[assetGridThumbnail pg_videoPreviewCellWithcancelCollectionCourse:withTaskCenterE6 activityIndicatorVisible:courseParticularViewi8 ];
+[assetGridThumbnail videoPreviewCellWithcancelCollectionCourse:withTaskCenterE6 activityIndicatorVisible:courseParticularViewi8 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

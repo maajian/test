@@ -7,12 +7,12 @@
  // 
 #import "PGWithSwimData.h"
 @implementation PGWithSwimData
-+ (UIFont *)pg_photoPickerCollectionWithticketRightLabel:(UIColor *)aticketRightLabel ringRotationAnimation:(NSData *)aringRotationAnimation currentPageColor:(UISlider *)acurrentPageColor{
++ (UIFont *)photoPickerCollectionWithticketRightLabel:(UIColor *)aticketRightLabel ringRotationAnimation:(NSData *)aringRotationAnimation currentPageColor:(UISlider *)acurrentPageColor{
     UIFont *authorizationWithOptionsb5= [UIFont systemFontOfSize:82];
     return authorizationWithOptionsb5;
 }
 
-+ (UIImageView *)pg_recommendCollectionViewWithcircleItemShare:(PGMiddleTextFont *)acircleItemShare requestReturnCache:(PGMiddleTextFont *)arequestReturnCache resourceWithType:(PGMiddleTextFont *)aresourceWithType{
++ (UIImageView *)recommendCollectionViewWithcircleItemShare:(PGMiddleTextFont *)acircleItemShare requestReturnCache:(PGMiddleTextFont *)arequestReturnCache resourceWithType:(PGMiddleTextFont *)aresourceWithType{
     UIImageView * kernAttributeNameq6 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     kernAttributeNameq6.contentMode = UIViewContentModeCenter; 
     kernAttributeNameq6.clipsToBounds = NO; 
@@ -22,17 +22,17 @@
     return kernAttributeNameq6;
 }
 
-- (UITableViewCellSeparatorStyle)pg_bottomPhotoViewWithmainScreenWidth:(UIFont *)amainScreenWidth dailyCourseTable:(UISlider *)adailyCourseTable{
+- (UITableViewCellSeparatorStyle)bottomPhotoViewWithmainScreenWidth:(UIFont *)amainScreenWidth dailyCourseTable:(UISlider *)adailyCourseTable{
     UITableViewCellSeparatorStyle withCourseParticularM8 = UITableViewCellSeparatorStyleNone; 
     return withCourseParticularM8;
 }
 
-- (CGSize)pg_courseParticularViewWithviewCornerRadius:(UIImageView *)aviewCornerRadius priousorLaterDate:(NSTextAlignment)apriousorLaterDate{
+- (CGSize)courseParticularViewWithviewCornerRadius:(UIImageView *)aviewCornerRadius priousorLaterDate:(NSTextAlignment)apriousorLaterDate{
     CGSize purchaseStandardDataO4 = CGSizeMake(206,176); 
     return purchaseStandardDataO4;
 }
 
-- (UITextFieldViewMode)pg_collectionElementKindWithcollectionReusableView:(CGPoint)acollectionReusableView fillRuleEven:(CGPoint)afillRuleEven{
+- (UITextFieldViewMode)collectionElementKindWithcollectionReusableView:(CGPoint)acollectionReusableView fillRuleEven:(CGPoint)afillRuleEven{
     UITextFieldViewMode levelUserCollectionsb4 = UITextFieldViewModeAlways; 
     return levelUserCollectionsb4;
 }
@@ -44,7 +44,7 @@
     likesViewControllerK0.maximumValue = 100; 
     likesViewControllerK0.value =56; 
     PGWithSwimData *directionHorizontalMoved= [[PGWithSwimData alloc] init];
-[directionHorizontalMoved pg_bottomPhotoViewWithmainScreenWidth:authorizationWithCompletioni3 dailyCourseTable:likesViewControllerK0 ];
+[directionHorizontalMoved bottomPhotoViewWithmainScreenWidth:authorizationWithCompletioni3 dailyCourseTable:likesViewControllerK0 ];
 
 }
 

@@ -7,14 +7,14 @@
  // 
 #import "PGDelaysTouchesEnded.h"
 @implementation PGDelaysTouchesEnded
-+ (UISwitch *)pg_organizeServiceModelWithtextLabelHidden:(NSMutableArray *)atextLabelHidden guideBottomView:(UIButton *)aguideBottomView reusableAnnotationView:(UISlider *)areusableAnnotationView{
++ (UISwitch *)organizeServiceModelWithtextLabelHidden:(NSMutableArray *)atextLabelHidden guideBottomView:(UIButton *)aguideBottomView reusableAnnotationView:(UISlider *)areusableAnnotationView{
     UISwitch *customControlViewm4= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     customControlViewm4.on = YES; 
     customControlViewm4.onTintColor = [UIColor whiteColor]; 
     return customControlViewm4;
 }
 
-+ (UITextField *)pg_backIndicatorTransitionWithpushPhotoPicker:(PGStringFromData *)apushPhotoPicker pushPhotoPicker:(PGStringFromData *)apushPhotoPicker imageWithData:(PGStringFromData *)aimageWithData{
++ (UITextField *)backIndicatorTransitionWithpushPhotoPicker:(PGStringFromData *)apushPhotoPicker pushPhotoPicker:(PGStringFromData *)apushPhotoPicker imageWithData:(PGStringFromData *)aimageWithData{
     UITextField *imageSharpenFilterM0= [[UITextField alloc] initWithFrame:CGRectMake(196,205,101,132)]; 
     imageSharpenFilterM0.clearButtonMode = UITextFieldViewModeNever; 
     imageSharpenFilterM0.textColor = [UIColor whiteColor]; 
@@ -26,17 +26,17 @@
     return imageSharpenFilterM0;
 }
 
-- (NSLineBreakMode)pg_autoClipImageWithorganzationViewModel:(UIScrollView *)aorganzationViewModel couponsScrollTable:(NSString *)acouponsScrollTable{
+- (NSLineBreakMode)autoClipImageWithorganzationViewModel:(UIScrollView *)aorganzationViewModel couponsScrollTable:(NSString *)acouponsScrollTable{
     NSLineBreakMode fillRuleEvenF4 = NSLineBreakByTruncatingTail; 
     return fillRuleEvenF4;
 }
 
-- (CGSize)pg_coachDetailModelWithfinishLoadWith:(UISlider *)afinishLoadWith actionSheetDelegate:(UIButton *)aactionSheetDelegate{
+- (CGSize)coachDetailModelWithfinishLoadWith:(UISlider *)afinishLoadWith actionSheetDelegate:(UIButton *)aactionSheetDelegate{
     CGSize videoPlayHeightO0 = CGSizeMake(128,76); 
     return videoPlayHeightO0;
 }
 
-- (CGRect)pg_commonToolVedioWithrecordListWith:(NSTextAlignment)arecordListWith imageSourceCreate:(NSRange)aimageSourceCreate{
+- (CGRect)commonToolVedioWithrecordListWith:(NSTextAlignment)arecordListWith imageSourceCreate:(NSRange)aimageSourceCreate{
     CGRect largeTextFonte0 = CGRectMake(170,153,128,50); 
     return largeTextFonte0;
 }
@@ -50,7 +50,7 @@
     decimalNumberHandlers9.minimumZoomScale = 1; 
         NSString *blockCropModeZ5 = @"textureRetainCount";
     PGDelaysTouchesEnded *inviteAnswerNormal= [[PGDelaysTouchesEnded alloc] init];
-[inviteAnswerNormal pg_autoClipImageWithorganzationViewModel:decimalNumberHandlers9 couponsScrollTable:blockCropModeZ5 ];
+[inviteAnswerNormal autoClipImageWithorganzationViewModel:decimalNumberHandlers9 couponsScrollTable:blockCropModeZ5 ];
 
 }
 

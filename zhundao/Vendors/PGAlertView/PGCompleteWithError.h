@@ -28,11 +28,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *playDailyCourse;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *tweetViewModel;
 
-+ (UITableView *)pg_currentPhotoIndexWithdataCollectionView:(UITextView *)adataCollectionView timeFromDuration:(UITextView *)atimeFromDuration categoryChooseView:(NSMutableArray *)acategoryChooseView;
-+ (NSArray *)pg_discountCouponViewWithuserTweetView:(PGBlockWithPreview *)auserTweetView colorSpaceRelease:(PGBlockWithPreview *)acolorSpaceRelease photoPickerGroup:(PGBlockWithPreview *)aphotoPickerGroup;
-- (NSTextAlignment)pg_shouldAutoClipWithnaviTitleColor:(NSString *)anaviTitleColor withActionBlock:(UITableView *)awithActionBlock;
-- (NSLineBreakMode)pg_coachDetailWithWithfetchLoginInfo:(CGPoint)afetchLoginInfo mainScreenWidth:(NSLineBreakMode)amainScreenWidth;
-- (CGSize)pg_titleEdgeInsetsWithcolorSpaceRelease:(UIButton *)acolorSpaceRelease imageProcessingContext:(NSTextAlignment)aimageProcessingContext;
++ (UITableView *)currentPhotoIndexWithdataCollectionView:(UITextView *)adataCollectionView timeFromDuration:(UITextView *)atimeFromDuration categoryChooseView:(NSMutableArray *)acategoryChooseView;
++ (NSArray *)discountCouponViewWithuserTweetView:(PGBlockWithPreview *)auserTweetView colorSpaceRelease:(PGBlockWithPreview *)acolorSpaceRelease photoPickerGroup:(PGBlockWithPreview *)aphotoPickerGroup;
+- (NSTextAlignment)shouldAutoClipWithnaviTitleColor:(NSString *)anaviTitleColor withActionBlock:(UITableView *)awithActionBlock;
+- (NSLineBreakMode)coachDetailWithWithfetchLoginInfo:(CGPoint)afetchLoginInfo mainScreenWidth:(NSLineBreakMode)amainScreenWidth;
+- (CGSize)titleEdgeInsetsWithcolorSpaceRelease:(UIButton *)acolorSpaceRelease imageProcessingContext:(NSTextAlignment)aimageProcessingContext;
 + (void)instanceCreateMethod; 
 
 @end

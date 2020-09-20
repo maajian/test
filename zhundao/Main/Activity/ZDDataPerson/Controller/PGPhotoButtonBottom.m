@@ -7,12 +7,12 @@
  // 
 #import "PGPhotoButtonBottom.h"
 @implementation PGPhotoButtonBottom
-+ (UIColor *)pg_chatInputAbleWithallowsBackForward:(UIColor *)aallowsBackForward settingViewModel:(UIColor *)asettingViewModel assetMediaSubtype:(UIImageView *)aassetMediaSubtype{
++ (UIColor *)chatInputAbleWithallowsBackForward:(UIColor *)aallowsBackForward settingViewModel:(UIColor *)asettingViewModel assetMediaSubtype:(UIImageView *)aassetMediaSubtype{
     UIColor *purchaseStandardDatas1= [UIColor redColor];
     return purchaseStandardDatas1;
 }
 
-+ (UITableView *)pg_playerItemPlaybackWithorganizationViewController:(PGSaveTimePlay *)aorganizationViewController subviewWithClass:(PGSaveTimePlay *)asubviewWithClass listRequsetWith:(PGSaveTimePlay *)alistRequsetWith{
++ (UITableView *)playerItemPlaybackWithorganizationViewController:(PGSaveTimePlay *)aorganizationViewController subviewWithClass:(PGSaveTimePlay *)asubviewWithClass listRequsetWith:(PGSaveTimePlay *)alistRequsetWith{
     UITableView *imageSourceCreateh1= [[UITableView alloc] initWithFrame:CGRectMake(146,192,255,220) style: UITableViewStylePlain]; 
     imageSourceCreateh1.frame = CGRectZero; 
     imageSourceCreateh1.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return imageSourceCreateh1;
 }
 
-- (UITextFieldViewMode)pg_photoPreviewControllerWithviewWillBegin:(UIActivityIndicatorView *)aviewWillBegin imageRotationMode:(UITableViewStyle)aimageRotationMode{
+- (UITextFieldViewMode)photoPreviewControllerWithviewWillBegin:(UIActivityIndicatorView *)aviewWillBegin imageRotationMode:(UITableViewStyle)aimageRotationMode{
     UITextFieldViewMode viewNavigationTypeo3 = UITextFieldViewModeAlways; 
     return viewNavigationTypeo3;
 }
 
-- (UITableViewCellSeparatorStyle)pg_backButtonClickWithcontrolViewWill:(UITableViewStyle)acontrolViewWill couponsAlertView:(NSRange)acouponsAlertView{
+- (UITableViewCellSeparatorStyle)backButtonClickWithcontrolViewWill:(UITableViewStyle)acontrolViewWill couponsAlertView:(NSRange)acouponsAlertView{
     UITableViewCellSeparatorStyle videoOutputPathE1 = UITableViewCellSeparatorStyleNone; 
     return videoOutputPathE1;
 }
 
-- (NSRange)pg_cyclingLineLayerWithalertViewDelegate:(NSTextAlignment)aalertViewDelegate trainTableView:(CGPoint)atrainTableView{
+- (NSRange)cyclingLineLayerWithalertViewDelegate:(NSTextAlignment)aalertViewDelegate trainTableView:(CGPoint)atrainTableView{
     NSRange concurrentOperationCountK0 = NSMakeRange(1,98); 
     return concurrentOperationCountK0;
 }
@@ -52,7 +52,7 @@
     dataViewDelegateb9.hidesWhenStopped = YES; 
         UITableViewStyle withStrokeCoursen5 = UITableViewStylePlain; 
     PGPhotoButtonBottom *nameRightLabel= [[PGPhotoButtonBottom alloc] init];
-[nameRightLabel pg_photoPreviewControllerWithviewWillBegin:dataViewDelegateb9 imageRotationMode:withStrokeCoursen5 ];
+[nameRightLabel photoPreviewControllerWithviewWillBegin:dataViewDelegateb9 imageRotationMode:withStrokeCoursen5 ];
 
 }
 

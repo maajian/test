@@ -76,7 +76,7 @@ static CGFloat const indicatorHeight = 3;
  *  @param font    文字的字体
  *  @param maxSize 文字的最大尺寸
  */
-- (CGSize)PG_sizeWithText:(NSString *)text font:(UIFont *)font maxSize:(CGSize)maxSize {
+- (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font maxSize:(CGSize)maxSize {
     NSDictionary *attrs = @{NSFontAttributeName : font};
     return [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
 }
@@ -118,12 +118,12 @@ static CGFloat const indicatorHeight = 3;
         [self.allTitleLabel addObject:_staticTitleLabel];
         
         // 添加点按手势
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(PG_staticTitleClick:)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(staticTitleClick:)];
         [_staticTitleLabel addGestureRecognizer:tap];
         
         // 默认选中第0个label
         if (j == 0) {
-            [self PG_staticTitleClick:tap];
+            [self staticTitleClick:tap];
         }
         
         [self addSubview:_staticTitleLabel];
@@ -141,7 +141,7 @@ static CGFloat const indicatorHeight = 3;
     
     // 指示器默认在第一个选中位置
     // 计算TitleLabel内容的Size
-    CGSize labelSize = [self PG_sizeWithText:firstLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, labelH)];
+    CGSize labelSize = [self sizeWithText:firstLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, labelH)];
     _indicatorView.SG_width = labelSize.width + kCellDefaultMargin * 2;
     _indicatorView.SG_centerX = firstLabel.SG_centerX;
     
@@ -152,12 +152,12 @@ static CGFloat const indicatorHeight = 3;
 }
 
 /** staticTitleClick的点击事件 */
-- (void)PG_staticTitleClick:(UITapGestureRecognizer *)tap {
+- (void)staticTitleClick:(UITapGestureRecognizer *)tap {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *photoScrollViewd3= [UIImage imageNamed:@""]; 
         NSData *foregroundColorAttributeO2= [[NSData alloc] init];
     PGImageCompressionWith *itemPhotoClick= [[PGImageCompressionWith alloc] init];
-[itemPhotoClick pg_stringFromClassWithorganizeHeaderView:photoScrollViewd3 discoveryViewModel:foregroundColorAttributeO2 ];
+[itemPhotoClick stringFromClassWithorganizeHeaderView:photoScrollViewd3 discoveryViewModel:foregroundColorAttributeO2 ];
 });
     // 0.获取选中的label
     UILabel *selLabel = (UILabel *)tap.view;
@@ -178,7 +178,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *inputPanelWithn6= [UIImage imageNamed:@""]; 
         NSData *textAlignmentRightT9= [[NSData alloc] init];
     PGImageCompressionWith *videoCameraInterface= [[PGImageCompressionWith alloc] init];
-[videoCameraInterface pg_stringFromClassWithorganizeHeaderView:inputPanelWithn6 discoveryViewModel:textAlignmentRightT9 ];
+[videoCameraInterface stringFromClassWithorganizeHeaderView:inputPanelWithn6 discoveryViewModel:textAlignmentRightT9 ];
 });
     // 取消高亮
     _selectedTitleLabel.highlighted = NO;
@@ -197,7 +197,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     // 改变指示器位置
     [UIView animateWithDuration:0.20 animations:^{
         // 计算内容的Size
-        CGSize labelSize = [self PG_sizeWithText:_selectedTitleLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, self.frame.size.height - indicatorHeight)];
+        CGSize labelSize = [self sizeWithText:_selectedTitleLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, self.frame.size.height - indicatorHeight)];
         self.indicatorView.SG_width = labelSize.width + kCellDefaultMargin * 2;
         self.indicatorView.SG_centerX = label.SG_centerX;
     }];
@@ -210,7 +210,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *assetsGroupEnumerationv9= [UIImage imageNamed:@""]; 
         NSData *tableViewContentt3= [[NSData alloc] init];
     PGImageCompressionWith *listWithCity= [[PGImageCompressionWith alloc] init];
-[listWithCity pg_stringFromClassWithorganizeHeaderView:assetsGroupEnumerationv9 discoveryViewModel:tableViewContentt3 ];
+[listWithCity stringFromClassWithorganizeHeaderView:assetsGroupEnumerationv9 discoveryViewModel:tableViewContentt3 ];
 });
     _scrollTitleArr = scrollTitleArr;
     
@@ -231,7 +231,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _scrollTitleLabel.highlightedTextColor = ZDMainColor;
         
         // 计算内容的Size
-        CGSize labelSize = [self PG_sizeWithText:_scrollTitleLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, labelH)];
+        CGSize labelSize = [self sizeWithText:_scrollTitleLabel.text font:kAppMiddleTextFont maxSize:CGSizeMake(MAXFLOAT, labelH)];
         // 计算内容的宽度
         CGFloat labelW = 0;
         if (self.scrollTitleArr.count < 6) {
@@ -251,12 +251,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.allTitleLabel addObject:_scrollTitleLabel];
         
         // 添加点按手势
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(PG_scrollTitleClick:)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollTitleClick:)];
         [_scrollTitleLabel addGestureRecognizer:tap];
         
         // 默认选中第0个label
         if (i == 0) {
-            [self PG_scrollTitleClick:tap];
+            [self scrollTitleClick:tap];
         }
         
         [self addSubview:_scrollTitleLabel];
@@ -282,13 +282,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     
     // 指示器默认在第一个选中位置
     // 计算TitleLabel内容的Size
-    CGSize labelSize = [self PG_sizeWithText:firstLabel.text font:labelFontOfSize maxSize:CGSizeMake(MAXFLOAT, labelH)];
+    CGSize labelSize = [self sizeWithText:firstLabel.text font:labelFontOfSize maxSize:CGSizeMake(MAXFLOAT, labelH)];
     _indicatorView.SG_width = labelSize.width + kCellDefaultMargin * 2;
     _indicatorView.SG_centerX = firstLabel.SG_centerX;
 }
 
 /** scrollTitleClick的点击事件 */
-- (void)PG_scrollTitleClick:(UITapGestureRecognizer *)tap {
+- (void)scrollTitleClick:(UITapGestureRecognizer *)tap {
     // 0.获取选中的label
     UILabel *selLabel = (UILabel *)tap.view;
     

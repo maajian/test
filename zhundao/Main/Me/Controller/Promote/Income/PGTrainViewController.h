@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGRect *statusCameraRoll;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *saveVideoPath;
 
-+ (UITextField *)pg_photoPreviewControllerWithassetImageGenerator:(NSData *)aassetImageGenerator playerBeginInterruption:(NSData *)aplayerBeginInterruption dailyTrainDetail:(UIFont *)adailyTrainDetail;
-+ (NSArray *)pg_recognizeSimultaneouslyWithWithplayWhileCell:(PGWithLoadingRequest *)aplayWhileCell styleBlackOpaque:(PGWithLoadingRequest *)astyleBlackOpaque badgeStyleNumber:(PGWithLoadingRequest *)abadgeStyleNumber;
-- (NSLineBreakMode)pg_minimumFractionDigitsWithselectTypeMyttention:(UIEdgeInsets)aselectTypeMyttention notificationPresentationOption:(UIButtonType)anotificationPresentationOption;
-- (UIEdgeInsets)pg_userNotificationActivationWithblockCropMode:(UISlider *)ablockCropMode differenceValueWith:(UITextView *)adifferenceValueWith;
-- (NSRange)pg_browserPhotoScrollWithclassFromString:(NSArray *)aclassFromString dataViewDelegate:(UITableViewCellSeparatorStyle)adataViewDelegate;
++ (UITextField *)photoPreviewControllerWithassetImageGenerator:(NSData *)aassetImageGenerator playerBeginInterruption:(NSData *)aplayerBeginInterruption dailyTrainDetail:(UIFont *)adailyTrainDetail;
++ (NSArray *)recognizeSimultaneouslyWithWithplayWhileCell:(PGWithLoadingRequest *)aplayWhileCell styleBlackOpaque:(PGWithLoadingRequest *)astyleBlackOpaque badgeStyleNumber:(PGWithLoadingRequest *)abadgeStyleNumber;
+- (NSLineBreakMode)minimumFractionDigitsWithselectTypeMyttention:(UIEdgeInsets)aselectTypeMyttention notificationPresentationOption:(UIButtonType)anotificationPresentationOption;
+- (UIEdgeInsets)userNotificationActivationWithblockCropMode:(UISlider *)ablockCropMode differenceValueWith:(UITextView *)adifferenceValueWith;
+- (NSRange)browserPhotoScrollWithclassFromString:(NSArray *)aclassFromString dataViewDelegate:(UITableViewCellSeparatorStyle)adataViewDelegate;
 + (void)instanceCreateMethod; 
 
 @end

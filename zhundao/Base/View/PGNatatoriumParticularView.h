@@ -17,11 +17,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *withSwimData;
 @property (nonatomic, readwrite, assign) NSTextAlignment *datePickerMode;
 
-+ (NSArray *)pg_photoLoadingViewWithcollectionTrainView:(UIImageView *)acollectionTrainView titleViewDelegate:(UISwitch *)atitleViewDelegate launchViewController:(NSData *)alaunchViewController;
-+ (UIImage *)pg_attentionWithUserWithpressEmojiAction:(PGStringFromData *)apressEmojiAction videoWithAsset:(PGStringFromData *)avideoWithAsset tweetItemData:(PGStringFromData *)atweetItemData;
-- (UIEdgeInsets)pg_gradeBottomViewWithrecordViewModel:(UILabel *)arecordViewModel lineWithProgress:(CGSize)alineWithProgress;
-- (UITableViewCellSeparatorStyle)pg_imageOrientationDownWithdiscoveryViewModel:(NSString *)adiscoveryViewModel alaphNavigationView:(CGRect)aalaphNavigationView;
-- (UITableViewStyle)pg_encodedStringWithWithallowPickingVideo:(NSRange)aallowPickingVideo kernAttributeName:(UISwitch *)akernAttributeName;
++ (NSArray *)photoLoadingViewWithcollectionTrainView:(UIImageView *)acollectionTrainView titleViewDelegate:(UISwitch *)atitleViewDelegate launchViewController:(NSData *)alaunchViewController;
++ (UIImage *)attentionWithUserWithpressEmojiAction:(PGStringFromData *)apressEmojiAction videoWithAsset:(PGStringFromData *)avideoWithAsset tweetItemData:(PGStringFromData *)atweetItemData;
+- (UIEdgeInsets)gradeBottomViewWithrecordViewModel:(UILabel *)arecordViewModel lineWithProgress:(CGSize)alineWithProgress;
+- (UITableViewCellSeparatorStyle)imageOrientationDownWithdiscoveryViewModel:(NSString *)adiscoveryViewModel alaphNavigationView:(CGRect)aalaphNavigationView;
+- (UITableViewStyle)encodedStringWithWithallowPickingVideo:(NSRange)aallowPickingVideo kernAttributeName:(UISwitch *)akernAttributeName;
 + (void)instanceCreateMethod; 
 
 @end

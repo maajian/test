@@ -102,7 +102,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     enableVertexAttriba7.autoresizesSubviews = YES; 
     enableVertexAttriba7.clearsContextBeforeDrawing = YES; 
     PGAssetPropertyDuration *centerViewModel= [[PGAssetPropertyDuration alloc] init];
-[centerViewModel pg_activityListWithWithfillRuleEven:assetMediaTypel8 collectionViewController:enableVertexAttriba7 ];
+[centerViewModel activityListWithWithfillRuleEven:assetMediaTypel8 collectionViewController:enableVertexAttriba7 ];
 });
     [super viewWillDisappear:animated];
     NSDictionary *attributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:18],

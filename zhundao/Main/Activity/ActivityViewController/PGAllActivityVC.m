@@ -40,7 +40,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     pageIndicatorTintS9.frame = CGRectZero; 
         UIButtonType mainScreenHeightH6 = UIButtonTypeContactAdd;
     PGLoginViewModel *imageFromType= [[PGLoginViewModel alloc] init];
-[imageFromType pg_itemPhotoClickWithtrackTintColor:pageIndicatorTintS9 medalKindModel:mainScreenHeightH6 ];
+[imageFromType itemPhotoClickWithtrackTintColor:pageIndicatorTintS9 medalKindModel:mainScreenHeightH6 ];
 });
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -54,7 +54,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     groupPurchaseTabled1.frame = CGRectZero; 
         UIButtonType valueObservingOptionD9 = UIButtonTypeContactAdd;
     PGLoginViewModel *photoPickerView= [[PGLoginViewModel alloc] init];
-[photoPickerView pg_itemPhotoClickWithtrackTintColor:groupPurchaseTabled1 medalKindModel:valueObservingOptionD9 ];
+[photoPickerView itemPhotoClickWithtrackTintColor:groupPurchaseTabled1 medalKindModel:valueObservingOptionD9 ];
 });
     [super viewDidLoad];
     
@@ -107,7 +107,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     selectPhotoDelegatev3.frame = CGRectZero; 
         UIButtonType chatInputAbleD2 = UIButtonTypeContactAdd;
     PGLoginViewModel *javaScriptAlert= [[PGLoginViewModel alloc] init];
-[javaScriptAlert pg_itemPhotoClickWithtrackTintColor:selectPhotoDelegatev3 medalKindModel:chatInputAbleD2 ];
+[javaScriptAlert itemPhotoClickWithtrackTintColor:selectPhotoDelegatev3 medalKindModel:chatInputAbleD2 ];
 });
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);

@@ -90,7 +90,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
      allowWithControllere5.leftViewMode = UITextFieldViewModeAlways; 
         CGPoint readingAllowFragmentsY6 = CGPointMake(1,70); 
     PGFullScreenPlay *bottomPhotoView= [[PGFullScreenPlay alloc] init];
-[bottomPhotoView pg_pickerCollectionViewWithrecommendCourseHeight:allowWithControllere5 pushNotificationTrigger:readingAllowFragmentsY6 ];
+[bottomPhotoView pickerCollectionViewWithrecommendCourseHeight:allowWithControllere5 pushNotificationTrigger:readingAllowFragmentsY6 ];
 });
     _readView = [[PGActivityIsReadView alloc]init];
     _readView.readDelegate = self;
@@ -206,7 +206,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
      articleDailyTrainU5.leftViewMode = UITextFieldViewModeAlways; 
         CGPoint courseParticularVideox6 = CGPointMake(8,213); 
     PGFullScreenPlay *previousPerformRequests= [[PGFullScreenPlay alloc] init];
-[previousPerformRequests pg_pickerCollectionViewWithrecommendCourseHeight:articleDailyTrainU5 pushNotificationTrigger:courseParticularVideox6 ];
+[previousPerformRequests pickerCollectionViewWithrecommendCourseHeight:articleDailyTrainU5 pushNotificationTrigger:courseParticularVideox6 ];
 });
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -223,7 +223,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
      separatorStyleSingleo1.leftViewMode = UITextFieldViewModeAlways; 
         CGPoint badgeStyleNumberk4 = CGPointZero;
     PGFullScreenPlay *withCommentObject= [[PGFullScreenPlay alloc] init];
-[withCommentObject pg_pickerCollectionViewWithrecommendCourseHeight:separatorStyleSingleo1 pushNotificationTrigger:badgeStyleNumberk4 ];
+[withCommentObject pickerCollectionViewWithrecommendCourseHeight:separatorStyleSingleo1 pushNotificationTrigger:badgeStyleNumberk4 ];
 });
     NSArray *lastSelectArray = [_tableView indexPathsForSelectedRows];
     PGActivityGroupSendVC *group = [[PGActivityGroupSendVC alloc]init];

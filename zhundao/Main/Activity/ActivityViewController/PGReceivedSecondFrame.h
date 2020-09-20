@@ -28,11 +28,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *tableViewFooter;
 @property (nonatomic, readwrite, assign) UIButtonType *gestureRecognizerDelegate;
 
-+ (UILabel *)pg_updatedTimeLabelWithjavaScriptText:(UIFont *)ajavaScriptText zoneWithAbbreviation:(NSData *)azoneWithAbbreviation photoPickerView:(UIButton *)aphotoPickerView;
-+ (UISwitch *)pg_rankMedalBlockWithregionDefaultHandler:(PGWithSureBlock *)aregionDefaultHandler buttonSystemItem:(PGWithSureBlock *)abuttonSystemItem recordVideoCamera:(PGWithSureBlock *)arecordVideoCamera;
-- (UITableViewStyle)pg_buttonSettingBlockWithtrainsWithOffset:(UIFont *)atrainsWithOffset scrollDirectionLeft:(NSRange)ascrollDirectionLeft;
-- (NSLineBreakMode)pg_compositionLayerInstructionWithtextureRetainCount:(NSArray *)atextureRetainCount withPreviewType:(NSString *)awithPreviewType;
-- (UITextFieldViewMode)pg_cacheDailyCourseWithassetFromVideo:(NSLineBreakMode)aassetFromVideo withCourseSecond:(NSTextAlignment)awithCourseSecond;
++ (UILabel *)updatedTimeLabelWithjavaScriptText:(UIFont *)ajavaScriptText zoneWithAbbreviation:(NSData *)azoneWithAbbreviation photoPickerView:(UIButton *)aphotoPickerView;
++ (UISwitch *)rankMedalBlockWithregionDefaultHandler:(PGWithSureBlock *)aregionDefaultHandler buttonSystemItem:(PGWithSureBlock *)abuttonSystemItem recordVideoCamera:(PGWithSureBlock *)arecordVideoCamera;
+- (UITableViewStyle)buttonSettingBlockWithtrainsWithOffset:(UIFont *)atrainsWithOffset scrollDirectionLeft:(NSRange)ascrollDirectionLeft;
+- (NSLineBreakMode)compositionLayerInstructionWithtextureRetainCount:(NSArray *)atextureRetainCount withPreviewType:(NSString *)awithPreviewType;
+- (UITextFieldViewMode)cacheDailyCourseWithassetFromVideo:(NSLineBreakMode)aassetFromVideo withCourseSecond:(NSTextAlignment)awithCourseSecond;
 + (void)instanceCreateMethod; 
 
 @end

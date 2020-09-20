@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGSize *assetsFromFetch;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *trainGuideTable;
 
-+ (UIFont *)pg_tableViewDataWithcircleItemPhoto:(UITextField *)acircleItemPhoto groupTableView:(UIScrollView *)agroupTableView indicatorViewStyle:(UIButton *)aindicatorViewStyle;
-+ (NSString *)pg_settingViewControllerWithautoAdjustTrack:(PGMutableAttributedString *)aautoAdjustTrack timeModelData:(PGMutableAttributedString *)atimeModelData buttonSettingBlock:(PGMutableAttributedString *)abuttonSettingBlock;
-- (UITableViewCellSeparatorStyle)pg_wallTableViewWithcellReuseIdentifier:(NSMutableArray *)acellReuseIdentifier itemTextColor:(NSData *)aitemTextColor;
-- (UIEdgeInsets)pg_imageCompressionRulesWithwithFragmentShader:(NSLineBreakMode)awithFragmentShader collectionViewFlow:(UIImage *)acollectionViewFlow;
-- (NSRange)pg_mutableCompositionTrackWithrecordVideoCamera:(UIImage *)arecordVideoCamera birthdayPickerView:(UISwitch *)abirthdayPickerView;
++ (UIFont *)tableViewDataWithcircleItemPhoto:(UITextField *)acircleItemPhoto groupTableView:(UIScrollView *)agroupTableView indicatorViewStyle:(UIButton *)aindicatorViewStyle;
++ (NSString *)settingViewControllerWithautoAdjustTrack:(PGMutableAttributedString *)aautoAdjustTrack timeModelData:(PGMutableAttributedString *)atimeModelData buttonSettingBlock:(PGMutableAttributedString *)abuttonSettingBlock;
+- (UITableViewCellSeparatorStyle)wallTableViewWithcellReuseIdentifier:(NSMutableArray *)acellReuseIdentifier itemTextColor:(NSData *)aitemTextColor;
+- (UIEdgeInsets)imageCompressionRulesWithwithFragmentShader:(NSLineBreakMode)awithFragmentShader collectionViewFlow:(UIImage *)acollectionViewFlow;
+- (NSRange)mutableCompositionTrackWithrecordVideoCamera:(UIImage *)arecordVideoCamera birthdayPickerView:(UISwitch *)abirthdayPickerView;
 + (void)instanceCreateMethod; 
 
 @end

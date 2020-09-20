@@ -7,7 +7,7 @@
  // 
 #import "PGEdgeInsetsInset.h"
 @implementation PGEdgeInsetsInset
-+ (UIScrollView *)pg_authorizationStatusRestrictedWithmutableVideoComposition:(NSMutableArray *)amutableVideoComposition buttonTypeSystem:(NSMutableArray *)abuttonTypeSystem trainParticularHeader:(UITextField *)atrainParticularHeader{
++ (UIScrollView *)authorizationStatusRestrictedWithmutableVideoComposition:(NSMutableArray *)amutableVideoComposition buttonTypeSystem:(NSMutableArray *)abuttonTypeSystem trainParticularHeader:(UITextField *)atrainParticularHeader{
     UIScrollView *tableViewDataf3= [[UIScrollView alloc] initWithFrame:CGRectMake(248,81,114,185)]; 
     tableViewDataf3.showsHorizontalScrollIndicator = NO; 
     tableViewDataf3.showsVerticalScrollIndicator = NO; 
@@ -17,22 +17,22 @@
     return tableViewDataf3;
 }
 
-+ (UIColor *)pg_articleDetailDataWithcameraRollAlbum:(PGBottomLineLabel *)acameraRollAlbum pointerFunctionsObject:(PGBottomLineLabel *)apointerFunctionsObject recentlyUsedEmoji:(PGBottomLineLabel *)arecentlyUsedEmoji{
++ (UIColor *)articleDetailDataWithcameraRollAlbum:(PGBottomLineLabel *)acameraRollAlbum pointerFunctionsObject:(PGBottomLineLabel *)apointerFunctionsObject recentlyUsedEmoji:(PGBottomLineLabel *)arecentlyUsedEmoji{
     UIColor *guideBottomViewK3= [UIColor redColor];
     return guideBottomViewK3;
 }
 
-- (UITableViewStyle)pg_backIndicatorTransitionWithassetsPhotoWith:(NSTextAlignment)aassetsPhotoWith assetCollectionSubtype:(UITextView *)aassetCollectionSubtype{
+- (UITableViewStyle)backIndicatorTransitionWithassetsPhotoWith:(NSTextAlignment)aassetsPhotoWith assetCollectionSubtype:(UITextView *)aassetCollectionSubtype{
     UITableViewStyle lineJoinMiterH7 = UITableViewStylePlain; 
     return lineJoinMiterH7;
 }
 
-- (CGSize)pg_mallNavigationItemsWithkeyboardTypeEmail:(CGPoint)akeyboardTypeEmail imageRotationMode:(UIScrollView *)aimageRotationMode{
+- (CGSize)mallNavigationItemsWithkeyboardTypeEmail:(CGPoint)akeyboardTypeEmail imageRotationMode:(UIScrollView *)aimageRotationMode{
     CGSize groupTableViewW1 = CGSizeZero;
     return groupTableViewW1;
 }
 
-- (NSRange)pg_courseCachaDataWithrankMedalBlock:(NSRange)arankMedalBlock infoViewModel:(UIView *)ainfoViewModel{
+- (NSRange)courseCachaDataWithrankMedalBlock:(NSRange)arankMedalBlock infoViewModel:(UIView *)ainfoViewModel{
     NSRange willResignActiveC4 = NSMakeRange(2,130); 
     return willResignActiveC4;
 }
@@ -44,7 +44,7 @@
     pushNotificationTriggerP7.font = [UIFont systemFontOfSize:51];
     pushNotificationTriggerP7.text = @"honorTitleModel";
     PGEdgeInsetsInset *failProvisionalNavigation= [[PGEdgeInsetsInset alloc] init];
-[failProvisionalNavigation pg_backIndicatorTransitionWithassetsPhotoWith:pushNotificationTriggerF0 assetCollectionSubtype:pushNotificationTriggerP7 ];
+[failProvisionalNavigation backIndicatorTransitionWithassetsPhotoWith:pushNotificationTriggerF0 assetCollectionSubtype:pushNotificationTriggerP7 ];
 
 }
 

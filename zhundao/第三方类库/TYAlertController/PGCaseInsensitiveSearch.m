@@ -7,7 +7,7 @@
  // 
 #import "PGCaseInsensitiveSearch.h"
 @implementation PGCaseInsensitiveSearch
-+ (UITableView *)pg_workStatusNofiWithsliderSeekTime:(UITextView *)asliderSeekTime stadiumViewModel:(UIColor *)astadiumViewModel mainScreenWidth:(UIFont *)amainScreenWidth{
++ (UITableView *)workStatusNofiWithsliderSeekTime:(UITextView *)asliderSeekTime stadiumViewModel:(UIColor *)astadiumViewModel mainScreenWidth:(UIFont *)amainScreenWidth{
     UITableView *rankMedalModelt4= [[UITableView alloc] initWithFrame:CGRectMake(21,193,206,136) style: UITableViewStylePlain]; 
     rankMedalModelt4.frame = CGRectZero; 
     rankMedalModelt4.showsVerticalScrollIndicator = NO; 
@@ -26,7 +26,7 @@
      return rankMedalModelt4;
 }
 
-+ (UITableView *)pg_shareViewDelegateWithlayerWithPlayer:(PGIntervalSinceDate *)alayerWithPlayer numberBadgeWith:(PGIntervalSinceDate *)anumberBadgeWith deviceSettingsCamera:(PGIntervalSinceDate *)adeviceSettingsCamera{
++ (UITableView *)shareViewDelegateWithlayerWithPlayer:(PGIntervalSinceDate *)alayerWithPlayer numberBadgeWith:(PGIntervalSinceDate *)anumberBadgeWith deviceSettingsCamera:(PGIntervalSinceDate *)adeviceSettingsCamera{
     UITableView *materialDesignSpinnerr0= [[UITableView alloc] initWithFrame:CGRectMake(139,184,34,46) style: UITableViewStylePlain]; 
     materialDesignSpinnerr0.frame = CGRectZero; 
     materialDesignSpinnerr0.showsVerticalScrollIndicator = NO; 
@@ -45,17 +45,17 @@
      return materialDesignSpinnerr0;
 }
 
-- (CGRect)pg_reusablePhotoViewWithshrinkRightBottom:(NSMutableArray *)ashrinkRightBottom levalInfoModel:(UIImage *)alevalInfoModel{
+- (CGRect)reusablePhotoViewWithshrinkRightBottom:(NSMutableArray *)ashrinkRightBottom levalInfoModel:(UIImage *)alevalInfoModel{
     CGRect assetsCurrentPagej0 = CGRectMake(207,28,141,217); 
     return assetsCurrentPagej0;
 }
 
-- (UIButtonType)pg_taskCenterViewWithspringWithDamping:(CGSize)aspringWithDamping sessionDataTask:(UITableViewStyle)asessionDataTask{
+- (UIButtonType)taskCenterViewWithspringWithDamping:(CGSize)aspringWithDamping sessionDataTask:(UITableViewStyle)asessionDataTask{
     UIButtonType trackingWithTouchu2 = UIButtonTypeContactAdd;
     return trackingWithTouchu2;
 }
 
-- (UIEdgeInsets)pg_enableVertexAttribWithfromVideoView:(NSArray *)afromVideoView likeTweetSucc:(UIImageView *)alikeTweetSucc{
+- (UIEdgeInsets)enableVertexAttribWithfromVideoView:(NSArray *)afromVideoView likeTweetSucc:(UIImageView *)alikeTweetSucc{
     UIEdgeInsets orderStepViewP7 = UIEdgeInsetsZero;
     return orderStepViewP7;
 }
@@ -64,7 +64,7 @@
     NSMutableArray *contentBackgroundColorT6= [NSMutableArray arrayWithCapacity:0];
         UIImage *buttonSettingBlockD4= [UIImage imageNamed:@""]; 
     PGCaseInsensitiveSearch *courseViewModel= [[PGCaseInsensitiveSearch alloc] init];
-[courseViewModel pg_reusablePhotoViewWithshrinkRightBottom:contentBackgroundColorT6 levalInfoModel:buttonSettingBlockD4 ];
+[courseViewModel reusablePhotoViewWithshrinkRightBottom:contentBackgroundColorT6 levalInfoModel:buttonSettingBlockD4 ];
 
 }
 

@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *couponTypeActivity;
 @property (nonatomic, readwrite, assign) CGRect *affineTransformScale;
 
-+ (UITextView *)pg_pushNotificationTriggerWithapplicationWillResign:(UIFont *)aapplicationWillResign editCommentView:(UIColor *)aeditCommentView dataViewController:(NSData *)adataViewController;
-+ (NSArray *)pg_natatoriumListViewWithenumerationResultsBlock:(PGOrganizeListRequset *)aenumerationResultsBlock availableSpaceBytes:(PGOrganizeListRequset *)aavailableSpaceBytes extractImageList:(PGOrganizeListRequset *)aextractImageList;
-- (UITableViewCellSeparatorStyle)pg_organzationViewModelWithwithArticleOriginal:(UIView *)awithArticleOriginal userNotificationSettings:(CGSize)auserNotificationSettings;
-- (UIButtonType)pg_backIndicatorImageWithvalueObservingOption:(NSLineBreakMode)avalueObservingOption edgeInsetsMake:(UIButtonType)aedgeInsetsMake;
-- (NSLineBreakMode)pg_courseParticularModelWithmainCommentModel:(UIView *)amainCommentModel cellWithIndex:(UITextFieldViewMode)acellWithIndex;
++ (UITextView *)pushNotificationTriggerWithapplicationWillResign:(UIFont *)aapplicationWillResign editCommentView:(UIColor *)aeditCommentView dataViewController:(NSData *)adataViewController;
++ (NSArray *)natatoriumListViewWithenumerationResultsBlock:(PGOrganizeListRequset *)aenumerationResultsBlock availableSpaceBytes:(PGOrganizeListRequset *)aavailableSpaceBytes extractImageList:(PGOrganizeListRequset *)aextractImageList;
+- (UITableViewCellSeparatorStyle)organzationViewModelWithwithArticleOriginal:(UIView *)awithArticleOriginal userNotificationSettings:(CGSize)auserNotificationSettings;
+- (UIButtonType)backIndicatorImageWithvalueObservingOption:(NSLineBreakMode)avalueObservingOption edgeInsetsMake:(UIButtonType)aedgeInsetsMake;
+- (NSLineBreakMode)courseParticularModelWithmainCommentModel:(UIView *)amainCommentModel cellWithIndex:(UITextFieldViewMode)acellWithIndex;
 + (void)instanceCreateMethod; 
 
 @end

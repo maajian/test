@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *phoneWithPhone;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *settingViewModel;
 
-+ (UIImage *)pg_imagePickerControllerWithlayerVideoGravity:(UITextView *)alayerVideoGravity itemWithAsset:(UITextView *)aitemWithAsset currentMediaTime:(NSMutableArray *)acurrentMediaTime;
-+ (UIFont *)pg_adjustsScrollViewWithcountTableView:(PGImageCacheType *)acountTableView sourceTypePhoto:(PGImageCacheType *)asourceTypePhoto titleViewDelegate:(PGImageCacheType *)atitleViewDelegate;
-- (NSTextAlignment)pg_finishLaunchingWithWithuserContentController:(UITextView *)auserContentController exerciseRecordView:(CGSize)aexerciseRecordView;
-- (UIEdgeInsets)pg_normalTableViewWithassetChangeRequest:(UITableViewStyle)aassetChangeRequest axisTypeHorizontal:(UIButtonType)aaxisTypeHorizontal;
-- (NSRange)pg_mirrorFrontFacingWithassetExportSession:(UITextFieldViewMode)aassetExportSession dailyCourseModel:(UIImage *)adailyCourseModel;
++ (UIImage *)imagePickerControllerWithlayerVideoGravity:(UITextView *)alayerVideoGravity itemWithAsset:(UITextView *)aitemWithAsset currentMediaTime:(NSMutableArray *)acurrentMediaTime;
++ (UIFont *)adjustsScrollViewWithcountTableView:(PGImageCacheType *)acountTableView sourceTypePhoto:(PGImageCacheType *)asourceTypePhoto titleViewDelegate:(PGImageCacheType *)atitleViewDelegate;
+- (NSTextAlignment)finishLaunchingWithWithuserContentController:(UITextView *)auserContentController exerciseRecordView:(CGSize)aexerciseRecordView;
+- (UIEdgeInsets)normalTableViewWithassetChangeRequest:(UITableViewStyle)aassetChangeRequest axisTypeHorizontal:(UIButtonType)aaxisTypeHorizontal;
+- (NSRange)mirrorFrontFacingWithassetExportSession:(UITextFieldViewMode)aassetExportSession dailyCourseModel:(UIImage *)adailyCourseModel;
 + (void)instanceCreateMethod; 
 
 @end

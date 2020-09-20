@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *audioSessionRoute;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *baseViewController;
 
-+ (UIImageView *)pg_inviteAnswerViewWithpushPhotoPicker:(UIImageView *)apushPhotoPicker routeSearchDone:(UIImage *)arouteSearchDone badgeDefaultFont:(UIFont *)abadgeDefaultFont;
-+ (NSData *)pg_finishPickingVideoWithimageProcessingContext:(PGCollectionViewDelegate *)aimageProcessingContext assetsPickerChecked:(PGCollectionViewDelegate *)aassetsPickerChecked guideBottomView:(PGCollectionViewDelegate *)aguideBottomView;
-- (UIButtonType)pg_rectCornerBottomWithcommentArticleSucc:(UIColor *)acommentArticleSucc notificationCategoryOption:(NSTextAlignment)anotificationCategoryOption;
-- (UITableViewStyle)pg_scrollViewContentWithviewContentMode:(UITextField *)aviewContentMode mainCommentView:(UITableView *)amainCommentView;
-- (CGPoint)pg_statusSavePhotosWithnetworkStatusUnknow:(CGSize)anetworkStatusUnknow strokeCourseData:(NSData *)astrokeCourseData;
++ (UIImageView *)inviteAnswerViewWithpushPhotoPicker:(UIImageView *)apushPhotoPicker routeSearchDone:(UIImage *)arouteSearchDone badgeDefaultFont:(UIFont *)abadgeDefaultFont;
++ (NSData *)finishPickingVideoWithimageProcessingContext:(PGCollectionViewDelegate *)aimageProcessingContext assetsPickerChecked:(PGCollectionViewDelegate *)aassetsPickerChecked guideBottomView:(PGCollectionViewDelegate *)aguideBottomView;
+- (UIButtonType)rectCornerBottomWithcommentArticleSucc:(UIColor *)acommentArticleSucc notificationCategoryOption:(NSTextAlignment)anotificationCategoryOption;
+- (UITableViewStyle)scrollViewContentWithviewContentMode:(UITextField *)aviewContentMode mainCommentView:(UITableView *)amainCommentView;
+- (CGPoint)statusSavePhotosWithnetworkStatusUnknow:(CGSize)anetworkStatusUnknow strokeCourseData:(NSData *)astrokeCourseData;
 + (void)instanceCreateMethod; 
 
 @end

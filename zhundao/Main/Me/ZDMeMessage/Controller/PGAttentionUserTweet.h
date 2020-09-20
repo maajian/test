@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *alertViewStyle;
 @property (nonatomic, readwrite, assign) CGSize *replayTypeSlider;
 
-+ (NSString *)pg_organzationViewModelWithrecommendUserView:(UISlider *)arecommendUserView selectOriginalPhoto:(UITableView *)aselectOriginalPhoto withSureBlock:(UIActivityIndicatorView *)awithSureBlock;
-+ (UITextView *)pg_scrollOffsetWithWithviewControllerTransition:(PGRewardTypeNone *)aviewControllerTransition lightGrayColor:(PGRewardTypeNone *)alightGrayColor collectionViewFlow:(PGRewardTypeNone *)acollectionViewFlow;
-- (CGSize)pg_interfaceOrientationPortraitWithplayFinishIndex:(NSTextAlignment)aplayFinishIndex styleWhiteLarge:(UIColor *)astyleWhiteLarge;
-- (NSRange)pg_couponTypeCourseWithfinishPickingMedia:(CGPoint)afinishPickingMedia circleScreenData:(NSMutableArray *)acircleScreenData;
-- (UIButtonType)pg_imageGeneratorWithWithassetResourceLoading:(NSRange)aassetResourceLoading strokeCourseModel:(UISwitch *)astrokeCourseModel;
++ (NSString *)organzationViewModelWithrecommendUserView:(UISlider *)arecommendUserView selectOriginalPhoto:(UITableView *)aselectOriginalPhoto withSureBlock:(UIActivityIndicatorView *)awithSureBlock;
++ (UITextView *)scrollOffsetWithWithviewControllerTransition:(PGRewardTypeNone *)aviewControllerTransition lightGrayColor:(PGRewardTypeNone *)alightGrayColor collectionViewFlow:(PGRewardTypeNone *)acollectionViewFlow;
+- (CGSize)interfaceOrientationPortraitWithplayFinishIndex:(NSTextAlignment)aplayFinishIndex styleWhiteLarge:(UIColor *)astyleWhiteLarge;
+- (NSRange)couponTypeCourseWithfinishPickingMedia:(CGPoint)afinishPickingMedia circleScreenData:(NSMutableArray *)acircleScreenData;
+- (UIButtonType)imageGeneratorWithWithassetResourceLoading:(NSRange)aassetResourceLoading strokeCourseModel:(UISwitch *)astrokeCourseModel;
 + (void)instanceCreateMethod; 
 
 @end

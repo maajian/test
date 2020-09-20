@@ -7,7 +7,7 @@
  // 
 #import "PGCancelCollectionCourse.h"
 @implementation PGCancelCollectionCourse
-+ (UIButton *)pg_addingPercentEscapesWithorderDetailCell:(UITextView *)aorderDetailCell assetsPickerChecked:(NSString *)aassetsPickerChecked pressEmojiAction:(UIImageView *)apressEmojiAction{
++ (UIButton *)addingPercentEscapesWithorderDetailCell:(UITextView *)aorderDetailCell assetsPickerChecked:(NSString *)aassetsPickerChecked pressEmojiAction:(UIImageView *)apressEmojiAction{
     UIButton *withGroupPurchasew2= [UIButton buttonWithType:UIButtonTypeCustom]; 
     withGroupPurchasew2.frame = CGRectZero; 
     withGroupPurchasew2.exclusiveTouch = NO; 
@@ -17,22 +17,22 @@
     return withGroupPurchasew2;
 }
 
-+ (NSData *)pg_imageCropManagerWithtweetCommentModel:(PGMedalDetailModel *)atweetCommentModel stateAlertView:(PGMedalDetailModel *)astateAlertView fromVideoFile:(PGMedalDetailModel *)afromVideoFile{
++ (NSData *)imageCropManagerWithtweetCommentModel:(PGMedalDetailModel *)atweetCommentModel stateAlertView:(PGMedalDetailModel *)astateAlertView fromVideoFile:(PGMedalDetailModel *)afromVideoFile{
     NSData *allowPickingImagei5= [[NSData alloc] init];
     return allowPickingImagei5;
 }
 
-- (NSRange)pg_contentInsetAdjustmentWithregionDefaultHandler:(CGSize)aregionDefaultHandler locationWithSuccess:(UIScrollView *)alocationWithSuccess{
+- (NSRange)contentInsetAdjustmentWithregionDefaultHandler:(CGSize)aregionDefaultHandler locationWithSuccess:(UIScrollView *)alocationWithSuccess{
     NSRange videoPlayHeightw5 = NSMakeRange(7,120); 
     return videoPlayHeightw5;
 }
 
-- (UIEdgeInsets)pg_tweetPhotoModelWithrectEdgeNone:(NSLineBreakMode)arectEdgeNone reusableSupplementaryView:(UITableView *)areusableSupplementaryView{
+- (UIEdgeInsets)tweetPhotoModelWithrectEdgeNone:(NSLineBreakMode)arectEdgeNone reusableSupplementaryView:(UITableView *)areusableSupplementaryView{
     UIEdgeInsets badgeStyleNumberw2 = UIEdgeInsetsMake(73,231,158,20); 
     return badgeStyleNumberw2;
 }
 
-- (UITextFieldViewMode)pg_baseLoginViewWithfrontFromBack:(CGPoint)afrontFromBack sourceTypeSaved:(NSRange)asourceTypeSaved{
+- (UITextFieldViewMode)baseLoginViewWithfrontFromBack:(CGPoint)afrontFromBack sourceTypeSaved:(NSRange)asourceTypeSaved{
     UITextFieldViewMode resourceWithTyper0 = UITextFieldViewModeAlways; 
     return resourceWithTyper0;
 }
@@ -46,7 +46,7 @@
     noticeTypeReadyt8.maximumZoomScale = 5; 
     noticeTypeReadyt8.minimumZoomScale = 1; 
     PGCancelCollectionCourse *videoPlayView= [[PGCancelCollectionCourse alloc] init];
-[videoPlayView pg_contentInsetAdjustmentWithregionDefaultHandler:routeSearchBaseA5 locationWithSuccess:noticeTypeReadyt8 ];
+[videoPlayView contentInsetAdjustmentWithregionDefaultHandler:routeSearchBaseA5 locationWithSuccess:noticeTypeReadyt8 ];
 
 }
 

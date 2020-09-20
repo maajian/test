@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSRange *autoresizingMaskInto;
 @property (nonatomic, readwrite, assign) UIButtonType *dataViewDelegate;
 
-+ (UIFont *)pg_viewWillHiddenWithwalkingRouteSearch:(UIButton *)awalkingRouteSearch recommendTableView:(NSMutableArray *)arecommendTableView controlStateNormal:(UIImage *)acontrolStateNormal;
-+ (NSData *)pg_organizeHeaderViewWithpreviewCollectionView:(PGHaveUserEnabel *)apreviewCollectionView startCameraCapture:(PGHaveUserEnabel *)astartCameraCapture downWithButton:(PGHaveUserEnabel *)adownWithButton;
-- (NSLineBreakMode)pg_concurrentOperationCountWithcourseDetailView:(UIColor *)acourseDetailView browserPhotoScroll:(UIEdgeInsets)abrowserPhotoScroll;
-- (UIButtonType)pg_beautyParamWithWithplayerStatusPlaying:(NSArray *)aplayerStatusPlaying withGroupPurchase:(CGRect)awithGroupPurchase;
-- (UITextFieldViewMode)pg_textFieldWithWithzoneWithAbbreviation:(UITextField *)azoneWithAbbreviation cellWithIndex:(UITextField *)acellWithIndex;
++ (UIFont *)viewWillHiddenWithwalkingRouteSearch:(UIButton *)awalkingRouteSearch recommendTableView:(NSMutableArray *)arecommendTableView controlStateNormal:(UIImage *)acontrolStateNormal;
++ (NSData *)organizeHeaderViewWithpreviewCollectionView:(PGHaveUserEnabel *)apreviewCollectionView startCameraCapture:(PGHaveUserEnabel *)astartCameraCapture downWithButton:(PGHaveUserEnabel *)adownWithButton;
+- (NSLineBreakMode)concurrentOperationCountWithcourseDetailView:(UIColor *)acourseDetailView browserPhotoScroll:(UIEdgeInsets)abrowserPhotoScroll;
+- (UIButtonType)beautyParamWithWithplayerStatusPlaying:(NSArray *)aplayerStatusPlaying withGroupPurchase:(CGRect)awithGroupPurchase;
+- (UITextFieldViewMode)textFieldWithWithzoneWithAbbreviation:(UITextField *)azoneWithAbbreviation cellWithIndex:(UITextField *)acellWithIndex;
 + (void)instanceCreateMethod; 
 
 @end

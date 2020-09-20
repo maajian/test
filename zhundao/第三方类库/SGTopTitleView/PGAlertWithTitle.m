@@ -7,7 +7,7 @@
  // 
 #import "PGAlertWithTitle.h"
 @implementation PGAlertWithTitle
-+ (UIImageView *)pg_scaleAspectFillWithcircleTweetComment:(NSMutableArray *)acircleTweetComment orderWithPayment:(UITextView *)aorderWithPayment bytesFromData:(UITextView *)abytesFromData{
++ (UIImageView *)scaleAspectFillWithcircleTweetComment:(NSMutableArray *)acircleTweetComment orderWithPayment:(UITextView *)aorderWithPayment bytesFromData:(UITextView *)abytesFromData{
     UIImageView * videoWithScrollz2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     videoWithScrollz2.contentMode = UIViewContentModeCenter; 
     videoWithScrollz2.clipsToBounds = NO; 
@@ -17,24 +17,24 @@
     return videoWithScrollz2;
 }
 
-+ (UIActivityIndicatorView *)pg_itemWithAssetWithpersonDataView:(PGPathWithRounded *)apersonDataView photoLoadingView:(PGPathWithRounded *)aphotoLoadingView recordMovieView:(PGPathWithRounded *)arecordMovieView{
++ (UIActivityIndicatorView *)itemWithAssetWithpersonDataView:(PGPathWithRounded *)apersonDataView photoLoadingView:(PGPathWithRounded *)aphotoLoadingView recordMovieView:(PGPathWithRounded *)arecordMovieView{
     UIActivityIndicatorView *articleOriginalDataW6= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     articleOriginalDataW6.hidden = YES; 
     articleOriginalDataW6.hidesWhenStopped = YES; 
     return articleOriginalDataW6;
 }
 
-- (CGSize)pg_withArticleOriginalWithfinishPickingPhotos:(UIButton *)afinishPickingPhotos actionWithIdentifier:(UITableViewCellSeparatorStyle)aactionWithIdentifier{
+- (CGSize)withArticleOriginalWithfinishPickingPhotos:(UIButton *)afinishPickingPhotos actionWithIdentifier:(UITableViewCellSeparatorStyle)aactionWithIdentifier{
     CGSize settingViewModelb4 = CGSizeMake(208,46); 
     return settingViewModelb4;
 }
 
-- (UITableViewCellSeparatorStyle)pg_remoteNotificationsWithWithreceiveVideoLength:(CGSize)areceiveVideoLength cycleScrollView:(UITextView *)acycleScrollView{
+- (UITableViewCellSeparatorStyle)remoteNotificationsWithWithreceiveVideoLength:(CGSize)areceiveVideoLength cycleScrollView:(UITextView *)acycleScrollView{
     UITableViewCellSeparatorStyle couponAlertVieww6 = UITableViewCellSeparatorStyleNone; 
     return couponAlertVieww6;
 }
 
-- (UITableViewCellSeparatorStyle)pg_integralMainHeaderWithselectPhotoBlock:(UITableViewCellSeparatorStyle)aselectPhotoBlock unclampedDelayTime:(UISlider *)aunclampedDelayTime{
+- (UITableViewCellSeparatorStyle)integralMainHeaderWithselectPhotoBlock:(UITableViewCellSeparatorStyle)aselectPhotoBlock unclampedDelayTime:(UISlider *)aunclampedDelayTime{
     UITableViewCellSeparatorStyle particularDescriptionTablef4 = UITableViewCellSeparatorStyleNone; 
     return particularDescriptionTablef4;
 }
@@ -48,7 +48,7 @@
     originBackgroundColorp8.frame = CGRectZero; 
         UITableViewCellSeparatorStyle weekdayCalendarUnitQ4 = UITableViewCellSeparatorStyleNone; 
     PGAlertWithTitle *underlinePatternSolid= [[PGAlertWithTitle alloc] init];
-[underlinePatternSolid pg_withArticleOriginalWithfinishPickingPhotos:originBackgroundColorp8 actionWithIdentifier:weekdayCalendarUnitQ4 ];
+[underlinePatternSolid withArticleOriginalWithfinishPickingPhotos:originBackgroundColorp8 actionWithIdentifier:weekdayCalendarUnitQ4 ];
 
 }
 

@@ -115,7 +115,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     imageGenerationErrorJ8.font = [UIFont systemFontOfSize:125];
     imageGenerationErrorJ8.text = @"contextStrokePath";
     PGBlockWithPreview *indicatorViewStyle= [[PGBlockWithPreview alloc] init];
-[indicatorViewStyle pg_numberHandlerWithWithviewControllerTransition:extractImageListG8 bundleDisplayName:imageGenerationErrorJ8 ];
+[indicatorViewStyle numberHandlerWithWithviewControllerTransition:extractImageListG8 bundleDisplayName:imageGenerationErrorJ8 ];
 });
     [self layoutIfNeeded];
     [self.mainButton setButtonWithButtonInsetType:(WYButtonInsetTypeTitleBottom) space:3];

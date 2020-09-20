@@ -62,7 +62,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     currentPageColorD2.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(106,124,79,151)];
      currentPageColorD2.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(69,31,179,222)];
      PGCompleteWithError *imageSharpenFilter= [[PGCompleteWithError alloc] init];
-[imageSharpenFilter pg_shouldAutoClipWithnaviTitleColor:withDailyCourseM8 withActionBlock:currentPageColorD2 ];
+[imageSharpenFilter shouldAutoClipWithnaviTitleColor:withDailyCourseM8 withActionBlock:currentPageColorD2 ];
 });
     
     /*! 背景图片 */
@@ -119,7 +119,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     gradeViewControllerF9.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(161,110,255,80)];
      gradeViewControllerF9.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(48,6,241,202)];
      PGCompleteWithError *trainViewModel= [[PGCompleteWithError alloc] init];
-[trainViewModel pg_shouldAutoClipWithnaviTitleColor:groupViewControllerP4 withActionBlock:gradeViewControllerF9 ];
+[trainViewModel shouldAutoClipWithnaviTitleColor:groupViewControllerP4 withActionBlock:gradeViewControllerF9 ];
 });
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
     [self.view addGestureRecognizer:tap];
@@ -226,7 +226,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     dailyTrainChapterM8.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(168,214,66,63)];
      dailyTrainChapterM8.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(205,100,143,117)];
      PGCompleteWithError *mainFirstLogin= [[PGCompleteWithError alloc] init];
-[mainFirstLogin pg_shouldAutoClipWithnaviTitleColor:cellDefaultMargini7 withActionBlock:dailyTrainChapterM8 ];
+[mainFirstLogin shouldAutoClipWithnaviTitleColor:cellDefaultMargini7 withActionBlock:dailyTrainChapterM8 ];
 });
     NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_QQ), nil];
     if ( ![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {

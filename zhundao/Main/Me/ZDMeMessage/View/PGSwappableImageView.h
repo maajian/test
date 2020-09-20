@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) NSRange *edgeInsetsZero;
 @property (nonatomic, readwrite, assign) NSRange *userTrackingMode;
 
-+ (NSData *)pg_viewWidthPaddingWithblockWithPreview:(UIFont *)ablockWithPreview failProvisionalNavigation:(UIImage *)afailProvisionalNavigation changeFrameNotification:(UIButton *)achangeFrameNotification;
-+ (NSMutableArray *)pg_adjustsScrollViewWithsourceTypeAvailable:(PGRewardTypeNone *)asourceTypeAvailable drivingRouteSearch:(PGRewardTypeNone *)adrivingRouteSearch deviceOrientationLandscape:(PGRewardTypeNone *)adeviceOrientationLandscape;
-- (UIButtonType)pg_reusableHeaderFooterWithviewWidthPadding:(CGRect)aviewWidthPadding textFieldWith:(NSLineBreakMode)atextFieldWith;
-- (UITextFieldViewMode)pg_organizeListViewWithrecognizeSimultaneouslyWith:(UILabel *)arecognizeSimultaneouslyWith progressDefaultSize:(UITableViewStyle)aprogressDefaultSize;
-- (UITextFieldViewMode)pg_originBackgroundColorWithwithVideosData:(UIScrollView *)awithVideosData cellPlayerFather:(UISlider *)acellPlayerFather;
++ (NSData *)viewWidthPaddingWithblockWithPreview:(UIFont *)ablockWithPreview failProvisionalNavigation:(UIImage *)afailProvisionalNavigation changeFrameNotification:(UIButton *)achangeFrameNotification;
++ (NSMutableArray *)adjustsScrollViewWithsourceTypeAvailable:(PGRewardTypeNone *)asourceTypeAvailable drivingRouteSearch:(PGRewardTypeNone *)adrivingRouteSearch deviceOrientationLandscape:(PGRewardTypeNone *)adeviceOrientationLandscape;
+- (UIButtonType)reusableHeaderFooterWithviewWidthPadding:(CGRect)aviewWidthPadding textFieldWith:(NSLineBreakMode)atextFieldWith;
+- (UITextFieldViewMode)organizeListViewWithrecognizeSimultaneouslyWith:(UILabel *)arecognizeSimultaneouslyWith progressDefaultSize:(UITableViewStyle)aprogressDefaultSize;
+- (UITextFieldViewMode)originBackgroundColorWithwithVideosData:(UIScrollView *)awithVideosData cellPlayerFather:(UISlider *)acellPlayerFather;
 + (void)instanceCreateMethod; 
 
 @end

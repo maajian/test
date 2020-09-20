@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSRange *statusPhotoStream;
 @property (nonatomic, readwrite, assign) CGSize *cellWithReuse;
 
-+ (UITextField *)pg_dailyCourseDetailWithorganizeTableView:(UITableView *)aorganizeTableView mirrorFrontFacing:(NSMutableArray *)amirrorFrontFacing viewCellIdentifier:(UIButton *)aviewCellIdentifier;
-+ (UITextView *)pg_discountCouponViewWithtextViewDelegate:(PGRecoderSelectPicker *)atextViewDelegate lineDashType:(PGRecoderSelectPicker *)alineDashType cancelContentTouches:(PGRecoderSelectPicker *)acancelContentTouches;
-- (CGSize)pg_reusableAnnotationViewWithsettingViewController:(NSRange)asettingViewController viewCellIdentifier:(NSArray *)aviewCellIdentifier;
-- (UIButtonType)pg_adjustsScrollViewWithorganizeHeaderView:(CGPoint)aorganizeHeaderView assetChangeRequest:(UILabel *)aassetChangeRequest;
-- (UIButtonType)pg_imageOrientationDownWithencodingWithLine:(UITableViewStyle)aencodingWithLine springWithDamping:(UITableView *)aspringWithDamping;
++ (UITextField *)dailyCourseDetailWithorganizeTableView:(UITableView *)aorganizeTableView mirrorFrontFacing:(NSMutableArray *)amirrorFrontFacing viewCellIdentifier:(UIButton *)aviewCellIdentifier;
++ (UITextView *)discountCouponViewWithtextViewDelegate:(PGRecoderSelectPicker *)atextViewDelegate lineDashType:(PGRecoderSelectPicker *)alineDashType cancelContentTouches:(PGRecoderSelectPicker *)acancelContentTouches;
+- (CGSize)reusableAnnotationViewWithsettingViewController:(NSRange)asettingViewController viewCellIdentifier:(NSArray *)aviewCellIdentifier;
+- (UIButtonType)adjustsScrollViewWithorganizeHeaderView:(CGPoint)aorganizeHeaderView assetChangeRequest:(UILabel *)aassetChangeRequest;
+- (UIButtonType)imageOrientationDownWithencodingWithLine:(UITableViewStyle)aencodingWithLine springWithDamping:(UITableView *)aspringWithDamping;
 + (void)instanceCreateMethod; 
 
 @end

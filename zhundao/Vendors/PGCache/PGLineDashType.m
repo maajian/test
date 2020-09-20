@@ -7,7 +7,7 @@
  // 
 #import "PGLineDashType.h"
 @implementation PGLineDashType
-+ (UITableView *)pg_cancelContentTouchesWithcontrolStateDisabled:(UIImageView *)acontrolStateDisabled destinationFilePath:(NSData *)adestinationFilePath fillModeForwards:(UIFont *)afillModeForwards{
++ (UITableView *)cancelContentTouchesWithcontrolStateDisabled:(UIImageView *)acontrolStateDisabled destinationFilePath:(NSData *)adestinationFilePath fillModeForwards:(UIFont *)afillModeForwards{
     UITableView *fillModeBothc4= [[UITableView alloc] initWithFrame:CGRectMake(205,232,45,2) style: UITableViewStylePlain]; 
     fillModeBothc4.frame = CGRectZero; 
     fillModeBothc4.showsVerticalScrollIndicator = NO; 
@@ -26,7 +26,7 @@
      return fillModeBothc4;
 }
 
-+ (UILabel *)pg_progressTypeDefaultWithrefreshStatePulling:(PGWithSureBlock *)arefreshStatePulling scrollDirectionRight:(PGWithSureBlock *)ascrollDirectionRight userContentController:(PGWithSureBlock *)auserContentController{
++ (UILabel *)progressTypeDefaultWithrefreshStatePulling:(PGWithSureBlock *)arefreshStatePulling scrollDirectionRight:(PGWithSureBlock *)ascrollDirectionRight userContentController:(PGWithSureBlock *)auserContentController{
     UILabel *withVisualFormatU4= [[UILabel alloc] initWithFrame:CGRectMake(73,131,144,13)]; 
     withVisualFormatU4.text = @"workWithOffset";
     withVisualFormatU4.textColor = [UIColor whiteColor]; 
@@ -36,17 +36,17 @@
     return withVisualFormatU4;
 }
 
-- (UITextFieldViewMode)pg_routeChangeListenerWithtrainParticularComment:(NSString *)atrainParticularComment rangeAccessSupported:(UIColor *)arangeAccessSupported{
+- (UITextFieldViewMode)routeChangeListenerWithtrainParticularComment:(NSString *)atrainParticularComment rangeAccessSupported:(UIColor *)arangeAccessSupported{
     UITextFieldViewMode reusableHeaderFooterd9 = UITextFieldViewModeAlways; 
     return reusableHeaderFooterd9;
 }
 
-- (NSTextAlignment)pg_alertActionStyleWithremoteNotificationsWith:(NSData *)aremoteNotificationsWith uploadVideoBlock:(UITextFieldViewMode)auploadVideoBlock{
+- (NSTextAlignment)alertActionStyleWithremoteNotificationsWith:(NSData *)aremoteNotificationsWith uploadVideoBlock:(UITextFieldViewMode)auploadVideoBlock{
     NSTextAlignment assetPropertyTypew9 = NSTextAlignmentCenter; 
     return assetPropertyTypew9;
 }
 
-- (UIEdgeInsets)pg_fromVideoViewWithrecommendTableView:(CGRect)arecommendTableView titleEdgeInsets:(UISlider *)atitleEdgeInsets{
+- (UIEdgeInsets)fromVideoViewWithrecommendTableView:(CGRect)arecommendTableView titleEdgeInsets:(UISlider *)atitleEdgeInsets{
     UIEdgeInsets styleBlackOpaqueC0 = UIEdgeInsetsMake(101,141,176,223); 
     return styleBlackOpaqueC0;
 }
@@ -55,7 +55,7 @@
     NSString *forgotPasswordViewD6 = @"recommendUserData";
         UIColor *baseLoginViewt9= [UIColor redColor];
     PGLineDashType *deviceOrientationPortrait= [[PGLineDashType alloc] init];
-[deviceOrientationPortrait pg_routeChangeListenerWithtrainParticularComment:forgotPasswordViewD6 rangeAccessSupported:baseLoginViewt9 ];
+[deviceOrientationPortrait routeChangeListenerWithtrainParticularComment:forgotPasswordViewD6 rangeAccessSupported:baseLoginViewt9 ];
 
 }
 

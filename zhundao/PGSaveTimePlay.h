@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *showGuideWindow;
 @property (nonatomic, readwrite, assign) NSRange *gestureRecognizerDelegate;
 
-+ (NSArray *)pg_withStrokeCourseWithtimesFromSlider:(UIScrollView *)atimesFromSlider managerWithDelegate:(NSMutableArray *)amanagerWithDelegate tableViewData:(UISlider *)atableViewData;
-+ (UIColor *)pg_playerBeginInterruptionWithsuccessWithJson:(PGSenseViewModel *)asuccessWithJson numberWithString:(PGSenseViewModel *)anumberWithString zoomingScrollView:(PGSenseViewModel *)azoomingScrollView;
-- (CGPoint)pg_imageSourceContainsWithcontextFillPath:(NSTextAlignment)acontextFillPath mainCommentModel:(UIFont *)amainCommentModel;
-- (UITextFieldViewMode)pg_leftNavigationItemWithimageSourceContains:(UIColor *)aimageSourceContains playerStreamInfo:(UIView *)aplayerStreamInfo;
-- (CGRect)pg_imageNearIndexWithcontentInsetAdjustment:(UITableViewCellSeparatorStyle)acontentInsetAdjustment tableViewDelegate:(NSRange)atableViewDelegate;
++ (NSArray *)withStrokeCourseWithtimesFromSlider:(UIScrollView *)atimesFromSlider managerWithDelegate:(NSMutableArray *)amanagerWithDelegate tableViewData:(UISlider *)atableViewData;
++ (UIColor *)playerBeginInterruptionWithsuccessWithJson:(PGSenseViewModel *)asuccessWithJson numberWithString:(PGSenseViewModel *)anumberWithString zoomingScrollView:(PGSenseViewModel *)azoomingScrollView;
+- (CGPoint)imageSourceContainsWithcontextFillPath:(NSTextAlignment)acontextFillPath mainCommentModel:(UIFont *)amainCommentModel;
+- (UITextFieldViewMode)leftNavigationItemWithimageSourceContains:(UIColor *)aimageSourceContains playerStreamInfo:(UIView *)aplayerStreamInfo;
+- (CGRect)imageNearIndexWithcontentInsetAdjustment:(UITableViewCellSeparatorStyle)acontentInsetAdjustment tableViewDelegate:(NSRange)atableViewDelegate;
 + (void)instanceCreateMethod; 
 
 @end

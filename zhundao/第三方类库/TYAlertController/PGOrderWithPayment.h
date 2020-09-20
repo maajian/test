@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *userTweetView;
 @property (nonatomic, readwrite, assign) UIButtonType *audioPlayerDelegate;
 
-+ (UIButton *)pg_organizeServiceModelWithmainCommentModel:(UISwitch *)amainCommentModel intergralStoreView:(UIColor *)aintergralStoreView hiddenScreenView:(UIScrollView *)ahiddenScreenView;
-+ (UIImage *)pg_strokeCourseHeaderWithstadiumParticularView:(PGRecoderSelectPicker *)astadiumParticularView rankMedalInfo:(PGRecoderSelectPicker *)arankMedalInfo tweetPhotoModel:(PGRecoderSelectPicker *)atweetPhotoModel;
-- (CGSize)pg_weekTimeIntervalWithcourseScrollView:(NSRange)acourseScrollView mainMessageView:(NSString *)amainMessageView;
-- (NSRange)pg_inputTextureUniformWithauthorizationOptionAlert:(UIButtonType)aauthorizationOptionAlert downloadProgressBlock:(UITextField *)adownloadProgressBlock;
-- (UITableViewStyle)pg_courseClassTableWithcellReuseIdentifier:(UIImageView *)acellReuseIdentifier indicatorViewStyle:(UISlider *)aindicatorViewStyle;
++ (UIButton *)organizeServiceModelWithmainCommentModel:(UISwitch *)amainCommentModel intergralStoreView:(UIColor *)aintergralStoreView hiddenScreenView:(UIScrollView *)ahiddenScreenView;
++ (UIImage *)strokeCourseHeaderWithstadiumParticularView:(PGRecoderSelectPicker *)astadiumParticularView rankMedalInfo:(PGRecoderSelectPicker *)arankMedalInfo tweetPhotoModel:(PGRecoderSelectPicker *)atweetPhotoModel;
+- (CGSize)weekTimeIntervalWithcourseScrollView:(NSRange)acourseScrollView mainMessageView:(NSString *)amainMessageView;
+- (NSRange)inputTextureUniformWithauthorizationOptionAlert:(UIButtonType)aauthorizationOptionAlert downloadProgressBlock:(UITextField *)adownloadProgressBlock;
+- (UITableViewStyle)courseClassTableWithcellReuseIdentifier:(UIImageView *)acellReuseIdentifier indicatorViewStyle:(UISlider *)aindicatorViewStyle;
 + (void)instanceCreateMethod; 
 
 @end

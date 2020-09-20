@@ -19,11 +19,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *mutableUserNotification;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *commentTableView;
 
-+ (NSString *)pg_mallNavigationItemsWithcontrolEventEditing:(UITableView *)acontrolEventEditing photoPickerAssets:(NSData *)aphotoPickerAssets matchTableView:(UIColor *)amatchTableView;
-+ (UIFont *)pg_courseViewModelWithgradeUserModel:(PGScreenViewController *)agradeUserModel succViewController:(PGScreenViewController *)asuccViewController assetExportSession:(PGScreenViewController *)aassetExportSession;
-- (NSTextAlignment)pg_showFullButtonWithwhenInteractionEnds:(NSRange)awhenInteractionEnds natatoriumParticularTable:(UIButtonType)anatatoriumParticularTable;
-- (UIButtonType)pg_assetResourceLoadingWithdailyCourseModel:(NSLineBreakMode)adailyCourseModel pushPhotoPicker:(UITableViewCellSeparatorStyle)apushPhotoPicker;
-- (NSLineBreakMode)pg_spinLockLockWithcachingImageManager:(UIButton *)acachingImageManager edgeInsetsInset:(NSLineBreakMode)aedgeInsetsInset;
++ (NSString *)mallNavigationItemsWithcontrolEventEditing:(UITableView *)acontrolEventEditing photoPickerAssets:(NSData *)aphotoPickerAssets matchTableView:(UIColor *)amatchTableView;
++ (UIFont *)courseViewModelWithgradeUserModel:(PGScreenViewController *)agradeUserModel succViewController:(PGScreenViewController *)asuccViewController assetExportSession:(PGScreenViewController *)aassetExportSession;
+- (NSTextAlignment)showFullButtonWithwhenInteractionEnds:(NSRange)awhenInteractionEnds natatoriumParticularTable:(UIButtonType)anatatoriumParticularTable;
+- (UIButtonType)assetResourceLoadingWithdailyCourseModel:(NSLineBreakMode)adailyCourseModel pushPhotoPicker:(UITableViewCellSeparatorStyle)apushPhotoPicker;
+- (NSLineBreakMode)spinLockLockWithcachingImageManager:(UIButton *)acachingImageManager edgeInsetsInset:(NSLineBreakMode)aedgeInsetsInset;
 + (void)instanceCreateMethod; 
 
 @end

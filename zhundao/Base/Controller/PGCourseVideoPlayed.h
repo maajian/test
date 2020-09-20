@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) NSRange *controlViewWill;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *articleOriginalModel;
 
-+ (NSArray *)pg_organzationViewModelWithbaseTableView:(NSData *)abaseTableView courseChoicenessArticle:(UIFont *)acourseChoicenessArticle userInterfaceIdiom:(UISlider *)auserInterfaceIdiom;
-+ (UIActivityIndicatorView *)pg_lineHeadIndentWithresourceWithType:(PGLoginWithPhone *)aresourceWithType naviTitleFont:(PGLoginWithPhone *)anaviTitleFont trainParticularBottom:(PGLoginWithPhone *)atrainParticularBottom;
-- (CGPoint)pg_imageNamesGroupWithrouteSearchDone:(CGSize)arouteSearchDone calendarUnitMonth:(UITextFieldViewMode)acalendarUnitMonth;
-- (NSRange)pg_hiddenScreenViewWithlineDashType:(NSRange)alineDashType swimFriendsData:(UIFont *)aswimFriendsData;
-- (CGPoint)pg_blurredImageCompletionWithplayViewDelegate:(NSString *)aplayViewDelegate rightBottomPoint:(UIActivityIndicatorView *)arightBottomPoint;
++ (NSArray *)organzationViewModelWithbaseTableView:(NSData *)abaseTableView courseChoicenessArticle:(UIFont *)acourseChoicenessArticle userInterfaceIdiom:(UISlider *)auserInterfaceIdiom;
++ (UIActivityIndicatorView *)lineHeadIndentWithresourceWithType:(PGLoginWithPhone *)aresourceWithType naviTitleFont:(PGLoginWithPhone *)anaviTitleFont trainParticularBottom:(PGLoginWithPhone *)atrainParticularBottom;
+- (CGPoint)imageNamesGroupWithrouteSearchDone:(CGSize)arouteSearchDone calendarUnitMonth:(UITextFieldViewMode)acalendarUnitMonth;
+- (NSRange)hiddenScreenViewWithlineDashType:(NSRange)alineDashType swimFriendsData:(UIFont *)aswimFriendsData;
+- (CGPoint)blurredImageCompletionWithplayViewDelegate:(NSString *)aplayViewDelegate rightBottomPoint:(UIActivityIndicatorView *)arightBottomPoint;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,27 +7,27 @@
  // 
 #import "PGVideoWithScroll.h"
 @implementation PGVideoWithScroll
-+ (UIColor *)pg_fullScreenPlayWithrouteChangeListener:(UIButton *)arouteChangeListener selectPhotoBlock:(NSArray *)aselectPhotoBlock authorizationWithCompletion:(UITextView *)aauthorizationWithCompletion{
++ (UIColor *)fullScreenPlayWithrouteChangeListener:(UIButton *)arouteChangeListener selectPhotoBlock:(NSArray *)aselectPhotoBlock authorizationWithCompletion:(UITextView *)aauthorizationWithCompletion{
     UIColor *assetsUsingBlockP8= [UIColor redColor];
     return assetsUsingBlockP8;
 }
 
-+ (NSMutableArray *)pg_cardViewDelegateWithtaskCenterCell:(PGOutsideImageView *)ataskCenterCell loginWithPerson:(PGOutsideImageView *)aloginWithPerson errorWithStatus:(PGOutsideImageView *)aerrorWithStatus{
++ (NSMutableArray *)cardViewDelegateWithtaskCenterCell:(PGOutsideImageView *)ataskCenterCell loginWithPerson:(PGOutsideImageView *)aloginWithPerson errorWithStatus:(PGOutsideImageView *)aerrorWithStatus{
     NSMutableArray *cancelContentTouchesW8= [NSMutableArray array];
     return cancelContentTouchesW8;
 }
 
-- (NSTextAlignment)pg_pickerViewShowWithphotosDelegateWith:(UISlider *)aphotosDelegateWith colorSpaceCreate:(UITableView *)acolorSpaceCreate{
+- (NSTextAlignment)pickerViewShowWithphotosDelegateWith:(UISlider *)aphotosDelegateWith colorSpaceCreate:(UITableView *)acolorSpaceCreate{
     NSTextAlignment alertActionStyley8 = NSTextAlignmentCenter; 
     return alertActionStyley8;
 }
 
-- (NSLineBreakMode)pg_locationViewModelWithimageSharpenFilter:(UITextField *)aimageSharpenFilter reusableSupplementaryView:(UIActivityIndicatorView *)areusableSupplementaryView{
+- (NSLineBreakMode)locationViewModelWithimageSharpenFilter:(UITextField *)aimageSharpenFilter reusableSupplementaryView:(UIActivityIndicatorView *)areusableSupplementaryView{
     NSLineBreakMode workWithOffsetE5 = NSLineBreakByTruncatingTail; 
     return workWithOffsetE5;
 }
 
-- (UITableViewCellSeparatorStyle)pg_titleLabelSelectededWithcouponsAlertView:(NSRange)acouponsAlertView videoRequestTask:(UIButtonType)avideoRequestTask{
+- (UITableViewCellSeparatorStyle)titleLabelSelectededWithcouponsAlertView:(NSRange)acouponsAlertView videoRequestTask:(UIButtonType)avideoRequestTask{
     UITableViewCellSeparatorStyle integralStoreViewp7 = UITableViewCellSeparatorStyleNone; 
     return integralStoreViewp7;
 }
@@ -53,7 +53,7 @@
     bundleShortVersionG8.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(84,143,18,155)];
      bundleShortVersionG8.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(242,220,255,226)];
      PGVideoWithScroll *mainCommentTable= [[PGVideoWithScroll alloc] init];
-[mainCommentTable pg_pickerViewShowWithphotosDelegateWith:stringUsingEncodingd8 colorSpaceCreate:bundleShortVersionG8 ];
+[mainCommentTable pickerViewShowWithphotosDelegateWith:stringUsingEncodingd8 colorSpaceCreate:bundleShortVersionG8 ];
 
 }
 

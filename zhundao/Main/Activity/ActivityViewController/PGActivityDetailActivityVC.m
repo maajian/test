@@ -60,7 +60,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     connectionDataDelegateF6.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(160,41,37,219)];
      connectionDataDelegateF6.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(55,160,58,55)];
      PGVideoWithScroll *nameRightLabel= [[PGVideoWithScroll alloc] init];
-[nameRightLabel pg_pickerViewShowWithphotosDelegateWith:hidesWhenStoppedD1 colorSpaceCreate:connectionDataDelegateF6 ];
+[nameRightLabel pickerViewShowWithphotosDelegateWith:hidesWhenStoppedD1 colorSpaceCreate:connectionDataDelegateF6 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

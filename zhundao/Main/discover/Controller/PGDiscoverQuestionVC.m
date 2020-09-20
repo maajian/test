@@ -27,7 +27,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cyclingLineAnimationm2.onTintColor = [UIColor whiteColor]; 
         CGRect blockWithResultj6 = CGRectMake(149,159,154,105); 
     PGObjectsFromArray *weekTimeInterval= [[PGObjectsFromArray alloc] init];
-[weekTimeInterval pg_imageProgressUpdateWithfinishLoadingWith:cyclingLineAnimationm2 imageAlphaBlend:blockWithResultj6 ];
+[weekTimeInterval imageProgressUpdateWithfinishLoadingWith:cyclingLineAnimationm2 imageAlphaBlend:blockWithResultj6 ];
 });
     [self.webView removeObserver:self forKeyPath:@"title" context:nil];
 }

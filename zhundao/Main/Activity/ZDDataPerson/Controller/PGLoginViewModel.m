@@ -7,7 +7,7 @@
  // 
 #import "PGLoginViewModel.h"
 @implementation PGLoginViewModel
-+ (UIScrollView *)pg_buttonItemAppearanceWithlongPressGesture:(UISlider *)alongPressGesture exerciseParticularView:(UIImageView *)aexerciseParticularView workWithOffset:(NSMutableArray *)aworkWithOffset{
++ (UIScrollView *)buttonItemAppearanceWithlongPressGesture:(UISlider *)alongPressGesture exerciseParticularView:(UIImageView *)aexerciseParticularView workWithOffset:(NSMutableArray *)aworkWithOffset{
     UIScrollView *strokeCourseSecondA7= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
     strokeCourseSecondA7.showsHorizontalScrollIndicator = NO; 
     strokeCourseSecondA7.showsVerticalScrollIndicator = NO; 
@@ -17,22 +17,22 @@
     return strokeCourseSecondA7;
 }
 
-+ (NSMutableArray *)pg_stringWithTimeWithlikesViewController:(PGSelectorFromString *)alikesViewController withRefreshingBlock:(PGSelectorFromString *)awithRefreshingBlock tweetPhotoModel:(PGSelectorFromString *)atweetPhotoModel{
++ (NSMutableArray *)stringWithTimeWithlikesViewController:(PGSelectorFromString *)alikesViewController withRefreshingBlock:(PGSelectorFromString *)awithRefreshingBlock tweetPhotoModel:(PGSelectorFromString *)atweetPhotoModel{
     NSMutableArray *tableViewFooterb3= [NSMutableArray arrayWithCapacity:0];
     return tableViewFooterb3;
 }
 
-- (NSLineBreakMode)pg_itemPhotoClickWithtrackTintColor:(UIButton *)atrackTintColor medalKindModel:(UIButtonType)amedalKindModel{
+- (NSLineBreakMode)itemPhotoClickWithtrackTintColor:(UIButton *)atrackTintColor medalKindModel:(UIButtonType)amedalKindModel{
     NSLineBreakMode yearTimeIntervala2 = NSLineBreakByTruncatingTail; 
     return yearTimeIntervala2;
 }
 
-- (CGPoint)pg_outsideImageViewWithrecommendCellDelegate:(NSLineBreakMode)arecommendCellDelegate assetCellType:(NSRange)aassetCellType{
+- (CGPoint)outsideImageViewWithrecommendCellDelegate:(NSLineBreakMode)arecommendCellDelegate assetCellType:(NSRange)aassetCellType{
     CGPoint textAlignmentRightx1 = CGPointZero;
     return textAlignmentRightx1;
 }
 
-- (UITextFieldViewMode)pg_sendTweetSuccWithshareImageObject:(NSLineBreakMode)ashareImageObject titleLabelSelecteded:(UITableView *)atitleLabelSelecteded{
+- (UITextFieldViewMode)sendTweetSuccWithshareImageObject:(NSLineBreakMode)ashareImageObject titleLabelSelecteded:(UITableView *)atitleLabelSelecteded{
     UITextFieldViewMode viewCornerRadiusG3 = UITextFieldViewModeAlways; 
     return viewCornerRadiusG3;
 }
@@ -46,7 +46,7 @@
     groupPurchaseOrderC8.frame = CGRectZero; 
         UIButtonType countTableViewy8 = UIButtonTypeContactAdd;
     PGLoginViewModel *textFieldView= [[PGLoginViewModel alloc] init];
-[textFieldView pg_itemPhotoClickWithtrackTintColor:groupPurchaseOrderC8 medalKindModel:countTableViewy8 ];
+[textFieldView itemPhotoClickWithtrackTintColor:groupPurchaseOrderC8 medalKindModel:countTableViewy8 ];
 
 }
 

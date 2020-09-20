@@ -371,7 +371,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *navigantionItemWithx3= [UIFont systemFontOfSize:37];
         UIColor *dailyTrainChapterG2= [UIColor redColor];
     PGExerciseRecordTable *deviceSettingsCamera= [[PGExerciseRecordTable alloc] init];
-[deviceSettingsCamera pg_assetCameraCellWithcellPlayerFather:navigantionItemWithx3 bytesFromData:dailyTrainChapterG2 ];
+[deviceSettingsCamera assetCameraCellWithcellPlayerFather:navigantionItemWithx3 bytesFromData:dailyTrainChapterG2 ];
 });
     [PGAlertView alertWithTitle:@"确定拨打电话?" message:nil sureBlock:^{
         [self callphone];

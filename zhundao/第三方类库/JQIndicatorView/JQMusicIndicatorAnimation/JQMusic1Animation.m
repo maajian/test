@@ -22,7 +22,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect userModelFromr6 = CGRectMake(179,34,151,234); 
         UIImage *applicationWillEnterj3= [UIImage imageNamed:@""]; 
     PGMovieTestView *sourceTypeSaved= [[PGMovieTestView alloc] init];
-[sourceTypeSaved pg_assetCollectionSubtypeWithcontextStrokePath:userModelFromr6 userCommentTable:applicationWillEnterj3 ];
+[sourceTypeSaved assetCollectionSubtypeWithcontextStrokePath:userModelFromr6 userCommentTable:applicationWillEnterj3 ];
 });
     CAReplicatorLayer *replicatorLayer = [CAReplicatorLayer layer];
     replicatorLayer.frame = CGRectMake(0, 0, size.width, size.height);
@@ -30,7 +30,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     replicatorLayer.backgroundColor = [UIColor clearColor].CGColor;
     [layer addSublayer:replicatorLayer];
     
-    [self PG_addMusicBarAnimationLayerAtLayer:replicatorLayer withSize:size tintColor:color];
+    [self addMusicBarAnimationLayerAtLayer:replicatorLayer withSize:size tintColor:color];
     replicatorLayer.instanceCount = 3;
     replicatorLayer.instanceDelay = 0.2;
     replicatorLayer.instanceTransform = CATransform3DMakeTranslation(size.width*3/10, 0.f, 0.f);
@@ -40,7 +40,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 #pragma mark - Music Indicator animation
 
 
-- (void)PG_addMusicBarAnimationLayerAtLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)color{
+- (void)addMusicBarAnimationLayerAtLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)color{
     CGFloat width = size.width/5;
     CGFloat height = size.height;
     self.barLayer = [CALayer layer];

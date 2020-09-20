@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *tableFooterView;
 @property (nonatomic, readwrite, assign) UITableViewStyle *loginViewController;
 
-+ (UIScrollView *)pg_discoverTableViewWithmainCommentModel:(UIImage *)amainCommentModel organizeServiceModel:(NSString *)aorganizeServiceModel chatInputAble:(UIFont *)achatInputAble;
-+ (UIButton *)pg_couponAlertViewWithcurrentDateString:(PGRewardTypeNone *)acurrentDateString userInfoWith:(PGRewardTypeNone *)auserInfoWith tintEffectWith:(PGRewardTypeNone *)atintEffectWith;
-- (NSTextAlignment)pg_codeLoginViewWithdifferenceValueWith:(UITextField *)adifferenceValueWith trainFinishAlert:(UIScrollView *)atrainFinishAlert;
-- (NSTextAlignment)pg_beginFromCurrentWithcellWithIndex:(UIScrollView *)acellWithIndex medalViewModel:(UITableViewStyle)amedalViewModel;
-- (UIButtonType)pg_weekTimeLabelWithwithCourseVideo:(NSLineBreakMode)awithCourseVideo mainViewController:(UITextFieldViewMode)amainViewController;
++ (UIScrollView *)discoverTableViewWithmainCommentModel:(UIImage *)amainCommentModel organizeServiceModel:(NSString *)aorganizeServiceModel chatInputAble:(UIFont *)achatInputAble;
++ (UIButton *)couponAlertViewWithcurrentDateString:(PGRewardTypeNone *)acurrentDateString userInfoWith:(PGRewardTypeNone *)auserInfoWith tintEffectWith:(PGRewardTypeNone *)atintEffectWith;
+- (NSTextAlignment)codeLoginViewWithdifferenceValueWith:(UITextField *)adifferenceValueWith trainFinishAlert:(UIScrollView *)atrainFinishAlert;
+- (NSTextAlignment)beginFromCurrentWithcellWithIndex:(UIScrollView *)acellWithIndex medalViewModel:(UITableViewStyle)amedalViewModel;
+- (UIButtonType)weekTimeLabelWithwithCourseVideo:(NSLineBreakMode)awithCourseVideo mainViewController:(UITextFieldViewMode)amainViewController;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,12 +7,12 @@
  // 
 #import "PGTrainDataWith.h"
 @implementation PGTrainDataWith
-+ (NSMutableArray *)pg_sourceTypeCameraWithsearchRequestWith:(UITableView *)asearchRequestWith imageOrientationDown:(NSData *)aimageOrientationDown valueImageRect:(UISlider *)avalueImageRect{
++ (NSMutableArray *)sourceTypeCameraWithsearchRequestWith:(UITableView *)asearchRequestWith imageOrientationDown:(NSData *)aimageOrientationDown valueImageRect:(UISlider *)avalueImageRect{
     NSMutableArray *deepBlackColorO5= [NSMutableArray array];
     return deepBlackColorO5;
 }
 
-+ (UISlider *)pg_courseVideoPlayerWithwithCommentObject:(PGScreenViewController *)awithCommentObject organizeHeaderView:(PGScreenViewController *)aorganizeHeaderView userDomainMask:(PGScreenViewController *)auserDomainMask{
++ (UISlider *)courseVideoPlayerWithwithCommentObject:(PGScreenViewController *)awithCommentObject organizeHeaderView:(PGScreenViewController *)aorganizeHeaderView userDomainMask:(PGScreenViewController *)auserDomainMask{
     UISlider *baseTabbarViewH3= [[UISlider alloc] initWithFrame:CGRectMake(46,36,124,105)]; 
     baseTabbarViewH3.minimumValue = 0; 
     baseTabbarViewH3.maximumValue = 100; 
@@ -20,17 +20,17 @@
     return baseTabbarViewH3;
 }
 
-- (UIButtonType)pg_backButtonTitleWithstyleLightContent:(UIEdgeInsets)astyleLightContent itemsSupplementBack:(UILabel *)aitemsSupplementBack{
+- (UIButtonType)backButtonTitleWithstyleLightContent:(UIEdgeInsets)astyleLightContent itemsSupplementBack:(UILabel *)aitemsSupplementBack{
     UIButtonType delaysTouchesBeganT8 = UIButtonTypeContactAdd;
     return delaysTouchesBeganT8;
 }
 
-- (NSRange)pg_applicationWillResignWithscrollTimeInterval:(UITableView *)ascrollTimeInterval withVisualFormat:(UIView *)awithVisualFormat{
+- (NSRange)applicationWillResignWithscrollTimeInterval:(UITableView *)ascrollTimeInterval withVisualFormat:(UIView *)awithVisualFormat{
     NSRange assetPropertyDurationA0 = NSMakeRange(10,225); 
     return assetPropertyDurationA0;
 }
 
-- (CGPoint)pg_priceMutableStringWithjavaScriptConfirm:(UIView *)ajavaScriptConfirm trackingWithTouch:(UITextView *)atrackingWithTouch{
+- (CGPoint)priceMutableStringWithjavaScriptConfirm:(UIView *)ajavaScriptConfirm trackingWithTouch:(UITextView *)atrackingWithTouch{
     CGPoint gaussianBlurElementj8 = CGPointZero;
     return gaussianBlurElementj8;
 }
@@ -44,7 +44,7 @@
     willResignActiveX5.numberOfLines = 0; 
     willResignActiveX5.textAlignment = NSTextAlignmentCenter; 
     PGTrainDataWith *streamStatusConnecting= [[PGTrainDataWith alloc] init];
-[streamStatusConnecting pg_backButtonTitleWithstyleLightContent:interfaceOrientionChangep7 itemsSupplementBack:willResignActiveX5 ];
+[streamStatusConnecting backButtonTitleWithstyleLightContent:interfaceOrientionChangep7 itemsSupplementBack:willResignActiveX5 ];
 
 }
 

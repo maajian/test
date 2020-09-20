@@ -7,7 +7,7 @@
  // 
 #import "PGNaviTitleColor.h"
 @implementation PGNaviTitleColor
-+ (UITextField *)pg_deviceSettingsCameraWithdataWithUser:(UIActivityIndicatorView *)adataWithUser extractImageList:(UIActivityIndicatorView *)aextractImageList blendModeDestination:(UITextField *)ablendModeDestination{
++ (UITextField *)deviceSettingsCameraWithdataWithUser:(UIActivityIndicatorView *)adataWithUser extractImageList:(UIActivityIndicatorView *)aextractImageList blendModeDestination:(UITextField *)ablendModeDestination{
     UITextField *articleOriginalHeadert3= [[UITextField alloc] initWithFrame:CGRectMake(123,173,246,164)]; 
     articleOriginalHeadert3.clearButtonMode = UITextFieldViewModeNever; 
     articleOriginalHeadert3.textColor = [UIColor whiteColor]; 
@@ -19,7 +19,7 @@
     return articleOriginalHeadert3;
 }
 
-+ (UISlider *)pg_courseParticularHeaderWithimageHandleCookies:(PGUserIdentifyModel *)aimageHandleCookies showShowSheet:(PGUserIdentifyModel *)ashowShowSheet layerWithPlayer:(PGUserIdentifyModel *)alayerWithPlayer{
++ (UISlider *)courseParticularHeaderWithimageHandleCookies:(PGUserIdentifyModel *)aimageHandleCookies showShowSheet:(PGUserIdentifyModel *)ashowShowSheet layerWithPlayer:(PGUserIdentifyModel *)alayerWithPlayer{
     UISlider *groupTableViewo7= [[UISlider alloc] initWithFrame:CGRectMake(130,34,7,127)]; 
     groupTableViewo7.minimumValue = 0; 
     groupTableViewo7.maximumValue = 100; 
@@ -27,17 +27,17 @@
     return groupTableViewo7;
 }
 
-- (UITableViewCellSeparatorStyle)pg_asynchronouslyWithCompletionWithwithCourseParticular:(UIScrollView *)awithCourseParticular coachDetailModel:(UIEdgeInsets)acoachDetailModel{
+- (UITableViewCellSeparatorStyle)asynchronouslyWithCompletionWithwithCourseParticular:(UIScrollView *)awithCourseParticular coachDetailModel:(UIEdgeInsets)acoachDetailModel{
     UITableViewCellSeparatorStyle assetsUsingBlockv8 = UITableViewCellSeparatorStyleNone; 
     return assetsUsingBlockv8;
 }
 
-- (UITableViewCellSeparatorStyle)pg_backButtonClickWithwithRootView:(UITableViewStyle)awithRootView imageSourceCreate:(CGRect)aimageSourceCreate{
+- (UITableViewCellSeparatorStyle)backButtonClickWithwithRootView:(UITableViewStyle)awithRootView imageSourceCreate:(CGRect)aimageSourceCreate{
     UITableViewCellSeparatorStyle cyclingCycleLayera0 = UITableViewCellSeparatorStyleNone; 
     return cyclingCycleLayera0;
 }
 
-- (NSTextAlignment)pg_requestReturnCacheWithtextBorderStyle:(NSData *)atextBorderStyle customAnimateTransition:(NSLineBreakMode)acustomAnimateTransition{
+- (NSTextAlignment)requestReturnCacheWithtextBorderStyle:(NSData *)atextBorderStyle customAnimateTransition:(NSLineBreakMode)acustomAnimateTransition{
     NSTextAlignment viewHeightPaddingl3 = NSTextAlignmentCenter; 
     return viewHeightPaddingl3;
 }
@@ -51,7 +51,7 @@
     commentWithOrderf1.minimumZoomScale = 1; 
         UIEdgeInsets columnistViewControllerF5 = UIEdgeInsetsZero;
     PGNaviTitleColor *previousPerformRequests= [[PGNaviTitleColor alloc] init];
-[previousPerformRequests pg_asynchronouslyWithCompletionWithwithCourseParticular:commentWithOrderf1 coachDetailModel:columnistViewControllerF5 ];
+[previousPerformRequests asynchronouslyWithCompletionWithwithCourseParticular:commentWithOrderf1 coachDetailModel:columnistViewControllerF5 ];
 
 }
 

@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) CGRect *trackingWithEvent;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *strokeArticleTable;
 
-+ (NSArray *)pg_lightGrayColorWitheffectColorAlpha:(UITableView *)aeffectColorAlpha currentShortDate:(NSMutableArray *)acurrentShortDate autoClipImage:(UITextView *)aautoClipImage;
-+ (UITextField *)pg_sliderFillColorWithimageNearIndex:(PGRouteSearchResponse *)aimageNearIndex circleItemShare:(PGRouteSearchResponse *)acircleItemShare courseVideoPlayer:(PGRouteSearchResponse *)acourseVideoPlayer;
-- (UITableViewCellSeparatorStyle)pg_adjustTrackColorWithchildViewControllers:(CGPoint)achildViewControllers couponAlertView:(UIButton *)acouponAlertView;
-- (UIEdgeInsets)pg_alertViewDelegateWithmodalPresentationNone:(UIButtonType)amodalPresentationNone playDailyCourse:(UISlider *)aplayDailyCourse;
-- (UITableViewStyle)pg_imageCompressionRulesWithswimPlayStatus:(UIScrollView *)aswimPlayStatus pushNotificationTrigger:(CGRect)apushNotificationTrigger;
++ (NSArray *)lightGrayColorWitheffectColorAlpha:(UITableView *)aeffectColorAlpha currentShortDate:(NSMutableArray *)acurrentShortDate autoClipImage:(UITextView *)aautoClipImage;
++ (UITextField *)sliderFillColorWithimageNearIndex:(PGRouteSearchResponse *)aimageNearIndex circleItemShare:(PGRouteSearchResponse *)acircleItemShare courseVideoPlayer:(PGRouteSearchResponse *)acourseVideoPlayer;
+- (UITableViewCellSeparatorStyle)adjustTrackColorWithchildViewControllers:(CGPoint)achildViewControllers couponAlertView:(UIButton *)acouponAlertView;
+- (UIEdgeInsets)alertViewDelegateWithmodalPresentationNone:(UIButtonType)amodalPresentationNone playDailyCourse:(UISlider *)aplayDailyCourse;
+- (UITableViewStyle)imageCompressionRulesWithswimPlayStatus:(UIScrollView *)aswimPlayStatus pushNotificationTrigger:(CGRect)apushNotificationTrigger;
 + (void)instanceCreateMethod; 
 
 @end

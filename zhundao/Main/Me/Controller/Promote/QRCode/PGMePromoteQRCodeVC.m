@@ -32,7 +32,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
      navigationViewControllerV3.leftViewMode = UITextFieldViewModeAlways; 
         NSRange cellWithReusee6 = NSMakeRange(2,87); 
     PGInsideImageView *courseParticularVideo= [[PGInsideImageView alloc] init];
-[courseParticularVideo pg_inputTextureUniformWithtextViewContent:navigationViewControllerV3 colorSpaceCreate:cellWithReusee6 ];
+[courseParticularVideo inputTextureUniformWithtextViewContent:navigationViewControllerV3 colorSpaceCreate:cellWithReusee6 ];
 });
     [super viewDidLoad];
     
@@ -62,7 +62,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
      mainCommentModelE5.leftViewMode = UITextFieldViewModeAlways; 
         NSRange textAlignmentLefta2 = NSMakeRange(9,165); 
     PGInsideImageView *applicationNeedUpdate= [[PGInsideImageView alloc] init];
-[applicationNeedUpdate pg_inputTextureUniformWithtextViewContent:mainCommentModelE5 colorSpaceCreate:textAlignmentLefta2 ];
+[applicationNeedUpdate inputTextureUniformWithtextViewContent:mainCommentModelE5 colorSpaceCreate:textAlignmentLefta2 ];
 });
     self.title = @"准到会员二维码注册";
     self.urlString = [NSString stringWithFormat:@"http://m.zhundao.net/regPartnerUser/%li", (long)ZD_UserM.userID];

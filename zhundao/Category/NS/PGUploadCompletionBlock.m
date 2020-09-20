@@ -7,7 +7,7 @@
  // 
 #import "PGUploadCompletionBlock.h"
 @implementation PGUploadCompletionBlock
-+ (UIImageView *)pg_uploadVideoBlockWithfinishLoadingWith:(UITextField *)afinishLoadingWith withStrokeCourse:(UITextView *)awithStrokeCourse cacheUserModel:(UIView *)acacheUserModel{
++ (UIImageView *)uploadVideoBlockWithfinishLoadingWith:(UITextField *)afinishLoadingWith withStrokeCourse:(UITextView *)awithStrokeCourse cacheUserModel:(UIView *)acacheUserModel{
     UIImageView * passWordWithj2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     passWordWithj2.contentMode = UIViewContentModeCenter; 
     passWordWithj2.clipsToBounds = NO; 
@@ -17,7 +17,7 @@
     return passWordWithj2;
 }
 
-+ (UIButton *)pg_sizeWithAssetWithcancelContentTouches:(PGNavigateItemWith *)acancelContentTouches swimCircleItem:(PGNavigateItemWith *)aswimCircleItem textBorderStyle:(PGNavigateItemWith *)atextBorderStyle{
++ (UIButton *)sizeWithAssetWithcancelContentTouches:(PGNavigateItemWith *)acancelContentTouches swimCircleItem:(PGNavigateItemWith *)aswimCircleItem textBorderStyle:(PGNavigateItemWith *)atextBorderStyle{
     UIButton *trainPropertyTrainE4= [UIButton buttonWithType:UIButtonTypeCustom]; 
     trainPropertyTrainE4.frame = CGRectZero; 
     trainPropertyTrainE4.exclusiveTouch = NO; 
@@ -27,17 +27,17 @@
     return trainPropertyTrainE4;
 }
 
-- (NSTextAlignment)pg_videoPreviewCellWithcancelCollectionCourse:(UIButton *)acancelCollectionCourse activityIndicatorVisible:(CGPoint)aactivityIndicatorVisible{
+- (NSTextAlignment)videoPreviewCellWithcancelCollectionCourse:(UIButton *)acancelCollectionCourse activityIndicatorVisible:(CGPoint)aactivityIndicatorVisible{
     NSTextAlignment shareInfoViewK4 = NSTextAlignmentCenter; 
     return shareInfoViewK4;
 }
 
-- (CGPoint)pg_scrollViewKeyboardWithimageEdgeExtend:(UIButton *)aimageEdgeExtend selectOriginalPhoto:(UIButton *)aselectOriginalPhoto{
+- (CGPoint)scrollViewKeyboardWithimageEdgeExtend:(UIButton *)aimageEdgeExtend selectOriginalPhoto:(UIButton *)aselectOriginalPhoto{
     CGPoint badgeDefaultFontv5 = CGPointMake(10,50); 
     return badgeDefaultFontv5;
 }
 
-- (UIButtonType)pg_chooseStadiumViewWithvalueImageRect:(UITextView *)avalueImageRect medalWallView:(NSString *)amedalWallView{
+- (UIButtonType)chooseStadiumViewWithvalueImageRect:(UITextView *)avalueImageRect medalWallView:(NSString *)amedalWallView{
     UIButtonType firstFrameCheckD1 = UIButtonTypeContactAdd;
     return firstFrameCheckD1;
 }
@@ -51,7 +51,7 @@
     viewControllerTransitionu1.frame = CGRectZero; 
         CGPoint couponTypeIntegralV3 = CGPointMake(9,56); 
     PGUploadCompletionBlock *alowGroupPurchase= [[PGUploadCompletionBlock alloc] init];
-[alowGroupPurchase pg_videoPreviewCellWithcancelCollectionCourse:viewControllerTransitionu1 activityIndicatorVisible:couponTypeIntegralV3 ];
+[alowGroupPurchase videoPreviewCellWithcancelCollectionCourse:viewControllerTransitionu1 activityIndicatorVisible:couponTypeIntegralV3 ];
 
 }
 

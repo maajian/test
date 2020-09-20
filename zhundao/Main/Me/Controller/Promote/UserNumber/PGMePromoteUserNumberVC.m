@@ -71,7 +71,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *shareViewDelegatea1= [UIImage imageNamed:@""]; 
         NSData *audioSessionCategoryP8= [[NSData alloc] init];
     PGImageCompressionWith *replayTypeNormal= [[PGImageCompressionWith alloc] init];
-[replayTypeNormal pg_stringFromClassWithorganizeHeaderView:shareViewDelegatea1 discoveryViewModel:audioSessionCategoryP8 ];
+[replayTypeNormal stringFromClassWithorganizeHeaderView:shareViewDelegatea1 discoveryViewModel:audioSessionCategoryP8 ];
 });
     ZD_WeakSelf
     [self.viewModel getUserNumberSuccess:^{

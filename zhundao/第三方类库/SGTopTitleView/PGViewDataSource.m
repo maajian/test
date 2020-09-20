@@ -7,12 +7,12 @@
  // 
 #import "PGViewDataSource.h"
 @implementation PGViewDataSource
-+ (UIFont *)pg_collectionDataWithWithlinkWithTarget:(UITableView *)alinkWithTarget indicatorViewColor:(UIColor *)aindicatorViewColor choicenessViewController:(UIFont *)achoicenessViewController{
++ (UIFont *)collectionDataWithWithlinkWithTarget:(UITableView *)alinkWithTarget indicatorViewColor:(UIColor *)aindicatorViewColor choicenessViewController:(UIFont *)achoicenessViewController{
     UIFont *mainActivityModelc3= [UIFont systemFontOfSize:49];
     return mainActivityModelc3;
 }
 
-+ (UITableView *)pg_unclampedDelayTimeWithpageTintColor:(PGSocialMessageObject *)apageTintColor blendModeClear:(PGSocialMessageObject *)ablendModeClear couponAlertView:(PGSocialMessageObject *)acouponAlertView{
++ (UITableView *)unclampedDelayTimeWithpageTintColor:(PGSocialMessageObject *)apageTintColor blendModeClear:(PGSocialMessageObject *)ablendModeClear couponAlertView:(PGSocialMessageObject *)acouponAlertView{
     UITableView *animatedImageFramess6= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     animatedImageFramess6.frame = CGRectZero; 
     animatedImageFramess6.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return animatedImageFramess6;
 }
 
-- (UITableViewStyle)pg_couponViewModelWithkeyboardTypeNumber:(UITableView *)akeyboardTypeNumber trainFinishAlert:(NSData *)atrainFinishAlert{
+- (UITableViewStyle)couponViewModelWithkeyboardTypeNumber:(UITableView *)akeyboardTypeNumber trainFinishAlert:(NSData *)atrainFinishAlert{
     UITableViewStyle collectionOriginalModelm0 = UITableViewStylePlain; 
     return collectionOriginalModelm0;
 }
 
-- (NSTextAlignment)pg_circleItemShareWithweekdayCalendarUnit:(UITableViewCellSeparatorStyle)aweekdayCalendarUnit defaultMaskType:(NSTextAlignment)adefaultMaskType{
+- (NSTextAlignment)circleItemShareWithweekdayCalendarUnit:(UITableViewCellSeparatorStyle)aweekdayCalendarUnit defaultMaskType:(NSTextAlignment)adefaultMaskType{
     NSTextAlignment buttonTitleColorg5 = NSTextAlignmentCenter; 
     return buttonTitleColorg5;
 }
 
-- (UIButtonType)pg_photoPickerViewWithchooseCellDelegate:(UITextField *)achooseCellDelegate videBeginPlay:(UIImageView *)avideBeginPlay{
+- (UIButtonType)photoPickerViewWithchooseCellDelegate:(UITextField *)achooseCellDelegate videBeginPlay:(UIImageView *)avideBeginPlay{
     UIButtonType secondTextureCoordinateu2 = UIButtonTypeContactAdd;
     return secondTextureCoordinateu2;
 }
@@ -64,7 +64,7 @@
      trackingWithToucha2.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(50,36,203,243)];
          NSData *imageContentModeV7= [[NSData alloc] init];
     PGViewDataSource *imageWithName= [[PGViewDataSource alloc] init];
-[imageWithName pg_couponViewModelWithkeyboardTypeNumber:trackingWithToucha2 trainFinishAlert:imageContentModeV7 ];
+[imageWithName couponViewModelWithkeyboardTypeNumber:trackingWithToucha2 trainFinishAlert:imageContentModeV7 ];
 
 }
 

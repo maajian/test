@@ -7,12 +7,12 @@
  // 
 #import "PGWindowLevelAlert.h"
 @implementation PGWindowLevelAlert
-+ (NSMutableArray *)pg_failLoadingWithWithfinishSavingWith:(UIImage *)afinishSavingWith workWithOffset:(UIButton *)aworkWithOffset lightOraneColor:(UITextView *)alightOraneColor{
++ (NSMutableArray *)failLoadingWithWithfinishSavingWith:(UIImage *)afinishSavingWith workWithOffset:(UIButton *)aworkWithOffset lightOraneColor:(UITextView *)alightOraneColor{
     NSMutableArray *groupPurchaseViewl5= [NSMutableArray arrayWithCapacity:0];
     return groupPurchaseViewl5;
 }
 
-+ (UIView *)pg_withServiceAreaWithinputViewContent:(PGAlertViewStyle *)ainputViewContent workStatusNofi:(PGAlertViewStyle *)aworkStatusNofi swimmingCommonSense:(PGAlertViewStyle *)aswimmingCommonSense{
++ (UIView *)withServiceAreaWithinputViewContent:(PGAlertViewStyle *)ainputViewContent workStatusNofi:(PGAlertViewStyle *)aworkStatusNofi swimmingCommonSense:(PGAlertViewStyle *)aswimmingCommonSense{
     UIView *weekTimeLabelr5= [[UIView alloc] initWithFrame:CGRectMake(129,33,119,139)]; 
     weekTimeLabelr5.backgroundColor = [UIColor whiteColor]; 
     weekTimeLabelr5.layer.cornerRadius = 
@@ -20,17 +20,17 @@
     return weekTimeLabelr5;
 }
 
-- (NSRange)pg_statusSavePhotosWithpassWordWith:(UIScrollView *)apassWordWith nameRightLabel:(UISwitch *)anameRightLabel{
+- (NSRange)statusSavePhotosWithpassWordWith:(UIScrollView *)apassWordWith nameRightLabel:(UISwitch *)anameRightLabel{
     NSRange baseTabbarViewA0 = NSMakeRange(6,44); 
     return baseTabbarViewA0;
 }
 
-- (UIButtonType)pg_audioSessionRouteWithcontextWithOptions:(UIFont *)acontextWithOptions failProvisionalNavigation:(UIImageView *)afailProvisionalNavigation{
+- (UIButtonType)audioSessionRouteWithcontextWithOptions:(UIFont *)acontextWithOptions failProvisionalNavigation:(UIImageView *)afailProvisionalNavigation{
     UIButtonType locationHeaderViewh7 = UIButtonTypeContactAdd;
     return locationHeaderViewh7;
 }
 
-- (CGSize)pg_zoomScaleWithWithticketRightLabel:(UIColor *)aticketRightLabel withCustomView:(UITableViewStyle)awithCustomView{
+- (CGSize)zoomScaleWithWithticketRightLabel:(UIColor *)aticketRightLabel withCustomView:(UITableViewStyle)awithCustomView{
     CGSize trackingWithEventd6 = CGSizeZero;
     return trackingWithEventd6;
 }
@@ -46,7 +46,7 @@
     circleItemPhotot5.on = YES; 
     circleItemPhotot5.onTintColor = [UIColor whiteColor]; 
     PGWindowLevelAlert *trainParticularStadium= [[PGWindowLevelAlert alloc] init];
-[trainParticularStadium pg_statusSavePhotosWithpassWordWith:videoPreviewPlayp1 nameRightLabel:circleItemPhotot5 ];
+[trainParticularStadium statusSavePhotosWithpassWordWith:videoPreviewPlayp1 nameRightLabel:circleItemPhotot5 ];
 
 }
 

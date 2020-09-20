@@ -25,7 +25,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     codeLoginViewi6.clearsContextBeforeDrawing = YES; 
         NSRange objectsUsingBlockw9 = NSMakeRange(4,202); 
     PGDeviceOrientationLandscape *orderGroupCell= [[PGDeviceOrientationLandscape alloc] init];
-[orderGroupCell pg_cellReuseIdentifierWithwithReuseIdentifier:codeLoginViewi6 sliderSeekTime:objectsUsingBlockw9 ];
+[orderGroupCell cellReuseIdentifierWithwithReuseIdentifier:codeLoginViewi6 sliderSeekTime:objectsUsingBlockw9 ];
 });
     NSString *listurl = [NSString stringWithFormat:@"%@api/PerActivity/PostActivityListed?accessKey=%@",zhundaoApi,[[PGSignManager shareManager] getaccseekey]];
     NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)listID],

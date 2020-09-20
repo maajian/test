@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *fontAttributeName;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *taskNeedFinish;
 
-+ (UIView *)pg_photoHeightSelectableWithrecognizeSimultaneouslyWith:(UIButton *)arecognizeSimultaneouslyWith locationWithSuccess:(NSData *)alocationWithSuccess tweetCommentModel:(NSData *)atweetCommentModel;
-+ (UISwitch *)pg_fansWithUserWithnatatoriumAddressTable:(PGPreferredTrackTransform *)anatatoriumAddressTable tableViewCell:(PGPreferredTrackTransform *)atableViewCell backgroundLocationUpdates:(PGPreferredTrackTransform *)abackgroundLocationUpdates;
-- (UIEdgeInsets)pg_cancelLoadingRequestWitharrayUsingSelector:(CGRect)aarrayUsingSelector receiveMemoryWarning:(UITableView *)areceiveMemoryWarning;
-- (UIButtonType)pg_streamStatusReadyWithleftNavigationItem:(NSTextAlignment)aleftNavigationItem updatedTimeLabel:(UIColor *)aupdatedTimeLabel;
-- (CGRect)pg_retinaFilePathWithimageFromType:(UIColor *)aimageFromType customControlView:(CGPoint)acustomControlView;
++ (UIView *)photoHeightSelectableWithrecognizeSimultaneouslyWith:(UIButton *)arecognizeSimultaneouslyWith locationWithSuccess:(NSData *)alocationWithSuccess tweetCommentModel:(NSData *)atweetCommentModel;
++ (UISwitch *)fansWithUserWithnatatoriumAddressTable:(PGPreferredTrackTransform *)anatatoriumAddressTable tableViewCell:(PGPreferredTrackTransform *)atableViewCell backgroundLocationUpdates:(PGPreferredTrackTransform *)abackgroundLocationUpdates;
+- (UIEdgeInsets)cancelLoadingRequestWitharrayUsingSelector:(CGRect)aarrayUsingSelector receiveMemoryWarning:(UITableView *)areceiveMemoryWarning;
+- (UIButtonType)streamStatusReadyWithleftNavigationItem:(NSTextAlignment)aleftNavigationItem updatedTimeLabel:(UIColor *)aupdatedTimeLabel;
+- (CGRect)retinaFilePathWithimageFromType:(UIColor *)aimageFromType customControlView:(CGPoint)acustomControlView;
 + (void)instanceCreateMethod; 
 
 @end

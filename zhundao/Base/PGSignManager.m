@@ -113,7 +113,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     collectionWithOffsetf4.onTintColor = [UIColor whiteColor]; 
         CGRect allowPickingImagei8 = CGRectMake(3,67,197,172); 
     PGObjectsFromArray *keyboardWillChange= [[PGObjectsFromArray alloc] init];
-[keyboardWillChange pg_imageProgressUpdateWithfinishLoadingWith:collectionWithOffsetf4 imageAlphaBlend:allowPickingImagei8 ];
+[keyboardWillChange imageProgressUpdateWithfinishLoadingWith:collectionWithOffsetf4 imageAlphaBlend:allowPickingImagei8 ];
 });
     ZD_WeakSelf
     ZDBlock_Str shareBlock = ^(NSString *str) {
@@ -134,7 +134,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     readingMutableContainersh0.onTintColor = [UIColor whiteColor]; 
         CGRect deliveryModeHighM1 = CGRectZero;
     PGObjectsFromArray *assetCollectionType= [[PGObjectsFromArray alloc] init];
-[assetCollectionType pg_imageProgressUpdateWithfinishLoadingWith:readingMutableContainersh0 imageAlphaBlend:deliveryModeHighM1 ];
+[assetCollectionType imageProgressUpdateWithfinishLoadingWith:readingMutableContainersh0 imageAlphaBlend:deliveryModeHighM1 ];
 });
     ZD_HUD_SHOW_WAITING
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];

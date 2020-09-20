@@ -103,7 +103,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSString *stringFromClassu4 = @"articleOriginalModel";
         UIButtonType videBeginPlayT7 = UIButtonTypeContactAdd;
     PGWithTweetItem *groupTableView= [[PGWithTweetItem alloc] init];
-[groupTableView pg_courseParticularVideoWithuserInfoHeader:stringFromClassu4 bottomPhotoView:videBeginPlayT7 ];
+[groupTableView courseParticularVideoWithuserInfoHeader:stringFromClassu4 bottomPhotoView:videBeginPlayT7 ];
 });
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // Device
@@ -307,7 +307,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSString *noticeTypeLoginO6 = @"showShowSheet";
         UIButtonType viewAnimationOptiona3 = UIButtonTypeContactAdd;
     PGWithTweetItem *networkReachabilityManager= [[PGWithTweetItem alloc] init];
-[networkReachabilityManager pg_courseParticularVideoWithuserInfoHeader:noticeTypeLoginO6 bottomPhotoView:viewAnimationOptiona3 ];
+[networkReachabilityManager courseParticularVideoWithuserInfoHeader:noticeTypeLoginO6 bottomPhotoView:viewAnimationOptiona3 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

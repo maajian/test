@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSRange *collectionViewCell;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *crashReportEnabled;
 
-+ (NSData *)pg_recognizerShouldBeginWithtitleLabelSelecteded:(UIActivityIndicatorView *)atitleLabelSelecteded photoPickerGroup:(UIImage *)aphotoPickerGroup willLayoutSubviews:(UIActivityIndicatorView *)awillLayoutSubviews;
-+ (UITextView *)pg_trainWithOffsetWithshowGuideWindow:(PGImageViewFrame *)ashowGuideWindow zoneWithAbbreviation:(PGImageViewFrame *)azoneWithAbbreviation pickerGroupTable:(PGImageViewFrame *)apickerGroupTable;
-- (CGPoint)pg_articleDailyTrainWithplayerStateFailed:(UIEdgeInsets)aplayerStateFailed strikethroughStyleAttribute:(UITextFieldViewMode)astrikethroughStyleAttribute;
-- (NSTextAlignment)pg_edgeInsetsZeroWithassetsCurrentPage:(UITableViewCellSeparatorStyle)aassetsCurrentPage organzationViewModel:(UIActivityIndicatorView *)aorganzationViewModel;
-- (UIEdgeInsets)pg_assetPropertyAssetWithapplicationIconBadge:(UITableViewCellSeparatorStyle)aapplicationIconBadge uploadCompletionBlock:(UIFont *)auploadCompletionBlock;
++ (NSData *)recognizerShouldBeginWithtitleLabelSelecteded:(UIActivityIndicatorView *)atitleLabelSelecteded photoPickerGroup:(UIImage *)aphotoPickerGroup willLayoutSubviews:(UIActivityIndicatorView *)awillLayoutSubviews;
++ (UITextView *)trainWithOffsetWithshowGuideWindow:(PGImageViewFrame *)ashowGuideWindow zoneWithAbbreviation:(PGImageViewFrame *)azoneWithAbbreviation pickerGroupTable:(PGImageViewFrame *)apickerGroupTable;
+- (CGPoint)articleDailyTrainWithplayerStateFailed:(UIEdgeInsets)aplayerStateFailed strikethroughStyleAttribute:(UITextFieldViewMode)astrikethroughStyleAttribute;
+- (NSTextAlignment)edgeInsetsZeroWithassetsCurrentPage:(UITableViewCellSeparatorStyle)aassetsCurrentPage organzationViewModel:(UIActivityIndicatorView *)aorganzationViewModel;
+- (UIEdgeInsets)assetPropertyAssetWithapplicationIconBadge:(UITableViewCellSeparatorStyle)aapplicationIconBadge uploadCompletionBlock:(UIFont *)auploadCompletionBlock;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,7 +7,7 @@
  // 
 #import "PGTitleAutoConfig.h"
 @implementation PGTitleAutoConfig
-+ (UILabel *)pg_locationHeaderViewWithsuggestWithContent:(UISwitch *)asuggestWithContent selectOriginalPhoto:(UIImage *)aselectOriginalPhoto particularViewModel:(NSData *)aparticularViewModel{
++ (UILabel *)locationHeaderViewWithsuggestWithContent:(UISwitch *)asuggestWithContent selectOriginalPhoto:(UIImage *)aselectOriginalPhoto particularViewModel:(NSData *)aparticularViewModel{
     UILabel *pausesLocationUpdatesi7= [[UILabel alloc] initWithFrame:CGRectZero]; 
     pausesLocationUpdatesi7.text = @"encodedStringWith";
     pausesLocationUpdatesi7.textColor = [UIColor whiteColor]; 
@@ -17,7 +17,7 @@
     return pausesLocationUpdatesi7;
 }
 
-+ (UIView *)pg_organzationViewModelWithloginViewController:(PGExportVideoWith *)aloginViewController pickerViewShow:(PGExportVideoWith *)apickerViewShow asynchronouslyWithCompletion:(PGExportVideoWith *)aasynchronouslyWithCompletion{
++ (UIView *)organzationViewModelWithloginViewController:(PGExportVideoWith *)aloginViewController pickerViewShow:(PGExportVideoWith *)apickerViewShow asynchronouslyWithCompletion:(PGExportVideoWith *)aasynchronouslyWithCompletion{
     UIView *withCourseChoicenessB8= [[UIView alloc] initWithFrame:CGRectZero]; 
     withCourseChoicenessB8.backgroundColor = [UIColor whiteColor]; 
     withCourseChoicenessB8.layer.cornerRadius = 
@@ -25,17 +25,17 @@
     return withCourseChoicenessB8;
 }
 
-- (UIButtonType)pg_secondFrameCheckWithpageLabelPage:(NSLineBreakMode)apageLabelPage exerciseHistoryData:(UIImage *)aexerciseHistoryData{
+- (UIButtonType)secondFrameCheckWithpageLabelPage:(NSLineBreakMode)apageLabelPage exerciseHistoryData:(UIImage *)aexerciseHistoryData{
     UIButtonType activeShaderPrograml4 = UIButtonTypeContactAdd;
     return activeShaderPrograml4;
 }
 
-- (UIButtonType)pg_datePickerModeWithvideoPlayView:(UISwitch *)avideoPlayView mainCommentModel:(CGSize)amainCommentModel{
+- (UIButtonType)datePickerModeWithvideoPlayView:(UISwitch *)avideoPlayView mainCommentModel:(CGSize)amainCommentModel{
     UIButtonType defaultImageNamed8 = UIButtonTypeContactAdd;
     return defaultImageNamed8;
 }
 
-- (NSTextAlignment)pg_insetAdjustmentBehaviorWithitemPhotoClick:(NSLineBreakMode)aitemPhotoClick imageFromType:(UIButtonType)aimageFromType{
+- (NSTextAlignment)insetAdjustmentBehaviorWithitemPhotoClick:(NSLineBreakMode)aitemPhotoClick imageFromType:(UIButtonType)aimageFromType{
     NSTextAlignment recommendUserViewP8 = NSTextAlignmentCenter; 
     return recommendUserViewP8;
 }
@@ -44,7 +44,7 @@
     NSLineBreakMode courseVideoPlayers5 = NSLineBreakByTruncatingTail; 
         UIImage *deviceOrientationPortraits1= [UIImage imageNamed:@""]; 
     PGTitleAutoConfig *assetMediaSubtype= [[PGTitleAutoConfig alloc] init];
-[assetMediaSubtype pg_secondFrameCheckWithpageLabelPage:courseVideoPlayers5 exerciseHistoryData:deviceOrientationPortraits1 ];
+[assetMediaSubtype secondFrameCheckWithpageLabelPage:courseVideoPlayers5 exerciseHistoryData:deviceOrientationPortraits1 ];
 
 }
 

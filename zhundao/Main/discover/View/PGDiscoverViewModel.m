@@ -7,7 +7,7 @@
  // 
 #import "PGDiscoverViewModel.h"
 @implementation PGDiscoverViewModel
-+ (UISlider *)pg_whenInteractionEndsWithwithCouponsInfo:(UIActivityIndicatorView *)awithCouponsInfo assetCollectionType:(UIFont *)aassetCollectionType activityTableView:(UIFont *)aactivityTableView{
++ (UISlider *)whenInteractionEndsWithwithCouponsInfo:(UIActivityIndicatorView *)awithCouponsInfo assetCollectionType:(UIFont *)aassetCollectionType activityTableView:(UIFont *)aactivityTableView{
     UISlider *whenInteractionEndsE7= [[UISlider alloc] initWithFrame:CGRectMake(62,196,52,20)]; 
     whenInteractionEndsE7.minimumValue = 0; 
     whenInteractionEndsE7.maximumValue = 100; 
@@ -15,7 +15,7 @@
     return whenInteractionEndsE7;
 }
 
-+ (UIView *)pg_receiveScriptMessageWithlevelUserCollections:(PGCountDownHelper *)alevelUserCollections userTweetView:(PGCountDownHelper *)auserTweetView countTableView:(PGCountDownHelper *)acountTableView{
++ (UIView *)receiveScriptMessageWithlevelUserCollections:(PGCountDownHelper *)alevelUserCollections userTweetView:(PGCountDownHelper *)auserTweetView countTableView:(PGCountDownHelper *)acountTableView{
     UIView *profileDataWithl8= [[UIView alloc] initWithFrame:CGRectZero]; 
     profileDataWithl8.backgroundColor = [UIColor whiteColor]; 
     profileDataWithl8.layer.cornerRadius = 
@@ -23,17 +23,17 @@
     return profileDataWithl8;
 }
 
-- (NSLineBreakMode)pg_videoCameraDelegateWithsizePlayView:(UITableView *)asizePlayView recommendCellDelegate:(UITextView *)arecommendCellDelegate{
+- (NSLineBreakMode)videoCameraDelegateWithsizePlayView:(UITableView *)asizePlayView recommendCellDelegate:(UITextView *)arecommendCellDelegate{
     NSLineBreakMode photoWidthSelectableW5 = NSLineBreakByTruncatingTail; 
     return photoWidthSelectableW5;
 }
 
-- (UITextFieldViewMode)pg_cropTypeWithWithtitlePositionAdjustment:(UITableViewStyle)atitlePositionAdjustment requestReturnCache:(UIButtonType)arequestReturnCache{
+- (UITextFieldViewMode)cropTypeWithWithtitlePositionAdjustment:(UITableViewStyle)atitlePositionAdjustment requestReturnCache:(UIButtonType)arequestReturnCache{
     UITextFieldViewMode userCommentViewB4 = UITextFieldViewModeAlways; 
     return userCommentViewB4;
 }
 
-- (UIButtonType)pg_circleParticularViewWithcollectionOriginalTable:(UIScrollView *)acollectionOriginalTable assetMediaType:(UITableViewStyle)aassetMediaType{
+- (UIButtonType)circleParticularViewWithcollectionOriginalTable:(UIScrollView *)acollectionOriginalTable assetMediaType:(UITableViewStyle)aassetMediaType{
     UIButtonType videBeginPlayv0 = UIButtonTypeContactAdd;
     return videBeginPlayv0;
 }
@@ -59,7 +59,7 @@
     hidesWhenStoppedg9.font = [UIFont systemFontOfSize:50];
     hidesWhenStoppedg9.text = @"mapsWithItems";
     PGDiscoverViewModel *titlePositionAdjustment= [[PGDiscoverViewModel alloc] init];
-[titlePositionAdjustment pg_videoCameraDelegateWithsizePlayView:withVertexShaderI1 recommendCellDelegate:hidesWhenStoppedg9 ];
+[titlePositionAdjustment videoCameraDelegateWithsizePlayView:withVertexShaderI1 recommendCellDelegate:hidesWhenStoppedg9 ];
 
 }
 

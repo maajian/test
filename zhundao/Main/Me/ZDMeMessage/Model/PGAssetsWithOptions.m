@@ -7,7 +7,7 @@
  // 
 #import "PGAssetsWithOptions.h"
 @implementation PGAssetsWithOptions
-+ (UIButton *)pg_currentMediaTimeWithassetCellType:(UIImageView *)aassetCellType connectionDataDelegate:(UIColor *)aconnectionDataDelegate lineJoinMiter:(UIImageView *)alineJoinMiter{
++ (UIButton *)currentMediaTimeWithassetCellType:(UIImageView *)aassetCellType connectionDataDelegate:(UIColor *)aconnectionDataDelegate lineJoinMiter:(UIImageView *)alineJoinMiter{
     UIButton *choicenessVideoViewa7= [UIButton buttonWithType:UIButtonTypeCustom]; 
     choicenessVideoViewa7.frame = CGRectZero; 
     choicenessVideoViewa7.exclusiveTouch = NO; 
@@ -17,7 +17,7 @@
     return choicenessVideoViewa7;
 }
 
-+ (UIButton *)pg_groupPurchaseOrderWithviewContentOffset:(PGCourseParticularTable *)aviewContentOffset dailyTrainData:(PGCourseParticularTable *)adailyTrainData assetFromFetch:(PGCourseParticularTable *)aassetFromFetch{
++ (UIButton *)groupPurchaseOrderWithviewContentOffset:(PGCourseParticularTable *)aviewContentOffset dailyTrainData:(PGCourseParticularTable *)adailyTrainData assetFromFetch:(PGCourseParticularTable *)aassetFromFetch{
     UIButton *inputViewContentO3= [UIButton buttonWithType:UIButtonTypeCustom]; 
     inputViewContentO3.frame = CGRectZero; 
     inputViewContentO3.exclusiveTouch = NO; 
@@ -27,17 +27,17 @@
     return inputViewContentO3;
 }
 
-- (UIButtonType)pg_textFieldViewWithpresetsCompatibleWith:(UISlider *)apresetsCompatibleWith calendarUnitYear:(CGPoint)acalendarUnitYear{
+- (UIButtonType)textFieldViewWithpresetsCompatibleWith:(UISlider *)apresetsCompatibleWith calendarUnitYear:(CGPoint)acalendarUnitYear{
     UIButtonType defaultImageNameN6 = UIButtonTypeContactAdd;
     return defaultImageNameN6;
 }
 
-- (NSLineBreakMode)pg_applicationLaunchOptionsWithcouponsInfoData:(NSMutableArray *)acouponsInfoData viewContentOffset:(NSRange)aviewContentOffset{
+- (NSLineBreakMode)applicationLaunchOptionsWithcouponsInfoData:(NSMutableArray *)acouponsInfoData viewContentOffset:(NSRange)aviewContentOffset{
     NSLineBreakMode mainScreenWidthP8 = NSLineBreakByTruncatingTail; 
     return mainScreenWidthP8;
 }
 
-- (CGPoint)pg_videoImageExtractorWithwithRootView:(CGPoint)awithRootView imageProcessingContext:(UITableViewCellSeparatorStyle)aimageProcessingContext{
+- (CGPoint)videoImageExtractorWithwithRootView:(CGPoint)awithRootView imageProcessingContext:(UITableViewCellSeparatorStyle)aimageProcessingContext{
     CGPoint exerciseRecordViewA8 = CGPointZero;
     return exerciseRecordViewA8;
 }
@@ -49,7 +49,7 @@
     assetCollectionTypeA1.value =76; 
         CGPoint fullScreenVideoH6 = CGPointZero;
     PGAssetsWithOptions *choicenessViewModel= [[PGAssetsWithOptions alloc] init];
-[choicenessViewModel pg_textFieldViewWithpresetsCompatibleWith:assetCollectionTypeA1 calendarUnitYear:fullScreenVideoH6 ];
+[choicenessViewModel textFieldViewWithpresetsCompatibleWith:assetCollectionTypeA1 calendarUnitYear:fullScreenVideoH6 ];
 
 }
 

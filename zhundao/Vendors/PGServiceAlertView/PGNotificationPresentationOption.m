@@ -7,7 +7,7 @@
  // 
 #import "PGNotificationPresentationOption.h"
 @implementation PGNotificationPresentationOption
-+ (UIScrollView *)pg_arrayUsingDescriptorsWithphotoPickerBrowser:(UIActivityIndicatorView *)aphotoPickerBrowser progressUpdateBlock:(UISlider *)aprogressUpdateBlock finishPickingMedia:(UITextView *)afinishPickingMedia{
++ (UIScrollView *)arrayUsingDescriptorsWithphotoPickerBrowser:(UIActivityIndicatorView *)aphotoPickerBrowser progressUpdateBlock:(UISlider *)aprogressUpdateBlock finishPickingMedia:(UITextView *)afinishPickingMedia{
     UIScrollView *scrollTimeIntervalF7= [[UIScrollView alloc] initWithFrame:CGRectMake(168,187,14,147)]; 
     scrollTimeIntervalF7.showsHorizontalScrollIndicator = NO; 
     scrollTimeIntervalF7.showsVerticalScrollIndicator = NO; 
@@ -17,22 +17,22 @@
     return scrollTimeIntervalF7;
 }
 
-+ (UIImage *)pg_recommendCourseHeightWithsendTweetSucc:(PGSocialMessageObject *)asendTweetSucc dailyCourseDetail:(PGSocialMessageObject *)adailyCourseDetail medalDetailCell:(PGSocialMessageObject *)amedalDetailCell{
++ (UIImage *)recommendCourseHeightWithsendTweetSucc:(PGSocialMessageObject *)asendTweetSucc dailyCourseDetail:(PGSocialMessageObject *)adailyCourseDetail medalDetailCell:(PGSocialMessageObject *)amedalDetailCell{
     UIImage *viewAutoresizingFlexibleX7= [UIImage imageNamed:@""]; 
     return viewAutoresizingFlexibleX7;
 }
 
-- (NSRange)pg_recordVideoCameraWithobjectsUsingBlock:(UISwitch *)aobjectsUsingBlock trainViewModel:(UIImageView *)atrainViewModel{
+- (NSRange)recordVideoCameraWithobjectsUsingBlock:(UISwitch *)aobjectsUsingBlock trainViewModel:(UIImageView *)atrainViewModel{
     NSRange userTweetDataL1 = NSMakeRange(10,72); 
     return userTweetDataL1;
 }
 
-- (CGRect)pg_collectionViewDataWithnoticeTypeLogin:(NSRange)anoticeTypeLogin assetMediaSubtype:(UIScrollView *)aassetMediaSubtype{
+- (CGRect)collectionViewDataWithnoticeTypeLogin:(NSRange)anoticeTypeLogin assetMediaSubtype:(UIScrollView *)aassetMediaSubtype{
     CGRect organizationViewControllerU1 = CGRectZero;
     return organizationViewControllerU1;
 }
 
-- (UITableViewCellSeparatorStyle)pg_hiddenShowSheetWithimageProcessingContext:(NSLineBreakMode)aimageProcessingContext asynchronouslyWithCompletion:(UIEdgeInsets)aasynchronouslyWithCompletion{
+- (UITableViewCellSeparatorStyle)hiddenShowSheetWithimageProcessingContext:(NSLineBreakMode)aimageProcessingContext asynchronouslyWithCompletion:(UIEdgeInsets)aasynchronouslyWithCompletion{
     UITableViewCellSeparatorStyle blendModeOverlayu4 = UITableViewCellSeparatorStyleNone; 
     return blendModeOverlayu4;
 }
@@ -48,7 +48,7 @@
     courseViewModelk8.autoresizesSubviews = YES; 
     courseViewModelk8.clearsContextBeforeDrawing = YES; 
     PGNotificationPresentationOption *assetPreferPrecise= [[PGNotificationPresentationOption alloc] init];
-[assetPreferPrecise pg_recordVideoCameraWithobjectsUsingBlock:tableViewScrollY0 trainViewModel:courseViewModelk8 ];
+[assetPreferPrecise recordVideoCameraWithobjectsUsingBlock:tableViewScrollY0 trainViewModel:courseViewModelk8 ];
 
 }
 

@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSTextAlignment *pickerGroupTable;
 @property (nonatomic, readwrite, assign) CGSize *textViewDelegate;
 
-+ (UIView *)pg_gradeBottomViewWithuserTweetView:(NSData *)auserTweetView differenceBetweenRect:(UILabel *)adifferenceBetweenRect userContentController:(NSString *)auserContentController;
-+ (UIFont *)pg_shouldAutoClipWithcourseChoicenessArticle:(PGHorizontalScrollIndicator *)acourseChoicenessArticle mainCourseModel:(PGHorizontalScrollIndicator *)amainCourseModel filterManagerInited:(PGHorizontalScrollIndicator *)afilterManagerInited;
-- (CGRect)pg_lineHeadIndentWithlikeTweetSucc:(NSTextAlignment)alikeTweetSucc playerBeginInterruption:(UIScrollView *)aplayerBeginInterruption;
-- (UIEdgeInsets)pg_withCourseChoicenessWithcountTableView:(UITableViewCellSeparatorStyle)acountTableView controlEventEditing:(UIImageView *)acontrolEventEditing;
-- (UITableViewCellSeparatorStyle)pg_failLoadWithWithreplayUserNick:(NSMutableArray *)areplayUserNick userInfoMedal:(UIButtonType)auserInfoMedal;
++ (UIView *)gradeBottomViewWithuserTweetView:(NSData *)auserTweetView differenceBetweenRect:(UILabel *)adifferenceBetweenRect userContentController:(NSString *)auserContentController;
++ (UIFont *)shouldAutoClipWithcourseChoicenessArticle:(PGHorizontalScrollIndicator *)acourseChoicenessArticle mainCourseModel:(PGHorizontalScrollIndicator *)amainCourseModel filterManagerInited:(PGHorizontalScrollIndicator *)afilterManagerInited;
+- (CGRect)lineHeadIndentWithlikeTweetSucc:(NSTextAlignment)alikeTweetSucc playerBeginInterruption:(UIScrollView *)aplayerBeginInterruption;
+- (UIEdgeInsets)withCourseChoicenessWithcountTableView:(UITableViewCellSeparatorStyle)acountTableView controlEventEditing:(UIImageView *)acontrolEventEditing;
+- (UITableViewCellSeparatorStyle)failLoadWithWithreplayUserNick:(NSMutableArray *)areplayUserNick userInfoMedal:(UIButtonType)auserInfoMedal;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,7 +7,7 @@
  // 
 #import "PGImageGeneratorWith.h"
 @implementation PGImageGeneratorWith
-+ (UIImageView *)pg_regionDefaultHandlerWithrectEdgeNone:(UIImageView *)arectEdgeNone orderDetailCell:(NSMutableArray *)aorderDetailCell ticketLeftLabel:(UILabel *)aticketLeftLabel{
++ (UIImageView *)regionDefaultHandlerWithrectEdgeNone:(UIImageView *)arectEdgeNone orderDetailCell:(NSMutableArray *)aorderDetailCell ticketLeftLabel:(UILabel *)aticketLeftLabel{
     UIImageView * levalInfoModelI1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     levalInfoModelI1.contentMode = UIViewContentModeCenter; 
     levalInfoModelI1.clipsToBounds = NO; 
@@ -17,7 +17,7 @@
     return levalInfoModelI1;
 }
 
-+ (UILabel *)pg_mutableParagraphStyleWithsupportedWindowLevel:(PGWithLoadingRequest *)asupportedWindowLevel clippingWithView:(PGWithLoadingRequest *)aclippingWithView lineHeadIndent:(PGWithLoadingRequest *)alineHeadIndent{
++ (UILabel *)mutableParagraphStyleWithsupportedWindowLevel:(PGWithLoadingRequest *)asupportedWindowLevel clippingWithView:(PGWithLoadingRequest *)aclippingWithView lineHeadIndent:(PGWithLoadingRequest *)alineHeadIndent{
     UILabel *arrayUsingDescriptorsg7= [[UILabel alloc] initWithFrame:CGRectZero]; 
     arrayUsingDescriptorsg7.text = @"imageTextureDelegate";
     arrayUsingDescriptorsg7.textColor = [UIColor whiteColor]; 
@@ -27,17 +27,17 @@
     return arrayUsingDescriptorsg7;
 }
 
-- (NSLineBreakMode)pg_accessoryDisclosureIndicatorWithstringFromDate:(NSMutableArray *)astringFromDate contextWithOptions:(UITextField *)acontextWithOptions{
+- (NSLineBreakMode)accessoryDisclosureIndicatorWithstringFromDate:(NSMutableArray *)astringFromDate contextWithOptions:(UITextField *)acontextWithOptions{
     NSLineBreakMode insetAdjustmentNeverp4 = NSLineBreakByTruncatingTail; 
     return insetAdjustmentNeverp4;
 }
 
-- (CGRect)pg_tweetItemModelWithimageNamesGroup:(UIActivityIndicatorView *)aimageNamesGroup insetAdjustmentBehavior:(UISwitch *)ainsetAdjustmentBehavior{
+- (CGRect)tweetItemModelWithimageNamesGroup:(UIActivityIndicatorView *)aimageNamesGroup insetAdjustmentBehavior:(UISwitch *)ainsetAdjustmentBehavior{
     CGRect periodicTimeObserverV6 = CGRectMake(179,10,125,127); 
     return periodicTimeObserverV6;
 }
 
-- (UIEdgeInsets)pg_showShowSheetWithnatatoriumAddressTable:(UITextFieldViewMode)anatatoriumAddressTable autoClipImage:(CGRect)aautoClipImage{
+- (UIEdgeInsets)showShowSheetWithnatatoriumAddressTable:(UITextFieldViewMode)anatatoriumAddressTable autoClipImage:(CGRect)aautoClipImage{
     UIEdgeInsets assetFromFetchh0 = UIEdgeInsetsZero;
     return assetFromFetchh0;
 }
@@ -53,7 +53,7 @@
     bottomPhotoViewf7.leftView = [[UIView alloc] initWithFrame:CGRectMake(237,28,62,64)];
      bottomPhotoViewf7.leftViewMode = UITextFieldViewModeAlways; 
     PGImageGeneratorWith *affineTransformTranslate= [[PGImageGeneratorWith alloc] init];
-[affineTransformTranslate pg_accessoryDisclosureIndicatorWithstringFromDate:coachDetailModelb4 contextWithOptions:bottomPhotoViewf7 ];
+[affineTransformTranslate accessoryDisclosureIndicatorWithstringFromDate:coachDetailModelb4 contextWithOptions:bottomPhotoViewf7 ];
 
 }
 

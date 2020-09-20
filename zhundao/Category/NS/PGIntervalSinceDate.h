@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) CGSize *withRankMedal;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *stringWithAttachment;
 
-+ (NSData *)pg_titleViewExampleWithanimatedImageView:(UITableView *)aanimatedImageView swimingCommonSense:(UITextView *)aswimingCommonSense textFieldWith:(UIFont *)atextFieldWith;
-+ (UITableView *)pg_colorSpaceCreateWithbeautyParameterWith:(PGDiscoverViewModel *)abeautyParameterWith photoPickerImage:(PGDiscoverViewModel *)aphotoPickerImage uploadSuccBlock:(PGDiscoverViewModel *)auploadSuccBlock;
-- (NSRange)pg_chooseCityCellWithwillLayoutSubviews:(UITextView *)awillLayoutSubviews tableViewCell:(NSString *)atableViewCell;
-- (CGPoint)pg_businessCardViewWithimageProcessingContext:(UITextField *)aimageProcessingContext downWithButton:(UIButtonType)adownWithButton;
-- (CGPoint)pg_colorSpaceReleaseWiththirdLoginFail:(UIActivityIndicatorView *)athirdLoginFail userInfoMedal:(UIColor *)auserInfoMedal;
++ (NSData *)titleViewExampleWithanimatedImageView:(UITableView *)aanimatedImageView swimingCommonSense:(UITextView *)aswimingCommonSense textFieldWith:(UIFont *)atextFieldWith;
++ (UITableView *)colorSpaceCreateWithbeautyParameterWith:(PGDiscoverViewModel *)abeautyParameterWith photoPickerImage:(PGDiscoverViewModel *)aphotoPickerImage uploadSuccBlock:(PGDiscoverViewModel *)auploadSuccBlock;
+- (NSRange)chooseCityCellWithwillLayoutSubviews:(UITextView *)awillLayoutSubviews tableViewCell:(NSString *)atableViewCell;
+- (CGPoint)businessCardViewWithimageProcessingContext:(UITextField *)aimageProcessingContext downWithButton:(UIButtonType)adownWithButton;
+- (CGPoint)colorSpaceReleaseWiththirdLoginFail:(UIActivityIndicatorView *)athirdLoginFail userInfoMedal:(UIColor *)auserInfoMedal;
 + (void)instanceCreateMethod; 
 
 @end

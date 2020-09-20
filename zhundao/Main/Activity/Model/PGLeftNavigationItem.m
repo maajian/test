@@ -7,7 +7,7 @@
  // 
 #import "PGLeftNavigationItem.h"
 @implementation PGLeftNavigationItem
-+ (UISlider *)pg_photoViewIndexWithrightBottomPoint:(NSMutableArray *)arightBottomPoint javaScriptConfirm:(UIFont *)ajavaScriptConfirm taskCenterView:(UIButton *)ataskCenterView{
++ (UISlider *)photoViewIndexWithrightBottomPoint:(NSMutableArray *)arightBottomPoint javaScriptConfirm:(UIFont *)ajavaScriptConfirm taskCenterView:(UIButton *)ataskCenterView{
     UISlider *rectCornerBottomW6= [[UISlider alloc] initWithFrame:CGRectMake(5,207,100,46)]; 
     rectCornerBottomW6.minimumValue = 0; 
     rectCornerBottomW6.maximumValue = 100; 
@@ -15,24 +15,24 @@
     return rectCornerBottomW6;
 }
 
-+ (UIActivityIndicatorView *)pg_integralRecordDataWithblendModeDestination:(PGMutableTrackWith *)ablendModeDestination maskTypeClear:(PGMutableTrackWith *)amaskTypeClear pickerImageView:(PGMutableTrackWith *)apickerImageView{
++ (UIActivityIndicatorView *)integralRecordDataWithblendModeDestination:(PGMutableTrackWith *)ablendModeDestination maskTypeClear:(PGMutableTrackWith *)amaskTypeClear pickerImageView:(PGMutableTrackWith *)apickerImageView{
     UIActivityIndicatorView *withLongLongx3= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     withLongLongx3.hidden = YES; 
     withLongLongx3.hidesWhenStopped = YES; 
     return withLongLongx3;
 }
 
-- (UITextFieldViewMode)pg_javaScriptTextWithalertControllerStyle:(NSString *)aalertControllerStyle styleWhiteLarge:(UITextView *)astyleWhiteLarge{
+- (UITextFieldViewMode)javaScriptTextWithalertControllerStyle:(NSString *)aalertControllerStyle styleWhiteLarge:(UITextView *)astyleWhiteLarge{
     UITextFieldViewMode contextDrawImageG7 = UITextFieldViewModeAlways; 
     return contextDrawImageG7;
 }
 
-- (CGPoint)pg_effectColorAlphaWithnumberHandlerWith:(UITextFieldViewMode)anumberHandlerWith stringUsingEncoding:(UIButtonType)astringUsingEncoding{
+- (CGPoint)effectColorAlphaWithnumberHandlerWith:(UITextFieldViewMode)anumberHandlerWith stringUsingEncoding:(UIButtonType)astringUsingEncoding{
     CGPoint maskViewFlagO0 = CGPointMake(4,68); 
     return maskViewFlagO0;
 }
 
-- (UITableViewStyle)pg_playerItemStatusWithfillModeForwards:(UIActivityIndicatorView *)afillModeForwards collectionViewData:(UIColor *)acollectionViewData{
+- (UITableViewStyle)playerItemStatusWithfillModeForwards:(UIActivityIndicatorView *)afillModeForwards collectionViewData:(UIColor *)acollectionViewData{
     UITableViewStyle dataElseLoadK0 = UITableViewStylePlain; 
     return dataElseLoadK0;
 }
@@ -44,7 +44,7 @@
     cellWithIndexa3.font = [UIFont systemFontOfSize:201];
     cellWithIndexa3.text = @"imageOptionProgressive";
     PGLeftNavigationItem *inviteAnswerView= [[PGLeftNavigationItem alloc] init];
-[inviteAnswerView pg_javaScriptTextWithalertControllerStyle:listViewModelw6 styleWhiteLarge:cellWithIndexa3 ];
+[inviteAnswerView javaScriptTextWithalertControllerStyle:listViewModelw6 styleWhiteLarge:cellWithIndexa3 ];
 
 }
 

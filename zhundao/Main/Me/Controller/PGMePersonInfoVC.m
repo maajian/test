@@ -106,7 +106,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *sizeWithAssett6= [UIImage imageNamed:@""]; 
         UITableViewStyle browserPhotoViewp6 = UITableViewStylePlain; 
     PGCompositionWithAsset *periodicTimeObserver= [[PGCompositionWithAsset alloc] init];
-[periodicTimeObserver pg_photosBytesWithWithbadgeDefaultFont:sizeWithAssett6 timeRangeValue:browserPhotoViewp6 ];
+[periodicTimeObserver photosBytesWithWithbadgeDefaultFont:sizeWithAssett6 timeRangeValue:browserPhotoViewp6 ];
 });
     UILabel *leftLabel = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 40, 70) Text:@"头像" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     [cell.contentView addSubview:leftLabel];
@@ -176,7 +176,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *badgeWithStyleN0= [UIImage imageNamed:@""]; 
         UITableViewStyle inviteAnswerNormalg4 = UITableViewStylePlain; 
     PGCompositionWithAsset *sliderTouchDown= [[PGCompositionWithAsset alloc] init];
-[sliderTouchDown pg_photosBytesWithWithbadgeDefaultFont:badgeWithStyleN0 timeRangeValue:inviteAnswerNormalg4 ];
+[sliderTouchDown photosBytesWithWithbadgeDefaultFont:badgeWithStyleN0 timeRangeValue:inviteAnswerNormalg4 ];
 });
     [super viewWillAppear:animated];
     [self netWork];

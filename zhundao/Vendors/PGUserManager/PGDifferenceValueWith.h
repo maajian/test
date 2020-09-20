@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) CGRect *imageCompressionRules;
 @property (nonatomic, readwrite, assign) NSLineBreakMode *dataReadingMapped;
 
-+ (UITextField *)pg_playerStateBufferingWithheaderFooterView:(UIImageView *)aheaderFooterView medalKindModel:(UIImage *)amedalKindModel finishSavingWith:(UIImageView *)afinishSavingWith;
-+ (UIScrollView *)pg_locationWithSuccessWithblockWithResult:(PGDailyTrainDetail *)ablockWithResult pathWithRect:(PGDailyTrainDetail *)apathWithRect mobileCoreServices:(PGDailyTrainDetail *)amobileCoreServices;
-- (UIEdgeInsets)pg_particularCommentTableWithsaveEmojiArray:(UITextFieldViewMode)asaveEmojiArray authorizationStatusRestricted:(UITableViewStyle)aauthorizationStatusRestricted;
-- (UITextFieldViewMode)pg_unclampedDelayTimeWithbackGroundColor:(UIButton *)abackGroundColor trainParticularData:(CGSize)atrainParticularData;
-- (CGRect)pg_couponTypeActivityWithactivityIndicatorView:(NSTextAlignment)aactivityIndicatorView coachDetailModel:(CGRect)acoachDetailModel;
++ (UITextField *)playerStateBufferingWithheaderFooterView:(UIImageView *)aheaderFooterView medalKindModel:(UIImage *)amedalKindModel finishSavingWith:(UIImageView *)afinishSavingWith;
++ (UIScrollView *)locationWithSuccessWithblockWithResult:(PGDailyTrainDetail *)ablockWithResult pathWithRect:(PGDailyTrainDetail *)apathWithRect mobileCoreServices:(PGDailyTrainDetail *)amobileCoreServices;
+- (UIEdgeInsets)particularCommentTableWithsaveEmojiArray:(UITextFieldViewMode)asaveEmojiArray authorizationStatusRestricted:(UITableViewStyle)aauthorizationStatusRestricted;
+- (UITextFieldViewMode)unclampedDelayTimeWithbackGroundColor:(UIButton *)abackGroundColor trainParticularData:(CGSize)atrainParticularData;
+- (CGRect)couponTypeActivityWithactivityIndicatorView:(NSTextAlignment)aactivityIndicatorView coachDetailModel:(CGRect)acoachDetailModel;
 + (void)instanceCreateMethod; 
 
 @end

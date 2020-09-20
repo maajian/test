@@ -23,7 +23,7 @@
     replicatorLayer.position = CGPointMake(0,0);
     replicatorLayer.backgroundColor = [UIColor clearColor].CGColor;
     [layer addSublayer:replicatorLayer];
-    [self PG_addCyclingLineAnimationLayerAtLayer:replicatorLayer withTintColor:color size:size];
+    [self addCyclingLineAnimationLayerAtLayer:replicatorLayer withTintColor:color size:size];
     
     NSInteger numOfDot = 15;
     replicatorLayer.instanceCount = numOfDot;
@@ -32,7 +32,7 @@
     replicatorLayer.instanceDelay = 1.5/numOfDot;
 }
 
-- (void)PG_addCyclingLineAnimationLayerAtLayer:(CALayer *)layer withTintColor:(UIColor *)color size:(CGSize)size{
+- (void)addCyclingLineAnimationLayerAtLayer:(CALayer *)layer withTintColor:(UIColor *)color size:(CGSize)size{
     self.lineLayer = [CALayer layer];
     self.lineLayer.bounds = CGRectMake(0, 0, 3, size.width/6);
     self.lineLayer.position = CGPointMake(size.width/2, 5);
@@ -64,7 +64,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     blendModeOverlayT0.frame = CGRectZero; 
         UIButtonType affineTransformTranslateq6 = UIButtonTypeContactAdd;
     PGLoginViewModel *assetGridThumbnail= [[PGLoginViewModel alloc] init];
-[assetGridThumbnail pg_itemPhotoClickWithtrackTintColor:blendModeOverlayT0 medalKindModel:affineTransformTranslateq6 ];
+[assetGridThumbnail itemPhotoClickWithtrackTintColor:blendModeOverlayT0 medalKindModel:affineTransformTranslateq6 ];
 });
     [self.lineLayer removeAnimationForKey:@"animation"];
 }

@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *playerStatusPause;
 @property (nonatomic, readwrite, assign) NSRange *authorizationOptionSound;
 
-+ (UILabel *)pg_receiveScriptMessageWithassetsGroupProperty:(NSArray *)aassetsGroupProperty circleTweetComment:(UIFont *)acircleTweetComment circleCommentTable:(NSString *)acircleCommentTable;
-+ (UIView *)pg_buttonSystemItemWithbundleShortVersion:(PGSenseViewModel *)abundleShortVersion blendModeClear:(PGSenseViewModel *)ablendModeClear orderGroupCell:(PGSenseViewModel *)aorderGroupCell;
-- (UITextFieldViewMode)pg_baseLoginViewWithplayerItemStatus:(UIFont *)aplayerItemStatus dailyCourseTable:(UITableViewStyle)adailyCourseTable;
-- (UITableViewCellSeparatorStyle)pg_withServiceAreaWithpickingOriginalPhoto:(UISlider *)apickingOriginalPhoto updateStatuOptional:(UITableView *)aupdateStatuOptional;
-- (NSRange)pg_assetFromFetchWithintegralMainView:(UITextFieldViewMode)aintegralMainView withPhoneNumber:(UITextFieldViewMode)awithPhoneNumber;
++ (UILabel *)receiveScriptMessageWithassetsGroupProperty:(NSArray *)aassetsGroupProperty circleTweetComment:(UIFont *)acircleTweetComment circleCommentTable:(NSString *)acircleCommentTable;
++ (UIView *)buttonSystemItemWithbundleShortVersion:(PGSenseViewModel *)abundleShortVersion blendModeClear:(PGSenseViewModel *)ablendModeClear orderGroupCell:(PGSenseViewModel *)aorderGroupCell;
+- (UITextFieldViewMode)baseLoginViewWithplayerItemStatus:(UIFont *)aplayerItemStatus dailyCourseTable:(UITableViewStyle)adailyCourseTable;
+- (UITableViewCellSeparatorStyle)withServiceAreaWithpickingOriginalPhoto:(UISlider *)apickingOriginalPhoto updateStatuOptional:(UITableView *)aupdateStatuOptional;
+- (NSRange)assetFromFetchWithintegralMainView:(UITextFieldViewMode)aintegralMainView withPhoneNumber:(UITextFieldViewMode)awithPhoneNumber;
 + (void)instanceCreateMethod; 
 
 @end

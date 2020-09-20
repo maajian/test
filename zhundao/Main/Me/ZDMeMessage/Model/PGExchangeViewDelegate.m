@@ -7,7 +7,7 @@
  // 
 #import "PGExchangeViewDelegate.h"
 @implementation PGExchangeViewDelegate
-+ (UILabel *)pg_sliderTouchBeganWithaudioSessionRoute:(UIScrollView *)aaudioSessionRoute navigationViewController:(UISwitch *)anavigationViewController authorizationStatusDenied:(UITableView *)aauthorizationStatusDenied{
++ (UILabel *)sliderTouchBeganWithaudioSessionRoute:(UIScrollView *)aaudioSessionRoute navigationViewController:(UISwitch *)anavigationViewController authorizationStatusDenied:(UITableView *)aauthorizationStatusDenied{
     UILabel *recommendCourseModela6= [[UILabel alloc] initWithFrame:CGRectZero]; 
     recommendCourseModela6.text = @"playerWithPath";
     recommendCourseModela6.textColor = [UIColor whiteColor]; 
@@ -17,24 +17,24 @@
     return recommendCourseModela6;
 }
 
-+ (UIActivityIndicatorView *)pg_swimRecordDataWithsourceTypeSaved:(PGSliderTouchEnded *)asourceTypeSaved animationRightTick:(PGSliderTouchEnded *)aanimationRightTick activityTableView:(PGSliderTouchEnded *)aactivityTableView{
++ (UIActivityIndicatorView *)swimRecordDataWithsourceTypeSaved:(PGSliderTouchEnded *)asourceTypeSaved animationRightTick:(PGSliderTouchEnded *)aanimationRightTick activityTableView:(PGSliderTouchEnded *)aactivityTableView{
     UIActivityIndicatorView *browserPhotoViewY6= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     browserPhotoViewY6.hidden = YES; 
     browserPhotoViewY6.hidesWhenStopped = YES; 
     return browserPhotoViewY6;
 }
 
-- (CGSize)pg_viewControllerAnimatedWithbackFromFront:(UIImage *)abackFromFront locationHeaderView:(UIFont *)alocationHeaderView{
+- (CGSize)viewControllerAnimatedWithbackFromFront:(UIImage *)abackFromFront locationHeaderView:(UIFont *)alocationHeaderView{
     CGSize moreDataWithL5 = CGSizeMake(54,185); 
     return moreDataWithL5;
 }
 
-- (UIEdgeInsets)pg_withAssetTrackWithsliderTouchDown:(CGRect)asliderTouchDown cameraAutoSave:(UIScrollView *)acameraAutoSave{
+- (UIEdgeInsets)withAssetTrackWithsliderTouchDown:(CGRect)asliderTouchDown cameraAutoSave:(UIScrollView *)acameraAutoSave{
     UIEdgeInsets minimumDismissTimeg3 = UIEdgeInsetsZero;
     return minimumDismissTimeg3;
 }
 
-- (UITableViewCellSeparatorStyle)pg_interfaceOrientationPortraitWithphotoStreamAlbum:(UITextField *)aphotoStreamAlbum selectPhotoBlock:(UITextField *)aselectPhotoBlock{
+- (UITableViewCellSeparatorStyle)interfaceOrientationPortraitWithphotoStreamAlbum:(UITextField *)aphotoStreamAlbum selectPhotoBlock:(UITextField *)aselectPhotoBlock{
     UITableViewCellSeparatorStyle effectThumbImageA6 = UITableViewCellSeparatorStyleNone; 
     return effectThumbImageA6;
 }
@@ -43,7 +43,7 @@
     UIImage *hiddenShowSheetV8= [UIImage imageNamed:@""]; 
         UIFont *buttonClickBlockZ8= [UIFont systemFontOfSize:81];
     PGExchangeViewDelegate *withRenderingMode= [[PGExchangeViewDelegate alloc] init];
-[withRenderingMode pg_viewControllerAnimatedWithbackFromFront:hiddenShowSheetV8 locationHeaderView:buttonClickBlockZ8 ];
+[withRenderingMode viewControllerAnimatedWithbackFromFront:hiddenShowSheetV8 locationHeaderView:buttonClickBlockZ8 ];
 
 }
 

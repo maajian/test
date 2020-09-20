@@ -7,29 +7,29 @@
  // 
 #import "PGColumnistChildData.h"
 @implementation PGColumnistChildData
-+ (NSData *)pg_mediaTimingFunctionWithbundleDisplayName:(UIFont *)abundleDisplayName withCouponsInfo:(UITextField *)awithCouponsInfo insetAdjustmentBehavior:(UIActivityIndicatorView *)ainsetAdjustmentBehavior{
++ (NSData *)mediaTimingFunctionWithbundleDisplayName:(UIFont *)abundleDisplayName withCouponsInfo:(UITextField *)awithCouponsInfo insetAdjustmentBehavior:(UIActivityIndicatorView *)ainsetAdjustmentBehavior{
     NSData *receivedFirstFrameH5= [[NSData alloc] init];
     return receivedFirstFrameH5;
 }
 
-+ (UISwitch *)pg_buttonTypeCustomWithwithCourseSecond:(PGFailWithError *)awithCourseSecond profileDataWith:(PGFailWithError *)aprofileDataWith backGroundColor:(PGFailWithError *)abackGroundColor{
++ (UISwitch *)buttonTypeCustomWithwithCourseSecond:(PGFailWithError *)awithCourseSecond profileDataWith:(PGFailWithError *)aprofileDataWith backGroundColor:(PGFailWithError *)abackGroundColor{
     UISwitch *chooseViewDelegateb1= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     chooseViewDelegateb1.on = YES; 
     chooseViewDelegateb1.onTintColor = [UIColor whiteColor]; 
     return chooseViewDelegateb1;
 }
 
-- (NSTextAlignment)pg_statusPhotoStreamWithplayerDecodeError:(NSMutableArray *)aplayerDecodeError settingViewController:(UIScrollView *)asettingViewController{
+- (NSTextAlignment)statusPhotoStreamWithplayerDecodeError:(NSMutableArray *)aplayerDecodeError settingViewController:(UIScrollView *)asettingViewController{
     NSTextAlignment couponViewModelJ7 = NSTextAlignmentCenter; 
     return couponViewModelJ7;
 }
 
-- (UITextFieldViewMode)pg_groupPurchaseDataWithinviteAnswerNormal:(UIButtonType)ainviteAnswerNormal cycleScrollView:(CGRect)acycleScrollView{
+- (UITextFieldViewMode)groupPurchaseDataWithinviteAnswerNormal:(UIButtonType)ainviteAnswerNormal cycleScrollView:(CGRect)acycleScrollView{
     UITextFieldViewMode alertControllerStyler3 = UITextFieldViewModeAlways; 
     return alertControllerStyler3;
 }
 
-- (NSRange)pg_withControlPointsWithhandpickViewModel:(UISwitch *)ahandpickViewModel deepBlackColor:(NSData *)adeepBlackColor{
+- (NSRange)withControlPointsWithhandpickViewModel:(UISwitch *)ahandpickViewModel deepBlackColor:(NSData *)adeepBlackColor{
     NSRange cyclingLineLayerk6 = NSMakeRange(5,132); 
     return cyclingLineLayerk6;
 }
@@ -43,7 +43,7 @@
     rankMedalHeaderR7.maximumZoomScale = 5; 
     rankMedalHeaderR7.minimumZoomScale = 1; 
     PGColumnistChildData *viewDataSource= [[PGColumnistChildData alloc] init];
-[viewDataSource pg_statusPhotoStreamWithplayerDecodeError:directionVerticalMovedN7 settingViewController:rankMedalHeaderR7 ];
+[viewDataSource statusPhotoStreamWithplayerDecodeError:directionVerticalMovedN7 settingViewController:rankMedalHeaderR7 ];
 
 }
 

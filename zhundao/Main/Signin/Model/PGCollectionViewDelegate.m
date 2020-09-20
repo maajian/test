@@ -7,14 +7,14 @@
  // 
 #import "PGCollectionViewDelegate.h"
 @implementation PGCollectionViewDelegate
-+ (UISwitch *)pg_fontAttributeNameWithcustomPropertyMapper:(NSMutableArray *)acustomPropertyMapper bitmapContextCreate:(UITableView *)abitmapContextCreate autoAdjustTrack:(UIImageView *)aautoAdjustTrack{
++ (UISwitch *)fontAttributeNameWithcustomPropertyMapper:(NSMutableArray *)acustomPropertyMapper bitmapContextCreate:(UITableView *)abitmapContextCreate autoAdjustTrack:(UIImageView *)aautoAdjustTrack{
     UISwitch *withJsonStringl4= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     withJsonStringl4.on = YES; 
     withJsonStringl4.onTintColor = [UIColor whiteColor]; 
     return withJsonStringl4;
 }
 
-+ (UIView *)pg_shouldAutoClipWithbadgeWithStyle:(PGIntervalSinceDate *)abadgeWithStyle articleContentModel:(PGIntervalSinceDate *)aarticleContentModel arrayUsingComparator:(PGIntervalSinceDate *)aarrayUsingComparator{
++ (UIView *)shouldAutoClipWithbadgeWithStyle:(PGIntervalSinceDate *)abadgeWithStyle articleContentModel:(PGIntervalSinceDate *)aarticleContentModel arrayUsingComparator:(PGIntervalSinceDate *)aarrayUsingComparator{
     UIView *pageScrollViewS6= [[UIView alloc] initWithFrame:CGRectZero]; 
     pageScrollViewS6.backgroundColor = [UIColor whiteColor]; 
     pageScrollViewS6.layer.cornerRadius = 
@@ -22,17 +22,17 @@
     return pageScrollViewS6;
 }
 
-- (NSTextAlignment)pg_animationRightTickWithchangePreviousRoute:(UITextView *)achangePreviousRoute sendTweetSucc:(NSLineBreakMode)asendTweetSucc{
+- (NSTextAlignment)animationRightTickWithchangePreviousRoute:(UITextView *)achangePreviousRoute sendTweetSucc:(NSLineBreakMode)asendTweetSucc{
     NSTextAlignment finishLaunchingWithc7 = NSTextAlignmentCenter; 
     return finishLaunchingWithc7;
 }
 
-- (NSRange)pg_originBackgroundColorWithvideoRequestTask:(UIButtonType)avideoRequestTask imageViewWith:(UISwitch *)aimageViewWith{
+- (NSRange)originBackgroundColorWithvideoRequestTask:(UIButtonType)avideoRequestTask imageViewWith:(UISwitch *)aimageViewWith{
     NSRange recognizeSimultaneouslyWithN5 = NSMakeRange(7,197); 
     return recognizeSimultaneouslyWithN5;
 }
 
-- (NSRange)pg_monthTimeIntervalWithtableViewStyle:(NSData *)atableViewStyle attentionWithUser:(NSRange)aattentionWithUser{
+- (NSRange)monthTimeIntervalWithtableViewStyle:(NSData *)atableViewStyle attentionWithUser:(NSRange)aattentionWithUser{
     NSRange alipaySuccNotificatione5 = NSMakeRange(9,112); 
     return alipaySuccNotificatione5;
 }
@@ -44,7 +44,7 @@
     commentTableViewd6.text = @"allowWithController";
         NSLineBreakMode pointerFunctionsOptionsn4 = NSLineBreakByTruncatingTail; 
     PGCollectionViewDelegate *ticketRightLabel= [[PGCollectionViewDelegate alloc] init];
-[ticketRightLabel pg_animationRightTickWithchangePreviousRoute:commentTableViewd6 sendTweetSucc:pointerFunctionsOptionsn4 ];
+[ticketRightLabel animationRightTickWithchangePreviousRoute:commentTableViewd6 sendTweetSucc:pointerFunctionsOptionsn4 ];
 
 }
 

@@ -35,7 +35,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     chooseCellDelegatei5.text = @"organizeServiceModel";
         NSLineBreakMode medalExplainViewA2 = NSLineBreakByTruncatingTail; 
     PGWithRecommendCourse *modalPresentationNone= [[PGWithRecommendCourse alloc] init];
-[modalPresentationNone pg_medalDetailCellWithviewWidthPadding:chooseCellDelegatei5 dailyCourseTable:medalExplainViewA2 ];
+[modalPresentationNone medalDetailCellWithviewWidthPadding:chooseCellDelegatei5 dailyCourseTable:medalExplainViewA2 ];
 });
     [super viewDidLoad];
     self.title = @"人脸签到";
@@ -160,7 +160,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     withDailyCourseA2.text = @"viewContentSize";
         NSLineBreakMode finishPickingVideoo9 = NSLineBreakByTruncatingTail; 
     PGWithRecommendCourse *loopCommonModes= [[PGWithRecommendCourse alloc] init];
-[loopCommonModes pg_medalDetailCellWithviewWidthPadding:withDailyCourseA2 dailyCourseTable:finishPickingVideoo9 ];
+[loopCommonModes medalDetailCellWithviewWidthPadding:withDailyCourseA2 dailyCourseTable:finishPickingVideoo9 ];
 });
     [self.deviceArray removeAllObjects];
     [self.faceVM getListWithBlock:^(NSArray *dataArray) {
@@ -191,7 +191,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     playerItemPlaybackD8.text = @"springWithDamping";
         NSLineBreakMode courseClassTableC3 = NSLineBreakByTruncatingTail; 
     PGWithRecommendCourse *trainWithOffset= [[PGWithRecommendCourse alloc] init];
-[trainWithOffset pg_medalDetailCellWithviewWidthPadding:playerItemPlaybackD8 dailyCourseTable:courseClassTableC3 ];
+[trainWithOffset medalDetailCellWithviewWidthPadding:playerItemPlaybackD8 dailyCourseTable:courseClassTableC3 ];
 });
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

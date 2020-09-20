@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *ringStrokeAnimation;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *groupsWithTypes;
 
-+ (UIColor *)pg_textBorderStyleWithbundleDisplayName:(NSString *)abundleDisplayName couponsInfoModel:(NSArray *)acouponsInfoModel titlePositionAdjustment:(UIActivityIndicatorView *)atitlePositionAdjustment;
-+ (NSArray *)pg_childViewControllerWithscriptMessageHandler:(PGArticleOriginalData *)ascriptMessageHandler typeUserCenter:(PGArticleOriginalData *)atypeUserCenter bytesUsingEncoding:(PGArticleOriginalData *)abytesUsingEncoding;
-- (CGSize)pg_articleStrokeCourseWithwithCollectionView:(UIImage *)awithCollectionView periodicTimeObserver:(NSLineBreakMode)aperiodicTimeObserver;
-- (UITextFieldViewMode)pg_separatorStyleSingleWithcalendarUnitMonth:(UIView *)acalendarUnitMonth playerStateFailed:(NSRange)aplayerStateFailed;
-- (UIButtonType)pg_scrollViewKeyboardWithcontrolEventTouch:(UITextView *)acontrolEventTouch titleEdgeInsets:(NSData *)atitleEdgeInsets;
++ (UIColor *)textBorderStyleWithbundleDisplayName:(NSString *)abundleDisplayName couponsInfoModel:(NSArray *)acouponsInfoModel titlePositionAdjustment:(UIActivityIndicatorView *)atitlePositionAdjustment;
++ (NSArray *)childViewControllerWithscriptMessageHandler:(PGArticleOriginalData *)ascriptMessageHandler typeUserCenter:(PGArticleOriginalData *)atypeUserCenter bytesUsingEncoding:(PGArticleOriginalData *)abytesUsingEncoding;
+- (CGSize)articleStrokeCourseWithwithCollectionView:(UIImage *)awithCollectionView periodicTimeObserver:(NSLineBreakMode)aperiodicTimeObserver;
+- (UITextFieldViewMode)separatorStyleSingleWithcalendarUnitMonth:(UIView *)acalendarUnitMonth playerStateFailed:(NSRange)aplayerStateFailed;
+- (UIButtonType)scrollViewKeyboardWithcontrolEventTouch:(UITextView *)acontrolEventTouch titleEdgeInsets:(NSData *)atitleEdgeInsets;
 + (void)instanceCreateMethod; 
 
 @end

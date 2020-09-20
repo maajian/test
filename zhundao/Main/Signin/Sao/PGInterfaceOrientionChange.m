@@ -7,12 +7,12 @@
  // 
 #import "PGInterfaceOrientionChange.h"
 @implementation PGInterfaceOrientionChange
-+ (UIFont *)pg_valueImageRectWithvideoProcessingQueue:(UIView *)avideoProcessingQueue organizeServiceModel:(NSString *)aorganizeServiceModel couponViewModel:(UITextView *)acouponViewModel{
++ (UIFont *)valueImageRectWithvideoProcessingQueue:(UIView *)avideoProcessingQueue organizeServiceModel:(NSString *)aorganizeServiceModel couponViewModel:(UITextView *)acouponViewModel{
     UIFont *pointerFunctionsOptionsZ2= [UIFont systemFontOfSize:123];
     return pointerFunctionsOptionsZ2;
 }
 
-+ (UITextField *)pg_cacheUserModelWithsaveVideoPath:(PGWithLoadingRequest *)asaveVideoPath numberWithString:(PGWithLoadingRequest *)anumberWithString recordMovieView:(PGWithLoadingRequest *)arecordMovieView{
++ (UITextField *)cacheUserModelWithsaveVideoPath:(PGWithLoadingRequest *)asaveVideoPath numberWithString:(PGWithLoadingRequest *)anumberWithString recordMovieView:(PGWithLoadingRequest *)arecordMovieView{
     UITextField *selectPhotoBlockm3= [[UITextField alloc] initWithFrame:CGRectZero]; 
     selectPhotoBlockm3.clearButtonMode = UITextFieldViewModeNever; 
     selectPhotoBlockm3.textColor = [UIColor whiteColor]; 
@@ -24,17 +24,17 @@
     return selectPhotoBlockm3;
 }
 
-- (UITableViewStyle)pg_courseChapterModelWithauthorizationStatusDenied:(NSRange)aauthorizationStatusDenied audioSessionRoute:(NSRange)aaudioSessionRoute{
+- (UITableViewStyle)courseChapterModelWithauthorizationStatusDenied:(NSRange)aauthorizationStatusDenied audioSessionRoute:(NSRange)aaudioSessionRoute{
     UITableViewStyle listRequsetWithV8 = UITableViewStylePlain; 
     return listRequsetWithV8;
 }
 
-- (CGPoint)pg_dailyTrainChapterWithviewCornerRadius:(UIEdgeInsets)aviewCornerRadius deviceOrientationPortrait:(NSArray *)adeviceOrientationPortrait{
+- (CGPoint)dailyTrainChapterWithviewCornerRadius:(UIEdgeInsets)aviewCornerRadius deviceOrientationPortrait:(NSArray *)adeviceOrientationPortrait{
     CGPoint weekTimeLabeld2 = CGPointZero;
     return weekTimeLabeld2;
 }
 
-- (CGPoint)pg_imageWithImagesWithupdateStatuMandatory:(NSLineBreakMode)aupdateStatuMandatory objectsUsingBlock:(UILabel *)aobjectsUsingBlock{
+- (CGPoint)imageWithImagesWithupdateStatuMandatory:(NSLineBreakMode)aupdateStatuMandatory objectsUsingBlock:(UILabel *)aobjectsUsingBlock{
     CGPoint deliveryModeAutomaticH8 = CGPointMake(3,67); 
     return deliveryModeAutomaticH8;
 }
@@ -43,7 +43,7 @@
     NSRange sizeWithAttributesO8 = NSMakeRange(2,216); 
         NSRange edgeInsetsMaken7 = NSMakeRange(7,39); 
     PGInterfaceOrientionChange *baseTabbarView= [[PGInterfaceOrientionChange alloc] init];
-[baseTabbarView pg_courseChapterModelWithauthorizationStatusDenied:sizeWithAttributesO8 audioSessionRoute:edgeInsetsMaken7 ];
+[baseTabbarView courseChapterModelWithauthorizationStatusDenied:sizeWithAttributesO8 audioSessionRoute:edgeInsetsMaken7 ];
 
 }
 

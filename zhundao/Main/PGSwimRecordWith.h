@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *customPropertyMapper;
 @property (nonatomic, readwrite, assign) NSRange *spinLockUnlock;
 
-+ (UIFont *)pg_orientationLandscapeConstraintWithlocationViewModel:(NSString *)alocationViewModel modalTransitionStyle:(UIButton *)amodalTransitionStyle changePhoneView:(NSData *)achangePhoneView;
-+ (UIImageView *)pg_userTweetTableWithallowsBackForward:(PGCompleteWithError *)aallowsBackForward withCommentObject:(PGCompleteWithError *)awithCommentObject buttonItemAppearance:(PGCompleteWithError *)abuttonItemAppearance;
-- (NSTextAlignment)pg_protocolViewControllerWithwithDailyTrain:(UISlider *)awithDailyTrain blockCropMode:(NSString *)ablockCropMode;
-- (UITextFieldViewMode)pg_viewWillHiddenWithmainCommentTable:(NSArray *)amainCommentTable progressDefaultSize:(UIColor *)aprogressDefaultSize;
-- (UITableViewStyle)pg_viewDataSourceWithmovieTestView:(UITextFieldViewMode)amovieTestView playViewModel:(NSLineBreakMode)aplayViewModel;
++ (UIFont *)orientationLandscapeConstraintWithlocationViewModel:(NSString *)alocationViewModel modalTransitionStyle:(UIButton *)amodalTransitionStyle changePhoneView:(NSData *)achangePhoneView;
++ (UIImageView *)userTweetTableWithallowsBackForward:(PGCompleteWithError *)aallowsBackForward withCommentObject:(PGCompleteWithError *)awithCommentObject buttonItemAppearance:(PGCompleteWithError *)abuttonItemAppearance;
+- (NSTextAlignment)protocolViewControllerWithwithDailyTrain:(UISlider *)awithDailyTrain blockCropMode:(NSString *)ablockCropMode;
+- (UITextFieldViewMode)viewWillHiddenWithmainCommentTable:(NSArray *)amainCommentTable progressDefaultSize:(UIColor *)aprogressDefaultSize;
+- (UITableViewStyle)viewDataSourceWithmovieTestView:(UITextFieldViewMode)amovieTestView playViewModel:(NSLineBreakMode)aplayViewModel;
 + (void)instanceCreateMethod; 
 
 @end

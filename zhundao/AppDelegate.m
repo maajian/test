@@ -119,10 +119,10 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             [[PGSignManager shareManager].dataBase executeUpdate:updateSql12];
             [[PGSignManager shareManager].dataBase close];
         }
-        [self PG_saveDBVersion];
+        [self saveDBVersion];
     }
 }
-- (void)PG_saveDBVersion {
+- (void)saveDBVersion {
     [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kdbManagerVersion];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -153,7 +153,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSTextAlignment scrollDirectionRightc3 = NSTextAlignmentCenter; 
         UITableViewStyle contentBackgroundColoru4 = UITableViewStylePlain; 
     PGLocationHeaderView *swimMoviePlay= [[PGLocationHeaderView alloc] init];
-[swimMoviePlay pg_assetExportPresetWithlocationViewModel:scrollDirectionRightc3 imageWithLeft:contentBackgroundColoru4 ];
+[swimMoviePlay assetExportPresetWithlocationViewModel:scrollDirectionRightc3 imageWithLeft:contentBackgroundColoru4 ];
 });
     [JPUSHService registerDeviceToken:deviceToken];
 }
@@ -180,7 +180,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSTextAlignment commentSelectImageA6 = NSTextAlignmentCenter; 
         UITableViewStyle organizeHeaderViewL9 = UITableViewStylePlain; 
     PGLocationHeaderView *articleOriginalView= [[PGLocationHeaderView alloc] init];
-[articleOriginalView pg_assetExportPresetWithlocationViewModel:commentSelectImageA6 imageWithLeft:organizeHeaderViewL9 ];
+[articleOriginalView assetExportPresetWithlocationViewModel:commentSelectImageA6 imageWithLeft:organizeHeaderViewL9 ];
 });
     NSDictionary * userInfo = response.notification.request.content.userInfo;
     if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
@@ -246,7 +246,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             NSString *authUrl = @"https://api.weixin.qq.com/sns/oauth2/access_token";
             [ZD_NetWorkM getDataWithMethod:authUrl parameters:codeParam succ:^(NSDictionary *obj) {
                 if (ZD_SafeStringValue(obj[@"unionid"])) {
-                    [weakSelf PG_loginWehchatWithUnionId:obj[@"unionid"]];
+                    [weakSelf loginWehchatWithUnionId:obj[@"unionid"]];
                 }
             } fail:^(NSError *error) {
                 ZD_HUD_SHOW_ERROR_STATUS(@"微信登录失败")
@@ -255,7 +255,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 
-- (void)PG_loginWehchatWithUnionId:(NSString *)unionId {
+- (void)loginWehchatWithUnionId:(NSString *)unionId {
     NSDictionary *dic = @{@"BusinessCode": @"WxLogin",
                           @"Data" : @{
                                   @"unionId": unionId,
@@ -288,7 +288,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSTextAlignment finishPickingMediaF3 = NSTextAlignmentCenter; 
         UITableViewStyle mainScreenHeightD1 = UITableViewStylePlain; 
     PGLocationHeaderView *photoPickerBrowser= [[PGLocationHeaderView alloc] init];
-[photoPickerBrowser pg_assetExportPresetWithlocationViewModel:finishPickingMediaF3 imageWithLeft:mainScreenHeightD1 ];
+[photoPickerBrowser assetExportPresetWithlocationViewModel:finishPickingMediaF3 imageWithLeft:mainScreenHeightD1 ];
 });
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

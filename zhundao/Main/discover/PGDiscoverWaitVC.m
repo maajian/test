@@ -52,7 +52,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     previousPerformRequestsx7.text = @"keywindowWithText";
         NSLineBreakMode dailyTrainClassX1 = NSLineBreakByTruncatingTail; 
     PGCustomDismissAction *viewControllerTransition= [[PGCustomDismissAction alloc] init];
-[viewControllerTransition pg_inputPanelWithWithdifferenceBetweenRect:previousPerformRequestsx7 playerItemPlayback:dailyTrainClassX1 ];
+[viewControllerTransition inputPanelWithWithdifferenceBetweenRect:previousPerformRequestsx7 playerItemPlayback:dailyTrainClassX1 ];
 });
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -113,7 +113,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)addGes
 {
     _topSaoImageview.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(PG_pushSAO)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushSAO)];
     [_topSaoImageview addGestureRecognizer:tap];
 }
 
@@ -157,11 +157,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (!_bottonSaoButton) {
         NSArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:@"muliData"];
         if ([[arr lastObject]integerValue]) {
-            _bottonSaoButton = [MyButton initWithButtonFrame:CGRectMake(20, kScreenHeight-150-138, kScreenWidth-40, 44) title:@"扫码" textcolor:[UIColor whiteColor] Target:self action:@selector(PG_pushSAO) BackgroundColor:ZDMainColor cornerRadius:5 masksToBounds:YES];
+            _bottonSaoButton = [MyButton initWithButtonFrame:CGRectMake(20, kScreenHeight-150-138, kScreenWidth-40, 44) title:@"扫码" textcolor:[UIColor whiteColor] Target:self action:@selector(pushSAO) BackgroundColor:ZDMainColor cornerRadius:5 masksToBounds:YES];
             _bottonSaoButton.titleEdgeInsets = UIEdgeInsetsMake(0, 32, 0, 0);
         }
         else{
-            _bottonSaoButton = [MyButton initWithButtonFrame:CGRectMake(20, kScreenHeight-150-138, kScreenWidth-40, 44) title:@"扫码" textcolor:[UIColor whiteColor] Target:self action:@selector(PG_pushSAO) BackgroundColor:ZDGrayColor cornerRadius:5 masksToBounds:YES];
+            _bottonSaoButton = [MyButton initWithButtonFrame:CGRectMake(20, kScreenHeight-150-138, kScreenWidth-40, 44) title:@"扫码" textcolor:[UIColor whiteColor] Target:self action:@selector(pushSAO) BackgroundColor:ZDGrayColor cornerRadius:5 masksToBounds:YES];
             _bottonSaoButton.titleEdgeInsets = UIEdgeInsetsMake(0, 32, 0, 0);
             _bottonSaoButton.userInteractionEnabled =NO;
         }
@@ -267,7 +267,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     NSArray *array1 = dic[@"Data"];
     if ([[PGSignManager shareManager].dataBase open]) {
-        [self PG_transactionwithArray1:array1];
+        [self transactionwithArray1:array1];
         [[PGSignManager shareManager].dataBase close];
     }
     if (isShow) {
@@ -356,7 +356,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 
 #pragma mark  mark 按钮点击事件
-- (void)PG_pushSAO { //扫码按钮
+- (void)pushSAO { //扫码按钮
     PGDiscoverMuliSignVC *muli = [[PGDiscoverMuliSignVC alloc]init];
     muli.signID = self.signID;
     muli.acckey = self.acckey;

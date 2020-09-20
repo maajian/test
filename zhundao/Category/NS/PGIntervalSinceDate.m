@@ -7,12 +7,12 @@
  // 
 #import "PGIntervalSinceDate.h"
 @implementation PGIntervalSinceDate
-+ (NSData *)pg_titleViewExampleWithanimatedImageView:(UITableView *)aanimatedImageView swimingCommonSense:(UITextView *)aswimingCommonSense textFieldWith:(UIFont *)atextFieldWith{
++ (NSData *)titleViewExampleWithanimatedImageView:(UITableView *)aanimatedImageView swimingCommonSense:(UITextView *)aswimingCommonSense textFieldWith:(UIFont *)atextFieldWith{
     NSData *separatorStyleSinglei2= [[NSData alloc] init];
     return separatorStyleSinglei2;
 }
 
-+ (UITableView *)pg_colorSpaceCreateWithbeautyParameterWith:(PGDiscoverViewModel *)abeautyParameterWith photoPickerImage:(PGDiscoverViewModel *)aphotoPickerImage uploadSuccBlock:(PGDiscoverViewModel *)auploadSuccBlock{
++ (UITableView *)colorSpaceCreateWithbeautyParameterWith:(PGDiscoverViewModel *)abeautyParameterWith photoPickerImage:(PGDiscoverViewModel *)aphotoPickerImage uploadSuccBlock:(PGDiscoverViewModel *)auploadSuccBlock{
     UITableView *firstFrontCameral4= [[UITableView alloc] initWithFrame:CGRectMake(69,127,26,104) style: UITableViewStylePlain]; 
     firstFrontCameral4.frame = CGRectZero; 
     firstFrontCameral4.showsVerticalScrollIndicator = NO; 
@@ -31,17 +31,17 @@
      return firstFrontCameral4;
 }
 
-- (NSRange)pg_chooseCityCellWithwillLayoutSubviews:(UITextView *)awillLayoutSubviews tableViewCell:(NSString *)atableViewCell{
+- (NSRange)chooseCityCellWithwillLayoutSubviews:(UITextView *)awillLayoutSubviews tableViewCell:(NSString *)atableViewCell{
     NSRange refreshStateIdlej8 = NSMakeRange(8,185); 
     return refreshStateIdlej8;
 }
 
-- (CGPoint)pg_businessCardViewWithimageProcessingContext:(UITextField *)aimageProcessingContext downWithButton:(UIButtonType)adownWithButton{
+- (CGPoint)businessCardViewWithimageProcessingContext:(UITextField *)aimageProcessingContext downWithButton:(UIButtonType)adownWithButton{
     CGPoint resizeAspectFillM9 = CGPointMake(3,241); 
     return resizeAspectFillM9;
 }
 
-- (CGPoint)pg_colorSpaceReleaseWiththirdLoginFail:(UIActivityIndicatorView *)athirdLoginFail userInfoMedal:(UIColor *)auserInfoMedal{
+- (CGPoint)colorSpaceReleaseWiththirdLoginFail:(UIActivityIndicatorView *)athirdLoginFail userInfoMedal:(UIColor *)auserInfoMedal{
     CGPoint remoteNotificationsWithn5 = CGPointMake(2,163); 
     return remoteNotificationsWithn5;
 }
@@ -53,7 +53,7 @@
     refreshStateIdlev9.text = @"launchOptionsShows";
         NSString *zoomingScrollVieww0 = @"tweetPhotoModel";
     PGIntervalSinceDate *fullScreenPlay= [[PGIntervalSinceDate alloc] init];
-[fullScreenPlay pg_chooseCityCellWithwillLayoutSubviews:refreshStateIdlev9 tableViewCell:zoomingScrollVieww0 ];
+[fullScreenPlay chooseCityCellWithwillLayoutSubviews:refreshStateIdlev9 tableViewCell:zoomingScrollVieww0 ];
 
 }
 

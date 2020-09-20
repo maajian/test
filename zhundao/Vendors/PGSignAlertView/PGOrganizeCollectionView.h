@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) CGRect *selectPhotoAssets;
 @property (nonatomic, readwrite, assign) CGPoint *backIndicatorTransition;
 
-+ (UIColor *)pg_taskCenterViewWithviewDataSource:(UIImageView *)aviewDataSource playerStateStopped:(UISwitch *)aplayerStateStopped userCommentView:(UILabel *)auserCommentView;
-+ (NSMutableArray *)pg_userCommentModelWithattentionWithUser:(PGUpdateUserLocation *)aattentionWithUser recordMovieBottom:(PGUpdateUserLocation *)arecordMovieBottom columnistViewController:(PGUpdateUserLocation *)acolumnistViewController;
-- (UIButtonType)pg_natatoriumParticularViewWithinviteAnswerView:(CGRect)ainviteAnswerView selectedPhotoBytes:(CGPoint)aselectedPhotoBytes;
-- (UITableViewStyle)pg_replayUserNickWithvideoPreviewPlay:(UIScrollView *)avideoPreviewPlay withTaskCenter:(NSString *)awithTaskCenter;
-- (UITableViewStyle)pg_controlEventTouchWithassetFromImage:(UITableView *)aassetFromImage connectionDataDelegate:(NSString *)aconnectionDataDelegate;
++ (UIColor *)taskCenterViewWithviewDataSource:(UIImageView *)aviewDataSource playerStateStopped:(UISwitch *)aplayerStateStopped userCommentView:(UILabel *)auserCommentView;
++ (NSMutableArray *)userCommentModelWithattentionWithUser:(PGUpdateUserLocation *)aattentionWithUser recordMovieBottom:(PGUpdateUserLocation *)arecordMovieBottom columnistViewController:(PGUpdateUserLocation *)acolumnistViewController;
+- (UIButtonType)natatoriumParticularViewWithinviteAnswerView:(CGRect)ainviteAnswerView selectedPhotoBytes:(CGPoint)aselectedPhotoBytes;
+- (UITableViewStyle)replayUserNickWithvideoPreviewPlay:(UIScrollView *)avideoPreviewPlay withTaskCenter:(NSString *)awithTaskCenter;
+- (UITableViewStyle)controlEventTouchWithassetFromImage:(UITableView *)aassetFromImage connectionDataDelegate:(NSString *)aconnectionDataDelegate;
 + (void)instanceCreateMethod; 
 
 @end

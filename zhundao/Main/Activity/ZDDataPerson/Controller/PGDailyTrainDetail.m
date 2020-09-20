@@ -7,7 +7,7 @@
  // 
 #import "PGDailyTrainDetail.h"
 @implementation PGDailyTrainDetail
-+ (UIImageView *)pg_inviteAnswerViewWithpushPhotoPicker:(UIImageView *)apushPhotoPicker routeSearchDone:(UIImage *)arouteSearchDone badgeDefaultFont:(UIFont *)abadgeDefaultFont{
++ (UIImageView *)inviteAnswerViewWithpushPhotoPicker:(UIImageView *)apushPhotoPicker routeSearchDone:(UIImage *)arouteSearchDone badgeDefaultFont:(UIFont *)abadgeDefaultFont{
     UIImageView * organizeListTableB8 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     organizeListTableB8.contentMode = UIViewContentModeCenter; 
     organizeListTableB8.clipsToBounds = NO; 
@@ -17,22 +17,22 @@
     return organizeListTableB8;
 }
 
-+ (NSData *)pg_finishPickingVideoWithimageProcessingContext:(PGCollectionViewDelegate *)aimageProcessingContext assetsPickerChecked:(PGCollectionViewDelegate *)aassetsPickerChecked guideBottomView:(PGCollectionViewDelegate *)aguideBottomView{
++ (NSData *)finishPickingVideoWithimageProcessingContext:(PGCollectionViewDelegate *)aimageProcessingContext assetsPickerChecked:(PGCollectionViewDelegate *)aassetsPickerChecked guideBottomView:(PGCollectionViewDelegate *)aguideBottomView{
     NSData *assetCameraCellq2= [[NSData alloc] init];
     return assetCameraCellq2;
 }
 
-- (UIButtonType)pg_rectCornerBottomWithcommentArticleSucc:(UIColor *)acommentArticleSucc notificationCategoryOption:(NSTextAlignment)anotificationCategoryOption{
+- (UIButtonType)rectCornerBottomWithcommentArticleSucc:(UIColor *)acommentArticleSucc notificationCategoryOption:(NSTextAlignment)anotificationCategoryOption{
     UIButtonType backButtonTitleO6 = UIButtonTypeContactAdd;
     return backButtonTitleO6;
 }
 
-- (UITableViewStyle)pg_scrollViewContentWithviewContentMode:(UITextField *)aviewContentMode mainCommentView:(UITableView *)amainCommentView{
+- (UITableViewStyle)scrollViewContentWithviewContentMode:(UITextField *)aviewContentMode mainCommentView:(UITableView *)amainCommentView{
     UITableViewStyle mallViewModelY5 = UITableViewStylePlain; 
     return mallViewModelY5;
 }
 
-- (CGPoint)pg_statusSavePhotosWithnetworkStatusUnknow:(CGSize)anetworkStatusUnknow strokeCourseData:(NSData *)astrokeCourseData{
+- (CGPoint)statusSavePhotosWithnetworkStatusUnknow:(CGSize)anetworkStatusUnknow strokeCourseData:(NSData *)astrokeCourseData{
     CGPoint finishSavingWithw4 = CGPointMake(4,105); 
     return finishSavingWithw4;
 }
@@ -41,7 +41,7 @@
     UIColor *verticalScrollIndicatorq3= [UIColor redColor];
         NSTextAlignment indicatorViewColorX4 = NSTextAlignmentCenter; 
     PGDailyTrainDetail *medalDetailFlow= [[PGDailyTrainDetail alloc] init];
-[medalDetailFlow pg_rectCornerBottomWithcommentArticleSucc:verticalScrollIndicatorq3 notificationCategoryOption:indicatorViewColorX4 ];
+[medalDetailFlow rectCornerBottomWithcommentArticleSucc:verticalScrollIndicatorq3 notificationCategoryOption:indicatorViewColorX4 ];
 
 }
 

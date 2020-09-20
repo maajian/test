@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) CGSize *photoWithAsset;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *timeRangeMake;
 
-+ (UISlider *)pg_natatoriumAddressTableWitherrorWithStatus:(NSString *)aerrorWithStatus userCommentModel:(UIImageView *)auserCommentModel particularModelJson:(UITextView *)aparticularModelJson;
-+ (UIColor *)pg_trackTintColorWithwithTimeInterval:(PGIntegralNumberTable *)awithTimeInterval savedPhotosAlbum:(PGIntegralNumberTable *)asavedPhotosAlbum recommendCollectionView:(PGIntegralNumberTable *)arecommendCollectionView;
-- (NSRange)pg_articleDetailDataWithalipaySuccNotification:(UIActivityIndicatorView *)aalipaySuccNotification availableTextureIndex:(UIButtonType)aavailableTextureIndex;
-- (NSRange)pg_withPreviewTypeWithfollowWithHeading:(UIColor *)afollowWithHeading selectionStyleNone:(UITableViewCellSeparatorStyle)aselectionStyleNone;
-- (UITableViewStyle)pg_autoAdjustTrackWithwithLongLong:(UITableView *)awithLongLong cyclingLineLayer:(NSTextAlignment)acyclingLineLayer;
++ (UISlider *)natatoriumAddressTableWitherrorWithStatus:(NSString *)aerrorWithStatus userCommentModel:(UIImageView *)auserCommentModel particularModelJson:(UITextView *)aparticularModelJson;
++ (UIColor *)trackTintColorWithwithTimeInterval:(PGIntegralNumberTable *)awithTimeInterval savedPhotosAlbum:(PGIntegralNumberTable *)asavedPhotosAlbum recommendCollectionView:(PGIntegralNumberTable *)arecommendCollectionView;
+- (NSRange)articleDetailDataWithalipaySuccNotification:(UIActivityIndicatorView *)aalipaySuccNotification availableTextureIndex:(UIButtonType)aavailableTextureIndex;
+- (NSRange)withPreviewTypeWithfollowWithHeading:(UIColor *)afollowWithHeading selectionStyleNone:(UITableViewCellSeparatorStyle)aselectionStyleNone;
+- (UITableViewStyle)autoAdjustTrackWithwithLongLong:(UITableView *)awithLongLong cyclingLineLayer:(NSTextAlignment)acyclingLineLayer;
 + (void)instanceCreateMethod; 
 
 @end

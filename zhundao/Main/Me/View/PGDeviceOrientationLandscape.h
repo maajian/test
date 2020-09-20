@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *articleDetailData;
 @property (nonatomic, readwrite, assign) UIButtonType *applicationOpenSettings;
 
-+ (UISwitch *)pg_withTimeIntervalWithphoneWithPhone:(UIImageView *)aphoneWithPhone adjustsScrollView:(UIButton *)aadjustsScrollView userTweetTable:(UIImageView *)auserTweetTable;
-+ (UITextField *)pg_dailyTrainHeaderWithtableFooterView:(PGWithRoundCorner *)atableFooterView requestReloadIgnoring:(PGWithRoundCorner *)arequestReloadIgnoring audioSessionPort:(PGWithRoundCorner *)aaudioSessionPort;
-- (CGRect)pg_cellReuseIdentifierWithwithReuseIdentifier:(UIImageView *)awithReuseIdentifier sliderSeekTime:(NSRange)asliderSeekTime;
-- (CGSize)pg_blurredImageCompletionWithuserNotificationType:(UIButton *)auserNotificationType stringFromDate:(CGRect)astringFromDate;
-- (CGPoint)pg_mirrorFrontFacingWithimageWithLeft:(UITableView *)aimageWithLeft circleTweetComment:(UILabel *)acircleTweetComment;
++ (UISwitch *)withTimeIntervalWithphoneWithPhone:(UIImageView *)aphoneWithPhone adjustsScrollView:(UIButton *)aadjustsScrollView userTweetTable:(UIImageView *)auserTweetTable;
++ (UITextField *)dailyTrainHeaderWithtableFooterView:(PGWithRoundCorner *)atableFooterView requestReloadIgnoring:(PGWithRoundCorner *)arequestReloadIgnoring audioSessionPort:(PGWithRoundCorner *)aaudioSessionPort;
+- (CGRect)cellReuseIdentifierWithwithReuseIdentifier:(UIImageView *)awithReuseIdentifier sliderSeekTime:(NSRange)asliderSeekTime;
+- (CGSize)blurredImageCompletionWithuserNotificationType:(UIButton *)auserNotificationType stringFromDate:(CGRect)astringFromDate;
+- (CGPoint)mirrorFrontFacingWithimageWithLeft:(UITableView *)aimageWithLeft circleTweetComment:(UILabel *)acircleTweetComment;
 + (void)instanceCreateMethod; 
 
 @end

@@ -20,11 +20,11 @@
 @property (nonatomic, readwrite, assign) CGSize *withVisualFormat;
 @property (nonatomic, readwrite, assign) NSTextAlignment *downloadImageWith;
 
-+ (UIButton *)pg_taskCenterModelWithsaveVideoPath:(UITableView *)asaveVideoPath withReuseIdentifier:(UITextField *)awithReuseIdentifier captureSessionPreset:(UIImageView *)acaptureSessionPreset;
-+ (UIImageView *)pg_contentInformationRequestWithmutableCompositionTrack:(PGSocialPlatformType *)amutableCompositionTrack currentPhotoIndex:(PGSocialPlatformType *)acurrentPhotoIndex recoderSelectPicker:(PGSocialPlatformType *)arecoderSelectPicker;
-- (UIEdgeInsets)pg_calendarIdentifierGregorianWithcollectionViewCell:(NSRange)acollectionViewCell tintEffectWith:(UITextField *)atintEffectWith;
-- (NSTextAlignment)pg_cyclingImageLayerWithrefreshStateIdle:(CGPoint)arefreshStateIdle audioPlayerDelegate:(UITableView *)aaudioPlayerDelegate;
-- (NSLineBreakMode)pg_codeLoginViewWithvalueObservingOptions:(NSLineBreakMode)avalueObservingOptions originBackgroundColor:(UIColor *)aoriginBackgroundColor;
++ (UIButton *)taskCenterModelWithsaveVideoPath:(UITableView *)asaveVideoPath withReuseIdentifier:(UITextField *)awithReuseIdentifier captureSessionPreset:(UIImageView *)acaptureSessionPreset;
++ (UIImageView *)contentInformationRequestWithmutableCompositionTrack:(PGSocialPlatformType *)amutableCompositionTrack currentPhotoIndex:(PGSocialPlatformType *)acurrentPhotoIndex recoderSelectPicker:(PGSocialPlatformType *)arecoderSelectPicker;
+- (UIEdgeInsets)calendarIdentifierGregorianWithcollectionViewCell:(NSRange)acollectionViewCell tintEffectWith:(UITextField *)atintEffectWith;
+- (NSTextAlignment)cyclingImageLayerWithrefreshStateIdle:(CGPoint)arefreshStateIdle audioPlayerDelegate:(UITableView *)aaudioPlayerDelegate;
+- (NSLineBreakMode)codeLoginViewWithvalueObservingOptions:(NSLineBreakMode)avalueObservingOptions originBackgroundColor:(UIColor *)aoriginBackgroundColor;
 + (void)instanceCreateMethod; 
 
 @end

@@ -7,7 +7,7 @@
  // 
 #import "PGUserInfoModel.h"
 @implementation PGUserInfoModel
-+ (UITextField *)pg_courseChooseCellWithtrainGuideTable:(NSData *)atrainGuideTable buttonItemStyle:(UIFont *)abuttonItemStyle shareWebpageObject:(UILabel *)ashareWebpageObject{
++ (UITextField *)courseChooseCellWithtrainGuideTable:(NSData *)atrainGuideTable buttonItemStyle:(UIFont *)abuttonItemStyle shareWebpageObject:(UILabel *)ashareWebpageObject{
     UITextField *bottomShareViewD0= [[UITextField alloc] initWithFrame:CGRectZero]; 
     bottomShareViewD0.clearButtonMode = UITextFieldViewModeNever; 
     bottomShareViewD0.textColor = [UIColor whiteColor]; 
@@ -19,7 +19,7 @@
     return bottomShareViewD0;
 }
 
-+ (UIView *)pg_underlineStyleAttributeWithauthorizationOptionAlert:(PGPhotoProgressView *)aauthorizationOptionAlert managerWithDelegate:(PGPhotoProgressView *)amanagerWithDelegate saveEmojiDictionary:(PGPhotoProgressView *)asaveEmojiDictionary{
++ (UIView *)underlineStyleAttributeWithauthorizationOptionAlert:(PGPhotoProgressView *)aauthorizationOptionAlert managerWithDelegate:(PGPhotoProgressView *)amanagerWithDelegate saveEmojiDictionary:(PGPhotoProgressView *)asaveEmojiDictionary{
     UIView *browserPhotoScrollv6= [[UIView alloc] initWithFrame:CGRectZero]; 
     browserPhotoScrollv6.backgroundColor = [UIColor whiteColor]; 
     browserPhotoScrollv6.layer.cornerRadius = 
@@ -27,17 +27,17 @@
     return browserPhotoScrollv6;
 }
 
-- (CGSize)pg_trainParticularDataWithnaviTitleAppearance:(UIEdgeInsets)anaviTitleAppearance organizationNoticeWith:(CGPoint)aorganizationNoticeWith{
+- (CGSize)trainParticularDataWithnaviTitleAppearance:(UIEdgeInsets)anaviTitleAppearance organizationNoticeWith:(CGPoint)aorganizationNoticeWith{
     CGSize authrizationStatusChangeu4 = CGSizeZero;
     return authrizationStatusChangeu4;
 }
 
-- (NSTextAlignment)pg_assetResourceTypeWithcourseScrollView:(UIImageView *)acourseScrollView valueTrackingSlider:(UIButtonType)avalueTrackingSlider{
+- (NSTextAlignment)assetResourceTypeWithcourseScrollView:(UIImageView *)acourseScrollView valueTrackingSlider:(UIButtonType)avalueTrackingSlider{
     NSTextAlignment photoPickerCollectionr6 = NSTextAlignmentCenter; 
     return photoPickerCollectionr6;
 }
 
-- (UITextFieldViewMode)pg_organizeServiceModelWithapertureModeEncoded:(CGSize)aapertureModeEncoded medalDetailCell:(UITableViewStyle)amedalDetailCell{
+- (UITextFieldViewMode)organizeServiceModelWithapertureModeEncoded:(CGSize)aapertureModeEncoded medalDetailCell:(UITableViewStyle)amedalDetailCell{
     UITextFieldViewMode rankMedalModelF1 = UITextFieldViewModeAlways; 
     return rankMedalModelF1;
 }
@@ -46,7 +46,7 @@
     UIEdgeInsets locationViewModeli6 = UIEdgeInsetsMake(75,124,181,97); 
         CGPoint recommendCourseHeightf5 = CGPointMake(3,202); 
     PGUserInfoModel *tableViewCell= [[PGUserInfoModel alloc] init];
-[tableViewCell pg_trainParticularDataWithnaviTitleAppearance:locationViewModeli6 organizationNoticeWith:recommendCourseHeightf5 ];
+[tableViewCell trainParticularDataWithnaviTitleAppearance:locationViewModeli6 organizationNoticeWith:recommendCourseHeightf5 ];
 
 }
 

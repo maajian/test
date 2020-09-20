@@ -7,7 +7,7 @@
  // 
 #import "PGTextHighlightRange.h"
 @implementation PGTextHighlightRange
-+ (UILabel *)pg_attentionViewControllerWithkeyboardTypeEmail:(UITextView *)akeyboardTypeEmail objectsHashTable:(NSMutableArray *)aobjectsHashTable dailyTrainHeader:(UIButton *)adailyTrainHeader{
++ (UILabel *)attentionViewControllerWithkeyboardTypeEmail:(UITextView *)akeyboardTypeEmail objectsHashTable:(NSMutableArray *)aobjectsHashTable dailyTrainHeader:(UIButton *)adailyTrainHeader{
     UILabel *assetChangeRequestF4= [[UILabel alloc] initWithFrame:CGRectZero]; 
     assetChangeRequestF4.text = @"mutableCompositionTrack";
     assetChangeRequestF4.textColor = [UIColor whiteColor]; 
@@ -17,24 +17,24 @@
     return assetChangeRequestF4;
 }
 
-+ (UIActivityIndicatorView *)pg_particularViewModelWithtitleEdgeInsets:(PGFailWithError *)atitleEdgeInsets selectPhotoDelegate:(PGFailWithError *)aselectPhotoDelegate originBackgroundColor:(PGFailWithError *)aoriginBackgroundColor{
++ (UIActivityIndicatorView *)particularViewModelWithtitleEdgeInsets:(PGFailWithError *)atitleEdgeInsets selectPhotoDelegate:(PGFailWithError *)aselectPhotoDelegate originBackgroundColor:(PGFailWithError *)aoriginBackgroundColor{
     UIActivityIndicatorView *timeMakeWithR7= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     timeMakeWithR7.hidden = YES; 
     timeMakeWithR7.hidesWhenStopped = YES; 
     return timeMakeWithR7;
 }
 
-- (UITableViewStyle)pg_cycleScrollViewWithcustomDismissAction:(UISlider *)acustomDismissAction playerDecodeError:(UITableViewCellSeparatorStyle)aplayerDecodeError{
+- (UITableViewStyle)cycleScrollViewWithcustomDismissAction:(UISlider *)acustomDismissAction playerDecodeError:(UITableViewCellSeparatorStyle)aplayerDecodeError{
     UITableViewStyle selectorFromStringe0 = UITableViewStylePlain; 
     return selectorFromStringe0;
 }
 
-- (UITableViewStyle)pg_imageWithNameWithrefreshStateIdle:(CGPoint)arefreshStateIdle intervalSinceDate:(UIColor *)aintervalSinceDate{
+- (UITableViewStyle)imageWithNameWithrefreshStateIdle:(CGPoint)arefreshStateIdle intervalSinceDate:(UIColor *)aintervalSinceDate{
     UITableViewStyle scrollTimeIntervalT8 = UITableViewStylePlain; 
     return scrollTimeIntervalT8;
 }
 
-- (CGSize)pg_likesTableViewWithimageWithName:(NSMutableArray *)aimageWithName allowsBackForward:(NSLineBreakMode)aallowsBackForward{
+- (CGSize)likesTableViewWithimageWithName:(NSMutableArray *)aimageWithName allowsBackForward:(NSLineBreakMode)aallowsBackForward{
     CGSize itemTextColorh6 = CGSizeMake(112,29); 
     return itemTextColorh6;
 }
@@ -46,7 +46,7 @@
     controlEventEditingr2.value =9; 
         UITableViewCellSeparatorStyle deviceOrientationLandscapes8 = UITableViewCellSeparatorStyleNone; 
     PGTextHighlightRange *cachingImageManager= [[PGTextHighlightRange alloc] init];
-[cachingImageManager pg_cycleScrollViewWithcustomDismissAction:controlEventEditingr2 playerDecodeError:deviceOrientationLandscapes8 ];
+[cachingImageManager cycleScrollViewWithcustomDismissAction:controlEventEditingr2 playerDecodeError:deviceOrientationLandscapes8 ];
 
 }
 

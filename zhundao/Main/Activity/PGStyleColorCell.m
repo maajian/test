@@ -97,7 +97,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     moreColumnistChilde3.autoresizesSubviews = YES; 
     moreColumnistChilde3.clearsContextBeforeDrawing = YES; 
     PGHorizontalScrollIndicator *keyboardTypeEmail= [[PGHorizontalScrollIndicator alloc] init];
-[keyboardTypeEmail pg_textAttributedStringWithcircleItemPhoto:animatedImageViewo4 classFromString:moreColumnistChilde3 ];
+[keyboardTypeEmail textAttributedStringWithcircleItemPhoto:animatedImageViewo4 classFromString:moreColumnistChilde3 ];
 });
     _colors = [colors copy];    
     [self.colorPickerView reloadData];
@@ -120,7 +120,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     collectionTrainModelF2.autoresizesSubviews = YES; 
     collectionTrainModelF2.clearsContextBeforeDrawing = YES; 
     PGHorizontalScrollIndicator *objectWithTitle= [[PGHorizontalScrollIndicator alloc] init];
-[objectWithTitle pg_textAttributedStringWithcircleItemPhoto:timeFromDurationK0 classFromString:collectionTrainModelF2 ];
+[objectWithTitle textAttributedStringWithcircleItemPhoto:timeFromDurationK0 classFromString:collectionTrainModelF2 ];
 });
     if (self.colors.count == 0) {
         return;
@@ -160,7 +160,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     assetsPickerDemoc2.autoresizesSubviews = YES; 
     assetsPickerDemoc2.clearsContextBeforeDrawing = YES; 
     PGHorizontalScrollIndicator *imageRequestOptions= [[PGHorizontalScrollIndicator alloc] init];
-[imageRequestOptions pg_textAttributedStringWithcircleItemPhoto:loginWithUserv9 classFromString:assetsPickerDemoc2 ];
+[imageRequestOptions textAttributedStringWithcircleItemPhoto:loginWithUserv9 classFromString:assetsPickerDemoc2 ];
 });
     self.colorDisplayView.backgroundColor = color;
     [self.delegate lm_didChangeStyleSettings:@{LMStyleSettingsTextColorName: color}];

@@ -7,7 +7,7 @@
  // 
 #import "PGResizeAspectFill.h"
 @implementation PGResizeAspectFill
-+ (UITableView *)pg_cameraAutoSaveWithuserInfoMedal:(UIImageView *)auserInfoMedal mutableCompositionTrack:(UIActivityIndicatorView *)amutableCompositionTrack textViewContent:(NSMutableArray *)atextViewContent{
++ (UITableView *)cameraAutoSaveWithuserInfoMedal:(UIImageView *)auserInfoMedal mutableCompositionTrack:(UIActivityIndicatorView *)amutableCompositionTrack textViewContent:(NSMutableArray *)atextViewContent{
     UITableView *networkReachabilityManagerq9= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     networkReachabilityManagerq9.frame = CGRectZero; 
     networkReachabilityManagerq9.showsVerticalScrollIndicator = NO; 
@@ -26,22 +26,22 @@
      return networkReachabilityManagerq9;
 }
 
-+ (UIImage *)pg_finishSavingWithWitherrorWithStatus:(PGCollectionViewLayout *)aerrorWithStatus medalDetailModel:(PGCollectionViewLayout *)amedalDetailModel mainScreenWidth:(PGCollectionViewLayout *)amainScreenWidth{
++ (UIImage *)finishSavingWithWitherrorWithStatus:(PGCollectionViewLayout *)aerrorWithStatus medalDetailModel:(PGCollectionViewLayout *)amedalDetailModel mainScreenWidth:(PGCollectionViewLayout *)amainScreenWidth{
     UIImage *currentDateStringV2= [UIImage imageNamed:@""]; 
     return currentDateStringV2;
 }
 
-- (UITableViewStyle)pg_socialMessageObjectWithloginWithUser:(UISwitch *)aloginWithUser countTableView:(NSRange)acountTableView{
+- (UITableViewStyle)socialMessageObjectWithloginWithUser:(UISwitch *)aloginWithUser countTableView:(NSRange)acountTableView{
     UITableViewStyle collectionViewCello6 = UITableViewStylePlain; 
     return collectionViewCello6;
 }
 
-- (NSLineBreakMode)pg_organizeCollectionViewWithencodingWithLine:(UIButton *)aencodingWithLine centerButtonClick:(CGPoint)acenterButtonClick{
+- (NSLineBreakMode)organizeCollectionViewWithencodingWithLine:(UIButton *)aencodingWithLine centerButtonClick:(CGPoint)acenterButtonClick{
     NSLineBreakMode keyboardAnimationDurationT4 = NSLineBreakByTruncatingTail; 
     return keyboardAnimationDurationT4;
 }
 
-- (CGRect)pg_userInterfaceIdiomWithrefreshHeaderLayer:(UIEdgeInsets)arefreshHeaderLayer viewCornerRadius:(NSRange)aviewCornerRadius{
+- (CGRect)userInterfaceIdiomWithrefreshHeaderLayer:(UIEdgeInsets)arefreshHeaderLayer viewCornerRadius:(NSRange)aviewCornerRadius{
     CGRect encodingWithLineS1 = CGRectZero;
     return encodingWithLineS1;
 }
@@ -52,7 +52,7 @@
     particularModelJsonl3.onTintColor = [UIColor whiteColor]; 
         NSRange edgeInsetsInsetC3 = NSMakeRange(4,150); 
     PGResizeAspectFill *headerViewDelegate= [[PGResizeAspectFill alloc] init];
-[headerViewDelegate pg_socialMessageObjectWithloginWithUser:particularModelJsonl3 countTableView:edgeInsetsInsetC3 ];
+[headerViewDelegate socialMessageObjectWithloginWithUser:particularModelJsonl3 countTableView:edgeInsetsInsetC3 ];
 
 }
 

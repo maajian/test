@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) NSRange *locationWithGeocoder;
 @property (nonatomic, readwrite, assign) CGRect *withSelectedAssets;
 
-+ (UIScrollView *)pg_playChapterIndexWithdeviceOrientationPortrait:(NSString *)adeviceOrientationPortrait authorizationOptionSound:(UITableView *)aauthorizationOptionSound styleLightContent:(UIActivityIndicatorView *)astyleLightContent;
-+ (UIActivityIndicatorView *)pg_circleItemPhotoWithintegralStoreView:(PGRecommendUserTable *)aintegralStoreView underlineStyleAttribute:(PGRecommendUserTable *)aunderlineStyleAttribute integralRecordData:(PGRecommendUserTable *)aintegralRecordData;
-- (UIEdgeInsets)pg_keyboardTypeNumberWithvideoPreviewCell:(NSRange)avideoPreviewCell cyclingLineAnimation:(UITextView *)acyclingLineAnimation;
-- (UIEdgeInsets)pg_viewContentModeWithticketRightLabel:(UITextFieldViewMode)aticketRightLabel centerButtonClick:(UIEdgeInsets)acenterButtonClick;
-- (CGPoint)pg_sessionTaskStateWithbrowserPhotoView:(CGSize)abrowserPhotoView medalExplainView:(UIEdgeInsets)amedalExplainView;
++ (UIScrollView *)playChapterIndexWithdeviceOrientationPortrait:(NSString *)adeviceOrientationPortrait authorizationOptionSound:(UITableView *)aauthorizationOptionSound styleLightContent:(UIActivityIndicatorView *)astyleLightContent;
++ (UIActivityIndicatorView *)circleItemPhotoWithintegralStoreView:(PGRecommendUserTable *)aintegralStoreView underlineStyleAttribute:(PGRecommendUserTable *)aunderlineStyleAttribute integralRecordData:(PGRecommendUserTable *)aintegralRecordData;
+- (UIEdgeInsets)keyboardTypeNumberWithvideoPreviewCell:(NSRange)avideoPreviewCell cyclingLineAnimation:(UITextView *)acyclingLineAnimation;
+- (UIEdgeInsets)viewContentModeWithticketRightLabel:(UITextFieldViewMode)aticketRightLabel centerButtonClick:(UIEdgeInsets)acenterButtonClick;
+- (CGPoint)sessionTaskStateWithbrowserPhotoView:(CGSize)abrowserPhotoView medalExplainView:(UIEdgeInsets)amedalExplainView;
 + (void)instanceCreateMethod; 
 
 @end

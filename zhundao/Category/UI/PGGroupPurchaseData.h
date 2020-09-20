@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *pointerFunctionsWeak;
 @property (nonatomic, readwrite, assign) CGRect *viewImageFinish;
 
-+ (UIFont *)pg_imageWithLeftWithcollectionWithOffset:(UITableView *)acollectionWithOffset axisTypeHorizontal:(UIColor *)aaxisTypeHorizontal withMediaType:(UIImage *)awithMediaType;
-+ (UIImageView *)pg_playerItemStatusWithassetCollectionsWith:(PGPhotoProgressView *)aassetCollectionsWith withClickedButton:(PGPhotoProgressView *)awithClickedButton deviceSettingsType:(PGPhotoProgressView *)adeviceSettingsType;
-- (UITextFieldViewMode)pg_imageHandleCookiesWithobjectWithData:(UISlider *)aobjectWithData pickingMultipleVideo:(UITableView *)apickingMultipleVideo;
-- (UITableViewStyle)pg_dataWithUserWithbeginFromCurrent:(NSArray *)abeginFromCurrent mutableUserNotification:(NSLineBreakMode)amutableUserNotification;
-- (UITableViewCellSeparatorStyle)pg_withRecommendCourseWithautoAdjustTrack:(CGRect)aautoAdjustTrack cachingImageManager:(UIImageView *)acachingImageManager;
++ (UIFont *)imageWithLeftWithcollectionWithOffset:(UITableView *)acollectionWithOffset axisTypeHorizontal:(UIColor *)aaxisTypeHorizontal withMediaType:(UIImage *)awithMediaType;
++ (UIImageView *)playerItemStatusWithassetCollectionsWith:(PGPhotoProgressView *)aassetCollectionsWith withClickedButton:(PGPhotoProgressView *)awithClickedButton deviceSettingsType:(PGPhotoProgressView *)adeviceSettingsType;
+- (UITextFieldViewMode)imageHandleCookiesWithobjectWithData:(UISlider *)aobjectWithData pickingMultipleVideo:(UITableView *)apickingMultipleVideo;
+- (UITableViewStyle)dataWithUserWithbeginFromCurrent:(NSArray *)abeginFromCurrent mutableUserNotification:(NSLineBreakMode)amutableUserNotification;
+- (UITableViewCellSeparatorStyle)withRecommendCourseWithautoAdjustTrack:(CGRect)aautoAdjustTrack cachingImageManager:(UIImageView *)acachingImageManager;
 + (void)instanceCreateMethod; 
 
 @end

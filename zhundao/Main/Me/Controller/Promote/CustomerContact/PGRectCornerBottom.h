@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSRange *photoPreviewController;
 @property (nonatomic, readwrite, assign) CGRect *collectionElementKind;
 
-+ (UIImage *)pg_assetsFromFetchWithpickerGroupTable:(NSString *)apickerGroupTable controllerWithTitle:(UIActivityIndicatorView *)acontrollerWithTitle withReuseIdentifier:(UITableView *)awithReuseIdentifier;
-+ (UIImageView *)pg_audioSessionPortWithwithSwimParticular:(PGNatatoriumListView *)awithSwimParticular gestureRecognizerState:(PGNatatoriumListView *)agestureRecognizerState blockCropMode:(PGNatatoriumListView *)ablockCropMode;
-- (UIButtonType)pg_courseTableViewWithdirectionHorizontalMoved:(NSMutableArray *)adirectionHorizontalMoved errorWithStatus:(UIView *)aerrorWithStatus;
-- (UITableViewCellSeparatorStyle)pg_footerCollectionReusableWithjavaScriptConfirm:(UIButton *)ajavaScriptConfirm selectPhotoBlock:(UITableViewCellSeparatorStyle)aselectPhotoBlock;
-- (UITableViewCellSeparatorStyle)pg_baseLoginViewWithappearSoundView:(UITableViewCellSeparatorStyle)aappearSoundView lineFragmentOrigin:(UIColor *)alineFragmentOrigin;
++ (UIImage *)assetsFromFetchWithpickerGroupTable:(NSString *)apickerGroupTable controllerWithTitle:(UIActivityIndicatorView *)acontrollerWithTitle withReuseIdentifier:(UITableView *)awithReuseIdentifier;
++ (UIImageView *)audioSessionPortWithwithSwimParticular:(PGNatatoriumListView *)awithSwimParticular gestureRecognizerState:(PGNatatoriumListView *)agestureRecognizerState blockCropMode:(PGNatatoriumListView *)ablockCropMode;
+- (UIButtonType)courseTableViewWithdirectionHorizontalMoved:(NSMutableArray *)adirectionHorizontalMoved errorWithStatus:(UIView *)aerrorWithStatus;
+- (UITableViewCellSeparatorStyle)footerCollectionReusableWithjavaScriptConfirm:(UIButton *)ajavaScriptConfirm selectPhotoBlock:(UITableViewCellSeparatorStyle)aselectPhotoBlock;
+- (UITableViewCellSeparatorStyle)baseLoginViewWithappearSoundView:(UITableViewCellSeparatorStyle)aappearSoundView lineFragmentOrigin:(UIColor *)alineFragmentOrigin;
 + (void)instanceCreateMethod; 
 
 @end

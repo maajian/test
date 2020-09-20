@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *statusWithBlock;
 @property (nonatomic, readwrite, assign) UIButtonType *trainPropertyTrain;
 
-+ (UISlider *)pg_groupPurchaseModelWithplayerControlView:(NSMutableArray *)aplayerControlView modelWithAsset:(UIImage *)amodelWithAsset playViewModel:(NSString *)aplayViewModel;
-+ (NSString *)pg_filterWithCodeWithpointerFunctionsObject:(PGColumnistChildData *)apointerFunctionsObject reusableCellWith:(PGColumnistChildData *)areusableCellWith imageViewDelegate:(PGColumnistChildData *)aimageViewDelegate;
-- (UITableViewCellSeparatorStyle)pg_assetResourceTypeWithbottomShareView:(UIColor *)abottomShareView calendarUnitYear:(NSTextAlignment)acalendarUnitYear;
-- (CGSize)pg_imageNamesGroupWithseparatorStyleNone:(UIButtonType)aseparatorStyleNone groupWithPhotos:(UIView *)agroupWithPhotos;
-- (NSTextAlignment)pg_emojiTypeActionWithtableFooterView:(CGPoint)atableFooterView nameRightLabel:(NSLineBreakMode)anameRightLabel;
++ (UISlider *)groupPurchaseModelWithplayerControlView:(NSMutableArray *)aplayerControlView modelWithAsset:(UIImage *)amodelWithAsset playViewModel:(NSString *)aplayViewModel;
++ (NSString *)filterWithCodeWithpointerFunctionsObject:(PGColumnistChildData *)apointerFunctionsObject reusableCellWith:(PGColumnistChildData *)areusableCellWith imageViewDelegate:(PGColumnistChildData *)aimageViewDelegate;
+- (UITableViewCellSeparatorStyle)assetResourceTypeWithbottomShareView:(UIColor *)abottomShareView calendarUnitYear:(NSTextAlignment)acalendarUnitYear;
+- (CGSize)imageNamesGroupWithseparatorStyleNone:(UIButtonType)aseparatorStyleNone groupWithPhotos:(UIView *)agroupWithPhotos;
+- (NSTextAlignment)emojiTypeActionWithtableFooterView:(CGPoint)atableFooterView nameRightLabel:(NSLineBreakMode)anameRightLabel;
 + (void)instanceCreateMethod; 
 
 @end

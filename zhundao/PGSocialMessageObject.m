@@ -7,7 +7,7 @@
  // 
 #import "PGSocialMessageObject.h"
 @implementation PGSocialMessageObject
-+ (UITextView *)pg_taskCenterModelWithintegralRecordTable:(UISwitch *)aintegralRecordTable downLoadData:(UISwitch *)adownLoadData cardViewDelegate:(UIFont *)acardViewDelegate{
++ (UITextView *)taskCenterModelWithintegralRecordTable:(UISwitch *)aintegralRecordTable downLoadData:(UISwitch *)adownLoadData cardViewDelegate:(UIFont *)acardViewDelegate{
     UITextView *withMainCommentq3= [[UITextView alloc] initWithFrame:CGRectMake(208,95,85,63)]; 
     withMainCommentq3.editable = NO; 
     withMainCommentq3.font = [UIFont systemFontOfSize:170];
@@ -15,7 +15,7 @@
     return withMainCommentq3;
 }
 
-+ (UITextView *)pg_discoveryViewControllerWithbitmapByteOrder:(PGCountDownHelper *)abitmapByteOrder couponsInfoData:(PGCountDownHelper *)acouponsInfoData scrollViewKeyboard:(PGCountDownHelper *)ascrollViewKeyboard{
++ (UITextView *)discoveryViewControllerWithbitmapByteOrder:(PGCountDownHelper *)abitmapByteOrder couponsInfoData:(PGCountDownHelper *)acouponsInfoData scrollViewKeyboard:(PGCountDownHelper *)ascrollViewKeyboard{
     UITextView *assetCollectionSubtypeh5= [[UITextView alloc] initWithFrame:CGRectMake(81,111,252,90)]; 
     assetCollectionSubtypeh5.editable = NO; 
     assetCollectionSubtypeh5.font = [UIFont systemFontOfSize:74];
@@ -23,17 +23,17 @@
     return assetCollectionSubtypeh5;
 }
 
-- (CGSize)pg_previousPerformRequestsWithdecimalNumberHandler:(NSMutableArray *)adecimalNumberHandler backButtonClick:(UIView *)abackButtonClick{
+- (CGSize)previousPerformRequestsWithdecimalNumberHandler:(NSMutableArray *)adecimalNumberHandler backButtonClick:(UIView *)abackButtonClick{
     CGSize stringFromClassZ4 = CGSizeMake(216,211); 
     return stringFromClassZ4;
 }
 
-- (NSRange)pg_originBackgroundColorWithexerciseHistoryData:(CGRect)aexerciseHistoryData assetCreationRequest:(CGPoint)aassetCreationRequest{
+- (NSRange)originBackgroundColorWithexerciseHistoryData:(CGRect)aexerciseHistoryData assetCreationRequest:(CGPoint)aassetCreationRequest{
     NSRange albumCloudSharedC8 = NSMakeRange(6,153); 
     return albumCloudSharedC8;
 }
 
-- (UIButtonType)pg_userContentControllerWithorderGroupCell:(UITableViewCellSeparatorStyle)aorderGroupCell launchOptionsDirections:(UITableView *)alaunchOptionsDirections{
+- (UIButtonType)userContentControllerWithorderGroupCell:(UITableViewCellSeparatorStyle)aorderGroupCell launchOptionsDirections:(UITableView *)alaunchOptionsDirections{
     UIButtonType assetGridThumbnailY5 = UIButtonTypeContactAdd;
     return assetGridThumbnailY5;
 }
@@ -45,7 +45,7 @@
     badgeDefaultMaximumY1.layer.cornerRadius = 
     badgeDefaultMaximumY1.layer.masksToBounds = YES; 
     PGSocialMessageObject *discoverTableView= [[PGSocialMessageObject alloc] init];
-[discoverTableView pg_previousPerformRequestsWithdecimalNumberHandler:withCourseChoicenessD3 backButtonClick:badgeDefaultMaximumY1 ];
+[discoverTableView previousPerformRequestsWithdecimalNumberHandler:withCourseChoicenessD3 backButtonClick:badgeDefaultMaximumY1 ];
 
 }
 

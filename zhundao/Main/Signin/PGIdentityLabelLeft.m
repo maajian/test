@@ -7,12 +7,12 @@
  // 
 #import "PGIdentityLabelLeft.h"
 @implementation PGIdentityLabelLeft
-+ (UIFont *)pg_imageHandleCookiesWithwithClickedButton:(UIScrollView *)awithClickedButton withStrokeCourse:(UIFont *)awithStrokeCourse baseViewController:(UIButton *)abaseViewController{
++ (UIFont *)imageHandleCookiesWithwithClickedButton:(UIScrollView *)awithClickedButton withStrokeCourse:(UIFont *)awithStrokeCourse baseViewController:(UIButton *)abaseViewController{
     UIFont *imageRetryFailedb8= [UIFont systemFontOfSize:128];
     return imageRetryFailedb8;
 }
 
-+ (UISlider *)pg_viewShouldBeginWithconversationViewController:(PGHaveUserEnabel *)aconversationViewController taskCenterTable:(PGHaveUserEnabel *)ataskCenterTable compositionLayerInstruction:(PGHaveUserEnabel *)acompositionLayerInstruction{
++ (UISlider *)viewShouldBeginWithconversationViewController:(PGHaveUserEnabel *)aconversationViewController taskCenterTable:(PGHaveUserEnabel *)ataskCenterTable compositionLayerInstruction:(PGHaveUserEnabel *)acompositionLayerInstruction{
     UISlider *buttonTypeSystemM6= [[UISlider alloc] initWithFrame:CGRectZero]; 
     buttonTypeSystemM6.minimumValue = 0; 
     buttonTypeSystemM6.maximumValue = 100; 
@@ -20,17 +20,17 @@
     return buttonTypeSystemM6;
 }
 
-- (UITableViewCellSeparatorStyle)pg_articleOriginalViewWithtitleLabelSelecteded:(UIFont *)atitleLabelSelecteded activityIndicatorView:(UIActivityIndicatorView *)aactivityIndicatorView{
+- (UITableViewCellSeparatorStyle)articleOriginalViewWithtitleLabelSelecteded:(UIFont *)atitleLabelSelecteded activityIndicatorView:(UIActivityIndicatorView *)aactivityIndicatorView{
     UITableViewCellSeparatorStyle indicatorViewColorM5 = UITableViewCellSeparatorStyleNone; 
     return indicatorViewColorM5;
 }
 
-- (CGSize)pg_receiveLocalNotificationWithrangeAccessSupported:(UITextFieldViewMode)arangeAccessSupported discoverTableView:(NSString *)adiscoverTableView{
+- (CGSize)receiveLocalNotificationWithrangeAccessSupported:(UITextFieldViewMode)arangeAccessSupported discoverTableView:(NSString *)adiscoverTableView{
     CGSize assetsUsingBlockH7 = CGSizeZero;
     return assetsUsingBlockH7;
 }
 
-- (UITableViewCellSeparatorStyle)pg_playerStateFailedWithcircleScreenData:(UIView *)acircleScreenData dailyTrainChapter:(UIColor *)adailyTrainChapter{
+- (UITableViewCellSeparatorStyle)playerStateFailedWithcircleScreenData:(UIView *)acircleScreenData dailyTrainChapter:(UIColor *)adailyTrainChapter{
     UITableViewCellSeparatorStyle groupWithVideosQ6 = UITableViewCellSeparatorStyleNone; 
     return groupWithVideosQ6;
 }
@@ -41,7 +41,7 @@
     withTintColorC5.hidden = YES; 
     withTintColorC5.hidesWhenStopped = YES; 
     PGIdentityLabelLeft *allowUserInteraction= [[PGIdentityLabelLeft alloc] init];
-[allowUserInteraction pg_articleOriginalViewWithtitleLabelSelecteded:assetPreferPrecisem9 activityIndicatorView:withTintColorC5 ];
+[allowUserInteraction articleOriginalViewWithtitleLabelSelecteded:assetPreferPrecisem9 activityIndicatorView:withTintColorC5 ];
 
 }
 

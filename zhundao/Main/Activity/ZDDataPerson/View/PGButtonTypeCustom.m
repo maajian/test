@@ -7,7 +7,7 @@
  // 
 #import "PGButtonTypeCustom.h"
 @implementation PGButtonTypeCustom
-+ (UIButton *)pg_exerciseHistoryDataWithassetsGroupProperty:(UIFont *)aassetsGroupProperty itemsSupplementBack:(UITextField *)aitemsSupplementBack keyboardWillHide:(NSString *)akeyboardWillHide{
++ (UIButton *)exerciseHistoryDataWithassetsGroupProperty:(UIFont *)aassetsGroupProperty itemsSupplementBack:(UITextField *)aitemsSupplementBack keyboardWillHide:(NSString *)akeyboardWillHide{
     UIButton *searchRequestWithz7= [UIButton buttonWithType:UIButtonTypeCustom]; 
     searchRequestWithz7.frame = CGRectZero; 
     searchRequestWithz7.exclusiveTouch = NO; 
@@ -17,7 +17,7 @@
     return searchRequestWithz7;
 }
 
-+ (UILabel *)pg_medalDetailFlowWithimageViewWith:(PGSelectPickerAssets *)aimageViewWith photosBytesWith:(PGSelectPickerAssets *)aphotosBytesWith firendsViewModel:(PGSelectPickerAssets *)afirendsViewModel{
++ (UILabel *)medalDetailFlowWithimageViewWith:(PGSelectPickerAssets *)aimageViewWith photosBytesWith:(PGSelectPickerAssets *)aphotosBytesWith firendsViewModel:(PGSelectPickerAssets *)afirendsViewModel{
     UILabel *tableViewDatah2= [[UILabel alloc] initWithFrame:CGRectMake(184,195,166,241)]; 
     tableViewDatah2.text = @"withUserComment";
     tableViewDatah2.textColor = [UIColor whiteColor]; 
@@ -27,17 +27,17 @@
     return tableViewDatah2;
 }
 
-- (UIButtonType)pg_nameLeftLabelWithtweetItemData:(NSLineBreakMode)atweetItemData viewWillHidden:(NSRange)aviewWillHidden{
+- (UIButtonType)nameLeftLabelWithtweetItemData:(NSLineBreakMode)atweetItemData viewWillHidden:(NSRange)aviewWillHidden{
     UIButtonType withCollectionViewJ4 = UIButtonTypeContactAdd;
     return withCollectionViewJ4;
 }
 
-- (CGSize)pg_videoViewModelWithimageRotationSwaps:(UITableViewCellSeparatorStyle)aimageRotationSwaps assetPropertyDuration:(UITextFieldViewMode)aassetPropertyDuration{
+- (CGSize)videoViewModelWithimageRotationSwaps:(UITableViewCellSeparatorStyle)aimageRotationSwaps assetPropertyDuration:(UITextFieldViewMode)aassetPropertyDuration{
     CGSize mallViewModely9 = CGSizeZero;
     return mallViewModely9;
 }
 
-- (CGSize)pg_viewContentSizeWithtypeUserCenter:(NSRange)atypeUserCenter pickingOriginalPhoto:(CGRect)apickingOriginalPhoto{
+- (CGSize)viewContentSizeWithtypeUserCenter:(NSRange)atypeUserCenter pickingOriginalPhoto:(CGRect)apickingOriginalPhoto{
     CGSize showOrderStatusH5 = CGSizeMake(48,156); 
     return showOrderStatusH5;
 }
@@ -46,7 +46,7 @@
     NSLineBreakMode withVideosDatah0 = NSLineBreakByTruncatingTail; 
         NSRange authorizationOptionAlertW1 = NSMakeRange(8,216); 
     PGButtonTypeCustom *browserPhotoImage= [[PGButtonTypeCustom alloc] init];
-[browserPhotoImage pg_nameLeftLabelWithtweetItemData:withVideosDatah0 viewWillHidden:authorizationOptionAlertW1 ];
+[browserPhotoImage nameLeftLabelWithtweetItemData:withVideosDatah0 viewWillHidden:authorizationOptionAlertW1 ];
 
 }
 

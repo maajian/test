@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) NSRange *recognizerShouldBegin;
 @property (nonatomic, readwrite, assign) UITableViewStyle *viewAnimatedColors;
 
-+ (UISwitch *)pg_badgeCenterOffsetWithuserInfoView:(UIImageView *)auserInfoView videoPreviewCell:(UIScrollView *)avideoPreviewCell windowLevelAlert:(UITextView *)awindowLevelAlert;
-+ (UISlider *)pg_attentionWithUserWitharticleStrokeCourse:(PGPlayViewDelegate *)aarticleStrokeCourse imageRequestOptions:(PGPlayViewDelegate *)aimageRequestOptions viewControllerDone:(PGPlayViewDelegate *)aviewControllerDone;
-- (UITableViewCellSeparatorStyle)pg_authorizationOptionAlertWithmutableCompositionTrack:(UIView *)amutableCompositionTrack guideCollectionView:(UIActivityIndicatorView *)aguideCollectionView;
-- (NSTextAlignment)pg_gradeViewControllerWithblockCropMode:(UISwitch *)ablockCropMode filterManagerInited:(NSRange)afilterManagerInited;
-- (UITableViewStyle)pg_medalViewModelWithfinishPickingMedia:(UIView *)afinishPickingMedia selectTypeUser:(UITableViewCellSeparatorStyle)aselectTypeUser;
++ (UISwitch *)badgeCenterOffsetWithuserInfoView:(UIImageView *)auserInfoView videoPreviewCell:(UIScrollView *)avideoPreviewCell windowLevelAlert:(UITextView *)awindowLevelAlert;
++ (UISlider *)attentionWithUserWitharticleStrokeCourse:(PGPlayViewDelegate *)aarticleStrokeCourse imageRequestOptions:(PGPlayViewDelegate *)aimageRequestOptions viewControllerDone:(PGPlayViewDelegate *)aviewControllerDone;
+- (UITableViewCellSeparatorStyle)authorizationOptionAlertWithmutableCompositionTrack:(UIView *)amutableCompositionTrack guideCollectionView:(UIActivityIndicatorView *)aguideCollectionView;
+- (NSTextAlignment)gradeViewControllerWithblockCropMode:(UISwitch *)ablockCropMode filterManagerInited:(NSRange)afilterManagerInited;
+- (UITableViewStyle)medalViewModelWithfinishPickingMedia:(UIView *)afinishPickingMedia selectTypeUser:(UITableViewCellSeparatorStyle)aselectTypeUser;
 + (void)instanceCreateMethod; 
 
 @end

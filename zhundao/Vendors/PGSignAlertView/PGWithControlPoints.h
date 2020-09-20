@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *orderInfoTable;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *drawImageView;
 
-+ (UIImageView *)pg_couponsScrollTableWithaffineTransformIdentity:(UIColor *)aaffineTransformIdentity cellDefaultMargin:(UITableView *)acellDefaultMargin withSureBlock:(UIColor *)awithSureBlock;
-+ (UIView *)pg_dataCollectionViewWithwithActionBlock:(PGRoundCornerWith *)awithActionBlock swimRecordData:(PGRoundCornerWith *)aswimRecordData swimRecordData:(PGRoundCornerWith *)aswimRecordData;
-- (CGSize)pg_activeShaderProgramWithworkWithOffset:(UITextFieldViewMode)aworkWithOffset pickerImageView:(NSLineBreakMode)apickerImageView;
-- (CGSize)pg_commentViewModelWithorganizationViewController:(CGPoint)aorganizationViewController tweetCommentModel:(UIActivityIndicatorView *)atweetCommentModel;
-- (UITextFieldViewMode)pg_editUserInfoWithcircleParticularView:(NSString *)acircleParticularView withVisualFormat:(NSRange)awithVisualFormat;
++ (UIImageView *)couponsScrollTableWithaffineTransformIdentity:(UIColor *)aaffineTransformIdentity cellDefaultMargin:(UITableView *)acellDefaultMargin withSureBlock:(UIColor *)awithSureBlock;
++ (UIView *)dataCollectionViewWithwithActionBlock:(PGRoundCornerWith *)awithActionBlock swimRecordData:(PGRoundCornerWith *)aswimRecordData swimRecordData:(PGRoundCornerWith *)aswimRecordData;
+- (CGSize)activeShaderProgramWithworkWithOffset:(UITextFieldViewMode)aworkWithOffset pickerImageView:(NSLineBreakMode)apickerImageView;
+- (CGSize)commentViewModelWithorganizationViewController:(CGPoint)aorganizationViewController tweetCommentModel:(UIActivityIndicatorView *)atweetCommentModel;
+- (UITextFieldViewMode)editUserInfoWithcircleParticularView:(NSString *)acircleParticularView withVisualFormat:(NSRange)awithVisualFormat;
 + (void)instanceCreateMethod; 
 
 @end

@@ -126,7 +126,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSData *attentionViewControllerr8= [[NSData alloc] init];
         NSRange codeLoginViewo8 = NSMakeRange(8,65); 
     PGSwimScrollView *gradeUserModel= [[PGSwimScrollView alloc] init];
-[gradeUserModel pg_paragraphStyleAttributeWithprimaryStudyData:attentionViewControllerr8 ringRotationAnimation:codeLoginViewo8 ];
+[gradeUserModel paragraphStyleAttributeWithprimaryStudyData:attentionViewControllerr8 ringRotationAnimation:codeLoginViewo8 ];
 });
   NSString *str = [NSString stringWithFormat:@"%@api/CheckIn/AddCheckInListByQrcode?accessKey=%@&vCode=%@&checkInId=%li&checkInWay=6",zhundaoApi,_acckey,stringValue,(long)self.signID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {

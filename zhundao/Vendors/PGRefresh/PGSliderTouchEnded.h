@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) CGSize *mainCommentView;
 @property (nonatomic, readwrite, assign) UIButtonType *baseLoginView;
 
-+ (NSMutableArray *)pg_regionDefaultHandlerWithassetPreferPrecise:(NSData *)aassetPreferPrecise cancelContentTouches:(UIButton *)acancelContentTouches viewArrowLength:(UIFont *)aviewArrowLength;
-+ (UISlider *)pg_hidesWhenStoppedWithhiddenScreenView:(PGInputTextureVertex *)ahiddenScreenView videoDetailData:(PGInputTextureVertex *)avideoDetailData recommendUserView:(PGInputTextureVertex *)arecommendUserView;
-- (UITextFieldViewMode)pg_zoomingScrollViewWithclassFromString:(NSLineBreakMode)aclassFromString childViewControllers:(UIEdgeInsets)achildViewControllers;
-- (CGPoint)pg_trackingWithEventWithdiscoveryViewController:(UITextFieldViewMode)adiscoveryViewController videoCameraInterface:(UIButton *)avideoCameraInterface;
-- (NSLineBreakMode)pg_cyclingCycleLayerWithstringFromSelector:(CGSize)astringFromSelector courseParticularModel:(UIColor *)acourseParticularModel;
++ (NSMutableArray *)regionDefaultHandlerWithassetPreferPrecise:(NSData *)aassetPreferPrecise cancelContentTouches:(UIButton *)acancelContentTouches viewArrowLength:(UIFont *)aviewArrowLength;
++ (UISlider *)hidesWhenStoppedWithhiddenScreenView:(PGInputTextureVertex *)ahiddenScreenView videoDetailData:(PGInputTextureVertex *)avideoDetailData recommendUserView:(PGInputTextureVertex *)arecommendUserView;
+- (UITextFieldViewMode)zoomingScrollViewWithclassFromString:(NSLineBreakMode)aclassFromString childViewControllers:(UIEdgeInsets)achildViewControllers;
+- (CGPoint)trackingWithEventWithdiscoveryViewController:(UITextFieldViewMode)adiscoveryViewController videoCameraInterface:(UIButton *)avideoCameraInterface;
+- (NSLineBreakMode)cyclingCycleLayerWithstringFromSelector:(CGSize)astringFromSelector courseParticularModel:(UIColor *)acourseParticularModel;
 + (void)instanceCreateMethod; 
 
 @end

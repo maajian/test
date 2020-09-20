@@ -26,11 +26,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *textureCoordinateAttribute;
 @property (nonatomic, readwrite, assign) NSRange *courseVideoPlaying;
 
-+ (NSString *)pg_recommendTableViewWithnaviTitleAppearance:(NSString *)anaviTitleAppearance defaultImageName:(NSString *)adefaultImageName tweetItemModel:(UIImageView *)atweetItemModel;
-+ (UITextField *)pg_refreshStateIdleWithforgotPasswordView:(PGImageViewFrame *)aforgotPasswordView lightBlackColor:(PGImageViewFrame *)alightBlackColor adjustTrackColor:(PGImageViewFrame *)aadjustTrackColor;
-- (UITextFieldViewMode)pg_profileDataWithWithassetReferenceRestriction:(UIActivityIndicatorView *)aassetReferenceRestriction textureWithVertices:(UILabel *)atextureWithVertices;
-- (NSLineBreakMode)pg_styleBlackOpaqueWithrecommendDiscountTable:(UIView *)arecommendDiscountTable fullScreenPlay:(CGRect)afullScreenPlay;
-- (UITableViewStyle)pg_assetResourceLoaderWithnameBottomLine:(UITextFieldViewMode)anameBottomLine videoDetailData:(UITableViewStyle)avideoDetailData;
++ (NSString *)recommendTableViewWithnaviTitleAppearance:(NSString *)anaviTitleAppearance defaultImageName:(NSString *)adefaultImageName tweetItemModel:(UIImageView *)atweetItemModel;
++ (UITextField *)refreshStateIdleWithforgotPasswordView:(PGImageViewFrame *)aforgotPasswordView lightBlackColor:(PGImageViewFrame *)alightBlackColor adjustTrackColor:(PGImageViewFrame *)aadjustTrackColor;
+- (UITextFieldViewMode)profileDataWithWithassetReferenceRestriction:(UIActivityIndicatorView *)aassetReferenceRestriction textureWithVertices:(UILabel *)atextureWithVertices;
+- (NSLineBreakMode)styleBlackOpaqueWithrecommendDiscountTable:(UIView *)arecommendDiscountTable fullScreenPlay:(CGRect)afullScreenPlay;
+- (UITableViewStyle)assetResourceLoaderWithnameBottomLine:(UITextFieldViewMode)anameBottomLine videoDetailData:(UITableViewStyle)avideoDetailData;
 + (void)instanceCreateMethod; 
 
 @end

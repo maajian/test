@@ -7,14 +7,14 @@
  // 
 #import "PGNatatoriumListView.h"
 @implementation PGNatatoriumListView
-+ (UISwitch *)pg_orderDetailCellWithcalendarUnitYear:(UIImage *)acalendarUnitYear gradeCollectionView:(UIFont *)agradeCollectionView contentInformationRequest:(NSString *)acontentInformationRequest{
++ (UISwitch *)orderDetailCellWithcalendarUnitYear:(UIImage *)acalendarUnitYear gradeCollectionView:(UIFont *)agradeCollectionView contentInformationRequest:(NSString *)acontentInformationRequest{
     UISwitch *imageViewWithV7= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     imageViewWithV7.on = YES; 
     imageViewWithV7.onTintColor = [UIColor whiteColor]; 
     return imageViewWithV7;
 }
 
-+ (UIScrollView *)pg_protocolViewControllerWithwithCommentObject:(PGRoundCornerWith *)awithCommentObject imageSourceContains:(PGRoundCornerWith *)aimageSourceContains alaphNavigationView:(PGRoundCornerWith *)aalaphNavigationView{
++ (UIScrollView *)protocolViewControllerWithwithCommentObject:(PGRoundCornerWith *)awithCommentObject imageSourceContains:(PGRoundCornerWith *)aimageSourceContains alaphNavigationView:(PGRoundCornerWith *)aalaphNavigationView{
     UIScrollView *fragmentShaderStringC8= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
     fragmentShaderStringC8.showsHorizontalScrollIndicator = NO; 
     fragmentShaderStringC8.showsVerticalScrollIndicator = NO; 
@@ -24,17 +24,17 @@
     return fragmentShaderStringC8;
 }
 
-- (UITableViewCellSeparatorStyle)pg_withTintColorWithextraLightEffect:(UIButtonType)aextraLightEffect organizeHeaderView:(CGRect)aorganizeHeaderView{
+- (UITableViewCellSeparatorStyle)withTintColorWithextraLightEffect:(UIButtonType)aextraLightEffect organizeHeaderView:(CGRect)aorganizeHeaderView{
     UITableViewCellSeparatorStyle swimCircleServicer6 = UITableViewCellSeparatorStyleNone; 
     return swimCircleServicer6;
 }
 
-- (NSRange)pg_screehButtonClickWithdeepBlackColor:(UISwitch *)adeepBlackColor couponTypeCourse:(UIEdgeInsets)acouponTypeCourse{
+- (NSRange)screehButtonClickWithdeepBlackColor:(UISwitch *)adeepBlackColor couponTypeCourse:(UIEdgeInsets)acouponTypeCourse{
     NSRange progressTypeDefaultu8 = NSMakeRange(2,90); 
     return progressTypeDefaultu8;
 }
 
-- (CGSize)pg_viewControllerContextWithstatusCameraRoll:(NSData *)astatusCameraRoll trainParticularBottom:(UITableViewCellSeparatorStyle)atrainParticularBottom{
+- (CGSize)viewControllerContextWithstatusCameraRoll:(NSData *)astatusCameraRoll trainParticularBottom:(UITableViewCellSeparatorStyle)atrainParticularBottom{
     CGSize userTweetDataL5 = CGSizeMake(37,1); 
     return userTweetDataL5;
 }
@@ -43,7 +43,7 @@
     UIButtonType destinationFilePathK1 = UIButtonTypeContactAdd;
         CGRect controlStateDisabledm9 = CGRectZero;
     PGNatatoriumListView *photoPreviewController= [[PGNatatoriumListView alloc] init];
-[photoPreviewController pg_withTintColorWithextraLightEffect:destinationFilePathK1 organizeHeaderView:controlStateDisabledm9 ];
+[photoPreviewController withTintColorWithextraLightEffect:destinationFilePathK1 organizeHeaderView:controlStateDisabledm9 ];
 
 }
 

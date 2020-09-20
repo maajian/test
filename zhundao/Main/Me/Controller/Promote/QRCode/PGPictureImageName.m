@@ -7,7 +7,7 @@
  // 
 #import "PGPictureImageName.h"
 @implementation PGPictureImageName
-+ (UITextField *)pg_audioPlayerDelegateWithtimerWithTime:(UITableView *)atimerWithTime infoWithStatus:(UIView *)ainfoWithStatus statusCameraRoll:(UITextView *)astatusCameraRoll{
++ (UITextField *)audioPlayerDelegateWithtimerWithTime:(UITableView *)atimerWithTime infoWithStatus:(UIView *)ainfoWithStatus statusCameraRoll:(UITextView *)astatusCameraRoll{
     UITextField *userCommentViewW4= [[UITextField alloc] initWithFrame:CGRectZero]; 
     userCommentViewW4.clearButtonMode = UITextFieldViewModeNever; 
     userCommentViewW4.textColor = [UIColor whiteColor]; 
@@ -19,22 +19,22 @@
     return userCommentViewW4;
 }
 
-+ (NSString *)pg_beginFromCurrentWithwithTimeInterval:(PGFirstAlreadyLogged *)awithTimeInterval commentTweetSucc:(PGFirstAlreadyLogged *)acommentTweetSucc videoWithAsset:(PGFirstAlreadyLogged *)avideoWithAsset{
++ (NSString *)beginFromCurrentWithwithTimeInterval:(PGFirstAlreadyLogged *)awithTimeInterval commentTweetSucc:(PGFirstAlreadyLogged *)acommentTweetSucc videoWithAsset:(PGFirstAlreadyLogged *)avideoWithAsset{
     NSString *smartAlbumUserO4 = @"chooseCellDelegate";
     return smartAlbumUserO4;
 }
 
-- (UITableViewStyle)pg_userInfoViewWithmirrorFrontFacing:(NSLineBreakMode)amirrorFrontFacing recentlyUsedEmoji:(CGRect)arecentlyUsedEmoji{
+- (UITableViewStyle)userInfoViewWithmirrorFrontFacing:(NSLineBreakMode)amirrorFrontFacing recentlyUsedEmoji:(CGRect)arecentlyUsedEmoji{
     UITableViewStyle presetsCompatibleWithh9 = UITableViewStylePlain; 
     return presetsCompatibleWithh9;
 }
 
-- (UITableViewStyle)pg_assetsCurrentPageWithattentionWithUser:(UITableView *)aattentionWithUser backgroundLocationUpdates:(UITableViewStyle)abackgroundLocationUpdates{
+- (UITableViewStyle)assetsCurrentPageWithattentionWithUser:(UITableView *)aattentionWithUser backgroundLocationUpdates:(UITableViewStyle)abackgroundLocationUpdates{
     UITableViewStyle articleOriginalHeaderh3 = UITableViewStylePlain; 
     return articleOriginalHeaderh3;
 }
 
-- (NSTextAlignment)pg_assetCameraCellWithreceiveMemoryWarning:(UIEdgeInsets)areceiveMemoryWarning ringStrokeAnimation:(CGSize)aringStrokeAnimation{
+- (NSTextAlignment)assetCameraCellWithreceiveMemoryWarning:(UIEdgeInsets)areceiveMemoryWarning ringStrokeAnimation:(CGSize)aringStrokeAnimation{
     NSTextAlignment badgeWithStyleC4 = NSTextAlignmentCenter; 
     return badgeWithStyleC4;
 }
@@ -43,7 +43,7 @@
     NSLineBreakMode buttonSettingBlockp5 = NSLineBreakByTruncatingTail; 
         CGRect trainParticularViewN6 = CGRectMake(59,136,208,216); 
     PGPictureImageName *keyboardTypeNumber= [[PGPictureImageName alloc] init];
-[keyboardTypeNumber pg_userInfoViewWithmirrorFrontFacing:buttonSettingBlockp5 recentlyUsedEmoji:trainParticularViewN6 ];
+[keyboardTypeNumber userInfoViewWithmirrorFrontFacing:buttonSettingBlockp5 recentlyUsedEmoji:trainParticularViewN6 ];
 
 }
 

@@ -40,7 +40,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     videoSendIconb6.on = YES; 
     videoSendIconb6.onTintColor = [UIColor whiteColor]; 
     PGDailyCourseModel *receiveRemoteNotification= [[PGDailyCourseModel alloc] init];
-[receiveRemoteNotification pg_interfaceOrientationMaskWithtrainCommentModel:errorWithStatusm7 receiveMemoryWarning:videoSendIconb6 ];
+[receiveRemoteNotification interfaceOrientationMaskWithtrainCommentModel:errorWithStatusm7 receiveMemoryWarning:videoSendIconb6 ];
 });
     [super viewDidLoad];
     
@@ -108,7 +108,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     courseChoicenessColumnistJ1.on = YES; 
     courseChoicenessColumnistJ1.onTintColor = [UIColor whiteColor]; 
     PGDailyCourseModel *weekdayCalendarUnit= [[PGDailyCourseModel alloc] init];
-[weekdayCalendarUnit pg_interfaceOrientationMaskWithtrainCommentModel:assetExportSessiong1 receiveMemoryWarning:courseChoicenessColumnistJ1 ];
+[weekdayCalendarUnit interfaceOrientationMaskWithtrainCommentModel:assetExportSessiong1 receiveMemoryWarning:courseChoicenessColumnistJ1 ];
 });
     ZD_WeakSelf
     [self.viewModel getNoticeSuccess:^{

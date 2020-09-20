@@ -38,8 +38,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self PG_setupUI];
-        [self PG_initLayout];
+        [self setupUI];
+        [self initLayout];
     }
     return self;
 }
@@ -84,7 +84,7 @@
     if (!_mustSwitch) {
         _mustSwitch = [[UISwitch alloc] init];
         _mustSwitch.on = YES;
-        [_mustSwitch addTarget:self action:@selector(PG_switchAction:) forControlEvents:UIControlEventValueChanged];
+        [_mustSwitch addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
     }
     return _mustSwitch;
 }
@@ -105,7 +105,7 @@
         _typeTitleLabel.text = @"类型";
         _typeTitleLabel.font = [UIFont systemFontOfSize:16];
         _typeTitleLabel.textColor = [UIColor blackColor];
-        [_typeLabel addTapGestureTarget:self action:@selector(PG_changeType:)];
+        [_typeLabel addTapGestureTarget:self action:@selector(changeType:)];
     }
     return _typeTitleLabel;
 }
@@ -118,7 +118,7 @@
         _typeLabel.font = [UIFont systemFontOfSize:16];
         _typeLabel.textColor = ZDHeaderTitleColor;
         _typeLabel.textAlignment = NSTextAlignmentRight;
-        [_typeLabel addTapGestureTarget:self action:@selector(PG_changeType:)];
+        [_typeLabel addTapGestureTarget:self action:@selector(changeType:)];
     }
     return _typeLabel;
 }
@@ -147,7 +147,7 @@
 }
 
 #pragma mark --- UI
-- (void)PG_setupUI {
+- (void)setupUI {
     self.backgroundColor = ZDBackgroundColor;
     [self addSubview:self.titleTF];
     
@@ -164,7 +164,7 @@
 }
 
 #pragma mark --- 布局
-- (void)PG_initLayout {
+- (void)initLayout {
     [self.titleTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.mas_equalTo(0);
         make.top.mas_equalTo(20);
@@ -239,11 +239,11 @@
 }
 
 #pragma mark --- action
-- (void)PG_switchAction:(UISwitch *)mustSwitch {
+- (void)switchAction:(UISwitch *)mustSwitch {
     
 }
 
-- (void)PG_changeType:(UITapGestureRecognizer *)gestureRecognizer {
+- (void)changeType:(UITapGestureRecognizer *)gestureRecognizer {
     if ([self.discoveEditApplyHeaderViewDelegate respondsToSelector:@selector(headerView:didChangeType:)]) {
         [self.discoveEditApplyHeaderViewDelegate headerView:self didChangeType:self.typeLabel];
     }

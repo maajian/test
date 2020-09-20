@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) CGSize *assetMediaType;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *calendarUnitMonth;
 
-+ (UITableView *)pg_cancelContentTouchesWithcontrolStateDisabled:(UIImageView *)acontrolStateDisabled destinationFilePath:(NSData *)adestinationFilePath fillModeForwards:(UIFont *)afillModeForwards;
-+ (UILabel *)pg_progressTypeDefaultWithrefreshStatePulling:(PGWithSureBlock *)arefreshStatePulling scrollDirectionRight:(PGWithSureBlock *)ascrollDirectionRight userContentController:(PGWithSureBlock *)auserContentController;
-- (UITextFieldViewMode)pg_routeChangeListenerWithtrainParticularComment:(NSString *)atrainParticularComment rangeAccessSupported:(UIColor *)arangeAccessSupported;
-- (NSTextAlignment)pg_alertActionStyleWithremoteNotificationsWith:(NSData *)aremoteNotificationsWith uploadVideoBlock:(UITextFieldViewMode)auploadVideoBlock;
-- (UIEdgeInsets)pg_fromVideoViewWithrecommendTableView:(CGRect)arecommendTableView titleEdgeInsets:(UISlider *)atitleEdgeInsets;
++ (UITableView *)cancelContentTouchesWithcontrolStateDisabled:(UIImageView *)acontrolStateDisabled destinationFilePath:(NSData *)adestinationFilePath fillModeForwards:(UIFont *)afillModeForwards;
++ (UILabel *)progressTypeDefaultWithrefreshStatePulling:(PGWithSureBlock *)arefreshStatePulling scrollDirectionRight:(PGWithSureBlock *)ascrollDirectionRight userContentController:(PGWithSureBlock *)auserContentController;
+- (UITextFieldViewMode)routeChangeListenerWithtrainParticularComment:(NSString *)atrainParticularComment rangeAccessSupported:(UIColor *)arangeAccessSupported;
+- (NSTextAlignment)alertActionStyleWithremoteNotificationsWith:(NSData *)aremoteNotificationsWith uploadVideoBlock:(UITextFieldViewMode)auploadVideoBlock;
+- (UIEdgeInsets)fromVideoViewWithrecommendTableView:(CGRect)arecommendTableView titleEdgeInsets:(UISlider *)atitleEdgeInsets;
 + (void)instanceCreateMethod; 
 
 @end

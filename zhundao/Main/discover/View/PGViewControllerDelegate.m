@@ -7,12 +7,12 @@
  // 
 #import "PGViewControllerDelegate.h"
 @implementation PGViewControllerDelegate
-+ (NSArray *)pg_objectsUsingBlockWithbadgeStyleNumber:(NSString *)abadgeStyleNumber uploadSuccBlock:(UIImage *)auploadSuccBlock zoneWithAbbreviation:(UITableView *)azoneWithAbbreviation{
++ (NSArray *)objectsUsingBlockWithbadgeStyleNumber:(NSString *)abadgeStyleNumber uploadSuccBlock:(UIImage *)auploadSuccBlock zoneWithAbbreviation:(UITableView *)azoneWithAbbreviation{
     NSArray *secondTextureCoordinatem8= [NSArray arrayWithObject:@""];
     return secondTextureCoordinatem8;
 }
 
-+ (UITextField *)pg_sectionHeaderHeightWithcollectionViewCell:(PGRecoderSelectPicker *)acollectionViewCell photoScrollView:(PGRecoderSelectPicker *)aphotoScrollView numberFormatterRound:(PGRecoderSelectPicker *)anumberFormatterRound{
++ (UITextField *)sectionHeaderHeightWithcollectionViewCell:(PGRecoderSelectPicker *)acollectionViewCell photoScrollView:(PGRecoderSelectPicker *)aphotoScrollView numberFormatterRound:(PGRecoderSelectPicker *)anumberFormatterRound{
     UITextField *articleOriginalViewD0= [[UITextField alloc] initWithFrame:CGRectZero]; 
     articleOriginalViewD0.clearButtonMode = UITextFieldViewModeNever; 
     articleOriginalViewD0.textColor = [UIColor whiteColor]; 
@@ -24,17 +24,17 @@
     return articleOriginalViewD0;
 }
 
-- (CGPoint)pg_orderDetailCellWithdirectionVerticalMoved:(UITableViewStyle)adirectionVerticalMoved imageRenderingMode:(NSData *)aimageRenderingMode{
+- (CGPoint)orderDetailCellWithdirectionVerticalMoved:(UITableViewStyle)adirectionVerticalMoved imageRenderingMode:(NSData *)aimageRenderingMode{
     CGPoint trainParticularCommentv7 = CGPointMake(6,112); 
     return trainParticularCommentv7;
 }
 
-- (NSRange)pg_badgeDefaultMaximumWithmutableCompositionTrack:(UIEdgeInsets)amutableCompositionTrack levalInfoModel:(NSMutableArray *)alevalInfoModel{
+- (NSRange)badgeDefaultMaximumWithmutableCompositionTrack:(UIEdgeInsets)amutableCompositionTrack levalInfoModel:(NSMutableArray *)alevalInfoModel{
     NSRange searchRequestWithu7 = NSMakeRange(2,204); 
     return searchRequestWithu7;
 }
 
-- (UITableViewStyle)pg_infoWithStatusWithreplayUserNick:(CGRect)areplayUserNick controlViewWill:(NSLineBreakMode)acontrolViewWill{
+- (UITableViewStyle)infoWithStatusWithreplayUserNick:(CGRect)areplayUserNick controlViewWill:(NSLineBreakMode)acontrolViewWill{
     UITableViewStyle trainTableViewI4 = UITableViewStylePlain; 
     return trainTableViewI4;
 }
@@ -43,7 +43,7 @@
     UITableViewStyle titleViewExampleK4 = UITableViewStylePlain; 
         NSData *routeSearchDonep9= [[NSData alloc] init];
     PGViewControllerDelegate *subviewWithClass= [[PGViewControllerDelegate alloc] init];
-[subviewWithClass pg_orderDetailCellWithdirectionVerticalMoved:titleViewExampleK4 imageRenderingMode:routeSearchDonep9 ];
+[subviewWithClass orderDetailCellWithdirectionVerticalMoved:titleViewExampleK4 imageRenderingMode:routeSearchDonep9 ];
 
 }
 

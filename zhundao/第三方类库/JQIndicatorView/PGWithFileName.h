@@ -24,11 +24,11 @@
 @property (nonatomic, readwrite, assign) NSLineBreakMode *withActivityIndicator;
 @property (nonatomic, readwrite, assign) NSRange *firstFrameCheck;
 
-+ (UIView *)pg_showInputTextWithspringWithDamping:(UIImage *)aspringWithDamping imageWithName:(UIActivityIndicatorView *)aimageWithName cardViewDelegate:(UIImageView *)acardViewDelegate;
-+ (UISlider *)pg_titleShowStatusWithopenWindowsAutomatically:(PGHaveUserEnabel *)aopenWindowsAutomatically operationWithBlock:(PGHaveUserEnabel *)aoperationWithBlock moreColumnistChild:(PGHaveUserEnabel *)amoreColumnistChild;
-- (UITableViewStyle)pg_viewContentSizeWithcenterViewModel:(UIEdgeInsets)acenterViewModel timesFromSlider:(NSData *)atimesFromSlider;
-- (UITableViewStyle)pg_rankMedalBlockWithaudioSessionCategory:(NSArray *)aaudioSessionCategory tweetItemModel:(UITextFieldViewMode)atweetItemModel;
-- (CGPoint)pg_alertControllerStyleWithtextureCoordinateAttribute:(NSLineBreakMode)atextureCoordinateAttribute movieFrameOpposite:(UITableViewStyle)amovieFrameOpposite;
++ (UIView *)showInputTextWithspringWithDamping:(UIImage *)aspringWithDamping imageWithName:(UIActivityIndicatorView *)aimageWithName cardViewDelegate:(UIImageView *)acardViewDelegate;
++ (UISlider *)titleShowStatusWithopenWindowsAutomatically:(PGHaveUserEnabel *)aopenWindowsAutomatically operationWithBlock:(PGHaveUserEnabel *)aoperationWithBlock moreColumnistChild:(PGHaveUserEnabel *)amoreColumnistChild;
+- (UITableViewStyle)viewContentSizeWithcenterViewModel:(UIEdgeInsets)acenterViewModel timesFromSlider:(NSData *)atimesFromSlider;
+- (UITableViewStyle)rankMedalBlockWithaudioSessionCategory:(NSArray *)aaudioSessionCategory tweetItemModel:(UITextFieldViewMode)atweetItemModel;
+- (CGPoint)alertControllerStyleWithtextureCoordinateAttribute:(NSLineBreakMode)atextureCoordinateAttribute movieFrameOpposite:(UITableViewStyle)amovieFrameOpposite;
 + (void)instanceCreateMethod; 
 
 @end

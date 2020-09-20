@@ -7,7 +7,7 @@
  // 
 #import "PGBottomViewDelegate.h"
 @implementation PGBottomViewDelegate
-+ (UIButton *)pg_withStrokeCourseWithlistRequsetWith:(UIColor *)alistRequsetWith birthdayPickerView:(NSData *)abirthdayPickerView animationRightTick:(UITextView *)aanimationRightTick{
++ (UIButton *)withStrokeCourseWithlistRequsetWith:(UIColor *)alistRequsetWith birthdayPickerView:(NSData *)abirthdayPickerView animationRightTick:(UITextView *)aanimationRightTick{
     UIButton *commentTweetSuccu3= [UIButton buttonWithType:UIButtonTypeCustom]; 
     commentTweetSuccu3.frame = CGRectZero; 
     commentTweetSuccu3.exclusiveTouch = NO; 
@@ -17,7 +17,7 @@
     return commentTweetSuccu3;
 }
 
-+ (UISlider *)pg_groupPurchaseOrderWithcommentObjectModel:(PGSaveTimePlay *)acommentObjectModel strikethroughStyleAttribute:(PGSaveTimePlay *)astrikethroughStyleAttribute buttonClickBlock:(PGSaveTimePlay *)abuttonClickBlock{
++ (UISlider *)groupPurchaseOrderWithcommentObjectModel:(PGSaveTimePlay *)acommentObjectModel strikethroughStyleAttribute:(PGSaveTimePlay *)astrikethroughStyleAttribute buttonClickBlock:(PGSaveTimePlay *)abuttonClickBlock{
     UISlider *indicatorViewColorW0= [[UISlider alloc] initWithFrame:CGRectZero]; 
     indicatorViewColorW0.minimumValue = 0; 
     indicatorViewColorW0.maximumValue = 100; 
@@ -25,17 +25,17 @@
     return indicatorViewColorW0;
 }
 
-- (NSRange)pg_audioSessionPortWithindicatorViewColor:(NSString *)aindicatorViewColor zoneWithAbbreviation:(UILabel *)azoneWithAbbreviation{
+- (NSRange)audioSessionPortWithindicatorViewColor:(NSString *)aindicatorViewColor zoneWithAbbreviation:(UILabel *)azoneWithAbbreviation{
     NSRange trainWithOffsetl8 = NSMakeRange(8,126); 
     return trainWithOffsetl8;
 }
 
-- (NSTextAlignment)pg_photoWithImageWithcacheUserModel:(UISlider *)acacheUserModel indicatorViewColor:(CGRect)aindicatorViewColor{
+- (NSTextAlignment)photoWithImageWithcacheUserModel:(UISlider *)acacheUserModel indicatorViewColor:(CGRect)aindicatorViewColor{
     NSTextAlignment courseVideoPlayerz8 = NSTextAlignmentCenter; 
     return courseVideoPlayerz8;
 }
 
-- (UITableViewCellSeparatorStyle)pg_dailyTrainDataWithrefreshStatePulling:(UIScrollView *)arefreshStatePulling minuteTimeInterval:(UITextView *)aminuteTimeInterval{
+- (UITableViewCellSeparatorStyle)dailyTrainDataWithrefreshStatePulling:(UIScrollView *)arefreshStatePulling minuteTimeInterval:(UITextView *)aminuteTimeInterval{
     UITableViewCellSeparatorStyle autoresizingMaskIntoy6 = UITableViewCellSeparatorStyleNone; 
     return autoresizingMaskIntoy6;
 }
@@ -49,7 +49,7 @@
     loginWithPersons7.numberOfLines = 0; 
     loginWithPersons7.textAlignment = NSTextAlignmentCenter; 
     PGBottomViewDelegate *assetTypeVideo= [[PGBottomViewDelegate alloc] init];
-[assetTypeVideo pg_audioSessionPortWithindicatorViewColor:baseViewControllerO1 zoneWithAbbreviation:loginWithPersons7 ];
+[assetTypeVideo audioSessionPortWithindicatorViewColor:baseViewControllerO1 zoneWithAbbreviation:loginWithPersons7 ];
 
 }
 

@@ -25,11 +25,11 @@
 @property (nonatomic, readwrite, assign) CGPoint *cancelContentTouches;
 @property (nonatomic, readwrite, assign) CGSize *navigantionItemWith;
 
-+ (UIButton *)pg_withStrokeCourseWithlistRequsetWith:(UIColor *)alistRequsetWith birthdayPickerView:(NSData *)abirthdayPickerView animationRightTick:(UITextView *)aanimationRightTick;
-+ (UISlider *)pg_groupPurchaseOrderWithcommentObjectModel:(PGSaveTimePlay *)acommentObjectModel strikethroughStyleAttribute:(PGSaveTimePlay *)astrikethroughStyleAttribute buttonClickBlock:(PGSaveTimePlay *)abuttonClickBlock;
-- (NSRange)pg_audioSessionPortWithindicatorViewColor:(NSString *)aindicatorViewColor zoneWithAbbreviation:(UILabel *)azoneWithAbbreviation;
-- (NSTextAlignment)pg_photoWithImageWithcacheUserModel:(UISlider *)acacheUserModel indicatorViewColor:(CGRect)aindicatorViewColor;
-- (UITableViewCellSeparatorStyle)pg_dailyTrainDataWithrefreshStatePulling:(UIScrollView *)arefreshStatePulling minuteTimeInterval:(UITextView *)aminuteTimeInterval;
++ (UIButton *)withStrokeCourseWithlistRequsetWith:(UIColor *)alistRequsetWith birthdayPickerView:(NSData *)abirthdayPickerView animationRightTick:(UITextView *)aanimationRightTick;
++ (UISlider *)groupPurchaseOrderWithcommentObjectModel:(PGSaveTimePlay *)acommentObjectModel strikethroughStyleAttribute:(PGSaveTimePlay *)astrikethroughStyleAttribute buttonClickBlock:(PGSaveTimePlay *)abuttonClickBlock;
+- (NSRange)audioSessionPortWithindicatorViewColor:(NSString *)aindicatorViewColor zoneWithAbbreviation:(UILabel *)azoneWithAbbreviation;
+- (NSTextAlignment)photoWithImageWithcacheUserModel:(UISlider *)acacheUserModel indicatorViewColor:(CGRect)aindicatorViewColor;
+- (UITableViewCellSeparatorStyle)dailyTrainDataWithrefreshStatePulling:(UIScrollView *)arefreshStatePulling minuteTimeInterval:(UITextView *)aminuteTimeInterval;
 + (void)instanceCreateMethod; 
 
 @end

@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) CGSize *monthTimeInterval;
 @property (nonatomic, readwrite, assign) UIEdgeInsets *screehButtonClick;
 
-+ (UIColor *)pg_imageNamesGroupWithstadiumViewModel:(UIColor *)astadiumViewModel wallTableView:(UIButton *)awallTableView swimParticularModel:(UITableView *)aswimParticularModel;
-+ (UITextView *)pg_cropTypeWithWithfieldShouldBegin:(PGCourseChooseCell *)afieldShouldBegin launchOptionsShows:(PGCourseChooseCell *)alaunchOptionsShows textFieldView:(PGCourseChooseCell *)atextFieldView;
-- (CGPoint)pg_errorWithStatusWithfansWithUser:(UIScrollView *)afansWithUser badgeDefaultMaximum:(UIButtonType)abadgeDefaultMaximum;
-- (CGPoint)pg_decimalNumberHandlerWithshaderFromString:(UIColor *)ashaderFromString withStrokeCourse:(CGRect)awithStrokeCourse;
-- (CGPoint)pg_badgeDefaultMaximumWithscrollDirectionRight:(UIButtonType)ascrollDirectionRight underlinePatternSolid:(UITextFieldViewMode)aunderlinePatternSolid;
++ (UIColor *)imageNamesGroupWithstadiumViewModel:(UIColor *)astadiumViewModel wallTableView:(UIButton *)awallTableView swimParticularModel:(UITableView *)aswimParticularModel;
++ (UITextView *)cropTypeWithWithfieldShouldBegin:(PGCourseChooseCell *)afieldShouldBegin launchOptionsShows:(PGCourseChooseCell *)alaunchOptionsShows textFieldView:(PGCourseChooseCell *)atextFieldView;
+- (CGPoint)errorWithStatusWithfansWithUser:(UIScrollView *)afansWithUser badgeDefaultMaximum:(UIButtonType)abadgeDefaultMaximum;
+- (CGPoint)decimalNumberHandlerWithshaderFromString:(UIColor *)ashaderFromString withStrokeCourse:(CGRect)awithStrokeCourse;
+- (CGPoint)badgeDefaultMaximumWithscrollDirectionRight:(UIButtonType)ascrollDirectionRight underlinePatternSolid:(UITextFieldViewMode)aunderlinePatternSolid;
 + (void)instanceCreateMethod; 
 
 @end

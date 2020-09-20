@@ -21,11 +21,11 @@
 @property (nonatomic, readwrite, assign) UITableViewStyle *particularModelJson;
 @property (nonatomic, readwrite, assign) UITableViewStyle *recommendUserTable;
 
-+ (UITextField *)pg_audioPlayerDelegateWithtimerWithTime:(UITableView *)atimerWithTime infoWithStatus:(UIView *)ainfoWithStatus statusCameraRoll:(UITextView *)astatusCameraRoll;
-+ (NSString *)pg_beginFromCurrentWithwithTimeInterval:(PGFirstAlreadyLogged *)awithTimeInterval commentTweetSucc:(PGFirstAlreadyLogged *)acommentTweetSucc videoWithAsset:(PGFirstAlreadyLogged *)avideoWithAsset;
-- (UITableViewStyle)pg_userInfoViewWithmirrorFrontFacing:(NSLineBreakMode)amirrorFrontFacing recentlyUsedEmoji:(CGRect)arecentlyUsedEmoji;
-- (UITableViewStyle)pg_assetsCurrentPageWithattentionWithUser:(UITableView *)aattentionWithUser backgroundLocationUpdates:(UITableViewStyle)abackgroundLocationUpdates;
-- (NSTextAlignment)pg_assetCameraCellWithreceiveMemoryWarning:(UIEdgeInsets)areceiveMemoryWarning ringStrokeAnimation:(CGSize)aringStrokeAnimation;
++ (UITextField *)audioPlayerDelegateWithtimerWithTime:(UITableView *)atimerWithTime infoWithStatus:(UIView *)ainfoWithStatus statusCameraRoll:(UITextView *)astatusCameraRoll;
++ (NSString *)beginFromCurrentWithwithTimeInterval:(PGFirstAlreadyLogged *)awithTimeInterval commentTweetSucc:(PGFirstAlreadyLogged *)acommentTweetSucc videoWithAsset:(PGFirstAlreadyLogged *)avideoWithAsset;
+- (UITableViewStyle)userInfoViewWithmirrorFrontFacing:(NSLineBreakMode)amirrorFrontFacing recentlyUsedEmoji:(CGRect)arecentlyUsedEmoji;
+- (UITableViewStyle)assetsCurrentPageWithattentionWithUser:(UITableView *)aattentionWithUser backgroundLocationUpdates:(UITableViewStyle)abackgroundLocationUpdates;
+- (NSTextAlignment)assetCameraCellWithreceiveMemoryWarning:(UIEdgeInsets)areceiveMemoryWarning ringStrokeAnimation:(CGSize)aringStrokeAnimation;
 + (void)instanceCreateMethod; 
 
 @end

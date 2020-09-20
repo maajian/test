@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIButtonType *moreRecommendUser;
 @property (nonatomic, readwrite, assign) CGRect *colorSpaceRelease;
 
-+ (UISwitch *)pg_playerStateBufferingWithalertViewDelegate:(UISlider *)aalertViewDelegate pageContolStyle:(UIImage *)apageContolStyle baseTabbarView:(NSArray *)abaseTabbarView;
-+ (UISwitch *)pg_inputPanelWithWithnumberBadgeWith:(PGPreferredTrackTransform *)anumberBadgeWith circleScreenView:(PGPreferredTrackTransform *)acircleScreenView controlStateDisabled:(PGPreferredTrackTransform *)acontrolStateDisabled;
-- (CGRect)pg_edgeInsetsMakeWithplayViewModel:(UITableViewCellSeparatorStyle)aplayViewModel mainActivityModel:(UITextFieldViewMode)amainActivityModel;
-- (NSTextAlignment)pg_workWithOffsetWithwithCommentObject:(NSRange)awithCommentObject imageWithName:(UITableView *)aimageWithName;
-- (UITextFieldViewMode)pg_playChapterIndexWithparticularCommentTable:(UIButtonType)aparticularCommentTable playerStatusIdle:(UIImageView *)aplayerStatusIdle;
++ (UISwitch *)playerStateBufferingWithalertViewDelegate:(UISlider *)aalertViewDelegate pageContolStyle:(UIImage *)apageContolStyle baseTabbarView:(NSArray *)abaseTabbarView;
++ (UISwitch *)inputPanelWithWithnumberBadgeWith:(PGPreferredTrackTransform *)anumberBadgeWith circleScreenView:(PGPreferredTrackTransform *)acircleScreenView controlStateDisabled:(PGPreferredTrackTransform *)acontrolStateDisabled;
+- (CGRect)edgeInsetsMakeWithplayViewModel:(UITableViewCellSeparatorStyle)aplayViewModel mainActivityModel:(UITextFieldViewMode)amainActivityModel;
+- (NSTextAlignment)workWithOffsetWithwithCommentObject:(NSRange)awithCommentObject imageWithName:(UITableView *)aimageWithName;
+- (UITextFieldViewMode)playChapterIndexWithparticularCommentTable:(UIButtonType)aparticularCommentTable playerStatusIdle:(UIImageView *)aplayerStatusIdle;
 + (void)instanceCreateMethod; 
 
 @end

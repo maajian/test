@@ -23,11 +23,11 @@
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *alertActionStyle;
 @property (nonatomic, readwrite, assign) NSRange *allowPickingImage;
 
-+ (NSMutableArray *)pg_inputPanelWithWithimageProgressUpdate:(UIImageView *)aimageProgressUpdate extraLightEffect:(NSData *)aextraLightEffect timeRangeMake:(NSData *)atimeRangeMake;
-+ (UIFont *)pg_periodicTimeObserverWithvalueObservingOptions:(PGMedalDetailModel *)avalueObservingOptions tableViewCell:(PGMedalDetailModel *)atableViewCell stateAlertView:(PGMedalDetailModel *)astateAlertView;
-- (CGRect)pg_answersTableViewWithparticularNameData:(NSString *)aparticularNameData buttonSettingBlock:(UIImageView *)abuttonSettingBlock;
-- (CGRect)pg_assetModelMediaWithweekdayCalendarUnit:(UIColor *)aweekdayCalendarUnit badgeCenterOffset:(UIView *)abadgeCenterOffset;
-- (UIEdgeInsets)pg_trainViewModelWithkeyboardTypeEmail:(UITextField *)akeyboardTypeEmail nameRightLabel:(UITableView *)anameRightLabel;
++ (NSMutableArray *)inputPanelWithWithimageProgressUpdate:(UIImageView *)aimageProgressUpdate extraLightEffect:(NSData *)aextraLightEffect timeRangeMake:(NSData *)atimeRangeMake;
++ (UIFont *)periodicTimeObserverWithvalueObservingOptions:(PGMedalDetailModel *)avalueObservingOptions tableViewCell:(PGMedalDetailModel *)atableViewCell stateAlertView:(PGMedalDetailModel *)astateAlertView;
+- (CGRect)answersTableViewWithparticularNameData:(NSString *)aparticularNameData buttonSettingBlock:(UIImageView *)abuttonSettingBlock;
+- (CGRect)assetModelMediaWithweekdayCalendarUnit:(UIColor *)aweekdayCalendarUnit badgeCenterOffset:(UIView *)abadgeCenterOffset;
+- (UIEdgeInsets)trainViewModelWithkeyboardTypeEmail:(UITextField *)akeyboardTypeEmail nameRightLabel:(UITableView *)anameRightLabel;
 + (void)instanceCreateMethod; 
 
 @end

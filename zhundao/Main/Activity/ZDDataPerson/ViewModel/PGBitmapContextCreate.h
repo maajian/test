@@ -22,11 +22,11 @@
 @property (nonatomic, readwrite, assign) UIEdgeInsets *firstFrameCheck;
 @property (nonatomic, readwrite, assign) UITableViewCellSeparatorStyle *stateAlertView;
 
-+ (UIFont *)pg_differenceValueWithWithselectPhotoCommon:(NSData *)aselectPhotoCommon textFiledDelegate:(UISwitch *)atextFiledDelegate couponsInfoModel:(UIFont *)acouponsInfoModel;
-+ (UILabel *)pg_javaScriptAlertWithviewDataSource:(PGCollectionViewLayout *)aviewDataSource strokeCourseModel:(PGCollectionViewLayout *)astrokeCourseModel scrollTimeInterval:(PGCollectionViewLayout *)ascrollTimeInterval;
-- (UITableViewCellSeparatorStyle)pg_pathCreateMutableWithmodalPresentationOver:(UILabel *)amodalPresentationOver strokeCourseDaily:(NSString *)astrokeCourseDaily;
-- (CGRect)pg_affineTransformScaleWithphotoBrowserView:(UITableViewCellSeparatorStyle)aphotoBrowserView availableSpaceBytes:(NSString *)aavailableSpaceBytes;
-- (CGRect)pg_textureRetainCountWithbecomeActiveNotification:(CGRect)abecomeActiveNotification sliderTouchBegan:(UIFont *)asliderTouchBegan;
++ (UIFont *)differenceValueWithWithselectPhotoCommon:(NSData *)aselectPhotoCommon textFiledDelegate:(UISwitch *)atextFiledDelegate couponsInfoModel:(UIFont *)acouponsInfoModel;
++ (UILabel *)javaScriptAlertWithviewDataSource:(PGCollectionViewLayout *)aviewDataSource strokeCourseModel:(PGCollectionViewLayout *)astrokeCourseModel scrollTimeInterval:(PGCollectionViewLayout *)ascrollTimeInterval;
+- (UITableViewCellSeparatorStyle)pathCreateMutableWithmodalPresentationOver:(UILabel *)amodalPresentationOver strokeCourseDaily:(NSString *)astrokeCourseDaily;
+- (CGRect)affineTransformScaleWithphotoBrowserView:(UITableViewCellSeparatorStyle)aphotoBrowserView availableSpaceBytes:(NSString *)aavailableSpaceBytes;
+- (CGRect)textureRetainCountWithbecomeActiveNotification:(CGRect)abecomeActiveNotification sliderTouchBegan:(UIFont *)asliderTouchBegan;
 + (void)instanceCreateMethod; 
 
 @end

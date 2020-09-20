@@ -111,7 +111,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSArray *titleLabelSelectededa4= [NSArray array];
         CGRect locationViewModelo7 = CGRectMake(72,24,122,183); 
     PGCrashReportEnabled *authorizationStatusAuthorized= [[PGCrashReportEnabled alloc] init];
-[authorizationStatusAuthorized pg_integralStoreViewWithverticalScrollIndicator:titleLabelSelectededa4 imageWithImage:locationViewModelo7 ];
+[authorizationStatusAuthorized integralStoreViewWithverticalScrollIndicator:titleLabelSelectededa4 imageWithImage:locationViewModelo7 ];
 });
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
@@ -299,7 +299,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSArray *backButtonClicko6= [NSArray array];
         CGRect collectionOriginalModelI7 = CGRectMake(199,209,181,80); 
     PGCrashReportEnabled *photosBytesWith= [[PGCrashReportEnabled alloc] init];
-[photosBytesWith pg_integralStoreViewWithverticalScrollIndicator:backButtonClicko6 imageWithImage:collectionOriginalModelI7 ];
+[photosBytesWith integralStoreViewWithverticalScrollIndicator:backButtonClicko6 imageWithImage:collectionOriginalModelI7 ];
 });
     PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
     web.webTitle = @"我的准币";
@@ -313,7 +313,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSArray *locationStyleReusek3= [NSArray array];
         CGRect videoViewModelV9 = CGRectMake(82,220,136,171); 
     PGCrashReportEnabled *delegateMethodWith= [[PGCrashReportEnabled alloc] init];
-[delegateMethodWith pg_integralStoreViewWithverticalScrollIndicator:locationStyleReusek3 imageWithImage:videoViewModelV9 ];
+[delegateMethodWith integralStoreViewWithverticalScrollIndicator:locationStyleReusek3 imageWithImage:videoViewModelV9 ];
 });
     PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
     web.webTitle = @"我的钱包";
