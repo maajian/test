@@ -6,11 +6,11 @@
 //  Copyright © 2020 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDStatisticsVC : BaseViewController
+@interface ZDStatisticsVC : ZDBaseVC
 @property (nonatomic, strong) ActivityModel *moreModel;
 
 @end

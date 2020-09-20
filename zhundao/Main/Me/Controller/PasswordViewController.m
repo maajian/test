@@ -8,7 +8,7 @@
 
 #import "PasswordViewController.h"
 #import "payTextField.h"
-#import "MyWalletViewController.h"
+#import "ZDMeMyWalletViewController.h"
 
 @interface PasswordViewController ()<payTextFieldDelegate>{
     payTextField *textfView;
@@ -63,7 +63,7 @@
             if ([PS isEqualToString:_password]) {
                 [self changePassword];
             }else{
-                maskLabel *label = [[maskLabel alloc]initWithTitle:@"密码输入不匹配，请重新输入"];
+                ZDMaskLabel *label = [[ZDMaskLabel alloc]initWithTitle:@"密码输入不匹配，请重新输入"];
                 [label labelAnimationWithViewlong:self.view];
                 [self clearData];
             }
@@ -77,20 +77,20 @@
 #pragma mark--- 网络请求
 - (void)changePassword{
     
-    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/SetPassWord?accessKey=%@&newPwd=%@",zhundaoApi,[[SignManager shareManager]getaccseekey],textfView.textf.text];
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerBase/SetPassWord?accessKey=%@&newPwd=%@",zhundaoApi,[[ZDSignManager shareManager]getaccseekey],textfView.textf.text];
+    MBProgressHUD *hud = [ZDMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"请稍候...";
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"]integerValue]==0) {
-            MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"设置成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud1 = [ZDMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"设置成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
             [hud1 hideAnimated:YES afterDelay:1.5];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self.navigationController popToRootViewControllerAnimated:YES];
             });
         }else{
-            maskLabel *label = [[maskLabel alloc]initWithTitle:dic[@"Msg"]];
+            ZDMaskLabel *label = [[ZDMaskLabel alloc]initWithTitle:dic[@"Msg"]];
             [label labelAnimationWithViewlong:self.view];
         }
     } fail:^(NSError *error) {
@@ -99,8 +99,8 @@
 }
 
 - (void)verifyOld :(NSString *)old{
-    NSString *str = [NSString stringWithFormat:@"%@g?accessKey=%@&oldPwd=%@",zhundaoApi,[[SignManager shareManager]getaccseekey],old];
-     MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    NSString *str = [NSString stringWithFormat:@"%@g?accessKey=%@&oldPwd=%@",zhundaoApi,[[ZDSignManager shareManager]getaccseekey],old];
+     MBProgressHUD *hud = [ZDMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"请稍候...";
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
@@ -122,7 +122,7 @@
 #pragma mark --- 其他
 
 - (void)showLabel:(NSString *)str{
-    maskLabel *label = [[maskLabel alloc]initWithTitle:str];
+    ZDMaskLabel *label = [[ZDMaskLabel alloc]initWithTitle:str];
     [label labelAnimationWithViewlong:self.view];
 }
 

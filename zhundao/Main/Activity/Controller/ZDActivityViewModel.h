@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ActivityCell.h"
+//#import "ActivityCell.h"
 
 typedef NS_ENUM(NSInteger, ZDActivityType) {
     ZDActivityTypeAll,

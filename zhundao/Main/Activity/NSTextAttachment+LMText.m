@@ -7,7 +7,7 @@
 //
 
 #import "NSTextAttachment+LMText.h"
-#import "LMParagraphConfig.h"
+#import "ZDParagraphConfig.h"
 #import <objc/runtime.h>
 
 @implementation NSTextAttachment (LMText)

@@ -88,7 +88,7 @@
     };
     
     if (ZD_UserM.isAdmin) {
-        NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
         NSDictionary *dic = @{@"ActivityStatus":@(0),
                               @"pageSize":@"10",
                               @"pageIndex":@(pageIndex)};
@@ -160,7 +160,7 @@
     };
     
     if (ZD_UserM.isAdmin) {
-        NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
         NSDictionary *dic = @{@"ActivityStatus":@(1),
                               @"pageSize":@"10",
                               @"pageIndex":@(pageIndex)};
@@ -232,7 +232,7 @@
     };
     
     if (ZD_UserM.isAdmin) {
-        NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
         NSDictionary *dic = @{@"ActivityStatus":@(2),
                               @"pageSize":@"10",
                               @"pageIndex":@(pageIndex)};
@@ -260,7 +260,7 @@
 
 // 检查是否可以发起活动
 - (void)checkIsCanpost:(ZDBlock_ID)successBlock error:(ZDBlock_Error)errorBlock {
-    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/GetActivityNumCurMonth?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/GetActivityNumCurMonth?accessKey=%@",zhundaoApi,[[ZDSignManager shareManager]getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         successBlock(obj);
     } fail:^(NSError *error) {

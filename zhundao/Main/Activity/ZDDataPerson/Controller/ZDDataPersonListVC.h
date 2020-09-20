@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDDataPersonListVC : BaseViewController
+@interface ZDDataPersonListVC : ZDBaseVC
 @property (nonatomic, assign) NSInteger activityID;
 
 @end

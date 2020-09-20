@@ -8,7 +8,7 @@
 
 #import "ZDMainActivityVC.h"
 
-#import "postActivityViewController.h"
+#import "ZDActivityPostActivityVC.h"
 #import "ZDAllActivityVC.h"
 #import "ZDOnActivityVC.h"
 #import "ZDCloseActivityVC.h"
@@ -249,11 +249,11 @@
                 if ([obj[@"Res"] integerValue] == 0) {
                     [weakSelf gotoPost];
                 } else {
-                    maskLabel *label = [[maskLabel alloc]initWithTitle:@"免费版一个月最多只能发4个活动"];
+                    ZDMaskLabel *label = [[ZDMaskLabel alloc]initWithTitle:@"免费版一个月最多只能发4个活动"];
                     [label  labelAnimationWithViewlong:weakSelf.view];
                 }
             } error:^(NSError *error) {
-                [[SignManager shareManager] showNotHaveNet:weakSelf.view];
+                [[ZDSignManager shareManager] showNotHaveNet:weakSelf.view];
             }];
         } else {
             [self gotoPost];
@@ -274,12 +274,12 @@
 
 #pragma mark --- action
 - (void)gotoPost {
-    postActivityViewController *postVC = [[postActivityViewController alloc]init];
+    ZDActivityPostActivityVC *postVC = [[ZDActivityPostActivityVC alloc]init];
     [self.navigationController pushViewController:postVC animated:YES];
 }
 
 - (void)getEmail {
-    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         if ([obj[@"errcode"] integerValue] == 0) {
             [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];

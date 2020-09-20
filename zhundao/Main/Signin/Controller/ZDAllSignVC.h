@@ -6,11 +6,11 @@
 //  Copyright © 2019 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDAllSignVC : BaseViewController
+@interface ZDAllSignVC : ZDBaseVC
 // 搜索的字符串
 @property (nonatomic, copy) NSString *searchText;
 // 是否搜索中

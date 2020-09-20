@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// 验证码发送
-@interface ZDLoginCodeSendVC : BaseViewController
+@interface ZDLoginCodeSendVC : ZDBaseVC
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import "ZDSignInViewModel.h"
 #import "ZDSignInModel.h"
-#import "signResult.h"
+#import "ZDSignResult.h"
 
 @interface ZDSignInViewModel()
 @property (nonatomic, assign) ZDSignype signType;
@@ -42,7 +42,7 @@
 
 #pragma mark --- network
 - (void)getAllSignListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
-    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
     NSDictionary *dic = @{@"Type":@"0",
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
@@ -84,7 +84,7 @@
     }];
 }
 - (void)getOnSignListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
-    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
     NSDictionary *dic = @{@"Type":@"1",
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
@@ -126,7 +126,7 @@
     }];
 }
 - (void)getCloseSignListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
-    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *listUrl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckIns?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
     NSDictionary *dic = @{@"Type":@"2",
                           @"pageSize":@"10",
                           @"pageIndex":@(pageIndex)};
@@ -170,7 +170,7 @@
 
 - (void)postDataWithSignID:(NSInteger)signID {
     if ([ZD_UserM hasLocalSign:signID]) {
-        [[signResult alloc] postLocalDataWithSignID:signID success:^{
+        [[ZDSignResult alloc] postLocalDataWithSignID:signID success:^{
             
         } fail:nil];
     }

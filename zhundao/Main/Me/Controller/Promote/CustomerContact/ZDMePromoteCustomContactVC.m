@@ -13,7 +13,7 @@
 #import "ZDMePromoteOrderVC.h"
 #import "ZDMePromoteQRCodeVC.h"
 #import "ZDMePromoteNoticeVC.h"
-#import "DetailNoticeViewController.h"
+#import "ZDMeDetailNoticeVC.h"
 
 #import "ZDMePromoteCustomContactCell.h"
 #import "ZDMePromoteCustomContactHeaderView.h"
@@ -81,7 +81,7 @@
     [self.viewModel getPromoteCustomContactSuccess:^{
         [weakSelf.tableView reloadData];
     } failure:^{
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
 - (void)networkForZDBi {
@@ -89,7 +89,7 @@
     [self.viewModel getZDBiSuccess:^{
         [weakSelf.tableView reloadData];
     } failure:^{
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
 - (void)networkForNotice {
@@ -97,7 +97,7 @@
     [self.viewModel getNoticeSuccess:^{
         [weakSelf.tableView reloadData];
     } failure:^{
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
 
@@ -149,7 +149,7 @@
     [self.navigationController pushViewController:notice animated:YES];
 }
 - (void)promoteCustomContactHeaderView:(ZDMePromoteCustomContactHeaderView *)promoteCustomContactHeaderView didTapNotice:(nonnull ZDMePromoteNoticeModel *)model {
-    DetailNoticeViewController *notice = [[DetailNoticeViewController alloc] init];
+    ZDMeDetailNoticeVC *notice = [[ZDMeDetailNoticeVC alloc] init];
     notice.detail = model.Detail;
     notice.detailTitle = model.Title;
     notice.time = model.AddTime;

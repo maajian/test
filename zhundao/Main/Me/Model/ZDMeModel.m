@@ -21,7 +21,7 @@
 + (instancetype)headerModel {
     return [ZDMeModel modelWithImageName:@"" title:@"" type:ZDMeTypeHeader];
 }
-+ (instancetype)noticeModel {
++ (instancetype)ZDMeNoticeModel {
     return [ZDMeModel modelWithImageName:@"通知公告" title:@"通知公告" type:ZDMeTypeNotice];
 }
 + (instancetype)walletModel {
@@ -30,7 +30,7 @@
 + (instancetype)messageModel {
     return [ZDMeModel modelWithImageName:@"短信120" title:@"我的短信" type:ZDMeTypeMessage];
 }
-+ (instancetype)contactModel {
++ (instancetype)ZDMeContactModel {
     return [ZDMeModel modelWithImageName:@"通讯录" title:@"我的通讯录" type:ZDMeTypeContact];
 }
 + (instancetype)questionModel {

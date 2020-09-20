@@ -6,11 +6,11 @@
 //  Copyright © 2018年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDDiscoverCustomApplyVC : BaseViewController
+@interface ZDDiscoverCustomApplyVC : ZDBaseVC
 
 @end
 

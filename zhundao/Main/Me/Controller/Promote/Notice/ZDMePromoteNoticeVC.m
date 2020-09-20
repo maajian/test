@@ -8,7 +8,7 @@
 
 #import "ZDMePromoteNoticeVC.h"
 
-#import "DetailNoticeViewController.h"
+#import "ZDMeDetailNoticeVC.h"
 
 #import "ZDMePromoteNoticeModel.h"
 #import "ZDMePromoteNoticeViewModel.h"
@@ -74,7 +74,7 @@
     [self.viewModel getNoticeSuccess:^{
         [weakSelf.tableView reloadData];
     } failure:^{
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
 
@@ -103,7 +103,7 @@
 #pragma mark --- UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZDMePromoteNoticeModel *model = self.viewModel.dataArray[indexPath.row];
-    DetailNoticeViewController *notice = [[DetailNoticeViewController alloc] init];
+    ZDMeDetailNoticeVC *notice = [[ZDMeDetailNoticeVC alloc] init];
     notice.detail = model.Detail;
     notice.detailTitle = model.Title;
     notice.time = model.AddTime;

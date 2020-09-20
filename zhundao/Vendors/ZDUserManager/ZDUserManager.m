@@ -7,7 +7,7 @@
 //
 
 #import "ZDUserManager.h"
-#import "LoginViewController.h"
+#import "ZDLoginMainVC.h"
 
 @implementation ZDUserManager
 
@@ -72,7 +72,7 @@
     return [[NSUserDefaults standardUserDefaults] boolForKey:ZDUserDefault_IsAdmin];
 }
 - (NSString *)token {
-    return [[SignManager shareManager] getToken];
+    return [[ZDSignManager shareManager] getToken];
 }
 
 // 登录账号
@@ -104,18 +104,18 @@
 /*! 退出登录清空数据 */
 - (void)didLogout
 {
-    if ([[SignManager shareManager].dataBase open])
+    if ([[ZDSignManager shareManager].dataBase open])
     {
         NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
-        [[SignManager shareManager].dataBase executeUpdate:updateSql];
+        [[ZDSignManager shareManager].dataBase executeUpdate:updateSql];
         NSString *updateSql1 = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
-        [[SignManager shareManager].dataBase executeUpdate:updateSql1];
+        [[ZDSignManager shareManager].dataBase executeUpdate:updateSql1];
         NSString *updateSql12 = [NSString stringWithFormat:@"DROP TABLE contact"];
-        [[SignManager shareManager].dataBase executeUpdate:updateSql12];
-        [[SignManager shareManager].dataBase close];
+        [[ZDSignManager shareManager].dataBase executeUpdate:updateSql12];
+        [[ZDSignManager shareManager].dataBase close];
     }
-    LoginViewController *login = [[LoginViewController alloc]init];
-    [UIApplication sharedApplication].delegate.window.rootViewController = [[BaseNavigationViewController alloc] initWithRootViewController:login];
+    ZDLoginMainVC *login = [[ZDLoginMainVC alloc]init];
+    [UIApplication sharedApplication].delegate.window.rootViewController = [[ZDBaseNavVC alloc] initWithRootViewController:login];
 }
 
 @end

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UXg-OB-JeE">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base NavVC-->
+        <scene sceneID="PJK-gQ-kCU">
+            <objects>
+                <navigationController id="UXg-OB-JeE" customClass="ZDBaseNavVC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y86-Dk-g46">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GOR-gb-qU0" kind="relationship" relationship="rootViewController" id="Q2p-TX-jeC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QZv-3e-uAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1111" y="-170"/>
+        </scene>
+        <!--设置-->
+        <scene sceneID="RtV-zI-riM">
+            <objects>
+                <tableViewController storyboardIdentifier="settingStoryboard" hidesBottomBarWhenPushed="YES" id="g1v-XY-LZm" customClass="ZDMeSettingTableViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="设置" id="Og3-Ol-n34"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMo-Iz-mlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="-233"/>
+        </scene>
+        <!--金塔-->
+        <scene sceneID="d6D-lo-o2k">
+            <objects>
+                <viewController id="GOR-gb-qU0" customClass="ZDMeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="STv-4r-gS4"/>
+                        <viewControllerLayoutGuide type="bottom" id="YvO-Ib-WDa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="seT-aT-v2l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="金塔" id="Ozn-kM-C8o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KMb-6G-JtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-402" y="-246"/>
+        </scene>
+    </scenes>
+</document>

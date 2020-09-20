@@ -71,7 +71,7 @@
     [self.viewModel getIncomeSuccess:^{
         [weakSelf.tableView reloadData];
     } failure:^{
-        [[SignManager shareManager] showNotHaveNet:self.view];
+        [[ZDSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
 

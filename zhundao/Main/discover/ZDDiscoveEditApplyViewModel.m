@@ -68,7 +68,7 @@
         }
     }
     
-    NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/updateActivityOption?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/updateActivityOption?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
     NSDictionary *dic = @{@"id" : @(ID),
                           @"title" : title,
                           @"inputType" : @(inputType),
@@ -96,7 +96,7 @@
         }
     }
     
-    NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/addActivityOption?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/addActivityOption?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
     NSDictionary *dic = @{@"title" : title,
                           @"inputType" : @(inputType),
                           @"option" : option,

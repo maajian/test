@@ -6,8 +6,8 @@
 //  Copyright © 2016年 zhundao. All rights reserved.
 //
 
-#import "WebViewController.h"
+#import "ZDWebViewController.h"
 
-@interface SuggestViewController : WebViewController
+@interface SuggestViewController : ZDWebViewController
 
 @end

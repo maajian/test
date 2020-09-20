@@ -8,22 +8,22 @@
 
 #import "ZDOnSignInVC.h"
 
-#import "SaoYiSaoViewController.h"
-#import "LoadAllSignViewController.h"
-#import "NewSignViewController.h"
-#import "xiugaisignViewController.h"
-#import "ResultsViewController.h"
-#import "CodeViewController.h"
-#import "PostEmailViewController.h"
+#import "ZDSaoYiSaoViewController.h"
+#import "ZDSignInLoadAllSignVC.h"
+#import "ZDSignInNewSignVC.h"
+#import "ZDSignInXIugaisignVC.h"
+#import "ZDSignInResultsVC.h"
+#import "ZDAvtivityCodeVC.h"
+#import "ZDActivityPostEmailVC.h"
 
-#import "signinTableViewCell.h"
+#import "ZDSignInSigninCell.h"
 #import "GZActionSheet.h"
 
 #import "ZDSignInViewModel.h"
 
 #import "ZDSignInModel.h"
-#import "LoadallsignModel.h"
-#import "PostSign.h"
+#import "ZDSignInLoadallsignModel.h"
+#import "ZDPostSignManager.h"
 
 @interface ZDOnSignInVC ()<UITableViewDataSource, UITableViewDelegate, signinTableViewCellDelegate> {
     NSInteger _page;
@@ -55,7 +55,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        [_tableView registerNib:[UINib nibWithNibName:@"signinTableViewCell" bundle:nil] forCellReuseIdentifier:@"signid"];
+        [_tableView registerNib:[UINib nibWithNibName:@"ZDSignInSigninCell" bundle:nil] forCellReuseIdentifier:@"signid"];
         _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 5)];
         _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.1)];
         _tableView.backgroundColor = ZDBackgroundColor;
@@ -125,7 +125,7 @@
     return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    signinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"signid"];
+    ZDSignInSigninCell *cell = [tableView dequeueReusableCellWithIdentifier:@"signid"];
     if (self.active) {
         cell.model = self.viewModel.onSearchArray[indexPath.section];
     } else {
@@ -149,7 +149,7 @@
 }
 
 #pragma mark --- signinTableViewCellDelegate
-- (void)signinCell:(signinTableViewCell *)signinCell willShowAlert:(id)sender {
+- (void)signinCell:(ZDSignInSigninCell *)signinCell willShowAlert:(id)sender {
     NSArray *array = @[@"删除签到",@"修改签到",@"微信签到二维码",@"手机号签到二维码",@"导出签到名单"];
     
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
@@ -162,7 +162,7 @@
             [weakSelf deleteSignWithModel:signinCell.model];
         }
         else if (index==2) {
-            xiugaisignViewController *xiugai = [[xiugaisignViewController alloc]init];
+            ZDSignInXIugaisignVC *xiugai = [[ZDSignInXIugaisignVC alloc]init];
             xiugai.activityName = signinCell.model.ActivityName;
             xiugai.acID = signinCell.model.ActivityID;
             xiugai.signID = signinCell.model.ID;
@@ -173,7 +173,7 @@
         }
         // 微信签到二维码
         else if (index==3) {
-            CodeViewController *code = [[CodeViewController alloc]init];
+            ZDAvtivityCodeVC *code = [[ZDAvtivityCodeVC alloc]init];
             NSString *imagestr =   [NSString stringWithFormat:@"%@ck/%li/%li/3",zhundaoH5Api,(long)signinCell.model.ID,(long)signinCell.model.ActivityID];
             code.imagestr = imagestr;
             code.titlestr = signinCell.model.Name;
@@ -184,7 +184,7 @@
         }
         // 手机号签到二维码
         else if(index==4){
-            CodeViewController *code = [[CodeViewController alloc]init];
+            ZDAvtivityCodeVC *code = [[ZDAvtivityCodeVC alloc]init];
             NSString *imagestr =   [NSString stringWithFormat:@"%@ckp/%li/%li/11",zhundaoH5Api,signinCell.model.ID,(long)signinCell.model.ActivityID];
             code.imagestr = imagestr;
             code.titlestr = signinCell.model.Name;
@@ -195,7 +195,7 @@
         }else{
             // 导出签到名单
             {
-                PostEmailViewController *post = [[PostEmailViewController alloc]init];
+                ZDActivityPostEmailVC *post = [[ZDActivityPostEmailVC alloc]init];
                 post.signID = signinCell.model.ID;
                 [self setHidesBottomBarWhenPushed:YES];
                 [self.navigationController pushViewController:post animated:YES];
@@ -206,11 +206,11 @@
     
     [self.view.window addSubview:sheet];
 }
-- (void)signinCell:(signinTableViewCell *)signinCell willTapSwitch:(UISwitch *)signSwicth {
+- (void)signinCell:(ZDSignInSigninCell *)signinCell willTapSwitch:(UISwitch *)signSwicth {
     ZD_WeakSelf
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否改变签到状态" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)signinCell.model.ID];
+        NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",zhundaoApi,[[ZDSignManager shareManager] getaccseekey],(long)signinCell.model.ID];
         
         [ZD_NetWorkM getDataWithMethod:listurl parameters:nil succ:^(NSDictionary *obj) {
             [weakSelf loadNewData];
@@ -223,9 +223,9 @@
     }]];
     [self presentViewController:alert  animated:YES completion:nil];
 }
-- (void)signinCell:(signinTableViewCell *)signinCell willPushList:(id)sender {
+- (void)signinCell:(ZDSignInSigninCell *)signinCell willPushList:(id)sender {
     ZD_WeakSelf
-    LoadAllSignViewController *load = [[LoadAllSignViewController alloc]init];
+    ZDSignInLoadAllSignVC *load = [[ZDSignInLoadAllSignVC alloc]init];
     load.activityID = signinCell.model.ActivityID;
     load.signID = signinCell.model.ID;
     load.signName = signinCell.model.Name;
@@ -252,13 +252,13 @@
 
 #pragma mark --- private
 - (void)deleteSignWithModel:(ZDSignInModel *)model {
-    MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[SignManager shareManager] getToken],(long)model.ID];
+    MBProgressHUD *hud = [ZDMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=iOS",zhundaoApi,[[ZDSignManager shareManager] getToken],(long)model.ID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"dic = %@",dic);
         [hud hideAnimated:YES];
-        MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud1 = [ZDMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
     } fail:^(NSError *error) {

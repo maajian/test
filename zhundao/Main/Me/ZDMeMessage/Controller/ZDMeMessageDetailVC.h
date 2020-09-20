@@ -6,13 +6,13 @@
 //  Copyright © 2020 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 
 #import "ZDMeMessageModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDMeMessageDetailVC : BaseViewController
+@interface ZDMeMessageDetailVC : ZDBaseVC
 @property (nonatomic, strong) ZDMeMessageModel *model;
 
 @end

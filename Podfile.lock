@@ -1,4 +1,5 @@
 PODS:
+  - AAChartKit (5.0.4)
   - AFNetworking (3.2.1):
     - AFNetworking/NSURLSession (= 3.2.1)
     - AFNetworking/Reachability (= 3.2.1)
@@ -29,7 +30,12 @@ PODS:
   - JCore (1.1.7)
   - JPush (3.0.8):
     - JCore (~> 1.1.7)
+  - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
+  - MJRefresh (3.5.0)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
   - SVProgressHUD (2.2.5)
   - UMCCommon (7.1.1)
   - UMCShare/Core (6.9.10):
@@ -47,9 +53,12 @@ PODS:
   - UMCShare/UI (6.9.10):
     - UMCCommon
     - UMCShare/Core
+  - WZLBadge (1.2.6)
   - YYCache (1.0.4)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - AAChartKit
   - AFNetworking
   - AMap2DMap
   - AMapLocation
@@ -58,13 +67,18 @@ DEPENDENCIES:
   - FMDB
   - IQKeyboardManager
   - JPush
+  - Masonry
   - MBProgressHUD
+  - MJRefresh
+  - SDWebImage
   - SVProgressHUD
   - UMCCommon
   - UMCShare/Social/ReducedQQ
   - UMCShare/Social/WeChat
   - UMCShare/UI
+  - WZLBadge
   - YYCache
+  - YYModel
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -75,17 +89,24 @@ SPEC REPOS:
     - JPush
     - YYCache
   trunk:
+    - AAChartKit
     - AFNetworking
     - AMap2DMap
     - AMapFoundation
     - AMapLocation
     - AMapSearch
+    - Masonry
     - MBProgressHUD
+    - MJRefresh
+    - SDWebImage
     - SVProgressHUD
     - UMCCommon
     - UMCShare
+    - WZLBadge
+    - YYModel
 
 SPEC CHECKSUMS:
+  AAChartKit: 0f69007e943e3d751b02e36df8ef5ea4fea668d9
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AMap2DMap: cac76bc057de18a1641f34df6b50bf5bc6b23571
   AMapFoundation: 9ed923193b357ebb30a073e9fe255d3c24054d5a
@@ -96,12 +117,17 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 1df9c0f147af1681cfb2d9977bc30309d45a7e76
   JCore: f7459c81c135281a874a6beafdd321666adcc834
   JPush: 9574d072cc37e93fa293ba69b43ce763c440943a
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
   UMCShare: a4a95fbdd61ecce5b6751d8c9ed9b519e80fcbc9
+  WZLBadge: 9ec779dcfd94c825518b395e8315fccaabff1bfa
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 879bec33ec242fcf127c5910c61489d2ab435b6c
+PODFILE CHECKSUM: 609634e070ad01e80a6a8e4ad27bb0defb73c05a
 
 COCOAPODS: 1.9.1

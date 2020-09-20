@@ -8,7 +8,7 @@
 
 #import "ZDLoginCodeFixVC.h"
 
-#import "MainViewController.h"
+#import "ZDBaseTabbarVC.h"
 
 #import "ZDLoginCodeFixView.h"
 
@@ -70,7 +70,7 @@
             ZD_UserM.isAdmin = [obj[@"data"][@"role"] isEqualToString:@"admin"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf dismissViewControllerAnimated:YES completion:nil];
-                MainViewController *tabbar = [[MainViewController alloc] init];
+                ZDBaseTabbarVC *tabbar = [[ZDBaseTabbarVC alloc] init];
                 [UIApplication sharedApplication].delegate.window.rootViewController= tabbar;
             });
         } else {

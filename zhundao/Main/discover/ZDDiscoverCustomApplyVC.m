@@ -9,7 +9,6 @@
 #import "ZDDiscoverCustomApplyVC.h"
 
 #import "ZDDiscoverEditApplyVC.h"
-#import "ChooseViewController.h"
 
 #import "ZDDiscoverCustomApplyCell.h"
 #import "ZDDiscoverCustomApplyPickerView.h"
@@ -105,7 +104,7 @@ static NSString *cellID = @"ZDDiscoverCustomApplyCell";
 }
 
 - (void)hideOrShowList:(ZDDiscoverCustomApplyModel *)model {
-   MBProgressHUD *hud = [MyHud showWithText:model.hidden ? @"显示中" : @"隐藏中" view:self.view];
+   MBProgressHUD *hud = [ZDMyHud showWithText:model.hidden ? @"显示中" : @"隐藏中" view:self.view];
     [self.viewModel hideOrShowList:!model.hidden ID:model.ID success:^{
         [hud hideAnimated:YES afterDelay:1];
         [self getApplyList];

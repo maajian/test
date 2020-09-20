@@ -19,7 +19,7 @@
 }
 // 获取合伙人主页统计数据
 - (void)getPromoteCustomContactSuccess:(ZDBlock_Void)success failure:(ZDBlock_Void)failure {
-    NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getPartnerHomeData?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getPartnerHomeData?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         ZDMePromoteCustomContactModel *incomeModel = [ZDMePromoteCustomContactModel incomeModelWithDic:obj[@"data"]];
         ZDMePromoteCustomContactModel *userNumberModel = [ZDMePromoteCustomContactModel userNumberModelWithDic:obj[@"data"]];
@@ -33,7 +33,7 @@
     }];
 }
 - (void)getZDBiSuccess:(ZDBlock_Void)success failure:(ZDBlock_Void)failure {
-    NSString *url = [NSString stringWithFormat:@"%@api/v2/user/getUserCoin?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/user/getUserCoin?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         if ([obj[@"res"] boolValue]) {
             _zhundaoBi = ZD_SafeIntValue(obj[@"data"][@"Balance"]);
@@ -46,7 +46,7 @@
     }];
 }
 - (void)getNoticeSuccess:(ZDBlock_Void)success failure:(ZDBlock_Void)failure {
-    NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getPartnerNotice?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getPartnerNotice?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
     NSDictionary *params = @{@"pageSize": @(3), @"pageIndex": @(1)};
     [ZD_NetWorkM postDataWithMethod:url parameters:params succ:^(NSDictionary *obj) {
         for (NSDictionary *dic in obj[@"data"]) {

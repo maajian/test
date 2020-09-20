@@ -8,21 +8,21 @@
 
 #import "ZDMessageCustomVC.h"
 
-#import "MessageContentCell.h"
+#import "ZDActivityMessageContentCell.h"
 
-#import "MessageContentViewModel.h"
+#import "ZDActivityMessageContentViewModel.h"
 
-#import "MessageContentModel.h"
+#import "ZDActivityMessageContentModel.h"
 
 @interface ZDMessageCustomVC ()<UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic,strong)UITableView *tableView;
 
-@property(nonatomic,strong)MessageContentViewModel *viewModel;
+@property(nonatomic,strong)ZDActivityMessageContentViewModel *viewModel;
 
 @end
 
-static NSString *cellID = @"MessageContentCell";
+static NSString *cellID = @"ZDActivityMessageContentCell";
 
 @implementation ZDMessageCustomVC
 
@@ -41,7 +41,7 @@ static NSString *cellID = @"MessageContentCell";
 
 #pragma mark --- init
 - (void)initSet {
-     _viewModel = [[MessageContentViewModel alloc]init];
+     _viewModel = [[ZDActivityMessageContentViewModel alloc]init];
     [self.view addSubview:self.tableView];
 }
 
@@ -53,7 +53,7 @@ static NSString *cellID = @"MessageContentCell";
         [weakSelf.tableView.mj_header endRefreshing];
     } failure:^(NSString *error) {
         [weakSelf.tableView.mj_header endRefreshing];
-        [[SignManager shareManager]showNotHaveNet:weakSelf.view];
+        [[ZDSignManager shareManager]showNotHaveNet:weakSelf.view];
     }];
 }
 
@@ -65,7 +65,7 @@ static NSString *cellID = @"MessageContentCell";
         _tableView.delegate =self;
         _tableView.dataSource =self;
         _tableView.backgroundColor = ZDBackgroundColor;
-        [_tableView registerClass:[MessageContentCell class] forCellReuseIdentifier:@"MessageContentCell"];
+        [_tableView registerClass:[ZDActivityMessageContentCell class] forCellReuseIdentifier:@"ZDActivityMessageContentCell"];
         _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.1)];
         _tableView.tableFooterView = [[UIView alloc]init];
         _tableView.layer.borderWidth = 1;
@@ -82,7 +82,7 @@ static NSString *cellID = @"MessageContentCell";
     return self.viewModel.customArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MessageContentCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    ZDActivityMessageContentCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     cell.model = self.viewModel.customArray[indexPath.row];
     return cell;
 }
@@ -98,7 +98,7 @@ static NSString *cellID = @"MessageContentCell";
     return [self.viewModel.customHeightArray[indexPath.row] integerValue];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    MessageContentModel *model = self.viewModel.customArray[indexPath.row];
+    ZDActivityMessageContentModel *model = self.viewModel.customArray[indexPath.row];
     if (model.messageStatusType != ZDMessageStatusTypeSuccess) {
         return;
     }
@@ -108,12 +108,12 @@ static NSString *cellID = @"MessageContentCell";
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
     __weak typeof(self) weakSelf = self;
-    MessageContentModel *model = self.viewModel.customArray[indexPath.row];
+    ZDActivityMessageContentModel *model = self.viewModel.customArray[indexPath.row];
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         [_viewModel deleteContent:model.ID esid:_es_id successBlock:^(id responseObject) {
             [weakSelf getCustomContent];
         } error:^(NSError *error) {
-            [[SignManager shareManager] showNotHaveNet:weakSelf.view];
+            [[ZDSignManager shareManager] showNotHaveNet:weakSelf.view];
         }];
     }];
     

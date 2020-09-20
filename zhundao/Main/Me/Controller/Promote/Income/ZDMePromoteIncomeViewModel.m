@@ -18,7 +18,7 @@
 }
 
 - (void)getIncomeSuccess:(ZDBlock_Void)success failure:(ZDBlock_Void)failure {
-    NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getPartnerLogCoinList?token=%@", zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getPartnerLogCoinList?token=%@", zhundaoApi,[[ZDSignManager shareManager] getToken]];
     NSDictionary *params = @{@"pageSize": @(10000), @"pageIndex": @(1)};
     [ZD_NetWorkM postDataWithMethod:url parameters:params succ:^(NSDictionary *obj) {
         for (NSDictionary *dic in obj[@"data"]) {

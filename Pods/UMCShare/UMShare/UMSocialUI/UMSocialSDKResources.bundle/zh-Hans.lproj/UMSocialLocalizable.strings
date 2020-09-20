@@ -94,7 +94,7 @@
 "commentEdit_post_fail" = "评论失败";
 "commentEdit_post_success" = "评论成功";
 "commentEdit_noLocation_title" = "定位服务未开启";
-"commentEdit_noLocation_message" = "您当前的定位服务处于关闭状态，或者没有对此应用开启地理位置服务，请先前往系统设置中开启本应用的定位服务，再进行分享";
+"comZDMentEdit_noLocation_message" = "您当前的定位服务处于关闭状态，或者没有对此应用开启地理位置服务，请先前往系统设置中开启本应用的定位服务，再进行分享";
 "commentEdit_title" = "新评论";
 "commentEdit_wait" = "评论发送中，请稍等...";
 

@@ -57,7 +57,7 @@
 
 #pragma mark --- Action
 - (void)shareWechat:(UIImage *)image {
-    [[SignManager shareManager] shareWithTitle:@"准到会员注册" detailTitle:@"新用户可享优惠" thumImage:[UIImage imageNamed:@"120"] webpageUrl:self.urlString withCTR:self Withtype:5];
+    [[ZDSignManager shareManager] shareWithTitle:@"准到会员注册" detailTitle:@"新用户可享优惠" thumImage:[UIImage imageNamed:@"120"] webpageUrl:self.urlString withCTR:self Withtype:5];
 }
 - (void)saveImageWithFrame:(UIImage *)image   //保存到相册
 {
@@ -65,11 +65,11 @@
 }
 - (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
 {
-    maskLabel *label ;
+    ZDMaskLabel *label ;
     if (error) {
-        label = [[maskLabel alloc]initWithTitle:@"请前往隐私-照片打开相机权限"];
+        label = [[ZDMaskLabel alloc]initWithTitle:@"请前往隐私-照片打开相机权限"];
     } else {
-        label = [[maskLabel alloc]initWithTitle:@"已保存到系统相册"];
+        label = [[ZDMaskLabel alloc]initWithTitle:@"已保存到系统相册"];
     }
     [label labelAnimationWithViewlong:self.view];
 }

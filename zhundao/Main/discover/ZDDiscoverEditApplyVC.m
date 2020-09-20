@@ -8,12 +8,12 @@
 
 #import "ZDDiscoverEditApplyVC.h"
 
-#import "UpDataViewController.h"
+#import "ZDSignInUpDataVC.h"
 
 #import "ZDDiscoveEditApplyCell.h"
 #import "ZDDiscoveEditApplyHeaderView.h"
 #import "ZDDiscoveEditApplyFooterView.h"
-#import "AJAlertSheet.h"
+#import "ZDAlertSheet.h"
 
 #import "ZDDiscoverCustomApplyModel.h"
 #import "ZDDiscoveEditApplyViewModel.h"
@@ -153,7 +153,7 @@ static NSString *cellID = @"ZDDiscoveEditApplyCell";
 - (void)headerView:(ZDDiscoveEditApplyHeaderView *)headerView didChangeType:(UILabel *)typeLabel {
     [self.view endEditing:YES];
     __weak typeof(self) weakSelf = self;
-    AJAlertSheet *sheet = [[AJAlertSheet alloc] initWithFrame:[UIScreen mainScreen].bounds array:self.viewModel.typeArray title:@"请选择报名类型" isDelete:NO selectBlock:^(NSInteger index) {
+    ZDAlertSheet *sheet = [[ZDAlertSheet alloc] initWithFrame:[UIScreen mainScreen].bounds array:self.viewModel.typeArray title:@"请选择报名类型" isDelete:NO selectBlock:^(NSInteger index) {
         weakSelf.model.typeStr = self.viewModel.typeArray[index];
         weakSelf.model.customType = index;
         weakSelf.title = weakSelf.model.typeStr ;
@@ -171,17 +171,17 @@ static NSString *cellID = @"ZDDiscoveEditApplyCell";
     __weak typeof(self) weakSelf = self;
     NSString *title = self.headerView.titleTF.text;
     if ([[title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
-        maskLabel *label = [[maskLabel alloc] initWithTitle:@"项目名称不能为空"];
+        ZDMaskLabel *label = [[ZDMaskLabel alloc] initWithTitle:@"项目名称不能为空"];
         [label labelAnimationWithViewlong:self.view];
     } else if (self.model.customType == ZDCustomTypeOneText && title.length > 50) {
-        maskLabel *label = [[maskLabel alloc] initWithTitle:@"单文本字数不能超出50"];
+        ZDMaskLabel *label = [[ZDMaskLabel alloc] initWithTitle:@"单文本字数不能超出50"];
         [label labelAnimationWithViewlong:self.view];
     } else {
         __block BOOL isContinue = YES;
         [weakSelf.viewModel.dataArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if (![obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length) {
                 isContinue = NO;
-                maskLabel *label = [[maskLabel alloc] initWithTitle:@"选项不能为空"];
+                ZDMaskLabel *label = [[ZDMaskLabel alloc] initWithTitle:@"选项不能为空"];
                 [label labelAnimationWithViewlong:weakSelf.view];
                 *stop = YES;
             }
@@ -201,7 +201,7 @@ static NSString *cellID = @"ZDDiscoveEditApplyCell";
                 } else if ([obj[@"errcode"] integerValue] == 100 || [obj[@"errcode"] integerValue] == 200) {
                     [self showAlertWithTitle:obj[@"errmsg"]];
                 } else {
-                    maskLabel *label = [[maskLabel alloc] initWithTitle:obj[@"errmsg"]];
+                    ZDMaskLabel *label = [[ZDMaskLabel alloc] initWithTitle:obj[@"errmsg"]];
                     [label labelAnimationWithViewlong:weakSelf.view];
                 }
             } failure:^(NSString * _Nonnull error) {
@@ -216,10 +216,10 @@ static NSString *cellID = @"ZDDiscoveEditApplyCell";
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        UpDataViewController *updata = [[UpDataViewController alloc]init];
+        ZDSignInUpDataVC *updata = [[ZDSignInUpDataVC alloc]init];
         updata.isPresent = YES;
-        updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[SignManager shareManager] getaccseekey]];
-        BaseNavigationViewController *nav = [[BaseNavigationViewController alloc] initWithRootViewController:updata];
+        updata.urlString = [NSString stringWithFormat:@"%@Activity/Upgraded?accesskey=%@",zhundaoH5Api,[[ZDSignManager shareManager] getaccseekey]];
+        ZDBaseNavVC *nav = [[ZDBaseNavVC alloc] initWithRootViewController:updata];
         [self presentViewController:nav animated:YES completion:nil];
     }]];
     [self presentViewController:alert animated:YES completion:nil];

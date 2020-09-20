@@ -6,12 +6,12 @@
 //  Copyright © 2018年 zhundao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ZDBaseVC.h"
 #import "ZDDiscoverCustomApplyModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDDiscoverEditApplyVC : BaseViewController
+@interface ZDDiscoverEditApplyVC : ZDBaseVC
 // 修改时
 @property (nonatomic, strong) ZDDiscoverCustomApplyModel *model;
 

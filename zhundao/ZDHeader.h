@@ -9,7 +9,7 @@
 #ifndef ZDHeader_h
 #define ZDHeader_h
 
-#import "BaseNavigationViewController.h"
+#import "ZDBaseNavVC.h"
 #import "ZDMacro.h"
 
 #import "MBProgressHUD.h"
@@ -18,20 +18,20 @@
 #import "UIImageView+WebCache.h"
 #import "AFNetworking.h"
 #import "IQKeyboardManager.h"
-#import "SignManager.h"
+#import "ZDSignManager.h"
 #import "ZDIndicatorView.h"
 #import "ZDCache.h"
 #import "FMDB.h"
-#import "AFmanager.h"
+#import "ZDAFmanager.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
 #import <UMCommon/UMCommon.h>
-#import "DBManager.h"
+#import "ZDDBManager.h"
 #import "UIButton+UIButton_RightNav.h"
 #import "AAGlobalMacro.h"
-#import "ZDWebViewController.h"
+#import "ZDBaseWebViewVC.h"
 #import "WZLBadgeImport.h"
-#import "AJAlertSheet.h"
+#import "ZDAlertSheet.h"
 #import "ZDAlertView.h"
 
 #import "ZDRefreshNormalFooter.h"

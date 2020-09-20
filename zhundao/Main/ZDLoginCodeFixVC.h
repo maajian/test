@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// 验证码填写
-@interface ZDLoginCodeFixVC : BaseViewController
+@interface ZDLoginCodeFixVC : ZDBaseVC
 @property (nonatomic, strong) NSString *phoneStr;
 
 @end

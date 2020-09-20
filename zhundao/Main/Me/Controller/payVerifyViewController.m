@@ -126,7 +126,7 @@
             [self.navigationController pushViewController:pass animated:YES];
         }
         else{
-            maskLabel *label = [[maskLabel alloc]initWithTitle:dic[@"errmsg"]];
+            ZDMaskLabel *label = [[ZDMaskLabel alloc]initWithTitle:dic[@"errmsg"]];
             [label labelAnimationWithViewlong:self.view];
         }
     } fail:^(NSError *error) {

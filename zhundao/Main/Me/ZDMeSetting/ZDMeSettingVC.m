@@ -99,7 +99,7 @@
     ZDMeSettingModel *model = self.dataSource[indexPath.section][indexPath.row];
     switch (model.type) {
         case ZDMeSettingTypeAbout: {
-            ZDWebViewController *web = [[ZDWebViewController alloc] init];
+            ZDBaseWebViewVC *web = [[ZDBaseWebViewVC alloc] init];
             web.webTitle = @"关于";
             web.isClose = YES;
             web.urlString = @"https://jinta.zhundao.net";
@@ -111,14 +111,14 @@
             break;
         }
         case ZDMeSettingTypeUserProtocol: {
-            ZDWebViewController *web = [[ZDWebViewController alloc] init];
+            ZDBaseWebViewVC *web = [[ZDBaseWebViewVC alloc] init];
             web.webTitle = @"准到服务协议";
             web.urlString = @"https://www.zhundao.net/service/help/detail/206";
             [self.navigationController pushViewController:web animated:YES];
             break;
         }
         case ZDMeSettingTypePrivacyProtect: {
-            ZDWebViewController *web = [[ZDWebViewController alloc] init];
+            ZDBaseWebViewVC *web = [[ZDBaseWebViewVC alloc] init];
             web.urlString = @"https://www.zhundao.net/service/help/detail/207";
             web.webTitle = @"准到隐私政策";
             [self.navigationController pushViewController:web animated:YES];
@@ -153,7 +153,7 @@
      
      UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
          
-          NSString *postStr = [NSString stringWithFormat:@"%@api/v2/user/updatePassWord?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+          NSString *postStr = [NSString stringWithFormat:@"%@api/v2/user/updatePassWord?token=%@",zhundaoApi,[[ZDSignManager shareManager] getToken]];
          NSDictionary *parameter = @{@"newPassWord" : alert.textFields.firstObject.text};
          if (alert.textFields.firstObject.text.length<6) {
              UIAlertController *lessAlert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入六位以上字符作为密码" preferredStyle:UIAlertControllerStyleAlert];
@@ -170,7 +170,7 @@
              [ZD_NetWorkM postDataWithMethod:postStr parameters:parameter succ:^(NSDictionary *obj) {
                  [hud hideAnimated:YES];
                  
-                 maskLabel *label = [[maskLabel alloc] initWithTitle:@"修改成功,请重新登录"];
+                 ZDMaskLabel *label = [[ZDMaskLabel alloc] initWithTitle:@"修改成功,请重新登录"];
                  [label labelAnimationWithViewlong:self.view];
                  
                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

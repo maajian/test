@@ -32,10 +32,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) ZDMeType type;
 
 + (instancetype)headerModel;
-+ (instancetype)noticeModel;
++ (instancetype)ZDMeNoticeModel;
 + (instancetype)walletModel;
 + (instancetype)messageModel;
-+ (instancetype)contactModel;
++ (instancetype)ZDMeContactModel;
 + (instancetype)questionModel;
 + (instancetype)honorModel;
 + (instancetype)zhundaobiModel;

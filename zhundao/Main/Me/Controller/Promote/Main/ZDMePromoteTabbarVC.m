@@ -8,7 +8,7 @@
 
 #import "ZDMePromoteTabbarVC.h"
 
-#import "BaseNavigationViewController.h"
+#import "ZDBaseNavVC.h"
 #import "ZDMePromoteCustomContactVC.h"
 #import "ZDMePromoteShareVC.h"
 
@@ -35,8 +35,8 @@
 
 #pragma mark --- custom
 - (void)createSubControllers {
-    BaseNavigationViewController *mainVC = [[BaseNavigationViewController alloc] initWithRootViewController:[ZDMePromoteCustomContactVC new]];
-    BaseNavigationViewController *shareVC = [[BaseNavigationViewController alloc] initWithRootViewController:[ZDMePromoteShareVC new]];
+    ZDBaseNavVC *mainVC = [[ZDBaseNavVC alloc] initWithRootViewController:[ZDMePromoteCustomContactVC new]];
+    ZDBaseNavVC *shareVC = [[ZDBaseNavVC alloc] initWithRootViewController:[ZDMePromoteShareVC new]];
     self.viewControllers = @[mainVC, shareVC];
     [self addCustomTabbar];
 }

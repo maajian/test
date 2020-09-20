@@ -8,9 +8,9 @@
 
 #import "ZDOnActivityVC.h"
 
-#import "moreModalViewController.h"
-#import "ListViewController.h"
-#import "oneActivityViewController.h"
+#import "ZDAvtivityMoreModalVC.h"
+#import "ZDActivityListVC.h"
+#import "ZDAvtivityOneActivityVC.h"
 
 #import "ZDActivityCell.h"
 
@@ -144,14 +144,14 @@ static NSString *cellID = @"ActivityCellID";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (ZD_UserM.isAdmin) {
         ZDActivityCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        ZDWebViewController *web = [[ZDWebViewController alloc] init];
+        ZDBaseWebViewVC *web = [[ZDBaseWebViewVC alloc] init];
         web.isClose = YES;
         web.webTitle = @"活动详情";
         web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)cell.model.ID];
         [self.navigationController pushViewController:web animated:YES];
     } else {
         ZDActivityCell *activityCell = [tableView cellForRowAtIndexPath:indexPath];
-        moreModalViewController *modal = [[moreModalViewController alloc]init];
+        ZDAvtivityMoreModalVC *modal = [[ZDAvtivityMoreModalVC alloc]init];
         modal.moreModel = activityCell.model;
         [self.navigationController pushViewController:modal animated:YES];
         ZD_WeakSelf
@@ -171,7 +171,7 @@ static NSString *cellID = @"ActivityCellID";
     if (activityCell.model.HasJoinNum==0) {
         [ZDAlertView alertWithTitle:@"暂无人参加,请下拉刷新数据" message:nil cancelBlock:nil];
     } else {
-        ListViewController *list = [[ListViewController alloc]init];
+        ZDActivityListVC *list = [[ZDActivityListVC alloc]init];
         list.listID = activityCell.model.ID;
         list.feeArray = [activityCell.model.ActivityFees copy];
         list.userInfo = activityCell.model.UserInfo;
@@ -184,18 +184,18 @@ static NSString *cellID = @"ActivityCellID";
 }
 // 签到
 - (void)activityCell:(ZDActivityCell *)activityCell didTapSignButton:(UIButton *)button {
-    oneActivityViewController *one = [[oneActivityViewController alloc]init];
+    ZDAvtivityOneActivityVC *one = [[ZDAvtivityOneActivityVC alloc]init];
     one.acID = activityCell.model.ID;
     one.activityName = activityCell.model.Title;
     [self.navigationController pushViewController:one animated:YES];
 }
 // 分享
 - (void)activityCell:(ZDActivityCell *)activityCell didTapShareButton:(UIButton *)button {
-    [[SignManager shareManager]shareImagewithModel:activityCell.model withCTR:self Withtype:5 withImage:nil];
+    [[ZDSignManager shareManager]shareImagewithModel:activityCell.model withCTR:self Withtype:5 withImage:nil];
 }
 // 更多点击
 - (void)activityCell:(ZDActivityCell *)activityCell didTapMoreButton:(UIButton *)button {
-    moreModalViewController *modal = [[moreModalViewController alloc]init];
+    ZDAvtivityMoreModalVC *modal = [[ZDAvtivityMoreModalVC alloc]init];
     modal.moreModel = activityCell.model;
     [self.navigationController pushViewController:modal animated:YES];
     ZD_WeakSelf

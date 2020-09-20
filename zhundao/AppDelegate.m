@@ -7,13 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "BaseNavigationViewController.h"
-#import "MainViewController.h"
-#import "LoginViewController.h"
-#import "SendViewController.h"
+#import "ZDBaseNavVC.h"
+#import "ZDBaseTabbarVC.h"
+#import "ZDLoginMainVC.h"
+#import "ZDloginSendVC.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "JPUSHService.h"
-#import "loginViewModel.h"
+#import "ZDloginMainViewModel.h"
 #import <UMCommon/UMCommon.h>
 #import <UMShare/UMShare.h>
 #import "WXApi.h"
@@ -41,7 +41,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    LoginViewController *login = [[LoginViewController alloc]init];
+    ZDLoginMainVC *login = [[ZDLoginMainVC alloc]init];
     NSString  *Unionid = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
     NSString *access = [[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
     NSString *mobile = [[NSUserDefaults standardUserDefaults]objectForKey:@"mobile"];
@@ -61,7 +61,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105950214"/*设置QQ平台的appID*/  appSecret:@"GAFeY0k6OGdPe1nb" redirectURL:@"http://mobile.umeng.com/social"];
     [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://app.zhundao.net/jttj/",
                                                         @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
-
+ 
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */
@@ -74,17 +74,17 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     
     //是否登录
     if (Unionid==nil&&access==nil) {
-        self.window.rootViewController = [[BaseNavigationViewController alloc] initWithRootViewController:login];;
+        self.window.rootViewController = [[ZDBaseNavVC alloc] initWithRootViewController:login];;
     }
     if (access) {
-        MainViewController *tabbar = [[MainViewController alloc]init];
+        ZDBaseTabbarVC *tabbar = [[ZDBaseTabbarVC alloc]init];
         self.window.rootViewController = tabbar;
     }
     if (Unionid&&[mobile isEqualToString:@"<null>"]) {
-        self.window.rootViewController = [[BaseNavigationViewController alloc] initWithRootViewController:login];
+        self.window.rootViewController = [[ZDBaseNavVC alloc] initWithRootViewController:login];
     }
     if (Unionid&&![mobile isEqualToString:@"<null>"]) {
-        MainViewController *tabbar = [[MainViewController alloc]init];
+        ZDBaseTabbarVC *tabbar = [[ZDBaseTabbarVC alloc]init];
         self.window.rootViewController = tabbar;
     }
     
@@ -107,16 +107,16 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 {
     NSInteger version = [[NSUserDefaults standardUserDefaults] integerForKey:kdbManagerVersion];
     if (version != 1) {
-        [[SignManager shareManager] createDatabase];
-        if ([[SignManager shareManager].dataBase open])
+        [[ZDSignManager shareManager] createDatabase];
+        if ([[ZDSignManager shareManager].dataBase open])
         {
             NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];
-            [[SignManager shareManager].dataBase executeUpdate:updateSql];
+            [[ZDSignManager shareManager].dataBase executeUpdate:updateSql];
             NSString *updateSql1 = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
-            [[SignManager shareManager].dataBase executeUpdate:updateSql1];
+            [[ZDSignManager shareManager].dataBase executeUpdate:updateSql1];
             NSString *updateSql12 = [NSString stringWithFormat:@"DROP TABLE contact"];
-            [[SignManager shareManager].dataBase executeUpdate:updateSql12];
-            [[SignManager shareManager].dataBase close];
+            [[ZDSignManager shareManager].dataBase executeUpdate:updateSql12];
+            [[ZDSignManager shareManager].dataBase close];
         }
         [self saveDBVersion];
     }
@@ -259,7 +259,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             [[NSUserDefaults standardUserDefaults]synchronize];
             ZD_UserM.isAdmin = [obj[@"data"][@"role"] isEqualToString:@"admin"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                MainViewController *tabbar = [[MainViewController alloc] init];
+                ZDBaseTabbarVC *tabbar = [[ZDBaseTabbarVC alloc] init];
                 [UIApplication sharedApplication].delegate.window.rootViewController= tabbar;
             });
         } else {
