@@ -11,9 +11,10 @@
             <connections>
                 <outlet property="appImageView" destination="t64-di-jlc" id="BUl-9L-all"/>
                 <outlet property="codeButton" destination="Wfq-D9-KhJ" id="qC3-kF-D0A"/>
-                <outlet property="loginButton" destination="Rxw-Fk-VQE" id="yh7-xP-KTu"/>
+                <outlet property="loginButton" destination="Rxw-Fk-VQE" id="IQp-qm-Jal"/>
                 <outlet property="tryButton" destination="NeD-wq-Dac" id="E88-b2-4Or"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wehcatButton" destination="5CN-eF-nys" id="FSW-tP-dZ1"/>
                 <outlet property="weixinlabel" destination="Jnu-MR-lhk" id="L7Q-PC-L6N"/>
             </connections>
         </placeholder>

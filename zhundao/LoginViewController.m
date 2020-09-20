@@ -33,6 +33,7 @@
     NSString *AccessKey1;
     NSDictionary *responseObjectdic;
 }
+@property (weak, nonatomic) IBOutlet UIButton *wehcatButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 //@property (copy, nonatomic) void (^requestForUserInfoBlock)();
 @property(nonatomic,strong)UITextField *phoneTextLabel;
@@ -203,16 +204,16 @@
     [_codeButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
     [_tryButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
     [_tryButton addTarget:self action:@selector(tryAction:) forControlEvents:UIControlEventTouchUpInside];
-    [_loginButton setBackgroundColor:ZDBlackColor3];
-//     if ([WXApi isWXAppInstalled])
-//     {
-//         _loginButton.hidden  = NO;
-//         _weixinlabel.hidden = NO;
-//     }
-//     else{
-//         _loginButton.hidden  = YES;
-//         _weixinlabel.hidden = YES;
-//     }
+    [_loginButton setBackgroundColor:ZDMainColor];
+     if ([WXApi isWXAppInstalled])
+     {
+         _wehcatButton.hidden  = NO;
+         _weixinlabel.hidden = NO;
+     }
+     else{
+         _wehcatButton.hidden  = YES;
+         _weixinlabel.hidden = YES;
+     }
 }
 -(UITextField *)lockTextLabel
 {
