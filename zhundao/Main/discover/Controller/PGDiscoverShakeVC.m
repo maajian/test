@@ -91,10 +91,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
                                                         NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
                                                         dispatch_async(dispatch_get_main_queue(), ^{
                                                             PGAvtivityCodeVC *code = [[PGAvtivityCodeVC alloc]init];
-                                                            NSString *imagestr =   result;
+                                                            NSString *imagestr =   [result stringByReplacingOccurrencesOfString:@"\"" withString:@""];
                                                                     code.imagestr = imagestr;
                                                                     code.titlestr = @"小程序二维码";
                                                                     code.hideLabel = NO;
+                                                            code.ossImage = YES;
                                                                     [self presentViewController:code animated:YES completion:nil];
                                                         });
                                                     }

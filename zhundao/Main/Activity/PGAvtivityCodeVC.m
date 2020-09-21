@@ -39,7 +39,11 @@
     imageView = [[UIImageView alloc] init];
     imageView.center = CGPointMake(self.view.center.x, self.view.center.y);
     imageView.bounds = CGRectMake(0, 0, size.width, size.height);
-    imageView.image = image1;
+    if (self.ossImage) {
+        [imageView sd_setImageWithURL:[NSURL URLWithString:_imagestr]];
+    } else {
+        imageView.image = image1;
+    }
     [self.view addSubview: imageView];
     CGFloat imageViewMinX =CGRectGetMinX(imageView.frame);
      CGFloat imageViewMaxY =CGRectGetMaxY(imageView.frame);
