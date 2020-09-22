@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,7 +38,7 @@
                                 <constraint firstAttribute="height" constant="40" id="4lR-eX-NRt"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="报名凭证" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wao-2p-0pK">
@@ -71,7 +71,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="扫一扫.png" translatesAutoresizingMaskIntoConstraints="NO" id="9KJ-hH-z66">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_scan_code" translatesAutoresizingMaskIntoConstraints="NO" id="9KJ-hH-z66">
                             <rect key="frame" x="325" y="75" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="4Gp-tw-aI7"/>
@@ -85,14 +85,14 @@
                                 <constraint firstAttribute="width" constant="20" id="xWo-4c-ff6"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="操作人.png" translatesAutoresizingMaskIntoConstraints="NO" id="F2h-MF-OKl">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_operation_people" translatesAutoresizingMaskIntoConstraints="NO" id="F2h-MF-OKl">
                             <rect key="frame" x="157.5" y="125" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="20" id="7Vp-qZ-Pln"/>
                                 <constraint firstAttribute="height" constant="20" id="YFx-Ge-Bbj"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Device-state.png" translatesAutoresizingMaskIntoConstraints="NO" id="n0l-cQ-dTt">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_device_state" translatesAutoresizingMaskIntoConstraints="NO" id="n0l-cQ-dTt">
                             <rect key="frame" x="290" y="125" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="Vqb-UC-oik"/>
@@ -145,14 +145,17 @@
                 <constraint firstItem="1hK-gN-O0R" firstAttribute="top" secondItem="YQ5-E1-Sbg" secondAttribute="top" id="rfb-k9-sGE"/>
                 <constraint firstAttribute="trailing" secondItem="1hK-gN-O0R" secondAttribute="trailing" id="y0N-JH-RRt"/>
             </constraints>
-            <point key="canvasLocation" x="639" y="-1448"/>
+            <point key="canvasLocation" x="637.60000000000002" y="-1448.7256371814094"/>
         </view>
     </objects>
     <resources>
-        <image name="Device-state.png" width="200" height="200"/>
         <image name="banner.png" width="432" height="192.60000610351562"/>
+        <image name="img_public_device_state" width="200" height="200"/>
+        <image name="img_public_operation_people" width="72" height="72"/>
+        <image name="img_public_scan_code" width="200" height="200"/>
         <image name="位置.png" width="200" height="200"/>
-        <image name="扫一扫.png" width="200" height="200"/>
-        <image name="操作人.png" width="43.200000762939453" height="43.200000762939453"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

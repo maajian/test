@@ -195,7 +195,7 @@
             [view addSubview:imageView];
         } else {
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (view.bounds.size.height - 7) / 2-3, 10, 10)];
-            imageView.image = [UIImage imageNamed:@"bottomTriangle"];
+            imageView.image = [UIImage imageNamed:@"img_public_bottomTriangle"];
             [view addSubview:imageView];
         }
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gesTap:)];

@@ -276,7 +276,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [hud hideAnimated:YES];
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
         if ([dic[@"Res"]integerValue ]==0) {
-            MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"充值成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"充值成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
             [hud1 hideAnimated:YES afterDelay:1.5];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self.navigationController popViewControllerAnimated:YES];

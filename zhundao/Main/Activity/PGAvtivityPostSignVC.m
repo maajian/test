@@ -138,7 +138,7 @@
         label4.tag = 1;
         
         chooseImage  = [[UIImageView alloc]initWithFrame:CGRectMake(kScreenWidth-140, 10, 25, 25)];
-        chooseImage.image = [UIImage imageNamed:@"打勾-right"];
+        chooseImage.image = [UIImage imageNamed:@"img_public_check_right"];
         if (_selectIndex == 0) [label3 addSubview:chooseImage];
         else [label4 addSubview:chooseImage];
     }
@@ -238,7 +238,7 @@
 }
 - (void)showhud
 {
-    MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"操作成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+    MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"操作成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
     [hud hideAnimated:YES afterDelay:1.5];
 }
 - (NSDictionary *)getPostDic

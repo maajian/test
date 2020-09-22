@@ -59,7 +59,7 @@
 }
 - (UIImageView *)showNullImage
 {
-    UIImageView *nullImageview = [UIImageView initWithFrame:CGRectMake(kScreenWidth/2-60 , kScreenHeight/2-100, 120, 120) imageName:@"空数据-5"];
+    UIImageView *nullImageview = [UIImageView initWithFrame:CGRectMake(kScreenWidth/2-60 , kScreenHeight/2-100, 120, 120) imageName:@"img_public_null_data"];
     [self.view addSubview:nullImageview];
     return nullImageview;
 }

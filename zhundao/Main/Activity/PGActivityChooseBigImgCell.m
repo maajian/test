@@ -38,7 +38,7 @@
 - (UIImageView *)arrowImgView{
     if (!_arrowImgView) {
         _arrowImgView = [[UIImageView alloc]initWithFrame: CGRectMake(kScreenWidth-20, 17, 10, 10)];
-        _arrowImgView.image = [UIImage imageNamed:@"rightArrows"];
+        _arrowImgView.image = [UIImage imageNamed:@"img_public_right_arrow_1"];
     }
     return _arrowImgView;
 }

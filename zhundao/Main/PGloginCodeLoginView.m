@@ -55,7 +55,7 @@
 - (void)setupUI {
      // 返回按钮
     _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_backButton setImage:[UIImage imageNamed:@"删除"] forState:UIControlStateNormal];
+    [_backButton setImage:[UIImage imageNamed:@"img_public_delete_1"] forState:UIControlStateNormal];
     [_backButton addTarget:self action:@selector(back) forControlEvents:(UIControlEventTouchUpInside)];
     [self addSubview:_backButton];
     
@@ -75,7 +75,7 @@
     
      // 箭头
     _arrowImage = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_arrowImage setImage:[UIImage imageNamed:@"rightArrows"] forState:UIControlStateNormal];
+    [_arrowImage setImage:[UIImage imageNamed:@"img_public_right_arrow_1"] forState:UIControlStateNormal];
     [self addSubview:_arrowImage];
     
      // 国家底部线

@@ -142,7 +142,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 [PGNewOrEditMV changeToNetImage:image block:^(NSString *str) {
                     _imageView.image = image;
                     [hud hideAnimated:YES];
-                    MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"上传成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+                    MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"上传成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
                     [hud1 hideAnimated:YES afterDelay:1.5];
                     NSDictionary *dic = @{@"HeadImgurl":str};
                     [_viewModel UpdateUserInfo:dic successBlock:^(id responseObject) {

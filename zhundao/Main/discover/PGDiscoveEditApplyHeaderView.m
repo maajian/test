@@ -127,7 +127,7 @@
 - (UIImageView *)arrowImageView {
     if (!_arrowImageView) {
         _arrowImageView = [UIImageView new];
-        _arrowImageView.image = [UIImage imageNamed:@"rightArrows"];
+        _arrowImageView.image = [UIImage imageNamed:@"img_public_right_arrow_1"];
     }
     return _arrowImageView;
 }

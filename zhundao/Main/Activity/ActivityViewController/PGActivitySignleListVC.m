@@ -398,7 +398,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
          [_SignListVM  addADMark:backStr personID:_personID UserName:_nameStr Mobile:_phoneStr markBlock:^(BOOL isSuccess) {
              [hud hideAnimated:YES];
              if (isSuccess) {
-                 MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:weakSelf.view imageName:@"签到打勾"];
+                 MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:weakSelf.view imageName:@"img_public_signin_check"];
                  [hud hideAnimated:YES afterDelay:1.5];
                  label.text = backStr;
              }else{

@@ -179,7 +179,7 @@
 
 - (PGNoDataScrollView *)noDataView{
     if (!_noDataView) {
-        _noDataView = [[PGNoDataScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64-40) imageName:@"空数据-5" topText:@"还没有人咨询留言哦" bottomText:@"刷新一下试试"];
+        _noDataView = [[PGNoDataScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64-40) imageName:@"img_public_null_data" topText:@"还没有人咨询留言哦" bottomText:@"刷新一下试试"];
     }
     return _noDataView;
 }

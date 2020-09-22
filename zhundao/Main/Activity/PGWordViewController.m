@@ -46,11 +46,11 @@
         
     NSArray *items = @[
                        [UIImage imageNamed:@"keyboard.png"],
-                       [UIImage imageNamed:@"font.png"],
+                       [UIImage imageNamed:@"img_public_cc_font"],
                        [UIImage imageNamed:@"insertImage.png"],
                        [UIImage imageNamed:@"link.png"],
 //                       [UIImage imageNamed:@"comment_icon"],
-                       [UIImage imageNamed:@"bottomMove.png"]
+                       [UIImage imageNamed:@"img_public_bottom_move"]
                        ];
     _contentInputAccessoryView = [[PGSegmentedControl alloc] initWithItems:items];
     _contentInputAccessoryView.delegate = self;
@@ -576,7 +576,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     } succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj);
         [hud1 hideAnimated:YES];
-        MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
         [hud hideAnimated:YES afterDelay:1];
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

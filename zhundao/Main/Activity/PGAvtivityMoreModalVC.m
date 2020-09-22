@@ -332,7 +332,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"%@",dic);
             [hud hideAnimated:YES];
             if ([dic[@"Res"] integerValue]==0) {
-                MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+                MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
                 [hud1 hideAnimated:YES afterDelay:1.5];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.navigationController popViewControllerAnimated:YES];
@@ -408,7 +408,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             hud1.mode = MBProgressHUDModeCustomView;
             hud1.label.text = @"设置成功";
             [self.view addSubview:hud1];
-            hud1.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"签到打勾"]];
+            hud1.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"img_public_signin_check"]];
             [hud1 showAnimated:YES];
             [hud1 hideAnimated:YES afterDelay:1];
             Time *TimeStop = [Time bringWithTime:Datastr];
@@ -514,7 +514,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/copyActivity?token=%@&activityId=%li",zhundaoApi,[[PGSignManager shareManager] getToken],self.moreModel.ID];
     [ZD_NetWorkM postDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
-        MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"复制成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"复制成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [[NSNotificationCenter defaultCenter] postNotificationName:ZDNotification_Load_Activity object:nil];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

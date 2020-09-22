@@ -235,7 +235,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [hud2 hideAnimated:YES];
             if (isSuccess) {
                 MBProgressHUD *hud3 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"绑定成功" showAnimated:YES UIView:self
-                                       .view imageName:@"签到打勾"];
+                                       .view imageName:@"img_public_signin_check"];
                 [hud3 hideAnimated:YES afterDelay:1.5];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.navigationController popViewControllerAnimated:YES];

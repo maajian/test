@@ -119,7 +119,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     else
     {
         _successFlag =1;
-    [self showhudWithString:@"绑定成功" WithImageName:@"签到打勾" successBool:YES];
+    [self showhudWithString:@"绑定成功" WithImageName:@"img_public_signin_check" successBool:YES];
     }
 }
 

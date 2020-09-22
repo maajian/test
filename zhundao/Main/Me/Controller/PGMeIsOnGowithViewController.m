@@ -66,7 +66,7 @@ static NSString *CellID = @"isOnGowith";
     }
     if (indexPath.row==0) {
         amountLabel = [MyLabel initWithLabelFrame:CGRectMake(50, 0, kScreenWidth-50, 44) Text:@"请选择提现账号" textColor:ZDPlaceHolderColor font:[UIFont systemFontOfSize:17] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
-        imageView = [MyImage initWithImageFrame:CGRectMake(12, 12, 20, 20) imageName:@"钱包" cornerRadius:0 masksToBounds:0];
+        imageView = [MyImage initWithImageFrame:CGRectMake(12, 12, 20, 20) imageName:@"img_public_wallet_grey" cornerRadius:0 masksToBounds:0];
         [cell.contentView addSubview:imageView];
         [cell.contentView addSubview:amountLabel];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -163,11 +163,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     amountLabel.text = account;
     amountLabel.textColor = [UIColor blackColor];
     if ([BankName isEqualToString:@"支付宝"]) {
-        imageView.image = [UIImage imageNamed:@"支付宝"];
+        imageView.image = [UIImage imageNamed:@"img_public_alipay"];
     } else if([BankName isEqualToString:@"微信钱包"]) {
         imageView.image = [UIImage imageNamed:@"wechatWithDraw"];
     } else{
-        imageView.image = [UIImage imageNamed:@"银行卡"];
+        imageView.image = [UIImage imageNamed:@"img_public_idcard"];
     }
 }
 

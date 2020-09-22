@@ -67,7 +67,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     
     /*! 背景图片 */
     UIImageView *backImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
-    backImageView.image = [UIImage imageNamed:@"专属邀请函1.jpg"];
+    backImageView.image = [UIImage imageNamed:@"img_public_own_invite"];
     [self.view addSubview:backImageView];
     
     /*! 活动标题 */

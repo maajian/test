@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="提现等待.png" translatesAutoresizingMaskIntoConstraints="NO" id="Njm-ZR-rDG">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="com_public_withdraw_wait" translatesAutoresizingMaskIntoConstraints="NO" id="Njm-ZR-rDG">
                     <rect key="frame" x="137.5" y="121" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="3BC-rC-viE"/>
@@ -114,7 +114,7 @@
                         <constraint firstItem="2yk-02-Rfn" firstAttribute="bottom" secondItem="Zvi-A3-nSg" secondAttribute="bottom" id="mYr-Ik-Zyz"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-mD-kgR">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-mD-kgR">
                     <rect key="frame" x="10" y="426" width="355" height="44"/>
                     <color key="backgroundColor" red="0.10196078431372549" green="0.67843137254901964" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -146,6 +146,6 @@
         </view>
     </objects>
     <resources>
-        <image name="提现等待.png" width="180" height="180"/>
+        <image name="com_public_withdraw_wait" width="180" height="180"/>
     </resources>
 </document>

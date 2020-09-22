@@ -458,7 +458,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSLog(@"dic = %@",dic);
         [hud hideAnimated:YES];
-        MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
     } fail:^(NSError *error) {

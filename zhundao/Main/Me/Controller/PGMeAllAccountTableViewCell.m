@@ -34,7 +34,7 @@
         _iconimageView.image = [UIImage imageNamed:@"wechatWithDraw"];
         _rightLabel.text =[NSString stringWithFormat:@"%@",model.Account] ;
     } else{
-        _iconimageView.image = [UIImage imageNamed:@"银行卡"];
+        _iconimageView.image = [UIImage imageNamed:@"img_public_idcard"];
         _rightLabel.text =[NSString stringWithFormat:@"%@(%@)",model.Account,model.BankName] ;
     }
     

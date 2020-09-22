@@ -266,9 +266,9 @@
         cell.model = _dataArray2[indexPath.row];
     }
     if (cell.model.Status==0) {
-        cell.checkLabel.image = [ UIImage imageNamed:@"打勾-9"];
+        cell.checkLabel.image = [ UIImage imageNamed:@"img_public_check_disable"];
     }if (cell.model.Status==1) {
-        cell.checkLabel.image = [ UIImage imageNamed:@"打勾-8"];
+        cell.checkLabel.image = [ UIImage imageNamed:@"img_public_check_select"];
         cell.nameLabel.frame = CGRectMake(0, 20, 100, 100);
     }
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(signOther:)];

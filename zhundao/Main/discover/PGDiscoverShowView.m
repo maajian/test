@@ -464,7 +464,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)addEditBackgroundView{
     UIImageView *imgView = [[UIImageView alloc]initWithFrame:self.frame];
-    imgView.image = [[UIImage imageNamed:@"专属邀请函1.jpg"]applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)] ;
+    imgView.image = [[UIImage imageNamed:@"img_public_own_invite"]applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)] ;
     [self addSubview:imgView];
 }
 #pragma mark ---添加手势

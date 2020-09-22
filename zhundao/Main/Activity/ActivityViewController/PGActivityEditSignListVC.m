@@ -331,7 +331,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             imageview.userInteractionEnabled = YES;
             [cell.contentView addSubview:imageview];
             UIButton *deleteButton = [MyButton initWithButtonFrame:CGRectMake(kLineSpace-25, 0, 25, 25) title:nil textcolor:nil Target:self action:@selector(deleteImage:) BackgroundColor:nil cornerRadius:0 masksToBounds:0 ];
-            [deleteButton setImage:[UIImage imageNamed:@"deleteCan"] forState:UIControlStateNormal];
+            [deleteButton setImage:[UIImage imageNamed:@"img_public_delete_can"] forState:UIControlStateNormal];
             deleteButton.tag = i;
             [imageview addSubview:deleteButton];
         }else
@@ -341,7 +341,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [addImageView addSubview:imageview];
             addImageView.layer.borderWidth = 0.5;
             addImageView.layer.borderColor = ZDPlaceHolderColor.CGColor;
-            imageview.image = [UIImage imageNamed:@"加号"];
+            imageview.image = [UIImage imageNamed:@"img_public_add_new"];
             [cell.contentView addSubview:addImageView];
             addImageView.userInteractionEnabled = YES;
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addImageGes:)];
@@ -479,7 +479,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             break;
         case 1:
         {
-            MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"编辑成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"编辑成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
             [hud hideAnimated:YES afterDelay:1];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 PGActivityListVC *list = nil;

@@ -662,7 +662,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 - (void)showAnnimate :(NSInteger )isSuccess{
     if (isSuccess) {
-        MBProgressHUD  *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD  *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [self loadData];
     }else{
@@ -696,7 +696,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 if (isSuccess==1)
                 {
                     [hud hideAnimated:YES];
-                    MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:weakSelf.view imageName:@"签到打勾"];
+                    MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:weakSelf.view imageName:@"img_public_signin_check"];
                     [hud1 hideAnimated:YES afterDelay:1.5];
                     [weakSelf loadData];
                 } else if (isSuccess==2) {

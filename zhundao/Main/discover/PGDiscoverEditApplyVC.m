@@ -90,10 +90,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cell.choiceTF.placeholder = [NSString stringWithFormat:@"选项%li",indexPath.row + 1];
     cell.choiceTF.text = self.viewModel.dataArray[indexPath.row];
     if (self.viewModel.dataArray.count <= 2) {
-        [cell.leftButton setImage:[UIImage imageNamed:@"deleteCant"] forState:UIControlStateNormal];
+        [cell.leftButton setImage:[UIImage imageNamed:@"img_public_delete_cant"] forState:UIControlStateNormal];
         cell.leftButton.userInteractionEnabled = NO;
     } else {
-        [cell.leftButton setImage:[UIImage imageNamed:@"deleteCan"] forState:UIControlStateNormal];
+        [cell.leftButton setImage:[UIImage imageNamed:@"img_public_delete_can"] forState:UIControlStateNormal];
         cell.leftButton.userInteractionEnabled = YES;
     }
     cell.discoveEditApplyCellDelegate = self;

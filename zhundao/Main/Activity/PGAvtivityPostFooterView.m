@@ -52,7 +52,7 @@
         [_checkbox setFrame:checkboxRect];
         _checkbox.layer.borderColor = [UIColor grayColor].CGColor;
         _checkbox.layer.borderWidth = 0.5;
-        [_checkbox setImage:[UIImage imageNamed:@"签到打勾"] forState:UIControlStateNormal];
+        [_checkbox setImage:[UIImage imageNamed:@"img_public_signin_check"] forState:UIControlStateNormal];
         
         [_checkbox addTarget:self action:@selector(checkboxClick) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -85,13 +85,13 @@
     _button.selected = !_button.selected;
     if (_button.selected) {
         NSLog(@"选中");  //取消图片
-        [_button setImage:[UIImage imageNamed:@"空白"] forState:UIControlStateNormal];
+        [_button setImage:[UIImage imageNamed:@"img_public_white_data"] forState:UIControlStateNormal];
         _button.backgroundColor = [UIColor clearColor];
         _button.userInteractionEnabled = NO;
     }
     else{
         NSLog(@"未选中"); //打勾
-        [_button setImage:[UIImage imageNamed:@"签到打勾"] forState:UIControlStateNormal];
+        [_button setImage:[UIImage imageNamed:@"img_public_signin_check"] forState:UIControlStateNormal];
         _button.backgroundColor = ZDMainColor;
         _button.userInteractionEnabled = YES;
     }

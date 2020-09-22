@@ -212,7 +212,7 @@
     [self createTopLabelWithName:topName WithView:view y:115];
     [self createBottomLabelWithName:bottomName View:view y:135];
     self.phoneStr = [bottomName copy];
-    UIImageView *callImage = [MyImage initWithImageFrame:CGRectMake(kScreenWidth-40, 125, 20, 20) imageName:@"打电话" cornerRadius:0 masksToBounds:0];
+    UIImageView *callImage = [MyImage initWithImageFrame:CGRectMake(kScreenWidth-40, 125, 20, 20) imageName:@"img_public_call_phone" cornerRadius:0 masksToBounds:0];
     callImage.userInteractionEnabled=YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(callAlert)];
     [callImage addGestureRecognizer:tap];

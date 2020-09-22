@@ -215,7 +215,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     else
     {
-        MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"登录成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+        MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"登录成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [self savaUser];
         [self saveDataWithDic:dic[@"Data"]];
@@ -244,7 +244,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     if ([[NSUserDefaults standardUserDefaults]objectForKey:muliID]&&[[NSUserDefaults standardUserDefaults]objectForKey:muliPhone]&&[[NSUserDefaults standardUserDefaults]objectForKey:muliPassword]) {
         if ([[[NSUserDefaults standardUserDefaults]objectForKey:muliID] isEqualToString:_IDTextField.text]&&[[[NSUserDefaults standardUserDefaults]objectForKey:muliPhone] isEqualToString:_phonoTextField.text]&&[[[NSUserDefaults standardUserDefaults]objectForKey:muliPassword] isEqualToString:_passwordTextField.text]) {
-            MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"登录成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"登录成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
             [hud1 hideAnimated:YES afterDelay:1.5];
             [self presentMuli];
         }

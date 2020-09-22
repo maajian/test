@@ -32,7 +32,7 @@
     if (PGDiscoverFaceModel) {
         _faceModel = PGDiscoverFaceModel;
     }
-    _iconUrlImageView.image = [UIImage imageNamed:@"人脸签到"];
+    _iconUrlImageView.image = [UIImage imageNamed:@"img_public_signin_face"];
     _iconUrlImageView.layer.masksToBounds = YES;
     _iconUrlImageView.layer.cornerRadius = 4;
     _titlelabel.text = _faceModel.Name;

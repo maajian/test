@@ -105,8 +105,8 @@
     /*! 绘制 */
     for (int i = 0; i<3; i++) {
         /*! 邀请函背景图 */
-        NSString *file = [[NSBundle mainBundle]pathForResource:[NSString stringWithFormat:@"邀请函%d",i+1] ofType:@".png"];
-        UIImage *image1 = [UIImage imageWithContentsOfFile:file];
+        NSString *file = [NSString stringWithFormat:@"img_discover_invite_%d",i+1];
+        UIImage *image1 = [UIImage imageNamed:file];
         [self.ViewModel drawImage:imageview image1:image1 image2:image2 acName:acName timeStr:timeStr address:address index :i];
         [_ViewModel savaImageToSanBox:_acid image:imageview.image index:i];
     }

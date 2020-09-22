@@ -107,7 +107,7 @@
 - (UIImageView *)deleteImageView {
     if (!_deleteImageView) {
         _deleteImageView = [[UIImageView alloc] init];;
-        _deleteImageView.image = [UIImage imageNamed:@"deleteCant.png"];
+        _deleteImageView.image = [UIImage imageNamed:@"img_public_delete_cant"];
     }
     return _deleteImageView;
 }

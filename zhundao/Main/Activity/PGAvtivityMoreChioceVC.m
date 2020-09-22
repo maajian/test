@@ -274,7 +274,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 cell.imageview.image = [UIImage imageNamed:@"option打勾"];
             }
             else{
-                cell.imageview.image = [UIImage imageNamed:@"空圈"];
+                cell.imageview.image = [UIImage imageNamed:@"img_public_null_qura"];
             }
         }
         NSDictionary *dic = self.allOptionaArray[indexPath.row-1];
@@ -394,7 +394,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
         else
         {
-            Cell.imageview.image = [UIImage imageNamed:@"空圈"];
+            Cell.imageview.image = [UIImage imageNamed:@"img_public_null_qura"];
             [_boolArray replaceObjectAtIndex:indexPath.row-1 withObject:@"0"];
         }
         NSLog(@"boolArray = %@",_boolArray);
@@ -485,7 +485,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self borderImage:selectImg];
     UIImageView *addImg =[[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetWidth(selectImg.frame)/4, CGRectGetWidth(selectImg.frame)/4, CGRectGetWidth(selectImg.frame)/2, CGRectGetWidth(selectImg.frame)/2)];
     [selectImg addSubview:addImg];
-    addImg.image = [UIImage imageNamed:@"加号"];
+    addImg.image = [UIImage imageNamed:@"img_public_add_new"];
     [cell.contentView addSubview:selectImg];
     selectImg.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addSmallImage)];
@@ -512,7 +512,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 _imageStr = str;
                 _img1.image = image;
                 [hud hideAnimated:YES];
-                MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+                MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
                 [hud1 hideAnimated:YES afterDelay:1.5];
             }];
         }

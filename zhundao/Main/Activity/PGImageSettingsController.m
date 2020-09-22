@@ -66,14 +66,14 @@
 - (void)setSelecting:(BOOL)selecting {
     _selecting = selecting;
     if (selecting){
-        [self.button1 setImage:[UIImage imageNamed:@"预览"] forState:UIControlStateNormal];
-        [self.button2 setImage:[UIImage imageNamed:@"打勾蓝色"] forState:UIControlStateNormal];
+        [self.button1 setImage:[UIImage imageNamed:@"img_public_preview"] forState:UIControlStateNormal];
+        [self.button2 setImage:[UIImage imageNamed:@"img_public_check_blue"] forState:UIControlStateNormal];
         [self.button1 setTitle:@"预览" forState:UIControlStateNormal];
         [self.button2 setTitle:@"发送" forState:UIControlStateNormal];
         [self.button2 setTitleColor:[UIColor colorWithRed:93/255.f green:150/255.f blue:209/255.f alpha:1.f] forState:UIControlStateNormal];
     }
     else {
-        [self.button1 setImage:[UIImage imageNamed:@"拍照"] forState:UIControlStateNormal];
+        [self.button1 setImage:[UIImage imageNamed:@"img_public_photo_image"] forState:UIControlStateNormal];
         [self.button2 setImage:[UIImage imageNamed:@"相册"] forState:UIControlStateNormal];
         [self.button1 setTitle:@"拍照" forState:UIControlStateNormal];
         [self.button2 setTitle:@"相册" forState:UIControlStateNormal];

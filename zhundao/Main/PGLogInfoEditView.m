@@ -53,7 +53,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
      // 关闭按钮
     _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_closeButton setImage:[UIImage imageNamed:@"删除"] forState:UIControlStateNormal];
+    [_closeButton setImage:[UIImage imageNamed:@"img_public_delete_1"] forState:UIControlStateNormal];
     [_closeButton addTarget:self action:@selector(back) forControlEvents:(UIControlEventTouchUpInside)];
     [self addSubview:_closeButton];
     

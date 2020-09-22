@@ -127,7 +127,7 @@
         cell.imageview.image = [UIImage imageNamed:@"option打勾"];
     }else
     {
-        cell.imageview.image = [UIImage imageNamed:@"空圈"];
+        cell.imageview.image = [UIImage imageNamed:@"img_public_null_qura"];
     }
     cell.titleLabel.text = self.nameArray[indexPath.row];
     return cell;
@@ -159,7 +159,7 @@
     PGActivityEditMoreChooseCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         if ([self.indexArray[indexPath.row] integerValue]) {
             [self.indexArray replaceObjectAtIndex:indexPath.row withObject:@"0"];
-            cell.imageview.image = [UIImage imageNamed:@"空圈"];
+            cell.imageview.image = [UIImage imageNamed:@"img_public_null_qura"];
         }else{
             [self.indexArray replaceObjectAtIndex:indexPath.row withObject:@"1"];
             cell.imageview.image = [UIImage imageNamed:@"option打勾"];

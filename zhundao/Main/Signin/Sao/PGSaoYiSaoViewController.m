@@ -236,7 +236,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     deviceview.layer.masksToBounds = YES;
     [self.view addSubview:deviceview];
     UIButton *devicebutton = [MyButton initWithButtonFrame:CGRectMake(5, 5, 30, 30) title:nil textcolor:nil Target:self action:@selector(btnClick:) BackgroundColor:nil cornerRadius:0 masksToBounds:NO];
-    [devicebutton setBackgroundImage:[UIImage imageNamed:@"灯光"] forState:UIControlStateNormal];
+    [devicebutton setBackgroundImage:[UIImage imageNamed:@"img_public_light"] forState:UIControlStateNormal];
     [deviceview addSubview:devicebutton];
     
     UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight-70, kScreenWidth/2, 70)];
@@ -245,8 +245,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(kScreenWidth/2, kScreenHeight-70, kScreenWidth/2, 70)];
     view2.backgroundColor =[UIColor colorWithWhite:0 alpha:0.3];
     [self.view addSubview:view2];
-    leftImage = [MyImage initWithImageFrame:CGRectMake(kScreenWidth/4-15, 15, 30, 30) imageName:@"扫码签到ed" cornerRadius:0 masksToBounds:NO];
-    rightImage = [MyImage initWithImageFrame:CGRectMake(kScreenWidth/4-15, 15, 30, 30) imageName:@"手机号" cornerRadius:0 masksToBounds:NO];
+    leftImage = [MyImage initWithImageFrame:CGRectMake(kScreenWidth/4-15, 15, 30, 30) imageName:@"img_public_scan_ed" cornerRadius:0 masksToBounds:NO];
+    rightImage = [MyImage initWithImageFrame:CGRectMake(kScreenWidth/4-15, 15, 30, 30) imageName:@"com_public_phone_number" cornerRadius:0 masksToBounds:NO];
     [view1 addSubview:leftImage];
     view1.tag = 101;
     [view2 addSubview:rightImage];

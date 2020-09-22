@@ -111,18 +111,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     float originX = kScreenWidth/3*2/6;
     UIButton *colorBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     colorBtn.frame = CGRectMake(originX-12, 7, 25, 25);
-    [colorBtn setImage:[UIImage imageNamed:@"专属邀请函颜色"] forState:UIControlStateNormal];
+    [colorBtn setImage:[UIImage imageNamed:@"img_discover_invite_color"] forState:UIControlStateNormal];
     [colorBtn addTarget:self action:@selector(colorBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [_toolView addSubview:colorBtn];
-//    UIButton *fontBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    fontBtn.frame = CGRectMake(originX*5-12, 7, 25, 25);
-//    [fontBtn setImage:[UIImage imageNamed:@"专属邀请函字体"] forState:UIControlStateNormal];
-//    [fontBtn addTarget:self action:@selector(fontstyleBtnClick) forControlEvents:UIControlEventTouchUpInside];
-//    [_toolView addSubview:fontBtn];
     
     UIButton *sizeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     sizeBtn.frame = CGRectMake(originX*3-12, 7, 25, 25);
-    [sizeBtn setImage:[UIImage imageNamed:@"专属邀请函字体"] forState:UIControlStateNormal];
+    [sizeBtn setImage:[UIImage imageNamed:@"img_discover_invite_font"] forState:UIControlStateNormal];
     [sizeBtn addTarget:self action:@selector(fontsizeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [_toolView addSubview:sizeBtn];
     

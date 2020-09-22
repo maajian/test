@@ -178,7 +178,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (UIImageView *)nullImageView
 {
     if (!_nullImageView) {
-        _nullImageView =  [MyImage initWithImageFrame:CGRectMake(kScreenWidth/2-60 , kScreenHeight/2-60, 120, 120) imageName:@"空数据-5" cornerRadius:0 masksToBounds:NO];
+        _nullImageView =  [MyImage initWithImageFrame:CGRectMake(kScreenWidth/2-60 , kScreenHeight/2-60, 120, 120) imageName:@"img_public_null_data" cornerRadius:0 masksToBounds:NO];
     }
     return _nullImageView;
 }
@@ -277,7 +277,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)showHudWitharray :(NSArray *)array1  //数据下载成功hud
 {
-    MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:[NSString stringWithFormat:@"已下载%lu人到本地",(unsigned long)array1.count] showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+    MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:[NSString stringWithFormat:@"已下载%lu人到本地",(unsigned long)array1.count] showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
     [hud hideAnimated:YES afterDelay:1];
 }
 -(void)transactionwithArray1 :(NSArray *)array1 {   //事务封装插入
@@ -412,7 +412,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             _nullLabel.text = str;
             break;
         case 2:
-             _nullImageView.image = [UIImage imageNamed:@"空数据-5"];
+             _nullImageView.image = [UIImage imageNamed:@"img_public_null_data"];
             _nullLabel.text = str;
             break;
             
@@ -625,7 +625,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     muli.updataBlock = ^(BOOL isSuccess)
     {
         if (isSuccess) {
-            MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"上传成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"上传成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
             [hud hideAnimated:YES afterDelay:2];
             [self netWorkWithIndicator:NO];
         }

@@ -293,7 +293,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.right.equalTo(self.view).with.offset(-20);
     }];
     view.backgroundColor = [UIColor colorWithWhite:0.90 alpha:1];
-    imageview.image = [UIImage imageNamed:@"密码"];
+    imageview.image = [UIImage imageNamed:@"img_public_password"];
     UIImageView *imageview1 = [[UIImageView alloc]init];
     [self.view addSubview:imageview1];
     [imageview1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -302,7 +302,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.height.mas_equalTo(20);
         make.width.mas_equalTo(20);
     }];
-     imageview1.image = [UIImage imageNamed:@"手机"];
+     imageview1.image = [UIImage imageNamed:@"com_public_phone_1"];
 }
 
 - (void)setLeftView

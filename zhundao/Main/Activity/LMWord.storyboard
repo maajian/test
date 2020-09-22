@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,10 +27,10 @@
                                             <rect key="frame" x="24" y="4" width="106.5" height="52"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="18"/>
-                                            <state key="normal" image="boldfont.png">
+                                            <state key="normal" image="img_public_bold_font">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" image="boldfonted.png"/>
+                                            <state key="selected" image="img_public_bold_fonted"/>
                                             <state key="highlighted" image="b_select_icon"/>
                                         </button>
                                         <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxO-N5-w3F">
@@ -166,7 +166,7 @@
                                             <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下拉.png" translatesAutoresizingMaskIntoConstraints="NO" id="VUo-Az-nFl">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_pull_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="VUo-Az-nFl">
                                             <rect key="frame" x="341.5" y="28" width="13.5" height="8"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="8KW-RV-aXc"/>
@@ -216,7 +216,7 @@
                                             <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下拉.png" translatesAutoresizingMaskIntoConstraints="NO" id="t4D-Zz-rsU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_pull_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="t4D-Zz-rsU">
                                             <rect key="frame" x="341.5" y="25" width="13.5" height="8"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="13.5" id="czU-4i-ObN"/>
@@ -273,7 +273,7 @@
                                             <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下拉.png" translatesAutoresizingMaskIntoConstraints="NO" id="PIA-Gp-4pf">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_pull_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="PIA-Gp-4pf">
                                             <rect key="frame" x="341.5" y="25" width="13.5" height="8"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="IhO-Zg-s0y"/>
@@ -435,7 +435,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="22" maxX="9" maxY="22"/>
-                                        <state key="normal" title="相册" image="相册.png">
+                                        <state key="normal" title="相册" image="img_public_photo_list.png">
                                             <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -568,7 +568,7 @@
                                             <constraint firstAttribute="width" constant="20" id="Yz3-hJ-QSQ"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPX-lO-D4d">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPX-lO-D4d">
                                         <rect key="frame" x="307" y="0.0" width="60" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="qvz-fq-ie9"/>
@@ -617,10 +617,12 @@
         <image name="123_icon" width="35" height="35"/>
         <image name="123_select_icon" width="35" height="35"/>
         <image name="b_select_icon" width="26" height="31"/>
-        <image name="boldfont.png" width="72" height="72"/>
-        <image name="boldfonted.png" width="72" height="72"/>
         <image name="check_icon" width="36" height="34"/>
         <image name="check_select_icon" width="36" height="34"/>
+        <image name="img_public_bold_font" width="72" height="72"/>
+        <image name="img_public_bold_fonted" width="72" height="72"/>
+        <image name="img_public_photo_list.png" width="128" height="128"/>
+        <image name="img_public_pull_down.png" width="128" height="128"/>
         <image name="left_icon" width="34" height="35"/>
         <image name="list_icon" width="36" height="33"/>
         <image name="list_select_icon" width="36" height="33"/>
@@ -630,9 +632,7 @@
         <image name="underLineed.png" width="72" height="72"/>
         <image name="xiaFont.png" width="72" height="72"/>
         <image name="xiaFonted.png" width="72" height="72"/>
-        <image name="下拉.png" width="72" height="72"/>
         <image name="打勾蓝色.png" width="72" height="72"/>
         <image name="拍照.png" width="72" height="72"/>
-        <image name="相册.png" width="72" height="72"/>
     </resources>
 </document>

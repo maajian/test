@@ -95,7 +95,7 @@
 
 - (UIImageView *)topImageView{
     if (!_topImageView) {
-        _topImageView = [MyImage initWithImageFrame:CGRectZero imageName:@"提现" cornerRadius:50 masksToBounds:1];
+        _topImageView = [MyImage initWithImageFrame:CGRectZero imageName:@"com_public_coin" cornerRadius:50 masksToBounds:1];
     }
     return _topImageView;
 }

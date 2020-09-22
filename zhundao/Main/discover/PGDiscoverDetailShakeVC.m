@@ -489,7 +489,7 @@
     NSInteger isSeccess = [dic[@"res"] integerValue];
     if (isSeccess) {
         _successFlag =1;
-        [self showhudWithString:@"解绑成功" WithImageName:@"签到打勾" successBool:YES];
+        [self showhudWithString:@"解绑成功" WithImageName:@"img_public_signin_check" successBool:YES];
     }
     else
     {

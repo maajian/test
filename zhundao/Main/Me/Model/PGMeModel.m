@@ -22,22 +22,22 @@
     return [PGMeModel modelWithImageName:@"" title:@"" type:PGMeTypeHeader];
 }
 + (instancetype)PGMeNoticeModel {
-    return [PGMeModel modelWithImageName:@"通知公告" title:@"通知公告" type:PGMeTypeNotice];
+    return [PGMeModel modelWithImageName:@"com_public_notice_list" title:@"通知公告" type:PGMeTypeNotice];
 }
 + (instancetype)walletModel {
-    return [PGMeModel modelWithImageName:@"wallet" title:@"我的钱包" type:PGMeTypeWallet];
+    return [PGMeModel modelWithImageName:@"img_public_wallet" title:@"我的钱包" type:PGMeTypeWallet];
 }
 + (instancetype)messageModel {
-    return [PGMeModel modelWithImageName:@"短信120" title:@"我的短信" type:PGMeTypeMessage];
+    return [PGMeModel modelWithImageName:@"img_public_message_blue" title:@"我的短信" type:PGMeTypeMessage];
 }
 + (instancetype)PGMeContactModel {
-    return [PGMeModel modelWithImageName:@"通讯录" title:@"我的通讯录" type:PGMeTypeContact];
+    return [PGMeModel modelWithImageName:@"com_public_contact_list" title:@"我的通讯录" type:PGMeTypeContact];
 }
 + (instancetype)questionModel {
-    return [PGMeModel modelWithImageName:@"retroaction" title:@"我的工单" type:PGMeTypeQuestion];
+    return [PGMeModel modelWithImageName:@"img_public_retroaction" title:@"我的工单" type:PGMeTypeQuestion];
 }
 + (instancetype)personDataMessageModel {
-    return [PGMeModel modelWithImageName:@"通知公告" title:@"消息" type:PGMeTypePersonDataMessage];
+    return [PGMeModel modelWithImageName:@"com_public_notice_list" title:@"消息" type:PGMeTypePersonDataMessage];
 }
 + (instancetype)honorModel {
     return [PGMeModel modelWithImageName:@"img_me_honor" title:@"我的勋章" type:PGMeTypeHonor];
@@ -52,7 +52,7 @@
     return [PGMeModel modelWithImageName:@"img_me_promote" title:@"准到合伙人" type:PGMeTypePromote];
 }
 + (instancetype)settingModel {
-    return [PGMeModel modelWithImageName:@"setting" title:@"设置" type:PGMeTypeSetting];
+    return [PGMeModel modelWithImageName:@"img_public_me_setting" title:@"设置" type:PGMeTypeSetting];
 }
 
 @end

@@ -26,7 +26,7 @@
 
 - (UIImageView *)idCardImgView{
     if (!_idCardImgView) {
-        _idCardImgView = [MyImage initWithImageFrame:CGRectMake(10, 50, 80, 80) imageName:@"加号" cornerRadius:0 masksToBounds:0];
+        _idCardImgView = [MyImage initWithImageFrame:CGRectMake(10, 50, 80, 80) imageName:@"img_public_add_new" cornerRadius:0 masksToBounds:0];
         _idCardImgView.layer.borderColor = ZDPlaceHolderColor.CGColor;
         _idCardImgView.layer.borderWidth = 0.5;
     }

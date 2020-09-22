@@ -55,7 +55,7 @@
     /*! 删除按钮 */
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [containView addSubview:cancelButton];
-    [cancelButton setImage:[UIImage imageNamed:@"删除"] forState:(UIControlStateNormal)];
+    [cancelButton setImage:[UIImage imageNamed:@"img_public_delete_1"] forState:(UIControlStateNormal)];
     [cancelButton addTarget:self action:@selector(quitView) forControlEvents:UIControlEventTouchUpInside];
     [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(containView.mas_left).offset(15);

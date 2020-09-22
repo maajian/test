@@ -266,7 +266,7 @@
             _groupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 55)];
             _groupView.backgroundColor = [UIColor whiteColor];
             UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 12, 32, 32)];
-            imageview.image = [UIImage imageNamed:@"分组"];
+            imageview.image = [UIImage imageNamed:@"img_public_group"];
             imageview.layer.cornerRadius = 2;
             imageview.layer.masksToBounds = YES;
             UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(56,0, 60, 55)];
@@ -537,7 +537,7 @@
 #pragma  mark  添加好友
 - (void)createRightButton
 {
-     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"添加朋友" Withtarget:self Selector:@selector(showa)];
+     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"com_public_add_Friend" Withtarget:self Selector:@selector(showa)];
 }
 - (void)showa
 {

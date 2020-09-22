@@ -462,7 +462,7 @@
     mv.addPersonBlock = ^(BOOL isSuccess)
     {
         if (isSuccess) {
-            MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"编辑成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+            MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"编辑成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
             [hud hideAnimated:YES afterDelay:1];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 PGMeContactViewController *contact = nil;

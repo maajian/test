@@ -36,7 +36,7 @@
         _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _addButton.addInsetWidth = 20;
         _addButton.addInsetHeight = 20;
-        [_addButton setImage:[UIImage imageNamed:@"addChoose"] forState:UIControlStateNormal];
+        [_addButton setImage:[UIImage imageNamed:@"img_public_add_choose"] forState:UIControlStateNormal];
         [_addButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _addButton;

@@ -430,7 +430,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)showSuccess
 {
     [hud hideAnimated:YES];
-    MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"发布成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
+    MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"发布成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
     [hud1 hideAnimated:YES afterDelay:2];
 }
 /*! 判断有没有修改更多选项，没有则默认，有则改变 */
