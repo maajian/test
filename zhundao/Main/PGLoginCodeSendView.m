@@ -36,7 +36,7 @@
     [self addSubview:_closeButton];
     
     _titleLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDBlackColor font:ZDSystemFont(28) numberOfLines:0 lineBreakMode:0 lineAlignment:0];
-    _titleLabel.text = @"欢迎登录金塔统计";
+    _titleLabel.text = @"欢迎登录金塔";
     [self addSubview:_titleLabel];
     
     _countryLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDBlackColor font:ZDSystemFont(14) numberOfLines:0 lineBreakMode:0 lineAlignment:0];
