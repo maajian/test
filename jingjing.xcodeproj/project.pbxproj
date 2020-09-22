@@ -2220,7 +2220,7 @@
 		9C719DC01F0CD39F00A5478A /* PGDiscoverGetCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDiscoverGetCodeVC.m; sourceTree = "<group>"; };
 		9C75C6F71F550E980084D86A /* PGAvtivityInviteViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAvtivityInviteViewModel.h; sourceTree = "<group>"; };
 		9C75C6F81F550E980084D86A /* PGAvtivityInviteViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAvtivityInviteViewModel.m; sourceTree = "<group>"; };
-		9C7752901DF01D2200FC31BB /* 金塔统计.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "金塔统计.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C7752901DF01D2200FC31BB /* jinta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jinta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7752941DF01D2200FC31BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C7752961DF01D2200FC31BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9C7752971DF01D2200FC31BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -5103,7 +5103,7 @@
 		9C7752911DF01D2200FC31BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C7752901DF01D2200FC31BB /* 金塔统计.app */,
+				9C7752901DF01D2200FC31BB /* jinta.app */,
 				9C7752A91DF01D2200FC31BB /* zhundaoTests.xctest */,
 				9C7752B41DF01D2200FC31BB /* zhundaoUITests.xctest */,
 			);
@@ -5783,7 +5783,7 @@
 			);
 			name = jingjing;
 			productName = zhundao;
-			productReference = 9C7752901DF01D2200FC31BB /* 金塔统计.app */;
+			productReference = 9C7752901DF01D2200FC31BB /* jinta.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9C7752A81DF01D2200FC31BB /* jingjingTests */ = {
@@ -6887,7 +6887,7 @@
 					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhundao.jinta;
-				PRODUCT_NAME = "金塔统计";
+				PRODUCT_NAME = jinta;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -6942,7 +6942,7 @@
 					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhundao.jinta;
-				PRODUCT_NAME = "金塔统计";
+				PRODUCT_NAME = jinta;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
