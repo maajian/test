@@ -1,17 +1,5 @@
-//
-//  PGMeAllAccountViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/18.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeAllAccountViewModel.h"
-
 @implementation PGMeAllAccountViewModel
-
-//api/PerBase/GetCreditCards?accessKey={accessKey}
-
 - (void)GetCreditCards :(allAccountBlock)allAccountBlock{
     NSString *url = [NSString stringWithFormat:@"%@api/PerBase/GetCreditCards?accessKey=%@",zhundaoApi,[[PGSignManager shareManager] getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
@@ -34,18 +22,12 @@
         allAccountBlock(0,@[]);
     }];
 }
-
-
-//api/PerBase/DeleteCreadCard/{id}?accessKey={accessKey}
 - (void)deleteCreadCard :(NSInteger)ID successBlock:(ZDSuccessBlock)successBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/DeleteCreadCard/%li?accessKey=%@",zhundaoApi,ID,[[PGSignManager shareManager]getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         successBlock(dic);
     } fail:^(NSError *error) {
-        
     }];
 }
-
-
 @end

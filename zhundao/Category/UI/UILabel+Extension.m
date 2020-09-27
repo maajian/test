@@ -1,20 +1,10 @@
-//
-//  UILabel+Extension.m
-//  zhundao
-//
-//  Created by maj on 2019/7/6.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "UILabel+Extension.h"
-
 @implementation UILabel (Extension)
 + (instancetype)zd_new {
     UILabel *label = [UILabel new];
     label.numberOfLines = 0;
     return label;
 }
-
 + (UILabel *)labelWithFrame:(CGRect)frame
                   textColor:(UIColor *)textColor
                        font:(UIFont *)font
@@ -77,7 +67,6 @@
                                    NSFontAttributeName: textFont,
                                    NSParagraphStyleAttributeName: paragraphStyle }
                           range:NSMakeRange(0, label.text.length)];
-        
         [label setAttributedText:attriDes];
     }
     if (sizeToFit) {
@@ -85,5 +74,4 @@
     }
     return label;
 }
-
 @end

@@ -1,35 +1,18 @@
 #import "PGTrainParticularStadium.h"
-//
-//  PGDataPersonAddVC.m
-//  jingjing
-//
-//  Created by maj on 2020/8/10.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGDataPersonAddVC.h"
-
 #import "PGDataPersonAddModel.h"
-
 #import "PGDataPersonAddCell.h"
-
 #import "PGDataPersonAddViewModel.h"
-
 @interface PGDataPersonAddVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) PGDataPersonAddViewModel *viewModel;
-
 @end
-
 @implementation PGDataPersonAddVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
 }
-
 #pragma mark --- Lazyload
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -45,22 +28,19 @@
     }
     return _tableView;
 }
-
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
     self.title = @"添加管理员";
     _viewModel = [[PGDataPersonAddViewModel alloc] init];
     [self.view addSubview:self.tableView];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem saveTextItemWithTarget:self action:@selector(saveAction)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem saveTextItemWithTarget:self action:@selector(PG_saveAction)];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
 }
-
 #pragma mark --- Network
-
 #pragma mark --- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 2;
@@ -70,11 +50,9 @@
     cell.model = self.viewModel.dataSource[indexPath.row];
     return cell;
 }
-
 #pragma mark --- UITableViewDelegate
-
 #pragma mark --- action
-- (void)saveAction {
+- (void)PG_saveAction {
     [self.view endEditing:YES];
     ZD_WeakSelf
     NSString *name = self.viewModel.dataSource.firstObject.content;
@@ -97,5 +75,4 @@
         }];
     }
 }
-
 @end

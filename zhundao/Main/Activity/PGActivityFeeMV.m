@@ -1,14 +1,4 @@
-
-//
-//  PGActivityFeeMV.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/15.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityFeeMV.h"
-
 @implementation PGActivityFeeMV
 #pragma 网络判断 是否可以修改
 - (void)netWorkWithID:(NSInteger)feeID
@@ -31,5 +21,4 @@
         }
     }];
 }
-
 @end

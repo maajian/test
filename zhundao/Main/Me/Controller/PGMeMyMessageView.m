@@ -1,35 +1,18 @@
 #import "PGFirendsViewModel.h"
-//
-//  PGMeMyMessageView.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/3.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeMyMessageView.h"
-
 @interface PGMeMyMessageView()
-
-//@property(nonatomic,strong) UIImageView  *imageView;
-
 @end
-
 @implementation PGMeMyMessageView
-
 - (instancetype)init{
     if (self = [super init]) {
         self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-64);
         self.contentSize = CGSizeMake(kScreenWidth, kScreenHeight-63);
         self.backgroundColor = ZDBackgroundColor;
-//        self.showsVerticalScrollIndicator = NO;
-        [self setupUI];
+        [self PG_setupUI];
     }
     return self;
 }
-
-- (void)setupUI{
-    
+- (void)PG_setupUI{
     UIImageView *imageView = [[UIImageView alloc]init];
     imageView.image = [UIImage imageNamed:@"message"];
     [self addSubview:imageView];
@@ -40,7 +23,6 @@
         make.size.mas_equalTo(CGSizeMake(100, 100));
         make.centerX.equalTo(self.mas_centerX).offset(0);
     }];
-    
     UILabel *label1 = [[UILabel alloc]init];
     label1.font = [UIFont systemFontOfSize:18];
     label1.text = @"剩余短信(条)";
@@ -51,7 +33,6 @@
         make.size.mas_equalTo(CGSizeMake(kScreenWidth-100, 30));
         make.centerX.equalTo(self.mas_centerX).offset(0);
     }];
-    
     _countLabel  = [[UILabel alloc]init];
     _countLabel.font = [UIFont boldSystemFontOfSize:32];
     _countLabel.text = @"0";
@@ -62,45 +43,38 @@
         make.size.mas_equalTo(CGSizeMake(kScreenWidth-100, 50));
         make.centerX.equalTo(self.mas_centerX).offset(0);
     }];
-    
     UIButton *payButton = [UIButton buttonWithType:UIButtonTypeCustom];
     payButton.backgroundColor = ZDMainColor;
     payButton.layer.cornerRadius = 4;
     payButton.layer.masksToBounds = YES;
     [payButton setTitle:@"充值" forState:UIControlStateNormal];
     [payButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [payButton addTarget:self action:@selector(payMoney) forControlEvents:UIControlEventTouchUpInside];
+    [payButton addTarget:self action:@selector(PG_payMoney) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:payButton];
     [payButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_countLabel.mas_bottom).offset(10);
         make.size.mas_equalTo(CGSizeMake(kScreenWidth-40, 50));
         make.centerX.equalTo(self.mas_centerX).offset(0);
     }];
-    
-    
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     backButton.backgroundColor = [UIColor  whiteColor];
     [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [backButton setTitle:@"返回" forState:UIControlStateNormal];
     backButton.layer.cornerRadius= 4;
     backButton.layer.masksToBounds = YES;
-    [backButton addTarget:self action:@selector(backCtr) forControlEvents:UIControlEventTouchUpInside];
+    [backButton addTarget:self action:@selector(PG_backCtr) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:backButton];
     [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(payButton.mas_bottom).offset(10);
         make.size.mas_equalTo(CGSizeMake(kScreenWidth-40, 50));
         make.centerX.equalTo(self.mas_centerX).offset(0);
     }];
-    
-   UIButton *queButton = [MyButton initWithButtonFrame:CGRectMake(50, kScreenHeight-64-50, kScreenWidth-100, 30) title:@"常见问题" textcolor:kColorA(90, 109, 150, 1) Target:self action:@selector(showQus) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
+   UIButton *queButton = [MyButton initWithButtonFrame:CGRectMake(50, kScreenHeight-64-50, kScreenWidth-100, 30) title:@"常见问题" textcolor:kColorA(90, 109, 150, 1) Target:self action:@selector(PG_showQus) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
     queButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [self addSubview:queButton];
-    
 }
-
 #pragma mark --- 按钮点击事件
-
-- (void)payMoney{
+- (void)PG_payMoney{
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle routeSearchDoneK2 = UITableViewStylePlain; 
         CGPoint assetImageGeneratorT4 = CGPointMake(4,108); 
@@ -111,14 +85,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
          [self.PGMeMyMessageViewDelegate payMessage];
     }
 }
-
-- (void)backCtr{
+- (void)PG_backCtr{
     if ([self.PGMeMyMessageViewDelegate respondsToSelector:@selector(backpop)]) {
         [self.PGMeMyMessageViewDelegate backpop];
     }
 }
-
-- (void)showQus{
+- (void)PG_showQus{
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle autoresizingMaskInton2 = UITableViewStylePlain; 
         CGPoint fragmentShaderStringj4 = CGPointMake(4,144); 
@@ -129,6 +101,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.PGMeMyMessageViewDelegate allQues];
     }
 }
-
-
 @end

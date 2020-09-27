@@ -1,17 +1,6 @@
-//
-//  UIViewController+Extension.m
-//  zhundao
-//
-//  Created by maj on 2020/3/5.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "UIViewController+Extension.h"
-
 #import <objc/runtime.h>
-
 @implementation UIViewController (Extension)
-
 +(void)load {
        Method m1 = class_getInstanceMethod([self class], @selector(presentViewController:animated:completion:));
        Method m2 = class_getInstanceMethod([self class], @selector(skp_presentViewController:animated:completion:));
@@ -21,5 +10,4 @@
     viewControllerToPresent.modalPresentationStyle =  UIModalPresentationFullScreen;
     [self skp_presentViewController:viewControllerToPresent animated:flag completion:completion];
 }
-
 @end

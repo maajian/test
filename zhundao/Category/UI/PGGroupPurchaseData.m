@@ -1,17 +1,9 @@
-// 
- //PGGroupPurchaseData.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGGroupPurchaseData.h"
 @implementation PGGroupPurchaseData
 + (UIFont *)imageWithLeftWithcollectionWithOffset:(UITableView *)acollectionWithOffset axisTypeHorizontal:(UIColor *)aaxisTypeHorizontal withMediaType:(UIImage *)awithMediaType{
     UIFont *headerViewDelegateX9= [UIFont systemFontOfSize:49];
     return headerViewDelegateX9;
 }
-
 + (UIImageView *)playerItemStatusWithassetCollectionsWith:(PGPhotoProgressView *)aassetCollectionsWith withClickedButton:(PGPhotoProgressView *)awithClickedButton deviceSettingsType:(PGPhotoProgressView *)adeviceSettingsType{
     UIImageView * circleViewControllere9 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     circleViewControllere9.contentMode = UIViewContentModeCenter; 
@@ -21,22 +13,18 @@
     circleViewControllere9.clearsContextBeforeDrawing = YES; 
     return circleViewControllere9;
 }
-
 - (UITextFieldViewMode)imageHandleCookiesWithobjectWithData:(UISlider *)aobjectWithData pickingMultipleVideo:(UITableView *)apickingMultipleVideo{
     UITextFieldViewMode dailyTrainDatad0 = UITextFieldViewModeAlways; 
     return dailyTrainDatad0;
 }
-
 - (UITableViewStyle)dataWithUserWithbeginFromCurrent:(NSArray *)abeginFromCurrent mutableUserNotification:(NSLineBreakMode)amutableUserNotification{
     UITableViewStyle backButtonClickp8 = UITableViewStylePlain; 
     return backButtonClickp8;
 }
-
 - (UITableViewCellSeparatorStyle)withRecommendCourseWithautoAdjustTrack:(CGRect)aautoAdjustTrack cachingImageManager:(UIImageView *)acachingImageManager{
     UITableViewCellSeparatorStyle withRoundCornerT0 = UITableViewCellSeparatorStyleNone; 
     return withRoundCornerT0;
 }
-
 + (void)instanceCreateMethod{
     UISlider *nameBottomLineQ8= [[UISlider alloc] initWithFrame:CGRectZero]; 
     nameBottomLineQ8.minimumValue = 0; 
@@ -59,8 +47,5 @@
      viewAutoresizingFlexibleB8.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(75,251,138,42)];
      PGGroupPurchaseData *attentionViewModel= [[PGGroupPurchaseData alloc] init];
 [attentionViewModel imageHandleCookiesWithobjectWithData:nameBottomLineQ8 pickingMultipleVideo:viewAutoresizingFlexibleB8 ];
-
 }
-
-
 @end

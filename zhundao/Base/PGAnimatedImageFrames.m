@@ -1,10 +1,3 @@
-// 
- //PGAnimatedImageFrames.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGAnimatedImageFrames.h"
 @implementation PGAnimatedImageFrames
 + (UITableView *)tableViewContentWithstyleLightContent:(NSMutableArray *)astyleLightContent defaultMaskType:(UIButton *)adefaultMaskType courseViewController:(NSMutableArray *)acourseViewController{
@@ -25,34 +18,26 @@
      withDataArrayT2.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(36,129,156,126)];
      return withDataArrayT2;
 }
-
 + (NSArray *)stringUsingEncodingWithnatatoriumParticularTable:(PGTitleAutoConfig *)anatatoriumParticularTable commentArticleSucc:(PGTitleAutoConfig *)acommentArticleSucc sectionHeaderHeight:(PGTitleAutoConfig *)asectionHeaderHeight{
     NSArray *interfaceOrientationMaskz1= [NSArray array];
     return interfaceOrientationMaskz1;
 }
-
 - (CGRect)rightBottomPointWithrequestReloadIgnoring:(UITableViewCellSeparatorStyle)arequestReloadIgnoring particularModelJson:(NSLineBreakMode)aparticularModelJson{
     CGRect integralMainDataH4 = CGRectZero;
     return integralMainDataH4;
 }
-
 - (NSTextAlignment)withRenderingModeWithleftNavigationItem:(UISwitch *)aleftNavigationItem gestureRecognizerDelegate:(NSTextAlignment)agestureRecognizerDelegate{
     NSTextAlignment moreTrainDarat0 = NSTextAlignmentCenter; 
     return moreTrainDarat0;
 }
-
 - (UITextFieldViewMode)fansWithUserWithselectedPhotoBytes:(UITableViewCellSeparatorStyle)aselectedPhotoBytes assetExportPreset:(UISwitch *)aassetExportPreset{
     UITextFieldViewMode updatedTimeLabelu7 = UITextFieldViewModeAlways; 
     return updatedTimeLabelu7;
 }
-
 + (void)instanceCreateMethod{
     UITableViewCellSeparatorStyle withRenderingModeS8 = UITableViewCellSeparatorStyleNone; 
         NSLineBreakMode socialShareResponseg5 = NSLineBreakByTruncatingTail; 
     PGAnimatedImageFrames *photoSelectableWith= [[PGAnimatedImageFrames alloc] init];
 [photoSelectableWith rightBottomPointWithrequestReloadIgnoring:withRenderingModeS8 particularModelJson:socialShareResponseg5 ];
-
 }
-
-
 @end

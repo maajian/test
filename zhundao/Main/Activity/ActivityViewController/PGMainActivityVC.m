@@ -1,55 +1,37 @@
 #import "PGTrainViewController.h"
-//
-//  PGMainActivityVC.m
-//  zhundao
-//
-//  Created by maj on 2019/7/6.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "PGMainActivityVC.h"
-
 #import "PGActivityPostActivityVC.h"
 #import "PGAllActivityVC.h"
 #import "PGOnActivityVC.h"
 #import "PGCloseActivityVC.h"
 #import "PGMeMessageVC.h"
-
 #import "PGActivityViewModel.h"
-
 @interface PGMainActivityVC ()<PGSegmentViewDelegate, UIScrollViewDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
     NSInteger _currentIndex;
 }
-@property (nonatomic, strong) UISearchController *searchController; // 搜索
-@property (nonatomic, strong) PGSegmentView      *segmentView; // 分页
+@property (nonatomic, strong) UISearchController *searchController; 
+@property (nonatomic, strong) PGSegmentView      *segmentView; 
 @property (nonatomic, strong) UIScrollView       *scrollView;
 @property (nonatomic, strong) PGAllActivityVC    *allVC;
 @property (nonatomic, strong) PGOnActivityVC     *onVC;
 @property (nonatomic, strong) PGCloseActivityVC  *closeVC;
-
 @property (nonatomic, strong) PGActivityViewModel *viewModel;
-
 @end
-
 @implementation PGMainActivityVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
     if (!ZD_UserM.isAdmin) {
-        [self networkGetMessageList];
+        [self PG_networkGetMessageList];
     }
 }
-
 - (void)viewDidLayoutSubviews {
     CGRect viewBounds = self.view.bounds;
     CGFloat topBarOffset = self.topLayoutGuide.length;
     viewBounds.origin.y = topBarOffset * -1;
     self.view.bounds = viewBounds;
 }
-
 - (void)viewDidAppear:(BOOL)animated {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets periodicTimeObserverq4 = UIEdgeInsetsMake(107,227,148,163); 
@@ -60,7 +42,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if(@available(iOS 11.0, *)) {
         self.navigationItem.hidesSearchBarWhenScrolling=YES;
     }
-    [self getEmail];
+    [self PG_getEmail];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -70,9 +52,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super viewWillAppear:animated];
     self.definesPresentationContext = YES;
 }
-
 #pragma mark --- init
-- (void)initSet {
+- (void)PG_initSet {
     self.edgesForExtendedLayout = UIRectEdgeNone;
     _currentIndex = 0;
     self.view.backgroundColor = ZDBackgroundColor;
@@ -86,15 +67,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self addChildViewController:_onVC];
     [self addChildViewController:_closeVC];
     [self.scrollView addSubview:_allVC.view];
-    // 添加活动
     if (ZD_UserM.isAdmin) {
-        self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(pushAddActivity)];
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(PG_pushAddActivity)];
+    } else {
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(PG_pushQuestion)];
     }
     if (ZD_UserM.loginExpired) {
         [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
     }
 }
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets underlineStyleSinglea1 = UIEdgeInsetsZero;
         UIButtonType dailyTrainClassJ1 = UIButtonTypeContactAdd;
@@ -114,7 +96,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }];
     [self.view layoutIfNeeded];
 }
-
 #pragma mark 懒加载
 - (PGSegmentView *)segmentView {
     if (!_segmentView) {
@@ -144,7 +125,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _viewModel;
 }
-// 搜索
 - (UISearchController *)searchController {
     if (!_searchController) {
         _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
@@ -159,12 +139,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
         if (@available(iOS 11.0, *)) {
             [_searchController.searchBar setPositionAdjustment:UIOffsetMake(kScreenWidth / 2 - 50, 0) forSearchBarIcon:UISearchBarIconSearch];
         }
-        //搜索时，背景变模糊
         [_searchController.searchBar setBackgroundImage:[UIImage new]];
     }
     return _searchController;
 }
-
 #pragma mark --- PGSegmentViewDelegate
 - (void)segmentView:(PGSegmentView *)segmentView didSelectIndex:(NSInteger)index {
     __weak typeof(self) weakSelf = self;
@@ -177,7 +155,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self.onVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(weakSelf.scrollView);
                 make.leading.equalTo(self.scrollView).offset(kScreenWidth);
-//                make.height.mas_equalTo(kScreenHeight- kTopBarHeight - 49 - 95);
                 make.bottom.equalTo(self.view);
                 make.width.equalTo(weakSelf.scrollView);
             }];
@@ -193,7 +170,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self.closeVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(weakSelf.scrollView);
                 make.leading.equalTo(self.scrollView).offset(2 * kScreenWidth);
-//                make.height.mas_equalTo(kScreenHeight- kTopBarHeight - 49 - 95);
                 make.bottom.equalTo(self.view);
                 make.width.equalTo(weakSelf.scrollView);
             }];
@@ -205,7 +181,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_scrollView setContentOffset:CGPointMake(2 * kScreenWidth, 0)];
     }
 }
-
 #pragma mark UISearchControllerDelegate 的代理
 - (void)willPresentSearchController:(UISearchController *)searchController {
     if (@available(iOS 11.0, *)) {
@@ -220,7 +195,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_searchController.searchBar setPositionAdjustment:UIOffsetMake(kScreenWidth / 2 - 50, 0) forSearchBarIcon:UISearchBarIconSearch];
     }
 }
-
 #pragma mark --- UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     if (self.searchController.searchBar.text.length) {
@@ -236,7 +210,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.onVC.searchText = self.searchController.searchBar.text;
     self.closeVC.searchText = self.searchController.searchBar.text;
 }
-
 #pragma mark --- UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger index = 0;
@@ -251,16 +224,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self segmentView:nil didSelectIndex:index];
     self.segmentView.currentIndex = index;
 }
-
 #pragma mark --- network
-- (void)pushAddActivity {
+- (void)PG_pushAddActivity {
     if ([[  NSUserDefaults standardUserDefaults  ]objectForKey:@"GradeId"]) {
         NSInteger grade =  [[[  NSUserDefaults standardUserDefaults  ]objectForKey:@"GradeId"]integerValue];
         if (grade <= 1) {
             ZD_WeakSelf
             [self.viewModel checkIsCanpost:^(id obj) {
                 if ([obj[@"Res"] integerValue] == 0) {
-                    [weakSelf gotoPost];
+                    [weakSelf PG_gotoPost];
                 } else {
                     PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:@"免费版一个月最多只能发4个活动"];
                     [label  labelAnimationWithViewlong:weakSelf.view];
@@ -269,11 +241,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 [[PGSignManager shareManager] showNotHaveNet:weakSelf.view];
             }];
         } else {
-            [self gotoPost];
+            [self PG_gotoPost];
         }
     }
 }
-- (void)networkGetMessageList {
+- (void)PG_networkGetMessageList {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets partButtonActionz2 = UIEdgeInsetsZero;
         UIButtonType tweetCommentDataS3 = UIButtonTypeContactAdd;
@@ -290,14 +262,20 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     } failure:^(NSString *error) {}];
 }
-
 #pragma mark --- action
-- (void)gotoPost {
+- (void)PG_gotoPost {
     PGActivityPostActivityVC *postVC = [[PGActivityPostActivityVC alloc]init];
     [self.navigationController pushViewController:postVC animated:YES];
 }
-
-- (void)getEmail {
+- (void)PG_pushQuestion {
+    PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/wenjuan/index.html?id=1479"];
+    web.isClose = YES;
+    [self setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:web animated:YES];
+    [self setHidesBottomBarWhenPushed:NO];
+}
+- (void)PG_getEmail {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         if ([obj[@"errcode"] integerValue] == 0) {
@@ -309,9 +287,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     } fail:^(NSError *error) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self getEmail];
+            [self PG_getEmail];
         });
     }];
 }
-
 @end

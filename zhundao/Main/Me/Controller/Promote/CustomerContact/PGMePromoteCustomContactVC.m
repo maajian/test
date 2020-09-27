@@ -1,38 +1,20 @@
 #import "PGDailyCourseModel.h"
-//
-//  PGDiscoverPromoteCostomContactVC.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteCustomContactVC.h"
-
 #import "PGMePromoteIncomeVC.h"
 #import "PGMePromoteUserNumberVC.h"
 #import "PGMePromoteOrderVC.h"
 #import "PGMePromoteQRCodeVC.h"
 #import "PGMePromoteNoticeVC.h"
 #import "PGMeDetailNoticeVC.h"
-
 #import "PGMePromoteCustomContactCell.h"
 #import "PGMePromoteCustomContactHeaderView.h"
-
 #import "PGMePromoteCustomContactViewModel.h"
-
 @interface PGMePromoteCustomContactVC ()<UITableViewDataSource, UITableViewDelegate, PGMePromoteCustomContactHeaderViewDelegate>
-
 @property (nonatomic, strong) UITableView *tableView;
-// 头视图
 @property (nonatomic, strong) PGMePromoteCustomContactHeaderView *headerView;
-
 @property (nonatomic, strong) PGMePromoteCustomContactViewModel *viewModel;
-
 @end
-
 @implementation PGMePromoteCustomContactVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets errorWithStatusm7 = UIEdgeInsetsMake(85,86,72,40); 
@@ -43,14 +25,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [receiveRemoteNotification interfaceOrientationMaskWithtrainCommentModel:errorWithStatusm7 receiveMemoryWarning:videoSendIconb6 ];
 });
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
-    [self networkForCustomContact];
-    [self networkForZDBi];
-    [self networkForNotice];
+    [self PG_initSet];
+    [self PG_initLayout];
+    [self PG_networkForCustomContact];
+    [self PG_networkForZDBi];
+    [self PG_networkForNotice];
 }
-
 #pragma mark --- Lazyload
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -71,21 +51,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _viewModel;
 }
-
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
     self.view.backgroundColor = ZDBackgroundColor;
     [self.view addSubview:self.tableView];
 }
-
-- (void)initLayout {
+- (void)PG_initLayout {
    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
 }
-
 #pragma mark --- Network
-- (void)networkForCustomContact {
+- (void)PG_networkForCustomContact {
     ZD_WeakSelf
     [self.viewModel getPromoteCustomContactSuccess:^{
         [weakSelf.tableView reloadData];
@@ -93,7 +70,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [[PGSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
-- (void)networkForZDBi {
+- (void)PG_networkForZDBi {
     ZD_WeakSelf
     [self.viewModel getZDBiSuccess:^{
         [weakSelf.tableView reloadData];
@@ -101,7 +78,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [[PGSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
-- (void)networkForNotice {
+- (void)PG_networkForNotice {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets assetExportSessiong1 = UIEdgeInsetsMake(166,98,117,128); 
         UISwitch *courseChoicenessColumnistJ1= [[UISwitch alloc] initWithFrame:CGRectZero]; 
@@ -117,7 +94,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [[PGSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
-
 #pragma mark --- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.dataArray.count;
@@ -127,9 +103,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cell.model = self.viewModel.dataArray[indexPath.row];
     return cell;
 }
-
 #pragma mark --- UITableViewDelegate
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     PGMePromoteCustomContactHeaderView *headerView = [[PGMePromoteCustomContactHeaderView alloc] initWithFrame:CGRectMake(0, 0, ZD_ScreenWidth, 120)];
     headerView.zhundaoBi = self.viewModel.zhundaoBi;
@@ -137,11 +111,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
     headerView.promoteCustomContactHeaderViewDelegate = self;
     return headerView;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 120;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PGMePromoteCustomContactModel *model = self.viewModel.dataArray[indexPath.row];
     if (model.promoteCustomContactType == PGMePromoteCustomContactTypeIncome) {
@@ -155,7 +127,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController pushViewController:order animated:YES];
     }
 }
-
 #pragma mark --- PGMePromoteCustomContactHeaderViewDelegate
 - (void)promoteCustomContactHeaderView:(PGMePromoteCustomContactHeaderView *)promoteCustomContactHeaderView didTapExtendButton:(UIButton *)button {
     PGMePromoteQRCodeVC *qrcode = [[PGMePromoteQRCodeVC alloc] init];
@@ -172,5 +143,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     notice.time = model.AddTime;
     [self.navigationController pushViewController:notice animated:YES];
 }
-
 @end

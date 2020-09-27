@@ -1,12 +1,4 @@
 #import "PGCustomDismissAction.h"
-//
-//  PGDiscoverWaitVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/3/22.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverWaitVC.h"
 #import "PGDiscoverMuliSignVC.h"
 #import "PGSignInLoadallsignModel.h"
@@ -28,22 +20,20 @@ static NSString *reUseID = @"moreSignReuseID";
 @property (weak, nonatomic) IBOutlet UILabel *placeLabel;
 @property(nonatomic,strong)UITableView                 *tableview;
 @property (weak, nonatomic) IBOutlet UIImageView *topSaoImageview;
-@property(nonatomic,strong)NSMutableArray             *dataArray;  // 左边标题的数组
-@property(nonatomic,strong)NSMutableArray             *dataArray1; // 右边结果的数组
-@property(nonatomic,strong)UILabel                      *leftLabel ;  //头视图左边标签
-@property(nonatomic,strong)UILabel                      *centerLabel ;  //头视图左边标签
-@property(nonatomic,strong)UILabel                      *rightLabel ;  //头视图左边标签
-@property(nonatomic,strong)UILabel                      *nullLabel ;  //空数据label
-@property(nonatomic,strong)UILabel                      *cellLeftLabel ;  //空数据label
-@property(nonatomic,strong)UILabel                      *cellRightLabel ;  //空数据label
-@property(nonatomic,strong)UIButton                      *bottonSaoButton;   //扫码按钮
-@property(nonatomic,strong)UIImageView                   *saoImageView;  //扫码中心图片
-@property(nonatomic,strong)UIImageView                   *nullImageView;  //扫码中心图片
+@property(nonatomic,strong)NSMutableArray             *dataArray;  
+@property(nonatomic,strong)NSMutableArray             *dataArray1; 
+@property(nonatomic,strong)UILabel                      *leftLabel ;  
+@property(nonatomic,strong)UILabel                      *centerLabel ;  
+@property(nonatomic,strong)UILabel                      *rightLabel ;  
+@property(nonatomic,strong)UILabel                      *nullLabel ;  
+@property(nonatomic,strong)UILabel                      *cellLeftLabel ;  
+@property(nonatomic,strong)UILabel                      *cellRightLabel ;  
+@property(nonatomic,strong)UIButton                      *bottonSaoButton;   
+@property(nonatomic,strong)UIImageView                   *saoImageView;  
+@property(nonatomic,strong)UIImageView                   *nullImageView;  
 @property(nonatomic,strong)UIProgressView                *progressView;
 @end
-
 @implementation PGDiscoverWaitVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextView *previousPerformRequestsx7= [[UITextView alloc] initWithFrame:CGRectMake(217,161,46,152)]; 
@@ -55,13 +45,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [viewControllerTransition inputPanelWithWithdifferenceBetweenRect:previousPerformRequestsx7 playerItemPlayback:dailyTrainClassX1 ];
 });
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     self.title = @"准到多点签到";
     [self isHaveNet];
     [self setLabelData];
     [self createTableView];
     [self rightButton];
-     [self shownull:_dataArray];   //是否显示空数据
+     [self shownull:_dataArray];   
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -86,10 +75,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 - (void)shownull :(NSArray *)nullArray
 {
-    if (nullArray.count==0&&_nullLabel==nil) {   //么有数据 且不存在label
+    if (nullArray.count==0&&_nullLabel==nil) {   
           [self.view insertSubview:self.nullLabel belowSubview:_tableview];
          [self.view insertSubview:self.nullImageView belowSubview:_tableview];
     }
@@ -113,12 +101,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)addGes
 {
     _topSaoImageview.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushSAO)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(PG_pushSAO)];
     [_topSaoImageview addGestureRecognizer:tap];
 }
-
 #pragma mark  mark 懒加载模块
-- (NSMutableArray *)dataArray  //标题
+- (NSMutableArray *)dataArray  
 {
     if (!_dataArray) {
         _dataArray = [NSMutableArray array];
@@ -157,11 +144,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (!_bottonSaoButton) {
         NSArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:@"muliData"];
         if ([[arr lastObject]integerValue]) {
-            _bottonSaoButton = [MyButton initWithButtonFrame:CGRectMake(20, kScreenHeight-150-138, kScreenWidth-40, 44) title:@"扫码" textcolor:[UIColor whiteColor] Target:self action:@selector(pushSAO) BackgroundColor:ZDMainColor cornerRadius:5 masksToBounds:YES];
+            _bottonSaoButton = [MyButton initWithButtonFrame:CGRectMake(20, kScreenHeight-150-138, kScreenWidth-40, 44) title:@"扫码" textcolor:[UIColor whiteColor] Target:self action:@selector(PG_pushSAO) BackgroundColor:ZDMainColor cornerRadius:5 masksToBounds:YES];
             _bottonSaoButton.titleEdgeInsets = UIEdgeInsetsMake(0, 32, 0, 0);
         }
         else{
-            _bottonSaoButton = [MyButton initWithButtonFrame:CGRectMake(20, kScreenHeight-150-138, kScreenWidth-40, 44) title:@"扫码" textcolor:[UIColor whiteColor] Target:self action:@selector(pushSAO) BackgroundColor:ZDGrayColor cornerRadius:5 masksToBounds:YES];
+            _bottonSaoButton = [MyButton initWithButtonFrame:CGRectMake(20, kScreenHeight-150-138, kScreenWidth-40, 44) title:@"扫码" textcolor:[UIColor whiteColor] Target:self action:@selector(PG_pushSAO) BackgroundColor:ZDGrayColor cornerRadius:5 masksToBounds:YES];
             _bottonSaoButton.titleEdgeInsets = UIEdgeInsetsMake(0, 32, 0, 0);
             _bottonSaoButton.userInteractionEnabled =NO;
         }
@@ -189,7 +176,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _nullLabel;
 }
-
 - (UIProgressView *)progressView
 {
     if (!_progressView) {
@@ -202,7 +188,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return  _progressView;
 }
 #pragma mark  mark 网络请求模块
-- (void)isHaveNet   //判断是否有网
+- (void)isHaveNet   
 {
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
@@ -210,15 +196,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self dataBaseSeacrhData];
             break;
         case ReachableViaWWAN:
-            // 使用3G网
             [self netWorkWithIndicator:YES];
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
             [self netWorkWithIndicator:YES];
             break;
     }
-    
 }
 - (void)showindicator
 {
@@ -227,8 +210,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [_tableview addSubview:indicator];
     [indicator startAnimating];
 }
-
-
 - (void)netWorkWithIndicator :(BOOL )isShow
 {
     NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/PostCheckInList?accessKey=%@",zhundaoApi,_acckey];
@@ -247,8 +228,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
         if ([obj[@"Res"] integerValue] == 0) {
             NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
-            [self savaDataWithResult:result indicator:isShow];   //保存数据进数据库
-            [self dataBaseSeacrhData];          //从数据库中搜索数据
+            [self savaDataWithResult:result indicator:isShow];   
+            [self dataBaseSeacrhData];          
             [_tableview reloadData];
         } else {
             PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:obj[@"Msg"]];
@@ -261,13 +242,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"error =%@",error);
     }];
 }
-
 #pragma mark  mark 数据库操作
-- (void)savaDataWithResult :(NSDictionary *)dic   indicator :(BOOL )isShow   //保存数据进数据库
+- (void)savaDataWithResult :(NSDictionary *)dic   indicator :(BOOL )isShow   
 {
     NSArray *array1 = dic[@"Data"];
     if ([[PGSignManager shareManager].dataBase open]) {
-        [self transactionwithArray1:array1];
+        [self PG_transactionwithArray1:array1];
         [[PGSignManager shareManager].dataBase close];
     }
     if (isShow) {
@@ -275,13 +255,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
          [self showHudWitharray:array1];
     }
 }
-- (void)showHudWitharray :(NSArray *)array1  //数据下载成功hud
+- (void)showHudWitharray :(NSArray *)array1  
 {
     MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:[NSString stringWithFormat:@"已下载%lu人到本地",(unsigned long)array1.count] showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
     [hud hideAnimated:YES afterDelay:1];
 }
--(void)transactionwithArray1 :(NSArray *)array1 {   //事务封装插入
-    // 开启事务
+-(void)PG_transactionwithArray1 :(NSArray *)array1 {   
     [[PGSignManager shareManager].dataBase beginTransaction];
     BOOL isRollBack = NO;
     @try {
@@ -300,24 +279,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     @catch (NSException *exception) {
         isRollBack = YES;
-        // 事务回退
         [[PGSignManager shareManager].dataBase rollback];
     }
     @finally {
         if (!isRollBack) {
-            //事务提交
             [[PGSignManager shareManager].dataBase commit];
         }
     }
 }
-
-- (void)createDataTable  //创建数据表
+- (void)createDataTable  
 {
     PGSignManager *datamanager = [PGSignManager shareManager];
     [datamanager createDatabase];
     if ([datamanager.dataBase open]) {
-//                    NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE muliSignList"];
-//                    BOOL res = [datamanager.dataBase executeUpdate:updateSql];
         bool result = [datamanager.dataBase executeUpdate:@"CREATE TABLE IF NOT EXISTS muliSignList(vcode TEXT NOT NULL,signID integer NOT NULL,trueName TEXT,Status integer,post integer DEFAULT 2,AdminRemark TEXT,phone TEXT,Fee DOUBLE,addTime TEXT,FeeName TEXT, PRIMARY KEY(vcode, signID));"];
         if (result) {
             NSLog(@"成功创建table");
@@ -328,9 +302,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
         [datamanager.dataBase close];
     }
-
 }
-- (void)dataBaseSeacrhData   //搜索数据库 
+- (void)dataBaseSeacrhData   
 {   leftNumber = centerNumber = rightNumber= 0;
     [self numberCount];
 }
@@ -354,9 +327,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [datamanager.dataBase close];
     }
 }
-
 #pragma mark  mark 按钮点击事件
-- (void)pushSAO { //扫码按钮
+- (void)PG_pushSAO { 
     PGDiscoverMuliSignVC *muli = [[PGDiscoverMuliSignVC alloc]init];
     muli.signID = self.signID;
     muli.acckey = self.acckey;
@@ -364,16 +336,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     muli.signStatusBlock = ^(NSInteger status,FMResultSet *rs)
     {
         [self settextWithstatus:status WithFMResultSet:rs];
-     
     };
     muli.haveNetBlock = ^(NSInteger status,NSDictionary *dic)
     {
-
         [self haveNetWithStatus:status WithDic:dic];
     };
 }
-
-- (void)settextWithstatus :(NSInteger )status WithFMResultSet :(FMResultSet *)rs   //没网的回调bolck
+- (void)settextWithstatus :(NSInteger )status WithFMResultSet :(FMResultSet *)rs   
 {
     switch (status) {
         case 0:
@@ -415,11 +384,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
              _nullImageView.image = [UIImage imageNamed:@"img_public_null_data"];
             _nullLabel.text = str;
             break;
-            
         default:
             break;
     }
-  
 }
 - (void)haveNetWithStatus :(NSInteger) status WithDic :(NSDictionary *)dic
 {
@@ -445,9 +412,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 #pragma mark  mark  block   回调刷新
-//[NSString stringWithFormat:@"%@\n姓名 : %@\n手机 : %@\n备注 : %@\n费用名称 : %@\n费用 : %.2f",str,name,phone,adminStr,feeName,fee]
-//[feeName isEqualToString:@"(null)"]
-- (void)getDataFromRs:(FMResultSet *)rs  //没网有数据的返回
+- (void)getDataFromRs:(FMResultSet *)rs  
 {
     [self removeData];
         if (![[rs stringForColumn:@"trueName"] isEqualToString:@"(null)"]) {
@@ -470,26 +435,24 @@ dispatch_async(dispatch_get_main_queue(), ^{
          [_dataArray1 addObject:[rs stringForColumn:@"AdminRemark"]];
     }
     _vcodeLabel.text = [rs stringForColumn:@"VCode"];
-    [self shownull:_dataArray];   //是否清除空数据
-    [self dataBaseSeacrhData];    //修改头视图的数据
+    [self shownull:_dataArray];   
+    [self dataBaseSeacrhData];    
     [_tableview reloadData];
 }
 - (NSString *)getPhoneStr :(NSString *)str
 {
     NSString *phone = nil;
-   
     if (str.length>7) {
         phone = [str stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
     }
     return phone;
 }
-- (void)removeData   //移除所有数据
+- (void)removeData   
 {
     [self.dataArray removeAllObjects];
     [self.dataArray1 removeAllObjects];
 }
-- (void)getdataFromDic :(NSDictionary *)dic  //有网有数据的返回
-
+- (void)getdataFromDic :(NSDictionary *)dic  
 {
     [self removeData];
     [_dataArray addObject:@"姓名"];
@@ -510,10 +473,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self shownull:_dataArray];
     [self dataBaseSeacrhData];
     [_tableview reloadData];
-    
 }
 #pragma mark  mark  TableView   模块
-- (void)createTableView  //创建tableview
+- (void)createTableView  
 {
     _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 150, kScreenWidth, kScreenHeight-150-64) style:UITableViewStylePlain];
     _tableview.dataSource =self;
@@ -524,7 +486,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [_tableview addSubview:self.bottonSaoButton];
     [_tableview addSubview:self.saoImageView];
     _tableview.tableFooterView = [[UIView alloc] init];
-    
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -532,7 +493,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reUseID];
     }
-    else//当页面拉动的时候 当cell存在并且最后一个存在 把它进行删除就出来一个独特的cell我们在进行数据配置即可避免
+    else
     {
         for (UIView *view in cell.contentView.subviews) {
             if ([view isKindOfClass:[UILabel class]]) {
@@ -566,7 +527,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self colorSTRWithStr:_leftLabel];
     [self colorSTRWithStr:_rightLabel];
     [self colorSTRWithStr:_centerLabel];
-    
      return view;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -595,30 +555,25 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return  label;
 }
 #pragma mark  右上角更多选项
-
-- (void)showPost  //sheet显示
+- (void)showPost  
 {
     NSArray *array = @[@"同步离线人员名单"];
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
-    // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
-        NSLog(@"Show Index %zi",index); //取消0
-        
-        if (index==1) {   //删除
+        NSLog(@"Show Index %zi",index); 
+        if (index==1) {   
             [weakSelf postData];
         }
-        
     };
-    
     [self.view.window addSubview:sheet];
 }
-- (void)rightButton   // 添加rightbutton
+- (void)rightButton   
 {
      [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];
 }
 #pragma mark  GZActionSheet action 响应事件
-- (void)postData // 发送离线数据
+- (void)postData 
 {
     PGDiscoverMuliPostData *muli = [[PGDiscoverMuliPostData alloc]init];
     [muli postWithView:self.view isShow:YES acckey:_acckey];
@@ -635,20 +590,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     };
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-//- (void)dealloc
-//{
-//    NSLog(@"dealloc");
-//}
-/*
-#pragma mark  mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

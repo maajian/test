@@ -1,21 +1,9 @@
 #import "PGAlertViewStyle.h"
-//
-//  PGTextStyle.m
-//  SimpleWord
-//
-//  Created by Chenly on 16/5/14.
-//  Copyright © 2016年 Little Meaning. All rights reserved.
-//
-
 #import "PGTextStyle.h"
 #import "UIFont+LMText.m"
-
 @interface PGTextStyle ()
-
 @end
-
 @implementation PGTextStyle
-
 - (instancetype)init {
     if (self = [super init]) {
         _fontSize = 16.f;
@@ -23,9 +11,7 @@
     }
     return self;
 }
-
 + (instancetype)textStyleWithType:(LMTextStyleType)type {
-    
     PGTextStyle *textStyle = [[self alloc] init];
     switch (type) {
         case LMTextStyleFormatTitleSmall:
@@ -43,9 +29,7 @@
     textStyle.bold = type == LMTextStyleFormatNormal ? NO : YES;
     return textStyle;
 }
-
 #pragma mark - setter & getter
-
 - (LMTextStyleType)type {
     if (self.bold == YES && self.italic == NO && self.underline == NO) {
         if (self.fontSize == 18.f) {
@@ -60,9 +44,7 @@
     }
     return LMTextStyleFormatNormal;
 }
-
 - (UIFont *)font {
     return [UIFont lm_fontWithFontSize:self.fontSize bold:self.bold italic:self.italic];
 }
-
 @end

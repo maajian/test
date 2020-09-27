@@ -1,25 +1,12 @@
 #import "PGAssetPropertyDuration.h"
-//
-//  PGActivityShowPostImageVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/10/30.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityShowPostImageVC.h"
 #import "PGActivityChooseBigImgVC.h"
 #import "PGActivityPostActivityVC.h"
 @interface PGActivityShowPostImageVC ()
-
 @property (weak, nonatomic) IBOutlet UIImageView *bigImageView;
-
 @property (weak, nonatomic) IBOutlet UIButton *changeButton;
-
 @end
-
 @implementation PGActivityShowPostImageVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kColorA(30, 30, 30, 1);;
@@ -27,16 +14,13 @@
     [self rightButton];
     [self customBack];
     self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-    // Do any additional setup after loading the view from its nib.
 }
-
 - (void)setup{
     self.title = @"修改封面";
     self.changeButton.layer.cornerRadius = 4;
     self.changeButton.layer.masksToBounds =YES;
     [_bigImageView sd_setImageWithURL:[NSURL URLWithString:_imageStr]];
 }
-
 - (IBAction)changeAction:(id)sender {
     PGActivityChooseBigImgVC *chooseimageVC = [[PGActivityChooseBigImgVC alloc]init];
     chooseimageVC.imageArray = _imageArray;
@@ -56,7 +40,6 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:view];
     self.navigationItem.leftBarButtonItem = item;
     [view addGestureRecognizer:tap3];
-    
 }
 -(void)rightButton
 {
@@ -88,10 +71,8 @@
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
     self.navigationController.navigationBar.translucent = NO;
-    /** 将状态栏文本颜色设置为黑色 ,默认就是黑色 */
     self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
 }
-
 - (void)viewWillDisappear:(BOOL)animated{
 dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint assetMediaTypel8 = CGPointMake(3,69); 
@@ -110,20 +91,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.navigationController.navigationBar.titleTextAttributes = attributes;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-    /** 将状态栏文本颜色设置为黑色 ,默认就是黑色 */
     self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

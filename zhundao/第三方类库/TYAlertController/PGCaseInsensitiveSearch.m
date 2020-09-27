@@ -1,10 +1,3 @@
-// 
- //PGCaseInsensitiveSearch.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGCaseInsensitiveSearch.h"
 @implementation PGCaseInsensitiveSearch
 + (UITableView *)workStatusNofiWithsliderSeekTime:(UITextView *)asliderSeekTime stadiumViewModel:(UIColor *)astadiumViewModel mainScreenWidth:(UIFont *)amainScreenWidth{
@@ -25,7 +18,6 @@
      rankMedalModelt4.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(209,8,79,169)];
      return rankMedalModelt4;
 }
-
 + (UITableView *)shareViewDelegateWithlayerWithPlayer:(PGIntervalSinceDate *)alayerWithPlayer numberBadgeWith:(PGIntervalSinceDate *)anumberBadgeWith deviceSettingsCamera:(PGIntervalSinceDate *)adeviceSettingsCamera{
     UITableView *materialDesignSpinnerr0= [[UITableView alloc] initWithFrame:CGRectMake(139,184,34,46) style: UITableViewStylePlain]; 
     materialDesignSpinnerr0.frame = CGRectZero; 
@@ -44,29 +36,22 @@
      materialDesignSpinnerr0.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(245,58,255,124)];
      return materialDesignSpinnerr0;
 }
-
 - (CGRect)reusablePhotoViewWithshrinkRightBottom:(NSMutableArray *)ashrinkRightBottom levalInfoModel:(UIImage *)alevalInfoModel{
     CGRect assetsCurrentPagej0 = CGRectMake(207,28,141,217); 
     return assetsCurrentPagej0;
 }
-
 - (UIButtonType)taskCenterViewWithspringWithDamping:(CGSize)aspringWithDamping sessionDataTask:(UITableViewStyle)asessionDataTask{
     UIButtonType trackingWithTouchu2 = UIButtonTypeContactAdd;
     return trackingWithTouchu2;
 }
-
 - (UIEdgeInsets)enableVertexAttribWithfromVideoView:(NSArray *)afromVideoView likeTweetSucc:(UIImageView *)alikeTweetSucc{
     UIEdgeInsets orderStepViewP7 = UIEdgeInsetsZero;
     return orderStepViewP7;
 }
-
 + (void)instanceCreateMethod{
     NSMutableArray *contentBackgroundColorT6= [NSMutableArray arrayWithCapacity:0];
         UIImage *buttonSettingBlockD4= [UIImage imageNamed:@""]; 
     PGCaseInsensitiveSearch *courseViewModel= [[PGCaseInsensitiveSearch alloc] init];
 [courseViewModel reusablePhotoViewWithshrinkRightBottom:contentBackgroundColorT6 levalInfoModel:buttonSettingBlockD4 ];
-
 }
-
-
 @end

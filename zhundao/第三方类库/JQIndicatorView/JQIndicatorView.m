@@ -1,12 +1,4 @@
 #import "PGDeviceLinkView.h"
-//
-//  JQIndicatorView.m
-//  JQIndicatorViewDemo
-//
-//  Created by James on 15/7/21.
-//  Copyright (c) 2015年 JQ. All rights reserved.
-//
-
 #import "JQIndicatorView.h"
 #import "JQIndicatorAnimationProtocol.h"
 #import "JQMusic1Animation.h"
@@ -15,58 +7,44 @@
 #import "JQBounceSpot2Animation.h"
 #import "JQCyclingLineAnimation.h"
 #import "JQCyclingCycleAnimation.h"
-
 #define JQIndicatorDefaultTintColor [UIColor colorWithRed:0.049 green:0.849 blue:1.000 alpha:1.000]
 #define JQIndicatorDefaultSize CGSizeMake(60,60)
-
 @interface JQIndicatorView ()
-
 @property (nonatomic, weak) id<JQIndicatorAnimationProtocol> animation;
 @property (nonatomic, assign) JQIndicatorType type;
 @property (nonatomic, assign) CGSize size;
 @property (nonatomic, strong) UIColor *loadingTintColor;
-
-- (void)setToNormalState;
-- (void)setToFadeOutState;
-- (void)fadeOutWithAnimation:(BOOL)animated;
-
+- (void)PG_setToNormalState;
+- (void)PG_setToFadeOutState;
+- (void)PG_fadeOutWithAnimation:(BOOL)animated;
 @end
-
 @implementation JQIndicatorView
-
 - (instancetype)initWithType:(JQIndicatorType)type{
     return [self initWithType:type tintColor:JQIndicatorDefaultTintColor];
 }
-
 - (instancetype)initWithType:(JQIndicatorType)type tintColor:(UIColor *)color{
     return [self initWithType:type tintColor:color size:JQIndicatorDefaultSize];
 }
-
 - (instancetype)initWithType:(JQIndicatorType)type tintColor:(UIColor *)color size:(CGSize)size{
     if (self = [super init]) {
         self.type = type;
         self.loadingTintColor = color;
         self.size = size;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterBackground) name:UIApplicationWillResignActiveNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PG_appWillEnterBackground) name:UIApplicationWillResignActiveNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PG_appWillBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
     }
-    
     return self;
 }
-
 #pragma mark - Animation
-
 - (void)startAnimating{
     self.layer.sublayers = nil;
-    [self setToNormalState];
-    self.animation = [self animationForIndicatorType:self.type];
+    [self PG_setToNormalState];
+    self.animation = [self PG_animationForIndicatorType:self.type];
     if ([self.animation respondsToSelector:@selector(configAnimationAtLayer:withTintColor:size:)]) {
-        
         [self.animation configAnimationAtLayer:self.layer withTintColor:self.loadingTintColor size:self.size];
     }
     self.isAnimating = YES;
 }
-
 - (void)stopAnimating{
     if (self.isAnimating == YES) {
         if ([self.animation respondsToSelector:@selector(removeAnimation)]) {
@@ -74,12 +52,11 @@
             self.isAnimating = NO;
             self.animation = nil;
         }
-        [self fadeOutWithAnimation:YES];
+        [self PG_fadeOutWithAnimation:YES];
         [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
 }
-
-- (id<JQIndicatorAnimationProtocol>)animationForIndicatorType:(JQIndicatorType)type{
+- (id<JQIndicatorAnimationProtocol>)PG_animationForIndicatorType:(JQIndicatorType)type{
     switch (type) {
         case JQIndicatorTypeMusic1:
             return [[JQMusic1Animation alloc] init];
@@ -97,22 +74,18 @@
             break;
     }
 }
-
 #pragma mark - Indicator animation methods
-
-- (void)setToNormalState{
+- (void)PG_setToNormalState{
     self.layer.backgroundColor = [UIColor grayColor].CGColor;
     self.layer.speed = 1.0f;
     self.layer.opacity = 1.0;
 }
-
-- (void)setToFadeOutState{
+- (void)PG_setToFadeOutState{
     self.layer.backgroundColor = [UIColor clearColor].CGColor;
     self.layer.sublayers = nil;
     self.layer.opacity = 0.f;
 }
-
-- (void)fadeOutWithAnimation:(BOOL)animated{
+- (void)PG_fadeOutWithAnimation:(BOOL)animated{
     if (animated) {
         CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
         fadeAnimation.delegate = self;
@@ -122,21 +95,17 @@
         [self.layer addAnimation:fadeAnimation forKey:@"fadeOut"];
     }
 }
-
 #pragma mark - CAAnimation delegate
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    [self setToFadeOutState];
+    [self PG_setToFadeOutState];
 }
-
 #pragma mark - Did enter background
-
-- (void)appWillEnterBackground{
+- (void)PG_appWillEnterBackground{
     if (self.isAnimating == YES) {
         [self.animation removeAnimation];
     }
 }
-
-- (void)appWillBecomeActive{
+- (void)PG_appWillBecomeActive{
 dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *pickerGroupTablei0= [UIFont systemFontOfSize:80];
         UITableViewStyle bottomPhotoViewK6 = UITableViewStylePlain; 

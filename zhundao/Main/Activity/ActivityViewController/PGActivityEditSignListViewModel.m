@@ -1,81 +1,5 @@
-//
-//  PGActivityEditSignListViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/20.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityEditSignListViewModel.h"
-
 @implementation PGActivityEditSignListViewModel
-
-//api/PerActivity/UpdateActivityList?accessKey={accessKey}
-
-
-//{
-//    AddTime = "2017-01-19 21:15:29";
-//    ID = 1279;
-//    InputType = 5;
-//    IsDeleted = 0;
-//    Option = "\U9009\U98791|\U9009\U98792|\U9009\U98793";
-//    Required = 1;
-//    Title = "\U5355\U9009\U6f14\U793a";
-//    UserID = 55;
-//},
-//{
-//    AddTime = "2017-01-19 21:16:11";
-//    ID = 1281;
-//    InputType = 1;
-//    IsDeleted = 0;
-//    Option = "";
-//    Required = 0;
-//    Title = "\U591a\U6587\U672c\U6f14\U793a";
-//    UserID = 55;
-//},
-//{
-//    AddTime = "2017-01-19 21:15:59";
-//    ID = 1280;
-//    InputType = 3;
-//    IsDeleted = 0;
-//    Option = "\U9009\U98791|\U9009\U98792|\U9009\U98793";
-//    Required = 1;
-//    Title = "\U591a\U9009\U6f14\U793a";
-//    UserID = 55;
-//},
-//{
-//    AddTime = "2017-01-19 21:15:06";
-//    ID = 1278;
-//    InputType = 2;
-//    IsDeleted = 0;
-//    Option = "\U9009\U62e91|\U9009\U98792";
-//    Required = 1;
-//    Title = "\U4e0b\U62c9\U6f14\U793a";
-//    UserID = 55;
-//},
-//{
-//    AddTime = "2017-01-19 21:14:38";
-//    ID = 1277;
-//    InputType = 0;
-//    IsDeleted = 0;
-//    Option = "";
-//    Required = 1;
-//    Title = "\U8f93\U5165\U6846\U6f14\U793a";
-//    UserID = 55;
-//},
-//{
-//    AddTime = "2017-01-19 21:16:26";
-//    ID = 1282;
-//    InputType = 4;
-//    IsDeleted = 0;
-//    Option = "";
-//    Required = 0;
-//    Title = "\U4f20\U56fe\U7247\U6f14\U793a";
-//    UserID = 55;
-//}
-//)
-
-
 #pragma 网络
 - (void)postDataWithDic :(NSDictionary *)dic {
     NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/UpdateActivityList?accessKey=%@",zhundaoApi,[[PGSignManager shareManager] getaccseekey]];
@@ -92,21 +16,16 @@
         _postBlock(0);
     }];
 }
-
-
 #pragma 逻辑
 - (NSMutableArray *)getMustArrayFromArray :(NSArray *)baseArray customArray :(NSArray *)customArray
 {
     NSMutableArray *array = [NSMutableArray array];
     [array addObjectsFromArray:baseArray];
     for (NSDictionary *dic in customArray) {
-//        if ([dic[@"Required"]integerValue]==1) {
             [array addObject:dic[@"Title"]];
-//        }
     }
     return array;
 }
-
 - (NSMutableArray *)getLeftChooseArrayFromCustomArray :(NSArray *)customArray
 {
       NSMutableArray *array = [NSMutableArray array];
@@ -117,8 +36,6 @@
     }
     return array;
 }
-
-
 - (NSMutableArray *)getRightMustArray :(NSArray *)baseArray allOptionArray :(NSArray *)allOptionArray dic :(NSDictionary *)optionDic
 {
     NSMutableArray *array = [NSMutableArray array];
@@ -148,9 +65,6 @@
     }
     return resultArray;
 }
-
-
-
 - (NSMutableArray *)getRequiredArray :(NSArray *)baseArray allOptionArray :(NSArray *)allOptionArray
 {
     NSMutableArray *resultArray = [NSMutableArray array];
@@ -165,23 +79,13 @@
     }
     return resultArray;
 }
-
-
-
-
-
-
-
 - (NSMutableArray *)getRightChooseAllOptionArray :(NSArray *)allOptionArray dic :(NSDictionary *)optionDic
 {
     NSMutableArray *array = [NSMutableArray array];
     NSMutableArray *resultArray = [NSMutableArray array];
     for (NSDictionary *dic in allOptionArray) {
-//        if ([dic[@"Required"]integerValue]==1) {}
-//        else {
             [array addObject:dic[@"Title"]];
             [resultArray addObject:@"未填写*"];
-//        }
     }
     for (int i = 0; i<array.count; i++) {
         for (NSString *keyStr in optionDic.allKeys) {
@@ -193,19 +97,15 @@
     }
     return resultArray;
 }
-
 - (NSDictionary *)getDicWithStr :(NSString *)jsonStr
 {
     NSData *data =  [jsonStr dataUsingEncoding:NSUTF8StringEncoding];;
-    
     NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
     NSLog(@"dic = %@",dic);
     return dic;
 }
-
 -(NSMutableArray *)getMustInputTypeFromArray :(NSArray *)baseNameArray customArray :(NSArray *)customArray
 {
-    
     NSMutableArray *array = [NSMutableArray array];
     for (NSString *nameStr in baseNameArray) {
         if ([nameStr isEqualToString:@"手机"]) {
@@ -227,9 +127,7 @@
         }
     }
     for (NSDictionary *dic in customArray) {
-//        if ([dic[@"Required"]integerValue]==1) {
             [array addObject:dic[@"InputType"]];
-//        }
     }
     return array;
 }
@@ -244,8 +142,7 @@
     }
     return array;
 }
-
-- (NSMutableAttributedString *)setAttrbriteStrWithText:(NSString *)text  //为*添加富文本变红色
+- (NSMutableAttributedString *)setAttrbriteStrWithText:(NSString *)text  
 {
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:text];
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:137.0f/256.0f green:137.0f/256.0f blue:137.0f/256.0f alpha:1] range:NSMakeRange(0, 3)];
@@ -255,7 +152,6 @@
     [str addAttribute:NSFontAttributeName value:KweixinFont(14) range:NSMakeRange(0, text.length)];
     return  str;
 }
-
 - (NSArray *)getAllChooseArrayWithStr :(NSString *)titleStr customArray:(NSArray *)customArray
 {
     NSMutableArray *array = [NSMutableArray array];
@@ -273,17 +169,11 @@
     }
     return [array copy];
 }
-
 - (NSArray *)getNowChooseArrayWithStr :(NSString *)titleStr
 {
     NSArray *array = [titleStr componentsSeparatedByString:@"|"];
     return array;
 }
-
-
-
-
-
 - (NSDictionary *)SaveWithRightMustArray :(NSMutableArray *)rightMustArray
                            leftMustArray :(NSMutableArray *)_leftMustArray
                                baseArray :(NSArray *)baseArray
@@ -309,9 +199,6 @@
         return nil;
     }
 }
-
-
-
 - (void)setKeyboardTypeWithtextf : (UITextField *)textf type :(NSInteger) type
 {
     if (type==0||type==1) {
@@ -320,8 +207,6 @@
         textf.keyboardType = UIKeyboardTypeNumberPad;
     }
 }
-
-
 - (NSMutableArray *)getLastPostArray :(NSArray *)array
 {
     NSArray *engArray = @[@"UserName",@"Mobile",@"Sex",@"Company",@"Depart",@"Duty",@"IDcard",@"Industry",@"Email",@"Address",@"Remark",@"FaceImg"];
@@ -333,11 +218,8 @@
             [lastArray addObject:str];
         }
     }
-    
     return lastArray;
-    
 }
-
 - (NSInteger )getSexSelectStr :(NSString *)sexStr
 {
         if ([sexStr isEqualToString:@"男"]) {
@@ -346,7 +228,6 @@
             return 2;
         }
 }
-
 - (NSMutableArray *)getBaseRightArray :(NSArray *)allRight count :(NSInteger )count
 {
     NSMutableArray *lastArray = [NSMutableArray array];

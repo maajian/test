@@ -1,15 +1,5 @@
-//
-//  PGDiscoverFaceModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/7/21.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverFaceModel.h"
-
 @implementation PGDiscoverFaceModel
-
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init]) {
@@ -21,7 +11,6 @@
     }
     return self;
 }
-
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.Name forKey:@"Name"];
@@ -30,5 +19,4 @@
     [aCoder encodeObject:self.checkInName forKey:@"checkInName"];
     [aCoder encodeInteger:self.checkInId forKey:@"checkInId"];
 }
-
 @end

@@ -1,11 +1,3 @@
-//
-//  PGDiscoverDetailShakeVC.h
-//  zhundao
-//
-//  Created by zhundao on 2017/2/14.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGBaseVC.h"
 typedef void(^popBolck) (NSDictionary *popdic);
 typedef void(^jiebangBlock)(BOOL  issuccess);

@@ -1,10 +1,3 @@
-// 
- //PGReceivedSecondFrame.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGReceivedSecondFrame.h"
 @implementation PGReceivedSecondFrame
 + (UILabel *)updatedTimeLabelWithjavaScriptText:(UIFont *)ajavaScriptText zoneWithAbbreviation:(NSData *)azoneWithAbbreviation photoPickerView:(UIButton *)aphotoPickerView{
@@ -16,36 +9,28 @@
     imageCropManagerH8.textAlignment = NSTextAlignmentCenter; 
     return imageCropManagerH8;
 }
-
 + (UISwitch *)rankMedalBlockWithregionDefaultHandler:(PGWithSureBlock *)aregionDefaultHandler buttonSystemItem:(PGWithSureBlock *)abuttonSystemItem recordVideoCamera:(PGWithSureBlock *)arecordVideoCamera{
     UISwitch *deepBlackColorp3= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     deepBlackColorp3.on = YES; 
     deepBlackColorp3.onTintColor = [UIColor whiteColor]; 
     return deepBlackColorp3;
 }
-
 - (UITableViewStyle)buttonSettingBlockWithtrainsWithOffset:(UIFont *)atrainsWithOffset scrollDirectionLeft:(NSRange)ascrollDirectionLeft{
     UITableViewStyle authorizationStatusAuthorizede7 = UITableViewStylePlain; 
     return authorizationStatusAuthorizede7;
 }
-
 - (NSLineBreakMode)compositionLayerInstructionWithtextureRetainCount:(NSArray *)atextureRetainCount withPreviewType:(NSString *)awithPreviewType{
     NSLineBreakMode imageViewWithj5 = NSLineBreakByTruncatingTail; 
     return imageViewWithj5;
 }
-
 - (UITextFieldViewMode)cacheDailyCourseWithassetFromVideo:(NSLineBreakMode)aassetFromVideo withCourseSecond:(NSTextAlignment)awithCourseSecond{
     UITextFieldViewMode shareViewDelegatef5 = UITextFieldViewModeAlways; 
     return shareViewDelegatef5;
 }
-
 + (void)instanceCreateMethod{
     UIFont *userNotificationTypeC6= [UIFont systemFontOfSize:60];
         NSRange viewCellIdentifierD5 = NSMakeRange(1,74); 
     PGReceivedSecondFrame *savedPhotosAlbum= [[PGReceivedSecondFrame alloc] init];
 [savedPhotosAlbum buttonSettingBlockWithtrainsWithOffset:userNotificationTypeC6 scrollDirectionLeft:viewCellIdentifierD5 ];
-
 }
-
-
 @end

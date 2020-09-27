@@ -1,14 +1,5 @@
 #import "PGReceiveVideoData.h"
-//
-//  PGMePromoteCustomContactNoticeView.m
-//  zhundao
-//
-//  Created by maj on 2020/1/8.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteCustomContactNoticeView.h"
-
 @interface PGMePromoteCustomContactNoticeView() {
     NSInteger _currentPage;
 }
@@ -19,21 +10,17 @@
 @property (nonatomic, strong) UIView *lineView;
 @property (nonatomic, strong) UIButton *moreButton;
 @property (nonatomic, strong) NSTimer *timer;
-
 @end
-
 @implementation PGMePromoteCustomContactNoticeView
-
 - (instancetype)init {
     if (self = [super init]) {
-        [self setupUI];
-        [self initLayout];
-        _timer = [NSTimer timerWithTimeInterval:2 target:self selector:@selector(timeAction:) userInfo:nil repeats:YES];
+        [self PG_setupUI];
+        [self PG_initLayout];
+        _timer = [NSTimer timerWithTimeInterval:2 target:self selector:@selector(PG_timeAction:) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIView *)cornerView {
     if (!_cornerView) {
@@ -68,7 +55,6 @@
     if (!_scrollView) {
         _scrollView = [UIScrollView new];
         _scrollView.bounces = NO;
-//        _scrollView.delegate = self;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
     }
@@ -79,19 +65,17 @@
         _moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_moreButton setTitle:@"更多" forState:UIControlStateNormal];
         _moreButton.titleLabel.font = ZDSystemFont(12);
-        [_moreButton addTarget:self action:@selector(moreAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_moreButton addTarget:self action:@selector(PG_moreAction:) forControlEvents:UIControlEventTouchUpInside];
         [_moreButton setTitleColor:ZDGrayColor2 forState:UIControlStateNormal];
     }
     return _moreButton;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOffset = CGSizeMake(0, 0);
     self.layer.shadowOpacity = 0.1;
     self.layer.shadowRadius = 5;
-    
     [self addSubview:self.cornerView];
     [self.cornerView addSubview:self.noticeImageView];
     [self.cornerView addSubview:self.noticeLabel];
@@ -99,9 +83,8 @@
     [self.cornerView addSubview:self.lineView];
     [self.cornerView addSubview:self.moreButton];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.cornerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
@@ -131,19 +114,17 @@
         make.centerY.equalTo(self).offset(0);
     }];
 }
-
 #pragma mark --- setter
 - (void)setNoticeArray:(NSMutableArray<PGMePromoteNoticeModel *> *)noticeArray {
     _noticeArray = noticeArray;
     for (int i = 0; i< noticeArray.count; i++) {
         PGMePromoteNoticeModel *model = noticeArray[i];
         UILabel *label = [UILabel labelWithFrame:CGRectZero textColor:ZDBlackColor font:ZDSystemFont(12) numberOfLines:0 lineBreakMode:0 lineAlignment:0];
-        [label addTapGestureTarget:self action:@selector(noticeAction:)];
+        [label addTapGestureTarget:self action:@selector(PG_noticeAction:)];
         label.text = model.Title;
         label.tag = 100 + i;
         _currentPage = 0;
         [_scrollView addSubview:label];
-        
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leading.trailing.equalTo(self.scrollView);
             make.top.equalTo(self.scrollView).offset(37 * i);
@@ -155,9 +136,8 @@
         _scrollView.contentSize = CGSizeMake(self.width, 37 * noticeArray.count);
     }
 }
-
 #pragma mark --- NSTimer
-- (void)timeAction:(NSTimer *)timer {
+- (void)PG_timeAction:(NSTimer *)timer {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *badgeStyleNumbery5= [UIFont systemFontOfSize:225];
         NSData *baseTabbarViewC0= [[NSData alloc] init];
@@ -180,9 +160,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }
 }
-
 #pragma mark --- action
-- (void)moreAction:(UIButton *)button {
+- (void)PG_moreAction:(UIButton *)button {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *circleItemPhotoR9= [UIFont systemFontOfSize:192];
         NSData *imageWithImaget5= [[NSData alloc] init];
@@ -193,12 +172,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.promoteCustomContactNoticeViewDelegate promoteCustomContactNoticeView:self didTapMoreButton:button];
     }
 }
-- (void)noticeAction:(UITapGestureRecognizer *)tap {
+- (void)PG_noticeAction:(UITapGestureRecognizer *)tap {
     NSInteger index = tap.view.tag - 100;
     PGMePromoteNoticeModel *model = _noticeArray[index];
     if ([self.promoteCustomContactNoticeViewDelegate respondsToSelector:@selector(promoteCustomContactNoticeView:didTapNotice:)]) {
         [self.promoteCustomContactNoticeViewDelegate promoteCustomContactNoticeView:self didTapNotice:model];
     }
 }
-
 @end

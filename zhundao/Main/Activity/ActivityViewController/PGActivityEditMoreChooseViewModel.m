@@ -1,15 +1,5 @@
-//
-//  PGActivityEditMoreChooseViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/21.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityEditMoreChooseViewModel.h"
-
 @implementation PGActivityEditMoreChooseViewModel
-
 - (NSMutableArray *)getIndexArrayFromArray :(NSArray *)nowArray allArray :(NSArray *)allArray
 {
     NSMutableArray *indexArray = [NSMutableArray array];
@@ -26,7 +16,4 @@
     }
     return indexArray;
 }
-
-
-
 @end

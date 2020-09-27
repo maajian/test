@@ -1,12 +1,4 @@
 #import "PGMutableTrackWith.h"
-//
-//  PGDiscoverDetailShakeVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/2/14.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverDetailShakeVC.h"
 #import "PGDiscoverDetailModel.h"
 #import "PGDiscoverShakeTableViewDelegateObj.h"
@@ -28,23 +20,18 @@
     UITableViewCell *mycell;
     NSInteger pickerTag;
     Reachability *r ;
-    
 }
 @property(nonatomic,assign)BOOL successFlag;
 @property(nonatomic,copy)NSString *linkStr ;
 @end
-
 @implementation PGDiscoverDetailShakeVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self datajiexi];
     [self createTableView];
     [self createRight];
     flag=0;
     _successFlag = 0;
-    // Do any additional setup after loading the view.
 }
 - (void)network
 {
@@ -53,26 +40,13 @@
         case NotReachable:
             NSLog(@"wu");
         {
-        
-            
-            
-            
             break;
         }
-            
         case ReachableViaWWAN:
-            // 使用3G网络
             NSLog(@"wan");
-          
-            
-            
-            
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
             NSLog(@"wifi");
-        
-            
             break;
     }
 }
@@ -96,13 +70,11 @@
     _tableview.dataSource = tableDelegate;
     tableDelegate.detailModelDelegate = self;
 }
-
 - (void)selectIndex:(NSIndexPath *)indexPath{
     if (indexPath.row== 4 && indexPath.section == 0) {
-        [self cellTap];
+        [self PG_cellTap];
     }
 }
-
 - (void)datajiexi
 {
     model = [PGDiscoverDetailModel yy_modelWithJSON:_dataDic];
@@ -122,30 +94,22 @@
     [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
         whiteView.transform = CGAffineTransformMakeTranslation(0,  (kScreenHeight-245)/2+245);
     } completion:nil];
-    
     UILabel *lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 190, whiteView.frame.size.width, .5)];
     lineLabel.backgroundColor = [UIColor blackColor];
     [whiteView addSubview:lineLabel];
     CGFloat btnWhidth=(kScreenWidth-60)/2;
-    
     UIButton *cancleBt = [UIButton buttonWithType:UIButtonTypeCustom];
     cancleBt.frame = CGRectMake(0, 190+10, btnWhidth, 35);
     [cancleBt setTitle:@"取消" forState:UIControlStateNormal];
     [cancleBt addTarget:self action:@selector(cancleAction) forControlEvents:UIControlEventTouchUpInside];
     [cancleBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [whiteView addSubview:cancleBt];
-    
-    //确定
     UIButton *confirmBt = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmBt addTarget:self action:@selector(confirmAction) forControlEvents:UIControlEventTouchUpInside];
     confirmBt.frame = CGRectMake(btnWhidth, 190+10, btnWhidth, 35);
     [confirmBt setTitle:@"确定" forState:UIControlStateNormal];
     [confirmBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [whiteView addSubview:confirmBt];
-    
-    
-    
-    
     UIPickerView *_picker = [[UIPickerView alloc] initWithFrame: CGRectMake(0, 10, kScreenWidth-60, 190)];
     _picker.delegate = self;
     _picker.dataSource = self;
@@ -153,13 +117,11 @@
     _picker.showsSelectionIndicator = YES;
     pickerTag=0;
     [whiteView addSubview:_picker];
-    
 }
 - (void)confirmAction
-{    NSMutableDictionary *mydic = [_dataDic mutableCopy];  //获取摇一摇的数组;
+{    NSMutableDictionary *mydic = [_dataDic mutableCopy];  
     if (flag==1) {
-        [mydic setObject:_signDataArray[pickerTag] forKey:@"NickName"];  //替换 NickName数据
-
+        [mydic setObject:_signDataArray[pickerTag] forKey:@"NickName"];  
     }
     else
     {
@@ -176,7 +138,6 @@
         [baseView removeFromSuperview];
     }];
         [self updataData];
-    
 }
 - (void)cancleAction
 {    [UIView animateWithDuration:0.4 animations:^{
@@ -186,7 +147,6 @@
     [baseView removeFromSuperview];
 }];
 }
-
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
@@ -200,7 +160,6 @@
         return  _activityDataArray.count;
     }
 }
-
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     if (flag==1) {
@@ -224,7 +183,6 @@
 }
 - (void)signListData
 {
-    //    POST api/CheckIn/PostCheckIn?accessKey={accessKey}
     NSString *accesskey = [[PGSignManager shareManager]getaccseekey];
     NSString *listUrl =[NSString stringWithFormat:@"%@api/CheckIn/PostCheckIn?accessKey=%@",zhundaoApi,accesskey];
     NSDictionary *dic = @{@"Type":@"1",
@@ -267,14 +225,11 @@
             [label labelAnimationWithViewlong:self.view];
         }
     } fail:^(NSError *error) {
-        
     }];
 }
 - (void)activityListData
 {
-    //    POST api/PerActivity/PostActivityList?accessKey={accessKey}
     NSString *accesskey = [[PGSignManager shareManager]getaccseekey];
-    
     NSString *listUrl =[NSString stringWithFormat:@"%@api/PerActivity/PostActivityList?accessKey=%@",zhundaoApi,accesskey];
     NSDictionary *dic = @{@"Type":@"1",
                           @"pageSize":@"1000",
@@ -290,14 +245,12 @@
         NSMutableArray *muarray = [NSMutableArray array];
         NSMutableArray *muarray1 = [NSMutableArray array];
         for (NSDictionary *acdic in array1) {
-            
             [muarray addObject:[acdic objectForKey:@"Title"]];
             [ muarray1 addObject:[acdic objectForKey:@"ID"]];
         }
         _activityDataArray = [muarray mutableCopy];
         _activityIDArray = [muarray1 mutableCopy];
         flag=0;
-        
         [hud hideAnimated:YES];
         if (_activityDataArray.count>0) {
             [self createpicker];
@@ -308,13 +261,8 @@
             [label labelAnimationWithViewlong:self.view];
         }
     } fail:^(NSError *error) {
-        
     }];
 }
-
-
-
-
 - (void)custom{
     flag = 2 ;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入链接" message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -336,7 +284,6 @@
                     }]];
     [self presentViewController:alert animated:YES completion:nil];
 }
-
 - (void)updataData
 {
     NSString *uptataUrl=[NSString stringWithFormat:@"%@/api/v2/extra/updateBeaconInfo?token=%@&deviceId=%@&&type=0",zhundaoApi,[[PGSignManager shareManager] getToken], self.DeviceId];
@@ -367,7 +314,6 @@
         tableDelegate.model = model1;
         [ _tableview  reloadData];
     }
-    
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [ZD_NetWorkM postDataWithMethod:uptataUrl parameters:updatadic succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
@@ -394,7 +340,6 @@
 }
 -(void) sureJiechu
 {
-  
         UIActionSheet *sheet= [[UIActionSheet alloc] initWithTitle:nil
                                                           delegate:self
                                                  cancelButtonTitle:@"取消"
@@ -402,8 +347,7 @@
                                                  otherButtonTitles:nil];
         [sheet showInView:self.view];
 }
-
-- (void)cellTap{
+- (void)PG_cellTap{
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     [PGAlertSheet showWithArray:@[@"签到", @"报名", @"自定义"] title:@"选择类别" isDelete:NO selectBlock:^(NSInteger index) {
         if (index == 0) {
@@ -435,12 +379,10 @@
 - (void)alertNotNet
 {
     [PGAlertView alertWithTitle:@"提醒!" message:@"请检查网络连接后重试" cancelBlock:^{
-        
     }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)netWorkWithstringValue:(NSString *)stringValue
 {
@@ -457,14 +399,12 @@
 }
 - (void)showhudWithString :(NSString *)labelText WithImageName :(NSString *)imageName successBool :(BOOL )isSuccess
 {
-    
     if (isSuccess) {
         MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:labelText showAnimated:YES UIView:self.view imageName:imageName];
          _jiebangBlock(1);
         [hud1 showAnimated:YES];
         [hud1 hideAnimated:YES afterDelay:1];
         [self willPop];
-        
     }
     else
     {
@@ -497,15 +437,4 @@
         [self showhudWithString:@"解绑失败" WithImageName:nil successBool:0];
     }
 }
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

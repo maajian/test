@@ -1,19 +1,9 @@
 #import "PGSocialMessageObject.h"
-                //
-//  PGLoginMainVC.m
-//  zhundao
-//
-//  Created by zhundao on 2016/12/2.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
-
 #import "PGLoginMainVC.h"
 #import "WXApi.h"
 #import "PGBaseTabbarVC.h"
 #import "PGDiscoverMultidropVC.h"
 #import "AppDelegate.h"
-//#import "ActivityViewController.h"
-//#import "PGMainActivityVC.h"
 #import "AFURLRequestSerialization.h"
 #import "UITextField+TextLeftOffset_ffset.h"
 #import <Foundation/NSJSONSerialization.h>
@@ -23,11 +13,8 @@
 #import "PGloginCodeLoginVC.h"
 #import "PGBaseWebViewVC.h"
 #import "PGLoginCodeSendVC.h"
-
 #define URL_APPID @"appid"
 #define URL_SECRET @"app secret"
-//wxe25de2684f235a04 appid
-//3286d02771487220b3135ed3620e552e appsecret
 @interface PGLoginMainVC ()<PGServiceAlertViewDelegate>
 {
     SendAuthResp *temp ;
@@ -36,30 +23,20 @@
 }
 @property (weak, nonatomic) IBOutlet UIButton *wehcatButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
-//@property (copy, nonatomic) void (^requestForUserInfoBlock)();
 @property(nonatomic,strong)UITextField *phoneTextLabel;
 @property(nonatomic,strong)UITextField *lockTextLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *appImageView;
 @property (weak, nonatomic) IBOutlet UILabel *weixinlabel;
 @property (weak, nonatomic) IBOutlet UIButton *codeButton;
 @property (weak, nonatomic) IBOutlet UIButton *tryButton;
-
 @property(nonatomic,strong)MBProgressHUD *hud;
 @end
-
 @implementation PGLoginMainVC
- // 验证码登录
 - (IBAction)zhuCeButton:(id)sender {
-    
-//    PGloginCodeLoginVC *code = [[PGloginCodeLoginVC alloc] init];
-//    PGBaseNavVC *nav = [[PGBaseNavVC alloc] initWithRootViewController:code];
-//    [self presentViewController:nav animated:YES completion:nil];
     PGLoginCodeSendVC *send = [[PGLoginCodeSendVC alloc] init];
     [self.navigationController pushViewController:send animated:YES];
 }
-
 - (IBAction)phonelogin:(id)sender {
-
     if (_phoneTextLabel.text.length && _lockTextLabel.text.length) {
         [self login];
     } else {
@@ -67,12 +44,10 @@
         [label labelAnimationWithViewlong:self.view];
     }
  }
-
 - (void)login {
-    [self networkForLogin];
+    [self PG_networkForLogin];
 }
-
-- (void)getGrade {
+- (void)PG_getGrade {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         [PGUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
@@ -112,19 +87,15 @@
         [_hud hideAnimated:YES];
     }];
 }
-
- // 多点登录
 - (IBAction)forgotButton:(id)sender {
     UIStoryboard *muliStory = [UIStoryboard storyboardWithName:@"PGDiscover" bundle:nil];
     PGDiscoverMultidropVC *multi = [muliStory instantiateViewControllerWithIdentifier:@"Multidrop"];
     PGBaseNavVC *Nav = [[PGBaseNavVC alloc] initWithRootViewController:multi];
     [UIApplication sharedApplication].delegate.window.rootViewController = Nav;
 }
-
 - (IBAction)loginAction:(id)sender {
         [self wechatLogin];
 }
-
 - (BOOL)wechatLogin {
     if ([WXApi isWXAppInstalled]) {
         SendAuthReq *req = [[SendAuthReq alloc] init];
@@ -137,7 +108,7 @@
         return NO;
     }
 }
-- (void)tryAction:(UIButton *)button {
+- (void)PG_tryAction:(UIButton *)button {
     PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
     web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/wenjuan/index.html?id=1479"];
     web.isClose = YES;
@@ -145,9 +116,8 @@
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
 }
-
 #pragma mark --- Network
-- (void)networkForLogin {
+- (void)PG_networkForLogin {
     [self.view endEditing:YES];
     NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
     NSDictionary *dic = @{@"BusinessCode": @"Login",
@@ -179,9 +149,7 @@
         ZD_HUD_SHOW_ERROR(error);
     }];
 }
-
-
-- (void)setupAlertController1 {
+- (void)PG_PG_setupAlertController1 {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *choicenessVideoViewW8= [NSMutableArray arrayWithCapacity:0];
         UIView *wechatTimeLinef7= [[UIView alloc] initWithFrame:CGRectZero]; 
@@ -191,24 +159,17 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGSocialMessageObject *particularNameData= [[PGSocialMessageObject alloc] init];
 [particularNameData previousPerformRequestsWithdecimalNumberHandler:choicenessVideoViewW8 backButtonClick:wechatTimeLinef7 ];
 });
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请输入正确的账号密码" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *actionConfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:actionConfirm];
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
-
-- (void)setupAlertController {
-    
+- (void)PG_setupAlertController {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请先安装微信客户端" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *actionConfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:actionConfirm];
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
-
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *cacheUserModelw9= [NSMutableArray arrayWithCapacity:0];
@@ -222,7 +183,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super viewDidLoad];
     [_codeButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
     [_tryButton setTitleColor:ZDBlackColor3 forState:UIControlStateNormal];
-    [_tryButton addTarget:self action:@selector(tryAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_tryButton addTarget:self action:@selector(PG_tryAction:) forControlEvents:UIControlEventTouchUpInside];
     [_loginButton setBackgroundColor:ZDMainColor];
      if ([WXApi isWXAppInstalled])
      {
@@ -304,20 +265,17 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }];
      imageview1.image = [UIImage imageNamed:@"com_public_phone_1"];
 }
-
 - (void)setLeftView
 {
     [_lockTextLabel setTextOffsetWithLeftViewRect:CGRectMake(0, 0, 30, 50) WithMode:UITextFieldViewModeAlways];
     [_phoneTextLabel setTextOffsetWithLeftViewRect:CGRectMake(0, 0, 30, 50) WithMode:UITextFieldViewModeAlways];
-    
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_phoneTextLabel.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(10, 10)]; // UIRectCornerBottomRight通过这个设置
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_phoneTextLabel.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(10, 10)]; 
     CAShapeLayer *maskLayer = [CAShapeLayer initWithFrame:_lockTextLabel.bounds WithPath:maskPath WithFillColor:[UIColor whiteColor] WithStrokeColor:[UIColor colorWithWhite:0.0 alpha:1]];
    _phoneTextLabel.layer.mask = maskLayer;
-    UIBezierPath *maskPath1 = [UIBezierPath bezierPathWithRoundedRect:_lockTextLabel.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(10, 10)]; // UIRectCornerBottomRight通过这个设置
+    UIBezierPath *maskPath1 = [UIBezierPath bezierPathWithRoundedRect:_lockTextLabel.bounds byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight cornerRadii:CGSizeMake(10, 10)]; 
     CAShapeLayer *maskLayer1 = [CAShapeLayer initWithFrame:_lockTextLabel.bounds WithPath:maskPath1 WithFillColor:[UIColor whiteColor] WithStrokeColor:[UIColor colorWithWhite:0.9 alpha:1]];
     _lockTextLabel.layer.mask = maskLayer1;
 }
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -332,7 +290,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         self.phoneTextLabel.text = ZD_UserM.loginAccount;
     }
 }
-
 #pragma mark --- PGServiceAlertViewDelegate
 - (void)alertView:(PGServiceAlertView *)alertView didTapUrl:(NSString *)url {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -361,17 +318,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     alertView = nil;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

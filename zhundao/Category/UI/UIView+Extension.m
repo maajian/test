@@ -1,13 +1,4 @@
-//
-//  UIView+Extension.m
-//  zhundao
-//
-//  Created by maj on 2018/12/1.
-//  Copyright © 2018年 zhundao. All rights reserved.
-//
-
 #import "UIView+Extension.h"
-
 @implementation UIView (Extension)
 - (void)setX:(CGFloat)x {
     CGRect frame = self.frame;
@@ -89,8 +80,6 @@
 - (CGFloat)maxY {
     return CGRectGetMaxY(self.frame);
 }
-
-
 - (void)setMinX:(CGFloat)minX {
     CGRect frame = self.frame;
     frame.origin.x = minX;
@@ -107,12 +96,8 @@
 - (CGFloat)minY {
     return CGRectGetMinY(self.frame);
 }
-
-
 @end
-
 @implementation UIView (GestureRecognize)
-
 - (void)addTapGestureTarget:(id)target action:(SEL)action {
     self.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapG = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
@@ -138,12 +123,8 @@
     pinchG.cancelsTouchesInView = NO;
     [self addGestureRecognizer:pinchG];
 }
-
 @end
-
-
 @implementation UIView (SubView)
-
 - (BOOL)containView:(Class)viewClass {
     BOOL contain = NO;
     for (UIView *view in self.subviews) {
@@ -153,7 +134,6 @@
     }
     return contain;
 }
-//  移除所有子视图
 - (void)removeAllSubviews {
     while (self.subviews.lastObject)
         [self.subviews.lastObject removeFromSuperview];
@@ -183,5 +163,4 @@
         make.centerX.equalTo(weakSelf);
     }];
 }
-
 @end

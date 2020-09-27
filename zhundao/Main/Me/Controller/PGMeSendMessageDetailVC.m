@@ -1,20 +1,8 @@
 #import "PGVerticalScrollIndicator.h"
-//
-//  PGMeSendMessageDetailVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/10.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeSendMessageDetailVC.h"
-
 @interface PGMeSendMessageDetailVC ()<WKNavigationDelegate>
-
 @end
-
 @implementation PGMeSendMessageDetailVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title =@"发送记录";
@@ -23,19 +11,8 @@
     [self.view addSubview:webview];
     [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
     self.webView =webview;
-    // Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

@@ -1,44 +1,26 @@
 #import "PGCurrentPlayChapter.h"
-//
-//  PGAllActivityVC.m
-//  zhundao
-//
-//  Created by maj on 2019/6/30.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "PGOnActivityVC.h"
-
 #import "PGAvtivityMoreModalVC.h"
 #import "PGActivityListVC.h"
 #import "PGAvtivityOneActivityVC.h"
-
 #import "PGActivityCell.h"
-
 #import "PGActivityViewModel.h"
-
 @interface PGOnActivityVC ()<UITableViewDataSource, UITableViewDelegate, PGActivityCellDelegate> {
     NSInteger _page;
 }
-
 @property (nonatomic, strong) UITableView         *tableView;
 @property (nonatomic, strong) PGActivityViewModel *viewModel;
-
 @end
-
 static NSString *cellID = @"ActivityCellID";
-
 @implementation PGOnActivityVC
-
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
-    [self initNotifition];
+    [self PG_initSet];
+    [self PG_initLayout];
+    [self PG_initNotifition];
 }
 - (void)viewDidAppear:(BOOL)animated {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -53,7 +35,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super viewDidAppear:animated];
     [_tableView reloadData];
 }
-
 #pragma mark --- lazyload
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -67,8 +48,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.mj_header = [PGRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-        _tableView.mj_footer = [PGRefreshNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+        _tableView.mj_header = [PGRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(PG_loadNewData)];
+        _tableView.mj_footer = [PGRefreshNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(PG_loadMoreData)];
     }
     return _tableView;
 }
@@ -78,13 +59,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _viewModel;
 }
-
 #pragma mark --- init
-- (void)initSet {
+- (void)PG_initSet {
     [self.view addSubview:self.tableView];
     [self.tableView.mj_header beginRefreshing];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets gradeViewControllerg0 = UIEdgeInsetsZero;
         UIView *stringFromDateb8= [[UIView alloc] initWithFrame:CGRectMake(110,70,73,60)]; 
@@ -98,17 +78,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.edges.equalTo(self.view);
     }];
 }
-- (void)initNotifition {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadNewData) name:ZDNotification_Change_Account object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadNewData) name:ZDNotification_Load_Activity object:nil];
+- (void)PG_initNotifition {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PG_loadNewData) name:ZDNotification_Change_Account object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PG_loadNewData) name:ZDNotification_Load_Activity object:nil];
 }
-
 #pragma mark --- network
-- (void)loadNewData {
+- (void)PG_loadNewData {
     _page = 1;
-    [self networkForOnData];
+    [self PG_networkForOnData];
 }
-- (void)loadMoreData {
+- (void)PG_loadMoreData {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets priousorLaterDateO5 = UIEdgeInsetsZero;
         UIView *photoPickerCollectionX8= [[UIView alloc] initWithFrame:CGRectMake(145,217,21,28)]; 
@@ -119,9 +98,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [alertActionStyle alertControllerStyleWithnetworkStatusUnknow:priousorLaterDateO5 objectWithData:photoPickerCollectionX8 ];
 });
     _page += 1;
-    [self networkForOnData];
+    [self PG_networkForOnData];
 }
-- (void)networkForOnData {
+- (void)PG_networkForOnData {
     ZD_WeakSelf
     [self.viewModel getOnActivityListWithPageIndex:_page success:^(NSArray *obj) {
         [weakSelf.tableView endRefresh];
@@ -137,7 +116,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.tableView endRefresh];
     }];
 }
-
 #pragma mark --- UITableViewDataSource
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (ZD_UserM.isAdmin) {
@@ -163,7 +141,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cell.activityCellDelegate = self;
     return cell;
 }
-
 #pragma mark --- UITableViewDelegate
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 10)];
@@ -192,9 +169,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         };
     }
 }
-
 #pragma mark --- PGActivityCellDelegate
-// 点击
 - (void)activityCell:(PGActivityCell *)activityCell didTapListButton:(UIButton *)button {
     if (activityCell.model.HasJoinNum==0) {
         [PGAlertView alertWithTitle:@"暂无人参加,请下拉刷新数据" message:nil cancelBlock:nil];
@@ -210,18 +185,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController pushViewController:list animated:YES];
     }
 }
-// 签到
 - (void)activityCell:(PGActivityCell *)activityCell didTapSignButton:(UIButton *)button {
     PGAvtivityOneActivityVC *one = [[PGAvtivityOneActivityVC alloc]init];
     one.acID = activityCell.model.ID;
     one.activityName = activityCell.model.Title;
     [self.navigationController pushViewController:one animated:YES];
 }
-// 分享
 - (void)activityCell:(PGActivityCell *)activityCell didTapShareButton:(UIButton *)button {
     [[PGSignManager shareManager]shareImagewithModel:activityCell.model withCTR:self Withtype:5 withImage:nil];
 }
-// 更多点击
 - (void)activityCell:(PGActivityCell *)activityCell didTapMoreButton:(UIButton *)button {
     PGAvtivityMoreModalVC *modal = [[PGAvtivityMoreModalVC alloc]init];
     modal.moreModel = activityCell.model;
@@ -235,7 +207,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     };
 }
-
 #pragma mark --- setter
 - (void)setSearchText:(NSString *)searchText {
     _searchText = searchText;
@@ -247,5 +218,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [_tableView reloadData];
 }
-
 @end

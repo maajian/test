@@ -1,23 +1,11 @@
 #import "PGAlertViewStyle.h"
-//
-//  PGSignInViewModel.m
-//  zhundao
-//
-//  Created by maj on 2019/7/28.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "PGSignInViewModel.h"
 #import "PGSignInModel.h"
 #import "PGSignResult.h"
-
 @interface PGSignInViewModel()
 @property (nonatomic, assign) PGSignype signType;
-
 @end
-
 @implementation PGSignInViewModel
-
 - (instancetype)initWithType:(PGSignype)signType {
     if (self = [super init]) {
         self.signType = signType;
@@ -40,7 +28,6 @@
     }
     return self;
 }
-
 #pragma mark --- network
 - (void)getAllSignListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Void)failure {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -60,7 +47,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_allTitleArray removeAllObjects];
         if ([obj[@"errcode"] integerValue] == 0) {
             if (pageIndex == 1) {
-                
             } else {
                 [tempArray addObjectsFromArray:(NSArray *)[[PGCache sharedCache] cacheForKey:@"ZDAllSign"]];
             }
@@ -70,7 +56,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 PGSignInModel *model = [PGSignInModel yy_modelWithJSON:dic];
                 [_allDataArray addObject:model];
                 [_allTitleArray addObject:model.Name];
-                [self postDataWithSignID:model.ID];
+                [self PG_postDataWithSignID:model.ID];
             }
             success(obj[@"data"]);
         } else {
@@ -102,7 +88,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_onTitleArray removeAllObjects];
         if ([obj[@"errcode"] integerValue] == 0) {
             if (pageIndex == 1) {
-                
             } else {
                 [tempArray addObjectsFromArray:(NSArray *)[[PGCache sharedCache] cacheForKey:@"ZDOnSign"]];
             }
@@ -112,7 +97,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 PGSignInModel *model = [PGSignInModel yy_modelWithJSON:dic];
                 [_onDataArray addObject:model];
                 [_onTitleArray addObject:model.Name];
-                [self postDataWithSignID:model.ID];
+                [self PG_postDataWithSignID:model.ID];
             }
             success(obj[@"data"]);
         } else {
@@ -144,7 +129,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_closeTitleArray removeAllObjects];
         if ([obj[@"errcode"] integerValue] == 0) {
             if (pageIndex == 1) {
-                
             } else {
                 [tempArray addObjectsFromArray:(NSArray *)[[PGCache sharedCache] cacheForKey:@"ZDCloseSign"]];
             }
@@ -154,7 +138,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 PGSignInModel *model = [PGSignInModel yy_modelWithJSON:dic];
                 [_closeDataArray addObject:model];
                 [_closeTitleArray addObject:model.Name];
-                [self postDataWithSignID:model.ID];
+                [self PG_postDataWithSignID:model.ID];
             }
             success(obj[@"data"]);
         } else {
@@ -174,8 +158,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }];
 }
-
-- (void)postDataWithSignID:(NSInteger)signID {
+- (void)PG_postDataWithSignID:(NSInteger)signID {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle registerViewControllerk5 = UITableViewStylePlain; 
         UITableViewCellSeparatorStyle mainMessageDataj6 = UITableViewCellSeparatorStyleNone; 
@@ -184,9 +167,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     if ([ZD_UserM hasLocalSign:signID]) {
         [[PGSignResult alloc] postLocalDataWithSignID:signID success:^{
-            
         } fail:nil];
     }
 }
-
 @end

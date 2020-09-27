@@ -1,12 +1,4 @@
 #import "PGUserDomainMask.h"
-//
-//  PGDiscoverMuliotherVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/4/7.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverMuliotherVC.h"
 #import "Time.h"
 @interface PGDiscoverMuliotherVC ()
@@ -17,9 +9,7 @@
 }
 @property(nonatomic,strong)NSString *textFieldStr;
 @end
-
 @implementation PGDiscoverMuliotherVC
-
 - (void)didReceiveMemoryWarning {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle viewCellIdentifierN5 = UITableViewStylePlain; 
@@ -30,7 +20,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [oscillatoryAnimationWith resourceWithTypeWithloginWithPerson:viewCellIdentifierN5 alipaySuccNotification:userInfoWithm8 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)sure
 {
@@ -52,14 +41,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM muliSignList WHERE signID = %li",(long)self.signid];
          FMResultSet * rs = [[PGSignManager shareManager].dataBase executeQuery:sql];
         while ([rs next]) {
-            
             if ([[rs stringForColumn:@"phone"] isEqualToString:_textFieldStr]) {
                 [self searchStatusWithStr:_textFieldStr withrs:rs];
                 flag=1;
             }
         }
         if (flag!=1) {
-            _signStatusBlock(2,rs); // 签到失败 凭证码无效
+            _signStatusBlock(2,rs); 
             [self backroot];
         }
          [[PGSignManager shareManager].dataBase close];
@@ -69,17 +57,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     if ([[rs stringForColumn:@"Status"]integerValue]==0) {
         [self notNetUpdataWithStr];
-        _signStatusBlock(1,rs);  //1 签到成功
+        _signStatusBlock(1,rs);  
         [self backroot];
-        
     }
     else
     {
-        _signStatusBlock(0,rs);  //0 已经签到
+        _signStatusBlock(0,rs);  
         [self backroot];
     }
 }
-- (void)notNetUpdataWithStr  //更新数据库元素
+- (void)notNetUpdataWithStr  
 {
      NSString *timeStr = [[Time alloc]nextDateWithNumber:0];
     [[PGSignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET Status = '1'  where phone = '%@' AND signID = %li",self.textFieldStr,(long)self.signid]];
@@ -94,29 +81,27 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self succseeresponseObject:dic];
         [self backroot];
     } fail:^(NSError *error) {
-        
     }];
 }
 - (void)succseeresponseObject:(NSDictionary *)dic
 {
     NSInteger res =[dic[@"Res"]integerValue];
     NSString *Url = dic[@"Url"];
-    if (res==0&&[Url isEqualToString:@"100"]) {  //签到成功  1 签到成功
+    if (res==0&&[Url isEqualToString:@"100"]) {  
          [self haveNetUpdataWithStr];
         NSMutableDictionary *dic1 = [dic[@"Data"] mutableCopy];
         [dic1 setObject:[self searchVcode] forKey:@"VCode"];
         self.haveNetBlock(1,[dic1 copy]);
     }
-    else  if (res==1&&[Url isEqualToString:@"101"]) {//已经签到  0 已经签到
+    else  if (res==1&&[Url isEqualToString:@"101"]) {
         NSMutableDictionary *dic1 = [dic[@"Data"] mutableCopy];
         [dic1 setObject:[self searchVcode] forKey:@"VCode"];
         self.haveNetBlock(0,[dic1 copy]);
-    } else   //签到失败 凭证码无效  2
+    } else   
     {
         self.haveNetBlock(2,dic);
     }
 }
-
 - (NSString *)searchVcode
 {
     NSString *str = nil;
@@ -134,7 +119,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return str;
 }
-- (void)haveNetUpdataWithStr //更新数据库元素
+- (void)haveNetUpdataWithStr 
 {
     [[PGSignManager shareManager] createDatabase];
     if ([[PGSignManager shareManager].dataBase open]) {
@@ -146,12 +131,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)backroot
 {
     UIViewController *rootVC = self.presentingViewController;
-    
     while (rootVC.presentingViewController) {
         rootVC = rootVC.presentingViewController;
     }
     [rootVC dismissViewControllerAnimated:YES completion:nil];
-    
 }
-
 @end

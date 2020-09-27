@@ -1,12 +1,4 @@
 #import "PGViewImageFinish.h"
-//
-//  PGMeAuthViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/19.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeAuthViewController.h"
 #import "PGMeAutoTopTableViewCell.h"
 #import "PGMeAutoBottomTableViewCell.h"
@@ -16,24 +8,14 @@
 #import "PGMeAuthModel.h"
 static NSString *topID  = @"autoTopID";
 static NSString *bottomID  = @"autobottomID";
-
 @interface PGMeAuthViewController ()<UITableViewDelegate,UITableViewDataSource>
-
-/*! 表视图 */
 @property(nonatomic,strong)UITableView *tableView;
-/*! 上传的字段 */
 @property(nonatomic,strong)NSMutableDictionary *postDic;
-/*! 用于转化图片的vm */
 @property(nonatomic,strong)PGNewOrEditMV *imageMV;
-/*! 发起认证的viewmodel */
 @property(nonatomic,strong)PGMeAuthViewModel *AuthVM;
-
 @property(nonatomic,strong)PGMeAuthModel *model;
-
 @end
-
 @implementation PGMeAuthViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"认证";
@@ -41,9 +23,7 @@ static NSString *bottomID  = @"autobottomID";
     [self.view addSubview:self.tableView];
     _imageMV = [[PGNewOrEditMV alloc]init];
     _AuthVM = [[PGMeAuthViewModel alloc]init];
-    // Do any additional setup after loading the view.
 }
-
 - (void)getData{
     if (_authdic) {
         _model  = [PGMeAuthModel yy_modelWithJSON:[NSDictionary dictionaryWithContentsOfFile:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"auth.plist"]]];
@@ -54,9 +34,7 @@ static NSString *bottomID  = @"autobottomID";
         [self.postDic setObject:_model.idCardFront forKey:@"IdCardFront"];
     }
 }
-
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStyleGrouped];
@@ -66,22 +44,16 @@ static NSString *bottomID  = @"autobottomID";
     }
     return _tableView;
 }
-
 - (NSMutableDictionary *)postDic{
     if (!_postDic) {
         _postDic = [NSMutableDictionary dictionary];
     }
     return _postDic;
 }
-
-
-
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 3;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return  section==0?3:1;
@@ -93,7 +65,7 @@ static NSString *bottomID  = @"autobottomID";
         if (!cell) {
             cell = [[PGMeAutoTopTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:topID];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            [cell.rightTf addTarget:self action:@selector(textFieldEnd:) forControlEvents:UIControlEventEditingDidEnd];
+            [cell.rightTf addTarget:self action:@selector(PG_textFieldEnd:) forControlEvents:UIControlEventEditingDidEnd];
         }
         if (indexPath.row==0) {
             cell.leftStr=@"姓名";
@@ -111,14 +83,13 @@ static NSString *bottomID  = @"autobottomID";
             cell.rightTf.text = _model?_model.idCard:@"";
         }
         cell.rightTf.tag = indexPath.row;
-        
         return cell;
     }if (indexPath.section == 1||indexPath.section==2){
         PGMeAutoBottomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:bottomID];
         if (!cell) {
             cell = [[PGMeAutoBottomTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bottomID];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectedImage:)];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(PG_selectedImage:)];
             cell.idCardImgView.userInteractionEnabled = YES;
             [cell.idCardImgView addGestureRecognizer:tap];
         }if (indexPath.section==1) {
@@ -133,31 +104,26 @@ static NSString *bottomID  = @"autobottomID";
     return nil;
 }
 #pragma mark -------UITableViewDelegate
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return indexPath.section==0?44:144;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
    return  section==2?120:0.1;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 20;
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     if (section==2) {
         UIView *View = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 120)];
         View.backgroundColor = [UIColor clearColor];
-        UIButton *explainButton = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth-120, 0, 110, 44) title:@"为什么要实名认证" textcolor:ZDMainColor Target:self action:@selector(explain) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
-        explainButton.titleLabel.font = [UIFont systemFontOfSize:13];
+        UIButton *PG_explainButton = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth-120, 0, 110, 44) title:@"为什么要实名认证" textcolor:ZDMainColor Target:self action:@selector(PG_explain) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
+        PG_explainButton.titleLabel.font = [UIFont systemFontOfSize:13];
         UIButton *addAccountButton = [MyButton initWithButtonFrame:CGRectMake(10, 44, kScreenWidth-20, 44) title:@"实名认证" textcolor:[UIColor whiteColor] Target:self action:@selector(sureAction) BackgroundColor: ZDMainColor cornerRadius:5 masksToBounds:YES];
         [View addSubview:addAccountButton];
-        [View addSubview:explainButton];
+        [View addSubview:PG_explainButton];
         return View;
     }else{
         return nil;
@@ -169,10 +135,8 @@ static NSString *bottomID  = @"autobottomID";
     View.backgroundColor = [UIColor clearColor];
     return View;
 }
-
 #pragma mark --- 选择图片 
-
-- (void)selectedImage:(UITapGestureRecognizer *)tap{
+- (void)PG_selectedImage:(UITapGestureRecognizer *)tap{
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect separatorStyleSinglef7 = CGRectZero;
         NSData *spinLockLockR7= [[NSData alloc] init];
@@ -192,10 +156,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }];
     }];
 }
-
 #pragma mark --- 输入框事件 
-
-- (void)textFieldEnd:(UITextField *)textField{
+- (void)PG_textFieldEnd:(UITextField *)textField{
     if ([textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length==0) {
         return;
     }
@@ -213,9 +175,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             break;
     }
 }
-
 #pragma mark---- 按钮点击事件
-
 - (void)sureAction{
     [self.view endEditing:YES];
     if ( (_model&&self.postDic.count!=6)||(!_model&&self.postDic.count!=5)) {
@@ -238,7 +198,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }];
 }
-- (void)explain{
+- (void)PG_explain{
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect articleDailyTrainT0 = CGRectMake(158,7,223,214); 
         NSData *changeFrameNotificationX7= [[NSData alloc] init];
@@ -247,8 +207,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     [PGAlertView alertWithTitle:@"提示" message:@"所有委托准到代收款的活动，为了确保主办方的资金安全，我们在首次提现时进行了实名认证。实名认证成功后才允许提现，且申请提现支付宝和银行卡的所有者须为此实名用户" cancelBlock:nil];
 }
-
-
 - (void)dealloc{
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect underlineStyleSingleM2 = CGRectZero;
@@ -260,14 +218,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

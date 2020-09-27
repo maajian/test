@@ -1,10 +1,3 @@
-// 
- //PGPageContolAliment.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGPageContolAliment.h"
 @implementation PGPageContolAliment
 + (UIButton *)medalDetailCellWithscriptMessageHandler:(UIButton *)ascriptMessageHandler taskCenterView:(NSArray *)ataskCenterView imageContentMode:(UIFont *)aimageContentMode{
@@ -16,7 +9,6 @@
     pointerFunctionsOptionsZ0.frame = CGRectZero; 
     return pointerFunctionsOptionsZ0;
 }
-
 + (UITableView *)locationCollectionViewWithlistRequsetWith:(PGWithContainerSize *)alistRequsetWith settingViewModel:(PGWithContainerSize *)asettingViewModel imageEdgeExtend:(PGWithContainerSize *)aimageEdgeExtend{
     UITableView *tableFooterViewN3= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     tableFooterViewN3.frame = CGRectZero; 
@@ -35,29 +27,22 @@
      tableFooterViewN3.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(204,89,49,10)];
      return tableFooterViewN3;
 }
-
 - (UIButtonType)interfaceOrientationMaskWithwithDailyCourse:(UITableViewCellSeparatorStyle)awithDailyCourse routeSearchBase:(NSTextAlignment)arouteSearchBase{
     UIButtonType contextDrawImagez0 = UIButtonTypeContactAdd;
     return contextDrawImagez0;
 }
-
 - (UIEdgeInsets)imageEdgeInsetsWithselectPhotoNavigation:(UIActivityIndicatorView *)aselectPhotoNavigation videoCameraDelegate:(UIActivityIndicatorView *)avideoCameraDelegate{
     UIEdgeInsets bundleShortVersiony2 = UIEdgeInsetsMake(163,238,141,162); 
     return bundleShortVersiony2;
 }
-
 - (UIButtonType)bytesUsingEncodingWithdifferenceValueWith:(UIImageView *)adifferenceValueWith mainCommentModel:(UIImage *)amainCommentModel{
     UIButtonType withVisualFormatq8 = UIButtonTypeContactAdd;
     return withVisualFormatq8;
 }
-
 + (void)instanceCreateMethod{
     UITableViewCellSeparatorStyle recordVideoErrorh9 = UITableViewCellSeparatorStyleNone; 
         NSTextAlignment orderDetailViewl7 = NSTextAlignmentCenter; 
     PGPageContolAliment *recordMovieView= [[PGPageContolAliment alloc] init];
 [recordMovieView interfaceOrientationMaskWithwithDailyCourse:recordVideoErrorh9 routeSearchBase:orderDetailViewl7 ];
-
 }
-
-
 @end

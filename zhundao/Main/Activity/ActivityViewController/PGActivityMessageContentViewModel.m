@@ -1,15 +1,6 @@
-//
-//  PGActivityMessageContentViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/9.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityMessageContentViewModel.h"
 #import "PGActivityMessageContentModel.h"
 @implementation PGActivityMessageContentViewModel
-
 - (instancetype)init {
     if (self = [super init]) {
         _customHeightArray = [NSMutableArray array];
@@ -19,8 +10,6 @@
     }
     return self;
 }
-
-//api/Sms/deleteContent/{id}
 - (void)deleteContent :(NSInteger )ID
                   esid:(NSInteger)esid
           successBlock:(ZDSuccessBlock)successBlock
@@ -32,7 +21,6 @@
         errorBlock(error);
     }];
 }
-
 - (void)addContent :(NSString * )content
                  ID:(NSInteger)ID
           successBlock:(ZDSuccessBlock)successBlock
@@ -49,7 +37,6 @@
         errorBlock(error);
     }];
 }
-
 - (void)getSystemWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Dic)success failure:(ZDBlock_Error_Str)failure {
     NSDictionary *dic = @{@"SortId" : @(1),
                           @"PageSize" : @(1000),
@@ -63,7 +50,6 @@
             PGActivityMessageContentModel *model = [[PGActivityMessageContentModel alloc] initWithDic:dic];
             model.isSystem = YES;
             [self.systemArray addObject:model];
-            
             NSString *content = model.es_content;
             CGSize size = [content boundingRectWithSize:CGSizeMake(kScreenWidth - 30, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil].size;
             [self.systemHeightArray addObject:@(size.height + 20)];
@@ -88,7 +74,6 @@
             PGActivityMessageContentModel *model = [[PGActivityMessageContentModel alloc] initWithDic:dic];
             model.isSystem = NO;
             [self.customArray addObject:model];
-            
             NSString *content = model.es_content;
             CGSize size = [content boundingRectWithSize:CGSizeMake(kScreenWidth - 30, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil].size;
             [self.customHeightArray addObject:@(size.height + 40)];
@@ -98,6 +83,4 @@
         failure(error.description);
     }];
 }
-
-
 @end

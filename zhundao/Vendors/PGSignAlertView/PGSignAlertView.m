@@ -1,14 +1,5 @@
 #import "PGColumnistChildData.h"
-//
-//  PGSignAlertView.m
-//  zhundao
-//
-//  Created by maj on 2019/12/5.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "PGSignAlertView.h"
-
 @interface PGSignAlertView() {
     NSString *_title;
     NSString *_cancelTitle;
@@ -22,22 +13,17 @@
 @property (nonatomic, strong) UIButton *cancelButton;
 @property (nonatomic, strong) UIButton *sureButton;
 @property (nonatomic, strong) UIButton *closeButton;
-
 @property (nonatomic, copy) ZDBlock_Void cancelBlock;
 @property (nonatomic, copy) ZDBlock_Void sureBlock;
 @property (nonatomic, strong) UIColor *titleColor;
-
 @end
-
 @implementation PGSignAlertView
-
 + (instancetype)alertWithTitle:(NSString *)title titleColor:(UIColor *)titleColor messageTitle:(NSString *)messageTitle cancelTitle:(NSString *)cancelTitle sureTitle:(NSString *)sureTitle cancelBlock:(ZDBlock_Void)cancelBlock sureBlock:(ZDBlock_Void)sureBlock {
     PGSignAlertView *alert = [[self alloc] initWithFrame:[UIScreen mainScreen].bounds title:title titleColor:titleColor messageTitle:messageTitle cancelTitle:cancelTitle sureTitle:sureTitle cancelBlock:cancelBlock sureBlock:sureBlock];
     [[UIApplication sharedApplication].keyWindow addSubview:alert];
     [alert animationIn];
     return alert;
 }
-
 - (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title titleColor:(UIColor *)titleColor messageTitle:(NSString *)messageTitle cancelTitle:(NSString *)cancelTitle sureTitle:(NSString *)sureTitle  cancelBlock:(ZDBlock_Void)cancelBlock sureBlock:(ZDBlock_Void)sureBlock{
     if (self = [super initWithFrame:frame]) {
         _cancelBlock = cancelBlock;
@@ -47,12 +33,11 @@
         _sureTitle = sureTitle;
         _title = title;
         _messageTitle = messageTitle;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIView *)bgView {
     if (!_bgView) {
@@ -90,7 +75,7 @@
         _cancelButton.layer.masksToBounds = YES;
         [_cancelButton setTitle:_cancelTitle forState:UIControlStateNormal];
         [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_cancelButton addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_cancelButton addTarget:self action:@selector(PG_cancelAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
 }
@@ -103,21 +88,20 @@
         _sureButton.titleLabel.font = [UIFont systemFontOfSize:16];
         [_sureButton setTitle:_sureTitle forState:UIControlStateNormal];
         [_sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_sureButton addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_sureButton addTarget:self action:@selector(PG_sureAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _sureButton;
 }
 - (UIButton *)closeButton {
     if (!_closeButton) {
         if (!_closeButton) {
-            _closeButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"com_delete"] target:self action:@selector(closeAction:)];
+            _closeButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"com_delete"] target:self action:@selector(PG_closeAction:)];
         }
     }
     return _closeButton;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self addSubview:self.bgView];
     [self.bgView addSubview:self.contentView];
     [self.contentView addSubview:self.titleLabel];
@@ -126,9 +110,8 @@
     [self.contentView addSubview:self.sureButton];
     [self.contentView addSubview:self.closeButton];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
@@ -173,21 +156,19 @@
         make.size.mas_equalTo(CGSizeMake(20, 20));
     }];
 }
-
 #pragma mark --- setter
 - (void)setMessageAlignment:(NSTextAlignment)messageAlignment {
     _messageAlignment = messageAlignment;
     _messageLabel.textAlignment = messageAlignment;
 }
-
 #pragma mark --- action
-- (void)cancelAction:(UIButton *)button {
+- (void)PG_cancelAction:(UIButton *)button {
     if (_cancelBlock) {
         _cancelBlock();
     }
     [self animationOut];
 }
-- (void)sureAction:(UIButton *)button {
+- (void)PG_sureAction:(UIButton *)button {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *baseLoginViewp0= [NSMutableArray array];
         UIScrollView *dailyCourseTableo6= [[UIScrollView alloc] initWithFrame:CGRectMake(250,79,108,249)]; 
@@ -204,13 +185,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [self animationOut];
 }
-- (void)closeAction:(UIButton *)button {
+- (void)PG_closeAction:(UIButton *)button {
     if (_cancelBlock) {
         _cancelBlock();
     }
     [self animationOut];
 }
-
 #pragma mark --- Private
 - (void)animationIn {
     self.contentView.transform = CGAffineTransformMakeScale(0.3, 0.3);
@@ -219,7 +199,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         self.contentView.transform = CGAffineTransformMakeScale(1, 1);
         self.bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     } completion:^(BOOL finished) {
-        
     }];
 }
 - (void)animationOut {
@@ -229,5 +208,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self removeFromSuperview];
     }];
 }
-
 @end

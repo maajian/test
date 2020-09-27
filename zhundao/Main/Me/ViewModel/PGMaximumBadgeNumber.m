@@ -1,10 +1,3 @@
-// 
- //PGMaximumBadgeNumber.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGMaximumBadgeNumber.h"
 @implementation PGMaximumBadgeNumber
 + (UIScrollView *)encodingWithLineWithstrokeCourseDaily:(NSString *)astrokeCourseDaily withPreviewType:(UITableView *)awithPreviewType previewCollectionView:(UILabel *)apreviewCollectionView{
@@ -16,7 +9,6 @@
     recordMovieViewR7.minimumZoomScale = 1; 
     return recordMovieViewR7;
 }
-
 + (UILabel *)courseViewModelWithcontrolEventTouch:(PGResizeAspectFill *)acontrolEventTouch choicenessVideoView:(PGResizeAspectFill *)achoicenessVideoView alaphNavigationView:(PGResizeAspectFill *)aalaphNavigationView{
     UILabel *collectionViewFlowK5= [[UILabel alloc] initWithFrame:CGRectZero]; 
     collectionViewFlowK5.text = @"receiveLocalNotification";
@@ -26,29 +18,22 @@
     collectionViewFlowK5.textAlignment = NSTextAlignmentCenter; 
     return collectionViewFlowK5;
 }
-
 - (CGRect)requestReloadIgnoringWithdeviceSettingsCamera:(NSTextAlignment)adeviceSettingsCamera moreColumnistChild:(NSMutableArray *)amoreColumnistChild{
     CGRect discoveryViewModely2 = CGRectZero;
     return discoveryViewModely2;
 }
-
 - (CGSize)mainMessageDataWithshrinkRightBottom:(CGRect)ashrinkRightBottom discountCouponView:(UIActivityIndicatorView *)adiscountCouponView{
     CGSize moreColumnistChildM1 = CGSizeMake(122,31); 
     return moreColumnistChildM1;
 }
-
 - (UITextFieldViewMode)extractImageListWithsecondTextureCoordinate:(CGRect)asecondTextureCoordinate assetMediaType:(UITableViewStyle)aassetMediaType{
     UITextFieldViewMode assetCollectionsWithO7 = UITextFieldViewModeAlways; 
     return assetCollectionsWithO7;
 }
-
 + (void)instanceCreateMethod{
     NSTextAlignment handpickViewModelq4 = NSTextAlignmentCenter; 
         NSMutableArray *colorSpaceCreatej0= [NSMutableArray array];
     PGMaximumBadgeNumber *imageWithData= [[PGMaximumBadgeNumber alloc] init];
 [imageWithData requestReloadIgnoringWithdeviceSettingsCamera:handpickViewModelq4 moreColumnistChild:colorSpaceCreatej0 ];
-
 }
-
-
 @end

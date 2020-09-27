@@ -1,22 +1,9 @@
-//
-//  PGDiscoverCustomApplyModel.m
-//  zhundao
-//
-//  Created by maj on 2018/12/1.
-//  Copyright © 2018年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverCustomApplyModel.h"
-
 @implementation PGDiscoverCustomApplyModel
-
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
-        // 标题
         self.title = dic[@"title"] ? dic[@"title"] : @"";
-        // 必填
         self.required = dic[@"required"] ? [dic[@"required"] integerValue] : 0;
-        // 类型
         switch ([dic[@"inputType"] integerValue]) {
             case 0:
                 self.customType = ZDCustomTypeOneText;
@@ -50,16 +37,12 @@
                 self.customType = ZDCustomTypeNumber;
                 _typeStr = @"【数  字】";
                 break;
-                
             default:
                 self.customType = ZDCustomTypeNumber;
                 _typeStr = @"【数  字】";
                 break;
         }
-        
-        // 自定义项ID
         self.ID = [dic[@"id"] integerValue];
-        // 多选
         if (![dic[@"option"] isEqual:[NSNull null]]) {
             self.option = dic[@"option"];
             self.optionArray = [self.option componentsSeparatedByString:@"|"];
@@ -68,13 +51,9 @@
             self.option = @"";
             self.optionArray = @[];
         }
-        // 填写提示
         self.placeholder = [dic[@"placeholder"] isEqual:[NSNull null]] ? @"" : dic[@"placeholder"];
-    
-        // 自定义相是否隐藏
         self.hidden = [dic[@"hidden"] boolValue];
     }
     return self;
 }
-
 @end

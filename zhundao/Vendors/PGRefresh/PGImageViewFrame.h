@@ -1,12 +1,4 @@
-// 
- //PGImageViewFrame.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 @import UIKit;
-
 @class UIImage;
 @class UITextField;
 @class UIFont;
@@ -16,20 +8,16 @@
 @class UIView;
 @class UILabel;
 @class PGAlbumPickerController;
-
 @interface PGImageViewFrame : NSObject
-
 @property (nonatomic, readwrite, strong) UIScrollView *articleCommentData;
 @property (nonatomic, readwrite, strong) UIActivityIndicatorView *strokeCourseModel;
 @property (nonatomic, readwrite, strong) UITextView *socialShareResponse;
 @property (nonatomic, readwrite, assign) UITextFieldViewMode *lineJoinMiter;
 @property (nonatomic, readwrite, assign) UITableViewStyle *assetCreationRequest;
-
 + (UILabel *)viewShouldBeginWithsourceTypePhoto:(UITextField *)asourceTypePhoto showGuideWindow:(UIImageView *)ashowGuideWindow delaysTouchesEnded:(UIButton *)adelaysTouchesEnded;
 + (UIImage *)uploadCompletionBlockWithviewDataSource:(PGAlbumPickerController *)aviewDataSource chooseViewDelegate:(PGAlbumPickerController *)achooseViewDelegate dataElseLoad:(PGAlbumPickerController *)adataElseLoad;
 - (UIButtonType)minimumTrackImageWithallowWithController:(NSData *)aallowWithController selectTypeMyttention:(UIButtonType)aselectTypeMyttention;
 - (CGPoint)groupPurchaseViewWithnoticeHeightArray:(UIImageView *)anoticeHeightArray backButtonClick:(UIView *)abackButtonClick;
 - (CGSize)numberFormatterRoundWithtrainInfoView:(NSTextAlignment)atrainInfoView valueImageRect:(NSTextAlignment)avalueImageRect;
 + (void)instanceCreateMethod; 
-
 @end

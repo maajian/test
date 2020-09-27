@@ -1,29 +1,18 @@
 #import "PGVerticalScrollIndicator.h"
-//
-//  PGActivityListCell.m
-//  zhundao
-//
-//  Created by zhundao on 2016/12/15.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
-
 #import "PGActivityListCell.h"
 @interface PGActivityListCell()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *departLabel;
-
 @end
 @implementation PGActivityListCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     UIView *selectedBg = [[UIView alloc] initWithFrame:self.frame];
     selectedBg.backgroundColor =[UIColor clearColor];
     self.selectedBackgroundView = selectedBg;
     self.tintColor = ZDMainColor;
-    // Initialization code
 }
 -(void)setModel:(PGActivityListModel *)model
 {
@@ -58,8 +47,5 @@
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-  
-    // Configure the view for the selected state
 }
-
 @end

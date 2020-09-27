@@ -1,10 +1,3 @@
-// 
- //PGLoginWithPhone.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGLoginWithPhone.h"
 @implementation PGLoginWithPhone
 + (UIButton *)taskCenterModelWithsaveVideoPath:(UITableView *)asaveVideoPath withReuseIdentifier:(UITextField *)awithReuseIdentifier captureSessionPreset:(UIImageView *)acaptureSessionPreset{
@@ -16,7 +9,6 @@
     maskViewFlagb5.frame = CGRectZero; 
     return maskViewFlagb5;
 }
-
 + (UIImageView *)contentInformationRequestWithmutableCompositionTrack:(PGSocialPlatformType *)amutableCompositionTrack currentPhotoIndex:(PGSocialPlatformType *)acurrentPhotoIndex recoderSelectPicker:(PGSocialPlatformType *)arecoderSelectPicker{
     UIImageView * viewImageFinishJ0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     viewImageFinishJ0.contentMode = UIViewContentModeCenter; 
@@ -26,22 +18,18 @@
     viewImageFinishJ0.clearsContextBeforeDrawing = YES; 
     return viewImageFinishJ0;
 }
-
 - (UIEdgeInsets)calendarIdentifierGregorianWithcollectionViewCell:(NSRange)acollectionViewCell tintEffectWith:(UITextField *)atintEffectWith{
     UIEdgeInsets withAssetTrackr2 = UIEdgeInsetsMake(198,155,239,212); 
     return withAssetTrackr2;
 }
-
 - (NSTextAlignment)cyclingImageLayerWithrefreshStateIdle:(CGPoint)arefreshStateIdle audioPlayerDelegate:(UITableView *)aaudioPlayerDelegate{
     NSTextAlignment trainGuideTableD5 = NSTextAlignmentCenter; 
     return trainGuideTableD5;
 }
-
 - (NSLineBreakMode)codeLoginViewWithvalueObservingOptions:(NSLineBreakMode)avalueObservingOptions originBackgroundColor:(UIColor *)aoriginBackgroundColor{
     NSLineBreakMode changeFrameNotificationi2 = NSLineBreakByTruncatingTail; 
     return changeFrameNotificationi2;
 }
-
 + (void)instanceCreateMethod{
     NSRange columnistChildViewQ4 = NSMakeRange(10,35); 
         UITextField *wechatTimeLineO2= [[UITextField alloc] initWithFrame:CGRectZero]; 
@@ -54,8 +42,5 @@
      wechatTimeLineO2.leftViewMode = UITextFieldViewModeAlways; 
     PGLoginWithPhone *withLocaleIdentifier= [[PGLoginWithPhone alloc] init];
 [withLocaleIdentifier calendarIdentifierGregorianWithcollectionViewCell:columnistChildViewQ4 tintEffectWith:wechatTimeLineO2 ];
-
 }
-
-
 @end

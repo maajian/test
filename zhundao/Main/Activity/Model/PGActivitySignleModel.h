@@ -1,26 +1,16 @@
-//
-//  PGActivitySignleModel.h
-//  zhundao
-//
-//  Created by zhundao on 2016/12/15.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-
 @interface PGActivitySignleModel : NSObject
-@property(nonatomic,strong)NSString *UserName; //姓名
-@property(nonatomic,strong)NSString *Mobile;  //手机
-@property(nonatomic,strong)NSString *Company;  //单位
-@property(nonatomic,assign)NSInteger Sex;    //性别
-@property(nonatomic,strong)NSString *Depart;//部门
-@property (nonatomic, copy) NSString *DepartName; // 组织名称
-@property(nonatomic,strong)NSString *Industry; //行业
-@property(nonatomic,strong)NSString *Duty;  //职务
-@property(nonatomic,strong)NSString *IDcard;  //身份证
-@property(nonatomic,strong)NSString *Email;   //邮箱
-@property(nonatomic,strong)NSString *Remark;   //备注
-@property(nonatomic,assign)NSInteger Num;  //参与人数
-@property(nonatomic,strong)NSString *Address; //地址
-
+@property(nonatomic,strong)NSString *UserName; 
+@property(nonatomic,strong)NSString *Mobile;  
+@property(nonatomic,strong)NSString *Company;  
+@property(nonatomic,assign)NSInteger Sex;    
+@property(nonatomic,strong)NSString *Depart;
+@property (nonatomic, copy) NSString *DepartName; 
+@property(nonatomic,strong)NSString *Industry; 
+@property(nonatomic,strong)NSString *Duty;  
+@property(nonatomic,strong)NSString *IDcard;  
+@property(nonatomic,strong)NSString *Email;   
+@property(nonatomic,strong)NSString *Remark;   
+@property(nonatomic,assign)NSInteger Num;  
+@property(nonatomic,strong)NSString *Address; 
 @end

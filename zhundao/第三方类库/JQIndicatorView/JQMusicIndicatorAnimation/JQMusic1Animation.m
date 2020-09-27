@@ -1,22 +1,9 @@
 #import "PGMovieTestView.h"
-//
-//  JQMusic1Animation.m
-//  JQMusic1AnimationDemo
-//
-//  Created by James on 15/7/18.
-//  Copyright (c) 2015年 JQ. All rights reserved.
-//
-
 #import "JQMusic1Animation.h"
-
 @interface JQMusic1Animation ()
-
 @property (nonatomic, strong) CALayer *barLayer;
-
 @end
-
 @implementation JQMusic1Animation
-
 - (void)configAnimationAtLayer:(CALayer *)layer withTintColor:(UIColor *)color size:(CGSize)size{
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect userModelFromr6 = CGRectMake(179,34,151,234); 
@@ -29,18 +16,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
     replicatorLayer.position = CGPointMake(0, 0);
     replicatorLayer.backgroundColor = [UIColor clearColor].CGColor;
     [layer addSublayer:replicatorLayer];
-    
-    [self addMusicBarAnimationLayerAtLayer:replicatorLayer withSize:size tintColor:color];
+    [self PG_addMusicBarAnimationLayerAtLayer:replicatorLayer withSize:size tintColor:color];
     replicatorLayer.instanceCount = 3;
     replicatorLayer.instanceDelay = 0.2;
     replicatorLayer.instanceTransform = CATransform3DMakeTranslation(size.width*3/10, 0.f, 0.f);
     replicatorLayer.masksToBounds = YES;
 }
-
 #pragma mark - Music Indicator animation
-
-
-- (void)addMusicBarAnimationLayerAtLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)color{
+- (void)PG_addMusicBarAnimationLayerAtLayer:(CALayer *)layer withSize:(CGSize)size tintColor:(UIColor *)color{
     CGFloat width = size.width/5;
     CGFloat height = size.height;
     self.barLayer = [CALayer layer];
@@ -49,18 +32,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.barLayer.cornerRadius = 2.0;
     self.barLayer.backgroundColor = color.CGColor;
     [layer addSublayer:self.barLayer];
-    
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position.y"];
     animation.toValue = @(self.barLayer.position.y - self.barLayer.bounds.size.height/2);
     animation.duration = 0.4;
     animation.autoreverses = YES;
     animation.repeatCount = CGFLOAT_MAX;
-    
     [self.barLayer addAnimation:animation forKey:@"animation"];
 }
-
 - (void)removeAnimation{
     [self.barLayer removeAnimationForKey:@"animation"];
 }
-
 @end

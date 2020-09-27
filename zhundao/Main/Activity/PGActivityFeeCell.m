@@ -1,23 +1,12 @@
-//
-//  PGActivityFeeCell.m
-//  zhundao
-//
-//  Created by zhundao on 2017/5/3.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityFeeCell.h"
-
 @implementation PGActivityFeeCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UILabel *)leftLabel1 {
     if (!_leftLabel1) {
@@ -100,7 +89,7 @@
 - (UISwitch *)showSwitch {
     if (!_showSwitch) {
         _showSwitch = [[UISwitch alloc] init];
-        [_showSwitch addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
+        [_showSwitch addTarget:self action:@selector(PG_switchAction:) forControlEvents:UIControlEventValueChanged];
     }
     return _showSwitch;
 }
@@ -139,9 +128,8 @@
     }
     return _lineView4;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self.contentView addSubview:self.leftLabel1];
     [self.contentView addSubview:self.leftLabel2];
     [self.contentView addSubview:self.leftLabel3];
@@ -158,9 +146,8 @@
     [self.contentView addSubview:self.lineView3];
     [self.contentView addSubview:self.lineView4];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.leftLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView).offset(10);
         make.top.equalTo(self.contentView).offset(0);
@@ -245,14 +232,11 @@
         make.height.mas_equalTo(1);
     }];
 }
-
 #pragma mark --- setter
-
 #pragma mark --- action
-- (void)switchAction:(UISwitch *)showSwitch {
+- (void)PG_switchAction:(UISwitch *)showSwitch {
     if ([self.PGActivityFeeCellDelegate respondsToSelector:@selector(PGActivityFeeCell:showSwitchDidChange:)]) {
         [self.PGActivityFeeCellDelegate PGActivityFeeCell:self showSwitchDidChange:showSwitch];
     }
 }
-
 @end

@@ -1,34 +1,21 @@
 #import "PGAssetsGroupSaved.h"
-//
-//  PGMeMessageCell.m
-//  jingjing
-//
-//  Created by maj on 2020/8/4.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMeMessageCell.h"
-
 @interface PGMeMessageCell()
 @property (nonatomic, strong) UIImageView *leftImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *detailTitleLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UIView *lineView;
-
 @end
-
 @implementation PGMeMessageCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.backgroundColor = [UIColor whiteColor];
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIImageView *)leftImageView {
     if (!_leftImageView) {
@@ -61,9 +48,8 @@
     }
     return _lineView;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     self.contentView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.leftImageView];
     [self.contentView addSubview:self.titleLabel];
@@ -71,9 +57,8 @@
     [self.contentView addSubview:self.timeLabel];
     [self.contentView addSubview:self.lineView];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView).offset(16);
         make.centerY.equalTo(self.contentView);
@@ -98,11 +83,9 @@
         make.leading.equalTo(self.titleLabel.mas_leading);
     }];
 }
-
 #pragma mark --- setter
 - (void)setModel:(PGMeMessageModel *)model {
     _model = model;
-    
     if (model.Type == PGMeMessageTypeAdmin) {
         if (model.IsRead) {
             _leftImageView.image = [UIImage imageNamed:@"img_me_message_admin"];
@@ -121,7 +104,5 @@
     _timeLabel.text = [[_model.AddTime stringByReplacingOccurrencesOfString:@"T" withString:@" "] componentsSeparatedByString:@"."].firstObject;
     _detailTitleLabel.text = _model.Content;
 }
-
 #pragma mark --- action
-
 @end

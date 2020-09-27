@@ -1,24 +1,11 @@
 #import "PGBytesFromData.h"
-//
-//  PGMeChangeSexVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/1.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeChangeSexVC.h"
 #import "PGMeChangeInfoViewModel.h"
 @interface PGMeChangeSexVC ()<UITableViewDataSource,UITableViewDelegate>
-
 @property(nonatomic,strong)UITableView *tableView;
-
 @property(nonatomic,strong)PGMeChangeInfoViewModel *viewModel;
-
 @end
-
 @implementation PGMeChangeSexVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _viewModel = [[PGMeChangeInfoViewModel alloc]init];
@@ -26,10 +13,8 @@
     [self customBack];
     [self rightButton];
     self.title = @"修改性别";
-    // Do any additional setup after loading the view.
 }
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
@@ -38,17 +23,13 @@
         _tableView.backgroundColor = ZDBackgroundColor;
         _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 15)];
         _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.1)];
-        
     }
     return _tableView;
 }
-
 #pragma mark --- UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 2;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellID = @"sexCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
@@ -75,9 +56,7 @@
     }
     return cell;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     if (indexPath.row==0) {
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0 ]];
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -106,14 +85,11 @@
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
                           NSForegroundColorAttributeName:ZDMainColor};
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
-    
     self.navigationItem.rightBarButtonItem = item;
 }
-
 - (void)backpop{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 - (void)save{
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect passWordWithC8 = CGRectZero;
@@ -136,9 +112,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-
-
 @end

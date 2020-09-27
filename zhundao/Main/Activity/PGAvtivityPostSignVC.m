@@ -1,16 +1,7 @@
 #import "PGDailyCourseModel.h"
-//
-//  PGAvtivityPostSignVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/3/24.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGAvtivityPostSignVC.h"
 #import "GZActionSheet.h"
 #import "PGAvtivityCodeVC.h"
-//static NSString *cellID = @"PostCell";  //tableviewcell id
 @interface PGAvtivityPostSignVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     UITextField *textf;
@@ -22,11 +13,9 @@
     UIImageView *chooseImage;
 }
 @property(nonatomic,strong)UITableView *tableview;
-@property(nonatomic,strong)NSArray *dataArray;  //内容数组
+@property(nonatomic,strong)NSArray *dataArray;  
 @end
-
 @implementation PGAvtivityPostSignVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createArray];
@@ -36,20 +25,18 @@
     [self createButton];
     [self settitle];
     self.view.backgroundColor = ZDBackgroundColor;
-    // Do any additional setup after loading the view.
 }
-
 - (void)settitle
 {
   self.title=[_dataArray1[0] isEqualToString:@""]? @"发起签到":@"修改签到";
 }
-- (void)createArray   //创建左边数组
+- (void)createArray   
 {
     _dataArray =@[@"签到名称 :",
                   @"活动选择 :",
                   @"签到对象 :"];
 }
-- (void)createDataArray   //创建右边数组
+- (void)createDataArray   
 {
     _dataArray1 = @[@"",
                     [NSString stringWithFormat:@"%@",self.activityName],
@@ -63,7 +50,7 @@
         _selectIndex = 1 ;
     }
 }
-- (void)createTableview  //创建tableview
+- (void)createTableview  
 {
     self.tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
     self.tableview.delegate =self;
@@ -72,7 +59,6 @@
     _tableview.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.tableview];
 }
-
 #pragma mark --- tableViewDatasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -90,37 +76,35 @@
     while (cell.contentView.subviews.lastObject!=nil) {
         [cell.contentView.subviews.lastObject removeFromSuperview];
     }
-    UILabel *label  = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 80, 44)];   //创建左边label
+    UILabel *label  = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 80, 44)];   
     [cell.contentView addSubview:label];
     label.text = _dataArray[indexPath.row];
     cell.textLabel.font = [UIFont systemFontOfSize:18];
     if (indexPath.row==0) {
-        textf = [[UITextField alloc]initWithFrame:CGRectMake(100, 0, kScreenWidth-80, 44)];  //创建UITextField
+        textf = [[UITextField alloc]initWithFrame:CGRectMake(100, 0, kScreenWidth-80, 44)];  
         textf.placeholder = @"请填写签到名称";
-        if ([_dataArray1[indexPath.row] isEqualToString:@""]) {   //如果为@“”。 则显示placeholder
+        if ([_dataArray1[indexPath.row] isEqualToString:@""]) {   
             textf.text = [NSString stringWithFormat:@"%@[签到]",_activityName];
         }
-        else{                                               // 如果不为@""   则显示数组的第一个
+        else{                                               
             textf.text = _dataArray1[indexPath.row];
         }
-//        textf.keyboardType = UIKeyboardTypeDefault;
         [cell.contentView addSubview:textf];
     }
     if (indexPath.row==1) {
         cell.accessoryType = UITableViewCellAccessoryNone;
-        label2 = [MyLabel initWithLabelFrame:CGRectMake(100, 0, kScreenWidth-100, 44) Text:_dataArray1[indexPath.row] textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:18] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:NO];  //创建右边label
+        label2 = [MyLabel initWithLabelFrame:CGRectMake(100, 0, kScreenWidth-100, 44) Text:_dataArray1[indexPath.row] textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:18] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:NO];  
         [cell.contentView addSubview:label2];
         cell.userInteractionEnabled = NO;
         label2.textColor = [UIColor lightGrayColor];
     }
     if (indexPath.row==2) {
-        label3 = [MyLabel initWithLabelFrame:CGRectMake(100, 0, kScreenWidth-100, 44) Text:@"限报名人员" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:18] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:NO];  //创建右边label
+        label3 = [MyLabel initWithLabelFrame:CGRectMake(100, 0, kScreenWidth-100, 44) Text:@"限报名人员" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:18] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:NO];  
         [cell.contentView addSubview:label3];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(typeChoose:)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(PG_typeChoose:)];
         label3.userInteractionEnabled = YES;
         [label3 addGestureRecognizer:tap];
         label3.tag = 0;
-        
         CAShapeLayer *layer = [CAShapeLayer layer];
         layer.strokeColor = ZDLineColor.CGColor;
         UIBezierPath *bezierPath = [UIBezierPath bezierPath];
@@ -129,14 +113,12 @@
         [bezierPath stroke];
         layer.path = bezierPath.CGPath;
         [cell.contentView.layer addSublayer:layer];
-        
-        UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(typeChoose:)];
-        label4 = [MyLabel initWithLabelFrame:CGRectMake(100, 44, kScreenWidth-100, 44) Text:@"不限报名人员" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:18] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:NO];  //创建右边label
+        UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(PG_typeChoose:)];
+        label4 = [MyLabel initWithLabelFrame:CGRectMake(100, 44, kScreenWidth-100, 44) Text:@"不限报名人员" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:18] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:NO];  
         [cell.contentView addSubview:label4];
         label4.userInteractionEnabled = YES;
         [label4 addGestureRecognizer:tap1];
         label4.tag = 1;
-        
         chooseImage  = [[UIImageView alloc]initWithFrame:CGRectMake(kScreenWidth-140, 10, 25, 25)];
         chooseImage.image = [UIImage imageNamed:@"img_public_check_right"];
         if (_selectIndex == 0) [label3 addSubview:chooseImage];
@@ -144,9 +126,7 @@
     }
     return cell;
 }
-
 #pragma mark  ----- tableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row==2) {
         return 88;
@@ -166,8 +146,7 @@
 - (void)createButton
 {
     UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10,215, kScreenWidth-20, 40) title:@"确定" textcolor:[UIColor whiteColor] Target:self action:@selector(buttonAction) BackgroundColor:ZDMainColor cornerRadius:3 masksToBounds:YES];
-    [_tableview addSubview:button];  //创建下面button
-    
+    [_tableview addSubview:button];  
 }
 - (void)buttonAction
 {
@@ -175,7 +154,6 @@
         [self showMask:@"请填写签到名称"];
     }
     else{
-        
         JQIndicatorView *indicator = [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
             indicator.center = self.view.center;
             [self.view addSubview:indicator];
@@ -220,15 +198,12 @@
         }
     }
 }
-
 #pragma mark----手势处理
-- (void)typeChoose:(UITapGestureRecognizer *)tap{
+- (void)PG_typeChoose:(UITapGestureRecognizer *)tap{
     _selectIndex = tap.view.tag;
     UILabel *label = (UILabel *)tap.view;
     [label addSubview:chooseImage];
 }
-
-
 #pragma mark---提交
 - (void)back
 {
@@ -270,19 +245,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [taskCenterTable interfaceOrientationMaskWithtrainCommentModel:groupPurchaseViewM2 receiveMemoryWarning:pickerViewDelegatem6 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)showMask:(NSString *)title
 {
     PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:title];
     [label labelAnimationWithViewlong:self.view];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

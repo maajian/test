@@ -1,16 +1,6 @@
 #import "PGReachabilityStatusChange.h"
-//
-//  PGLoginCodeFixView.m
-//  jingjing
-//
-//  Created by maj on 2020/8/3.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGLoginCodeFixView.h"
-
 #import "PGLoginCodeView.h"
-
 @interface PGLoginCodeFixView()
 @property (nonatomic, strong) UIButton *closeButton;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -18,58 +8,46 @@
 @property (nonatomic, strong) PGLoginCodeView *codeView;
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UIButton *sureButton;
-
 @end
-
 @implementation PGLoginCodeFixView
-
 - (instancetype)init {
     if (self = [super init]) {
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
-
 #pragma mark --- UI
-- (void)setupUI {
-    _closeButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"nav_close"] target:self action:@selector(closeAction:)];
+- (void)PG_setupUI {
+    _closeButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"nav_close"] target:self action:@selector(PG_closeAction:)];
     [self addSubview:_closeButton];
-    
     _titleLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDBlackColor font:ZDSystemFont(32) numberOfLines:0 lineBreakMode:0 lineAlignment:0];
     _titleLabel.text = @"输入验证码";
     [self addSubview:_titleLabel];
-    
     _phoneLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDFontColor666 font:ZDSystemFont(14) numberOfLines:0 lineBreakMode:0 lineAlignment:0];
     _phoneLabel.text = @"验证码已发送至 +86 188 4458 9997";
     [self addSubview:_phoneLabel];
-    
     _codeView = [[PGLoginCodeView alloc] init];
     [self addSubview:_codeView];
-    
     _timeLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDFontColor666 font:ZDSystemFont(14) numberOfLines:0 lineBreakMode:0 lineAlignment:0];
     [self addSubview:_timeLabel];
-    
     _sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _sureButton.backgroundColor = ZDBlackColor3;
     _sureButton.layer.cornerRadius = 5;
     _sureButton.layer.masksToBounds = YES;
     _sureButton.titleLabel.font = ZDSystemFont(14);
     [_sureButton setTitle:@"下一步" forState:UIControlStateNormal];
-    [_sureButton addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_sureButton addTarget:self action:@selector(PG_nextAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_sureButton];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(15);
         make.top.equalTo(self).offset(30 + ZD_StatusBar_H);
         make.size.mas_equalTo(CGSizeMake(16, 16));
     }];
-    
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.closeButton.mas_bottom).offset(60);
         make.leading.equalTo(self).offset(40);
@@ -95,7 +73,6 @@
         make.height.mas_equalTo(44);
     }];
 }
-
 #pragma mark --- setter getter
 - (NSString *)code {
     return self.codeView.textField.text;
@@ -110,17 +87,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _phoneStr = phoneStr;
     _phoneLabel.text = [NSString stringWithFormat:@"验证码已发送至 +86 %@", phoneStr];
 }
-
 #pragma mark --- action
-- (void)closeAction:(UIButton *)button {
+- (void)PG_closeAction:(UIButton *)button {
     if ([self.loginCodeFixViewDelegate respondsToSelector:@selector(PGLoginCodeFixView:didTapCloseButton:)]) {
         [self.loginCodeFixViewDelegate PGLoginCodeFixView:self didTapCloseButton:button];
     }
 }
-- (void)nextAction:(UIButton *)nextButton {
+- (void)PG_nextAction:(UIButton *)nextButton {
     if ([self.loginCodeFixViewDelegate respondsToSelector:@selector(PGLoginCodeFixView:didTapNextButton:)]) {
         [self.loginCodeFixViewDelegate PGLoginCodeFixView:self didTapNextButton:nextButton];
     }
 }
-
 @end

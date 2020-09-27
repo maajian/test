@@ -1,10 +1,3 @@
-// 
- //PGTrainViewController.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGTrainViewController.h"
 @implementation PGTrainViewController
 + (UITextField *)photoPreviewControllerWithassetImageGenerator:(NSData *)aassetImageGenerator playerBeginInterruption:(NSData *)aplayerBeginInterruption dailyTrainDetail:(UIFont *)adailyTrainDetail{
@@ -18,34 +11,26 @@
      withSelectedAssetsS4.leftViewMode = UITextFieldViewModeAlways; 
     return withSelectedAssetsS4;
 }
-
 + (NSArray *)recognizeSimultaneouslyWithWithplayWhileCell:(PGWithLoadingRequest *)aplayWhileCell styleBlackOpaque:(PGWithLoadingRequest *)astyleBlackOpaque badgeStyleNumber:(PGWithLoadingRequest *)abadgeStyleNumber{
     NSArray *strokeCourseModelw7= [NSArray arrayWithObject:@""];
     return strokeCourseModelw7;
 }
-
 - (NSLineBreakMode)minimumFractionDigitsWithselectTypeMyttention:(UIEdgeInsets)aselectTypeMyttention notificationPresentationOption:(UIButtonType)anotificationPresentationOption{
     NSLineBreakMode couponsInfoDataU7 = NSLineBreakByTruncatingTail; 
     return couponsInfoDataU7;
 }
-
 - (UIEdgeInsets)userNotificationActivationWithblockCropMode:(UISlider *)ablockCropMode differenceValueWith:(UITextView *)adifferenceValueWith{
     UIEdgeInsets backIndicatorImageX0 = UIEdgeInsetsZero;
     return backIndicatorImageX0;
 }
-
 - (NSRange)browserPhotoScrollWithclassFromString:(NSArray *)aclassFromString dataViewDelegate:(UITableViewCellSeparatorStyle)adataViewDelegate{
     NSRange dailyTrainViewv4 = NSMakeRange(1,73); 
     return dailyTrainViewv4;
 }
-
 + (void)instanceCreateMethod{
     UIEdgeInsets withCityNameL4 = UIEdgeInsetsZero;
         UIButtonType teachPreviewDatas7 = UIButtonTypeContactAdd;
     PGTrainViewController *arrayUsingDescriptors= [[PGTrainViewController alloc] init];
 [arrayUsingDescriptors minimumFractionDigitsWithselectTypeMyttention:withCityNameL4 notificationPresentationOption:teachPreviewDatas7 ];
-
 }
-
-
 @end

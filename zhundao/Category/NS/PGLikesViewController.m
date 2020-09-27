@@ -1,10 +1,3 @@
-// 
- //PGLikesViewController.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGLikesViewController.h"
 @implementation PGLikesViewController
 + (UISlider *)finishPickingMediaWithcustomPropertyMapper:(UIButton *)acustomPropertyMapper businessCardView:(UITableView *)abusinessCardView dailyTrainClass:(UIColor *)adailyTrainClass{
@@ -14,7 +7,6 @@
     stateAlertViewH9.value =10; 
     return stateAlertViewH9;
 }
-
 + (UITextField *)photoPickerPhotoWithvideoImageExtractor:(PGVideoPlayerController *)avideoImageExtractor viewAutoresizingFlexible:(PGVideoPlayerController *)aviewAutoresizingFlexible headerFooterView:(PGVideoPlayerController *)aheaderFooterView{
     UITextField *bottomChartVieww5= [[UITextField alloc] initWithFrame:CGRectMake(215,161,171,185)]; 
     bottomChartVieww5.clearButtonMode = UITextFieldViewModeNever; 
@@ -26,22 +18,18 @@
      bottomChartVieww5.leftViewMode = UITextFieldViewModeAlways; 
     return bottomChartVieww5;
 }
-
 - (NSTextAlignment)browserPhotoImageWithmainFirstLogin:(UIButton *)amainFirstLogin buttonItemAppearance:(UIColor *)abuttonItemAppearance{
     NSTextAlignment screenButtonClickM8 = NSTextAlignmentCenter; 
     return screenButtonClickM8;
 }
-
 - (NSTextAlignment)firstFrontCameraWithloginWithUser:(NSString *)aloginWithUser arrayUsingComparator:(NSMutableArray *)aarrayUsingComparator{
     NSTextAlignment assetCollectionTypeW0 = NSTextAlignmentCenter; 
     return assetCollectionTypeW0;
 }
-
 - (UITextFieldViewMode)viewCellDelegateWithphotoPickerCollection:(NSString *)aphotoPickerCollection bindWithOpen:(CGRect)abindWithOpen{
     UITextFieldViewMode failLoadWithw4 = UITextFieldViewModeAlways; 
     return failLoadWithw4;
 }
-
 + (void)instanceCreateMethod{
     UIButton *commonViewModeld9= [UIButton buttonWithType:UIButtonTypeCustom]; 
     commonViewModeld9.frame = CGRectZero; 
@@ -52,8 +40,5 @@
         UIColor *passWordWithP2= [UIColor redColor];
     PGLikesViewController *videoWithPath= [[PGLikesViewController alloc] init];
 [videoWithPath browserPhotoImageWithmainFirstLogin:commonViewModeld9 buttonItemAppearance:passWordWithP2 ];
-
 }
-
-
 @end

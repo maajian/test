@@ -1,12 +1,4 @@
 #import "PGWithSureBlock.h"
-//
-//  PGMeAllAccountViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/18.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeAllAccountViewController.h"
 #import "PGMeAllAccountViewModel.h"
 #import "PGMeAllAccountTableViewCell.h"
@@ -15,27 +7,18 @@
 #import "PGMeAddAccountViewController.h"
 static NSString *cellID = @"AllAccountID";
 @interface PGMeAllAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
-
 @property(nonatomic,strong)UITableView *tableView;
-
 @property(nonatomic,copy)NSArray *dataArray;
-
 @property(nonatomic,strong)PGMeAllAccountViewModel *allViewModel;
-
 @end
-
 @implementation PGMeAllAccountViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"提现账号";
     _allViewModel = [[PGMeAllAccountViewModel alloc]init];
     [self.view addSubview:self.tableView];
-    // Do any additional setup after loading the view.
 }
-
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
@@ -45,10 +28,8 @@ static NSString *cellID = @"AllAccountID";
     }
     return _tableView;
 }
-
 #pragma mark --- 网络请求
-
-- (void)networkGetAccount{
+- (void)PG_networkGetAccount{
     [_allViewModel GetCreditCards:^(BOOL isSuccess, NSArray *Array) {
         if (isSuccess) {
             NSMutableArray *muarray = [NSMutableArray array];
@@ -56,10 +37,8 @@ static NSString *cellID = @"AllAccountID";
                 PGMeAllAccountModel *model = [PGMeAllAccountModel yy_modelWithJSON:dic];
                 [muarray addObject:model];
             }
-            
             PGMeAllAccountModel *wechatModel = [[PGMeAllAccountModel alloc] initWithAccount:@"微信钱包" bankName:@"微信钱包" iD:0];
             [muarray addObject:wechatModel];
-            
             _dataArray = muarray;
             [_tableView reloadData];
         }else{
@@ -67,9 +46,7 @@ static NSString *cellID = @"AllAccountID";
         }
     }];
 }
-
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _dataArray.count;
@@ -83,10 +60,8 @@ static NSString *cellID = @"AllAccountID";
     }
     cell.model = _dataArray[indexPath.row];
     return cell;
-    
 }
 #pragma mark -------UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 64;
 }
@@ -94,13 +69,12 @@ static NSString *cellID = @"AllAccountID";
 {
     return 20;
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIView *View = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
     View.backgroundColor = ZDBackgroundColor;
-    UIButton *addAccountButton = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"添加提现账户" textcolor:[UIColor whiteColor] Target:self action:@selector(addAccount) BackgroundColor: ZDMainColor cornerRadius:5 masksToBounds:YES];
-    [View addSubview:addAccountButton];
+    UIButton *PG_addAccountButton = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 44) title:@"添加提现账户" textcolor:[UIColor whiteColor] Target:self action:@selector(PG_addAccount) BackgroundColor: ZDMainColor cornerRadius:5 masksToBounds:YES];
+    [View addSubview:PG_addAccountButton];
     return  View;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -114,7 +88,6 @@ static NSString *cellID = @"AllAccountID";
     [_AllAccountDelegate post:model.Account BankName:model.BankName ID:model.ID];
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
@@ -127,17 +100,12 @@ static NSString *cellID = @"AllAccountID";
     [_allViewModel deleteCreadCard:model.ID successBlock:^(id responseObject) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
         if ([dic[@"Res"] integerValue]==0) {
-           [weakSelf networkGetAccount];
+           [weakSelf PG_networkGetAccount];
         }
     }];
 }
-
-
 #pragma mark ---  添加账号
-
-- (void)addAccount{
-    /*! 如果未认证 前往认证*/
-    
+- (void)PG_addAccount{
     if (![[NSUserDefaults standardUserDefaults]boolForKey:@"Authentication"]) {
         ZD_WeakSelf
         [PGAlertView alertWithTitle:@"操作提醒" message:@"请先完成实名认证再添加提现账号" sureBlock:^{
@@ -145,7 +113,6 @@ static NSString *cellID = @"AllAccountID";
             [weakSelf setHidesBottomBarWhenPushed:YES];
             [weakSelf.navigationController pushViewController:auth animated:YES];
         } cancelBlock:^{
-            
         }];
     }else{
         NSDictionary *authdic = [NSDictionary dictionaryWithContentsOfFile:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"auth.plist"]];
@@ -159,10 +126,8 @@ static NSString *cellID = @"AllAccountID";
             [self setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:add animated:YES];
         }
-        
     }
 }
-
 - (void)viewWillAppear:(BOOL)animated{
 dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *smartAlbumUserK7= [UIFont systemFontOfSize:29];
@@ -171,9 +136,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [pageScrollView javaScriptConfirmWithloginWithUser:smartAlbumUserK7 mobileCoreServices:dataElseLoadY5 ];
 });
     [super viewWillAppear:animated];
-    [self networkGetAccount];
+    [self PG_networkGetAccount];
 }
-
 - (void)dealloc{
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
@@ -185,7 +149,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [linkViewModel javaScriptConfirmWithloginWithUser:couponViewModelJ9 mobileCoreServices:secondeMallViewr9 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 @end

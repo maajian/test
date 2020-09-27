@@ -1,12 +1,4 @@
 #import "PGLoginViewModel.h"
-//
-//  PGActivityFeeViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/4/13.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityFeeViewController.h"
 #import "PGActivityFeeCell.h"
 #import "PGActivityFeeMV.h"
@@ -16,22 +8,13 @@
     PGActivityFeeCell *myCell;
 }
 @property(nonatomic,strong)               UITableView *tableview ;
-/*! 数组的个数 */
 @property(nonatomic,assign)   NSInteger sectionCount ;
-/*! 外部传入的费用数组 */
 @property(nonatomic,strong)   NSMutableArray *dataArray;
-/*! 每个费用字典 */
 @property(nonatomic,strong)    NSMutableDictionary *datadic ;
-
 @property(nonatomic,assign)   NSInteger oriCount ;
-
-/*! sectionCount =0 时出现的footerview */
 @property(nonatomic,strong)UIView *topView;
-
 @end
-
 @implementation PGActivityFeeViewController
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIButton *playerStatusPlayingN5= [UIButton buttonWithType:UIButtonTypeCustom]; 
@@ -47,10 +30,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super viewDidLoad];
     [self baseSetting];
     [self customBack];
-    // Do any additional setup after loading the view.
 }
 #pragma 基础设置
-
 - (void)baseSetting
 {
     self.title = @"活动费用";
@@ -88,10 +69,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self sureAction];
     }]];
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
 #pragma 懒加载
-
 - (UITableView *)tableview
 {
     if (!_tableview) {
@@ -129,7 +108,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return _topView;
 }
 #pragma UITableViewDataSource  
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (_sectionCount==0) {
@@ -156,13 +134,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cell.textFIeld2.tag = indexPath.section+100;
     cell.textFIeld3.tag = indexPath.section+100;
     cell.textField4.tag = indexPath.section+100;
-    [self setdataForCell:cell index:indexPath];
+    [self PG_setdataForCell:cell index:indexPath];
     cell.deleteImageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(deleteCellWithges:)];
     [cell.deleteImageView addGestureRecognizer:tap];
     return cell;
 }
-- (void)setdataForCell:(PGActivityFeeCell *)cell index:(NSIndexPath *)indexpath {
+- (void)PG_setdataForCell:(PGActivityFeeCell *)cell index:(NSIndexPath *)indexpath {
      id dic =self.dataArray[indexpath.section];
     if ([dic isKindOfClass:[NSDictionary class]]) {
         cell.textFIeld1.text = dic [@"Title"];
@@ -175,7 +153,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             cell.textFIeld2.text = @"";
             cell.textFIeld2.placeholder = @"请输入金额";
         }
-        
         if ([dic[@"Limit"] integerValue]==0) {
             cell.textFIeld3.placeholder = @"默认不限";
             cell.textFIeld3.text = @"";
@@ -183,7 +160,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         else{
             cell.textFIeld3.text = [NSString stringWithFormat:@"%@",dic[@"Limit"]];
         }
-        
         cell.textField4.text = dic[@"OrderNo"] ?  [NSString stringWithFormat:@"%@",dic[@"OrderNo"]] : @"0";
         cell.showSwitch.on = dic[@"Status"] ? ![dic[@"Status"] boolValue] : YES;
     }
@@ -228,14 +204,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
             {
                  [self.datadic setObject:myCell.textFIeld2.text forKey:@"Amount"];
             }
-          
             if ([myCell.textFIeld3.text isEqualToString:@""]) {
                      [self.datadic setObject:@"0" forKey:@"Limit"];
                 }
            else{
                [self.datadic setObject:myCell.textFIeld3.text forKey:@"Limit"];
                 }
-            
             if ([myCell.textField4.text isEqualToString:@"0"] || [myCell.textField4.text isEqualToString:@""]) {
                 [self.datadic setObject:@"0" forKey:@"OrderNo"];
             }
@@ -251,7 +225,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableview reloadData];
     }
     [self.datadic removeAllObjects];
-   
 }
 #pragma mark --- PGActivityFeeCellDelegate
 - (void)PGActivityFeeCell:(PGActivityFeeCell *)PGActivityFeeCell showSwitchDidChange:(UISwitch *)showSwitch {
@@ -277,7 +250,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [label labelAnimationWithViewlong:self.view];
     }
 }
-
 #pragma UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
@@ -305,10 +277,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [View addSubview:[self createSureButton]];
     return View;
 }
-
 - (UIButton *)createAddFeeButton
 {
-
     UIButton *button = [MyButton initWithButtonFrame:CGRectMake(10, 20, kScreenWidth-20, 40) title:@"+ 添加费用项" textcolor:ZDMainColor Target:self action: @selector(addFeeSection) BackgroundColor:[UIColor clearColor] cornerRadius:5 masksToBounds:YES];
     button.layer.borderWidth = 1;
     button.layer.borderColor = ZDMainColor.CGColor;
@@ -331,7 +301,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (UILabel *)leftLabel
 {
- 
     UILabel   * _leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 85, 44)];
     _leftLabel.font = [UIFont systemFontOfSize:15];
         _leftLabel.textAlignment = NSTextAlignmentLeft;
@@ -340,16 +309,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (UITextField *)rightTextField
 {
-   
      UITextField  * _rightTextField = [[UITextField alloc]initWithFrame:CGRectMake(100, 0, kScreenWidth-100, 44)];
         _rightTextField.font =  [UIFont systemFontOfSize:15];
         _rightTextField.textAlignment = NSTextAlignmentLeft;
         _rightTextField.textColor = [UIColor blackColor];
- 
     return _rightTextField;
 }
-
-
 #pragma mark Action  按钮动作
 - (void)deleteCellWithges:(UITapGestureRecognizer *)tap
 {
@@ -365,7 +330,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 if (isChange==0) {
                     PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:@"已有人报名该项目，无法删除"];
                     [label labelAnimationWithViewlong:self.view];
-                    
                 }
                 else if (isChange==1)
                 {
@@ -402,7 +366,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSLog(@"data = %@",self.dataArray);
     [_tableview reloadData];
 }
-
 - (void)pushToExplain
 {
     PGActivityFeeExplainVC *detail = [[PGActivityFeeExplainVC alloc]init];
@@ -413,17 +376,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)addFeeSection
 {
     [self.view endEditing:YES];
-//    [_tableview insertSections:<#(nonnull NSIndexSet *)#> withRowAnimation:(UITableViewRowAnimation)]
-    _sectionCount +=1;   //要先 改变numberofsection 个数。加1
+    _sectionCount +=1;   
     [self.dataArray addObject:@{}];
-     [_tableview insertSections:[NSIndexSet indexSetWithIndex:_sectionCount-1] withRowAnimation:UITableViewRowAnimationRight];  //再添加单元格分组
+     [_tableview insertSections:[NSIndexSet indexSetWithIndex:_sectionCount-1] withRowAnimation:UITableViewRowAnimationRight];  
     NSLog(@"data = %@",self.dataArray);
     [_tableview reloadData];
 }
 - (void)sureAction
 {
     [self.view endEditing:YES];
-    NSInteger a = 0; //记录当前循环次数
+    NSInteger a = 0; 
     for (id dic1 in _dataArray) {
         if([dic1 isKindOfClass:[NSDictionary class]]){
             a = a+1;
@@ -436,7 +398,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 [self showLabel];
                 return;
             };
-            
         }
         if(![dic1 isKindOfClass:[NSDictionary class]]){
             [self showLabel];
@@ -463,8 +424,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-
 @end

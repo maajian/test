@@ -1,20 +1,10 @@
-//
-//  ISSCButton.m
-//  MFiAudioAPP
-//
-//  Created by Rick on 13/10/4.
-//  Copyright (c) 2013年 ISSC. All rights reserved.
-//
-
 #import "ISSCButton.h"
 #import <QuartzCore/QuartzCore.h>
 @implementation ISSCButton
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
         self.layer.borderColor = [UIColor grayColor].CGColor;
         self.layer.borderWidth = 1.0f;
         self.layer.cornerRadius = 8.0f;
@@ -31,7 +21,6 @@
     }
     return self;
 }
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.layer.borderColor = [UIColor grayColor].CGColor;
@@ -48,13 +37,4 @@
     self.layer.shouldRasterize = YES;
     self.layer.rasterizationScale = [UIScreen mainScreen].scale;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
 @end

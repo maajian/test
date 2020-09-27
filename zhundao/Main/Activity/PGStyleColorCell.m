@@ -1,30 +1,16 @@
 #import "PGHorizontalScrollIndicator.h"
-//
-//  PGStyleColorCell.m
-//  SimpleWord
-//
-//  Created by Chenly on 16/5/13.
-//  Copyright © 2016年 Little Meaning. All rights reserved.
-//
-
 #import "PGStyleColorCell.h"
 #import "PGColorPickerView.h"
-
 @interface PGStyleColorCell () <PGColorPickerViewDataSource, PGColorPickerViewDelegate>
-
 @property (weak, nonatomic) IBOutlet UIView *colorDisplayView;
 @property (weak, nonatomic) IBOutlet PGColorPickerView *colorPickerView;
-
 @end
-
 @implementation PGStyleColorCell
 {
     CAShapeLayer *_lineLayer;
 }
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     if (!_lineLayer) {
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
         shapeLayer.fillColor = [UIColor clearColor].CGColor;
@@ -35,7 +21,6 @@
         _lineLayer = shapeLayer;
         [self.layer addSublayer:_lineLayer];
     }
-    
     _colors = @[
                 [UIColor blackColor],
                 [UIColor colorWithRed:1/255.f green:122/255.f blue:171/255.f alpha:1],
@@ -54,34 +39,27 @@
     self.colorPickerView.dataSource = self;
     self.colorPickerView.delegate = self;
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     self.colorPickerView.hidden = !selected;
     _lineLayer.hidden = !selected;
 }
-
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    
     if (!self.selected) {
         return;
     }
-    
     CGRect layerFrame = rect;
     layerFrame.origin.x = 20.f;
     layerFrame.origin.y = 60.f;
     layerFrame.size.width -= 20.f * 2;
     layerFrame.size.height = 1.f;
-    
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(0, 0.5f)];
     [path addLineToPoint:CGPointMake(CGRectGetWidth(layerFrame), 0.5f)];
     _lineLayer.path = path.CGPath;
     _lineLayer.frame = layerFrame;
 }
-
 - (void)setColors:(NSArray *)colors {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImageView * animatedImageViewo4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
@@ -102,9 +80,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _colors = [colors copy];    
     [self.colorPickerView reloadData];
 }
-
 #pragma mark - set Color
-
 - (void)setSelectedColor:(UIColor *)selectedColor {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImageView * timeFromDurationK0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
@@ -134,17 +110,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }];
 }
-
 #pragma mark - <PGColorPickerViewDataSource, PGColorPickerViewDelegate>
-
 - (NSInteger)lm_numberOfColorsInColorPickerView:(PGColorPickerView *)pickerView {
     return self.colors.count;
 }
-
 - (UIColor *)lm_colorPickerView:(PGColorPickerView *)pickerView colorForItemAtIndex:(NSInteger)index {
     return self.colors[index];
 }
-
 - (void)lm_colorPickerView:(PGColorPickerView *)pickerView didSelectColor:(UIColor *)color {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImageView * loginWithUserv9 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
@@ -165,5 +137,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.colorDisplayView.backgroundColor = color;
     [self.delegate lm_didChangeStyleSettings:@{LMStyleSettingsTextColorName: color}];
 }
-
 @end

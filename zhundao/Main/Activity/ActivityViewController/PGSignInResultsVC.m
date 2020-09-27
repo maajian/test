@@ -1,12 +1,4 @@
 #import "PGVideoWithScroll.h"
-//
-//  PGSignInResultsVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/3/8.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGSignInResultsVC.h"
 #import "PGSignInLoadAllSignCell.h"
 #import "PGSignInLoadallsignModel.h"
@@ -25,13 +17,10 @@
 @property(nonatomic,strong)NSMutableArray *phoneArray ;
 @property(nonatomic,strong)NSMutableArray *nameArray;
 @end
-
 @implementation PGSignInResultsVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
      [self.view addSubview:self.tableView];
-    // Do any additional setup after loading the view.
 }
 #pragma mark ----- 懒加载
 - (PGSignInOnePersonDataNetWork *)oneVM{
@@ -98,9 +87,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [effectThumbImage pickerViewShowWithphotosDelegateWith:assetResourceTypeg3 colorSpaceCreate:keyboardWillChanget2 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return dataArray.count;
@@ -129,7 +116,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [cell addGestureRecognizer:tap2];
     return cell;
 }
-
 - (void)showDetail:(UITapGestureRecognizer *)tap
 {
     myCell = (PGSignInLoadAllSignCell *)tap.view;
@@ -169,7 +155,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [weakSelf.presentingViewController  setHidesBottomBarWhenPushed:YES];
     [weakSelf.presentingViewController.navigationController pushViewController:signle animated:YES];
 }
-
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     [_phoneArray removeAllObjects];
     [_nameArray removeAllObjects];
@@ -188,7 +173,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         set = [[NSMutableIndexSet alloc]init];
     }
     if (array3.count!=0||array4.count!=0) {
-      
             for (int i =0; i<array3.count; i++) {
                 [set addIndex:[array1 indexOfObject:array3[i]]];
             }
@@ -210,18 +194,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     myCell = (PGSignInLoadAllSignCell *)tap.view.superview.superview;
     if (!myCell.model.SignTime||[myCell.timeLabel.text isEqualToString:@" 管理员代签  "]) {
-        [self showSign];
+        [self PG_showSign];
     }
 }
-
-- (void)showSign {
+- (void)PG_showSign {
     ZD_WeakSelf
     [PGAlertView alertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] message:@"代签后不能修改" sureBlock:^{
         [[PGSignResult alloc] dealAdminSignWithSignID:weakSelf.signID phone:myCell.model.Mobile action1:^{
             [weakSelf TableReloadData];
         }];
     } cancelBlock:^{
-        
     }];
 }
 - (void)TableReloadData
@@ -252,7 +234,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [PGAlertView alertWithTitle:@"确定拨打电话?" message:nil sureBlock:^{
         [weakSelf callphone];
     } cancelBlock:^{
-        
     }];
 }
 - (void)callphone
@@ -262,11 +243,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     return 60;
 }
-
-
 - (NSString *)getUserInfo:(NSDictionary *)dic
 {
     NSMutableArray *array = [NSMutableArray arrayWithObjects:@"100",@"101", nil];

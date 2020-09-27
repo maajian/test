@@ -1,12 +1,4 @@
 #import "PGIntervalSinceDate.h"
-//
-//  PGAvtivityPostView.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/13.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGAvtivityPostView.h"
 #import "ActivityModel.h"
 #import "NSString+HTML.h"
@@ -17,45 +9,22 @@
 #import "Time.h"
 #import "PGAvtivityCCDatePickerView.h"
 @interface PGAvtivityPostView()<UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource,ZDAvtivityFooterDelegate>
-
-/*! UI */
-/*! 顶部大图 */
 @property(nonatomic,strong)      UIImageView *bigImageView;
-/*! 修改按钮 */
 @property(nonatomic,strong)      UIButton *changeButton;
-/*! 活动开始时间 */
 @property(nonatomic,strong)      UILabel *beginTimeLeftLabel;
-/*! 活动结束时间 */
 @property(nonatomic,strong)      UILabel *stopTimeLeftLabel;
-/*! 报名开始时间 */
 @property(nonatomic,strong)      UILabel *startTimeLeftLabel;
-/*! 报名截止时间 */
 @property(nonatomic,strong)      UILabel *endTimeLeftLabel;
-/*! 活动名称 */
 @property(nonatomic,strong)      UILabel *activityTitleLabel;
-/*! 活动地点 */
 @property(nonatomic,strong)      UILabel *activityPlaceLabel;
-/*! 定位按钮 */
 @property(nonatomic,strong)      UIButton *locationButton;
-/*! 活动人数 */
 @property(nonatomic,strong)      UILabel *activityNumberLabel;
-/*! 活动费用 */
 @property(nonatomic,strong)      UILabel *activityFeeLeftLabel;
-/*! 更多选项 */
 @property(nonatomic,strong)      UILabel *moreLabel;
-
-
-
-/*! 数据 */
 @property(nonatomic,strong)     PGAvtivityPostViewModel  *postVM;
-
-@property(nonatomic,strong)     ActivityModel *activityModel;//数据源
-
-@property(nonatomic,assign)          NSInteger gradeID; //等级
-
+@property(nonatomic,strong)     ActivityModel *activityModel;
+@property(nonatomic,assign)          NSInteger gradeID; 
 @property(nonatomic,copy)       NSArray  *imageArray;
-
-
 @end
 @implementation PGAvtivityPostView
 - (instancetype)initWithModel :(ActivityModel *)activityModel{
@@ -72,8 +41,6 @@
     }
     return self;
 }
-
-/*! 懒加载 */
 -(UITableView *)tableview
 {
     if (!_tableview) {
@@ -83,50 +50,40 @@
     }
     return _tableview;
 }
-/*! 详情 */
-- (UIWebView *)textview
+- (WKWebView *)textview
 {
     if (!_textview) {
-        _textview = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+        _textview = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
         if (_activityModel) {
             [_textview loadHTMLString:_activityModel.Content baseURL:nil];
             _htmlStr = [_activityModel.Content copy];
-            
-            
             NSAttributedString *attstr = [NSString strToAttriWithStr:_htmlStr];
             NSLog(@"attstr = %@",attstr);
             _textStr = [attstr copy];
-            
         }
     }
     return  _textview;
 }
-/*! 顶部大图 */
 - (UIImageView *)bigImageView{
     if (!_bigImageView) {
         _bigImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 250)];
     }
     return _bigImageView;
 }
-/*! 修改图片 */
 - (UIButton *)changeButton{
     if (!_changeButton) {
-        _changeButton = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth-80, 210, 70, 30) title:@"编辑封面" textcolor:kColorA(70, 70, 70, 1) Target:self action:@selector(imgChange) BackgroundColor:kColorA(250, 250, 250, 1) cornerRadius:5 masksToBounds:1];
+        _changeButton = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth-80, 210, 70, 30) title:@"编辑封面" textcolor:kColorA(70, 70, 70, 1) Target:self action:@selector(PG_imgChange) BackgroundColor:kColorA(250, 250, 250, 1) cornerRadius:5 masksToBounds:1];
         _changeButton.titleLabel.font = KweixinFont(13);
     }
     return _changeButton;
 }
-
-/*! 活动开始时间左侧 */
 - (UILabel *)beginTimeLeftLabel
 {
     if (!_beginTimeLeftLabel) {
-        
         _beginTimeLeftLabel = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 70, 44) Text:@"开始时间" textColor:[UIColor blackColor] font:KHeitiSCMedium(15) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     }
     return _beginTimeLeftLabel;
 }
-/*! 活动开始时间右侧 */
 - (UILabel *)beginTimeRightLabel
 {
     if (!_beginTimeRightLabel) {
@@ -134,7 +91,6 @@
     }
     return _beginTimeRightLabel;
 }
-/*! 活动名称 */
 - (UILabel *)activityTitleLabel
 {
     if (!_activityTitleLabel) {
@@ -142,7 +98,6 @@
     }
     return _activityTitleLabel;
 }
-/*! 活动名称 */
 - (UITextField *)activityTitleTextField
 {
     if (!_activityTitleTextField) {
@@ -156,22 +111,18 @@
     }
     return  _activityTitleTextField;
 }
-/*! 报名开始时间 */
 - (UILabel *)startTimeLeftLabel{
     if (!_startTimeLeftLabel) {
         _startTimeLeftLabel =[MyLabel initWithLabelFrame:CGRectMake(10, 0, 70, 44) Text:@"报名开始" textColor:[UIColor blackColor] font:KHeitiSCMedium(15) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     }
     return _startTimeLeftLabel;
 }
-
 - (UILabel *)startTimeRightLabel{
     if (!_startTimeRightLabel) {
         _startTimeRightLabel =[MyLabel initWithLabelFrame:CGRectMake(85, 0, kScreenWidth-85, 44) Text:[_postVM startTime:_activityModel] textColor:[UIColor blackColor] font:KHeitiSCMedium(15) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     }
     return _startTimeRightLabel;
 }
-
-/*! 活动结束时间 */
 - (UILabel *)endTimeLeftLabel
 {
     if (!_endTimeLeftLabel) {
@@ -179,7 +130,6 @@
     }
     return _endTimeLeftLabel;
 }
-/*! 活动结束时间  */
 - (UILabel *)endTimeRightLabel
 {
     if (!_endTimeRightLabel) {
@@ -187,7 +137,6 @@
     }
     return _endTimeRightLabel;
 }
-/*! 报名截止 */
 - (UILabel *)stopTimeLeftLabel
 {
     if (!_stopTimeLeftLabel) {
@@ -195,7 +144,6 @@
     }
     return _stopTimeLeftLabel;
 }
-/*! 报名截止时间 */
 - (UILabel *)stopTimeRightLabel
 {
     if (!_stopTimeRightLabel) {
@@ -203,7 +151,6 @@
     }
     return _stopTimeRightLabel;
 }
-/*! 活动地点 */
 - (UILabel *)activityPlaceLabel
 {
     if (!_activityPlaceLabel) {
@@ -211,7 +158,6 @@
     }
     return _activityPlaceLabel;
 }
-/*! 活动地点 */
 - (UITextField *)activityPlaceTextField
 {
     if (!_activityPlaceTextField) {
@@ -225,18 +171,16 @@
     }
     return  _activityPlaceTextField;
 }
-/*! 定位按钮 */
 - (UIButton *)locationButton
 {
     if (!_locationButton) {
-        _locationButton = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth-65, 7, 50, 30) title:@"定位" textcolor:[UIColor blackColor] Target:self action:@selector(locationAction) BackgroundColor:kColorA(244, 244, 244, 1) cornerRadius:5 masksToBounds:YES];
+        _locationButton = [MyButton initWithButtonFrame:CGRectMake(kScreenWidth-65, 7, 50, 30) title:@"定位" textcolor:[UIColor blackColor] Target:self action:@selector(PG_locationAction) BackgroundColor:kColorA(244, 244, 244, 1) cornerRadius:5 masksToBounds:YES];
         NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:@"定位"];
         [str  addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13] range:NSMakeRange(0, 2)];
         [_locationButton setAttributedTitle:str forState:UIControlStateNormal];
     }
     return _locationButton;
 }
-/*! 更多选项按钮 */
 - (UILabel *)moreLabel
 {
     if (!_moreLabel) {
@@ -297,13 +241,9 @@
         else{
             [_activityNumbertField initWithString:@"默认不限" font:KHeitiSCMedium(15)];
         }
-        
     }
     return _activityNumbertField;
 }
-
-
-
 #pragma mark uitableviewDatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -381,7 +321,6 @@
         if (indexPath.row==0) {
             [cell.contentView addSubview:self.activityNumbertField];
             [cell.contentView addSubview:self.activityNumberLabel];
-            
         }
         else
         {
@@ -397,7 +336,6 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
-
 #pragma uitableviewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -408,7 +346,6 @@
         case 4:
             return 100;
             break;
-            
         default:
             return 44;
             break;
@@ -434,7 +371,6 @@
         case 6:
             return 150;
             break;
-            
         default:
             return 0.1;
             break;
@@ -473,7 +409,6 @@
             return  footer;
         }
             break;
-            
         default:return nil;
             break;
     }
@@ -488,27 +423,20 @@
     self.stopTimeRightLabel.userInteractionEnabled = YES;
     self.beginTimeRightLabel.userInteractionEnabled = YES;
     self.activityFeeRightLabel.userInteractionEnabled = YES;
-    /*! 活动结束点击 */
     UITapGestureRecognizer *stopTimeTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showStopTimePick)];
     [self.stopTimeRightLabel addGestureRecognizer:stopTimeTap];
-    /*! 报名截止点击 */
     UITapGestureRecognizer *endtimeTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showEndTimePick)];
     [self.endTimeRightLabel addGestureRecognizer:endtimeTap];
-    /*! 活动开始点击 */
     UITapGestureRecognizer *startTimeTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showStartTimePick)];
     [self.beginTimeRightLabel addGestureRecognizer:startTimeTap];
-    /*! 报名开始点击 */
-    
-    UITapGestureRecognizer *startTimeTap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showApplyStartTimePick)];
+    UITapGestureRecognizer *startTimeTap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(PG_showApplyStartTimePick)];
     [self.startTimeRightLabel addGestureRecognizer:startTimeTap1];
-    
-    UITapGestureRecognizer *activityFeeTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushToFee)];
+    UITapGestureRecognizer *activityFeeTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(PG_pushToFee)];
     [self.activityFeeRightLabel addGestureRecognizer:activityFeeTap];
     UITapGestureRecognizer *webtap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(edit)];
     webtap.delegate =self;
     [self.textview addGestureRecognizer:webtap];
 }
-
 #pragma mark ---时间选择器
 -(void)showStopTimePick
 {
@@ -525,7 +453,6 @@
 {
     NSDate *date = [[Time alloc]getDateFromStr:_endTimeRightLabel.text];
     PGAvtivityCCDatePickerView *dateView = [[PGAvtivityCCDatePickerView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) WithStr:@"选择活动截止时间" withDate:date];
-    
     [self addSubview:dateView];
     dateView.blcok = ^(NSDate *dateString){
         NSString *datestr = [NSString stringWithFormat:@"%ld-%02ld-%02ld %02ld:%02ld",(long)dateString.year,(long)dateString.month,(long)dateString.day,(long)dateString.hour,(long)dateString.minute];
@@ -544,8 +471,7 @@
     };
     [dateView fadeIn];
 }
-
-- (void)showApplyStartTimePick{
+- (void)PG_showApplyStartTimePick{
     NSDate *date = [[Time alloc]getDateFromStr:_startTimeRightLabel.text];
     PGAvtivityCCDatePickerView *dateView = [[PGAvtivityCCDatePickerView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) WithStr:@"选择报名开始时间" withDate:date];
     [self addSubview:dateView];
@@ -556,7 +482,6 @@
     [dateView fadeIn];
 }
 #pragma  mark --- 获取图片
-
 - (void)getImage{
     [_postVM getImage:^(id responseObject) {
         NSArray *Array = [NSArray arrayWithArray:responseObject];
@@ -572,22 +497,18 @@
         [[PGSignManager shareManager]showNotHaveNet:self];
     }];
 }
-
 #pragma mark --- 回调
-
 - (void)pushToXieyi{
     if ([self.ZDAvtivityPostDelegate respondsToSelector:@selector(pushXieYi)]) {
         [self.ZDAvtivityPostDelegate pushXieYi];
     }
 }
-
 - (void)post{
     if ([self.ZDAvtivityPostDelegate respondsToSelector:@selector(isCanPost:)]) {
         [self.ZDAvtivityPostDelegate isCanPost:_bigImageStr];
     }
 }
-
-- (void)pushToFee{
+- (void)PG_pushToFee{
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextView *taskCenterCelle5= [[UITextView alloc] initWithFrame:CGRectMake(171,153,22,119)]; 
     taskCenterCelle5.editable = NO; 
@@ -601,22 +522,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.ZDAvtivityPostDelegate pushFee];
     }
 }
-
 - (void)edit{
     if ([self.ZDAvtivityPostDelegate respondsToSelector:@selector(pushEdit)]) {
         [self.ZDAvtivityPostDelegate pushEdit];
     }
 }
-
-- (void)locationAction{
+- (void)PG_locationAction{
     if ([self.ZDAvtivityPostDelegate respondsToSelector:@selector(pushLocation)]) {
         [self.ZDAvtivityPostDelegate pushLocation];
     }
 }
-- (void)imgChange{
+- (void)PG_imgChange{
     if ([self.ZDAvtivityPostDelegate respondsToSelector:@selector(changeBigImage:)]) {
         [self.ZDAvtivityPostDelegate changeBigImage:_imageArray];
     }
 }
-
 @end

@@ -1,15 +1,5 @@
-//
-//  PGDiscoverPromoteCustomContactModel.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteCustomContactModel.h"
-
 @implementation PGMePromoteCustomContactModel
-
 + (instancetype)incomeModelWithDic:(NSDictionary *)dic {
     PGMePromoteCustomContactModel *model = [[PGMePromoteCustomContactModel alloc] init];
     model.totalString = [dic[@"totalBonus"] stringValue];
@@ -31,5 +21,4 @@
     model.promoteCustomContactType = PGMePromoteCustomContactTypeUserNumber;
     return model;
 }
-
 @end

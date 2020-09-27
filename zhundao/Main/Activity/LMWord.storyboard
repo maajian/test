@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="fontStyle" id="Xfk-fa-UWh" customClass="ZDStyleFontStyleCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="fontStyle" id="Xfk-fa-UWh" customClass="PGStyleFontStyleCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xfk-fa-UWh" id="4rZ-dE-as9">
@@ -37,7 +37,7 @@
                                             <rect key="frame" x="134.5" y="4" width="106" height="52"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="18"/>
-                                            <state key="normal" image="xiaFont.png">
+                                            <state key="normal" image="xiaFont">
                                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="selected" image="xiaFonted.png"/>
@@ -49,7 +49,7 @@
                                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="selected" image="underLineed.png"/>
-                                            <state key="highlighted" image="b_select_icon"/>
+                                            <state key="highlighted" image="underLine"/>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -78,7 +78,7 @@
                                     <outlet property="underLineButton" destination="0s4-ev-nnB" id="wrs-Jq-HYs"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="paragraph" id="Xaf-s4-Euv" customClass="ZDStyleParagraphCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="paragraph" id="Xaf-s4-Euv" customClass="PGStyleParagraphCell">
                                 <rect key="frame" x="0.0" y="88" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xaf-s4-Euv" id="CXd-PT-boy">
@@ -153,7 +153,7 @@
                                     <outlet property="rightButton" destination="jxu-o2-gJ6" id="0wA-B8-vCW"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="fontSize" rowHeight="120" id="H2G-Am-mdo" customClass="ZDStyleFontSizeCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="fontSize" rowHeight="120" id="H2G-Am-mdo" customClass="PGStyleFontSizeCell">
                                 <rect key="frame" x="0.0" y="148" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H2G-Am-mdo" id="6e0-o0-hxy">
@@ -166,7 +166,7 @@
                                             <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_pull_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="VUo-Az-nFl">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_pull_down" translatesAutoresizingMaskIntoConstraints="NO" id="VUo-Az-nFl">
                                             <rect key="frame" x="341.5" y="28" width="13.5" height="8"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="8KW-RV-aXc"/>
@@ -179,7 +179,7 @@
                                             <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBb-T0-IMU" customClass="ZDFontSizePickerView">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBb-T0-IMU" customClass="PGFontSizePickerView">
                                             <rect key="frame" x="20" y="72.5" width="335" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="mvC-MB-7U7"/>
@@ -203,7 +203,7 @@
                                     <outlet property="pickerView" destination="XBb-T0-IMU" id="3yl-hH-qPw"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="color" rowHeight="180" id="j4s-oW-hfB" customClass="ZDStyleColorCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="color" rowHeight="180" id="j4s-oW-hfB" customClass="PGStyleColorCell">
                                 <rect key="frame" x="0.0" y="268" width="375" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j4s-oW-hfB" id="qEe-R5-XLK">
@@ -216,7 +216,7 @@
                                             <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_pull_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="t4D-Zz-rsU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_pull_down" translatesAutoresizingMaskIntoConstraints="NO" id="t4D-Zz-rsU">
                                             <rect key="frame" x="341.5" y="25" width="13.5" height="8"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="13.5" id="czU-4i-ObN"/>
@@ -236,7 +236,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78l-M3-v9e" customClass="ZDColorPickerView">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78l-M3-v9e" customClass="PGColorPickerView">
                                             <rect key="frame" x="60" y="80" width="255" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="hhm-L0-HYq"/>
@@ -260,7 +260,7 @@
                                     <outlet property="colorPickerView" destination="78l-M3-v9e" id="KX6-uo-IhS"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="format" rowHeight="120" id="YPH-aQ-T4k" customClass="ZDStyleFormatCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="format" rowHeight="120" id="YPH-aQ-T4k" customClass="PGStyleFormatCell">
                                 <rect key="frame" x="0.0" y="448" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YPH-aQ-T4k" id="A4I-fd-NAO">
@@ -273,7 +273,7 @@
                                             <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_pull_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="PIA-Gp-4pf">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_pull_down" translatesAutoresizingMaskIntoConstraints="NO" id="PIA-Gp-4pf">
                                             <rect key="frame" x="341.5" y="25" width="13.5" height="8"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="IhO-Zg-s0y"/>
@@ -420,7 +420,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="22" maxX="8" maxY="22"/>
-                                        <state key="normal" title="拍照" image="拍照.png">
+                                        <state key="normal" title="拍照" image="img_public_photo_image">
                                             <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -435,7 +435,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="22" maxX="9" maxY="22"/>
-                                        <state key="normal" title="相册" image="img_public_photo_list.png">
+                                        <state key="normal" title="相册" image="img_public_photo_list">
                                             <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -483,7 +483,7 @@
                                     <inset key="sectionInset" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photo" id="YIf-Bl-5b2" customClass="ZDPhotoCollectionCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photo" id="YIf-Bl-5b2" customClass="PGPhotoCollectionCell">
                                         <rect key="frame" x="4" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -493,7 +493,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vxs-GA-YCC">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="option打勾.png" translatesAutoresizingMaskIntoConstraints="NO" id="OFB-R0-Huf">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_check_select" translatesAutoresizingMaskIntoConstraints="NO" id="OFB-R0-Huf">
                                                     <rect key="frame" x="175" y="175" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Lb9-7T-b5D"/>
@@ -561,7 +561,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liQ-k6-blP">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="打勾蓝色.png" translatesAutoresizingMaskIntoConstraints="NO" id="kjo-qy-ukr">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="img_public_check_blue" translatesAutoresizingMaskIntoConstraints="NO" id="kjo-qy-ukr">
                                         <rect key="frame" x="24" y="12" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="7ha-U5-qaa"/>
@@ -621,18 +621,19 @@
         <image name="check_select_icon" width="36" height="34"/>
         <image name="img_public_bold_font" width="72" height="72"/>
         <image name="img_public_bold_fonted" width="72" height="72"/>
-        <image name="img_public_photo_list.png" width="128" height="128"/>
-        <image name="img_public_pull_down.png" width="128" height="128"/>
+        <image name="img_public_check_blue" width="72" height="72"/>
+        <image name="img_public_check_select" width="72" height="72"/>
+        <image name="img_public_photo_image" width="72" height="72"/>
+        <image name="img_public_photo_list" width="72" height="72"/>
+        <image name="img_public_pull_down" width="72" height="72"/>
         <image name="left_icon" width="34" height="35"/>
         <image name="list_icon" width="36" height="33"/>
         <image name="list_select_icon" width="36" height="33"/>
-        <image name="option打勾.png" width="72" height="72"/>
         <image name="right_icon" width="34" height="35"/>
+        <image name="underLine" width="72" height="72"/>
         <image name="underLine.png" width="72" height="72"/>
         <image name="underLineed.png" width="72" height="72"/>
-        <image name="xiaFont.png" width="72" height="72"/>
+        <image name="xiaFont" width="72" height="72"/>
         <image name="xiaFonted.png" width="72" height="72"/>
-        <image name="打勾蓝色.png" width="72" height="72"/>
-        <image name="拍照.png" width="72" height="72"/>
     </resources>
 </document>

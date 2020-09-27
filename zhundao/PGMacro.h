@@ -1,14 +1,5 @@
-//
-//  PGMacro.h
-//  zhundao
-//
-//  Created by maj on 2019/5/26.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #ifndef PGMacro_h
 #define PGMacro_h
-
 typedef void(^ZDBlock_Void)();
 typedef void(^ZDBlock_ID)(id obj);
 typedef void(^ZDBlock_ID2)(id obj1, id obj2);
@@ -21,8 +12,7 @@ typedef void(^ZDBlock_Dic)(NSDictionary *obj);
 typedef void(^ZDBlock_Error)(NSError *error);
 typedef void(^ZDBlock_Error_Str)(NSString *error);
 typedef void(^ZDBlock_TableView)(UITableView *tableView);
-
-#pragma mark - /* Class **/
+#pragma mark - 
 #define ZD_NotificationCenter        [NSNotificationCenter defaultCenter]
 #define ZD_FileManager               [NSFileManager defaultManager]
 #define ZD_Application               [UIApplication sharedApplication]
@@ -34,8 +24,7 @@ typedef void(^ZDBlock_TableView)(UITableView *tableView);
 #define ZD_CurrentCalendar           [NSCalendar currentCalendar]
 #define ZD_CurrentLocale             [NSLocale currentLocale]
 #define ZD_SharedSingleton           [ZDSingleton sharedSingleton]
-
-#pragma mark - /* Property **/
+#pragma mark - 
 #define ZD_ScreenScale               [UIScreen mainScreen].scale
 #define ZD_ScreenBounds              [UIScreen mainScreen].bounds
 #define ZD_ScreenWidth               [UIScreen mainScreen].bounds.size.width
@@ -43,8 +32,7 @@ typedef void(^ZDBlock_TableView)(UITableView *tableView);
 #define ZD_KeyWindow                 [UIApplication sharedApplication].keyWindow
 #define ZD_SystemVerionFloatValue    [UIDevice currentDevice].systemVersion.floatValue
 #define ZD_CountryCode               [[NSLocale componentsFromLocaleIdentifier:[NSLocale currentLocale].localeIdentifier] objectForKey:@"kCFLocaleCountryCodeKey"]
-
-#pragma mark - /* Method **/
+#pragma mark - 
 #define ZD_ClassName(classArg)           NSStringFromClass([classArg class])
 #define ZD_IsKindOfClass(arg,classArg)   [arg isKindOfClass:[classArg class]]
 #define ZD_ThreadCancelledThenReturn     if(ZD_CurrentThread.isCancelled) return;
@@ -60,8 +48,7 @@ typedef void(^ZDBlock_TableView)(UITableView *tableView);
 #define ZD_IsChina                       [ZD_CountryCode isEqualToString:@"CN"]
 #define ZD_IsMessageTimeout(arg,threshold)  (([[NSDate date] timeIntervalSince1970]*1000 - arg)/1000.0 > threshold)
 #define ZD_IsEqualToString(arg,arg2)     [arg isEqualToString:arg2]
-
-#pragma mark - /* Scalar **/
+#pragma mark - 
 #define ZD_1_PIXEL                       (1.0 / ZD_ScreenScale)
 #define ZD_SideViewController_Width      (ZD_ScreenWidth * 0.8)
 #define ZD_Version_GreaterThanOrEqual_8  (ZD_SystemVerionFloatValue >= 8.0)
@@ -86,23 +73,6 @@ typedef void(^ZDBlock_TableView)(UITableView *tableView);
 #define ZD_SAFE_BOTTOM_LAYOUT            (ZD_iPhone_X ? -(ZD_SAFE_BOTTOM) : 0)
 #define ZD_SAFE_BOTTOM_LAYOUT_TABBAR     (ZD_iPhone_X ? -(ZD_SAFE_BOTTOM+ZD_TabBar_H) : -ZD_TabBar_H)
 #define ZD_BootomBtnConstant             ZD_SAFE_BOTTOM_LAYOUT - 30
-
-//#pragma mark - /* Log **/
-//#if ZDRelease
-//    #define ZD_StartTime
-//    #define ZD_StopTime
-//    #define ZD_EndTime(format, ...)
-//    #define ZDLog(format,...)
-//    #define ZDLogM(format, ...)
-//    #define ZDLogL(format, ...)
-//    #define ZDLogP(format, ...)
-//    #define ZDLogLife()
-//    #define ZDLogLifeLoad()
-//    #define ZDLogLifeDealloc()
-//    #define ZDLogSuc(format, ...)
-//    #define ZDLogErr(format, ...)
-//
-//#else
 #define NSLog(format,...)\
 printf("%s:%.4lf:%s[%04d]%s\n", [[[NSDate date] dateByAddingTimeInterval:[NSTimeZone systemTimeZone].secondsFromGMT].description stringByReplacingOccurrencesOfString:@" +0000" withString:@""].UTF8String, [[NSDate date] timeIntervalSinceReferenceDate] - floor([[NSDate date] timeIntervalSinceReferenceDate]), __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String])
 #define ZD_StartTime \
@@ -114,7 +84,6 @@ ZDLog(@"⌛️结束，用时:%f", ZD_StopTime - ZD_StartTime);
 #define ZD_EndTime(format, ...) \
 CFAbsoluteTime ZD_StopTime  = CFAbsoluteTimeGetCurrent();\
 ZDLog(@"⌛️结束，用时:%f..." format, ZD_StopTime - ZD_StartTime, ##__VA_ARGS__);
-
 #define ZDLog(format,...) \
 DDLogVerbose(@"Meari___:" format,  ##__VA_ARGS__);
 #define ZDLogM(format, ...) \
@@ -131,20 +100,8 @@ DDLogVerbose(@"AppLife:💀💀💀---%@", self);
 DDLogVerbose(@"Meari-------✅✅:" format, ##__VA_ARGS__);
 #define ZDLogErr(format, ...)\
 DDLogVerbose(@"Meari-------❌❌:" format, ##__VA_ARGS__);
-
-//#endif
-
-
-
-
-
-
-
-#pragma mark - /* Code block */
-//=
+#pragma mark - 
 #define ZDEqual_WhenNonNil(variable, argument) if(argument != nil) {variable = argument;}
-
-//block
 #define ZDDo_Block_Safe(block, ...)\
 if (block) {\
 block(__VA_ARGS__);\
@@ -153,9 +110,6 @@ block(__VA_ARGS__);\
 #define ZDDo_Block_Safe2(block, arg1, arg2) ZDDo_Block_Safe(block, (arg1), (arg2))
 #define ZDDo_Block_Safe3(block, arg1, arg2, arg3) ZDDo_Block_Safe(block, (arg1), (arg2), (arg3))
 #define ZDDo_Block_Safe4(block, arg1, arg2, arg3, arg4) ZDDo_Block_Safe(block, (arg1), (arg2), (arg3), (arg4))
-
-
-//block on main thread
 #define ZDDo_Block_Safe_Main(block, ...)\
 if (block) {\
 if ([NSThread currentThread].isMainThread) {\
@@ -170,9 +124,6 @@ block(__VA_ARGS__);\
 #define ZDDo_Block_Safe_Main2(block, arg1, arg2) ZDDo_Block_Safe_Main(block, (arg1), (arg2))
 #define ZDDo_Block_Safe_Main3(block, arg1, arg2, arg3) ZDDo_Block_Safe_Main(block, (arg1), (arg2), (arg3))
 #define ZDDo_Block_Safe_Main4(block, arg1, arg2, arg3, arg4) ZDDo_Block_Safe_Main(block, (arg1), (arg2), (arg3), (arg4))
-
-
-//Singleton
 #define ZD_Singleton_Interface(name) +(instancetype)shared##name;
 #define ZD_Singleton_Implementation(name)\
 + (instancetype)shared##name {\
@@ -183,8 +134,6 @@ instance = [[self alloc] init];\
 });\
 return instance;\
 }
-
-//Coder
 #define ZD_CoderAndCopy \
 - (void)encodeWithCoder:(NSCoder *)aCoder {\
 unsigned int count = 0;\
@@ -233,8 +182,6 @@ id v = [self valueForKey:key];\
 free(list);\
 return copy;\
 }
-
-//Getter
 #define ZDGetter_MutableArray(name)\
 - (NSMutableArray *)name {\
 if (!_##name) {\
@@ -249,12 +196,8 @@ _##name = [NSMutableDictionary dictionary];\
 }\
 return _##name;\
 }
-
-//runtime
 #define ZD_ExchangeClassImp(sel1,sel2) \
 method_exchangeImplementations(class_getClassMethod(self, sel1), class_getClassMethod(self, sel2));
 #define ZD_ExchangeInstanceImp(sel1,sel2) \
 method_exchangeImplementations(class_getInstanceMethod(self, sel1), class_getInstanceMethod(self, sel2));
-
-
-#endif /* PGMacro_h */
+#endif 

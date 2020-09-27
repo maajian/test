@@ -1,26 +1,12 @@
 #import "PGViewImageFinish.h"
-//
-//  PGDiscoverShopDetailVC.m
-//  zhundao
-//
-//  Created by maj on 2020/2/14.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverShopDetailVC.h"
-
 #import <WebKit/WebKit.h>
-
 @interface PGDiscoverShopDetailVC () {
     NSInteger _productId;
     NSString *_imageUrl;
 }
-
 @end
-
 @implementation PGDiscoverShopDetailVC
-
-//移除监听
 - (void)dealloc{
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect successWithJsonh0 = CGRectMake(193,115,56,205); 
@@ -32,18 +18,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
-    // Do any additional setup after loading the view.
+    [self PG_initSet];
 }
-
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
     [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
 }
-
 #pragma mark --- action
-- (void)shareAction {
+- (void)PG_shareAction {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect rangeAccessSupportedO4 = CGRectMake(55,2,150,117); 
         NSData *textInputNotificationz9= [[NSData alloc] init];
@@ -72,32 +54,28 @@ dispatch_async(dispatch_get_main_queue(), ^{
         self.urlString = navigationAction.request.URL.absoluteString;
         _productId = ZD_SafeIntValue([navigationAction.request.URL.absoluteString componentsSeparatedByString:@"market/detail/"].lastObject);
     }
-    [self networkForShare];
+    [self PG_networkForShare];
     decisionHandler(WKNavigationActionPolicyAllow);
 }
-
 - (void)popOne {
     [super popOne];
     [self.webView reload];
 }
-
 #pragma mark --- Network
-- (void)networkForShare {
+- (void)PG_networkForShare {
     if (_productId) {
         NSString *url = [NSString stringWithFormat:@"%@api/v2/shop/getProductDetail?productId=%li",zhundaoApi,_productId];
         [ZD_NetWorkM postDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
             if ([obj[@"errcode"] integerValue] == 0) {
                 _imageUrl = ZD_SafeStringValue(obj[@"data"][@"HeadImg"]);
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    self.navigationItem.rightBarButtonItem = [UIBarButtonItem shareItemWithTarget:self action:@selector(shareAction)];
+                    self.navigationItem.rightBarButtonItem = [UIBarButtonItem shareItemWithTarget:self action:@selector(PG_shareAction)];
                 });
             }
         } fail:^(NSError *error) {
-            
         }];
     } else {
         self.navigationItem.rightBarButtonItem = nil;
     }
 }
-
 @end

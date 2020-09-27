@@ -1,20 +1,8 @@
-//
-//  PGMeAddAccountTableViewCell.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/19.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeAddAccountTableViewCell.h"
-
 @implementation PGMeAddAccountTableViewCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self.contentView addSubview:self.bottomLeftLabel];
@@ -22,8 +10,6 @@
     }
     return self;
 }
-
-
 - (void)setRow:(NSInteger)row{
     _row = row;
     switch (row) {
@@ -65,44 +51,32 @@
             break;
     }
 }
-
 #pragma mark --- 懒加载
-
 - (UILabel *)topLeftLabel{
     if (!_topLeftLabel) {
         _topLeftLabel = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 1000, 44)];
     }
     return _topLeftLabel;
 }
-
 - (UILabel *)rightLabel{
     if (!_rightLabel) {
         _rightLabel = [[UILabel alloc]initWithFrame:CGRectZero];
     }
     return _rightLabel;
 }
-
 - (UILabel *)bottomLeftLabel{
     if (!_bottomLeftLabel) {
         _bottomLeftLabel = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 1000, 44)];
     }
     return _bottomLeftLabel;
 }
-
-
 -(UITextField *)textf{
     if (!_textf) {
         _textf = [[UITextField alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_topLeftLabel.frame)+20, 0, 250, 44)];
     }
     return _textf;
 }
-
-
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 @end

@@ -1,49 +1,32 @@
 #import "PGInterfaceOrientionChange.h"
-//
-//  PGActivityMessageContentVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/9.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityMessageContentVC.h"
-
 #import "PGActivityChangeContentVC.h"
 #import "PGMessageCustomVC.h"
 #import "PGMeaageSystemVC.h"
-
 #import "PGActivityMessageContentViewModel.h"
 #import "PGActivityMessageContentModel.h"
-
 #import "PGActivityGroupSendViewModel.h"
 #import "UIButton+UIButton_RightNav.h"
 @interface PGActivityMessageContentVC ()<PGSegmentViewDelegate> {
     NSInteger _index;
 }
-
 @property (nonatomic, strong) PGSegmentView *segmentView;
-
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) PGMeaageSystemVC *sysVC;
 @property (nonatomic, strong) PGMessageCustomVC *customVC;
-
 @end
-
 @implementation PGActivityMessageContentVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"文案选择";
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
 }
 - (void)dealloc{
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
-
 #pragma mark --- init
-- (void)initSet {
+- (void)PG_initSet {
     [self.view addSubview:self.segmentView];
     [self.view addSubview:self.scrollView];
     _sysVC = [[PGMeaageSystemVC alloc] init];
@@ -52,7 +35,7 @@
     [self addChildViewController:_customVC];
     [self.scrollView addSubview:_sysVC.view];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     __weak typeof(self) weakSelf = self;
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.equalTo(weakSelf.view);
@@ -68,7 +51,6 @@
     [self.view layoutIfNeeded];
     NSLog(@"self.sysVC.view = %@", NSStringFromCGRect(self.sysVC.view.frame));
 }
-
 #pragma mark 懒加载
 - (PGSegmentView *)segmentView {
     if (!_segmentView) {
@@ -89,7 +71,6 @@
     }
     return _scrollView;
 }
-
 #pragma mark --- PGSegmentViewDelegate
 - (void)segmentView:(PGSegmentView *)segmentView didSelectIndex:(NSInteger)index {
     __weak typeof(self) weakSelf = self;
@@ -112,7 +93,6 @@
         [_scrollView setContentOffset:CGPointMake(kScreenWidth, 0)];
     }
 }
-
 #pragma mark --- 新增文案
 - (void)addContent{
     PGActivityChangeContentVC *content = [[PGActivityChangeContentVC alloc]init];
@@ -121,5 +101,4 @@
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:content animated:YES];
 }
-
 @end

@@ -1,24 +1,12 @@
-//
-//  PGDiscoverCustomApplyViewModel.m
-//  zhundao
-//
-//  Created by maj on 2018/12/1.
-//  Copyright © 2018年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverCustomApplyViewModel.h"
-
 @implementation PGDiscoverCustomApplyViewModel
-
 - (instancetype)init {
     if (self = [super init]) {
         self.dataArray = [NSMutableArray array];
     }
     return self;
 }
-
 #pragma mark --- network
-// 获取自定义报名项列表
 - (void)getCustomApplyList:(kZDCommonSucc)success fail:(kZDCommonFail)fail {
     [_dataArray removeAllObjects];
     NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/getActivityOptionList?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
@@ -59,8 +47,6 @@
         fail(error.description);
     }];
 }
-
-// 隐藏显示报名项
 - (void)hideOrShowList:(BOOL)hidden ID:(NSInteger)ID success:(kZDCommonSucc)success fail:(kZDCommonFail)fail {
     NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/updateActivityOption?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     NSDictionary *dic = @{@"hidden" : hidden ? @(1): @(0),
@@ -73,7 +59,6 @@
         fail(error.description);
     }];
 }
-
 #pragma mark --- lazyload
 - (NSMutableArray<PGDiscoverCustomApplyModel *> *)titleArray {
     if (!_titleArray) {
@@ -87,5 +72,4 @@
     }
     return _allTitleArray;
 }
-
 @end

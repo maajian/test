@@ -1,38 +1,20 @@
 #import "PGWithSwimData.h"
-//
-//  payVerifyViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/7.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "payVerifyViewController.h"
 #import "PasswordViewController.h"
 @interface payVerifyViewController ()
-/*! 验证码输入框 */
 @property(nonatomic,strong)UITextField *textf;
-/*! 发送验证码按钮 */
 @property(nonatomic,strong)UIButton *sendVerifyButton;
-/*! 验证按钮 */
 @property(nonatomic,strong)UIButton *verifyButton;
-/*! 手机号码 */
 @property(nonatomic,copy)NSString *phoneStr;
 @end
-
 @implementation payVerifyViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _phoneStr = ZD_UserM.phone;
-    [self setUI];
+    [self PG_setUI];
     self.title = @"短信验证";
-    // Do any additional setup after loading the view.
 }
-
-
-- (void)setUI{
-    
+- (void)PG_setUI{
     UILabel *label = [[UILabel alloc]init];
     label.font = [UIFont systemFontOfSize:14];
     label.textColor = kColorA(180, 180, 180, 1);
@@ -45,7 +27,6 @@
         make.top.equalTo(self.view).offset(40);
         make.height.mas_equalTo(30);
     }];
-    
     UILabel *phoneLabel = [[UILabel alloc]init];
     phoneLabel.font = [UIFont systemFontOfSize:18];
     phoneLabel.textColor = kColorA(90, 90, 90, 1);
@@ -58,7 +39,6 @@
         make.left.equalTo(self.view).offset(50);
         make.right.equalTo(self.view).offset(-50);
     }];
-    
     _textf = [[UITextField alloc]init];
     _textf.placeholder = @"请输入手机验证码";
     _textf.tintColor = ZDMainColor;
@@ -72,20 +52,18 @@
         make.width.mas_equalTo(kScreenWidth-40-150);
         make.height.mas_equalTo(40);
     }];
-    
     _sendVerifyButton = [[UIButton alloc]init];
     [self.view addSubview:_sendVerifyButton];
     [_sendVerifyButton setTitle:@"获取验证码" forState:UIControlStateNormal];
     _sendVerifyButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_sendVerifyButton setTitleColor:ZDMainColor forState:UIControlStateNormal];
-    [_sendVerifyButton addTarget:self action:@selector(sendVerify) forControlEvents:UIControlEventTouchUpInside];
+    [_sendVerifyButton addTarget:self action:@selector(PG_sendVerify) forControlEvents:UIControlEventTouchUpInside];
     [_sendVerifyButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view).offset(-20);
         make.width.mas_equalTo(130);
         make.top.equalTo(phoneLabel.mas_bottom).offset(30);
         make.height.mas_equalTo(40);
     }];
-    
     _verifyButton = [[UIButton alloc]init];
     [self.view addSubview:_verifyButton];
     [_verifyButton setTitle:@"验证" forState:UIControlStateNormal];
@@ -93,7 +71,7 @@
     _verifyButton.backgroundColor =ZDMainColor;
     _verifyButton.layer.cornerRadius = 5;
     _verifyButton.layer.masksToBounds = YES;
-    [_verifyButton addTarget:self action:@selector(verifyMessage) forControlEvents:UIControlEventTouchUpInside];
+    [_verifyButton addTarget:self action:@selector(PG_verifyMessage) forControlEvents:UIControlEventTouchUpInside];
     [_verifyButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(20);
         make.right.equalTo(self.view).offset(-20);
@@ -101,12 +79,10 @@
         make.height.mas_equalTo(44);
     }];
     [self.view layoutIfNeeded];
-    [self addline];
+    [self PG_addline];
 }
-
 #pragma  mark --- 网络请求
-
-- (void)sendVerify {
+- (void)PG_sendVerify {
     NSString *str = [NSString stringWithFormat:@"%@api/v2/senCode?phoneOrEmail=%@",zhundaoApi,self.phoneStr];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         [self beginTime];
@@ -114,8 +90,7 @@
         NSLog(@"error = %@",error);
     }];
 }
-
-- (void)verifyMessage{
+- (void)PG_verifyMessage{
     NSString *urlstr = [NSString stringWithFormat:@"%@api/v2/verifyCode?phoneOrEmail=%@&code=%@",zhundaoApi,self.phoneStr,_textf.text];
     [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
@@ -131,18 +106,14 @@
             [label labelAnimationWithViewlong:self.view];
         }
     } fail:^(NSError *error) {
-        
     }];
 }
-
 #pragma mark --- 倒计时
-
 - (void)beginTime
 {
-    __block int timeout =60;    //倒计时 gmd time
+    __block int timeout =60;    
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-    
     dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC,0);
     dispatch_source_set_event_handler(timer, ^{
         if (timeout<=0) {
@@ -151,10 +122,7 @@
                 _sendVerifyButton.userInteractionEnabled = YES;
                 [_sendVerifyButton setTitleColor:ZDMainColor forState:UIControlStateNormal];
                 [_sendVerifyButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-                
             });
-            
-            
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 _sendVerifyButton.userInteractionEnabled = NO;
@@ -162,15 +130,12 @@
                 [_sendVerifyButton setTitle:[NSString stringWithFormat:@"(%d)发送验证码",timeout] forState:UIControlStateNormal];
                 timeout--;
             });
-            
         }
     });
     dispatch_resume(timer);
 }
-
 #pragma mark -- 画线
-
-- (void)addline{
+- (void)PG_addline{
     CAShapeLayer *layer1 = [CAShapeLayer layer];
     layer1.lineWidth = 1;
     layer1.strokeColor =  kColorA(220, 220, 220, 1).CGColor;
@@ -179,7 +144,6 @@
     [path addLineToPoint:CGPointMake(kScreenWidth-20, CGRectGetMaxY(_textf.frame))];
     layer1.path = path.CGPath;
     [self.view.layer addSublayer:layer1];
-    
     CAShapeLayer *layer2 = [CAShapeLayer layer];
     layer2.lineWidth = 0.3;
     layer2.strokeColor = kColorA(220, 220, 220, 1).CGColor;
@@ -189,11 +153,7 @@
     layer2.path = path2.CGPath;
     [self.view.layer addSublayer:layer2];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-
 @end

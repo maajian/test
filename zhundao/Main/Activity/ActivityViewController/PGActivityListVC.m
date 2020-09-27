@@ -1,11 +1,4 @@
 #import "PGUserInfoBottom.h"
-//
-//  PGActivityListVC.m
-//  zhundao
-//
-//  Created by zhundao on 2016/12/15.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
 #import "PGActivityListVC.h"
 #import "PGActivityListModel.h"
 #import "PGActivitySignleListVC.h"
@@ -23,7 +16,6 @@
 #import "PGActivityCustomInviteVC.h"
 #import "Time.h"
 #import "PGActivityChoosePersonVC.h"
-
 @interface PGActivityListVC ()<UITableViewDelegate,UITableViewDataSource,UISearchResultsUpdating,UISearchControllerDelegate>
 {
     UITableView *_table;
@@ -43,14 +35,10 @@
 }
 @property (nonatomic, strong) UISearchController *searchController;
 @property(nonatomic,strong)  PGActivityListViewModel *listVM;
-/*! 邀请函视图 */
 @property(nonatomic,strong) PGDiscoverShowView *showVW;
-/*! 邀请函的viewmodel */
 @property(nonatomic,strong) PGDiscoverPriviteInviteViewModel *priviteViewModel;
 @end
-
 @implementation PGActivityListVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     listuser = [NSString stringWithFormat:@"%li",(long)self.listID];
@@ -64,12 +52,10 @@
      self.automaticallyAdjustsScrollViewInsets = NO;
      self.edgesForExtendedLayout = UIRectEdgeNone;
 }
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self firstload];
 }
-
 #pragma mark  网络 network
 - (void)firstload
 {
@@ -81,23 +67,19 @@
             [self cantNet];
             break;
         }
-            
         case ReachableViaWWAN:
-            // 使用3G网络
             NSLog(@"wan");
             [self reflsh];
-            [self isload];
+            [self PG_isload];
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
             NSLog(@"wifi");
             [self reflsh];
-            [self isload];
+            [self PG_isload];
             break;
     }
 }
-
-- (void)isload{
+- (void)PG_isload{
     NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:listuser];
     NSLog(@"count = %li",(unsigned long)array1.count);
     indicator = [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
@@ -106,7 +88,6 @@
     [indicator startAnimating];
     [self loadData];
 }
-
 - (void)cantNet
 {
     [self deleteData];
@@ -116,8 +97,6 @@
         for (int i=0; i<array1.count; i++)
         {
             NSDictionary *acdic = [array1 objectAtIndex:i];
-            
-            
             PGActivityListModel *model = [PGActivityListModel yy_modelWithJSON:acdic];
             [_phoneSearchArray addObject:model.Mobile];
             if (model.NickName==nil||[model.NickName isEqualToString:@""]) {
@@ -131,43 +110,32 @@
             }else{
                 [_UserNameSearchArray addObject:model.UserName];
             }
-            
             model.count = array1.count-i;
             [muarray addObject:model];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             _dataArray = [muarray copy];
-            
             [_table reloadData];
         });
     });
 }
 #pragma mark--- 懒加载
-
 - (PGDiscoverShowView *)showVW{
     if (!_showVW ) {
         _showVW = [[PGDiscoverShowView alloc]init];
     }
     return _showVW;
 }
-
 #pragma mark 下拉刷新
-// 下拉刷新
 - (void)reflsh
 {
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     __weak __typeof(self) weakSelf=self;
-    
     header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
         if ((manager.networkReachabilityStatus==AFNetworkReachabilityStatusReachableViaWiFi||manager.networkReachabilityStatus==AFNetworkReachabilityStatusReachableViaWWAN)) {
-//            isJuhua =YES;
             [weakSelf loadData];
-            
         }
         else{
-
-            
             [weakSelf mj_headerStateWithState:MJRefreshStateNoMoreData WithHidden:YES Withinsert:0];
         }
     }];
@@ -186,7 +154,6 @@
     _table.backgroundColor = ZDBackgroundColor;
     _table.separatorStyle = NO;
     [_table registerNib:[UINib nibWithNibName:@"PGActivityListCell" bundle:nil] forCellReuseIdentifier:@"listcell"];
-    
     _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     _searchController.searchBar.frame = CGRectMake(0,5,kScreenWidth-40, 40);
     _searchController.searchBar.placeholder = @"搜索";
@@ -194,16 +161,11 @@
     _searchController.dimsBackgroundDuringPresentation = NO;
     _searchController.delegate = self;
      [self.searchController.searchBar sizeToFit];
-    //搜索时，背景变模糊
     [_searchController.searchBar setBackgroundImage:[UIImage new]];
-    
     _table.tableHeaderView = self.searchController.searchBar;
-//    在使用了navigationController后，当界面进行跳转往返后，时而会出现tableView或collectionView上移的情况，通常会自动上移64个像素，那么这种情况，我们可以关闭tableView的自动适配布局。
     self.searchController.searchResultsUpdater = self;
-    
     [self.view addSubview:_table];
 }
-
 #pragma mark UISearchControllerDelegate 的代理
 - (void)willPresentSearchController:(UISearchController *)searchController
 {
@@ -234,7 +196,6 @@
         self.view.bounds = viewBounds;
     }
 }
-
 - (void)deleteData
 {
     if (_phoneSearchArray)  [_phoneSearchArray removeAllObjects];
@@ -243,14 +204,13 @@
     else _nickNameSearchArray = [NSMutableArray array];
     if (_UserNameSearchArray)  [_UserNameSearchArray removeAllObjects];
     else _UserNameSearchArray = [NSMutableArray array];
-
 }
 #pragma mark UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     self.edgesForExtendedLayout = UIRectEdgeNone;
     NSString *searchString = [self.searchController.searchBar text];
-    NSMutableArray *array1 = [NSMutableArray arrayWithArray:_phoneSearchArray];   //_phoneSearchArray 的mutablecopy
-    NSMutableArray *array2 = [NSMutableArray arrayWithArray:_nickNameSearchArray];//_nickNameSearchArray 的mutablecopy
+    NSMutableArray *array1 = [NSMutableArray arrayWithArray:_phoneSearchArray];   
+    NSMutableArray *array2 = [NSMutableArray arrayWithArray:_nickNameSearchArray];
     NSMutableArray *array5= [NSMutableArray arrayWithArray:_UserNameSearchArray];
     NSMutableArray *array3 = nil;
     NSMutableArray *array4 =nil;
@@ -286,24 +246,19 @@
        _searchDataArray = nil;
        [_table reloadData];
    }
-    
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
-
 {
     if (_searchController.active) {
-        
         if (scrollView == _table) {
             CGFloat sectionHeaderHeight = 44;
             if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
                 _searchController.searchBar.hidden = NO;
-                
             }
             else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
                 _searchController.searchBar.hidden = YES;
             }
     }
-   
 }
 }
 - (void)getaccseekey
@@ -317,11 +272,10 @@
         accesskey = [uid copy];
     }
 }
-- (void)loadData    //网络加载数据
+- (void)loadData    
 {
     dispatch_queue_t conQueue = dispatch_queue_create("1", DISPATCH_QUEUE_CONCURRENT);
     NSString *extraInfoUrl = [NSString stringWithFormat:@"%@api/v2/activity/GetActivityOption?token=%@&activityId=%li",zhundaoApi,[[PGSignManager shareManager] getToken], _listID];
-    
     [ZD_NetWorkM postDataWithMethod:extraInfoUrl parameters:nil succ:^(NSDictionary *obj) {
         NSArray *extraInfoArray = obj[@"data"];
         ZDBlock_Arr succBlock = ^(NSArray *result) {
@@ -351,15 +305,11 @@
                         [_UserNameSearchArray addObject:model.UserName];
                     }
                     model.count = result.count-i;
-                    
                     {
                         NSMutableDictionary *e = [NSMutableDictionary dictionary];
-                        
                         [muarray addObject:model];
                         for (NSString *keystr in acdic.allKeys) {
-                            
                             if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-                                //
                                 [e setObject:@"" forKey:keystr];
                             }
                             else
@@ -367,13 +317,8 @@
                                 [e setObject:[acdic objectForKey:keystr] forKey:keystr];
                             }
                         }
-                        
                         [dataarr addObject:e];
-                        
-                        
                     }
-                    
-                    
                 }
                 [[NSUserDefaults standardUserDefaults]setObject:dataarr forKey:listuser];
                 [[NSUserDefaults standardUserDefaults]synchronize];
@@ -384,7 +329,6 @@
                 });
             });
         };
-        
         if (ZD_UserM.isAdmin) {
             NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivityListForYS?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
             NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)self.listID],
@@ -439,7 +383,6 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
-
 #pragma mark tableview delegate datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -448,7 +391,6 @@
     }else{
         return [_dataArray count];
     }
-//    return _dataArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -456,7 +398,6 @@
     if (cell==nil) {
         cell = [[PGActivityListCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"listcell"];
     }
-    
     if (self.searchController.active) {
          cell.model = _searchDataArray[indexPath.row];
     }else{
@@ -464,17 +405,13 @@
     }
     cell.listCount.text =[NSString stringWithFormat:@"%li",(long)cell.model.count];
     return cell;
-    
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (_table.editing) {
-        
     }else{
         mycell = (PGActivityListCell *)[tableView cellForRowAtIndexPath:indexPath];
         PGActivitySignleListVC *signle = [[PGActivitySignleListVC alloc]init];
@@ -498,7 +435,6 @@
         [self.navigationController pushViewController:signle animated:YES];
     }
 }
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PGActivityListModel *model = nil;
@@ -508,7 +444,6 @@
         [self deletePerson:model];
     }
 }
-
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSMutableArray *rowArray = [NSMutableArray array];
     PGActivityListModel *model = nil;
@@ -521,7 +456,7 @@
     [rowArray addObject:rowAction1];
     if (model.Status ==1) {
         UITableViewRowAction *rowAction2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"线下支付" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-            [self underLineWithActivityListId:model.ID];
+            [self PG_underLineWithActivityListId:model.ID];
         }];
         rowAction2.backgroundColor = ZDMainColor;
         [rowArray addObject:rowAction2];
@@ -540,7 +475,7 @@
     }
     if (model.Status==0) {
         UITableViewRowAction *rowAction5 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"邀请函" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-            [self sendInvite];
+            [self PG_sendInvite];
         }];
         mycell = [tableView cellForRowAtIndexPath:indexPath];
         rowAction5.backgroundColor = ZDMainColor;
@@ -549,42 +484,41 @@
     return rowArray;
 }
 #pragma mark --- 发送邀请函 
-
-- (void)sendInvite{
+- (void)PG_sendInvite{
     NSInteger Grade = [[[NSUserDefaults standardUserDefaults]objectForKey:@"GradeId"]integerValue];
     switch (Grade) {
         case 0:
         case 1:{
             if ([mycell.listCount.text integerValue]>100) {
-                [self showLabelWithStr:@"V1下用户只限发前100张邀请函"];
+                [self PG_showLabelWithStr:@"V1下用户只限发前100张邀请函"];
             }else{
-                [self showInviteVC];
+                [self PG_showInviteVC];
             }
         }
             break;
         case 2:{
             if ([mycell.listCount.text integerValue]>200) {
-                [self showLabelWithStr:@"V2用户只限发前200张邀请函"];
+                [self PG_showLabelWithStr:@"V2用户只限发前200张邀请函"];
             }else{
-                [self showInviteVC];
+                [self PG_showInviteVC];
             }
         }
             break;
         case 3:{
             if ([mycell.listCount.text integerValue]>300) {
-                [self showLabelWithStr:@"V3下用户只限发前300张邀请函"];
+                [self PG_showLabelWithStr:@"V3下用户只限发前300张邀请函"];
             }else{
-                [self showInviteVC];
+                [self PG_showInviteVC];
             }
         }
             break;
         default:{
-            [self showInviteVC];
+            [self PG_showInviteVC];
         }
             break;
     }
 }
-- (void)showInviteVC{
+- (void)PG_showInviteVC{
     if ([[NSUserDefaults standardUserDefaults]integerForKey:@"selectInvite"]) {
         if ([[NSUserDefaults standardUserDefaults]integerForKey:@"selectInvite"]>1) {
             ZDBlock_Str codeBlock = ^(NSString *str) {
@@ -599,26 +533,25 @@
                     [_table setEditing:NO];
                 }];
             };
-            
             if (ZD_UserM.isAdmin) {
                 codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)self.listID]);
             } else {
-                [self networkForGetActivityLinkSuccess:^(NSString *obj) {
+                [self PG_networkForGetActivityLinkSuccess:^(NSString *obj) {
                     codeBlock(obj);
                 }];
             }
         }else{
-            [self defaultInvite:YES];
+            [self PG_defaultInvite:YES];
         }
     }else{
-        [self defaultInvite:NO];
+        [self PG_defaultInvite:NO];
     }
 }
-- (void)showLabelWithStr :(NSString *)str{
+- (void)PG_showLabelWithStr :(NSString *)str{
     PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:str];
     [label labelAnimationWithViewlong:self.view];
 }
-- (void)defaultInvite:(BOOL)isSign{
+- (void)PG_defaultInvite:(BOOL)isSign{
 dispatch_async(dispatch_get_main_queue(), ^{
     NSString *dateFormatterMediumR7 = @"chatInputText";
         UIFont *bundleDisplayNamep3= [UIFont systemFontOfSize:228];
@@ -637,30 +570,27 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [_table setEditing:NO];
         }];
     };
-    
     if (isSign) {
         codeBlock(mycell.model.VCode);
     } else {
         if (ZD_UserM.isAdmin) {
             codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)self.listID]);
         } else {
-            [self networkForGetActivityLinkSuccess:^(NSString *obj) {
+            [self PG_networkForGetActivityLinkSuccess:^(NSString *obj) {
                 codeBlock(obj);
             }];
         }
     }
 }
 #pragma mark ---审核
-
 - (void)check : (BOOL) isPass activityListId :(NSInteger)activityListId{
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_listVM UpdateStatusActivityListId:activityListId status:isPass block:^(NSInteger isSuccess) {
         [hud hideAnimated:YES];
-        [self showAnnimate:isSuccess];
+        [self PG_showAnnimate:isSuccess];
     }];
 }
-
-- (void)showAnnimate :(NSInteger )isSuccess{
+- (void)PG_showAnnimate :(NSInteger )isSuccess{
     if (isSuccess) {
         MBProgressHUD  *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
         [hud1 hideAnimated:YES afterDelay:1.5];
@@ -671,21 +601,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 #pragma mark -----underLineMoney 线下收款
-
-- (void)underLineWithActivityListId :(NSInteger)activityListId {
+- (void)PG_underLineWithActivityListId :(NSInteger)activityListId {
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [_listVM PayOffLine:activityListId block:^(NSInteger isSuccess) {
         [hud hideAnimated:YES];
-        [self showAnnimate:isSuccess];
+        [self PG_showAnnimate:isSuccess];
     }];
 }
-
 #pragma deleteData 
 -(void)deletePerson :(PGActivityListModel *)model
 {
     NSArray *array = @[@"删除报名人员"];
     __weak typeof(self) weakSelf = self;
-    
     PGAlertSheet *sheet = [[PGAlertSheet alloc]initWithFrame:[UIScreen mainScreen].bounds array:array title:@"删除后将导致该用户二维码失效，如果有签到记录也将被删除，是否继续?" isDelete : YES selectBlock:^(NSInteger index) {
         if (index==0) {
            MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
@@ -710,9 +637,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.view addSubview:sheet];
     [sheet fadeIn];
 }
-
 #pragma mark 右上角更多设置
-- (void)showPost  //sheet显示
+- (void)showPost  
 {
     NSInteger Grade = [[[NSUserDefaults standardUserDefaults]objectForKey:@"GradeId"]integerValue];
     NSArray *array;
@@ -726,11 +652,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
         array = @[@"添加报名人员"];
     }
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:5 andShowCancel:YES];
-    // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
-        NSLog(@"Show Index %zi",index); //取消0
-        
+        NSLog(@"Show Index %zi",index); 
         if (index==1) {
             PGActivityNewPersonVC *new = [[PGActivityNewPersonVC alloc]init];
             new.activityID = self.listID;
@@ -745,7 +669,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 }
             };
         }
-        
         if (index==2) {
             PGActivityPostEmailVC *post = [[PGActivityPostEmailVC alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
@@ -764,17 +687,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
             choosePerson.activityID = _listID;
             [self.navigationController pushViewController:choosePerson animated:YES];
         }
-        
     };
-    
     [self.view.window addSubview:sheet];
 }
 #pragma mark --- readDelegate
-- (void)rightButton   // 添加rightbutton
+- (void)rightButton   
 {
     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];
 }
-- (void)networkForGetActivityLinkSuccess:(ZDBlock_Str)success {
+- (void)PG_networkForGetActivityLinkSuccess:(ZDBlock_Str)success {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSString *userInfoMedalD5 = @"shaderFromString";
         UIFont *integralMainDatab9= [UIFont systemFontOfSize:179];
@@ -796,29 +717,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }];
 }
 #pragma mark GZActionSheet action 响应事件
-- (void)postEmail // 发送邮件
+- (void)postEmail 
 {
     PGActivityPostEmailVC *post = [[PGActivityPostEmailVC alloc]init];
     [self setHidesBottomBarWhenPushed:YES];
     post.activityID = self.listID;
     [self.navigationController pushViewController:post animated:YES];
 }
-
 -(void)dealloc
 {
     NSLog(@"没有泄露");
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

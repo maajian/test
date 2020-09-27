@@ -1,31 +1,14 @@
 #import "PGVideoPreviewCell.h"
-//
-//  PGMeDetailNoticeVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/8/15.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeDetailNoticeVC.h"
 #import "NSString+HTML.h"
-
 #import "PGMeNoticeViewModel.h"
-
 @interface PGMeDetailNoticeVC ()
-/*! textview */
 @property(nonatomic,strong)UITextView *textView ;
-
 @property(nonatomic,assign)BOOL isNeed;
-/*! 富文本字符串 */
 @property(nonatomic,strong) NSAttributedString *htmlStr;
- // 逻辑管理器
 @property (nonatomic, strong) PGMeNoticeViewModel *viewModel;
-
 @end
-
 @implementation PGMeDetailNoticeVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIActivityIndicatorView *routeChangeListenerO8= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
@@ -36,7 +19,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [playFinishIndex bundleDisplayNameWithfirstFrontCamera:routeChangeListenerO8 swimCircleService:locationStyleReusez5 ];
 });
     [super viewDidLoad];
-    
     _viewModel = [[PGMeNoticeViewModel alloc] init];
     self.view.backgroundColor  = ZDBackgroundColor;
     [self.view addSubview:self.textView];
@@ -45,10 +27,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (_isNotificationPush) {
         [self netWork];
     } else {
-        [self changeContent];
+        [self PG_changeContent];
     }
 }
-
 #pragma mark ------懒加载
 - (UITextView *)textView{
     if (!_textView) {
@@ -61,7 +42,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _textView;
 }
-
 #pragma mark --- 网络请求
 - (void)netWork {
     __weak typeof(self) weakSelf = self;
@@ -69,15 +49,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _detail = weakSelf.viewModel.noticeModel.Detail;
         _detailTitle = weakSelf.viewModel.noticeModel.Title;
         _time = weakSelf.viewModel.noticeModel.AddTime;
-        [self changeContent];
-        
+        [self PG_changeContent];
     } failBlock:^(NSString *error) {
-        
     }];
 }
-
-- (void)changeContent {
-    
+- (void)PG_changeContent {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         _htmlStr= [NSString strToAttriWithStr:[NSString stringWithFormat:@"<head><style>img{width:%fpx !important;height:auto}</style></head>%@",CGRectGetWidth(_textView.frame),_detail]];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -85,9 +61,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         });
     });
 }
-
-/*! 设置textview内容 */
-
 - (void)setContent {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIActivityIndicatorView *orderDetailCelld8= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
@@ -97,11 +70,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGVideoPreviewCell *mutableParagraphStyle= [[PGVideoPreviewCell alloc] init];
 [mutableParagraphStyle bundleDisplayNameWithfirstFrontCamera:orderDetailCelld8 swimCircleService:mainViewModelV4 ];
 });
-    
      NSMutableParagraphStyle *paragraphStyle1 = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle1.lineSpacing = 5;
-    
-    paragraphStyle1.paragraphSpacing = 5; //段落后面的间距
+    paragraphStyle1.paragraphSpacing = 5; 
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:@"\n"];
     if (_detailTitle.length) {
         NSMutableAttributedString *attributedString1 = [[NSMutableAttributedString alloc]initWithString:_detailTitle attributes:@{NSFontAttributeName :[UIFont boldSystemFontOfSize:18],NSForegroundColorAttributeName:[UIColor blackColor],NSParagraphStyleAttributeName :paragraphStyle1}];
@@ -113,19 +84,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
         NSAttributedString *returnStr1 = [[NSAttributedString alloc]initWithString:@"\n"];
         [attributedString appendAttributedString:returnStr1];
     }
-   
-    
     NSMutableAttributedString *str1 = [[NSMutableAttributedString alloc]initWithAttributedString:_htmlStr];
     [str1 removeAttribute:NSFontAttributeName range:NSMakeRange(0, str1.length)];
     [str1 addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, str1.length)];
     [attributedString appendAttributedString:str1];
     _textView.attributedText = attributedString;
-    
-    
 }
-
 #pragma mark 自定义返回按钮
-
 -(void)customBack
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(-8, 20, 80, 44)];
@@ -138,7 +103,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.navigationItem.leftBarButtonItem = item;
     [view addGestureRecognizer:tap3];
 }
-
 - (void)backpop
 {
     if (_isLoadBlock) {
@@ -146,9 +110,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 #pragma mark ----保存是否已读
-/*! mark 保存是否已读 */
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if (_ID) {
@@ -157,32 +119,24 @@ dispatch_async(dispatch_get_main_queue(), ^{
             if ([array containsObject:@(_ID)]) {
                 return;
             }else{
-                [self savaState:array];
+                [self PG_savaState:array];
             }
-            
         }else{
             NSMutableArray *array = [NSMutableArray array];
-            [self savaState:array];
+            [self PG_savaState:array];
         }
     }
 }
-- (void)savaState :(NSMutableArray *)savaArray{
+- (void)PG_savaState :(NSMutableArray *)savaArray{
     [savaArray addObject:@(_ID)];
     _isNeed = YES;
     [[NSUserDefaults standardUserDefaults]setObject:savaArray forKey:@"noticeState"];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
-
-
-
 -(void)dealloc{
     NSLog(@"dealloc");
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-
-
 @end

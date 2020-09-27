@@ -1,12 +1,4 @@
 #import "PGRecommendUserTable.h"
-//
-//  PGDiscoverXYVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/7/5.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverXYVC.h"
 #import "UITextField+TextLeftOffset_ffset.h"
 #import "PGDiscoverPrintVM.h"
@@ -15,12 +7,9 @@
 @property(nonatomic,strong)UITextField *tf2;
 @property(nonatomic,strong)UIButton *sureBtn;
 @property(nonatomic,strong)UILabel  *exLabel;
-
 @property(nonatomic,strong)UIButton  *testButton ;
 @end
-
 @implementation PGDiscoverXYVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = ZDBackgroundColor;
@@ -31,7 +20,6 @@
     [self.view addSubview:self.testButton];
     [self setText];
     self.title  = @"打印调试";
-    // Do any additional setup after loading the view.
 }
 #pragma mark 懒加载
 - (UITextField *)tf1
@@ -57,9 +45,7 @@
         _tf2.keyboardType =UIKeyboardTypeNumbersAndPunctuation;
     }
     return _tf2;
-    
 }
-
 - (UIButton *)sureBtn
 {
     if (!_sureBtn) {
@@ -67,7 +53,6 @@
     }
     return _sureBtn;
 }
-
 - (UILabel *)exLabel
 {
     if (!_exLabel) {
@@ -78,9 +63,7 @@
         _exLabel.textAlignment =NSTextAlignmentRight;
     }
     return _exLabel;
-    
 }
-
 - (UIButton *)testButton
 {
     if (!_testButton) {
@@ -97,7 +80,6 @@
     return _testButton;
 }
 #pragma mark  -----打印 
-
 - (void)print
 {
     PGDiscoverPrintVM *_ViewModel = [[PGDiscoverPrintVM alloc]init];
@@ -106,15 +88,12 @@
 #pragma mark 设置输入框文本
 - (void)setText
 {
-    
    NSString *x =  [[NSUserDefaults standardUserDefaults]objectForKey:@"printX"];
     _tf1.text = [NSString stringWithFormat:@"%@",x];
     NSString *y = [[NSUserDefaults standardUserDefaults]objectForKey:@"printY"];
     _tf2.text = [NSString stringWithFormat:@"%@",y];
 }
-
 #pragma mark 确定返回
-
 - (void)sureAction
 {
     NSString *str1 =[_tf1.text stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
@@ -133,17 +112,7 @@
         [label labelAnimationWithViewlong:self.view];
     }
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

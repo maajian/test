@@ -1,49 +1,27 @@
 #import "PGCompleteWithError.h"
-//
-//  PGDiscoverDefaultVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/10/9.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverDefaultVC.h"
 #import "UIImage+LXDCreateBarcode.h"
 #import "BigSizeButton.h"
 #import <UShareUI/UShareUI.h>
 #import "WXApi.h"
 @interface PGDiscoverDefaultVC ()
-
-/*! 活动标题 */
 @property(nonatomic,strong)UILabel *titleLabel;
-/*! 二维码图片 */
 @property(nonatomic,strong)UIImageView *QRimageView;
-/*! 姓名 */
 @property(nonatomic,strong)UILabel *nameLabel;
-/*! 截屏的图片 */
 @property(nonatomic,strong)UIImage *image;
-/*! 分享按钮 */
 @property(nonatomic,strong)BigSizeButton *shareButton;
-/*! 底部显示的标题 */
 @property(nonatomic,strong)UILabel *bottomLabel;
-/*! 地点 */
 @property(nonatomic,strong)UILabel *timeLabel;
-/*! 时间 */
 @property(nonatomic,strong)UILabel *addressLabel;
-
 @end
-
 @implementation PGDiscoverDefaultVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUI];
+    [self PG_setUI];
     [self addGes];
     [[UIApplication sharedApplication]setStatusBarHidden:YES];
-    // Do any additional setup after loading the view.
 }
-
-- (void)setUI{
+- (void)PG_setUI{
 dispatch_async(dispatch_get_main_queue(), ^{
     NSString *withDailyCourseM8 = @"imageNearIndex";
         UITableView *currentPageColorD2= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
@@ -64,29 +42,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
      PGCompleteWithError *imageSharpenFilter= [[PGCompleteWithError alloc] init];
 [imageSharpenFilter shouldAutoClipWithnaviTitleColor:withDailyCourseM8 withActionBlock:currentPageColorD2 ];
 });
-    
-    /*! 背景图片 */
     UIImageView *backImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
     backImageView.image = [UIImage imageNamed:@"img_public_own_invite"];
     [self.view addSubview:backImageView];
-    
-    /*! 活动标题 */
     [self.view addSubview:self.titleLabel];
-    
     UIView *QRbgView = [[UIView alloc] initWithFrame:CGRectMake((kScreenWidth -100)/2 - 5, kScreenHeight/2+kScreenHeight*0.2 - 5, 110, 110)];
     QRbgView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:QRbgView];
-    /*! 二维码 */
     [self.view addSubview:self.QRimageView];
-    /*! 姓名 */
     [self.view addSubview:self.nameLabel];
-    /*! 显示底部的标题 */
     [self.view addSubview:self.bottomLabel];
-    /*! 时间 */
     [self.view addSubview:self.timeLabel];
-    /*! 地点 */
     [self.view addSubview:self.addressLabel];
-    /*! 截屏 分享 */
     if (_activityTitle) {
         _image = [self imageWithUIView:self.view];
         _shareButton = [[BigSizeButton alloc]initWithFrame:CGRectMake(kScreenWidth-60, 30, 30, 30)];
@@ -94,11 +61,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_shareButton setImage:[UIImage imageNamed:@"detailShare"] forState:UIControlStateNormal];
         [self.view addSubview:_shareButton];
     }
-    
-    
-    
 }
-
 #pragma mark  --- 点击推出
 - (void)addGes{
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -124,13 +87,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
     [self.view addGestureRecognizer:tap];
 }
-
 - (void)dismiss{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 #pragma mark --- 懒加载
-
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(40, kScreenHeight/2-kScreenHeight*0.09, kScreenWidth-80, kScreenHeight*0.1)];
@@ -146,10 +106,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _titleLabel;
 }
-
 - (UIImageView *)QRimageView{
     if (!_QRimageView) {
-        
         _QRimageView = [[UIImageView alloc]initWithFrame:CGRectMake((kScreenWidth -100)/2, kScreenHeight/2+kScreenHeight*0.2, 100, 100)];
         if (_codeStr) {
             _QRimageView.image = [UIImage imageOfQRFromURL:_codeStr];
@@ -159,7 +117,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _QRimageView;
 }
-
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
         if (_name) {
@@ -170,8 +127,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _nameLabel;
 }
-
-
 - (UILabel *)bottomLabel{
     if (!_bottomLabel) {
         if (_isSign) {
@@ -182,7 +137,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _bottomLabel;
 }
-
 - (UILabel *)timeLabel{
     if (!_timeLabel) {
         if (_timeStr) {
@@ -193,7 +147,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _timeLabel;
 }
-
 - (UILabel *)addressLabel{
     if (!_addressLabel) {
         if (_address) {
@@ -204,9 +157,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _addressLabel;
 }
-
 #pragma mark--- 分享
-
 - (void)shareImage{
 dispatch_async(dispatch_get_main_queue(), ^{
     NSString *cellDefaultMargini7 = @"headerViewDelegate";
@@ -230,26 +181,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_QQ), nil];
     if ( ![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
-        //没有安装QQ
         [arr removeObject:@(UMSocialPlatformType_QQ)];
     }
     if (![WXApi isWXAppInstalled]) {
-        //没有安装微信
         [arr removeObject:@(UMSocialPlatformType_WechatSession)];
-       
     }
-    
     [UMSocialUIManager setPreDefinePlatforms:arr];
     [UMSocialShareUIConfig shareInstance].shareTitleViewConfig.isShow = NO;
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        //创建分享消息对象
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-        //创建图片内容对象
         UMShareImageObject *shareObject = [[UMShareImageObject alloc] init];
         [shareObject setShareImage:_image];
-        //分享消息对象设置分享内容对象
         messageObject.shareObject = shareObject;
-        //调用分享接口
         [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
             if (error) {
                 NSLog(@"************Share fail with error %@*********",error);
@@ -258,15 +201,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
             }
         }];
     }];
-
 }
-
 #pragma mark --- 截屏
 - (UIImage*) imageWithUIView:(UIView*) view
 {
-    if([[UIScreen mainScreen] scale] == 2.0){      // @2x
+    if([[UIScreen mainScreen] scale] == 2.0){      
         UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 2.0);
-    }else if([[UIScreen mainScreen] scale] == 3.0){ // @3x ( iPhone 6plus 、iPhone 6s plus)
+    }else if([[UIScreen mainScreen] scale] == 3.0){ 
         UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 3.0);
     }else{
         UIGraphicsBeginImageContext(view.frame.size);
@@ -277,22 +218,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIGraphicsEndImageContext();
     return tImage;
 }
-
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication]setStatusBarHidden:NO];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

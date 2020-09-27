@@ -1,34 +1,17 @@
 #import "PGVideoWithScroll.h"
-//
-//  PGActivityBigImageCollectionView.m
-//  zhundao
-//
-//  Created by zhundao on 2017/10/20.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityBigImageCollectionView.h"
 #import "PGActivityBigImageCell.h"
 #import "PGActivityChooseBigImageViewModel.h"
 static NSString *cellID = @"BigImageCollectionCellID";
 static NSString *headerID = @"BigImageCollectionCellHeaderID";
 @interface PGActivityBigImageCollectionView()<UICollectionViewDelegate,UICollectionViewDataSource>
-/*! 头视图名称 */
 @property(nonatomic,strong)UILabel *nameLabel;
-/*! 选择的图片索引 */
 @property(nonatomic,assign,readwrite)NSInteger selectIndex;
-/*! 打勾图片 */
 @property(nonatomic,strong,readwrite)UIImageView *selectImageView;
-/*! 高度数组 */
 @property(nonatomic,strong)NSMutableArray *heightArray;
-
 @property(nonatomic,strong)PGActivityChooseBigImageViewModel *viewModel;
-
 @end
 @implementation PGActivityBigImageCollectionView
-
-
-
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout{
     if (self = [super initWithFrame:frame collectionViewLayout:layout]) {
         self.delegate = self;
@@ -47,7 +30,6 @@ static NSString *headerID = @"BigImageCollectionCellHeaderID";
     }
     return _nameLabel;
 }
-
 - (UIImageView *)selectImageView{
     if (!_selectImageView) {
         _selectImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, 20, 20)];
@@ -55,7 +37,6 @@ static NSString *headerID = @"BigImageCollectionCellHeaderID";
     }
     return _selectImageView;
 }
-
 #pragma mark --- UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -63,7 +44,6 @@ static NSString *headerID = @"BigImageCollectionCellHeaderID";
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return _dataArray.count;
 }
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     PGActivityBigImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     NSDictionary *imageDic = _dataArray[indexPath.item];
@@ -74,7 +54,6 @@ static NSString *headerID = @"BigImageCollectionCellHeaderID";
     }
     return cell;
 }
-
 #pragma  mark --- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     PGActivityBigImageCell *Cell = (PGActivityBigImageCell *)[collectionView cellForItemAtIndexPath:indexPath];
@@ -97,7 +76,6 @@ static NSString *headerID = @"BigImageCollectionCellHeaderID";
         [self.imageSelectDelegate selectIndex:imageDic[@"Link"] item:indexPath.item tag:self.tag];
     }
 }
-
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerID forIndexPath:indexPath];
     if (kind == UICollectionElementKindSectionHeader) {
@@ -106,10 +84,4 @@ static NSString *headerID = @"BigImageCollectionCellHeaderID";
     }
     return nil;
 }
-
-
-
-
-
-
 @end

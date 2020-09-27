@@ -1,10 +1,3 @@
-// 
- //PGOrganizationNoticeWith.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGOrganizationNoticeWith.h"
 @implementation PGOrganizationNoticeWith
 + (UIView *)exerciseHistoryDataWithcourseVideoPlayer:(UIColor *)acourseVideoPlayer browserPhotoScroll:(UITextView *)abrowserPhotoScroll shrinkRightBottom:(UIImage *)ashrinkRightBottom{
@@ -14,7 +7,6 @@
     showControlViewJ1.layer.masksToBounds = YES; 
     return showControlViewJ1;
 }
-
 + (UITableView *)exerciseRecordViewWithtaskCenterModel:(PGUserDomainMask *)ataskCenterModel adjustsScrollView:(PGUserDomainMask *)aadjustsScrollView tableViewData:(PGUserDomainMask *)atableViewData{
     UITableView *shareInfoViewD7= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     shareInfoViewD7.frame = CGRectZero; 
@@ -33,29 +25,22 @@
      shareInfoViewD7.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(251,23,245,255)];
      return shareInfoViewD7;
 }
-
 - (CGRect)commentTweetSuccWithimageMovieWriter:(CGPoint)aimageMovieWriter settingTableView:(NSData *)asettingTableView{
     CGRect currentDownloadCountw6 = CGRectZero;
     return currentDownloadCountw6;
 }
-
 - (NSRange)assetsPickerCheckedWithtitlePositionAdjustment:(UIFont *)atitlePositionAdjustment imageTextureDelegate:(CGRect)aimageTextureDelegate{
     NSRange backIndicatorTransitionH6 = NSMakeRange(1,166); 
     return backIndicatorTransitionH6;
 }
-
 - (UIButtonType)pathCloseSubpathWithaudioSessionCategory:(UISwitch *)aaudioSessionCategory managerWithDelegate:(NSData *)amanagerWithDelegate{
     UIButtonType videoDealPointc3 = UIButtonTypeContactAdd;
     return videoDealPointc3;
 }
-
 + (void)instanceCreateMethod{
     CGPoint particularNameDatat8 = CGPointMake(3,133); 
         NSData *natatoriumParticularTablet0= [[NSData alloc] init];
     PGOrganizationNoticeWith *photoImageView= [[PGOrganizationNoticeWith alloc] init];
 [photoImageView commentTweetSuccWithimageMovieWriter:particularNameDatat8 settingTableView:natatoriumParticularTablet0 ];
-
 }
-
-
 @end

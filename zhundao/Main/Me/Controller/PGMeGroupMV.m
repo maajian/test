@@ -1,17 +1,5 @@
-//
-//  PGMeGroupMV.m
-//  zhundao
-//
-//  Created by zhundao on 2017/5/24.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeGroupMV.h"
-
 @implementation PGMeGroupMV
-//api/Contact/PostContactGroup?accessKey={accessKey} //获取分组
-
-//api/Contact/GetSingleContactGroup/{id}?accessKey={accessKey} 获取组里面的信息
 - (void)netWorkWithStr :(NSString *)str
 {
     [ZD_NetWorkM postDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
@@ -22,10 +10,8 @@
             _block(dataArray);
         }
     } fail:^(NSError *error) {
-        
     }];
 }
-
 - (NSArray *)searchDatabaseFromID:(NSInteger )ID
 {
     PGSignManager *manager = [PGSignManager shareManager];
@@ -43,14 +29,12 @@
             [mobileArray addObject:[rs stringForColumn:@"Mobile"]];
             [idArray addObject:[NSString stringWithFormat:@"%li",(long)[rs intForColumn:@"ID"]]];
         }
-        
         [manager.dataBase close];
     }
     [allArray addObject:nameArray];
     [allArray addObject:imageArray];
     [allArray addObject:idArray];
     [allArray addObject:mobileArray];
-    
     return allArray;
 }
 - (void)addPersonToGroupWithDic :(NSDictionary *)dic
@@ -59,7 +43,6 @@
     [ZD_NetWorkM postDataWithMethod:netstr parameters:dic succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj);
         NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:obj];
-        
         if ([dicionary[@"Res"] integerValue] ==0) {
             if (_addPersonBlock) {
                 _addPersonBlock(1);
@@ -89,7 +72,5 @@
         }
         [manager.dataBase close];
     }
-
-
 }
 @end

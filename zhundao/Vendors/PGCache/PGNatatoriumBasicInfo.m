@@ -1,17 +1,9 @@
-// 
- //PGNatatoriumBasicInfo.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGNatatoriumBasicInfo.h"
 @implementation PGNatatoriumBasicInfo
 + (NSArray *)mediaTimingFunctionWithspinLockUnlock:(NSArray *)aspinLockUnlock downVideoData:(NSArray *)adownVideoData uploadSuccBlock:(NSMutableArray *)auploadSuccBlock{
     NSArray *badgeDefaultMaximumR0= [NSArray array];
     return badgeDefaultMaximumR0;
 }
-
 + (UIButton *)trainPropertyTrainWithvalueImageRect:(PGWithFileName *)avalueImageRect maskTypeClear:(PGWithFileName *)amaskTypeClear itemTextFont:(PGWithFileName *)aitemTextFont{
     UIButton *videoCameraInterfaceT4= [UIButton buttonWithType:UIButtonTypeCustom]; 
     videoCameraInterfaceT4.frame = CGRectZero; 
@@ -21,22 +13,18 @@
     videoCameraInterfaceT4.frame = CGRectZero; 
     return videoCameraInterfaceT4;
 }
-
 - (CGSize)bundleDisplayNameWithcodeLoginView:(UILabel *)acodeLoginView withRecommendCourse:(UIButton *)awithRecommendCourse{
     CGSize contextFillRectL6 = CGSizeZero;
     return contextFillRectL6;
 }
-
 - (UIEdgeInsets)viewAnimatedColorsWithtaskCenterTable:(UITableViewStyle)ataskCenterTable withControlPoints:(UITextFieldViewMode)awithControlPoints{
     UIEdgeInsets applicationNeedUpdateU5 = UIEdgeInsetsMake(63,33,255,128); 
     return applicationNeedUpdateU5;
 }
-
 - (CGRect)titleShowStatusWithlinkViewModel:(UIFont *)alinkViewModel textAlignmentRight:(NSTextAlignment)atextAlignmentRight{
     CGRect answerViewModelB2 = CGRectMake(225,105,191,140); 
     return answerViewModelB2;
 }
-
 + (void)instanceCreateMethod{
     UILabel *withCommentObjectu2= [[UILabel alloc] initWithFrame:CGRectZero]; 
     withCommentObjectu2.text = @"withServiceArea";
@@ -52,8 +40,5 @@
     fromVideoFilee7.frame = CGRectZero; 
     PGNatatoriumBasicInfo *interfaceOrientionChange= [[PGNatatoriumBasicInfo alloc] init];
 [interfaceOrientionChange bundleDisplayNameWithcodeLoginView:withCommentObjectu2 withRecommendCourse:fromVideoFilee7 ];
-
 }
-
-
 @end

@@ -1,10 +1,3 @@
-// 
- //PGAssetsGroupSaved.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGAssetsGroupSaved.h"
 @implementation PGAssetsGroupSaved
 + (UIImageView *)articleDetailDataWithuserInfoView:(UITextView *)auserInfoView loopCommonModes:(UIColor *)aloopCommonModes yearTimeInterval:(UIButton *)ayearTimeInterval{
@@ -16,29 +9,24 @@
     timeModelDataa5.clearsContextBeforeDrawing = YES; 
     return timeModelDataa5;
 }
-
 + (UIActivityIndicatorView *)rankMedalInfoWithlaunchOptionsShows:(PGOrganizeListRequset *)alaunchOptionsShows willEnterForeground:(PGOrganizeListRequset *)awillEnterForeground separatorStyleNone:(PGOrganizeListRequset *)aseparatorStyleNone{
     UIActivityIndicatorView *textLabelHiddenq6= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     textLabelHiddenq6.hidden = YES; 
     textLabelHiddenq6.hidesWhenStopped = YES; 
     return textLabelHiddenq6;
 }
-
 - (CGPoint)objectsHashTableWithbottomChartView:(UIScrollView *)abottomChartView assetsUsingBlock:(UIEdgeInsets)aassetsUsingBlock{
     CGPoint recordVideoCameraO3 = CGPointZero;
     return recordVideoCameraO3;
 }
-
 - (CGPoint)commentViewModelWithapplicationWillEnter:(CGSize)aapplicationWillEnter assetChangeRequest:(UITextView *)aassetChangeRequest{
     CGPoint deviceSettingsTypeJ0 = CGPointZero;
     return deviceSettingsTypeJ0;
 }
-
 - (UITextFieldViewMode)textFiledDelegateWithcustomAnimateTransition:(UILabel *)acustomAnimateTransition showShowSheet:(NSRange)ashowShowSheet{
     UITextFieldViewMode integralMainDataA5 = UITextFieldViewModeAlways; 
     return integralMainDataA5;
 }
-
 + (void)instanceCreateMethod{
     UIScrollView *purchaseStandardDatav5= [[UIScrollView alloc] initWithFrame:CGRectMake(230,116,125,99)]; 
     purchaseStandardDatav5.showsHorizontalScrollIndicator = NO; 
@@ -49,8 +37,5 @@
         UIEdgeInsets assetPropertyDurationS1 = UIEdgeInsetsZero;
     PGAssetsGroupSaved *assetsCurrentPage= [[PGAssetsGroupSaved alloc] init];
 [assetsCurrentPage objectsHashTableWithbottomChartView:purchaseStandardDatav5 assetsUsingBlock:assetPropertyDurationS1 ];
-
 }
-
-
 @end

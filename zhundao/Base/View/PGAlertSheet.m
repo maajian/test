@@ -1,16 +1,4 @@
 #import "PGNameBottomLine.h"
-//
-//  PGAlertSheet.m
-//  PGAlertSheet
-//
-//  Created by zhundao on 2017/6/28.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
-
-//208 203 192
-
-//156
 #import "PGAlertSheet.h"
 #define  kWidth ([UIScreen mainScreen].bounds.size.width)
 #define  kHeight ([UIScreen mainScreen].bounds.size.height)
@@ -19,21 +7,19 @@
     BOOL delete ;
     NSInteger  titleHeight;
 }
-@property(nonatomic,strong)          NSMutableArray *dataArray ; //数组
-@property(nonatomic,copy)           NSString   *title ;   //标题
-@property(nonatomic,strong)          UILabel *titleLabel ; //标题label
-@property(nonatomic,assign)          NSInteger buttonCount ; //数组个数
-@property(nonatomic,strong)         UIButton  *cancelButton ; //取消按钮
-@property(nonatomic,strong)        UIView    *backView ; //全屏幕的视图 进入后视图透明度变化
-@property(nonatomic,strong)        UIView     *titleView ;//遮挡titlelabel
-@property(nonatomic,strong)        UIView    *sheetView  ;  //弹出视图的底部背景视图
+@property(nonatomic,strong)          NSMutableArray *dataArray ; 
+@property(nonatomic,copy)           NSString   *title ;   
+@property(nonatomic,strong)          UILabel *titleLabel ; 
+@property(nonatomic,assign)          NSInteger buttonCount ; 
+@property(nonatomic,strong)         UIButton  *cancelButton ; 
+@property(nonatomic,strong)        UIView    *backView ; 
+@property(nonatomic,strong)        UIView     *titleView ;
+@property(nonatomic,strong)        UIView    *sheetView  ;  
 @end
 @implementation PGAlertSheet
-
 #pragma mark 初始化
 const static NSInteger crackHeight = 5 ;
 const static NSInteger cellHeight  = 44 ;
-
 + (void)showWithArray :(NSArray *)dataArray
       title :(NSString *)title
    isDelete :(BOOL)isDelete
@@ -42,7 +28,6 @@ const static NSInteger cellHeight  = 44 ;
     [ZD_KeyWindow addSubview:sheet];
     [sheet fadeIn];
 }
-
 - (instancetype)initWithFrame:(CGRect)frame
                        array :(NSArray *)dataArray
                        title :(NSString *)title
@@ -56,9 +41,6 @@ const static NSInteger cellHeight  = 44 ;
             CGSize size = [_title boundingRectWithSize:CGSizeMake(kScreenWidth-40, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:14]} context:nil].size;
             titleHeight = size.height + 40;
         }
-            
-            
-//            titleHeight = 55;
         else titleHeight = 0 ;
         _buttonCount = self.dataArray.count;
         delete = isDelete;
@@ -68,7 +50,6 @@ const static NSInteger cellHeight  = 44 ;
     }
     return self;
 }
-
 #pragma mark 懒加载
 - (UILabel *)titleLabel
 {
@@ -80,11 +61,9 @@ const static NSInteger cellHeight  = 44 ;
         _titleLabel.numberOfLines = 0 ;
         _titleLabel.font = [UIFont systemFontOfSize:14];
         _titleLabel.textColor = ZDHeaderTitleColor;
-        
     }
     return _titleLabel;
 }
-
 - (UIView *)titleView{
     if (!_titleView) {
         _titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWidth, titleHeight)];
@@ -92,7 +71,6 @@ const static NSInteger cellHeight  = 44 ;
     }
     return _titleView;
 }
-
 - (UIButton *)cancelButton
 {
     if (!_cancelButton) {
@@ -113,11 +91,9 @@ const static NSInteger cellHeight  = 44 ;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cancelAction)];
         [_backView addGestureRecognizer:tap];
         [_backView addSubview:self.sheetView];
-    
     }
     return _backView;
 }
-
 - (UIView *)sheetView
 {
     if (!_sheetView) {
@@ -129,9 +105,7 @@ const static NSInteger cellHeight  = 44 ;
     }
     return  _sheetView;
 }
-
 #pragma mark button 创建 
-
 - (void)createButton
 {
     for (int i = 0;  i < _buttonCount; i ++) {
@@ -148,7 +122,6 @@ const static NSInteger cellHeight  = 44 ;
         }
     }
 }
-
 #pragma 点击动画
 - (void)fadeIn {
     self.alpha = 0.0    ;
@@ -166,27 +139,14 @@ const static NSInteger cellHeight  = 44 ;
     }];
 }
 #pragma mark 点击事件 
-
 - (void) sureAction :(UIButton *)sender
 {
     NSInteger select = sender.tag - 100 ;
     _backBlock (select);
     [self fadeOut];
 }
-
 - (void)cancelAction
 {
     [self fadeOut];
 }
-
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 @end

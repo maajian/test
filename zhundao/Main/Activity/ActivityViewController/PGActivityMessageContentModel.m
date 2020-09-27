@@ -1,15 +1,5 @@
-//
-//  PGActivityMessageContentModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/9.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityMessageContentModel.h"
-
 @implementation PGActivityMessageContentModel
-
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
         self.ID = [dic[@"msg_id"] integerValue];
@@ -26,7 +16,6 @@
                 case -1:
                     self.messageStatusType = PGMessageStatusTypeFail;
                     break;
-                    
                 default:
                     break;
             }
@@ -36,5 +25,4 @@
     }
     return self;
 }
-
 @end

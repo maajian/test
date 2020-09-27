@@ -1,12 +1,4 @@
 #import "PGMedalWallTable.h"
-//
-//  PGActivityEditSignListVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/20.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityEditSignListVC.h"
 #import "PGActivityEditSignListViewModel.h"
 #import "PGActivityEditSignListCell.h"
@@ -17,19 +9,16 @@
 #import "PGNewOrEditMV.h"
 #import "PGAvtivityCCDatePickerView.h"
 #import "Time.h"
-//#import "PGSignInLoadAllSignVC.h"
 #define  kLineSpace  ((kScreenWidth-40)/3)
 @interface PGActivityEditSignListVC ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
-@property(nonatomic,strong)PGActivityEditSignListViewModel *VM ;   //视图模型
+@property(nonatomic,strong)PGActivityEditSignListViewModel *VM ;   
 @property(nonatomic,strong)UITableView *tableView ;
-@property(nonatomic,strong)NSMutableArray *leftMustArray; //必填项左边名称
-@property(nonatomic,strong)NSMutableArray *rightMustArray ; //必填项右边名称
+@property(nonatomic,strong)NSMutableArray *leftMustArray; 
+@property(nonatomic,strong)NSMutableArray *rightMustArray ; 
 @property(nonatomic,strong)NSMutableArray *requireArray ;
-@property(nonatomic,strong)NSMutableArray *mustTypeArray ; // 必填项左边inputType
+@property(nonatomic,strong)NSMutableArray *mustTypeArray ; 
 @end
-
 @implementation PGActivityEditSignListVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets choicenessViewModelf9 = UIEdgeInsetsZero;
@@ -41,7 +30,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self baseSetting];
 }
 #pragma mark baseSetting  基础设置
-
 - (void)baseSetting
 {
     self.title = @"修改信息";
@@ -49,18 +37,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _VM = [[PGActivityEditSignListViewModel alloc]init];
     self.view.backgroundColor = ZDBackgroundColor;
     [self.view addSubview:self.tableView];
-    NSArray *allOptionArray = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"optionArray%li",(long)self.activityID]];  //获取所有自定义项
+    NSArray *allOptionArray = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"optionArray%li",(long)self.activityID]];  
     NSDictionary *datadic = [_VM getDicWithStr:self.dataStr];
-   self.leftMustArray =  [[_VM getMustArrayFromArray:self.baseNameArray customArray:allOptionArray] mutableCopy];   //获取必填项
+   self.leftMustArray =  [[_VM getMustArrayFromArray:self.baseNameArray customArray:allOptionArray] mutableCopy];   
     self.rightMustArray = [_VM getRightMustArray:self.baseArray allOptionArray:allOptionArray dic:datadic];
     self.mustTypeArray = [_VM getMustInputTypeFromArray:self.baseNameArray customArray:allOptionArray];
     self.requireArray = [_VM getRequiredArray:self.baseArray allOptionArray:allOptionArray];
     [_tableView reloadData];
-    
 }
-
 #pragma mark 懒加载
-
 - (UITableView *)tableView
 {
     if (!_tableView) {
@@ -70,9 +55,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return  _tableView;
 }
-
 #pragma mark UITableViewDataSource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
    return 1;
@@ -108,18 +91,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     return 30;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 20;
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     return [self createHeader];
-    
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     return  [self createFooter];
@@ -133,11 +112,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self pushToLabelEditWithIsMust:[_requireArray[cell.tag] boolValue] tag:cell.tag];
     }
 }
-
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     PGActivityEditSignListCell *cell = (PGActivityEditSignListCell *)textField.superview.superview;
-    if ([_requireArray[cell.tag] boolValue]) {  //textField必填 则textf 不能为空
+    if ([_requireArray[cell.tag] boolValue]) {  
         if ([_mustTypeArray[cell.tag] integerValue]==1) {
             return;
         }
@@ -170,9 +148,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     PGActivityMoreLabelVC *moreLabel = [[PGActivityMoreLabelVC alloc]init];
     moreLabel.isMust = isMust;
-    moreLabel.textfTitle = _rightMustArray[tagIndex];  //传自带text
+    moreLabel.textfTitle = _rightMustArray[tagIndex];  
     [self.navigationController pushViewController:moreLabel animated:NO];
-    moreLabel.strBlock = ^(NSString *str)  //回调值刷新界面
+    moreLabel.strBlock = ^(NSString *str)  
     {
         if (str.length==0) {
             [_rightMustArray replaceObjectAtIndex:tagIndex withObject:@"未填写"];
@@ -184,29 +162,24 @@ dispatch_async(dispatch_get_main_queue(), ^{
     };
 }
 #pragma mark 头尾视图创建
-
-- (UIView *) createHeader   //创建头视图
+- (UIView *) createHeader   
 {
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
     view.backgroundColor=ZDBackgroundColor;
     return view;
 }
-
-- (UIView *) createFooter   //创建尾视图
+- (UIView *) createFooter   
 {
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 20)];
     view.backgroundColor=[UIColor clearColor];
     return view;
 }
-
 #pragma mark cell上视图创建
 - (void)createViewWithCell :(PGActivityEditSignListCell *)cell
 {
-        [self createLeftLabelWithStr:_leftMustArray[cell.tag] view:cell.contentView]; //创建左边label
-         //  如果 inputType 为2 3 5 6 下拉框 多选框 单选框 日期控件 则创建右边label
+        [self createLeftLabelWithStr:_leftMustArray[cell.tag] view:cell.contentView]; 
         if ([_mustTypeArray[cell.tag] integerValue]==2||[_mustTypeArray[cell.tag] integerValue]==3||[_mustTypeArray[cell.tag] integerValue]==5||[_mustTypeArray[cell.tag] integerValue]==6) {
             [self createRightLabelWithStr:_rightMustArray[cell.tag] view:cell.contentView];
-            //如果为0 1 7 文本数据 多文本数据 数字控件
         }else if ([_mustTypeArray[cell.tag] integerValue]==0||[_mustTypeArray[cell.tag] integerValue]==1||[_mustTypeArray[cell.tag] integerValue]==7)
         {
             [self createTextFieldWithStr:_rightMustArray[cell.tag] index:[_mustTypeArray[cell.tag] integerValue] view:cell.contentView];
@@ -226,12 +199,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [self createImageViewWithCell1:cell imageArray:imageArray];
 }
-- (void)createLeftLabelWithStr:(NSString *)Str view :(UIView *)view  //创建左边label
+- (void)createLeftLabelWithStr:(NSString *)Str view :(UIView *)view  
 {
     UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 80, 44) Text:Str textColor:[UIColor blackColor] font:KweixinFont(14) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     [view addSubview:label];
 }
-- (void)createRightLabelWithStr :(NSString *)str  view :(UIView *)view  //创建label
+- (void)createRightLabelWithStr :(NSString *)str  view :(UIView *)view  
 {
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(95, 0, kScreenWidth-120, 44)];
     label.font =KweixinFont(14);
@@ -240,7 +213,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     {
         label.text =str;
         label.textColor =[UIColor blackColor];
-        
     }
     label.userInteractionEnabled = YES;
     label.textAlignment = NSTextAlignmentRight;
@@ -248,7 +220,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [label addGestureRecognizer:tap];
     [view addSubview:label];
 }
-- (void)createTextFieldWithStr :(NSString *)str index :(NSInteger)index view :(UIView *)view //创建右边输入框
+- (void)createTextFieldWithStr :(NSString *)str index :(NSInteger)index view :(UIView *)view 
 {
     UITextField *textField = [myTextField initWithFrame:CGRectMake(95, 0, kScreenWidth-120, 44) placeholder:str font:KweixinFont(14) TextAlignment:NSTextAlignmentRight textColor:[UIColor blackColor]];
     textField.delegate =self;
@@ -260,8 +232,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     {
         textField.text =str;
         textField.attributedPlaceholder = [_VM setAttrbriteStrWithText:@"未填写*"];
-//        [textField setValue:[UIColor colorWithRed:137.0f/256.0f green:137.0f/256.0f blue:137.0f/256.0f alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-//        [textField setValue:KweixinFont(14) forKeyPath:@"_placeholderLabel.font"];
     }
     [view addSubview:textField];
 }
@@ -269,35 +239,27 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)gesAction:(UITapGestureRecognizer *)tap
 {
     PGActivityEditSignListCell *cell = (PGActivityEditSignListCell *)tap.view.superview.superview;
-    NSArray *allOptionArray = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"optionArray%li",(long)self.activityID]];  //获取所有自定义项
+    NSArray *allOptionArray = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"optionArray%li",(long)self.activityID]];  
         switch ([_mustTypeArray[cell.tag] integerValue]) {
             case 2:
-                //下拉
                 [self pushMustChooseWithCell:cell customArray:allOptionArray isMoreChoose:NO];
                 break;
             case 3:
-                //多选
             {
                 [self pushMustChooseWithCell:cell customArray:allOptionArray isMoreChoose:YES];
             }
                 break;
             case 5:
-                //单选
                 [self pushMustChooseWithCell:cell customArray:allOptionArray isMoreChoose:NO];
                 break;
             case 6:
-                //日期
                 [self showDataPicker:cell];
                 break;
             default:
                 break;
         }
 }
-
 - (void)pushMustChooseWithCell :(PGActivityEditSignListCell *)cell customArray :(NSArray *)customArray isMoreChoose :(BOOL)isMoreChoose
-
-//必填项 跳转至多选单选
-
 {
     PGActivityEditMoreChooseVC *moreChoose = [[PGActivityEditMoreChooseVC alloc]init];
     moreChoose.allDataArray = [[_VM getAllChooseArrayWithStr:_leftMustArray[cell.tag] customArray:customArray] copy];
@@ -311,19 +273,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_tableView reloadData];
     };
 }
-
-
 #pragma mark 选择图片
-
-//必填项 选择图片
 - (void)createImageViewWithCell1 :(PGActivityEditSignListCell *)cell imageArray :(NSArray *)imageArray
-
 {
     NSInteger x = 0 ;
     NSInteger y = 0 ;
     for (int i = 0; i < imageArray.count+1; i ++) {
-        x = i / 3;  //x 为行
-        y = i% 3 ;   // y 为列
+        x = i / 3;  
+        y = i% 3 ;   
         if (i < imageArray.count) {
             UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake(10+y*(kLineSpace+10), 54 + x *(kLineSpace+10), kLineSpace, kLineSpace) ];
             [imageview sd_setImageWithURL:[NSURL URLWithString:imageArray[i]]];
@@ -348,9 +305,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [addImageView addGestureRecognizer:tap];
         }
     }
-    
 }
-//deleteCan
 #pragma mark 添加图片手势响应
 #pragma arguments 添加图片手势响应
 -(void) addImageGes :(UITapGestureRecognizer *)tap
@@ -387,7 +342,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
         nextResponder = nextResponder.nextResponder;
     }
-  
         NSString *imageStr = [_rightMustArray objectAtIndex:cell.tag];
         NSMutableArray *imageArray = [[imageStr componentsSeparatedByString:@"|"] mutableCopy];
         [imageArray removeObjectAtIndex:sender.tag];
@@ -395,9 +349,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_rightMustArray replaceObjectAtIndex:cell.tag withObject:lastStr];
         [_tableView reloadData];
 }
-
 #pragma mark 日期创建 
-
 - (void)showDataPicker:(PGActivityEditSignListCell *)cell
 {
         NSString *timeStr = _rightMustArray[cell.tag];
@@ -423,13 +375,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [item setTitleTextAttributes:attributes forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = item;
 }
-
 - (void)leftButton
 {
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.rightBarButtonItem = leftItem;
 }
-
 #pragma mark 保存 返回事件
 - (void)save {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -468,7 +418,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         return;
     }
 }
-
 - (void)backWithIndex :(NSInteger )isSuccess
 {
     switch (isSuccess) {
@@ -483,7 +432,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [hud hideAnimated:YES afterDelay:1];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 PGActivityListVC *list = nil;
-//                PGSignInLoadAllSignVC *load = nil;
                 for (UIViewController *VC in self.navigationController.viewControllers) {
                     if ([VC isKindOfClass:[PGActivityListVC class]]) {
                         list = (PGActivityListVC *)VC;
@@ -491,34 +439,23 @@ dispatch_async(dispatch_get_main_queue(), ^{
                         [list loadData];
                         break;
                     }
-//                    if ([VC isKindOfClass:[PGSignInLoadAllSignVC class]]) {
-//                        load = (PGSignInLoadAllSignVC *)VC;
-//                        [self.navigationController popToViewController:load animated:YES];
-//                        [load loadData];
-//                        break;
-//                    }
                 }
             });
         }
             break;
         case 2:
         {
-            
         }
             break;
         default:
             break;
     }
 }
-
 - (void)back
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-
 @end

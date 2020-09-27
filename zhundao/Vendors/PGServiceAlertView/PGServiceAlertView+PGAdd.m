@@ -1,16 +1,5 @@
-//
-//  PGServiceAlertView+PGAdd.m
-//  zhundao
-//
-//  Created by maj on 2020/1/14.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGServiceAlertView+PGAdd.h"
-
-
 @implementation PGServiceAlertView (ZDAdd)
-
 + (instancetype)privacyAlertWithDelegate:(id)delegate {
     PGServiceAlertView *alert = [[PGServiceAlertView alloc] init];
     alert.cancelTitle = @"不同意";
@@ -28,7 +17,6 @@
     [alert animationIn];
     return alert;
 }
-
 + (instancetype)privacyNeedCheckAlertWithDelegate:(id)delegate  {
     PGServiceAlertView *alert = [[PGServiceAlertView alloc] init];
     alert.alertViewDelegate = delegate;
@@ -41,5 +29,4 @@
     [alert animationIn];
     return alert;
 }
-
 @end

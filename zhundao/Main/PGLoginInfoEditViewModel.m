@@ -1,16 +1,5 @@
-//
-//  PGLoginInfoEditViewModel.m
-//  zhundao
-//
-//  Created by 罗程勇 on 2018/6/15.
-//  Copyright © 2018年 zhundao. All rights reserved.
-//
-
 #import "PGLoginInfoEditViewModel.h"
-
 @implementation PGLoginInfoEditViewModel
-
-// 验证码注册登录
 - (void)loginWirhCode:(NSString *)code phoneStr:(NSString *)phoneStr name:(NSString *)name passWord:(NSString *)passWord  successBlock:(kZDCommonSucc)successBlock failBlock:(kZDCommonFail)failBlock  {
     NSString *str = [NSString stringWithFormat:@"%@api/v2/login",zhundaoApi];
     NSDictionary *dic = @{@"userName":phoneStr,
@@ -30,5 +19,4 @@
         failBlock(error.description);
     }];
 }
-
 @end

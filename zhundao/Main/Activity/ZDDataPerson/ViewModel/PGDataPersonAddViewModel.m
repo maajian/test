@@ -1,15 +1,5 @@
-//
-//  PGDataPersonAddViewModel.m
-//  jingjing
-//
-//  Created by maj on 2020/8/10.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGDataPersonAddViewModel.h"
-
 @implementation PGDataPersonAddViewModel
-
 - (instancetype)init {
     if (self = [super init]) {
         _dataSource = @[
@@ -19,7 +9,6 @@
     }
     return self;
 }
-
 #pragma mark --- network
 - (void)addDataPersonWithActivityId:(NSInteger)activityId userName:(NSString *)userName phone:(NSString *)phone success:(ZDBlock_Void)success failure:(ZDBlock_Error)failure{
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
@@ -40,5 +29,4 @@
         ZDDo_Block_Safe_Main1(failure, error)
     }];
 }
-
 @end

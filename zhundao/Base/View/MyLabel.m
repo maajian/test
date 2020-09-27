@@ -1,16 +1,6 @@
-//
-//  MyLabel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/2/22.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "MyLabel.h"
-
 @implementation MyLabel
 +(UILabel *)initWithLabelFrame:(CGRect)frame Text : (NSString *)text textColor :(UIColor *)textColor font :(UIFont *)font textAlignment : (NSTextAlignment )textAlignment cornerRadius :(float)cornerRadius masksToBounds:(BOOL)masksToBounds
-
 {
     return  [[self alloc]initWithLabelFrame:frame Text:text textColor:textColor font:font textAlignment:textAlignment cornerRadius:cornerRadius masksToBounds:masksToBounds];
 }
@@ -29,7 +19,6 @@
                  }
     return self;
 }
-
 - (UILabel *)initWithFrame :(CGRect)frame Text : (NSString *)text textColor :(UIColor *)textColor font :(UIFont *)font
 {
     MyLabel *label = [[MyLabel alloc]init];
@@ -67,11 +56,8 @@
 }
 - (void)myCopy:(UIMenuController *)menu
 {
-    //当没有文字的时候调用这个方法会崩溃
     if (!self.text) return;
-    //复制文字到剪切板
     UIPasteboard * paste = [UIPasteboard generalPasteboard];
     paste.string = self.text;
-    
 }
 @end

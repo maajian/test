@@ -1,36 +1,20 @@
 #import "PGExerciseRecordTable.h"
-//
-//  PasswordViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/7.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PasswordViewController.h"
 #import "payTextField.h"
 #import "PGMeMyWalletViewController.h"
-
 @interface PasswordViewController ()<payTextFieldDelegate>{
     payTextField *textfView;
 }
-
 @property(nonatomic,strong)UILabel *label;
-
 @end
-
 @implementation PasswordViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"修改密码";
-    [self setUI];
-    [self titleSet];
-    // Do any additional setup after loading the view.
+    [self PG_setUI];
+    [self PG_titleSet];
 }
-
-- (void)setUI{
-    
+- (void)PG_setUI{
     _label = [[UILabel alloc]initWithFrame:CGRectMake(50, 110, kScreenWidth-100, 40)];
     _label.textColor = ZDHeaderTitleColor;
     _label.font =[UIFont systemFontOfSize:15];
@@ -40,17 +24,13 @@
     textfView.payTextFieldDelegate = self;
     [self.view addSubview:textfView];
 }
-
 #pragma mark --- payTextFieldDelegate
-
-- (void)sendPassWord:(NSString *)PS{
+- (void)PG_sendPassWord:(NSString *)PS{
     switch (_state) {
-             // 验证老密码 
         case Old:{
-            [self verifyOld:PS];
+            [self PG_verifyOld:PS];
         }
             break;
-             // 输入新密码
         case New:{
             PasswordViewController *password1 = [[PasswordViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
@@ -59,25 +39,22 @@
             [self.navigationController pushViewController:password1 animated:YES];
         }
             break;
-             // 再次输入密码
         case ReNew:{
             if ([PS isEqualToString:_password]) {
                 [self changePassword];
             }else{
                 PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:@"密码输入不匹配，请重新输入"];
                 [label labelAnimationWithViewlong:self.view];
-                [self clearData];
+                [self PG_clearData];
             }
         }
             break;
-            
         default:
             break;
     }
 }
 #pragma mark--- 网络请求
 - (void)changePassword{
-    
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/SetPassWord?accessKey=%@&newPwd=%@",zhundaoApi,[[PGSignManager shareManager]getaccseekey],textfView.textf.text];
     MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"请稍候...";
@@ -98,8 +75,7 @@
         [hud hideAnimated:YES];
     }];
 }
-
-- (void)verifyOld :(NSString *)old{
+- (void)PG_verifyOld :(NSString *)old{
     NSString *str = [NSString stringWithFormat:@"%@g?accessKey=%@&oldPwd=%@",zhundaoApi,[[PGSignManager shareManager]getaccseekey],old];
      MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"请稍候...";
@@ -112,22 +88,19 @@
             password1.state = New;
             [self.navigationController pushViewController:password1 animated:YES];
         }else{
-            [self showLabel:@"密码输入错误"];
-            [self clearData];
+            [self PG_showLabel:@"密码输入错误"];
+            [self PG_clearData];
         }
     } fail:^(NSError *error) {
         [hud hideAnimated:YES];
     }];
 }
-
 #pragma mark --- 其他
-
-- (void)showLabel:(NSString *)str{
+- (void)PG_showLabel:(NSString *)str{
     PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:str];
     [label labelAnimationWithViewlong:self.view];
 }
-
-- (void)titleSet{
+- (void)PG_titleSet{
 dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *inputTextureUniformC8= [UIFont systemFontOfSize:253];
         UIColor *cellWithReuseS0= [UIColor redColor];
@@ -147,13 +120,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
             _label.text = @"请再次填写以确认";
         }
             break;
-            
         default:
             break;
     }
 }
-
-- (void)clearData{
+- (void)PG_clearData{
     textfView.textf.text = @"";
     textfView.label1.hidden = YES;
     textfView.label2.hidden = YES;
@@ -161,22 +132,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     textfView.label4.hidden = YES;
     textfView.label5.hidden = YES;
     textfView.label6.hidden = YES;
-    
 }
-
 - (void)dealloc{
     NSLog(@"没有内存泄露");
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

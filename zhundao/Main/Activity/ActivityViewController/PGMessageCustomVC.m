@@ -1,36 +1,17 @@
 #import "PGInterfaceOrientationLandscape.h"
-//
-//  PGMessageCustomVC.m
-//  zhundao
-//
-//  Created by maj on 2019/5/26.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "PGMessageCustomVC.h"
-
 #import "PGActivityMessageContentCell.h"
-
 #import "PGActivityMessageContentViewModel.h"
-
 #import "PGActivityMessageContentModel.h"
-
 @interface PGMessageCustomVC ()<UITableViewDataSource, UITableViewDelegate>
-
 @property(nonatomic,strong)UITableView *tableView;
-
 @property(nonatomic,strong)PGActivityMessageContentViewModel *viewModel;
-
 @end
-
 static NSString *cellID = @"PGActivityMessageContentCell";
-
 @implementation PGMessageCustomVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
+    [self PG_initSet];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -39,15 +20,13 @@ static NSString *cellID = @"PGActivityMessageContentCell";
 - (void)dealloc{
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
-
 #pragma mark --- init
-- (void)initSet {
+- (void)PG_initSet {
      _viewModel = [[PGActivityMessageContentViewModel alloc]init];
     [self.view addSubview:self.tableView];
 }
-
 #pragma mark --- 网络请求
-- (void)getCustomContent{
+- (void)PG_getCustomContent{
     __weak typeof(self) weakSelf = self;
     [self.viewModel getCustomWithPageIndex:0 EsID:_es_id success:^(NSDictionary *obj) {
         [weakSelf.tableView reloadData];
@@ -57,8 +36,6 @@ static NSString *cellID = @"PGActivityMessageContentCell";
         [[PGSignManager shareManager]showNotHaveNet:weakSelf.view];
     }];
 }
-
-
 #pragma mark --- lazyload
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -71,13 +48,11 @@ static NSString *cellID = @"PGActivityMessageContentCell";
         _tableView.tableFooterView = [[UIView alloc]init];
         _tableView.layer.borderWidth = 1;
         _tableView.layer.borderColor = ZDLineColor.CGColor;
-        _tableView.mj_header = [PGRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getCustomContent)];
+        _tableView.mj_header = [PGRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(PG_getCustomContent)];
     }
     return _tableView;
 }
-
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.viewModel.customArray.count;
@@ -88,7 +63,6 @@ static NSString *cellID = @"PGActivityMessageContentCell";
     return cell;
 }
 #pragma mark -------UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.1;
 }
@@ -112,23 +86,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [[NSNotificationCenter defaultCenter] postNotificationName:ZDNotification_Message_Select object:model.es_content];
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
     __weak typeof(self) weakSelf = self;
     PGActivityMessageContentModel *model = self.viewModel.customArray[indexPath.row];
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         [_viewModel deleteContent:model.ID esid:_es_id successBlock:^(id responseObject) {
-            [weakSelf getCustomContent];
+            [weakSelf PG_getCustomContent];
         } error:^(NSError *error) {
             [[PGSignManager shareManager] showNotHaveNet:weakSelf.view];
         }];
     }];
-    
     deleteAction.backgroundColor = [UIColor redColor];
     return @[deleteAction];
 }
-
-// 将要展示cell 补全分割线
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         cell.layoutMargins = UIEdgeInsetsZero;
@@ -137,5 +107,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         cell.separatorInset = UIEdgeInsetsZero;
     }
 }
-
 @end

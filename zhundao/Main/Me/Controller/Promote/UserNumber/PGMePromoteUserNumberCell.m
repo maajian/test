@@ -1,35 +1,22 @@
 #import "PGCircleCropRadius.h"
-//
-//  PGDiscoverPromoteUserNumberCell.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteUserNumberCell.h"
-
 @interface PGMePromoteUserNumberCell()
 @property (nonatomic, strong) UIImageView *iconImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *iDLabel;
 @property (nonatomic, strong) UILabel *levelLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
-
 @end
-
 @implementation PGMePromoteUserNumberCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.backgroundColor = [UIColor whiteColor];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIImageView *)iconImageView {
     if (!_iconImageView) {
@@ -66,9 +53,8 @@
     }
     return _timeLabel;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle controllerWithTitleU4 = UITableViewStylePlain; 
         UIImageView * infoHeaderHeighty2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
@@ -86,9 +72,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.contentView addSubview:self.levelLabel];
     [self.contentView addSubview:self.timeLabel];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView).offset(18);
         make.centerY.equalTo(self.contentView);
@@ -112,7 +97,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.trailing.equalTo(self.contentView).offset(-18);
     }];
 }
-
 #pragma mark --- setter
 - (void)setModel:(PGMePromoteUserNumberModel *)model {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -138,5 +122,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.iDLabel.text = [NSString stringWithFormat:@"准到ID: %li", (long)model.UserId];
     self.timeLabel.text = model.AddTime;
 }
-
 @end

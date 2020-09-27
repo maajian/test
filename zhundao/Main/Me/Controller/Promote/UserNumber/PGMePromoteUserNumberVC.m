@@ -1,35 +1,18 @@
 #import "PGImageCompressionWith.h"
-//
-//  PGDiscoverPromoteUserNumberVC.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteUserNumberVC.h"
-
 #import "PGMePromoteUserNumberCell.h"
-
 #import "PGMePromoteUserNumberModel.h"
 #import "PGMePromoteUserNumberViewModel.h"
-
 @interface PGMePromoteUserNumberVC ()<UITableViewDelegate, UITableViewDataSource>
-
 @property (nonatomic, strong) UITableView *tableView;
-
 @property (nonatomic, strong) PGMePromoteUserNumberViewModel *viewModel;
-
 @end
-
 @implementation PGMePromoteUserNumberVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
-    [self networkForUserNumberList];
+    [self PG_initSet];
+    [self PG_initLayout];
+    [self PG_networkForUserNumberList];
 }
 #pragma mark --- Lazyload
 - (UITableView *)tableView {
@@ -52,21 +35,19 @@
     }
     return _viewModel;
 }
-
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
     self.title = @"我的用户";
     [self.view addSubview:self.tableView];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.trailing.equalTo(self.view);
         make.bottom.equalTo(self.view).offset(ZD_SAFE_BOTTOM_LAYOUT);
     }];
 }
-
 #pragma mark --- Network
-- (void)networkForUserNumberList {
+- (void)PG_networkForUserNumberList {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *shareViewDelegatea1= [UIImage imageNamed:@""]; 
         NSData *audioSessionCategoryP8= [[NSData alloc] init];
@@ -80,7 +61,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [[PGSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
-
 #pragma mark --- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.dataArray.count;
@@ -90,5 +70,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cell.model = self.viewModel.dataArray[indexPath.row];
     return cell;
 }
-
 @end

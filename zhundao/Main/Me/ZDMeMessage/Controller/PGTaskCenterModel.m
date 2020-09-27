@@ -1,10 +1,3 @@
-// 
- //PGTaskCenterModel.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGTaskCenterModel.h"
 @implementation PGTaskCenterModel
 + (UITableView *)textAlignmentLeftWithcollectionElementKind:(NSMutableArray *)acollectionElementKind withCourseParticular:(UISlider *)awithCourseParticular scrollDirectionRight:(UIColor *)ascrollDirectionRight{
@@ -25,34 +18,26 @@
      activityIndicatorViewF1.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(229,58,32,21)];
      return activityIndicatorViewF1;
 }
-
 + (UIColor *)applicationNeedUpdateWithcategoryChooseView:(PGScrollViewDeceleration *)acategoryChooseView textViewDelegate:(PGScrollViewDeceleration *)atextViewDelegate itemTextColor:(PGScrollViewDeceleration *)aitemTextColor{
     UIColor *differenceValueWithQ9= [UIColor redColor];
     return differenceValueWithQ9;
 }
-
 - (UITableViewCellSeparatorStyle)fillModeBothWithassetCollectionSubtype:(UITableViewCellSeparatorStyle)aassetCollectionSubtype downloadChapterModel:(NSArray *)adownloadChapterModel{
     UITableViewCellSeparatorStyle selectPhotoBlocky5 = UITableViewCellSeparatorStyleNone; 
     return selectPhotoBlocky5;
 }
-
 - (NSLineBreakMode)wallTableViewWithcollectionViewController:(UITextView *)acollectionViewController reusableHeaderFooter:(UILabel *)areusableHeaderFooter{
     NSLineBreakMode insetAdjustmentBehaviorO4 = NSLineBreakByTruncatingTail; 
     return insetAdjustmentBehaviorO4;
 }
-
 - (NSLineBreakMode)imageSharpenFilterWithcellPlayerFather:(UITableViewStyle)acellPlayerFather couponsScrollTable:(NSArray *)acouponsScrollTable{
     NSLineBreakMode maskTypeClearS9 = NSLineBreakByTruncatingTail; 
     return maskTypeClearS9;
 }
-
 + (void)instanceCreateMethod{
     UITableViewCellSeparatorStyle reusableHeaderFooterj2 = UITableViewCellSeparatorStyleNone; 
         NSArray *postImageWithC9= [NSArray array];
     PGTaskCenterModel *mutableUserNotification= [[PGTaskCenterModel alloc] init];
 [mutableUserNotification fillModeBothWithassetCollectionSubtype:reusableHeaderFooterj2 downloadChapterModel:postImageWithC9 ];
-
 }
-
-
 @end

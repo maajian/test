@@ -1,48 +1,33 @@
 #import "PGCaseInsensitiveSearch.h"
-//
-//  PGServiceAlertView.m
-//  zhundao
-//
-//  Created by maj on 2020/1/13.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGServiceAlertView.h"
-
 @interface PGServiceAlertView()<UITextViewDelegate>
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UIButton *cancelButton;
 @property (nonatomic, strong) UIButton *sureButton;
-
 @property (nonatomic, copy) ZDBlock_Void cancelBlock;
 @property (nonatomic, copy) ZDBlock_Void sureBlock;
-
 @end
-
 @implementation PGServiceAlertView
-
 - (instancetype)init {
     if (self = [super init]) {
         self.frame = [UIScreen mainScreen].bounds;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 - (instancetype)initWithCancelBlock:(ZDBlock_Void)cancelBlock sureBlock:(ZDBlock_Void)sureBlock {
     if (self = [super init]) {
         self.frame = [UIScreen mainScreen].bounds;
         _cancelBlock = cancelBlock;
         _sureBlock = sureBlock;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIView *)contentView {
     if (!_contentView) {
@@ -82,7 +67,7 @@
         [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
         [_cancelButton setTitleColor:ZDGrayColor forState:UIControlStateNormal];
         _cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        [_cancelButton addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_cancelButton addTarget:self action:@selector(PG_cancelAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
 }
@@ -95,22 +80,20 @@
         [_sureButton setTitle:@"确定" forState:UIControlStateNormal];
         [_sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _sureButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        [_sureButton addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_sureButton addTarget:self action:@selector(PG_sureAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _sureButton;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self addSubview:self.contentView];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.textView];
     [self.contentView addSubview:self.sureButton];
     [self.contentView addSubview:self.cancelButton];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *articleOriginalModelO0= [NSMutableArray arrayWithCapacity:0];
         UIImage *withGradientTintB9= [UIImage imageNamed:@""]; 
@@ -156,7 +139,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return NO;
 }
-
 #pragma mark --- setter
 - (void)setTitle:(NSString *)title {
     _title = title;
@@ -224,14 +206,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 #pragma mark --- action
-- (void)cancelAction:(UIButton *)button {
+- (void)PG_cancelAction:(UIButton *)button {
     ZDDo_Block_Safe_Main(_cancelBlock);
     [self animationOut];
     if ([self.alertViewDelegate respondsToSelector:@selector(alertView:didTapCancelButton:)]) {
         [self.alertViewDelegate alertView:self didTapCancelButton:button];
     }
 }
-- (void)sureAction:(UIButton *)button {
+- (void)PG_sureAction:(UIButton *)button {
     [self animationOut];
     ZDDo_Block_Safe_Main(_sureBlock);
     if ([self.alertViewDelegate respondsToSelector:@selector(alertView:didTapSureButton:)]) {
@@ -245,10 +227,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
         self.contentView.transform = CGAffineTransformMakeScale(1, 1);
     } completion:^(BOOL finished) {
-        
     }];
 }
-
 - (void)animationOut {
     [UIView animateWithDuration:0.25 animations:^{
         self.alpha = 0.01;
@@ -256,5 +236,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self removeFromSuperview];
     }];
 }
-
 @end

@@ -1,10 +1,3 @@
-// 
- //PGPlayImageView.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGPlayImageView.h"
 @implementation PGPlayImageView
 + (UITableView *)shareInfoViewWithvideoOutputPath:(UITableView *)avideoOutputPath userViewModel:(UITableView *)auserViewModel showsVerticalScroll:(NSMutableArray *)ashowsVerticalScroll{
@@ -25,7 +18,6 @@
      orderDetailViewy7.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(135,207,137,155)];
      return orderDetailViewy7;
 }
-
 + (UILabel *)noticeHeightArrayWithtextViewDelegate:(PGApertureModeEncoded *)atextViewDelegate textViewContent:(PGApertureModeEncoded *)atextViewContent integralMainData:(PGApertureModeEncoded *)aintegralMainData{
     UILabel *playFinishIndexz6= [[UILabel alloc] initWithFrame:CGRectZero]; 
     playFinishIndexz6.text = @"integralRecordTable";
@@ -35,29 +27,22 @@
     playFinishIndexz6.textAlignment = NSTextAlignmentCenter; 
     return playFinishIndexz6;
 }
-
 - (UITextFieldViewMode)mutableCompositionTrackWithpointerFunctionsOptions:(CGPoint)apointerFunctionsOptions userNotificationAction:(NSTextAlignment)auserNotificationAction{
     UITextFieldViewMode viewNavigationTypeV3 = UITextFieldViewModeAlways; 
     return viewNavigationTypeV3;
 }
-
 - (NSRange)photoLoadingViewWithdeviceSettingsCamera:(UITableView *)adeviceSettingsCamera withDataArray:(NSRange)awithDataArray{
     NSRange photoImageViewl6 = NSMakeRange(8,220); 
     return photoImageViewl6;
 }
-
 - (UIButtonType)dailyCourseModelWithcalendarUnitYear:(CGPoint)acalendarUnitYear articleOriginalTable:(NSMutableArray *)aarticleOriginalTable{
     UIButtonType groupsWithTypesn9 = UIButtonTypeContactAdd;
     return groupsWithTypesn9;
 }
-
 + (void)instanceCreateMethod{
     CGPoint concurrentOperationCountd1 = CGPointMake(4,58); 
         NSTextAlignment currentViewControllere1 = NSTextAlignmentCenter; 
     PGPlayImageView *withCommentObject= [[PGPlayImageView alloc] init];
 [withCommentObject mutableCompositionTrackWithpointerFunctionsOptions:concurrentOperationCountd1 userNotificationAction:currentViewControllere1 ];
-
 }
-
-
 @end

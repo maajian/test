@@ -1,37 +1,19 @@
 #import "PGSelectOriginalPhoto.h"
-//
-//  PGDiscoverPromoteNoticeVC.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteNoticeVC.h"
-
 #import "PGMeDetailNoticeVC.h"
-
 #import "PGMePromoteNoticeModel.h"
 #import "PGMePromoteNoticeViewModel.h"
-
 @interface PGMePromoteNoticeVC ()<UITableViewDelegate, UITableViewDataSource>
-// 列表
 @property (nonatomic, strong) UITableView *tableView;
-
 @property (nonatomic, strong) PGMePromoteNoticeViewModel *viewModel;
-
 @end
-
 @implementation PGMePromoteNoticeVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
-    [self networkForNoticeList];
+    [self PG_initSet];
+    [self PG_initLayout];
+    [self PG_networkForNoticeList];
 }
-
 #pragma mark --- lazyload
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -53,24 +35,21 @@
     }
     return _viewModel;
 }
-
-#pragma mark --- initSet
-- (void)initSet {
+#pragma mark --- PG_initSet
+- (void)PG_initSet {
     self.title = @"全部公告";
     self.view.backgroundColor = ZDBackgroundColor;
     [self.view addSubview:self.tableView];
 }
-
-#pragma mark --- initLayout
-- (void)initLayout {
+#pragma mark --- PG_initLayout
+- (void)PG_initLayout {
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.trailing.equalTo(self.view);
         make.bottom.equalTo(self.view).offset(ZD_SAFE_BOTTOM);
     }];
 }
-
 #pragma mark --- network
-- (void)networkForNoticeList {
+- (void)PG_networkForNoticeList {
     ZD_WeakSelf
     [self.viewModel getNoticeSuccess:^{
         [weakSelf.tableView reloadData];
@@ -78,7 +57,6 @@
         [[PGSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
-
 #pragma mark --- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.dataArray.count;
@@ -100,7 +78,6 @@
     cell.detailTextLabel.text = model.AddTime;
     return cell;
 }
-
 #pragma mark --- UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PGMePromoteNoticeModel *model = self.viewModel.dataArray[indexPath.row];
@@ -110,5 +87,4 @@
     notice.time = model.AddTime;
     [self.navigationController pushViewController:notice animated:YES];
 }
-
 @end

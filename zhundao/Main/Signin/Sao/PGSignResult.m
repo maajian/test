@@ -1,32 +1,18 @@
 #import "PGCaseInsensitiveSearch.h"
-//
-//  PGSignResult.m
-//  zhundao
-//
-//  Created by zhundao on 2017/3/6.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGSignResult.h"
 #import "Time.h"
-
 #import <AudioToolbox/AudioToolbox.h>
-
 #import "PGSignInLoadallsignModel.h"
 #import "PGDiscoverPrintVM.h"
-
 @interface PGSignResult() {
     BOOL _canPrint;
 }
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) PGSignInLoadallsignModel *model;
-
 @end
-
 @implementation PGSignResult
-
 - (void)dealPhoneSignWithSignID:(NSInteger)signID phone:(NSString *)phone action1:(ZDBlock_Void)action1  {
-    [self dealDataWithSignID:signID content:phone signType:PGSignTypePhone action1:action1];
+    [self PG_dealDataWithSignID:signID content:phone signType:PGSignTypePhone action1:action1];
 }
 - (void)dealAdminSignWithSignID:(NSInteger)signID phone:(NSString *)phone action1:(ZDBlock_Void)action1 {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -35,7 +21,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGCaseInsensitiveSearch *deliveryModeAutomatic= [[PGCaseInsensitiveSearch alloc] init];
 [deliveryModeAutomatic reusablePhotoViewWithshrinkRightBottom:imagePickerControllerM8 levalInfoModel:sectionHeaderHeightf1 ];
 });
-    [self dealDataWithSignID:signID content:phone signType:PGSignTypeAdmin action1:action1];
+    [self PG_dealDataWithSignID:signID content:phone signType:PGSignTypeAdmin action1:action1];
 }
 - (void)dealCodeSignWithSignID:(NSInteger)signID vcode:(NSString *)vcode action1:(ZDBlock_Void)action1 {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -44,20 +30,17 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGCaseInsensitiveSearch *trackTintColor= [[PGCaseInsensitiveSearch alloc] init];
 [trackTintColor reusablePhotoViewWithshrinkRightBottom:statusBackgroundColorW0 levalInfoModel:photoWidthSelectableL3 ];
 });
-    [self dealDataWithSignID:signID content:vcode signType:PGSignTypeCode action1:action1];
+    [self PG_dealDataWithSignID:signID content:vcode signType:PGSignTypeCode action1:action1];
 }
-
-- (void)dealDataWithSignID:(NSInteger)signID content:(NSString *)content signType:(PGSignType)signType action1:(ZDBlock_Void)action1 {
-    // 数据处理
+- (void)PG_dealDataWithSignID:(NSInteger)signID content:(NSString *)content signType:(PGSignType)signType action1:(ZDBlock_Void)action1 {
     _canPrint = [[[NSUserDefaults standardUserDefaults]objectForKey:@"GradeId"]integerValue]>=4&&[[NSUserDefaults standardUserDefaults]boolForKey:@"printFlag"];
     _dataArray = ((NSArray *)[PGCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", PGCacheSign_One_List, signID]]).mutableCopy;
-    NSArray *signArray = [self saveSignStatusWithContent:content type:signType];
+    NSArray *signArray = [self PG_saveSignStatusWithContent:content type:signType];
     BOOL hasSearch = [signArray.firstObject boolValue];
     BOOL alreadySign = [signArray[1] boolValue];
     _model = signArray.lastObject;
     if (!hasSearch) {
         NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/checkIn/checkIn?token=%@", zhundaoApi, [[PGSignManager shareManager] getToken]];
-//        checkInTime
         NSDictionary *params = @{@"content": content, @"type": signType == PGSignTypeCode ? @(0) : @(1) , @"checkInId": @(signID), @"checkInWay": @(11)};
         [ZD_NetWorkM postDataWithMethod:urlStr parameters:params succ:^(NSDictionary *obj) {
             SystemSoundID soundID = 1102;
@@ -69,12 +52,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 data = [NSDictionary dictionary];
             }
             UIColor *titleColor = nil;
-            
             if (![obj[@"data"] isEqual:[NSNull null]]) {
                 titleColor = [obj[@"errcode"] integerValue] == 0 ? ZDMainColor : ZDYellowColor;
-                [self showSuccessAlertWithSignType:signType data:data title:obj[@"errmsg"] titleColor:titleColor action1:action1];
+                [self PG_showSuccessAlertWithSignType:signType data:data title:obj[@"errmsg"] titleColor:titleColor action1:action1];
             } else {
-                [self showErrorAlertWithSignType:signType message:obj[@"errmsg"] action1:action1];
+                [self PG_showErrorAlertWithSignType:signType message:obj[@"errmsg"] action1:action1];
             }
         } fail:^(NSError *error) {
             [[PGSignManager shareManager] showNotHaveNet:UIApplication.sharedApplication.keyWindow];
@@ -91,16 +73,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
                               @"checkInTime": NSDate.getCurrentDayStr
                               };
         [PGCache.sharedCache setCache:_dataArray forKey:[NSString stringWithFormat:@"%@%li", PGCacheSign_One_List, signID]];
-        [self showSuccessAlertWithSignType:signType data:dic title:alreadySign ? @"重复签到" : @"签到成功" titleColor:alreadySign ? ZDYellowColor: ZDMainColor action1:action1];
+        [self PG_showSuccessAlertWithSignType:signType data:dic title:alreadySign ? @"重复签到" : @"签到成功" titleColor:alreadySign ? ZDYellowColor: ZDMainColor action1:action1];
         [ZD_UserM markLocalSign:signID];
         [self postLocalDataWithSignID:signID success:nil fail:nil];
     }
 }
-
-// 保持签到状态本地
-- (NSArray *)saveSignStatusWithContent:(NSString *)content type:(PGSignType)type{
-    __block BOOL hasSearch = NO;  // 本地能否搜索到
-    __block BOOL alreadySign = NO; // 本地是否已经签过
+- (NSArray *)PG_saveSignStatusWithContent:(NSString *)content type:(PGSignType)type{
+    __block BOOL hasSearch = NO;  
+    __block BOOL alreadySign = NO; 
     __block PGSignInLoadallsignModel *model = nil;;
     [_dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (type == PGSignTypeCode && [obj[@"VCode"] isEqualToString: content]) {
@@ -127,8 +107,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }];
     return @[@(hasSearch), @(alreadySign), model ? model : [PGSignInLoadallsignModel new]];
 }
-
-- (void)showSuccessAlertWithSignType:(PGSignType)signType data:(NSDictionary *)data title:(NSString *)title titleColor:(UIColor *)titleColor action1:(ZDBlock_Void)action1{
+- (void)PG_showSuccessAlertWithSignType:(PGSignType)signType data:(NSDictionary *)data title:(NSString *)title titleColor:(UIColor *)titleColor action1:(ZDBlock_Void)action1{
     NSString *message = [NSString stringWithFormat:@"姓名 : %@\n手机 : %@\n",data[@"name"],data[@"phone"]];
     if (ZD_SafeStringValue(data[@"adminRemark"]).length) {
         message = [message stringByAppendingString:[NSString stringWithFormat:@"备注 : %@\n", data[@"adminRemark"]]];
@@ -140,12 +119,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     NSString *title2 = _canPrint ? @"蓝牙打印" : @"";
     [PGSignAlertView alertWithTitle:title titleColor:titleColor messageTitle:message cancelTitle:signType == PGSignTypeCode ? @"继续扫码" : @"确定" sureTitle:title2 cancelBlock:action1 sureBlock:^{
-        [self printWithDic:data];
+        [self PG_printWithDic:data];
         action1();
     }];
 }
-
-- (void)showErrorAlertWithSignType:(PGSignType)signType message:(NSString *)message action1:(ZDBlock_Void)action1 {
+- (void)PG_showErrorAlertWithSignType:(PGSignType)signType message:(NSString *)message action1:(ZDBlock_Void)action1 {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *activityListWithZ4= [NSMutableArray arrayWithCapacity:0];
         UIImage *columnistCategoryModelP7= [UIImage imageNamed:@""]; 
@@ -164,7 +142,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         alert.messageAlignment = NSTextAlignmentCenter;
     }
 }
-        
 - (void)postLocalDataWithSignID:(NSInteger)signID success:(ZDBlock_Void)success fail:(ZDBlock_Void)fail {
     NSMutableArray *postArray = [NSMutableArray array];
     [_dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -176,7 +153,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [postArray addObject:postdic];
         }
     }];
-    
     NSString *url = [[NSString stringWithFormat:@"%@api/v2/checkIn/batchCheckIn?token=%@&checkId=%li",zhundaoApi, [[PGSignManager shareManager] getToken], signID] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     if (!postArray.count) {
         ZDDo_Block_Safe_Main(success)
@@ -190,23 +166,21 @@ dispatch_async(dispatch_get_main_queue(), ^{
         ZDDo_Block_Safe_Main(fail)
     }];
 }
-
 #pragma mark --- Print
-- (void)printWithDic:(NSDictionary *)dic {
+- (void)PG_printWithDic:(NSDictionary *)dic {
     PGDiscoverPrintVM *printVM = [[PGDiscoverPrintVM alloc]init];
     NSArray *modelselArray = [printVM getModel];
     NSInteger index = [modelselArray indexOfObject:@"1"];
     int offsetx = [[[NSUserDefaults standardUserDefaults]objectForKey:@"printX"] intValue];
     int offsety = [[[NSUserDefaults standardUserDefaults]objectForKey:@"printY"] intValue];
-    if (index ==0) {  // 打印二维码
+    if (index ==0) {  
         [printVM printQRCode:dic[@"vCode"] ? dic[@"vCode"] : _model.VCode isPrint:YES offsetx:offsetx offsety:offsety];
-    }else{  //打印二维码加姓名
+    }else{  
         [printVM printQRCode:dic[@"vCode"] ? dic[@"vCode"] : _model.VCode name:dic[@"name"] isPrint:YES offsetx:offsetx offsety:offsety];
     }
-    [self postPrintLogWithDic:dic];
+    [self PG_postPrintLogWithDic:dic];
 }
-
-- (void)postPrintLogWithDic:(NSDictionary *)dic {
+- (void)PG_postPrintLogWithDic:(NSDictionary *)dic {
     NSString *urlStr = [NSString stringWithFormat:@"%@zhundao2b?token=%@", zhundaoLogApi,[[PGSignManager shareManager] getToken]];
     NSDictionary *params = @{@"BusinessCode": @"Log_InsertUserLog",
                              @"Data": @{
@@ -219,11 +193,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
                                      }
                              };
     [ZD_NetWorkM postDataWithMethod:urlStr parameters:params succ:^(NSDictionary *obj) {
-        
         NSLog(@"succsss --- ");
     } fail:^(NSError *error) {
         NSLog(@"error --- ");
     }];
 }
-
 @end

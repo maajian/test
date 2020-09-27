@@ -1,30 +1,17 @@
 #import "PGCountDownHelper.h"
-//
-//  PGDataPersonAddCell.m
-//  jingjing
-//
-//  Created by maj on 2020/8/10.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGDataPersonAddCell.h"
-
 @interface PGDataPersonAddCell()<UITextFieldDelegate>
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UITextField *textTF;
-
 @end
-
 @implementation PGDataPersonAddCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
@@ -44,15 +31,13 @@
     }
     return _textTF;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.textTF];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView).offset(15);
         make.centerY.equalTo(self.contentView);
@@ -64,7 +49,6 @@
         make.top.bottom.equalTo(self.contentView);
     }];
 }
-
 #pragma mark --- setter
 - (void)setModel:(PGDataPersonAddModel *)model {
     _model = model;
@@ -76,12 +60,9 @@
         _textTF.keyboardType = UIKeyboardTypeDefault;
     }
 }
-
 #pragma mark --- UITextFieldDelegate
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     _model.content = textField.text;
 }
-
 #pragma mark --- action
-
 @end

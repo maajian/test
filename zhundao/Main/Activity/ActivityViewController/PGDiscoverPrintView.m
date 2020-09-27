@@ -1,40 +1,14 @@
 #import "PGViewFinishLoad.h"
-//
-//  PGDiscoverPrintView.m
-//  zhundao
-//
-//  Created by zhundao on 2017/7/19.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverPrintView.h"
 @interface PGDiscoverPrintView()
-
 @property(nonatomic,strong)         UITextField *tf1 ;
-
 @property(nonatomic,strong)        UITextField *tf2 ;
-
 @property(nonatomic,strong)        UIButton * sureButton ;
-
 @property(nonatomic,strong)        UIView    *pushView ;
-
-
 @end
-
 static const int viewWidth = 300;
 static const int viewHeight = 150;
 @implementation PGDiscoverPrintView
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
-
 - (instancetype)initWithFirstIndex :(NSInteger )index
 {
     if (self = [super init]) {
@@ -48,11 +22,7 @@ static const int viewHeight = 150;
     }
     return self;
 }
-
-
 #pragma mark ------懒加载 
-
-
 - (UIView *)pushView
 {
     if (!_pushView) {
@@ -67,17 +37,8 @@ static const int viewHeight = 150;
     }
     return _pushView;
 }
-
-
-//划线 上移。pushView变小  tf1 变大
-//- (void)drawRect:(CGRect)rect
-//{
-//    UIBezierPath
-//}
-
 -(UITextField *)tf1
 {
-   
     if (!_tf1) {
         _tf1 = [myTextField initWithFrame:CGRectMake(30, 30, 70, 40) placeholder:@"起始序号" font:[UIFont systemFontOfSize:13] TextAlignment:NSTextAlignmentCenter textColor:[UIColor blackColor]];
         _tf1.layer.cornerRadius = 5 ;
@@ -88,8 +49,6 @@ static const int viewHeight = 150;
     }
     return _tf1;
 }
-
-
 - (UITextField *)tf2
 {
     if (!_tf2) {
@@ -102,7 +61,6 @@ static const int viewHeight = 150;
     }
     return _tf2;
 }
-
 - (UIButton *)sureButton
 {
     if (!_sureButton) {
@@ -114,23 +72,6 @@ static const int viewHeight = 150;
 #pragma mark ---- 画直线
 - (void)drawline
 {
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    //指定直线样式
-//    CGContextSetLineCap(context, kCGLineCapSquare);
-//    //直线宽度
-//    CGContextSetLineWidth(context, 2.0);
-//    //设置颜色
-//    CGContextSetRGBStrokeColor(context,68.f, 186.f, 37.f, 1.0);
-//   //开始绘制
-//    CGContextBeginPath(context);
-//    //移动画笔
-//    CGContextMoveToPoint(context, 120, 100);
-//    //下一点
-//    CGContextAddLineToPoint(context,180, 100);
-//    //绘制完成
-//    CGContextStrokePath(context);
-    
-    
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(120, 50)];
     [path addLineToPoint:CGPointMake(180, 50)];
@@ -139,12 +80,8 @@ static const int viewHeight = 150;
     lineLayer.lineWidth = 1.0 ;
     lineLayer.path = path.CGPath;
     [_pushView.layer addSublayer:lineLayer];
-    
-    
 }
-
 #pragma mark ---- 确定事件
-
 - (void)sureAction
 {
     [self endEditing:YES];
@@ -163,17 +100,12 @@ static const int viewHeight = 150;
         [self out];
     }
 }
-
 #pragma mark ----警告
 - (void)alertText :(NSString *)text
 {
     PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:text];
     [label labelAnimationWithViewlong:self];
 }
-
-
-
-// 动画
 - (void)comeIn
 {
     self.alpha = 0.0    ;
@@ -183,7 +115,6 @@ static const int viewHeight = 150;
         _pushView.transform = CGAffineTransformMakeScale(1, 1);
     } completion:nil];
 }
-
 - (void)out
 {
     [self endEditing:YES];
@@ -193,11 +124,8 @@ static const int viewHeight = 150;
         [self removeFromSuperview];
     }];
 }
-
 - (void)dealloc
 {
     NSLog(@"没有泄露");
 }
-
-
 @end

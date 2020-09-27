@@ -1,10 +1,3 @@
-// 
- //PGInputViewContent.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGInputViewContent.h"
 @implementation PGInputViewContent
 + (UITableView *)withSwimParticularWithimageWithImages:(UIImageView *)aimageWithImages itemStatusFailed:(UILabel *)aitemStatusFailed viewCellDelegate:(UIActivityIndicatorView *)aviewCellDelegate{
@@ -25,27 +18,22 @@
      discountCouponTableX1.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(140,255,139,29)];
      return discountCouponTableX1;
 }
-
 + (NSArray *)contentsUserReviewsWithtableFooterView:(PGInputTextureVertex *)atableFooterView bottomPhotoView:(PGInputTextureVertex *)abottomPhotoView socialShareResponse:(PGInputTextureVertex *)asocialShareResponse{
     NSArray *assetPreferPreciseq7= [NSArray arrayWithObject:@""];
     return assetPreferPreciseq7;
 }
-
 - (NSTextAlignment)lightBlackColorWithfansWithUser:(UIFont *)afansWithUser socialUserInfo:(UITextView *)asocialUserInfo{
     NSTextAlignment sliderTouchDownl1 = NSTextAlignmentCenter; 
     return sliderTouchDownl1;
 }
-
 - (NSTextAlignment)groupWithPhotosWithlocationManagerDelegate:(UISlider *)alocationManagerDelegate showsVerticalScroll:(UISlider *)ashowsVerticalScroll{
     NSTextAlignment receiveLocalNotificationx8 = NSTextAlignmentCenter; 
     return receiveLocalNotificationx8;
 }
-
 - (CGRect)viewWillHiddenWithcharacterLineLength:(UIImageView *)acharacterLineLength imageEdgeExtend:(UITextFieldViewMode)aimageEdgeExtend{
     CGRect titlePositionAdjustmenth1 = CGRectZero;
     return titlePositionAdjustmenth1;
 }
-
 + (void)instanceCreateMethod{
     UIFont *playerStatusPlayingG3= [UIFont systemFontOfSize:155];
         UITextView *receiveVideoLengths9= [[UITextView alloc] initWithFrame:CGRectMake(215,20,97,169)]; 
@@ -54,8 +42,5 @@
     receiveVideoLengths9.text = @"appearSoundView";
     PGInputViewContent *medalExplainView= [[PGInputViewContent alloc] init];
 [medalExplainView lightBlackColorWithfansWithUser:playerStatusPlayingG3 socialUserInfo:receiveVideoLengths9 ];
-
 }
-
-
 @end

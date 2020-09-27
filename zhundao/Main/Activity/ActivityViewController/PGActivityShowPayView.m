@@ -1,46 +1,31 @@
 #import "PGSourceTypeAvailable.h"
-//
-//  PGActivityShowPayView.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/8.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityShowPayView.h"
 #import "payTextField.h"
 @interface PGActivityShowPayView()<payTextFieldDelegate>{
     UIView *containView;
 }
 @property(nonatomic,assign)CGFloat money;
-
 @end
 @implementation PGActivityShowPayView
-
 - (instancetype)init{
     if (self = [super init]) {
         self.frame = [UIScreen mainScreen].bounds;
-        [self setUI];
+        [self PG_setUI];
     }
     return self;
 }
-
 - (instancetype)initWithMoney:(CGFloat)money{
     if (self = [super init]) {
         self.frame = [UIScreen mainScreen].bounds;
         _money = money;
-        [self setUI];
+        [self PG_setUI];
     }
     return self;
 }
-
-- (void)setUI{
-    /*! 背景框 */
+- (void)PG_setUI{
     UIView *view = [[UIView alloc]initWithFrame:self.frame];
     view.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.6];
     [self addSubview:view];
-    
-    /*! 白框 */
     containView = [[UIView alloc]init];
     containView.backgroundColor = [UIColor whiteColor];
     containView.layer.cornerRadius = 5;
@@ -52,18 +37,15 @@
         make.right.equalTo(view).offset(-50);
         make.height.mas_equalTo(150+(kScreenWidth-120)/6+15);
     }];
-    /*! 删除按钮 */
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [containView addSubview:cancelButton];
     [cancelButton setImage:[UIImage imageNamed:@"img_public_delete_1"] forState:(UIControlStateNormal)];
-    [cancelButton addTarget:self action:@selector(quitView) forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton addTarget:self action:@selector(PG_quitView) forControlEvents:UIControlEventTouchUpInside];
     [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(containView.mas_left).offset(15);
         make.top.equalTo(containView.mas_top).offset(15);
         make.size.mas_equalTo(CGSizeMake(15, 15));
     }];
-    
-    /*! 请输入支付密码 */
     UILabel *label1 = [[UILabel alloc]init];
     label1.text = @"请输入支付密码";
     label1.textAlignment = NSTextAlignmentCenter;
@@ -75,8 +57,6 @@
         make.top.equalTo(containView).offset(0);
         make.height.mas_equalTo(44);
     }];
-    
-    /*! 提现 */
     UILabel *label2 = [[UILabel alloc]init];
     label2.text = @"短信";
     label2.font = [UIFont systemFontOfSize:15];
@@ -89,8 +69,6 @@
         make.right.equalTo(containView).offset(-50);
         make.height.mas_equalTo(30);
     }];
-    
-    /*! 钱 */
     UILabel *moneyLabel = [[UILabel alloc]init];
     moneyLabel.text = [NSString stringWithFormat:@"%.2f",_money];
     moneyLabel.font = [UIFont systemFontOfSize:35];
@@ -102,25 +80,17 @@
         make.right.equalTo(containView).offset(0);
         make.height.mas_equalTo(40);
     }];
-    
     payTextField *payView = [[payTextField alloc]initWithFrame:CGRectMake(10, 150, kScreenWidth-120, (kScreenWidth-120)/6) blackRadius:5];
     [containView addSubview:payView];
     payView.payTextFieldDelegate = self;
-    
-    
     [self layoutIfNeeded];
-    
     containView.transform = CGAffineTransformMakeScale(0.9, 0.9);
     [UIView animateWithDuration:0.25 animations:^{
         containView.transform = CGAffineTransformMakeScale(1, 1);
     }];
-    
-    /*! 划线 */
-    [self createLayer];
+    [self PG_createLayer];
 }
-
-
-- (void)quitView{
+- (void)PG_quitView{
 dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint sizePlayViewD5 = CGPointZero;
         UIButtonType withRankMedalG8 = UIButtonTypeContactAdd;
@@ -133,10 +103,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self removeFromSuperview];
     }];
 }
-
 #pragma mark --- 画线
-
-- (void)createLayer{
+- (void)PG_createLayer{
 dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint childViewModelX5 = CGPointZero;
         UIButtonType remoteNotificationsWithT4 = UIButtonTypeContactAdd;
@@ -151,7 +119,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame), 44)];
     layer.path = path.CGPath;
     [containView.layer addSublayer:layer];
-
     CAShapeLayer *layer1 = [CAShapeLayer layer];
     layer1.lineWidth = 0.8;
     layer1.strokeColor = kColorA(230, 230, 230, 1).CGColor;
@@ -160,20 +127,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [path1 addLineToPoint:CGPointMake(CGRectGetWidth(self.frame), 140)];
     layer1.path = path1.CGPath;
     [containView.layer addSublayer:layer1];
-
 }
-
-
-
 #pragma mark --- payTextFieldDelegate
-
-- (void)sendPassWord:(NSString *)PS{
-    [self quitView];
+- (void)PG_sendPassWord:(NSString *)PS{
+    [self PG_quitView];
     if ([self.showPayViewDelegate respondsToSelector:@selector(verify:)]) {
         [self.showPayViewDelegate verify:PS];
     }
     NSLog(@"%@",PS);
 }
-
-
 @end

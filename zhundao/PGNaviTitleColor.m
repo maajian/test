@@ -1,10 +1,3 @@
-// 
- //PGNaviTitleColor.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGNaviTitleColor.h"
 @implementation PGNaviTitleColor
 + (UITextField *)deviceSettingsCameraWithdataWithUser:(UIActivityIndicatorView *)adataWithUser extractImageList:(UIActivityIndicatorView *)aextractImageList blendModeDestination:(UITextField *)ablendModeDestination{
@@ -18,7 +11,6 @@
      articleOriginalHeadert3.leftViewMode = UITextFieldViewModeAlways; 
     return articleOriginalHeadert3;
 }
-
 + (UISlider *)courseParticularHeaderWithimageHandleCookies:(PGUserIdentifyModel *)aimageHandleCookies showShowSheet:(PGUserIdentifyModel *)ashowShowSheet layerWithPlayer:(PGUserIdentifyModel *)alayerWithPlayer{
     UISlider *groupTableViewo7= [[UISlider alloc] initWithFrame:CGRectMake(130,34,7,127)]; 
     groupTableViewo7.minimumValue = 0; 
@@ -26,22 +18,18 @@
     groupTableViewo7.value =2; 
     return groupTableViewo7;
 }
-
 - (UITableViewCellSeparatorStyle)asynchronouslyWithCompletionWithwithCourseParticular:(UIScrollView *)awithCourseParticular coachDetailModel:(UIEdgeInsets)acoachDetailModel{
     UITableViewCellSeparatorStyle assetsUsingBlockv8 = UITableViewCellSeparatorStyleNone; 
     return assetsUsingBlockv8;
 }
-
 - (UITableViewCellSeparatorStyle)backButtonClickWithwithRootView:(UITableViewStyle)awithRootView imageSourceCreate:(CGRect)aimageSourceCreate{
     UITableViewCellSeparatorStyle cyclingCycleLayera0 = UITableViewCellSeparatorStyleNone; 
     return cyclingCycleLayera0;
 }
-
 - (NSTextAlignment)requestReturnCacheWithtextBorderStyle:(NSData *)atextBorderStyle customAnimateTransition:(NSLineBreakMode)acustomAnimateTransition{
     NSTextAlignment viewHeightPaddingl3 = NSTextAlignmentCenter; 
     return viewHeightPaddingl3;
 }
-
 + (void)instanceCreateMethod{
     UIScrollView *commentWithOrderf1= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
     commentWithOrderf1.showsHorizontalScrollIndicator = NO; 
@@ -52,8 +40,5 @@
         UIEdgeInsets columnistViewControllerF5 = UIEdgeInsetsZero;
     PGNaviTitleColor *previousPerformRequests= [[PGNaviTitleColor alloc] init];
 [previousPerformRequests asynchronouslyWithCompletionWithwithCourseParticular:commentWithOrderf1 coachDetailModel:columnistViewControllerF5 ];
-
 }
-
-
 @end

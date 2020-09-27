@@ -1,46 +1,24 @@
 #import "PGMutableAttributedString.h"
-//
-//  PGDiscoverPromoteCustomContactHeaderView.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteCustomContactHeaderView.h"
-
 #import "PGMePromoteCustomContactNoticeView.h"
-
 @interface PGMePromoteCustomContactHeaderView()<PGMePromoteCustomContactNoticeViewDelegate>
-// 黑色背景
 @property (nonatomic, strong) UIView *blackView;
-// 图标
 @property (nonatomic, strong) UIImageView *iconImageView;
-// 名字
 @property (nonatomic, strong) UILabel *nameLabel;
-// 金币图标
 @property (nonatomic, strong) UIImageView *moneyImageView;
-// 金币个数
 @property (nonatomic, strong) UILabel *countLabel;
-// 拓展客户
 @property (nonatomic, strong) UILabel *trailLabel;
-// 箭头
 @property (nonatomic, strong) UIButton *arrowButton;
-// 公告
 @property (nonatomic, strong) PGMePromoteCustomContactNoticeView *noticeView;
-
 @end
-
 @implementation PGMePromoteCustomContactHeaderView
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIView *)blackView {
     if (!_blackView) {
@@ -90,7 +68,7 @@
 }
 - (UIButton *)arrowButton {
     if (!_arrowButton) {
-        _arrowButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"public_image_white_arrow_right"] target:self action:@selector(jumpQRCode:)];
+        _arrowButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"public_image_white_arrow_right"] target:self action:@selector(PG_jumpQRCode:)];
         _arrowButton.addInsetWidth = 70;
         _arrowButton.addInsetHeight = 20;
     }
@@ -103,9 +81,8 @@
     }
     return _noticeView;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self addSubview:self.blackView];
     [self.blackView addSubview:self.iconImageView];
     [self.blackView addSubview:self.nameLabel];
@@ -115,9 +92,8 @@
     [self.blackView addSubview:self.arrowButton];
     [self addSubview:self.noticeView];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.blackView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.top.trailing.equalTo(self);
         make.height.mas_equalTo(108);
@@ -157,7 +133,6 @@
         make.height.mas_equalTo(37);
     }];
 }
-
 #pragma mark --- setter
 - (void)setZhundaoBi:(NSInteger)zhundaoBi {
     _zhundaoBi = zhundaoBi;
@@ -168,12 +143,11 @@
     self.noticeView.noticeArray = noticeArray;
 }
 #pragma mark --- action
-- (void)jumpQRCode:(UIButton *)button {
+- (void)PG_jumpQRCode:(UIButton *)button {
     if ([self.promoteCustomContactHeaderViewDelegate respondsToSelector:@selector(promoteCustomContactHeaderView:didTapExtendButton:)]) {
         [self.promoteCustomContactHeaderViewDelegate promoteCustomContactHeaderView:self didTapExtendButton:button];
     }
 }
-
 #pragma mark --- PGMePromoteCustomContactHeaderView
 - (void)promoteCustomContactNoticeView:(PGMePromoteCustomContactNoticeView *)promoteCustomContactNoticeView didTapMoreButton:(UIButton *)button {
     if ([self.promoteCustomContactHeaderViewDelegate respondsToSelector:@selector(promoteCustomContactHeaderView:didTapMoreButton:)]) {
@@ -185,6 +159,4 @@
         [self.promoteCustomContactHeaderViewDelegate promoteCustomContactHeaderView:self didTapNotice:model];
     }
 }
-
-
 @end

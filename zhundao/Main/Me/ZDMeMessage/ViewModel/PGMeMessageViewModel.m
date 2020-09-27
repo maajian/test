@@ -1,13 +1,4 @@
-//
-//  PGMeMessageViewModel.m
-//  jingjing
-//
-//  Created by maj on 2020/8/10.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMeMessageViewModel.h"
-
 @implementation PGMeMessageViewModel
 - (instancetype)init {
     if (self = [super init]) {
@@ -16,9 +7,7 @@
     }
     return self;
 }
-
 #pragma mark --- network
-// 获取消息列表
 - (void)getMeMessageListWithPage:(NSInteger)page Success:(ZDBlock_Void)success failure:(ZDBlock_Error_Str)failure {
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi,ZD_UserM.token];
     NSDictionary *dic = @{@"BusinessCode": @"GetMessageListForApp",
@@ -49,7 +38,6 @@
         ZDDo_Block_Safe1(failure, error.domain)
     }];
 }
-// 更新消息为已读（app端）
 - (void)setReadMessageWithID:(NSInteger)Id success:(ZDBlock_Void)success failure:(ZDBlock_Error_Str)failure {
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
     NSDictionary *dic = @{@"BusinessCode": @"UpdateMessageReadForApp",
@@ -67,5 +55,4 @@
         ZDDo_Block_Safe_Main1(failure, error.domain)
     }];
 }
-
 @end

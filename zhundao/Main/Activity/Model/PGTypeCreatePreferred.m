@@ -1,10 +1,3 @@
-// 
- //PGTypeCreatePreferred.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGTypeCreatePreferred.h"
 @implementation PGTypeCreatePreferred
 + (UITextView *)attentionViewModelWithmedalDetailCell:(UIFont *)amedalDetailCell linkViewModel:(UIFont *)alinkViewModel showingPhotoView:(UIView *)ashowingPhotoView{
@@ -14,7 +7,6 @@
     chooseStadiumTableZ6.text = @"photoLoadingView";
     return chooseStadiumTableZ6;
 }
-
 + (UILabel *)backgroundLocationUpdatesWithauthorizationOptionAlert:(PGUpdateUserLocation *)aauthorizationOptionAlert rankMedalInfo:(PGUpdateUserLocation *)arankMedalInfo imageSharpenFilter:(PGUpdateUserLocation *)aimageSharpenFilter{
     UILabel *videoRequestTaskk5= [[UILabel alloc] initWithFrame:CGRectMake(67,124,49,124)]; 
     videoRequestTaskk5.text = @"pushNotificationTrigger";
@@ -24,29 +16,22 @@
     videoRequestTaskk5.textAlignment = NSTextAlignmentCenter; 
     return videoRequestTaskk5;
 }
-
 - (NSLineBreakMode)playerWithPathWithcouseFinishAlert:(UIButtonType)acouseFinishAlert downLoadData:(CGSize)adownLoadData{
     NSLineBreakMode imageAlphaBlendY9 = NSLineBreakByTruncatingTail; 
     return imageAlphaBlendY9;
 }
-
 - (UIButtonType)wechatTimeLineWithshowFullButton:(UIImageView *)ashowFullButton replayUserNick:(UIEdgeInsets)areplayUserNick{
     UIButtonType finishPickingVideoy1 = UIButtonTypeContactAdd;
     return finishPickingVideoy1;
 }
-
 - (NSLineBreakMode)currentViewControllerWithswimRecordData:(UIColor *)aswimRecordData discountCouponView:(UIView *)adiscountCouponView{
     NSLineBreakMode playerControlViewv8 = NSLineBreakByTruncatingTail; 
     return playerControlViewv8;
 }
-
 + (void)instanceCreateMethod{
     UIButtonType textAlignmentLefty4 = UIButtonTypeContactAdd;
         CGSize photoBrowserViewd8 = CGSizeMake(4,89); 
     PGTypeCreatePreferred *lightOraneColor= [[PGTypeCreatePreferred alloc] init];
 [lightOraneColor playerWithPathWithcouseFinishAlert:textAlignmentLefty4 downLoadData:photoBrowserViewd8 ];
-
 }
-
-
 @end

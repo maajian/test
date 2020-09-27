@@ -1,13 +1,4 @@
-//
-//  PGDBManager.m
-//  zhundao
-//
-//  Created by zhundao on 2017/7/3.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDBManager.h"
-
 @implementation PGDBManager
 +(PGDBManager *)shareManager
 {
@@ -18,17 +9,7 @@
     });
     return dbManager ;
 }
-//+ (instancetype)allocWithZone:(struct _NSZone *)zone
-//{
-//    return [self shareManager];
-//}
-//
-//- (id)copy
-//{
-//    return self;
-//}
-
-- (void)createDatabase  //创建数据库
+- (void)createDatabase  
 { 
     NSString *path =NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES)[0];
     path = [path stringByAppendingString:@"list.sqlite"];
@@ -57,9 +38,7 @@
         }
         [self.dataBase close];
     }
-    
 }
-
 - (void)deleteData:(NSString *)sqlStr
 {
     if ([self.dataBase open]) {
@@ -71,13 +50,9 @@
         {
             NSLog(@"数据表插入失败");
         }
-        
         [self.dataBase close];
     }
-    
 }
-
-
 - (void)searchData:(NSString *)sqlStr
 {
     if ([self.dataBase open]) {
@@ -90,38 +65,4 @@
         [self.dataBase close];
     }
 }
-
-//
-//- (void)insertData :(NSString *)sqlStr
-//{
-//    if ([self.dataBase open]) {
-//        [self.dataBase beginTransaction];
-//        BOOL isRollBack = NO;
-//        @try {
-//            
-//        }
-//        
-//        @catch (NSException *exception) {
-//            isRollBack = YES;
-//            // 事务回退
-//            [self.dataBase rollback];
-//        }
-//        @finally {
-//            if (!isRollBack) {
-//                //事务提交
-//                [self.dataBase commit];
-//            }
-//        }
-//        [self.dataBase close];
-//    }
-//}
-
-
-
-
-
-
-
-
-
 @end

@@ -1,10 +1,3 @@
-// 
- //PGCompleteWithError.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGCompleteWithError.h"
 @implementation PGCompleteWithError
 + (UITableView *)currentPhotoIndexWithdataCollectionView:(UITextView *)adataCollectionView timeFromDuration:(UITextView *)atimeFromDuration categoryChooseView:(NSMutableArray *)acategoryChooseView{
@@ -25,27 +18,22 @@
      showLoginAlertf3.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(135,53,48,238)];
      return showLoginAlertf3;
 }
-
 + (NSArray *)discountCouponViewWithuserTweetView:(PGBlockWithPreview *)auserTweetView colorSpaceRelease:(PGBlockWithPreview *)acolorSpaceRelease photoPickerGroup:(PGBlockWithPreview *)aphotoPickerGroup{
     NSArray *withTrainParticularZ7= [NSArray array];
     return withTrainParticularZ7;
 }
-
 - (NSTextAlignment)shouldAutoClipWithnaviTitleColor:(NSString *)anaviTitleColor withActionBlock:(UITableView *)awithActionBlock{
     NSTextAlignment captureSessionPresetF5 = NSTextAlignmentCenter; 
     return captureSessionPresetF5;
 }
-
 - (NSLineBreakMode)coachDetailWithWithfetchLoginInfo:(CGPoint)afetchLoginInfo mainScreenWidth:(NSLineBreakMode)amainScreenWidth{
     NSLineBreakMode currentMediaTimew7 = NSLineBreakByTruncatingTail; 
     return currentMediaTimew7;
 }
-
 - (CGSize)titleEdgeInsetsWithcolorSpaceRelease:(UIButton *)acolorSpaceRelease imageProcessingContext:(NSTextAlignment)aimageProcessingContext{
     CGSize mainActivityModelK7 = CGSizeMake(197,44); 
     return mainActivityModelK7;
 }
-
 + (void)instanceCreateMethod{
     NSString *deviceOrientationUnknownN6 = @"backButtonTitle";
         UITableView *searchRequestWitht3= [[UITableView alloc] initWithFrame:CGRectMake(55,244,217,159) style: UITableViewStylePlain]; 
@@ -65,8 +53,5 @@
      searchRequestWitht3.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(88,196,28,22)];
      PGCompleteWithError *cacheUserModel= [[PGCompleteWithError alloc] init];
 [cacheUserModel shouldAutoClipWithnaviTitleColor:deviceOrientationUnknownN6 withActionBlock:searchRequestWitht3 ];
-
 }
-
-
 @end

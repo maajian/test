@@ -1,35 +1,18 @@
 #import "PGInputButtonTitle.h"
-//
-//  PGDiscoverPromoteOrderVC.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteOrderVC.h"
-
 #import "PGMePromoteOrderCell.h"
-
 #import "PGMePromoteOrderModel.h"
 #import "PGMePromoteOrderViewModel.h"
-
 @interface PGMePromoteOrderVC ()<UITableViewDelegate, UITableViewDataSource>
-
 @property (nonatomic, strong) UITableView *tableView;
-
 @property (nonatomic, strong) PGMePromoteOrderViewModel *viewModel;
-
 @end
-
 @implementation PGMePromoteOrderVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
-    [self networkForOrderList];
+    [self PG_initSet];
+    [self PG_initLayout];
+    [self PG_networkForOrderList];
 }
 #pragma mark --- Lazyload
 - (UITableView *)tableView {
@@ -52,9 +35,8 @@
     }
     return _viewModel;
 }
-
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
 dispatch_async(dispatch_get_main_queue(), ^{
     UILabel *monthTimeIntervalL0= [[UILabel alloc] initWithFrame:CGRectMake(121,196,248,250)]; 
     monthTimeIntervalL0.text = @"enumerationResultsBlock";
@@ -69,15 +51,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.title = @"我的订单";
     [self.view addSubview:self.tableView];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.trailing.equalTo(self.view);
         make.bottom.equalTo(self.view).offset(ZD_SAFE_BOTTOM_LAYOUT);
     }];
 }
-
 #pragma mark --- Network
-- (void)networkForOrderList {
+- (void)PG_networkForOrderList {
 dispatch_async(dispatch_get_main_queue(), ^{
     UILabel *arrayUsingDescriptorsk6= [[UILabel alloc] initWithFrame:CGRectZero]; 
     arrayUsingDescriptorsk6.text = @"contextWithOptions";
@@ -96,7 +77,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [[PGSignManager shareManager] showNotHaveNet:self.view];
     }];
 }
-
 #pragma mark --- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.dataArray.count;
@@ -106,10 +86,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cell.model = self.viewModel.dataArray[indexPath.row];
     return cell;
 }
-
 #pragma mark --- UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
 }
-
 @end

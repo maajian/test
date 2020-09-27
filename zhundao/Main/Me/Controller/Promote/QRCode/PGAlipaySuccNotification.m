@@ -1,10 +1,3 @@
-// 
- //PGAlipaySuccNotification.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGAlipaySuccNotification.h"
 @implementation PGAlipaySuccNotification
 + (UIScrollView *)appearSoundViewWithimageSourceCreate:(UIColor *)aimageSourceCreate controlViewWill:(NSMutableArray *)acontrolViewWill imageEdgeExtend:(NSMutableArray *)aimageEdgeExtend{
@@ -16,7 +9,6 @@
     orderGroupCellY3.minimumZoomScale = 1; 
     return orderGroupCellY3;
 }
-
 + (UIButton *)groupsWithTypesWithdifferenceValueWith:(PGPurchaseStatusLabel *)adifferenceValueWith currentDownloadCount:(PGPurchaseStatusLabel *)acurrentDownloadCount taskCenterView:(PGPurchaseStatusLabel *)ataskCenterView{
     UIButton *withRenderingModef0= [UIButton buttonWithType:UIButtonTypeCustom]; 
     withRenderingModef0.frame = CGRectZero; 
@@ -26,29 +18,22 @@
     withRenderingModef0.frame = CGRectZero; 
     return withRenderingModef0;
 }
-
 - (UITableViewStyle)weekTimeLabelWithlocationWithSuccess:(NSArray *)alocationWithSuccess allowPickingVideo:(NSString *)aallowPickingVideo{
     UITableViewStyle scaleAspectFillt5 = UITableViewStylePlain; 
     return scaleAspectFillt5;
 }
-
 - (UITextFieldViewMode)alertActionStyleWithvalueObservingOption:(UIFont *)avalueObservingOption videoDealPoint:(CGRect)avideoDealPoint{
     UITextFieldViewMode assetReferenceRestrictionl2 = UITextFieldViewModeAlways; 
     return assetReferenceRestrictionl2;
 }
-
 - (NSRange)maximumTrackImageWithloginWithUser:(NSRange)aloginWithUser locationViewController:(CGRect)alocationViewController{
     NSRange playerStatePausez9 = NSMakeRange(1,31); 
     return playerStatePausez9;
 }
-
 + (void)instanceCreateMethod{
     NSArray *withSessionConfigurationO5= [NSArray array];
         NSString *numberWithStringP9 = @"buttonItemAppearance";
     PGAlipaySuccNotification *natatoriumListTable= [[PGAlipaySuccNotification alloc] init];
 [natatoriumListTable weekTimeLabelWithlocationWithSuccess:withSessionConfigurationO5 allowPickingVideo:numberWithStringP9 ];
-
 }
-
-
 @end

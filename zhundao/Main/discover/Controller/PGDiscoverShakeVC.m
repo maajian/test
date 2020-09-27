@@ -1,12 +1,4 @@
 #import "PGAnimatedImageFrames.h"
-//
-//  PGDiscoverShakeVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/2/9.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverShakeVC.h"
 #import "PGDiscoverShakeCell.h"
 #import "PGDiscoverShakeModel.h"
@@ -22,13 +14,11 @@
     NSMutableArray *_dataArray;
     NSMutableArray *dataarr;
     PGDiscoverShakeCell *mycell;
-
 }
 @property(nonatomic,strong)UILabel *nullDataLabell;
 @property(nonatomic,strong)UIImageView *nullImageView ;
 @end
 @implementation PGDiscoverShakeVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewCellSeparatorStyle styleLightContentx7 = UITableViewCellSeparatorStyleNone; 
@@ -41,21 +31,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
     accesskey = [[PGSignManager shareManager]getaccseekey];
     [self createTableView];
     [self firstload];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem moreItemWithTarget:self action:@selector(moreAction)];
-    // Do any additional setup after loading the view.
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem moreItemWithTarget:self action:@selector(PG_moreAction)];
 }
-- (void)moreAction {
+- (void)PG_moreAction {
     [PGAlertSheet showWithArray:@[@"扫码绑定", @"小程序二维码"] title:@"" isDelete:NO selectBlock:^(NSInteger index) {
         if (index == 0) {
             [self pushOtherWithIndex];
         } else {
-            [self networkForGetQrcode];
+            [self PG_networkForGetQrcode];
         }
     }];
 }
 - (void)pushOtherWithIndex
 {
-
             PGDiscoverBindingBeaconVC *bind = [[PGDiscoverBindingBeaconVC alloc]init];
             [self presentViewController:bind animated:YES completion:nil];
             bind.backblock = ^(BOOL flag)
@@ -65,24 +53,20 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     };
 }
-- (void)networkForGetQrcode {
+- (void)PG_networkForGetQrcode {
     NSString *codeUrl = [NSString stringWithFormat:@"%@api/v2/wechatMini/getIbeaconQrcode?userId=%li",zhundaoApi,ZD_UserM.userID];
-
     NSDictionary *headers = @{ @"Content-Type": @"application/json",
                                @"cache-control": @"no-cache",
                                @"Postman-Token": @"54ba4b2e-961e-410b-8231-bc4c164a946f" };
-
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:codeUrl]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];
     [request setAllHTTPHeaderFields:headers];
-
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     if (error) {
-                                                        
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
@@ -102,7 +86,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
                                                 }];
     [dataTask resume];
 }
-
 - (void)firstload
 {
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
@@ -121,21 +104,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self shownull];
             break;
         }
-            
         case ReachableViaWWAN:
-            // 使用3G网络
             NSLog(@"wan");
             [self loadData];
-            
-            
-            
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
             NSLog(@"wifi");
             [self loadData];
-            
-            
             break;
     }
 }
@@ -162,14 +137,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_nullImageView removeFromSuperview];
     }
 }
-
 - (void)loadData
 {
     JQIndicatorView *indicator = [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
     indicator.center = self.view.center;
     [self.view addSubview:indicator];
     [indicator startAnimating];
-//    api/Game/GetMybeaconList?accessKey={accessKey}
     NSString *shakeUrl = [NSString stringWithFormat:@"%@api/v2/extra/getMyBeaconList?userId=%li",zhundaoApi,ZD_UserM.userID];
     [ZD_NetWorkM getDataWithMethod:shakeUrl parameters:nil succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj);
@@ -183,35 +156,28 @@ dispatch_async(dispatch_get_main_queue(), ^{
             PGDiscoverShakeModel *model = [PGDiscoverShakeModel yy_modelWithJSON:acdic];
             [muarray addObject:model];
             for (NSString *keyStr in dic.allKeys) {
-                if ([keyStr isEqualToString:@"User"]) {    //判断key是否为user 是就移除NSUserDefaults不能存空值
+                if ([keyStr isEqualToString:@"User"]) {    
                     [dic removeObjectForKey:keyStr];
                 }
-                else if ([[dic objectForKey:keyStr] isEqual:[NSNull null]])  //判断value是否为null ，是则用空字符串替换
+                else if ([[dic objectForKey:keyStr] isEqual:[NSNull null]])  
                 {
                     [e setObject:@"" forKey:keyStr];
                 }
                 else
                 {
-                    [e setObject:[dic objectForKey:keyStr] forKey:keyStr];  //正常的照搬
+                    [e setObject:[dic objectForKey:keyStr] forKey:keyStr];  
                 }
             }
             [dataarr addObject:e];
         }
-        
-        
         [[NSUserDefaults standardUserDefaults]setObject:[dataarr copy] forKey:@"shake"];
-        
         [indicator stopAnimating];
         _dataArray = [muarray mutableCopy];
         [_tableview reloadData];
         [self shownull];
     } fail:^(NSError *error) {
-        
     }];
 }
-
-
-
 - (void)createTableView
 {
     _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
@@ -227,34 +193,31 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     return _dataArray.count;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PGDiscoverShakeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"shakeID"];
     if (cell==nil) {
         cell = [[PGDiscoverShakeCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"shakeID"];
     }
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cellTap:)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(PG_cellTap:)];
     [cell addGestureRecognizer:tap];
     cell.model= _dataArray[indexPath.row];
-    
     return  cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 70;
 }
-- (void)cellTap:(UITapGestureRecognizer *)tap{
+- (void)PG_cellTap:(UITapGestureRecognizer *)tap{
     mycell = (PGDiscoverShakeCell *)tap.view;
-    NSInteger row = [_tableview indexPathForCell:mycell].row;   //取得选择cell的row
+    NSInteger row = [_tableview indexPathForCell:mycell].row;   
     NSMutableArray *pushArr = [[[NSUserDefaults standardUserDefaults]objectForKey:@"shake"]mutableCopy];
-    NSDictionary *dic = [pushArr objectAtIndex:row];    //获取属性传值的字典dic
+    NSDictionary *dic = [pushArr objectAtIndex:row];    
     PGDiscoverDetailShakeVC *detailShake = [[PGDiscoverDetailShakeVC alloc]init];
     detailShake.dataDic = dic;
     detailShake.DeviceId = mycell.model.DeviceId;
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:detailShake animated:YES];
-    
     detailShake.block= ^(NSDictionary *dic)
     {
         [pushArr removeObjectAtIndex:row];
@@ -268,7 +231,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     };
 }
-
 - (void)didReceiveMemoryWarning {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewCellSeparatorStyle columnistChildViewQ2 = UITableViewCellSeparatorStyleNone; 
@@ -277,14 +239,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [playWhileCell rightBottomPointWithrequestReloadIgnoring:columnistChildViewQ2 particularModelJson:courseVideoPlayerm4 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

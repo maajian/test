@@ -1,32 +1,19 @@
 #import "PGOutsideImageView.h"
-//
-//  PGMeNormalCell.m
-//  zhundao
-//
-//  Created by maj on 2020/1/30.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMeNormalCell.h"
-
 @interface PGMeNormalCell()
 @property (nonatomic, strong) UIImageView *iconImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIView *redDotView;
-
 @end
-
 @implementation PGMeNormalCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIImageView *)iconImageView {
     if (!_iconImageView) {
@@ -50,17 +37,15 @@
     }
     return _redDotView;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     self.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.iconImageView];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.redDotView];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSString *uploadVideoBlockg7 = @"downWithButton";
         UIActivityIndicatorView *orderDetailCells9= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
@@ -84,7 +69,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.centerY.mas_equalTo(self.contentView);
     }];
 }
-
 #pragma mark --- setter
 - (void)setModel:(PGMeModel *)model {
     _model = model;
@@ -96,8 +80,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
        self.redDotView.hidden = !model.showRod;
     }
 }
-
-
 #pragma mark --- action
-
 @end

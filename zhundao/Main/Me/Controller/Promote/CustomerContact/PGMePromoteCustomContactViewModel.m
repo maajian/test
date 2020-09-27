@@ -1,13 +1,4 @@
-//
-//  PGMePromoteCustomContactViewModel.m
-//  zhundao
-//
-//  Created by maj on 2020/1/17.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteCustomContactViewModel.h"
-
 @implementation PGMePromoteCustomContactViewModel
 - (instancetype)init {
     if (self = [super init]) {
@@ -17,7 +8,6 @@
     }
     return self;
 }
-// 获取合伙人主页统计数据
 - (void)getPromoteCustomContactSuccess:(ZDBlock_Void)success failure:(ZDBlock_Void)failure {
     NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getPartnerHomeData?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
@@ -58,5 +48,4 @@
         ZDDo_Block_Safe_Main(failure);
     }];
 }
-
 @end

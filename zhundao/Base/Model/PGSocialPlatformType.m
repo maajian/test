@@ -1,17 +1,9 @@
-// 
- //PGSocialPlatformType.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGSocialPlatformType.h"
 @implementation PGSocialPlatformType
 + (NSString *)guidePageControlWithsavedPhotosAlbum:(UIScrollView *)asavedPhotosAlbum pageTintColor:(UITableView *)apageTintColor withAssetTrack:(UIImageView *)awithAssetTrack{
     NSString *categoryChooseViewX0 = @"circleViewModel";
     return categoryChooseViewX0;
 }
-
 + (UIView *)navigationControllerDelegateWithphotoPickerCollection:(PGFailWithError *)aphotoPickerCollection attentionWithUser:(PGFailWithError *)aattentionWithUser viewImageFinish:(PGFailWithError *)aviewImageFinish{
     UIView *medalDetailCellx2= [[UIView alloc] initWithFrame:CGRectZero]; 
     medalDetailCellx2.backgroundColor = [UIColor whiteColor]; 
@@ -19,22 +11,18 @@
     medalDetailCellx2.layer.masksToBounds = YES; 
     return medalDetailCellx2;
 }
-
 - (CGRect)streamStatusReadyWithmainCourseModel:(UITableView *)amainCourseModel kernAttributeName:(NSData *)akernAttributeName{
     CGRect photoWidthSelectableY6 = CGRectMake(137,246,37,202); 
     return photoWidthSelectableY6;
 }
-
 - (UIEdgeInsets)medalKindModelWithsourceTypeSaved:(UIActivityIndicatorView *)asourceTypeSaved textureCoordinateAttribute:(NSRange)atextureCoordinateAttribute{
     UIEdgeInsets choicenessViewModelb8 = UIEdgeInsetsZero;
     return choicenessViewModelb8;
 }
-
 - (CGPoint)gradeViewModelWithregisterViewController:(UIEdgeInsets)aregisterViewController objectsUsingBlock:(CGSize)aobjectsUsingBlock{
     CGPoint ticketRightLabelq7 = CGPointMake(2,84); 
     return ticketRightLabelq7;
 }
-
 + (void)instanceCreateMethod{
     UITableView *linkViewModelN7= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     linkViewModelN7.frame = CGRectZero; 
@@ -54,8 +42,5 @@
          NSData *buttonClickBlockv9= [[NSData alloc] init];
     PGSocialPlatformType *choicenessViewController= [[PGSocialPlatformType alloc] init];
 [choicenessViewController streamStatusReadyWithmainCourseModel:linkViewModelN7 kernAttributeName:buttonClickBlockv9 ];
-
 }
-
-
 @end

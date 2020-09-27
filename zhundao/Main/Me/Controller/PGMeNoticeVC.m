@@ -1,12 +1,4 @@
 #import "PGArticleOriginalData.h"
-//
-//  PGMeNoticeVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/8/15.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeNoticeVC.h"
 #import "PGMeNoticeTableViewCell.h"
 #import "PGMeNoticeViewModel.h"
@@ -16,31 +8,21 @@
     Reachability *r;
     NSInteger page;
 }
-/*! tableView */
 @property(nonatomic,strong)UITableView    *tableView;
-/*! 数据源数组 */
 @property(nonatomic,strong)NSMutableArray *dataArray ;
-/*! ViewModel */
 @property(nonatomic,strong)PGMeNoticeViewModel *noticeVM;
-/*! 高度数据 */
 @property(nonatomic,strong)NSMutableArray *heightArray ;
-/*! 时间数组 */
 @property(nonatomic,strong)NSMutableArray *timeArray ;
-
 @end
-
 @implementation PGMeNoticeVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self baseSetting];
-    [self createText];
+    [self PG_baseSetting];
+    [self PG_createText];
     page = 1 ;
-    // Do any additional setup after loading the view.
 }
-#pragma mark baseSetting 
-
-- (void)baseSetting{
+#pragma mark PG_baseSetting 
+- (void)PG_baseSetting{
 dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *notificationCategoryOptionk7= [UIFont systemFontOfSize:97];
         NSRange naviTitleFonte7 = NSMakeRange(4,192); 
@@ -55,7 +37,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _timeArray = [NSMutableArray array];
     [self firstLoad];
 }
-- (void)createText {
+- (void)PG_createText {
     UITextView * textView = [[UITextView alloc]initWithFrame:CGRectZero];
     [self.view addSubview:textView];
 }
@@ -64,22 +46,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-            [self cantNet];
+            [self PG_cantNet];
             break;
         case ReachableViaWWAN:
-            // 使用3G网
-            [self networkWithPage:0];
+            [self PG_networkWithPage:0];
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
-            [self networkWithPage:0];
+            [self PG_networkWithPage:0];
             break;
     }
 }
-
 #pragma mark ----有网没网的显示
-/*! 有网 */
-- (void)networkWithPage:(NSInteger)Page {
+- (void)PG_networkWithPage:(NSInteger)Page {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *controlViewWillz0= [UIFont systemFontOfSize:61];
         NSRange insetAdjustmentNeverc3 = NSMakeRange(6,154); 
@@ -98,7 +76,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [_timeArray removeAllObjects];
         }
         [indicator stopAnimating];
-        
         NSMutableArray *array2 = [NSMutableArray array];
         NSMutableArray *array1  = [NSMutableArray array];
         NSMutableArray *array3 = [NSMutableArray array];
@@ -116,14 +93,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_tableView reloadData];
         [weakVM sava:_dataArray];
         [weakVM saveTime:_dataArray.firstObject];
-        
         [_tableView.mj_footer endRefreshing];
         [_tableView.mj_header endRefreshing];
     }];
-
 }
-/*! 没网 */
-- (void)cantNet {
+- (void)PG_cantNet {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIFont *scrollDirectionRightw8= [UIFont systemFontOfSize:56];
         NSRange affineTransformMakeA6 = NSMakeRange(4,217); 
@@ -147,21 +121,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_tableView reloadData];
     }
 }
-
 #pragma mark 上拉加载
-
-- (void)loadMore {
+- (void)PG_loadMore {
     page = page + 1;
-    [self networkWithPage:page];
+    [self PG_networkWithPage:page];
 }
-
-- (void)loadNew {
+- (void)PG_loadNew {
     page = 1 ;
-    [self networkWithPage:page];
+    [self PG_networkWithPage:page];
 }
-
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
@@ -173,21 +142,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.backgroundColor = ZDBackgroundColor;
         _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-        MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNew)];
+        MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(PG_loadNew)];
         [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
         [header setTitle:@"释放刷新" forState:MJRefreshStatePulling];
         [header setTitle:@"加载中，请等待 ..." forState:MJRefreshStateRefreshing];
         header.lastUpdatedTimeLabel.hidden = YES;
         _tableView.mj_header = header;
-        MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
+        MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(PG_loadMore)];
         _tableView.mj_footer = footer;
     }
     return _tableView;
 }
-
-
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _dataArray.count;
@@ -205,14 +171,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cell.model = _dataArray[indexPath.row];
     return cell;
 }
-
 #pragma mark -------UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 38 +[_heightArray[indexPath.row] integerValue];
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     PGMeDetailNoticeVC *detailNotice = [[PGMeDetailNoticeVC alloc]init];
     [self setHidesBottomBarWhenPushed:YES];
@@ -227,26 +190,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [_tableView reloadData];
         }
     };
-    
 }
-
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
 }
-
 - (void)dealloc{
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

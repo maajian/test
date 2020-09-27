@@ -1,25 +1,11 @@
 #import "PGInsideImageView.h"
-//
-//  PGDiscoverPromoteQRCodeVC.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteQRCodeVC.h"
-
 #import "PGMePromoteQRCodeView.h"
-
 @interface PGMePromoteQRCodeVC ()<PGMePromoteQRCodeViewDelegate>
-
 @property (nonatomic, strong) PGMePromoteQRCodeView *mePromoteQRCodeView;
 @property (nonatomic, copy) NSString *urlString;
-
 @end
-
 @implementation PGMePromoteQRCodeVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextField *navigationViewControllerV3= [[UITextField alloc] initWithFrame:CGRectZero]; 
@@ -35,11 +21,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [courseParticularVideo inputTextureUniformWithtextViewContent:navigationViewControllerV3 colorSpaceCreate:cellWithReusee6 ];
 });
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
 }
-
 #pragma mark --- Lazyload
 - (PGMePromoteQRCodeView *)mePromoteQRCodeView {
     if (!_mePromoteQRCodeView) {
@@ -48,9 +32,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _mePromoteQRCodeView;
 }
-
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextField *mainCommentModelE5= [[UITextField alloc] initWithFrame:CGRectZero]; 
     mainCommentModelE5.clearButtonMode = UITextFieldViewModeNever; 
@@ -68,25 +51,23 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.urlString = [NSString stringWithFormat:@"http://m.zhundao.net/regPartnerUser/%li", (long)ZD_UserM.userID];
     [self.view addSubview:self.mePromoteQRCodeView];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.mePromoteQRCodeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
 }
-
 #pragma mark --- PGMePromoteQRCodeViewDelegate
 - (void)promoteQRCodeView:(PGMePromoteQRCodeView *)promoteQRCodeView didTapShareButton:(UIButton *)button {
-    [self shareWechat:promoteQRCodeView.qrcodeImageView.image];
+    [self PG_shareWechat:promoteQRCodeView.qrcodeImageView.image];
 }
 - (void)promoteQRCodeView:(PGMePromoteQRCodeView *)promoteQRCodeView didTapSaveLocalButton:(UIButton *)button {
     [self saveImageWithFrame:promoteQRCodeView.qrcodeImageView.image];
 }
-
 #pragma mark --- Action
-- (void)shareWechat:(UIImage *)image {
+- (void)PG_shareWechat:(UIImage *)image {
     [[PGSignManager shareManager] shareWithTitle:@"准到会员注册" detailTitle:@"新用户可享优惠" thumImage:[UIImage imageNamed:@"120"] webpageUrl:self.urlString withCTR:self Withtype:5];
 }
-- (void)saveImageWithFrame:(UIImage *)image   //保存到相册
+- (void)saveImageWithFrame:(UIImage *)image   
 {
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
 }
@@ -100,5 +81,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [label labelAnimationWithViewlong:self.view];
 }
-
 @end

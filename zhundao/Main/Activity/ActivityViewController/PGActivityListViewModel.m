@@ -1,16 +1,5 @@
-//
-//  PGActivityListViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/20.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityListViewModel.h"
-
 @implementation PGActivityListViewModel
-
-//api/PerActivity/DeleteActivityList/{id}?accessKey={accessKey}
 - (void)deletePersonWithID:(NSInteger) personID 
 {
     NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/DeleteActivityList/%li?accessKey=%@",zhundaoApi,(long)personID,[[PGSignManager shareManager] getaccseekey]];
@@ -29,10 +18,7 @@
         if (_deleteBlock) _deleteBlock(0);
     }];
 }
-
-//POST api/PerActivity/UpdateExamine?accessKey={accessKey}&activityListId={activityListId}&status={status}
 - (void)UpdateStatusActivityListId :(NSInteger)activityListId status :(BOOL)status  block :(deleteBlock)block{
-    
     NSInteger pass = status? 0 : 3;
     NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/UpdateExamine?accessKey=%@&activityListId=%li&status=%li",zhundaoApi,[[PGSignManager shareManager] getaccseekey],activityListId,pass];
     [ZD_NetWorkM postDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
@@ -43,12 +29,8 @@
             block(0);
         }
     } fail:^(NSError *error) {
-        
     }];
 }
-
-//POST api/PerActivity/PayOffLine?accessKey={accessKey}&activityListId={activityListId}
-
 - (void)PayOffLine :(NSInteger)activityListId block :(deleteBlock)block{
     NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/PayOffLine?accessKey=%@&activityListId=%li",zhundaoApi,[[PGSignManager shareManager] getaccseekey],activityListId];
     [ZD_NetWorkM postDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
@@ -59,8 +41,6 @@
             block(0);
         }
     } fail:^(NSError *error) {
-        
     }];
 }
-
 @end

@@ -1,27 +1,15 @@
-//
-//  PGMyHud.m
-//  zhundao
-//
-//  Created by zhundao on 2017/2/24.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMyHud.h"
-
 @implementation PGMyHud
-
 + (MBProgressHUD *)showWithText:(NSString *)text view:(UIView *)view {
     MBProgressHUD *hud = [[self alloc]initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:view];
     hud.label.text = text;
     return hud;
 }
-
 + (MBProgressHUD *)showSuccess:(NSString *)text view:(UIView *)view delay:(CGFloat)delay{
     MBProgressHUD *hud = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:text showAnimated:YES UIView:view imageName:@"checked"];
     [hud hideAnimated:YES afterDelay:delay];
     return hud;
 }
-
 +(MBProgressHUD *)initWithAnimationType:(MBProgressHUDAnimation)AnimationType showAnimated:(BOOL)showAnimated UIView:(UIView *)view
 {
     return [[self alloc]initWithAnimationType:AnimationType showAnimated:showAnimated UIView:view];
@@ -30,7 +18,6 @@
 {
     return  [[self alloc]initWithMode:Mode labelText:text showAnimated:showAnimated UIView:view imageName:imageName];
 }
-
 - (instancetype)initWithAnimationType:(MBProgressHUDAnimation)AnimationType showAnimated:(BOOL)showAnimated UIView:(UIView *)view
 {
     if (self = [super init]) {

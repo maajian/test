@@ -1,10 +1,3 @@
-// 
- //PGImageGeneratorWith.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGImageGeneratorWith.h"
 @implementation PGImageGeneratorWith
 + (UIImageView *)regionDefaultHandlerWithrectEdgeNone:(UIImageView *)arectEdgeNone orderDetailCell:(NSMutableArray *)aorderDetailCell ticketLeftLabel:(UILabel *)aticketLeftLabel{
@@ -16,7 +9,6 @@
     levalInfoModelI1.clearsContextBeforeDrawing = YES; 
     return levalInfoModelI1;
 }
-
 + (UILabel *)mutableParagraphStyleWithsupportedWindowLevel:(PGWithLoadingRequest *)asupportedWindowLevel clippingWithView:(PGWithLoadingRequest *)aclippingWithView lineHeadIndent:(PGWithLoadingRequest *)alineHeadIndent{
     UILabel *arrayUsingDescriptorsg7= [[UILabel alloc] initWithFrame:CGRectZero]; 
     arrayUsingDescriptorsg7.text = @"imageTextureDelegate";
@@ -26,22 +18,18 @@
     arrayUsingDescriptorsg7.textAlignment = NSTextAlignmentCenter; 
     return arrayUsingDescriptorsg7;
 }
-
 - (NSLineBreakMode)accessoryDisclosureIndicatorWithstringFromDate:(NSMutableArray *)astringFromDate contextWithOptions:(UITextField *)acontextWithOptions{
     NSLineBreakMode insetAdjustmentNeverp4 = NSLineBreakByTruncatingTail; 
     return insetAdjustmentNeverp4;
 }
-
 - (CGRect)tweetItemModelWithimageNamesGroup:(UIActivityIndicatorView *)aimageNamesGroup insetAdjustmentBehavior:(UISwitch *)ainsetAdjustmentBehavior{
     CGRect periodicTimeObserverV6 = CGRectMake(179,10,125,127); 
     return periodicTimeObserverV6;
 }
-
 - (UIEdgeInsets)showShowSheetWithnatatoriumAddressTable:(UITextFieldViewMode)anatatoriumAddressTable autoClipImage:(CGRect)aautoClipImage{
     UIEdgeInsets assetFromFetchh0 = UIEdgeInsetsZero;
     return assetFromFetchh0;
 }
-
 + (void)instanceCreateMethod{
     NSMutableArray *coachDetailModelb4= [NSMutableArray arrayWithCapacity:0];
         UITextField *bottomPhotoViewf7= [[UITextField alloc] initWithFrame:CGRectZero]; 
@@ -54,8 +42,5 @@
      bottomPhotoViewf7.leftViewMode = UITextFieldViewModeAlways; 
     PGImageGeneratorWith *affineTransformTranslate= [[PGImageGeneratorWith alloc] init];
 [affineTransformTranslate accessoryDisclosureIndicatorWithstringFromDate:coachDetailModelb4 contextWithOptions:bottomPhotoViewf7 ];
-
 }
-
-
 @end

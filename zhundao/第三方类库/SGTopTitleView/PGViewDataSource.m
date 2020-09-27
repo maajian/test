@@ -1,17 +1,9 @@
-// 
- //PGViewDataSource.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGViewDataSource.h"
 @implementation PGViewDataSource
 + (UIFont *)collectionDataWithWithlinkWithTarget:(UITableView *)alinkWithTarget indicatorViewColor:(UIColor *)aindicatorViewColor choicenessViewController:(UIFont *)achoicenessViewController{
     UIFont *mainActivityModelc3= [UIFont systemFontOfSize:49];
     return mainActivityModelc3;
 }
-
 + (UITableView *)unclampedDelayTimeWithpageTintColor:(PGSocialMessageObject *)apageTintColor blendModeClear:(PGSocialMessageObject *)ablendModeClear couponAlertView:(PGSocialMessageObject *)acouponAlertView{
     UITableView *animatedImageFramess6= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     animatedImageFramess6.frame = CGRectZero; 
@@ -30,22 +22,18 @@
      animatedImageFramess6.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(162,79,98,45)];
      return animatedImageFramess6;
 }
-
 - (UITableViewStyle)couponViewModelWithkeyboardTypeNumber:(UITableView *)akeyboardTypeNumber trainFinishAlert:(NSData *)atrainFinishAlert{
     UITableViewStyle collectionOriginalModelm0 = UITableViewStylePlain; 
     return collectionOriginalModelm0;
 }
-
 - (NSTextAlignment)circleItemShareWithweekdayCalendarUnit:(UITableViewCellSeparatorStyle)aweekdayCalendarUnit defaultMaskType:(NSTextAlignment)adefaultMaskType{
     NSTextAlignment buttonTitleColorg5 = NSTextAlignmentCenter; 
     return buttonTitleColorg5;
 }
-
 - (UIButtonType)photoPickerViewWithchooseCellDelegate:(UITextField *)achooseCellDelegate videBeginPlay:(UIImageView *)avideBeginPlay{
     UIButtonType secondTextureCoordinateu2 = UIButtonTypeContactAdd;
     return secondTextureCoordinateu2;
 }
-
 + (void)instanceCreateMethod{
     UITableView *trackingWithToucha2= [[UITableView alloc] initWithFrame:CGRectMake(73,111,101,138) style: UITableViewStylePlain]; 
     trackingWithToucha2.frame = CGRectZero; 
@@ -65,8 +53,5 @@
          NSData *imageContentModeV7= [[NSData alloc] init];
     PGViewDataSource *imageWithName= [[PGViewDataSource alloc] init];
 [imageWithName couponViewModelWithkeyboardTypeNumber:trackingWithToucha2 trainFinishAlert:imageContentModeV7 ];
-
 }
-
-
 @end

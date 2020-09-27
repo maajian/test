@@ -1,31 +1,18 @@
 #import "PGCourseVideoPlaying.h"
-//
-//  PGActivityMessageContentCell.m
-//  zhundao
-//
-//  Created by maj on 2019/5/26.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "PGActivityMessageContentCell.h"
-
 @interface PGActivityMessageContentCell()
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *statusLabel;
-
 @end
-
 @implementation PGActivityMessageContentCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
@@ -43,9 +30,8 @@
     }
     return _statusLabel;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSLineBreakMode sourceTypePhoton6 = NSLineBreakByTruncatingTail; 
         CGRect baseLoginViewT5 = CGRectMake(117,78,249,186); 
@@ -55,9 +41,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.statusLabel];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(10);
         make.leading.equalTo(self.contentView).offset(15);
@@ -69,12 +54,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.height.mas_equalTo(30);
     }];
 }
-
 #pragma mark --- 赋值
 - (void)setModel:(PGActivityMessageContentModel *)model {
     _model = model;
     self.titleLabel.text = model.es_content;
-    
     if (model.isSystem) {
         [self.statusLabel mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(0);
@@ -83,7 +66,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.statusLabel mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(20);
         }];
-        
         switch (model.messageStatusType) {
             case PGMessageStatusTypeSuccess:
                 self.statusLabel.text = @"【审核通过】";
@@ -104,11 +86,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 break;
         }
     }
-    
      [self layoutIfNeeded];
     _model.cellHeight = self.statusLabel.maxY;
-    
 }
-
-
 @end

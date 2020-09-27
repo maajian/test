@@ -1,36 +1,21 @@
 #import "PGBlockWithPreview.h"
-//
-//  PGMePromoteBottomView.m
-//  zhundao
-//
-//  Created by maj on 2020/1/17.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteBottomView.h"
-
 @interface PGMePromoteBottomView()
-
 @property (nonatomic, strong) UIButton *mainButton;
-
 @property (nonatomic, strong) UIButton *shareButton;
-
 @end
-
 @implementation PGMePromoteBottomView
-
 - (instancetype)init {
     if (self = [super init]) {
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIButton *)mainButton {
     if (!_mainButton) {
-        _mainButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"img_me_promote_main_normal"] highlightedImage:[UIImage imageNamed:@"img_me_promote_main_select"] selectedImage:[UIImage imageNamed:@"img_me_promote_main_select"] target:self action:@selector(mainAction:)];
+        _mainButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"img_me_promote_main_normal"] highlightedImage:[UIImage imageNamed:@"img_me_promote_main_select"] selectedImage:[UIImage imageNamed:@"img_me_promote_main_select"] target:self action:@selector(PG_mainAction:)];
         [_mainButton setTitle:@"首页" forState:UIControlStateNormal];
         [_mainButton setTitleColor:ZDMainColor forState:UIControlStateHighlighted];
         [_mainButton setTitleColor:ZDMainColor forState:UIControlStateSelected];
@@ -50,9 +35,8 @@
     }
     return _shareButton;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     self.backgroundColor = [UIColor whiteColor];
     self.layer.masksToBounds = NO;
     self.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -62,9 +46,8 @@
     [self addSubview:self.mainButton];
     [self addSubview:self.shareButton];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.mainButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.equalTo(self);
         make.bottom.equalTo(self).offset(ZD_SAFE_BOTTOM_LAYOUT);
@@ -76,19 +59,17 @@
         make.bottom.equalTo(self.mainButton);
     }];
 }
-
 #pragma mark --- setter
 - (void)setCurrentIndex:(NSInteger)currentIndex {
     _currentIndex = currentIndex;
     if (currentIndex == 0) {
-        [self mainAction:_mainButton];
+        [self PG_mainAction:_mainButton];
     } else {
         [self shareButton:_shareButton];
     }
 }
-
 #pragma mark --- action
-- (void)mainAction:(UIButton *)button {
+- (void)PG_mainAction:(UIButton *)button {
     _mainButton.selected = YES;
     _shareButton.selected = NO;
     if ([self.promoteBottomViewDelegate respondsToSelector:@selector(promoteBottomView:didSelectMainButton:)]) {
@@ -121,5 +102,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.mainButton setButtonWithButtonInsetType:(WYButtonInsetTypeTitleBottom) space:3];
     [self.shareButton setButtonWithButtonInsetType:(WYButtonInsetTypeTitleBottom) space:3];
 }
-
 @end

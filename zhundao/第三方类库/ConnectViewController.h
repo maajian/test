@@ -1,32 +1,19 @@
-//
-//  ConnectViewController.h
-//  BLETR
-//
-//  Created by D500 user on 12/9/26.
-//  Copyright (c) 2012 ISSC Technologies Corporation. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import "CBController.h"
 #import "UUIDSettingViewController.h"
 #import "DeviceInfo.h"
-//typedef void(^devideBlock) (NSString *str);
 @interface ConnectViewController : CBController<UITableViewDataSource, UITextViewDelegate, UITableViewDelegate>
 {
     IBOutlet UITableView *devicesTableView;
     UIActivityIndicatorView *activityIndicatorView;
     UILabel *statusLabel;
     UUIDSettingViewController *uuidSettingViewController;
-
     NSTimer *refreshDeviceListTimer;
-
     int connectionStatus;
-    //Derek
     DeviceInfo *deviceInfo;
     MyPeripheral *controlPeripheral;
-    NSMutableArray *connectedDeviceInfo;//stored for DeviceInfo object
-    NSMutableArray *connectingList;//stored for MyPeripheral object
-    
+    NSMutableArray *connectedDeviceInfo;
+    NSMutableArray *connectingList;
     UIBarButtonItem *refreshButton;
     UIBarButtonItem *scanButton;
     UIBarButtonItem *cancelButton;
@@ -36,7 +23,6 @@
 @property (nonatomic, retain) IBOutlet UILabel *statusLabel;
 @property (assign) int connectionStatus;
 @property (retain, nonatomic) IBOutlet UILabel *versionLabel;
-//@property(nonatomic,copy) devideBlock devideBlock;
 - (IBAction)refreshDeviceList:(id)sender;
 - (IBAction)actionButtonCancelScan:(id)sender;
 - (IBAction)manualUUIDSetting:(id)sender;

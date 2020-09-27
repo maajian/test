@@ -1,18 +1,9 @@
-//
-//  PGMeContactMV.m
-//  zhundao
-//
-//  Created by zhundao on 2017/5/23.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeContactMV.h"
 #import "NSString+ChangeToPinyin.h"
 #import "PGMeContactModel.h"
 @implementation PGMeContactMV
-- (void)netWorkWithStr:(NSString *)str  //返回字典保存 首字母和data
+- (void)netWorkWithStr:(NSString *)str  
 {
-   
     NSDictionary *dic = @{
                           @"contactGroupID":@"-1",
                           @"curPage":@"1",
@@ -33,7 +24,6 @@
             _block(dataarray);
         }
     } fail:^(NSError *error) {
-        
     }];
 }
 - (void)netWorkGroupSave
@@ -53,18 +43,17 @@
         [[NSUserDefaults standardUserDefaults]setObject:array2 forKey:@"GroupID"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     } fail:^(NSError *error) {
-        
     }];
 }
 -(NSDictionary *)getdicWithArray:(NSArray *)dataarray isHaveNet :(BOOL) isHave
 {
     NSDate* Start = [NSDate date];
-    NSMutableArray *array = [NSMutableArray array];  //保存相应字母
+    NSMutableArray *array = [NSMutableArray array];  
     NSMutableArray *nameArray = [NSMutableArray array];
     NSMutableArray *pinyinArray = [NSMutableArray array];
     NSMutableArray *phoneArray = [NSMutableArray array];
     NSMutableArray *companyArray =[NSMutableArray array];
-    NSMutableDictionary *backDic = [NSMutableDictionary dictionary]; //保存字母和对应的数据
+    NSMutableDictionary *backDic = [NSMutableDictionary dictionary]; 
     for (int i = 0 ;i<dataarray.count;i++) {
         NSDictionary *dic1 =[NSDictionary dictionaryWithDictionary:dataarray[i]];
         NSString *nameStr = dic1[@"TrueName"];
@@ -74,10 +63,9 @@
             [companyArray addObject:dic1[@"Company"]];
         }
         NSString *pinyinStr = nil;
-        pinyinStr = [[NSString alloc]changeToPinyinWithStr:nameStr]; //转换成拼音
+        pinyinStr = [[NSString alloc]changeToPinyinWithStr:nameStr]; 
         [pinyinArray addObject:pinyinStr];
-        [array addObject:[[pinyinStr substringToIndex:1] uppercaseString]];  //获取首字母并转成大写
-       
+        [array addObject:[[pinyinStr substringToIndex:1] uppercaseString]];  
     }
     if (_searchBlcok) _searchBlcok(nameArray,phoneArray,pinyinArray,companyArray);
     NSMutableArray*dataArray1 = [NSMutableArray array];
@@ -87,7 +75,7 @@
     }
     if (isHave) {
         if ([[PGSignManager shareManager].dataBase open]) {
-            [self insertSignListWithArray:dataArray1];
+            [self PG_insertSignListWithArray:dataArray1];
             [[PGSignManager shareManager].dataBase close];
         }
     }
@@ -104,30 +92,22 @@
             [backDic setObject:dicarray forKey:array1[i]];
         }
     }
-    
     double deltaTime = [[NSDate date] timeIntervalSinceDate:Start];
     NSLog(@"time = %f", deltaTime);
-    
     return backDic;
 }
 - (NSArray *)sortWithArray:(NSArray *)sortArray
 {
     NSArray *resultArray = [sortArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        
         return [obj1 compare:obj2 options:NSNumericSearch];
     }];
     return resultArray;
 }
-
 - (void)createSignList
 {
-    
     PGSignManager *manager = [PGSignManager shareManager];
-    
     [manager createDatabase];
     if ([manager.dataBase open]) {
-//        NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE contact"];
-//        BOOL res = [manager.dataBase executeUpdate:updateSql];
         bool result = [manager.dataBase executeUpdate:@"CREATE TABLE IF NOT EXISTS contact(ID INTEGER PRIMARY KEY NOT NULL ,Sex INTEGER,HeadImgurl TEXT,GroupName TEXT,ContactGroupID INTEGER,TrueName TEXT NOT NULL,Address TEXT,Company TEXT,Duty TEXT,Email TEXT,Remark TEXT,SerialNo TEXT,IDcard TEXT,Mobile TEXT NOT NULL);"];
         if (result) {
             NSLog(@"成功创建table");
@@ -137,11 +117,9 @@
             NSLog(@"创建table失败");
         }
         [manager.dataBase close];
-        
     }
 }
--(void)insertSignListWithArray :(NSArray *)array1 {
-    // 开启事务
+-(void)PG_insertSignListWithArray :(NSArray *)array1 {
     [[PGSignManager shareManager].dataBase beginTransaction];
     BOOL isRollBack = NO;
     @try {
@@ -159,17 +137,14 @@
     }
     @catch (NSException *exception) {
         isRollBack = YES;
-        // 事务回退
         [[PGSignManager shareManager].dataBase rollback];
     }
     @finally {
         if (!isRollBack) {
-            //事务提交
             [[PGSignManager shareManager].dataBase commit];
         }
     }
 }
-
 - (void)deleteDataWithModel :(NSInteger)personID
 {
     PGSignManager *manager = [PGSignManager shareManager];
@@ -183,12 +158,9 @@
         {
             NSLog(@"数据表插入失败");
         }
-        
         [manager.dataBase close];
     }
-
 }
-//GET api/Contact/DeleteContact/{id}?accessKey={accessKey}
 - (void)deleteDataHaveNetWithStr:(NSString *)str
 {
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
@@ -198,9 +170,7 @@
     } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
     }];
-    
 }
-
 - (NSArray *)searchDatabaseFromID:(NSInteger )ID
 {
     PGSignManager *manager = [PGSignManager shareManager];

@@ -1,10 +1,3 @@
-// 
- //PGOrganizeListRequset.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGOrganizeListRequset.h"
 @implementation PGOrganizeListRequset
 + (UIImageView *)natatoriumParticularDataWithitemPhotoClick:(UITextView *)aitemPhotoClick layerWithPlayer:(UIImage *)alayerWithPlayer mainScreenHeight:(UITableView *)amainScreenHeight{
@@ -16,7 +9,6 @@
     photoPickerImagey1.clearsContextBeforeDrawing = YES; 
     return photoPickerImagey1;
 }
-
 + (UILabel *)cameraRollAlbumWithwithCityName:(PGDeviceOrientationFace *)awithCityName originBackgroundColor:(PGDeviceOrientationFace *)aoriginBackgroundColor timeRangeMake:(PGDeviceOrientationFace *)atimeRangeMake{
     UILabel *withVertexShaderp7= [[UILabel alloc] initWithFrame:CGRectMake(164,183,81,245)]; 
     withVertexShaderp7.text = @"generatingDeviceOrientation";
@@ -26,22 +18,18 @@
     withVertexShaderp7.textAlignment = NSTextAlignmentCenter; 
     return withVertexShaderp7;
 }
-
 - (UIEdgeInsets)filterManagerDelegateWithconcurrentOperationCount:(UIImageView *)aconcurrentOperationCount scrollViewContent:(UIButton *)ascrollViewContent{
     UIEdgeInsets succViewControllerm6 = UIEdgeInsetsMake(61,218,245,8); 
     return succViewControllerm6;
 }
-
 - (UIEdgeInsets)objectsHashTableWithhourTimeInterval:(UITextView *)ahourTimeInterval dateFormatterMedium:(UIEdgeInsets)adateFormatterMedium{
     UIEdgeInsets cancelAutoFadej1 = UIEdgeInsetsMake(249,56,248,72); 
     return cancelAutoFadej1;
 }
-
 - (CGSize)wallTableViewWithimageTextureDelegate:(UITableView *)aimageTextureDelegate imageManagerMaximum:(UIView *)aimageManagerMaximum{
     CGSize preferredTrackTransformW7 = CGSizeZero;
     return preferredTrackTransformW7;
 }
-
 + (void)instanceCreateMethod{
     UIImageView * rankMedalViewc0 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     rankMedalViewc0.contentMode = UIViewContentModeCenter; 
@@ -57,8 +45,5 @@
     organizeListTableQ9.frame = CGRectZero; 
     PGOrganizeListRequset *lightOraneColor= [[PGOrganizeListRequset alloc] init];
 [lightOraneColor filterManagerDelegateWithconcurrentOperationCount:rankMedalViewc0 scrollViewContent:organizeListTableQ9 ];
-
 }
-
-
 @end

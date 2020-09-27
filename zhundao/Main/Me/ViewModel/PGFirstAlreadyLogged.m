@@ -1,10 +1,3 @@
-// 
- //PGFirstAlreadyLogged.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGFirstAlreadyLogged.h"
 @implementation PGFirstAlreadyLogged
 + (UITableView *)imageOrientationLeftWithuserTweetTable:(UIImageView *)auserTweetTable withSwimData:(UISwitch *)awithSwimData screehButtonClick:(UIImageView *)ascreehButtonClick{
@@ -25,7 +18,6 @@
      photoWithImagep4.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(241,233,8,226)];
      return photoWithImagep4;
 }
-
 + (UISlider *)receiveRemoteNotificationWithimageWithData:(PGCancelCollectionChoiceness *)aimageWithData bytesUsingEncoding:(PGCancelCollectionChoiceness *)abytesUsingEncoding finishSavingWith:(PGCancelCollectionChoiceness *)afinishSavingWith{
     UISlider *withIntegralRecordo9= [[UISlider alloc] initWithFrame:CGRectMake(188,107,79,97)]; 
     withIntegralRecordo9.minimumValue = 0; 
@@ -33,22 +25,18 @@
     withIntegralRecordo9.value =2; 
     return withIntegralRecordo9;
 }
-
 - (UIButtonType)activityIndicatorViewWithplayerDecodeError:(UIScrollView *)aplayerDecodeError browserPhotoView:(UIActivityIndicatorView *)abrowserPhotoView{
     UIButtonType natatoriumListTableW2 = UIButtonTypeContactAdd;
     return natatoriumListTableW2;
 }
-
 - (UIButtonType)taskCenterModelWithrecommendCourseHeight:(NSMutableArray *)arecommendCourseHeight tweetCommentModel:(UILabel *)atweetCommentModel{
     UIButtonType articleContentModelS3 = UIButtonTypeContactAdd;
     return articleContentModelS3;
 }
-
 - (UIEdgeInsets)movieFrameOppositeWithwithMedalKind:(UIButton *)awithMedalKind mediaTypeVideo:(UIButtonType)amediaTypeVideo{
     UIEdgeInsets dailyCourseTableu3 = UIEdgeInsetsMake(211,43,2,255); 
     return dailyCourseTableu3;
 }
-
 + (void)instanceCreateMethod{
     UIScrollView *circleParticularViewW7= [[UIScrollView alloc] initWithFrame:CGRectMake(98,75,202,13)]; 
     circleParticularViewW7.showsHorizontalScrollIndicator = NO; 
@@ -61,8 +49,5 @@
     hidesWhenStoppedo2.hidesWhenStopped = YES; 
     PGFirstAlreadyLogged *birthdayPickerView= [[PGFirstAlreadyLogged alloc] init];
 [birthdayPickerView activityIndicatorViewWithplayerDecodeError:circleParticularViewW7 browserPhotoView:hidesWhenStoppedo2 ];
-
 }
-
-
 @end

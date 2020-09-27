@@ -1,15 +1,5 @@
-//
-//  PGMeAllAccountModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/18.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeAllAccountModel.h"
-
 @implementation PGMeAllAccountModel
-
 - (instancetype)initWithAccount:(NSString *)account bankName:(NSString *)bankName iD:(NSInteger)iD {
     if (self = [super init]) {
         self.Account = account;
@@ -18,5 +8,4 @@
     }
     return self;
 }
-
 @end

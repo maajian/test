@@ -1,17 +1,5 @@
-//
-//  PGActivityChooseBigImageViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/10/24.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityChooseBigImageViewModel.h"
-
 @implementation PGActivityChooseBigImageViewModel
-
-/*!  获取高度数组 */
-
 - (NSMutableArray *)heightForCell :(NSArray *) array{
     NSMutableArray *heightArray = [NSMutableArray array];
     for (NSDictionary *dic in array) {
@@ -21,6 +9,4 @@
     }
     return heightArray;
 }
-
-
 @end

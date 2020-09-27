@@ -1,10 +1,3 @@
-// 
- //PGPlayBecomeActive.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGPlayBecomeActive.h"
 @implementation PGPlayBecomeActive
 + (UISlider *)controlStateNormalWithbottomCellDelegate:(NSString *)abottomCellDelegate viewCornerRadius:(UIColor *)aviewCornerRadius numberWithString:(UIButton *)anumberWithString{
@@ -14,27 +7,22 @@
     backGroundColorH2.value =50; 
     return backGroundColorH2;
 }
-
 + (NSData *)settingTableViewWithclippingWithView:(PGFriendsViewModel *)aclippingWithView loginWithPerson:(PGFriendsViewModel *)aloginWithPerson photoHeightSelectable:(PGFriendsViewModel *)aphotoHeightSelectable{
     NSData *datePickerModeY8= [[NSData alloc] init];
     return datePickerModeY8;
 }
-
 - (UITableViewStyle)playerStatePlayingWithrecoderSelectPicker:(UIButton *)arecoderSelectPicker withVisualFormat:(UIActivityIndicatorView *)awithVisualFormat{
     UITableViewStyle sourceTypeAvailablei3 = UITableViewStylePlain; 
     return sourceTypeAvailablei3;
 }
-
 - (CGPoint)groupPhotosWithWithreceiveNotificationResponse:(UIButton *)areceiveNotificationResponse playerStreamInfo:(NSData *)aplayerStreamInfo{
     CGPoint assetCollectionsWithx4 = CGPointMake(1,51); 
     return assetCollectionsWithx4;
 }
-
 - (NSRange)pointerFunctionsObjectWithfinishLoadingWith:(CGSize)afinishLoadingWith articleStrokeCourse:(CGSize)aarticleStrokeCourse{
     NSRange playDailyCourset0 = NSMakeRange(4,81); 
     return playDailyCourset0;
 }
-
 + (void)instanceCreateMethod{
     UIButton *articleOriginalHeaderd3= [UIButton buttonWithType:UIButtonTypeCustom]; 
     articleOriginalHeaderd3.frame = CGRectZero; 
@@ -47,8 +35,5 @@
     orientationLandscapeConstraintw6.hidesWhenStopped = YES; 
     PGPlayBecomeActive *profileDataWith= [[PGPlayBecomeActive alloc] init];
 [profileDataWith playerStatePlayingWithrecoderSelectPicker:articleOriginalHeaderd3 withVisualFormat:orientationLandscapeConstraintw6 ];
-
 }
-
-
 @end

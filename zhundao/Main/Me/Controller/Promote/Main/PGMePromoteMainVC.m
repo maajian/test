@@ -1,36 +1,20 @@
 #import "PGTitleViewWith.h"
-//
-//  PGMePromoteMainVC.m
-//  zhundao
-//
-//  Created by maj on 2020/1/17.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteMainVC.h"
-
 #import "PGMePromoteShareVC.h"
 #import "PGMePromoteCustomContactVC.h"
-
 #import "PGMePromoteBottomView.h"
-
 @interface PGMePromoteMainVC ()<PGMePromoteBottomViewDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) PGMePromoteShareVC *shareVC;
 @property (nonatomic, strong) PGMePromoteCustomContactVC *contactVC;
 @property (nonatomic, strong) PGMePromoteBottomView *bottomView;
 @property (nonatomic, strong) UIScrollView *scrollView;
-
 @end
-
 @implementation PGMePromoteMainVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
 }
-
 #pragma mark 懒加载
 - (PGMePromoteBottomView *)bottomView {
     if (!_bottomView) {
@@ -52,24 +36,20 @@
     }
     return _scrollView;
 }
-
 #pragma mark --- init
-- (void)initSet {
+- (void)PG_initSet {
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = ZDBackgroundColor;
-    
     [self.view addSubview:self.bottomView];
     [self.view addSubview:self.scrollView];
-
     self.title = @"准到合伙人";
     _shareVC = [[PGMePromoteShareVC alloc] init];
     _contactVC = [[PGMePromoteCustomContactVC alloc] init];
     [self addChildViewController:_shareVC];
     [self addChildViewController:_contactVC];
     [self.scrollView addSubview:_contactVC.view];
-    
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     ZD_WeakSelf
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.equalTo(self.view);
@@ -88,7 +68,6 @@
     }];
     [self.bottomView refreshLayout];
 }
-
 #pragma mark --- PGMePromoteBottomViewDelegate
 - (void)promoteBottomView:(PGMePromoteBottomView *)promoteBottomView didSelectMainButton:(UIButton *)button {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -113,7 +92,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [_scrollView setContentOffset:CGPointMake(kScreenWidth, 0)];
 }
-
 #pragma mark --- UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger index = 0;
@@ -126,5 +104,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     self.bottomView.currentIndex = index;
 }
-
 @end

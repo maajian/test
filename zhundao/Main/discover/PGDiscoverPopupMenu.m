@@ -1,30 +1,17 @@
 #import "PGDeviceOrientationUnknown.h"
-//
-//  PGDiscoverPopupMenu.m
-//  PGDiscoverPopupMenu
-//
-//  Created by lyb on 2017/5/10.
-//  Copyright © 2017年 lyb. All rights reserved.
-//
-
 #import "PGDiscoverPopupMenu.h"
 #import "PGDiscoverPopupMenuPath.h"
-
 #define YBScreenWidth [UIScreen mainScreen].bounds.size.width
 #define YBScreenHeight [UIScreen mainScreen].bounds.size.height
 #define YBMainWindow  [UIApplication sharedApplication].keyWindow
 #define YB_SAFE_BLOCK(BlockName, ...) ({ !BlockName ? nil : BlockName(__VA_ARGS__); })
-
-#pragma mark - /////////////
+#pragma mark - 
 #pragma mark - private cell
-
 @interface YBPopupMenuCell : UITableViewCell
 @property (nonatomic, assign) BOOL isShowSeparator;
 @property (nonatomic, strong) UIColor * separatorColor;
 @end
-
 @implementation YBPopupMenuCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -35,19 +22,16 @@
     }
     return self;
 }
-
 - (void)setIsShowSeparator:(BOOL)isShowSeparator
 {
     _isShowSeparator = isShowSeparator;
     [self setNeedsDisplay];
 }
-
 - (void)setSeparatorColor:(UIColor *)separatorColor
 {
     _separatorColor = separatorColor;
     [self setNeedsDisplay];
 }
-
 - (void)drawRect:(CGRect)rect
 {
     if (!_isShowSeparator) return;
@@ -56,17 +40,12 @@
     [bezierPath fillWithBlendMode:kCGBlendModeNormal alpha:1];
     [bezierPath closePath];
 }
-
 @end
-
-
-
 @interface PGDiscoverPopupMenu ()
 <
 UITableViewDelegate,
 UITableViewDataSource
 >
-
 @property (nonatomic, strong) UIView      * menuBackView;
 @property (nonatomic) CGRect                relyRect;
 @property (nonatomic, strong) UITableView * tableView;
@@ -79,9 +58,7 @@ UITableViewDataSource
 @property (nonatomic, strong) UIColor     * separatorColor;
 @property (nonatomic, assign) BOOL          isChangeDirection;
 @end
-
 @implementation PGDiscoverPopupMenu
-
 - (instancetype)init
 {
     self = [super init];
@@ -90,7 +67,6 @@ UITableViewDataSource
     }
     return self;
 }
-
 #pragma mark - publics
 + (PGDiscoverPopupMenu *)showAtPoint:(CGPoint)point titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth delegate:(id<YBPopupMenuDelegate>)delegate
 {
@@ -103,7 +79,6 @@ UITableViewDataSource
     [popupMenu show];
     return popupMenu;
 }
-
 + (PGDiscoverPopupMenu *)showRelyOnView:(UIView *)view titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth delegate:(id<YBPopupMenuDelegate>)delegate
 {
     CGRect absoluteRect = [view convertRect:view.bounds toView:YBMainWindow];
@@ -118,7 +93,6 @@ UITableViewDataSource
     [popupMenu show];
     return popupMenu;
 }
-
 + (PGDiscoverPopupMenu *)showAtPoint:(CGPoint)point titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth otherSettings:(void (^) (PGDiscoverPopupMenu * popupMenu))otherSetting
 {
     PGDiscoverPopupMenu *popupMenu = [[PGDiscoverPopupMenu alloc] init];
@@ -130,7 +104,6 @@ UITableViewDataSource
     [popupMenu show];
     return popupMenu;
 }
-
 + (PGDiscoverPopupMenu *)showRelyOnView:(UIView *)view titles:(NSArray *)titles icons:(NSArray *)icons menuWidth:(CGFloat)itemWidth otherSettings:(void (^) (PGDiscoverPopupMenu * popupMenu))otherSetting
 {
     CGRect absoluteRect = [view convertRect:view.bounds toView:YBMainWindow];
@@ -145,7 +118,6 @@ UITableViewDataSource
     [popupMenu show];
     return popupMenu;
 }
-
 - (void)dismiss
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(ybPopupMenuBeganDismiss)]) {
@@ -164,13 +136,11 @@ UITableViewDataSource
         [_menuBackView removeFromSuperview];
     }];
 }
-
 #pragma mark tableViewDelegate & dataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _titles.count;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * identifier = @"PGDiscoverPopupMenu";
@@ -203,31 +173,26 @@ UITableViewDataSource
     }
     return cell;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (_dismissOnSelected) [self dismiss];
     UITableViewCell *Cell = [tableView cellForRowAtIndexPath:indexPath];
     if (self.delegate && [self.delegate respondsToSelector:@selector(ybPopupMenuDidSelectedAtIndex:PGDiscoverPopupMenu:cell:)]) {
-        
         [self.delegate ybPopupMenuDidSelectedAtIndex:indexPath.row PGDiscoverPopupMenu:self cell :Cell];
     }
 }
-
 #pragma mark - scrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     YBPopupMenuCell *cell = [self getLastVisibleCell];
     cell.isShowSeparator = YES;
 }
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     YBPopupMenuCell *cell = [self getLastVisibleCell];
     cell.isShowSeparator = NO;
 }
-
 - (YBPopupMenuCell *)getLastVisibleCell
 {
     NSArray <NSIndexPath *>*indexPaths = [self.tableView indexPathsForVisibleRows];
@@ -237,7 +202,6 @@ UITableViewDataSource
     NSIndexPath *indexPath = indexPaths.firstObject;
     return [self.tableView cellForRowAtIndexPath:indexPath];
 }
-
 #pragma mark - privates
 - (void)show
 {
@@ -259,7 +223,6 @@ UITableViewDataSource
         }
     }];
 }
-
 - (void)setDefaultSettings
 {
     _cornerRadius = 5.0;
@@ -294,7 +257,6 @@ UITableViewDataSource
     self.backgroundColor = [UIColor clearColor];
     [self addSubview:self.tableView];
 }
-
 - (UITableView *)tableView
 {
     if (!_tableView) {
@@ -307,14 +269,12 @@ UITableViewDataSource
     }
     return _tableView;
 }
-
 - (void)touchOutSide
 {
     if (_dismissOnTouchOutside) {
         [self dismiss];
     }
 }
-
 - (void)setIsShowShadow:(BOOL)isShowShadow
 {
     _isShowShadow = isShowShadow;
@@ -322,13 +282,11 @@ UITableViewDataSource
     self.layer.shadowOffset = CGSizeMake(0, 0);
     self.layer.shadowRadius = isShowShadow ? 2.0 : 0;
 }
-
 - (void)setShowMaskView:(BOOL)showMaskView
 {
     _showMaskView = showMaskView;
     _menuBackView.backgroundColor = showMaskView ? [[UIColor blackColor] colorWithAlphaComponent:0.1] : [UIColor clearColor];
 }
-
 - (void)setType:(YBPopupMenuType)type
 {
     _type = type;
@@ -340,7 +298,6 @@ UITableViewDataSource
             _separatorColor = [UIColor lightGrayColor];
         }
             break;
-            
         default:
         {
             _textColor = [UIColor blackColor];
@@ -351,122 +308,102 @@ UITableViewDataSource
     }
     [self updateUI];
 }
-
 - (void)setFontSize:(CGFloat)fontSize
 {
     _fontSize = fontSize;
     [self.tableView reloadData];
 }
-
 - (void)setTextColor:(UIColor *)textColor
 {
     _textColor = textColor;
     [self.tableView reloadData];
 }
-
 - (void)setPoint:(CGPoint)point
 {
     _point = point;
     [self updateUI];
 }
-
 - (void)setItemWidth:(CGFloat)itemWidth
 {
     _itemWidth = itemWidth;
     [self updateUI];
 }
-
 - (void)setItemHeight:(CGFloat)itemHeight
 {
     _itemHeight = itemHeight;
     self.tableView.rowHeight = itemHeight;
     [self updateUI];
 }
-
 - (void)setBorderWidth:(CGFloat)borderWidth
 {
     _borderWidth = borderWidth;
     [self updateUI];
 }
-
 - (void)setBorderColor:(UIColor *)borderColor
 {
     _borderColor = borderColor;
     [self updateUI];
 }
-
 - (void)setArrowPosition:(CGFloat)arrowPosition
 {
     _arrowPosition = arrowPosition;
     [self updateUI];
 }
-
 - (void)setArrowWidth:(CGFloat)arrowWidth
 {
     _arrowWidth = arrowWidth;
     [self updateUI];
 }
-
 - (void)setArrowHeight:(CGFloat)arrowHeight
 {
     _arrowHeight = arrowHeight;
     [self updateUI];
 }
-
 - (void)setArrowDirection:(YBPopupMenuArrowDirection)arrowDirection
 {
     _arrowDirection = arrowDirection;
     [self updateUI];
 }
-
 - (void)setMaxVisibleCount:(NSInteger)maxVisibleCount
 {
     _maxVisibleCount = maxVisibleCount;
     [self updateUI];
 }
-
 - (void)setBackColor:(UIColor *)backColor
 {
     _backColor = backColor;
     [self updateUI];
 }
-
 - (void)setTitles:(NSArray *)titles
 {
     _titles = titles;
     [self updateUI];
 }
-
 - (void)setImages:(NSArray *)images
 {
     _images = images;
     [self updateUI];
 }
-
 - (void)setPriorityDirection:(YBPopupMenuPriorityDirection)priorityDirection
 {
     _priorityDirection = priorityDirection;
     [self updateUI];
 }
-
 - (void)setRectCorner:(UIRectCorner)rectCorner
 {
     _rectCorner = rectCorner;
     [self updateUI];
 }
-
 - (void)setCornerRadius:(CGFloat)cornerRadius
 {
     _cornerRadius = cornerRadius;
     [self updateUI];
 }
-
 - (void)setOffset:(CGFloat)offset
 {
     _offset = offset;
     [self updateUI];
 }
-
 - (void)updateUI
 {
     CGFloat height;
@@ -550,9 +487,7 @@ UITableViewDataSource
             self.frame = CGRectMake(x, _point.y - _arrowPosition, _itemWidth + _arrowHeight, height);
         }
     }else if (_arrowDirection == YBPopupMenuArrowDirectionNone) {
-        
     }
-    
     if (_isChangeDirection) {
         [self changeRectCorner];
     }
@@ -561,7 +496,6 @@ UITableViewDataSource
     [self.tableView reloadData];
     [self setNeedsDisplay];
 }
-
 - (void)setRelyRect
 {
     if (CGRectEqualToRect(_relyRect, CGRectZero)) {
@@ -577,8 +511,6 @@ UITableViewDataSource
         _point = CGPointMake(_relyRect.origin.x, _relyRect.origin.y + _relyRect.size.height / 2);
     }
 }
-
-
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
@@ -592,7 +524,6 @@ UITableViewDataSource
         self.tableView.frame = CGRectMake(_borderWidth , _borderWidth , frame.size.width - _borderWidth * 2 - _arrowHeight, frame.size.height);
     }
 }
-
 - (void)changeRectCorner
 {
     if (_isCornerChanged || _rectCorner == UIRectCornerAllCorners) {
@@ -611,9 +542,7 @@ UITableViewDataSource
     if (_rectCorner & UIRectCornerBottomRight) {
         haveBottomRightCorner = YES;
     }
-    
     if (_arrowDirection == YBPopupMenuArrowDirectionTop || _arrowDirection == YBPopupMenuArrowDirectionBottom) {
-        
         if (haveTopLeftCorner) {
             _rectCorner = _rectCorner | UIRectCornerBottomLeft;
         }else {
@@ -634,7 +563,6 @@ UITableViewDataSource
         }else {
             _rectCorner = _rectCorner & (~UIRectCornerTopRight);
         }
-        
     }else if (_arrowDirection == YBPopupMenuArrowDirectionLeft || _arrowDirection == YBPopupMenuArrowDirectionRight) {
         if (haveTopLeftCorner) {
             _rectCorner = _rectCorner | UIRectCornerTopRight;
@@ -657,16 +585,12 @@ UITableViewDataSource
             _rectCorner = _rectCorner & (~UIRectCornerBottomLeft);
         }
     }
-    
     _isCornerChanged = YES;
 }
-
 - (void)setOffset
 {
     if (_itemWidth == 0) return;
-    
     CGRect originRect = self.frame;
-    
     if (_arrowDirection == YBPopupMenuArrowDirectionTop) {
         originRect.origin.y += _offset;
     }else if (_arrowDirection == YBPopupMenuArrowDirectionBottom) {
@@ -678,11 +602,9 @@ UITableViewDataSource
     }
     self.frame = originRect;
 }
-
 - (void)setAnchorPoint
 {
     if (_itemWidth == 0) return;
-    
     CGPoint point = CGPointMake(0.5, 0.5);
     if (_arrowDirection == YBPopupMenuArrowDirectionTop) {
         point = CGPointMake(_arrowPosition / _itemWidth, 0);
@@ -697,7 +619,6 @@ UITableViewDataSource
     self.layer.anchorPoint = point;
     self.frame = originRect;
 }
-
 - (void)setArrowPosition
 {
     if (_priorityDirection == YBPopupMenuPriorityDirectionNone) {
@@ -711,23 +632,13 @@ UITableViewDataSource
         }else {
             _arrowPosition = _itemWidth / 2;
         }
-        
     }else if (_arrowDirection == YBPopupMenuArrowDirectionLeft || _arrowDirection == YBPopupMenuArrowDirectionRight) {
-//        if (_point.y + _itemHeight / 2 > YBScreenHeight - _minSpace) {
-//            _arrowPosition = _itemHeight - (YBScreenHeight - _minSpace - _point.y);
-//        }else if (_point.y < _itemHeight / 2 + _minSpace) {
-//            _arrowPosition = _point.y - _minSpace;
-//        }else {
-//            _arrowPosition = _itemHeight / 2;
-//        }
     }
 }
-
 - (void)drawRect:(CGRect)rect
 {
     UIBezierPath *bezierPath = [PGDiscoverPopupMenuPath yb_bezierPathWithRect:rect rectCorner:_rectCorner cornerRadius:_cornerRadius borderWidth:_borderWidth borderColor:_borderColor backgroundColor:_backColor arrowWidth:_arrowWidth arrowHeight:_arrowHeight arrowPosition:_arrowPosition arrowDirection:_arrowDirection];
     [bezierPath fill];
     [bezierPath stroke];
 }
-
 @end

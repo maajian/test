@@ -1,18 +1,8 @@
 #import "PGEncodingWithLine.h"
-//
-//  PGDiscoverGetCodeVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/7/5.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverGetCodeVC.h"
 #import "UIImage+mask.h"
 #import "PGDiscoverPrintVM.h"
-// 距顶部高度
 #define Top_Height 0.2*kScreenHeight
-// 中间View的宽度
 #define MiddleWidth 0.8*kScreenWidth
 static NSString *saoText = @"将二维码/条形码放入框内，即可自动扫描";
 @interface PGDiscoverGetCodeVC ()
@@ -20,17 +10,14 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     PGDiscoverPrintVM *vm ;
 }
 @end
-
 @implementation PGDiscoverGetCodeVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden = YES;
     self.view.backgroundColor = [UIColor blackColor];
-    [self creatBackGroundView];
-    [self creatUI];
+    [self PG_creatBackGroundView];
+    [self PG_creatUI];
     vm = [[PGDiscoverPrintVM alloc]init];
-    // Do any additional setup after loading the view.
 }
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     NSString *stringValue;
@@ -42,13 +29,11 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     [timer invalidate];
     timer = nil;
     NSLog(@"%@",stringValue);
-    
     [vm printQRCode:stringValue isPrint:YES offsetx:[_offsetX intValue] offsety:[_offsetY intValue]];
     [self backAction];
 }
 #pragma mark  -- -- -- -- -- MakeView
-
-- (void)creatBackGroundView{
+- (void)PG_creatBackGroundView{
 dispatch_async(dispatch_get_main_queue(), ^{
     UISwitch *cellDefaultMarginT4= [[UISwitch alloc] initWithFrame:CGRectMake(155,53,219,196)]; 
     cellDefaultMarginT4.on = YES; 
@@ -64,7 +49,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 -(void)backAction{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (void)creatUI{
+- (void)PG_creatUI{
 dispatch_async(dispatch_get_main_queue(), ^{
     UISwitch *deviceSettingsCameraI5= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     deviceSettingsCameraI5.on = YES; 
@@ -86,7 +71,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     labIntroudction.textColor = [UIColor whiteColor];
     labIntroudction.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:labIntroudction];
-    
     CGFloat leadSpace = (kScreenWidth - MiddleWidth)/ 2;
     UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(leadSpace, Top_Height, MiddleWidth, MiddleWidth)];
     imageView.image = [UIImage imageNamed:@"Icon_SaoYiSao"];
@@ -98,17 +82,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.line.contentMode = UIViewContentModeScaleToFill;
     [self.view addSubview:self.line];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

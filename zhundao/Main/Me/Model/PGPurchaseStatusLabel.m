@@ -1,17 +1,9 @@
-// 
- //PGPurchaseStatusLabel.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGPurchaseStatusLabel.h"
 @implementation PGPurchaseStatusLabel
 + (NSString *)recommendTableViewWithnaviTitleAppearance:(NSString *)anaviTitleAppearance defaultImageName:(NSString *)adefaultImageName tweetItemModel:(UIImageView *)atweetItemModel{
     NSString *guidePageControlR2 = @"secondeMallView";
     return guidePageControlR2;
 }
-
 + (UITextField *)refreshStateIdleWithforgotPasswordView:(PGImageViewFrame *)aforgotPasswordView lightBlackColor:(PGImageViewFrame *)alightBlackColor adjustTrackColor:(PGImageViewFrame *)aadjustTrackColor{
     UITextField *couponsViewControllerm2= [[UITextField alloc] initWithFrame:CGRectMake(80,201,49,104)]; 
     couponsViewControllerm2.clearButtonMode = UITextFieldViewModeNever; 
@@ -23,22 +15,18 @@
      couponsViewControllerm2.leftViewMode = UITextFieldViewModeAlways; 
     return couponsViewControllerm2;
 }
-
 - (UITextFieldViewMode)profileDataWithWithassetReferenceRestriction:(UIActivityIndicatorView *)aassetReferenceRestriction textureWithVertices:(UILabel *)atextureWithVertices{
     UITextFieldViewMode listWithCityJ2 = UITextFieldViewModeAlways; 
     return listWithCityJ2;
 }
-
 - (NSLineBreakMode)styleBlackOpaqueWithrecommendDiscountTable:(UIView *)arecommendDiscountTable fullScreenPlay:(CGRect)afullScreenPlay{
     NSLineBreakMode collectionViewControllerc7 = NSLineBreakByTruncatingTail; 
     return collectionViewControllerc7;
 }
-
 - (UITableViewStyle)assetResourceLoaderWithnameBottomLine:(UITextFieldViewMode)anameBottomLine videoDetailData:(UITableViewStyle)avideoDetailData{
     UITableViewStyle photoPickerAssetsk9 = UITableViewStylePlain; 
     return photoPickerAssetsk9;
 }
-
 + (void)instanceCreateMethod{
     UIActivityIndicatorView *socialShareResponsew2= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     socialShareResponsew2.hidden = YES; 
@@ -51,8 +39,5 @@
     stadiumViewModelo1.textAlignment = NSTextAlignmentCenter; 
     PGPurchaseStatusLabel *imageWithImage= [[PGPurchaseStatusLabel alloc] init];
 [imageWithImage profileDataWithWithassetReferenceRestriction:socialShareResponsew2 textureWithVertices:stadiumViewModelo1 ];
-
 }
-
-
 @end

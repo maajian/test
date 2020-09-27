@@ -1,10 +1,3 @@
-// 
- //PGTrainCommentView.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGTrainCommentView.h"
 @implementation PGTrainCommentView
 + (UILabel *)tableViewScrollWithlineFragmentOrigin:(NSString *)alineFragmentOrigin childViewController:(UIImageView *)achildViewController deliveryModeAutomatic:(UIImage *)adeliveryModeAutomatic{
@@ -16,7 +9,6 @@
     middleTextFontf7.textAlignment = NSTextAlignmentCenter; 
     return middleTextFontf7;
 }
-
 + (UISlider *)guideCollectionViewWithtaskCenterModel:(PGDeviceOrientationFace *)ataskCenterModel resizeModeFast:(PGDeviceOrientationFace *)aresizeModeFast swimRecordWith:(PGDeviceOrientationFace *)aswimRecordWith{
     UISlider *backGroundUseru6= [[UISlider alloc] initWithFrame:CGRectZero]; 
     backGroundUseru6.minimumValue = 0; 
@@ -24,29 +16,22 @@
     backGroundUseru6.value =61; 
     return backGroundUseru6;
 }
-
 - (CGRect)userInterfaceIdiomWithshareViewDelegate:(NSLineBreakMode)ashareViewDelegate filterWithCode:(CGRect)afilterWithCode{
     CGRect supportedWindowLevela4 = CGRectZero;
     return supportedWindowLevela4;
 }
-
 - (UITableViewCellSeparatorStyle)imageRotationModeWithinputTextureVertex:(UIColor *)ainputTextureVertex sizeWithAttributes:(UIButton *)asizeWithAttributes{
     UITableViewCellSeparatorStyle controlEventEditingY9 = UITableViewCellSeparatorStyleNone; 
     return controlEventEditingY9;
 }
-
 - (NSRange)extraLightEffectWithdateFormatterShort:(CGPoint)adateFormatterShort doneButtonClick:(UIFont *)adoneButtonClick{
     NSRange showGuideWindowP7 = NSMakeRange(4,160); 
     return showGuideWindowP7;
 }
-
 + (void)instanceCreateMethod{
     NSLineBreakMode deviceOrientationLandscapeU8 = NSLineBreakByTruncatingTail; 
         CGRect imageEdgeInsetsr1 = CGRectZero;
     PGTrainCommentView *resizeAspectFill= [[PGTrainCommentView alloc] init];
 [resizeAspectFill userInterfaceIdiomWithshareViewDelegate:deviceOrientationLandscapeU8 filterWithCode:imageEdgeInsetsr1 ];
-
 }
-
-
 @end

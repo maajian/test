@@ -1,28 +1,13 @@
-//
-//  PGColorPickerView.h
-//  PGColorPickerView
-//
-//  Created by Chenly on 16/5/14.
-//  Copyright © 2016年 Little Meaning. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
-
 @class PGColorPickerView;
-
 @protocol PGColorPickerViewDataSource <NSObject>
-
 - (NSInteger)lm_numberOfColorsInColorPickerView:(PGColorPickerView *)pickerView;
 - (UIColor *)lm_colorPickerView:(PGColorPickerView *)pickerView colorForItemAtIndex:(NSInteger)index;
-
 @end
-
 @protocol PGColorPickerViewDelegate <NSObject>
-
 @optional
 - (void)lm_colorPickerView:(PGColorPickerView *)pickerView didSelectIndex:(NSInteger)index;
 - (void)lm_colorPickerView:(PGColorPickerView *)pickerView didSelectColor:(UIColor *)color;
-
 @end
 
 @interface PGColorPickerView : UIView

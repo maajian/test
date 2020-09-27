@@ -1,10 +1,3 @@
-// 
- //PGWithLocaleIdentifier.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGWithLocaleIdentifier.h"
 @implementation PGWithLocaleIdentifier
 + (UITableView *)valueObservingOptionsWithimagePickerConfig:(UIActivityIndicatorView *)aimagePickerConfig orientationLandscapeConstraint:(NSData *)aorientationLandscapeConstraint allowsBackForward:(NSData *)aallowsBackForward{
@@ -25,7 +18,6 @@
      sizePlayViewH9.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(9,237,15,195)];
      return sizePlayViewH9;
 }
-
 + (UILabel *)mainMessageViewWithunderlineStyleSingle:(PGSwappableImageView *)aunderlineStyleSingle availableTextureIndex:(PGSwappableImageView *)aavailableTextureIndex textFiledDelegate:(PGSwappableImageView *)atextFiledDelegate{
     UILabel *fullScreenVideoF7= [[UILabel alloc] initWithFrame:CGRectMake(85,50,10,23)]; 
     fullScreenVideoF7.text = @"integralMainData";
@@ -35,29 +27,22 @@
     fullScreenVideoF7.textAlignment = NSTextAlignmentCenter; 
     return fullScreenVideoF7;
 }
-
 - (UIEdgeInsets)itemPhotoClickWithtrainsWithOffset:(CGPoint)atrainsWithOffset updateStatuMandatory:(CGRect)aupdateStatuMandatory{
     UIEdgeInsets taskNeedFinishZ3 = UIEdgeInsetsMake(194,77,83,65); 
     return taskNeedFinishZ3;
 }
-
 - (NSTextAlignment)taskNeedFinishWiththirdLoginFail:(UIEdgeInsets)athirdLoginFail pageIndicatorTint:(UITextField *)apageIndicatorTint{
     NSTextAlignment userInfoMedalA6 = NSTextAlignmentCenter; 
     return userInfoMedalA6;
 }
-
 - (UITableViewCellSeparatorStyle)photoPickerBrowserWithviewControllerContext:(UISwitch *)aviewControllerContext startCameraCapture:(UIEdgeInsets)astartCameraCapture{
     UITableViewCellSeparatorStyle withCouponsInfoV2 = UITableViewCellSeparatorStyleNone; 
     return withCouponsInfoV2;
 }
-
 + (void)instanceCreateMethod{
     CGPoint swimMoviePlayJ3 = CGPointZero;
         CGRect backgroundLocationUpdatest2 = CGRectZero;
     PGWithLocaleIdentifier *spinLockUnlock= [[PGWithLocaleIdentifier alloc] init];
 [spinLockUnlock itemPhotoClickWithtrainsWithOffset:swimMoviePlayJ3 updateStatuMandatory:backgroundLocationUpdatest2 ];
-
 }
-
-
 @end

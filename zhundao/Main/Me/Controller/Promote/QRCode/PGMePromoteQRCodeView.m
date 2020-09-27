@@ -1,22 +1,12 @@
 #import "PGMiddleTextFont.h"
-//
-//  PGDiscoverPromoteQRCodeView.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteQRCodeView.h"
-
 #import "UIImage+LXDCreateBarcode.h"
-
 @interface PGMePromoteQRCodeView() {
     NSString *_url;
     CGFloat _codePadding;
 }
-@property (nonatomic, strong) UIView *cornerView; // 圆角视图
-@property (nonatomic, strong) UIView *shadowView; // 阴影视图
+@property (nonatomic, strong) UIView *cornerView; 
+@property (nonatomic, strong) UIView *shadowView; 
 @property (nonatomic, strong) UIImageView *qrcodeImageView;
 @property (nonatomic, strong) UILabel *bottomLabel1;
 @property (nonatomic, strong) UILabel *bottomLabel2;
@@ -24,21 +14,17 @@
 @property (nonatomic, strong) UILabel *shareWechatLabel;
 @property (nonatomic, strong) UILabel *saveLabel;
 @property (nonatomic, strong) UIButton *saveButton;
-
 @end
-
 @implementation PGMePromoteQRCodeView
-
 - (instancetype)initWithUrl:(NSString *)url {
     if (self = [super init]) {
         _codePadding = 60;
         _url = url;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIView *)cornerView {
     if (!_cornerView) {
@@ -90,7 +76,7 @@
 }
 - (UIButton *)shareWechatButton {
     if (!_shareWechatButton) {
-        _shareWechatButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"img_me_wechat"] target:self action:@selector(shareAction:)];
+        _shareWechatButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"img_me_wechat"] target:self action:@selector(PG_shareAction:)];
         _shareWechatButton.addInsetWidth = 30;
         _shareWechatButton.addInsetHeight = 30;
     }
@@ -105,15 +91,14 @@
 }
 - (UIButton *)saveButton {
     if (!_saveButton) {
-        _saveButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"img_me_local"] target:self action:@selector(saveAction:)];
+        _saveButton = [UIButton buttonWithFrame:CGRectZero normalImage:[UIImage imageNamed:@"img_me_local"] target:self action:@selector(PG_saveAction:)];
         _saveButton.addInsetWidth = 30;
         _saveButton.addInsetHeight = 30;
     }
     return _saveButton;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     self.backgroundColor = ZDBackgroundColor;
     [self addSubview:self.shadowView];
     [self addSubview:self.cornerView];
@@ -125,9 +110,8 @@
     [self addSubview:self.saveButton];
     [self addSubview:self.saveLabel];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint assetFromImagex8 = CGPointZero;
         UIButton *zoomingScrollViewx8= [UIButton buttonWithType:UIButtonTypeCustom]; 
@@ -181,17 +165,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.top.equalTo(self.saveButton.mas_bottom).offset(10);
     }];
 }
-
 #pragma mark --- action
-- (void)shareAction:(UIButton *)button {
+- (void)PG_shareAction:(UIButton *)button {
     if ([self.mePromoteQRCodeViewDelegate respondsToSelector:@selector(promoteQRCodeView:didTapShareButton:)]) {
         [self.mePromoteQRCodeViewDelegate promoteQRCodeView:self didTapShareButton:button];
     }
 }
-- (void)saveAction:(UIButton *)button {
+- (void)PG_saveAction:(UIButton *)button {
     if ([self.mePromoteQRCodeViewDelegate respondsToSelector:@selector(promoteQRCodeView:didTapSaveLocalButton:)]) {
         [self.mePromoteQRCodeViewDelegate promoteQRCodeView:self didTapSaveLocalButton:button];
     }
 }
-
 @end

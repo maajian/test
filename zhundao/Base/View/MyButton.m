@@ -1,13 +1,4 @@
-//
-//  MyButton.m
-//  zhundao
-//
-//  Created by zhundao on 2017/2/22.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "MyButton.h"
-
 @implementation MyButton
 +(UIButton *)initWithButtonFrame:(CGRect)frame title:(NSString *)title textcolor:(UIColor *)textColor Target:(id)target action:(SEL)action BackgroundColor:(UIColor *)BackgroundColor cornerRadius:(CGFloat)cornerRadius masksToBounds:(BOOL)masksToBounds
 {
@@ -27,7 +18,4 @@
     }
     return self;
 }
-
-
-
 @end

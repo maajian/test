@@ -1,36 +1,21 @@
 #import "PGDailyTrainDetail.h"
-//
-//  PGMainActivityVC.m
-//  zhundao
-//
-//  Created by maj on 2019/7/6.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "PGMainSignInVC.h"
-
 #import "PGAllSignVC.h"
 #import "PGOnSignInVC.h"
 #import "PGCloseSignInVC.h"
-
 #import "PGSignInViewModel.h"
-
 @interface PGMainSignInVC ()<PGSegmentViewDelegate, UIScrollViewDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
     NSInteger _currentIndex;
 }
-@property (nonatomic, strong) UISearchController *searchController; // 搜索
-@property (nonatomic, strong) PGSegmentView      *segmentView; // 分页
+@property (nonatomic, strong) UISearchController *searchController; 
+@property (nonatomic, strong) PGSegmentView      *segmentView; 
 @property (nonatomic, strong) UIScrollView       *scrollView;
 @property (nonatomic, strong) PGAllSignVC    *allVC;
 @property (nonatomic, strong) PGOnSignInVC     *onVC;
 @property (nonatomic, strong) PGCloseSignInVC  *closeVC;
-
 @property (nonatomic, strong) PGSignInViewModel *viewModel;
-
 @end
-
 @implementation PGMainSignInVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIColor *footerCollectionReusablep9= [UIColor redColor];
@@ -39,27 +24,23 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [articleDetailData rectCornerBottomWithcommentArticleSucc:footerCollectionReusablep9 notificationCategoryOption:articleCourseParticularW7 ];
 });
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
 }
-
 - (void)viewDidLayoutSubviews {
     CGRect viewBounds = self.view.bounds;
     CGFloat topBarOffset = self.topLayoutGuide.length;
     viewBounds.origin.y = topBarOffset * -1;
     self.view.bounds = viewBounds;
 }
-
 - (void)viewDidAppear:(BOOL)animated {
     if(@available(iOS 11.0, *)) {
         self.navigationItem.hidesSearchBarWhenScrolling=YES;
     }
     [ZD_NotificationCenter postNotificationName:ZDUserDefault_Update_Sign object:nil];
 }
-
 #pragma mark --- init
-- (void)initSet {
+- (void)PG_initSet {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIColor *commentWithOrderq4= [UIColor redColor];
         NSTextAlignment concurrentOperationCountV5 = NSTextAlignmentCenter; 
@@ -81,7 +62,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self addChildViewController:_closeVC];
     [self.scrollView addSubview:_allVC.view];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     ZD_WeakSelf
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.equalTo(weakSelf.view);
@@ -90,13 +71,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }];
     [self.allVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.equalTo(weakSelf.scrollView);
-        //        make.height.mas_equalTo(kScreenHeight- kTopBarHeight - 49 - 95);
         make.bottom.equalTo(weakSelf.view);
         make.width.equalTo(weakSelf.scrollView);
     }];
     [self.view layoutIfNeeded];
 }
-
 #pragma mark 懒加载
 - (PGSegmentView *)segmentView {
     if (!_segmentView) {
@@ -126,7 +105,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _viewModel;
 }
-// 搜索
 - (UISearchController *)searchController {
     if (!_searchController) {
         _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
@@ -141,12 +119,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
         if (@available(iOS 11.0, *)) {
             [_searchController.searchBar setPositionAdjustment:UIOffsetMake(kScreenWidth / 2 - 50, 0) forSearchBarIcon:UISearchBarIconSearch];
         }
-        //搜索时，背景变模糊
         [_searchController.searchBar setBackgroundImage:[UIImage new]];
     }
     return _searchController;
 }
-
 #pragma mark --- PGSegmentViewDelegate
 - (void)segmentView:(PGSegmentView *)segmentView didSelectIndex:(NSInteger)index {
     __weak typeof(self) weakSelf = self;
@@ -174,7 +150,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self.closeVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(weakSelf.scrollView);
                 make.leading.equalTo(self.scrollView).offset(2 * kScreenWidth);
-                //                make.height.mas_equalTo(kScreenHeight- kTopBarHeight - 49 - 95);
                 make.bottom.equalTo(self.view);
                 make.width.equalTo(weakSelf.scrollView);
             }];
@@ -186,7 +161,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_scrollView setContentOffset:CGPointMake(2 * kScreenWidth, 0)];
     }
 }
-
 #pragma mark UISearchControllerDelegate 的代理
 - (void)willPresentSearchController:(UISearchController *)searchController {
     if (@available(iOS 11.0, *)) {
@@ -201,7 +175,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_searchController.searchBar setPositionAdjustment:UIOffsetMake(kScreenWidth / 2 - 50, 0) forSearchBarIcon:UISearchBarIconSearch];
     }
 }
-
 #pragma mark --- UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     if (self.searchController.searchBar.text.length) {
@@ -217,7 +190,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.onVC.searchText = self.searchController.searchBar.text;
     self.closeVC.searchText = self.searchController.searchBar.text;
 }
-
 #pragma mark --- UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger index = 0;
@@ -232,6 +204,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self segmentView:nil didSelectIndex:index];
     self.segmentView.currentIndex = index;
 }
-
-
 @end

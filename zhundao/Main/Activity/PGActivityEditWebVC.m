@@ -1,25 +1,14 @@
 #import "PGDeviceOrientationFace.h"
-//
-//  PGActivityEditWebVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/5/12.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityEditWebVC.h"
 #import "PGWordViewController.h"
 #import "PGWordView.h"
 @interface PGActivityEditWebVC ()
-
 @property (nonatomic, strong) PGWordViewController *wordViewController;
 @property (nonatomic, weak) UIViewController *currentViewController;
 @property (strong, nonatomic)  UIView *container;
 @property(nonatomic,assign)NSInteger flag;
 @end
-
 @implementation PGActivityEditWebVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customBack];
@@ -28,7 +17,7 @@
     [self.view addSubview:self.container];
     self.currentViewController.view.frame = self.container.bounds;
     self.title = @"编辑活动详情";
-    [self changeSegment:nil];
+    [self PG_changeSegment:nil];
 }
 -(void)customBack
 {
@@ -70,12 +59,8 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-
 - (PGWordViewController *)wordViewController {
-    
     if (!_wordViewController) {
         _wordViewController = [[PGWordViewController alloc] init];
     }
@@ -88,14 +73,11 @@
     }
     return _container;
 }
-
-- (void)changeSegment:(UISegmentedControl *)sender {
-    
+- (void)PG_changeSegment:(UISegmentedControl *)sender {
     if (self.currentViewController) {
         [self.currentViewController removeFromParentViewController];
         [self.currentViewController.view removeFromSuperview];
     }
-    
     UIViewController *viewController = self.wordViewController ;
     self.wordViewController.imageArray = self.imageArray;
     [self addChildViewController:viewController];
@@ -107,9 +89,7 @@
         _flag+=1;
     }
     viewController.view.frame = self.container.bounds;
-
 }
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

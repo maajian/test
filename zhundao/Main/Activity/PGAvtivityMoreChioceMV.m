@@ -1,17 +1,8 @@
-//
-//  PGAvtivityMoreChioceMV.m
-//  zhundao
-//
-//  Created by zhundao on 2017/4/17.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGAvtivityMoreChioceMV.h"
-
 @implementation PGAvtivityMoreChioceMV
 - (CGFloat)heightForCellWithImagearr :(NSArray *) array
 {
-    NSInteger x =0;    //行
+    NSInteger x =0;    
     for (int i=0; i<array.count+1; i++) {
         x = i/3;
     }

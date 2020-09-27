@@ -1,19 +1,10 @@
 #import "PGPlayDailyCourse.h"
-//
-//  PGAvtivityMoreChioceVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/4/12.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGAvtivityMoreChioceVC.h"
 #import "PGAvtivityPostActivityCell.h"
 #import "PGAvtivityOptionTableViewCell.h"
 #import "BDImagePicker.h"
 #import "PGAvtivityMoreChioceMV.h"
 #import "PGNewOrEditMV.h"
-
 #define kBigImageArray @"BigImageArray"
 #define kSmallImageArray @"SmallImageArray"
 #define kBigIndex @"BigIndex"
@@ -22,23 +13,18 @@
 #define kAlertSwitch @"AlertSwitch"
 #define kHiddenList @"HiddenList"
 static NSString *optionid = @"optionid";
-//https://joinheadoss.oss-cn-hangzhou.aliyuncs.com/qinglong/Static/zhundao/img/bg/1.jpg
-//https://joinheadoss.oss-cn-hangzhou.aliyuncs.com/qinglong/Static/zhundao/img/bg/2.jpg
-//https://joinheadoss.oss-cn-hangzhou.aliyuncs.com/qinglong/Static/zhundao/img/bg/3.jpg
-//https://joinheadoss.oss-cn-hangzhou.aliyuncs.com/qinglong/Static/zhundao/img/bg/4.jpg
 @interface PGAvtivityMoreChioceVC ()<UITableViewDelegate,UITableViewDataSource>
 {
     BOOL isExpland;
     PGAvtivityPostActivityCell *myCell;
 }
 @property(nonatomic ,strong)UITableView *tableview ;
-@property(nonatomic,strong)NSMutableArray *boolArray;   //自定义项的bool值
-@property(nonatomic,strong)NSMutableArray *baseOptionsArray ;  //基础自定义项
-@property(nonatomic,strong)NSMutableArray *allOptionaArray ;  //全部自定义项
-@property(nonatomic,strong)NSMutableDictionary *backDic;  //返回界面block的字典
+@property(nonatomic,strong)NSMutableArray *boolArray;   
+@property(nonatomic,strong)NSMutableArray *baseOptionsArray ;  
+@property(nonatomic,strong)NSMutableArray *allOptionaArray ;  
+@property(nonatomic,strong)NSMutableDictionary *backDic;  
 @property(nonatomic,assign)BOOL alertBool;
 @property(nonatomic,assign)NSInteger hiddenBool;
-
 @property(nonatomic,strong)          UISwitch *alertSwitch;
 @property(nonatomic,strong)          UILabel *hiddenRightLabel;
 @property(nonatomic,strong)         UILabel *customLeftLabel ;
@@ -48,9 +34,7 @@ static NSString *optionid = @"optionid";
 @property(nonatomic,strong)          UIImageView *img1;
 @property(nonatomic,assign)          NSInteger gradeID;
 @end
-
 @implementation PGAvtivityMoreChioceVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect collectionReusableViewQ2 = CGRectMake(67,220,223,57); 
@@ -66,9 +50,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if ([[  NSUserDefaults standardUserDefaults  ]objectForKey:@"GradeId"]) {
         self.gradeID =  [[[  NSUserDefaults standardUserDefaults  ]objectForKey:@"GradeId"]integerValue];
     }
-
 }
-
 #pragma 基础设置 
 - (void)dataBaseSet
 {
@@ -87,7 +69,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [self.view addSubview:self.tableview];
 }
-
 -(void)customBack
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(-8, 20, 80, 44)];
@@ -104,7 +85,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
                           NSForegroundColorAttributeName:ZDMainColor};
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
-
     self.navigationItem.rightBarButtonItem = item;
 }
 - (void)save
@@ -130,7 +110,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (UILabel *)customRightLabel
 {
-    
     if (!_customRightLabel) {
         _customRightLabel =  [MyLabel initWithLabelFrame:CGRectMake(85, 0, kScreenWidth-115, 44) Text:@"多选" textColor:kColorA(199, 199, 205, 1) font:KHeitiSCLight(15) textAlignment:NSTextAlignmentRight cornerRadius:0 masksToBounds:0];
     }
@@ -147,7 +126,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     if (!_alertSwitch) {
         _alertSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(kScreenWidth-60, 7, 50, 44)];
-        [_alertSwitch addTarget:self action:@selector(switchChange:) forControlEvents:UIControlEventValueChanged];
+        [_alertSwitch addTarget:self action:@selector(PG_switchChange:) forControlEvents:UIControlEventValueChanged];
         _alertSwitch.on = _alertBool;
     }
     return _alertSwitch;
@@ -167,7 +146,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _hiddenRightLabel;
 }
-
 - (NSMutableDictionary *)backDic
 {
     if (!_backDic) {
@@ -190,7 +168,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     if (!_boolArray) {
         _boolArray = [NSMutableArray array];
-        
         if (_datadic.count!=0) {
             _boolArray = _datadic[kBoolarray];
         }
@@ -229,7 +206,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _baseOptionsArray;
 }
-
 #pragma datasource tableview 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -253,7 +229,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             }
         }
             break;
-            
         default:return 1;
             break;
     }
@@ -285,9 +260,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     {
         PGAvtivityPostActivityCell *cell = [PGAvtivityPostActivityCell cellAllocWithTableView:tableView WithIndexPath:indexPath];
         if (indexPath.section==0) {
-            [self ImageCell:cell];
+            [self PG_ImageCell:cell];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
         }
         else if (indexPath.section==1) {
             if (indexPath.row==0) {
@@ -313,9 +287,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             }
         }
         return cell;
-        
     }
-    
 }
 #pragma delegate tableview
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -328,7 +300,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             return 44;
             break;
     }
-    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -377,12 +348,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
     view.backgroundColor = [UIColor clearColor];
-    
     UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, kScreenWidth-10, 30) Text:str textColor:[UIColor grayColor] font:KHeitiSCLight(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     [view addSubview:label];
     return  view;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -405,19 +374,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_tableview reloadData];
     }
 }
-
 #pragma  mark ---
-
-- (void)switchChange:(UISwitch *)mySwitch{
+- (void)PG_switchChange:(UISwitch *)mySwitch{
     if (mySwitch.on) {
         [_backDic setObject:@(1) forKey:kAlertSwitch];
     }else{
         [_backDic setObject:@(0) forKey:kAlertSwitch];
     }
 }
-
 #pragma 名单显示设置
-- (void)listGes  //手势点击名单
+- (void)listGes  
 {
     ZD_WeakSelf
     [PGAlertSheet showWithArray:@[@"显示人数和头像姓名", @"显示人数和头像昵称", @"显示人数", @"隐藏"] title:@"报名名单设置" isDelete:NO selectBlock:^(NSInteger index) {
@@ -432,7 +398,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }];
 }
-- (void)changeDataWithIndex :(NSInteger )index Str :(NSString *)str //选择设置
+- (void)changeDataWithIndex :(NSInteger )index Str :(NSString *)str 
 {
     switch (index) {
         case 0:
@@ -476,13 +442,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 #pragma  图片视图创建
-- (void)ImageCell :(UITableViewCell *)cell{
+- (void)PG_ImageCell :(UITableViewCell *)cell{
     _img1 = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 100,100)];
     [_img1 sd_setImageWithURL:[NSURL URLWithString:_imageStr]];
-    [self borderImage:_img1];
+    [self PG_borderImage:_img1];
     [cell.contentView addSubview:_img1];
     UIImageView *selectImg = [[UIImageView alloc]initWithFrame:CGRectMake(120, 10, 100, 100)];
-    [self borderImage:selectImg];
+    [self PG_borderImage:selectImg];
     UIImageView *addImg =[[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetWidth(selectImg.frame)/4, CGRectGetWidth(selectImg.frame)/4, CGRectGetWidth(selectImg.frame)/2, CGRectGetWidth(selectImg.frame)/2)];
     [selectImg addSubview:addImg];
     addImg.image = [UIImage imageNamed:@"img_public_add_new"];
@@ -491,7 +457,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addSmallImage)];
     [selectImg addGestureRecognizer:tap];
 }
-- (void)borderImage:(UIImageView *)imageView{
+- (void)PG_borderImage:(UIImageView *)imageView{
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect effectColorAlphaN8 = CGRectMake(249,5,78,132); 
         UIImage *longPressGesturew5= [UIImage imageNamed:@""]; 
@@ -520,14 +486,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

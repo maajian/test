@@ -1,44 +1,29 @@
 #import "PGDifferenceValueWith.h"
-//
-//  WYMeCodeView.m
-//  Meari
-//
-//  Created by maj on 2019/4/11.
-//  Copyright © 2019 Meari. All rights reserved.
-//
-
 #import "PGLoginCodeView.h"
-
 static const NSInteger itemCount = 4;
 static const CGFloat fixedSpace = 10.f;
-
 @interface PGLoginCodeView()<UITextFieldDelegate> {
-    NSInteger _selectIndex; // 当前位置
+    NSInteger _selectIndex; 
 }
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UIButton *maskButton;
-
 @property (nonatomic, strong) NSMutableArray<UILabel *> *labelArray;
 @property (nonatomic, strong) NSMutableArray<UIView *> *lineArray;
 @property (nonatomic, assign, getter=isDelete) BOOL delete;
-
 @end
-
 @implementation PGLoginCodeView
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _selectIndex = 0;
         _labelArray = [NSMutableArray array];
         _lineArray = [NSMutableArray array];
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode assetExportPresetn4 = UITextFieldViewModeAlways; 
         UITableViewStyle passWordWithq2 = UITableViewStylePlain; 
@@ -51,16 +36,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
         UILabel *codeLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDBlackColor font:ZDSystemFont(24) numberOfLines:1 lineBreakMode:0 lineAlignment:NSTextAlignmentCenter];
         [self addSubview:codeLabel];
         [self.labelArray addObject:codeLabel];
-        
         UIView *lineView = [[UIView alloc] init];
         lineView.backgroundColor = ZDLineColor;
         [self addSubview:lineView];
         [self.lineArray addObject:lineView];
     }
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
@@ -77,10 +60,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.height.mas_equalTo(1);
     }];
 }
-
 #pragma mark --- UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [self changeAnimation:textField];
+    [self PG_changeAnimation:textField];
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (_selectIndex >= 0 && _selectIndex < self.lineArray.count) {
@@ -92,9 +74,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if ([string isEqualToString:@""] && range.location == 0 && range.length == 0) {
         return NO;
     }
-    _delete = range.length == 1;  // 是否是删除
+    _delete = range.length == 1;  
     if ((range.location == itemCount - 1 && range.length == 0) || range.location == itemCount) {
-        // 最后一个数字输入处理
         textField.text = [[textField.text substringToIndex:itemCount - 1] stringByAppendingString: string];
         self.labelArray[itemCount - 1].text = string;
         [self.textField resignFirstResponder];
@@ -103,13 +84,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
         return YES;
     }
 }
-
 #pragma mark --- action
-- (void)textFieldEditingDidChanged:(UITextField *)textField {
+- (void)PG_textFieldEditingDidChanged:(UITextField *)textField {
     if ([textField.text isEqualToString:@""] && _selectIndex == itemCount - 1) {
         return;
     }
-    _selectIndex = textField.text.length >= itemCount ? itemCount: textField.text.length; // 当前位置修改;
+    _selectIndex = textField.text.length >= itemCount ? itemCount: textField.text.length; 
     if (self.isDelete) {
         if (_selectIndex >= 0 && _selectIndex < self.labelArray.count) {
             self.labelArray[_selectIndex].text = @"";
@@ -117,7 +97,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     } else if(_selectIndex > 0){
         self.labelArray[_selectIndex - 1].text = [textField.text substringFromIndex:_selectIndex - 1];
     }
-    //直接从键盘粘贴
     if (_selectIndex == itemCount) {
         for (int i = 0; i < itemCount; i ++) {
             [self.lineArray[i].layer removeAllAnimations];
@@ -125,11 +104,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
         _selectIndex = itemCount - 1;
     }
-    [self removeAnimation:textField];
-    [self changeAnimation:textField];
+    [self PG_removeAnimation:textField];
+    [self PG_changeAnimation:textField];
 }
-// 按钮点击弹出键盘
-- (void)maskButtonAction:(UIButton *)button {
+- (void)PG_maskButtonAction:(UIButton *)button {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode javaScriptAlertU6 = UITextFieldViewModeAlways; 
         UITableViewStyle synchronizedEncodingUsingq1 = UITableViewStylePlain; 
@@ -138,8 +116,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     [self.textField becomeFirstResponder];
 }
-// 横线动画
-- (void)lineAnimation:(UIView *)view {
+- (void)PG_lineAnimation:(UIView *)view {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
     animation.duration = 1;
     animation.repeatCount = HUGE_VALF;
@@ -149,7 +126,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     animation.toValue = (id)ZDMainColor.CGColor;
     [view.layer addAnimation:animation forKey:@"backgroundColor"];
 }
-
 #pragma mark --- lazyload
 - (UITextField *)textField {
     if (!_textField) {
@@ -159,9 +135,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         if (@available(iOS 12.0, *)) {
             _textField.textContentType =  UITextContentTypeOneTimeCode;
         } else {
-            // Fallback on earlier versions
         }
-        [_textField addTarget:self action:@selector(textFieldEditingDidChanged:) forControlEvents:(UIControlEventEditingChanged)];
+        [_textField addTarget:self action:@selector(PG_textFieldEditingDidChanged:) forControlEvents:(UIControlEventEditingChanged)];
     }
     return _textField;
 }
@@ -169,20 +144,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (!_maskButton) {
         _maskButton = [UIButton zd_button];
         _maskButton.backgroundColor = ZDBackgroundColor;
-        [_maskButton addTarget:self action:@selector(maskButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_maskButton addTarget:self action:@selector(PG_maskButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _maskButton;
 }
-
 #pragma mark --- public
-- (void)changeAnimation:(UITextField *)textField {
+- (void)PG_changeAnimation:(UITextField *)textField {
     if (self.isDelete) {
-        [self lineAnimation:self.lineArray[_selectIndex]];
+        [self PG_lineAnimation:self.lineArray[_selectIndex]];
     } else {
-        [self lineAnimation:self.lineArray[_selectIndex]];
+        [self PG_lineAnimation:self.lineArray[_selectIndex]];
     }
 }
-- (void)removeAnimation:(UITextField *)textField  {
+- (void)PG_removeAnimation:(UITextField *)textField  {
     if (self.isDelete) {
         [self.lineArray[_selectIndex == itemCount -1 ? _selectIndex : _selectIndex + 1].layer removeAllAnimations];
     } else {
@@ -191,6 +165,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }
 }
-
-
 @end

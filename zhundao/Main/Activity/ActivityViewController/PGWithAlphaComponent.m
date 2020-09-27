@@ -1,10 +1,3 @@
-// 
- //PGWithAlphaComponent.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGWithAlphaComponent.h"
 @implementation PGWithAlphaComponent
 + (UITextView *)photoButtonClickWithcancelCollectionCourse:(UIButton *)acancelCollectionCourse titleTextAttributes:(UIScrollView *)atitleTextAttributes trainsWithOffset:(UITextView *)atrainsWithOffset{
@@ -14,27 +7,22 @@
     collectionTrainViewZ8.text = @"orderDetailCell";
     return collectionTrainViewZ8;
 }
-
 + (NSMutableArray *)scrollTimeIntervalWitharticleStrokeCourse:(PGTitleViewWith *)aarticleStrokeCourse accessoryDisclosureIndicator:(PGTitleViewWith *)aaccessoryDisclosureIndicator encodingWithLine:(PGTitleViewWith *)aencodingWithLine{
     NSMutableArray *medalKindModela3= [NSMutableArray array];
     return medalKindModela3;
 }
-
 - (NSTextAlignment)dataWithUserWithregisterViewController:(NSData *)aregisterViewController blockCropMode:(UISlider *)ablockCropMode{
     NSTextAlignment couponsAlertViewn6 = NSTextAlignmentCenter; 
     return couponsAlertViewn6;
 }
-
 - (UITextFieldViewMode)styleBlackOpaqueWithoriginStatusBackground:(CGRect)aoriginStatusBackground guidePageControl:(CGRect)aguidePageControl{
     UITextFieldViewMode badgeTextColorE3 = UITextFieldViewModeAlways; 
     return badgeTextColorE3;
 }
-
 - (NSTextAlignment)discoveryViewControllerWithattentionViewController:(UITableViewStyle)aattentionViewController matchTableView:(CGPoint)amatchTableView{
     NSTextAlignment fontAttributeNameW7 = NSTextAlignmentCenter; 
     return fontAttributeNameW7;
 }
-
 + (void)instanceCreateMethod{
     NSData *medalDetailCellO5= [[NSData alloc] init];
         UISlider *deviceOrientationUnknowne5= [[UISlider alloc] initWithFrame:CGRectZero]; 
@@ -43,8 +31,5 @@
     deviceOrientationUnknowne5.value =100; 
     PGWithAlphaComponent *showingPhotoView= [[PGWithAlphaComponent alloc] init];
 [showingPhotoView dataWithUserWithregisterViewController:medalDetailCellO5 blockCropMode:deviceOrientationUnknowne5 ];
-
 }
-
-
 @end

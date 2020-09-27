@@ -1,46 +1,30 @@
 #import "PGOrganizeListRequset.h"
-//
-//  PGSaoYiSaoViewController.m
-//  SaoYiSao
-//
-//  Created by ClaudeLi on 16/4/21.
-//  Copyright © 2016年 ClaudeLi. All rights reserved.
-//
-
 #import "PGDiscoverBindingBeaconVC.h"
 #import "UIImage+mask.h"
-// 距顶部高度
 #define Top_Height 0.2*kScreenHeight
-// 中间View的宽度
 #define MiddleWidth 0.8*kScreenWidth
 static NSString *saoText = @"将二维码/条形码放入框内，即可自动扫描";
-
 @interface PGDiscoverBindingBeaconVC ()<UIAlertViewDelegate>
 {
     bool _canOpen;
 }
 @property(nonatomic,assign)BOOL successFlag;
 @end
-
 @implementation PGDiscoverBindingBeaconVC
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden = YES;
     self.view.backgroundColor = [UIColor blackColor];
-    [self creatBackGroundView];
-    [self creatUI];
+    [self PG_creatBackGroundView];
+    [self PG_creatUI];
     _successFlag = 0;
 }
-
 -(void)backAction{
     if (_successFlag) {
          _backblock(_successFlag);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 #pragma mark -
 #pragma mark  -- -- -- -- -- AVCapture Metadata Output Objects Delegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
@@ -87,13 +71,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)showhudWithString :(NSString *)labelText WithImageName :(NSString *)imageName successBool :(BOOL )isSuccess
 {
-    
     if (isSuccess) {
         MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:labelText showAnimated:YES UIView:self.view imageName:imageName];
         [hud1 showAnimated:YES];
         [hud1 hideAnimated:YES afterDelay:1];
         [self willPop];
-        
     }
    else
    {
@@ -122,18 +104,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self showhudWithString:@"绑定成功" WithImageName:@"img_public_signin_check" successBool:YES];
     }
 }
-
-
 #pragma mark -
 #pragma mark  -- -- -- -- -- MakeView
-
-- (void)creatBackGroundView{
+- (void)PG_creatBackGroundView{
     UIImageView *maskView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     maskView.image = [UIImage maskImageWithMaskRect:maskView.frame clearRect:CGRectMake((kScreenWidth-MiddleWidth)/2, Top_Height, MiddleWidth, MiddleWidth)];
     [self.view addSubview:maskView];
 }
-
-- (void)creatUI{
+- (void)PG_creatUI{
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImageView * withGroupPurchasen4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     withGroupPurchasen4.contentMode = UIViewContentModeCenter; 
@@ -156,7 +134,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
                        UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
-    
     UILabel * labIntroudction= [[UILabel alloc] initWithFrame:CGRectMake(0, Top_Height+MiddleWidth + 20, kScreenWidth, 35)];
     labIntroudction.numberOfLines=2;
     labIntroudction.text= saoText;
@@ -164,12 +141,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
     labIntroudction.textColor = [UIColor whiteColor];
     labIntroudction.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:labIntroudction];
-    
     CGFloat leadSpace = (kScreenWidth - MiddleWidth)/ 2;
     UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(leadSpace, Top_Height, MiddleWidth, MiddleWidth)];
     imageView.image = [UIImage imageNamed:@"Icon_SaoYiSao"];
     [self.view addSubview:imageView];
-    
     upOrdown = NO;
     num =0;
   self.line = [[UIImageView alloc] initWithFrame:CGRectMake(leadSpace, Top_Height, MiddleWidth, 12)];
@@ -177,7 +152,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
   self.line.contentMode = UIViewContentModeScaleToFill;
     [self.view addSubview:self.line];
 }
-
 - (void)didReceiveMemoryWarning {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImageView * withMedalKindE3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
@@ -196,7 +170,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [keywindowWithText filterManagerDelegateWithconcurrentOperationCount:withMedalKindE3 scrollViewContent:hourTimeIntervalm2 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 @end

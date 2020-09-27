@@ -1,10 +1,3 @@
-// 
- //PGPlayTestView.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGPlayTestView.h"
 @implementation PGPlayTestView
 + (UISlider *)collectionOriginalModelWithtitleTextAttributes:(UIColor *)atitleTextAttributes tableViewData:(UIButton *)atableViewData rectCornerBottom:(UITextView *)arectCornerBottom{
@@ -14,27 +7,22 @@
     sizeWithAttributesV3.value =60; 
     return sizeWithAttributesV3;
 }
-
 + (UIImage *)rootViewControllerWithassetFromImage:(PGArticleCommentView *)aassetFromImage commonViewModel:(PGArticleCommentView *)acommonViewModel trainsWithOffset:(PGArticleCommentView *)atrainsWithOffset{
     UIImage *withReuseIdentifierU1= [UIImage imageNamed:@""]; 
     return withReuseIdentifierU1;
 }
-
 - (NSTextAlignment)weekTimeLabelWithtweetPhotoModel:(UITextView *)atweetPhotoModel contentInsetAdjustment:(UITableViewCellSeparatorStyle)acontentInsetAdjustment{
     NSTextAlignment honorTitleModely1 = NSTextAlignmentCenter; 
     return honorTitleModely1;
 }
-
 - (NSRange)titleViewExampleWithcollectionViewController:(NSLineBreakMode)acollectionViewController withFragmentShader:(UITableViewStyle)awithFragmentShader{
     NSRange requestReloadIgnoringo1 = NSMakeRange(10,149); 
     return requestReloadIgnoringo1;
 }
-
 - (UIButtonType)badgeDefaultFontWithtitleEdgeInsets:(NSRange)atitleEdgeInsets keyboardWillChange:(UIEdgeInsets)akeyboardWillChange{
     UIButtonType applicationStateActiveU0 = UIButtonTypeContactAdd;
     return applicationStateActiveU0;
 }
-
 + (void)instanceCreateMethod{
     UITextView *activityListWithg8= [[UITextView alloc] initWithFrame:CGRectZero]; 
     activityListWithg8.editable = NO; 
@@ -43,8 +31,5 @@
         UITableViewCellSeparatorStyle imageGenerationErrorx8 = UITableViewCellSeparatorStyleNone; 
     PGPlayTestView *failProvisionalNavigation= [[PGPlayTestView alloc] init];
 [failProvisionalNavigation weekTimeLabelWithtweetPhotoModel:activityListWithg8 contentInsetAdjustment:imageGenerationErrorx8 ];
-
 }
-
-
 @end

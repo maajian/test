@@ -1,25 +1,11 @@
 #import "PGWithTrainParticular.h"
-//
-//  PGLoginCodeFixVC.m
-//  jingjing
-//
-//  Created by maj on 2020/8/3.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGLoginCodeFixVC.h"
-
 #import "PGBaseTabbarVC.h"
-
 #import "PGLoginCodeFixView.h"
-
 @interface PGLoginCodeFixVC()<PGLoginCodeFixViewDelegate>
 @property (nonatomic, strong) PGLoginCodeFixView *loginCodeFixView;
-
 @end
-
 @implementation PGLoginCodeFixVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSRange scrollOffsetWithQ4 = NSMakeRange(2,80); 
@@ -28,11 +14,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [viewControllerDone bottomChartViewWithcommonToolVedio:scrollOffsetWithQ4 dailyTrainChapter:viewsAlongAxisU2 ];
 });
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
 }
-
 - (void)viewWillAppear:(BOOL)animated {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSRange choicenessVideoViewM6 = NSMakeRange(9,194); 
@@ -47,22 +31,20 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
-
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
     _loginCodeFixView = [[PGLoginCodeFixView alloc] init];
     _loginCodeFixView.phoneStr = self.phoneStr;
     _loginCodeFixView.loginCodeFixViewDelegate = self;
     [self.view addSubview:self.loginCodeFixView];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.loginCodeFixView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
 }
-
 #pragma mark --- Network
-- (void)networkForLoginCode {
+- (void)PG_networkForLoginCode {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSRange doneButtonClickF9 = NSMakeRange(3,90); 
         CGPoint imageTextureDelegatei4 = CGPointZero;
@@ -99,14 +81,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         ZD_HUD_SHOW_ERROR(error);
     }];
 }
-
 #pragma mark --- PGLoginCodeFixViewDelegate
 - (void)PGLoginCodeFixView:(PGLoginCodeFixView *)loginCodeFixView didTapNextButton:(UIButton *)button {
-    [self networkForLoginCode];
+    [self PG_networkForLoginCode];
 }
 - (void)PGLoginCodeFixView:(PGLoginCodeFixView *)loginCodeFixView didTapCloseButton:(UIButton *)button {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-
 @end

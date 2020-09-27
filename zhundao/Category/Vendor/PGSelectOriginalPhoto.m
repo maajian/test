@@ -1,10 +1,3 @@
-// 
- //PGSelectOriginalPhoto.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGSelectOriginalPhoto.h"
 @implementation PGSelectOriginalPhoto
 + (UIScrollView *)levalInfoModelWithcacheCourseParticular:(UIFont *)acacheCourseParticular weekTimeLabel:(UIButton *)aweekTimeLabel withCourseVideo:(UIFont *)awithCourseVideo{
@@ -16,7 +9,6 @@
     directionVerticalMovedR1.minimumZoomScale = 1; 
     return directionVerticalMovedR1;
 }
-
 + (UIButton *)paragraphStyleAttributeWithcustomAnimateTransition:(PGMutableTrackWith *)acustomAnimateTransition doneButtonClick:(PGMutableTrackWith *)adoneButtonClick taskCenterTable:(PGMutableTrackWith *)ataskCenterTable{
     UIButton *indicatorViewColorn4= [UIButton buttonWithType:UIButtonTypeCustom]; 
     indicatorViewColorn4.frame = CGRectZero; 
@@ -26,29 +18,22 @@
     indicatorViewColorn4.frame = CGRectZero; 
     return indicatorViewColorn4;
 }
-
 - (UITableViewStyle)photoPrevireViewWithhandpickViewModel:(CGRect)ahandpickViewModel photoPickerCollection:(NSString *)aphotoPickerCollection{
     UITableViewStyle suggestBackViewB7 = UITableViewStylePlain; 
     return suggestBackViewB7;
 }
-
 - (UIButtonType)sendButtonStatusWithlaunchViewController:(UITableView *)alaunchViewController numberWithString:(UIEdgeInsets)anumberWithString{
     UIButtonType textAlignmentRightx1 = UIButtonTypeContactAdd;
     return textAlignmentRightx1;
 }
-
 - (UIButtonType)timeUnclampedPropWithbadgeWithStyle:(UIEdgeInsets)abadgeWithStyle numberBadgeWith:(NSData *)anumberBadgeWith{
     UIButtonType enterBackgroundNotificationO2 = UIButtonTypeContactAdd;
     return enterBackgroundNotificationO2;
 }
-
 + (void)instanceCreateMethod{
     CGRect photoButtonClickv3 = CGRectMake(119,159,131,218); 
         NSString *integralMainViewS3 = @"cardViewDelegate";
     PGSelectOriginalPhoto *circleViewController= [[PGSelectOriginalPhoto alloc] init];
 [circleViewController photoPrevireViewWithhandpickViewModel:photoButtonClickv3 photoPickerCollection:integralMainViewS3 ];
-
 }
-
-
 @end

@@ -1,10 +1,3 @@
-// 
- //PGUserCommentView.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGUserCommentView.h"
 @implementation PGUserCommentView
 + (UITextField *)rectEdgeNoneWithdownloadImageWith:(UIColor *)adownloadImageWith trainTableView:(UISwitch *)atrainTableView reusablePhotoView:(UITextView *)areusablePhotoView{
@@ -18,29 +11,24 @@
      changeReasonCategoryX0.leftViewMode = UITextFieldViewModeAlways; 
     return changeReasonCategoryX0;
 }
-
 + (UISwitch *)notificationPresentationOptionsWithprogressTypeDefault:(PGGroupPurchaseData *)aprogressTypeDefault cancelContentTouches:(PGGroupPurchaseData *)acancelContentTouches withGradientTint:(PGGroupPurchaseData *)awithGradientTint{
     UISwitch *defaultMaskTypeS8= [[UISwitch alloc] initWithFrame:CGRectMake(172,227,155,239)]; 
     defaultMaskTypeS8.on = YES; 
     defaultMaskTypeS8.onTintColor = [UIColor whiteColor]; 
     return defaultMaskTypeS8;
 }
-
 - (UIEdgeInsets)transformRotationAngleWithswimCircleItem:(UIButton *)aswimCircleItem colorSpaceRelease:(UIImageView *)acolorSpaceRelease{
     UIEdgeInsets infoBottomViews3 = UIEdgeInsetsZero;
     return infoBottomViews3;
 }
-
 - (CGPoint)couponTypeActivityWithnaviTitleFont:(UIEdgeInsets)anaviTitleFont authorizationWithCompletion:(UITextView *)aauthorizationWithCompletion{
     CGPoint replayTypeNormalG3 = CGPointMake(10,122); 
     return replayTypeNormalG3;
 }
-
 - (UIEdgeInsets)crashReportEnabledWithassetImageGenerator:(UITableViewStyle)aassetImageGenerator bytesUsingEncoding:(UIColor *)abytesUsingEncoding{
     UIEdgeInsets bottomShareViewv1 = UIEdgeInsetsZero;
     return bottomShareViewv1;
 }
-
 + (void)instanceCreateMethod{
     UIButton *timeFromDurationk4= [UIButton buttonWithType:UIButtonTypeCustom]; 
     timeFromDurationk4.frame = CGRectZero; 
@@ -56,8 +44,5 @@
     downloadImageWithW3.clearsContextBeforeDrawing = YES; 
     PGUserCommentView *openWindowsAutomatically= [[PGUserCommentView alloc] init];
 [openWindowsAutomatically transformRotationAngleWithswimCircleItem:timeFromDurationk4 colorSpaceRelease:downloadImageWithW3 ];
-
 }
-
-
 @end

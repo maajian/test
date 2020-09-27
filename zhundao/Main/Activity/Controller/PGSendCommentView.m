@@ -1,10 +1,3 @@
-// 
- //PGSendCommentView.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGSendCommentView.h"
 @implementation PGSendCommentView
 + (UITextView *)cellWithReuseWithpickerColletionView:(UIFont *)apickerColletionView integralRecordTable:(UIImage *)aintegralRecordTable birthdayPickerView:(UIScrollView *)abirthdayPickerView{
@@ -14,7 +7,6 @@
     photosBytesWitho3.text = @"mutableCompositionTrack";
     return photosBytesWitho3;
 }
-
 + (UILabel *)shrinkRightBottomWithviewControllerContext:(PGPathWithRounded *)aviewControllerContext collectionViewController:(PGPathWithRounded *)acollectionViewController suggestBackView:(PGPathWithRounded *)asuggestBackView{
     UILabel *cellReuseIdentifierj9= [[UILabel alloc] initWithFrame:CGRectZero]; 
     cellReuseIdentifierj9.text = @"actionSheetDelegate";
@@ -24,22 +16,18 @@
     cellReuseIdentifierj9.textAlignment = NSTextAlignmentCenter; 
     return cellReuseIdentifierj9;
 }
-
 - (UITableViewStyle)contextDrawImageWithnumberBadgeWith:(UIButton *)anumberBadgeWith modalPresentationOver:(UIEdgeInsets)amodalPresentationOver{
     UITableViewStyle gradeViewModelO1 = UITableViewStylePlain; 
     return gradeViewModelO1;
 }
-
 - (CGRect)playViewModelWithforgotPasswordView:(UITableView *)aforgotPasswordView underlineStyleSingle:(UIButton *)aunderlineStyleSingle{
     CGRect remoteNotificationsWithN0 = CGRectMake(100,175,151,244); 
     return remoteNotificationsWithN0;
 }
-
 - (NSLineBreakMode)couponsInfoDataWithtransitRouteSearch:(UIButton *)atransitRouteSearch controlStateNormal:(UITableView *)acontrolStateNormal{
     NSLineBreakMode withSessionConfigurationv4 = NSLineBreakByTruncatingTail; 
     return withSessionConfigurationv4;
 }
-
 + (void)instanceCreateMethod{
     UIButton *appendingPathComponentU9= [UIButton buttonWithType:UIButtonTypeCustom]; 
     appendingPathComponentU9.frame = CGRectZero; 
@@ -50,8 +38,5 @@
         UIEdgeInsets blurWithRadiusG9 = UIEdgeInsetsMake(219,13,127,10); 
     PGSendCommentView *photoStreamAlbum= [[PGSendCommentView alloc] init];
 [photoStreamAlbum contextDrawImageWithnumberBadgeWith:appendingPathComponentU9 modalPresentationOver:blurWithRadiusG9 ];
-
 }
-
-
 @end

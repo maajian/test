@@ -1,26 +1,7 @@
-//
-//  PGActivityConsultViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/8/3.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityConsultViewModel.h"
 #import "PGActivityConsultModel.h"
 #import "Time.h"
 @implementation PGActivityConsultViewModel
-
-/*! 获取回复列表 */
-//POST api/PerBase/PstConsultList?accessKey={accessKey}
-
-/*! 回复留言 */
-//POST api/PerBase/ReplyConsult/{id}?accessKey={accessKey}&answer={answer}&IsRecommend={IsRecommend}
-
-/*! 删除活动资讯 */
-//GET api/PerBase/DeleteConsult/{id}?accessKey={accessKey}
-
-
 - (void)getAllConsult :(NSDictionary *)dic  getAllBlock:(getAllBlock)getAllBlock
 {
     NSString *url = [NSString stringWithFormat:@"%@api/PerBase/PstConsultList?accessKey=%@",zhundaoApi,[[PGSignManager shareManager] getaccseekey]];
@@ -42,14 +23,8 @@
         }
         getAllBlock(muarray,timeArray,notArray,hadArray);
     } fail:^(NSError *error) {
-        
     }];
 }
-
-
-
-
-/*! 获取高度数组 */
 - (NSArray *)getHeight:(NSArray *)array
 {
     NSMutableArray *heightArray = [NSMutableArray array];
@@ -60,10 +35,6 @@
     }
     return heightArray;
 }
-
-
-
-/*! 获取时间 */
 - (NSString *)getTime:(NSString *)timeStr
 {
     Time *time = [Time bringWithTime:timeStr];

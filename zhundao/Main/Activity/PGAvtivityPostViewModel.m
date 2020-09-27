@@ -1,18 +1,7 @@
-//
-//  PGAvtivityPostViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/13.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGAvtivityPostViewModel.h"
 #import "Time.h"
 #import "ActivityModel.h"
 @implementation PGAvtivityPostViewModel
-
-/*! 获取图片数组 */
-
 -  (void)getImage:(ZDSuccessBlock)successBlock error :(ZDErrorBlock)errorBlock {
     NSString *str = @"https://www.zhundao.net/images.txt";
     PGNetWorkManager.shareHTTPSessionManager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json",
@@ -29,12 +18,8 @@
         NSLog(@"responseObject = %@",obj);
         successBlock(obj);
     } fail:^(NSError *error) {
-        
     }];
 }
-
-
-/*! 活动开始时间 */
 - (NSString *)beginTime:(ActivityModel *)activityModel
 {
     Time *time = [[Time alloc]init];
@@ -48,10 +33,8 @@
     }
     return str;
 }
-/*! 活动结束时间 */
 - (NSString *)stopTime:(ActivityModel *)activityModel
 {
-    
     Time *time = [[Time alloc]init];
     NSString *str = nil;
     if (activityModel) {
@@ -67,7 +50,6 @@
     }
     return str;
 }
-/*! 报名开始时间 */
 - (NSString *)startTime:(ActivityModel *)activityModel
 {
     NSString *str = nil;
@@ -81,7 +63,6 @@
     }
     return str;
 }
-/*! 报名截止时间 */
 - (NSString *)endTime:(ActivityModel *)activityModel
 {
     Time *time = [[Time alloc]init];
@@ -95,8 +76,7 @@
     }
     return str;
 }
-/*! 获取未删除的费用项 */
--(NSMutableArray *) getFeeArrayNotDelete:(ActivityModel *)activityModel  //获取未删除的费用项
+-(NSMutableArray *) getFeeArrayNotDelete:(ActivityModel *)activityModel  
 {
     NSMutableArray *array = [activityModel.ActivityFees mutableCopy];
     for (NSDictionary *dic in activityModel.ActivityFees) {
@@ -106,37 +86,33 @@
     }
     return  array;
 }
-/*! 判断时间输入是否正确 */
 -(BOOL)isFalseTime :(NSString *)beginTime stopTime :(NSString *)stopTime
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSDate* stopDate1 = [formatter dateFromString:stopTime];//结束时间
-    NSDate* beginDate2 = [formatter dateFromString:beginTime];//开始时间
+    NSDate* stopDate1 = [formatter dateFromString:stopTime];
+    NSDate* beginDate2 = [formatter dateFromString:beginTime];
     NSString *timeStop = [NSString stringWithFormat:@"%ld", (long)[stopDate1 timeIntervalSince1970]];
     NSString *timeBegin = [NSString stringWithFormat:@"%ld", (long)[beginDate2 timeIntervalSince1970]];
     if ([timeStop integerValue]- [timeBegin integerValue]>0) {
-        return NO;  //时间正确
+        return NO;  
     }
     else{
-        return YES;//时间错误
+        return YES;
     }
 }
-/*! 当前时间 */
 - (NSString *)timeNow
 {
     Time *time = [[Time alloc]init];
     NSString *str = [time nextDateWithNumber:0];
     return str;
 }
-/*! 拼接后面的：00 */
 - (NSString *)appendTime :(NSString *)timeStr{
     if (timeStr.length) {
         return  [timeStr stringByAppendingString:@":00"];
     }
     return @"";
 }
-/*! 是否开启报名用户提醒 */
 - (NSInteger)isAlert:(NSDictionary *)dic
 {
     NSString *str = [dic valueForKey:@"AlertSwitch"];
@@ -147,12 +123,10 @@
         return 1;
     }
 }
-
-/*! 获取基础报名项 */
 - (NSString *)getUserInfo:(NSDictionary *)dic ALLOptionsArray :(NSArray *)ALLOptionsArray
 {
     NSArray *boolarray = [dic[@"Boolarray"] copy];
-    NSInteger count = 0 ;//计算添加逗号, 100,101
+    NSInteger count = 0 ;
     NSString *str = @"";
     for (int i = 0; i<12; i++) {
         if ([boolarray[i] integerValue]) {
@@ -166,12 +140,11 @@
     NSLog(@"固定项字符串为%@",str);
     return str;
 }
-/*! 获取额外报名项 */
 - (NSString *)getExtraUserInfo:(NSDictionary *)dic ALLOptionsArray :(NSArray *)ALLOptionsArray
 {
     NSArray *boolarray = [dic[@"Boolarray"] copy];
     NSString *str = @"";
-    NSInteger count = 0 ;//计算添加逗号, 100,101
+    NSInteger count = 0 ;
     if (boolarray.count>12) {
         for (int i=12; i<boolarray.count; i++) {
             if ([boolarray[i] integerValue]) {
@@ -179,7 +152,6 @@
                 if (count>1) {
                     str = [str stringByAppendingString:@","];
                 }
-                
                 str =   [str stringByAppendingString:[NSString stringWithFormat:@"%@",ALLOptionsArray[i]]];
             }
         }
@@ -187,5 +159,4 @@
     NSLog(@"选填项字符串为%@",str);
     return str;
 }
-
 @end

@@ -1,19 +1,9 @@
-//
-//  UIAlertController+creat.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/6.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "UIAlertController+creat.h"
-
 @implementation UIAlertController (creat)
 +(UIAlertController *)initWithTitle :(NSString *)title message :(NSString *)message sureAction :(uiAlert)alertAction
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-    
     }];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:alertAction]];

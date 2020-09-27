@@ -1,10 +1,3 @@
-// 
- //PGPlayerViewContent.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGPlayerViewContent.h"
 @implementation PGPlayerViewContent
 + (UIImageView *)guideBottomViewWithpathWithRect:(UITextField *)apathWithRect refreshStateIdle:(UITableView *)arefreshStateIdle cachingHighQuality:(UIColor *)acachingHighQuality{
@@ -16,34 +9,26 @@
     strokeCourseHeaderW0.clearsContextBeforeDrawing = YES; 
     return strokeCourseHeaderW0;
 }
-
 + (NSString *)subviewWithClassWithrecordVideoCamera:(PGRecoderSelectPicker *)arecordVideoCamera connectionDataDelegate:(PGRecoderSelectPicker *)aconnectionDataDelegate smartAlbumUser:(PGRecoderSelectPicker *)asmartAlbumUser{
     NSString *tableViewContentn4 = @"strokeArticleTable";
     return tableViewContentn4;
 }
-
 - (NSLineBreakMode)alertWithControllerWithimageMatrixMultiply:(CGSize)aimageMatrixMultiply phoneWithPhone:(NSLineBreakMode)aphoneWithPhone{
     NSLineBreakMode gradeCollectionViewJ4 = NSLineBreakByTruncatingTail; 
     return gradeCollectionViewJ4;
 }
-
 - (UITableViewCellSeparatorStyle)followWithHeadingWithchoicenessTableView:(UIImage *)achoicenessTableView photoViewIndex:(NSArray *)aphotoViewIndex{
     UITableViewCellSeparatorStyle withJsonStringV7 = UITableViewCellSeparatorStyleNone; 
     return withJsonStringV7;
 }
-
 - (NSTextAlignment)fillRuleEvenWithrecommendCollectionView:(NSArray *)arecommendCollectionView currentShortDate:(UIEdgeInsets)acurrentShortDate{
     NSTextAlignment trackingWithTouchq9 = NSTextAlignmentCenter; 
     return trackingWithTouchq9;
 }
-
 + (void)instanceCreateMethod{
     CGSize playerStatusPausev4 = CGSizeMake(193,181); 
         NSLineBreakMode javaScriptTextF8 = NSLineBreakByTruncatingTail; 
     PGPlayerViewContent *selectPhotoNavigation= [[PGPlayerViewContent alloc] init];
 [selectPhotoNavigation alertWithControllerWithimageMatrixMultiply:playerStatusPausev4 phoneWithPhone:javaScriptTextF8 ];
-
 }
-
-
 @end

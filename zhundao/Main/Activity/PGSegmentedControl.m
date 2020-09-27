@@ -1,19 +1,9 @@
-//
-//  PGSegmentedControl.m
-//  SimpleWord
-//
-//  Created by Chenly on 16/5/13.
-//  Copyright © 2016年 Little Meaning. All rights reserved.
-//
-
 #import "PGSegmentedControl.h"
-
 @implementation PGSegmentedControl
 {
     NSMutableArray *_itemViews;
     UIView *_slideBlockView;
 }
-
 - (instancetype)initWithItems:(NSArray<UIImage *> *)items {
     if (self = [super init]) {
         self.clipsToBounds = YES;
@@ -28,16 +18,13 @@
         _slideBlockView = [[UIView alloc] init];
         _slideBlockView.backgroundColor = [UIColor darkGrayColor];
         [self addSubview:_slideBlockView];
-        
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(PG_handleTap:)];
         [self addGestureRecognizer:tap];
     }
     return self;
 }
-
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
     CGRect rect = self.bounds;
     CGFloat itemWidth = CGRectGetWidth(rect) / self.numberOfSegments;
     CGFloat itemHeight = CGRectGetHeight(rect) - 4.f;
@@ -54,12 +41,10 @@
     rect.origin.x = selectedItemView.center.x - CGRectGetWidth(rect) / 2;
     _slideBlockView.frame = rect;
 }
-
-- (void)handleTap:(UITapGestureRecognizer *)tap {
+- (void)PG_handleTap:(UITapGestureRecognizer *)tap {
     CGPoint point = [tap locationInView:self];
     CGFloat itemWidth = CGRectGetWidth(self.bounds) / self.numberOfSegments;
     NSInteger index = point.x / itemWidth;
-    
     if ([self.delegate respondsToSelector:@selector(lm_segmentedControl:didTapAtIndex:)]) {
         [self.delegate lm_segmentedControl:self didTapAtIndex:index];
     }
@@ -67,17 +52,13 @@
         [self setSelectedSegmentIndex:index animated:YES];
     }
 }
-
 - (NSInteger)numberOfSegments {
     return _itemViews.count;
 }
-
 - (void)setSelectedSegmentIndex:(NSInteger)selectedSegmentIndex animated:(BOOL)animated {
-    
     if (_selectedSegmentIndex == selectedSegmentIndex) {
         return;
     }
-    
     _selectedSegmentIndex = selectedSegmentIndex;
     if (animated) {
         [UIView animateWithDuration:0.2 animations:^{
@@ -89,10 +70,8 @@
     }
     [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
-
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(0, 0.5f)];
     [path addLineToPoint:CGPointMake(CGRectGetMaxX(rect), 0.5f)];
@@ -102,5 +81,4 @@
     [[UIColor colorWithWhite:0.9 alpha:1.f] setStroke];
     [path stroke];
 }
-
 @end

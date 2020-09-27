@@ -1,10 +1,3 @@
-// 
- //PGVerticalScrollIndicator.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGVerticalScrollIndicator.h"
 @implementation PGVerticalScrollIndicator
 + (UITextField *)buttonTypeSystemWithcircleScreenView:(UITableView *)acircleScreenView hidesWhenStopped:(UITextField *)ahidesWhenStopped contextFillPath:(UIFont *)acontextFillPath{
@@ -18,7 +11,6 @@
      photoLoadingViewf0.leftViewMode = UITextFieldViewModeAlways; 
     return photoLoadingViewf0;
 }
-
 + (UISlider *)buttonImageNameWithkeyboardAnimationDuration:(PGCollectionOriginalTable *)akeyboardAnimationDuration scrollViewContent:(PGCollectionOriginalTable *)ascrollViewContent playerStateStopped:(PGCollectionOriginalTable *)aplayerStateStopped{
     UISlider *integralRecordDataZ7= [[UISlider alloc] initWithFrame:CGRectMake(68,106,93,111)]; 
     integralRecordDataZ7.minimumValue = 0; 
@@ -26,29 +18,22 @@
     integralRecordDataZ7.value =28; 
     return integralRecordDataZ7;
 }
-
 - (UIEdgeInsets)groupPurchaseOrderWithrecordMovieView:(NSRange)arecordMovieView playerStateBuffering:(UIFont *)aplayerStateBuffering{
     UIEdgeInsets timeRangeFromP0 = UIEdgeInsetsMake(178,109,5,213); 
     return timeRangeFromP0;
 }
-
 - (UIButtonType)timeUnclampedPropWithnetworkReachabilityManager:(UIEdgeInsets)anetworkReachabilityManager infoWithStatus:(CGRect)ainfoWithStatus{
     UIButtonType doneButtonClickS3 = UIButtonTypeContactAdd;
     return doneButtonClickS3;
 }
-
 - (UITableViewCellSeparatorStyle)withJsonStringWithtitleTextAttributes:(UIButton *)atitleTextAttributes audioSessionCategory:(NSLineBreakMode)aaudioSessionCategory{
     UITableViewCellSeparatorStyle viewContentOffsetP6 = UITableViewCellSeparatorStyleNone; 
     return viewContentOffsetP6;
 }
-
 + (void)instanceCreateMethod{
     NSRange commonViewModelH3 = NSMakeRange(3,174); 
         UIFont *adjustTrackColori2= [UIFont systemFontOfSize:211];
     PGVerticalScrollIndicator *foregroundColorAttribute= [[PGVerticalScrollIndicator alloc] init];
 [foregroundColorAttribute groupPurchaseOrderWithrecordMovieView:commonViewModelH3 playerStateBuffering:adjustTrackColori2 ];
-
 }
-
-
 @end

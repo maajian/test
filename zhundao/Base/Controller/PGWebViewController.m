@@ -1,35 +1,19 @@
 #import "PGDeviceOrientationFace.h"
-//
-//  PGWebViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2016/12/27.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
-
 #import "PGWebViewController.h"
-
 @interface PGWebViewController ()<WKNavigationDelegate>
 {
     JQIndicatorView *indicator;
 }
-
 @end
-
 @implementation PGWebViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Do any additional setup after loading the view.
 }
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
 }
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -58,14 +42,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [timeMakeWith pushNotificationTriggerWithaffineTransformIdentity:articleCommentDataJ8 modelWithAsset:taskNeedFinishE8 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

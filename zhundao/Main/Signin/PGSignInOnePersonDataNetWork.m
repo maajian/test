@@ -1,20 +1,8 @@
 #import "PGDeviceOrientationLandscape.h"
-//
-//  PGSignInOnePersonDataNetWork.m
-//  zhundao
-//
-//  Created by zhundao on 2017/4/14.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGSignInOnePersonDataNetWork.h"
 @interface PGSignInOnePersonDataNetWork()
-
 @end
 @implementation PGSignInOnePersonDataNetWork
-//GET api/PerActivity/GetSingleActivityList?accessKey={accessKey}&activityListId={activityListId}
-
-
 - (void)getNewList :(NSInteger)listID BackBlock :(backpopBlock)backBlock {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImageView * codeLoginViewi6 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
@@ -35,16 +23,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array1 = result[@"Data"];
         NSMutableArray  *dataarr = [NSMutableArray array];
-        
         for (int i=0; i<array1.count; i++)
         {
             NSDictionary *acdic = [array1 objectAtIndex:i];
             {
                 NSMutableDictionary *e = [NSMutableDictionary dictionary];
                 for (NSString *keystr in acdic.allKeys) {
-                    
                     if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-                        //
                         [e setObject:@"" forKey:keystr];
                     }
                     else
@@ -52,20 +37,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
                         [e setObject:[acdic objectForKey:keystr] forKey:keystr];
                     }
                 }
-                
                 [dataarr addObject:e];
-                
-                
             }
-            
-            
         }
         [[NSUserDefaults standardUserDefaults]setObject:dataarr forKey:[NSString stringWithFormat:@"%li",(long)listID]];
         [[NSUserDefaults standardUserDefaults]synchronize];
         backBlock(dataarr);
     } fail:^(NSError *error) {
-        
     }];
 }
-
 @end

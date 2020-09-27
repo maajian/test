@@ -1,33 +1,18 @@
 #import "PGTrainParticularProperty.h"
-//
-//  PGDiscoverPromoteTabbarVC.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteTabbarVC.h"
-
 #import "PGBaseNavVC.h"
 #import "PGMePromoteCustomContactVC.h"
 #import "PGMePromoteShareVC.h"
-
 @interface PGMePromoteTabbarVC ()
-
 @end
-
 @implementation PGMePromoteTabbarVC
-
 - (instancetype)init {
     if (self = [super init]) {
-        [self createSubControllers];
-        [self addCustomTabbar];
-        
+        [self PG_createSubControllers];
+        [self PG_addCustomTabbar];
     }
     return self;
 }
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode collectionViewDataj1 = UITextFieldViewModeAlways; 
@@ -36,26 +21,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [regularExpressionCase scrollViewDecelerationWithfromVideoFile:collectionViewDataj1 separatorStyleNone:browserPhotoScrollj6 ];
 });
     [super viewDidLoad];
-    
     self.tabBar.translucent = NO;
 }
-
 #pragma mark --- custom
-- (void)createSubControllers {
+- (void)PG_createSubControllers {
     PGBaseNavVC *mainVC = [[PGBaseNavVC alloc] initWithRootViewController:[PGMePromoteCustomContactVC new]];
     PGBaseNavVC *shareVC = [[PGBaseNavVC alloc] initWithRootViewController:[PGMePromoteShareVC new]];
     self.viewControllers = @[mainVC, shareVC];
-    [self addCustomTabbar];
+    [self PG_addCustomTabbar];
 }
-// 添加自定义tabbar
-- (void)addCustomTabbar {
-    // 添加自定义按钮
+- (void)PG_addCustomTabbar {
     CGFloat buttonWidth = ZD_ScreenWidth / 2;
-    //,@"img_tabbar_friend_normal"
     NSArray *normalImageArray = @[@"img_me_promote_main_normal",@"img_me_promote_share_normal"];
-    //@"img_tabbar_friend_highlighted",
     NSArray *selectImageArray = @[@"img_me_promote_main_select",@"img_me_promote_share_select"];
-    //WYLocalString(@"friend_title"),
     NSArray *titleArray = @[@"首页", @"分享"];
     for (int i = 0; i < 2; i++) {
         UIButton *button = [UIButton buttonWithFrame:CGRectMake(i * buttonWidth , 0, buttonWidth, 49) normalImage:[UIImage imageNamed:normalImageArray[i]] selectedImage:[UIImage imageNamed:selectImageArray[i]] target:self action:nil];
@@ -71,14 +49,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         self.selectedIndex = 0;
     }
 }
-
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     NSInteger currentSelect = [tabBar.items indexOfObject:item];
-    //4
     for (int i = 0; i < 2; i++) {
         UIButton *button = (UIButton *)[tabBar viewWithTag:100 + i];
         button.selected = i == currentSelect;
     }
 }
-
 @end

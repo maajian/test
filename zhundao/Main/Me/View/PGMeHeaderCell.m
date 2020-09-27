@@ -1,35 +1,21 @@
 #import "PGDailyCourseModel.h"
-//
-//  PGMeHeaderCell.m
-//  zhundao
-//
-//  Created by maj on 2020/1/30.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMeHeaderCell.h"
-
 @interface PGMeHeaderCell()
-
 @property (nonatomic, strong) UIImageView *iconImageView;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *idLabel;
 @property (nonatomic, strong) UILabel *levelLabel;
-
 @end
-
 @implementation PGMeHeaderCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIImageView *)iconImageView {
     if (!_iconImageView) {
@@ -53,7 +39,7 @@
         _levelLabel.layer.cornerRadius = 6;
         _levelLabel.layer.masksToBounds = YES;
         _levelLabel.backgroundColor = ZDBlueColor;
-        [_levelLabel addTapGestureTarget:self action:@selector(vipAction:)];
+        [_levelLabel addTapGestureTarget:self action:@selector(PG_vipAction:)];
         _levelLabel.hidden = !ZD_UserM.isAdmin;
     }
     return _levelLabel;
@@ -64,18 +50,16 @@
     }
     return _idLabel;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     self.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.iconImageView];
     [self.contentView addSubview:self.nameLabel];
     [self.contentView addSubview:self.levelLabel];
     [self.contentView addSubview:self.idLabel];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets userTweetViewC8 = UIEdgeInsetsMake(111,103,180,240); 
         UISwitch *differenceBetweenRecti6= [[UISwitch alloc] initWithFrame:CGRectMake(143,111,150,218)]; 
@@ -105,7 +89,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.leading.equalTo(self.nameLabel);
     }];
 }
-
 #pragma mark --- setter
 - (void)setModel:(PGMeModel *)model {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -122,9 +105,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.levelLabel.text = [NSString stringWithFormat:@"V%li",(long)ZD_UserM.gradeId];
     self.idLabel.text = [NSString stringWithFormat:@"准到ID: %li", (long)ZD_UserM.userID];
 }
-
 #pragma mark --- Action
-- (void)vipAction:(UITapGestureRecognizer *)gestureRecognizer {
+- (void)PG_vipAction:(UITapGestureRecognizer *)gestureRecognizer {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets styleLightContentD0 = UIEdgeInsetsMake(246,127,61,28); 
         UISwitch *withPlayerItemn8= [[UISwitch alloc] initWithFrame:CGRectMake(224,206,74,101)]; 
@@ -137,5 +119,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.meHeaderCellDelegate headerCell:self didTapVIPLabel:(UILabel *)gestureRecognizer.view];
     }
 }
-
 @end

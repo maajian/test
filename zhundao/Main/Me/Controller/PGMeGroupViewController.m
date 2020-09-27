@@ -1,12 +1,4 @@
 #import "PGShowInputText.h"
-//
-//  PGMeGroupViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/5/24.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeGroupViewController.h"
 #import "PGMeGroupMV.h"
 #import "PGMeContactMV.h"
@@ -29,15 +21,11 @@
 @property(nonatomic,strong)NSMutableArray *personIDArray;
 @property(nonatomic,assign)BOOL isDelete;
 @end
-
 @implementation PGMeGroupViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customBack];
     [self baseSetting];
-    
-    // Do any additional setup after loading the view.
 }
 #pragma 基础设置 base 
 - (void)baseSetting
@@ -49,11 +37,8 @@
     _personIDArray= [NSMutableArray array];
     [self.view addSubview:self.tableView];
     [self firstload];
-    
 }
-
 #pragma  懒加载
-
 - (UITableView *)tableView
 {
     if (!_tableView) {
@@ -61,7 +46,6 @@
         _tableView.delegate =self;
         _tableView.dataSource = self;
         [_tableView registerNib:[UINib nibWithNibName:@"PGMeGroupTableViewCell" bundle:nil] forCellReuseIdentifier:@"groupID"];
-//        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return  _tableView;
 }
@@ -77,12 +61,10 @@
             break;
         }
         case ReachableViaWWAN:
-            // 使用3G网络
             NSLog(@"wan");
             [self netWork];
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
             NSLog(@"wifi");
             [self netWork];
             break;
@@ -119,7 +101,6 @@
         [_titleArray insertObject:@"未分组" atIndex:0];
         [_tableView reloadData];
     };
-    
 }
 - (void)notHaveNet
 {
@@ -166,16 +147,11 @@
         return cell;
 }
 - (void)drawRect:(CGRect)rect {
-    
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [UIColor clearColor].CGColor);
     CGContextFillRect(context, rect);
-    
-    //上分割线，
     CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:198/255.0 green:198/255.0 blue:198/255.0 alpha:1].CGColor);
     CGContextStrokeRect(context, CGRectMake(0, 0, rect.size.width-30, 1));
-    
-    //下分割线
     CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:198/255.0 green:198/255.0 blue:198/255.0 alpha:1].CGColor);
     CGContextStrokeRect(context, CGRectMake(0, rect.size.height, rect.size.width-30, 1));
 }
@@ -190,8 +166,7 @@
         [view addSubview:label];
         if ([[self.openSectionDict valueForKey:[NSString stringWithFormat:@"%li", (long)section]] integerValue] == 0) {
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (view.bounds.size.height - 10) / 2, 10, 10)];
-            imageView.image = [UIImage imageNamed:@"rightTriangle"];   //  三角形小图片
-            
+            imageView.image = [UIImage imageNamed:@"rightTriangle"];   
             [view addSubview:imageView];
         } else {
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (view.bounds.size.height - 7) / 2-3, 10, 10)];
@@ -201,18 +176,15 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gesTap:)];
         [view addGestureRecognizer:tap];
         return view;
-   
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 55;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 40;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     if (section==0) {
@@ -221,7 +193,6 @@
         return 0.1;
     }
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PGMePersonDetailViewController *person = [[PGMePersonDetailViewController alloc]init];
@@ -232,8 +203,6 @@
     person.personID =[idarray[indexPath.row] integerValue];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:person animated:YES];
-    
-    
     NSString *str = [NSString stringWithFormat:@"%@api/Contact/DeleteContact/%li?accessKey=%@",zhundaoApi,(long)[idarray[indexPath.row] integerValue],[[PGSignManager shareManager] getaccseekey]];
     person.block = ^(BOOL isDelete)
     {
@@ -245,7 +214,6 @@
         }
     };
 }
-
 #pragma UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -253,15 +221,13 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-        if ([[self.openSectionDict valueForKey:[NSString stringWithFormat:@"%li", (long)section]] integerValue] == 0) {    //根据记录的展开状态设置row的数量
+        if ([[self.openSectionDict valueForKey:[NSString stringWithFormat:@"%li", (long)section]] integerValue] == 0) {    
             return 0;
         } else {
             NSArray *array =_nameArray[section];
             return array.count;
         }
 }
-
 #pragma sectionHeader Clicked 头视图点击
 - (void)gesTap:(UITapGestureRecognizer *)tap
 {
@@ -275,7 +241,6 @@
     NSUInteger index = tap.view.tag;
     NSIndexSet *set = [NSIndexSet indexSetWithIndex:index-100];
     [self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationFade];
-   
 }
 #pragma contentFill 视图内容填充 图片和名字
 - (void)setimageWithNameStr :(NSString *)nameStr imageStr :(NSString *)imageStr withCell :(PGMeGroupTableViewCell *)cell
@@ -297,7 +262,6 @@
         }
         cell.groupImageView.image = [UIImage circleImageWithText:text bgColor:color size:CGSizeMake(cell.groupImageView.frame.size.height, cell.groupImageView.frame.size.width)];
     }
-
 }
 #pragma 自定义返回按钮
 -(void)customBack
@@ -321,17 +285,9 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 -(void)dealloc
 {
     NSLog(@"分组没有内存泄漏");
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

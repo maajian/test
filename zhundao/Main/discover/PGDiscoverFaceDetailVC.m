@@ -1,40 +1,21 @@
 #import "PGAlbumPickerController.h"
-//
-//  PGDiscoverFaceDetailVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/7/27.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverFaceDetailVC.h"
 #import "PGDiscoverFaceDetailCell.h"
 #import "PGDiscoverFaceDetailViewModel.h"
 #import "PGPickerView.h"
 #import "GZActionSheet.h"
 @interface PGDiscoverFaceDetailVC ()<UITableViewDelegate,UITableViewDataSource>
-
 @property(nonatomic,strong)UITableView *tableView;
-
 @property(nonatomic,strong)PGDiscoverFaceDetailViewModel *VM;
-
 @property(nonatomic,strong)NSMutableArray *titleArray;
-
 @property(nonatomic,strong)NSMutableArray *IDArray;
-
 @property(nonatomic,strong)PGPickerView *pickerView ;
-
 @property(nonatomic,strong)NSMutableArray *signTitleArray;
-
 @property(nonatomic,strong)NSMutableArray *signIDArray;
-
 @property(nonatomic,strong)UIProgressView *progressView;
-
 @property(nonatomic,strong)UILabel *progressLabel;
 @end
-
 @implementation PGDiscoverFaceDetailVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *videoCameraInterfacem0= [NSMutableArray arrayWithCapacity:0];
@@ -45,10 +26,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     [self createRight];
-    // Do any additional setup after loading the view.
 }
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
@@ -58,7 +37,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _tableView;
 }
-
 - (PGDiscoverFaceDetailViewModel *)VM
 {
     if (!_VM) {
@@ -87,7 +65,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _progressView.trackTintColor = [UIColor lightGrayColor];
         _progressView.progressTintColor = ZDMainColor;
         [_progressView setProgress:0.0 animated:YES];
-        
     }
     return _progressView;
 }
@@ -100,7 +77,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return _progressLabel;
 }
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 4;
@@ -111,7 +87,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGDiscoverFaceDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:FaceDetailID];
     if (!cell) {
         cell = [[PGDiscoverFaceDetailCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FaceDetailID];
-        
     }
     cell.tag = indexPath.row;
     cell.model = self.model;
@@ -124,11 +99,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return cell;
 }
 #pragma mark -------UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.1;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 10;
@@ -137,7 +110,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     return nil;
 }
-
 #pragma mark ------选择活动和签到
 - (void)activity
 {
@@ -154,10 +126,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }else{
             [weakSelf showActivityPick:titleArray];
         }
-        
     }];
 }
-
 - (void)signWithStr :(NSString *)str
 {
     [self.signIDArray removeAllObjects];
@@ -183,7 +153,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)showSignPick:(NSArray *)array
 {
-    
     _pickerView = [[PGPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:array currentStr:nil backBlock:^(NSString *str) {
         NSString *idstr = [_signIDArray objectAtIndex:[_signTitleArray indexOfObject:str]];
         [self bindSignWithStr:idstr];
@@ -191,7 +160,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.view addSubview:_pickerView];
     [_pickerView fadeIn];
 }
-
 - (void)showActivityPick:(NSArray *)array
 {
     _pickerView = [[PGPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:array currentStr:nil backBlock:^(NSString *str) {
@@ -200,9 +168,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.view addSubview:_pickerView];
     [_pickerView fadeIn];
 }
-
 #pragma mark -----绑定签到
-
 - (void)bindSignWithStr:(NSString *)str
 {
     [PGAlertView alertWithTitle:@"同步将消耗一定时间" message:@"是否继续" sureBlock:^{
@@ -226,7 +192,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             }];
         });
         dispatch_resume(timer);
-        
         [self.view addSubview:self.progressLabel];
         [self.view addSubview:self.progressView];
         MBProgressHUD *hud2 = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
@@ -251,43 +216,30 @@ dispatch_async(dispatch_get_main_queue(), ^{
             }
         }];
     } cancelBlock:^{
-        
     }];
-   
 }
-
 #pragma mark ----右上角更多
-
 - (void)createRight
 {
     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];
 }
-
-- (void)showPost  //sheet显示
+- (void)showPost  
 {
     NSArray *array = @[@"全部同步"];
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:5 andShowCancel:YES];
-    // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
         if (index==1) {
             [weakSelf bindSignWithStr:[NSString stringWithFormat:@"%li",(long)_model.checkInId]];
         }
     };
-    
     [self.view.window addSubview:sheet];
 }
-
-
-
-
-
 - (void)showMaskWithTitle :(NSString *)str
 {
     PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:str];
     [label labelAnimationWithViewlong:self.view];
 }
-
 - (void)viewWillDisappear:(BOOL)animated{
 dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableArray *textAlignmentCenterK7= [NSMutableArray arrayWithCapacity:0];
@@ -302,14 +254,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

@@ -1,23 +1,10 @@
 #import "PGOrganizeListRequset.h"
-//
-//  PGActivityViewModel.m
-//  zhundao
-//
-//  Created by maj on 2019/6/30.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "PGActivityViewModel.h"
-
 #import "PGMeMessageModel.h"
-
 @interface PGActivityViewModel()
 @property (nonatomic, assign) PGActivityType activityType;
-
 @end
-
 @implementation PGActivityViewModel
-
 - (instancetype)initWithType:(PGActivityType)activityType {
     if (self = [super init]) {
         self.activityType = activityType;
@@ -40,7 +27,6 @@
     }
     return self;
 }
-
 #pragma mark --- network
 - (void)getAllActivityListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Str)failure {
     ZDBlock_Dic callBlock = ^(NSDictionary *obj) {
@@ -49,7 +35,6 @@
         [_allTitleArray removeAllObjects];
         if ([obj[@"errcode"] integerValue] == 0) {
             if (pageIndex == 1) {
-                
             } else {
                 [tempArray addObjectsFromArray:(NSArray *)[[PGCache sharedCache] cacheForKey:@"ZDAllActivity"]];
             }
@@ -73,7 +58,6 @@
             ZDDo_Block_Safe_Main1(failure, obj[@"errmsg"])
         }
     };
-    
     ZDBlock_Str failBlock = ^(NSString *str) {
         NSArray *array = (NSArray *)[[PGCache sharedCache] cacheForKey:@"ZDAllActivity"];
         if (array.count) {
@@ -87,7 +71,6 @@
             ZDDo_Block_Safe_Main1(failure, str)
         }
     };
-    
     if (ZD_UserM.isAdmin) {
         NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
         NSDictionary *dic = @{@"ActivityStatus":@(0),
@@ -114,7 +97,6 @@
         }];
     }
 }
-
 - (void)getOnActivityListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Str)failure {
     ZDBlock_Dic callBlock = ^(NSDictionary *obj) {
         NSMutableArray *tempArray = [NSMutableArray array];
@@ -122,7 +104,6 @@
         [_onTitleArray removeAllObjects];
         if ([obj[@"errcode"] integerValue] == 0) {
             if (pageIndex == 1) {
-
             } else {
                 [tempArray addObjectsFromArray:(NSArray *)[[PGCache sharedCache] cacheForKey:@"ZDOnActivity"]];
             }
@@ -159,7 +140,6 @@
             ZDDo_Block_Safe_Main1(failure, str)
         }
     };
-    
     if (ZD_UserM.isAdmin) {
         NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
         NSDictionary *dic = @{@"ActivityStatus":@(1),
@@ -186,7 +166,6 @@
         }];
     }
 }
-
 - (void)getCloseActivityListWithPageIndex:(NSInteger)pageIndex success:(ZDBlock_Arr)success failure:(ZDBlock_Str)failure {
     ZDBlock_Dic callBlock = ^(NSDictionary *obj) {
         NSMutableArray *tempArray = [NSMutableArray array];
@@ -194,7 +173,6 @@
         [_closeTitleArray removeAllObjects];
         if ([obj[@"errcode"] integerValue] == 0) {
             if (pageIndex == 1) {
-
             } else {
                 [tempArray addObjectsFromArray:(NSArray *)[[PGCache sharedCache] cacheForKey:@"ZDCloseActivity"]];
             }
@@ -231,7 +209,6 @@
             ZDDo_Block_Safe_Main1(failure, str)
         }
     };
-    
     if (ZD_UserM.isAdmin) {
         NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivities?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
         NSDictionary *dic = @{@"ActivityStatus":@(2),
@@ -258,8 +235,6 @@
         }];
     }
 }
-
-// 检查是否可以发起活动
 - (void)checkIsCanpost:(ZDBlock_ID)successBlock error:(ZDBlock_Error)errorBlock {
     NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/GetActivityNumCurMonth?accessKey=%@",zhundaoApi,[[PGSignManager shareManager]getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
@@ -268,8 +243,6 @@
         errorBlock(error);
     }];
 }
-
-// 获取消息个数
 - (void)getMeMessageListSuccess:(ZDBlock_Int)success failure:(ZDBlock_Error_Str)failure {
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi,ZD_UserM.token];
     NSDictionary *dic = @{@"BusinessCode": @"GetMessageListForApp",
@@ -296,6 +269,4 @@
         ZDDo_Block_Safe1(failure, error.domain)
     }];
 }
-
-
 @end

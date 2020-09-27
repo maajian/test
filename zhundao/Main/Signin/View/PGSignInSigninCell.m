@@ -1,24 +1,11 @@
 #import "PGStrokeCourseParticular.h"
-//
-//  PGSignInSigninCell.m
-//  zhundao
-//
-//  Created by zhundao on 2016/12/9.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
-
 #import "PGSignInSigninCell.h"
 #import "Time.h"
-//#import "SignInViewModel.h"
 @interface PGSignInSigninCell()
-
 @end
-
 @implementation PGSignInSigninCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
 }
 - (void)setModel:(PGSignInModel *)model
 {
@@ -42,8 +29,7 @@
     [_signname setTitle:_model.Name forState:UIControlStateNormal];
     _signobjectLabel.text =[NSString stringWithFormat: @"全部:%li",(long)_model.NumShould];
 }
-
-- (BOOL)isShowRed{
+- (BOOL)PG_isShowRed{
     if (_model.NumShould ==0) {
         return NO;
     }
@@ -58,7 +44,6 @@
         return YES;
     }
 }
-
 - (void)getData{
     NSInteger all =_model.NumShould;
     [self.layer.sublayers enumerateObjectsUsingBlock:^(__kindof CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -83,7 +68,7 @@
     [self colorSTRWithStr:_signRatioLabel rangeBegin:4];
     [self colorSTRWithStr:_signobjectLabel rangeBegin:3];
      CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-     if ([self isShowRed]) {
+     if ([self PG_isShowRed]) {
          float x;
         if (@available(iOS 11.0, *)) {
             x = kScreenWidth-100;
@@ -98,21 +83,18 @@
         [self.layer addSublayer:shapeLayer];
      }
 }
-
 - (void)colorSTRWithStr :(UILabel *)label rangeBegin :(NSInteger )begin
 {
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc]initWithString:label.text];
     [string addAttribute:NSForegroundColorAttributeName value:ZDMainColor range:NSMakeRange(begin, label.text.length-begin)];
     label.attributedText = string;
 }
-
 #pragma mark --- Action
 - (IBAction)pushSignList:(id)sender {
     if ([self.signinCellDelegate respondsToSelector:@selector(signinCell:willPushList:)]) {
         [self.signinCellDelegate signinCell:self willPushList:sender];
     }
 }
-
 - (IBAction)switchChange:(id)sender {
     if ([self.signinCellDelegate respondsToSelector:@selector(signinCell:willTapSwitch:)]) {
         [self.signinCellDelegate signinCell:self willTapSwitch:sender];
@@ -123,10 +105,7 @@
         [self.signinCellDelegate signinCell:self willShowAlert:sender];
     }
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
 }
-
 @end

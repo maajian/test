@@ -1,11 +1,3 @@
-//
-//  PGDiscoverPrintVM.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/29.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverPrintVM.h"
 #import "TscCommand.h"
 @implementation PGDiscoverPrintVM
@@ -16,7 +8,6 @@
     UITableViewCell *cell =(UITableViewCell *) [tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryNone;
 }
-
 - (NSMutableArray *)changeArray :(NSMutableArray *)array row :(NSInteger )row
 {
     [array removeObject:@"1"];
@@ -24,19 +15,6 @@
     [array replaceObjectAtIndex:row withObject:@"1"];
     return array;
 }
-
-//- (NSArray *)getSize
-//{
-//    NSArray *array = nil;
-//    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"sizeArray"]) {
-//        array = [[[NSUserDefaults standardUserDefaults]objectForKey:@"sizeArray"] copy];
-//    }else{
-//        array = @[@"0",@"1",@"0"];
-//        [[NSUserDefaults standardUserDefaults]setObject:array forKey:@"sizeArray"];
-//        [[NSUserDefaults standardUserDefaults]synchronize];
-//    }
-//    return array;
-//}
 - (BOOL)getFlag
 {
     BOOL flag;
@@ -51,7 +29,6 @@
     }
     return flag;
 }
-
 - (NSArray *)getModel
 {
     NSMutableArray *array =nil;
@@ -69,7 +46,6 @@
     }
     return array;
 }
-
 - (NSArray *)getActive
 {
     NSArray *array =nil;
@@ -79,11 +55,9 @@
         array = @[@"1",@"0"];
         [[NSUserDefaults standardUserDefaults]setObject:array forKey:@"activeSelArray"];
         [[NSUserDefaults standardUserDefaults]synchronize];
-        
     }
     return array;
 }
-
 - (NSString *)getOffsetX
 {
     NSString  *a  =nil;
@@ -112,10 +86,7 @@
 }
 - (void)printTextIsPrint :(BOOL)isPrint offsetx :(int )x offsety :(int)y  textArray :(NSArray *)textArray
 {
-    TscCommand *tscCmd = [self setTscCmd:isPrint];
-    /*
-     打印多行标签文本
-     */
+    TscCommand *tscCmd = [self PG_setTscCmd:isPrint];
     NSString *str = nil;
     for (int i = 0; i <textArray.count; i++) {
         str = textArray[i ];
@@ -128,13 +99,10 @@
                    withYscal:1
                     withText:str];
     }
-    //print
     [tscCmd addPrint:1 :1];
 }
-
-/*! 打印二维码 备注 */
 - (void)printQRCode :(NSString *)linkStr isPrint :(BOOL)isPrint offsetx :(int )x offsety :(int)y textArray :(NSArray *)textArray{
-     TscCommand *tscCmd = [self setTscCmd:isPrint];
+     TscCommand *tscCmd = [self PG_setTscCmd:isPrint];
     NSInteger index = textArray.count-1;
     switch (index) {
         case 0:
@@ -191,78 +159,25 @@
             [tscCmd addPrint:1 :1];
         }
             break;
-            
         default:
             break;
     }
-
 }
-
 - (void)printQRCode :(NSString *)linkStr isPrint :(BOOL)isPrint offsetx :(int )x offsety :(int)y
 {
-   TscCommand *tscCmd = [self setTscCmd:isPrint];
-//    NSArray *array = [self getSize];
-//    NSInteger index = [array indexOfObject:@"1"];
-    
-//    switch (index) {
-//        case 0:
-//        {
-//            [self codeDataTscCommand:tscCmd x:95+x y:80+y width:4 str:linkStr];
-//             [tscCmd addPrint:1 :1];
-//        }
-//             break;
-//        case 1:
-//        {
-//            [self codeDataTscCommand:tscCmd x:75+x y:50+y width:6 str:linkStr];
-//             [tscCmd addPrint:1 :1];
-//        }
-//             break;
-//        case 2:
-//        {
+   TscCommand *tscCmd = [self PG_setTscCmd:isPrint];
             [self codeDataTscCommand:tscCmd x:55+x y:30+y width:8 str:linkStr];
              [tscCmd addPrint:1 :1];
-//        }
-//            break;
-//            
-//        default:
-//            break;
-//    }
 }
-
 - (void)printQRCode :(NSString *)linkStr name :(NSString *)name isPrint :(BOOL)isPrint offsetx :(int )x offsety :(int)y
 {
-    TscCommand *tscCmd = [self setTscCmd:isPrint];
-//    NSArray *array = [self getSize];
-//    NSInteger index = [array indexOfObject:@"1"];
+    TscCommand *tscCmd = [self PG_setTscCmd:isPrint];
     CGRect rect = [name boundingRectWithSize:CGSizeMake(1000, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:17] } context:nil];
-    
-//    switch (index) {
-//        case 0:
-//        {
-//            [self codeDataTscCommand:tscCmd x:95+x y:60+y width:4 str:linkStr];
-//            [self codeTscCommand:tscCmd x:30-rect.size.width/2 y:110 name:name];
-//            [tscCmd addPrint:1 :1];
-//        }
-//            break;
-//        case 1:
-//        {
-//             [self codeDataTscCommand:tscCmd x:75+x y:50+y width:6 str:linkStr];
-//            [self codeTscCommand:tscCmd x:50-rect.size.width/2 y:150 name:name];
-//            [tscCmd addPrint:1 :1];
-//        }
-//            break;
-//        case 2:
-//        {
             [self codeDataTscCommand:tscCmd x:55+x y:10+y width:8 str:linkStr];
-             [self codeTscCommand:tscCmd x:70 -rect.size.width/2 y:185 name:name];   //x和坐标原点相同居中
+             [self codeTscCommand:tscCmd x:70 -rect.size.width/2 y:185 name:name];   
             [tscCmd addPrint:1 :1];
-//        }
-//            break;
-//        default:
-//            break;
-//    }
 }
-- ( TscCommand *)setTscCmd :(BOOL)isPrint{
+- ( TscCommand *)PG_setTscCmd :(BOOL)isPrint{
     TscCommand *tscCmd = [[TscCommand alloc] init];
     [tscCmd setHasResponse:isPrint];
     [tscCmd addSize:30 :30];
@@ -274,7 +189,6 @@
     [tscCmd addCls];
     return tscCmd;
 }
-
 - (void)codeDataTscCommand:(TscCommand *)tscCmd x :(int)x y :(int)y  width :(int)width str :(NSString *)str
 {
     [tscCmd addReference:x
@@ -287,8 +201,6 @@
                      :0
                      :str];
 }
-
-
 -(void)codeTscCommand:(TscCommand *)tscCmd x :(int)x y :(int)y name :(NSString *)name
 {
     [tscCmd addTextwithX:x
@@ -298,7 +210,5 @@
                withXscal:1
                withYscal:1
                 withText:name];
-
 }
-
 @end

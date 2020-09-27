@@ -1,10 +1,3 @@
-// 
- //PGAuthImageView.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGAuthImageView.h"
 @implementation PGAuthImageView
 + (UISlider *)courseParticularSectionWithnumberFormatterRound:(UIFont *)anumberFormatterRound withPhoneNumber:(UIActivityIndicatorView *)awithPhoneNumber groupPurchaseTable:(UIImageView *)agroupPurchaseTable{
@@ -14,7 +7,6 @@
     bitmapContextCreateU5.value =68; 
     return bitmapContextCreateU5;
 }
-
 + (UIScrollView *)trainCommentTableWithstringFromClass:(PGHaveUserEnabel *)astringFromClass integralStoreView:(PGHaveUserEnabel *)aintegralStoreView movieFrameOpposite:(PGHaveUserEnabel *)amovieFrameOpposite{
     UIScrollView *authorizationWithCompletionz2= [[UIScrollView alloc] initWithFrame:CGRectMake(228,40,192,123)]; 
     authorizationWithCompletionz2.showsHorizontalScrollIndicator = NO; 
@@ -24,22 +16,18 @@
     authorizationWithCompletionz2.minimumZoomScale = 1; 
     return authorizationWithCompletionz2;
 }
-
 - (NSTextAlignment)badgeWithStyleWithinputTextureVertex:(UIScrollView *)ainputTextureVertex scrollTimeInterval:(UIImageView *)ascrollTimeInterval{
     NSTextAlignment playerLayerGravityt2 = NSTextAlignmentCenter; 
     return playerLayerGravityt2;
 }
-
 - (CGPoint)commonToolVedioWithcourseViewController:(UITableViewStyle)acourseViewController separatorStyleNone:(UITableViewStyle)aseparatorStyleNone{
     CGPoint cancelContentTouchesd0 = CGPointMake(5,95); 
     return cancelContentTouchesd0;
 }
-
 - (UITableViewCellSeparatorStyle)animatedImageViewWithimageCompressionRules:(NSMutableArray *)aimageCompressionRules commentWithOrder:(UILabel *)acommentWithOrder{
     UITableViewCellSeparatorStyle editCommentViews1 = UITableViewCellSeparatorStyleNone; 
     return editCommentViews1;
 }
-
 + (void)instanceCreateMethod{
     UIScrollView *userNotificationActivationo0= [[UIScrollView alloc] initWithFrame:CGRectMake(1,116,205,217)]; 
     userNotificationActivationo0.showsHorizontalScrollIndicator = NO; 
@@ -55,8 +43,5 @@
     trainCommentViewl1.clearsContextBeforeDrawing = YES; 
     PGAuthImageView *playBecomeActive= [[PGAuthImageView alloc] init];
 [playBecomeActive badgeWithStyleWithinputTextureVertex:userNotificationActivationo0 scrollTimeInterval:trainCommentViewl1 ];
-
 }
-
-
 @end

@@ -1,17 +1,5 @@
-//
-//  PGMeChangeInfoViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/1.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeChangeInfoViewModel.h"
-
 @implementation PGMeChangeInfoViewModel
-
-//api/PerBase/UpdateUserInfo?accessKey={accessKey}
-
 - (void)UpdateUserInfo :(NSDictionary *)dic
           successBlock :(ZDSuccessBlock)successBlock
             errorBlock : (ZDErrorBlock)errorBlock {
@@ -22,7 +10,6 @@
         errorBlock(error);
     }];
 }
-
 - (void)getUserInfo:(ZDSuccessBlock)successBlock
         errorBlock : (ZDErrorBlock)errorBlock{
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
@@ -32,7 +19,4 @@
         errorBlock(error);
     }];
 }
-    
-
-
 @end

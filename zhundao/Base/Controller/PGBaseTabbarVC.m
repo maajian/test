@@ -1,18 +1,8 @@
 #import "PGUserInfoModel.h"
-//
-//  PGBaseTabbarVC.m
-//  zhundao
-//
-//  Created by zhundao on 2016/12/1.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
-
 #import "PGBaseTabbarVC.h"
-
 #import "PGLoginMainVC.h"
 #import "PGMeDetailNoticeVC.h"
 #import "PGBaseNavVC.h"
-
 @interface PGBaseTabbarVC ()
 {
     NSInteger flag;
@@ -20,11 +10,8 @@
 @property(nonatomic,strong)UIButton *startButton;
 @property(nonatomic,strong)UILabel *startLabel;
 @property(nonatomic,strong)UIImageView *startIamgeView;
-
 @property (nonatomic, strong) NSTimer *timer;
-
 @end
-
 @implementation PGBaseTabbarVC
 - (instancetype)init
 {
@@ -32,7 +19,7 @@
     if (self) {
         [self createSubControllers];
         [self createCustomTabBar];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotification:) name:kAppNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PG_getNotification:) name:kAppNotification object:nil];
     }
     return self;
 }
@@ -45,9 +32,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     [super viewDidLoad];
     self.tabBar.translucent = NO;
-    // Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets assetMediaSubtypeD9 = UIEdgeInsetsMake(225,203,197,187); 
@@ -56,7 +41,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [pickerColletionView trainParticularDataWithnaviTitleAppearance:assetMediaSubtypeD9 organizationNoticeWith:pickerViewShows3 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 -(void)createSubControllers
 {
@@ -93,35 +77,23 @@ dispatch_async(dispatch_get_main_queue(), ^{
         titleArray = @[@"首页",@"我的"];
     }
     CGFloat buttonWidth = kScreenWidth/ imageArray.count;
-
     for (int i=0; i<imageArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i*buttonWidth, 0, buttonWidth, 49);
-        [button addTarget:self action:@selector(buttonAction:) forControlEvents: UIControlEventTouchUpInside ];
+        [button addTarget:self action:@selector(PG_buttonAction:) forControlEvents: UIControlEventTouchUpInside ];
         button.tag = 100+i;
         [self.tabBar addSubview:button];
         UIImageView *imageview = [[UIImageView alloc]init];
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 27 , buttonWidth,  12)];
-        
            imageview.image = [UIImage imageNamed:imageArray[i]];
             label.textColor = [UIColor lightGrayColor];
-
         imageview.frame = CGRectMake(buttonWidth/2-10, 2, 20, 20);
-        
         [button addSubview:imageview];
-        
-        
-        
         label.text = titleArray[i];
         label.font = [UIFont systemFontOfSize:12];
-        
         label.textAlignment = NSTextAlignmentCenter;
-     
-        
-   
         label.tag = 100+i;
         [button addSubview:label];
-    
          self.tabBar.shadowImage = [[UIImage alloc] init];
         if (i==0) {
             flag=0;
@@ -132,15 +104,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
             _startIamgeView.image = [UIImage imageNamed:@"home_tab_act_pressed"];
             [_startButton addSubview:_startLabel];
             [_startButton addSubview:_startIamgeView];
-          
         }
     }
 }
-
-
-- (void)buttonAction:(UIButton *)sender{
+- (void)PG_buttonAction:(UIButton *)sender{
     self.selectedIndex = sender.tag-100;
-    
     NSArray *imageArray;
     NSArray *imagedarray;
     if (ZD_UserM.isAdmin) {
@@ -150,7 +118,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         imageArray = @[@"home_tab_act_normal",@"home_tab_mine_normal"];
         imagedarray = @[@"home_tab_act_pressed",@"home_tab_mine_pressed"];
     }
-    
     if ([_startButton.subviews[0] isKindOfClass:[UILabel class]]) {
          _startLabel =  (UILabel *)_startButton.subviews[0];
     }
@@ -163,12 +130,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     else{
         _startIamgeView =  (UIImageView *)_startButton.subviews[1];
     }
-    if (sender!=_startButton) {    //如果切换tabbar
+    if (sender!=_startButton) {    
         _startLabel.textColor = [UIColor lightGrayColor];
         _startIamgeView.image = [UIImage imageNamed:imageArray[flag]];
-        
-        self.startButton.selected = NO;    //startButton 取消选中
-        self.startButton = sender;       // 切换button
+        self.startButton.selected = NO;    
+        self.startButton = sender;       
         if ([_startButton.subviews[0] isKindOfClass:[UILabel class]]) {
             _startLabel =  (UILabel *)_startButton.subviews[0];
         }
@@ -181,20 +147,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
         else{
             _startIamgeView =  (UIImageView *)_startButton.subviews[1];
         }
-      
         flag = self.selectedIndex;
     }
     else{
-        self.startButton.selected = YES;    // starbutton 选中
+        self.startButton.selected = YES;    
     }
     if (!self.startButton.selected) {
         _startLabel.textColor = ZDMainColor;
         _startIamgeView.image = [UIImage imageNamed:imagedarray[flag]];
     }
 }
-
 #pragma mark --- 通知接收
-- (void)getNotification:(NSNotification *)nofi {
+- (void)PG_getNotification:(NSNotification *)nofi {
     PGBaseNavVC *baseNav = self.viewControllers[0];
     PGMeDetailNoticeVC *detailNotice = [[PGMeDetailNoticeVC alloc]init];
     detailNotice.ID = [nofi.userInfo[@"id"] integerValue];
@@ -203,17 +167,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.selectedIndex = 0;
     [baseNav pushViewController:detailNotice animated:YES];
 }
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [_timer invalidate];
     _timer = nil;
 }
-
 - (void)dealloc {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIEdgeInsets effectThumbImageJ6 = UIEdgeInsetsZero;
@@ -223,12 +184,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

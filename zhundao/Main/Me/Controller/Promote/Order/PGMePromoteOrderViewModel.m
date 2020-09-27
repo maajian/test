@@ -1,22 +1,11 @@
-//
-//  PGMePromoteOrderViewModel.m
-//  zhundao
-//
-//  Created by maj on 2020/1/19.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteOrderViewModel.h"
-
 @implementation PGMePromoteOrderViewModel
-
 - (instancetype)init {
     if (self = [super init]) {
         _dataArray = [NSMutableArray array];
     }
     return self;
 }
-
 - (void)getOrderSuccess:(ZDBlock_Void)success failure:(ZDBlock_Void)failure {
     NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getPartnerOrderList?token=%@", zhundaoApi,[[PGSignManager shareManager] getToken]];
     NSDictionary *params = @{@"pageSize": @(10000), @"pageIndex": @(1)};
@@ -30,5 +19,4 @@
         ZDDo_Block_Safe_Main(failure);
     }];
 }
-
 @end

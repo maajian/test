@@ -1,39 +1,25 @@
 #import "PGVertexAttribPointer.h"
-//
-//  PGFontSizePickerView.m
-//  SimpleWord
-//
-//  Created by Chenly on 16/5/13.
-//  Copyright © 2016年 Little Meaning. All rights reserved.
-//
-
 #import "PGFontSizePickerView.h"
-
 @interface PGFontSizePickerView () <UIScrollViewDelegate>
-
 @end
-
 @implementation PGFontSizePickerView
 {
     UIScrollView *_scrollView;
     NSMutableArray *_itemViews;
     CAGradientLayer *_maskLayer;
 }
-
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         [self setup];
     }
     return self;
 }
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setup];
     }
     return self;
 }
-
 - (void)setup {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSTextAlignment integralMainDataU3 = NSTextAlignmentCenter; 
@@ -49,17 +35,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [playerStatusReady partButtonActionWithregisterViewController:integralMainDataU3 imageCropManager:completeViewDelegatet3 ];
 });
     self.backgroundColor = [UIColor whiteColor];
-    
     _normalFont = [UIFont systemFontOfSize:16.f];
     _selectedFont = [UIFont boldSystemFontOfSize:21.f];
     _normalTextColor = [UIColor grayColor];
     _selectedTextColor = [UIColor blackColor];
-    
     _scrollView = [[UIScrollView alloc] init];
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.delegate = self;
     [self addSubview:_scrollView];
-    
     _maskLayer = [CAGradientLayer layer];
     _maskLayer.colors = @[
                     (__bridge id)[UIColor clearColor].CGColor,
@@ -72,17 +55,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _maskLayer.startPoint = CGPointMake(0, 0);
     _maskLayer.endPoint = CGPointMake(1, 0);
     self.layer.mask = _maskLayer;
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(PG_handleTap:)];
     [self addGestureRecognizer:tap];
-    
     _itemViews = [NSMutableArray array];
     _selectedIndex = -1;
 }
-
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
     CGRect rect = self.bounds;
     rect.origin = CGPointZero;
     rect.size.width = self.itemWidth == 0 ? CGRectGetWidth(rect) / 5 : self.itemWidth;
@@ -102,7 +81,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _scrollView.contentInset = UIEdgeInsetsMake(0, width/2, 0, width/2);
     _scrollView.frame = self.bounds;
     _maskLayer.frame = self.bounds;
-    
     if (_selectedIndex == -1 || _selectedIndex >= _itemViews.count) {
         [self selectIndex:0 animated:NO];
     }
@@ -112,7 +90,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self selectIndex:index animated:NO];
     }
 }
-
 - (void)setDataSource:(id<LMFontSizePickerViewDataSource>)dataSource {
     if (_dataSource == dataSource) {
         return;
@@ -120,7 +97,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _dataSource = dataSource;
     [self reloadData];
 }
-
 - (void)reloadData {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSTextAlignment couponsScrollTableQ9 = NSTextAlignmentCenter; 
@@ -140,7 +116,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (!self.dataSource) {
         return;
     }
-    
     for (NSInteger index = 0; index < self.numberOfItems; index++) {
         UILabel *itemView = [[UILabel alloc] init];
         itemView.text = [self.dataSource lm_pickerView:self titleForItemAtIndex:index];
@@ -152,16 +127,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [self setNeedsLayout];
 }
-
 - (NSInteger)numberOfItems {
     return [self.dataSource lm_numberOfItemsInPickerView:self];
 }
-
 #pragma mark - tap
-
-- (void)handleTap:(UITapGestureRecognizer *)tap {
+- (void)PG_handleTap:(UITapGestureRecognizer *)tap {
     CGPoint point = [tap locationInView:_scrollView];
-    
     for (NSInteger index = 0; index < _itemViews.count; index++) {
         UILabel *label = _itemViews[index];
         if (CGRectContainsPoint(label.frame, point)) {
@@ -176,20 +147,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }
 }
-
-
 #pragma mark - <UIScrollViewDelegate>
-
-- (void)scrollEnd {
+- (void)PG_scrollEnd {
     CGPoint centerLocation = CGPointZero;
     centerLocation.x = _scrollView.contentOffset.x + CGRectGetWidth(self.bounds) / 2;
-    
     for (NSInteger index = 0; index < _itemViews.count; index++) {
         UILabel *label = _itemViews[index];
         if ((index == 0 && centerLocation.x < CGRectGetMinX(label.frame)) ||
             (index == _itemViews.count - 1 && centerLocation.x > CGRectGetMaxX(label.frame)) ||
             CGRectContainsPoint(label.frame, centerLocation)) {
-                        
             if (index != _selectedIndex && [self.delegate respondsToSelector:@selector(lm_pickerView:didSelectIndex:)]) {
                 [self selectIndex:index animated:YES];
                 [self.delegate lm_pickerView:self didSelectIndex:index];
@@ -201,32 +167,25 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }
 }
-
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (!decelerate) {
-        [self scrollEnd];
+        [self PG_scrollEnd];
     }
 }
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [self scrollEnd];
+    [self PG_scrollEnd];
 }
-
 #pragma mark - 
-
 - (void)selectIndex:(NSInteger)index animated:(BOOL)animated {
-    
     if (_selectedIndex >= 0 && _selectedIndex < _itemViews.count) {
         UILabel *lastSelectedLabel = _itemViews[_selectedIndex];
         lastSelectedLabel.textColor = self.normalTextColor;
         lastSelectedLabel.font = self.normalFont;
     }
-    
     _selectedIndex = index;
     UILabel *selectedLabel = _itemViews[index];
     selectedLabel.textColor = self.selectedTextColor;
     selectedLabel.font = self.selectedFont;
     [_scrollView setContentOffset:CGPointMake(selectedLabel.center.x - CGRectGetWidth(self.bounds) / 2, 0) animated:animated];
 }
-
 @end

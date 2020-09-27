@@ -1,12 +1,4 @@
 #import "PGInputViewContent.h"
-//
-//  PGActivityConsultViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/8/3.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityConsultViewController.h"
 #import "PGActivityConsultViewModel.h"
 #import "PGActivityConsultTableViewCell.h"
@@ -16,74 +8,52 @@
 @interface PGActivityConsultViewController ()<UITableViewDelegate,UITableViewDataSource>{
     Reachability *r;
 }
-/*! tableview */
 @property(nonatomic,strong)UITableView *tableView;
-/*! 显示出来的模型数组 */
 @property(nonatomic,strong)NSMutableArray *dataArray;
-/*! 控制器的viewmodel */
 @property(nonatomic,strong)PGActivityConsultViewModel *viewModel;
-/*! 高度数组 */
 @property(nonatomic,strong)NSArray *heightArray;
-/*! 时间数组 */
 @property(nonatomic,strong)NSArray *timeArray;
-/*! 未回复的数组 */
 @property(nonatomic,strong)NSArray *notArray;
-/*! 已经回复的数组 */
 @property(nonatomic,strong)NSArray *hadArray;
-/*! 全部内容的数组  */
 @property(nonatomic,strong)NSArray *allArray;
-/*! 下拉刷新 header */
 @property(nonatomic,strong)MJRefreshNormalHeader *header;
-/*! 滑块的index */
 @property(nonatomic,assign)NSInteger selectIndex ;
-/*! 空数据视图 */
 @property(nonatomic,strong)PGNoDataScrollView *noDataView ;
 @end
-
 @implementation PGActivityConsultViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self baseSetting];
-    // Do any additional setup after loading the view.
 }
-
 #pragma mark -----基础设置
-
 - (void)baseSetting
 {
     _selectIndex = 0;
     self.title = @"咨询管理";
     [self createChoose];
-    
     [self.view addSubview:self.tableView];
     self.view.backgroundColor = ZDBackgroundColor;
     _viewModel = [[PGActivityConsultViewModel alloc]init];
     [self firstLoad];
     [self reflsh];
 }
-
 #pragma mark ----网络判断
 - (void)firstLoad
 {
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-            [self notNet];
+            [self PG_notNet];
             break;
         case ReachableViaWWAN:
-            // 使用3G网
             [self getAllConsult];
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
             [self getAllConsult];
             break;
     }
 }
-
 #pragma mark -----网络请求
-
 - (void)getAllConsult
 {
     NSDictionary *dic = @{@"Status":@"0",
@@ -97,32 +67,29 @@
         _allArray = [dataArray copy];
         _hadArray = [hadAnswerArray copy];
         _notArray = [noAnswerArray copy];
-        [weakSelf getDataArr];
+        [weakSelf PG_getDataArr];
         [[PGSignManager shareManager]saveData:dataArray name:[NSString stringWithFormat:@"allConsult%li",(long)self.acID]];
         [[PGSignManager shareManager]saveData:hadAnswerArray name:[NSString stringWithFormat:@"hadConsult%li",(long)self.acID]];
         [[PGSignManager shareManager]saveData:noAnswerArray name:[NSString stringWithFormat:@"notConsult%li",(long)self.acID]];
         _heightArray = [[weakVM getHeight:_dataArray]copy];
         _timeArray = [timeArray copy];
         [_tableView.mj_header endRefreshing];
-        [weakSelf goTOLoadData];
+        [weakSelf PG_goTOLoadData];
     }];
 }
-
-- (void)notNet{
+- (void)PG_notNet{
     _allArray = [[PGSignManager shareManager]getArray:[NSString stringWithFormat:@"allConsult%li",(long)self.acID]];
     _hadArray = [[PGSignManager shareManager]getArray:[NSString stringWithFormat:@"hadConsult%li",(long)self.acID]];
     _notArray = [[PGSignManager shareManager]getArray:[NSString stringWithFormat:@"notConsult%li",(long)self.acID]];
-    [self getDataArr];
-    [self goTOLoadData];
-    
+    [self PG_getDataArr];
+    [self PG_goTOLoadData];
 }
-
-- (void)getDataArr {
+- (void)PG_getDataArr {
     if (_selectIndex==0) _dataArray = [_notArray copy];
     else if (_selectIndex ==1) _dataArray = [_hadArray copy];
     else _dataArray = [_allArray copy];
 }
-- (void)goTOLoadData{
+- (void)PG_goTOLoadData{
     if (_noDataView) {
         [_noDataView removeNoDataView];
     }
@@ -133,14 +100,11 @@
     }
 }
 #pragma mark ----下啦刷新
-
 - (void)reflsh
 {
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     __weak __typeof(self) weakSelf=self;
-    
     _header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
         if ((manager.networkReachabilityStatus==AFNetworkReachabilityStatusReachableViaWiFi||manager.networkReachabilityStatus==AFNetworkReachabilityStatusReachableViaWWAN)) {
             [weakSelf getAllConsult];
         }
@@ -161,7 +125,6 @@
     _tableView.mj_insetT=mj_insetT;
 }
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, kScreenWidth, kScreenHeight-64-40)];
@@ -176,7 +139,6 @@
     }
     return _tableView;
 }
-
 - (PGNoDataScrollView *)noDataView{
     if (!_noDataView) {
         _noDataView = [[PGNoDataScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64-40) imageName:@"img_public_null_data" topText:@"还没有人咨询留言哦" bottomText:@"刷新一下试试"];
@@ -184,7 +146,6 @@
     return _noDataView;
 }
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataArray.count;
@@ -214,7 +175,6 @@
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    
     return nil;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -224,7 +184,6 @@
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:one animated:YES];
 }
-
 - (void)createChoose
 {
     NSArray *array=@[
@@ -237,22 +196,22 @@
     headerView.btnChooseClickReturn = ^(NSInteger x) {
         _selectIndex = x;
         switch (x) {
-            case 0:  {              //未回复
+            case 0:  {              
                 _dataArray = [_notArray copy];
                 _heightArray = [[_viewModel getHeight:_dataArray]copy];
-                [self goTOLoadData];
+                [self PG_goTOLoadData];
                 break;
             }
-            case 1:   {             //已回复
+            case 1:   {             
                 _dataArray = [_hadArray copy];
                 _heightArray = [[_viewModel getHeight:_dataArray]copy];
-                [self goTOLoadData];
+                [self PG_goTOLoadData];
                 break;
             }
-            case 2:        {        //全部
+            case 2:        {        
                 _dataArray = [_allArray copy];
                 _heightArray = [[_viewModel getHeight:_dataArray]copy];
-                [self goTOLoadData];
+                [self PG_goTOLoadData];
                 break;
             }
             default:
@@ -284,12 +243,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [assetResourceLoading lightBlackColorWithfansWithUser:captureSessionPresetB9 socialUserInfo:fromVideoFilej4 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self getAllConsult];
 }
-
 @end

@@ -1,20 +1,8 @@
-//
-//  PGMeNoticeTableViewCell.m
-//  zhundao
-//
-//  Created by zhundao on 2017/8/15.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeNoticeTableViewCell.h"
-
 @implementation PGMeNoticeTableViewCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
          [self.contentView addSubview:self.topLabel];
@@ -22,7 +10,6 @@
     }
     return self;
 }
-
 - (void)setModel:(PGMeNoticeModel *)model{
     if (model) {
         _model = model;
@@ -42,27 +29,21 @@
     _bottomLabel.textColor = kColorA(150, 150, 150, 1);
     _bottomLabel.textAlignment = NSTextAlignmentLeft;
 }
-
 #pragma mark ---懒加载
-/*! 顶部label */
 - (UILabel *)topLabel{
     if (!_topLabel) {
         _topLabel = [[UILabel alloc]initWithFrame:CGRectZero];
     }
     return _topLabel;
 }
-/*! 底部label */
 - (UILabel *)bottomLabel{
     if (!_bottomLabel) {
         _bottomLabel = [[UILabel alloc]initWithFrame:CGRectZero];
     }
     return _bottomLabel;
 }
-
-/*! 计算尺寸 */
 - (void)layoutSubviews{
     [super layoutSubviews];
-    /*! 高 28 */
     if (_bottomLabel) {
         [_bottomLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(12);
@@ -70,7 +51,6 @@
             make.bottom.equalTo(self.contentView).offset(-4);
             make.height.mas_equalTo(20);
         }];
-        /*! 高8 +高 */
        [_topLabel mas_makeConstraints:^(MASConstraintMaker *make) {
            make.left.equalTo(self.contentView).offset(12);
            make.right.equalTo(self.contentView).offset(0);
@@ -79,13 +59,7 @@
        }];
     }
 }
-
-
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 @end

@@ -1,13 +1,4 @@
-//
-//  PGActivityListModel.h
-//  zhundao
-//
-//  Created by zhundao on 2016/12/15.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-
 @interface PGActivityListModel : NSObject
 @property(nonatomic,strong)NSString *UserName;
 @property(nonatomic,strong)NSString *AddTime;
@@ -27,5 +18,4 @@
 @property(nonatomic,strong)NSString *Email;
 @property(nonatomic,strong)NSString *Address;
 @property(nonatomic,copy)NSString *DepartName;
-
 @end

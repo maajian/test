@@ -1,19 +1,7 @@
-//
-//  PGActivityBigImageFlowLayout.m
-//  zhundao
-//
-//  Created by zhundao on 2017/10/20.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityBigImageFlowLayout.h"
-/*! 间距为10 */
 static const CGFloat itemSpace = 10;
-
 static const CGFloat itemHeight = 70;
-
 @implementation PGActivityBigImageFlowLayout
-
 - (instancetype)init{
     if (self = [super init]) {
         self.itemSize = CGSizeMake((kScreenWidth- 4*itemSpace - 1)/3, itemHeight);
@@ -24,5 +12,4 @@ static const CGFloat itemHeight = 70;
     }
     return self;
 }
-
 @end

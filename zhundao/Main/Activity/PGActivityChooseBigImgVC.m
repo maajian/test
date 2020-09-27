@@ -1,12 +1,4 @@
 #import "PGMediaTypeAudio.h"
-//
-//  PGActivityChooseBigImgVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/10/20.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityChooseBigImgVC.h"
 #import "PGActivityChooseBigImgCell.h"
 #import "BDImagePicker.h"
@@ -15,20 +7,12 @@
 #import "PGActivityShowPostImageVC.h"
 #import "PGActivityPostActivityVC.h"
 @interface PGActivityChooseBigImgVC ()<UITableViewDelegate,UITableViewDataSource,ChooseBigImgTableViewCellDelegate>
-
 @property(nonatomic,strong)UITableView *tableView;
-/*! 高度数组 */
 @property(nonatomic,strong)NSMutableArray *heightArray;
-
 @property(nonatomic,strong)PGActivityChooseBigImageViewModel *viewModel;
-/*! 是否为上传图片 */
 @property(nonatomic,assign)BOOL isPost;
-
-
 @end
-
 @implementation PGActivityChooseBigImgVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _viewModel = [[PGActivityChooseBigImageViewModel alloc]init];
@@ -37,11 +21,8 @@
     [self customBack];
     [self rightButton];
     self.title = @"编辑封面";
-    // Do any additional setup after loading the view.
 }
-
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStyleGrouped];
@@ -54,7 +35,6 @@
     }
     return _tableView;
 }
-
 #pragma mark -------UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return _imageArray.count+1 ;
@@ -83,13 +63,10 @@
         cell.height = [_heightArray[indexPath.section-1]integerValue];
     }
         cell.section = indexPath.section;
-    
     cell.ChooseBigImgTableViewCellDelegate = self;
-    
     return cell;
 }
 #pragma mark -------UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==0) {
         return 44;
@@ -97,7 +74,6 @@
         return [_heightArray[indexPath.section-1] integerValue];
     }
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==0) {
         __weak typeof(self) weakSelf  = self;
@@ -115,7 +91,6 @@
         }];
     }
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (section==1) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 8)];
@@ -125,10 +100,8 @@
         return nil;
     }
 }
-
 #pragma mark ---ChooseBigImgTableViewCellDelegate
-
-- (void)selectImage:(NSString *)urlStr item:(NSInteger)item tag:(NSInteger)CollectionViewTag{
+- (void)PG_selectImage:(NSString *)urlStr item:(NSInteger)item tag:(NSInteger)CollectionViewTag{
 dispatch_async(dispatch_get_main_queue(), ^{
     NSData *finishLoadingWithq2= [[NSData alloc] init];
         UIImageView * buttonSettingBlockh9 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
@@ -145,10 +118,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _currentItem = item;
     _collectIndex = CollectionViewTag-100;
 }
-
-
 #pragma mark --- 编辑完成和取消
-
 -(void)customBack
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(-8, 20, 80, 44)];
@@ -205,22 +175,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }
     [self.navigationController popToViewController:post animated:YES];
-    
 }
 - (void)dealloc{
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

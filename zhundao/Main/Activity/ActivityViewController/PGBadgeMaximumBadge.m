@@ -1,10 +1,3 @@
-// 
- //PGBadgeMaximumBadge.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGBadgeMaximumBadge.h"
 @implementation PGBadgeMaximumBadge
 + (UITableView *)differenceValueWithWithphotoPickerGroup:(UIImage *)aphotoPickerGroup sendTweetSucc:(UITextField *)asendTweetSucc trainDataWith:(UIColor *)atrainDataWith{
@@ -25,7 +18,6 @@
      receiveRemoteNotificationZ0.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(192,116,248,107)];
      return receiveRemoteNotificationZ0;
 }
-
 + (UIButton *)mallViewModelWithsourceTypeSaved:(PGDeviceOrientationFace *)asourceTypeSaved integralRecordModel:(PGDeviceOrientationFace *)aintegralRecordModel integralMainView:(PGDeviceOrientationFace *)aintegralMainView{
     UIButton *itemTextFontc8= [UIButton buttonWithType:UIButtonTypeCustom]; 
     itemTextFontc8.frame = CGRectZero; 
@@ -35,29 +27,22 @@
     itemTextFontc8.frame = CGRectZero; 
     return itemTextFontc8;
 }
-
 - (NSTextAlignment)photoButtonBottomWithsizeWithAttributes:(NSLineBreakMode)asizeWithAttributes rootViewController:(UIEdgeInsets)arootViewController{
     NSTextAlignment hidesWhenStoppedR6 = NSTextAlignmentCenter; 
     return hidesWhenStoppedR6;
 }
-
 - (NSRange)weekTimeIntervalWithparticularDetailTable:(UITableViewStyle)aparticularDetailTable assetCollectionSubtype:(UILabel *)aassetCollectionSubtype{
     NSRange particularDetailTableW6 = NSMakeRange(8,79); 
     return particularDetailTableW6;
 }
-
 - (UIButtonType)maskTypeClearWithcouponsInfoData:(UISwitch *)acouponsInfoData styleLightContent:(NSLineBreakMode)astyleLightContent{
     UIButtonType hiddenScreenViewU7 = UIButtonTypeContactAdd;
     return hiddenScreenViewU7;
 }
-
 + (void)instanceCreateMethod{
     NSLineBreakMode animatedImageFramesx9 = NSLineBreakByTruncatingTail; 
         UIEdgeInsets userCommentTabled9 = UIEdgeInsetsZero;
     PGBadgeMaximumBadge *selectPhotoCommon= [[PGBadgeMaximumBadge alloc] init];
 [selectPhotoCommon photoButtonBottomWithsizeWithAttributes:animatedImageFramesx9 rootViewController:userCommentTabled9 ];
-
 }
-
-
 @end

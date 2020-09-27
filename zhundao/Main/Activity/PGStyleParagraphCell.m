@@ -1,26 +1,13 @@
 #import "PGDeviceOrientationFace.h"
-//
-//  PGStyleParagraphCell.m
-//  SimpleWord
-//
-//  Created by Chenly on 16/5/13.
-//  Copyright © 2016年 Little Meaning. All rights reserved.
-//
-
 #import "PGStyleParagraphCell.h"
-
 @interface PGStyleParagraphCell ()
-
 @property (weak, nonatomic) IBOutlet UIButton *listButton;
 @property (weak, nonatomic) IBOutlet UIButton *numberListButton;
 @property (weak, nonatomic) IBOutlet UIButton *checkboxButton;
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
-
 @end
-
 @implementation PGStyleParagraphCell
-
 - (void)awakeFromNib {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGSize locationWithSuccessp3 = CGSizeZero;
@@ -34,19 +21,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [natatoriumListData pushNotificationTriggerWithaffineTransformIdentity:locationWithSuccessp3 modelWithAsset:failLoadWithU3 ];
 });
     [super awakeFromNib];
-    
     for (UIButton *button in @[_listButton, _numberListButton, _checkboxButton, _leftButton, _rightButton]) {
         button.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(PG_buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 - (void)setType:(NSInteger)type {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGSize updateStatuMandatoryR2 = CGSizeZero;
@@ -63,7 +45,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.numberListButton.selected = type == 2;
     self.checkboxButton.selected = type == 3;
 }
-
 - (NSInteger)type {
     if (self.listButton.selected) {
         return 1;
@@ -76,21 +57,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return 0;
 }
-
 - (BOOL)isList {
     return self.listButton.selected;
 }
-
 - (BOOL)isNumberList {
     return self.numberListButton.selected;
 }
-
-- (BOOL)isCheckBox {
+- (BOOL)PG_isCheckBox {
     return self.checkboxButton.selected;
 }
-
-- (void)buttonAction:(UIButton *)sender {
-    
+- (void)PG_buttonAction:(UIButton *)sender {
     if (sender == self.leftButton) {
         [self.delegate lm_paragraphChangeIndentWithDirection:LMStyleIndentDirectionLeft];
     }
@@ -117,5 +93,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.delegate lm_paragraphChangeType:type];
     }
 }
-
 @end

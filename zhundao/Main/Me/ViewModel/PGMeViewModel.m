@@ -1,15 +1,5 @@
-//
-//  PGMeViewModel.m
-//  zhundao
-//
-//  Created by maj on 2020/1/31.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMeViewModel.h"
-
 @implementation PGMeViewModel
-
 - (void)getPromoteSuccess:(ZDBlock_Void)success failure:(ZDBlock_Void)failure {
     NSString *urlString = [NSString stringWithFormat:@"%@zhundao2all?token=%@", zhundaoLogApi,[[PGSignManager shareManager] getToken]];
     NSDictionary *params = @{@"BusinessCode": @"Badge_Get", @"Data": @{}};
@@ -34,5 +24,4 @@
         ZDDo_Block_Safe_Main(failure);
     }];
 }
-
 @end

@@ -1,14 +1,5 @@
-//
-//  NSString+getColorFromFirst.m
-//  zhundao
-//
-//  Created by zhundao on 2017/5/24.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "NSString+getColorFromFirst.h"
 #import "NSString+ChangeToPinyin.h"
-
 @implementation NSString (getColorFromFirst)
 - (UIColor *)getColorWithStr :(NSString *)str
 {
@@ -19,13 +10,12 @@
                        [UIColor colorWithRed:242/255.f green:114/255.f blue:94/255.f alpha:1],
                        [UIColor colorWithRed:78/255.f green:169/255.f blue:235/255.f alpha:1],
                        [UIColor colorWithRed:179/255.f green:137/255.f blue:121/255.f alpha:1],
-                       [UIColor colorWithRed:23/255.f green:194/255.f blue:148/255.f alpha:1],  //颜色数组
+                       [UIColor colorWithRed:23/255.f green:194/255.f blue:148/255.f alpha:1],  
                        ];
     NSString  *pinyinStr = [[NSString alloc]changeToPinyinWithStr:str];
     UIColor *color = nil;
-    
-    NSString *lastStr =[pinyinStr substringFromIndex:(pinyinStr.length/2)]; //获取最后一个字母
-    int asciiCode = [lastStr characterAtIndex:0]; //将最后字母转换成ASCII码
+    NSString *lastStr =[pinyinStr substringFromIndex:(pinyinStr.length/2)]; 
+    int asciiCode = [lastStr characterAtIndex:0]; 
     if (asciiCode>='a'&&asciiCode<='d') {
         color = array[0];
     }
@@ -55,5 +45,4 @@
     }
     return color;
 }
-
 @end

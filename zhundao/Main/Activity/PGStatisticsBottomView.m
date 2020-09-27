@@ -1,16 +1,6 @@
 #import "PGExportVideoWith.h"
-//
-//  ZDStatisticsHeaderView.m
-//  jingjing
-//
-//  Created by maj on 2020/9/16.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGStatisticsBottomView.h"
-
 static const CGFloat itemHeight = 44.f;
-
 @interface PGStatisticsBottomView()
 @property (nonatomic, strong) UIView *shadowView;
 @property (nonatomic, strong) UIView *cornerView;
@@ -18,19 +8,15 @@ static const CGFloat itemHeight = 44.f;
 @property (nonatomic, strong) UIView *subtitleView;
 @property (nonatomic, strong) UILabel *departLabel;
 @property (nonatomic, strong) UILabel *totalLabel;
-
 @end
-
 @implementation PGStatisticsBottomView
-
 - (instancetype)init {
     if (self = [super init]) {
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIView *)shadowView {
     if (!_shadowView) {
@@ -82,9 +68,8 @@ static const CGFloat itemHeight = 44.f;
     }
     return _totalLabel;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self addSubview:self.shadowView];
     [self.shadowView addSubview:self.cornerView];
     [self.cornerView addSubview:self.titleLabel];
@@ -92,9 +77,8 @@ static const CGFloat itemHeight = 44.f;
     [self.subtitleView addSubview:self.departLabel];
     [self.subtitleView addSubview:self.totalLabel];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(15);
         make.trailing.equalTo(self).offset(-15);
@@ -124,29 +108,23 @@ static const CGFloat itemHeight = 44.f;
         make.trailing.equalTo(self.subtitleView);
     }];
 }
-
 #pragma mark --- setter
 - (void)setDataSource:(NSMutableArray<PGStatisticsModel *> *)dataSource {
     _dataSource = dataSource;
-    
     [self.shadowView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo((self.dataSource.count + 1) * itemHeight + 50);
     }];
-    
     for (int i = 0 ; i< self.dataSource.count; i++) {
         PGStatisticsModel *model = self.dataSource[i];
         UILabel *leftLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDBlackColor font:ZDSystemFont(14) numberOfLines:0 lineBreakMode:0 lineAlignment:NSTextAlignmentCenter];
         leftLabel.text = model.DepartName;
         [self.cornerView addSubview:leftLabel];
-        
         UILabel *rightLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDBlackColor font:ZDSystemFont(14) numberOfLines:0 lineBreakMode:0 lineAlignment:NSTextAlignmentCenter];
         rightLabel.text = @(model.TotalCount).stringValue;
         [self.cornerView addSubview:rightLabel];
-        
         UIView *lineView = [[UIView alloc] init];
         lineView.backgroundColor = ZDLineColor;
         [self.cornerView addSubview:lineView];
-        
         [leftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leading.trailing.equalTo(self.departLabel);
             make.top.equalTo(self.subtitleView.mas_bottom).offset(itemHeight * i);
@@ -166,7 +144,5 @@ static const CGFloat itemHeight = 44.f;
         lineView.hidden = self.dataSource.count == i + 1;
     }
 }
-
 #pragma mark --- action
-
 @end

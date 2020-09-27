@@ -1,14 +1,5 @@
 #import "PGTitleViewWith.h"
-//
-//  PGStatisticsTopView.m
-//  jingjing
-//
-//  Created by maj on 2020/9/16.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGStatisticsTopView.h"
-
 @interface PGStatisticsTopView()
 @property (nonatomic, strong) UIView *shadowView;
 @property (nonatomic, strong) UIView *cornerView;
@@ -17,19 +8,15 @@
 @property (nonatomic, strong) UILabel * allCountFixLabel;
 @property (nonatomic, strong) UILabel * yesterdayCountNumberLabel;
 @property (nonatomic, strong) UILabel * yesterdayCountFixLabel;
-
 @end
-
 @implementation PGStatisticsTopView
-
 - (instancetype)init{
     if (self = [super init]) {
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIView *)shadowView {
     if (!_shadowView) {
@@ -86,9 +73,8 @@
     }
     return _yesterdayCountFixLabel;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self addSubview:self.shadowView];
     [self.shadowView addSubview:self.cornerView];
     [self.cornerView addSubview:self.titleLabel];
@@ -97,9 +83,8 @@
     [self.cornerView addSubview:self.yesterdayCountFixLabel];
     [self.cornerView addSubview:self.yesterdayCountNumberLabel];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(15);
         make.trailing.equalTo(self).offset(-15);
@@ -132,14 +117,11 @@
         make.leading.trailing.equalTo(self.yesterdayCountNumberLabel);
     }];
 }
-
 #pragma mark --- setter
 - (void)setMoreModel:(ActivityModel *)moreModel {
     _moreModel = moreModel;
     _allCountNumberLabel.text = @(_moreModel.total).stringValue;
     _yesterdayCountNumberLabel.text = @(_moreModel.yesterday).stringValue;
 }
-
 #pragma mark --- action
-
 @end

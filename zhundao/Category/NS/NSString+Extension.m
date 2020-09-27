@@ -1,15 +1,5 @@
-//
-//  NSString+Extension.m
-//  zhundao
-//
-//  Created by maj on 2019/7/6.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "NSString+Extension.h"
-
 @implementation NSString (Extension)
-
 #pragma mark --- 获取首页时间
 - (NSString *)getHomeActivityEndTime {
     NSDateFormatter *dateFormatter  = [[NSDateFormatter alloc]init];
@@ -19,7 +9,7 @@
     NSString *str2 = [endarray firstObject];
     NSString *str3 = [endarray objectAtIndex:1];
     NSString *endstr2 = [str2 stringByAppendingString:@":"];
-    NSString *timeStr = [endstr2 stringByAppendingString:str3]; //2016-11-18 09:44
+    NSString *timeStr = [endstr2 stringByAppendingString:str3]; 
     NSArray *onlyarr = [timeStr componentsSeparatedByString:@"-"];
     NSString *str4 = [onlyarr objectAtIndex:1];
     NSString *str5 = [onlyarr objectAtIndex:2];
@@ -49,7 +39,6 @@
     NSString *stop = [[stopTime substringFromIndex:5] substringToIndex:11];
     return [[NSString stringWithFormat:@"活动时间: %@ 一 %@",begin, stop] stringByReplacingOccurrencesOfString:@"T" withString:@" "];
 }
-
 - (NSDictionary *)zd_jsonDictionary {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
@@ -66,7 +55,6 @@
     }
     return nil;
 }
-
 - (NSAttributedString *)dataPersonAttributed1 {
     NSRange range1 = [self rangeOfString:@"*"];
     NSRange range2 = [self rangeOfString:@"未填写"];
@@ -79,5 +67,4 @@
         return [[NSAttributedString alloc] initWithString:self];
     }
 }
-
 @end

@@ -1,37 +1,25 @@
-// 
- //PGSenseViewModel.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGSenseViewModel.h"
 @implementation PGSenseViewModel
 + (NSString *)alowGroupPurchaseWithcollectionWithOffset:(UIView *)acollectionWithOffset buttonClickBlock:(UITableView *)abuttonClickBlock readingAllowFragments:(UIImageView *)areadingAllowFragments{
     NSString *photoPickerViewP4 = @"scrollDirectionRight";
     return photoPickerViewP4;
 }
-
 + (UIImage *)showPhotoPickerWithintegralRecordTable:(PGSelectPhotoBrowser *)aintegralRecordTable fetchLoginInfo:(PGSelectPhotoBrowser *)afetchLoginInfo strokeCourseSecond:(PGSelectPhotoBrowser *)astrokeCourseSecond{
     UIImage *tableViewDataq8= [UIImage imageNamed:@""]; 
     return tableViewDataq8;
 }
-
 - (UITextFieldViewMode)couseFinishAlertWithimageFromType:(UIView *)aimageFromType pointerFunctionsOptions:(UILabel *)apointerFunctionsOptions{
     UITextFieldViewMode assetFromFetchM0 = UITextFieldViewModeAlways; 
     return assetFromFetchM0;
 }
-
 - (CGSize)taskCenterTableWithswimingCommonSense:(UIEdgeInsets)aswimingCommonSense lineBreakMode:(UITableViewCellSeparatorStyle)alineBreakMode{
     CGSize circleScreenViewp4 = CGSizeZero;
     return circleScreenViewp4;
 }
-
 - (UITableViewStyle)cachingImageManagerWithrectContainsPoint:(CGSize)arectContainsPoint activityTableView:(NSRange)aactivityTableView{
     UITableViewStyle currentPhotoIndexm0 = UITableViewStylePlain; 
     return currentPhotoIndexm0;
 }
-
 + (void)instanceCreateMethod{
     UIView *showPhotoPickerw5= [[UIView alloc] initWithFrame:CGRectZero]; 
     showPhotoPickerw5.backgroundColor = [UIColor whiteColor]; 
@@ -45,8 +33,5 @@
     timeUnclampedPropP3.textAlignment = NSTextAlignmentCenter; 
     PGSenseViewModel *swimCircleService= [[PGSenseViewModel alloc] init];
 [swimCircleService couseFinishAlertWithimageFromType:showPhotoPickerw5 pointerFunctionsOptions:timeUnclampedPropP3 ];
-
 }
-
-
 @end

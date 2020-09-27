@@ -1,15 +1,6 @@
-//
-//  PGNewOrEditMV.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/9.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGNewOrEditMV.h"
-
 @implementation PGNewOrEditMV
-- (NSMutableAttributedString *)setAttrbriteStrWithText:(NSString *)text  //为*添加富文本变红色
+- (NSMutableAttributedString *)setAttrbriteStrWithText:(NSString *)text  
 {
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:text];
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:137.0f/256.0f green:137.0f/256.0f blue:137.0f/256.0f alpha:1] range:NSMakeRange(0, 3)];
@@ -19,7 +10,7 @@
     [str addAttribute:NSFontAttributeName value:KweixinFont(14) range:NSMakeRange(0, text.length)];
     return  str;
 }
-- (void)setKeyboardTypeWithtextf :(UITextField *)TextField  //添加键盘类型
+- (void)setKeyboardTypeWithtextf :(UITextField *)TextField  
 {
     switch (TextField.tag-100) {
         case 1:
@@ -40,7 +31,6 @@
     str = [str stringByTrimmingCharactersInSet:set];
     TextField.text = str;
 }
-
 + (void)changeToNetImage :(UIImage *)image block:(upBlock)block
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@/OAuth/UploadFile",zhundaoH5Api];
@@ -66,10 +56,8 @@
             block(dic[@"url"]);
         }
     } fail:^(NSError *error) {
-        
     }];
 }
-
 - (NSMutableArray *)sexChangeWithArray :(NSArray *)dataArray  muArray :(NSMutableArray *)array
 {
     if ([dataArray [3]integerValue]==0) {
@@ -95,7 +83,6 @@
         return @"0";
     }
 }
-
 - (NSString *)searchContactGroupIDFromID:(NSInteger )ID
 {
     PGSignManager *manager = [PGSignManager shareManager];

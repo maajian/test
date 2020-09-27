@@ -1,46 +1,25 @@
 #import "PGWithTweetItem.h"
-//
-//  PGDiscoverPromoteCustomContactCell.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteCustomContactCell.h"
-
 @interface PGMePromoteCustomContactCell()
-// 圆角
 @property (nonatomic, strong) UIView *cornerView;
-// 阴影
 @property (nonatomic, strong) UIView *shadowView;
-// 主标题
 @property (nonatomic, strong) UILabel *MainTitleLabel;
-// 箭头
 @property (nonatomic, strong) UIButton *arrowButton;
-// 总xx
 @property (nonatomic, strong) UILabel *allTitleLabel;
-// 总xx 数量
 @property (nonatomic, strong) UILabel *allCountLabel;
-// 今日xx
 @property (nonatomic, strong) UILabel *todayTitleLabel;
-// 今日xx 数量
 @property (nonatomic, strong) UILabel *todayCountLabel;
-
 @end
-
 @implementation PGMePromoteCustomContactCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.backgroundColor = ZDBackgroundColor;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIView *)cornerView {
     if (!_cornerView) {
@@ -100,9 +79,8 @@
     }
     return _todayCountLabel;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSString *refreshHeaderLayerg3 = @"shareInfoView";
         UIButtonType discoveryViewModelY1 = UIButtonTypeContactAdd;
@@ -118,9 +96,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.cornerView addSubview:self.todayTitleLabel];
     [self.cornerView addSubview:self.todayCountLabel];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView).offset(13);
         make.trailing.equalTo(self.contentView).offset(-13);
@@ -158,7 +135,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.width.top.equalTo(self.allTitleLabel);
     }];
 }
-
 #pragma mark --- setter
 - (void)setModel:(PGMePromoteCustomContactModel *)model {
     self.allCountLabel.text = model.totalString;
@@ -179,10 +155,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
             self.allTitleLabel.text = @"总订单";
             self.todayTitleLabel.text = @"昨日新增";
             break;
-            
         default:
             break;
     }
 }
-
 @end

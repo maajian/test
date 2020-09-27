@@ -1,15 +1,5 @@
-//
-//  PGMeNoticeModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/8/15.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeNoticeModel.h"
-
 @implementation PGMeNoticeModel
-
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     if (self = [super init]) {
         self.AddTime = [aDecoder decodeObjectForKey:@"AddTime"];
@@ -20,7 +10,6 @@
     }
     return self;
 }
-
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:self.AddTime forKey:@"AddTime"];
     [aCoder encodeObject:self.Detail forKey:@"Detail"];
@@ -28,17 +17,4 @@
     [aCoder encodeObject:self.Title forKey:@"Title"];
     [aCoder encodeInteger:self.ID forKey:@"ID"];
 }
-
-
-
 @end
-///*! 添加时间 */
-//@property(nonatomic,copy)NSString *AddTime;
-///*! 详情内容 */
-//@property(nonatomic,copy)NSString *Detail;
-///*! 类别名称 */
-//@property(nonatomic,copy)NSString *SortName;
-///*! 文章名称 */
-//@property(nonatomic,copy)NSString *Title;
-/*! 文章id */
-//@property(nonatomic,assign)NSInteger ID;

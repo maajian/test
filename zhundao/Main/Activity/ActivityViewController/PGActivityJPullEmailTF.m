@@ -1,30 +1,14 @@
 #import "PGStringFromData.h"
-//
-//
-//  Created by mythkiven on 15/11/12.
-//  Copyright © 2015年 3code. All rights reserved.
-//
-
 #import "PGActivityJPullEmailTF.h"
 #import "PGActivityJPullCell.h"
-
 #define cellH 44
-
 @interface PGActivityJPullEmailTF ()<UITableViewDataSource, UITableViewDelegate>
-
-/** 邮箱下拉列表 */
 @property (strong, nonatomic) UITableView *pullTableView;
-
-/** 匹配输入的邮箱后缀数组(用来显示在列表中)dataSource*/
 @property (strong, nonatomic) NSArray *matchedSuffixArray;
-
-
 @end
-
 @implementation PGActivityJPullEmailTF
-
 #pragma mark － 默认邮箱
-- (void)setUpEmailSuffixArray {
+- (void)PG_setUpEmailSuffixArray {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint collectionWithOffsetp0 = CGPointMake(6,165); 
         UIScrollView *groupPurchaseModelh5= [[UIScrollView alloc] initWithFrame:CGRectZero]; 
@@ -53,44 +37,39 @@ dispatch_async(dispatch_get_main_queue(), ^{
                             @"139.com"
                             ];
 }
-
 #pragma mark - UI创建
 - (instancetype)initWithFrame:(CGRect)frame InView:(UIView *)view {
     if (self = [super initWithFrame:frame]) {
-        return [self setUpInView:view];
+        return [self PG_setUpInView:view];
     }
     return nil;
 }
-
-- (instancetype)setUpInView:(UIView *)view {
+- (instancetype)PG_setUpInView:(UIView *)view {
     CGFloat textX = self.frame.origin.x;
     CGFloat textY = self.frame.origin.y;
     CGFloat textH = self.frame.size.height;
     CGFloat textW = self.frame.size.width;
-    
     self.pullTableView = [[UITableView alloc] initWithFrame:CGRectMake(textX, textY+textH, textW, 4*cellH) style:UITableViewStylePlain];
     self.pullTableView.dataSource = self;
     self.pullTableView.delegate = self;
-    [self setUpEmailSuffixArray];
+    [self PG_setUpEmailSuffixArray];
     [self.pullTableView registerNib:[UINib nibWithNibName:@"PGActivityJPullCell" bundle:nil]    forCellReuseIdentifier:@"PGActivityJPullCell"];
     self.pullTableView.userInteractionEnabled = YES;
     self.pullTableView.hidden = YES;
     [view addSubview:self.pullTableView];
-   
-    [self addTarget:self action:@selector(textFieldDidChanged) forControlEvents:UIControlEventEditingChanged]; //编辑改变时触发
+    [self addTarget:self action:@selector(PG_textFieldDidChanged) forControlEvents:UIControlEventEditingChanged]; 
     self.keyboardType = UIKeyboardTypeASCIICapable;
-    
     return self;
 }
-#pragma mark － textFieldDidChanged
-- (void)textFieldDidChanged {
-    if ([self.text containsString:@"@"]) { //包含字符串
+#pragma mark － PG_textFieldDidChanged
+- (void)PG_textFieldDidChanged {
+    if ([self.text containsString:@"@"]) { 
         self.pullTableView.hidden = NO;
         NSString *latterStr = [self.text substringFromIndex:[self.text rangeOfString:@"@"].location+1];
         if ([latterStr isEqualToString:@""]) {
             self.matchedSuffixArray = self.mailsuffixData;
         } else {
-            self.matchedSuffixArray = [self.mailsuffixData filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self beginswith %@", [self deleteSpacesInString:latterStr]]];
+            self.matchedSuffixArray = [self.mailsuffixData filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self beginswith %@", [self PG_deleteSpacesInString:latterStr]]];
             if (self.matchedSuffixArray.count == 0) {
                 self.pullTableView.hidden = YES;
             }
@@ -100,18 +79,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
         self.pullTableView.hidden = YES;
     }
 }
-
 #pragma mark 去掉空格
-- (NSString *)deleteSpacesInString:(NSString *)string {
+- (NSString *)PG_deleteSpacesInString:(NSString *)string {
     if ([string containsString:@" "]) {
         return [string stringByReplacingOccurrencesOfString:@" " withString:@""];
     } else {
         return string;
     }
 }
-
-
-
 #pragma mark -
 - (void)setMailCellHeight:(CGFloat)mailCellHeight{
     _mailCellHeight = mailCellHeight;
@@ -132,7 +107,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _mailFont = mailFont;
     [self.pullTableView reloadData];
 }
-
 -(void)setMailFontColor:(UIColor *)MailFontColor{
     _MailFontColor=MailFontColor;
     [self.pullTableView reloadData];
@@ -171,12 +145,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _separatorInsets = separatorInsets;
     [self.pullTableView reloadData];
 }
-
-
 - (void)hideEmailPrompt {
     self.pullTableView.hidden = YES;
 }
-
 #pragma mark - tableView datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.matchedSuffixArray.count;
@@ -186,7 +157,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSString *formerStr = [self.text substringToIndex:[self.text rangeOfString:@"@"].location+1];
     cell.emailLabel.text = [formerStr stringByAppendingString:self.matchedSuffixArray[indexPath.row]]        ;
     CGRect rect = cell.emailLabel.frame;
-    
     if (self.mailFont) cell.emailLabel.font = self.mailFont;
     if (self.MailFontColor) cell.emailLabel.textColor = self.MailFontColor;
     if (self.mailCellColor) cell.backgroundColor = self.mailCellColor;
@@ -197,24 +167,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
         rect.size.height = cellH;
         cell.emailLabel.frame = rect;
     }
-    
-    
     rect.origin.x = self.mLeftMargin;
     cell.emailLabel.frame = rect;
     cell.touchButton.tag = indexPath.row;
-    [cell.touchButton addTarget:self action:@selector(tapCell:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.touchButton addTarget:self action:@selector(PG_tapCell:) forControlEvents:UIControlEventTouchUpInside];
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7 && self.separatorInsets) {
         cell.separatorInset = UIEdgeInsetsMake([self.separatorInsets[0] floatValue], [self.separatorInsets[1] floatValue], [self.separatorInsets[2] floatValue], [self.separatorInsets[3] floatValue]);
     }
-    
     return cell;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return self.mailCellHeight ? self.mailCellHeight : cellH;
 }
-
-- (void)tapCell:(UIButton *)sender {
+- (void)PG_tapCell:(UIButton *)sender {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint authorizationWithCompletioni9 = CGPointZero;
         UIScrollView *dailyTrainChapterI1= [[UIScrollView alloc] initWithFrame:CGRectMake(1,18,12,144)]; 
@@ -230,6 +195,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.text = [formerStr stringByAppendingString:self.matchedSuffixArray[sender.tag]];
     self.pullTableView.hidden = YES;
 }
-
-
 @end

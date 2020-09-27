@@ -1,12 +1,4 @@
 #import "PGViewWithIdentifier.h"
-//
-//  PGMeChooseGroupViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/6.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeChooseGroupViewController.h"
 #import "PGMeGroupMV.h"
 #import "PGMeGroupModel.h"
@@ -20,9 +12,7 @@
 @property(nonatomic,strong)NSMutableArray *groupIDArray;
 @property(nonatomic,assign)NSInteger selectIndex;
 @end
-
 @implementation PGMeChooseGroupViewController
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSRange recordListWithA4 = NSMakeRange(1,112); 
@@ -35,7 +25,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     [super viewDidLoad];
     [self baseSetting];
-    // Do any additional setup after loading the view.
 }
 #pragma 基础设置 baseset 
 - (void)baseSetting
@@ -59,7 +48,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.navigationItem.leftBarButtonItem = item;
     [view addGestureRecognizer:tap3];
 }
-
 - (void)backpop
 {
     if (self.selectIndex==1000) {
@@ -98,7 +86,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
-    
 }
        #pragma 有网没网判断
 - (void)firstload
@@ -112,12 +99,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
             break;
         }
         case ReachableViaWWAN:
-            // 使用3G网络
             NSLog(@"wan");
             [self network];
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
             NSLog(@"wifi");
             [self network];
             break;
@@ -189,28 +174,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 self.nameStr = @"";
             }
         }
-//        if (self.groupArray.count==indexPath.row+1&&self.selectIndex ==1000) {
-//            
-//        }
     }
-//    if (indexPath.row<self.groupArray.count) {
-//    if (self.groupArray.count>0) {
-//        cell.textLabel.text = self.groupArray[indexPath.row];
-//        cell.textLabel.textColor = [UIColor blackColor];
-//        cell.textLabel.font = [UIFont systemFontOfSize:12];
-//        if ([self.groupArray[indexPath.row] isEqualToString:self.nameStr]) {
-//            self.selectIndex = indexPath.row;
-//            self.nameStr = @"";
-//        }
-//    }
-//    }
-    
-//    else
-//    {
-//        cell.textLabel.text = @"新增...";
-//        cell.textLabel.textColor = ZDMainColor;
-//         cell.textLabel.font = [UIFont systemFontOfSize:12];
-//    }
     if (self.selectIndex ==indexPath.row) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
            cell.tintColor = ZDMainColor;
@@ -220,10 +184,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return cell;
 }
-
-
 #pragma UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 0.1;
@@ -243,44 +204,21 @@ dispatch_async(dispatch_get_main_queue(), ^{
     view.backgroundColor = [UIColor clearColor];
     return view;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
          UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.selectIndex inSection:0]];
         cell.accessoryType = UITableViewCellAccessoryNone;
         self.selectIndex = indexPath.row;
         UITableViewCell *cell1 = [tableView cellForRowAtIndexPath:indexPath];
         cell1.accessoryType = UITableViewCellAccessoryCheckmark;
         cell1.tintColor = ZDMainColor;
-
 }
 #pragma 添加分组
-//- (void)addGroup
-//{
-//    UIAlertController *alert  =nil;
-//    __weak typeof(alert) weakAlert = alert;
-//    alert = [UIAlertController initWithTitle:@"新建分组" message:@"请输入分组名称" sureAction:^(UIAlertAction *action) {
-//         PGMeGroupMV *mv = [[PGMeGroupMV alloc]init];
-//        [mv netWorkCreateGroupWithStr:weakAlert.textFields.firstObject.text];
-//        NSDictionary *dic = @{@"ID" :[NSString stringWithFormat:@"%li",self.personid],
-//                              @"GroupName" :weakAlert.textFields.firstObject.text};
-//        [mv addPersonToGroupWithDic:dic];
-//    }];
-//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)dealloc
 {
     NSLog(@"没有内存泄漏");
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

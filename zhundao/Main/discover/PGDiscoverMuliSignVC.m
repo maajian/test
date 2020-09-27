@@ -1,18 +1,9 @@
 #import "PGSwimScrollView.h"
-//
-//  PGDiscoverMuliSignVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/3/22.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverMuliSignVC.h"
 #import "UIImage+mask.h"
 #import "PGDiscoverMuliotherVC.h"
 #import "Time.h"
 #define Top_Height 0.2*kScreenHeight
-// 中间View的宽度
 #define MiddleWidth 0.8*kScreenWidth
 static NSString *saoText = @"将二维码/条形码放入框内，即可自动扫描";
 @interface PGDiscoverMuliSignVC ()
@@ -21,22 +12,17 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
         NSInteger flag;
 }
 @end
-
 @implementation PGDiscoverMuliSignVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden = YES;
     self.view.backgroundColor = [UIColor blackColor];
-    [self creatBackGroundView];
-    [self creatUI];
+    [self PG_creatBackGroundView];
+    [self PG_creatUI];
     flag=0;
-    // Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 #pragma mark  -- -- -- -- -- AVCapture Metadata Output Objects Delegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
@@ -64,36 +50,33 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
         case ReachableViaWiFi:
             NSLog(@"wifi");
         {
-            [self netWorkWithstringValue:stringValue];
+            [self PG_netWorkWithstringValue:stringValue];
         }
             break;
         case ReachableViaWWAN:
             NSLog(@"wan");
         {
-            [self netWorkWithstringValue:stringValue];
+            [self PG_netWorkWithstringValue:stringValue];
         }
             break;
         default:
             break;
     }
 }
-
 - (void)dontHaveNetWithStr :(NSString *)stringValue
 {
- 
     [[PGSignManager shareManager] createDatabase];
     if ([[PGSignManager shareManager].dataBase open]) {
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM muliSignList WHERE signID = %li",(long)self.signID];
         FMResultSet * rs = [[PGSignManager shareManager].dataBase executeQuery:sql];
         while ([rs next]) {
-            
             if ([[rs stringForColumn:@"VCode"] isEqualToString:stringValue]) {
                 [self searchStatusWithStr:stringValue withrs:rs];
                   flag=1;
             }
         }
         if (flag==0) {
-            _signStatusBlock(2,rs); // 签到失败 凭证码无效
+            _signStatusBlock(2,rs); 
             [self backAction];
         }
           [[PGSignManager shareManager].dataBase close];
@@ -103,25 +86,23 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 {
      if ([[rs stringForColumn:@"Status"]integerValue]==0) {
          [self notNetUpdataWithStr:stringValue];
-         _signStatusBlock(1,rs);  //1 签到成功
+         _signStatusBlock(1,rs);  
          [self backAction];
-         
      }
        else
     {
-        _signStatusBlock(0,rs);  //0 已经签到
+        _signStatusBlock(0,rs);  
         [self backAction];
     }
 }
-
-- (void)notNetUpdataWithStr :(NSString *)stringValue  //更新数据库元素
+- (void)notNetUpdataWithStr :(NSString *)stringValue  
 {
      NSString *timeStr = [[Time alloc]nextDateWithNumber:0];
      [[PGSignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET Status = '1'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
       [[PGSignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET post = '0'  where VCode = '%@' AND signID = %li",stringValue,(long)self.signID]];
       [[PGSignManager shareManager].dataBase executeUpdate:[NSString stringWithFormat:@"UPDATE muliSignList SET addTime = '%@'  where VCode = '%@' AND signID = %li",timeStr,stringValue,(long)self.signID]];
 }
-- (void)netWorkWithstringValue:(NSString *)stringValue {
+- (void)PG_netWorkWithstringValue:(NSString *)stringValue {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSData *attentionViewControllerr8= [[NSData alloc] init];
         NSRange codeLoginViewo8 = NSMakeRange(8,65); 
@@ -134,10 +115,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self succseeresponseObject:dic WithStr:stringValue];
         [self backAction];
     } fail:^(NSError *error) {
-        
     }];
 }
-- (void)haveNetUpdataWithStr :(NSString *)stringValue  //更新数据库元素
+- (void)haveNetUpdataWithStr :(NSString *)stringValue  
 {
     [[PGSignManager shareManager] createDatabase];
     NSString *timeStr = [[Time alloc]nextDateWithNumber:0];
@@ -152,17 +132,17 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     NSInteger res =[dic[@"Res"]integerValue];
     NSString *Url = dic[@"Url"];
-    if (res==0&&[Url isEqualToString:@"100"]) {  //签到成功  1 签到成功
+    if (res==0&&[Url isEqualToString:@"100"]) {  
         [self haveNetUpdataWithStr:stringValue];
         NSMutableDictionary *dic1 = [dic[@"Data"] mutableCopy];
         [dic1 setObject:stringValue forKey:@"VCode"];
         self.haveNetBlock(1,[dic1 copy]);
     }
-    else  if (res==0&&[Url isEqualToString:@"101"]) {//已经签到  0 已经签到
+    else  if (res==0&&[Url isEqualToString:@"101"]) {
         NSMutableDictionary *dic1 = [dic[@"Data"] mutableCopy];
         [dic1 setObject:stringValue forKey:@"VCode"];
         self.haveNetBlock(0,[dic1 copy]);
-    } else   //签到失败 凭证码无效  2
+    } else   
     {
         self.haveNetBlock(2,dic);
     }
@@ -170,20 +150,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
 -(void)backAction{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (void)creatBackGroundView{
+- (void)PG_creatBackGroundView{
     UIImageView *maskView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     maskView.image = [UIImage maskImageWithMaskRect:maskView.frame clearRect:CGRectMake((kScreenWidth-MiddleWidth)/2, Top_Height, MiddleWidth, MiddleWidth)];
     [self.view addSubview:maskView];
 }
-
-- (void)creatUI{
+- (void)PG_creatUI{
     UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     backBtn.frame = CGRectMake(10, 24, 32, 32);
     [backBtn setImage:[[UIImage imageNamed:@"anniu"] imageWithRenderingMode:
                        UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
-    
     UILabel * labIntroudction= [[UILabel alloc] initWithFrame:CGRectMake(0, Top_Height+MiddleWidth + 20, kScreenWidth, 35)];
     labIntroudction.numberOfLines=2;
     labIntroudction.text= saoText;
@@ -191,12 +169,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
     labIntroudction.textColor = [UIColor whiteColor];
     labIntroudction.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:labIntroudction];
-    
     CGFloat leadSpace = (kScreenWidth - MiddleWidth)/ 2;
     UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(leadSpace, Top_Height, MiddleWidth, MiddleWidth)];
     imageView.image = [UIImage imageNamed:@"Icon_SaoYiSao"];
     [self.view addSubview:imageView];
-    
     upOrdown = NO;
     num =0;
     self.line = [[UIImageView alloc] initWithFrame:CGRectMake(leadSpace, Top_Height, MiddleWidth, 12)];
@@ -208,7 +184,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)viewtap:(UITapGestureRecognizer *)tap
 {
     if (tap.view.tag==102) {
-        
         PGDiscoverMuliotherVC *other = [[PGDiscoverMuliotherVC alloc]init];
         other.signid = self.signID;
         other.acckey = _acckey;
@@ -222,15 +197,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         other.signStatusBlock = ^(NSInteger status,FMResultSet *rs)
         {
             _signStatusBlock(status,rs);
-            
         };
     }
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

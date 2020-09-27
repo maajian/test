@@ -1,10 +1,3 @@
-// 
- //PGResizeAspectFill.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGResizeAspectFill.h"
 @implementation PGResizeAspectFill
 + (UITableView *)cameraAutoSaveWithuserInfoMedal:(UIImageView *)auserInfoMedal mutableCompositionTrack:(UIActivityIndicatorView *)amutableCompositionTrack textViewContent:(NSMutableArray *)atextViewContent{
@@ -25,27 +18,22 @@
      networkReachabilityManagerq9.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(68,234,112,241)];
      return networkReachabilityManagerq9;
 }
-
 + (UIImage *)finishSavingWithWitherrorWithStatus:(PGCollectionViewLayout *)aerrorWithStatus medalDetailModel:(PGCollectionViewLayout *)amedalDetailModel mainScreenWidth:(PGCollectionViewLayout *)amainScreenWidth{
     UIImage *currentDateStringV2= [UIImage imageNamed:@""]; 
     return currentDateStringV2;
 }
-
 - (UITableViewStyle)socialMessageObjectWithloginWithUser:(UISwitch *)aloginWithUser countTableView:(NSRange)acountTableView{
     UITableViewStyle collectionViewCello6 = UITableViewStylePlain; 
     return collectionViewCello6;
 }
-
 - (NSLineBreakMode)organizeCollectionViewWithencodingWithLine:(UIButton *)aencodingWithLine centerButtonClick:(CGPoint)acenterButtonClick{
     NSLineBreakMode keyboardAnimationDurationT4 = NSLineBreakByTruncatingTail; 
     return keyboardAnimationDurationT4;
 }
-
 - (CGRect)userInterfaceIdiomWithrefreshHeaderLayer:(UIEdgeInsets)arefreshHeaderLayer viewCornerRadius:(NSRange)aviewCornerRadius{
     CGRect encodingWithLineS1 = CGRectZero;
     return encodingWithLineS1;
 }
-
 + (void)instanceCreateMethod{
     UISwitch *particularModelJsonl3= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     particularModelJsonl3.on = YES; 
@@ -53,8 +41,5 @@
         NSRange edgeInsetsInsetC3 = NSMakeRange(4,150); 
     PGResizeAspectFill *headerViewDelegate= [[PGResizeAspectFill alloc] init];
 [headerViewDelegate socialMessageObjectWithloginWithUser:particularModelJsonl3 countTableView:edgeInsetsInsetC3 ];
-
 }
-
-
 @end

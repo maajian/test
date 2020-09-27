@@ -1,10 +1,3 @@
-// 
- //PGDeviceOrientationLandscape.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGDeviceOrientationLandscape.h"
 @implementation PGDeviceOrientationLandscape
 + (UISwitch *)withTimeIntervalWithphoneWithPhone:(UIImageView *)aphoneWithPhone adjustsScrollView:(UIButton *)aadjustsScrollView userTweetTable:(UIImageView *)auserTweetTable{
@@ -13,7 +6,6 @@
     viewWillBeginM4.onTintColor = [UIColor whiteColor]; 
     return viewWillBeginM4;
 }
-
 + (UITextField *)dailyTrainHeaderWithtableFooterView:(PGWithRoundCorner *)atableFooterView requestReloadIgnoring:(PGWithRoundCorner *)arequestReloadIgnoring audioSessionPort:(PGWithRoundCorner *)aaudioSessionPort{
     UITextField *originBackgroundColort6= [[UITextField alloc] initWithFrame:CGRectMake(88,224,175,97)]; 
     originBackgroundColort6.clearButtonMode = UITextFieldViewModeNever; 
@@ -25,22 +17,18 @@
      originBackgroundColort6.leftViewMode = UITextFieldViewModeAlways; 
     return originBackgroundColort6;
 }
-
 - (CGRect)cellReuseIdentifierWithwithReuseIdentifier:(UIImageView *)awithReuseIdentifier sliderSeekTime:(NSRange)asliderSeekTime{
     CGRect withCouponsInfoe2 = CGRectMake(86,97,214,51); 
     return withCouponsInfoe2;
 }
-
 - (CGSize)blurredImageCompletionWithuserNotificationType:(UIButton *)auserNotificationType stringFromDate:(CGRect)astringFromDate{
     CGSize withCommentObjectJ1 = CGSizeZero;
     return withCommentObjectJ1;
 }
-
 - (CGPoint)mirrorFrontFacingWithimageWithLeft:(UITableView *)aimageWithLeft circleTweetComment:(UILabel *)acircleTweetComment{
     CGPoint keyboardWillHideQ1 = CGPointMake(6,64); 
     return keyboardWillHideQ1;
 }
-
 + (void)instanceCreateMethod{
     UIImageView * wallTableViewP5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     wallTableViewP5.contentMode = UIViewContentModeCenter; 
@@ -51,8 +39,5 @@
         NSRange authorizationStatusDeniedN7 = NSMakeRange(4,228); 
     PGDeviceOrientationLandscape *discoverTableView= [[PGDeviceOrientationLandscape alloc] init];
 [discoverTableView cellReuseIdentifierWithwithReuseIdentifier:wallTableViewP5 sliderSeekTime:authorizationStatusDeniedN7 ];
-
 }
-
-
 @end

@@ -1,12 +1,4 @@
 #import "PGWithRecommendCourse.h"
-//
-//  PGDiscoverFaceVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/7/21.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverFaceVC.h"
 #import "PGDiscoverFaceViewModel.h"
 #import "PGDiscoverShakeCell.h"
@@ -15,18 +7,12 @@
     Reachability *r;;
 }
 @property(nonatomic,strong)UITableView *tableView ;
-
 @property(nonatomic,strong)PGDiscoverFaceViewModel *faceVM;
-
 @property(nonatomic,strong)NSMutableArray *deviceArray ;
-
 @property(nonatomic,strong)UILabel *nullDataLabell;
 @property(nonatomic,strong)UIImageView *nullImageView ;
-
 @end
-
 @implementation PGDiscoverFaceVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextView *chooseCellDelegatei5= [[UITextView alloc] initWithFrame:CGRectZero]; 
@@ -41,10 +27,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.title = @"人脸签到";
     [self.view addSubview:self.tableView];
     [self getData];
-    // Do any additional setup after loading the view.
 }
 #pragma mark -------是否有网
-- (void)firstload{
+- (void)PG_firstload{
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:{
@@ -64,7 +49,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 #pragma mark 懒加载    
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
@@ -78,7 +62,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _tableView;
 }
-
 -(PGDiscoverFaceViewModel *)faceVM{
     if (!_faceVM) {
         _faceVM = [[PGDiscoverFaceViewModel alloc]init];
@@ -112,9 +95,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_nullImageView removeFromSuperview];
     }
 }
-
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _deviceArray.count;
 }
@@ -129,13 +110,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return cell;
 }
 #pragma mark -------UITableViewDelegate
-
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
     view.backgroundColor = [UIColor clearColor];
     return view;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     PGDiscoverFaceDetailVC *faceDetail = [[PGDiscoverFaceDetailVC alloc]init];
     faceDetail.model = _deviceArray[indexPath.row];
@@ -148,9 +127,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     };
 }
-
-
-
 #pragma mark -------获取数据 
 - (void)getData{
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -174,15 +150,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self shownull];
     }];
 }
-
-
-
-
-
-
-
-
-
 - (void)didReceiveMemoryWarning {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextView *playerItemPlaybackD8= [[UITextView alloc] initWithFrame:CGRectZero]; 
@@ -194,14 +161,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [trainWithOffset medalDetailCellWithviewWidthPadding:playerItemPlaybackD8 dailyCourseTable:courseClassTableC3 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

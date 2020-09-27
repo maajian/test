@@ -1,38 +1,19 @@
 #import "PGViewImageFinish.h"
-//
-//  PGDiscoverEditApplyVC.m
-//  zhundao
-//
-//  Created by maj on 2018/12/2.
-//  Copyright © 2018年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverEditApplyVC.h"
-
 #import "PGSignInUpDataVC.h"
-
 #import "PGDiscoveEditApplyCell.h"
 #import "PGDiscoveEditApplyHeaderView.h"
 #import "PGDiscoveEditApplyFooterView.h"
 #import "PGAlertSheet.h"
-
 #import "PGDiscoverCustomApplyModel.h"
 #import "PGDiscoveEditApplyViewModel.h"
-
 static NSString *cellID = @"PGDiscoveEditApplyCell";
-
 @interface PGDiscoverEditApplyVC ()<UITableViewDataSource, UITableViewDelegate, PGDiscoveEditApplyFooterViewDelegate, PGDiscoveEditApplyCellDelegate, PGDiscoveEditApplyHeaderViewDelegate>
-// 列表
 @property (nonatomic, strong) UITableView *tableView;
-// 头
 @property (nonatomic, strong) PGDiscoveEditApplyHeaderView *headerView;
-// 逻辑视图
 @property (nonatomic, strong) PGDiscoveEditApplyViewModel *viewModel;
-
 @end
-
 @implementation PGDiscoverEditApplyVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect controllerWithTitlel5 = CGRectZero;
@@ -41,15 +22,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [taskCenterCell progressUpdateBlockWithimageGenerationError:controllerWithTitlel5 finishLoadWith:delaysTouchesBeganh2 ];
 });
     [super viewDidLoad];
-    
     [self.view addSubview:self.tableView];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem backImageItemWithTarget:self action:@selector(backAction:)];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem saveTextItemWithTarget:self action:@selector(saveAction:)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem saveTextItemWithTarget:self action:@selector(PG_saveAction:)];
     self.title = self.viewModel.typeArray[_model.customType];
 }
-
 #pragma mark --- lazyload
-// 列表
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kTopBarHeight) style:UITableViewStyleGrouped];
@@ -63,7 +41,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _tableView;
 }
-
 - (PGDiscoveEditApplyViewModel *)viewModel {
     if (!_viewModel) {
         _viewModel = [[PGDiscoveEditApplyViewModel alloc] init];
@@ -71,7 +48,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _viewModel;
 }
-
 - (PGDiscoveEditApplyHeaderView *)headerView {
     if (!_headerView) {
         _headerView = [[PGDiscoveEditApplyHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _model.ID ? 234 : 180)];
@@ -79,12 +55,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _headerView;
 }
-
 #pragma mark --- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.isNeedChoice ? self.viewModel.dataArray.count : 0;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PGDiscoveEditApplyCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     cell.choiceTF.placeholder = [NSString stringWithFormat:@"选项%li",indexPath.row + 1];
@@ -99,7 +73,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cell.discoveEditApplyCellDelegate = self;
     return cell;
 }
-
 #pragma mark --- UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return _model.ID ? 234 : 180;
@@ -120,7 +93,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     footer.isNeedChoice = self.viewModel.isNeedChoice;
     return footer;
 }
-
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([cell respondsToSelector:@selector(layoutMargins)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
@@ -130,15 +102,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
 }
 #pragma mark --- PGDiscoveEditApplyCellDelegate
-// 点击删除cell
 - (void)tableViewCell:(PGDiscoveEditApplyCell *)tableViewCell didSelectButton:(UIButton *)button {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:tableViewCell];
     [self.viewModel.dataArray removeObjectAtIndex:indexPath.row];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
     [self.tableView reloadData];
 }
-
-// 输入结束,数据源修改
 - (void)tableViewCell:(PGDiscoveEditApplyCell *)tableViewCell didEndEdit:(UITextField *)textField {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGRect withSwimParticularC9 = CGRectMake(104,37,222,56); 
@@ -149,9 +118,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSInteger index = [self.tableView indexPathForCell:tableViewCell].row;
     [self.viewModel.dataArray replaceObjectAtIndex:index withObject:textField.text];
 }
-
 #pragma mark --- PGDiscoveEditApplyFooterViewDelegate
-// 增加cell
 - (void)footerView:(UIView *)footerView didAddButton:(UIButton *)button {
     [self.viewModel.dataArray addObject:@""];
     [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.tableView numberOfRowsInSection:0]  inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
@@ -160,9 +127,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentSize.height) animated:YES];
     [self.tableView endUpdates];
 }
-
 #pragma mark --- PGDiscoveEditApplyHeaderViewDelegate
-// 选取类型
 - (void)headerView:(PGDiscoveEditApplyHeaderView *)headerView didChangeType:(UILabel *)typeLabel {
     [self.view endEditing:YES];
     __weak typeof(self) weakSelf = self;
@@ -180,7 +145,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (void)saveAction:(id)sender {
+- (void)PG_saveAction:(id)sender {
     __weak typeof(self) weakSelf = self;
     NSString *title = self.headerView.titleTF.text;
     if ([[title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
@@ -199,33 +164,29 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 *stop = YES;
             }
         }];
-        
         if (!isContinue) return;
         if (self.model.ID) {
             [weakSelf.viewModel changeCustomtApplyWithTitle:title inputType:self.model.customType ID:self.model.ID require:self.headerView.mustSwitch.isOn tips:self.headerView.tipInputTF.text choiceArray:self.viewModel.dataArray success:^{
                 [weakSelf.navigationController popViewControllerAnimated:YES];
             } failure:^(NSString * _Nonnull error) {
-                
             }];
         } else {
             [weakSelf.viewModel newCustomApplyRequestWithTitle:title inputType:self.model.customType require:self.headerView.mustSwitch.isOn tips:self.headerView.tipInputTF.text choiceArray:self.viewModel.dataArray success:^(NSDictionary *obj) {
                 if ([obj[@"errcode"] integerValue] == 0) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 } else if ([obj[@"errcode"] integerValue] == 100 || [obj[@"errcode"] integerValue] == 200) {
-                    [self showAlertWithTitle:obj[@"errmsg"]];
+                    [self PG_showAlertWithTitle:obj[@"errmsg"]];
                 } else {
                     PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:obj[@"errmsg"]];
                     [label labelAnimationWithViewlong:weakSelf.view];
                 }
             } failure:^(NSString * _Nonnull error) {
-                
             }];
         }
     }
 }
-
 #pragma mark --- public
-- (void)showAlertWithTitle:(NSString *)title {
+- (void)PG_showAlertWithTitle:(NSString *)title {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -237,5 +198,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }]];
     [self presentViewController:alert animated:YES completion:nil];
 }
-
 @end

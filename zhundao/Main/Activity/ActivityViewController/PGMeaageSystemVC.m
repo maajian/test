@@ -1,37 +1,18 @@
 #import "PGUpdatedTimeLabel.h"
-//
-//  PGMeaageSystemVC.m
-//  zhundao
-//
-//  Created by maj on 2019/5/26.
-//  Copyright © 2019 zhundao. All rights reserved.
-//
-
 #import "PGMeaageSystemVC.h"
-
 #import "PGActivityChangeContentVC.h"
 #import "PGActivityMessageContentCell.h"
-
 #import "PGActivityMessageContentViewModel.h"
-
 #import "PGActivityMessageContentModel.h"
-
 @interface PGMeaageSystemVC ()<UITableViewDataSource, UITableViewDelegate>
-
 @property(nonatomic,strong)UITableView *tableView;
-
 @property(nonatomic,strong)PGActivityMessageContentViewModel *viewModel;
-
 @end
-
 static NSString *cellID = @"PGActivityMessageContentCell";
-
 @implementation PGMeaageSystemVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
+    [self PG_initSet];
 }
 - (void)viewWillAppear:(BOOL)animated{
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -53,15 +34,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)dealloc{
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
-
 #pragma mark --- init
-- (void)initSet {
+- (void)PG_initSet {
     _viewModel = [[PGActivityMessageContentViewModel alloc]init];
     [self.view addSubview:self.tableView];
 }
-
 #pragma mark --- 网络请求
-- (void)getSystemContent {
+- (void)PG_getSystemContent {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle articleOriginalViewI9 = UITableViewStylePlain; 
         UITextField *backGroundColork6= [[UITextField alloc] initWithFrame:CGRectZero]; 
@@ -84,8 +63,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [[PGSignManager shareManager]showNotHaveNet:weakSelf.view];
     }];
 }
-
-
 #pragma mark --- lazyload
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -98,13 +75,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _tableView.tableFooterView = [[UIView alloc]init];
         _tableView.layer.borderWidth = 1;
         _tableView.layer.borderColor = ZDLineColor.CGColor;
-        _tableView.mj_header = [PGRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getSystemContent)];
+        _tableView.mj_header = [PGRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(PG_getSystemContent)];
     }
     return _tableView;
 }
-
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.viewModel.systemArray.count;
@@ -115,7 +90,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return cell;
 }
 #pragma mark -------UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.1;
 }
@@ -130,7 +104,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [[NSNotificationCenter defaultCenter] postNotificationName:ZDNotification_Message_Select object:model.es_content];
     [self.navigationController popViewControllerAnimated:YES];
 }
-// 将要展示cell 补全分割线
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewStyle playChapterIndexT5 = UITableViewStylePlain; 
@@ -152,5 +125,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         cell.separatorInset = UIEdgeInsetsZero;
     }
 }
-
 @end

@@ -1,14 +1,5 @@
 #import "PGLineDashType.h"
-//
-//  PGAvtivityOneActivityVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/3/21.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGAvtivityOneActivityVC.h"
-//#import "PGSignInSigninModel.h"
 #import "PGSignInSigninCell.h"
 #import "PGSaoYiSaoViewController.h"
 #import "PGSignInLoadallsignModel.h"
@@ -27,18 +18,16 @@
      PGSignInSigninCell  *mycell;
 }
 @property (strong, nonatomic) UITableView *tableView;
-@property(nonatomic,strong)NSString *signUrlStr;//  网络请求url
-@property(nonatomic,strong)NSMutableArray *dataarr;//本地的存储数组
-@property(nonatomic,strong)NSMutableArray *dataArray; //tableview 的array
-@property(nonatomic,strong)NSMutableArray *signarr; //扫码数组
-@property(nonatomic,strong)NSMutableArray *signarr1;//扫码数组
-@property(nonatomic,strong)NSMutableArray *signarr2;//扫码数组
-@property(nonatomic,strong)NSMutableArray *modelArray;//上拉的model数组
+@property(nonatomic,strong)NSString *signUrlStr;
+@property(nonatomic,strong)NSMutableArray *dataarr;
+@property(nonatomic,strong)NSMutableArray *dataArray; 
+@property(nonatomic,strong)NSMutableArray *signarr; 
+@property(nonatomic,strong)NSMutableArray *signarr1;
+@property(nonatomic,strong)NSMutableArray *signarr2;
+@property(nonatomic,strong)NSMutableArray *modelArray;
 @property(nonatomic,assign)BOOL isJuhua;
 @end
-
 @implementation PGAvtivityOneActivityVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     xiala=1;
@@ -50,11 +39,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:ZDUserDefault_Update_Sign object:nil];
     [self createtableview];
     [self firstload];
-    // Do any additional setup after loading the view.
 }
-
 #pragma mark 懒加载
-
 - (NSMutableArray *)dataarr
 {
     if (!_dataarr) {
@@ -95,7 +81,6 @@
     one.acID = self.acID;
     [self.navigationController pushViewController:one animated:YES];
 }
-
 - (void)createtableview
 {
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0, kScreenWidth, kScreenHeight-64) style:UITableViewStyleGrouped];
@@ -116,23 +101,15 @@
             [self loadArray];
             break;
         }
-            
         case ReachableViaWWAN:
-            // 使用3G网络
             NSLog(@"wan");
              [self reflsh];
-            [self ishaveArray];
-            
-            
-            
+            [self PG_ishaveArray];
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
             NSLog(@"wifi");
              [self reflsh];
-            [self ishaveArray];
-            
-            
+            [self PG_ishaveArray];
             break;
     }
 }
@@ -149,7 +126,6 @@
         else{
             weakSelf.tableView.mj_footer.state = MJRefreshStateNoMoreData;
             weakSelf.tableView.mj_header.state = MJRefreshStateNoMoreData;
-            
             weakSelf.tableView.mj_header.hidden = YES;
             weakSelf.tableView.mj_insetT=0;
         }
@@ -189,13 +165,10 @@
         }
         for (NSDictionary *acdic in array1) {
             PGSignInModel *model = [PGSignInModel yy_modelWithJSON:acdic];
-            
             [_modelArray addObject:model];
             NSMutableDictionary *e = [NSMutableDictionary dictionary];
             for (NSString *keystr in acdic.allKeys) {
-                
                 if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-                    //
                     [e setObject:@"" forKey:keystr];
                 }
                 else
@@ -205,12 +178,9 @@
             }
             [_dataarr addObject:e];
         }
-        
         [[NSUserDefaults standardUserDefaults]setObject:_dataarr forKey:[NSString stringWithFormat:@"oneActivity%li",(long)self.acID]];
-        
         [[NSUserDefaults standardUserDefaults]synchronize];
         _dataArray = [_modelArray mutableCopy];
-        
         if (_isJuhua==YES) {
             [self.tableView.mj_footer endRefreshing];
             if (array1.count<20) {
@@ -219,13 +189,11 @@
             }
             _isJuhua=NO;
         }
-        
         [_tableView reloadData];
     } fail:^(NSError *error) {
-        
     }];
 }
-- (void)ishaveArray {
+- (void)PG_ishaveArray {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSString *recognizeSimultaneouslyWithU9 = @"withDailyCourse";
         UIColor *taskCenterViewQ7= [UIColor redColor];
@@ -234,7 +202,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     [self loadData];
 }
-
 - (void)loadArray
 {
     NSMutableArray *muarray = [NSMutableArray array];
@@ -244,13 +211,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [muarray addObject:model];
     }
     _dataArray = [muarray mutableCopy];
-    
     [_tableView reloadData];
     [self shownull:_dataArray WithText:@"暂时没有签到哦，请在右上方添加" WithTextColor:[UIColor lightGrayColor]];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {if (scrollView == _tableView) {
@@ -268,8 +233,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _signUrlStr =  [NSString stringWithFormat:@"%@api/CheckIn/PostCheckIn?accessKey=%@",zhundaoApi,accesskey];
     return _signUrlStr;
 }
-
-- (void)loadData    //网络加载数据
+- (void)loadData    
 {    JQIndicatorView *indicator = [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
     if (_isJuhua==NO) {
         indicator.center = self.view.center;
@@ -294,9 +258,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [muarray addObject:model];
             NSMutableDictionary *e = [NSMutableDictionary dictionary];
             for (NSString *keystr in acdic.allKeys) {
-                
                 if ([[acdic objectForKey:keystr] isEqual:[NSNull null]]) {
-                    //
                     [e setObject:@"" forKey:keystr];
                 }
                 else
@@ -306,17 +268,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
             }
             [self.dataarr addObject:e];
         }
-        
         if (_isJuhua==NO) {
             [indicator stopAnimating];
         }
         [[NSUserDefaults standardUserDefaults]setObject:_dataarr forKey:[NSString stringWithFormat:@"oneActivity%li",(long)self.acID]];
         [[NSUserDefaults standardUserDefaults]synchronize];
-        
         _dataArray = [muarray mutableCopy];
-        
         _modelArray = [muarray mutableCopy];
-        
         if (_isJuhua==YES) {
             [self.tableView.mj_header endRefreshing];
             self.tableView.mj_footer.state = MJRefreshStateIdle;
@@ -335,7 +293,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [indicator stopAnimating];
         }
     }];
-    
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -372,25 +329,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
     UIResponder *nextResponder = button.nextResponder;
     while (nextResponder) {
         if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
-            
             mycell  = (PGSignInSigninCell *)nextResponder;
             break;
         }
-        
         nextResponder = nextResponder.nextResponder;
-        
     }
     NSArray *array = @[@"删除签到",@"修改签到",@"微信签到二维码",@"手机号签到二维码",@"导出签到名单"];
-   
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
-    
-    // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
-        NSLog(@"Show Index %zi",index); //取消0
+        NSLog(@"Show Index %zi",index); 
         if (index==1) {
               [weakSelf deleteSign];
-            
         }
        else if (index==2) {
             PGSignInXIugaisignVC *xiugai = [[PGSignInXIugaisignVC alloc]init];
@@ -401,7 +351,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:xiugai animated:YES];
         }
-        // 微信签到二维码
        else if (index==3) {
            PGAvtivityCodeVC *code = [[PGAvtivityCodeVC alloc]init];
            NSString *imagestr =   [NSString stringWithFormat:@"%@ck/%li/%li/3",zhundaoH5Api,(long)mycell.model.ID,(long)mycell.model.ActivityID];
@@ -409,10 +358,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
            code.titlestr = mycell.model.Name;
            code.labelStr = @"签到";
            [self presentViewController:code animated:YES completion:^{
-               
            }];
        }
-        // 手机号签到二维码
        else if(index==4){
            PGAvtivityCodeVC *code = [[PGAvtivityCodeVC alloc]init];
            NSString *imagestr =   [NSString stringWithFormat:@"%@ckp/%li/%li/11",zhundaoH5Api,mycell.model.ID,(long)mycell.model.ActivityID];
@@ -420,7 +367,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
            code.titlestr = mycell.model.Name;
            code.labelStr = @"手机号签到";
            [self presentViewController:code animated:YES completion:^{
-               
            }];
        } else{
            PGActivityPostEmailVC *post = [[PGActivityPostEmailVC alloc]init];
@@ -430,9 +376,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
            [self setHidesBottomBarWhenPushed:NO];
        }
     };
-    
     [self.view.window addSubview:sheet];
-
 }
 - (NSArray *)createXiuArray
 {
@@ -466,7 +410,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"error = %@",error);
     }];
 }
-
 - (void)switchChange:(UISwitch *)button
 {
      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否改变签到状态" message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -474,30 +417,23 @@ dispatch_async(dispatch_get_main_queue(), ^{
         UIResponder *nextResponder = button.nextResponder;
         while (nextResponder) {
             if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
-                
                 mycell  = (PGSignInSigninCell *)nextResponder;
                 break;
             }
-            
             nextResponder = nextResponder.nextResponder;
-            
         }
         NSString *listurl = [NSString stringWithFormat:@"%@api/CheckIn/UpdateCheckIn?accessKey=%@&checkInId=%li",zhundaoApi,accesskey,(long)mycell.model.ID];
-        
         [ZD_NetWorkM getDataWithMethod:listurl parameters:nil succ:^(NSDictionary *obj) {
-            
         } fail:^(NSError *error) {
-            
         }];
-        [self changeModelswitchButton:mycell.switchButton];
+        [self PG_changeModelswitchButton:mycell.switchButton];
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         button.on = !button.on;
     }]];
     [self presentViewController:alert  animated:YES completion:nil];
 }
-
-- (void)changeModelswitchButton :(UISwitch *)switchButton{
+- (void)PG_changeModelswitchButton :(UISwitch *)switchButton{
 dispatch_async(dispatch_get_main_queue(), ^{
     NSString *photoPrevireViewD5 = @"forgotPasswordView";
         UIColor *circleTweetCommentv7= [UIColor redColor];
@@ -516,30 +452,23 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSMutableDictionary *changeDic = [[array1 objectAtIndex:section]mutableCopy];
     [changeDic setObject:changeStr forKey:@"Status"];
     NSMutableArray *array2 = [array1 mutableCopy];
-    [array2 removeObjectAtIndex:section];            //修改本地数据
+    [array2 removeObjectAtIndex:section];            
     [array2 insertObject:changeDic atIndex:section];
     [[NSUserDefaults standardUserDefaults]setObject:[array2 copy]  forKey:[[NSString stringWithFormat:@"oneActivity%li",(long)self.acID]copy]];
     [[NSUserDefaults standardUserDefaults]synchronize];
     PGSignInModel *model = [PGSignInModel yy_modelWithDictionary:[changeDic copy] ];
-    [_dataArray removeObjectAtIndex:section];   //修改——dataarray ，防止滑动改变
+    [_dataArray removeObjectAtIndex:section];   
     [_dataArray insertObject:model atIndex:section];
 }
-
-
-
-
 - (void)pushSignList:(UIButton *)button
 {
     UIResponder *nextResponder = button.nextResponder;
     while (nextResponder) {
         if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
-            
             mycell  = (PGSignInSigninCell *)nextResponder;
             break;
         }
-        
         nextResponder = nextResponder.nextResponder;
-        
     }
     PGSignInLoadAllSignVC *load = [[PGSignInLoadAllSignVC alloc]init];
     load.signID = mycell.model.ID;
@@ -575,11 +504,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)dealloc{
     NSLog(@"没有内存泄露");
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

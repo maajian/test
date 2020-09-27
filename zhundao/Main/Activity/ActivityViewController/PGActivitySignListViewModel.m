@@ -1,16 +1,5 @@
-//
-//  PGActivitySignListViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/20.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivitySignListViewModel.h"
-
 @implementation PGActivitySignListViewModel
-
-
 - (NSMutableArray *)getRightArray:(NSDictionary *)datadic array :(NSArray *)array
 {
     NSMutableArray *result = [NSMutableArray array];
@@ -33,7 +22,6 @@
     }
     return result;
 }
-
 - (NSMutableArray *)getLastPostArray :(NSArray *)array
 {
     NSArray *engArray = @[@"UserName",@"Mobile",@"Sex",@"Company",@"Depart",@"Duty",@"IDcard",@"Industry",@"Email",@"Address",@"Remark",@"FaceImg"];
@@ -45,10 +33,8 @@
             [lastArray addObject:str];
         }
     }
-    
     return lastArray;
 }
-
 - (void)removeNone:(NSMutableArray *)array
 {
     for (int i = 0 ; i <array.count; i++) {
@@ -59,7 +45,6 @@
         }
     }
 }
-
 - (void)payMent : (NSInteger)payment title :(NSString *)title array :(NSMutableArray *)array{
     switch (payment) {
         case 0:
@@ -81,8 +66,6 @@
             break;
     }
 }
-
-
 - (void)addADMark :(NSString *)adMark personID :(NSInteger)personID UserName :(NSString *)UserName Mobile :(NSString *)Mobile markBlock:(markBlock)markBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/UpdateActivityList?accessKey=%@",zhundaoApi,[[PGSignManager shareManager] getaccseekey]];
     NSDictionary *dic = @{@"UserName" : UserName,
@@ -101,7 +84,4 @@
         NSLog(@"error = %@",error);
     }];
 }
-
-
-
 @end

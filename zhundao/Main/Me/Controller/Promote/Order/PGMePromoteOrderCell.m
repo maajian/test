@@ -1,34 +1,21 @@
 #import "PGAlertWithTitle.h"
-//
-//  PGDiscoverPromoteOrderCell.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteOrderCell.h"
-
 @interface PGMePromoteOrderCell()
 @property (nonatomic, strong) UIView *cornerView;
 @property (nonatomic, strong) UIView *shadowView;
 @property (nonatomic, strong) NSMutableArray <UILabel *> *leftLabelArray;
 @property (nonatomic, strong) NSMutableArray <UILabel *> *rightLabelArray;
-
 @end
-
 @implementation PGMePromoteOrderCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.backgroundColor = ZDBackgroundColor;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIView *)cornerView {
     if (!_cornerView) {
@@ -49,9 +36,8 @@
     }
     return _shadowView;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     _leftLabelArray = [NSMutableArray array];
     _rightLabelArray  = [NSMutableArray array];
     [self.contentView addSubview:self.shadowView];
@@ -71,9 +57,8 @@
         [_rightLabelArray addObject:label];
     }
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.cornerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(10);
         make.leading.equalTo(self.contentView).offset(13);
@@ -87,13 +72,11 @@
     [_leftLabelArray mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.cornerView.mas_leading).offset(18);
     }];
-    
     [_rightLabelArray mas_distributeViewsAlongAxis:(MASAxisTypeVertical) withFixedSpacing:9 leadSpacing:9 tailSpacing:9];
     [_rightLabelArray mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.equalTo(self.cornerView.mas_trailing).offset(-18);
     }];
 }
-
 #pragma mark --- setter
 - (void)setModel:(PGMePromoteOrderModel *)model {
     _model = model;
@@ -103,7 +86,5 @@
     _rightLabelArray[3].text = model.NickName;
     _rightLabelArray[4].text = model.AddTime;
 }
-
 #pragma mark --- action
-
 @end

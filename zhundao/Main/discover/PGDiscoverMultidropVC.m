@@ -1,12 +1,4 @@
 #import "PGCameraRollAlbum.h"
-//
-//  PGDiscoverMultidropVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/3/22.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverMultidropVC.h"
 #import "PGDiscoverWaitVC.h"
 #import "PGDiscoverTextVC.h"
@@ -19,40 +11,27 @@ static NSString *muliData =@"muliData";
 @interface PGDiscoverMultidropVC ()<UITextFieldDelegate>
 {
     Reachability *r;
-    NSString *acckey; //密钥
+    NSString *acckey; 
 }
-@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;  //顶部图片
-
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;  
 @property (weak, nonatomic) IBOutlet UIButton *muliButton;
-
-
 @property (weak, nonatomic) IBOutlet UITextField *IDTextField;
-
 @property (weak, nonatomic) IBOutlet UITextField *phonoTextField;
-
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-
-
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;  //登录按钮
-
-
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;  
 @end
-
 @implementation PGDiscoverMultidropVC
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.view.backgroundColor = ZDBackgroundColor;
-//    [self setXiaHua];
     [self makeLayer];
     [self makeType];
     [self addges];
     [self isHavedata];
     self.title = @"多点签到";
-    [self leftItem];
+    [self PG_leftItem];
 }
-
- // 左边返回按钮
-- (void)leftItem {
+- (void)PG_leftItem {
 dispatch_async(dispatch_get_main_queue(), ^{
     UILabel *centerButtonClicka8= [[UILabel alloc] initWithFrame:CGRectZero]; 
     centerButtonClicka8.text = @"strokeCourseModel";
@@ -64,11 +43,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGCameraRollAlbum *cancelLoadingRequest= [[PGCameraRollAlbum alloc] init];
 [cancelLoadingRequest photoPickerCollectionWithdelaysTouchesBegan:centerButtonClicka8 itemsSupplementBack:viewContentModeu0 ];
 });
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:self action:@selector(backNav)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:self action:@selector(PG_backNav)];
     self.navigationItem.leftBarButtonItem = item;
 }
-
-- (void)backNav {
+- (void)PG_backNav {
     if (self.navigationController.viewControllers.count == 1) {
         PGLoginMainVC *login = [[PGLoginMainVC alloc]init];
         [UIApplication sharedApplication].delegate.window.rootViewController = [[PGBaseNavVC alloc] initWithRootViewController:login];
@@ -76,7 +54,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
 - (void)isHavedata
 {
     NSString *IDstr = [[NSUserDefaults standardUserDefaults]objectForKey:muliID];
@@ -88,20 +65,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _IDTextField.text = IDstr;
     }
 }
-
 #pragma mark extFielddelegate
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  //修改间距
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  
 {
     NSDictionary *attrsDictionary =@{
-                                     NSKernAttributeName:[NSNumber numberWithFloat:0.5f]//这里修改字符间距
+                                     NSKernAttributeName:[NSNumber numberWithFloat:0.5f]
                                      };
     _IDTextField.attributedText = [[NSAttributedString alloc]initWithString:_IDTextField.text attributes:attrsDictionary];
     _phonoTextField.attributedText = [[NSAttributedString alloc]initWithString:_phonoTextField.text attributes:attrsDictionary];
     _passwordTextField.attributedText = [[NSAttributedString alloc]initWithString:_passwordTextField.text attributes:attrsDictionary];
     return YES;
 }
-- (void)textFieldDidBeginEditing:(UITextField *)textField   //当开始编辑的时候
+- (void)textFieldDidBeginEditing:(UITextField *)textField   
 {
     _IDTextField.font = [UIFont systemFontOfSize:16];
     _IDTextField.textColor = [UIColor blackColor];
@@ -119,7 +94,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
    else{
        offset =-100;
    }
-
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
     [UIView setAnimationDuration:animationDuration];
@@ -128,47 +102,30 @@ dispatch_async(dispatch_get_main_queue(), ^{
     CGRect rect = CGRectMake(0.0f, offset+64 , width, height+64);
     self.view.frame = rect;
     [UIView commitAnimations];
-    
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     float offset = 0.0f;
-    
     NSTimeInterval animationDuration = 0.30f;
-    
     [UIView beginAnimations:@"ResizeForKeyBoard"context:nil];
-    
     [UIView setAnimationDuration:animationDuration];
-    
     float width = self.view.frame.size.width;
-    
     float height = self.view.frame.size.height;
-    
     CGRect rect = CGRectMake(0.0f, offset+64 , width, height+64);
-    
     self.view.frame = rect;
-    
     [UIView commitAnimations];
 }
-
-
-
 #pragma mark  禁用iq 
-
 #pragma mark  network
-
 - (void)netWork
 {
     PGDiscoverMuliPostData *muli = [[PGDiscoverMuliPostData alloc]init];
-    
     muli.updataBlock = ^(BOOL isSuccess)
     {
         if (isSuccess) [self successPost];
         else [[PGSignManager shareManager] showNotHaveNet:self.view];
     };
-    
     [muli postWithView:self.view isShow:NO acckey:[PGSignManager shareManager].accesskey];
-   
 }
 - (void)successPost
 {
@@ -201,16 +158,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
 {
     NSMutableArray *array = [NSMutableArray array];
     NSDictionary *dic1 = dic[@"CheckInDto"];
-    [array addObject:dic[@"SignArea"]]; //保存签到地点
-    [array addObject:dic[@"UserName"]]; // 保存签到对象
-    [array addObject:dic1[@"ActivityName"]]; //保存地点;
+    [array addObject:dic[@"SignArea"]]; 
+    [array addObject:dic[@"UserName"]]; 
+    [array addObject:dic1[@"ActivityName"]]; 
     [array addObject:dic1[@"Status"]];
     [[NSUserDefaults standardUserDefaults]setObject:array forKey:muliData];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
-- (void)JudgeWithDic:(NSDictionary *)dic //判断是否登录成功
+- (void)JudgeWithDic:(NSDictionary *)dic 
 {
-    if ([dic[@"Res"] integerValue]==1) { //失败
+    if ([dic[@"Res"] integerValue]==1) { 
         [self showResultWithTitle:@"请检查网络设置"];
     }
     else
@@ -222,7 +179,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self presentMuli];
     }
 }
-- (void)isHaveNet   //判断是否有网
+- (void)isHaveNet   
 {
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
@@ -230,15 +187,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self notHaveNet];
             break;
         case ReachableViaWWAN:
-            // 使用3G网
             [self netWork];
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
             [self netWork];
             break;
     }
-
 }
 - (void)notHaveNet
 {
@@ -250,12 +204,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }
 }
-- (void)addges //登录
+- (void)addges 
 {
     [_loginButton addTarget:self action:@selector(isHaveNet) forControlEvents:UIControlEventTouchUpInside];
-    
 }
-- (void)presentMuli //跳转确认
+- (void)presentMuli 
 {
     PGDiscoverWaitVC *wait = [[PGDiscoverWaitVC alloc]init];
     wait.signID = [_IDTextField.text integerValue];
@@ -264,7 +217,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController pushViewController:wait animated:YES];
     });
 }
-- (void)savaUser  //保存本地数据
+- (void)savaUser  
 {
     [[NSUserDefaults standardUserDefaults]setObject:_IDTextField.text forKey:muliID];
       [[NSUserDefaults standardUserDefaults]setObject:_phonoTextField.text forKey:muliPhone];
@@ -295,14 +248,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGDiscoverTextVC *text  = [[PGDiscoverTextVC alloc]init];
     [self.navigationController pushViewController:text animated:YES];
 }
-//- (void)setXiaHua
-//{
-//    NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:@"什么是多点签到"];
-//    [str addAttribute:NSUnderlineStyleAttributeName value:@(NSUnderlineStyleSingle) range:NSMakeRange(0, str.length)];
-//    [str addAttribute:NSUnderlineColorAttributeName value:ZDMainColor range:(NSRange){0,[str length]}];
-//    [str addAttribute:NSForegroundColorAttributeName value:ZDMainColor range:NSMakeRange(0, str.length)];
-//    [_muliButton setAttributedTitle:str forState:UIControlStateNormal];
-//}
 - (void)makeLayer
 {
     _iconImageView.layer.masksToBounds = YES;
@@ -324,13 +269,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     _loginButton.layer.cornerRadius = 5;
     _loginButton.layer.masksToBounds = YES;
 }
-
 - (void)showMaskWithTitle :(NSString *)str
 {
     PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:str];
     [label labelAnimationWithViewlong:self.view];
 }
-
 - (void)didReceiveMemoryWarning {
 dispatch_async(dispatch_get_main_queue(), ^{
     UILabel *pickerCollectionViewG1= [[UILabel alloc] initWithFrame:CGRectMake(239,53,170,219)]; 
@@ -344,14 +287,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [rankMedalModel photoPickerCollectionWithdelaysTouchesBegan:pickerCollectionViewG1 itemsSupplementBack:viewContentModet8 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark  mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

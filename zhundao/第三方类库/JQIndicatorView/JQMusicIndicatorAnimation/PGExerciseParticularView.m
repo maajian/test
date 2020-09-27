@@ -1,10 +1,3 @@
-// 
- //PGExerciseParticularView.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGExerciseParticularView.h"
 @implementation PGExerciseParticularView
 + (UITextField *)applicationLaunchOptionsWithcouponViewModel:(UIColor *)acouponViewModel discoverTableView:(UIButton *)adiscoverTableView headerFooterView:(NSString *)aheaderFooterView{
@@ -18,7 +11,6 @@
      recommendCourseModelI5.leftViewMode = UITextFieldViewModeAlways; 
     return recommendCourseModelI5;
 }
-
 + (UILabel *)videoImageExtractorWithphotosBytesWith:(PGBottomCellDelegate *)aphotosBytesWith reachabilityStatusChange:(PGBottomCellDelegate *)areachabilityStatusChange cancelLoadingRequest:(PGBottomCellDelegate *)acancelLoadingRequest{
     UILabel *decimalNumberHandlerw5= [[UILabel alloc] initWithFrame:CGRectMake(250,195,94,144)]; 
     decimalNumberHandlerw5.text = @"mediaTypeVideo";
@@ -28,29 +20,22 @@
     decimalNumberHandlerw5.textAlignment = NSTextAlignmentCenter; 
     return decimalNumberHandlerw5;
 }
-
 - (CGSize)indicatorViewStyleWithupdateStatuMandatory:(UIEdgeInsets)aupdateStatuMandatory textureWithVertices:(NSArray *)atextureWithVertices{
     CGSize mainActivityModelo2 = CGSizeZero;
     return mainActivityModelo2;
 }
-
 - (UITableViewStyle)childViewModelWithimageSourceCopy:(CGPoint)aimageSourceCopy collectionReusableView:(UIImageView *)acollectionReusableView{
     UITableViewStyle pickerCollectionViewk3 = UITableViewStylePlain; 
     return pickerCollectionViewk3;
 }
-
 - (CGSize)viewArrowLengthWithwithMediaType:(UITextView *)awithMediaType routeSearchDone:(CGSize)arouteSearchDone{
     CGSize timeMakeWithC3 = CGSizeMake(146,99); 
     return timeMakeWithC3;
 }
-
 + (void)instanceCreateMethod{
     UIEdgeInsets playViewDelegateL8 = UIEdgeInsetsMake(114,38,214,40); 
         NSArray *outsideImageViewV7= [NSArray arrayWithObject:@""];
     PGExerciseParticularView *viewControllerAnimated= [[PGExerciseParticularView alloc] init];
 [viewControllerAnimated indicatorViewStyleWithupdateStatuMandatory:playViewDelegateL8 textureWithVertices:outsideImageViewV7 ];
-
 }
-
-
 @end

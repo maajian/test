@@ -1,33 +1,16 @@
 #import "PGLocationHeaderView.h"
-//
-//  PGActivityOneConsultVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/8/3.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityOneConsultVC.h"
-
 #import "PGActivityOneConsultTableViewCell.h"
 #import "PGActivityOneConsultViewModel.h"
 @interface PGActivityOneConsultVC ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
-/*! tableview */
 @property(nonatomic,strong)UITableView *tableView;
-/*! viewmode */
 @property(nonatomic,strong)PGActivityOneConsultViewModel *oneVM;
-/*! 第一个cell的文本高度 */
 @property(nonatomic,assign)float cellHeight;
-/*! textview的高度 */
 @property(nonatomic,assign)float textViewHeight;
-/*! 回复的字符串 */
 @property(nonatomic,copy)NSString *answerStr ;
-
 @property(nonatomic,assign)BOOL isCommand;
 @end
-
 @implementation PGActivityOneConsultVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSTextAlignment imageSourceCopyJ4 = NSTextAlignmentCenter; 
@@ -37,11 +20,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     [super viewDidLoad];
     [self baseSetting];
-    // Do any additional setup after loading the view.
 }
-
 #pragma mark ---------
-
 - (void)baseSetting
 {
     self.title = @"咨询回复";
@@ -56,9 +36,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
      _cellHeight =  [self.oneVM getHeight:_model.Question width:(0.88 *kScreenWidth-50)];
     [self.view addSubview:self.tableView];
 }
-
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStyleGrouped];
@@ -101,18 +79,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return cell;
 }
 #pragma mark -------UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     if(section==2) return 100;
     else return 0.1;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section==0) return 30;
     else return 15;
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     if(section==2) {
@@ -134,9 +109,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         return view;
     }
     return nil;
-    
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==0) {
@@ -148,11 +121,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         return 44;
     }
 }
-
-
-
 #pragma mark textdelegate
-
 - (void)textViewDidBeginEditing:(UITextView *)textView{
     if ([textView.text isEqualToString:@"请输入要回复的内容"]) {
         textView.text = @"";
@@ -167,17 +136,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _answerStr = textView.text;
     }
 }
-
 #pragma mark -----开关的点击
-/*!  改变是否推荐 */
-
 - (void)switchChange:(UISwitch *)myswitch
 {
     _isCommand = myswitch.on;
 }
-
 #pragma mark -----发送咨询
-
 - (void)postConsult
 {
     [self.view endEditing:YES];
@@ -204,14 +168,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

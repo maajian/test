@@ -1,10 +1,3 @@
-// 
- //PGUpdateUserLocation.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGUpdateUserLocation.h"
 @implementation PGUpdateUserLocation
 + (UITextField *)viewContentSizeWithdeviceSettingsType:(UIButton *)adeviceSettingsType swipeGestureRecognizer:(UIView *)aswipeGestureRecognizer blendModeSource:(UIButton *)ablendModeSource{
@@ -18,7 +11,6 @@
      downloadChapterModelO6.leftViewMode = UITextFieldViewModeAlways; 
     return downloadChapterModelO6;
 }
-
 + (UISlider *)withAssetTrackWithbuttonTitleColor:(PGPlayBecomeActive *)abuttonTitleColor natatoriumListData:(PGPlayBecomeActive *)anatatoriumListData showControlView:(PGPlayBecomeActive *)ashowControlView{
     UISlider *videoProcessingQueuen7= [[UISlider alloc] initWithFrame:CGRectMake(147,3,72,119)]; 
     videoProcessingQueuen7.minimumValue = 0; 
@@ -26,22 +18,18 @@
     videoProcessingQueuen7.value =86; 
     return videoProcessingQueuen7;
 }
-
 - (CGSize)swimPlayStatusWithinterfaceOrientationMask:(UIImageView *)ainterfaceOrientationMask recordMovieModel:(UITextFieldViewMode)arecordMovieModel{
     CGSize trainsWithOffsetf3 = CGSizeZero;
     return trainsWithOffsetf3;
 }
-
 - (NSLineBreakMode)searchRequestWithWithbottomCellDelegate:(UIScrollView *)abottomCellDelegate pointerFunctionsObject:(UIScrollView *)apointerFunctionsObject{
     NSLineBreakMode withCourseChoicenessW0 = NSLineBreakByTruncatingTail; 
     return withCourseChoicenessW0;
 }
-
 - (UITextFieldViewMode)contentInformationRequestWithtrainParticularProperty:(NSLineBreakMode)atrainParticularProperty inviteAnswerNormal:(UITextView *)ainviteAnswerNormal{
     UITextFieldViewMode userInterfaceIdiomq3 = UITextFieldViewModeAlways; 
     return userInterfaceIdiomq3;
 }
-
 + (void)instanceCreateMethod{
     UIImageView * notificationActionOptionu2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     notificationActionOptionu2.contentMode = UIViewContentModeCenter; 
@@ -52,8 +40,5 @@
         UITextFieldViewMode personDataViewC5 = UITextFieldViewModeAlways; 
     PGUpdateUserLocation *affineTransformMake= [[PGUpdateUserLocation alloc] init];
 [affineTransformMake swimPlayStatusWithinterfaceOrientationMask:notificationActionOptionu2 recordMovieModel:personDataViewC5 ];
-
 }
-
-
 @end

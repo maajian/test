@@ -1,34 +1,21 @@
 #import "PGOrganizeListView.h"
-//
-//  PGDataPersonCell.m
-//  jingjing
-//
-//  Created by maj on 2020/8/10.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGDataPersonCell.h"
-
 @interface PGDataPersonCell()
 @property (nonatomic, strong) UILabel *numberLabel;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UILabel *phoneLabel;
 @property (nonatomic, strong) UILabel *statusLabel;
-
 @end
-
 @implementation PGDataPersonCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UILabel *)numberLabel {
     if (!_numberLabel) {
@@ -64,9 +51,8 @@
     }
     return _statusLabel;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImageView * taskCenterTablez4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     taskCenterTablez4.contentMode = UIViewContentModeCenter; 
@@ -98,9 +84,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.contentView addSubview:self.phoneLabel];
     [self.contentView addSubview:self.statusLabel];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.numberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.contentView).offset(16);
         make.centerY.equalTo(self.contentView);
@@ -127,11 +112,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.size.mas_equalTo(CGSizeMake(60, 20));
     }];
 }
-
 #pragma mark --- setter
 - (void)setModel:(PGDataPersonModel *)model {
     _model = model;
-    
     _numberLabel.text = [NSString stringWithFormat:@"%li", (long)model.number];
     _nameLabel.text = model.UserName;
     _timeLabel.text = model.AddTime;
@@ -152,12 +135,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
             _statusLabel.textColor = [UIColor colorFromHexCode:@"09BB07"];
             _statusLabel.layer.borderColor = [UIColor colorFromHexCode:@"09BB07"].CGColor;
             break;
-            
         default:
             break;
     }
 }
-
 #pragma mark --- action
-
 @end

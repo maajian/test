@@ -1,12 +1,4 @@
 #import "PGCompositionWithAsset.h"
-//
-//  PGMePersonInfoVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/10/31.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMePersonInfoVC.h"
 #import "PGMePersonInfoCell.h"
 #import "PGMePersonInfoModel.h"
@@ -16,37 +8,25 @@
 #import "PGMeChangeInfoVC.h"
 #import "PGMeChangeInfoViewModel.h"
 @interface PGMePersonInfoVC ()<UITableViewDelegate,UITableViewDataSource>
-
 @property(nonatomic,strong)UITableView *tableView;
-
 @property(nonatomic,strong)UIImageView *imageView;
-/*! 数据源 */
 @property(nonatomic,strong)PGMePersonInfoModel *model;
-/*! 左边的字符串 */
 @property(nonatomic,copy)NSArray *leftArray;
-
 @property(nonatomic,strong)PGMeChangeInfoViewModel *viewModel;
-
 @end
-
 @implementation PGMePersonInfoVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self baseSetting];
+    [self PG_baseSetting];
     [self.view addSubview:self.tableView];
-    // Do any additional setup after loading the view from its nib.
 }
-
-- (void)baseSetting{
+- (void)PG_baseSetting{
     self.title = @"信息修改";
     _viewModel = [[PGMeChangeInfoViewModel alloc]init];
    _model = [PGMePersonInfoModel yy_modelWithJSON:_userDic];
     _leftArray = [NSArray arrayWithObjects:@"头像",@"姓名",@"昵称",@"手机",@"邮箱",@"性别",@"单位",@"行业",@"职务", nil];
 }
-
 #pragma mark--- 网络请求
-
 - (void)netWork{
     [_viewModel getUserInfo:^(id responseObject) {
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:responseObject];
@@ -54,12 +34,9 @@
         _model  = [PGMePersonInfoModel yy_modelWithJSON:_userDic];
         [_tableView reloadData];
     } errorBlock:^(NSError *error) {
-        
     }];
 }
-
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
@@ -71,9 +48,7 @@
     }
     return _tableView;
 }
-
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 9;
@@ -86,7 +61,7 @@
         UITableViewCell *Cell = [tableView dequeueReusableCellWithIdentifier:cellID1];
         if (!Cell) {
             Cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID1];
-            [self createImageView:Cell];
+            [self PG_createImageView:Cell];
         }
         return Cell;
     }else{
@@ -100,8 +75,7 @@
         return cell;
     }
 }
-
-- (void)createImageView:(UITableViewCell *)cell{
+- (void)PG_createImageView:(UITableViewCell *)cell{
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *sizeWithAssett6= [UIImage imageNamed:@""]; 
         UITableViewStyle browserPhotoViewp6 = UITableViewStylePlain; 
@@ -123,9 +97,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
-
 #pragma mark -------UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row==0) {
         return 70;
@@ -133,7 +105,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         return 44;
     }
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row ==0) {
         [BDImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
@@ -151,7 +122,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
                         NSLog(@"error = %@",error);
                     }];
                 }];
-                
             }
         }];
     }else if (indexPath.row == 5){
@@ -168,9 +138,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController pushViewController:changeInfo animated:YES];;
     }
 }
-
 #pragma mark --- 视图生命周期
-
 - (void)viewWillAppear:(BOOL)animated{
 dispatch_async(dispatch_get_main_queue(), ^{
     UIImage *badgeWithStyleN0= [UIImage imageNamed:@""]; 
@@ -181,21 +149,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super viewWillAppear:animated];
     [self netWork];
 }
-
-
 - (void)dealloc{
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

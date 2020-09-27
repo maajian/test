@@ -1,20 +1,8 @@
-//
-//  PGActivityBuyMessageCell.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/6.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityBuyMessageCell.h"
-
 @implementation PGActivityBuyMessageCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self.contentView addSubview:self.label1];
@@ -23,7 +11,6 @@
     }
     return self;
 }
-
 - (UILabel *)label1{
     if (!_label1) {
         _label1 = [[UILabel alloc]init];
@@ -34,7 +21,6 @@
     }
     return _label1;
 }
-
 - (UITextField *)textf{
     if (!_textf) {
         _textf = [myTextField initWithFrame:CGRectMake(CGRectGetMaxX(_label1.frame), 0, 80, 44) placeholder:nil font:[UIFont systemFontOfSize:14] TextAlignment:NSTextAlignmentCenter textColor:[UIColor darkGrayColor]];
@@ -42,7 +28,6 @@
     }
     return _textf;
 }
-
 - (UILabel *)label2{
     if (!_label2) {
         _label2 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_textf.frame), 0, 50, 44)];
@@ -51,7 +36,6 @@
     }
     return _label2;
 }
-
 - (void)drawRect:(CGRect)rect{
     CAShapeLayer *layer = [CAShapeLayer layer];
     layer.strokeColor = [UIColor blackColor].CGColor;
@@ -64,8 +48,5 @@
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 @end

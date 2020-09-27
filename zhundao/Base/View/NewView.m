@@ -1,12 +1,4 @@
 #import "PGBottomViewDelegate.h"
-//
-//  NewView.m
-//  zhundao
-//
-//  Created by zhundao on 2017/1/7.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "NewView.h"
 #import "AppDelegate.h"
 @interface NewView()
@@ -15,7 +7,6 @@
 }
 @end
 @implementation NewView
-
 - (instancetype)initWithTitle:(NSString *)str
 {
     self = [super init];
@@ -23,7 +14,6 @@
         [self createLabel];
         label.text = str;
         [self createImage];
-        
         self.alpha = 0.8;
         self.backgroundColor = [UIColor blackColor];
     }
@@ -48,5 +38,4 @@
     imageView.image = [UIImage imageNamed:@"fx_my_attention_guide_arrow"];
     [self addSubview:imageView];
 }
-
 @end

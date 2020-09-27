@@ -1,10 +1,3 @@
-// 
- //PGTextHighlightRange.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGTextHighlightRange.h"
 @implementation PGTextHighlightRange
 + (UILabel *)attentionViewControllerWithkeyboardTypeEmail:(UITextView *)akeyboardTypeEmail objectsHashTable:(NSMutableArray *)aobjectsHashTable dailyTrainHeader:(UIButton *)adailyTrainHeader{
@@ -16,29 +9,24 @@
     assetChangeRequestF4.textAlignment = NSTextAlignmentCenter; 
     return assetChangeRequestF4;
 }
-
 + (UIActivityIndicatorView *)particularViewModelWithtitleEdgeInsets:(PGFailWithError *)atitleEdgeInsets selectPhotoDelegate:(PGFailWithError *)aselectPhotoDelegate originBackgroundColor:(PGFailWithError *)aoriginBackgroundColor{
     UIActivityIndicatorView *timeMakeWithR7= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     timeMakeWithR7.hidden = YES; 
     timeMakeWithR7.hidesWhenStopped = YES; 
     return timeMakeWithR7;
 }
-
 - (UITableViewStyle)cycleScrollViewWithcustomDismissAction:(UISlider *)acustomDismissAction playerDecodeError:(UITableViewCellSeparatorStyle)aplayerDecodeError{
     UITableViewStyle selectorFromStringe0 = UITableViewStylePlain; 
     return selectorFromStringe0;
 }
-
 - (UITableViewStyle)imageWithNameWithrefreshStateIdle:(CGPoint)arefreshStateIdle intervalSinceDate:(UIColor *)aintervalSinceDate{
     UITableViewStyle scrollTimeIntervalT8 = UITableViewStylePlain; 
     return scrollTimeIntervalT8;
 }
-
 - (CGSize)likesTableViewWithimageWithName:(NSMutableArray *)aimageWithName allowsBackForward:(NSLineBreakMode)aallowsBackForward{
     CGSize itemTextColorh6 = CGSizeMake(112,29); 
     return itemTextColorh6;
 }
-
 + (void)instanceCreateMethod{
     UISlider *controlEventEditingr2= [[UISlider alloc] initWithFrame:CGRectZero]; 
     controlEventEditingr2.minimumValue = 0; 
@@ -47,8 +35,5 @@
         UITableViewCellSeparatorStyle deviceOrientationLandscapes8 = UITableViewCellSeparatorStyleNone; 
     PGTextHighlightRange *cachingImageManager= [[PGTextHighlightRange alloc] init];
 [cachingImageManager cycleScrollViewWithcustomDismissAction:controlEventEditingr2 playerDecodeError:deviceOrientationLandscapes8 ];
-
 }
-
-
 @end

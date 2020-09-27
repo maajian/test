@@ -1,17 +1,5 @@
-//
-//  PGMeAddAccountViewModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/19.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeAddAccountViewModel.h"
-
 @implementation PGMeAddAccountViewModel
-//api/PerBase/AddCreadCards?accessKey={accessKey}
-
-/*! 添加提现账号 */
 - (void)AddCreadCards :(NSDictionary *)dic  AddAccountBlock:(AddAccountBlock)AddAccountBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/AddCreadCards?accessKey=%@",zhundaoApi,[[PGSignManager shareManager]getaccseekey]];
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
@@ -26,7 +14,6 @@
         AddAccountBlock(0);
     }];
 }
-
 - (BOOL)isCanPost :(NSDictionary *)postdic{
     if (postdic.count==2) {
         return NO;
@@ -36,5 +23,4 @@
         return YES;
     }
 }
-
 @end

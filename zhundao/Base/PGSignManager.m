@@ -1,19 +1,9 @@
 #import "PGObjectsFromArray.h"
-
-//
-//  PGSignManager.m
-//  zhundao
-//
-//  Created by zhundao on 2016/12/20.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
-
 #import "PGSignManager.h"
 #import <UShareUI/UShareUI.h>
 #import "WXApi.h"
 @interface PGSignManager ()
 {
-    
 }
 @end
 @implementation PGSignManager
@@ -29,17 +19,14 @@
     });
     return manager;
 }
-
 + (instancetype)allocWithZone:(struct _NSZone *)zone
 {
     return [self shareManager];
-    
 }
 - (id)copy
 {
     return self;
 }
-
 - (NSString *)getaccseekey
 {
     NSString *acc =[[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
@@ -52,7 +39,6 @@
     }
     return _accesskey;
 }
-
 - (NSString *)getToken {
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) {
         return [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
@@ -60,8 +46,7 @@
         return @"";
     }
 }
-
-- (void)createDatabase  //创建数据库
+- (void)createDatabase  
 {
     NSString *path =NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES)[0];
     path = [path stringByAppendingString:@"list.sqlite"];
@@ -76,7 +61,6 @@
         NSLog(@"数据库打开失败");
     }
     }
-
 - (void)saveImageWithFrame:(CGRect )rect
                    WithCtr:(UIViewController *)Ctr
 {
@@ -90,12 +74,10 @@
     CGImageRelease(bitmapImage);
     [self loadImageFinished:resultImg];
 }
-
 - (void)loadImageFinished:(UIImage *)image
 {
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
 }
-
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     PGMaskLabel *label ;
@@ -122,12 +104,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (ZD_UserM.isAdmin) {
         shareBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0?token=%@",(long)model.ID,ZD_UserM.token]);
     } else {
-        [self networkForGetActivityLinkWithID:model.ID success:^(NSString *obj) {
+        [self PG_networkForGetActivityLinkWithID:model.ID success:^(NSString *obj) {
             shareBlock(obj);
         }];
     }
 }
-- (void)networkForGetActivityLinkWithID:(NSInteger)ID success:(ZDBlock_Str)success {
+- (void)PG_networkForGetActivityLinkWithID:(NSInteger)ID success:(ZDBlock_Str)success {
 dispatch_async(dispatch_get_main_queue(), ^{
     UISwitch *readingMutableContainersh0= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     readingMutableContainersh0.on = YES; 
@@ -153,18 +135,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)shareWithTitle:(NSString *)title detailTitle:(NSString *)detailTitle thumImage:(UIImage *)thumImage webpageUrl:(NSString *)webpageUrl withCTR:(UIViewController *)ctr Withtype:(NSInteger)type {
     NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine), nil];
       if (![WXApi isWXAppInstalled]) {
-          //没有安装微信
           [arr removeObject:@(UMSocialPlatformType_WechatSession)];
           [arr removeObject:@(UMSocialPlatformType_WechatTimeLine)];
       }
-    
       [UMSocialUIManager setPreDefinePlatforms:arr];
       [UMSocialShareUIConfig shareInstance].shareTitleViewConfig.isShow = NO;
       [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
           UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
           UMShareWebpageObject *shareObject = nil;
           UMShareImageObject *imageObject = nil;
-          if (type==5) { //网页分享
+          if (type==5) { 
               if (platformType ==UMSocialPlatformType_WechatSession) {
                   shareObject = [UMShareWebpageObject shareObjectWithTitle:title descr:detailTitle thumImage:thumImage];
               }
@@ -172,7 +152,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
               {
                   shareObject = [UMShareWebpageObject shareObjectWithTitle:title descr:nil thumImage:thumImage];
               }
-              //如果有缩略图，则设置缩略图
               shareObject.webpageUrl =webpageUrl;
              messageObject.shareObject = shareObject;
           }
@@ -182,9 +161,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
               [imageObject setShareImage:thumImage];
               messageObject.shareObject = imageObject;
           }
-
-          
-          //调用分享接口
           [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:ctr completion:^(id data, NSError *error) {
               if (error) {
                   NSLog(@"************Share fail with error %@*********",error);
@@ -194,15 +170,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
           }];
       }];
 }
-
-
 - (void)saveData:(NSArray *)array name :(NSString *)name
 {
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array];
     [[NSUserDefaults standardUserDefaults]setObject:data forKey:name];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
-
 - (NSArray *)getArray :(NSString *)name
 {
     NSData *data = [[NSUserDefaults standardUserDefaults]objectForKey:name];
@@ -213,5 +186,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:@"请检查网络设置"];
     [label labelAnimationWithViewlong:View];
 }
-
 @end

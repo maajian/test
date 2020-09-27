@@ -1,15 +1,5 @@
-//
-//  PGDiscoverCustomModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/1/16.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverCustomModel.h"
-
 @implementation PGDiscoverCustomModel
-
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
         self.ID = [dic[@"id"] integerValue];
@@ -21,5 +11,4 @@
     }
     return self;
 }
-
 @end

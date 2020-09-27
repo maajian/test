@@ -1,10 +1,3 @@
-// 
- //PGNatatoriumParticularData.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGNatatoriumParticularData.h"
 @implementation PGNatatoriumParticularData
 + (UISwitch *)recommendCollectionViewWithmutableUserNotification:(UIColor *)amutableUserNotification dailyCourseModel:(UIImage *)adailyCourseModel nodataViewDelegate:(UIButton *)anodataViewDelegate{
@@ -13,29 +6,24 @@
     autoAdjustTrackd3.onTintColor = [UIColor whiteColor]; 
     return autoAdjustTrackd3;
 }
-
 + (UIActivityIndicatorView *)autoresizingMaskIntoWithstrokeCourseSecond:(PGInputViewContent *)astrokeCourseSecond swimRecordData:(PGInputViewContent *)aswimRecordData buttonTitleColor:(PGInputViewContent *)abuttonTitleColor{
     UIActivityIndicatorView *secondTextureCoordinateS2= [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]; 
     secondTextureCoordinateS2.hidden = YES; 
     secondTextureCoordinateS2.hidesWhenStopped = YES; 
     return secondTextureCoordinateS2;
 }
-
 - (CGRect)scrollTimeIntervalWithmainViewController:(UIImageView *)amainViewController rectEdgeNone:(UIScrollView *)arectEdgeNone{
     CGRect controlEventTouchC2 = CGRectMake(234,204,105,209); 
     return controlEventTouchC2;
 }
-
 - (UIButtonType)cellReuseIdentifierWithnaviTitleFont:(UITextView *)anaviTitleFont finishSavingWith:(UIActivityIndicatorView *)afinishSavingWith{
     UIButtonType assetResourceLoadingE2 = UIButtonTypeContactAdd;
     return assetResourceLoadingE2;
 }
-
 - (CGSize)organizeNoticeModelWithfinishPickingVideo:(UIView *)afinishPickingVideo animationRightTick:(UIScrollView *)aanimationRightTick{
     CGSize finishPickingVideol5 = CGSizeMake(126,245); 
     return finishPickingVideol5;
 }
-
 + (void)instanceCreateMethod{
     UIImageView * shaderFromStringr2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString string]] highlightedImage:[[UIImage alloc] initWithData:[NSData data]]]; 
     shaderFromStringr2.contentMode = UIViewContentModeCenter; 
@@ -51,8 +39,5 @@
     showOrderStatusi3.minimumZoomScale = 1; 
     PGNatatoriumParticularData *assetFromImage= [[PGNatatoriumParticularData alloc] init];
 [assetFromImage scrollTimeIntervalWithmainViewController:shaderFromStringr2 rectEdgeNone:showOrderStatusi3 ];
-
 }
-
-
 @end

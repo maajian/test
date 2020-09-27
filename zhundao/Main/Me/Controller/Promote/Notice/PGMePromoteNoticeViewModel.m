@@ -1,22 +1,11 @@
-//
-//  PGMePromoteNoticeViewModel.m
-//  zhundao
-//
-//  Created by maj on 2020/1/7.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteNoticeViewModel.h"
-
 @implementation PGMePromoteNoticeViewModel
-
 - (instancetype)init {
     if (self = [super init]) {
         self.dataArray = [NSMutableArray array];
     }
     return self;
 }
-
 - (void)getNoticeSuccess:(ZDBlock_Void)success failure:(ZDBlock_Void)failure {
     NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getPartnerNotice?token=%@", zhundaoApi,[[PGSignManager shareManager] getToken]];
     NSDictionary *params = @{@"pageSize": @(10000), @"pageIndex": @(1)};
@@ -30,5 +19,4 @@
         ZDDo_Block_Safe_Main(failure);
     }];
 }
-
 @end

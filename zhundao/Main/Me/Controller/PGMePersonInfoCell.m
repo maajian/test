@@ -1,38 +1,24 @@
-//
-//  PGMePersonInfoCell.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/1.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMePersonInfoCell.h"
-
 @implementation PGMePersonInfoCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self.contentView addSubview:self.leftLabel];
         [self.contentView addSubview:self.rightLabel];
-        [self updataFrame];
+        [self PG_updataFrame];
         _rightLabel.text = @"sssadsds";
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     return self;
 }
-
 -(UILabel *)leftLabel{
     if (!_leftLabel) {
         _leftLabel = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 40, 44) Text:@"姓名" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:14] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     }
     return _leftLabel;
 }
-
 - (UILabel *)rightLabel{
     if (!_rightLabel) {
         _rightLabel = [[UILabel alloc]init];
@@ -42,8 +28,7 @@
     }
     return _rightLabel;
 }
-
-- (void)updataFrame{
+- (void)PG_updataFrame{
     [_rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).offset(0);
         make.top.equalTo(self.contentView).offset(5);
@@ -51,9 +36,7 @@
         make.left.equalTo(self.leftLabel.mas_right).offset(0);
     }];
 }
-
 #pragma mark --- 存取器
-
 - (void)setCellTag:(NSInteger)cellTag{
     _cellTag = cellTag;
     _leftLabel.text = _leftArray[cellTag];
@@ -70,7 +53,6 @@
             }else{
               _rightLabel.text = @"未填写";
             }
-       
         }
             break;
         case 2:
@@ -128,14 +110,7 @@
             break;
     }
 }
-
-
-
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 @end

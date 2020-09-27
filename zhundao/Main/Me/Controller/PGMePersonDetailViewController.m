@@ -1,12 +1,4 @@
 #import "PGFieldValueDictionary.h"
-//
-//  PGMePersonDetailViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/5/25.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMePersonDetailViewController.h"
 #import "PGMeChooseGroupViewController.h"
 #import "GZActionSheet.h"
@@ -18,21 +10,17 @@
 #import "PGMeContactViewController.h"
 @interface PGMePersonDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableview;
-@property(nonatomic,strong)NSMutableArray *firstCellArray;  //第一个cell后的数据
-@property(nonatomic,strong)NSMutableArray *firstCellNameArray;  //第一个cell后的数据
-@property(nonatomic,strong)NSMutableArray *otherDataArray; //第二个cell后的数据
-@property(nonatomic,strong)NSMutableArray *topNameArray ;//第二个cell后名称数组
+@property(nonatomic,strong)NSMutableArray *firstCellArray;  
+@property(nonatomic,strong)NSMutableArray *firstCellNameArray;  
+@property(nonatomic,strong)NSMutableArray *otherDataArray; 
+@property(nonatomic,strong)NSMutableArray *topNameArray ;
 @property(nonatomic,copy)NSString *phoneStr;
 @property(nonatomic,copy)NSString *groupStr ;
 @end
-
 @implementation PGMePersonDetailViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self baseSetting];
-    
-    // Do any additional setup after loading the view.
 }
 #pragma 基础设置 
 - (void)baseSetting
@@ -55,7 +43,6 @@
     }
     [self.view addSubview:self.tableview];
 }
-
 #pragma 懒加载
 - (NSMutableArray *)firstCellNameArray{
     if (!_firstCellNameArray) {
@@ -99,7 +86,6 @@
     return _tableview;
 }
 #pragma UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _otherDataArray.count;
@@ -112,8 +98,6 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:personID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (indexPath.row==0) {
-            
-            
            [self createPhoneCellWithView:cell.contentView WithTopName:_topNameArray[indexPath.row] BottomName:_otherDataArray[indexPath.row]];
         }
         else{
@@ -125,13 +109,10 @@
             self.groupStr =[_otherDataArray[indexPath.row] copy];
             [cell addGestureRecognizer:tap];
         }
-        
     }
-    
-    
     return  cell;
 }
-- (void)pushChoose:(UITapGestureRecognizer *)tap  //选择分组
+- (void)pushChoose:(UITapGestureRecognizer *)tap  
 {
     NSInteger index = [_topNameArray indexOfObject:@"分组"];
     UITableViewCell *cell = [_tableview cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
@@ -146,7 +127,6 @@
         self.groupStr = groupName;
         [_otherDataArray replaceObjectAtIndex:index withObject:groupName];
         label.text = groupName;
-        
     };
 }
 #pragma UITableViewDelegate
@@ -171,10 +151,8 @@
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
     view.backgroundColor = [UIColor clearColor];
-    
     return view;
 }
-
 #pragma 视图创建
 -(void)createFirCellWithView :(UIView *)view
 {
@@ -186,11 +164,10 @@
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(imageView.frame.origin.x+50+10, 30, 100, 50)];
     label.text = _firstCellArray[0];
     label.font = KHeitiSCMedium(15);
-    if (![_firstCellArray[1] isEqualToString:@"(null)"]||[_firstCellArray[1] isEqualToString:@""]) { //姓名
+    if (![_firstCellArray[1] isEqualToString:@"(null)"]||[_firstCellArray[1] isEqualToString:@""]) { 
         [imageView sd_setImageWithURL:[NSURL URLWithString:_firstCellArray[1]]];
     }else
     {
-        
         NSString *text = _firstCellArray[0];
         UIColor *color = [[NSString alloc]getColorWithStr:text];
         if (text.length<=2) {
@@ -205,7 +182,6 @@
     [view addSubview:imageView];
     [view addSubview:label];
 }
-
 - (void)createPhoneCellWithView :(UIView *)view WithTopName:(NSString *)topName BottomName :(NSString *)bottomName
 {
     [self createFirCellWithView:view];
@@ -218,14 +194,11 @@
     [callImage addGestureRecognizer:tap];
     [view addSubview:callImage];
 }
-
 - (void)createGroupCellWithView :(UIView *)view WithTopName:(NSString *)topName BottomName :(NSString *)bottomName
 {
     [self createTopLabelWithName:topName WithView:view y:5];
     [self createBottomLabelWithName:bottomName View:view y:25];
 }
-
-//创建label上面
 - (void)createTopLabelWithName :(NSString *)name WithView :(UIView *)view y:(NSInteger)offsety
 {
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(18, offsety, 150, 25)];
@@ -248,23 +221,19 @@
 {
     NSArray *array = @[@"删除联系人",@"编辑联系人"];
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
-    // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
-        NSLog(@"Show Index %zi",index); //取消0
-        
-        if (index==1) {   //删除
+        NSLog(@"Show Index %zi",index); 
+        if (index==1) {   
             [weakSelf createAlert];
         }
-        
-        if (index==2) { //编辑
+        if (index==2) { 
             PGMeNewOrEditPersonViewController *new = [[PGMeNewOrEditPersonViewController alloc]init];
             [weakSelf setHidesBottomBarWhenPushed:YES];
             new.personID = self.personID;
             [weakSelf.navigationController pushViewController:new animated:YES];
         }
     };
-    
     [self.view.window addSubview:sheet];
 }
 -(void)createAlert
@@ -277,12 +246,11 @@
     }];
     [self presentViewController:alert animated:YES completion:nil];
 }
-- (void)callAlert  //打电话
+- (void)callAlert  
 {
     [PGAlertView alertWithTitle:@"确定拨打电话?" message:nil sureBlock:^{
         [self callphone];
     } cancelBlock:^{
-        
     }];
 }
 - (void)callphone
@@ -292,14 +260,5 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

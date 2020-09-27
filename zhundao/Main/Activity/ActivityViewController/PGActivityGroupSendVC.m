@@ -1,12 +1,4 @@
 #import "PGNavigateItemWith.h"
-//
-//  PGActivityGroupSendVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/11/2.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityGroupSendVC.h"
 #import "PGActivityGroupSendViewModel.h"
 #import "PGActivityGroupSendCell.h"
@@ -19,20 +11,13 @@
     NSInteger _es_id;
 }
 @property(nonatomic,strong)UITableView *tableView;
-/*! viewModel   */
 @property(nonatomic,strong)PGActivityGroupSendViewModel *viewModel;
-/*! 剩余短信条数 */
 @property(nonatomic,assign)NSInteger messageCount;
-/*! 签名 */
 @property(nonatomic,copy)NSString *remark;
-/*! 需要的短信条数 */
 @property(nonatomic,assign)NSInteger lastNeedCount;
-/*! 编辑的textStr */
 @property(nonatomic,strong)NSString *textStr;
 @end
-
 @implementation PGActivityGroupSendVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _viewModel = [[PGActivityGroupSendViewModel alloc]init];
@@ -42,16 +27,11 @@
     _remark = @"【准到】";
     _lastNeedCount =  1;
     [self getSign];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData:) name:ZDNotification_Message_Select object:nil];
-    // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PG_refreshData:) name:ZDNotification_Message_Select object:nil];
 }
-
 #pragma mark --- 网络请求
-
 - (void)getSign{
-    /*! 获取签名 */
     [_viewModel getAdminInfo:^(id responseObject) {
-        /*! 获取短信数 */
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
         NSArray *array = dic[@"data"];
         NSDictionary *dataDic = array.firstObject;
@@ -64,13 +44,11 @@
     } error:^(NSError *error) {
     }];
 }
-- (void)showAlertWithStr:(NSString *)str{
+- (void)PG_showAlertWithStr:(NSString *)str{
     PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:str];
     [label labelAnimationWithViewlong:self.view];
 }
-
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStyleGrouped];
@@ -80,9 +58,7 @@
     }
     return _tableView;
 }
-
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 3;
 }
@@ -112,20 +88,16 @@
     return cell;
 }
 #pragma mark -------UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
    return  [_viewModel heightForRowAtIndexPath:indexPath];
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
    return  [_viewModel heightForFooterInSection:section];
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
    return [_viewModel heightForHeaderInSection:section];
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     if (section==2) {
@@ -150,21 +122,17 @@
         label.textColor = ZDHeaderTitleColor;
         label.font = [UIFont systemFontOfSize:10];
         [view addSubview:label];
-    
     }else{
         view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 10)];
         view.backgroundColor = ZDBackgroundColor;
     }
     return view;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section ==0) {
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
-
 #pragma mark --- GroupSendTableViewCellDelegate
 - (void)tableViewCell:(PGActivityGroupSendCell *)tableViewCell didSelectTextView:(UITextView *)textView {
     PGActivityMessageContentVC *message = [[PGActivityMessageContentVC alloc]init];
@@ -173,9 +141,7 @@
     message.es_id = _es_id;
     [self.navigationController pushViewController:message animated:YES];
 }
-
 #pragma mark --- 发送短信
-
 - (void)sendMessage{
     NSLog(@"COUNT = %li",_lastNeedCount * _selectArray.count);
     if (_messageCount<_lastNeedCount * _selectArray.count) {
@@ -200,7 +166,6 @@
         }];
     }
 }
-
 #pragma mark --- action
 - (void)sureAction{
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -218,21 +183,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-- (void)refreshData:(NSNotification *)noti {
+- (void)PG_refreshData:(NSNotification *)noti {
     _textStr = noti.object;
     [_tableView reloadData];
 }
-
 - (void)dealloc{
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

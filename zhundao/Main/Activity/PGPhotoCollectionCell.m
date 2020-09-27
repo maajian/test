@@ -1,22 +1,9 @@
 #import "PGDailyTrainView.h"
-//
-//  PGPhotoCollectionCell.m
-//  SimpleWord
-//
-//  Created by Chenly on 16/5/16.
-//  Copyright © 2016年 Little Meaning. All rights reserved.
-//
-
 #import "PGPhotoCollectionCell.h"
-
 @interface PGPhotoCollectionCell ()
-
 @property (weak, nonatomic) IBOutlet UIImageView *selectedImageView;
-
 @end
-
 @implementation PGPhotoCollectionCell
-
 - (void)setSelected:(BOOL)selected {
 dispatch_async(dispatch_get_main_queue(), ^{
     UILabel *fontAttributeNamej4= [[UILabel alloc] initWithFrame:CGRectZero]; 
@@ -32,5 +19,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super setSelected:selected];
     self.selectedImageView.hidden = !selected;
 }
-
 @end

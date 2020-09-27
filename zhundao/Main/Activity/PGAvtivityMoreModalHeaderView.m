@@ -1,74 +1,42 @@
 #import "PGRankMedalView.h"
-//
-//  PGAvtivityMoreModalHeaderView.m
-//  zhundao
-//
-//  Created by maj on 2018/11/30.
-//  Copyright © 2018年 zhundao. All rights reserved.
-//
-
 #import "PGAvtivityMoreModalHeaderView.h"
-
 #import "Time.h"
-
 @interface PGAvtivityMoreModalHeaderView()
-// 详情
 @property (nonatomic, strong) UIView *detailView;
-// 图片
 @property (nonatomic, strong) UIImageView *headerImageView;
-// 标题
 @property (nonatomic, strong) UILabel *titleLabel;
-// 活动时间
 @property (nonatomic, strong) UILabel *activityTimeLabel;
-// 报名截止
 @property (nonatomic, strong) UILabel *endLabel;
-// 线
 @property (nonatomic, strong) UIView *lineView;
-// 箭头
 @property (nonatomic, strong) UIImageView *arrowImageView;
-// 报名视图
 @property (nonatomic, strong) UIView *applyView;
-// 报名人数
 @property (nonatomic, strong) UILabel *applyCountLabel;
-// 报名文字
 @property (nonatomic, strong) UILabel *applyTitleLabel;
-// 浏览视图
 @property (nonatomic, strong) UIView *browseView;
-// 浏览人数
 @property (nonatomic, strong) UILabel *browseCountLabel;
-// 浏览文字
 @property (nonatomic, strong) UILabel *browseTitleLabel;
-// 收入视图
 @property (nonatomic, strong) UIView *incomeView;
-// 收入金额
 @property (nonatomic, strong) UILabel *incomeCountLabel;
-// 收入文字
 @property (nonatomic, strong) UILabel *incomeTitleLabel;
-
 @end
-
 @implementation PGAvtivityMoreModalHeaderView
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = ZDBackgroundColor;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UIView *)detailView {
     if (!_detailView) {
         _detailView = [[UIView alloc] init];
         _detailView.backgroundColor = [UIColor whiteColor];
-        [_detailView addTapGestureTarget:self action:@selector(gotoDetail)];
+        [_detailView addTapGestureTarget:self action:@selector(PG_gotoDetail)];
     }
     return _detailView;
 }
-
-// 头部图片
 - (UIImageView *)headerImageView {
     if (!_headerImageView) {
         _headerImageView = [[UIImageView alloc] init];
@@ -77,7 +45,6 @@
     }
     return _headerImageView;
 }
-
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
@@ -86,7 +53,6 @@
     }
     return _titleLabel;
 }
-
 - (UILabel *)activityTimeLabel {
     if (!_activityTimeLabel) {
         _activityTimeLabel = [[UILabel alloc] init];
@@ -95,7 +61,6 @@
     }
     return _activityTimeLabel;
 }
-
 - (UILabel *)endLabel {
     if (!_endLabel) {
         _endLabel = [[UILabel alloc] init];
@@ -104,7 +69,6 @@
     }
     return _endLabel;
 }
-
 - (UIImageView *)arrowImageView {
     if (!_arrowImageView) {
         _arrowImageView = [[UIImageView alloc] init];
@@ -112,7 +76,6 @@
     }
     return _arrowImageView;
 }
-
 - (UIView *)lineView {
     if (!_lineView) {
         _lineView = [UIView new];
@@ -120,7 +83,6 @@
     }
     return _lineView;
 }
-
 - (UIView *)applyView {
     if (!_applyView) {
         _applyView = [[UIView alloc] init];
@@ -129,7 +91,6 @@
     }
     return _applyView;
 }
-
 - (UILabel *)applyCountLabel {
     if (!_applyCountLabel) {
         _applyCountLabel = [UILabel new];
@@ -138,7 +99,6 @@
     }
     return _applyCountLabel;
 }
-
 - (UILabel *)applyTitleLabel {
     if (!_applyTitleLabel) {
         _applyTitleLabel = [UILabel new];
@@ -148,7 +108,6 @@
     }
     return _applyTitleLabel;
 }
-
 - (UIView *)browseView {
     if (!_browseView) {
         _browseView = [[UIView alloc] init];
@@ -157,7 +116,6 @@
     }
     return _browseView;
 }
-
 - (UILabel *)browseCountLabel {
     if (!_browseCountLabel) {
         _browseCountLabel = [UILabel new];
@@ -166,7 +124,6 @@
     }
     return _browseCountLabel;
 }
-
 - (UILabel *)browseTitleLabel {
     if (!_browseTitleLabel) {
         _browseTitleLabel = [UILabel new];
@@ -176,7 +133,6 @@
     }
     return _browseTitleLabel;
 }
-
 - (UIView *)incomeView {
     if (!_incomeView) {
         _incomeView = [[UIView alloc] init];
@@ -185,7 +141,6 @@
     }
     return _incomeView;
 }
-
 - (UILabel *)incomeCountLabel {
     if (!_incomeCountLabel) {
         _incomeCountLabel = [UILabel new];
@@ -194,7 +149,6 @@
     }
     return _incomeCountLabel;
 }
-
 - (UILabel *)incomeTitleLabel {
     if (!_incomeTitleLabel) {
         _incomeTitleLabel = [UILabel new];
@@ -204,9 +158,8 @@
     }
     return _incomeTitleLabel;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self addSubview:self.detailView];
     [self.detailView addSubview:self.headerImageView];
     [self.detailView addSubview:self.titleLabel];
@@ -224,9 +177,8 @@
     [self.incomeView addSubview:self.incomeCountLabel];
     [self.incomeView addSubview:self.incomeTitleLabel];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSLineBreakMode registerViewControllerb4 = NSLineBreakByTruncatingTail; 
         NSArray *imageContentModeV0= [NSArray array];
@@ -237,109 +189,91 @@ dispatch_async(dispatch_get_main_queue(), ^{
         make.left.right.top.mas_equalTo(0);
         make.height.mas_equalTo(80);
     }];
-    
     [self.headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.equalTo(self).offset(10);
         make.size.mas_equalTo(CGSizeMake(60, 60));
     }];
-    
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headerImageView.mas_right).offset(10);
         make.top.equalTo(self.headerImageView);
         make.right.equalTo(self.arrowImageView.mas_left).offset(5);
     }];
-    
     [self.activityTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.endLabel);
         make.right.equalTo(self.endLabel);
         make.bottom.equalTo(self.endLabel.mas_top).offset(-5);
         make.height.mas_equalTo(13);
     }];
-    
     [self.endLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headerImageView.mas_right).offset(10);
         make.bottom.equalTo(self.headerImageView);
         make.right.equalTo(self.titleLabel);
         make.height.mas_equalTo(13);
     }];
-    
     [self.arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).offset(20);
         make.height.mas_equalTo(15);
         make.width.mas_equalTo(ZD_UserM.isAdmin ? 15 : 0);
         make.centerY.equalTo(self.headerImageView);
     }];
-    
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.equalTo(self.detailView.mas_bottom);
         make.height.mas_equalTo(1);
     }];
-    
     [self.applyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.lineView.mas_bottom);
         make.bottom.equalTo(self).offset(-10);
         make.left.mas_equalTo(0);
         make.width.mas_equalTo(kScreenWidth / 3);
     }];
-    
     [self.applyCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.applyView);
         make.bottom.equalTo(self.applyView.mas_centerY).offset(-5);
         make.height.mas_equalTo(15);
     }];
-    
     [self.applyTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.applyView);
         make.height.mas_equalTo(15);
         make.top.equalTo(self.applyCountLabel.mas_bottom).offset(10);
     }];
-    
     [self.browseView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.width.equalTo(self.applyView);
         make.left.equalTo(self.applyView.mas_right);
     }];
-    
     [self.browseCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.browseView);
         make.bottom.equalTo(self.browseView.mas_centerY).offset(-5);
         make.height.mas_equalTo(15);
     }];
-    
     [self.browseTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.browseView);
         make.top.equalTo(self.browseCountLabel.mas_bottom).offset(10);
         make.height.mas_equalTo(15);
     }];
-    
     [self.incomeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.width.equalTo(self.applyView);
         make.left.equalTo(self.browseView.mas_right);
     }];
-    
     [self.incomeCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.incomeView);
         make.bottom.equalTo(self.incomeView.mas_centerY).offset(-5);
         make.height.mas_equalTo(15);
     }];
-    
     [self.incomeTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.incomeView);
         make.top.equalTo(self.incomeCountLabel.mas_bottom).offset(10);
         make.height.mas_equalTo(15);
     }];
 }
-
 #pragma mark --- setter
 - (void)setModel:(ActivityModel *)model {
     [_headerImageView sd_setImageWithURL:[NSURL URLWithString:model.ShareImgurl] placeholderImage:[UIImage imageNamed:@"logogray"]];
     _titleLabel.text = model.Title;
-    
     Time  *timeStart = [Time bringWithTime:model.TimeStart];
     _activityTimeLabel.text = [NSString stringWithFormat:@"活动时间 : %@",timeStart.timeStr];
     Time *TimeStop = [Time bringWithTime:model.TimeStop];
     _endLabel.text = [NSString stringWithFormat:@"报名截止 : %@", TimeStop.timeStr ];
-    
     if (ZD_UserM.isAdmin) {
         _applyCountLabel.text = [NSString stringWithFormat:@"%li",(long)model.HasJoinNum];
         _incomeCountLabel.text = [NSString stringWithFormat:@"%.2f",model.Amount];
@@ -350,20 +284,17 @@ dispatch_async(dispatch_get_main_queue(), ^{
         _browseCountLabel.text = [NSString stringWithFormat:@"%li",(long)model.yesterday];
     }
 }
-
 - (void)setEndTime:(NSString *)endTime {
     if (endTime.length) {
         _endLabel.text = endTime;
     }
 }
-
 #pragma mark --- action
-- (void)gotoDetail {
+- (void)PG_gotoDetail {
     if ([self.headerViewDelegate respondsToSelector:@selector(header:didTapDetailView:)]) {
         [self.headerViewDelegate header:self didTapDetailView:self.detailView];
     }
 }
-
 - (void)apply {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSLineBreakMode maximumFractionDigitsv4 = NSLineBreakByTruncatingTail; 
@@ -375,13 +306,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.headerViewDelegate header:self didTapChartView:chartTypeApply];
     }
 }
-
 - (void)browse {
     if ([self.headerViewDelegate respondsToSelector:@selector(header:didTapChartView:)]) {
         [self.headerViewDelegate header:self didTapChartView:chartTypeBrowse];
     }
 }
-
 - (void)income {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSLineBreakMode imageNearIndexf2 = NSLineBreakByTruncatingTail; 
@@ -393,5 +322,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.headerViewDelegate header:self didTapChartView:chartTypeIncome];
     }
 }
-
 @end

@@ -1,10 +1,3 @@
-// 
- //PGMutableTrackWith.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGMutableTrackWith.h"
 @implementation PGMutableTrackWith
 + (UIScrollView *)discoverTableViewWithmainCommentModel:(UIImage *)amainCommentModel organizeServiceModel:(NSString *)aorganizeServiceModel chatInputAble:(UIFont *)achatInputAble{
@@ -16,7 +9,6 @@
     videoCameraDelegateg6.minimumZoomScale = 1; 
     return videoCameraDelegateg6;
 }
-
 + (UIButton *)couponAlertViewWithcurrentDateString:(PGRewardTypeNone *)acurrentDateString userInfoWith:(PGRewardTypeNone *)auserInfoWith tintEffectWith:(PGRewardTypeNone *)atintEffectWith{
     UIButton *vertexAttribPointeri1= [UIButton buttonWithType:UIButtonTypeCustom]; 
     vertexAttribPointeri1.frame = CGRectZero; 
@@ -26,22 +18,18 @@
     vertexAttribPointeri1.frame = CGRectZero; 
     return vertexAttribPointeri1;
 }
-
 - (NSTextAlignment)codeLoginViewWithdifferenceValueWith:(UITextField *)adifferenceValueWith trainFinishAlert:(UIScrollView *)atrainFinishAlert{
     NSTextAlignment objectsHashTablec7 = NSTextAlignmentCenter; 
     return objectsHashTablec7;
 }
-
 - (NSTextAlignment)beginFromCurrentWithcellWithIndex:(UIScrollView *)acellWithIndex medalViewModel:(UITableViewStyle)amedalViewModel{
     NSTextAlignment receiveMemoryWarningG1 = NSTextAlignmentCenter; 
     return receiveMemoryWarningG1;
 }
-
 - (UIButtonType)weekTimeLabelWithwithCourseVideo:(NSLineBreakMode)awithCourseVideo mainViewController:(UITextFieldViewMode)amainViewController{
     UIButtonType notificationCategoryOptionC1 = UIButtonTypeContactAdd;
     return notificationCategoryOptionC1;
 }
-
 + (void)instanceCreateMethod{
     UITextField *registerViewModelh5= [[UITextField alloc] initWithFrame:CGRectZero]; 
     registerViewModelh5.clearButtonMode = UITextFieldViewModeNever; 
@@ -59,8 +47,5 @@
     playerStatusFailedK5.minimumZoomScale = 1; 
     PGMutableTrackWith *navigationViewController= [[PGMutableTrackWith alloc] init];
 [navigationViewController codeLoginViewWithdifferenceValueWith:registerViewModelh5 trainFinishAlert:playerStatusFailedK5 ];
-
 }
-
-
 @end

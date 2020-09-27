@@ -1,13 +1,4 @@
-//
-//  PGMeModel.h
-//  zhundao
-//
-//  Created by maj on 2020/1/20.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-
 typedef NS_ENUM(NSInteger, PGMeType) {
     PGMeTypeHeader,
     PGMeTypeNotice,
@@ -22,15 +13,12 @@ typedef NS_ENUM(NSInteger, PGMeType) {
     PGMeTypeSetting,
     PGMeTypePersonDataMessage,
 };
-
 NS_ASSUME_NONNULL_BEGIN
-
 @interface PGMeModel : NSObject
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, assign) BOOL showRod;
 @property (nonatomic, assign) PGMeType type;
-
 + (instancetype)headerModel;
 + (instancetype)PGMeNoticeModel;
 + (instancetype)walletModel;
@@ -43,7 +31,5 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)promoteModel;
 + (instancetype)settingModel;
 + (instancetype)personDataMessageModel;
-
 @end
-
 NS_ASSUME_NONNULL_END

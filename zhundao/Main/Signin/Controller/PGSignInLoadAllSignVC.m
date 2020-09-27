@@ -1,12 +1,4 @@
 #import "PGUserInfoBottom.h"
-//
-//  PGSignInLoadAllSignVC.m
-//  zhundao
-//
-//  Created by zhundao on 2016/12/20.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
-
 #import "PGSignInLoadAllSignVC.h"
 #import "PGSignInLoadallsignModel.h"
 #import "PGSignInLoadAllSignCell.h"
@@ -34,9 +26,7 @@
 @property (nonatomic, retain) UISearchController *searchController;
 @property(nonatomic,strong)PGSignInOnePersonDataNetWork *oneVM;
 @end
-
 @implementation PGSignInLoadAllSignVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     flag=0;
@@ -57,7 +47,6 @@
     [self loadData];
     _tableview.backgroundColor = ZDBackgroundColor;
 }
-
 #pragma mark ----- 懒加载
 - (PGSignInOnePersonDataNetWork *)oneVM{
     if (!_oneVM) {
@@ -65,7 +54,6 @@
     }
     return _oneVM;
 }
-
 - (void)setNavTitle
 {
     UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(0, 0, 44, 44) Text:_signName textColor:[UIColor blackColor] font:KHeitiSCMedium(17) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
@@ -83,7 +71,7 @@
         [weakSelf loadData];
     } fail:nil];
 }
-- (void)loadData    //网络加载数据
+- (void)loadData    
 {
     JQIndicatorView *indicator = nil;
         indicator = [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
@@ -126,11 +114,11 @@
         [_tableview.mj_header endRefreshing];
         NSArray *tempArray = (NSArray *)[PGCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", PGCacheSign_One_List, _signID]];
         if (tempArray.count) {
-            [self dealDataWithArray:tempArray];
+            [self PG_dealDataWithArray:tempArray];
         }
     }];
 }
-- (void)dealDataWithArray:(NSArray *)array {
+- (void)PG_dealDataWithArray:(NSArray *)array {
     [_dataArray removeAllObjects];
     [_dataArray1 removeAllObjects];
     [_dataArray2 removeAllObjects];
@@ -146,7 +134,6 @@
     }
     [_tableview reloadData];
 }
-
 - (void)showNoDataArray
 {
     [PGAlertView alertWithTitle:@"对不起，您的权限不够" message:@"请前往升级" cancelTitle:@"返回" sureTitle:@"升级" sureBlock:^{
@@ -180,7 +167,6 @@
         [[  NSUserDefaults standardUserDefaults  ]setObject:GradeId forKey:@"GradeId"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     } fail:^(NSError *error) {
-        
     }];
 }
 - (void)createTableView
@@ -197,7 +183,6 @@
         [self createSearchCtr];
     }
 }
-
 - (void)createSearchCtr
 {
    resultsController = [[PGSignInResultsVC alloc] init];
@@ -243,8 +228,6 @@
         return _dataArray2.count;
     }
 }
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PGSignInLoadAllSignCell *cell = [tableView dequeueReusableCellWithIdentifier:@"loadID"];
@@ -255,7 +238,6 @@
     cell.tag = indexPath.row;
     cell.signid = self.signID;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     if (flag==0) {
          cell.model = _dataArray[indexPath.row];
     }
@@ -274,7 +256,6 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(signOther:)];
       cell.timeLabel.userInteractionEnabled = YES;
     [cell.timeLabel addGestureRecognizer:tap];
-    
     UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showDetail:)];
     [cell addGestureRecognizer:tap2];
     return cell;
@@ -332,17 +313,14 @@
             [weakSelf loadData];
         }];
     } cancelBlock:^{
-        
     }];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     return 60;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -352,13 +330,10 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i*buttonWeith, 0, buttonWeith, 40);
         button.backgroundColor = [UIColor colorWithWhite:0.97 alpha:1];
-        
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, buttonWeith, 40)];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont boldSystemFontOfSize:13];
-        
         if (i==0) {
-            //            label.text = [NSString stringWithFormat:@""]
             label.text = [NSString stringWithFormat:@"全部(%li)",(unsigned long)_dataArray.count];
             if (flag==0) {
                 _starLabel= label;
@@ -371,7 +346,6 @@
                 _starLabel= label;
                 label.textColor = ZDMainColor;
             }
-            
         } if (i==2) {
             label.text = [NSString stringWithFormat:@"未签(%li)",(unsigned long)_dataArray2.count];
             if (flag==2) {
@@ -379,7 +353,6 @@
                 label.textColor = ZDMainColor;
             }
         }
-        
         [button addSubview:label];
         [button addTarget:self  action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         button.tag = 100+i;
@@ -397,17 +370,12 @@
          self.starButton.backgroundColor = [UIColor whiteColor];
         self.starButton.selected = NO;
         self.starButton = button;
-    
-
     }
     else{
         self.starButton.selected=YES;
     }
-    
     if (!self.starButton.selected) {
         self.starButton.backgroundColor = [UIColor redColor];
-
-       
     }
     if (button.tag==100) {
         flag=0;
@@ -422,7 +390,6 @@
         [_tableview reloadData];
     }
 }
-
 - (NSString *)getUserInfo:(NSDictionary *)dic
 {
     NSMutableArray *array = [NSMutableArray arrayWithObjects:@"100",@"101", nil];
@@ -441,14 +408,4 @@
 - (void)dealloc{
     NSLog(@"dealloc");
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

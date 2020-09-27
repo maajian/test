@@ -1,12 +1,4 @@
 #import "PGImageAlphaPremultiplied.h"
-//
-//  PGWordViewController.m
-//  SimpleWord
-//
-//  Created by Chenly on 16/5/13.
-//  Copyright © 2016年 Little Meaning. All rights reserved.
-//
-
 #import "PGWordViewController.h"
 #import "PGWordView.h"
 #import "PGSegmentedControl.h"
@@ -17,78 +9,63 @@
 #import "NSTextAttachment+LMText.h"
 #import "UIFont+LMText.h"
 #import "PGTextHTMLParser.h"
-
 @interface PGWordViewController () <UITextViewDelegate, UITextFieldDelegate, PGSegmentedControlDelegate, PGStyleSettingsControllerDelegate, PGImageSettingsControllerDelegate>
-
 @property (nonatomic, assign) CGFloat keyboardSpacingHeight;
 @property (nonatomic, strong) PGSegmentedControl *contentInputAccessoryView;
-
 @property (nonatomic, readonly) UIStoryboard *lm_storyboard;
 @property (nonatomic, strong) PGStyleSettingsController *styleSettingsViewController;
 @property (nonatomic, strong) PGImageSettingsController *imageSettingsViewController;
-
-
 @property (nonatomic, assign) CGFloat inputViewHeight;
-
 @property (nonatomic, strong) PGTextStyle *currentTextStyle;
 @property (nonatomic, strong) PGParagraphConfig *currentParagraphConfig;
-
 @end
-
 @implementation PGWordViewController
 {
     NSRange _lastSelectedRange;
     BOOL _keepCurrentTextStyle;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
     NSArray *items = @[
                        [UIImage imageNamed:@"keyboard.png"],
                        [UIImage imageNamed:@"img_public_cc_font"],
                        [UIImage imageNamed:@"insertImage.png"],
                        [UIImage imageNamed:@"link.png"],
-//                       [UIImage imageNamed:@"comment_icon"],
                        [UIImage imageNamed:@"img_public_bottom_move"]
                        ];
     _contentInputAccessoryView = [[PGSegmentedControl alloc] initWithItems:items];
     _contentInputAccessoryView.delegate = self;
     _contentInputAccessoryView.changeSegmentManually = YES;
-    
     _textView = [[PGWordView alloc] init];
     _textView.delegate = self;
     _textView.titleTextField.delegate = self;
     [self.view addSubview:_textView];
-    
     [self setCurrentParagraphConfig:[[PGParagraphConfig alloc] init]];
     [self setCurrentTextStyle:[PGTextStyle textStyleWithType:LMTextStyleFormatNormal]];
-    [self updateParagraphTypingAttributes];
-    [self updateTextStyleTypingAttributes];
+    [self PG_updateParagraphTypingAttributes];
+    [self PG_updateTextStyleTypingAttributes];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
+                                             selector:@selector(PG_keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
+                                             selector:@selector(PG_keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
-    [_contentInputAccessoryView addTarget:self action:@selector(changeTextInputView:) forControlEvents:UIControlEventValueChanged];
+    [_contentInputAccessoryView addTarget:self action:@selector(PG_changeTextInputView:) forControlEvents:UIControlEventValueChanged];
 }
-
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    [self layoutTextView];
+    [self PG_layoutTextView];
     CGRect rect = self.view.bounds;
     rect.size.height = 40.f;
     self.contentInputAccessoryView.frame = rect;
 }
-
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [_textView becomeFirstResponder];
 }
-- (void)layoutTextView {
+- (void)PG_layoutTextView {
     CGRect rect = self.view.bounds;
     rect.origin.y = [self.topLayoutGuide length];
     rect.size.height -= rect.origin.y;
@@ -96,12 +73,9 @@
     UIEdgeInsets insets = self.textView.contentInset;
     insets.bottom = self.keyboardSpacingHeight;
     self.textView.contentInset = insets;
-    
 }
-
 #pragma mark - Keyboard
-
-- (void)keyboardWillShow:(NSNotification *)notification {
+- (void)PG_keyboardWillShow:(NSNotification *)notification {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIColor *playerStatusPauseM2= [UIColor redColor];
         NSTextAlignment locationStyleReuseA2 = NSTextAlignmentCenter; 
@@ -115,22 +89,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     self.keyboardSpacingHeight = keyboardSize.height;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        [self layoutTextView];
+        [self PG_layoutTextView];
     } completion:nil];
 }
-
-- (void)keyboardWillHide:(NSNotification *)notification {
+- (void)PG_keyboardWillHide:(NSNotification *)notification {
     if (self.keyboardSpacingHeight == 0) {
         return;
     }
     self.keyboardSpacingHeight = 0;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        [self layoutTextView];
+        [self PG_layoutTextView];
     } completion:nil];
 }
-
 #pragma mark - <UITextViewDelegate>
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField.text.length == 0) {
         textField.text = textField.placeholder;
@@ -140,48 +111,38 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.textView.editable = YES;
     return YES;
 }
-
 #pragma mark - <UITextViewDelegate>
-
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
     [self.contentInputAccessoryView setSelectedSegmentIndex:0 animated:NO];
     _textView.inputAccessoryView = self.contentInputAccessoryView;
     [self.imageSettingsViewController reload];
     return YES;
 }
-
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {
     _textView.inputAccessoryView = nil;
     return YES;
 }
-
 - (void)textViewDidChangeSelection:(UITextView *)textView {
-
     if (_lastSelectedRange.location != textView.selectedRange.location) {
-        
         if (_keepCurrentTextStyle) {
-            // 如果当前行的内容为空，TextView 会自动使用上一行的 typingAttributes，所以在删除内容时，保持 typingAttributes 不变
-            [self updateTextStyleTypingAttributes];
-            [self updateParagraphTypingAttributes];
+            [self PG_updateTextStyleTypingAttributes];
+            [self PG_updateParagraphTypingAttributes];
             _keepCurrentTextStyle = NO;
         }
         else {
-            self.currentTextStyle = [self textStyleForSelection];
-            self.currentParagraphConfig = [self paragraphForSelection];
-            [self updateTextStyleTypingAttributes];
-            [self updateParagraphTypingAttributes];
-            [self reloadSettingsView];
+            self.currentTextStyle = [self PG_textStyleForSelection];
+            self.currentParagraphConfig = [self PG_paragraphForSelection];
+            [self PG_updateTextStyleTypingAttributes];
+            [self PG_updateParagraphTypingAttributes];
+            [self PG_reloadSettingsView];
         }
     }
     _lastSelectedRange = textView.selectedRange;
 }
-
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-
     if (range.location == 0 && range.length == 0 && text.length == 0) {
-        // 光标在第一个位置时，按下退格键，则删除段落设置
         self.currentParagraphConfig.indentLevel = 0;
-        [self updateParagraphTypingAttributes];
+        [self PG_updateParagraphTypingAttributes];
     }
     _lastSelectedRange = NSMakeRange(range.location + text.length - range.length, 0);
     if (text.length == 0 && range.length > 0) {
@@ -189,11 +150,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return YES;
 }
-
 #pragma mark - Change InputView
 - (void)insertlink
 {
-    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"插入超链接" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
         textField.placeholder = @"超链接地址";
@@ -205,7 +164,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSDictionary *attr = self.textView.typingAttributes;
-        
         UITextField *address = weakAlertController.textFields.firstObject;
         UITextField *title = weakAlertController.textFields.lastObject;
         NSError *error;
@@ -213,7 +171,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regulaStr
                                                                                options:NSRegularExpressionCaseInsensitive
                                                                                  error:&error];
-
         NSUInteger numberOfMatches = [regex numberOfMatchesInString:address.text options:0 range:NSMakeRange(0, [address.text length])];
         if (numberOfMatches ==1) {
             NSDictionary * attris = @{NSLinkAttributeName:[NSURL URLWithString:address.text]};
@@ -226,10 +183,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
             self.textView.allowsEditingTextAttributes = NO;
             [self setCurrentParagraphConfig:[[PGParagraphConfig alloc] init]];
             [self setCurrentTextStyle:[PGTextStyle textStyleWithType:LMTextStyleFormatNormal]];
-            
             self.textView.typingAttributes = attr;
-            [self updateParagraphTypingAttributes];
-            [self updateTextStyleTypingAttributes];
+            [self PG_updateParagraphTypingAttributes];
+            [self PG_updateTextStyleTypingAttributes];
         }
     }]];
     [self presentViewController:alertController animated:YES completion:nil];
@@ -241,7 +197,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGImageAlphaPremultiplied *mainCommentTable= [[PGImageAlphaPremultiplied alloc] init];
 [mainCommentTable assetResourceTypeWithbottomShareView:courseParticularVideox6 calendarUnitYear:remoteNotificationsWithx7 ];
 });
-    
     if (index == control.numberOfSegments - 1) {
         [self.textView resignFirstResponder];
         return;
@@ -250,7 +205,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [control setSelectedSegmentIndex:index animated:YES];
     }
 }
-
 - (UIStoryboard *)lm_storyboard {
     static dispatch_once_t onceToken;
     static UIStoryboard *storyboard;
@@ -259,7 +213,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     });
     return storyboard;
 }
-
 - (PGStyleSettingsController *)styleSettingsViewController {
     if (!_styleSettingsViewController) {
         _styleSettingsViewController = [self.lm_storyboard instantiateViewControllerWithIdentifier:@"style"];
@@ -268,7 +221,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _styleSettingsViewController;
 }
-
 - (PGImageSettingsController *)imageSettingsViewController {
     if (!_imageSettingsViewController) {
         _imageSettingsViewController = [self.lm_storyboard instantiateViewControllerWithIdentifier:@"image"];
@@ -276,15 +228,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _imageSettingsViewController;
 }
-
-- (void)changeTextInputView:(PGSegmentedControl *)control {
+- (void)PG_changeTextInputView:(PGSegmentedControl *)control {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIColor *normalTableViewg8= [UIColor redColor];
         NSTextAlignment trackingWithEventR7 = NSTextAlignmentCenter; 
     PGImageAlphaPremultiplied *secondeMallView= [[PGImageAlphaPremultiplied alloc] init];
 [secondeMallView assetResourceTypeWithbottomShareView:normalTableViewg8 calendarUnitYear:trackingWithEventR7 ];
 });
-    
     CGRect rect = self.view.bounds;
     rect.size.height = self.keyboardSpacingHeight - CGRectGetHeight(self.contentInputAccessoryView.frame);
     switch (control.selectedSegmentIndex) {
@@ -307,7 +257,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         case 3:
         {
             [self insertlink];
-            [self reloadSettingsView];
+            [self PG_reloadSettingsView];
             break;
         }
         default:
@@ -316,19 +266,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [self.textView reloadInputViews];
 }
-
 #pragma mark - settings
-
-// 刷新设置界面
-- (void)reloadSettingsView {
-    
+- (void)PG_reloadSettingsView {
     self.styleSettingsViewController.textStyle = self.currentTextStyle;
     [self.styleSettingsViewController setParagraphConfig:self.currentParagraphConfig];
     [self.styleSettingsViewController reload];
 }
-
-- (PGTextStyle *)textStyleForSelection {
-    
+- (PGTextStyle *)PG_textStyleForSelection {
     PGTextStyle *textStyle = [[PGTextStyle alloc] init];
     NSLog(@"%@",self.textView.typingAttributes);
     UIFont *font = self.textView.typingAttributes[NSFontAttributeName];
@@ -341,40 +285,31 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return textStyle;
 }
-
-- (PGParagraphConfig *)paragraphForSelection {
-    
+- (PGParagraphConfig *)PG_paragraphForSelection {
     NSParagraphStyle *paragraphStyle = self.textView.typingAttributes[NSParagraphStyleAttributeName];
     LMParagraphType type = [self.textView.typingAttributes[LMParagraphTypeName] integerValue];
     PGParagraphConfig *paragraphConfig = [[PGParagraphConfig alloc] initWithParagraphStyle:paragraphStyle type:type];
     return paragraphConfig;
 }
-
-// 获取所有选中的段落，通过"\n"来判断段落。
-- (NSArray *)rangesOfParagraphForCurrentSelection {
-    
+- (NSArray *)PG_rangesOfParagraphForCurrentSelection {
     NSRange selection = self.textView.selectedRange;
     NSInteger location;
     NSInteger length;
-    
     NSInteger start = 0;
     NSInteger end = selection.location;
     NSRange range = [self.textView.text rangeOfString:@"\n"
                                               options:NSBackwardsSearch
                                                 range:NSMakeRange(start, end - start)];
     location = (range.location != NSNotFound) ? range.location + 1 : 0;
-    
     start = selection.location + selection.length;
     end = self.textView.text.length;
     range = [self.textView.text rangeOfString:@"\n"
                                       options:0
                                         range:NSMakeRange(start, end - start)];
     length = (range.location != NSNotFound) ? (range.location + 1 - location) : (self.textView.text.length - location);
-    
     range = NSMakeRange(location, length);
     NSString *textInRange = [self.textView.text substringWithRange:range];
     NSArray *components = [textInRange componentsSeparatedByString:@"\n"];
-    
     NSMutableArray *ranges = [NSMutableArray array];
     for (NSInteger i = 0; i < components.count; i++) {
         NSString *component = components[i];
@@ -396,31 +331,27 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return ranges;
 }
-
-- (void)updateTextStyleTypingAttributes {
+- (void)PG_updateTextStyleTypingAttributes {
     NSMutableDictionary *typingAttributes = [self.textView.typingAttributes mutableCopy];
     typingAttributes[NSFontAttributeName] = self.currentTextStyle.font;
     typingAttributes[NSForegroundColorAttributeName] = self.currentTextStyle.textColor;
     typingAttributes[NSUnderlineStyleAttributeName] = @(self.currentTextStyle.underline ? NSUnderlineStyleSingle : NSUnderlineStyleNone);
     self.textView.typingAttributes = typingAttributes;
 }
-
-- (void)updateParagraphTypingAttributes {
+- (void)PG_updateParagraphTypingAttributes {
     NSMutableDictionary *typingAttributes = [self.textView.typingAttributes mutableCopy];
     typingAttributes[LMParagraphTypeName] = @(self.currentParagraphConfig.type);
     typingAttributes[NSParagraphStyleAttributeName] = self.currentParagraphConfig.paragraphStyle;
     self.textView.typingAttributes = typingAttributes;
 }
-
-- (void)updateTextStyleForSelection {
+- (void)PG_updateTextStyleForSelection {
     if (self.textView.selectedRange.length > 0) {
         [self.textView.textStorage addAttributes:self.textView.typingAttributes range:self.textView.selectedRange];
     }
 }
-
-- (void)updateParagraphForSelectionWithKey:(NSString *)key {
+- (void)PG_updateParagraphForSelectionWithKey:(NSString *)key {
     NSRange selectedRange = self.textView.selectedRange;
-    NSArray *ranges = [self rangesOfParagraphForCurrentSelection];
+    NSArray *ranges = [self PG_rangesOfParagraphForCurrentSelection];
     if (!ranges) {
         if (self.currentParagraphConfig.type == 0) {
             NSMutableDictionary *typingAttributes = [self.textView.typingAttributes mutableCopy];
@@ -433,9 +364,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     NSInteger offset = 0;
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithAttributedString:self.textView.attributedText];
     for (NSValue *rangeValue in ranges) {
-        
         NSRange range = NSMakeRange(rangeValue.rangeValue.location + offset, rangeValue.rangeValue.length);
-       
         if ([key isEqualToString:LMParagraphTypeName]) {
             if (self.currentParagraphConfig.type == LMParagraphTypeNone) {
                 [attributedText deleteCharactersInRange:NSMakeRange(range.location, 1)];
@@ -462,9 +391,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.textView.allowsEditingTextAttributes = NO;
     self.textView.selectedRange = selectedRange;
 }
-
-- (NSTextAttachment *)insertImage:(UIImage *)image {
-    // textView 默认会有一些左右边距
+- (NSTextAttachment *)PG_insertImage:(UIImage *)image {
     CGFloat width = CGRectGetWidth(self.textView.frame) - (self.textView.textContainerInset.left + self.textView.textContainerInset.right + 12.f);
     NSTextAttachment *textAttachment = [NSTextAttachment attachmentWithImage:image width:width];
     NSAttributedString *attachmentString = [NSAttributedString attributedStringWithAttachment:textAttachment];
@@ -472,7 +399,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [attributedString insertAttributedString:attachmentString atIndex:0];
     if (_lastSelectedRange.location != 0 &&
         ![[self.textView.text substringWithRange:NSMakeRange(_lastSelectedRange.location - 1, 1)] isEqualToString:@"\n"]) {
-        // 上一个字符不为"\n"则图片前添加一个换行 且 不是第一个位置
         [attributedString insertAttributedString:[[NSAttributedString alloc] initWithString:@"\n"] atIndex:0];
     }
     [attributedString addAttributes:self.textView.typingAttributes range:NSMakeRange(0, attributedString.length)];
@@ -481,7 +407,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     paragraphStyle.paragraphSpacingBefore = 8.f;
     paragraphStyle.paragraphSpacing = 8.f;
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, attributedString.length)];
-    
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithAttributedString:self.textView.attributedText];
     [attributedText replaceCharactersInRange:_lastSelectedRange withAttributedString:attributedString];
     self.textView.allowsEditingTextAttributes = YES;
@@ -491,24 +416,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.textView scrollRangeToVisible:_lastSelectedRange];
     return textAttachment;
 }
-
 #pragma mark - <PGStyleSettingsControllerDelegate>
-
 - (void)lm_didChangedTextStyle:(PGTextStyle *)textStyle {
-    
     self.currentTextStyle = textStyle;
-    [self updateTextStyleTypingAttributes];
-    [self updateTextStyleForSelection];
+    [self PG_updateTextStyleTypingAttributes];
+    [self PG_updateTextStyleForSelection];
 }
-
 - (void)lm_didChangedParagraphIndentLevel:(NSInteger)level {
-    
     self.currentParagraphConfig.indentLevel += level;
-    
     NSRange selectedRange = self.textView.selectedRange;
-    NSArray *ranges = [self rangesOfParagraphForCurrentSelection];
+    NSArray *ranges = [self PG_rangesOfParagraphForCurrentSelection];
     if (ranges.count <= 1) {
-        [self updateParagraphForSelectionWithKey:LMParagraphIndentName];
+        [self PG_updateParagraphForSelectionWithKey:LMParagraphIndentName];
     }
     else {
         self.textView.allowsEditingTextAttributes = YES;
@@ -516,7 +435,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         for (NSValue *rangeValue in ranges) {
             NSRange range = rangeValue.rangeValue;
             self.textView.selectedRange = range;
-            PGParagraphConfig *paragraphConfig = [self paragraphForSelection];
+            PGParagraphConfig *paragraphConfig = [self PG_paragraphForSelection];
             paragraphConfig.indentLevel += level;
             [attributedText addAttribute:NSParagraphStyleAttributeName value:paragraphConfig.paragraphStyle range:range];
         }
@@ -524,25 +443,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
         self.textView.allowsEditingTextAttributes = NO;
         self.textView.selectedRange = selectedRange;
     }
-    [self updateParagraphTypingAttributes];
+    [self PG_updateParagraphTypingAttributes];
 }
-
 - (void)lm_didChangedParagraphType:(NSInteger)type {
-//    self.currentParagraphConfig.type = type;
-//    
-//    [self updateParagraphTypingAttributes];
-//    [self updateParagraphForSelectionWithKey:LMParagraphTypeName];
 }
-
 #pragma mark - <PGImageSettingsControllerDelegate>
-
 - (void)lm_imageSettingsController:(PGImageSettingsController *)viewController presentPreview:(UIViewController *)previewController {
     [self presentViewController:previewController animated:YES completion:nil];
 }
-
 - (void)lm_imageSettingsController:(PGImageSettingsController *)viewController insertImage:(UIImage *)image {
-    
-    // 降低图片质量用于流畅显示，将原始图片存入到 Document 目录下，将图片文件 URL 与 Attachment 绑定。
     float actualWidth = image.size.width * image.scale;
     float boundsWidth = CGRectGetWidth(self.view.bounds) - 8.f * 2;
     float compressionQuality = boundsWidth / actualWidth;
@@ -551,8 +460,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     NSData *degradedImageData = UIImageJPEGRepresentation(image, compressionQuality);
     UIImage *degradedImage = [UIImage imageWithData:degradedImageData];
-    
-    NSTextAttachment *attachment = [self insertImage:degradedImage];
+    NSTextAttachment *attachment = [self PG_insertImage:degradedImage];
     [self.textView resignFirstResponder];
     [self.textView scrollRangeToVisible:_lastSelectedRange];
     NSString *urlStr = [NSString stringWithFormat:@"%@/OAuth/UploadFile",zhundaoH5Api];
@@ -580,8 +488,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [hud hideAnimated:YES afterDelay:1];
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-            // 实际应用时候可以将存本地的操作改为上传到服务器，URL 也由本地路径改为服务器图片地址。
             NSURL *filePath = [NSURL URLWithString:dic[@"url"]];
             attachment.attachmentType = LMTextAttachmentTypeImage;
             attachment.userInfo = filePath.absoluteString;
@@ -590,15 +496,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [hud1 hideAnimated:YES];
     }];
 }
-
 - (void)lm_imageSettingsController:(PGImageSettingsController *)viewController presentImagePickerView:(UIViewController *)picker {
     [self presentViewController:picker animated:YES completion:nil];
 }
 
 #pragma mark - export
-
 - (NSString *)exportHTML {
-    
     NSString *title = [NSString stringWithFormat:@"<h3 align=\"center\">%@</h3>", self.textView.titleTextField.text];
     NSString *content = [PGTextHTMLParser HTMLFromAttributedString:self.textView.attributedText WithImageArray:self.imageArray];
     return [title stringByAppendingString:content];

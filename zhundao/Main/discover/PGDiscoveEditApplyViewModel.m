@@ -1,25 +1,13 @@
-//
-//  PGDiscoveEditApplyViewModel.m
-//  zhundao
-//
-//  Created by maj on 2018/12/5.
-//  Copyright © 2018年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoveEditApplyViewModel.h"
-
 @implementation PGDiscoveEditApplyViewModel
-
 - (instancetype)init {
     if (self = [super init]) {
         _typeArray = @[@"输入框",@"多文本",@"下拉框",@"多选框",@"图片",@"单选框",@"日期",@"数字"];
     }
     return self;
 }
-
 - (void)setModel:(PGDiscoverCustomApplyModel *)model {
     _model = model;
-    
     switch (model.customType) {
         case ZDCustomTypeImage:
         case ZDCustomTypeDate:
@@ -38,7 +26,6 @@
     NSInteger type = _model.customType;
     _model.typeStr = _typeArray[type];
     model.typeStr = _typeArray[type];
-    
     if (model.ID) {
         _dataArray = _model.optionArray.mutableCopy;
         if (_isNeedChoice && !_dataArray.count) {
@@ -49,16 +36,11 @@
             _dataArray = @[@"", @""].mutableCopy;
         } else {
             _dataArray = @[].mutableCopy;
-            
         }
-        
     }
 }
-
 #pragma mark --- network
-
 - (void)changeCustomtApplyWithTitle:(NSString *)title inputType:(ZDCustomType)inputType ID:(NSInteger)ID require:(BOOL)require tips:(NSString *)tips choiceArray:(NSArray *)choiceArray success:(kZDCommonSucc)success failure:(kZDCommonFail)failure{
-//    /api/v2/activity/updateActivityOption
     NSString *option = @"";
     if (choiceArray.count) {
         option = [option stringByAppendingString:choiceArray.firstObject];
@@ -67,7 +49,6 @@
             option = [option stringByAppendingString:choiceArray[i]];
         }
     }
-    
     NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/updateActivityOption?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     NSDictionary *dic = @{@"id" : @(ID),
                           @"title" : title,
@@ -85,7 +66,6 @@
         failure(error.description);
     }];
 }
-
 - (void)newCustomApplyRequestWithTitle:(NSString *)title inputType:(ZDCustomType)inputType require:(BOOL)require tips:(NSString *)tips choiceArray:(NSArray *)choiceArray success:(ZDBlock_Dic)success failure:(kZDCommonFail)failure {
     NSString *option = @"";
     if (choiceArray.count) {
@@ -95,7 +75,6 @@
             option = [option stringByAppendingString:choiceArray[i]];
         }
     }
-    
     NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/addActivityOption?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
     NSDictionary *dic = @{@"title" : title,
                           @"inputType" : @(inputType),
@@ -113,5 +92,4 @@
         failure(error.description);
     }];
 }
-
 @end

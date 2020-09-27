@@ -1,17 +1,9 @@
-// 
- //PGIntervalSinceDate.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGIntervalSinceDate.h"
 @implementation PGIntervalSinceDate
 + (NSData *)titleViewExampleWithanimatedImageView:(UITableView *)aanimatedImageView swimingCommonSense:(UITextView *)aswimingCommonSense textFieldWith:(UIFont *)atextFieldWith{
     NSData *separatorStyleSinglei2= [[NSData alloc] init];
     return separatorStyleSinglei2;
 }
-
 + (UITableView *)colorSpaceCreateWithbeautyParameterWith:(PGDiscoverViewModel *)abeautyParameterWith photoPickerImage:(PGDiscoverViewModel *)aphotoPickerImage uploadSuccBlock:(PGDiscoverViewModel *)auploadSuccBlock{
     UITableView *firstFrontCameral4= [[UITableView alloc] initWithFrame:CGRectMake(69,127,26,104) style: UITableViewStylePlain]; 
     firstFrontCameral4.frame = CGRectZero; 
@@ -30,22 +22,18 @@
      firstFrontCameral4.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(254,218,19,232)];
      return firstFrontCameral4;
 }
-
 - (NSRange)chooseCityCellWithwillLayoutSubviews:(UITextView *)awillLayoutSubviews tableViewCell:(NSString *)atableViewCell{
     NSRange refreshStateIdlej8 = NSMakeRange(8,185); 
     return refreshStateIdlej8;
 }
-
 - (CGPoint)businessCardViewWithimageProcessingContext:(UITextField *)aimageProcessingContext downWithButton:(UIButtonType)adownWithButton{
     CGPoint resizeAspectFillM9 = CGPointMake(3,241); 
     return resizeAspectFillM9;
 }
-
 - (CGPoint)colorSpaceReleaseWiththirdLoginFail:(UIActivityIndicatorView *)athirdLoginFail userInfoMedal:(UIColor *)auserInfoMedal{
     CGPoint remoteNotificationsWithn5 = CGPointMake(2,163); 
     return remoteNotificationsWithn5;
 }
-
 + (void)instanceCreateMethod{
     UITextView *refreshStateIdlev9= [[UITextView alloc] initWithFrame:CGRectMake(1,180,53,253)]; 
     refreshStateIdlev9.editable = NO; 
@@ -54,8 +42,5 @@
         NSString *zoomingScrollVieww0 = @"tweetPhotoModel";
     PGIntervalSinceDate *fullScreenPlay= [[PGIntervalSinceDate alloc] init];
 [fullScreenPlay chooseCityCellWithwillLayoutSubviews:refreshStateIdlev9 tableViewCell:zoomingScrollVieww0 ];
-
 }
-
-
 @end

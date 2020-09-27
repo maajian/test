@@ -1,36 +1,18 @@
 #import "PGNotificationPresentationOption.h"
-//
-//  PGMeAddAccountViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/19.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeAddAccountViewController.h"
 #import "PGMeAddAccountTableViewCell.h"
 #import "PGMeAddAccountViewModel.h"
 #import "PGPickerView.h"
 static NSString *cellID = @"addAccountID";
-
 @interface PGMeAddAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
-
 @property(nonatomic,strong)UITableView *tableView;
-/*! 提现方式 默认支付宝 */
 @property(nonatomic,strong)NSString  *typeStr;
-
 @property(nonatomic,strong)PGMeAddAccountViewModel *addVM;
-/*! 选择银行 */
 @property(nonatomic,strong)PGPickerView *pickerView;
-
 @property(nonatomic,strong)NSMutableDictionary *postDic;
-
 @property(nonatomic,copy)NSString *name;
-
 @end
-
 @implementation PGMeAddAccountViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"添加账户";
@@ -43,7 +25,6 @@ static NSString *cellID = @"addAccountID";
     [self.view addSubview:self.tableView];
 }
 #pragma mark 懒加载
-
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
@@ -53,15 +34,12 @@ static NSString *cellID = @"addAccountID";
     }
     return _tableView;
 }
-
 - (NSMutableDictionary *)postDic{
     if (!_postDic) {
         _postDic = [NSMutableDictionary dictionary];
     }return _postDic;
 }
-
 #pragma mark -------UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 3;
@@ -77,25 +55,22 @@ static NSString *cellID = @"addAccountID";
     cell.currentType = _typeStr;
     cell.row = indexPath.row;
     if (indexPath.row==0) {
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showSheet)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(PG_showSheet)];
         [cell.contentView addGestureRecognizer:tap];
     }if (indexPath.row==1) {
         cell.textf.keyboardType = UIKeyboardTypeURL;
-        [cell.textf addTarget:self action:@selector(editEnd:) forControlEvents:UIControlEventEditingDidEnd];
+        [cell.textf addTarget:self action:@selector(PG_editEnd:) forControlEvents:UIControlEventEditingDidEnd];
     }
     return cell;
 }
 #pragma mark -------UITableViewDelegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 80;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 20;
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIView *View = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 80)];
@@ -110,16 +85,14 @@ static NSString *cellID = @"addAccountID";
     View.backgroundColor = [UIColor clearColor];
     return View;
 }
-- (void)editEnd:(UITextField *)TextField{
+- (void)PG_editEnd:(UITextField *)TextField{
     if ([TextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length==0) {
         return;
     }
     [_postDic setObject:TextField.text forKey:@"Account"];
 }
-
 #pragma mark --- 选择银行 
-
-- (void)showSheet{
+- (void)PG_showSheet{
 dispatch_async(dispatch_get_main_queue(), ^{
     UISwitch *sourceTypeSavedd0= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     sourceTypeSavedd0.on = YES; 
@@ -143,7 +116,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.view addSubview:_pickerView];
     [_pickerView fadeIn];
 }
-
 #pragma mark ---- 按钮事件 
 - (void)sureAction{
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -173,7 +145,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }];
 }
-
 - (void)dealloc{
     NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
@@ -196,14 +167,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [organizationViewController recordVideoCameraWithobjectsUsingBlock:cancelLoadingRequestL3 trainViewModel:arrayUsingComparatorm3 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

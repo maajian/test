@@ -1,10 +1,3 @@
-// 
- //PGInputButtonTitle.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGInputButtonTitle.h"
 @implementation PGInputButtonTitle
 + (UIButton *)imagePickerConfigWithsecondeMallView:(UIImage *)asecondeMallView stringUsingEncoding:(UITextField *)astringUsingEncoding titleShowStatus:(UITableView *)atitleShowStatus{
@@ -16,7 +9,6 @@
     assetMediaTypeB4.frame = CGRectZero; 
     return assetMediaTypeB4;
 }
-
 + (UITextField *)articleDailyTrainWithuploadVideoBlock:(PGScreenViewController *)auploadVideoBlock fromVideoView:(PGScreenViewController *)afromVideoView circleItemPhoto:(PGScreenViewController *)acircleItemPhoto{
     UITextField *commonViewModele6= [[UITextField alloc] initWithFrame:CGRectZero]; 
     commonViewModele6.clearButtonMode = UITextFieldViewModeNever; 
@@ -28,22 +20,18 @@
      commonViewModele6.leftViewMode = UITextFieldViewModeAlways; 
     return commonViewModele6;
 }
-
 - (NSTextAlignment)scrollViewKeyboardWithselectTypeUser:(UILabel *)aselectTypeUser assetPropertyDuration:(NSRange)aassetPropertyDuration{
     NSTextAlignment moreColumnistChildk0 = NSTextAlignmentCenter; 
     return moreColumnistChildk0;
 }
-
 - (UITableViewStyle)sectionHeaderHeightWithcouponAlertView:(UISlider *)acouponAlertView sendCommentView:(UIActivityIndicatorView *)asendCommentView{
     UITableViewStyle trainParticularModelo4 = UITableViewStylePlain; 
     return trainParticularModelo4;
 }
-
 - (CGPoint)badgeAnimTypeWithindicatorViewColor:(NSLineBreakMode)aindicatorViewColor baseTableView:(CGSize)abaseTableView{
     CGPoint controlEventEditingT0 = CGPointZero;
     return controlEventEditingT0;
 }
-
 + (void)instanceCreateMethod{
     UILabel *backgroundLocationUpdatesk8= [[UILabel alloc] initWithFrame:CGRectZero]; 
     backgroundLocationUpdatesk8.text = @"maskViewFlag";
@@ -54,8 +42,5 @@
         NSRange mapsWithItemsc6 = NSMakeRange(5,52); 
     PGInputButtonTitle *secondTextureCoordinate= [[PGInputButtonTitle alloc] init];
 [secondTextureCoordinate scrollViewKeyboardWithselectTypeUser:backgroundLocationUpdatesk8 assetPropertyDuration:mapsWithItemsc6 ];
-
 }
-
-
 @end

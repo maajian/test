@@ -1,22 +1,12 @@
 #import "PGScrollViewDeceleration.h"
-//
-//  PGDiscoverTextVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/4/7.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverTextVC.h"
 #import "UITextView+BaseCreate.h"
 static const NSInteger linespacing =3;
 static const NSInteger paragraphSpacing =10;
 @interface PGDiscoverTextVC ()
-@property(nonatomic,strong)UITextView               *     textview ; // textview输入框
+@property(nonatomic,strong)UITextView               *     textview ; 
 @end
-
 @implementation PGDiscoverTextVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextFieldViewMode playerStateStoppedP1 = UITextFieldViewModeAlways; 
@@ -29,10 +19,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [self.view addSubview: self.textview];
     [self makeAttribute];
     self.view.backgroundColor = ZDBackgroundColor;
-    // Do any additional setup after loading the view.
 }
 #pragma  懒加载   
-
 -(UITextView *)textview
 {
     if (!_textview) {
@@ -43,28 +31,17 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 - (void)makeAttribute
 {
-
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc]init];
-    style.lineSpacing = linespacing;   //行间距
-    style.paragraphSpacing = paragraphSpacing;   //段落间距
+    style.lineSpacing = linespacing;   
+    style.paragraphSpacing = paragraphSpacing;   
     NSDictionary *dic = @{NSForegroundColorAttributeName :  [UIColor blackColor],
-                          NSParagraphStyleAttributeName :style,   //段落样式
+                          NSParagraphStyleAttributeName :style,   
                           NSKernAttributeName :@0.5f,
-                          NSFontAttributeName :KweixinFont(17)};  //设置字间距
+                          NSFontAttributeName :KweixinFont(17)};  
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:_textview.text attributes:dic];
-    
     _textview.attributedText = str;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

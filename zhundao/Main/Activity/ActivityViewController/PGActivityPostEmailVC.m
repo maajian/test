@@ -1,27 +1,16 @@
 #import "PGDiscoveryViewController.h"
-//
-//  PGActivityPostEmailVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/14.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityPostEmailVC.h"
 #import "PGActivityJPullEmailTF.h"
 #import "UITextField+TextLeftOffset_ffset.h"
 @interface PGActivityPostEmailVC ()
 @property(nonatomic,strong)PGActivityJPullEmailTF *textField;
 @end
-
 @implementation PGActivityPostEmailVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = ZDBackgroundColor;
     self.title = @"发送名单";
     [self rightButtton];
-    // Do any additional setup after loading the view.
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -30,7 +19,7 @@
     [self createTextf];
     [_textField becomeFirstResponder];
 }
-- (void)rightButtton  // 右边发送邮箱按钮
+- (void)rightButtton  
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(postEmail)];
     NSDictionary *dic = @{NSFontAttributeName : [UIFont systemFontOfSize:17],
@@ -38,16 +27,14 @@
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = item;
 }
-- (void)createTextf  // 输入框初始化
+- (void)createTextf  
 {
     _textField = [[PGActivityJPullEmailTF alloc] initWithFrame:CGRectMake(-1, 20, kScreenWidth+2, 44) InView:self.view];
-//    textField.layer.borderColor = [UIColor colorWithRed:178.0f/256.0f green:178.0f/256.0f blue:178.0f/256.0f alpha:1].CGColor;
     _textField.layer.borderColor = [UIColor colorWithWhite:0.80 alpha:1].CGColor;
     _textField.layer.borderWidth = 1;
     _textField.backgroundColor = [UIColor whiteColor];
     _textField.mailCellHeight  = 40;
     _textField.keyboardType = UIKeyboardTypeEmailAddress;
-    
     [_textField setTextOffsetWithLeftViewRect:CGRectMake(0, 0, 20, 44) WithMode:UITextFieldViewModeAlways];
     _textField.mailFont        = [UIFont  systemFontOfSize:16];
     _textField.MailFontColor   = [UIColor blackColor];
@@ -59,9 +46,7 @@
     }
     [self.view addSubview:_textField];
 }
-
 #pragma  发送邮箱
-//GET api/PerActivity/SendActivityListByEmail?accessKey={accessKey}&email={email}&activityId={activityId}
 - (void)postEmail
 {
     [self.view endEditing:YES];
@@ -90,7 +75,6 @@
         } fail:^(NSError *error) {
             ZD_HUD_SHOW_ERROR(error)
         }];
-        
     } else {
         NSString *str = nil;
         if (_signID) {
@@ -114,7 +98,6 @@
         }];
     }
 }
-
 - (void)didReceiveMemoryWarning {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITableViewCellSeparatorStyle becomeActiveNotificationx0 = UITableViewCellSeparatorStyleNone; 
@@ -123,14 +106,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [orderDetailView timesFromSliderWithscreenButtonClick:becomeActiveNotificationx0 withJsonString:numberFormatterRoundJ8 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

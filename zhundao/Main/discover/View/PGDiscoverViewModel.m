@@ -1,10 +1,3 @@
-// 
- //PGDiscoverViewModel.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGDiscoverViewModel.h"
 @implementation PGDiscoverViewModel
 + (UISlider *)whenInteractionEndsWithwithCouponsInfo:(UIActivityIndicatorView *)awithCouponsInfo assetCollectionType:(UIFont *)aassetCollectionType activityTableView:(UIFont *)aactivityTableView{
@@ -14,7 +7,6 @@
     whenInteractionEndsE7.value =21; 
     return whenInteractionEndsE7;
 }
-
 + (UIView *)receiveScriptMessageWithlevelUserCollections:(PGCountDownHelper *)alevelUserCollections userTweetView:(PGCountDownHelper *)auserTweetView countTableView:(PGCountDownHelper *)acountTableView{
     UIView *profileDataWithl8= [[UIView alloc] initWithFrame:CGRectZero]; 
     profileDataWithl8.backgroundColor = [UIColor whiteColor]; 
@@ -22,22 +14,18 @@
     profileDataWithl8.layer.masksToBounds = YES; 
     return profileDataWithl8;
 }
-
 - (NSLineBreakMode)videoCameraDelegateWithsizePlayView:(UITableView *)asizePlayView recommendCellDelegate:(UITextView *)arecommendCellDelegate{
     NSLineBreakMode photoWidthSelectableW5 = NSLineBreakByTruncatingTail; 
     return photoWidthSelectableW5;
 }
-
 - (UITextFieldViewMode)cropTypeWithWithtitlePositionAdjustment:(UITableViewStyle)atitlePositionAdjustment requestReturnCache:(UIButtonType)arequestReturnCache{
     UITextFieldViewMode userCommentViewB4 = UITextFieldViewModeAlways; 
     return userCommentViewB4;
 }
-
 - (UIButtonType)circleParticularViewWithcollectionOriginalTable:(UIScrollView *)acollectionOriginalTable assetMediaType:(UITableViewStyle)aassetMediaType{
     UIButtonType videBeginPlayv0 = UIButtonTypeContactAdd;
     return videBeginPlayv0;
 }
-
 + (void)instanceCreateMethod{
     UITableView *withVertexShaderI1= [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain]; 
     withVertexShaderI1.frame = CGRectZero; 
@@ -60,8 +48,5 @@
     hidesWhenStoppedg9.text = @"mapsWithItems";
     PGDiscoverViewModel *titlePositionAdjustment= [[PGDiscoverViewModel alloc] init];
 [titlePositionAdjustment videoCameraDelegateWithsizePlayView:withVertexShaderI1 recommendCellDelegate:hidesWhenStoppedg9 ];
-
 }
-
-
 @end

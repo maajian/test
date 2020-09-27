@@ -1,37 +1,25 @@
-// 
- //PGCancelCollectionChoiceness.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGCancelCollectionChoiceness.h"
 @implementation PGCancelCollectionChoiceness
 + (UIFont *)nodataViewDelegateWithassetExportPreset:(UIButton *)aassetExportPreset integralMainData:(UITextView *)aintegralMainData stringFromDate:(UITextView *)astringFromDate{
     UIFont *organizeListTablew7= [UIFont systemFontOfSize:129];
     return organizeListTablew7;
 }
-
 + (NSArray *)assetCollectionSubtypeWithpresetsCompatibleWith:(PGArticleCommentView *)apresetsCompatibleWith numberBadgeWith:(PGArticleCommentView *)anumberBadgeWith frameCheckDisabled:(PGArticleCommentView *)aframeCheckDisabled{
     NSArray *pickerViewShowQ7= [NSArray arrayWithObject:@""];
     return pickerViewShowQ7;
 }
-
 - (UITextFieldViewMode)withUserDataWithstreamStatusIdle:(UITableView *)astreamStatusIdle trackingWithTouch:(UIButtonType)atrackingWithTouch{
     UITextFieldViewMode inputTextureUniformX6 = UITextFieldViewModeAlways; 
     return inputTextureUniformX6;
 }
-
 - (UITableViewStyle)lineDashTypeWithgradeBottomView:(NSRange)agradeBottomView textAlignmentCenter:(CGPoint)atextAlignmentCenter{
     UITableViewStyle courseDetailViewF4 = UITableViewStylePlain; 
     return courseDetailViewF4;
 }
-
 - (CGSize)coachDetailWithWithstrokeCourseDaily:(UIButtonType)astrokeCourseDaily updatedTimeLabel:(CGRect)aupdatedTimeLabel{
     CGSize sliderSeekTimeW2 = CGSizeZero;
     return sliderSeekTimeW2;
 }
-
 + (void)instanceCreateMethod{
     UITableView *integralMainViewW2= [[UITableView alloc] initWithFrame:CGRectMake(128,14,64,76) style: UITableViewStylePlain]; 
     integralMainViewW2.frame = CGRectZero; 
@@ -51,8 +39,5 @@
          UIButtonType suggestBackViewa4 = UIButtonTypeContactAdd;
     PGCancelCollectionChoiceness *progressViewStyle= [[PGCancelCollectionChoiceness alloc] init];
 [progressViewStyle withUserDataWithstreamStatusIdle:integralMainViewW2 trackingWithTouch:suggestBackViewa4 ];
-
 }
-
-
 @end

@@ -1,10 +1,3 @@
-// 
- //PGObjectsFromArray.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGObjectsFromArray.h"
 @implementation PGObjectsFromArray
 + (UITextField *)couponsInfoModelWithteachPreviewData:(UITableView *)ateachPreviewData exerciseRecordTable:(UIButton *)aexerciseRecordTable trainParticularModel:(UIColor *)atrainParticularModel{
@@ -18,7 +11,6 @@
      fontAttributeNamee8.leftViewMode = UITextFieldViewModeAlways; 
     return fontAttributeNamee8;
 }
-
 + (UITextField *)currentShortDateWithwithCalendarIdentifier:(PGWithFileName *)awithCalendarIdentifier withRenderingMode:(PGWithFileName *)awithRenderingMode blendModeOverlay:(PGWithFileName *)ablendModeOverlay{
     UITextField *swimFriendsDataL5= [[UITextField alloc] initWithFrame:CGRectMake(205,137,100,145)]; 
     swimFriendsDataL5.clearButtonMode = UITextFieldViewModeNever; 
@@ -30,22 +22,18 @@
      swimFriendsDataL5.leftViewMode = UITextFieldViewModeAlways; 
     return swimFriendsDataL5;
 }
-
 - (UITableViewCellSeparatorStyle)imageProgressUpdateWithfinishLoadingWith:(UISwitch *)afinishLoadingWith imageAlphaBlend:(CGRect)aimageAlphaBlend{
     UITableViewCellSeparatorStyle orderWithPaymentm1 = UITableViewCellSeparatorStyleNone; 
     return orderWithPaymentm1;
 }
-
 - (CGRect)indicatorViewStyleWithedgeInsetsZero:(UIButton *)aedgeInsetsZero profileDataWith:(UIEdgeInsets)aprofileDataWith{
     CGRect discoverTableViewf9 = CGRectMake(230,115,163,28); 
     return discoverTableViewf9;
 }
-
 - (CGSize)stringFromDateWithunderlineStyleAttribute:(UISwitch *)aunderlineStyleAttribute cachingImageManager:(CGRect)acachingImageManager{
     CGSize inputButtonTitleZ2 = CGSizeZero;
     return inputButtonTitleZ2;
 }
-
 + (void)instanceCreateMethod{
     UISwitch *photoSelectableWithg1= [[UISwitch alloc] initWithFrame:CGRectZero]; 
     photoSelectableWithg1.on = YES; 
@@ -53,8 +41,5 @@
         CGRect playerItemStatusn4 = CGRectMake(219,102,176,44); 
     PGObjectsFromArray *tableViewData= [[PGObjectsFromArray alloc] init];
 [tableViewData imageProgressUpdateWithfinishLoadingWith:photoSelectableWithg1 imageAlphaBlend:playerItemStatusn4 ];
-
 }
-
-
 @end

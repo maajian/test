@@ -1,10 +1,3 @@
-// 
- //PGInsideImageView.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGInsideImageView.h"
 @implementation PGInsideImageView
 + (UISwitch *)layerTintColorWithassetsGroupEnumeration:(NSMutableArray *)aassetsGroupEnumeration textBorderStyle:(NSMutableArray *)atextBorderStyle photoViewIndex:(NSData *)aphotoViewIndex{
@@ -13,27 +6,22 @@
     withPhoneNumberM4.onTintColor = [UIColor whiteColor]; 
     return withPhoneNumberM4;
 }
-
 + (UIColor *)recoderSelectPickerWithstrokeCourseDaily:(PGWithLoadingRequest *)astrokeCourseDaily stringDrawingUses:(PGWithLoadingRequest *)astringDrawingUses reusableCellWith:(PGWithLoadingRequest *)areusableCellWith{
     UIColor *titleAutoConfigU2= [UIColor redColor];
     return titleAutoConfigU2;
 }
-
 - (NSLineBreakMode)inputTextureUniformWithtextViewContent:(UITextField *)atextViewContent colorSpaceCreate:(NSRange)acolorSpaceCreate{
     NSLineBreakMode imageRequestOptionsM9 = NSLineBreakByTruncatingTail; 
     return imageRequestOptionsM9;
 }
-
 - (CGSize)assetPreferPreciseWithtrainCommentModel:(UILabel *)atrainCommentModel userNotificationType:(UIEdgeInsets)auserNotificationType{
     CGSize swimMoviePlayv3 = CGSizeMake(143,30); 
     return swimMoviePlayv3;
 }
-
 - (CGRect)pathWithOvalWithattentionViewController:(UIButtonType)aattentionViewController zoomingScrollView:(UIEdgeInsets)azoomingScrollView{
     CGRect pushNotificationTriggere3 = CGRectMake(71,140,78,183); 
     return pushNotificationTriggere3;
 }
-
 + (void)instanceCreateMethod{
     UITextField *mainMessageDataj2= [[UITextField alloc] initWithFrame:CGRectMake(90,120,183,251)]; 
     mainMessageDataj2.clearButtonMode = UITextFieldViewModeNever; 
@@ -46,8 +34,5 @@
         NSRange authorizationOptionBadgem8 = NSMakeRange(4,113); 
     PGInsideImageView *playerStatePlaying= [[PGInsideImageView alloc] init];
 [playerStatePlaying inputTextureUniformWithtextViewContent:mainMessageDataj2 colorSpaceCreate:authorizationOptionBadgem8 ];
-
 }
-
-
 @end

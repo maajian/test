@@ -1,28 +1,12 @@
 #import "PGSuccessWithStatus.h"
-//
-//  PGDiscoverColorView.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/22.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverColorView.h"
-
 const static CGFloat buttonWidth = 20;
-
 @interface PGDiscoverColorView()
-/*! 标记之前选择的颜色按钮 */
 @property(nonatomic,assign) NSInteger oriIndex ;
-
 @property(nonatomic,copy)   NSArray *colorArray;
-
 @property(nonatomic,strong) UIColor *currentColor;
-
 @end
-
 @implementation PGDiscoverColorView
-
 - (instancetype)initWithColor :(UIColor *)originColor{
     if (self = [super init]) {
         if ([self.colorArray containsObject:originColor]) {
@@ -31,14 +15,11 @@ const static CGFloat buttonWidth = 20;
             _oriIndex = 108;
         }
         _currentColor = originColor;
-        [self setupUI];
+        [self PG_setupUI];
         [self addObserver:self forKeyPath:@"currentColor" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     }
     return self;
 }
-
-
-
 - (NSArray *)colorArray{
     if (!_colorArray) {
         _colorArray = @[kColorA(249, 249, 249, 1),
@@ -52,11 +33,7 @@ const static CGFloat buttonWidth = 20;
     }
     return _colorArray;
 }
-
-
-- (void)setupUI{
-    /*! 创建8个颜色button */
-    
+- (void)PG_setupUI{
     @autoreleasepool {
         for (int i = 0 ; i<9; i++) {
             UIButton *button;
@@ -66,11 +43,9 @@ const static CGFloat buttonWidth = 20;
                 shapeLayer.fillColor = _currentColor.CGColor;
             }else{
                 button = [MyButton initWithButtonFrame:CGRectMake(15 + (buttonWidth+15)*i, 5, 20, 20) title:nil textcolor:nil Target:self action:@selector(buttonAction:) BackgroundColor:kColorA(249, 249, 249, 1) cornerRadius:buttonWidth/2 masksToBounds:1];
-
                 UIColor *color =(UIColor *)_colorArray[i];
                 shapeLayer.fillColor = color.CGColor;
             }
-            /*! 里面圆的直径 */
             CGFloat insideOvalDia = 16;
             UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(2, 2, insideOvalDia, insideOvalDia)];
             shapeLayer.path = path.CGPath;
@@ -84,8 +59,6 @@ const static CGFloat buttonWidth = 20;
             }
         }
     };
-    
-    /*! 创建下面横线 */
         CAShapeLayer *layer = [CAShapeLayer layer];
         UIBezierPath *path = [UIBezierPath bezierPath];
         layer.strokeColor =  ZDLineColor.CGColor;
@@ -99,25 +72,19 @@ const static CGFloat buttonWidth = 20;
         [path addLineToPoint:CGPointMake(225, 60)];
          layer.path = path.CGPath;
         [self.layer addSublayer:layer];
-    
-    /*! 创建输入框 */
     const CGFloat *components = CGColorGetComponents(_currentColor.CGColor);
     NSArray *placeholderAray = @[@"R",@"G",@"B"];
     for (int i = 0; i<3; i++) {
         UITextField *textf = [myTextField initWithFrame:CGRectMake(80*i, 25, 80, 35) placeholder:placeholderAray[i] font:[UIFont systemFontOfSize:12] TextAlignment:NSTextAlignmentCenter textColor:[UIColor whiteColor]];
         textf.keyboardType = UIKeyboardTypeDecimalPad;
         textf.tag = 1000 +i;
-        [textf addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-        [textf addTarget:self action:@selector(textFieldDidEndChange:) forControlEvents:UIControlEventEditingDidEnd];
+        [textf addTarget:self action:@selector(PG_textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+        [textf addTarget:self action:@selector(PG_textFieldDidEndChange:) forControlEvents:UIControlEventEditingDidEnd];
         textf.text = [NSString stringWithFormat:@"%.1f",components[i]*256];
         [self addSubview:textf];
     }
-    
 }
-
-
 #pragma mark --- 颜色按钮点击事件
-
 - (void)buttonAction : (UIButton *)button
 {
     if (_oriIndex == button.tag) {
@@ -125,7 +92,7 @@ const static CGFloat buttonWidth = 20;
     }
     if (button.tag!=8) {
         self.currentColor = [_colorArray objectAtIndex:button.tag-100];
-        [self changeColor];
+        [self PG_changeColor];
     }else{
         return;
     }
@@ -137,8 +104,7 @@ const static CGFloat buttonWidth = 20;
     _oriIndex = button.tag;
     [_colorDelegate colorViewCurrrentColor:_currentColor];
 }
-/*! 展示按钮改变颜色 */
-- (void)changeColor{
+- (void)PG_changeColor{
     UIButton *showButton = [self viewWithTag:108];
     for (CALayer *layer in showButton.layer.sublayers) {
         if ([layer isKindOfClass:[CAShapeLayer class]]) {
@@ -147,14 +113,11 @@ const static CGFloat buttonWidth = 20;
         }
     }
 }
-
 #pragma mark --- 输入框编辑事件
-- (void)textFieldDidChange:(UITextField *)textField{
-    /*! 如果大于256  则显示256*/
+- (void)PG_textFieldDidChange:(UITextField *)textField{
     if ([textField.text floatValue]>256) {
         textField.text = @"256.0";
     }
-    /*! 保留小数点后1位*/
     if ([textField.text componentsSeparatedByString:@"."].count==2) {
         NSString *secondStr =[textField.text componentsSeparatedByString:@"."].lastObject;
         if (secondStr.length>2) {
@@ -163,7 +126,7 @@ const static CGFloat buttonWidth = 20;
         }
     }
 }
-- (void)textFieldDidEndChange:(UITextField *)textField{
+- (void)PG_textFieldDidEndChange:(UITextField *)textField{
     switch (textField.tag) {
         case 1000:{
             UITextField *textf1 = [self viewWithTag:1001];
@@ -185,17 +148,15 @@ const static CGFloat buttonWidth = 20;
             self.currentColor = kColorA([textf1.text floatValue], [textf2.text floatValue], [textField.text floatValue], 1);
         }
             break;
-            
         default:
             break;
     }
-    [self changeColor];
-    [self identityButton];
+    [self PG_changeColor];
+    [self PG_identityButton];
     [_colorDelegate colorViewCurrrentColor:_currentColor];
 }
-
 #pragma mark---颜色改变不再数组内，按钮还原
-- (void)identityButton{
+- (void)PG_identityButton{
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextView *assetReferenceRestrictionf7= [[UITextView alloc] initWithFrame:CGRectMake(244,255,96,107)]; 
     assetReferenceRestrictionf7.editable = NO; 
@@ -216,11 +177,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 button.transform = CGAffineTransformIdentity;
             }];
         }
-        
     }];
 }
 #pragma mark ---触发kvo
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     UIColor  *newColor = [change objectForKey:NSKeyValueChangeNewKey];
     const CGFloat *compoments = CGColorGetComponents(newColor.CGColor);
@@ -229,9 +188,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         textf.text = [NSString stringWithFormat:@"%.1f",compoments[i]*256];
     }
 }
-
 - (void)dealloc{
     [self removeObserver:self forKeyPath:@"currentColor"];
 }
-
 @end

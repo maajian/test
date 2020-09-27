@@ -1,25 +1,12 @@
 #import "PGFirstBackCamera.h"
-//
-//  PGMeSettingVC.m
-//  jingjing
-//
-//  Created by maj on 2020/8/4.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMeSettingVC.h"
-
 #import "PGMeSettingModel.h"
-
 @interface PGMeSettingVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray<NSArray<PGMeSettingModel *> *> *dataSource;
 @property (nonatomic, strong) UIView *footerView;
-
 @end
-
 @implementation PGMeSettingVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSTextAlignment courseViewControllerw5 = NSTextAlignmentCenter; 
@@ -28,12 +15,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [imageEdgeInsets backButtonClickWithmoreDataWith:courseViewControllerw5 imageOptionProgressive:articleDailyTrainy1 ];
 });
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
 }
-
 #pragma mark --- Lazyload
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -49,7 +33,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _tableView;
 }
-
 - (UIView *)footerView {
     if (!_footerView) {
         _footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];
@@ -58,15 +41,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
         button.frame = CGRectMake(0, 16, kScreenWidth, 44);
         button.backgroundColor = [UIColor whiteColor];
         [button setTitleColor:ZDMainColor forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(logoutAction:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(PG_logoutAction:) forControlEvents:UIControlEventTouchUpInside];
         button.titleLabel.font = ZDSystemFont(14);
         [_footerView addSubview:button];
     }
     return _footerView;
 }
-
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
     self.title = @"设置";
     _dataSource = @[
         @[[PGMeSettingModel changePasswordModel], [PGMeSettingModel userProtocolModel], [PGMeSettingModel privacyProtectModel]],
@@ -74,14 +56,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     ];
     [self.view addSubview:self.tableView];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
 }
-
 #pragma mark --- Network
-
 #pragma mark --- UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataSource.count;
@@ -98,9 +78,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cell.textLabel.text = model.title;
     return cell;
 }
-
 #pragma mark --- UITableViewDelegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     PGMeSettingModel *model = self.dataSource[indexPath.section][indexPath.row];
@@ -131,35 +109,28 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self.navigationController pushViewController:web animated:YES];
             break;
         }
-            
         default:
             break;
     }
 }
-
 #pragma mark --- action
-- (void)logoutAction:(UIButton *)button {
+- (void)PG_logoutAction:(UIButton *)button {
     UIAlertController *logoutAlert = [UIAlertController alertControllerWithTitle:nil message:@"退出后不会删除任何历史数据，下次登录依然可以使用本账号" preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *action1 =  [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [ZD_UserM didLogout];
     }];
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    
     [logoutAlert addAction:action1];
     [logoutAlert addAction:action2];
-    
     [self presentViewController:logoutAlert animated:YES completion:nil];
 }
-
 - (void)changePassword {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"友情提醒" message:@"确定修改密码？若您没有密码，您输入的将变成密码" preferredStyle:UIAlertControllerStyleAlert];
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"密码";
         textField.secureTextEntry = YES;
     }];
-     
      UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-         
           NSString *postStr = [NSString stringWithFormat:@"%@api/v2/user/updatePassWord?token=%@",zhundaoApi,[[PGSignManager shareManager] getToken]];
          NSDictionary *parameter = @{@"newPassWord" : alert.textFields.firstObject.text};
          if (alert.textFields.firstObject.text.length<6) {
@@ -172,27 +143,21 @@ dispatch_async(dispatch_get_main_queue(), ^{
          MBProgressHUD *hud  = [[MBProgressHUD alloc]init];
          [self.view addSubview:hud];
          hud.animationType = MBProgressHUDAnimationFade;
-         //        hud.minShowTime = 1;
          [hud showAnimated:YES];
              [ZD_NetWorkM postDataWithMethod:postStr parameters:parameter succ:^(NSDictionary *obj) {
                  [hud hideAnimated:YES];
-                 
                  PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:@"修改成功,请重新登录"];
                  [label labelAnimationWithViewlong:self.view];
-                 
                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                      [ZD_UserM didLogout];
                  });
              } fail:^(NSError *error) {
-                 
              }];
          }
      }];
-     
      [alert addAction:action1];
      UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
      [alert addAction:action2];
      [self presentViewController:alert animated:YES completion:nil];
 }
-
 @end

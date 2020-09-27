@@ -1,14 +1,5 @@
-//
-//  SVProgressHUD+Add.m
-//  Meari
-//
-//  Created by 李兵 on 2016/12/9.
-//  Copyright © 2016年 PPStrong. All rights reserved.
-//
-
 #import "SVProgressHUD+Add.h"
 #import <objc/runtime.h>
-
 @implementation SVProgressHUD (Add)
 + (void)load {
     ZD_ExchangeClassImp(@selector(ZD_sharedView), NSSelectorFromString(@"sharedView"))
@@ -18,9 +9,6 @@
     ZD_ExchangeClassImp(@selector(ZD_showWithStatus:maskType:), @selector(showWithStatus:maskType:))
     ZD_ExchangeInstanceImp(@selector(ZD_dismiss), @selector(dismiss))
 }
-/**
- 属性
- */
 - (UIControl *)ZD_assistOverlay {
     return objc_getAssociatedObject(self, @selector(ZD_assistOverlay));
 }

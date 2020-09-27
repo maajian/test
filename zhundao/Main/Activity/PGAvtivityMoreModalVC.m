@@ -1,12 +1,4 @@
 #import "PGSwimingCommonSense.h"
-//
-//  PGAvtivityMoreModalVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/2/16.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGAvtivityMoreModalVC.h"
 #import "Time.h"
 #import "PGActivityEditVC.h"
@@ -23,46 +15,34 @@
 #import "PGAvtivitySignUpVC.h"
 #import "PGDataPersonListVC.h"
 #import "PGActivityPostEmailVC.h"
-
 #import "PGAvtivityMoreModalModel.h"
-
 #import "PGAvtivityMoreModalCell.h"
 #import "PGAvtivityMoreModalHeaderView.h"
 #import "PGStatisticsVC.h"
-
 static const CGFloat itemSpace = 1;
 static NSString *cellID = @"PGAvtivityMoreModalCell";
 static NSString *headerID = @"PGAvtivityMoreModalHeaderView";
-
 @interface PGAvtivityMoreModalVC ()<UICollectionViewDataSource, UICollectionViewDelegate, PGAvtivityMoreModalHeaderViewDelegate> {
     NSString *accesskey;
-    NSString *_endTimeStr; // 截止时间
+    NSString *_endTimeStr; 
 }
-// 数据
 @property (nonatomic, copy) NSArray<PGAvtivityMoreModalModel *> *dataArray;
-
 @property (nonatomic, strong) UICollectionView *collectionView;
-
-
 @end
-
 @implementation PGAvtivityMoreModalVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"model = %@",_moreModel);
-    [self initSet];
+    [self PG_initSet];
     accesskey = [[PGSignManager shareManager]getaccseekey];
     if (!ZD_UserM.isAdmin) {
-        [self networkForGetDataStatistics];
+        [self PG_networkForGetDataStatistics];
     }
 }
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self netWorkConsult];
+    [self PG_netWorkConsult];
 }
-
 #pragma mark --- lazyload
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
@@ -82,9 +62,8 @@ static NSString *headerID = @"PGAvtivityMoreModalHeaderView";
     }
     return _collectionView;
 }
-
 #pragma mark --- initLayout
-- (void)initSet {
+- (void)PG_initSet {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIView *locationCollectionViewB8= [[UIView alloc] initWithFrame:CGRectZero]; 
     locationCollectionViewB8.backgroundColor = [UIColor whiteColor]; 
@@ -120,18 +99,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [self.view addSubview:self.collectionView];
 }
-
 #pragma mark --- UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _dataArray.count;
 }
-
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PGAvtivityMoreModalCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     cell.model = _dataArray[indexPath.item];
     return cell;
 }
-
 #pragma mark --- UICollectionViewDelegate
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
@@ -143,12 +119,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return nil;
 }
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     PGAvtivityMoreModalModel *model = _dataArray[indexPath.item];
     switch (model.moreMoalType) {
         case MoreMoalTypeEdit: {
-            [self pushToEdit];
+            [self PG_pushToEdit];
         }
             break;
         case MoreMoalTypePersonList: {
@@ -156,7 +131,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
             break;
         case MoreMoalTypeConsult: {
-            [self consult];
+            [self PG_consult];
         }
             break;
         case MoreMoalTypeLink: {
@@ -168,7 +143,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
             break;
         case MoreMoalTypeDelete: {
-            [self delelteActivity];
+            [self PG_delelteActivity];
         }
             break;
         case MoreMoalTypeShare: {
@@ -196,7 +171,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             if (ZD_UserM.isAdmin) {
                 codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID]);
             } else {
-                [self networkForGetActivityLinkSuccess:^(NSString *obj) {
+                [self PG_networkForGetActivityLinkSuccess:^(NSString *obj) {
                     codeBlock(obj);
                 }];
             }
@@ -207,7 +182,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
             break;
         case MoreMoalTypeCopy: {
-            [self copyActivity];
+            [self PG_copyActivity];
         }
             break;
         case MoreMoalTypeDataPerson: {
@@ -228,14 +203,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self.navigationController pushViewController:statistics animated:YES];
         }
             break;
-            
         default:
             break;
     }
 }
-
 #pragma mark --- PGAvtivityMoreModalHeaderViewDelegate
-// 跳转详情
 - (void)header:(PGAvtivityMoreModalHeaderView *)headerView didTapDetailView:(UIView *)detailView {
     ZDBlock_Str detailBlock = ^(NSString *str) {
         PGActivityDetailActivityVC *detail = [[PGActivityDetailActivityVC alloc]init];
@@ -243,17 +215,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
         detail.urlString = str;
         [self.navigationController pushViewController:detail animated:YES];
     };
-    
     if (ZD_UserM.isAdmin) {
         detailBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID]);
     } else {
-        [self networkForGetActivityLinkSuccess:^(NSString *obj) {
+        [self PG_networkForGetActivityLinkSuccess:^(NSString *obj) {
             detailBlock(obj);
         }];
     }
 }
-
-// 图表
 - (void)header:(PGAvtivityMoreModalHeaderView *)headerView didTapChartView:(chartType)type {
     ZDBlock_Void pushPersonBlock = ^() {
         PGAvtivitySignUpVC *signUp = [[PGAvtivitySignUpVC alloc] init];
@@ -261,19 +230,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
         signUp.chartType = ChartTypeActivityPerson;
         [self.navigationController pushViewController:signUp animated:YES];
     };
-    
     if (!ZD_UserM.isAdmin) {
-//        pushPersonBlock();
         return;
     }
-    
     switch (type) {
-            //  报名
         case chartTypeApply: {
             pushPersonBlock();
         }
             break;
-            // 收入
         case chartTypeIncome: {
             PGAvtivitySignUpVC *signUp = [[PGAvtivitySignUpVC alloc] init];
             signUp.activityId = _moreModel.ID;
@@ -281,7 +245,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self.navigationController pushViewController:signUp animated:YES];
         }
             break;
-            // 浏览
         case chartTypeBrowse: {
             PGAvtivitySignUpVC *signUp = [[PGAvtivitySignUpVC alloc] init];
             signUp.activityId = _moreModel.ID;
@@ -289,14 +252,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [self.navigationController pushViewController:signUp animated:YES];
         }
             break;
-            
         default:
             break;
     }
 }
-
 #pragma mark --- action
-// 签到
 - (void)PGSign {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIView *statusWithBlockA4= [[UIView alloc] initWithFrame:CGRectZero]; 
@@ -312,9 +272,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     one.activityName = _moreModel.Title;
     [self.navigationController pushViewController:one animated:YES];
 }
-
-// 删除活动
-- (void)delelteActivity {
+- (void)PG_delelteActivity {
 dispatch_async(dispatch_get_main_queue(), ^{
     UIView *courseRecommendCellU7= [[UIView alloc] initWithFrame:CGRectZero]; 
     courseRecommendCellU7.backgroundColor = [UIColor whiteColor]; 
@@ -336,7 +294,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 [hud1 hideAnimated:YES afterDelay:1.5];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.navigationController popViewControllerAnimated:YES];
-                    _backBlock(1);   //1 表示删除
+                    _backBlock(1);   
                 });
             }else{
                 PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:dic[@"Msg"]];
@@ -347,12 +305,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [hud hideAnimated:YES];
         }];
     } cancelBlock:^{
-        
     }];
 }
-
-// 跳转编辑
-- (void)pushToEdit {
+- (void)PG_pushToEdit {
     if ([self.moreModel.Content containsString:@"class=\"zhundaoQQ\""]) {
         PGActivityEditVC *editctr = [[PGActivityEditVC alloc]init];
         editctr.urlString =[NSString stringWithFormat: @"%@Activity/PubActivity/%ld?accesskey=%@",zhundaoH5Api,(long)_moreModel.ID,accesskey];
@@ -364,8 +319,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController pushViewController:post animated:YES];
     }
 }
-
-// 签到名单
 - (void)signList
 {
     if (_moreModel.HasJoinNum==0) {
@@ -385,18 +338,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController pushViewController:list animated:YES];
     }
 }
-
-// 活动截止
 - (void)signEnd
 {
     [PGAlertView alertWithTitle:@"确定将活动截止?" message:@"确定后如要再次开启报名请通过编辑活动修改报名截止时间" sureBlock:^{
         NSString *urlstr = [NSString stringWithFormat:@"%@api/PerActivity/UnDueActivity?accessKey=%@&activityId=%li",zhundaoApi,accesskey,(long)_moreModel.ID];
-        //    2017-01-09 19:27:20
         NSDate *date = [NSDate date];
         NSDateFormatter *format = [[NSDateFormatter alloc]init];
         [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *Datastr = [format stringFromDate:date];
-        //    NSDictionary *dic = @{@"TimeStop":Datastr};
         MBProgressHUD *hud = [[MBProgressHUD alloc]init];
         [self.view addSubview:hud];
         hud.animationType = MBProgressHUDAnimationFade;
@@ -419,18 +368,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"error = %@",error);
         }];
     } cancelBlock:^{
-        
     }];
 }
-
-// 咨询
-- (void)consult {
-    PGActivityConsultViewController *consult = [[PGActivityConsultViewController alloc]init];
-    consult.acID = self.moreModel.ID;
-    [self.navigationController pushViewController:consult animated:YES];
+- (void)PG_consult {
+    PGActivityConsultViewController *PG_consult = [[PGActivityConsultViewController alloc]init];
+    PG_consult.acID = self.moreModel.ID;
+    [self.navigationController pushViewController:PG_consult animated:YES];
 }
-
-// 链接
 - (void)link {
     ZDBlock_Str block = ^(NSString *str) {
         UIPasteboard *pastboard = [UIPasteboard generalPasteboard];
@@ -440,14 +384,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (ZD_UserM.isAdmin) {
         block([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID]);
     } else {
-        [self networkForGetActivityLinkSuccess:^(NSString *obj) {
+        [self PG_networkForGetActivityLinkSuccess:^(NSString *obj) {
             block(obj);
         }];
     }
 }
-
 #pragma mark --- network
-- (void)netWorkConsult{
+- (void)PG_netWorkConsult{
     NSString *url = [NSString stringWithFormat:@"%@api/PerBase/PstConsultList?accessKey=%@",zhundaoApi,[[PGSignManager shareManager] getaccseekey]];
     NSDictionary *dic = @{@"Status":@"2",
                           @"ID":@(_moreModel.ID),
@@ -468,11 +411,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [_collectionView reloadData];
         }
     } fail:^(NSError *error) {
-        
     }];
 }
-// 获取数据统计
-- (void)networkForGetDataStatistics {
+- (void)PG_networkForGetDataStatistics {
     ZD_HUD_SHOW_WAITING
     ZD_WeakSelf
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
@@ -491,7 +432,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         ZD_HUD_SHOW_ERROR(error)
     }];
 }
-- (void)networkForGetActivityLinkSuccess:(ZDBlock_Str)success {
+- (void)PG_networkForGetActivityLinkSuccess:(ZDBlock_Str)success {
     ZD_HUD_SHOW_WAITING
     NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, ZD_UserM.token];
     NSDictionary *dic = @{@"BusinessCode": @"GetActivityLink",
@@ -506,12 +447,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
         ZD_HUD_SHOW_ERROR(error)
     }];
 }
-
-// 复制活动
-- (void)copyActivity {
+- (void)PG_copyActivity {
      MBProgressHUD *hud = [PGMyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     hud.label.text = @"加载中...";
-    NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/copyActivity?token=%@&activityId=%li",zhundaoApi,[[PGSignManager shareManager] getToken],self.moreModel.ID];
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/PG_copyActivity?token=%@&activityId=%li",zhundaoApi,[[PGSignManager shareManager] getToken],self.moreModel.ID];
     [ZD_NetWorkM postDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"复制成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
@@ -526,6 +465,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [label labelAnimationWithViewlong:self.view];
     }];
 }
-
-
 @end

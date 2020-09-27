@@ -1,10 +1,3 @@
-// 
- //PGViewWillShow.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGViewWillShow.h"
 @implementation PGViewWillShow
 + (UITextField *)applicationStateActiveWithwithLocaleIdentifier:(NSString *)awithLocaleIdentifier medalKindModel:(UIColor *)amedalKindModel deviceSettingsType:(NSMutableArray *)adeviceSettingsType{
@@ -18,7 +11,6 @@
      interfaceOrientationLandscapeW3.leftViewMode = UITextFieldViewModeAlways; 
     return interfaceOrientationLandscapeW3;
 }
-
 + (UITextField *)medalExplainViewWithframeWithIndex:(PGStartLoadWith *)aframeWithIndex recordVideoQuality:(PGStartLoadWith *)arecordVideoQuality fansWithUser:(PGStartLoadWith *)afansWithUser{
     UITextField *launchOptionsShowsZ4= [[UITextField alloc] initWithFrame:CGRectMake(148,182,99,21)]; 
     launchOptionsShowsZ4.clearButtonMode = UITextFieldViewModeNever; 
@@ -30,29 +22,22 @@
      launchOptionsShowsZ4.leftViewMode = UITextFieldViewModeAlways; 
     return launchOptionsShowsZ4;
 }
-
 - (NSRange)sliderFillColorWithoriginalPhotoWith:(UIColor *)aoriginalPhotoWith activityTableView:(NSTextAlignment)aactivityTableView{
     NSRange badgeStyleNumberF2 = NSMakeRange(8,124); 
     return badgeStyleNumberF2;
 }
-
 - (CGPoint)gradeBottomViewWithanimatedImageFrames:(UIImage *)aanimatedImageFrames withFragmentShader:(UIImage *)awithFragmentShader{
     CGPoint blurredImageDefaultQ3 = CGPointMake(9,239); 
     return blurredImageDefaultQ3;
 }
-
 - (UITextFieldViewMode)interfaceOrientationMaskWithblockWithResult:(UITextFieldViewMode)ablockWithResult videoWithScroll:(UILabel *)avideoWithScroll{
     UITextFieldViewMode categoryChooseViewf0 = UITextFieldViewModeAlways; 
     return categoryChooseViewf0;
 }
-
 + (void)instanceCreateMethod{
     UIColor *groupPurchaseDataB9= [UIColor redColor];
         NSTextAlignment assetResourceTypez2 = NSTextAlignmentCenter; 
     PGViewWillShow *minuteTimeInterval= [[PGViewWillShow alloc] init];
 [minuteTimeInterval sliderFillColorWithoriginalPhotoWith:groupPurchaseDataB9 activityTableView:assetResourceTypez2 ];
-
 }
-
-
 @end

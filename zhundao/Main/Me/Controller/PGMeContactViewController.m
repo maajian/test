@@ -1,16 +1,7 @@
 #import "PGSliderFillColor.h"
-//
-//  PGMeContactViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/5/23.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeContactViewController.h"
 #import "PGMeContactMV.h"
 #import "PGMeContactTableViewCell.h"
-//#import "PGMeQQPopMenuView.h"
 #import "PGMeGroupViewController.h"
 #import "UIImage+LGExtension.h"
 #import "PGMePersonDetailViewController.h"
@@ -20,12 +11,12 @@
 {
     JQIndicatorView *indicator;
     Reachability *r;
-    NSInteger deleteIndex; //删除位置
+    NSInteger deleteIndex; 
 }
 @property(nonatomic,strong)UITableView                      *tableView ;
 @property(nonatomic,strong)UISearchController                *searchController;
-@property(nonatomic,strong)NSArray                     *headerArray;     //存储名单字母的数组
-@property(nonatomic,copy)NSDictionary                        *datadic ;   //
+@property(nonatomic,strong)NSArray                     *headerArray;     
+@property(nonatomic,copy)NSDictionary                        *datadic ;   
 @property(nonatomic,strong)UIView                        *groupView;
 @property(nonatomic,assign)NSInteger                     allCount ;
 @property(nonatomic,strong)NSArray                       *networkArray ;
@@ -33,17 +24,13 @@
 @property(nonatomic,strong)NSMutableArray               *phoneArray;
 @property(nonatomic,strong)NSMutableArray               *pinyinArray;
 @property(nonatomic,strong)NSMutableArray               *companyArray;
-@property(nonatomic,strong)NSMutableIndexSet           *set;  //搜索出来的位置index的集合
+@property(nonatomic,strong)NSMutableIndexSet           *set;  
 @property(nonatomic,strong)NSMutableArray              *searchDataArray  ;
 @end
-//POST api/Contact/PostContact?accessKey={accessKey}
 @implementation PGMeContactViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self baseSetting];
-    // Do any additional setup after loading the view.
 }
 #pragma  mark   基础设置
 - (void)baseSetting
@@ -67,12 +54,10 @@
             break;
         }
         case ReachableViaWWAN:
-            // 使用3G网络
             NSLog(@"wan");
             [self netWork];
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
             NSLog(@"wifi");
             [self netWork];
             break;
@@ -84,8 +69,8 @@
     indicator = [[JQIndicatorView alloc]showWithView:self.view];
     NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContact?accessKey=%@",zhundaoApi,[[PGSignManager shareManager] getaccseekey]];
     PGMeContactMV *mv = [[ PGMeContactMV alloc]init];
-    [mv createSignList];   //创建数据库表
-    [mv netWorkWithStr:str]; //网络请求
+    [mv createSignList];   
+    [mv netWorkWithStr:str]; 
     __weak typeof(mv) weakMv = mv;
     __weak typeof(self) weakSelf = self;
     mv.block = ^(NSArray *array)
@@ -107,7 +92,6 @@
         weakSelf.companyArray = [companyArray mutableCopy];
     };
 }
-
 -(void)notHaveNet
 {
     PGMeContactMV *mv = [[PGMeContactMV alloc]init];
@@ -125,7 +109,6 @@
         self.phoneArray = [phoneArray mutableCopy];
         self.companyArray = [companyArray mutableCopy];
     };
-    
 }
 #pragma  mark   懒加载
 - (NSMutableArray *)searchDataArray
@@ -178,21 +161,20 @@
 - (UISearchController *)searchController
 {
     if (!_searchController) {
-        _searchController = [[UISearchController alloc]initWithSearchResultsController:nil]; //不写nil可以选择新建控制器，通过block回调数据
+        _searchController = [[UISearchController alloc]initWithSearchResultsController:nil]; 
         _searchController.searchBar.frame = CGRectMake(0, 2, kScreenWidth, 42);
         _searchController.searchBar.placeholder = @"搜索";
-        _searchController.searchBar.barTintColor = ZDBackgroundColor; //搜索框旁边的颜色
-        _searchController.dimsBackgroundDuringPresentation = NO;  //开始搜索时是否显示背景
-        _searchController.delegate = self;   // 控制出现和消失等情况的代理 UISearchControllerDelegate
+        _searchController.searchBar.barTintColor = ZDBackgroundColor; 
+        _searchController.dimsBackgroundDuringPresentation = NO;  
+        _searchController.delegate = self;   
         [_searchController.searchBar sizeToFit];
         [_searchController.searchBar setBackgroundImage:[UIImage new]];
-        self.searchController.searchResultsUpdater = self;  //UISearchResultsUpdating 输入时实时更新的代理
-       self.definesPresentationContext = YES;  //让搜索框一起滑动
+        self.searchController.searchResultsUpdater = self;  
+       self.definesPresentationContext = YES;  
     }
     return _searchController;
 }
 #pragma  mark   UITableViewDelegate 实现
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 55;
@@ -262,7 +244,6 @@
         else
         {
             UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth/3, 75)];
-            
             _groupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 55)];
             _groupView.backgroundColor = [UIColor whiteColor];
             UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 12, 32, 32)];
@@ -278,17 +259,14 @@
             [view addSubview:_groupView];
             [view addSubview:label1];
             [self addGes];
-            
             return view;
         }
     }
 }
-
 - (void)addGes
 {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushGroup)];
     [_groupView addGestureRecognizer:tap];
-    
 }
 - (void)pushGroup
 {
@@ -301,9 +279,7 @@
             [self netWork];
         }
     };
-
 }
-
 #pragma  mark  UITableViewDataSource 实现
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -325,7 +301,6 @@
 }
 - (void)pushToPersonDetail:(UITapGestureRecognizer *)tap
 {
-    
     PGMeContactTableViewCell *cell = (PGMeContactTableViewCell *)tap.view;
     PGMePersonDetailViewController *person = [[PGMePersonDetailViewController alloc]init];
     PGMeContactMV *mv = [[PGMeContactMV alloc]init];
@@ -358,7 +333,6 @@
         return _headerArray.count;
     }
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (_searchController.active) {
@@ -382,7 +356,6 @@
     NSMutableDictionary *dic = [_datadic mutableCopy];
     NSMutableArray *deleteArray = [[_datadic objectForKey:_headerArray[indexPath.section]] mutableCopy];
     [deleteArray removeObject:deleteArray[indexPath.row]];
-//    [self deleteSearchArray];
     if (deleteArray.count==0) {
         [dic removeObjectForKey:_headerArray[indexPath.section]];
         NSMutableArray *headerarray = [_headerArray mutableCopy];
@@ -445,12 +418,10 @@
     NSMutableArray *array2 = [NSMutableArray arrayWithArray:_phoneArray];
     NSMutableArray *array5= [NSMutableArray arrayWithArray:_pinyinArray];
      NSMutableArray *array7= [NSMutableArray arrayWithArray:_companyArray];
-    
     NSMutableArray *array3 = nil;
     NSMutableArray *array4 =nil;
     NSMutableArray *array6 =nil;
     NSMutableArray *array8 = nil;
-    
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
     array3= [NSMutableArray arrayWithArray:[_nameArray filteredArrayUsingPredicate:preicate]];
     array4 = [NSMutableArray arrayWithArray:[_phoneArray filteredArrayUsingPredicate:preicate]];
@@ -487,7 +458,6 @@
                     PGMeContactModel *model = [PGMeContactModel yy_modelWithDictionary:searchdic];
                     [self.searchDataArray addObject:model];
                 }
-
                 [_tableView reloadData];
             });
         });
@@ -506,7 +476,6 @@
         }
     }
 }
-
 #pragma  mark  UISearchControllerDelegate 实现
 - (void)willPresentSearchController:(UISearchController *)searchController
 {
@@ -533,7 +502,6 @@
         self.view.bounds = viewBounds;
     }
 }
-
 #pragma  mark  添加好友
 - (void)createRightButton
 {
@@ -547,17 +515,9 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)dealloc
 {
     NSLog(@"没有内存泄漏");
 }
-/*
-#pragma  mark  mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

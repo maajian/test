@@ -1,15 +1,5 @@
-//
-//  PGActivityConsultModel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/8/3.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityConsultModel.h"
-
 @implementation PGActivityConsultModel
-
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init]) {
@@ -22,12 +12,9 @@
         self.ID = [aDecoder decodeIntegerForKey:@"ID"];
         self.IsRecommend = [aDecoder decodeIntegerForKey:@"IsRecommend"];
         self.IsReply = [aDecoder decodeIntegerForKey:@"IsReply"];
-        
-        
     }
     return self;
 }
-
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:self.AddTime forKey:@"AddTime"];
     [aCoder encodeObject:self.Answer forKey:@"Answer"];
@@ -39,6 +26,4 @@
     [aCoder encodeInteger:self.IsRecommend forKey:@"IsRecommend"];
     [aCoder encodeInteger:self.IsReply forKey:@"IsReply"];
 }
-
-
 @end

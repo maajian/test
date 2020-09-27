@@ -1,34 +1,21 @@
 #import "PGUploadCompletionBlock.h"
-//
-//  PGDiscoverPromoteIncomeCell.m
-//  zhundao
-//
-//  Created by maj on 2020/1/6.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMePromoteIncomeCell.h"
-
 @interface PGMePromoteIncomeCell()
-@property (nonatomic, strong) UILabel *countLabel; // 金额
-@property (nonatomic, strong) UILabel *typeLabel; // 类型
-@property (nonatomic, strong) UILabel *markLabel; // 备注
-@property (nonatomic, strong) UILabel *timeLabel; // 时间
-
+@property (nonatomic, strong) UILabel *countLabel; 
+@property (nonatomic, strong) UILabel *typeLabel; 
+@property (nonatomic, strong) UILabel *markLabel; 
+@property (nonatomic, strong) UILabel *timeLabel; 
 @end
-
 @implementation PGMePromoteIncomeCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.backgroundColor = [UIColor whiteColor];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self setupUI];
-        [self initLayout];
+        [self PG_setupUI];
+        [self PG_initLayout];
     }
     return self;
 }
-
 #pragma mark --- lazyload
 - (UILabel *)countLabel {
     if (!_countLabel) {
@@ -54,17 +41,15 @@
     }
     return _timeLabel;
 }
-
 #pragma mark --- UI
-- (void)setupUI {
+- (void)PG_setupUI {
     [self.contentView addSubview:self.countLabel];
     [self.contentView addSubview:self.typeLabel];
     [self.contentView addSubview:self.markLabel];
     [self.contentView addSubview:self.timeLabel];
 }
-
 #pragma mark --- 布局
-- (void)initLayout {
+- (void)PG_initLayout {
     CGFloat width = (kScreenWidth - 140) / 3;
     [self.countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(width);
@@ -84,7 +69,6 @@
         make.top.bottom.equalTo(self.countLabel);
     }];
 }
-
 #pragma mark --- setter
 - (void)setModel:(PGMePromoteIncomeModel *)model {
     _model = model;
@@ -93,9 +77,5 @@
     _markLabel.text = model.Remark;
     _timeLabel.text = model.AddTime;
 }
-
-
 #pragma mark --- action
-
-
 @end

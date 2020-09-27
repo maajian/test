@@ -1,34 +1,18 @@
 #import "PGWithLocaleIdentifier.h"
-//
-//  PGMeMessageVC.m
-//  jingjing
-//
-//  Created by maj on 2020/8/4.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGMeMessageVC.h"
-
 #import "PGMeMessageDetailVC.h"
 #import "PGMeMessageCell.h"
-
 #import "PGMeMessageViewModel.h"
-
 @interface PGMeMessageVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) PGMeMessageViewModel *viewModel;
 @property (nonatomic, assign) NSInteger page;
-
 @end
-
 @implementation PGMeMessageVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.tableView.mj_header beginRefreshing];
 }
@@ -42,7 +26,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
 }
-
 #pragma mark --- Lazyload
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -57,14 +40,13 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [_tableView registerClass:[PGMeMessageCell class] forCellReuseIdentifier:NSStringFromClass([PGMeMessageCell class])];
         _tableView.sectionHeaderHeight = 0.1;
         _tableView.sectionFooterHeight = 10;
-        _tableView.mj_header = [PGRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-        _tableView.mj_footer = [PGRefreshNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+        _tableView.mj_header = [PGRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(PG_loadNewData)];
+        _tableView.mj_footer = [PGRefreshNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(PG_loadMoreData)];
         _tableView.rowHeight = 71;
     }
     return _tableView;
 }
-
-- (void)loadNewData {
+- (void)PG_loadNewData {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint recordMovieBottome3 = CGPointZero;
         CGRect imageNamesGroupV0 = CGRectMake(198,61,103,2); 
@@ -72,9 +54,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [mobileCoreServices itemPhotoClickWithtrainsWithOffset:recordMovieBottome3 updateStatuMandatory:imageNamesGroupV0 ];
 });
     _page = 1;
-    [self networkForGetMeMessageList];
+    [self PG_networkForGetMeMessageList];
 }
-- (void)loadMoreData {
+- (void)PG_loadMoreData {
 dispatch_async(dispatch_get_main_queue(), ^{
     CGPoint videoDealPointg4 = CGPointMake(2,193); 
         CGRect naviTitleAppearanceM6 = CGRectMake(124,191,177,203); 
@@ -82,23 +64,21 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [blockWithResult itemPhotoClickWithtrainsWithOffset:videoDealPointg4 updateStatuMandatory:naviTitleAppearanceM6 ];
 });
     _page += 1;
-    [self networkForGetMeMessageList];
+    [self PG_networkForGetMeMessageList];
 }
-
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
     self.title = @"消息";
     _viewModel = [[PGMeMessageViewModel alloc] init];
     [self.view addSubview:self.tableView];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
 }
-
 #pragma mark --- Network
-- (void)networkForGetMeMessageList {
+- (void)PG_networkForGetMeMessageList {
     ZD_WeakSelf
     [self.viewModel getMeMessageListWithPage:_page Success:^{
         [weakSelf.tableView reloadData];
@@ -108,7 +88,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
        ZD_HUD_SHOW_ERROR_STATUS(error)
     }];
 }
-
 #pragma mark --- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.dataSource.count;
@@ -118,20 +97,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
     cell.model = self.viewModel.dataSource[indexPath.row];
     return cell;
 }
-
 #pragma mark --- UITableViewDelegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PGMeMessageDetailVC *detail = [[PGMeMessageDetailVC alloc] init];
     detail.model = self.viewModel.dataSource[indexPath.row];
     [self.navigationController pushViewController:detail animated:YES];
 }
-//- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-//
-//    }];
-//    deleteAction.backgroundColor = ZDRedColor;
-//    return @[deleteAction];
-//}
-
 @end

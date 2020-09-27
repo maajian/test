@@ -1,27 +1,15 @@
-//
-//  GuideView.m
-//  引导页面
-//
-//  Created by apple on 15/11/23.
-//  Copyright © 2015年 cheniue. All rights reserved.
-//
-
 #import "GuideView.h"
 #import <CoreText/CoreText.h>
 #import <CoreImage/CoreImage.h>
-
 #define UPIMAGE ([UIImage imageNamed:@"fx_my_attention_guide_arrow"])
 #define DOWNIMAGE ([UIImage imageNamed:@"fx_guide_arrow_down"])
 #define DEFAULTCORNERRADIUS (5.0f)
-
 @implementation GuideView
 {
     UITextView *markTextView;
     UIImageView *markImageView;
     BOOL isClean;
 }
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 -(void)setShowRect:(CGRect)showRect
 {
     _showRect = showRect;
@@ -55,9 +43,7 @@
 }
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
-
     if (isClean)
     {
         CGContextClearRect(context, self.bounds);
@@ -138,11 +124,11 @@
     CGPoint markCenter = CGPointMake(CGRectGetMinX(showLocationRect), CGRectGetMinY(showLocationRect));
     CGFloat centerX = self.bounds.size.width/2.0f;
     CGFloat centerY = self.bounds.size.height/2.0f;
-    if (markCenter.x<=centerX&&markCenter.y<=centerY)//左上
+    if (markCenter.x<=centerX&&markCenter.y<=centerY)
     {
         CGFloat right = (self.bounds.size.width-showLocationRect.origin.x-showLocationRect.size.width)*(self.bounds.size.height-showLocationRect.origin.y);
         CGFloat bottom = (self.bounds.size.width-showLocationRect.origin.x)*(self.bounds.size.height-showLocationRect.origin.y-showLocationRect.size.height);
-        if (right>=bottom)//右侧
+        if (right>=bottom)
         {
             [markImageView setFrame:CGRectMake(showLocationRect.origin.x+showLocationRect.size.width, showLocationRect.origin.y, markImageView.frame.size.width, markImageView.frame.size.height)];
             [markImageView setImage:UPIMAGE];
@@ -154,7 +140,7 @@
             [markTextView setFrame:CGRectMake(markImageView.frame.origin.x+markImageView.frame.size.width-markTextView.font.pointSize, markImageView.frame.origin.y+markImageView.frame.size.height, size.width, size.height)];
             [self addSubview:markTextView];
         }
-        else//下面
+        else
         {
             [markImageView setFrame:CGRectMake(showLocationRect.origin.x, showLocationRect.origin.y+showLocationRect.size.height, markImageView.frame.size.width, markImageView.frame.size.height)];
             [markImageView setImage:DOWNIMAGE];
@@ -167,11 +153,11 @@
             [self addSubview:markTextView];
         }
     }
-    else if (markCenter.x>=centerX&&markCenter.y<=centerY)//右上
+    else if (markCenter.x>=centerX&&markCenter.y<=centerY)
     {
         CGFloat left = (showLocationRect.origin.x)*(self.bounds.size.height-showLocationRect.origin.y);
         CGFloat bottom = (showLocationRect.origin.x+showLocationRect.size.width)*(self.bounds.size.height-showLocationRect.origin.y-showLocationRect.size.height);
-        if (left>=bottom)//左侧
+        if (left>=bottom)
         {
             [markImageView setFrame:CGRectMake(showLocationRect.origin.x-markImageView.frame.size.width, showLocationRect.origin.y, markImageView.frame.size.width, markImageView.frame.size.height)];
             [markImageView setImage:DOWNIMAGE];
@@ -183,7 +169,7 @@
             [markTextView setFrame:CGRectMake(markImageView.frame.origin.x-size.width+markTextView.font.pointSize, markImageView.frame.origin.y+markImageView.frame.size.height, size.width, size.height)];
             [self addSubview:markTextView];
         }
-        else//下面
+        else
         {
             [markImageView setFrame:CGRectMake(showLocationRect.origin.x+showLocationRect.size.width-markImageView.frame.size.width, showLocationRect.origin.y+showLocationRect.size.height, markImageView.frame.size.width, markImageView.frame.size.height)];
             [markImageView setImage:UPIMAGE];
@@ -196,11 +182,11 @@
             [self addSubview:markTextView];
         }
     }
-    else if (markCenter.x<=centerX&&markCenter.y>=centerY)//左下
+    else if (markCenter.x<=centerX&&markCenter.y>=centerY)
     {
         CGFloat right = (self.bounds.size.width-showLocationRect.origin.x-showLocationRect.size.width)*(showLocationRect.origin.y+showLocationRect.size.height);
         CGFloat up = (self.bounds.size.width-showLocationRect.origin.x)*(showLocationRect.origin.y);
-        if (right>=up)//右侧
+        if (right>=up)
         {
             [markImageView setFrame:CGRectMake(showLocationRect.origin.x+showLocationRect.size.width, showLocationRect.origin.y+showLocationRect.size.height-markImageView.frame.size.height, markImageView.frame.size.width, markImageView.frame.size.height)];
             [markImageView setImage:DOWNIMAGE];
@@ -212,7 +198,7 @@
             [markTextView setFrame:CGRectMake(markImageView.frame.origin.x+markImageView.frame.size.width-markTextView.font.pointSize, markImageView.frame.origin.y-size.height, size.width, size.height)];
             [self addSubview:markTextView];
         }
-        else//上面
+        else
         {
             [markImageView setFrame:CGRectMake(showLocationRect.origin.x, showLocationRect.origin.y-markImageView.frame.size.height, markImageView.frame.size.width, markImageView.frame.size.height)];
             [markImageView setImage:UPIMAGE];
@@ -225,11 +211,11 @@
             [self addSubview:markTextView];
         }
     }
-    else if (markCenter.x>=centerX&&markCenter.y>=centerY)//右下
+    else if (markCenter.x>=centerX&&markCenter.y>=centerY)
     {
         CGFloat left = (showLocationRect.origin.x)*(showLocationRect.origin.y+showLocationRect.size.height);
         CGFloat up = (showLocationRect.origin.x+showLocationRect.size.width)*(showLocationRect.origin.y);
-        if (left>=up)//左侧
+        if (left>=up)
         {
             [markImageView setFrame:CGRectMake(showLocationRect.origin.x-markImageView.frame.size.width, showLocationRect.origin.y+showLocationRect.size.height-markImageView.frame.size.height, markImageView.frame.size.width, markImageView.frame.size.height)];
             [markImageView setImage:UPIMAGE];
@@ -241,7 +227,7 @@
             [markTextView setFrame:CGRectMake(markImageView.frame.origin.x-size.width+markTextView.font.pointSize, markImageView.frame.origin.y-size.height, size.width, size.height)];
             [self addSubview:markTextView];
         }
-        else//上面
+        else
         {
             [markImageView setFrame:CGRectMake(showLocationRect.origin.x+showLocationRect.size.width-markImageView.frame.size.width, showLocationRect.origin.y-markImageView.frame.size.height, markImageView.frame.size.width, markImageView.frame.size.height)];
             [markImageView setImage:DOWNIMAGE];
@@ -286,7 +272,6 @@
     CGFloat width = rect.size.width;
     CGFloat height = rect.size.height;
     CGRect newRect = CGRectMake(center.x - width * 0.5 - DEFAULTCORNERRADIUS, center.y - height * 0.5 - DEFAULTCORNERRADIUS, width + DEFAULTCORNERRADIUS * 2.0, height + DEFAULTCORNERRADIUS * 2.0);
-    
     return newRect;
 }
 -(CGRect)rectScale:(CGRect)rect
@@ -295,7 +280,6 @@
     CGFloat width = rect.size.width;
     CGFloat height = rect.size.height;
     CGRect newRect = CGRectMake(center.x - width * 0.5 - 2.0, center.y - height * 0.5 - 2.0, width + 4.0, height + 4.0);
-    
     return newRect;
 }
 -(CGFloat)ovalDrawScale
@@ -308,16 +292,11 @@
 }
 -(CGRect)ovalFrameScale:(CGRect)rect s:(CGFloat)s
 {
-
     CGPoint center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
     CGFloat width = rect.size.width;
     CGFloat height = rect.size.height;
     CGRect newRect = CGRectMake(center.x - width * s * 0.5, center.y - height * s * 0.5, width * s, height * s);
-    
     return newRect;
-
-    
-
 }
 -(UIImage*)imageFromView:(UIView*)view
 {
@@ -335,5 +314,4 @@
     CFRelease(newImageRef);
     return newImage;
 }
-
 @end

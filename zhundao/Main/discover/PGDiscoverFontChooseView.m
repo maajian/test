@@ -1,34 +1,17 @@
 #import "PGSuccessWithStatus.h"
-//
-//  PGDiscoverFontChooseView.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/27.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverFontChooseView.h"
-
-/*! 按钮高度 */
 static float buttonHeight = 40;
-
 @interface PGDiscoverFontChooseView()
-
 @end
-
 @implementation PGDiscoverFontChooseView
-
 - (instancetype)initWithFrame:(CGRect)frame Fontsize :(float )fontsize{
     if (self = [super initWithFrame:frame]) {
          _fontsize = fontsize;
-        [self setupUI];
+        [self PG_setupUI];
     }
     return self;
 }
-
-
-/*! UI创建 */
-- (void)setupUI{
+- (void)PG_setupUI{
     float buttonWidth = (kScreenWidth - CGRectGetMinX(self.frame)*2)/8;
     float triangleCenter = kScreenWidth/3*2/6*3-5;
     NSArray *array = @[@"11",@"13",@"15",@"17",@"19",@"21",@"23",@"25"];
@@ -48,8 +31,6 @@ static float buttonHeight = 40;
     [bezierPath closePath];
     layer.path = bezierPath.CGPath;
     [self.layer addSublayer:layer];
-    
-    /*! 判断当前显示的字体是哪个 */
     NSInteger changeIndex;
     if (_fontsize<11) {
         changeIndex = 0;
@@ -62,10 +43,9 @@ static float buttonHeight = 40;
             changeIndex = [array indexOfObject:[NSString stringWithFormat:@"%d",(int)_fontsize+1]];
         }
     }
-    /*! 创建按钮 */
     @autoreleasepool {
         for (int i = 0; i <8; i++) {
-            UIButton *button = [MyButton initWithButtonFrame:CGRectMake(i *buttonWidth, 0, buttonWidth, buttonHeight) title:array[i] textcolor:[UIColor whiteColor] Target:self action:@selector(buttonAction:) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
+            UIButton *button = [MyButton initWithButtonFrame:CGRectMake(i *buttonWidth, 0, buttonWidth, buttonHeight) title:array[i] textcolor:[UIColor whiteColor] Target:self action:@selector(PG_buttonAction:) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [button setTitleColor:kColorA(98, 167, 245, 1) forState:UIControlStateSelected];
             if (changeIndex ==i) {
@@ -74,12 +54,8 @@ static float buttonHeight = 40;
             [self addSubview:button];
         }
     }
-    
-
 }
-
-
-- (void)buttonAction:(UIButton *)button{
+- (void)PG_buttonAction:(UIButton *)button{
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextView *likesViewModelC1= [[UITextView alloc] initWithFrame:CGRectMake(207,92,247,166)]; 
     likesViewModelC1.editable = NO; 
@@ -99,7 +75,4 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.fontsizeDelegate postFontsize:[button.titleLabel.text floatValue]];
     }
 }
-
-
 @end
-

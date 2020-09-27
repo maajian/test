@@ -1,38 +1,16 @@
 #import "PGPortraitUpsideDown.h"
-//
-//  PGNoDataScrollView.m
-//  zhundao
-//
-//  Created by zhundao on 2017/8/7.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGNoDataScrollView.h"
-
 @interface PGNoDataScrollView()
-
-/*! 顶部图片 */
 @property(nonatomic,strong)UIImageView *topImageView ;
-/*! 第一行的label */
 @property(nonatomic,strong)UILabel     *topLabel ;
-/*! 第二行的label */
 @property(nonatomic,strong)UILabel     *bottomLabel;
-/*! 图片的字符串 */
 @property(nonatomic,copy)NSString      *imageName;
-/*! 顶部的字符串 */
 @property(nonatomic,copy)NSString      *topText;
-/*! 底部的字符串 */
 @property(nonatomic,copy)NSString      *bottomText;
-/*! 视图中心 x */
 @property(nonatomic,assign)float       centerX ;
-/*! 视图中心 y */
 @property(nonatomic,assign)float       centerY;
-
-
 @end
 @implementation PGNoDataScrollView
-
-
 - (instancetype)initWithFrame:(CGRect)frame
                    imageName :(NSString *)imageName
                      topText :(NSString *) topText
@@ -45,7 +23,6 @@
         _bottomText = bottomText;
         _topText = topText;
         [self addSubview:self.topImageView];
-        /*! 如果存在第二行字符串 则创建label */
         if (bottomText) {
              [self addSubview:self.bottomLabel];
         }
@@ -53,11 +30,7 @@
     }
     return self;
 }
-
-
-
 #pragma mark ------  懒加载
-
 - (UIImageView *)topImageView{
     if (!_topImageView) {
         _topImageView = [[UIImageView alloc]initWithFrame:CGRectZero];
@@ -65,7 +38,6 @@
     }
     return  _topImageView;
 }
-
 - (UILabel *)topLabel{
     if (!_topLabel) {
         _topLabel = [[UILabel alloc]initWithFrame:CGRectZero];
@@ -76,7 +48,6 @@
     }
     return _topLabel;
 }
-
 - (UILabel *)bottomLabel{
     if (!_bottomLabel) {
         _bottomLabel = [[UILabel alloc]initWithFrame:CGRectZero];
@@ -87,8 +58,6 @@
     }
     return _bottomLabel;
 }
-
-
 -(void)layoutSubviews{
     if (_topLabel) {
         _topImageView.frame = CGRectMake(self.centerX - 60, self.centerY - 120, 120, 120);
@@ -104,15 +73,11 @@
             _bottomLabel.text = bottomText;
 }
 #pragma mark 手势添加 
-/*! 第一种 */
-/*!  点击屏幕加载 */
-
 - (void)addGesToScreenWithBlock :(SEL)reloadSEL{
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:reloadSEL];
     [self addGestureRecognizer:tap];
 }
 #pragma mark ----- 获取x y
-
 - (float)centerX{
     return self.center.x;
 }
@@ -126,17 +91,7 @@
     self.centerY = centerY;
 }
 #pragma mark 移除视图
-
 - (void)removeNoDataView{
     [self removeFromSuperview];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 @end

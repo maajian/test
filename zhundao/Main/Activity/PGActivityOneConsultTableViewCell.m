@@ -1,22 +1,9 @@
 #import "PGRecoderSelectPicker.h"
-//
-//  PGActivityOneConsultTableViewCell.m
-//  zhundao
-//
-//  Created by zhundao on 2017/8/3.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityOneConsultTableViewCell.h"
 #import "PGActivityOneConsultViewModel.h"
-
 @interface PGActivityOneConsultTableViewCell()
-
-
 @end
-
 @implementation PGActivityOneConsultTableViewCell
-
 - (void)awakeFromNib {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSRange mutableVideoCompositiona1 = NSMakeRange(7,83); 
@@ -25,9 +12,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [progressUpdateBlock updateStatuMandatoryWithcolumnistChildView:mutableVideoCompositiona1 integralRecordData:orderDetailCellN1 ];
 });
     [super awakeFromNib];
-    // Initialization code
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 dispatch_async(dispatch_get_main_queue(), ^{
     NSRange timeModelDatac4 = NSMakeRange(10,72); 
@@ -36,10 +21,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [readingMutableContainers updateStatuMandatoryWithcolumnistChildView:timeModelDatac4 integralRecordData:postImageWithR9 ];
 });
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 - (void)setModel:(PGActivityConsultModel *)model
 {
     if (model) {
@@ -67,9 +49,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             break;
     }
 }
-
 #pragma mark ----懒加载 
-
 - (UIImageView *)imgView
 {
     if (!_imgView) {
@@ -78,7 +58,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _imgView;
 }
-
 - (UILabel *)nameLabel
 {
     if (!_nameLabel) {
@@ -89,7 +68,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _nameLabel;
 }
-
 - (UILabel *)phoneLabel
 {
     if (!_phoneLabel) {
@@ -100,7 +78,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _phoneLabel;
 }
-
 - (UILabel *)questionLabel
 {
     if (!_questionLabel) {
@@ -111,8 +88,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _questionLabel;
 }
-
-
 - (UILabel *)timeLabel
 {
     if (!_timeLabel) {
@@ -123,7 +98,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _timeLabel;
 }
-
 - (UITextView *)textView
 {
     if (!_textView) {
@@ -140,11 +114,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
             _textView.text = @"请输入要回复的内容";
             _textView.textColor = [UIColor lightGrayColor];
         }
-        
     }
     return _textView;
 }
-
 - (UILabel *)remLabel{
     if (!_remLabel) {
         _remLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 80, 44)];
@@ -153,7 +125,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _remLabel;
 }
-
 - (UISwitch *)mySwitch{
     if (!_mySwitch) {
         _mySwitch = [[UISwitch alloc]initWithFrame:CGRectMake(kScreenWidth-60, 7, 60, 44)];
@@ -165,8 +136,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _mySwitch;
 }
-
-
 - (void)layoutSubviews{
     if (_timeLabel) {
         __weak typeof(_imgView) weakView = _imgView;
@@ -201,16 +170,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
             make.right.mas_equalTo(self.contentView).offset(-8);
         }];
     }
-  
 }
-
-
-
-
-
-
-
-
-
-
 @end

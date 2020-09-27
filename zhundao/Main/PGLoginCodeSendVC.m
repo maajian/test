@@ -1,32 +1,16 @@
 #import "PGArticleContentModel.h"
-//
-//  PGLoginCodeSendVC.m
-//  jingjing
-//
-//  Created by maj on 2020/8/3.
-//  Copyright © 2020 zhundao. All rights reserved.
-//
-
 #import "PGLoginCodeSendVC.h"
-
 #import "PGLoginCodeFixVC.h"
-
 #import "PGLoginCodeSendView.h"
-
 @interface PGLoginCodeSendVC()<PGLoginCodeSendViewDelegate>
 @property (nonatomic, strong) PGLoginCodeSendView *loginCodeSendView;
-
 @end
-
 @implementation PGLoginCodeSendVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
-    [self initLayout];
+    [self PG_initSet];
+    [self PG_initLayout];
 }
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
@@ -44,21 +28,19 @@ dispatch_async(dispatch_get_main_queue(), ^{
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
-
 #pragma mark --- Init
-- (void)initSet {
+- (void)PG_initSet {
     _loginCodeSendView = [[PGLoginCodeSendView alloc] init];
     _loginCodeSendView.loginCodeSendViewDelegate = self;
     [self.view addSubview:_loginCodeSendView];
 }
-- (void)initLayout {
+- (void)PG_initLayout {
     [_loginCodeSendView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
 }
-
 #pragma mark --- Network
-- (void)networkForCheckPhone {
+- (void)PG_networkForCheckPhone {
     NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
     NSDictionary *dic = @{@"BusinessCode": @"CheckPhone",
                           @"Data" : @{
@@ -79,7 +61,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         ZD_HUD_SHOW_ERROR(error);
     }];
 }
-
 #pragma mark --- PGLoginCodeSendViewDelegate
 - (void)PGLoginCodeSendView:(PGLoginCodeSendView *)loginCodeSendView didTapCloseButton:(UIButton *)button {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -99,7 +80,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         return;
     }
     [self.view endEditing:YES];
-    [self networkForCheckPhone];
+    [self PG_networkForCheckPhone];
 }
-
 @end

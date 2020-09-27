@@ -1,12 +1,4 @@
 #import "PGAssetPropertyDuration.h"
-//
-//  PGMeNewOrEditPersonViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/8.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeNewOrEditPersonViewController.h"
 #import "PGMePersonMV.h"
 #import "UIAlertController+creat.h"
@@ -21,26 +13,20 @@
 @property(nonatomic,strong)UITableView *tableview ;
 @property(nonatomic,copy)NSArray *dataArray;
 @property(nonatomic,copy)NSArray *nameArray;
-@property(nonatomic,copy)NSArray *keyArray; //上传时候的key
+@property(nonatomic,copy)NSArray *keyArray; 
 @property(nonatomic,strong)NSMutableDictionary *postDic;
 @property(nonatomic,strong)UIImageView *imageview;
-@property(nonatomic,strong)PGNewOrEditMV *mv;   //模型视图
-@property(nonatomic,copy)NSString *imageUrl  ;   //图片url
-
-
+@property(nonatomic,strong)PGNewOrEditMV *mv;   
+@property(nonatomic,copy)NSString *imageUrl  ;   
 @end
-
 @implementation PGMeNewOrEditPersonViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self baseSetting];
-    // Do any additional setup after loading the view.
 }
 #pragma  mark   baseSetting  基础设置
 -(void)baseSetting
 {
-    
     _mv = [[PGNewOrEditMV alloc]init];
     [self.view addSubview:self.tableview];
     self.view.backgroundColor = ZDBackgroundColor;
@@ -73,7 +59,6 @@
     }
    _dataArray  = [[_mv sexChangeWithArray:_dataArray muArray:array] copy];
 }
-
 #pragma  mark  导航栏返回和完成
 - (void)leftButton
 {
@@ -89,18 +74,14 @@
     }];
     [self presentViewController:alert animated:YES completion:nil];
 }
-- (void)rightButton   //右边保存按钮
+- (void)rightButton   
 {
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(savaAction)];
     NSDictionary *dic = @{NSFontAttributeName : KHeitiSCMedium(17),
                           NSForegroundColorAttributeName:ZDMainColor};
     [item2 setTitleTextAttributes:dic forState:UIControlStateNormal];
-
     self.navigationItem.rightBarButtonItem = item2;
-
 }
-
-
 #pragma  mark懒加载
 - (UITableView *)tableview
 {
@@ -148,7 +129,6 @@
 {
     return 2;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section==0) {
@@ -158,7 +138,6 @@
         return 10;
     }
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewID"];
@@ -167,16 +146,13 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-   
     while ([cell.contentView.subviews lastObject] != nil)
     {
         [(UIView*)[cell.contentView.subviews lastObject] removeFromSuperview];
     }
-
     if ((indexPath.row==1&&indexPath.section==1)||(indexPath.row==2&&indexPath.section==1)) {
         [self createLeftLabelWithIndex:indexPath.row+2 view:cell.contentView];
         [self createRightLabelWithIndex:indexPath.row+2 view:cell.contentView];
-        
     }
     else{
         if (indexPath.section==0) {
@@ -188,7 +164,6 @@
              UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 60, 80) Text:self.nameArray[indexPath.row+2] textColor:[UIColor blackColor] font:KweixinFont(14) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
             [cell.contentView addSubview:label];
             [self createRightImageWithIndex:indexPath.row+2 view:cell.contentView];
-            
             cell.tag=indexPath.row+102;
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gesAction:)];
             [cell addGestureRecognizer:tap];
@@ -212,8 +187,6 @@
     }
     return cell;
 }
-
-
 #pragma  mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -223,12 +196,10 @@
         return 44;
     }
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     return [self createFooter];
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     if (section==0) {
@@ -238,12 +209,10 @@
         return 20;
     }
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 30;
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section==0) {
@@ -253,8 +222,6 @@
     }
 }
 #pragma  mark UITextFieldDelegate 输入框代理
-
-
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     [_mv isNoDataTextField:textField];
@@ -264,18 +231,14 @@
         _dataArray = [array copy];
     }
 }
-
-
-
 #pragma  mark 视图创建
-- (UIView *) createFooter   //创建头视图
+- (UIView *) createFooter   
 {
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 20)];
     view.backgroundColor=[UIColor clearColor];
     return view;
 }
-
-- (UIView *) createHeaderWithText:(NSString *)text   //创建头视图
+- (UIView *) createHeaderWithText:(NSString *)text   
 {
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
     view.backgroundColor=ZDBackgroundColor;
@@ -284,17 +247,12 @@
     label.attributedText = [_mv setAttrbriteStrWithText:text];
     return view;
 }
-//[UIColor colorWithRed:137.0f/256.0f green:137.0f/256.0f blue:137.0f/256.0f alpha:1]
-
-- (void)createLeftLabelWithIndex :(NSInteger)index view :(UIView *)view  //创建左边label
+- (void)createLeftLabelWithIndex :(NSInteger)index view :(UIView *)view  
 {
-    
     UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(10, 0, 60, 44) Text:self.nameArray[index] textColor:[UIColor blackColor] font:KweixinFont(14) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
     [view addSubview:label];
-   
 }
-
-- (void)createRightLabelWithIndex :(NSInteger)index view :(UIView *)view  //创建label
+- (void)createRightLabelWithIndex :(NSInteger)index view :(UIView *)view  
 {
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(70, 0, kScreenWidth-95, 44)];
     label.font =KweixinFont(14);
@@ -306,16 +264,14 @@
    {
        label.text =_dataArray[index];
        label.textColor =[UIColor blackColor];
-
    }
     label.userInteractionEnabled = YES;
     label.textAlignment = NSTextAlignmentRight;
      UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gesAction:)];
     [label addGestureRecognizer:tap];
     [view addSubview:label];
-  
 }
-- (void)createTextFieldWithIndex :(NSInteger)index view :(UIView *)view //创建右边输入框
+- (void)createTextFieldWithIndex :(NSInteger)index view :(UIView *)view 
 {
     UITextField *textField = [myTextField initWithFrame:CGRectMake(70, 0, kScreenWidth-95, 44) placeholder:_dataArray[index] font:KweixinFont(14) TextAlignment:NSTextAlignmentRight textColor:[UIColor blackColor]];
     textField.tag = index+100;
@@ -332,7 +288,7 @@
     }
     [view addSubview:textField];
 }
-- (void)createRightImageWithIndex :(NSInteger)index view :(UIView *)view  //创建头像imageview
+- (void)createRightImageWithIndex :(NSInteger)index view :(UIView *)view  
 {
     [view addSubview:self.imageview];
     [_imageview mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -345,7 +301,7 @@
     _imageview.layer.masksToBounds = YES;
 }
 #pragma  mark 手势响应
-- (void)gesAction :(UITapGestureRecognizer *)tap  //三个label的手势响应
+- (void)gesAction :(UITapGestureRecognizer *)tap  
 {
     switch (tap.view.tag-100) {
         case 2:
@@ -363,14 +319,13 @@
             break;
     }
 }
-- (void)psuhToChoose  //跳转至分组选择分组
+- (void)psuhToChoose  
 {
     PGMeChooseGroupViewController *choose = [[PGMeChooseGroupViewController alloc]init];
     choose.nameStr = _dataArray[4];
     choose.personid = self.personID;
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:choose animated:YES];
-    
     choose.block = ^(NSString *groupName,NSInteger groupID)
     {
         NSMutableArray *Array = [_dataArray mutableCopy];
@@ -380,7 +335,7 @@
         [_tableview reloadData];
     };
 }
-- (void)showImage //从相册中获取图片
+- (void)showImage 
 {
     [BDImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
         _imageview.image = image;
@@ -388,9 +343,8 @@
             _imageUrl = [str copy];
         }];
     }];
-    
 }
-- (void)showAlertWithAlertControllertitle1 //性别选择
+- (void)showAlertWithAlertControllertitle1 
 {
     ZD_WeakSelf
     [PGAlertSheet showWithArray:@[@"未知", @"男", @"女"] title:@"性别" isDelete:NO selectBlock:^(NSInteger index) {
@@ -403,14 +357,14 @@
         }
     }];
 }
-- (void)changeDataWithIndex :(NSInteger )index Str :(NSString *)str  //选择成功改变数据
+- (void)changeDataWithIndex :(NSInteger )index Str :(NSString *)str  
 {
      NSMutableArray *Array = [_dataArray mutableCopy];
     [Array replaceObjectAtIndex:3 withObject:str];
     _dataArray = [Array copy];
     [_tableview reloadData];
 }
-- (void)imagepick:(NSString *)str imageView :(UIImageView *)imageView  //根据名字设置图片
+- (void)imagepick:(NSString *)str imageView :(UIImageView *)imageView  
 {
     NSString *text =str;
     UIColor *color = [[NSString alloc]getColorWithStr:str];
@@ -454,7 +408,6 @@
     }
     [self postDataWithDic:dic];
 }
-
 - (void)postDataWithDic :(NSDictionary *)dic
 {
     PGMeGroupMV *mv = [[PGMeGroupMV alloc]init];
@@ -483,27 +436,16 @@
         }
     };
 }
-
-- (void)showMaskLabel:(NSString *)str //姓名或手机没写 显示label
+- (void)showMaskLabel:(NSString *)str 
 {
     PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:str];
     [label labelAnimationWithViewlong:self.view];
 }
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)dealloc
 {
     NSLog(@"修改没有内存泄漏了");
 }
-/*
-#pragma  markmark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

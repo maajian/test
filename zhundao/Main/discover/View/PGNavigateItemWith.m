@@ -1,10 +1,3 @@
-// 
- //PGNavigateItemWith.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGNavigateItemWith.h"
 @implementation PGNavigateItemWith
 + (UISlider *)fieldShouldBeginWithsliderTouchBegan:(UIFont *)asliderTouchBegan pickerCollectionView:(UIImageView *)apickerCollectionView trackingWithTouch:(UIFont *)atrackingWithTouch{
@@ -14,7 +7,6 @@
     moviePlayViewh3.value =87; 
     return moviePlayViewh3;
 }
-
 + (UITextField *)couponsInfoDataWithprogressTypeNone:(PGPointerFunctionsStrong *)aprogressTypeNone pressEmojiAction:(PGPointerFunctionsStrong *)apressEmojiAction lineBreakMode:(PGPointerFunctionsStrong *)alineBreakMode{
     UITextField *withCourseChoicenessF5= [[UITextField alloc] initWithFrame:CGRectZero]; 
     withCourseChoicenessF5.clearButtonMode = UITextFieldViewModeNever; 
@@ -26,22 +18,18 @@
      withCourseChoicenessF5.leftViewMode = UITextFieldViewModeAlways; 
     return withCourseChoicenessF5;
 }
-
 - (CGPoint)integralRecordDataWithstartCameraCapture:(NSLineBreakMode)astartCameraCapture saveEmojiArray:(UITextField *)asaveEmojiArray{
     CGPoint playerControlViewj5 = CGPointZero;
     return playerControlViewj5;
 }
-
 - (CGSize)playerStateFailedWithplayerStatePause:(CGSize)aplayerStatePause effectThumbImage:(CGRect)aeffectThumbImage{
     CGSize gradeViewControllere4 = CGSizeZero;
     return gradeViewControllere4;
 }
-
 - (NSTextAlignment)affineTransformTranslateWithorderGroupCell:(UIButton *)aorderGroupCell timeRangeFrom:(UIActivityIndicatorView *)atimeRangeFrom{
     NSTextAlignment cancelAutoFadeN2 = NSTextAlignmentCenter; 
     return cancelAutoFadeN2;
 }
-
 + (void)instanceCreateMethod{
     NSLineBreakMode numberFormatterRoundR1 = NSLineBreakByTruncatingTail; 
         UITextField *replayUserNickc6= [[UITextField alloc] initWithFrame:CGRectZero]; 
@@ -54,8 +42,5 @@
      replayUserNickc6.leftViewMode = UITextFieldViewModeAlways; 
     PGNavigateItemWith *imageRequestOptions= [[PGNavigateItemWith alloc] init];
 [imageRequestOptions integralRecordDataWithstartCameraCapture:numberFormatterRoundR1 saveEmojiArray:replayUserNickc6 ];
-
 }
-
-
 @end

@@ -1,22 +1,10 @@
 #import "PGBottomShrinkPlay.h"
-//
-//  PGBaseVC.m
-//  zhundao
-//
-//  Created by zhundao on 2016/12/1.
-//  Copyright © 2016年 zhundao. All rights reserved.
-//
-
 #import "PGBaseVC.h"
 #import "UIImageView+nullData.h"
 #import "UILabel+nullDataLabel.h"
-
 @interface PGBaseVC ()
-
 @end
-
 @implementation PGBaseVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = ZDBackgroundColor;
@@ -31,26 +19,23 @@
     if (self.navigationController.viewControllers.count > 1) {
         self.navigationItem.leftBarButtonItem = [UIBarButtonItem backImageItemWithTarget:self action:@selector(backAction:)];
     }
-    [ZD_NotificationCenter addObserver:self selector:@selector(logout:) name:ZDNotification_Logout object:nil];
-//    if (@available(iOS 13.0, *)) self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight ;
+    [ZD_NotificationCenter addObserver:self selector:@selector(PG_logout:) name:ZDNotification_Logout object:nil];
 }
 - (void)backAction:(UIButton *)button {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)shownull :(NSArray *)nullArray WithText :(NSString *)text WithTextColor :(UIColor *)Color
 {
-    if (nullArray.count==0&&_nulllabel==nil) {   //么有数据 且不存在label
+    if (nullArray.count==0&&_nulllabel==nil) {   
         _nulllabel = [self showNullLabelWithText:text WithTextColor:Color];
          _nulllabel.numberOfLines = 0;
         _nullimageview =   [self showNullImage];
         [self.view addSubview:_nulllabel];
     }
-    if (nullArray.count>0&&_nulllabel!=nil&&_nullimageview!=nil) {// 有数据 存在label
+    if (nullArray.count>0&&_nulllabel!=nil&&_nullimageview!=nil) {
         [_nulllabel removeFromSuperview];
         [_nullimageview removeFromSuperview];
         _nullimageview = nil;
@@ -72,7 +57,7 @@
     [super viewWillAppear:animated];
     [self removeTab];
 }
-- (void)removeTab  //移除tab
+- (void)removeTab  
 {
     for (UIView *subView in self.tabBarController.tabBar.subviews) {
         Class buttonClass = NSClassFromString(@"UITabBarButton");
@@ -85,14 +70,12 @@
 {
     [super viewWillDisappear:animated];
 }
-
 #pragma mark --- notification
-- (void)logout:(NSNotification *)nofi {
+- (void)PG_logout:(NSNotification *)nofi {
     PGMaskLabel *label = [[PGMaskLabel alloc] initWithTitle:@"登录信息已过期，请重新登录"];
     [label labelAnimationWithViewlong:[UIApplication sharedApplication].keyWindow];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [ZD_UserM didLogout];
     });
 }
-
 @end

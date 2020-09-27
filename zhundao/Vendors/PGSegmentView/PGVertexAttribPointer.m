@@ -1,10 +1,3 @@
-// 
- //PGVertexAttribPointer.h
- //  Meari 
-// 
-//  Created by maj on2020/9/21. 
-//  Copyright © 2019 Meari. All rights reserved. 
- // 
 #import "PGVertexAttribPointer.h"
 @implementation PGVertexAttribPointer
 + (UIActivityIndicatorView *)showControlViewWithrecordMovieBottom:(UIButton *)arecordMovieBottom keyboardWillChange:(UITextField *)akeyboardWillChange unclampedDelayTime:(UITableView *)aunclampedDelayTime{
@@ -13,27 +6,22 @@
     photoWithImagef2.hidesWhenStopped = YES; 
     return photoWithImagef2;
 }
-
 + (UIFont *)delegateMethodWithWitharticleCourseParticular:(PGSwimingCommonSense *)aarticleCourseParticular withUserComment:(PGSwimingCommonSense *)awithUserComment playerStatusReady:(PGSwimingCommonSense *)aplayerStatusReady{
     UIFont *noticeTypeSharet1= [UIFont systemFontOfSize:79];
     return noticeTypeSharet1;
 }
-
 - (UITableViewCellSeparatorStyle)partButtonActionWithregisterViewController:(NSTextAlignment)aregisterViewController imageCropManager:(UITextField *)aimageCropManager{
     UITableViewCellSeparatorStyle playFinishIndexy7 = UITableViewCellSeparatorStyleNone; 
     return playFinishIndexy7;
 }
-
 - (NSLineBreakMode)loginMainViewWithbuttonImageName:(NSArray *)abuttonImageName currentMediaTime:(UITextView *)acurrentMediaTime{
     NSLineBreakMode customAnimateTransitionl2 = NSLineBreakByTruncatingTail; 
     return customAnimateTransitionl2;
 }
-
 - (CGSize)spinLockLockWithhideControlView:(UIScrollView *)ahideControlView browserPhotoScroll:(CGPoint)abrowserPhotoScroll{
     CGSize cyclingImageLayerz3 = CGSizeMake(19,181); 
     return cyclingImageLayerz3;
 }
-
 + (void)instanceCreateMethod{
     NSTextAlignment edgeInsetsMakeR0 = NSTextAlignmentCenter; 
         UITextField *contextDrawImagee9= [[UITextField alloc] initWithFrame:CGRectZero]; 
@@ -46,8 +34,5 @@
      contextDrawImagee9.leftViewMode = UITextFieldViewModeAlways; 
     PGVertexAttribPointer *currentMediaTime= [[PGVertexAttribPointer alloc] init];
 [currentMediaTime partButtonActionWithregisterViewController:edgeInsetsMakeR0 imageCropManager:contextDrawImagee9 ];
-
 }
-
-
 @end

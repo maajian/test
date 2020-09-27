@@ -1,44 +1,24 @@
 #import "PGEncodingWithLine.h"
-//
-//  PGDiscoverCustomApplyVC.m
-//  zhundao
-//
-//  Created by maj on 2018/12/1.
-//  Copyright © 2018年 zhundao. All rights reserved.
-//
-
 #import "PGDiscoverCustomApplyVC.h"
-
 #import "PGDiscoverEditApplyVC.h"
-
 #import "PGDiscoverCustomApplyCell.h"
 #import "PGDiscoverCustomApplyPickerView.h"
-
 #import "PGDiscoverCustomApplyViewModel.h"
 #import "PGDiscoverCustomApplyModel.h"
-
 static NSString *cellID = @"PGDiscoverCustomApplyCell";
-
 @interface PGDiscoverCustomApplyVC ()<UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate, UISearchResultsUpdating, PGDiscoverCustomApplyPickerViewDelegate>
-// 列表
 @property (nonatomic, strong) UITableView *tableView;
-// 搜索
 @property (nonatomic, strong) UISearchController *searchController;
-// viewmodel
 @property (nonatomic, strong) PGDiscoverCustomApplyViewModel *viewModel;
-
 @end
-
 @implementation PGDiscoverCustomApplyVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initSet];
+    [self PG_initSet];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self getApplyList];
+    [self PG_getApplyList];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -49,9 +29,7 @@ static NSString *cellID = @"PGDiscoverCustomApplyCell";
     viewBounds.origin.y = topBarOffset * -1;
     self.view.bounds = viewBounds;
 }
-
 #pragma mark --- lazyload
-// 列表
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kTopBarHeight ) style:UITableViewStylePlain];
@@ -65,8 +43,6 @@ static NSString *cellID = @"PGDiscoverCustomApplyCell";
     }
     return _tableView;
 }
-
-// 搜索
 - (UISearchController *)searchController {
     if (!_searchController) {
         _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
@@ -77,14 +53,12 @@ static NSString *cellID = @"PGDiscoverCustomApplyCell";
         _searchController.dimsBackgroundDuringPresentation = NO;
         _searchController.delegate = self;
         _searchController.searchResultsUpdater = self;
-        //搜索时，背景变模糊
         [_searchController.searchBar setBackgroundImage:[UIImage new]];
     }
     return _searchController;
 }
-
 #pragma mark --- init
-- (void)initSet {
+- (void)PG_initSet {
 dispatch_async(dispatch_get_main_queue(), ^{
     UISwitch *timesFromSliderB7= [[UISwitch alloc] initWithFrame:CGRectMake(23,6,28,217)]; 
     timesFromSliderB7.on = YES; 
@@ -96,14 +70,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.title = @"自定义报名项";
      self.definesPresentationContext = YES;
     _viewModel = [[PGDiscoverCustomApplyViewModel alloc] init];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(createpicker)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(PG_createpicker)];
     [self.view addSubview:self.tableView];
     [PGIndicatorView showIndicatorView:self.view];
 }
-
 #pragma mark --- network
-// 获取自定义报名项列表
-- (void)getApplyList {
+- (void)PG_getApplyList {
     [self.viewModel getCustomApplyList:^{
         [PGIndicatorView dismiss];
         [_tableView reloadData];
@@ -111,17 +83,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [PGIndicatorView dismiss];
     }];
 }
-
 - (void)hideOrShowList:(PGDiscoverCustomApplyModel *)model {
    MBProgressHUD *hud = [PGMyHud showWithText:model.hidden ? @"显示中" : @"隐藏中" view:self.view];
     [self.viewModel hideOrShowList:!model.hidden ID:model.ID success:^{
         [hud hideAnimated:YES afterDelay:1];
-        [self getApplyList];
+        [self PG_getApplyList];
     } fail:^(NSString * _Nonnull error) {
         [hud hideAnimated:YES];
     }];
 }
-
 #pragma mark --- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (_searchController.active) {
@@ -130,15 +100,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
         return _viewModel.dataArray.count;
     }
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PGDiscoverCustomApplyCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     cell.model = _searchController.active ? _viewModel.titleArray[indexPath.row] : _viewModel.dataArray[indexPath.row];
     return cell;
 }
-
 #pragma mark --- UITableViewDelegate
-// 左滑
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     PGDiscoverCustomApplyModel *model = _searchController.active ? _viewModel.titleArray[indexPath.row]  : _viewModel.dataArray[indexPath.row];
     UITableViewRowAction *showAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:model.hidden ? @"显示" : @"隐藏" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
@@ -147,8 +114,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     showAction.backgroundColor = ZDMainColor;
     return @[showAction];
 }
-
-// 选中
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     PGDiscoverEditApplyVC *editApply = [[PGDiscoverEditApplyVC alloc] init];
@@ -159,7 +124,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [self.navigationController pushViewController:editApply animated:YES];
 }
-
 #pragma mark UISearchControllerDelegate 的代理
 - (void)willPresentSearchController:(UISearchController *)searchController {
     _tableView.frame = CGRectMake(0,0, kScreenWidth, kScreenHeight);
@@ -167,7 +131,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
 - (void)willDismissSearchController:(UISearchController *)searchController {
     _tableView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight- 64);
 }
-
 #pragma mark --- UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -181,7 +144,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     self.edgesForExtendedLayout = UIRectEdgeNone;
    [_viewModel.titleArray removeAllObjects];
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", [self.searchController.searchBar text]];
-    
     NSArray *filterArray = [_viewModel.allTitleArray filteredArrayUsingPredicate:preicate];
     if (filterArray.count) {
         for (int i =0; i<filterArray.count; i++) {
@@ -191,7 +153,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     [self.tableView reloadData];
 }
-
 #pragma mark --- PGDiscoverCustomApplyPickerViewDelegate
 - (void)customApplyPickerView:(PGDiscoverCustomApplyPickerView *)customApplyPickerView didSelectType:(ZDCustomType)customType {
     PGDiscoverEditApplyVC *editApply = [[PGDiscoverEditApplyVC alloc] init];
@@ -200,13 +161,11 @@ dispatch_async(dispatch_get_main_queue(), ^{
     editApply.model = model;
     [self.navigationController pushViewController:editApply animated:YES];
 }
-
 #pragma mark --- Action
-- (void)createpicker {
+- (void)PG_createpicker {
     PGDiscoverCustomApplyPickerView *pickerView = [[PGDiscoverCustomApplyPickerView alloc] init];
     pickerView.customApplyPickerViewDelegate = self;
     [[UIApplication sharedApplication].keyWindow addSubview:pickerView];
     [pickerView show];
 }
-
 @end

@@ -1,15 +1,5 @@
-//
-//  PGMaskLabel.m
-//  zhundao
-//
-//  Created by zhundao on 2017/1/19.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMaskLabel.h"
-
 @implementation PGMaskLabel
-
 - (instancetype)initWithTitle:(NSString *)str
 {
     self = [super init];
@@ -23,7 +13,6 @@
         self.font = [UIFont boldSystemFontOfSize:16];
         self.text = str;
         self.alpha=1;
-        
     }
     return self;
 }

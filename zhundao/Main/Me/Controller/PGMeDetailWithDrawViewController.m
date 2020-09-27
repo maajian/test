@@ -1,38 +1,20 @@
 #import "PGImageViewFrame.h"
-//
-//  PGMeDetailWithDrawViewController.m
-//  zhundao
-//
-//  Created by zhundao on 2017/9/13.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeDetailWithDrawViewController.h"
 #import "PGMeMyWalletViewModel.h"
 #import "Time.h"
 @interface PGMeDetailWithDrawViewController ()
-/*! 顶部图片 */
 @property (weak, nonatomic) IBOutlet UIImageView *topImageView;
-/*! 到账时间 */
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-/*! 账户标签 */
 @property (weak, nonatomic) IBOutlet UILabel *accountLabel;
-/*! 提现金额 */
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
-/*! 确定按钮 */
 @property (weak, nonatomic) IBOutlet UIButton *comfirmButton;
-/*!  */
 @end
-
 @implementation PGMeDetailWithDrawViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUI];
-    
+    [self PG_setUI];
 }
-
-- (void)setUI{
+- (void)PG_setUI{
     self.title = @"提现详情";
     self.comfirmButton.layer.cornerRadius = 5;
     self.comfirmButton.layer.masksToBounds = YES;
@@ -42,24 +24,10 @@
     _accountLabel.text =[NSString stringWithFormat:@"%@ %@",dic[@"BankName"],dic[@"Account"]];
     _moneyLabel.text = [NSString stringWithFormat:@"¥%.2f",[dic[@"Amount"] floatValue]];
 }
-
-
-
 - (IBAction)comfirmAction:(id)sender {
-    
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

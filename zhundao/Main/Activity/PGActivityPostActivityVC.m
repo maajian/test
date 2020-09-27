@@ -1,93 +1,56 @@
 #import "PGUploadCompletionBlock.h"
-//
-//  PGActivityPostActivityVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/4/11.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityPostActivityVC.h"
 #import "PGAvtivityMoreChioceVC.h"
 #import "PGActivityFeeViewController.h"
 #import "PGAvtivityOptions.h"
 #import "PGActivityMapVC.h"
 #import "PGActivityEditWebVC.h"
-//#import "ActivityViewController.h"
 #import "PGMainActivityVC.h"
 #import "PGAvtivityPostView.h"
 #import "PGAvtivityPostViewModel.h"
 #import "PGActivityChooseBigImgVC.h"
 #import "PGActivityShowPostImageVC.h"
-
 #define kBoolarray @"Boolarray"
 #define kAlertSwitch @"AlertSwitch"
 #define kHiddenList @"HiddenList"
-
-//coordinate = MACoordinateConvert(coordinate, MACoordinateTypeBaidu);
 @interface PGActivityPostActivityVC ()<ZDAvtivityPostDelegate>
 {
     MBProgressHUD *hud ;
 }
-/*! 主界面 */
 @property(nonatomic,strong)PGAvtivityPostView                     *postView;
-/*! ViewModel  */
 @property(nonatomic,strong)PGAvtivityPostViewModel                *postVM;
-/*! 时间格式懒加载，减少开销 */
 @property(nonatomic,strong)NSDateFormatter            *formatter;
-/*! 自定义项 */
 @property(nonatomic,strong)      NSMutableArray *optionArray;
-/*! 更多选项 */
 @property(nonatomic,copy)         NSDictionary *moredic;
-/*! 大图 */
 @property(nonatomic,copy)NSString *bigImageUrl ;
-/*! 是否大图为上传的 */
 @property(nonatomic,assign)BOOL isImgPost;
-/*! 第几个item */
 @property(nonatomic,assign)NSInteger currentItem;
-
 @property(nonatomic,assign)NSInteger collectIndex;
-
-/*! 小图 */
 @property(nonatomic,copy)NSString *smallImageUrl ;
-/*! 小图是否为上传 */
 @property(nonatomic,assign)BOOL isSmallPost;
-
-/*! 经纬度 */
 @property(nonatomic,assign)double latitude;
 @property(nonatomic,assign)double longitude;
-/*! 是否是高德地图地址 */
 @property (nonatomic, assign) BOOL isGaoDeMap;
-
-/*! 基础项+自定义项 */
 @property(nonatomic,strong)NSMutableArray *ALLOptionsArray;
-
 @property(nonatomic,assign)NSInteger jiexiCount;
-
-@property(nonatomic,strong)NSMutableArray *strArray; //图片字符串数组
-
-
-
+@property(nonatomic,strong)NSMutableArray *strArray; 
 @end
-
 @implementation PGActivityPostActivityVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = ZDBackgroundColor;
     _postVM = [[PGAvtivityPostViewModel alloc]init];
     [self baseSetting];
-    [self.view addSubview:self.PGAvtivityPostView];
+    [self.view addSubview:self.PG_PGAvtivityPostView];
      [self network];
-     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectImg:) name:@"changeImg" object:nil];
-    // Do any additional setup after loading the view.
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PG_selectImg:) name:@"changeImg" object:nil];
 }
 - (void)baseSetting
 {
     _jiexiCount=0;
     if (_activityModel) {
         _postView.htmlStr = [_activityModel.Content copy];
-        self.PGAvtivityPostView.bigImageStr = _activityModel.BackImgurl;
+        self.postView.bigImageStr = _activityModel.BackImgurl;
         _isImgPost = NO;
         _smallImageUrl = _activityModel.ShareImgurl;
         _isSmallPost = YES;
@@ -116,14 +79,13 @@
     }];
 }
 #pragma mark 懒加载
-- (PGAvtivityPostView *)PGAvtivityPostView{
+- (PGAvtivityPostView *)PG_PGAvtivityPostView{
     if (!_postView) {
         _postView = [[PGAvtivityPostView alloc]initWithModel:_activityModel];
         _postView.ZDAvtivityPostDelegate = self;
     }
     return _postView;
 }
-
 -(NSDateFormatter *)formatter{
     if (!_formatter) {
         _formatter = [[NSDateFormatter alloc] init];
@@ -131,7 +93,6 @@
     }
     return _formatter;
 }
-
 - (NSDictionary *)moredic
 {
     if (!_moredic) {
@@ -139,17 +100,14 @@
     }
     return _moredic;
 }
-/*! 自定义项 */
-- (NSMutableArray *)optionArray  //
+- (NSMutableArray *)optionArray  
 {
     if (!_optionArray) {
         _optionArray = [NSMutableArray array];
-        
     }
     return _optionArray;
 }
-/*! 所有基础项+自定义项 */
-- (NSMutableArray *)ALLOptionsArray //所有自定义项
+- (NSMutableArray *)ALLOptionsArray 
 {
     __weak typeof(self) weakSelf = self;
     if (!_ALLOptionsArray) {
@@ -165,7 +123,6 @@
     return _ALLOptionsArray;
 }
 #pragma mark --- ZDAvtivityPostDelegate
-/*! 跳转协议 */
 - (void)pushXieYi{
     NSString *xieyiStr = @"https://www.zhundao.net/service/help/detail/206";
     PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
@@ -175,8 +132,6 @@
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
 }
-
-/*! 跳转编辑费用相 */
 - (void)pushFee{
     PGActivityFeeViewController *fee = [[PGActivityFeeViewController alloc]init];
     [self setHidesBottomBarWhenPushed: YES];
@@ -193,7 +148,6 @@
         [self.view endEditing:YES];
     };
 }
-/*! 跳转编辑详情 */
 - (void)pushEdit{
     PGActivityEditWebVC *ed = [[PGActivityEditWebVC alloc]init];
     if (_postView.htmlStr) {
@@ -209,12 +163,8 @@
         [_postView.textview loadHTMLString:htmlstr baseURL:nil];
         _postView.textStr = [text copy];
         _postView.htmlStr= [htmlstr copy];
-        
     };
 }
-
-
-/*! 跳转编辑更多 */
 - (void)pushMoreChoose{
     PGAvtivityMoreChioceVC *moreChioce = [[PGAvtivityMoreChioceVC alloc]init];
     [self setHidesBottomBarWhenPushed:YES];
@@ -224,7 +174,7 @@
         moreChioce.isSmallPost = _isSmallPost;
         moreChioce.imageStr = _smallImageUrl;
     }else{
-        moreChioce.imageStr = self.PGAvtivityPostView.bigImageStr;
+        moreChioce.imageStr = self.PG_PGAvtivityPostView.bigImageStr;
     }
     [self.navigationController pushViewController:moreChioce animated:YES];
     moreChioce.block = ^(NSDictionary *dic, NSString *smallStr, BOOL isPost) {
@@ -233,7 +183,6 @@
         _isSmallPost = isPost;
     };
 }
-/*! 跳转定位 */
 - (void)pushLocation{
 dispatch_async(dispatch_get_main_queue(), ^{
     UIButton *badgeDefaultMaximumA2= [UIButton buttonWithType:UIButtonTypeCustom]; 
@@ -269,39 +218,33 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (_isImgPost) {
         PGActivityShowPostImageVC *showPost = [[PGActivityShowPostImageVC alloc]init];
         showPost.imageArray = imageArray;
-        showPost.imageStr = self.PGAvtivityPostView.bigImageStr;
+        showPost.imageStr = self.PG_PGAvtivityPostView.bigImageStr;
         [self.navigationController pushViewController:showPost animated:YES];
     }else{
         PGActivityChooseBigImgVC *chooseimageVC = [[PGActivityChooseBigImgVC alloc]init];
         chooseimageVC.imageArray = imageArray;
-        chooseimageVC.selectUrl = self.PGAvtivityPostView.bigImageStr;
+        chooseimageVC.selectUrl = self.PG_PGAvtivityPostView.bigImageStr;
         chooseimageVC.currentItem = _currentItem;
         chooseimageVC.collectIndex = _collectIndex;
         [self setHidesBottomBarWhenPushed:YES];
         [self.navigationController pushViewController:chooseimageVC animated:YES];
     }
 }
-
-- (void)selectImg:(NSNotification *)sender{
-    //打印通知传过来的数值
+- (void)PG_selectImg:(NSNotification *)sender{
     _bigImageUrl = sender.userInfo[@"ImgStr"];
     _isImgPost = [sender.userInfo[@"isPost"] boolValue];
     if (!_isImgPost) {
         _currentItem = [sender.userInfo[@"item"] integerValue];
         _collectIndex = [sender.userInfo[@"collectIndex"] integerValue];
     }
-    self.PGAvtivityPostView.bigImageStr = _bigImageUrl;
-    [self.PGAvtivityPostView.tableview reloadData];
+    self.PG_PGAvtivityPostView.bigImageStr = _bigImageUrl;
+    [self.PG_PGAvtivityPostView.tableview reloadData];
 }
 #pragma  mark --- 发起活动
-
-/*! 转换大图 */
-
 - (void)postActivity
 {
     [self isHaveMoredic];
 }
-
 - (void)lastPost
 {
     NSString *str = nil;
@@ -326,10 +269,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                                @"extraUserInfo" :[_postVM getExtraUserInfo:_moredic ALLOptionsArray:self.ALLOptionsArray],
                                @"hideInfo":[_moredic valueForKey:kHiddenList]
                                };
-    
-    
     NSMutableDictionary *dic = [postBody mutableCopy];
-    /*! 费用项判断 */
     if ([_postView.activityFeeRightLabel.text isEqualToString:@"未设置,默认免费"]) {
         NSLog(@"没有费用");
         [dic setObject:@"" forKey:@"activityFees"];
@@ -344,17 +284,14 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }];
          [dic setObject:ZD_SafeValue(temp) forKey:@"activityFees"];
     }
-    /*! 人数判断 */
     if ([_postView.activityNumbertField.text isEqualToString:@""]) {
         [dic setObject:[NSString stringWithFormat:@"%d",0] forKey:@"userLimit"];
     }else{
         [dic setObject:_postView.activityNumbertField.text forKey:@"userLimit"];
     }
-    
     if (_postView.startTimeRightLabel.text) {
          [dic setObject:[_postVM appendTime:_postView.startTimeRightLabel.text] forKey:@"startTime"];
     }
-    /*! 经纬度设置 */
     if (self.latitude) {
         if (_isGaoDeMap) {
             [dic setObject:[NSString stringWithFormat:@"%lf",_longitude + 0.0065] forKey:@"lng"];
@@ -364,7 +301,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             [dic setObject:[NSString stringWithFormat:@"%lf",_latitude] forKey:@"lat"];
         }
     }
-    /*! 是否为编辑活动 */
     if (_activityModel) {
         [dic setObject:@(_activityModel.ID) forKey:@"id"];
         if (_activityModel.HasJoinNum >0) {
@@ -376,7 +312,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             }
         }
         [dic setObject:@(_activityModel.ActivityGenre) forKey:@"activityGenre"];
-        
         if (!self.latitude && _activityModel.Lat) {
             [dic setObject:[NSString stringWithFormat:@"%lf",_activityModel.Lng] forKey:@"lng"];
             [dic setObject:[NSString stringWithFormat:@"%lf",_activityModel.Lat] forKey:@"lat"];
@@ -397,8 +332,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     PGNetWorkManager.shareHTTPSessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj);
+        NSString *str = [[NSString alloc]initWithData:obj encoding:NSUTF8StringEncoding];
         NSDictionary *dictinary = [[NSString alloc]initWithData:obj encoding:NSUTF8StringEncoding].zd_jsonDictionary;
-        /*! 失败跳转 */
         PGNetWorkManager.shareHTTPSessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
         if ([dictinary[@"errcode"] integerValue] != 0) {
             [hud hideAnimated:YES];
@@ -408,7 +343,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 [self.navigationController popToRootViewControllerAnimated:YES];
             });
         }
-        /*! 成功跳转刷新 */
         if ([dictinary[@"errcode"]integerValue]==0) {
             [self showSuccess];
             [ZD_NotificationCenter postNotificationName:ZDNotification_Load_Activity object:nil];
@@ -425,15 +359,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }];
 }
 #pragma 逻辑
-
-
 - (void)showSuccess
 {
     [hud hideAnimated:YES];
     MBProgressHUD *hud1 = [PGMyHud initWithMode:MBProgressHUDModeCustomView labelText:@"发布成功" showAnimated:YES UIView:self.view imageName:@"img_public_signin_check"];
     [hud1 hideAnimated:YES afterDelay:2];
 }
-/*! 判断有没有修改更多选项，没有则默认，有则改变 */
 - (void)isHaveMoredic
 {
     if (self.moredic.count==0) {
@@ -452,19 +383,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [dic setValue:@0 forKey:kHiddenList];
         _smallImageUrl = _bigImageUrl;
         _moredic = [dic copy];
-       
     }else{
-
     }
     [self lastPost];
 }
-/*! 是否可以发布活动 */
 - (void)isCanPost:(NSString *)bigImage
 {
     _bigImageUrl = bigImage;
     PGMaskLabel *label = nil;
     NSString *datailstr = [_postView.textStr string];
-    if ([_postView.activityTitleTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length==0) { //去除空格和回车
+    if ([_postView.activityTitleTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length==0) { 
         label = [[PGMaskLabel alloc]initWithTitle:@"请输入活动名称"];
         [label labelAnimationWithViewlong:self.view];
         return;
@@ -491,7 +419,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self postActivity];
     }
 }
-/*! 编辑的时候 网络请求成功初始化字典 */
 - (void)editDic
 {
     NSMutableArray *boarray = [NSMutableArray array];
@@ -529,10 +456,8 @@ dispatch_async(dispatch_get_main_queue(), ^{
     else{
         [dic setValue:@0 forKey:kAlertSwitch];
     }
-    
     _moredic = [dic copy];
 }
-/*! 修改html图片字符串 */
 - (void)setImageStr
 {
     NSArray *imageArray = [_postView.htmlStr componentsSeparatedByString:@"https://joinheadoss.oss-cn-hangzhou.aliyuncs.com/zhundao/"];
@@ -545,7 +470,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
     }
 }
-
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self];
@@ -564,14 +488,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [assetGridThumbnail videoPreviewCellWithcancelCollectionCourse:withTaskCenterE6 activityIndicatorVisible:courseParticularViewi8 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

@@ -1,20 +1,10 @@
 #import "PGGuideBottomView.h"
-//
-//  PGActivityMoreLabelVC.m
-//  zhundao
-//
-//  Created by zhundao on 2017/6/21.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGActivityMoreLabelVC.h"
 @interface PGActivityMoreLabelVC ()<UITextViewDelegate>
 @property (nonatomic,strong)UITextView *textView;
 @property(nonatomic,copy)NSString *placeHStr;
 @end
-
 @implementation PGActivityMoreLabelVC
-
 - (void)viewDidLoad {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextField *trainParticularBottomj9= [[UITextField alloc] initWithFrame:CGRectMake(130,55,109,122)]; 
@@ -39,11 +29,10 @@ dispatch_async(dispatch_get_main_queue(), ^{
           self.title = @"多文本";
         _placeHStr = @"请输入多文本";
     }
-    [self leftButton];
-    // Do any additional setup after loading the view.
+    [self PG_leftButton];
 }
 #pragma mark 自定义返回
-- (void)leftButton {
+- (void)PG_leftButton {
 dispatch_async(dispatch_get_main_queue(), ^{
     UITextField *scriptMessageHandlerA8= [[UITextField alloc] initWithFrame:CGRectMake(160,47,147,25)]; 
     scriptMessageHandlerA8.clearButtonMode = UITextFieldViewModeNever; 
@@ -69,7 +58,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 }
 -(void)backAction
 {
-    if (_isMust) {  //必须填写 则不能返回空内容
+    if (_isMust) {  
         if ([_textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length==0) {
             PGMaskLabel *label = [[PGMaskLabel alloc]initWithTitle:@"输入框不能为空"];
             [label labelAnimationWithViewlong:self.view];
@@ -101,20 +90,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
     }
     return _textView;
 }
-
 #pragma mark textview delegate
-
 -(void)textViewDidBeginEditing:(UITextView *)textView
-
 {
     if ([textView.text isEqualToString:_placeHStr]) {
         textView.text = @"";
     }
     _textView.textColor = [UIColor blackColor];
 }
-
 - (void)textViewDidEndEditing:(UITextView *)textView
-
 {
     if (textView.text.length<1) {
         textView.text = _placeHStr;
@@ -136,14 +120,5 @@ dispatch_async(dispatch_get_main_queue(), ^{
 [mutableParagraphStyle postImageWithWithwithCommentObject:currentDateStringb3 gestureRecognizerState:cropTypeWithU0 ];
 });
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-*/
-
 @end

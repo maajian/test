@@ -1,20 +1,10 @@
-//
-//  PGMeContactTableViewCell.m
-//  zhundao
-//
-//  Created by zhundao on 2017/5/23.
-//  Copyright © 2017年 zhundao. All rights reserved.
-//
-
 #import "PGMeContactTableViewCell.h"
 #import "UIImage+LGExtension.h"
 #import "NSString+ChangeToPinyin.h"
 #import "NSString+getColorFromFirst.h"
 @implementation PGMeContactTableViewCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 - (void)setModel:(PGMeContactModel *)model
 {
@@ -36,7 +26,6 @@
             }
             else
             {
-                
                 text = [_model.TrueName substringWithRange:NSMakeRange(_model.TrueName.length-2, 2)];
             }
             _iconImageView.image = [UIImage circleImageWithText:text bgColor:color size:CGSizeMake(_iconImageView.frame.size.width, _iconImageView.frame.size.height)];
@@ -47,8 +36,5 @@
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
 @end
