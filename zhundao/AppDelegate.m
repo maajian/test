@@ -34,8 +34,8 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     [UMConfigure setLogEnabled:YES];
     [UMConfigure initWithAppkey:@"58b3c7a275ca352ea8000c3a" channel:@"App Store"];
     [[UMSocialManager defaultManager] openLog:YES];
-    [WXApi registerApp:@"wx03bd16d684b23cb3" universalLink:@"https://app.zhundao.net/jttj/"];
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx03bd16d684b23cb3" appSecret:@"ace26a762813528cc2dbb65b4279398e" redirectURL:@"http://mobile.umeng.com/social"];
+//    [WXApi registerApp:@"wx03bd16d684b23cb3" universalLink:@"https://app.zhundao.net/jttj/"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx03bd16d684b23cb3" appSecret:@"1dee227e7dca7705a8fe6451f04254f7" redirectURL:@"http://mobile.umeng.com/social"];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105950214"  appSecret:@"GAFeY0k6OGdPe1nb" redirectURL:@"http://mobile.umeng.com/social"];
     [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://app.zhundao.net/jttj/",
                                                         @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
@@ -161,11 +161,18 @@ dispatch_async(dispatch_get_main_queue(), ^{
     return result;
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+        if (!result) {
+             // 其他如支付等SDK的回调
+        }
     [WXApi handleOpenURL:url delegate:self];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
-    return [WXApi handleOpenUniversalLink:userActivity delegate:self];;
+    if (![[UMSocialManager defaultManager] handleUniversalLink:userActivity options:nil]) {
+            // 其他SDK的回调
+        }
+    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
 }
 #pragma mark  -----微信授权回调
 - (void)onResp:(BaseResp *)resp {
