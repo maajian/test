@@ -15,6 +15,6 @@ pod 'AMapSearch'
 pod 'UMCCommon'
 pod 'UMCShare/UI'
 pod 'UMCShare/Social/WeChat'
-pod 'UMCShare/Social/ReducedQQ'
+pod 'UMCShare/Social/QQ'
 
 end

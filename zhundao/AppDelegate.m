@@ -58,14 +58,10 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     [UMConfigure initWithAppkey:@"58b3c7a275ca352ea8000c3a" channel:@"App Store"];
     [[UMSocialManager defaultManager] openLog:YES];
     /* 设置微信的appKey和appSecret */
-    [WXApi registerApp:@"wxfe2a9da163481ba9" universalLink:@"https://open.zhundao.net/"];
-    [WXApi checkUniversalLinkReady:^(WXULCheckStep step, WXCheckULStepResult* result) {
-        NSLog(@"%@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
-    }];
+    [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://open.zhundao.net/app/",
+                                                        @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxfe2a9da163481ba9" appSecret:@"ace26a762813528cc2dbb65b4279398e" redirectURL:@"http://mobile.umeng.com/social"];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105950214"/*设置QQ平台的appID*/  appSecret:@"GAFeY0k6OGdPe1nb" redirectURL:@"http://mobile.umeng.com/social"];
-    [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://open.zhundao.net/",
-                                                        @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
 
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。

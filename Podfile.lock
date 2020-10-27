@@ -32,6 +32,10 @@ PODS:
   - UMCCommon (7.1.1)
   - UMCShare/Core (6.9.10):
     - UMCCommon
+  - UMCShare/Social/QQ (6.9.10):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedQQ
   - UMCShare/Social/ReducedQQ (6.9.10):
     - UMCCommon
     - UMCShare/Core
@@ -57,7 +61,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - JPush
   - UMCCommon
-  - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/QQ
   - UMCShare/Social/WeChat
   - UMCShare/UI
   - YYCache
@@ -94,6 +98,6 @@ SPEC CHECKSUMS:
   UMCShare: a4a95fbdd61ecce5b6751d8c9ed9b519e80fcbc9
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 6e2f005b6a70862ce91a5e4c7f8b558f4a11ff2d
+PODFILE CHECKSUM: bac0e2279d8dfe31f157511b39dc2d05d654c981
 
 COCOAPODS: 1.9.1

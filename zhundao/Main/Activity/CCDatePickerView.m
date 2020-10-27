@@ -220,7 +220,6 @@
     }
     NSString *title;
     if (component==0) {
-        customLabel.textAlignment = NSTextAlignmentLeft;
         NSString *yaerstr = [_yearArray[row] substringFromIndex:2]; //
         title = [NSString stringWithFormat:@"%@年",yaerstr];
     }
@@ -242,7 +241,7 @@
     //  设置横线的颜色，实现显示或者隐藏
     ((UILabel *)[pickerView.subviews objectAtIndex:1]).backgroundColor = [UIColor clearColor];
     
-    ((UILabel *)[pickerView.subviews objectAtIndex:2]).backgroundColor = [UIColor clearColor];
+//    ((UILabel *)[pickerView.subviews objectAtIndex:2]).backgroundColor = [UIColor clearColor];
     return customLabel;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -368,7 +367,7 @@
  */
 -(UIPickerView *)datePicker {
     if (!_datePicker) {
-        _datePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(W(50), self.yearLabel.bottom-20, self.dateView.size.width-W(100), self.dateView.size.height-H(170))];
+        _datePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(W(10), self.yearLabel.bottom-20, self.dateView.size.width-W(20), self.dateView.size.height-H(170))];
         _datePicker.showsSelectionIndicator = NO;
         _datePicker.showsSelectionIndicator = YES;
         _datePicker.delegate = self;
