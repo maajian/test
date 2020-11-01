@@ -55,7 +55,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     //友盟
     //开发者需要显式的调用此函数，日志系统才能工作
     [UMConfigure setLogEnabled:YES];//设置打开日志
-    [UMConfigure initWithAppkey:@"58b3c7a275ca352ea8000c3a" channel:@"App Store"];
+    [UMConfigure initWithAppkey:@"58b3c7a275ca352ea8000c3a" channel:nil];
     [[UMSocialManager defaultManager] openLog:YES];
     /* 设置微信的appKey和appSecret */
     [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://open.zhundao.net/app/",

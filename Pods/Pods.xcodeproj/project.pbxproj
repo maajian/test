@@ -16,6 +16,7 @@
 				DD5941773CD99F0A6AF95F1F5334F71F /* PBXTargetDependency */,
 			);
 			name = UMCShare;
+			productName = UMCShare;
 		};
 		39082CE2CA8065D786A75F5C09CFF2C0 /* AMapFoundation */ = {
 			isa = PBXAggregateTarget;
@@ -25,6 +26,7 @@
 			dependencies = (
 			);
 			name = AMapFoundation;
+			productName = AMapFoundation;
 		};
 		54F872FDE6669F86C58C8075211FE643 /* AMapSearch */ = {
 			isa = PBXAggregateTarget;
@@ -35,6 +37,7 @@
 				2DC2DB3B4A1A85F653A62C945ECBA549 /* PBXTargetDependency */,
 			);
 			name = AMapSearch;
+			productName = AMapSearch;
 		};
 		5FB6AB0A09E7A2F2BE11AD6BAEFD9AED /* JPush */ = {
 			isa = PBXAggregateTarget;
@@ -45,6 +48,7 @@
 				61A7D75865C20272D53BC19298DA2A93 /* PBXTargetDependency */,
 			);
 			name = JPush;
+			productName = JPush;
 		};
 		6F6B630FA5213AB083E7CEF1F986FE44 /* UMCCommon */ = {
 			isa = PBXAggregateTarget;
@@ -54,6 +58,7 @@
 			dependencies = (
 			);
 			name = UMCCommon;
+			productName = UMCCommon;
 		};
 		8628BC7F8FF0BA905278BC233A7C0362 /* AMap2DMap */ = {
 			isa = PBXAggregateTarget;
@@ -64,6 +69,7 @@
 				F66243753AA5E205AEDDA677386C3D61 /* PBXTargetDependency */,
 			);
 			name = AMap2DMap;
+			productName = AMap2DMap;
 		};
 		971676D1C9A11C105647D995975ACE4F /* AMapLocation */ = {
 			isa = PBXAggregateTarget;
@@ -74,6 +80,7 @@
 				A3BD2F257188EDF0B22EC29C6E05880D /* PBXTargetDependency */,
 			);
 			name = AMapLocation;
+			productName = AMapLocation;
 		};
 		D504B99928659EA67A1C3A9E981EB8FF /* JCore */ = {
 			isa = PBXAggregateTarget;
@@ -83,6 +90,7 @@
 			dependencies = (
 			);
 			name = JCore;
+			productName = JCore;
 		};
 /* End PBXAggregateTarget section */
 
@@ -377,8 +385,7 @@
 		41FE66EE2DAE557727CA720AA4233D29 /* AMapLocationVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapLocationVersion.h; path = AMapLocationKit.framework/Headers/AMapLocationVersion.h; sourceTree = "<group>"; };
 		44DA515E34AE675D76EB1469F018A39C /* AMapCommonObj.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapCommonObj.h; path = AMapSearchKit.framework/Headers/AMapCommonObj.h; sourceTree = "<group>"; };
 		460CE71B9036E75F8B3E8F652F05E260 /* AMapGeoFenceError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapGeoFenceError.h; path = AMapLocationKit.framework/Headers/AMapGeoFenceError.h; sourceTree = "<group>"; };
-		46A630B4B0BD1C77FC010834AD870099 /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UMSocialWechatHandler.h; path = UMShare/SocialLibraries/WeChat/UMSocialWechatHandler.h; sourceTree = "<group>"; };
-		48ACF38225AF5129416A1F090F6D3286 /* libYYCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libYYCache.a; path = libYYCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		48ACF38225AF5129416A1F090F6D3286 /* libYYCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYYCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D9683951468976B787A4E1FA1B1502 /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUITextFieldView+Additions.h"; path = "IQKeyboardManager/Categories/IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
 		4BEA6DD4256F725038EDC18D5FF66C2C /* FMDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.debug.xcconfig; sourceTree = "<group>"; };
 		4D29F222BAEC3C0BCEBC31D450E5C4CB /* WXApiObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WXApiObject.h; path = UMShare/SocialLibraries/WeChat/WechatSDK/WXApiObject.h; sourceTree = "<group>"; };
@@ -396,7 +403,6 @@
 		58E6B960518C71129FDB13EED85B0FCB /* AMapSearchKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapSearchKit.h; path = AMapSearchKit.framework/Headers/AMapSearchKit.h; sourceTree = "<group>"; };
 		596B6A8D7D41F3D67C11924FDE58AB30 /* AMapLocationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapLocationManager.h; path = AMapLocationKit.framework/Headers/AMapLocationManager.h; sourceTree = "<group>"; };
 		5A0312092994BAB3A251A6EA57D4E846 /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardReturnKeyHandler.h; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
-		5B97AA250480235E0BF711C97A06EAF7 /* libSocialWeChat.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libSocialWeChat.a; path = UMShare/SocialLibraries/WeChat/libSocialWeChat.a; sourceTree = "<group>"; };
 		5D220E1D5F16D35CF7B791DD57A57373 /* MAPointAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAPointAnnotation.h; path = MAMapKit.framework/Headers/MAPointAnnotation.h; sourceTree = "<group>"; };
 		5EDB73FF47A0CCDD6AE803002CA00825 /* AFNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.release.xcconfig; sourceTree = "<group>"; };
 		616EF3648D07AFBC0FCA06CF77962C50 /* AMapLocationRegionObj.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapLocationRegionObj.h; path = AMapLocationKit.framework/Headers/AMapLocationRegionObj.h; sourceTree = "<group>"; };
@@ -409,17 +415,15 @@
 		68C51A513552317A15EB089A63D020B8 /* AMapNearbyUploadInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapNearbyUploadInfo.h; path = AMapSearchKit.framework/Headers/AMapNearbyUploadInfo.h; sourceTree = "<group>"; };
 		698BFBA57973362DA04D0ACDE7B141A4 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		6C22FB18D13F34B48BEC94338CE06F9F /* MAHeatMapTileOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAHeatMapTileOverlay.h; path = MAMapKit.framework/Headers/MAHeatMapTileOverlay.h; sourceTree = "<group>"; };
-		6CBEFE4F9E22AFDC6347A739BB35FF8C /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCocoaAsyncSocket.a; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CBEFE4F9E22AFDC6347A739BB35FF8C /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDB6B8588ADAA46E7247E48A47E8A85 /* MAMapView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAMapView.h; path = MAMapKit.framework/Headers/MAMapView.h; sourceTree = "<group>"; };
 		6D99028E028D235E1D0C0F1CC90CB938 /* AMapSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMapSearch.debug.xcconfig; sourceTree = "<group>"; };
 		6F41BB5D4F09C299F9BBF2B4E21DFDD7 /* MAOverlayPathView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAOverlayPathView.h; path = MAMapKit.framework/Headers/MAOverlayPathView.h; sourceTree = "<group>"; };
-		7051C781C0596BAEA69360B216B25632 /* UMSocialQQHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UMSocialQQHandler.h; path = UMShare/SocialLibraries/QQ/UMSocialQQHandler.h; sourceTree = "<group>"; };
 		7545F16174791B8D4DBEAEF110A934E8 /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapFoundationKit.framework; sourceTree = "<group>"; };
 		760D5205508C285CDAA22DB6451E2466 /* FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-prefix.pch"; sourceTree = "<group>"; };
 		761F099DC4042E0CB88FEFAB676750C1 /* IQPreviousNextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQPreviousNextView.m; path = IQKeyboardManager/IQToolbar/IQPreviousNextView.m; sourceTree = "<group>"; };
 		793244A271493824D65A1610757AFF00 /* JCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JCore.debug.xcconfig; sourceTree = "<group>"; };
 		7988193EB95F5A206CC7DB2406945A6D /* YYKVStorage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYKVStorage.h; path = YYCache/YYKVStorage.h; sourceTree = "<group>"; };
-		7A2724D18FFC1F57CA7E173000DB804B /* libSocialQQ.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libSocialQQ.a; path = UMShare/SocialLibraries/QQ/libSocialQQ.a; sourceTree = "<group>"; };
 		7A59FE36569A3247AE5966E014DFAE4E /* Pods-zhundao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-zhundao.debug.xcconfig"; sourceTree = "<group>"; };
 		7CF2683FA31D7FE63DA3454841CF61FB /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
 		7E863B9EC953C4D8B4D64802A0EAAC91 /* MAGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAGeometry.h; path = MAMapKit.framework/Headers/MAGeometry.h; sourceTree = "<group>"; };
@@ -436,9 +440,9 @@
 		8C91D4940624A9CE969982CC0210F6A1 /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+IQKeyboardToolbar.h"; path = "IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
 		92445CD24512B882F97BA4EE4FA54799 /* MAAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAAnnotation.h; path = MAMapKit.framework/Headers/MAAnnotation.h; sourceTree = "<group>"; };
 		932F37ABE657C960A92E4A19AAEFBD3B /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
-		9384ABD10747BF2F605870FA9A2A12A6 /* libPods-zhundao.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-zhundao.a"; path = "libPods-zhundao.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9384ABD10747BF2F605870FA9A2A12A6 /* libPods-zhundao.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zhundao.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		983A656667F451FF4D4DEDFC719B22B1 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		98527D7196957AAB07B79E2E2AFDE23E /* libIQKeyboardManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libIQKeyboardManager.a; path = libIQKeyboardManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		98527D7196957AAB07B79E2E2AFDE23E /* libIQKeyboardManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIQKeyboardManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		98720F3958B34EE03B69A508F5DEF8D7 /* MAPolyline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAPolyline.h; path = MAMapKit.framework/Headers/MAPolyline.h; sourceTree = "<group>"; };
 		98D7BA197352AA2427BFD3266575E876 /* YYCache.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYCache.release.xcconfig; sourceTree = "<group>"; };
 		9A8684C4F41B563DF729C780EE49BA84 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -447,14 +451,14 @@
 		9BCEA4C72335F905EFC7044536C004EA /* MAGeodesicPolyline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAGeodesicPolyline.h; path = MAMapKit.framework/Headers/MAGeodesicPolyline.h; sourceTree = "<group>"; };
 		9CE49DCB4ADA8B20502EE8BF147F5592 /* IQUITextFieldView+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUITextFieldView+Additions.m"; path = "IQKeyboardManager/Categories/IQUITextFieldView+Additions.m"; sourceTree = "<group>"; };
 		9D3E3F4B4AFC4C1796F3C63C446D1798 /* MAGroundOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAGroundOverlay.h; path = MAMapKit.framework/Headers/MAGroundOverlay.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FBEBB3274DCB5872BDB0E7B8229EC63 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		A14A92A39C4BDBDA0FDA6572FBB230DD /* IQUIWindow+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIWindow+Hierarchy.h"; path = "IQKeyboardManager/Categories/IQUIWindow+Hierarchy.h"; sourceTree = "<group>"; };
 		A1D6D5C34201E9DE28FDBF9CA3CC8D03 /* UMCCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UMCCommon.release.xcconfig; sourceTree = "<group>"; };
-		A3A80BA70CFB7F75C5391BEBBBA8C9DA /* libFMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFMDB.a; path = libFMDB.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3A80BA70CFB7F75C5391BEBBBA8C9DA /* libFMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMDB.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BED74FDE782606DA6F79ADBBDD3C86 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = UMShare/SocialLibraries/QQ/QQSDK/TencentOpenAPI.framework; sourceTree = "<group>"; };
 		A4CF75291084652ABEC85C0A27E19187 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
-		A4FA15D44DF6BAC7550EDEED10862AA3 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAFNetworking.a; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4FA15D44DF6BAC7550EDEED10862AA3 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A528979340E3450BF8E64D231D67D99B /* AMapURLSearch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapURLSearch.h; path = AMapFoundationKit.framework/Headers/AMapURLSearch.h; sourceTree = "<group>"; };
 		A5C4CE20BC87C06BF591B58BD5B4B3A6 /* MAPolygonView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAPolygonView.h; path = MAMapKit.framework/Headers/MAPolygonView.h; sourceTree = "<group>"; };
 		A7E2120AA31C2348C2EFD3D0301B0137 /* YYMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYMemoryCache.m; path = YYCache/YYMemoryCache.m; sourceTree = "<group>"; };
@@ -585,7 +589,6 @@
 				994604ACC868FB9C42FA83EFF2EC0D19 /* Frameworks */,
 				49407F997331CD5BBCBB28C73690D2D7 /* Support Files */,
 			);
-			name = JCore;
 			path = JCore;
 			sourceTree = "<group>";
 		};
@@ -619,7 +622,6 @@
 				F2FD813C0ACF0BDAEABA57DEF5948B6C /* standard */,
 				365DA7696B87752792BDB6B167E8FBDF /* Support Files */,
 			);
-			name = FMDB;
 			path = FMDB;
 			sourceTree = "<group>";
 		};
@@ -712,15 +714,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FMDB";
-			sourceTree = "<group>";
-		};
-		3E75DB9F126B462B11776EBE43DDA0E8 /* ReducedWeChat */ = {
-			isa = PBXGroup;
-			children = (
-				46A630B4B0BD1C77FC010834AD870099 /* UMSocialWechatHandler.h */,
-				C586116C66A8525D5BA87E4A43E677CC /* Frameworks */,
-			);
-			name = ReducedWeChat;
 			sourceTree = "<group>";
 		};
 		4266E8A64A98A3ABD142C1CE64875069 /* Support Files */ = {
@@ -834,7 +827,6 @@
 				134EC447227F342C1C1DD8016ADC05F9 /* Resources */,
 				4A6D21A9C7A459137D2540C0423EB922 /* Support Files */,
 			);
-			name = IQKeyboardManager;
 			path = IQKeyboardManager;
 			sourceTree = "<group>";
 		};
@@ -849,7 +841,6 @@
 				6B80389633053AF9149993654D9CCD9D /* Support Files */,
 				443BEC7D452335FD6F7E1B91D45FEB0A /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -861,14 +852,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/AMapSearch";
-			sourceTree = "<group>";
-		};
-		563C4C2F864A81CB0AD6F9927BB9AAAD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7A2724D18FFC1F57CA7E173000DB804B /* libSocialQQ.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6B80389633053AF9149993654D9CCD9D /* Support Files */ = {
@@ -974,7 +957,6 @@
 				2E92F9EC07BD108B44BB9E4B0A9E9A19 /* Frameworks */,
 				E71D0968747A88D543DB0121896C4288 /* Support Files */,
 			);
-			name = JPush;
 			path = JPush;
 			sourceTree = "<group>";
 		};
@@ -1031,7 +1013,6 @@
 				1EFDE031B580E5209C6CA1F72A57859D /* Resources */,
 				4266E8A64A98A3ABD142C1CE64875069 /* Support Files */,
 			);
-			name = AMap2DMap;
 			path = AMap2DMap;
 			sourceTree = "<group>";
 		};
@@ -1059,7 +1040,6 @@
 				7358CD9AF1DBE49BC6F81320B03D1092 /* Frameworks */,
 				536CE79284BC0853845A0BCBDD26A9F6 /* Support Files */,
 			);
-			name = AMapSearch;
 			path = AMapSearch;
 			sourceTree = "<group>";
 		};
@@ -1076,17 +1056,7 @@
 				A7E2120AA31C2348C2EFD3D0301B0137 /* YYMemoryCache.m */,
 				DDCE9842C39EEE0B2763DCC6448F884D /* Support Files */,
 			);
-			name = YYCache;
 			path = YYCache;
-			sourceTree = "<group>";
-		};
-		B48FD4EC2BB71602D0D7B75166312C37 /* ReducedQQ */ = {
-			isa = PBXGroup;
-			children = (
-				7051C781C0596BAEA69360B216B25632 /* UMSocialQQHandler.h */,
-				563C4C2F864A81CB0AD6F9927BB9AAAD /* Frameworks */,
-			);
-			name = ReducedQQ;
 			sourceTree = "<group>";
 		};
 		B5D8976CFF9EE8142E4B50210454C16F /* Targets Support Files */ = {
@@ -1095,14 +1065,6 @@
 				34BF4342BD452159AF98C21AAB55D3B0 /* Pods-zhundao */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		C586116C66A8525D5BA87E4A43E677CC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5B97AA250480235E0BF711C97A06EAF7 /* libSocialWeChat.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C90E785BADF91AB78483CAFBCF4B05B4 /* Frameworks */ = {
@@ -1132,7 +1094,6 @@
 				A6B1540DC1E9EEA20A6C0BEC06042FD9 /* Support Files */,
 				ECB76DCF6DB347ECD8653287B84AAD3C /* UI */,
 			);
-			name = UMCShare;
 			path = UMCShare;
 			sourceTree = "<group>";
 		};
@@ -1199,8 +1160,6 @@
 			isa = PBXGroup;
 			children = (
 				450C969D8F0AA655F603C8F226962794 /* QQ */,
-				B48FD4EC2BB71602D0D7B75166312C37 /* ReducedQQ */,
-				3E75DB9F126B462B11776EBE43DDA0E8 /* ReducedWeChat */,
 				F6774D3E5C02AC699F5798F4C915C045 /* WeChat */,
 			);
 			name = Social;
@@ -1221,7 +1180,6 @@
 				42F2A0E3BB8AC8BA887B06765AD37879 /* Frameworks */,
 				AB7F1B69C62A075E53258C25FE7F3BC8 /* Support Files */,
 			);
-			name = UMCCommon;
 			path = UMCCommon;
 			sourceTree = "<group>";
 		};
@@ -1239,7 +1197,6 @@
 				7B5BD34ECC116E050DFE97BFD74C68D0 /* Frameworks */,
 				DDEE08D83C1BDB206C33AB5BEA19169B /* Support Files */,
 			);
-			name = AMapLocation;
 			path = AMapLocation;
 			sourceTree = "<group>";
 		};
@@ -1275,7 +1232,6 @@
 				9E2EFB3DC045DD8E054938C37F250A38 /* Frameworks */,
 				2953743DD1339D476E715005C2BC2175 /* Support Files */,
 			);
-			name = AMapFoundation;
 			path = AMapFoundation;
 			sourceTree = "<group>";
 		};
@@ -1307,7 +1263,6 @@
 				9FBEBB3274DCB5872BDB0E7B8229EC63 /* GCDAsyncUdpSocket.m */,
 				9BAD456839D5FF34ABA19F4DE383ECE0 /* Support Files */,
 			);
-			name = CocoaAsyncSocket;
 			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
@@ -2021,8 +1976,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
