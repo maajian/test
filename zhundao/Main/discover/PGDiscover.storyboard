@@ -34,11 +34,11 @@
                         <sections>
                             <tableViewSection id="mee-HV-IUS">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="7fX-uV-7zj">
-                                        <rect key="frame" x="0.0" y="1" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="7fX-uV-7zj">
+                                        <rect key="frame" x="0.0" y="1" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7fX-uV-7zj" id="xwq-G3-ECF">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_discover_custom" translatesAutoresizingMaskIntoConstraints="NO" id="H18-nN-BWL">
@@ -49,7 +49,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自定义报名项" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbH-Sd-n4c">
-                                                    <rect key="frame" x="60" y="15" width="150" height="14"/>
+                                                    <rect key="frame" x="60" y="15" width="150" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="DYQ-Po-9ah"/>
                                                     </constraints>
@@ -67,11 +67,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="8Ua-Fl-aWY">
-                                        <rect key="frame" x="0.0" y="45" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="8Ua-Fl-aWY">
+                                        <rect key="frame" x="0.0" y="51" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Ua-Fl-aWY" id="bah-lN-iI2">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_public_invite_2" translatesAutoresizingMaskIntoConstraints="NO" id="uWK-4C-7dP">
@@ -82,7 +82,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="专属邀请函" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QV9-cl-dRp">
-                                                    <rect key="frame" x="60" y="15" width="150" height="14"/>
+                                                    <rect key="frame" x="60" y="15" width="150" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="4UI-41-Jfx"/>
                                                     </constraints>
@@ -104,11 +104,11 @@
                             </tableViewSection>
                             <tableViewSection id="2Be-RV-PjB">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="I0v-CU-Lgm">
-                                        <rect key="frame" x="0.0" y="100" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="I0v-CU-Lgm">
+                                        <rect key="frame" x="0.0" y="112" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I0v-CU-Lgm" id="7HL-KH-PaT">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_discover_questionnaire" translatesAutoresizingMaskIntoConstraints="NO" id="EbO-6H-evR">
@@ -119,7 +119,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="准到问卷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhh-PZ-fYF">
-                                                    <rect key="frame" x="60" y="15" width="150" height="14"/>
+                                                    <rect key="frame" x="60" y="15" width="150" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="pm7-FY-lyC"/>
                                                     </constraints>

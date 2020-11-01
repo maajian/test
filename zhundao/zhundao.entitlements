@@ -7,7 +7,6 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>applinks:open.zhundao.net</string>
-		<string>applinks:open.zhundao.com.cn</string>
 	</array>
 </dict>
 </plist>

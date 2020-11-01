@@ -2,7 +2,7 @@
 #import "PGActivityListModel.h"
 @implementation PGActivityGroupSendViewModel
 #pragma mark ---- network
-- (void)PG_openMessage:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
+- (void)openMessage:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/App/InstallMessageApp?accesskey=%@&id=3&from=ios",zhundaoApi,[[PGSignManager shareManager]getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         successBlock(obj);
@@ -10,7 +10,7 @@
         errorBlock(error);
     }];
 }
-- (void)PG_getAdminInfo:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
+- (void)getAdminInfo:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/GetAdminInfo?token=%@",zhundaoMessageApi,[[PGSignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj );

@@ -80,7 +80,8 @@
         if (_signID) {
             str = [NSString stringWithFormat:@"%@api/CheckIn/SendCheckInListByEmail?accessKey=%@&email=%@&checkInId=%li",zhundaoApi,[[PGSignManager shareManager] getaccseekey],_textField.text,(long)self.signID];
         }else{
-            str = [NSString stringWithFormat:@"%@api/PerActivity/SendActivityListByEmail?accessKey=%@&email=%@&activityId=%li",zhundaoApi,[[PGSignManager shareManager] getaccseekey],_textField.text,(long)self.activityID];
+            
+            str = [NSString stringWithFormat:@"%@api/v2/activity/sendActivityListByEmailForJinTaAdmin?token=%@&email=%@&activityId=%li",zhundaoApi,[[PGSignManager shareManager] getToken],_textField.text,(long)self.activityID];
         }
         ZD_HUD_SHOW_WAITING
         [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {

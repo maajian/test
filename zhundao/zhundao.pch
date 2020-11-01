@@ -56,7 +56,8 @@
 #define ZDSystemFont(r) [UIFont systemFontOfSize:r]
 #define ZDBoldFont(r) [UIFont boldSystemFontOfSize:r]
 
-#define zhundaoApi @"https://open.zhundao.com.cn/"
+//#define zhundaoApi @"https://open.zhundao.com.cn/"
+#define zhundaoApi @"https://open.zhundao.net/"
 #define zhundaoH5Api @"https://m.zhundao.net/"
 #define zhundaoMessageApi @"https://sms.zhundao.com.cn/"
 #define zhundaoLogApi @"https://fc.zhundao.net/"

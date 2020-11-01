@@ -634,7 +634,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             };
         }
      }];
-    [self.view addSubview:sheet];
+    [ZD_KeyWindow addSubview:sheet];
     [sheet fadeIn];
 }
 #pragma mark 右上角更多设置

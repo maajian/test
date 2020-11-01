@@ -8,15 +8,15 @@
 @end
 static BDImagePicker *bdImagePickerInstance = nil;
 @implementation BDImagePicker
-+ (void)PG_showImagePickerFromViewController:(UIViewController *)viewController allowsEditing:(BOOL)allowsEditing finishAction:(BDImagePickerFinishAction)finishAction {
++ (void)showImagePickerFromViewController:(UIViewController *)viewController allowsEditing:(BOOL)allowsEditing finishAction:(BDImagePickerFinishAction)finishAction {
     if (bdImagePickerInstance == nil) {
         bdImagePickerInstance = [[BDImagePicker alloc] init];
     }
-    [bdImagePickerInstance PG_showImagePickerFromViewController:viewController
+    [bdImagePickerInstance showImagePickerFromViewController:viewController
                                                allowsEditing:allowsEditing
                                                 finishAction:finishAction];
 }
-- (void)PG_showImagePickerFromViewController:(UIViewController *)viewController
+- (void)showImagePickerFromViewController:(UIViewController *)viewController
                             allowsEditing:(BOOL)allowsEditing
                              finishAction:(BDImagePickerFinishAction)finishAction {
     _viewController = viewController;

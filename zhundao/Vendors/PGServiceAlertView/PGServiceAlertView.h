@@ -32,7 +32,7 @@ typedef NS_ENUM(NSInteger, PGServiceAlertViewType) {
 - (instancetype)initWithCancelBlock:(ZDBlock_Void)cancelBlock sureBlock:(ZDBlock_Void)sureBlock;
 - (void)animationIn;
 - (void)animationOut;
-- (void)contentIn;
-- (void)contentOut;
+//- (void)contentIn;
+//- (void)contentOut;
 @end
 NS_ASSUME_NONNULL_END
