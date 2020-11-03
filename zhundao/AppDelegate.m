@@ -35,7 +35,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     [UMConfigure initWithAppkey:@"58b3c7a275ca352ea8000c3a" channel:@"App Store"];
     [[UMSocialManager defaultManager] openLog:YES];
 //    [WXApi registerApp:@"wx03bd16d684b23cb3" universalLink:@"https://app.zhundao.net/jttj/"];
-    [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://app.zhundao.net/jttj/",
+    [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://open.zhundao.net/jinta/",
                                                         @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx03bd16d684b23cb3" appSecret:@"1dee227e7dca7705a8fe6451f04254f7" redirectURL:@"http://mobile.umeng.com/social"];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105950214"  appSecret:@"GAFeY0k6OGdPe1nb" redirectURL:@"http://mobile.umeng.com/social"];
