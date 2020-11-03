@@ -32,25 +32,24 @@
 
 //POST api/PerActivity/UpdateExamine?accessKey={accessKey}&activityListId={activityListId}&status={status}
 - (void)UpdateStatusActivityListId :(NSInteger)activityListId status :(BOOL)status  block :(deleteBlock)block{
-    
     NSInteger pass = status? 0 : 3;
-    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/UpdateExamine?accessKey=%@&activityListId=%li&status=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],activityListId,pass];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/updateExamine?token=%@&activityListId=%li&status=%li",zhundaoApi,[[SignManager shareManager] getToken],activityListId,pass];
     [ZD_NetWorkM postDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
-        if ([dic[@"Res"]integerValue]==0) {
+        if ([dic[@"errcode"]integerValue] == 0) {
             block(1);
         }else{
             block(0);
         }
     } fail:^(NSError *error) {
-        
+        block(0);
     }];
 }
 
 //POST api/PerActivity/PayOffLine?accessKey={accessKey}&activityListId={activityListId}
 
 - (void)PayOffLine :(NSInteger)activityListId block :(deleteBlock)block{
-    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/PayOffLine?accessKey=%@&activityListId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],activityListId];
+    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/PayOffLine?accessKey=%@&activityListId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],(long)activityListId];
     [ZD_NetWorkM postDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"]integerValue]==0) {

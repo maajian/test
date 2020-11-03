@@ -651,7 +651,7 @@
             };
         }
      }];
-    [self.view addSubview:sheet];
+    [ZD_KeyWindow addSubview:sheet];
     [sheet fadeIn];
 }
 
