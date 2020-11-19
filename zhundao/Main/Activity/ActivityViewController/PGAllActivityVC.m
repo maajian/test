@@ -158,7 +158,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
         web.isClose = YES;
         web.webTitle = @"活动详情";
-        web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)cell.model.ID];
+        web.urlString = [NSString stringWithFormat:@"https://m.zhundao.net/eventjt/%li/0?token=%@",(long)cell.model.ID,ZD_UserM.token];
         [self.navigationController pushViewController:web animated:YES];
     } else {
         PGActivityCell *activityCell = [tableView cellForRowAtIndexPath:indexPath];

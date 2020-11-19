@@ -100,7 +100,7 @@
     if ([WXApi isWXAppInstalled]) {
         SendAuthReq *req = [[SendAuthReq alloc] init];
         req.scope = @"snsapi_userinfo";
-        req.state = @"GSTDoctorApp";
+        req.state = @"jinta";
         [WXApi sendReq:req completion:nil];
         return YES;
     }

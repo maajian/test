@@ -183,15 +183,12 @@ dispatch_async(dispatch_get_main_queue(), ^{
             SendAuthResp *temp = (SendAuthResp *)resp;
             NSLog(@"temp.code = %@",temp.code);
             NSLog(@"state = %@",temp.state);
-            NSDictionary *codeParam = @{@"appid" : ZDKey_Wechat_Key,
-                                        @"secret" : ZDKey_Wechat_Secret,
-                                        @"code" : temp.code,
-                                        @"grant_type" : @"authorization_code"
-            };
-            NSString *authUrl = @"https://api.weixin.qq.com/sns/oauth2/access_token";
-            [ZD_NetWorkM getDataWithMethod:authUrl parameters:codeParam succ:^(NSDictionary *obj) {
-                if (ZD_SafeStringValue(obj[@"unionid"])) {
+            NSString *authUrl = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code", ZDKey_Wechat_Key, ZDKey_Wechat_Secret, temp.code];
+            [ZD_NetWorkM getDataWithMethod:authUrl parameters:nil succ:^(NSDictionary *obj) {
+                if (obj[@"unionid"]) {
                     [weakSelf PG_loginWehchatWithUnionId:obj[@"unionid"]];
+                } else {
+                    ZD_HUD_SHOW_ERROR_STATUS(@"微信登录失败")
                 }
             } fail:^(NSError *error) {
                 ZD_HUD_SHOW_ERROR_STATUS(@"微信登录失败")

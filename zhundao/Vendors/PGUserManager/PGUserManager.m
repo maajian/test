@@ -82,6 +82,7 @@
 #pragma mark --- 本地数据
 - (void)didLogout
 {
+    
     if ([[PGSignManager shareManager].dataBase open])
     {
         NSString *updateSql = [NSString stringWithFormat:@"DROP TABLE signList"];

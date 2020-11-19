@@ -102,7 +102,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf shareWithTitle:model.Title detailTitle:[NSString stringWithFormat:@"时间:%@ 地点:%@",model.TimeStart,model.Address] thumImage:image ? image : [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.ShareImgurl]]] webpageUrl:str withCTR:ctr Withtype:type];
     };
     if (ZD_UserM.isAdmin) {
-        shareBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0?token=%@",(long)model.ID,ZD_UserM.token]);
+        shareBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/%li/0?token=%@",(long)model.ID,ZD_UserM.token]);
     } else {
         [self PG_networkForGetActivityLinkWithID:model.ID success:^(NSString *obj) {
             shareBlock(obj);

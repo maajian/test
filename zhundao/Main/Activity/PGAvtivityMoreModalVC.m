@@ -154,7 +154,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
             PGAvtivityInviteVC *invite = [[PGAvtivityInviteVC alloc]init];
             invite.acid = _moreModel.ID;
             invite.model = self.moreModel;
-            NSString *imagestr =   [NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID];
+            NSString *imagestr =   [NSString stringWithFormat:@"https://m.zhundao.net/eventjt/%li/0?token=%@",_moreModel.ID,ZD_UserM.token];
             invite.imageStr = imagestr ;
             [self presentViewController:invite animated:YES completion:nil];
         }
@@ -169,7 +169,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                 [self presentViewController:code animated:YES completion:nil];
             };
             if (ZD_UserM.isAdmin) {
-                codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID]);
+                codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/%li/0?token=%@",_moreModel.ID,ZD_UserM.token]);
             } else {
                 [self PG_networkForGetActivityLinkSuccess:^(NSString *obj) {
                     codeBlock(obj);
@@ -216,7 +216,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController pushViewController:detail animated:YES];
     };
     if (ZD_UserM.isAdmin) {
-        detailBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID]);
+        detailBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/%li/0?token=%@",_moreModel.ID,ZD_UserM.token]);
     } else {
         [self PG_networkForGetActivityLinkSuccess:^(NSString *obj) {
             detailBlock(obj);
@@ -382,7 +382,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         [PGAlertView alertWithTitle:@"已成功复制到粘贴板" message:nil cancelBlock:nil];
     };
     if (ZD_UserM.isAdmin) {
-        block([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)_moreModel.ID]);
+        block([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/%li/0?token=%@",_moreModel.ID,ZD_UserM.token]);
     } else {
         [self PG_networkForGetActivityLinkSuccess:^(NSString *obj) {
             block(obj);

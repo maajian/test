@@ -534,7 +534,7 @@
                 }];
             };
             if (ZD_UserM.isAdmin) {
-                codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)self.listID]);
+                codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/%li/0?token=%@",self.listID,ZD_UserM.token]);
             } else {
                 [self PG_networkForGetActivityLinkSuccess:^(NSString *obj) {
                     codeBlock(obj);
@@ -574,7 +574,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
         codeBlock(mycell.model.VCode);
     } else {
         if (ZD_UserM.isAdmin) {
-            codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/{%li}/0",(long)self.listID]);
+            codeBlock([NSString stringWithFormat:@"https://m.zhundao.net/eventjt/%li/0?token=%@",self.listID,ZD_UserM.token]);
         } else {
             [self PG_networkForGetActivityLinkSuccess:^(NSString *obj) {
                 codeBlock(obj);
