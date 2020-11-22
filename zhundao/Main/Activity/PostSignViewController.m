@@ -256,7 +256,7 @@
         return [NSString stringWithFormat:@"%@api/v2/checkIn/addCheckIn?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     }
     else{
-        return  [NSString stringWithFormat:@"%@api/v2/checkIn/updateCheckIn?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        return  [NSString stringWithFormat:@"%@api/v2/checkIn/updateCheckIn?token=%@&from=ios",zhundaoApi,[[SignManager shareManager] getToken]];
     }
 }
 - (void)didReceiveMemoryWarning {

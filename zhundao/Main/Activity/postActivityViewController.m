@@ -294,9 +294,9 @@
 {
     NSString *str = nil;
     if (_activityModel) {
-        str = [NSString stringWithFormat:@"%@api/v2/activity/updateActivity?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        str = [NSString stringWithFormat:@"%@api/v2/activity/updateActivity?token=%@&from=ios",zhundaoApi,[[SignManager shareManager] getToken]];
     } else {
-        str = [NSString stringWithFormat:@"%@api/v2/activity/addActivity?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
+        str = [NSString stringWithFormat:@"%@api/v2/activity/addActivity?token=%@&from=ios",zhundaoApi,[[SignManager shareManager] getToken]];
     }
     NSDictionary *postBody = @{@"title":ZD_SafeValue(_postView.activityTitleTextField.text),
                                @"timeStart":ZD_SafeValue([_postVM appendTime:_postView.beginTimeRightLabel.text]),

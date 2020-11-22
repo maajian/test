@@ -78,10 +78,10 @@
 
 #pragma 网络
 - (void)postDataWithDic :(NSDictionary *)dic {
-    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/UpdateActivityList?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/updateActivityList?token=%@&from=ios",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
-        if ([dic[@"Res"] integerValue]==0) {
+        if ([dic[@"res"] boolValue]) {
             _postBlock(1);
         }
         else

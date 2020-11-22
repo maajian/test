@@ -13,7 +13,7 @@
 //api/PerActivity/DeleteActivityList/{id}?accessKey={accessKey}
 - (void)deletePersonWithID:(NSInteger) personID 
 {
-    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/DeleteActivityList/%li?accessKey=%@",zhundaoApi,(long)personID,[[SignManager shareManager] getaccseekey]];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/cancelActivityList?token=%@&activityListId=%@&from=ios",zhundaoApi,[[SignManager shareManager] getToken], @(personID).stringValue];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSLog(@"responseObject = %@",obj);
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];

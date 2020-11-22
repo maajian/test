@@ -71,9 +71,9 @@
     }
     NSString *str = nil;
     if (_signID) {
-        str = [NSString stringWithFormat:@"%@api/CheckIn/SendCheckInListByEmail?accessKey=%@&email=%@&checkInId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],_textField.text,(long)self.signID];
+        str = [NSString stringWithFormat:@"%@api/v2/checkIn/sendCheckInListByEmail?token=%@&email=%@&checkInId=%li&from=ios",zhundaoApi,[[SignManager shareManager] getToken],_textField.text,(long)self.signID];
     }else{
-        str = [NSString stringWithFormat:@"%@api/PerActivity/SendActivityListByEmail?accessKey=%@&email=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getaccseekey],_textField.text,(long)self.activityID];
+        str = [NSString stringWithFormat:@"%@api/v2/activity/sendActivityListByEmail?token=%@&email=%@&activityId=%li&from=ios",zhundaoApi,[[SignManager shareManager] getToken],_textField.text,(long)self.activityID];
     }
     MBProgressHUD *hud1 = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
