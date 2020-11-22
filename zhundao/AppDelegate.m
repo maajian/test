@@ -14,7 +14,7 @@
 #import <UserNotifications/UserNotifications.h>
 #endif
 NSString * const kdbManagerVersion = @"DBManagerVersion";
-#define kYoumengAPPKEY @"58b3c7a275ca352ea8000c3a"
+#define kYoumengAPPKEY @"5fb6177373749c24fd9cd7ed"
 #define KMapkey @"20ef0c1ba6b34bbe79a814a3578b0639"
 @class AFURLResponseSerialization;
 @interface AppDelegate ()<WXApiDelegate,UIApplicationDelegate,JPUSHRegisterDelegate>
@@ -32,9 +32,8 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     NSString *mobile = [[NSUserDefaults standardUserDefaults]objectForKey:@"mobile"];
     [self deleteDatabase];
     [UMConfigure setLogEnabled:YES];
-    [UMConfigure initWithAppkey:@"58b3c7a275ca352ea8000c3a" channel:@"App Store"];
+    [UMConfigure initWithAppkey:@"5fb6177373749c24fd9cd7ed" channel:@"nil"];
     [[UMSocialManager defaultManager] openLog:YES];
-//    [WXApi registerApp:@"wx03bd16d684b23cb3" universalLink:@"https://open.zhundao.net/jinta/"];
     [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://open.zhundao.net/jinta/",
                                                         @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx03bd16d684b23cb3" appSecret:@"1dee227e7dca7705a8fe6451f04254f7" redirectURL:@"http://mobile.umeng.com/social"];
@@ -172,7 +171,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
     if (![[UMSocialManager defaultManager] handleUniversalLink:userActivity options:nil]) {
             // 其他SDK的回调
         }
-    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
+    return YES;
 }
 #pragma mark  -----微信授权回调
 - (void)onResp:(BaseResp *)resp {
