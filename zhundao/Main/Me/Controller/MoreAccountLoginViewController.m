@@ -89,7 +89,7 @@
     _hud.label.text = @"登录中";
     _hud.label.textColor = [UIColor whiteColor];
 
-    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login",zhundaoApi];
+    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login?from=ios",zhundaoApi];
     NSDictionary *parameters = @{@"userName" : _accountTF .text, @"passWord" : _passwordTF.text};
     
     [ZD_NetWorkM postDataWithMethod:phoneurl parameters:parameters succ:^(NSDictionary *obj) {
@@ -138,7 +138,6 @@
             [[NSUserDefaults standardUserDefaults] setObject:userArray forKey:@"userArray"];
         }
         [ZD_UserM saveLoginTime];
-        [loginViewModel getTokenByAccount:_accountTF .text passWord:_passwordTF.text];
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"wechatLogin"];
         
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:WX_UNION_ID];

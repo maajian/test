@@ -78,7 +78,7 @@
 
 #pragma 网络
 - (void)postDataWithDic :(NSDictionary *)dic {
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/updateActivityList?token=%@&from=ios",zhundaoApi,[[SignManager shareManager] getToken]];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/updateActivityListAdmin?token=%@&from=ios",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"res"] boolValue]) {

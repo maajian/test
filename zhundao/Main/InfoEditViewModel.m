@@ -12,7 +12,7 @@
 
 // 验证码注册登录
 - (void)loginWirhCode:(NSString *)code phoneStr:(NSString *)phoneStr name:(NSString *)name passWord:(NSString *)passWord  successBlock:(kZDCommonSucc)successBlock failBlock:(kZDCommonFail)failBlock  {
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/login",zhundaoApi];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/login?from=ios",zhundaoApi];
     NSDictionary *dic = @{@"userName":phoneStr,
                           @"code":code,
                           @"trueName":name,

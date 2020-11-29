@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface loginViewModel : NSObject
-
-/*! 账号密码登录后获取token */
-+ (void)getTokenByAccount:(NSString *)phoneStr passWord:(NSString *)password ;
 /**
  微信登录后获取token
  

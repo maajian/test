@@ -68,7 +68,7 @@
 
 - (void)login {
  
-    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login",@"https://open.zhundao.net/"];
+    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login?from=ios",@"https://open.zhundao.net/"];
     NSDictionary *parameters = @{@"userName" : _phoneTextLabel.text, @"passWord" : _lockTextLabel.text};
     
     [ZD_NetWorkM postDataWithMethod:phoneurl parameters:parameters succ:^(NSDictionary *obj) {
@@ -125,7 +125,6 @@
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"wechatLogin"];
         [[NSUserDefaults standardUserDefaults]synchronize];
         [ZD_UserM saveLoginTime];
-        [loginViewModel getTokenByAccount:_phoneTextLabel.text passWord:_lockTextLabel.text];
         MainViewController *tabbar = [[MainViewController alloc]init];
         AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
         appDelegate.window.rootViewController= tabbar;

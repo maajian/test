@@ -164,7 +164,7 @@ static NSString *moreAccountCellID = @"moreAccountCellID";
     _hud.label.text = @"登录中";
     _hud.label.textColor = [UIColor whiteColor];
     
-    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login",zhundaoApi];
+    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login?from=ios",zhundaoApi];
     NSDictionary *parameters = @{@"userName" : userdic[@"phone"], @"passWord" : userdic[@"password"]};
     
     [ZD_NetWorkM postDataWithMethod:phoneurl parameters:parameters succ:^(NSDictionary *obj) {

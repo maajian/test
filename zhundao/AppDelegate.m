@@ -224,7 +224,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
             NSLog(@"temp.code = %@",temp.code);
             NSLog(@"state = %@",temp.state);
             
-            NSString *poststring =[NSString stringWithFormat:@"%@api/v2/weChatLogin?code=%@&type=1",zhundaoApi,temp.code];
+            NSString *poststring =[NSString stringWithFormat:@"%@api/v2/weChatLogin?code=%@&type=1&from=ios",zhundaoApi,temp.code];
             [ZD_NetWorkM getDataWithMethod:poststring parameters:nil succ:^(NSDictionary *obj) {
                 [[NSUserDefaults standardUserDefaults] setObject:obj[@"accessKey"] forKey:AccessKey];
                 [[NSUserDefaults standardUserDefaults] setObject:obj[@"token"] forKey:@"token"];

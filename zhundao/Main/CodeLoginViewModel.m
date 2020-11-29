@@ -30,7 +30,7 @@
 
  // 验证码登录 
 - (void)loginWirhCode:(NSString *)code phoneStr:(NSString *)phoneStr successBlock:(kZDCommonSucc)successBlock failBlock:(kZDCommonFail)failBlock  {
-    NSString *str = [NSString stringWithFormat:@"%@api/v2/login",zhundaoApi];
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/login?from=ios",zhundaoApi];
     NSDictionary *dic = @{@"userName":phoneStr,
                           @"code":code};
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
