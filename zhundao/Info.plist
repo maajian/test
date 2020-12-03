@@ -32,10 +32,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.zd.jinta</string>
+			<string>com.zhundao.jinta</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>iOSzhundao</string>
+				<string>iOSJinta</string>
 			</array>
 		</dict>
 		<dict>
