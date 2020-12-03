@@ -14,7 +14,6 @@
 #import "detailActivityViewController.h"
 #import "NewView.h"
 #import "moreModalViewController.h"
-#import <UShareUI/UShareUI.h>
 #import "WXApi.h"
 #import "PostSign.h"
 #import "oneActivityViewController.h"

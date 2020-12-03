@@ -20,13 +20,15 @@
     if (currentImage) {
         _imageView.image = currentImage;
     }
-    UIImageView *imageView  = [[UIImageView alloc]initWithFrame:CGRectMake(100, 5, 100, 100)];
+    UIImageView *imageView  = [[UIImageView alloc]initWithFrame:CGRectZero];
     imageView.image = currentImage;
     [self.contentView addSubview:imageView];
 }
 
 - (UIImageView *)imageView{
-    _imageView = [[UIImageView alloc]init];
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc]init];
+    }
     return _imageView;
 }
 

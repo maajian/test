@@ -9,7 +9,6 @@
 #import "defaultViewController.h"
 #import "UIImage+LXDCreateBarcode.h"
 #import "BigSizeButton.h"
-#import <UShareUI/UShareUI.h>
 #import "WXApi.h"
 @interface defaultViewController ()
 
@@ -167,37 +166,29 @@
 #pragma mark--- 分享
 
 - (void)shareImage{
-    NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_QQ), nil];
-    if ( ![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
-        //没有安装QQ
-        [arr removeObject:@(UMSocialPlatformType_QQ)];
-    }
     if (![WXApi isWXAppInstalled]) {
-        //没有安装微信
-        [arr removeObject:@(UMSocialPlatformType_WechatSession)];
-       
+        NSLog(@"请移步App Store去下载微信客户端");
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请先下载微信" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;;
     }
     
-    [UMSocialUIManager setPreDefinePlatforms:arr];
-    [UMSocialShareUIConfig shareInstance].shareTitleViewConfig.isShow = NO;
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        //创建分享消息对象
-        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-        //创建图片内容对象
-        UMShareImageObject *shareObject = [[UMShareImageObject alloc] init];
-        [shareObject setShareImage:_image];
-        //分享消息对象设置分享内容对象
-        messageObject.shareObject = shareObject;
-        //调用分享接口
-        [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
-            if (error) {
-                NSLog(@"************Share fail with error %@*********",error);
-            }else{
-                NSLog(@"response data is %@",data);
-            }
-        }];
-    }];
+    // 创建分享内容
+    WXMediaMessage *message = [WXMediaMessage message];
+    
+    // 多媒体消息中包含的图片数据对象
+    WXImageObject *imageObject = [WXImageObject object];
+    imageObject.imageData = UIImageJPEGRepresentation(_image, 1);
 
+    message.mediaObject = imageObject;
+    
+    SendMessageToWXReq *sendReq = [[SendMessageToWXReq alloc] init];
+    sendReq.message = message;
+    sendReq.bText = NO;
+//    sendReq.scene = WXSceneTimeline;// 分享到朋友圈
+    sendReq.scene = WXSceneSession;// 分享到微信
+    [WXApi sendReq:sendReq completion:nil];
 }
 
 #pragma mark --- 截屏

@@ -82,11 +82,13 @@
 
 #pragma mark --- notification
 - (void)networkChange:(NSNotification *)nofi {
-    [ZDAlertView alertWithTitle:@"提示" message:@"网络超时，是否切换到备用服务器重试？" sureBlock:^{
-        [[NSUserDefaults standardUserDefaults] setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
-        [[NSUserDefaults standardUserDefaults] setObject:[NSDate getCurrentDayStr] forKey:ZDUserDefault_First_Network];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    } cancelBlock:nil];
+    if (![ZD_KeyWindow containView:[ZDAlertView class]]) {
+        [ZDAlertView alertWithTitle:@"提示" message:@"网络超时，是否切换到备用服务器重试？" sureBlock:^{
+            [[NSUserDefaults standardUserDefaults] setObject:@"备用线路" forKey:ZDUserDefault_Network_Line];
+            [[NSUserDefaults standardUserDefaults] setObject:[NSDate getCurrentDayStr] forKey:ZDUserDefault_First_Network];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        } cancelBlock:nil];
+    }
 }
 - (void)logout:(NSNotification *)nofi {
     maskLabel *label = [[maskLabel alloc] initWithTitle:@"登录信息已过期，请重新登录"];

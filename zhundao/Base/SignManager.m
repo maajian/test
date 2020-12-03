@@ -8,7 +8,7 @@
 //
 
 #import "SignManager.h"
-#import <UShareUI/UShareUI.h>
+//#import <UShareUI/UShareUI.h>
 #import "WXApi.h"
 @interface SignManager ()
 {
@@ -109,54 +109,46 @@
     [self shareWithTitle:model.Title detailTitle:[NSString stringWithFormat:@"时间:%@ 地点:%@",model.TimeStart,model.Address] thumImage:image ? image : [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.ShareImgurl]]] webpageUrl:[NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)model.ID] withCTR:ctr Withtype:type];
 }
 - (void)shareWithTitle:(NSString *)title detailTitle:(NSString *)detailTitle thumImage:(UIImage *)thumImage webpageUrl:(NSString *)webpageUrl withCTR:(UIViewController *)ctr Withtype:(NSInteger)type {
-    NSMutableArray *arr = [NSMutableArray arrayWithObjects:@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_Qzone), nil];
-      if ( ![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
-          //没有安装QQ
-          
-          [arr removeObject:@(UMSocialPlatformType_QQ)];
-          [arr removeObject:@(UMSocialPlatformType_Qzone)];
-      }
-      if (![WXApi isWXAppInstalled]) {
-          //没有安装微信
-          [arr removeObject:@(UMSocialPlatformType_WechatSession)];
-          [arr removeObject:@(UMSocialPlatformType_WechatTimeLine)];
-      }
-    
-      [UMSocialUIManager setPreDefinePlatforms:arr];
-      [UMSocialShareUIConfig shareInstance].shareTitleViewConfig.isShow = NO;
-      [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-          UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-          UMShareWebpageObject *shareObject = nil;
-          UMShareImageObject *imageObject = nil;
-          if (type==5) { //网页分享
-              if (platformType ==UMSocialPlatformType_WechatSession) {
-                  shareObject = [UMShareWebpageObject shareObjectWithTitle:title descr:detailTitle thumImage:thumImage];
-              }
-              else
-              {
-                  shareObject = [UMShareWebpageObject shareObjectWithTitle:title descr:nil thumImage:thumImage];
-              }
-              //如果有缩略图，则设置缩略图
-              shareObject.webpageUrl =webpageUrl;
-             messageObject.shareObject = shareObject;
-          }
-          else
-          {
-                 imageObject = [[UMShareImageObject alloc] init];
-              [imageObject setShareImage:thumImage];
-              messageObject.shareObject = imageObject;
-          }
+    if (![WXApi isWXAppInstalled]) {
+        NSLog(@"请移步App Store去下载微信客户端");
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请先下载微信" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]];
+        [ctr presentViewController:alert animated:YES completion:nil];
+        return;;
+    }
+    if (type == 5) {
+        WXMediaMessage *message = [WXMediaMessage message];
+        message.title = title;
+        message.description = detailTitle;
+        [message setThumbImage:thumImage];
 
-          
-          //调用分享接口
-          [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:ctr completion:^(id data, NSError *error) {
-              if (error) {
-                  NSLog(@"************Share fail with error %@*********",error);
-              }else{
-                  NSLog(@"response data is %@",data);
-              }
-          }];
-      }];
+        // 多媒体消息中包含的网页数据对象
+        WXWebpageObject *webpageObject = [WXWebpageObject object];
+        // 网页的url地址
+        webpageObject.webpageUrl = webpageUrl;
+        message.mediaObject = webpageObject;
+
+        SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
+        req.bText = NO;
+        req.message = message;
+        req.scene = WXSceneSession;
+
+        [WXApi sendReq:req completion:nil];
+    } else {
+        // 创建分享内容
+        WXMediaMessage *message = [WXMediaMessage message];
+        // 多媒体消息中包含的图片数据对象
+        WXImageObject *imageObject = [WXImageObject object];
+        imageObject.imageData = UIImageJPEGRepresentation(thumImage, 1);
+        message.mediaObject = imageObject;
+        
+        SendMessageToWXReq *sendReq = [[SendMessageToWXReq alloc] init];
+        sendReq.bText = NO;
+        sendReq.message = message;
+    //    sendReq.scene = WXSceneTimeline;// 分享到朋友圈
+        sendReq.scene = WXSceneSession;// 分享到微信
+        [WXApi sendReq:sendReq completion:nil];
+    }
 }
 
 

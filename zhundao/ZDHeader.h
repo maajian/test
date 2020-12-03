@@ -24,7 +24,7 @@
 #import "AFmanager.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
-#import <UMCommon/UMCommon.h>
+//#import <UMCommon/UMCommon.h>
 #import "DBManager.h"
 #import "UIButton+UIButton_RightNav.h"
 #import "AAGlobalMacro.h"

@@ -121,14 +121,9 @@ Copyright jpush.cn
 
 Copyright jpush.cn
 
-## UMCCommon
+## WechatOpenSDK
 
-Copyright 2011 - 2019 umeng.com. All rights reserved.
-
-
-## UMCShare
-
-Copyright 2011 - 2018 umeng.com. All rights reserved.
+Copyright 2020 tencent.com. All rights reserved.
 
 
 ## YYCache

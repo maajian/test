@@ -14,8 +14,8 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "JPUSHService.h"
 #import "loginViewModel.h"
-#import <UMCommon/UMCommon.h>
-#import <UMShare/UMShare.h>
+//#import <UMCommon/UMCommon.h>
+//#import <UMShare/UMShare.h>
 #import "WXApi.h"
 
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
@@ -52,16 +52,25 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     /*! 数据库更新 */
     [self deleteDatabase];
     
+//    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
+//        NSLog(@"WeChatSDK: %@", log);
+//    }];
+    [WXApi registerApp:@"wxfe2a9da163481ba9" universalLink:@"https://open.zhundao.net/app/"];
+    
+//    [WXApi checkUniversalLinkReady:^(WXULCheckStep step, WXCheckULStepResult* result) {
+//        NSLog(@"%@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
+//    }];
+    
     //友盟
     //开发者需要显式的调用此函数，日志系统才能工作
-    [UMConfigure setLogEnabled:YES];//设置打开日志
-    [UMConfigure initWithAppkey:@"58b3c7a275ca352ea8000c3a" channel:nil];
-    [[UMSocialManager defaultManager] openLog:YES];
-    /* 设置微信的appKey和appSecret */
-    [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://open.zhundao.net/app/",
-                                                        @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxfe2a9da163481ba9" appSecret:@"ace26a762813528cc2dbb65b4279398e" redirectURL:@"http://mobile.umeng.com/social"];
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105950214"/*设置QQ平台的appID*/  appSecret:@"GAFeY0k6OGdPe1nb" redirectURL:@"http://mobile.umeng.com/social"];
+//    [UMConfigure setLogEnabled:YES];//设置打开日志
+//    [UMConfigure initWithAppkey:@"58b3c7a275ca352ea8000c3a" channel:nil];
+//    [[UMSocialManager defaultManager] openLog:YES];
+//    /* 设置微信的appKey和appSecret */
+//    [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://open.zhundao.net/app/",
+//                                                        @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxfe2a9da163481ba9" appSecret:@"ace26a762813528cc2dbb65b4279398e" redirectURL:@"http://mobile.umeng.com/social"];
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105950214"/*设置QQ平台的appID*/  appSecret:@"GAFeY0k6OGdPe1nb" redirectURL:@"http://mobile.umeng.com/social"];
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */
@@ -194,17 +203,12 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 
 -(BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-    BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
     BOOL wxRes = [WXApi handleOpenURL:url delegate:self];
-    return result & wxRes;
+    return wxRes;
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
-    if (!result) {
-        // 其他如支付等SDK的回调
-    }
-    return result;
+    return [WXApi handleOpenURL:url delegate:self];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {

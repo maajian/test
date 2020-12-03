@@ -14,7 +14,6 @@
 #import "inviteViewController.h"
 #import "detailActivityViewController.h"
 #import "ConsultViewController.h"
-#import <UShareUI/UShareUI.h>
 #import "WXApi.h"
 #import "PostSignViewController.h"
 #import "oneActivityViewController.h"
