@@ -37,6 +37,10 @@
 #define userdic1 @"userdic"
 
 #define activityaArray @"activityaArray"
+#define ZDGreyColor666  [UIColor colorFromHexCode:@"666666"]
+#define ZDGreyColor999  [UIColor colorFromHexCode:@"999999"]
+#define ZDBlackColor3  [UIColor colorFromHexCode:@"4A4C5B"]
+#define ZDGreyColorA  [UIColor colorFromHexCode:@"aaaaaa"]
 #define ZDGreenColor2 ([UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1])
 #define ZDGrayColor  [UIColor colorWithRed:186.00f/255.0f green:187.00f/255.0f blue:192.00f/255.0f alpha:1]
 #define ZDGrayColor2  [UIColor colorWithRed:153.00f/255.0f green:153.00f/255.0f blue:153.00f/255.0f alpha:1]

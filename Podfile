@@ -3,6 +3,8 @@ project 'zhundao.xcodeproj'
 target 'zhundao' do
 pod 'CocoaAsyncSocket'
 pod 'IQKeyboardManager'
+pod 'SVProgressHUD'
+pod 'DZNEmptyDataSet', '~>1.8.1'
 pod 'FMDB'
 pod 'JPush'
 pod 'AFNetworking'

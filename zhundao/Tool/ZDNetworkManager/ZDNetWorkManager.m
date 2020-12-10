@@ -27,6 +27,7 @@ ZD_Singleton_Implementation(NetWorkManager)
         [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
         manager.requestSerializer.timeoutInterval = 20.f;
         [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"application/octet-stream", @"application/json", @"text/json" , @"text/javascript", nil];
     });
     return manager;
 }

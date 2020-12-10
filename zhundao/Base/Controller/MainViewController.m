@@ -66,8 +66,8 @@
         }
     }
     CGFloat buttonWidth = kScreenWidth/4;
-    NSArray *imageArray = @[@"activity",@"loginin",@"discover",@"me"];
-    NSArray *titleArray = @[@"活动",@"签到",@"发现",@"我"];
+    NSArray *imageArray = @[@"activity",@"tabbar_message",@"discover",@"me"];
+    NSArray *titleArray = @[@"活动",@"消息",@"发现",@"我"];
     for (int i=0; i<4; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i*buttonWidth, 0, buttonWidth, 49);
@@ -116,8 +116,8 @@
     self.selectedIndex = sender.tag-100;
     
     
-    NSArray *imageArray = @[@"activity",@"loginin",@"discover",@"me"];
-        NSArray *imagedarray = @[@"activityed",@"logined",@"discovered",@"meed"];
+    NSArray *imageArray = @[@"activity",@"tabbar_message",@"discover",@"me"];
+        NSArray *imagedarray = @[@"activityed",@"tabbar_message_select",@"discovered",@"meed"];
     
     if ([_startButton.subviews[0] isKindOfClass:[UILabel class]]) {
          _startLabel =  (UILabel *)_startButton.subviews[0];
