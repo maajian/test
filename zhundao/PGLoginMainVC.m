@@ -13,6 +13,8 @@
 #import "PGloginCodeLoginVC.h"
 #import "PGBaseWebViewVC.h"
 #import "PGLoginCodeSendVC.h"
+#import <UMCommon/UMCommon.h>
+#import <UMShare/UMShare.h>
 #define URL_APPID @"appid"
 #define URL_SECRET @"app secret"
 @interface PGLoginMainVC ()<PGServiceAlertViewDelegate>
@@ -97,16 +99,53 @@
         [self wechatLogin];
 }
 - (BOOL)wechatLogin {
+    ZD_WeakSelf
     if ([WXApi isWXAppInstalled]) {
-        SendAuthReq *req = [[SendAuthReq alloc] init];
-        req.scope = @"snsapi_userinfo";
-        req.state = @"jinta";
-        [WXApi sendReq:req completion:nil];
+//        SendAuthReq *req = [[SendAuthReq alloc] init];
+//        req.scope = @"snsapi_userinfo";
+//        req.state = @"jinta";
+//        [WXApi sendReq:req completion:nil];
+        [[UMSocialManager defaultManager] getUserInfoWithPlatform:(UMSocialPlatformType_WechatSession) currentViewController:nil completion:^(id result, NSError *error) {
+            UMSocialUserInfoResponse *res = result;
+            if (res.unionId.length) {
+                [weakSelf PG_loginWehchatWithUnionId:res.unionId];
+            } else {
+                ZD_HUD_SHOW_ERROR_STATUS(@"微信登录失败")
+            }
+        }];
         return YES;
     }
     else {
         return NO;
     }
+}
+#pragma mark  -----微信授权回调
+- (void)PG_loginWehchatWithUnionId:(NSString *)unionId {
+    NSDictionary *dic = @{@"BusinessCode": @"WxLogin",
+                          @"Data" : @{
+                                  @"unionId": unionId,
+                         }
+    };
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
+    ZD_HUD_SHOW_WAITING
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        ZD_HUD_DISMISS
+        if ([obj[@"res"] boolValue]) {
+            [ZD_UserM saveLoginTime];
+            [[NSUserDefaults standardUserDefaults] setObject:obj[@"data"][@"token"] forKey:@"token"];
+            [[NSUserDefaults standardUserDefaults]setObject:obj[@"data"][@"accessKey"] forKey:AccessKey];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            ZD_UserM.isAdmin = [obj[@"data"][@"role"] isEqualToString:@"admin"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                PGBaseTabbarVC *tabbar = [[PGBaseTabbarVC alloc] init];
+                [UIApplication sharedApplication].delegate.window.rootViewController= tabbar;
+            });
+        } else {
+            ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"]);
+        }
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR(error);
+    }];
 }
 - (void)PG_tryAction:(UIButton *)button {
     PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];

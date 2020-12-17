@@ -33,6 +33,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     [self deleteDatabase];
     [UMConfigure setLogEnabled:YES];
     [UMConfigure initWithAppkey:@"5fb6177373749c24fd9cd7ed" channel:@"nil"];
+    [WXApi registerApp:@"wx03bd16d684b23cb3" universalLink:@"https://open.zhundao.net/jinta/"];
     [[UMSocialManager defaultManager] openLog:YES];
     [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://open.zhundao.net/jinta/",
                                                         @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
@@ -172,55 +173,6 @@ dispatch_async(dispatch_get_main_queue(), ^{
             // 其他SDK的回调
         }
     return YES;
-}
-#pragma mark  -----微信授权回调
-- (void)onResp:(BaseResp *)resp {
-    ZD_WeakSelf
-    NSLog(@"resp = %i", resp.errCode);
-    if (resp.errCode==0) {
-        if ([resp isKindOfClass:[SendAuthResp class]]) {
-            SendAuthResp *temp = (SendAuthResp *)resp;
-            NSLog(@"temp.code = %@",temp.code);
-            NSLog(@"state = %@",temp.state);
-            NSString *authUrl = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code", ZDKey_Wechat_Key, ZDKey_Wechat_Secret, temp.code];
-            [ZD_NetWorkM getDataWithMethod:authUrl parameters:nil succ:^(NSDictionary *obj) {
-                if (obj[@"unionid"]) {
-                    [weakSelf PG_loginWehchatWithUnionId:obj[@"unionid"]];
-                } else {
-                    ZD_HUD_SHOW_ERROR_STATUS(@"微信登录失败")
-                }
-            } fail:^(NSError *error) {
-                ZD_HUD_SHOW_ERROR_STATUS(@"微信登录失败")
-            }];
-        }
-    }
-}
-- (void)PG_loginWehchatWithUnionId:(NSString *)unionId {
-    NSDictionary *dic = @{@"BusinessCode": @"WxLogin",
-                          @"Data" : @{
-                                  @"unionId": unionId,
-                         }
-    };
-    NSString *url = [NSString stringWithFormat:@"%@jinTaData", zhundaoLogApi];
-    ZD_HUD_SHOW_WAITING
-    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
-        ZD_HUD_DISMISS
-        if ([obj[@"res"] boolValue]) {
-            [ZD_UserM saveLoginTime];
-            [[NSUserDefaults standardUserDefaults] setObject:obj[@"data"][@"token"] forKey:@"token"];
-            [[NSUserDefaults standardUserDefaults]setObject:obj[@"data"][@"accessKey"] forKey:AccessKey];
-            [[NSUserDefaults standardUserDefaults]synchronize];
-            ZD_UserM.isAdmin = [obj[@"data"][@"role"] isEqualToString:@"admin"];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                PGBaseTabbarVC *tabbar = [[PGBaseTabbarVC alloc] init];
-                [UIApplication sharedApplication].delegate.window.rootViewController= tabbar;
-            });
-        } else {
-            ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"]);
-        }
-    } fail:^(NSError *error) {
-        ZD_HUD_SHOW_ERROR(error);
-    }];
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
 dispatch_async(dispatch_get_main_queue(), ^{

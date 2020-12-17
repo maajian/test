@@ -6850,7 +6850,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Zhundao Information Technology Co., Ltd. (YH49M9STFP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = X5R6P2Q692;
 				ENABLE_BITCODE = NO;
@@ -6879,7 +6879,7 @@
 					"$(PROJECT_DIR)/zhundao/第三方类库/UMSocial/WeChat/WechatSDK",
 					"$(PROJECT_DIR)/zhundao/第三方类库/UMSocial/UMSocialSDKPlugin",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -6904,7 +6904,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Zhundao Information Technology Co., Ltd. (YH49M9STFP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = X5R6P2Q692;
 				ENABLE_BITCODE = NO;
@@ -6934,7 +6934,7 @@
 					"$(PROJECT_DIR)/zhundao/第三方类库/UMSocial/WeChat/WechatSDK",
 					"$(PROJECT_DIR)/zhundao/第三方类库/UMSocial/UMSocialSDKPlugin",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
