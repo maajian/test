@@ -12,11 +12,11 @@
 #import "LoginViewController.h"
 #import "SendViewController.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
-#import "JPUSHService.h"
 #import "loginViewModel.h"
 //#import <UMCommon/UMCommon.h>
 //#import <UMShare/UMShare.h>
 #import "WXApi.h"
+#import <GTSDK/GeTuiSdk.h> 
 
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -24,10 +24,14 @@
 NSString * const kdbManagerVersion = @"DBManagerVersion";
 #define kYoumengAPPKEY @"58b3c7a275ca352ea8000c3a"
 #define KMapkey @"ec66cd9c1c0675a526822e333504cad7"
+#define kGtAppId           @"icsAR4twklA9djLiG36sh8"
+#define kGtAppKey          @"ay5fEPhmTZ9o4kH0rS4GC9"
+#define kGtAppSecret       @"ywcGQYVFht7o7x9eZ6zHE9"
+
 @class AFURLResponseSerialization;
 
 //58b3c7a275ca352ea8000c3a 友盟appkey
-@interface AppDelegate ()<WXApiDelegate,UIApplicationDelegate,JPUSHRegisterDelegate>
+@interface AppDelegate ()<WXApiDelegate,UIApplicationDelegate, GeTuiSdkDelegate, UNUserNotificationCenterDelegate>
 {
     NSDictionary *userDict;
 }
@@ -79,7 +83,8 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     [AMapServices sharedServices].apiKey = KMapkey;  //地图apikey
     
     //推送
-    [self JPushSet:launchOptions];
+    [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:self];
+    [GeTuiSdk registerRemoteNotification: (UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)];
     
     //是否登录
     if (Unionid==nil&&access==nil) {
@@ -136,71 +141,114 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 }
 
 
-#pragma  mark -----极光推送设置 
-
-- (void)JPushSet:(NSDictionary *)launchOptions
-{
-     static NSString *appkey = @"770f6e079395b847e46bc296";
-      NSString *channel = @"appStore";
-    
-    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
-    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-        
-    }
-    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
-    
-    [JPUSHService setupWithOption:launchOptions appKey:appkey
-                          channel:channel
-                 apsForProduction:0   //0为开发 1为上传app
-            advertisingIdentifier:nil];
-}
-
+#pragma  mark ----- 推送设置
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [JPUSHService registerDeviceToken:deviceToken];
+    //向个推服务器注册deviceToken
+//    [GeTuiSdk registerDeviceTokenData:deviceToken];
 }
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    //Optional
-    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
-}
-
-#pragma mark  ------ 推送代理 JPUSHRegisterDelegate
-- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
-    NSDictionary * userInfo = notification.request.content.userInfo;
-    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [JPUSHService handleRemoteNotification:userInfo];
+/// 通知展示（iOS10及以上版本）
+/// @param center center
+/// @param notification notification
+/// @param completionHandler completionHandler
+- (void)GeTuiSdkNotificationCenter:(UNUserNotificationCenter *)center
+           willPresentNotification:(UNNotification * )notification
+             completionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
+__API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
+    if (@available(iOS 10.0, *)) {
+        if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+            [GeTuiSdk resetBadge];
+            if ([SignManager shareManager].getToken.length) {
+                [ZD_NotificationCenter postNotificationName:ZDNotification_GetMessageList object:nil];
+            }
+        }else{
+            //应用处于前台时的本地推送接受
+        }
+        //当应用处于前台时提示设置，需要哪个可以设置哪一个
+        completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:kAppNotification object:nil userInfo:userInfo];
-    completionHandler(UNNotificationPresentationOptionAlert);
-    
 }
 
-
-- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
-    NSDictionary * userInfo = response.notification.request.content.userInfo;
-    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [JPUSHService handleRemoteNotification:userInfo];
+ 
+/// 收到通知信息
+/// @param userInfo apns通知内容
+/// @param center UNUserNotificationCenter（iOS10及以上版本）
+/// @param response UNNotificationResponse（iOS10及以上版本）
+/// @param completionHandler 用来在后台状态下进行操作（iOS10以下版本）
+- (void)GeTuiSdkDidReceiveNotification:(NSDictionary *)userInfo
+                    notificationCenter:(nullable UNUserNotificationCenter *)center
+                              response:(nullable UNNotificationResponse *)response
+                fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler {
+    [GeTuiSdk handleRemoteNotification:userInfo];
+    NSLog(@"内容 = %@",userInfo);
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+        if ([SignManager shareManager].getToken.length) {
+            [ZD_NotificationCenter postNotificationName:ZDNotification_GetMessageList object:nil];
+        }
+    } else{
+        [GeTuiSdk resetBadge];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [ZD_NotificationCenter postNotificationName:ZDNotification_Push object:nil];
+        });
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:kAppNotification object:nil userInfo:userInfo];
-    completionHandler();
+    if(completionHandler) {
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    
-    // Required, iOS 7 Support
+
+/// 收到透传消息
+/// @param userInfo    推送消息内容
+/// @param fromGetui   YES: 个推通道  NO：苹果apns通道
+/// @param offLine     是否是离线消息，YES.是离线消息
+/// @param appId       应用的appId
+/// @param taskId      推送消息的任务id
+/// @param msgId       推送消息的messageid
+/// @param completionHandler 用来在后台状态下进行操作（通过苹果apns通道的消息 才有此参数值）
+- (void)GeTuiSdkDidReceiveSlience:(NSDictionary *)userInfo
+                        fromGetui:(BOOL)fromGetui
+                          offLine:(BOOL)offLine
+                            appId:(nullable NSString *)appId
+                           taskId:(nullable NSString *)taskId
+                            msgId:(nullable NSString *)msgId
+           fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler {
+    [GeTuiSdk handleRemoteNotification:userInfo];
     NSLog(@"内容 = %@",userInfo);
-    [JPUSHService handleRemoteNotification:userInfo];
-    completionHandler(UIBackgroundFetchResultNewData);
+    [GeTuiSdk resetBadge];
+    if ([SignManager shareManager].getToken.length) {
+        [ZD_NotificationCenter postNotificationName:ZDNotification_GetMessageList object:nil];
+    }
+    if(completionHandler) {
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    
-    NSLog(@"内容 = %@",userInfo);
-    // Required,For systems with less than or equal to iOS6
-    [JPUSHService handleRemoteNotification:userInfo];
+- (void)GeTuiSdkNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification {
+    // [ 参考代码，开发者注意根据实际需求自行修改 ] 根据APP需要自行修改参数值
 }
 
+// app杀死的时候调用
+- (void)applicationHasKill:(UIApplication *)application Options:(NSDictionary *)launchOptions {
+   if (launchOptions != nil) {
+       NSDictionary * userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+       NSLog(@"userInfo = %@",userInfo);
+       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+           //关闭友盟自带的弹出框
+           [GeTuiSdk resetBadge];
+           if ([SignManager shareManager].getToken.length) {
+               [ZD_NotificationCenter postNotificationName:ZDNotification_Push object:nil];
+           }
+       });
+   }
+}
+
+/** SDK启动成功返回cid */
+- (void)GeTuiSdkDidRegisterClient:(NSString *)clientId {
+    //个推SDK已注册，返回clientId
+    NSLog(@"\n>>>[GeTuiSdk RegisterClient]:%@\n\n", clientId);
+    ZD_UserM.clientId = clientId;
+}
+
+#pragma mark --- 三方授权
 -(BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
     BOOL wxRes = [WXApi handleOpenURL:url delegate:self];
@@ -242,9 +290,7 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 
 }
 
-- (void)getUserInfo
-{
-    
+- (void)getUserInfo {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];

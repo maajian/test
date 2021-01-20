@@ -8,6 +8,7 @@
 
 #import "SignleListViewController.h"
 #import "SignleModel.h"
+#import "ZDActivityAdminMarkVC.h"
 #import "ImageBrowserViewController.h"
 #import "GZActionSheet.h"
 #import "EditSignListViewController.h"
@@ -35,9 +36,15 @@
 @property(nonatomic,strong)NSMutableArray *typeArray ; // 左边inputType
 @property(nonatomic,copy)NSArray *baseNameArray ;
 @property(nonatomic,copy)NSArray *baseArray ;
+
+@property(nonatomic,strong)NSMutableArray *admminLeftArray;
+@property(nonatomic,strong)NSMutableArray *admminRightArray;
+
 @end
 
 @implementation SignleListViewController
+ZDGetter_MutableArray(admminLeftArray)
+ZDGetter_MutableArray(admminRightArray)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,8 +77,35 @@
         [_rightArray addObject:[self.datadic objectForKey:@"Amount"]];
         [_typeArray addObject:@"10"];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
+    [self.admminLeftArray removeAllObjects];
+    [self.admminRightArray removeAllObjects];
+    NSString *AdminRemark = self.datadic[@"AdminRemark"];
+    NSString *GuestType = self.datadic[@"GuestType"];
+    NSString *Seat = self.datadic[@"Seat"];
+    NSString *Room = self.datadic[@"Room"];
+    [self.admminLeftArray addObject:@"管理员备注"];
+    [self.admminRightArray addObject:AdminRemark];
     
+    if (GuestType.length) {
+        [self.admminLeftArray addObject:@"嘉宾类型"];
+        [self.admminRightArray addObject:GuestType];
+    }
+    
+    if (Room.length) {
+        [self.admminLeftArray addObject:@"房号"];
+        [self.admminRightArray addObject:Room];
+    }
+    if (Seat.length) {
+        [self.admminLeftArray addObject:@"座位"];
+        [self.admminRightArray addObject:Seat];
+    }
+    
+    [_table reloadData];
 }
 
 
@@ -83,14 +117,17 @@
 }
 - (void)moreAction
 {
-    NSArray *array = @[@"修改人员信息"];
-    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:1 andShowCancel:YES];
+    NSArray *array = @[@"修改人员信息", @"修改管理员备注"];
+    GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:0 andShowCancel:YES];
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
         NSLog(@"Show Index %zi",index); //取消0
         if (index==1) {   //删除
             [weakSelf EditSignList];
+        }
+        if (index == 2) {
+            [weakSelf adMark];
         }
     };
     [self.view.window addSubview:sheet];
@@ -125,7 +162,7 @@
     if (section==0) {
         return self.leftArray.count;
     }else{
-        return 1;
+        return self.admminLeftArray.count;
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -134,6 +171,7 @@
     cell = [tableView dequeueReusableCellWithIdentifier:@"signlecell"];
     if (cell==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"signlecell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     while (cell.contentView.subviews.lastObject!=nil) {
         [cell.contentView.subviews.lastObject removeFromSuperview];
@@ -230,15 +268,14 @@
             [cell.contentView addSubview:label1];
         }
     }else{
-        UILabel *label   = [MyLabel initWithLabelFrame:CGRectMake(20, 5,80, 30) Text:@"管理员备注" textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:15] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
-        CGSize size = [label.text boundingRectWithSize:CGSizeMake(100, label.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:label.font} context:nil].size;
+        
+        
+        UILabel *label   = [MyLabel initWithLabelFrame:CGRectMake(20, 5,80, 30) Text:self.admminLeftArray[indexPath.row] textColor:[UIColor blackColor] font:[UIFont systemFontOfSize:15] textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+        CGSize size = [label.text boundingRectWithSize :CGSizeMake(100, label.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:label.font} context:nil].size;
         label.frame = CGRectMake(20, 5, size.width, 30);
         [cell.contentView addSubview:label];
-        UILabel *label1   = [MyLabel initWithLabelFrame:CGRectMake(106, 5, kScreenWidth-116, 30) Text:self.datadic[@"AdminRemark"] textColor:[UIColor lightGrayColor] font:[UIFont systemFontOfSize:15] textAlignment:NSTextAlignmentRight cornerRadius:0 masksToBounds:0];
+        UILabel *label1   = [MyLabel initWithLabelFrame:CGRectMake(106, 5, kScreenWidth-116, 30) Text:self.admminRightArray[indexPath.row] textColor:[UIColor lightGrayColor] font:[UIFont systemFontOfSize:15] textAlignment:NSTextAlignmentRight cornerRadius:0 masksToBounds:0];
         [cell.contentView addSubview:label1];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(adMark:)];
-        [label1 addGestureRecognizer:tap];
-        
     }
         cell.tag = indexPath.row;
     return cell;
@@ -252,24 +289,28 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([_typeArray[indexPath.row] integerValue]==1) {
-        NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:16]};
-        CGSize size = [[NSString stringWithFormat:@"%@     %@",_leftArray[indexPath.row],_rightArray[indexPath.row]] boundingRectWithSize:CGSizeMake(kScreenWidth-50, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
-        return  size.height+15;
-    }else if ([_typeArray[indexPath.row] integerValue]==4)
-    {
-        NSArray  *imageArr = [_rightArray[indexPath.row] componentsSeparatedByString:@"|"];
-        if (imageArr.count==0||(imageArr.count==1&&[imageArr.firstObject isEqualToString:@""])) return 40;
-        
-        NSMutableArray *Array = [NSMutableArray array];
-        for (int i=0; i<imageArr.count; i++) {
-              if (imageArr[i]!=nil) [Array addObject:imageArr[i]];
+    if (indexPath.section == 0) {
+        if ([_typeArray[indexPath.row] integerValue]==1) {
+            NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:16]};
+            CGSize size = [[NSString stringWithFormat:@"%@     %@",_leftArray[indexPath.row],_rightArray[indexPath.row]] boundingRectWithSize:CGSizeMake(kScreenWidth-50, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+            return  size.height+15;
+        }else if ([_typeArray[indexPath.row] integerValue]==4)
+        {
+            NSArray  *imageArr = [_rightArray[indexPath.row] componentsSeparatedByString:@"|"];
+            if (imageArr.count==0||(imageArr.count==1&&[imageArr.firstObject isEqualToString:@""])) return 40;
+            
+            NSMutableArray *Array = [NSMutableArray array];
+            for (int i=0; i<imageArr.count; i++) {
+                  if (imageArr[i]!=nil) [Array addObject:imageArr[i]];
+            }
+            if (Array.count%3==0)  return  Array.count/3 *110+30;
+               else return  (Array.count/3+1) *110+30;
+           }
+        else{
+            return 44;
         }
-        if (Array.count%3==0)  return  Array.count/3 *110+30;
-           else return  (Array.count/3+1) *110+30;
-       }
-    else{
-        return 40;
+    } else {
+        return 44;
     }
 }
 
@@ -328,8 +369,7 @@
     }];
 }
 #pragma mark 蓝牙打印 
-- (void)print
-{
+- (void)print {
     PrintVM *printvm = [[PrintVM alloc]init];
     NSArray *modelselArray = [printvm getModel];
     NSInteger index = [modelselArray indexOfObject:@"1"];
@@ -355,11 +395,13 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 /*! 修改管理员备注 */
-- (void)adMark:(UITapGestureRecognizer *)tap{
-    UILabel *label = (UILabel *)tap.view;
+- (void)adMark {
+    ZDActivityAdminMarkVC *adminVC = [[ZDActivityAdminMarkVC alloc] init];
+    adminVC.dataDic = self.datadic;
+    [self.navigationController pushViewController:adminVC animated:YES];
+    return;;
+
     MoreLabelViewController *more =[[MoreLabelViewController alloc]init];
-    more.isADMark = YES;
-    more.textfTitle = label.text;
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:more animated:YES];
     __weak typeof(self) weakSelf = self;
@@ -370,7 +412,7 @@
              if (isSuccess) {
                  MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:weakSelf.view imageName:@"签到打勾"];
                  [hud hideAnimated:YES afterDelay:1.5];
-                 label.text = backStr;
+//                 label.text = backStr;
              }else{
                  maskLabel *label = [[maskLabel alloc]initWithTitle:@"修改失败"];
                  [label labelAnimationWithViewlong:weakSelf.view];

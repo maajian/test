@@ -23,7 +23,7 @@
     NSDictionary *dic = @{@"BusinessCode": @"GetMessageListForApp",
                           @"Data" : @{
                                   @"PageIndex":@(page),
-                                  @"PageSize":@(10),
+                                  @"PageSize":@(1000),
                          }
     };
     ZD_WeakSelf
@@ -34,17 +34,23 @@
         }
         if (obj[@"data"]) {
             NSArray *list = [NSArray arrayWithArray:obj[@"data"][@"list"]];
+            NSInteger count = 0;
             for (NSDictionary *dic in list) {
                 ZDMessageMainModel *message = [ZDMessageMainModel yy_modelWithJSON:dic];
                 if (![weakSelf.idArray containsObject:@(message.Id)]) {
                     [weakSelf.dataSource addObject:message];
                     [weakSelf.idArray addObject:@(message.Id)];
                 }
+                if (!message.IsRead) {
+                    count = count + 1;
+                }
             }
+            ZD_UserM.unreadMessage = count;
             weakSelf.isEmpty = weakSelf.dataSource.count == 0;
             weakSelf.isError = NO;
             ZDDo_Block_Safe_Main(success)
         } else {
+            ZD_UserM.unreadMessage = ZD_UserM.unreadMessage;
             weakSelf.isError = YES;
             weakSelf.isEmpty = NO;
             ZDDo_Block_Safe1(failure, obj[@"errmsg"])
@@ -52,6 +58,7 @@
     } fail:^(NSError *error) {
         weakSelf.isError = YES;
         weakSelf.isEmpty = NO;
+        ZD_UserM.unreadMessage = ZD_UserM.unreadMessage;
         ZDDo_Block_Safe1(failure, error.domain)
     }];
 }

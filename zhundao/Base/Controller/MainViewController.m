@@ -20,8 +20,6 @@
 @property(nonatomic,strong)UILabel *startLabel;
 @property(nonatomic,strong)UIImageView *startIamgeView;
 
-@property (nonatomic, strong) NSTimer *timer;
-
 @end
 
 @implementation MainViewController
@@ -31,7 +29,8 @@
     if (self) {
         [self createSubControllers];
         [self createCustomTabBar];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotification:) name:kAppNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushNotification:) name:ZDNotification_Push object:nil];
+        [ZD_NotificationCenter addObserver:self selector:@selector(updateRedDot) name:ZDNotification_UnreadMessageChange object:nil];
     }
     return self;
 }
@@ -41,10 +40,18 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 -(void)createSubControllers
 {
     NSArray *storyboardNames = @[@"Activity",@"Signin",@"Discover",@"Me"];
@@ -60,140 +67,62 @@
 - (void)createCustomTabBar
 {
     for (UIView *subView in self.tabBar.subviews) {
-        Class buttonClass = NSClassFromString(@"UITabBarButton");
-        if ([subView isKindOfClass:buttonClass]) {
-            [subView removeFromSuperview];
-        }
-    }
+       Class buttonClass = NSClassFromString(@"UITabBarButton");
+       if ([subView isKindOfClass:buttonClass]) {
+           [subView removeFromSuperview];
+       }
+   }
+
     CGFloat buttonWidth = kScreenWidth/4;
-    NSArray *imageArray = @[@"activity",@"tabbar_message",@"discover",@"me"];
+    NSArray *imageArray = @[@"tabbar_activity",@"tabbar_message",@"tabbar_discover",@"tabbar_me"];
+    NSArray *imagedarray = @[@"tabbar_activity_select",@"tabbar_message_select",@"tabbar_discover_select",@"tabbar_me_select"];
     NSArray *titleArray = @[@"活动",@"消息",@"发现",@"我"];
-    for (int i=0; i<4; i++) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(i*buttonWidth, 0, buttonWidth, 49);
-        [button addTarget:self action:@selector(buttonAction:) forControlEvents: UIControlEventTouchUpInside ];
-        button.tag = 100+i;
+    for (int i = 0; i < 4; i++) {
+        UIButton *button = [UIButton buttonWithFrame:CGRectMake(i * buttonWidth , 0, kScreenWidth / 4, 49) normalImage:[UIImage imageNamed:imageArray[i]] selectedImage:[UIImage imageNamed:imagedarray[i]] target:self action:@selector(buttonAction:)];
+        [button setTitle:titleArray[i] forState:UIControlStateNormal];
+        [button setTitleColor:ZDGreenColor forState:UIControlStateSelected];
+        button.titleLabel.font = [UIFont systemFontOfSize:9];
+        button.selected = i == 0;
+        button.tag = 100 + i;
+        button.imageView.tag = 1000 + i;
+        [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [button setButtonWithButtonInsetType:WYButtonInsetTypeTitleBottom space:4];
         [self.tabBar addSubview:button];
-        UIImageView *imageview = [[UIImageView alloc]init];
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 27 , buttonWidth,  12)];
-        
-           imageview.image = [UIImage imageNamed:imageArray[i]];
-            label.textColor = [UIColor lightGrayColor];
-
-        imageview.frame = CGRectMake(buttonWidth/2-10, 2, 20, 20);
-        
-        [button addSubview:imageview];
-        
-        
-        
-        label.text = titleArray[i];
-        label.font = [UIFont systemFontOfSize:12];
-        
-        label.textAlignment = NSTextAlignmentCenter;
-     
-        
-   
-        label.tag = 100+i;
-        [button addSubview:label];
-    
-         self.tabBar.shadowImage = [[UIImage alloc] init];
-        if (i==0) {
-            flag=0;
-            _startButton = button;
-            _startLabel = label;
-            _startLabel.textColor = ZDGreenColor2;
-            _startIamgeView = imageview;
-            _startIamgeView.image = [UIImage imageNamed:@"activityed"];
-            [_startButton addSubview:_startLabel];
-            [_startButton addSubview:_startIamgeView];
-          
-        }
-    }
-}
-
-
-- (void)buttonAction:(UIButton *)sender{
-    self.selectedIndex = sender.tag-100;
-    
-    
-    NSArray *imageArray = @[@"activity",@"tabbar_message",@"discover",@"me"];
-        NSArray *imagedarray = @[@"activityed",@"tabbar_message_select",@"discovered",@"meed"];
-    
-    if ([_startButton.subviews[0] isKindOfClass:[UILabel class]]) {
-         _startLabel =  (UILabel *)_startButton.subviews[0];
-    }
-    else{
-        _startIamgeView =  (UIImageView *)_startButton.subviews[0];
-    }
-    if ([_startButton.subviews[1] isKindOfClass:[UILabel class]]) {
-        _startLabel =  (UILabel *)_startButton.subviews[1];
-    }
-    else{
-        _startIamgeView =  (UIImageView *)_startButton.subviews[1];
-    }
-    if (sender!=_startButton) {    //如果切换tabbar
-        _startLabel.textColor = [UIColor lightGrayColor];
-        _startIamgeView.image = [UIImage imageNamed:imageArray[flag]];
-        
-        self.startButton.selected = NO;    //startButton 取消选中
-        self.startButton = sender;       // 切换button
-        if ([_startButton.subviews[0] isKindOfClass:[UILabel class]]) {
-            _startLabel =  (UILabel *)_startButton.subviews[0];
-        }
-        else{
-            _startIamgeView =  (UIImageView *)_startButton.subviews[0];
-        }
-        if ([_startButton.subviews[1] isKindOfClass:[UILabel class]]) {
-            _startLabel =  (UILabel *)_startButton.subviews[1];
-        }
-        else{
-            _startIamgeView =  (UIImageView *)_startButton.subviews[1];
-        }
-      
-        flag = self.selectedIndex;
-    }
-    else{
-        self.startButton.selected = YES;    // starbutton 选中
-    }
-    if (!self.startButton.selected) {
-        _startLabel.textColor = ZDGreenColor2;
-        _startIamgeView.image = [UIImage imageNamed:imagedarray[flag]];
+        self.selectedIndex = 0;
     }
 }
 
 #pragma mark --- 通知接收
-- (void)getNotification:(NSNotification *)nofi {
-    BaseNavigationViewController *baseNav = self.viewControllers[0];
-    DetailNoticeViewController *detailNotice = [[DetailNoticeViewController alloc]init];
-    detailNotice.ID = [nofi.userInfo[@"id"] integerValue];
-    detailNotice.isNotificationPush = YES;
-    [detailNotice setHidesBottomBarWhenPushed:YES];
-    self.selectedIndex = 0;
-    [baseNav pushViewController:detailNotice animated:YES];
+- (void)pushNotification:(NSNotification *)nofi {
+    self.selectedIndex = 1;
+}
+- (void)setSelectedIndex:(NSUInteger)selectedIndex {
+    super.selectedIndex = selectedIndex;
+    //4
+    for (int i = 0; i < 4; i++) {
+        UIButton *button = (UIButton *)[self.tabBar viewWithTag:100 + i];
+        button.selected = i == selectedIndex;
+    }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+#pragma mark --- action
+- (void)buttonAction:(UIButton *)button {
+    NSInteger tag = button.tag - 100;
+    self.selectedIndex = tag;
 }
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [_timer invalidate];
-    _timer = nil;
+- (void)updateRedDot {
+    if (!ZD_UserM.unreadMessage) {
+        [[self.tabBar viewWithTag:101] pp_hiddenBadge];
+    } else {
+        [[self.tabBar viewWithTag:101] pp_addBadgeWithNumber:ZD_UserM.unreadMessage];
+        UIDeviceOrientation orientation  = [[[UIDevice currentDevice] valueForKey:@"orientation"] integerValue];
+        if(orientation == UIDeviceOrientationLandscapeLeft ||
+           orientation == UIDeviceOrientationLandscapeRight){
+            [[self.tabBar viewWithTag:101] pp_moveBadgeWithX:- kScreenWidth /8 + 10 Y:12];
+        }else {
+            [[self.tabBar viewWithTag:101] pp_moveBadgeWithX:- kScreenWidth /8 + 10 Y:12];
+        }
+    }
 }
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

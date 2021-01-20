@@ -29,9 +29,9 @@
 #import "UIButton+UIButton_RightNav.h"
 #import "AAGlobalMacro.h"
 #import "ZDWebViewController.h"
-#import "WZLBadgeImport.h"
 #import "AJAlertSheet.h"
 #import "ZDAlertView.h"
+#import "PPBadgeView.h"
 
 #import "ZDRefreshNormalFooter.h"
 #import "ZDRefreshNormalHeader.h"
@@ -40,6 +40,7 @@
 #import "ZDSignAlertView.h"
 #import "ZDNetWorkManager.h"
 #import "ZDUserManager.h"
+#import "ZDDeviceManager.h"
 #import "ZDMacro.h"
 
 #import "UIView+Extension.h"

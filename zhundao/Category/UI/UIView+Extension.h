@@ -46,4 +46,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIView (HeaderFooterView)
++ (CGFloat)heightForHeaderFooterTitle:(NSString *)title labelMargin:(CGFloat)labelMargin;
++ (CGFloat)heightForHeaderFooterTitle:(NSString *)title labelMargin:(CGFloat)labelMargin font:(UIFont *)font;
++ (instancetype)viewWithHeaderFooterTitle:(NSString *)title labelMargin:(CGFloat)labelMargin alignment:(NSTextAlignment)alignment;
++ (instancetype)viewWithHeaderFooterTitle:(NSString *)title labelMargin:(CGFloat)labelMargin alignment:(NSTextAlignment)alignment font:(UIFont *)font;
+@end
+
 NS_ASSUME_NONNULL_END

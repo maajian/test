@@ -38,14 +38,16 @@ ZD_Singleton_Implementation(NetWorkManager)
  */
 - (void)getDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
     [[ZDNetWorkManager shareHTTPSessionManager] GET:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@, method = %@", responseObject, method);
+        NSLog(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
         succ(responseObject);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@, method = %@", error, method);
-        if (error.code == -1011) {
-            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-        } else  if (self.isDefaultNetworkLine) {
+//        if (error.code == -1011) {
+//            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+//        } else
+            if (self.isDefaultNetworkLine) {
+                fail([self networkError]);
             [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
         } else {
             fail([self networkError]);
@@ -58,13 +60,15 @@ ZD_Singleton_Implementation(NetWorkManager)
  */
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
     [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@, method = %@", responseObject, method);
+        NSLog(@"responseObject = %@, method = %@, params = %@", responseObject, method, parameters);
         succ(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@, method = %@", error, method);
-        if (error.code == -1011) {
-            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-        } else  if (self.isDefaultNetworkLine) {
+//        if (error.code == -1011) {
+//            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+//        } else
+            if (self.isDefaultNetworkLine) {
+                fail([self networkError]);
             [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
         } else {
             fail([self networkError]);
@@ -74,15 +78,19 @@ ZD_Singleton_Implementation(NetWorkManager)
 
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters constructing:(void (^)(id<AFMultipartFormData> formData))constructing succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
     [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters constructingBodyWithBlock:constructing progress: nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@, method = %@", responseObject, method);
+        NSLog(@"responseObject = %@, method = %@, params = %@", responseObject, method, parameters);
         succ(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@, method = %@", error, method);
-        if (error.code == -1011) {
-            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-        } else  if (self.isDefaultNetworkLine) {
+//        if (error.code == -1011) {
+//            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+//        }
+//        else
+            if (self.isDefaultNetworkLine) {
+           fail([self networkError]);
            [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
-       } else {
+       }
+        else {
            fail([self networkError]);
        }
     }];

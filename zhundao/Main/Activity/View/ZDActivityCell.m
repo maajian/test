@@ -173,10 +173,10 @@
     
     NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"%li",(long)_model.ID]];
     if (_model.HasJoinNum!=array1.count&&_model.HasJoinNum!=0) {
-        [_listButton.imageView showBadgeWithStyle:(WBadgeStyleRedDot) value:0 animationType:(WBadgeAnimTypeNone)];
+        [_listButton.imageView pp_addDotWithColor:[UIColor redColor]];
         _listButton.imageView.layer.masksToBounds = NO;
     } else {
-        [_listButton.imageView clearBadge];
+        [_listButton.imageView pp_hiddenBadge];
     }
 }
 

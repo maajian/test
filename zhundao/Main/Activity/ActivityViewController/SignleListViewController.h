@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 @interface SignleListViewController : BaseViewController
-@property(nonatomic,strong)NSDictionary *datadic;
+@property(nonatomic,strong)NSMutableDictionary *datadic;
 @property(nonatomic,assign)NSInteger activityID;
 @property(nonatomic,assign)NSInteger personID;
 @property(nonatomic,copy)NSString *vcode;

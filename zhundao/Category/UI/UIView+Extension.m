@@ -185,3 +185,42 @@
 }
 
 @end
+
+@implementation UIView (HeaderFooterView)
++ (CGFloat)heightForHeaderFooterTitle:(NSString *)title labelMargin:(CGFloat)labelMargin {
+    return [self heightForHeaderFooterTitle:title labelMargin:labelMargin font:[UIFont systemFontOfSize:12]];
+}
++ (CGFloat)heightForHeaderFooterTitle:(NSString *)title labelMargin:(CGFloat)labelMargin font:(UIFont *)font {
+    if(title.length){
+        UILabel *label = [UILabel labelWithFrame:CGRectZero textColor:ZDHeaderTitleColor font:font numberOfLines:0 lineBreakMode:0 lineAlignment:0];
+        label.text = title;
+        CGSize size = [label sizeThatFits:CGSizeMake(kScreenWidth - 2 * labelMargin, CGFLOAT_MAX)];
+        return size.height + 10 + 10;
+    }else {
+        return CGFLOAT_MIN;
+    }
+}
++ (instancetype)viewWithHeaderFooterTitle:(NSString *)title labelMargin:(CGFloat)labelMargin alignment:(NSTextAlignment)alignment {
+    return [self viewWithHeaderFooterTitle:title labelMargin:labelMargin alignment:alignment font:[UIFont systemFontOfSize:12]];
+}
++ (instancetype)viewWithHeaderFooterTitle:(NSString *)title labelMargin:(CGFloat)labelMargin alignment:(NSTextAlignment)alignment font:(UIFont *)font {
+    if(title.length){
+        UILabel *label = [UILabel labelWithFrame:CGRectZero textColor:ZDHeaderTitleColor font:font numberOfLines:0 lineBreakMode:0 lineAlignment:alignment];
+        label.text = title;
+        CGSize size = [label sizeThatFits:CGSizeMake(kScreenWidth - labelMargin * 2, CGFLOAT_MAX)];
+        
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, size.height + 16 + 6)];
+        view.backgroundColor = ZDBackgroundColor;
+        [view addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(-10);
+            make.leading.mas_equalTo(labelMargin);
+            make.trailing.mas_equalTo(-labelMargin);
+            make.top.mas_equalTo(10);
+        }];
+        return view;
+    }else {
+        return nil;
+    }
+}
+@end

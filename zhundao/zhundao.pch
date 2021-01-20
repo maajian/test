@@ -61,7 +61,8 @@
 #define ZDSystemFont(r) [UIFont systemFontOfSize:r]
 #define ZDBoldFont(r) [UIFont boldSystemFontOfSize:r]
 
-#define zhundaoApi ([[NSUserDefaults standardUserDefaults]objectForKey:@"ZDUserDefault_Network_Line"]?@"https://open.zhundao.com.cn/":@"https://open.zhundao.net/")
+
+#define zhundaoApi ([[NSUserDefaults standardUserDefaults]objectForKey:@"ZDUserDefault_Network_Line"]?@"https://open.zhundao.com.cn/":@"https://open.zhundaoyun.com/")
 #define zhundaoH5Api @"https://m.zhundao.net/"
 #define zhundaoMessageApi @"https://sms.zhundao.com.cn/"
 #define zhundaoLogApi @"https://fc.zhundao.net/"
@@ -84,9 +85,6 @@
 #define kDEVICEUUID    [UIDevice currentDevice].identifierForVendor.UUIDString /**<设备唯一标识*/
 #define kDEVICEVERSION [UIDevice currentDevice].systemVersion  /**<设备系统版本信息*/
 #define kPLATFORM       [UIDevice currentDevice].systemName     /**<平台信息 iPhone iPad Pod*/
-
- // 极光通知
-#define kAppNotification @"kAppNotification"
 
 
 #endif /* zhundao_pch */

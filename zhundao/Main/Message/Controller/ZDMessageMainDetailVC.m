@@ -54,6 +54,9 @@
     ZD_WeakSelf
     [self.viewModel setReadMessageWithID:_model.Id success:^{
         weakSelf.model.IsRead = 1;
+        if (ZD_UserM.unreadMessage) {
+            ZD_UserM.unreadMessage -= 1;
+        }
     } failure:^(NSString *error) {
     }];
 }

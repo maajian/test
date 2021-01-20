@@ -456,9 +456,9 @@
         NSIndexPath *indexpath = [_table indexPathForCell:mycell];
         if (self.searchController.active) {
             NSArray *arr = [allarray objectsAtIndexes:set];
-            signle.datadic = [arr objectAtIndex:indexpath.row];
+            signle.datadic = [NSMutableDictionary dictionaryWithDictionary:[arr objectAtIndex:indexpath.row]];
         }else{
-            signle.datadic = [allarray objectAtIndex:indexpath.row];
+            signle.datadic = [NSMutableDictionary dictionaryWithDictionary:[allarray objectAtIndex:indexpath.row]];
         }
         signle.userInfo =self.userInfo;
         signle.isChange = YES;

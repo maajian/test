@@ -8,6 +8,8 @@
 
 #import "ZDActivityViewModel.h"
 
+#import "ZDMessageMainModel.h"
+
 @interface ZDActivityViewModel()
 @property (nonatomic, assign) ZDActivityType activityType;
 
@@ -172,5 +174,31 @@
     }];
 }
 
+- (void)getMeMessageListSuccess:(ZDBlock_Void)success failure:(ZDBlock_Error_Str)failure {
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, [[SignManager shareManager] getToken]];
+    NSDictionary *dic = @{@"BusinessCode": @"GetMessageListForApp",
+                          @"Data" : @{
+                                  @"PageIndex":@(1),
+                                  @"PageSize":@(1000),
+                         }
+    };
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        if (obj[@"data"]) {
+            NSInteger count = 0;
+            NSArray *list = [NSArray arrayWithArray:obj[@"data"][@"list"]];
+            for (NSDictionary *dic in list) {
+                ZDMessageMainModel *message = [ZDMessageMainModel yy_modelWithJSON:dic];
+                if (!message.IsRead) {
+                    count = count + 1;
+                }
+            }
+            ZD_UserM.unreadMessage = count;
+        } else {
+            ZD_UserM.unreadMessage = ZD_UserM.unreadMessage;
+        }
+    } fail:^(NSError *error) {
+        ZD_UserM.unreadMessage = ZD_UserM.unreadMessage;
+    }];
+}
 
 @end

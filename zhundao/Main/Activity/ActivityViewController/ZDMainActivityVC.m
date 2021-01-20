@@ -31,11 +31,16 @@
 
 @implementation ZDMainActivityVC
 
+- (void)dealloc {
+    [ZD_NotificationCenter removeObserver:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initSet];
     [self initLayout];
+    [self initNotification];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -80,6 +85,8 @@
     if (ZD_UserM.loginExpired) {
         [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
     }
+    [ZD_UserM networkForSendClientID];
+    [self getRedDot];
 }
 - (void)initLayout {
     ZD_WeakSelf
@@ -94,6 +101,9 @@
         make.width.equalTo(weakSelf.scrollView);
     }];
     [self.view layoutIfNeeded];
+}
+- (void)initNotification {
+    [ZD_NotificationCenter addObserver:self selector:@selector(getRedDot) name:ZDNotification_GetMessageList object:nil];
 }
 
 #pragma mark 懒加载
@@ -274,6 +284,9 @@
             [self getEmail];
         });
     }];
+}
+- (void)getRedDot {
+    [self.viewModel getMeMessageListSuccess:nil failure:nil];
 }
 
 @end

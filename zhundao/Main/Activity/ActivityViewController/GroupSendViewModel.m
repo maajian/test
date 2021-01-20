@@ -13,7 +13,6 @@
 
 #pragma mark ---- network
 /*! 开通短信 */
-//https://open.zhundao.net/api/App/InstallApp?accesskey={accesskey}&id=3&from=ios
 - (void)openMessage:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/App/InstallMessageApp?accesskey=%@&id=3&from=ios",zhundaoApi,[[SignManager shareManager]getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {

@@ -68,7 +68,7 @@
 
 - (void)login {
  
-    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login?from=ios",@"https://open.zhundao.net/"];
+    NSString *phoneurl = [NSString stringWithFormat:@"%@api/v2/login?from=ios",zhundaoApi];
     NSDictionary *parameters = @{@"userName" : _phoneTextLabel.text, @"passWord" : _lockTextLabel.text};
     
     [ZD_NetWorkM postDataWithMethod:phoneurl parameters:parameters succ:^(NSDictionary *obj) {

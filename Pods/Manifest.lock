@@ -26,10 +26,8 @@ PODS:
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
+  - GTSDK (2.5.2.0)
   - IQKeyboardManager (5.0.4)
-  - JCore (1.1.7)
-  - JPush (3.0.8):
-    - JCore (~> 1.1.7)
   - SVProgressHUD (2.2.5)
   - WechatOpenSDK (1.8.7.1)
   - YYCache (1.0.4)
@@ -42,8 +40,8 @@ DEPENDENCIES:
   - CocoaAsyncSocket
   - DZNEmptyDataSet (~> 1.8.1)
   - FMDB
+  - GTSDK (~> 2.5.2.0)
   - IQKeyboardManager
-  - JPush
   - SVProgressHUD
   - WechatOpenSDK
   - YYCache
@@ -53,8 +51,6 @@ SPEC REPOS:
     - CocoaAsyncSocket
     - FMDB
     - IQKeyboardManager
-    - JCore
-    - JPush
     - YYCache
   trunk:
     - AFNetworking
@@ -63,6 +59,7 @@ SPEC REPOS:
     - AMapLocation
     - AMapSearch
     - DZNEmptyDataSet
+    - GTSDK
     - SVProgressHUD
     - WechatOpenSDK
 
@@ -75,13 +72,12 @@ SPEC CHECKSUMS:
   CocoaAsyncSocket: 7eadd3f59e1a6c84e2aefc93e9ff7b55156fe174
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  GTSDK: 29fa17ca404a31be6d3b764b29e33cddcaafd35c
   IQKeyboardManager: 1df9c0f147af1681cfb2d9977bc30309d45a7e76
-  JCore: f7459c81c135281a874a6beafdd321666adcc834
-  JPush: 9574d072cc37e93fa293ba69b43ce763c440943a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: c46afe7731657d8920fd9086498ba4bad1d0ef83
+PODFILE CHECKSUM: 1d3ce8bdf42223df5cb6697acf95c1661114242a
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

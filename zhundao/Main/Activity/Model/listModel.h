@@ -26,4 +26,9 @@
 @property(nonatomic,strong)NSString *Industry;
 @property(nonatomic,strong)NSString *Email;
 @property(nonatomic,strong)NSString *Address;
+
+@property(nonatomic, copy) NSString *Seat; // 座位
+@property(nonatomic, copy) NSString *GuestType; // 嘉宾类型
+@property(nonatomic, copy) NSString *Room; // 房间
+
 @end

@@ -82,7 +82,6 @@
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
        ZD_HUD_SHOW_ERROR_STATUS(error)
-
     }];
 }
 #pragma mark --- UITableViewDataSource
