@@ -36,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUI];
+    [self initLayout];
     [self addGes];
     [[UIApplication sharedApplication]setStatusBarHidden:YES];
     // Do any additional setup after loading the view.
@@ -45,7 +46,19 @@
     
     /*! 背景图片 */
     UIImageView *backImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
-    backImageView.image = [UIImage imageNamed:@"专属邀请函1.jpg"];
+    if ([UIScreen mainScreen].bounds.size.height == 480) {
+         // 3.5英寸
+        backImageView.image = [UIImage imageNamed:@"discover_own_invite_640X960"];
+     } else if ([UIScreen mainScreen].bounds.size.height == 568) {
+         // 4.0英寸
+         backImageView.image = [UIImage imageNamed:@"discover_own_invite_640X1136"];
+     } else if ([UIScreen mainScreen]. bounds.size.height == 667) {
+         // 5.0英寸
+         backImageView.image = [UIImage imageNamed:@"discover_own_invite_750X1334"];
+     } else {
+         // X英寸
+         backImageView.image = [UIImage imageNamed:@"discover_own_invite_1242X2688"];
+     }
     [self.view addSubview:backImageView];
     
     /*! 活动标题 */
@@ -72,9 +85,42 @@
         [_shareButton setImage:[UIImage imageNamed:@"detailShare"] forState:UIControlStateNormal];
         [self.view addSubview:_shareButton];
     }
-    
-    
-    
+}
+
+- (void)initLayout {
+    CGFloat contentHeight = kScreenHeight;
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.view).offset(40);
+        make.top.mas_equalTo(@(contentHeight / 2 - contentHeight * 0.09));
+        make.width.mas_equalTo(kScreenWidth - 80);
+        make.height.mas_equalTo(contentHeight * 0.1);
+    }];
+    [self.QRimageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.view).offset((kScreenWidth -100)/2);
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(contentHeight * 0.19);
+        make.height.width.mas_equalTo(100);
+    }];
+    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.view).offset(50);
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(contentHeight * 0.0845);
+        make.width.mas_equalTo(kScreenWidth - 100);
+        make.height.mas_equalTo(contentHeight * 0.1);
+    }];
+    [self.bottomLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.view).offset(50);
+        make.top.equalTo(self.view).offset(contentHeight * 0.885);
+        make.width.mas_equalTo(kScreenWidth - 100);
+    }];
+    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.view).offset(40);
+        make.top.equalTo(self.bottomLabel.mas_bottom).offset(20);
+        make.width.mas_equalTo(kScreenWidth - 80);
+    }];
+    [self.addressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.view).offset(40);
+        make.top.equalTo(self.timeLabel.mas_bottom);
+        make.height.mas_equalTo(30);
+    }];
 }
 
 #pragma mark  --- 点击推出
@@ -91,7 +137,7 @@
 
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(40, kScreenHeight/2-kScreenHeight*0.09, kScreenWidth-80, kScreenHeight*0.1)];
+        _titleLabel = [[UILabel alloc] init];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.numberOfLines = 0;
         _titleLabel.font = [UIFont systemFontOfSize:22];
@@ -107,8 +153,7 @@
 
 - (UIImageView *)QRimageView{
     if (!_QRimageView) {
-        
-        _QRimageView = [[UIImageView alloc]initWithFrame:CGRectMake((kScreenWidth -100)/2, kScreenHeight/2+kScreenHeight*0.2, 100, 100)];
+        _QRimageView = [[UIImageView alloc] init];
         if (_codeStr) {
             _QRimageView.image = [UIImage imageOfQRFromURL:_codeStr];
         }else{
@@ -121,9 +166,9 @@
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
         if (_name) {
-            _nameLabel = [MyLabel initWithLabelFrame:CGRectMake(50, kScreenHeight/2+kScreenHeight*0.0945, kScreenWidth-100, kScreenHeight*0.1) Text:_name textColor:[UIColor whiteColor] font:KweixinFont(17) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
+            _nameLabel = [MyLabel initWithLabelFrame:CGRectZero Text:_name textColor:[UIColor whiteColor] font:KweixinFont(17) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
         }else{
-            _nameLabel = [MyLabel initWithLabelFrame:CGRectMake(50, kScreenHeight/2+kScreenHeight*0.0945, kScreenWidth-100, kScreenHeight*0.1) Text:@"周先生(变量)" textColor:[UIColor whiteColor] font:KweixinFont(17) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
+            _nameLabel = [MyLabel initWithLabelFrame:CGRectZero Text:@"周先生(变量)" textColor:[UIColor whiteColor] font:KweixinFont(17) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
         }
     }
     return _nameLabel;
@@ -133,9 +178,9 @@
 - (UILabel *)bottomLabel{
     if (!_bottomLabel) {
         if (_isSign) {
-            _bottomLabel = [MyLabel initWithLabelFrame:CGRectMake(50, kScreenHeight*0.87, kScreenWidth-100, 30) Text:@"专属二维码入场凭证" textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(11) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
+            _bottomLabel = [MyLabel initWithLabelFrame:CGRectZero Text:@"专属二维码入场凭证" textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(11) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
         }else{
-            _bottomLabel = [MyLabel initWithLabelFrame:CGRectMake(50, kScreenHeight*0.87, kScreenWidth-100, 30) Text:@"长按或扫一扫报名" textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(11) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
+            _bottomLabel = [MyLabel initWithLabelFrame:CGRectZero Text:@"长按或扫一扫报名" textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(11) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
         }
     }
     return _bottomLabel;
@@ -144,9 +189,9 @@
 - (UILabel *)timeLabel{
     if (!_timeLabel) {
         if (_timeStr) {
-            _timeLabel = [MyLabel initWithLabelFrame:CGRectMake(40, kScreenHeight*0.88, kScreenWidth-80, kScreenHeight*0.1) Text:_timeStr textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+            _timeLabel = [MyLabel initWithLabelFrame:CGRectZero Text:_timeStr textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
         }else{
-            _timeLabel = [MyLabel initWithLabelFrame:CGRectMake(40, kScreenHeight*0.88, kScreenWidth-80, kScreenHeight*0.1) Text:@"时间: 2017-11-10 09:00(变量)" textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+            _timeLabel = [MyLabel initWithLabelFrame:CGRectZero Text:@"时间: 2017-11-10 09:00(变量)" textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
         }
     }
     return _timeLabel;
@@ -155,9 +200,9 @@
 - (UILabel *)addressLabel{
     if (!_addressLabel) {
         if (_address) {
-            _addressLabel = [MyLabel initWithLabelFrame:CGRectMake(40, kScreenHeight*0.88+35, kScreenWidth-80, 30) Text:_address textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+            _addressLabel = [MyLabel initWithLabelFrame:CGRectZero Text:_address textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
         }else{
-            _addressLabel = [MyLabel initWithLabelFrame:CGRectMake(40, kScreenHeight*0.88+35, kScreenWidth-80, 30) Text:@"地址: 杭州滨江区白马湖会展中心(变量)" textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
+            _addressLabel = [MyLabel initWithLabelFrame:CGRectZero Text:@"地址: 杭州滨江区白马湖会展中心(变量)" textColor:[UIColor colorWithWhite:0.70 alpha:1] font:KweixinFont(12) textAlignment:NSTextAlignmentLeft cornerRadius:0 masksToBounds:0];
         }
     }
     return _addressLabel;

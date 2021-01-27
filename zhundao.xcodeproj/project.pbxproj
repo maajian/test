@@ -597,8 +597,6 @@
 		9C6974C11F21ED79005B42CD /* FaceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6974C01F21ED79005B42CD /* FaceViewModel.m */; };
 		9C6A84DD1F56A3C700DD584B /* AJCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A84DA1F56A3C700DD584B /* AJCarousel.m */; };
 		9C6A84DE1F56A3C700DD584B /* AJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A84DC1F56A3C700DD584B /* AJCollectionViewCell.m */; };
-		9C6A84E11F56A41B00DD584B /* 邀请函3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6A84DF1F56A41B00DD584B /* 邀请函3.png */; };
-		9C6A84E21F56A41B00DD584B /* 邀请函2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6A84E01F56A41B00DD584B /* 邀请函2.png */; };
 		9C6A84E81F56B66D00DD584B /* inviteCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A84E71F56B66D00DD584B /* inviteCollectionView.m */; };
 		9C6A84EB1F56B7AA00DD584B /* InviteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A84EA1F56B7AA00DD584B /* InviteCollectionViewCell.m */; };
 		9C6B0A711DFE87CF000A8557 /* friend.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6B0A701DFE87CF000A8557 /* friend.png */; };
@@ -624,7 +622,6 @@
 		9C72C5621E20C74D00212F0A /* wechat.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72C5611E20C74D00212F0A /* wechat.png */; };
 		9C72C5641E20D65300212F0A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72C5631E20D65300212F0A /* logo.png */; };
 		9C72C5661E20F21F00212F0A /* sharewechat.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72C5651E20F21F00212F0A /* sharewechat.png */; };
-		9C75C6F31F54FBB80084D86A /* 邀请函1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C75C6F21F54FBB80084D86A /* 邀请函1.png */; };
 		9C75C6F91F550E980084D86A /* inviteViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C75C6F81F550E980084D86A /* inviteViewModel.m */; };
 		9C7752951DF01D2200FC31BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7752941DF01D2200FC31BB /* main.m */; };
 		9C7752981DF01D2200FC31BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7752971DF01D2200FC31BB /* AppDelegate.m */; };
@@ -716,7 +713,6 @@
 		9CEBC9F21E1E44E100EC98E1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CEBC9F11E1E44E100EC98E1 /* Default-568h@2x.png */; };
 		9CECC1E61E091C6500B8BEDF /* selectColor.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CECC1E51E091C6500B8BEDF /* selectColor.png */; };
 		9CFCD8281E84F0000067323B /* PostSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFCD8271E84F0000067323B /* PostSignViewController.m */; };
-		9CFE30E31F8DAD74005DC56A /* 专属邀请函1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9CFE30E21F8DAD74005DC56A /* 专属邀请函1.jpg */; };
 		9CFE30E51F8DE4D1005DC56A /* 邀请.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CFE30E41F8DE4D1005DC56A /* 邀请.png */; };
 /* End PBXBuildFile section */
 
@@ -1802,8 +1798,6 @@
 		9C6A84DA1F56A3C700DD584B /* AJCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJCarousel.m; path = ../../Main/Activity/AJCarousel.m; sourceTree = "<group>"; };
 		9C6A84DB1F56A3C700DD584B /* AJCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJCollectionViewCell.h; path = ../../Main/Activity/AJCollectionViewCell.h; sourceTree = "<group>"; };
 		9C6A84DC1F56A3C700DD584B /* AJCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJCollectionViewCell.m; path = ../../Main/Activity/AJCollectionViewCell.m; sourceTree = "<group>"; };
-		9C6A84DF1F56A41B00DD584B /* 邀请函3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "邀请函3.png"; sourceTree = "<group>"; };
-		9C6A84E01F56A41B00DD584B /* 邀请函2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "邀请函2.png"; sourceTree = "<group>"; };
 		9C6A84E61F56B66D00DD584B /* inviteCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inviteCollectionView.h; sourceTree = "<group>"; };
 		9C6A84E71F56B66D00DD584B /* inviteCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inviteCollectionView.m; sourceTree = "<group>"; };
 		9C6A84E91F56B7AA00DD584B /* InviteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1848,7 +1842,6 @@
 		9C72C5611E20C74D00212F0A /* wechat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat.png; sourceTree = "<group>"; };
 		9C72C5631E20D65300212F0A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9C72C5651E20F21F00212F0A /* sharewechat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sharewechat.png; sourceTree = "<group>"; };
-		9C75C6F21F54FBB80084D86A /* 邀请函1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "邀请函1.png"; sourceTree = "<group>"; };
 		9C75C6F71F550E980084D86A /* inviteViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inviteViewModel.h; sourceTree = "<group>"; };
 		9C75C6F81F550E980084D86A /* inviteViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inviteViewModel.m; sourceTree = "<group>"; };
 		9C7752901DF01D2200FC31BB /* zhundao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zhundao.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2007,7 +2000,6 @@
 		9CF67ED51E6E527000BC80DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		9CFCD8261E84F0000067323B /* PostSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostSignViewController.h; sourceTree = "<group>"; };
 		9CFCD8271E84F0000067323B /* PostSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostSignViewController.m; sourceTree = "<group>"; };
-		9CFE30E21F8DAD74005DC56A /* 专属邀请函1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "专属邀请函1.jpg"; sourceTree = "<group>"; };
 		9CFE30E41F8DE4D1005DC56A /* 邀请.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "邀请.png"; sourceTree = "<group>"; };
 		E5DCCAAE14B0CCD93C18DB64 /* Pods-zhundao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhundao.release.xcconfig"; path = "Pods/Target Support Files/Pods-zhundao/Pods-zhundao.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -4632,7 +4624,6 @@
 				9C9648691F7B3E6F004DD8DC /* 专属邀请函大小.png */,
 				9C96486A1F7B3E6F004DD8DC /* 专属邀请函颜色.png */,
 				9C96486B1F7B3E6F004DD8DC /* 专属邀请函字体.png */,
-				9CFE30E21F8DAD74005DC56A /* 专属邀请函1.jpg */,
 				9CFE30E41F8DE4D1005DC56A /* 邀请.png */,
 				9C1D33761F720781009B6046 /* 支付宝.png */,
 				9C1D33741F720729009B6046 /* 钱包.png */,
@@ -4640,10 +4631,7 @@
 				9CE41C271F6B6A900065D3F1 /* 地址.png */,
 				9C594F4C1F6A5C8B0006CD5E /* 提现等待.png */,
 				9C1246A01F5EA710000768D9 /* 打勾-right.png */,
-				9C6A84DF1F56A41B00DD584B /* 邀请函3.png */,
-				9C6A84E01F56A41B00DD584B /* 邀请函2.png */,
 				5B519927210F6B72002413DB /* 密码.png */,
-				9C75C6F21F54FBB80084D86A /* 邀请函1.png */,
 				9C5849CB1F46B9B10078CB0E /* 通知公告.png */,
 				9C4D1E521F384962005BB512 /* 提现.png */,
 				9C67CD741F28842400743A04 /* 人脸签到.png */,
@@ -5483,7 +5471,6 @@
 				9C59CFAC1DF17CCF0089F2EB /* zhundao.png in Resources */,
 				9C54D5CC1F0B68AC0053501E /* 蓝牙打印.png in Resources */,
 				9C5597831E25D68100E91226 /* 60.png in Resources */,
-				9C6A84E21F56A41B00DD584B /* 邀请函2.png in Resources */,
 				9C1F97701EC59416003280F4 /* font.png in Resources */,
 				9C5597871E25D68100E91226 /* 120.png in Resources */,
 				9C8635141E2CC4D500364FD6 /* Info.plist in Resources */,
@@ -5508,7 +5495,6 @@
 				9C7752A31DF01D2200FC31BB /* LaunchScreen.storyboard in Resources */,
 				9C23ED8E1E2DED9D00CD1B62 /* ImageViewController.xib in Resources */,
 				9C4E78141E9F771B005D68BD /* option打勾.png in Resources */,
-				9C75C6F31F54FBB80084D86A /* 邀请函1.png in Resources */,
 				5B9957231FCD8BE300A26866 /* MJRefresh.bundle in Resources */,
 				9C8BE8D91E26004E00790DD5 /* 58.png in Resources */,
 				9C4658CC1E023B490039AFF6 /* SendViewController.xib in Resources */,
@@ -5572,7 +5558,6 @@
 				8446DCC120D15C4B000C724B /* AAFunnel.js in Resources */,
 				9C5E122A1E8A4D7500E9A11B /* banner.png in Resources */,
 				9C55978C1E25E0B800E91226 /* 80.png in Resources */,
-				9CFE30E31F8DAD74005DC56A /* 专属邀请函1.jpg in Resources */,
 				9C793F7D1E5EB49000DE08CD /* 扫码签到ed.png in Resources */,
 				9C793F7B1E5EB49000DE08CD /* 手机号.png in Resources */,
 				9C5166C71E320D0E002886A2 /* ChangeInputViewController.xib in Resources */,
@@ -5585,7 +5570,6 @@
 				9C3F3A531E55833900E7E8E2 /* more截止.png in Resources */,
 				9C0B1E661DF934BF003A7DB8 /* back.png in Resources */,
 				9C793F8F1E5EDF1900DE08CD /* saoma-5.png in Resources */,
-				9C6A84E11F56A41B00DD584B /* 邀请函3.png in Resources */,
 				9C1246A11F5EA710000768D9 /* 打勾-right.png in Resources */,
 				8446DCC220D15C4B000C724B /* AAHighcharts-3d.js in Resources */,
 				9C7AD91A1E8E02FB00CC1627 /* more所有签到.png in Resources */,

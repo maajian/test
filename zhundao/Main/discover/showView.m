@@ -445,7 +445,19 @@ static const CGFloat bottomViewHeight= 44;
 }
 - (void)addEditBackgroundView{
     UIImageView *imgView = [[UIImageView alloc]initWithFrame:self.frame];
-    imgView.image = [[UIImage imageNamed:@"专属邀请函1.jpg"]applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)] ;
+    if ([UIScreen mainScreen].bounds.size.height == 480) {
+         // 3.5英寸
+        imgView.image = [[UIImage imageNamed:@"discover_own_invite_640X960"] applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)];
+     } else if ([UIScreen mainScreen].bounds.size.height == 568) {
+         // 4.0英寸
+         imgView.image = [[UIImage imageNamed:@"discover_own_invite_640X1136"] applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)];
+     } else if ([UIScreen mainScreen]. bounds.size.height == 667) {
+         // 5.0英寸
+         imgView.image = [[UIImage imageNamed:@"discover_own_invite_750X1334"] applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)];
+     } else {
+         // X英寸
+         imgView.image = [[UIImage imageNamed:@"discover_own_invite_1242X2688"] applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)];
+     }
     [self addSubview:imgView];
 }
 #pragma mark ---添加手势

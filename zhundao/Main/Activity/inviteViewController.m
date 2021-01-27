@@ -91,9 +91,6 @@
     imageview = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-40)];
     /*! 二维码图片 */
     UIImage *image2 = [UIImage imageOfQRFromURL:_imageStr];
-//    /*! 邀请函背景图 */
-//    NSString *file = [[NSBundle mainBundle]pathForResource:@"邀请函1" ofType:@".png"];
-//    UIImage *image1 = [UIImage imageWithContentsOfFile:file];
     /*! 获取名称字符串 */
     NSString *acName = _model.Title;
     /*! 时间字符串 */
@@ -104,8 +101,20 @@
     /*! 绘制 */
     for (int i = 0; i<3; i++) {
         /*! 邀请函背景图 */
-        NSString *file = [[NSBundle mainBundle]pathForResource:[NSString stringWithFormat:@"邀请函%d",i+1] ofType:@".png"];
-        UIImage *image1 = [UIImage imageWithContentsOfFile:file];
+        UIImage *image1;
+        if ([UIScreen mainScreen].bounds.size.height == 480) {
+             // 3.5英寸
+            image1 = [UIImage imageNamed:[NSString stringWithFormat:@"me_more_invite_640x960_%d", i + 1]];
+         } else if ([UIScreen mainScreen].bounds.size.height == 568) {
+             // 4.0英寸
+             image1 = [UIImage imageNamed:[NSString stringWithFormat:@"me_more_invite_640x1136_%d",i + 1]];
+         } else if ([UIScreen mainScreen]. bounds.size.height == 667) {
+             // 5.0英寸
+             image1 = [UIImage imageNamed:[NSString stringWithFormat:@"me_more_invite_750x1334_%d", i + 1]];
+         } else {
+             // X英寸
+             image1 = [UIImage imageNamed:[NSString stringWithFormat:@"me_more_invite_1242x2688_%d", i + 1]];
+         }
         [self.ViewModel drawImage:imageview image1:image1 image2:image2 acName:acName timeStr:timeStr address:address index :i];
         [_ViewModel savaImageToSanBox:_acid image:imageview.image index:i];
     }
