@@ -58,7 +58,7 @@
 //        NSArray *array = [NSArray arrayWithArray:obj];
 //        listBlock(array);
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
     }];
 }
 

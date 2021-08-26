@@ -139,7 +139,7 @@
 
 - (void)shareImage{
     if (![WXApi isWXAppInstalled]) {
-        NSLog(@"请移步App Store去下载微信客户端");
+        DDLogVerbose(@"请移步App Store去下载微信客户端");
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请先下载微信" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];

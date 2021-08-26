@@ -40,7 +40,7 @@
 {
     NSString *str = [NSString stringWithFormat:@"%@api/Contact/PostContactGroup?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
     [ZD_NetWorkM postDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *dataArray = dicionary[@"Data"];
         NSMutableArray *array1 = [NSMutableArray array];
@@ -106,7 +106,7 @@
     }
     
     double deltaTime = [[NSDate date] timeIntervalSinceDate:Start];
-    NSLog(@"time = %f", deltaTime);
+    DDLogVerbose(@"time = %f", deltaTime);
     
     return backDic;
 }
@@ -130,11 +130,11 @@
 //        BOOL res = [manager.dataBase executeUpdate:updateSql];
         bool result = [manager.dataBase executeUpdate:@"CREATE TABLE IF NOT EXISTS contact(ID INTEGER PRIMARY KEY NOT NULL ,Sex INTEGER,HeadImgurl TEXT,GroupName TEXT,ContactGroupID INTEGER,TrueName TEXT NOT NULL,Address TEXT,Company TEXT,Duty TEXT,Email TEXT,Remark TEXT,SerialNo TEXT,IDcard TEXT,Mobile TEXT NOT NULL);"];
         if (result) {
-            NSLog(@"成功创建table");
+            DDLogVerbose(@"成功创建table");
         }
         else
         {
-            NSLog(@"创建table失败");
+            DDLogVerbose(@"创建table失败");
         }
         [manager.dataBase close];
         
@@ -149,11 +149,11 @@
             NSString *insertSql =[NSString stringWithFormat:@"replace INTO contact(ID,GroupName,Sex, HeadImgurl,ContactGroupID,TrueName,Address,Company,Duty,Email,Remark,SerialNo,IDcard,Mobile)VALUES(%li,'%@',%li,'%@',%li,'%@','%@','%@','%@','%@','%@','%@','%@','%@')",(long)model.ID,model.GroupName,(long)model.Sex,model.HeadImgurl,(long)model.ContactGroupID,model.TrueName,model.Address,model.Company,model.Duty,model.Email,model.Remark,model.SerialNo,model.IDcard,model.Mobile];
             BOOL res = [[SignManager shareManager].dataBase executeUpdate:insertSql];
             if (res) {
-                NSLog(@"数据表插入成功");
+                DDLogVerbose(@"数据表插入成功");
             }
             else
             {
-                NSLog(@"数据表插入失败");
+                DDLogVerbose(@"数据表插入失败");
             }
         }
     }
@@ -177,11 +177,11 @@
         NSString *insertSql =[NSString stringWithFormat:@"DELETE FROM contact WHERE ID = '%ld'",(long)personID];
         BOOL res = [manager.dataBase executeUpdate:insertSql];
         if (res) {
-            NSLog(@"数据表插入成功");
+            DDLogVerbose(@"数据表插入成功");
         }
         else
         {
-            NSLog(@"数据表插入失败");
+            DDLogVerbose(@"数据表插入失败");
         }
         
         [manager.dataBase close];
@@ -194,9 +194,9 @@
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dictionary = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *dataarray =dictionary[@"Data"];
-        NSLog(@"%@",dataarray);
+        DDLogVerbose(@"%@",dataarray);
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
     }];
     
 }

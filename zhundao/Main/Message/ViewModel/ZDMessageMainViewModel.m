@@ -79,5 +79,53 @@
         ZDDo_Block_Safe_Main1(failure, error.domain)
     }];
 }
+// 清除所有未读
+- (void)clearAllReadMessageSuccess:(ZDBlock_Void)success failure:(ZDBlock_Error_Str)failure {
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, [[SignManager shareManager] getToken]];
+    NSDictionary *dic = @{@"BusinessCode": @"ClearUnReadMessageForApp",
+                          @"Data" : @{}
+    };
+    ZD_WeakSelf
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        if ([obj[@"res"] boolValue]) {
+            ZD_UserM.unreadMessage = 0;
+            [weakSelf.dataSource enumerateObjectsUsingBlock:^(ZDMessageMainModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                obj.IsRead = YES;
+            }];
+            ZDDo_Block_Safe_Main(success)
+        } else {
+            ZDDo_Block_Safe_Main1(failure, obj[@"errmsg"])
+        }
+    } fail:^(NSError *error) {
+        ZDDo_Block_Safe_Main1(failure, error.domain)
+    }];
+}
+
+// 删除消息
+- (void)deleteMessageMessageWithID:(NSInteger)Id success:(ZDBlock_Void)success failure:(ZDBlock_Error_Str)failure {
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, [[SignManager shareManager] getToken]];
+    NSDictionary *dic = @{@"BusinessCode": @"DeleteMessageForApp",
+                          @"Data" : @{
+                              @"id":@(Id)
+                          }
+    };
+    ZD_WeakSelf
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        if ([obj[@"res"] boolValue]) {
+            ZD_UserM.unreadMessage -= 1;
+            [weakSelf.dataSource enumerateObjectsUsingBlock:^(ZDMessageMainModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (obj.Id == Id) {
+                    [weakSelf.dataSource removeObjectAtIndex:idx];
+                    *stop = YES;
+                }
+            }];
+            ZDDo_Block_Safe_Main(success)
+        } else {
+            ZDDo_Block_Safe_Main1(failure, obj[@"errmsg"])
+        }
+    } fail:^(NSError *error) {
+        ZDDo_Block_Safe_Main1(failure, error.domain)
+    }];
+}
 
 @end

@@ -60,13 +60,13 @@
         NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
         [formData appendPartWithFileData:data name:@"imgFile" fileName:fileName mimeType:@"image/jpeg"];
     } succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if (block) {
             block(dic[@"url"]);
         }
     } fail:^(NSError *error) {
-        
+        ZD_HUD_DISMISS
     }];
 }
 

@@ -10,7 +10,7 @@
 
 #import <WebKit/WebKit.h>
 
-@interface ZDDiscoverShopDetailVC () {
+@interface ZDDiscoverShopDetailVC ()<ZDShareViewDelegate> {
     NSInteger _productId;
     NSString *_imageUrl;
 }
@@ -37,7 +37,7 @@
 
 #pragma mark --- action
 - (void)shareAction {
-    [[SignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_imageUrl]]] webpageUrl:self.urlString  withCTR:self Withtype:5];
+    [ZDShareView showWithDelegate:self];
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
@@ -49,6 +49,17 @@
 }
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     _productId = 0;
+    NSString *url = [[navigationAction request].URL.absoluteString stringByRemovingPercentEncoding];
+    if(![url containsString:@"https"] && ![url containsString:@"http"]){
+        if ([[UIDevice currentDevice].systemVersion floatValue] <= 10.0) {
+            [[UIApplication sharedApplication] openURL:[navigationAction request].URL];
+        }else {
+            [[UIApplication sharedApplication] openURL:[navigationAction request].URL options:@{} completionHandler:^(BOOL success) {}];
+        }
+        //不允许跳转
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return ;
+    }
     if ([navigationAction.request.URL.absoluteString containsString:@"market/detail"]) {
         self.urlString = navigationAction.request.URL.absoluteString;
         _productId = ZD_SafeIntValue([navigationAction.request.URL.absoluteString componentsSeparatedByString:@"market/detail/"].lastObject);
@@ -60,6 +71,15 @@
 - (void)popOne {
     [super popOne];
     [self.webView reload];
+}
+
+#pragma mark --- ZDShareViewDelegate
+- (void)shareView:(ZDShareView *)shareView didSelectType:(ZDShareType)shareType {
+    if (shareType == ZDShareTypeWechat) {
+        [[SignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_imageUrl]]] webpageUrl:self.urlString  withCTR:self Withtype:5 scene:0];
+    } else {
+        [[SignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_imageUrl]]] webpageUrl:self.urlString  withCTR:self Withtype:5 scene:1];
+    }
 }
 
 #pragma mark --- Network

@@ -173,8 +173,8 @@ const static CGFloat buttonWidth = 20;
         case 1001:{
             UITextField *textf1 = [self viewWithTag:1000];
             UITextField *textf2 = [self viewWithTag:1002];
-            NSLog(@"%f",[textf1.text floatValue]);
-            NSLog(@"%f",[textf2.text floatValue]);
+            DDLogVerbose(@"%f",[textf1.text floatValue]);
+            DDLogVerbose(@"%f",[textf2.text floatValue]);
             self.currentColor = kColorA([textf1.text floatValue], [textField.text floatValue], [textf2.text floatValue], 1);
         }
             break;

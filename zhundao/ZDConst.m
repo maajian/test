@@ -27,6 +27,7 @@ NSString *const ZDUserDefault_HasShowPrivacy = @"ZDUserDefault_HasShowPrivacy";
 NSString *const ZDUserDefault_LoginTime = @"ZDUserDefault_LoginTime";
 NSString *const ZDUserDefault_ClientId = @"ZDUserDefault_ClientId";
 NSString *const ZDUserDefault_UnreadMessage = @"ZDUserDefault_UnreadMessage";
+NSString *const ZDUserDefault_SignList = @"ZDUserDefault_SignList";
 
 #pragma mark --- Cache
 NSString *const ZDCacheSign_One_List = @"ZDCacheSign_One_List";

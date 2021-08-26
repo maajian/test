@@ -32,13 +32,15 @@
     ListTableViewCell *mycell;
     NSString *listuser;
      Reachability *r;
-    NSMutableArray *_phoneSearchArray;
-    NSMutableArray *_nickNameSearchArray;
-    NSMutableArray  *_UserNameSearchArray;
     NSArray *_searchDataArray;
     MJRefreshNormalHeader *header;
     NSMutableIndexSet *set;
     JQIndicatorView *indicator;
+    
+    NSMutableArray *_phoneSearchArray;
+    NSMutableArray *_nickNameSearchArray;
+    NSMutableArray  *_UserNameSearchArray;
+    NSMutableArray *_companySearchArray;
 }
 @property (nonatomic, strong) UISearchController *searchController;
 @property(nonatomic,strong)  ListViewModel *listVM;
@@ -52,7 +54,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    listuser = [NSString stringWithFormat:@"%li",(long)self.listID];
+    listuser = [NSString stringWithFormat:@"%li",(long)self.activityModel.ID];
    self.title = @"名单";
     [self getaccseekey];
      [self createTableView];
@@ -75,7 +77,7 @@
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-            NSLog(@"wu");
+            DDLogVerbose(@"wu");
         {
             [self cantNet];
             break;
@@ -83,13 +85,13 @@
             
         case ReachableViaWWAN:
             // 使用3G网络
-            NSLog(@"wan");
+            DDLogVerbose(@"wan");
             [self reflsh];
             [self isload];
             break;
         case ReachableViaWiFi:
             // 使用WiFi网络
-            NSLog(@"wifi");
+            DDLogVerbose(@"wifi");
             [self reflsh];
             [self isload];
             break;
@@ -98,7 +100,7 @@
 
 - (void)isload{
     NSArray *array1 = [[NSUserDefaults standardUserDefaults]objectForKey:listuser];
-    NSLog(@"count = %li",(unsigned long)array1.count);
+    DDLogVerbose(@"count = %li",(unsigned long)array1.count);
     indicator = [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
     indicator.center = self.view.center;
     [self.view addSubview:indicator];
@@ -129,6 +131,11 @@
                 [_UserNameSearchArray addObject:@"没有姓名"];
             }else{
                 [_UserNameSearchArray addObject:model.UserName];
+            }
+            if (model.UserName ==nil) {
+                [_companySearchArray addObject:@"没有公司"];
+            }else{
+                [_companySearchArray addObject:model.Company];
             }
             
             model.count = array1.count-i;
@@ -179,11 +186,12 @@
 #pragma mark 表视图创建
 - (void)createTableView
 {
-    _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
+    _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kTopBarHeight) style:UITableViewStylePlain];
     _table.delegate = self;
     _table.dataSource = self;
     _table.backgroundColor = ZDBackgroundColor;
-    _table.separatorStyle = NO;
+    _table.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _table.separatorColor = [UIColor clearColor];
     [_table registerNib:[UINib nibWithNibName:@"ListTableViewCell" bundle:nil] forCellReuseIdentifier:@"listcell"];
     
     _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
@@ -242,6 +250,8 @@
     else _nickNameSearchArray = [NSMutableArray array];
     if (_UserNameSearchArray)  [_UserNameSearchArray removeAllObjects];
     else _UserNameSearchArray = [NSMutableArray array];
+    if (_companySearchArray)  [_companySearchArray removeAllObjects];
+    else _companySearchArray = [NSMutableArray array];
 
 }
 #pragma mark UISearchResultsUpdating
@@ -251,20 +261,23 @@
     NSMutableArray *array1 = [NSMutableArray arrayWithArray:_phoneSearchArray];   //_phoneSearchArray 的mutablecopy
     NSMutableArray *array2 = [NSMutableArray arrayWithArray:_nickNameSearchArray];//_nickNameSearchArray 的mutablecopy
     NSMutableArray *array5= [NSMutableArray arrayWithArray:_UserNameSearchArray];
+    NSMutableArray *array7= [NSMutableArray arrayWithArray:_companySearchArray];
     NSMutableArray *array3 = nil;
     NSMutableArray *array4 =nil;
     NSMutableArray *array6 =nil;
+    NSMutableArray *array8 =nil;
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
        array3= [NSMutableArray arrayWithArray:[_phoneSearchArray filteredArrayUsingPredicate:preicate]];
        array4 =[NSMutableArray arrayWithArray:[_nickNameSearchArray filteredArrayUsingPredicate:preicate]];
        array6 =[NSMutableArray arrayWithArray:[_UserNameSearchArray filteredArrayUsingPredicate:preicate]];
+    array8 =[NSMutableArray arrayWithArray:[_companySearchArray filteredArrayUsingPredicate:preicate]];
     if (set) {
         [set removeAllIndexes];
     }
     else{
         set = [[NSMutableIndexSet alloc]init];
     }
-    if (array3.count!=0||array4.count!=0||array6.count!=0) {
+    if (array3.count!=0||array4.count!=0||array6.count!=0||array8.count!=0) {
             for (int i =0; i<array3.count; i++) {
                 [set addIndex:[array1 indexOfObject:array3[i]]];
                 array1[[array1 indexOfObject:array3[i]]] = @"";
@@ -276,6 +289,10 @@
              for (int i=0 ; i<array6.count; i++) {
                 [set addIndex:[array5 indexOfObject:array6[i]]];
                  array5[[array5 indexOfObject:array6[i]]] = @"";
+            }
+            for (int i =0; i<array8.count; i++) {
+                [set addIndex:[array7 indexOfObject:array8[i]]];
+                array7[[array7 indexOfObject:array8[i]]] = @"";
             }
             _searchDataArray = [[_dataArray copy] objectsAtIndexes:set];
             [_table reloadData];
@@ -319,11 +336,11 @@
 - (void)loadData    //网络加载数据
 {
     dispatch_queue_t conQueue = dispatch_queue_create("1", DISPATCH_QUEUE_CONCURRENT);
-    NSString *extraInfoUrl = [NSString stringWithFormat:@"%@api/v2/activity/GetActivityOption?token=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getToken], _listID];
+    NSString *extraInfoUrl = [NSString stringWithFormat:@"%@api/v2/activity/GetActivityOption?token=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getToken], self.activityModel.ID];
     [ZD_NetWorkM postDataWithMethod:extraInfoUrl parameters:nil succ:^(NSDictionary *obj) {
         NSArray *extraInfoArray = obj[@"data"];
         NSString *listurl = [NSString stringWithFormat:@"%@api/v2/activity/getActivityList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
-        NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)self.listID],
+        NSDictionary *dic = @{@"activityId":[NSString stringWithFormat:@"%li",(long)self.activityModel.ID],
                               @"pageSize":@"200000",
                               @"curPage":@"1"};
         [ZD_NetWorkM postDataWithMethod:listurl parameters:dic succ:^(NSDictionary *obj) {
@@ -353,6 +370,11 @@
                         [_UserNameSearchArray addObject:@"没有姓名"];
                     }else{
                         [_UserNameSearchArray addObject:model.UserName];
+                    }
+                    if (model.UserName ==nil) {
+                        [_companySearchArray addObject:@"没有公司"];
+                    }else{
+                        [_companySearchArray addObject:model.Company];
                     }
                     model.count =array1.count-i;
                     
@@ -388,7 +410,7 @@
                 });
             });
         } fail:^(NSError *error) {
-            NSLog(@"error = %@",error);
+            DDLogVerbose(@"error = %@",error);
             [indicator stopAnimating];
             [[SignManager shareManager] showNotHaveNet:self.view];
         }];
@@ -409,7 +431,7 @@
             }
             [optionArray replaceObjectAtIndex:i withObject:mudic];
         }
-        [[NSUserDefaults standardUserDefaults]setObject:[optionArray copy] forKey:[NSString stringWithFormat:@"optionArray%li",(long)self.listID]];
+        [[NSUserDefaults standardUserDefaults]setObject:[optionArray copy] forKey:[NSString stringWithFormat:@"optionArray%li",(long)self.activityModel.ID]];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
@@ -460,9 +482,9 @@
         }else{
             signle.datadic = [NSMutableDictionary dictionaryWithDictionary:[allarray objectAtIndex:indexpath.row]];
         }
-        signle.userInfo =self.userInfo;
+        signle.userInfo =self.activityModel.UserInfo;
         signle.isChange = YES;
-        signle.activityID = self.listID;
+        signle.activityID = self.activityModel.ID;
         signle.personID = mycell.model.ID;
         [self  setHidesBottomBarWhenPushed:YES];
         [self.navigationController pushViewController:signle animated:YES];
@@ -559,10 +581,10 @@
         if ([[NSUserDefaults standardUserDefaults]integerForKey:@"selectInvite"]>1) {
             customInviteViewController *custom = [[customInviteViewController alloc]init];
             custom.signCodeStr = mycell.model.VCode ;
-            custom.activityCodeStr = [NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)_listID];
-            custom.activityAddress = [NSString stringWithFormat:@"活动地址：%@",_address];
-            custom.activityTime = [NSString stringWithFormat:@"活动时间：%@",[Time bringWithTime:_timeStart].timeStr];
-            custom.activityTitle = _listName;
+            custom.activityCodeStr = [NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)self.activityModel.ID];
+            custom.activityAddress = [NSString stringWithFormat:@"活动地址：%@",self.activityModel.Address];
+            custom.activityTime = [NSString stringWithFormat:@"活动时间：%@",[Time bringWithTime:self.activityModel.TimeStart].timeStr];
+            custom.activityTitle = self.activityModel.Title;
             custom.name = mycell.model.UserName;
             [self presentViewController:custom animated:YES completion:^{
                 [_table setEditing:NO];
@@ -580,15 +602,15 @@
 }
 - (void)defaultInvite:(BOOL)isSign{
     defaultViewController *defaultInvite = [[defaultViewController alloc]init];
-    defaultInvite.activityTitle = _listName;
+    defaultInvite.activityTitle = self.activityModel.Title;
     defaultInvite.isSign = isSign;
     if (isSign) {
         defaultInvite.codeStr = mycell.model.VCode;
     }else{
-        defaultInvite.codeStr = [NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)_listID];
+        defaultInvite.codeStr = [NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)self.activityModel.ID];
     }
-    defaultInvite.address = [NSString stringWithFormat:@"地址：%@",_address];
-    defaultInvite.timeStr = [NSString stringWithFormat:@"时间：%@",[Time bringWithTime:_timeStart].timeStr];
+    defaultInvite.address = [NSString stringWithFormat:@"地址：%@",self.activityModel.Address];
+    defaultInvite.timeStr = [NSString stringWithFormat:@"时间：%@",[Time bringWithTime:self.activityModel.TimeStart].timeStr];
     defaultInvite.name  = mycell.model.UserName;
     [self presentViewController:defaultInvite animated:YES completion:^{
         [_table setEditing:NO];
@@ -627,32 +649,30 @@
 #pragma deleteData 
 -(void)deletePerson :(listModel *)model
 {
-    NSArray *array = @[@"删除报名人员"];
     __weak typeof(self) weakSelf = self;
-    
-    AJAlertSheet *sheet = [[AJAlertSheet alloc]initWithFrame:[UIScreen mainScreen].bounds array:array title:@"删除后将导致该用户二维码失效，如果有签到记录也将被删除，是否继续?" isDelete : YES selectBlock:^(NSInteger index) {
-        if (index==0) {
-           MBProgressHUD *hud = [MyHud initWithAnimationType:MBProgressHUDAnimationFade showAnimated:YES UIView:self.view];
-           hud.label.text = @"删除中";
-            [_listVM deletePersonWithID:model.ID];
-            _listVM.deleteBlock = ^(NSInteger isSuccess)
-            {
-                if (isSuccess==1)
-                {
-                    [hud hideAnimated:YES];
-                    MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:weakSelf.view imageName:@"签到打勾"];
-                    [hud1 hideAnimated:YES afterDelay:1.5];
-                    [weakSelf loadData];
-                } else if (isSuccess==2) {
-                    maskLabel *label = [[maskLabel alloc]initWithTitle:@"付费或已有用户签到的活动无法删除"];
-                    [label labelAnimationWithViewlong:weakSelf.view];
-                }
-                else  [[SignManager shareManager]showNotHaveNet:weakSelf.view];
-            };
-        }
-     }];
-    [ZD_KeyWindow addSubview:sheet];
-    [sheet fadeIn];
+    if (self.activityModel.Fee) {
+        [self networkForjudgeOpenV3Function:^(NSString *errorStr) {
+            if (!errorStr.length) {
+                AJAlertSheet *sheet = [[AJAlertSheet alloc]initWithFrame:[UIScreen mainScreen].bounds array:@[@"退款并删除?"] title:@"删除后将导致该用户二维码失效，如果有签到记录也将被删除，是否继续?" isDelete : YES selectBlock:^(NSInteger index) {
+                    if (index==0) {
+                        [weakSelf deleteAndRefundActivity:model.ID];
+                    }
+                 }];
+                [ZD_KeyWindow addSubview:sheet];
+                [sheet fadeIn];
+            } else {
+                [ZDAlertView alertWithTitle:@"提示" message:@"V3以上会员开通退款应用后才可使用本功能" cancelTitle:@"确定" sureTitle:nil sureBlock:nil cancelBlock:nil];
+            }
+        }];
+    } else {
+        AJAlertSheet *sheet = [[AJAlertSheet alloc]initWithFrame:[UIScreen mainScreen].bounds array:@[@"删除报名人员"] title:@"删除后将导致该用户二维码失效，如果有签到记录也将被删除，是否继续?" isDelete : YES selectBlock:^(NSInteger index) {
+            if (index==0) {
+                [weakSelf deleteAndRefundActivity:model.ID];
+            }
+         }];
+        [ZD_KeyWindow addSubview:sheet];
+        [sheet fadeIn];
+    }
 }
 
 #pragma mark 右上角更多设置
@@ -669,22 +689,22 @@
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
-        NSLog(@"Show Index %zi",index); //取消0
+        DDLogVerbose(@"Show Index %zi",index); //取消0
         
         if (index==1) {
             
             PrintVcodeViewController *print = [[PrintVcodeViewController alloc]init];
             [weakSelf setHidesBottomBarWhenPushed:YES];
             print.modelArray = [_dataArray copy];
-            print.activityID = _listID;
+            print.activityID = self.activityModel.ID;
             [weakSelf.navigationController pushViewController:print animated:YES];
         }
         
         if (index==2) {
             NewPersonViewController *new = [[NewPersonViewController alloc]init];
-            new.activityID = self.listID;
-            new.userInfo = self.userInfo;
-            new.feeArray = [self.feeArray copy];
+            new.activityID = self.activityModel.ID;
+            new.userInfo = self.activityModel.UserInfo;
+            new.feeArray = [self.activityModel.ActivityFees copy];
             [self setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:new animated:YES];
             new.fleshBlock = ^(BOOL isSuccess)
@@ -698,7 +718,7 @@
         if (index==3) {
             PostEmailViewController *post = [[PostEmailViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
-            post.activityID = self.listID;
+            post.activityID = self.activityModel.ID;
             [self.navigationController pushViewController:post animated:YES];
         }
         if (index == 4) {
@@ -709,8 +729,8 @@
             }else{
                 choosePerson.modelArray = [_dataArray copy];
             }
-            choosePerson.activityName = _listName;
-            choosePerson.activityID = _listID;
+            choosePerson.activityName = self.activityModel.Title;
+            choosePerson.activityID = self.activityModel.ID;
             [self.navigationController pushViewController:choosePerson animated:YES];
         }
         
@@ -719,23 +739,36 @@
     [self.view.window addSubview:sheet];
 }
 #pragma mark --- readDelegate
-
-//-(void)cancelSend{
-//    [self endEditing];
-//}
-//
-//- (void)endEditing{
-//    _table.allowsMultipleSelectionDuringEditing = NO;
-//    _table.editing = NO;
-//}
-//- (void)nextStep{
-//    NSArray *selectArray = [_table indexPathsForSelectedRows];
-//    [self endEditing];
-//    GroupSendViewController *groupSend = [[GroupSendViewController alloc]init];
-//    [self setHidesBottomBarWhenPushed:YES];
-//    [self.navigationController pushViewController:groupSend animated:YES];
-//
-//}
+- (void)deleteAndRefundActivity:(NSInteger)activityListId {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/cancel?token=%@&activityListId=%li&from=ios", zhundaoApi, [[SignManager shareManager] getToken], activityListId];
+    ZD_HUD_SHOW_WAITING
+    ZD_WeakSelf
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"res"] boolValue]) {
+            ZD_HUD_DISMISS
+            [weakSelf loadData];
+        } else {
+            ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"]);
+        }
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR_STATUS(@"请检查网络设置");
+    }];
+}
+// 判断是否开通v3的退款应用
+- (void)networkForjudgeOpenV3Function:(ZDBlock_Str)open {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/app/getMyAppConfig?userid=%li&appId=37", zhundaoApi, ZD_UserM.userID];
+    ZD_HUD_SHOW_WAITING
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        ZD_HUD_DISMISS
+        if ([obj[@"res"] boolValue]) {
+            ZDDo_Block_Safe_Main1(open, @"")
+        } else {
+            ZDDo_Block_Safe_Main1(open, obj[@"errmsg"])
+        }
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR_STATUS(@"请检查网络设置");
+    }];
+}
 
 - (void)rightButton   // 添加rightbutton
 {
@@ -746,13 +779,13 @@
 {
     PostEmailViewController *post = [[PostEmailViewController alloc]init];
     [self setHidesBottomBarWhenPushed:YES];
-    post.activityID = self.listID;
+    post.activityID = self.activityModel.ID;
     [self.navigationController pushViewController:post animated:YES];
 }
 
 -(void)dealloc
 {
-    NSLog(@"没有泄露");
+    DDLogVerbose(@"没有泄露");
 }
 
 - (void)didReceiveMemoryWarning {

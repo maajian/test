@@ -110,7 +110,7 @@
 - (void)SwitchChange
 {
     switchFlag = !switchFlag;
-    NSLog(@"%i",switchFlag);
+    DDLogVerbose(@"%i",switchFlag);
     if (switchFlag==NO) {
         [_switchButton setOn:NO];
     }
@@ -294,7 +294,7 @@
                 b= temp;
                 [arr replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%li",(long)a]];
                 [arr replaceObjectAtIndex:j withObject:[NSString stringWithFormat:@"%li",(long)b]];
-                NSLog(@"arr =%@",arr);
+                DDLogVerbose(@"arr =%@",arr);
             }
         }
     }
@@ -325,11 +325,11 @@
         }
     }
     footerView.hidden = NO;
-    //      NSLog(@"dic = %@",textDic);
+    //      DDLogVerbose(@"dic = %@",textDic);
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    NSLog(@"view = %f",footerView.frame.origin.y);
+    DDLogVerbose(@"view = %f",footerView.frame.origin.y);
     [UIView animateWithDuration:3 animations:^{
         footerView.hidden = YES;
     } completion:nil];

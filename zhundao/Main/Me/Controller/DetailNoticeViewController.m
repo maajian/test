@@ -159,7 +159,7 @@
 
 
 -(void)dealloc{
-    NSLog(@"dealloc");
+    DDLogVerbose(@"dealloc");
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

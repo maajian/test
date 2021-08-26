@@ -7,7 +7,6 @@
 //
 
 #import "postActivityViewController.h"
-#import "MoreChioceViewController.h"
 #import "FeeViewController.h"
 #import "AvtivityOptions.h"
 #import "MapViewController.h"
@@ -18,8 +17,9 @@
 #import "postViewModel.h"
 #import "ChooseBigImgViewController.h"
 #import "ShowPostImageViewController.h"
+#import "ZDActivityOptionModel.h"
+#import "ZDActivityMoreChioceVC.h"
 
-#define kBoolarray @"Boolarray"
 #define kAlertSwitch @"AlertSwitch"
 #define kHiddenList @"HiddenList"
 
@@ -34,10 +34,6 @@
 @property(nonatomic,strong)postViewModel                *postVM;
 /*! 时间格式懒加载，减少开销 */
 @property(nonatomic,strong)NSDateFormatter            *formatter;
-/*! 自定义项 */
-@property(nonatomic,strong)      NSMutableArray *optionArray;
-/*! 更多选项 */
-@property(nonatomic,copy)         NSDictionary *moredic;
 /*! 大图 */
 @property(nonatomic,copy)NSString *bigImageUrl ;
 /*! 是否大图为上传的 */
@@ -58,19 +54,22 @@
 /*! 是否是高德地图地址 */
 @property (nonatomic, assign) BOOL isGaoDeMap;
 
-/*! 基础项+自定义项 */
-@property(nonatomic,strong)NSMutableArray *ALLOptionsArray;
-
 @property(nonatomic,assign)NSInteger jiexiCount;
 
 @property(nonatomic,strong)NSMutableArray *strArray; //图片字符串数组
-
-
+// 用户option
+@property (nonatomic, strong) NSMutableArray<ZDActivityOptionModel *> *userInfoOptionArray;
+// 其他自定义option
+@property (nonatomic, strong) NSMutableArray<ZDActivityOptionModel *> *extraInfoOptionArray;
+/*! 更多选项 */
+@property (nonatomic, strong) NSMutableDictionary *moredic;
 
 @end
 
 @implementation postActivityViewController
-
+ZDGetter_MutableArray(userInfoOptionArray)
+ZDGetter_MutableArray(extraInfoOptionArray)
+ZDGetter_MutableDictionary(moredic)
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = ZDBackgroundColor;
@@ -97,21 +96,22 @@
         self.title = @"发起活动";
     }
 }
+
 #pragma mark netWork网络请求
-- (void)network
-{   
+- (void)network {
     __weak typeof(self) weakSelf = self;
     AvtivityOptions *Options = [[AvtivityOptions alloc]init];
-    JQIndicatorView *indicator = [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
-    indicator.center = self.view.center;
-    [self.view addSubview:indicator];
-    [indicator startAnimating];
-    [Options networkwithBlock:^(NSArray *optionsArray) {
-        [indicator stopAnimating];
-        weakSelf.optionArray = [optionsArray copy];
-        if (_activityModel) {
-            [self editDic];
-        }
+    ZD_HUD_SHOW_WAITING
+    [Options networkWithActivityId:self.activityModel.ID success:^(NSArray *userInfoArray, NSArray *extraInfoArray) {
+        ZD_HUD_DISMISS
+        weakSelf.userInfoOptionArray = [userInfoArray mutableCopy];
+        weakSelf.extraInfoOptionArray = [extraInfoArray mutableCopy];
+        [weakSelf editDic];
+    } failure:^{
+        ZD_HUD_SHOW_ERROR_STATUS(@"请检查网络设置")
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        });
     }];
 }
 #pragma mark 懒加载
@@ -131,38 +131,6 @@
     return _formatter;
 }
 
-- (NSDictionary *)moredic
-{
-    if (!_moredic) {
-        _moredic = [NSDictionary dictionary];
-    }
-    return _moredic;
-}
-/*! 自定义项 */
-- (NSMutableArray *)optionArray  //
-{
-    if (!_optionArray) {
-        _optionArray = [NSMutableArray array];
-        
-    }
-    return _optionArray;
-}
-/*! 所有基础项+自定义项 */
-- (NSMutableArray *)ALLOptionsArray //所有自定义项
-{
-    __weak typeof(self) weakSelf = self;
-    if (!_ALLOptionsArray) {
-        _ALLOptionsArray = [NSMutableArray array];
-        NSArray *arr =  @[@"100",@"101",@"102",@"103",@"104",@"105",@"110",@"106",@"107",@"111",@"109",@"112"];
-        [_ALLOptionsArray addObjectsFromArray:arr];
-        if (weakSelf.optionArray.count>0) {
-            for (NSDictionary *dic in weakSelf.optionArray) {
-                [_ALLOptionsArray addObject:dic[@"ID"]];
-            }
-        }
-    }
-    return _ALLOptionsArray;
-}
 #pragma mark --- postDelegate
 /*! 跳转协议 */
 - (void)pushXieYi{
@@ -215,22 +183,16 @@
 
 /*! 跳转编辑更多 */
 - (void)pushMoreChoose{
-    MoreChioceViewController *moreChioce = [[MoreChioceViewController alloc]init];
-    [self setHidesBottomBarWhenPushed:YES];
-    moreChioce.optionsArray = self.optionArray;
-    moreChioce.datadic =self.moredic;
-    if (_isSmallPost) {
-        moreChioce.isSmallPost = _isSmallPost;
-        moreChioce.imageStr = _smallImageUrl;
-    }else{
-        moreChioce.imageStr = self.postView.bigImageStr;
-    }
+    ZDActivityMoreChioceVC *moreChioce = [[ZDActivityMoreChioceVC alloc] initWithImageUrl:_smallImageUrl.length ? _smallImageUrl : self.postView.bigImageStr alert:[self.moredic[kAlertSwitch] boolValue] showList:[self.moredic[kHiddenList] integerValue]    isEditActivity:self.activityModel ? YES : NO chioceBlock:^(NSString * _Nonnull imageUrl, NSMutableArray * _Nonnull userArray, NSMutableArray * _Nonnull extraArray, BOOL alert, ZDActivityShowListType showListType) {
+        _smallImageUrl = imageUrl;
+        self.userInfoOptionArray = [[NSMutableArray alloc] initWithArray:userArray copyItems:YES];;
+        self.extraInfoOptionArray = [[NSMutableArray alloc] initWithArray:extraArray copyItems:YES];
+        self.moredic[kHiddenList] = @(showListType);
+        self.moredic[kAlertSwitch] = @(alert);
+    }];
+    moreChioce.extraInfoOptionArray = [[NSMutableArray alloc] initWithArray:self.extraInfoOptionArray copyItems:YES];
+    moreChioce.userInfoOptionArray = [[NSMutableArray alloc] initWithArray:self.userInfoOptionArray copyItems:YES];
     [self.navigationController pushViewController:moreChioce animated:YES];
-    moreChioce.block = ^(NSDictionary *dic, NSString *smallStr, BOOL isPost) {
-        _smallImageUrl = smallStr;
-        _moredic = [dic copy];
-        _isSmallPost = isPost;
-    };
 }
 /*! 跳转定位 */
 - (void)pushLocation{
@@ -283,13 +245,6 @@
 }
 #pragma  mark --- 发起活动
 
-/*! 转换大图 */
-
-- (void)postActivity
-{
-    [self isHaveMoredic];
-}
-
 - (void)lastPost
 {
     NSString *str = nil;
@@ -304,22 +259,21 @@
                                @"timeStop":ZD_SafeValue([_postVM appendTime:_postView.endTimeRightLabel.text]),
                                @"address":ZD_SafeValue(_postView.activityPlaceTextField.text),
                                @"content":_postView.htmlStr,
-                               @"userInfo":[_postVM getUserInfo:_moredic ALLOptionsArray:self.ALLOptionsArray],
+                               @"userInfo":[_postVM getCustomInfo:self.userInfoOptionArray],
                                @"userLimit":_postView.activityNumbertField.text,
                                @"backImgurl":ZD_SafeStringValue(_bigImageUrl),
-                               @"shareImgurl":ZD_SafeStringValue(_smallImageUrl),
+                               @"shareImgurl":ZD_SafeStringValue(_smallImageUrl).length ? ZD_SafeStringValue(_smallImageUrl) : ZD_SafeStringValue(_bigImageUrl),
                                @"timeSure":[_postVM timeNow],
                                @"alert":[NSNumber numberWithBool:[_postVM isAlert:_moredic]],
                                @"sendSms":[NSNumber numberWithBool:0],
-                               @"extraUserInfo" :[_postVM getExtraUserInfo:_moredic ALLOptionsArray:self.ALLOptionsArray],
+                               @"extraUserInfo" :[_postVM getCustomInfo:self.extraInfoOptionArray],
                                @"hideInfo":[_moredic valueForKey:kHiddenList]
                                };
-    
     
     NSMutableDictionary *dic = [postBody mutableCopy];
     /*! 费用项判断 */
     if ([_postView.activityFeeRightLabel.text isEqualToString:@"未设置,默认免费"]) {
-        NSLog(@"没有费用");
+        DDLogVerbose(@"没有费用");
         [dic setObject:@"" forKey:@"activityFees"];
     }else
     {
@@ -384,7 +338,7 @@
                                                           nil];
     ZDNetWorkManager.shareHTTPSessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         NSDictionary *dictinary = [[NSString alloc]initWithData:obj encoding:NSUTF8StringEncoding].zd_jsonDictionary;
         /*! 失败跳转 */
         ZDNetWorkManager.shareHTTPSessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -406,7 +360,7 @@
         }
     } fail:^(NSError *error) {
         ZDNetWorkManager.shareHTTPSessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         [hud hideAnimated:YES];
         maskLabel *label = [[maskLabel alloc]initWithTitle:error.description];
         [label labelAnimationWithViewlong:self.view];
@@ -420,31 +374,6 @@
     [hud hideAnimated:YES];
     MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"发布成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
     [hud1 hideAnimated:YES afterDelay:2];
-}
-/*! 判断有没有修改更多选项，没有则默认，有则改变 */
-- (void)isHaveMoredic
-{
-    if (self.moredic.count==0) {
-        NSMutableArray *boarray = [NSMutableArray array];
-        for (int i= 0; i<self.ALLOptionsArray.count; i++) {
-            if (i==0||i==1) {
-                [boarray addObject:@1];
-            }else
-            {
-                [boarray addObject:@0];
-            }
-        }
-        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-        [dic setValue:boarray forKey:kBoolarray];
-        [dic setValue:@0 forKey:kAlertSwitch];
-        [dic setValue:@0 forKey:kHiddenList];
-        _smallImageUrl = _bigImageUrl;
-        _moredic = [dic copy];
-       
-    }else{
-
-    }
-    [self lastPost];
 }
 /*! 是否可以发布活动 */
 - (void)isCanPost:(NSString *)bigImage
@@ -476,49 +405,18 @@
         return;
     }
     else{
-        [self postActivity];
+        [self lastPost];
     }
 }
 /*! 编辑的时候 网络请求成功初始化字典 */
-- (void)editDic
-{
-    NSMutableArray *boarray = [NSMutableArray array];
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSArray *UserInfoArray =  [_activityModel.UserInfo componentsSeparatedByString:@","];
-    for (int i= 0; i<self.ALLOptionsArray.count; i++) {
-        [boarray addObject:@0];
+- (void)editDic {
+    if (_activityModel) {
+        [self.moredic setValue:_activityModel.HideInfo ? @(_activityModel.HideInfo) : @(0) forKey:kHiddenList];
+        [self.moredic setValue:_activityModel.Alert ? @(1) : @(0) forKey:kAlertSwitch];
+    } else {
+        [self.moredic setValue:@0 forKey:kHiddenList];
+        [self.moredic setValue:@0 forKey:kAlertSwitch];
     }
-    for (int i= 0; i<UserInfoArray.count; i++) {
-        [boarray replaceObjectAtIndex:[self.ALLOptionsArray indexOfObject:UserInfoArray[i]] withObject:@1];
-    }
-    NSArray *ExtraUserInfoArray = [_activityModel.ExtraUserInfo componentsSeparatedByString:@","];
-    if (ExtraUserInfoArray.count>0) {
-        for (int i = 0  ;i <self.optionArray.count; i++) {
-            [boarray addObject:@0];
-        }
-        for (NSDictionary *alldic in self.optionArray) {
-        for (int i=0; i<ExtraUserInfoArray.count; i++) {
-                if ([ExtraUserInfoArray[i]integerValue]==[alldic[@"ID"] integerValue]) {
-                    [ boarray replaceObjectAtIndex:[self.ALLOptionsArray indexOfObject:[NSNumber numberWithInteger:[ExtraUserInfoArray[i] integerValue]]] withObject:@1];
-                }
-            }
-        }
-    }
-    [dic setValue:boarray forKey:kBoolarray];
-    if (_activityModel.HideInfo) {
-        [dic setValue:[NSString stringWithFormat:@"%li",(long)_activityModel.HideInfo]forKey:kHiddenList];
-    }
-    else{
-        [dic setValue:@0 forKey:kHiddenList];
-    }
-    if (_activityModel.Alert) {
-        [dic setValue:@1 forKey:kAlertSwitch];
-    }
-    else{
-        [dic setValue:@0 forKey:kAlertSwitch];
-    }
-    
-    _moredic = [dic copy];
 }
 /*! 修改html图片字符串 */
 - (void)setImageStr
@@ -537,7 +435,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self];
-    NSLog(@"内存泄漏不存在");
+    DDLogVerbose(@"内存泄漏不存在");
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

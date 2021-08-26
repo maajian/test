@@ -28,7 +28,7 @@
 }
 - (IBAction)sureButton:(id)sender {
     if ([_textView.text isEqualToString:@"请输入项目名称"]||[[_textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0||[[_textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]==0) {
-        NSLog(@"不能为空");
+        DDLogVerbose(@"不能为空");
         UILabel *label = [[UILabel alloc]init];
         label.backgroundColor = [UIColor blackColor];
         label.textColor =[UIColor whiteColor];
@@ -74,7 +74,7 @@
 - (void)SwitchChange
 {
     switchFlag = !switchFlag;
-    NSLog(@"%i",switchFlag);
+    DDLogVerbose(@"%i",switchFlag);
     if (switchFlag==NO) {
         [_switch1 setOn:NO];
     }
@@ -101,7 +101,7 @@
     NSString *posturl = [NSString stringWithFormat:@"%@api/PerActivity/UpdateOrAddOption?accessKey=%@",zhundaoApi,accesskey];
     
     [ZD_NetWorkM postDataWithMethod:posturl parameters:jsonStr succ:^(NSDictionary *obj) {
-        NSLog(@"res = %@",obj);
+        DDLogVerbose(@"res = %@",obj);
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"] integerValue] == 0) {
             NSInteger customID = [dic[@"Data"] integerValue];

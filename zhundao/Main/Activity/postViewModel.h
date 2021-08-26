@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "NSObject+block.h"
+#import "ZDActivityOptionModel.h"
+
 @interface postViewModel : NSObject
 /*! 获取图片 */
 -  (void)getImage:(ZDSuccessBlock)successBlock error :(ZDErrorBlock)errorBlock;
@@ -38,10 +40,7 @@
 /*! 是否开启报名用户提醒 */
 - (NSInteger)isAlert:(NSDictionary *)dic;
 
-/*! 获取基础报名项 */
-- (NSString *)getUserInfo:(NSDictionary *)dic ALLOptionsArray :(NSArray *)ALLOptionsArray;
-
-/*! 获取额外报名项 */
-- (NSString *)getExtraUserInfo:(NSDictionary *)dic ALLOptionsArray :(NSArray *)ALLOptionsArray;
+/*! 获取报名项 */
+- (NSString *)getCustomInfo:(NSMutableArray<ZDActivityOptionModel *> *)userArray;
 
 @end

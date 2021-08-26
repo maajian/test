@@ -103,34 +103,34 @@ typedef void(^ZDBlock_TableView)(UITableView *tableView);
 //    #define ZDLogErr(format, ...)
 //
 //#else
-#define NSLog(format,...)\
-printf("%s:%.4lf:%s[%04d]%s\n", [[[NSDate date] dateByAddingTimeInterval:[NSTimeZone systemTimeZone].secondsFromGMT].description stringByReplacingOccurrencesOfString:@" +0000" withString:@""].UTF8String, [[NSDate date] timeIntervalSinceReferenceDate] - floor([[NSDate date] timeIntervalSinceReferenceDate]), __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String])
-#define ZD_StartTime \
-CFAbsoluteTime ZD_StartTime = CFAbsoluteTimeGetCurrent();\
-ZDLog(@"⏳开始........");
-#define ZD_StopTime \
-CFAbsoluteTime ZD_StopTime  = CFAbsoluteTimeGetCurrent();\
-ZDLog(@"⌛️结束，用时:%f", ZD_StopTime - ZD_StartTime);
-#define ZD_EndTime(format, ...) \
-CFAbsoluteTime ZD_StopTime  = CFAbsoluteTimeGetCurrent();\
-ZDLog(@"⌛️结束，用时:%f..." format, ZD_StopTime - ZD_StartTime, ##__VA_ARGS__);
+//#define NSLog(format,...)\
+//printf("%s:%.4lf:%s[%04d]%s\n", [[[NSDate date] dateByAddingTimeInterval:[NSTimeZone systemTimeZone].secondsFromGMT].description stringByReplacingOccurrencesOfString:@" +0000" withString:@""].UTF8String, [[NSDate date] timeIntervalSinceReferenceDate] - floor([[NSDate date] timeIntervalSinceReferenceDate]), __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String])
+//#define ZD_StartTime \
+//CFAbsoluteTime ZD_StartTime = CFAbsoluteTimeGetCurrent();\
+//ZDLog(@"⏳开始........");
+//#define ZD_StopTime \
+//CFAbsoluteTime ZD_StopTime  = CFAbsoluteTimeGetCurrent();\
+//ZDLog(@"⌛️结束，用时:%f", ZD_StopTime - ZD_StartTime);
+//#define ZD_EndTime(format, ...) \
+//CFAbsoluteTime ZD_StopTime  = CFAbsoluteTimeGetCurrent();\
+//ZDLog(@"⌛️结束，用时:%f..." format, ZD_StopTime - ZD_StartTime, ##__VA_ARGS__);
 
-#define ZDLog(format,...) \
-DDLogVerbose(@"Meari___:" format,  ##__VA_ARGS__);
-#define ZDLogM(format, ...) \
-DDLogVerbose(@"Meari________________:" format, ##__VA_ARGS__);
-#define ZDLogL(format, ...) \
-DDLogVerbose(@"Meari________________________________:" format, ##__VA_ARGS__);
-#define ZDLogP(format, ...) \
-DDLogVerbose(@"Meari--------人--" format, ##__VA_ARGS__);
-#define ZDLogLifeLoad() \
-DDLogVerbose(@"AppLife:👶🏻👶🏻👶🏻---%@", self);
-#define ZDLogLifeDealloc() \
-DDLogVerbose(@"AppLife:💀💀💀---%@", self);
-#define ZDLogSuc(format, ...)\
-DDLogVerbose(@"Meari-------✅✅:" format, ##__VA_ARGS__);
-#define ZDLogErr(format, ...)\
-DDLogVerbose(@"Meari-------❌❌:" format, ##__VA_ARGS__);
+//#define ZDLog(format,...) \
+//DDLogVerbose(@"Meari___:" format,  ##__VA_ARGS__);
+//#define ZDLogM(format, ...) \
+//DDLogVerbose(@"Meari________________:" format, ##__VA_ARGS__);
+//#define ZDLogL(format, ...) \
+//DDLogVerbose(@"Meari________________________________:" format, ##__VA_ARGS__);
+//#define ZDLogP(format, ...) \
+//DDLogVerbose(@"Meari--------人--" format, ##__VA_ARGS__);
+//#define ZDLogLifeLoad() \
+//DDLogVerbose(@"AppLife:👶🏻👶🏻👶🏻---%@", self);
+//#define ZDLogLifeDealloc() \
+//DDLogVerbose(@"AppLife:💀💀💀---%@", self);
+//#define ZDLogSuc(format, ...)\
+//DDLogVerbose(@"Meari-------✅✅:" format, ##__VA_ARGS__);
+//#define ZDLogErr(format, ...)\
+//DDLogVerbose(@"Meari-------❌❌:" format, ##__VA_ARGS__);
 
 //#endif
 

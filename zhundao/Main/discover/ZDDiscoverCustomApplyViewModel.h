@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getCustomApplyList:(kZDCommonSucc)success fail:(kZDCommonFail)fail;
 // 隐藏显示报名项
 - (void)hideOrShowList:(BOOL)hidden ID:(NSInteger)ID success:(kZDCommonSucc)success fail:(kZDCommonFail)fail;
+// 删除报名项
+- (void)deleteItemWithID:(NSInteger)ID success:(kZDCommonSucc)success fail:(kZDCommonFail)fail;
 
 @end
 

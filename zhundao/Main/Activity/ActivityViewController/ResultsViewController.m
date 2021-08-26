@@ -127,7 +127,7 @@
         if ([datadic[@"Mobile"] isEqualToString:myCell.model.Mobile]) {
             *stop = YES;
         }
-        NSLog(@"index = %lu",(unsigned long)idx);
+        DDLogVerbose(@"index = %lu",(unsigned long)idx);
     }];
     __weak typeof(self) weakSelf = self;
     SignleListViewController *signle = [[SignleListViewController alloc]init];

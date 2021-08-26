@@ -11,12 +11,13 @@
 #import "moreModalViewController.h"
 #import "ListViewController.h"
 #import "oneActivityViewController.h"
+#import "ZDActivitySignListVC.h"
 
 #import "ZDActivityCell.h"
 
 #import "ZDActivityViewModel.h"
 
-@interface ZDAllActivityVC ()<UITableViewDataSource, UITableViewDelegate, ZDActivityCellDelegate> {
+@interface ZDAllActivityVC ()<UITableViewDataSource, UITableViewDelegate, ZDActivityCellDelegate, ZDShareViewDelegate> {
     NSInteger _page;
 }
 
@@ -152,26 +153,24 @@ static NSString *cellID = @"ActivityCellID";
         [ZDAlertView alertWithTitle:@"暂无人参加,请下拉刷新数据" message:nil cancelBlock:nil];
     } else {
         ListViewController *list = [[ListViewController alloc]init];
-        list.listID = activityCell.model.ID;
-        list.feeArray = [activityCell.model.ActivityFees copy];
-        list.userInfo = activityCell.model.UserInfo;
-        list.HasJoinNum = activityCell.model.HasJoinNum;
-        list.listName = activityCell.model.Title;
-        list.timeStart = activityCell.model.TimeStart;
-        list.address = activityCell.model.Address;
+        list.activityModel = activityCell.model;
         [self.navigationController pushViewController:list animated:YES];
     }
 }
 // 签到
 - (void)activityCell:(ZDActivityCell *)activityCell didTapSignButton:(UIButton *)button {
-    oneActivityViewController *one = [[oneActivityViewController alloc]init];
-    one.acID = activityCell.model.ID;
-    one.activityName = activityCell.model.Title;
-    [self.navigationController pushViewController:one animated:YES];
+//    oneActivityViewController *one = [[oneActivityViewController alloc]init];
+//    one.acID = activityCell.model.ID;
+//    one.activityName = activityCell.model.Title;
+//    [self.navigationController pushViewController:one animated:YES];
+    
+    ZDActivitySignListVC *signVc = [[ZDActivitySignListVC alloc] init];
+    signVc.activityModel = activityCell.model;
+    [self.navigationController pushViewController:signVc animated:YES];
 }
 // 分享
 - (void)activityCell:(ZDActivityCell *)activityCell didTapShareButton:(UIButton *)button {
-    [[SignManager shareManager]shareImagewithModel:activityCell.model withCTR:self Withtype:5 withImage:nil];
+    [ZDShareView showWithModel:activityCell.model delegate:self];
 }
 // 更多点击
 - (void)activityCell:(ZDActivityCell *)activityCell didTapMoreButton:(UIButton *)button {
@@ -186,6 +185,14 @@ static NSString *cellID = @"ActivityCellID";
             [weakSelf.tableView reloadData];
         }
     };
+}
+#pragma mark --- ZDShareViewDelegate
+- (void)shareView:(ZDShareView *)shareView didSelectType:(ZDShareType)shareType {
+    if (shareType == ZDShareTypeWechat) {
+        [[SignManager shareManager]shareImagewithModel:shareView.model withCTR:self Withtype:5 withImage:nil scene:0];
+    } else {
+        [[SignManager shareManager]shareImagewithModel:shareView.model withCTR:self Withtype:5 withImage:nil scene:1];
+    }
 }
 
 #pragma mark --- setter

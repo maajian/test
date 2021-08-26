@@ -36,7 +36,7 @@ static NSString *cellID = @"MessageContentCell";
     [self.tableView.mj_header beginRefreshing];
 }
 - (void)dealloc{
-    NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
+    DDLogVerbose(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 
 #pragma mark --- init

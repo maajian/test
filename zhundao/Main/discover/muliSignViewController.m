@@ -47,7 +47,7 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     [self.session stopRunning];
     [timer invalidate];
     timer = nil;
-    NSLog(@"%@",stringValue);
+    DDLogVerbose(@"%@",stringValue);
     [self panduanNetWithStr:stringValue];
 }
 - (void)panduanNetWithStr:(NSString *)stringValue
@@ -55,19 +55,19 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-             NSLog(@"暂无网络");
+             DDLogVerbose(@"暂无网络");
         {
             [self dontHaveNetWithStr:stringValue];
         }
             break;
         case ReachableViaWiFi:
-            NSLog(@"wifi");
+            DDLogVerbose(@"wifi");
         {
             [self netWorkWithstringValue:stringValue];
         }
             break;
         case ReachableViaWWAN:
-            NSLog(@"wan");
+            DDLogVerbose(@"wan");
         {
             [self netWorkWithstringValue:stringValue];
         }

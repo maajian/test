@@ -78,7 +78,7 @@
                                                         
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
+                                                        DDLogVerbose(@"%@", httpResponse);
                                                         NSError *error = [[NSError alloc] init];
                                                         NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&httpResponse error:&error];
                                                         NSString *result = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
@@ -101,7 +101,7 @@
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-            NSLog(@"wu");
+            DDLogVerbose(@"wu");
         {
             NSMutableArray *muarray = [NSMutableArray array];
             NSArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:@"shake"];
@@ -117,7 +117,7 @@
             
         case ReachableViaWWAN:
             // 使用3G网络
-            NSLog(@"wan");
+            DDLogVerbose(@"wan");
             [self loadData];
             
             
@@ -125,7 +125,7 @@
             break;
         case ReachableViaWiFi:
             // 使用WiFi网络
-            NSLog(@"wifi");
+            DDLogVerbose(@"wifi");
             [self loadData];
             
             
@@ -165,7 +165,7 @@
 //    api/Game/GetMybeaconList?accessKey={accessKey}
     NSString *shakeUrl = [NSString stringWithFormat:@"%@api/v2/extra/getMyBeaconList?userId=%li",zhundaoApi,ZD_UserM.userID];
     [ZD_NetWorkM getDataWithMethod:shakeUrl parameters:nil succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array1 = result[@"data"];
         NSMutableArray *muarray = [NSMutableArray array];

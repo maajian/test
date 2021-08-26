@@ -122,7 +122,7 @@ ZDGetter_MutableArray(admminRightArray)
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
-        NSLog(@"Show Index %zi",index); //取消0
+        DDLogVerbose(@"Show Index %zi",index); //取消0
         if (index==1) {   //删除
             [weakSelf EditSignList];
         }
@@ -428,7 +428,7 @@ ZDGetter_MutableArray(admminRightArray)
 }
 //-(void)dealloc
 //{
-//    NSLog(@"dealloc");
+//    DDLogVerbose(@"dealloc");
 //}
 /*
 #pragma mark - Navigation

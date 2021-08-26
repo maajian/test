@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, ZDMeType) {
     ZDMeTypeQuestion,
     ZDMeTypeHonor,
     ZDMeTypeZDBi,
+    ZDMeTypeSupplier,
     ZDMeTypeVoucher,
     ZDMeTypePromote,
     ZDMeTypeSetting,
@@ -41,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)voucherModel;
 + (instancetype)promoteModel;
 + (instancetype)settingModel;
++ (instancetype)supplierModel;
 
 @end
 

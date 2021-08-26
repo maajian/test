@@ -134,7 +134,7 @@
 
 #pragma mark myWalletDelegate
 - (void)gotoWithDraw{
-    NSLog(@"提现");
+    DDLogVerbose(@"提现");
     
     IsOnGowithViewController *isOnGowith = [[IsOnGowithViewController alloc]init];
     isOnGowith.allMoney = [NSString stringWithFormat:@"%.2f",[_datadic[@"Balance"] floatValue]];
@@ -259,7 +259,7 @@
 }
 
 -(void)dealloc{
-    NSLog(@"没有内存泄露");
+    DDLogVerbose(@"没有内存泄露");
 }
 
 - (void)didReceiveMemoryWarning {

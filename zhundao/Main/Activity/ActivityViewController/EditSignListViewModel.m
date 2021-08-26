@@ -199,7 +199,7 @@
     NSData *data =  [jsonStr dataUsingEncoding:NSUTF8StringEncoding];;
     
     NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-    NSLog(@"dic = %@",dic);
+    DDLogVerbose(@"dic = %@",dic);
     return dic;
 }
 
@@ -294,7 +294,7 @@
     [array removeObject:@"未填写*"];
     int baseCount = (int)baseArray.count;
     if (array.count==_leftMustArray.count) {
-        NSLog(@"必填项填写完成");
+        DDLogVerbose(@"必填项填写完成");
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         for (int i = baseCount;  i < array.count; i ++) {
             if (![_leftMustArray[i] isEqualToString:@"费用选择"]&&![rightMustArray[i] isEqualToString:@"未填写"]) {

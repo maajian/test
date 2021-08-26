@@ -50,7 +50,7 @@
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-            NSLog(@"wu");
+            DDLogVerbose(@"wu");
         {
         
             
@@ -61,7 +61,7 @@
             
         case ReachableViaWWAN:
             // 使用3G网络
-            NSLog(@"wan");
+            DDLogVerbose(@"wan");
           
             
             
@@ -69,7 +69,7 @@
             break;
         case ReachableViaWiFi:
             // 使用WiFi网络
-            NSLog(@"wifi");
+            DDLogVerbose(@"wifi");
         
             
             break;
@@ -373,7 +373,7 @@
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"修改成功" showAnimated:YES UIView:self.view imageName:@"checked"];
         [hud1 hideAnimated:YES afterDelay:1];
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeText labelText:@"修改失败" showAnimated:YES UIView:self.view imageName:nil];
         [hud1 hideAnimated:YES afterDelay:1];

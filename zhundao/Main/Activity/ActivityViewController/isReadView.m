@@ -88,7 +88,7 @@
 //}
 
 - (void)dealloc{
-    NSLog(@"read没有内存泄露");
+    DDLogVerbose(@"read没有内存泄露");
 }
 
 @end

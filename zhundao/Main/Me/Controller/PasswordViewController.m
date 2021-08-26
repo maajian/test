@@ -158,7 +158,7 @@
 }
 
 - (void)dealloc{
-    NSLog(@"没有内存泄露");
+    DDLogVerbose(@"没有内存泄露");
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

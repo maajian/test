@@ -51,11 +51,11 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
     //获取请求的url路径.
     NSString *requestString = navigationResponse.response.URL.absoluteString;
-    NSLog(@"requestString:%@",requestString);
+    DDLogVerbose(@"requestString:%@",requestString);
     // 遇到要做出改变的字符串
     NSString *subStr = @"usercenter";
     if ([requestString rangeOfString:subStr].location != NSNotFound) {
-        NSLog(@"这个字符串中有usercenter");
+        DDLogVerbose(@"这个字符串中有usercenter");
         //回调的URL中如果含有百度，就直接返回，也就是关闭了webView界面
         _block(1);
         [self.navigationController  popViewControllerAnimated:YES];

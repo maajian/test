@@ -302,7 +302,7 @@
             break;
         case WYButtonInsetTypeTitleBottom: {
             self.imageEdgeInsets = UIEdgeInsetsMake(-titleSize.height/2 , titleSize.width/2, titleSize.height/2, -titleSize.width/2);
-            NSLog(@"imageEdgeInsets = %@", NSStringFromUIEdgeInsets(self.imageEdgeInsets));
+            DDLogVerbose(@"imageEdgeInsets = %@", NSStringFromUIEdgeInsets(self.imageEdgeInsets));
             self.titleEdgeInsets = UIEdgeInsetsMake(imageSize.height/2 + space , -imageSize.width/2, - imageSize.height/2 - space ,  imageSize.width/2);
         }
             break;

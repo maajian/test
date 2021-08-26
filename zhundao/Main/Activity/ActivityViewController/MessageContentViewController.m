@@ -38,7 +38,7 @@
     [self initLayout];
 }
 - (void)dealloc{
-    NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
+    DDLogVerbose(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 
 #pragma mark --- init
@@ -65,7 +65,7 @@
         make.width.equalTo(weakSelf.scrollView);
     }];
     [self.view layoutIfNeeded];
-    NSLog(@"self.sysVC.view = %@", NSStringFromCGRect(self.sysVC.view.frame));
+    DDLogVerbose(@"self.sysVC.view = %@", NSStringFromCGRect(self.sysVC.view.frame));
 }
 
 #pragma mark 懒加载

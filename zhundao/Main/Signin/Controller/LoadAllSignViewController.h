@@ -7,19 +7,14 @@
 //
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "ZDSignInModel.h"
 typedef void(^block)(NSInteger signNum);
 
 typedef void(^signBlock)(BOOL isRed);
 @interface LoadAllSignViewController : BaseViewController
 @property(nonatomic,copy)block block;
-/*! 签到ID */
-@property(nonatomic,assign)NSInteger signID;
+@property (nonatomic, strong) ZDSignInModel *signInModel;
 @property(nonatomic,copy)signBlock signBlock;
-/*! 签到名称 */
-@property(nonatomic,copy)NSString *signName;
-/*! 实际所有签到人数 */
-@property(nonatomic,assign)NSInteger signNumber;
-/*! 活动ID */
-@property(nonatomic,assign)NSInteger activityID;
+
 - (void)loadData;
 @end

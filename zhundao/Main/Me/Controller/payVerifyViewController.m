@@ -110,7 +110,7 @@
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         [self beginTime];
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
     }];
 }
 
@@ -118,7 +118,7 @@
     NSString *urlstr = [NSString stringWithFormat:@"%@api/v2/verifyCode?phoneOrEmail=%@&code=%@",zhundaoApi,self.phoneStr,_textf.text];
     [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
-        NSLog(@"msg = %@",dic[@"Msg"]);
+        DDLogVerbose(@"msg = %@",dic[@"Msg"]);
         if ([dic[@"errcode"] integerValue]==0) {
             PasswordViewController *pass = [[PasswordViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];

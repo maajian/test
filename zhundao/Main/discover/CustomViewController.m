@@ -304,7 +304,7 @@
             [baseView removeFromSuperview];
         }];
         input.block = ^(NSDictionary *dic){
-            NSLog(@"dic = %@",dic);
+            DDLogVerbose(@"dic = %@",dic);
             NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:@"Custom"] ;
             CustomModel *model = [CustomModel yy_modelWithJSON:dic];
             NSMutableArray *earray  = [NSMutableArray array];
@@ -328,7 +328,7 @@
             [baseView removeFromSuperview];
         }];
         moreInput.block = ^(NSDictionary *dic){
-            NSLog(@"dic = %@",dic);
+            DDLogVerbose(@"dic = %@",dic);
             NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:@"Custom"] ;
             CustomModel *model = [CustomModel yy_modelWithJSON:dic];
             NSMutableArray *earray  = [NSMutableArray array];
@@ -352,7 +352,7 @@
             [baseView removeFromSuperview];
         }];
         oneChoice.block = ^(NSDictionary *dic){
-            NSLog(@"dic = %@",dic);
+            DDLogVerbose(@"dic = %@",dic);
            NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:@"Custom"] ;
             CustomModel *model = [CustomModel yy_modelWithJSON:dic];
             NSMutableArray *earray  = [NSMutableArray array];
@@ -376,7 +376,7 @@
             [baseView removeFromSuperview];
         }];
         moreChoice.block = ^(NSDictionary *dic){
-            NSLog(@"dic = %@",dic);
+            DDLogVerbose(@"dic = %@",dic);
             NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:@"Custom"] ;
             CustomModel *model = [CustomModel yy_modelWithJSON:dic];
             NSMutableArray *earray  = [NSMutableArray array];
@@ -400,7 +400,7 @@
             [baseView removeFromSuperview];
         }];
         moreImage.block = ^(NSDictionary *dic){
-            NSLog(@"dic = %@",dic);
+            DDLogVerbose(@"dic = %@",dic);
             NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:@"Custom"] ;
             CustomModel *model = [CustomModel yy_modelWithJSON:dic];
             NSMutableArray *earray  = [NSMutableArray array];
@@ -425,7 +425,7 @@
             [baseView removeFromSuperview];
         }];
         pull.block = ^(NSDictionary *dic){
-            NSLog(@"dic = %@",dic);
+            DDLogVerbose(@"dic = %@",dic);
             NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:@"Custom"] ;
             CustomModel *model = [CustomModel yy_modelWithJSON:dic];
             NSMutableArray *earray  = [NSMutableArray array];
@@ -582,7 +582,7 @@
         }];
 
         input.block = ^(NSDictionary *dic){
-            NSLog(@"dic = %@",dic);
+            DDLogVerbose(@"dic = %@",dic);
             NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:@"Custom"] ;
             CustomModel *model = [CustomModel yy_modelWithJSON:dic];
             NSMutableArray *earray  = [NSMutableArray array];
@@ -605,7 +605,7 @@
         [self.navigationController presentViewController:choose animated:YES completion:^{
         }];
         choose.block = ^(NSDictionary *dic){
-            NSLog(@"dic = %@",dic);
+            DDLogVerbose(@"dic = %@",dic);
             NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:@"Custom"] ;
             CustomModel *model = [CustomModel yy_modelWithJSON:dic];
             NSMutableArray *earray  = [NSMutableArray array];
@@ -635,7 +635,7 @@
                                                         options:NSJSONReadingMutableContainers
                                                           error:&err];
     if(err) {
-        NSLog(@"json解析失败：%@",err);
+        DDLogVerbose(@"json解析失败：%@",err);
         return nil;
     }
     return array;

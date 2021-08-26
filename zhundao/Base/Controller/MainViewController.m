@@ -11,6 +11,9 @@
 #import "LoginViewController.h"
 #import "DetailNoticeViewController.h"
 #import "BaseNavigationViewController.h"
+#import "ZDMessageMainDetailVC.h"
+#import "ZDMessageMainVC.h"
+#import "ListViewController.h"
 
 @interface MainViewController ()
 {
@@ -95,6 +98,26 @@
 #pragma mark --- 通知接收
 - (void)pushNotification:(NSNotification *)nofi {
     self.selectedIndex = 1;
+    if (![[SignManager shareManager] getToken].length) {
+        return;
+    }
+    if (nofi.object) {
+        NSDictionary *dic = nofi.object;
+        NSInteger click_type = [dic[@"click_type"] integerValue];
+        if (click_type == 103) {
+            NSInteger detailID = [dic[@"param"] integerValue];
+            [self networkForMessageDetail:detailID];
+        } else if (click_type == 104) {
+            NSInteger ActivityID = [dic[@"param"] integerValue];
+            [self networkForActivityListDetail:ActivityID];
+        } else if (click_type == 105 || click_type == 106 || click_type == 100) {
+            NSString *url = [dic[@"url"] stringByReplacingOccurrencesOfString:@"[token]" withString:[[SignManager shareManager] getToken]];
+            ZDWebViewController *web = [[ZDWebViewController alloc] init];
+            web.urlString = url;
+            web.isClose = YES;
+            [self.selectedViewController pushViewController:web animated:YES];
+        }
+    }
 }
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
     super.selectedIndex = selectedIndex;
@@ -123,6 +146,43 @@
             [[self.tabBar viewWithTag:101] pp_moveBadgeWithX:- kScreenWidth /8 + 10 Y:12];
         }
     }
+}
+
+#pragma mark --- Network
+- (void)networkForMessageDetail:(NSInteger)detailID {
+    NSString *url = [NSString stringWithFormat:@"%@jinTaData?token=%@", zhundaoLogApi, [[SignManager shareManager] getToken]];
+    NSDictionary *dic = @{@"BusinessCode": @"GetMessageDetailForApp",
+                          @"Data" : @{
+                                  @"id":@(detailID),
+                         }
+    };
+    [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
+        if ([obj[@"res"] boolValue]) {
+            ZDMessageMainModel *model = [ZDMessageMainModel yy_modelWithJSON:obj[@"data"]];
+            ZDMessageMainDetailVC *detail = [[ZDMessageMainDetailVC alloc] init];
+            detail.model = model;
+            [self.selectedViewController pushViewController:detail animated:YES];
+        } else {
+//            ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"])
+        }
+    } fail:^(NSError *error) {
+//        ZD_HUD_SHOW_ERROR_STATUS(@"qi")
+    }];
+}
+- (void)networkForActivityListDetail:(NSInteger)activityID {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/getSingleActivityForUser?activityId=%li&token=%@",zhundaoApi,(long)activityID,[[SignManager shareManager] getToken]];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"res"] boolValue]) {
+            ActivityModel *model = [ActivityModel yy_modelWithDictionary:obj[@"data"]];
+            ListViewController *list = [[ListViewController alloc]init];
+            list.activityModel = model;
+            [self.selectedViewController pushViewController:list animated:YES];
+        } else {
+            ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"]);
+        }
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR_STATUS(@"请检查网络设置")
+    }];
 }
 
 @end

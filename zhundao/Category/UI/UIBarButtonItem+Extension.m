@@ -80,6 +80,28 @@
                                                Target:target
                                                action:action];
 }
+// 清除未读
++ (UIBarButtonItem *)clearReadTextItemWithTarget:(id)target action:(SEL)action {
+    return [UIBarButtonItem textBarButtonItemWithText:@"清除未读"
+                                               color:ZDBlackColor
+                                               Target:target
+                                               action:action];
+}
+// 清除未读
++ (UIBarButtonItem *)cancelTextItemWithTarget:(id)target action:(SEL)action {
+    return [UIBarButtonItem textBarButtonItemWithText:@"取消"
+                                               color:ZDGrayColor2
+                                               Target:target
+                                               action:action];
+}
+// 保存
++ (UIBarButtonItem *)saveText2ItemWithTarget:(id)target action:(SEL)action {
+    return [UIBarButtonItem textBarButtonItemWithText:@"保存"
+                                            textColor:[UIColor whiteColor]
+                                              bgColor:ZDGreenColor
+                                               Target:target
+                                               action:action];
+}
 
 #pragma mark - 全能方法
 
@@ -111,6 +133,24 @@
     return item;
 }
 
++ (UIBarButtonItem *)textBarButtonItemWithText:(NSString *)text
+                                     textColor:(UIColor *)textColor
+                                       bgColor:(UIColor *)bgColor
+                                        Target:(id)target
+                                        action:(SEL)action {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 50, 30);
+    [btn setBackgroundColor:bgColor];
+    btn.titleLabel.font = ZDBoldFont(14);
+    [btn setTitle:text forState:UIControlStateNormal];
+    [btn setTitleColor:textColor forState:UIControlStateNormal];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    btn.layer.cornerRadius = 2;
+    btn.layer.masksToBounds = YES;
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    return item;
+}
+
 /**
  *  导航条按钮：文本
  *
@@ -128,7 +168,7 @@
                                                            target:target
                                                            action:action];
     NSDictionary *normalDic = @{ NSForegroundColorAttributeName: color,
-                                 NSFontAttributeName: [UIFont systemFontOfSize:17] };
+                                 NSFontAttributeName: [UIFont systemFontOfSize:14] };
     [bar setTitleTextAttributes:normalDic forState:UIControlStateNormal];
     return bar;
 }

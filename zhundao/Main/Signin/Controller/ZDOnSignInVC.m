@@ -157,7 +157,7 @@
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
-        NSLog(@"Show Index %zi",index); //取消0
+        DDLogVerbose(@"Show Index %zi",index); //取消0
         if (index==1) {
             [weakSelf deleteSignWithModel:signinCell.model];
         }
@@ -225,17 +225,17 @@
 }
 - (void)signinCell:(signinTableViewCell *)signinCell willPushList:(id)sender {
     ZD_WeakSelf
-    LoadAllSignViewController *load = [[LoadAllSignViewController alloc]init];
-    load.activityID = signinCell.model.ActivityID;
-    load.signID = signinCell.model.ID;
-    load.signName = signinCell.model.Name;
-    load.signNumber = signinCell.model.NumShould;
-    [self setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:load animated:YES];
-    load.block = ^(NSInteger a) {
-        [weakSelf loadNewData];
-    };
-    [self setHidesBottomBarWhenPushed:NO];
+//    LoadAllSignViewController *load = [[LoadAllSignViewController alloc]init];
+//    load.activityID = signinCell.model.ActivityID;
+//    load.signID = signinCell.model.ID;
+//    load.signName = signinCell.model.Name;
+//    load.signNumber = signinCell.model.NumShould;
+//    [self setHidesBottomBarWhenPushed:YES];
+//    [self.navigationController pushViewController:load animated:YES];
+//    load.block = ^(NSInteger a) {
+//        [weakSelf loadNewData];
+//    };
+//    [self setHidesBottomBarWhenPushed:NO];
 }
 
 #pragma mark --- setter
@@ -256,7 +256,7 @@
     NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=ios",zhundaoApi,[[SignManager shareManager] getToken],(long)model.ID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
-        NSLog(@"dic = %@",dic);
+        DDLogVerbose(@"dic = %@",dic);
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];

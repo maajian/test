@@ -26,7 +26,7 @@
                                                                 diskPath:nil];
     [NSURLCache setSharedURLCache:sharedCache];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         successBlock(obj);
     } fail:^(NSError *error) {
         
@@ -148,43 +148,16 @@
     }
 }
 
-/*! 获取基础报名项 */
-- (NSString *)getUserInfo:(NSDictionary *)dic ALLOptionsArray :(NSArray *)ALLOptionsArray
+/*! 获取报名项 */
+- (NSString *)getCustomInfo:(NSMutableArray<ZDActivityOptionModel *> *)userArray
 {
-    NSArray *boolarray = [dic[@"Boolarray"] copy];
-    NSInteger count = 0 ;//计算添加逗号, 100,101
-    NSString *str = @"";
-    for (int i = 0; i<12; i++) {
-        if ([boolarray[i] integerValue]) {
-            count+=1;
-            if (count>1) {
-                str = [str stringByAppendingString:@","];
-            }
-            str =  [str stringByAppendingString:ALLOptionsArray[i]];
+    NSMutableArray *idArray = [NSMutableArray array];
+    [userArray enumerateObjectsUsingBlock:^(ZDActivityOptionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.IsCheck) {
+            [idArray addObject:@(obj.ID)];
         }
-    }
-    NSLog(@"固定项字符串为%@",str);
-    return str;
-}
-/*! 获取额外报名项 */
-- (NSString *)getExtraUserInfo:(NSDictionary *)dic ALLOptionsArray :(NSArray *)ALLOptionsArray
-{
-    NSArray *boolarray = [dic[@"Boolarray"] copy];
-    NSString *str = @"";
-    NSInteger count = 0 ;//计算添加逗号, 100,101
-    if (boolarray.count>12) {
-        for (int i=12; i<boolarray.count; i++) {
-            if ([boolarray[i] integerValue]) {
-                count+=1;
-                if (count>1) {
-                    str = [str stringByAppendingString:@","];
-                }
-                
-                str =   [str stringByAppendingString:[NSString stringWithFormat:@"%@",ALLOptionsArray[i]]];
-            }
-        }
-    }
-    NSLog(@"选填项字符串为%@",str);
+    }];
+    NSString *str = [idArray componentsJoinedByString:@","];
     return str;
 }
 

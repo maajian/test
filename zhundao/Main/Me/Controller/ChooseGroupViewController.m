@@ -96,19 +96,19 @@
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-            NSLog(@"wu");
+            DDLogVerbose(@"wu");
         {
             [self notHaveNet];
             break;
         }
         case ReachableViaWWAN:
             // 使用3G网络
-            NSLog(@"wan");
+            DDLogVerbose(@"wan");
             [self network];
             break;
         case ReachableViaWiFi:
             // 使用WiFi网络
-            NSLog(@"wifi");
+            DDLogVerbose(@"wifi");
             [self network];
             break;
     }
@@ -264,7 +264,7 @@
 }
 - (void)dealloc
 {
-    NSLog(@"没有内存泄漏");
+    DDLogVerbose(@"没有内存泄漏");
 }
 /*
 #pragma mark - Navigation

@@ -202,7 +202,7 @@
         dispatch_source_t timer= dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(0, 0));
         dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2* NSEC_PER_SEC, 0);
         dispatch_source_set_event_handler(timer, ^{
-            NSLog(@"调用了定时器");
+            DDLogVerbose(@"调用了定时器");
             [self.VM getProgressWithDeviceKey:_model.deviceKey progressBlock:^(NSInteger index, NSInteger total) {
                 float status  = (float) index/total;
                 dispatch_async(dispatch_get_main_queue(), ^{

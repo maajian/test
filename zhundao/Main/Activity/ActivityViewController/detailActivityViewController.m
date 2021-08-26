@@ -9,7 +9,7 @@
 #import "detailActivityViewController.h"
 //#import <UShareUI/UShareUI.h>
 #import "WXApi.h"
-@interface detailActivityViewController ()<WKNavigationDelegate>
+@interface detailActivityViewController ()<WKNavigationDelegate, ZDShareViewDelegate>
 
 @end
 
@@ -34,21 +34,16 @@
 
 - (void)shareImage
 {
-  
-    [[SignManager shareManager]shareImagewithModel:_model withCTR:self Withtype:5 withImage:nil];
+    [ZDShareView showWithDelegate:self];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark --- ZDShareViewDelegate
+- (void)shareView:(ZDShareView *)shareView didSelectType:(ZDShareType)shareType {
+    if (shareType == ZDShareTypeWechat) {
+        [[SignManager shareManager]shareImagewithModel:_model withCTR:self Withtype:5 withImage:nil scene:0];
+    } else {
+        [[SignManager shareManager]shareImagewithModel:_model withCTR:self Withtype:5 withImage:nil scene:1];
+    }
 }
-*/
 
 @end

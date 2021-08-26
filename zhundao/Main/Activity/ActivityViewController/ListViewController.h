@@ -9,19 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 @interface ListViewController : BaseViewController
-/*! 活动名称 */
-@property(nonatomic,copy)NSString *listName;
-/*! 活动ID */
-@property(nonatomic,assign)NSInteger listID;
-/*! 费用数组 */
-@property(nonatomic,copy)NSArray *feeArray;
-/*! 基础项 */
-@property(nonatomic,copy)NSString *userInfo;
-/*! 参与人数 */
-@property(nonatomic,assign)NSInteger HasJoinNum;
-/*! 活动开始时间 */
-@property(nonatomic,copy)NSString *timeStart;
-/*! 地址 */
-@property(nonatomic,copy)NSString *address;
+//
+@property (nonatomic, strong) ActivityModel *activityModel;
+
 - (void)loadData ;
 @end

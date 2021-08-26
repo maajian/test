@@ -53,7 +53,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self postData];
-    [self loadData];
     _tableview.backgroundColor = ZDBackgroundColor;
 }
 
@@ -67,18 +66,21 @@
 
 - (void)setNavTitle
 {
-    UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(0, 0, 44, 44) Text:_signName textColor:[UIColor blackColor] font:KHeitiSCMedium(17) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
+    UILabel *label = [MyLabel initWithLabelFrame:CGRectMake(0, 0, 44, 44) Text:self.signInModel.Name textColor:[UIColor blackColor] font:KHeitiSCMedium(17) textAlignment:NSTextAlignmentCenter cornerRadius:0 masksToBounds:0];
     self.navigationItem.titleView = label;
 }
-- (void)pushScan
-{
-    SaoYiSaoViewController *sao = [[SaoYiSaoViewController alloc] init];
-    sao.signID = self.signID;
-    [self presentViewController:sao animated:YES completion:nil];
+- (void)pushScan {
+    if (self.signInModel.Status == 1) {
+        SaoYiSaoViewController *sao = [[SaoYiSaoViewController alloc] init];
+        sao.signID = self.self.signInModel.ID;
+        [self presentViewController:sao animated:YES completion:nil];
+    } else {
+        ZD_HUD_SHOW_ERROR_STATUS(@"请先开启签到!")
+    }
 }
 - (void)postData {
     ZD_WeakSelf
-    [[signResult alloc] postLocalDataWithSignID:_signID success:^{
+    [[signResult alloc] postLocalDataWithSignID:self.signInModel.ID success:^{
         [weakSelf loadData];
     } fail:nil];
 }
@@ -91,7 +93,7 @@
         [indicator startAnimating];
     NSString *listurl = [NSString stringWithFormat:@"%@api/v2/checkIn/getCheckInPeopleList?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     NSDictionary *dic = @{@"Type":@"0",
-                          @"CheckInId":[NSString stringWithFormat:@"%li",(long)_signID],
+                          @"CheckInId":[NSString stringWithFormat:@"%li",(long)self.signInModel.ID],
                           @"pageSize":@"200000",
                           @"pageIndex":@"1"};
     [ZDNetWorkManager shareHTTPSessionManager].responseSerializer = [AFJSONResponseSerializer serializer];
@@ -115,7 +117,7 @@
                 }
             }
         }
-        [ZDCache.sharedCache setCache:result[@"data"] forKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, _signID]];
+        [ZDCache.sharedCache setCache:result[@"data"] forKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, self.signInModel.ID]];
         [_tableview.mj_header endRefreshing];
         [indicator stopAnimating];
         [self createSearchCtr];
@@ -123,7 +125,7 @@
     } fail:^(NSError *error) {
         [indicator stopAnimating];
         [_tableview.mj_header endRefreshing];
-        NSArray *tempArray = (NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, _signID]];
+        NSArray *tempArray = (NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, self.signInModel.ID]];
         if (tempArray.count) {
             [self dealDataWithArray:tempArray];
         }
@@ -189,7 +191,7 @@
     _tableview.delegate = self ;
     _tableview.backgroundColor = ZDBackgroundColor;
     _tableview.dataSource = self;
-    _tableview.mj_header = [ZDRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    _tableview.mj_header = [ZDRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(postData)];
     [_tableview setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [self.view addSubview:_tableview];
     if ([r currentReachabilityStatus]==NotReachable) {
@@ -203,8 +205,8 @@
     _searchController = [[UISearchController alloc] initWithSearchResultsController:resultsController];
     _searchController.searchBar.placeholder = @"搜索";
     _searchController.searchBar.barTintColor = _tableview.backgroundColor = ZDBackgroundColor;
-    resultsController.signID = self.signID;
-    resultsController.activityID = self.activityID;
+    resultsController.signID = self.self.signInModel.ID;
+    resultsController.activityID = self.signInModel.ActivityID;
     _searchController.dimsBackgroundDuringPresentation = NO;
     _searchController.view.backgroundColor = ZDBackgroundColor;
     [_searchController.searchBar setBackgroundImage:[UIImage new]];
@@ -222,7 +224,7 @@
 }
 - (NSArray *)getallData
 {
-    NSArray *arr = (NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, _signID]];
+    NSArray *arr = (NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, self.signInModel.ID]];
     NSMutableArray *alldataarray = [NSMutableArray array]; 
     for (NSDictionary *acdic in arr) {
         LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];
@@ -252,7 +254,7 @@
         cell.backgroundColor = [UIColor clearColor];
     }
     cell.tag = indexPath.row;
-    cell.signid = self.signID;
+    cell.signid = self.signInModel.ID;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (flag==0) {
@@ -281,12 +283,12 @@
 - (void)showDetail:(UITapGestureRecognizer *)tap
 {
     myCell = (LoadAllSignTableViewCell *)tap.view;
-    NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"%li",(long)self.activityID]];
+    NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"%li",(long)self.signInModel.ActivityID]];
     __weak typeof(self) weakSelf = self;
     if (array&&array.count==_dataArray.count) {
         [self pushToDetail:array];
     }else{
-        [self.oneVM getNewList:self.activityID BackBlock:^(NSArray *backArray) {
+        [self.oneVM getNewList:self.signInModel.ActivityID BackBlock:^(NSArray *backArray) {
             [weakSelf pushToDetail:backArray];
         }];
     }
@@ -306,7 +308,7 @@
         signle.datadic =datadic;
         signle.userInfo = [weakSelf getUserInfo:datadic];
     }else{
-        NSArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)_signID]];
+        NSArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)self.signInModel.ID]];
         signle.userInfo = @"100,101";
         signle.datadic = [arr objectAtIndex:myCell.tag];
     }
@@ -320,14 +322,18 @@
 {
     myCell = (LoadAllSignTableViewCell *)tap.view.superview.superview;
     if (!myCell.model.SignTime||[myCell.timeLabel.text isEqualToString:@" 管理员代签  "]) {
-        [self showSign];
+        if (self.signInModel.Status == 1) {
+            [self showSign];
+        } else {
+            ZD_HUD_SHOW_ERROR_STATUS(@"请先开启签到!")
+        }
     }
 }
 - (void)showSign
 {
     __weak typeof(self) weakSelf = self;
     [ZDAlertView alertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] message:@"代签后不能修改" sureBlock:^{
-        [[signResult alloc] dealAdminSignWithSignID:self.signID phone:myCell.model.Mobile action1:^{
+        [[signResult alloc] dealAdminSignWithSignID:self.signInModel.ID phone:myCell.model.Mobile action1:^{
             [weakSelf loadData];
         }];
     } cancelBlock:^{
@@ -438,7 +444,7 @@
     return [array componentsJoinedByString:@","];
 }
 - (void)dealloc{
-    NSLog(@"dealloc");
+    DDLogVerbose(@"dealloc");
 }
 
 

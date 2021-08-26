@@ -28,6 +28,9 @@
                 ([dic[@"ID"] integerValue] == 1004 &&  [dic[@"Status"] integerValue] == 1) ) {
                 self.allowPromote = YES;
             }
+            if ([dic[@"ID"] integerValue] == 4001 &&  [dic[@"Status"] integerValue] == 1) {
+                self.allowSupplier = YES;
+            }
         }
         ZDDo_Block_Safe_Main(success);
     } fail:^(NSError *error) {

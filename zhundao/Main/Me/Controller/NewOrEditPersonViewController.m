@@ -496,7 +496,7 @@
 }
 - (void)dealloc
 {
-    NSLog(@"修改没有内存泄漏了");
+    DDLogVerbose(@"修改没有内存泄漏了");
 }
 /*
 #pragma  markmark - Navigation

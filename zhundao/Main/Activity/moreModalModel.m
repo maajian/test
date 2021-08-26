@@ -75,4 +75,8 @@
     return [[self alloc] initWithImageStr:@"more复制.png" title:@"活动复制" type:MoreMoalTypeCopy];
 }
 
++ (instancetype)visitorRadarModel {
+    return [[self alloc] initWithImageStr:@"more_visitorRadar.png" title:@"访客雷达" type:MoreMoalTypeVisitorRadar];
+}
+
 @end

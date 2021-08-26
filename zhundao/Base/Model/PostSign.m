@@ -45,7 +45,7 @@
         postStr = [postStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         
     [ZD_NetWorkM postDataWithMethod:postStr parameters:@{@"checkJson": jsonStr} succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         NSDictionary *msg = [NSDictionary dictionaryWithDictionary:obj];
         if ([msg[@"Msg"]integerValue] ==0) {
             SignManager *manager = [SignManager shareManager];
@@ -56,7 +56,7 @@
             }
         }
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
     }];
         
         

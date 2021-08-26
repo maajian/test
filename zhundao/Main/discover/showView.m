@@ -291,7 +291,7 @@ static const CGFloat bottomViewHeight= 44;
 #pragma mark - YBPopupMenuDelegate
 - (void)ybPopupMenuDidSelectedAtIndex:(NSInteger)index ybPopupMenu:(YBPopupMenu *)ybPopupMenu cell:(UITableViewCell *)cell
 {
-    NSLog(@"点击了 %@ 选项",TITLES[index]);
+    DDLogVerbose(@"点击了 %@ 选项",TITLES[index]);
     if (![self createSecondView:index]) {
         return;
     }
@@ -454,6 +454,12 @@ static const CGFloat bottomViewHeight= 44;
      } else if ([UIScreen mainScreen]. bounds.size.height == 667) {
          // 5.0英寸
          imgView.image = [[UIImage imageNamed:@"discover_own_invite_750X1334"] applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)];
+     } else if ([UIScreen mainScreen].bounds.size.height == 736) {
+         imgView.image = [[UIImage imageNamed:@"discover_own_invite_1242x2208"] applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)];
+     } else if ([UIScreen mainScreen].bounds.size.height == 812) {
+         imgView.image = [[UIImage imageNamed:@"discover_own_invite_1125x2436"] applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)];
+     } else if ([UIScreen mainScreen].bounds.size.height == 896) {
+         imgView.image = [[UIImage imageNamed:@"discover_own_invite_828x1792"] applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)];
      } else {
          // X英寸
          imgView.image = [[UIImage imageNamed:@"discover_own_invite_1242X2688"] applyTintEffectWithColor: kColorA(0, 0, 0, 0.3)];
@@ -528,8 +534,8 @@ static const CGFloat bottomViewHeight= 44;
 //     UITextView *textView = (UITextView *)gestureRecognizer.view;
 //    [self.rotationDic setObject:@(gestureRecognizer.rotation+[[self.rotationDic objectForKey:@(textView.tag)] floatValue]) forKey:@(textView.tag)];
 //    //通过transform 进行旋转变换
-//    NSLog(@"gestureRecognizer = %f",gestureRecognizer.rotation);
-//    NSLog(@"rotation = %@",[self.rotationDic objectForKey:@(textView.tag)]);
+//    DDLogVerbose(@"gestureRecognizer = %f",gestureRecognizer.rotation);
+//    DDLogVerbose(@"rotation = %@",[self.rotationDic objectForKey:@(textView.tag)]);
 //    textView.transform = CGAffineTransformRotate(textView.transform, gestureRecognizer.rotation);
 //    //将旋转角度 置为 0
 //    gestureRecognizer.rotation = 0;

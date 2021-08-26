@@ -52,7 +52,7 @@
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSLog(@"[UUIDSettingViewController] textFieldShouldReturn");
+    DDLogVerbose(@"[UUIDSettingViewController] textFieldShouldReturn");
 
     [textField resignFirstResponder];
     return TRUE;
@@ -155,9 +155,9 @@
     }
     
     
-    //NSLog(@"%@",self.transServiceUUIDStr);
-    //NSLog(@"%@",self.transTxUUIDStr);
-    //NSLog(@"%@",self.transRxUUIDStr);
+    //DDLogVerbose(@"%@",self.transServiceUUIDStr);
+    //DDLogVerbose(@"%@",self.transTxUUIDStr);
+    //DDLogVerbose(@"%@",self.transRxUUIDStr);
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [[appDelegate navigationController] popToRootViewControllerAnimated:YES];

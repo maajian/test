@@ -32,15 +32,15 @@
 { 
     NSString *path =NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES)[0];
     path = [path stringByAppendingString:@"list.sqlite"];
-    NSLog(@"path = %@",path);
+    DDLogVerbose(@"path = %@",path);
     _dataBase = [FMDatabase databaseWithPath:path];
     BOOL open = [_dataBase open];
     if (open) {
-        NSLog(@"数据库打开成功");
+        DDLogVerbose(@"数据库打开成功");
     }
     else
     {
-        NSLog(@"数据库打开失败");
+        DDLogVerbose(@"数据库打开失败");
     }
 }
 - (void)createTable :(NSString *)sqlStr
@@ -49,11 +49,11 @@
     if ([self.dataBase open]) {
         bool result = [self.dataBase executeUpdate:sqlStr];
         if (result) {
-            NSLog(@"成功创建table");
+            DDLogVerbose(@"成功创建table");
         }
         else
         {
-            NSLog(@"创建table失败");
+            DDLogVerbose(@"创建table失败");
         }
         [self.dataBase close];
     }
@@ -65,11 +65,11 @@
     if ([self.dataBase open]) {
         BOOL res = [self.dataBase executeUpdate:sqlStr];
         if (res) {
-            NSLog(@"数据表插入成功");
+            DDLogVerbose(@"数据表插入成功");
         }
         else
         {
-            NSLog(@"数据表插入失败");
+            DDLogVerbose(@"数据表插入失败");
         }
         
         [self.dataBase close];

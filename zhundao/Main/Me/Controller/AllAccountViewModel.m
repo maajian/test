@@ -16,7 +16,7 @@
     NSString *url = [NSString stringWithFormat:@"%@api/PerBase/GetCreditCards?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
-        NSLog( @"dic = %@",result );
+        DDLogVerbose( @"dic = %@",result );
         if ([result[@"Res"]integerValue]==0) {
             NSMutableArray *array = [NSMutableArray array];
             for (NSDictionary *dic in result[@"Data"]) {

@@ -51,7 +51,7 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     [self.session stopRunning];
     [timer invalidate];
     timer = nil;
-    NSLog(@"%@",stringValue);
+    DDLogVerbose(@"%@",stringValue);
     [self netWorkWithstringValue:stringValue];
 }
 - (void)netWorkWithstringValue:(NSString *)stringValue

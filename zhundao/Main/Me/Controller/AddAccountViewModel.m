@@ -16,7 +16,7 @@
     NSString *str = [NSString stringWithFormat:@"%@api/PerBase/AddCreadCards?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
     [ZD_NetWorkM postDataWithMethod:str parameters:dic succ:^(NSDictionary *obj) {
         NSDictionary *result = [NSDictionary dictionaryWithDictionary:obj];
-        NSLog(@"result = %@",result);
+        DDLogVerbose(@"result = %@",result);
         if ([result[@"Res"] integerValue]==0) {
             AddAccountBlock(1);
         }else{

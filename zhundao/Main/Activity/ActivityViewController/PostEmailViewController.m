@@ -91,7 +91,7 @@
             [label labelAnimationWithViewlong:self.view];
         }
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         [hud1 hideAnimated:YES];
         [[SignManager shareManager] showNotHaveNet:self.view];
     }];

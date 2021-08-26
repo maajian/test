@@ -110,7 +110,7 @@
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-            NSLog(@"wu");
+            DDLogVerbose(@"wu");
         {
             [self loadArray];
             break;
@@ -118,7 +118,7 @@
             
         case ReachableViaWWAN:
             // 使用3G网络
-            NSLog(@"wan");
+            DDLogVerbose(@"wan");
              [self reflsh];
             [self ishaveArray];
             
@@ -127,7 +127,7 @@
             break;
         case ReachableViaWiFi:
             // 使用WiFi网络
-            NSLog(@"wifi");
+            DDLogVerbose(@"wifi");
              [self reflsh];
             [self ishaveArray];
             
@@ -318,7 +318,7 @@
         [_tableView reloadData];
         [self shownull:_dataArray WithText:@"暂时没有签到哦，请在右上方添加!" WithTextColor:[UIColor lightGrayColor]];
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         if (_isJuhua==YES) {
             [self.tableView.mj_header endRefreshing];
             self.tableView.mj_footer.state = MJRefreshStateIdle;
@@ -380,7 +380,7 @@
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
-        NSLog(@"Show Index %zi",index); //取消0
+        DDLogVerbose(@"Show Index %zi",index); //取消0
         if (index==1) {
               [weakSelf deleteSign];
             
@@ -449,14 +449,14 @@
     NSString *str = [NSString stringWithFormat:@"%@api/v2/checkIn/deleteCheckIn?token=%@&checkInId=%li&from=ios",zhundaoApi,[[SignManager shareManager] getToken],(long)mycell.model.ID];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
-        NSLog(@"dic = %@",dic);
+        DDLogVerbose(@"dic = %@",dic);
         [hud hideAnimated:YES];
         MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud1 hideAnimated:YES afterDelay:1.5];
         [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
     } fail:^(NSError *error) {
         [hud hideAnimated:YES];
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
     }];
 }
 
@@ -517,28 +517,28 @@
 
 - (void)pushSignList:(UIButton *)button
 {
-    UIResponder *nextResponder = button.nextResponder;
-    while (nextResponder) {
-        if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
-            
-            mycell  = (signinTableViewCell *)nextResponder;
-            break;
-        }
-        
-        nextResponder = nextResponder.nextResponder;
-        
-    }
-    LoadAllSignViewController *load = [[LoadAllSignViewController alloc]init];
-    load.signID = mycell.model.ID;
-    load.activityID = mycell.model.ActivityID;
-    load.signName = mycell.model.Name;
-    load.signNumber = mycell.model.NumShould;
-    [self setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:load animated:YES];
-    load.block = ^(NSInteger a)
-    {
-        [self loadData];
-    };
+//    UIResponder *nextResponder = button.nextResponder;
+//    while (nextResponder) {
+//        if ([nextResponder isKindOfClass:[UITableViewCell class]]) {
+//            
+//            mycell  = (signinTableViewCell *)nextResponder;
+//            break;
+//        }
+//        
+//        nextResponder = nextResponder.nextResponder;
+//        
+//    }
+//    LoadAllSignViewController *load = [[LoadAllSignViewController alloc]init];
+//    load.signID = mycell.model.ID;
+//    load.activityID = mycell.model.ActivityID;
+//    load.signName = mycell.model.Name;
+//    load.signNumber = mycell.model.NumShould;
+//    [self setHidesBottomBarWhenPushed:YES];
+//    [self.navigationController pushViewController:load animated:YES];
+//    load.block = ^(NSInteger a)
+//    {
+//        [self loadData];
+//    };
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
@@ -560,7 +560,7 @@
     [_tableView reloadData];
 }
 - (void)dealloc{
-    NSLog(@"没有内存泄露");
+    DDLogVerbose(@"没有内存泄露");
 }
 /*
 #pragma mark - Navigation

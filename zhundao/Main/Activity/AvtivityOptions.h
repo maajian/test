@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef void(^netBlock) (NSArray *optionsArray);
+
+#import "ZDActivityOptionModel.h"
+typedef void(^optionBlock) (NSArray *userInfoArray, NSArray *extraInfoArray);
 @interface AvtivityOptions : NSObject
-@property(nonatomic,copy)netBlock block;
-- (void)networkwithBlock :(netBlock)netBlock;
+
+- (void)networkWithActivityId:(NSInteger)activityId success:(optionBlock)success failure:(ZDBlock_Void)failure;
+
 @end

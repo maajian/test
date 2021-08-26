@@ -27,7 +27,7 @@
     i = 0;
     flag=0;
     [self createUI];
-      self.modalTransitionStyle =UIModalTransitionStyleFlipHorizontal;
+    self.modalTransitionStyle =UIModalTransitionStyleFlipHorizontal;
     _textf.delegate =self;
     _textf.keyboardType = UIKeyboardTypeNumberPad;
     [_textf addTarget:self action:@selector(textFieldDidEditing:) forControlEvents:UIControlEventEditingChanged];

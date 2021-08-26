@@ -30,7 +30,7 @@
     NSMutableArray *notArray = [NSMutableArray array];
     __weak typeof(self) weakSelf = self;
     [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array = dic[@"Data"];
         for (NSDictionary *datadic  in array) {

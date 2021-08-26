@@ -113,6 +113,15 @@ static NSString *cellID = @"ZDDiscoverCustomApplyCell";
         [hud hideAnimated:YES];
     }];
 }
+- (void)deleteItem:(ZDDiscoverCustomApplyModel *)model {
+    ZD_HUD_SHOW_WAITING
+    [self.viewModel deleteItemWithID:model.ID success:^{
+        ZD_HUD_DISMISS
+        [self getApplyList];
+    } fail:^(NSString * _Nonnull error) {
+        ZD_HUD_SHOW_ERROR_STATUS(error)
+    }];
+}
 
 #pragma mark --- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -133,11 +142,16 @@ static NSString *cellID = @"ZDDiscoverCustomApplyCell";
 // 左滑
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZDDiscoverCustomApplyModel *model = _searchController.active ? _viewModel.titleArray[indexPath.row]  : _viewModel.dataArray[indexPath.row];
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        [self deleteItem:model];
+    }];
+    deleteAction.backgroundColor = [UIColor redColor];
+    
     UITableViewRowAction *showAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleDefault) title:model.hidden ? @"显示" : @"隐藏" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         [self hideOrShowList:model];
     }];
     showAction.backgroundColor = ZDGreenColor;
-    return @[showAction];
+    return @[deleteAction];
 }
 
 // 选中

@@ -79,7 +79,7 @@
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
     NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
     [ZD_NetWorkM postDataWithMethod:url parameters:jsonStr succ:^(NSDictionary *obj) {
-        NSLog(@"res = %@",obj);
+        DDLogVerbose(@"res = %@",obj);
         success();
     } fail:^(NSError *error) {
         failure(error.description);
@@ -107,7 +107,7 @@
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
     NSString *jsonStr = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
     [ZD_NetWorkM postDataWithMethod:url parameters:jsonStr succ:^(NSDictionary *obj) {
-        NSLog(@"res = %@",obj);
+        DDLogVerbose(@"res = %@",obj);
         success(obj);
     } fail:^(NSError *error) {
         failure(error.description);

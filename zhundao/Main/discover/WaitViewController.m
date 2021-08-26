@@ -248,7 +248,7 @@ static NSString *reUseID = @"moreSignReuseID";
         if (isShow) {
             [indicator stopAnimating];
         }
-        NSLog(@"error =%@",error);
+        DDLogVerbose(@"error =%@",error);
     }];
 }
 
@@ -280,11 +280,11 @@ static NSString *reUseID = @"moreSignReuseID";
             NSString *insertSql =[NSString stringWithFormat:@"replace INTO muliSignList(vcode, signID,Status,AdminRemark,FeeName,Fee,phone,trueName)VALUES('%@',%li,%li,'%@','%@',%f,'%@','%@')",model.VCode,(long)self.signID,(long)model.Status,model.AdminRemark,model.FeeName,model.Fee,model.Mobile,model.TrueName];
             BOOL res = [[SignManager shareManager].dataBase executeUpdate:insertSql];
             if (res) {
-                NSLog(@"数据表插入成功");
+                DDLogVerbose(@"数据表插入成功");
             }
             else
             {
-                NSLog(@"数据表插入失败");
+                DDLogVerbose(@"数据表插入失败");
             }
         }
     }
@@ -310,11 +310,11 @@ static NSString *reUseID = @"moreSignReuseID";
 //                    BOOL res = [datamanager.dataBase executeUpdate:updateSql];
         bool result = [datamanager.dataBase executeUpdate:@"CREATE TABLE IF NOT EXISTS muliSignList(vcode TEXT NOT NULL,signID integer NOT NULL,trueName TEXT,Status integer,post integer DEFAULT 2,AdminRemark TEXT,phone TEXT,Fee DOUBLE,addTime TEXT,FeeName TEXT, PRIMARY KEY(vcode, signID));"];
         if (result) {
-            NSLog(@"成功创建table");
+            DDLogVerbose(@"成功创建table");
         }
         else
         {
-            NSLog(@"创建table失败");
+            DDLogVerbose(@"创建table失败");
         }
         [datamanager.dataBase close];
     }
@@ -367,18 +367,18 @@ static NSString *reUseID = @"moreSignReuseID";
 {
     switch (status) {
         case 0:
-            NSLog(@"已经签到");
+            DDLogVerbose(@"已经签到");
             [self errorCaseWithStr:@"该用户已经签到!" WithStatus:0];
             [self getDataFromRs:rs];
             break;
         case 1:
-            NSLog(@"签到成功");
+            DDLogVerbose(@"签到成功");
              [self errorCaseWithStr:@"签到成功!" WithStatus:1];
             [self getDataFromRs:rs];
             break;
         case 2:
         {
-            NSLog(@"无效");
+            DDLogVerbose(@"无效");
               [self errorCaseWithStr:@"签到失败,凭证码无效!" WithStatus:2];
             _vcodeLabel.text = @"签到失败,凭证码无效";
         }
@@ -415,12 +415,12 @@ static NSString *reUseID = @"moreSignReuseID";
 {
     switch (status) {
         case 0:
-            NSLog(@"已经签到");
+            DDLogVerbose(@"已经签到");
       [self errorCaseWithStr:@"该用户已经签到!" WithStatus:0];
             [self getdataFromDic:dic];
             break;
         case 1:
-            NSLog(@"签到成功!");
+            DDLogVerbose(@"签到成功!");
               [self errorCaseWithStr:@"签到成功!" WithStatus:1];
             [self getdataFromDic:dic];
             break;
@@ -593,7 +593,7 @@ static NSString *reUseID = @"moreSignReuseID";
     // 2. Block 方式
     __weak typeof(self) weakSelf = self;
     sheet.ClickIndex = ^(NSInteger index){
-        NSLog(@"Show Index %zi",index); //取消0
+        DDLogVerbose(@"Show Index %zi",index); //取消0
         
         if (index==1) {   //删除
             [weakSelf postData];
@@ -632,7 +632,7 @@ static NSString *reUseID = @"moreSignReuseID";
 }
 //- (void)dealloc
 //{
-//    NSLog(@"dealloc");
+//    DDLogVerbose(@"dealloc");
 //}
 /*
 #pragma mark  mark - Navigation

@@ -16,7 +16,7 @@
 
 #import "ZDActivityViewModel.h"
 
-@interface ZDOnActivityVC ()<UITableViewDataSource, UITableViewDelegate, ZDActivityCellDelegate> {
+@interface ZDOnActivityVC ()<UITableViewDataSource, UITableViewDelegate, ZDActivityCellDelegate, ZDShareViewDelegate> {
     NSInteger _page;
 }
 
@@ -151,13 +151,7 @@ static NSString *cellID = @"ActivityCellID";
         [ZDAlertView alertWithTitle:@"暂无人参加,请下拉刷新数据" message:nil cancelBlock:nil];
     } else {
         ListViewController *list = [[ListViewController alloc]init];
-        list.listID = activityCell.model.ID;
-        list.feeArray = [activityCell.model.ActivityFees copy];
-        list.userInfo = activityCell.model.UserInfo;
-        list.HasJoinNum = activityCell.model.HasJoinNum;
-        list.listName = activityCell.model.Title;
-        list.timeStart = activityCell.model.TimeStart;
-        list.address = activityCell.model.Address;
+        list.activityModel = activityCell.model;
         [self.navigationController pushViewController:list animated:YES];
     }
 }
@@ -170,7 +164,7 @@ static NSString *cellID = @"ActivityCellID";
 }
 // 分享
 - (void)activityCell:(ZDActivityCell *)activityCell didTapShareButton:(UIButton *)button {
-    [[SignManager shareManager]shareImagewithModel:activityCell.model withCTR:self Withtype:5 withImage:nil];
+    [ZDShareView showWithModel:activityCell.model delegate:self];
 }
 // 更多点击
 - (void)activityCell:(ZDActivityCell *)activityCell didTapMoreButton:(UIButton *)button {
@@ -185,6 +179,15 @@ static NSString *cellID = @"ActivityCellID";
             [weakSelf.tableView reloadData];
         }
     };
+}
+
+#pragma mark --- ZDShareViewDelegate
+- (void)shareView:(ZDShareView *)shareView didSelectType:(ZDShareType)shareType {
+    if (shareType == ZDShareTypeWechat) {
+        [[SignManager shareManager]shareImagewithModel:shareView.model withCTR:self Withtype:5 withImage:nil scene:0];
+    } else {
+        [[SignManager shareManager]shareImagewithModel:shareView.model withCTR:self Withtype:5 withImage:nil scene:1];
+    }
 }
 
 #pragma mark --- setter

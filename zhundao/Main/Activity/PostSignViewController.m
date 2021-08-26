@@ -192,7 +192,7 @@
                 [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
                 [self back];
             } fail:^(NSError *error) {
-                NSLog(@"error = %@",error);
+                DDLogVerbose(@"error = %@",error);
                 [indicator stopAnimating];
                 [self showMask:@"服务器开小差啦"];
             }];
@@ -212,7 +212,7 @@
                 [[NSNotificationCenter defaultCenter] postNotificationName:ZDUserDefault_Update_Sign object:nil];
                 [self back];
             } fail:^(NSError *error) {
-                NSLog(@"error = %@",error);
+                DDLogVerbose(@"error = %@",error);
                 [indicator stopAnimating];
                 [self showMask:@"服务器开小差啦"];
             }];

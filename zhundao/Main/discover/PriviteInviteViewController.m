@@ -268,7 +268,7 @@ static NSString *topCellID = @"topInviteCellID";
 
 
 - (void)dealloc{
-    NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",NSStringFromClass([self class])]);
+    DDLogVerbose(@"%@", [NSString stringWithFormat:@"%@dealloc",NSStringFromClass([self class])]);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

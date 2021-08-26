@@ -18,26 +18,63 @@
     [super viewDidLoad];
     
     self.title = self.webTitle;
-    [self addOwnViews];
-    [self relayoutFrameOfSubViews];
+    [self.view addSubview:self.webView];
     [self addBackButton];
     
     // 手势返回设置
     [_webView setAllowsBackForwardNavigationGestures:true];
 }
 
-// 视图添加
-- (void)addOwnViews {
-    self.webView = [[WKWebView alloc] init];
-    self.webView.navigationDelegate = self;
-    [self.view addSubview:self.webView];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
-//    [self addBackButton];
-}
+- (WKWebView *)webView {
+    if (!_webView) {
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+        WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+        configuration.userContentController = userContentController;
 
-// 位置计算
-- (void)relayoutFrameOfSubViews {
-    self.webView.frame = CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.height - 64);
+        // js偏好设置
+        WKPreferences *preferences = [WKPreferences new];
+        preferences.javaScriptCanOpenWindowsAutomatically = YES;
+        preferences.javaScriptEnabled = YES;
+        preferences.minimumFontSize = 8;
+        configuration.preferences = preferences;
+
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kStatusBarHeight - ZD_SAFE_TOP) configuration:configuration];
+        _webView.navigationDelegate = self;
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.urlString]
+                                                               cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                           timeoutInterval:20];
+        NSDictionary *cachedHeaders;
+        if (self.urlString) {
+           cachedHeaders = [[NSUserDefaults standardUserDefaults] objectForKey:self.urlString];
+        }
+        //设置request headers
+        if (cachedHeaders) {
+            NSString *etag = [cachedHeaders objectForKey:@"Etag"];
+            if (etag) {
+                [request setValue:etag forHTTPHeaderField:@"If-None-Match"];
+            }
+            NSString *lastModified = [cachedHeaders objectForKey:@"Last-Modified"];
+            if (lastModified) {
+                [request setValue:lastModified forHTTPHeaderField:@"If-Modified-Since"];
+            }
+        }
+        [_webView loadRequest:request];
+
+        [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *_Nullable data, NSURLResponse *_Nullable response, NSError *_Nullable error) {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+//            WYLog(@"httpResponse == %@", httpResponse);
+            if (httpResponse.statusCode == 304 || httpResponse.statusCode == 0) {
+                [request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+            } else {
+                [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+                [ZD_UserDefaults setObject:httpResponse.allHeaderFields forKey:self.urlString];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                           [_webView reload];
+                       });
+        }] resume];
+    }
+    return _webView;
 }
 
 #pragma mark --- WKNavigationDelegate
@@ -47,7 +84,7 @@
  @param webView <#webView description#>
  @param navigation <#navigation description#>
  */
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     if (!_indicator) {
         _indicator = [[JQIndicatorView alloc]initWithType:3 tintColor: [UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1] size:CGSizeMake(90, 70)];
         _indicator.center = self.view.center;
@@ -72,6 +109,18 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     // 如果是跳转一个新页面
+    NSString *url = [[navigationAction request].URL.absoluteString stringByRemovingPercentEncoding];
+    NSString* scheme = [navigationAction request].URL.scheme;
+    if(![url containsString:@"https"] && ![url containsString:@"http"]){
+        if ([[UIDevice currentDevice].systemVersion floatValue] <= 10.0) {
+            [[UIApplication sharedApplication] openURL:[navigationAction request].URL];
+        }else {
+            [[UIApplication sharedApplication] openURL:[navigationAction request].URL options:@{} completionHandler:^(BOOL success) {}];
+        }
+        //不允许跳转
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return ;
+    }
     if (navigationAction.targetFrame == nil) {
         [webView loadRequest:navigationAction.request];
     }

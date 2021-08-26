@@ -27,7 +27,7 @@
 - (void)getAdminInfo:(ZDSuccessBlock)successBlock error:(ZDErrorBlock)errorBlock{
     NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/GetAdminInfo?token=%@",zhundaoMessageApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj );
+        DDLogVerbose(@"responseObject = %@",obj );
         successBlock(obj);
     } fail:^(NSError *error) {
         errorBlock(error);

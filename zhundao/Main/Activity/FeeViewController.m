@@ -376,7 +376,7 @@
         [self.dataArray replaceObjectAtIndex:0 withObject:dic];
     }
     [_tableview deleteSections:[NSIndexSet indexSetWithIndex:[_tableview indexPathForCell:myCell].section] withRowAnimation:UITableViewRowAnimationFade];
-    NSLog(@"data = %@",self.dataArray);
+    DDLogVerbose(@"data = %@",self.dataArray);
     [_tableview reloadData];
 }
 
@@ -394,7 +394,7 @@
     _sectionCount +=1;   //要先 改变numberofsection 个数。加1
     [self.dataArray addObject:@{}];
      [_tableview insertSections:[NSIndexSet indexSetWithIndex:_sectionCount-1] withRowAnimation:UITableViewRowAnimationRight];  //再添加单元格分组
-    NSLog(@"data = %@",self.dataArray);
+    DDLogVerbose(@"data = %@",self.dataArray);
     [_tableview reloadData];
 }
 - (void)sureAction

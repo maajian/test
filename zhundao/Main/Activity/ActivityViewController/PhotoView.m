@@ -35,7 +35,6 @@
                 HUD.progress = ((float)receivedSize)/expectedSize;
             } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL){
                 self.imageView.frame=[self caculateOriginImageSizeWith:image];
-                NSLog(@"图片加载完成");
                 if (!isCached) {
                     [HUD hideAnimated:YES];
                 }

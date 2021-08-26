@@ -33,7 +33,7 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer*) otherGestureRecognizer{
-    NSLog(@"%@", NSStringFromClass([otherGestureRecognizer class]));
+    DDLogVerbose(@"%@", NSStringFromClass([otherGestureRecognizer class]));
     if([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]] && [NSStringFromClass([otherGestureRecognizer class])isEqualToString:@"UITapGestureRecognizer"]){
         return NO;
     }

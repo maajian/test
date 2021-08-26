@@ -103,6 +103,6 @@ static NSString *cellID = @"inviteID";
 }
 
 - (void)dealloc{
-    NSLog(@"没有内存问题1");
+    DDLogVerbose(@"没有内存问题1");
 }
 @end

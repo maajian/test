@@ -11,7 +11,7 @@
 #import "inviteViewModel.h"
 #import "inviteCollectionView.h"
 #import "BigSizeButton.h"
-@interface inviteViewController () <inviteDelegate>
+@interface inviteViewController () <inviteDelegate, ZDShareViewDelegate>
 {
     UIImageView *imageview;
     UIButton *button;
@@ -108,9 +108,18 @@
          } else if ([UIScreen mainScreen].bounds.size.height == 568) {
              // 4.0英寸
              image1 = [UIImage imageNamed:[NSString stringWithFormat:@"me_more_invite_640x1136_%d",i + 1]];
-         } else if ([UIScreen mainScreen]. bounds.size.height == 667) {
+         } else if ([UIScreen mainScreen].bounds.size.height == 667) {
              // 5.0英寸
              image1 = [UIImage imageNamed:[NSString stringWithFormat:@"me_more_invite_750x1334_%d", i + 1]];
+         } else if ([UIScreen mainScreen].bounds.size.height == 736) {
+             // 5.0英寸
+             image1 = [UIImage imageNamed:[NSString stringWithFormat:@"me_more_invite_1242x2208_%d", i + 1]];
+         } else if ([UIScreen mainScreen].bounds.size.height == 812) {
+             // 5.0英寸
+             image1 = [UIImage imageNamed:[NSString stringWithFormat:@"me_more_invite_1125x2436_%d", i + 1]];
+         } else if ([UIScreen mainScreen].bounds.size.height == 896) {
+             // 5.0英寸
+             image1 = [UIImage imageNamed:[NSString stringWithFormat:@"me_more_invite_828x1792%d", i + 1]];
          } else {
              // X英寸
              image1 = [UIImage imageNamed:[NSString stringWithFormat:@"me_more_invite_1242x2688_%d", i + 1]];
@@ -124,7 +133,7 @@
 
 - (void)selectIndex:(NSInteger)index{
     _index = index;
-    NSLog(@"index = %li",index);
+    DDLogVerbose(@"index = %li",index);
 }
 
 - (void)dismissVC{
@@ -145,8 +154,18 @@
 
 - (void)shareImage
 {
-    [[SignManager shareManager]shareImagewithModel:_model withCTR:self Withtype:1 withImage:self.imageArray[_index]];
+    [ZDShareView showWithDelegate:self];
 }
+
+#pragma mark --- ZDShareViewDelegate
+- (void)shareView:(ZDShareView *)shareView didSelectType:(ZDShareType)shareType {
+    if (shareType == ZDShareTypeWechat) {
+        [[SignManager shareManager]shareImagewithModel:_model withCTR:self Withtype:5 withImage:nil scene:0];
+    } else {
+        [[SignManager shareManager]shareImagewithModel:_model withCTR:self Withtype:5 withImage:nil scene:1];
+    }
+}
+
 
 #pragma mark------保存相册
 - (void)saveImageWithFrame   //保存到相册
@@ -175,7 +194,7 @@
 }
 
 - (void)dealloc{
-    NSLog(@"没有内存问题");
+    DDLogVerbose(@"没有内存问题");
 }
 /*
 #pragma mark - Navigation

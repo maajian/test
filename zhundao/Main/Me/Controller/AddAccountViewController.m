@@ -121,7 +121,7 @@ static NSString *cellID = @"addAccountID";
 - (void)showSheet{
     NSArray *Array = @[@"支付宝",@"工商银行",@"中国银行",@"建设银行",@"农业银行",@"交通银行",@"民生银行",@"兴业银行"];
     _pickerView = [[AJPickerView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) dataArray:Array currentStr:_typeStr backBlock:^(NSString *str) {
-        NSLog(@"选中 %@",str);
+        DDLogVerbose(@"选中 %@",str);
         _typeStr = str;
         [_postDic setObject:_typeStr forKey:@"BankName"];
         [_tableView reloadData];
@@ -148,7 +148,7 @@ static NSString *cellID = @"addAccountID";
 }
 
 - (void)dealloc{
-    NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
+    DDLogVerbose(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];

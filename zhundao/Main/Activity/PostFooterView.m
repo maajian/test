@@ -83,13 +83,13 @@
 {
     _button.selected = !_button.selected;
     if (_button.selected) {
-        NSLog(@"选中");  //取消图片
+        DDLogVerbose(@"选中");  //取消图片
         [_button setImage:[UIImage imageNamed:@"空白"] forState:UIControlStateNormal];
         _button.backgroundColor = [UIColor clearColor];
         _button.userInteractionEnabled = NO;
     }
     else{
-        NSLog(@"未选中"); //打勾
+        DDLogVerbose(@"未选中"); //打勾
         [_button setImage:[UIImage imageNamed:@"签到打勾"] forState:UIControlStateNormal];
         _button.backgroundColor = ZDGreenColor;
         _button.userInteractionEnabled = YES;

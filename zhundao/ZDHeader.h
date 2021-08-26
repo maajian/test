@@ -9,6 +9,18 @@
 #ifndef ZDHeader_h
 #define ZDHeader_h
 
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "DDLog.h"
+#endif
+#ifdef DEBUG
+    static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#else
+    static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#endif
+
+
 #import "BaseNavigationViewController.h"
 
 #import "MBProgressHUD.h"
@@ -37,6 +49,7 @@
 #import "ZDRefreshNormalHeader.h"
 #import "ZDSegmentView.h"
 #import "ZDSearchBar.h"
+#import "ZDShareView.h"
 #import "ZDSignAlertView.h"
 #import "ZDNetWorkManager.h"
 #import "ZDUserManager.h"
@@ -47,6 +60,7 @@
 #import "UIBarButtonItem+Extension.h"
 #import "UIAlertController+creat.h"
 #import "UIColor+Extension.h"
+#import "NSFileManager+Extension.h"
 #import "UIView+Extension.h"
 #import "UIButton+Extension.h"
 #import "UITableView+Extension.h"

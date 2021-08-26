@@ -109,9 +109,9 @@ const NSInteger ACHeight = 44 ;
 - (UIPickerView *)pickerView
 {
     if (!_pickerView ) {
-//        NSLog(@"all = %f",kHeight);
-//        NSLog(@"height = %f" ,kHeight -((kHeight-64)/2+44+64));
-//        NSLog(@"y = %f" ,(kHeight-64)/2+44+64);
+//        DDLogVerbose(@"all = %f",kHeight);
+//        DDLogVerbose(@"height = %f" ,kHeight -((kHeight-64)/2+44+64));
+//        DDLogVerbose(@"y = %f" ,(kHeight-64)/2+44+64);
         _pickerView  = [[UIPickerView alloc]initWithFrame:CGRectMake(0, (kHeight-64)/2+44  , kWidth, kHeight -((kHeight-64)/2+44+64))];
         _pickerView.backgroundColor = [UIColor colorWithRed:198.f/255.f green:203.f/255.f blue:211.f/255.f alpha:1];
         _pickerView.delegate = self;
@@ -211,7 +211,7 @@ const NSInteger ACHeight = 44 ;
 
 - (void)dealloc
 {
-    NSLog(@"没有内存泄漏");
+    DDLogVerbose(@"没有内存泄漏");
 }
 /*
 // Only override drawRect: if you perform custom drawing.

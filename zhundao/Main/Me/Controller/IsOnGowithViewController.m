@@ -204,7 +204,7 @@ static NSString *CellID = @"isOnGowith";
 
 
 - (void)dealloc{
-    NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
+    DDLogVerbose(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

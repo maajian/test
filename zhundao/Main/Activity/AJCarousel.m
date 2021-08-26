@@ -102,7 +102,7 @@ static NSString *cellID = @"cellID";
     if (!cell) {
         cell = [[AJCollectionViewCell alloc]init];
     }
-    NSLog(@"item = %li",indexPath.item);
+    DDLogVerbose(@"item = %li",indexPath.item);
     cell.currentImage = _imageArray[indexPath.row];
     /*! 实际使用过程中可以把label移除 ， 避免cell上存在多余的子视图 */
     cell.currentLabelStr = [NSString stringWithFormat:@"这是第%li张图片",(long)indexPath.item + 1];
@@ -217,7 +217,7 @@ static NSString *cellID = @"cellID";
     return _isScroll;
 }
 - (void)dealloc{
-    NSLog(@"轮播图没有内存泄露");
+    DDLogVerbose(@"轮播图没有内存泄露");
 }
 /*
 // Only override drawRect: if you perform custom drawing.

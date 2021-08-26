@@ -155,7 +155,7 @@
 - (void)SwitchChange
 {
     switchFlag = !switchFlag;
-    NSLog(@"%i",switchFlag);
+    DDLogVerbose(@"%i",switchFlag);
     if (switchFlag==NO) {
         [_switch1 setOn:NO];
     }
@@ -189,7 +189,7 @@
     NSString *posturl = [NSString stringWithFormat:@"%@api/PerActivity/UpdateOrAddOption?accessKey=%@",zhundaoApi,accesskey];
     
     [ZD_NetWorkM postDataWithMethod:posturl parameters:jsonStr succ:^(NSDictionary *obj) {
-        NSLog(@"res = %@",obj);
+        DDLogVerbose(@"res = %@",obj);
         if (self.block) {
             self.block([sendDic copy]);
         }
@@ -322,7 +322,7 @@
                 b= temp;
                 [arr replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%li",(long)a]];
                 [arr replaceObjectAtIndex:j withObject:[NSString stringWithFormat:@"%li",(long)b]];
-                NSLog(@"arr =%@",arr);
+                DDLogVerbose(@"arr =%@",arr);
             }
         }
     }
@@ -353,11 +353,11 @@
         
     }
     footerView.hidden = NO;
-    //      NSLog(@"dic = %@",textDic);
+    //      DDLogVerbose(@"dic = %@",textDic);
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    NSLog(@"view = %f",footerView.frame.origin.y);
+    DDLogVerbose(@"view = %f",footerView.frame.origin.y);
     [UIView animateWithDuration:3 animations:^{
         footerView.hidden = YES;
     } completion:nil];

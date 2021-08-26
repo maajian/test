@@ -28,6 +28,7 @@ UIKIT_EXTERN NSString *const ZDUserDefault_HasShowPrivacy;
 UIKIT_EXTERN NSString *const ZDUserDefault_LoginTime;
 UIKIT_EXTERN NSString *const ZDUserDefault_ClientId; // 客户端clientID
 UIKIT_EXTERN NSString *const ZDUserDefault_UnreadMessage; // 未读消息个数
+UIKIT_EXTERN NSString *const ZDUserDefault_SignList; // 签到列表
  
 #pragma mark --- Cache
 UIKIT_EXTERN NSString *const ZDCacheSign_One_List;

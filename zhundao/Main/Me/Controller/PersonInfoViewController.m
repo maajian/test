@@ -139,9 +139,9 @@
                     [hud1 hideAnimated:YES afterDelay:1.5];
                     NSDictionary *dic = @{@"HeadImgurl":str};
                     [_viewModel UpdateUserInfo:dic successBlock:^(id responseObject) {
-                        NSLog(@"responseObject = %@",responseObject);
+                        DDLogVerbose(@"responseObject = %@",responseObject);
                     } errorBlock:^(NSError *error) {
-                        NSLog(@"error = %@",error);
+                        DDLogVerbose(@"error = %@",error);
                     }];
                 }];
                 
@@ -171,7 +171,7 @@
 
 
 - (void)dealloc{
-    NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
+    DDLogVerbose(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

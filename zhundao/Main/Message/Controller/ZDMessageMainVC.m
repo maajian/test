@@ -3,6 +3,7 @@
 #import "ZDMessageMainDetailVC.h"
 #import "ZDMessageMainCell.h"
 #import "ZDMessageMainViewModel.h"
+#import "ZDMessageMainModel.h"
 @interface ZDMessageMainVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) ZDMessageMainViewModel *viewModel;
 @property (nonatomic, assign) NSInteger page;
@@ -43,17 +44,18 @@
     [self.tableView registerClass:[ZDMessageMainCell class] forCellReuseIdentifier:NSStringFromClass([ZDMessageMainCell class])];
     self.tableView.mj_header = [ZDRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     self.tableView.mj_footer = [ZDRefreshNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem clearReadTextItemWithTarget:self action:@selector(clearAllAction:)];
     self.errorViewTapedBlock = ^{
         weakSelf.isLoading = YES;
         weakSelf.page = 1;
         [weakSelf loadNewData];
-        NSLog(@"点击error");
+        DDLogVerbose(@"点击error");
     };
     self.emptyViewTapedBlock = ^{
         weakSelf.isLoading = YES;
         weakSelf.page = 1;
         [weakSelf loadNewData];
-        NSLog(@"点击了空");
+        DDLogVerbose(@"点击了空");
     };
     
     self.tableView.rowHeight = 71;
@@ -84,6 +86,24 @@
        ZD_HUD_SHOW_ERROR_STATUS(error)
     }];
 }
+- (void)networkForClearAllAction {
+    ZD_WeakSelf
+    [self.viewModel clearAllReadMessageSuccess:^{
+        [weakSelf.tableView reloadData];
+    } failure:^(NSString *error) {
+        ZD_HUD_SHOW_ERROR_STATUS(error);
+    }];
+}
+- (void)networkForDeleteMessage:(NSInteger)row {
+    ZD_WeakSelf
+    ZDMessageMainModel *model = self.viewModel.dataSource[row];
+    [self.viewModel deleteMessageMessageWithID:model.Id success:^{
+        [weakSelf.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:(UITableViewRowAnimationFade)];
+    } failure:^(NSString *error) {
+        ZD_HUD_SHOW_ERROR_STATUS(error);
+    }];
+}
+
 #pragma mark --- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.dataSource.count;
@@ -98,5 +118,21 @@
     ZDMessageMainDetailVC *detail = [[ZDMessageMainDetailVC alloc] init];
     detail.model = self.viewModel.dataSource[indexPath.row];
     [self.navigationController pushViewController:detail animated:YES];
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self networkForDeleteMessage:indexPath.row];
+    }
+}
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+#pragma mark --- Action
+- (void)clearAllAction:(id)sender {
+    ZD_WeakSelf
+    [ZDAlertView alertWithTitle:@"提示" message:@"是否将所有消息标记为已读" sureBlock:^{
+        [weakSelf networkForClearAllAction];
+    } cancelBlock:nil];
 }
 @end

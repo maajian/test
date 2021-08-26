@@ -64,15 +64,15 @@
 {
     NSString *path =NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES)[0];
     path = [path stringByAppendingString:@"list.sqlite"];
-    NSLog(@"path = %@",path);
+    DDLogVerbose(@"path = %@",path);
     _dataBase = [FMDatabase databaseWithPath:path];
     BOOL open = [_dataBase open];
     if (open) {
-        NSLog(@"数据库打开成功");
+        DDLogVerbose(@"数据库打开成功");
     }
     else
     {
-        NSLog(@"数据库打开失败");
+        DDLogVerbose(@"数据库打开失败");
     }
     }
 
@@ -105,12 +105,12 @@
     }
     [label labelAnimationWithViewlong:SaveCtr.view];
 }
-- (void)shareImagewithModel:(ActivityModel *)model withCTR:(UIViewController *)ctr Withtype:(NSInteger)type withImage :(UIImage *)image {
-    [self shareWithTitle:model.Title detailTitle:[NSString stringWithFormat:@"时间:%@ 地点:%@",model.TimeStart,model.Address] thumImage:image ? image : [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.ShareImgurl]]] webpageUrl:[NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)model.ID] withCTR:ctr Withtype:type];
+- (void)shareImagewithModel:(ActivityModel *)model withCTR:(UIViewController *)ctr Withtype:(NSInteger)type withImage :(UIImage *)image scene:(int)scene {
+    [self shareWithTitle:model.Title detailTitle:[NSString stringWithFormat:@"时间:%@ 地点:%@",model.TimeStart,model.Address] thumImage:image ? image : [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.ShareImgurl]]] webpageUrl:[NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)model.ID] withCTR:ctr Withtype:type scene:scene];
 }
-- (void)shareWithTitle:(NSString *)title detailTitle:(NSString *)detailTitle thumImage:(UIImage *)thumImage webpageUrl:(NSString *)webpageUrl withCTR:(UIViewController *)ctr Withtype:(NSInteger)type {
+- (void)shareWithTitle:(NSString *)title detailTitle:(NSString *)detailTitle thumImage:(UIImage *)thumImage webpageUrl:(NSString *)webpageUrl withCTR:(UIViewController *)ctr Withtype:(NSInteger)type scene:(int)scene {
     if (![WXApi isWXAppInstalled]) {
-        NSLog(@"请移步App Store去下载微信客户端");
+        DDLogVerbose(@"请移步App Store去下载微信客户端");
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请先下载微信" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]];
         [ctr presentViewController:alert animated:YES completion:nil];
@@ -131,7 +131,7 @@
         SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
         req.bText = NO;
         req.message = message;
-        req.scene = WXSceneSession;
+        req.scene = scene;
 
         [WXApi sendReq:req completion:nil];
     } else {
@@ -146,7 +146,7 @@
         sendReq.bText = NO;
         sendReq.message = message;
     //    sendReq.scene = WXSceneTimeline;// 分享到朋友圈
-        sendReq.scene = WXSceneSession;// 分享到微信
+        sendReq.scene = scene;// 分享到微信
         [WXApi sendReq:sendReq completion:nil];
     }
 }

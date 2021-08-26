@@ -39,23 +39,20 @@
 #define activityaArray @"activityaArray"
 #define ZDGreyColor666  [UIColor colorFromHexCode:@"666666"]
 #define ZDGreyColor999  [UIColor colorFromHexCode:@"999999"]
-#define ZDBlackColor3  [UIColor colorFromHexCode:@"4A4C5B"]
 #define ZDGreyColorA  [UIColor colorFromHexCode:@"aaaaaa"]
 #define ZDGreenColor2 ([UIColor colorWithRed:9.00f/255.0f green:187.00f/255.0f blue:7.00f/255.0f alpha:1])
 #define ZDGrayColor  [UIColor colorWithRed:186.00f/255.0f green:187.00f/255.0f blue:192.00f/255.0f alpha:1]
 #define ZDGrayColor2  [UIColor colorWithRed:153.00f/255.0f green:153.00f/255.0f blue:153.00f/255.0f alpha:1]
-#define ZDGreenColor  [UIColor colorWithRed:68.00f/255.0f green:186.00f/255.0f blue:37.00f/255.0f alpha:1]
+#define ZDGreenColor  [UIColor colorWithRed:109.00f/255.0f green:181.00f/255.0f blue:3.00f/255.0f alpha:1]
 #define ZDBackgroundColor  [UIColor colorWithRed:244.00f/255.0f green:244.00f/255.0f blue:244.00f/255.0f alpha:1]
 #define ZDLineColor  [UIColor colorWithRed:223.00f/255.0f green:223.00f/255.0f blue:223.00f/255.0f alpha:1]
-#define ZDLineColor2  [UIColor colorWithRed:180.00f/255.0f green:180.00f/255.0f blue:180.00f/255.0f alpha:1]
 #define ZDRedColor  [UIColor colorWithRed:213.00f/255.0f green:79.00f/255.0f blue:72.00f/255.0f alpha:1]
 #define ZDYellowColor  [UIColor colorWithRed:245.00f/255.0f green:181.00f/255.0f blue:75.00f/255.0f alpha:1]
 #define ZDPlaceHolderColor  [UIColor colorWithRed:199.0f/256.0f green:199.0f/256.0f blue:205.0f/256.0f alpha:1]
 #define ZDHeaderTitleColor [UIColor colorWithRed:137.0f/256.0f green:137.0f/256.0f blue:137.0f/256.0f alpha:1]
-#define ZDFontColor666 [UIColor colorWithRed:102.0f/256.0f green:102.0f/256.0f blue:102.0f/256.0f alpha:1]
 #define ZDBlackColor [UIColor colorWithRed:51.0f/256.0f green:51.0f/256.0f blue:51.0f/256.0f alpha:1]
-#define ZDBlackColor2 [UIColor colorWithRed:68.0f/256.0f green:75.0f/256.0f blue:83.0f/256.0f alpha:1]
 #define ZDBlueColor [UIColor colorWithRed:71.0f/256.0f green:144.0f/256.0f blue:238.0f/256.0f alpha:1]
+#define ZD_FontColor_Subtitle       [UIColor colorFromHexCode:@"848484"]
 
 #define ZDMediumFont(r) [UIFont systemMediumFonWithSize:r]
 #define ZDSystemFont(r) [UIFont systemFontOfSize:r]
@@ -65,7 +62,7 @@
 #define zhundaoApi ([[NSUserDefaults standardUserDefaults]objectForKey:@"ZDUserDefault_Network_Line"]?@"https://open.zhundao.com.cn/":@"https://open.zhundaoyun.com/")
 #define zhundaoH5Api @"https://m.zhundao.net/"
 #define zhundaoMessageApi @"https://sms.zhundao.com.cn/"
-#define zhundaoLogApi @"https://fc.zhundao.net/"
+#define zhundaoLogApi @"https://api.zhundaoyun.com/"
 
 #define kColorA(r,g,b,a) [UIColor colorWithRed:(r)/256.0 green:(g)/256.0 blue:(b)/256.0 alpha:a]
 #define KweixinFont(r) [UIFont fontWithName:@"Helvetica" size:r]

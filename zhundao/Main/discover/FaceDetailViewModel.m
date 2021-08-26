@@ -32,7 +32,7 @@
         activityBlock(muarray,muarray1);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
     }];
 }
 
@@ -46,7 +46,7 @@
         signBlock(array1);
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         signBlock(@[@""]);
     }];
 
@@ -64,7 +64,7 @@
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         bindBlock(1);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         bindBlock(0);
     }];
 }
@@ -80,7 +80,7 @@
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *jsonString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSArray *array = [jsonString componentsSeparatedByString:@":"];
-        NSLog(@"array.firstObject = %@",array.firstObject);
+        DDLogVerbose(@"array.firstObject = %@",array.firstObject);
         if ([array.firstObject isEqualToString:@""]) {
             progressBlock(1,1);
         }else{
@@ -90,7 +90,7 @@
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         
     }];
 }
@@ -108,7 +108,7 @@
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseObject];
         addNewBlock(dic);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         addNewBlock(@{});
     }];
 }

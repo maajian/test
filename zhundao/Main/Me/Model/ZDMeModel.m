@@ -51,5 +51,8 @@
 + (instancetype)settingModel {
     return [ZDMeModel modelWithImageName:@"setting" title:@"设置" type:ZDMeTypeSetting];
 }
++ (instancetype)supplierModel {
+    return [ZDMeModel modelWithImageName:@"img_me_promote" title:@"准到供应商" type:ZDMeTypeSupplier];
+}
 
 @end

@@ -25,7 +25,7 @@
             if (_feeBlock)  _feeBlock(1);
         }
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         if (_feeBlock) {
             _feeBlock(2);
         }

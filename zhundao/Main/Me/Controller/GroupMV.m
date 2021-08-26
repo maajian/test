@@ -15,7 +15,7 @@
 - (void)netWorkWithStr :(NSString *)str
 {
     [ZD_NetWorkM postDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *dataArray = dicionary[@"Data"];
         if (_block) {
@@ -57,7 +57,7 @@
 {
     NSString *netstr = [NSString stringWithFormat:@"%@api/Contact/UpdateOrAddContact?accessKey=%@",zhundaoApi,[[SignManager shareManager] getaccseekey]];
     [ZD_NetWorkM postDataWithMethod:netstr parameters:dic succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         NSDictionary *dicionary = [NSDictionary dictionaryWithDictionary:obj];
         
         if ([dicionary[@"Res"] integerValue] ==0) {
@@ -66,7 +66,7 @@
             }
         }
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         if (_addPersonBlock) {
             _addPersonBlock(0);
         }
@@ -81,11 +81,11 @@
         BOOL res = [manager.dataBase executeUpdate:sql];
         [manager.dataBase executeUpdate:sql1];
         if (res) {
-            NSLog(@"数据表更新成功");
+            DDLogVerbose(@"数据表更新成功");
         }
         else
         {
-            NSLog(@"数据表插入失败");
+            DDLogVerbose(@"数据表插入失败");
         }
         [manager.dataBase close];
     }

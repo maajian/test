@@ -87,6 +87,9 @@
     }
     [ZD_UserM networkForSendClientID];
     [self getRedDot];
+    [self checkVersin:^(BOOL obj) {
+        ZD_UserM.iosHiddenFlag = obj;
+    }];
 }
 - (void)initLayout {
     ZD_WeakSelf
@@ -287,6 +290,25 @@
 }
 - (void)getRedDot {
     [self.viewModel getMeMessageListSuccess:nil failure:nil];
+}
+- (void)checkVersin:(ZDBlock_BOOL)block {
+    ZD_HUD_SHOW_WAITING
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getZdConfig?name=iOS-App", zhundaoApi];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        ZD_HUD_DISMISS
+        if ([obj[@"res"] boolValue]) {
+            NSString *data = obj[@"data"];
+            NSDictionary *dic = data.zd_jsonDictionary;
+            NSString *version = ZD_SafeStringValue(dic[@"version"]);
+            BOOL over = [version compareVesionWithServerVersion];
+            block(!over);
+        } else {
+            block(true);
+        }
+    } fail:^(NSError *error) {
+        block(true);
+        ZD_HUD_DISMISS
+    }];
 }
 
 @end

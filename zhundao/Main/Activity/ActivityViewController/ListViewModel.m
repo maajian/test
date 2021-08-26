@@ -15,7 +15,7 @@
 {
     NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/cancelActivityList?token=%@&activityListId=%@&from=ios",zhundaoApi,[[SignManager shareManager] getToken], @(personID).stringValue];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         if ([dic[@"Res"] integerValue]==0) {
             if (_deleteBlock) _deleteBlock(1);
@@ -25,7 +25,7 @@
             if (_deleteBlock) _deleteBlock(2);
         }
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         if (_deleteBlock) _deleteBlock(0);
     }];
 }

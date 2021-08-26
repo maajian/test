@@ -104,10 +104,10 @@
         if([[NSFileManager defaultManager]fileExistsAtPath:path] && ![p containsString:@"YWDB"] && ![p containsString:@"swim"]) {
             BOOL isRemove = [[NSFileManager defaultManager]removeItemAtPath:path error:&error];
             if(isRemove) {
-                NSLog(@"清除成功");
-                NSLog(@"p = %@",p);
+                DDLogVerbose(@"清除成功");
+                DDLogVerbose(@"p = %@",p);
             }else{
-                NSLog(@"清除失败");
+                DDLogVerbose(@"清除失败");
             }
         }
     }

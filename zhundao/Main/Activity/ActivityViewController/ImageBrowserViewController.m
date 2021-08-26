@@ -233,7 +233,7 @@
     UIWindow *window = _handleVC.view.window;
     
     if(window == nil){
-        NSLog(@"错误：窗口为空！");
+        DDLogVerbose(@"错误：窗口为空！");
         return;
     }
     

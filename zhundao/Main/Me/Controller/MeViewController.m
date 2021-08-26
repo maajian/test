@@ -53,6 +53,9 @@
     [self getuser];
     [self networkForPromote];
     [self isShowRed];
+    [self checkVersin:^(BOOL obj) {
+        ZD_UserM.iosHiddenFlag = obj;
+    }];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -91,7 +94,7 @@
     _dataSource = @[@[[ZDMeModel headerModel]],
                     @[[ZDMeModel noticeModel]],
                     @[[ZDMeModel walletModel], [ZDMeModel messageModel], [ZDMeModel contactModel], [ZDMeModel questionModel]],
-                    @[[ZDMeModel honorModel], [ZDMeModel zhundaobiModel], [ZDMeModel voucherModel], [ZDMeModel promoteModel]],
+                    @[[ZDMeModel honorModel], [ZDMeModel zhundaobiModel], [ZDMeModel voucherModel]].mutableCopy,
                     @[[ZDMeModel settingModel]]].mutableCopy;
     
     [self.view addSubview:self.tableView];
@@ -121,9 +124,44 @@
 - (void)networkForPromote {
     ZD_WeakSelf
     [self.viewModel getPromoteSuccess:^{
+        __block BOOL exist = NO;
+        [weakSelf.dataSource enumerateObjectsUsingBlock:^(NSMutableArray<ZDMeModel *> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [obj enumerateObjectsUsingBlock:^(ZDMeModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (obj.type == ZDMeTypeSupplier || obj.type == ZDMeTypePromote) {
+                    exist = YES;
+                }
+            }];
+        }];
+        if (!exist) {
+            if (weakSelf.viewModel.allowPromote) {
+                [self.dataSource[3] addObject:[ZDMeModel promoteModel]];
+            }
+            if (weakSelf.viewModel.allowSupplier) {
+                [self.dataSource[3] addObject:[ZDMeModel supplierModel]];
+            }
+        }
         [weakSelf.tableView reloadData];
     } failure:^{
         
+    }];
+}
+- (void)checkVersin:(ZDBlock_BOOL)block {
+    ZD_HUD_SHOW_WAITING
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/extra/getZdConfig?name=iOS-App", zhundaoApi];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        ZD_HUD_DISMISS
+        if ([obj[@"res"] boolValue]) {
+            NSString *data = obj[@"data"];
+            NSDictionary *dic = data.zd_jsonDictionary;
+            NSString *version = ZD_SafeStringValue(dic[@"version"]);
+            BOOL over = [version compareVesionWithServerVersion];
+            block(!over);
+        } else {
+            block(true);
+        }
+    } fail:^(NSError *error) {
+        block(true);
+        ZD_HUD_DISMISS
     }];
 }
 
@@ -132,15 +170,7 @@
     return 5;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0 || section == 1) {
-        return 1;
-    } else if (section == 2) {
-        return 4;
-    } else if (section == 3) {
-        return self.viewModel.allowPromote ? 4 : 3;
-    } else {
-        return 1;
-    }
+    return self.dataSource[section].count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
@@ -202,6 +232,10 @@
         case ZDMeTypeSetting: {
             [self pushSetting];
             break;
+        }
+        case ZDMeTypeSupplier: {
+            [self showSupplier];
+            break;;
         }
             
         default:
@@ -279,7 +313,7 @@
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"我的代金券";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/coupon/index.html#/mycoupon?token=%@",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/coupon/index.html?token=%@#/mycoupon",[[SignManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
@@ -288,7 +322,16 @@
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"我的勋章";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/account/index.html#!/nameplate?token=%@",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/account/index.html?token=%@#!/nameplate",[[SignManager shareManager] getToken]];
+    [self setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:web animated:YES];
+    [self setHidesBottomBarWhenPushed:NO];
+}
+- (void)showSupplier {
+    ZDWebViewController *web = [[ZDWebViewController alloc] init];
+    web.webTitle = @"准到供应商";
+    web.isClose = YES;
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/settlement/m/supplier_list.html?token=%@",[[SignManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
@@ -297,7 +340,7 @@
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     web.webTitle = @"我的准币";
     web.isClose = YES;
-    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/shop/index.html#!/ZDWallet?token=%@",[[SignManager shareManager] getToken]];
+    web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/shop/index.html?token=%@#!/ZDWallet",[[SignManager shareManager] getToken]];
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:web animated:YES];
     [self setHidesBottomBarWhenPushed:NO];

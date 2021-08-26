@@ -73,6 +73,14 @@
         fail(error.description);
     }];
 }
+- (void)deleteItemWithID:(NSInteger)ID success:(kZDCommonSucc)success fail:(kZDCommonFail)fail {
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/delActivityOption?token=%@&id=%li",zhundaoApi,[[SignManager shareManager] getToken], ID];
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        success();
+    } fail:^(NSError *error) {
+        fail(error.description);
+    }];
+}
 
 #pragma mark --- lazyload
 - (NSMutableArray<ZDDiscoverCustomApplyModel *> *)titleArray {

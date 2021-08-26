@@ -22,7 +22,7 @@
 #import "ConsultActivitySocket.h"
 #import "isReadView.h"
 
-@interface ActivityViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ActivityViewController ()<UITableViewDelegate,UITableViewDataSource, ZDShareViewDelegate>
 {   ActivityCell *mycell;
     NSInteger flag;
     NSInteger xiala;
@@ -299,8 +299,7 @@
 
 {
      [self getMycell:tap];
-
-    [[SignManager shareManager]shareImagewithModel:mycell.model withCTR:self Withtype:5 withImage:nil];
+    [ZDShareView showWithDelegate:self];
 }
 - (void)pushActivity:(UITapGestureRecognizer *)tap
 {
@@ -323,7 +322,7 @@
     modal.backBlock = ^(NSInteger a)
     {
         if (a==1) {
-            NSLog(@"删除刷新");
+            DDLogVerbose(@"删除刷新");
             [self reloadtable];
         }
     };
@@ -360,13 +359,7 @@
     else
     {
     ListViewController *list = [[ListViewController alloc]init];
-    list.listID = mycell.model.ID;
-    list.feeArray = [mycell.model.ActivityFees copy];
-    list.userInfo = mycell.model.UserInfo;
-    list.HasJoinNum = mycell.model.HasJoinNum;
-    list.listName = mycell.model.Title;
-    list.timeStart = mycell.model.TimeStart;
-    list.address = mycell.model.Address;
+    list.activityModel = mycell.model;
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:list animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
@@ -440,26 +433,19 @@
     }
 }
 
+#pragma mark --- ZDShareViewDelegate
+- (void)shareView:(ZDShareView *)shareView didSelectType:(ZDShareType)shareType {
+    if (shareType == ZDShareTypeWechat) {
+        [[SignManager shareManager]shareImagewithModel:mycell.model withCTR:self Withtype:5 withImage:nil scene:0];
+    } else {
+        [[SignManager shareManager]shareImagewithModel:mycell.model withCTR:self Withtype:5 withImage:nil scene:1];
+    }
+}
+
 - (void)dealloc {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-    // Dispose of any resources that can be recreated.
-}
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

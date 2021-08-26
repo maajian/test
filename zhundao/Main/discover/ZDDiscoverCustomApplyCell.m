@@ -35,6 +35,7 @@
         _typeLabel = [UILabel new];
         _typeLabel.textColor = kColorA(153, 153, 153, 1);
         _typeLabel.font = [UIFont systemFontOfSize:14];
+        _typeLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _typeLabel;
 }
@@ -44,6 +45,7 @@
         _titleLabel = [UILabel new];
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.font = [UIFont systemFontOfSize:14];
+        _titleLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _titleLabel;
 }
@@ -54,6 +56,7 @@
         _mustLabel.text = @"*";
         _mustLabel.textColor = kColorA(153, 153, 153, 1);
         _mustLabel.font = [UIFont systemFontOfSize:14];
+        _mustLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _mustLabel;
 }
@@ -68,23 +71,22 @@
 
 #pragma mark --- 布局
 - (void)initLayout {
-    [self.typeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(4);
-        make.top.bottom.mas_equalTo(0);
-        make.width.mas_equalTo(75);
-    }];
-    
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.typeLabel.mas_right).offset(20);
-        make.top.bottom.mas_equalTo(0);
-        make.right.equalTo(self.mustLabel.mas_left).offset(-10);
+        make.leading.equalTo(self.contentView).offset(16);
+        make.centerY.equalTo(self.contentView);
     }];
     
     [self.mustLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-10);
-        make.centerY.equalTo(self.contentView);
-        make.width.mas_equalTo(10);
+        make.leading.equalTo(self.titleLabel.mas_trailing).offset(4);
+        make.centerY.equalTo(self.titleLabel);
+        make.width.mas_equalTo(14);
     }];
+    
+    [self.typeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.mustLabel.mas_trailing).offset(4);
+        make.centerY.equalTo(self.contentView);
+    }];
+    
 }
 
 #pragma mark --- setter

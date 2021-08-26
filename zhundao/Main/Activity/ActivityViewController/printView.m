@@ -195,7 +195,7 @@ static const int viewHeight = 150;
 
 - (void)dealloc
 {
-    NSLog(@"没有泄露");
+    DDLogVerbose(@"没有泄露");
 }
 
 

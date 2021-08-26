@@ -97,7 +97,7 @@
         if (error != nil && error.code == AMapLocationErrorLocateFailed)
         {
             //定位错误：此时location和regeocode没有返回值，不进行annotation的添加
-            NSLog(@"定位错误:{%ld - %@};", (long)error.code, error.localizedDescription);
+            DDLogVerbose(@"定位错误:{%ld - %@};", (long)error.code, error.localizedDescription);
             return;
         }
         else if (error != nil
@@ -109,7 +109,7 @@
                      || error.code == AMapLocationErrorCannotConnectToHost))
         {
             //逆地理错误：在带逆地理的单次定位中，逆地理过程可能发生错误，此时location有返回值，regeocode无返回值，进行annotation的添加
-            NSLog(@"逆地理错误:{%ld - %@};", (long)error.code, error.localizedDescription);
+            DDLogVerbose(@"逆地理错误:{%ld - %@};", (long)error.code, error.localizedDescription);
         }
         else
         {
@@ -350,7 +350,7 @@
     [self.search AMapPOIAroundSearch: Request];
 }
 - (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response{
-    NSLog(@"周边搜索回调");
+    DDLogVerbose(@"周边搜索回调");
     if(response.pois.count == 0)
     {
         return;

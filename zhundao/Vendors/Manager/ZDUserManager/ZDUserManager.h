@@ -42,6 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL loginExpired;
 // 是否发送了推送的clientID
 @property (nonatomic, assign) BOOL sendPush;
+// true表示当前版本大于服务器保存版本，隐藏一些东西
+@property (nonatomic, assign) BOOL iosHiddenFlag;
 // 未读消息个数
 @property (nonatomic, assign) NSInteger unreadMessage;
 // 个推clientId

@@ -98,7 +98,7 @@
         }
     } fail:^(NSError *error) {
         markBlock(0);
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
     }];
 }
 

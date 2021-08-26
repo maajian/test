@@ -10,7 +10,7 @@
 
 #import <WebKit/WebKit.h>
 
-@interface ZDDiscoverQuestionVC () {
+@interface ZDDiscoverQuestionVC ()<ZDShareViewDelegate> {
     NSString *_shareUrl;
 }
 
@@ -35,7 +35,7 @@
 
 #pragma mark --- action
 - (void)shareAction {
-    [[SignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[UIImage imageNamed:@"120"] webpageUrl:_shareUrl  withCTR:self Withtype:5];
+    [ZDShareView showWithDelegate:self];
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
@@ -59,6 +59,15 @@
 - (void)popOne {
     [super popOne];
     self.navigationItem.rightBarButtonItem = nil;
+}
+
+#pragma mark --- ZDShareViewDelegate
+- (void)shareView:(ZDShareView *)shareView didSelectType:(ZDShareType)shareType {
+    if (shareType == ZDShareTypeWechat) {
+        [[SignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[UIImage imageNamed:@"120"] webpageUrl:_shareUrl  withCTR:self Withtype:5 scene:0];
+    } else {
+        [[SignManager shareManager] shareWithTitle:self.title detailTitle:nil thumImage:[UIImage imageNamed:@"120"] webpageUrl:_shareUrl  withCTR:self Withtype:5 scene:1];
+    }
 }
 
 @end

@@ -13,9 +13,13 @@
 #import "SendViewController.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "loginViewModel.h"
-//#import <UMCommon/UMCommon.h>
-//#import <UMShare/UMShare.h>
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+#import "DDASLLogger.h"
+#import "DDFileLogger.h"
+#import <UMCommon/UMCommon.h>
 #import "WXApi.h"
+#import <UMCommonLog/UMCommonLogHeaders.h>
 #import <GTSDK/GeTuiSdk.h> 
 
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
@@ -41,43 +45,18 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    
+
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    LoginViewController *login = [[LoginViewController alloc]init];
+    BaseNavigationViewController *login = [[BaseNavigationViewController alloc] initWithRootViewController:[[LoginViewController alloc]init]];
     NSString  *Unionid = [[NSUserDefaults standardUserDefaults]objectForKey:WX_UNION_ID];
     NSString *access = [[NSUserDefaults standardUserDefaults]objectForKey:AccessKey];
     NSString *mobile = [[NSUserDefaults standardUserDefaults]objectForKey:@"mobile"];
-              //oX9XjjizWbtuCeHkJRKDwJDvPFEQ
-              //oX9Xjjjk0W7TGowAdZZtcfdeNg0o uid
-    /*! 数据库更新 */
+
     [self deleteDatabase];
     
-//    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
-//        NSLog(@"WeChatSDK: %@", log);
-//    }];
     [WXApi registerApp:@"wxfe2a9da163481ba9" universalLink:@"https://open.zhundao.net/app/"];
-    
-//    [WXApi checkUniversalLinkReady:^(WXULCheckStep step, WXCheckULStepResult* result) {
-//        NSLog(@"%@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
-//    }];
-    
-    //友盟
-    //开发者需要显式的调用此函数，日志系统才能工作
-//    [UMConfigure setLogEnabled:YES];//设置打开日志
-//    [UMConfigure initWithAppkey:@"58b3c7a275ca352ea8000c3a" channel:nil];
-//    [[UMSocialManager defaultManager] openLog:YES];
-//    /* 设置微信的appKey和appSecret */
-//    [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://open.zhundao.net/app/",
-//                                                        @(UMSocialPlatformType_QQ):@"https://www.zhundao.net/"};
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxfe2a9da163481ba9" appSecret:@"ace26a762813528cc2dbb65b4279398e" redirectURL:@"http://mobile.umeng.com/social"];
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105950214"/*设置QQ平台的appID*/  appSecret:@"GAFeY0k6OGdPe1nb" redirectURL:@"http://mobile.umeng.com/social"];
-    /* 设置分享到QQ互联的appID
-     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
-     */
     
     //地图
     [AMapServices sharedServices].apiKey = KMapkey;  //地图apikey
@@ -85,6 +64,14 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     //推送
     [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:self];
     [GeTuiSdk registerRemoteNotification: (UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)];
+    
+    // 日志
+    [self writeLog];
+    
+    //友盟
+    [UMConfigure initWithAppkey:kYoumengAPPKEY channel:nil];
+    [UMConfigure setLogEnabled:YES];
+    [UMCommonLogManager setUpUMCommonLogManager];
     
     //是否登录
     if (Unionid==nil&&access==nil) {
@@ -140,6 +127,17 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+#pragma mark --- 日志
+- (void)writeLog {
+    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
+    [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] initWithLogFileManager:[[DDLogFileManagerDefault alloc] initWithLogsDirectory:[NSFileManager logFolder]] ]; // File Logger
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 刷新频率为24小时
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 1; // 最大文件数量为7个
+    fileLogger.doNotReuseLogFiles = NO;
+    [DDLog addLogger:fileLogger withLevel:(DDLogLevelVerbose)];
+//    DDLogVerbose(@"================================init MeariDDLog =========================");
+}
 
 #pragma  mark ----- 推送设置
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -179,7 +177,10 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
                               response:(nullable UNNotificationResponse *)response
                 fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler {
     [GeTuiSdk handleRemoteNotification:userInfo];
-    NSLog(@"内容 = %@",userInfo);
+    DDLogVerbose(@"内容 = %@",userInfo);
+    NSString *payload = userInfo[@"payload"];
+    payload = [payload stringByReplacingOccurrencesOfString:@"'" withString:@"\""];
+    DDLogVerbose(@"json = %@", payload.zd_jsonDictionary);
     if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
         if ([SignManager shareManager].getToken.length) {
             [ZD_NotificationCenter postNotificationName:ZDNotification_GetMessageList object:nil];
@@ -187,7 +188,7 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
     } else{
         [GeTuiSdk resetBadge];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [ZD_NotificationCenter postNotificationName:ZDNotification_Push object:nil];
+            [ZD_NotificationCenter postNotificationName:ZDNotification_Push object:payload.zd_jsonDictionary];
         });
     }
     if(completionHandler) {
@@ -212,7 +213,11 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
                             msgId:(nullable NSString *)msgId
            fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler {
     [GeTuiSdk handleRemoteNotification:userInfo];
-    NSLog(@"内容 = %@",userInfo);
+    DDLogVerbose(@"内容 = %@",userInfo);
+    NSString *payload = userInfo[@"payload"];
+    payload = [payload stringByReplacingOccurrencesOfString:@"'" withString:@"\""];
+    DDLogVerbose(@"payload = %@", payload.zd_jsonDictionary);
+    NSDictionary *dic = payload.zd_jsonDictionary;
     [GeTuiSdk resetBadge];
     if ([SignManager shareManager].getToken.length) {
         [ZD_NotificationCenter postNotificationName:ZDNotification_GetMessageList object:nil];
@@ -230,7 +235,7 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
 - (void)applicationHasKill:(UIApplication *)application Options:(NSDictionary *)launchOptions {
    if (launchOptions != nil) {
        NSDictionary * userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-       NSLog(@"userInfo = %@",userInfo);
+       DDLogVerbose(@"userInfo = %@",userInfo);
        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
            //关闭友盟自带的弹出框
            [GeTuiSdk resetBadge];
@@ -244,7 +249,7 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
 /** SDK启动成功返回cid */
 - (void)GeTuiSdkDidRegisterClient:(NSString *)clientId {
     //个推SDK已注册，返回clientId
-    NSLog(@"\n>>>[GeTuiSdk RegisterClient]:%@\n\n", clientId);
+    DDLogVerbose(@"\n>>>[GeTuiSdk RegisterClient]:%@\n\n", clientId);
     ZD_UserM.clientId = clientId;
 }
 
@@ -269,12 +274,12 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
 #pragma mark  -----微信授权回调
 - (void)onResp:(BaseResp *)resp {
     // 向微信请求授权后,得到响应结果
-    NSLog(@"resp = %i", resp.errCode);
+    DDLogVerbose(@"resp = %i", resp.errCode);
     if (resp.errCode==0) {
         if ([resp isKindOfClass:[SendAuthResp class]]) {
             SendAuthResp *temp = (SendAuthResp *)resp;
-            NSLog(@"temp.code = %@",temp.code);
-            NSLog(@"state = %@",temp.state);
+            DDLogVerbose(@"temp.code = %@",temp.code);
+            DDLogVerbose(@"state = %@",temp.state);
             
             NSString *poststring =[NSString stringWithFormat:@"%@api/v2/weChatLogin?code=%@&type=1&from=ios",zhundaoApi,temp.code];
             [ZD_NetWorkM getDataWithMethod:poststring parameters:nil succ:^(NSDictionary *obj) {
@@ -283,7 +288,7 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
                 [[NSUserDefaults standardUserDefaults]synchronize];
                 [self getUserInfo];
             } fail:^(NSError *error) {
-                NSLog(@"发送失败");
+                DDLogVerbose(@"发送失败");
             }];
         }
     }
@@ -319,18 +324,6 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
     }];
 }
 
-//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-//    
-//    [WXApi handleOpenURL:url delegate:self];
-//    return YES;
-//}
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-}
-
-
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
@@ -343,10 +336,5 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [ZD_NetWorkM autoChangeLine];
 }
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
 
 @end

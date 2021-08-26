@@ -41,7 +41,7 @@
  *  The console output log
  */
 #ifdef DEBUG // Debug status, open the LOG function
-#define AADetailLog(fmt, ...) NSLog((@"-------> %@ [Line %d] \n"fmt "\n\n"), [[NSString stringWithFormat:@"%s",__FILE__] lastPathComponent], __LINE__, ##__VA_ARGS__);
+#define AADetailLog(fmt, ...) DDLogVerbose((@"-------> %@ [Line %d] \n"fmt "\n\n"), [[NSString stringWithFormat:@"%s",__FILE__] lastPathComponent], __LINE__, ##__VA_ARGS__);
 #else // Release status, turn off the LOG function
 #define AADetailLog(...)
 #endif

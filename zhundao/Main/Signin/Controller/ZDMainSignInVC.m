@@ -13,7 +13,6 @@
 #import "ZDCloseSignInVC.h"
 
 #import "ZDSignInViewModel.h"
-
 @interface ZDMainSignInVC ()<ZDSegmentViewDelegate, UIScrollViewDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
     NSInteger _currentIndex;
 }

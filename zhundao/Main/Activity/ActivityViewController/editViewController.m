@@ -63,12 +63,12 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
     //获取请求的url路径.
     NSString *requestString = navigationResponse.response.URL.absoluteString;
-    NSLog(@"requestString:%@",requestString);
+    DDLogVerbose(@"requestString:%@",requestString);
     // 遇到要做出改变的字符串
     __weak typeof(self) weakSelf = self;
     NSString *subStr = @"MangeActivity";
     if ([requestString rangeOfString:subStr].location != NSNotFound) {
-        NSLog(@"这个字符串中有MangeActivity");
+        DDLogVerbose(@"这个字符串中有MangeActivity");
         //回调的URL中如果含有百度，就直接返回，也就是关闭了webView界面
         [ZD_NotificationCenter postNotificationName:ZDNotification_Load_Activity object:nil];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

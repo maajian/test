@@ -47,7 +47,7 @@
     NSString *filepath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"withdraw.plist"];
   BOOL issuces =    [dic writeToFile:filepath atomically:YES];
     if (issuces) {
-        NSLog(@"1");
+        DDLogVerbose(@"1");
     }
 }
 

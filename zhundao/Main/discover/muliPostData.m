@@ -57,11 +57,11 @@
     NSString *jsonStr = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
     
     
-    NSLog(@"jsonStr = %@",jsonStr);
+    DDLogVerbose(@"jsonStr = %@",jsonStr);
     NSString *postStr =[NSString stringWithFormat:@"%@api/CheckIn/BatchCheckIn?accessKey=%@&checkInWay=6",zhundaoApi,acckey];
     postStr = [postStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     [ZD_NetWorkM postDataWithMethod:postStr parameters:@{@"checkJson": jsonStr} succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         if (isShow) [indicator stopAnimating];
         NSDictionary *msg = [NSDictionary dictionaryWithDictionary:obj];
         if ([msg[@"Msg"]integerValue] ==0) {
@@ -76,7 +76,7 @@
             }
         }
     } fail:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        DDLogVerbose(@"error = %@",error);
         if (isShow) [indicator stopAnimating];
         [[SignManager shareManager] showNotHaveNet:view];
     }];

@@ -46,11 +46,11 @@
                         NSString *insertSql = [NSString stringWithFormat:@"replace into noticeList(ID,AddTime,Detail,SortName,Title)values(%li,'%@','%@','%@','%@')",(long)model.ID,model.AddTime,model.Detail,model.SortName,model.Title];
                         BOOL res = [manager.dataBase executeUpdate:insertSql];
                         if (res) {
-                            NSLog(@"数据表插入成功");
+                            DDLogVerbose(@"数据表插入成功");
                         }
                         else
                         {
-                            NSLog(@"数据表插入失败");
+                            DDLogVerbose(@"数据表插入失败");
                         }
                     }
                 }
@@ -72,14 +72,14 @@
 - (void)sava :(NSArray *)array{
     /*! 创建plist  */
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"notice.plist"];
-    NSLog(@"path = %@",path);
+    DDLogVerbose(@"path = %@",path);
     NSFileManager *fm = [NSFileManager defaultManager];
     [fm createFileAtPath:path contents:nil attributes:nil];
     /*! 保存数据进plist */
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array];
   BOOL isSuccess =   [data writeToFile:path atomically:YES];
-    if (isSuccess) NSLog(@"保存成功");
-     else NSLog(@"保存失败");
+    if (isSuccess) DDLogVerbose(@"保存成功");
+     else DDLogVerbose(@"保存失败");
     
 }
 

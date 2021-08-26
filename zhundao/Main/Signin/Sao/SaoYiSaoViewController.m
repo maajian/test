@@ -181,7 +181,7 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 
 -(void)dealloc
 {
-    NSLog(@"dealloc");
+    DDLogVerbose(@"dealloc");
 }
 #pragma mark -
 #pragma mark  -- -- -- -- -- MakeView
@@ -194,7 +194,9 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 
 - (void)creatUI{
     UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    backBtn.frame = CGRectMake(10, 24, 32, 32);
+    backBtn.frame = CGRectMake(16, ZD_StatusBar_H, 44, 44);
+    backBtn.addInsetWidth = 20;
+    backBtn.addInsetHeight = 20;
     [backBtn setImage:[[UIImage imageNamed:@"anniu"] imageWithRenderingMode:
                        UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
@@ -223,7 +225,7 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
 }
 - (void)otherView
 {
-    UIView *deviceview = [[UIView alloc]initWithFrame:CGRectMake(kScreenWidth/2-20, kScreenHeight-110, 40, 40)];
+    UIView *deviceview = [[UIView alloc]initWithFrame:CGRectMake(kScreenWidth/2-20, kScreenHeight-110 + ZD_SAFE_BOTTOM_LAYOUT, 40, 40)];
     deviceview.backgroundColor =[UIColor colorWithWhite:0 alpha:0.3];
     deviceview.layer.cornerRadius = 20;
     deviceview.layer.masksToBounds = YES;
@@ -232,10 +234,10 @@ static NSString *saoText = @"将二维码/条形码放入框内，即可自动�
     [devicebutton setBackgroundImage:[UIImage imageNamed:@"灯光"] forState:UIControlStateNormal];
     [deviceview addSubview:devicebutton];
     
-    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight-70, kScreenWidth/2, 70)];
+    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight-70 + ZD_SAFE_BOTTOM_LAYOUT, kScreenWidth/2, 70 - ZD_SAFE_BOTTOM_LAYOUT)];
     view1.backgroundColor =[UIColor colorWithWhite:0 alpha:0.3];
     [self.view addSubview:view1];
-    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(kScreenWidth/2, kScreenHeight-70, kScreenWidth/2, 70)];
+    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(kScreenWidth/2 , kScreenHeight-70 + ZD_SAFE_BOTTOM_LAYOUT, kScreenWidth/2, 70)];
     view2.backgroundColor =[UIColor colorWithWhite:0 alpha:0.3];
     [self.view addSubview:view2];
     leftImage = [MyImage initWithImageFrame:CGRectMake(kScreenWidth/4-15, 15, 30, 30) imageName:@"扫码签到ed" cornerRadius:0 masksToBounds:NO];

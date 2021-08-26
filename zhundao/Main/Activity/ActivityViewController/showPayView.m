@@ -159,7 +159,7 @@
     if ([self.showPayViewDelegate respondsToSelector:@selector(verify:)]) {
         [self.showPayViewDelegate verify:PS];
     }
-    NSLog(@"%@",PS);
+    DDLogVerbose(@"%@",PS);
 }
 
 

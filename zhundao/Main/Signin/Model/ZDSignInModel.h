@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDSignInModel : NSObject
+@interface ZDSignInModel : NSObject<NSCoding,NSCopying>
 @property(nonatomic,copy)NSString *Name;   //名字
 @property(nonatomic,copy)NSString *ActivityName;   //名字
 @property(nonatomic,assign)NSInteger CheckInType;  //签到类型  默认0 到场签到   1离场签退  2 集合签到

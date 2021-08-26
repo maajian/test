@@ -61,7 +61,7 @@
     
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-invite.plist",name]];
     NSArray *array = [NSArray arrayWithContentsOfFile:path].firstObject;
-    NSLog(@"Fixarray = %@",array);
+    DDLogVerbose(@"Fixarray = %@",array);
     return array;
     
 }
@@ -69,7 +69,7 @@
 - (NSArray *)writeCustomArray :(NSString *)name{
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-invite.plist",name]];
     NSArray *array = [[NSArray arrayWithContentsOfFile:path] objectAtIndex:1];
-    NSLog(@"CustomArray = %@",array);
+    DDLogVerbose(@"CustomArray = %@",array);
     return array;
 }
 

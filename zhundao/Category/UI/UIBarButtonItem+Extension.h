@@ -28,6 +28,12 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark --- 文字
 // 保存
 + (UIBarButtonItem *)saveTextItemWithTarget:(id)target action:(SEL)action ;
+// 清除未读
++ (UIBarButtonItem *)clearReadTextItemWithTarget:(id)target action:(SEL)action;
+// 返回
++ (UIBarButtonItem *)cancelTextItemWithTarget:(id)target action:(SEL)action;
+// 保存
++ (UIBarButtonItem *)saveText2ItemWithTarget:(id)target action:(SEL)action;
 
 @end
 

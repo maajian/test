@@ -9,11 +9,13 @@
 #import "ZDMessageMainDetailVC.h"
 
 #import "ZDMessageMainViewModel.h"
+#import "ListViewController.h"
 
 @interface ZDMessageMainDetailVC ()
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UILabel *contentLabel;
+@property (nonatomic, strong) UIImageView *arrowImageView;
 @property (nonatomic, strong) ZDMessageMainViewModel *viewModel;
 
 @end
@@ -49,6 +51,12 @@
     }
     return _contentLabel;
 }
+- (UIImageView *)arrowImageView {
+    if (!_arrowImageView) {
+        _arrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sign_arrow"]];
+    }
+    return _arrowImageView;
+}
 #pragma mark --- network
 - (void)networkForRedMessage {
     ZD_WeakSelf
@@ -71,6 +79,10 @@
     [self.view addSubview:self.timeLabel];
     [self.view addSubview:self.contentView];
     [self.contentView addSubview:self.contentLabel];
+    if (self.model.click_type != ZDMeMessageClickTypeNone && self.model.click_type != ZDMeMessageClickTypeWebOutApp) {
+        [self.contentView addSubview:self.arrowImageView];
+        [self.contentView addTapGestureTarget:self action:@selector(clickAction)];
+    }
     if (!self.model.IsRead) {
         [self networkForRedMessage];
     }
@@ -91,8 +103,51 @@
         make.trailing.equalTo(self.contentView).offset(-14);
         make.top.equalTo(self.contentView).offset(14);
         make.height.mas_equalTo(size);
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-14);
+        if (self.model.click_type != ZDMeMessageClickTypeNone && self.model.click_type != ZDMeMessageClickTypeWebOutApp) {
+            
+        } else {
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(-14);
+        }
     }];
+    if (self.model.click_type != ZDMeMessageClickTypeNone && self.model.click_type != ZDMeMessageClickTypeWebOutApp) {
+        [self.arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.equalTo(self.contentView).offset(-16);
+            make.top.equalTo(self.contentLabel.mas_bottom).offset(10);
+            make.size.mas_equalTo(CGSizeMake(15, 15));
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(-14);
+        }];
+    }
+}
+
+#pragma mark --- network
+- (void)networkForActivityListDetail:(NSInteger)activityID {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/getSingleActivityForUser?activityId=%li&token=%@",zhundaoApi,(long)activityID,[[SignManager shareManager] getToken]];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"res"] boolValue]) {
+            ActivityModel *model = [ActivityModel yy_modelWithDictionary:obj[@"data"]];
+            ListViewController *list = [[ListViewController alloc]init];
+            list.activityModel = model;
+            [self.navigationController pushViewController:list animated:YES];
+        } else {
+            ZD_HUD_SHOW_ERROR_STATUS(obj[@"errmsg"]);
+        }
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR_STATUS(@"请检查网络设置")
+    }];
+}
+
+#pragma mark --- Action
+- (void)clickAction {
+    if (self.model.click_type == ZDMeMessageClickTypeApplyList) {
+        NSInteger ActivityID = [self.model.param integerValue];
+        [self networkForActivityListDetail:ActivityID];
+    } else if (self.model.click_type == 105 || self.model.click_type == 106 || self.model.click_type == 100) {
+        NSString *url = [self.model.url stringByReplacingOccurrencesOfString:@"[token]" withString:[[SignManager shareManager] getToken]];
+        ZDWebViewController *web = [[ZDWebViewController alloc] init];
+        web.urlString = url;
+        web.isClose = YES;
+        [self.navigationController pushViewController:web animated:YES];
+    }
 }
 
 @end

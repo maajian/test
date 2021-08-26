@@ -106,7 +106,7 @@
     cell.groupSendBlock = ^(NSInteger needCount, NSString *textStr) {
         weakSelf.lastNeedCount = needCount;
         weakSelf.textStr = textStr;
-        NSLog(@"textStr = %@",textStr);
+        DDLogVerbose(@"textStr = %@",textStr);
     };
     return cell;
 }
@@ -176,7 +176,7 @@
 #pragma mark --- 发送短信
 
 - (void)sendMessage{
-    NSLog(@"COUNT = %li",_lastNeedCount * _selectArray.count);
+    DDLogVerbose(@"COUNT = %li",_lastNeedCount * _selectArray.count);
     if (_messageCount<_lastNeedCount * _selectArray.count) {
         maskLabel *label = [[maskLabel alloc]initWithTitle:@"您的短信余额不足"];
         [label labelAnimationWithViewlong:self.view];
@@ -194,7 +194,7 @@
                 [self.view addSubview:sendView];
             }
         } error:^(NSError *error) {
-            NSLog(@"error = %@",error);
+            DDLogVerbose(@"error = %@",error);
             [hud hideAnimated:YES];
         }];
     }
@@ -211,7 +211,7 @@
 }
 
 - (void)dealloc{
-    NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
+    DDLogVerbose(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 
 /*

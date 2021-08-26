@@ -184,9 +184,9 @@
                              };
     [ZD_NetWorkM postDataWithMethod:urlStr parameters:params succ:^(NSDictionary *obj) {
         
-        NSLog(@"succsss --- ");
+        DDLogVerbose(@"succsss --- ");
     } fail:^(NSError *error) {
-        NSLog(@"error --- ");
+        DDLogVerbose(@"error --- ");
     }];
 }
 

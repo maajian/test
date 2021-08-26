@@ -33,8 +33,10 @@
     }else{
          _titleLabel.text =[NSString stringWithFormat:@"%@(%@)",_model.UserName,_model.NickName];
     }
-    _phoneLabel.text = _model.Mobile;
-    _timeLabel.text = _model.AddTime;
+    
+    _phoneLabel.text = [_model.AddTime getSortTime];
+    _timeLabel.text = _model.Company;
+    
    _successLabel.layer.borderColor = [[UIColor colorWithRed:141.00f/255.0f green:189.00f/255.0f blue:38.00f/255.0f alpha:1] CGColor];
    _successLabel.layer.borderWidth = 1;
     _successLabel.layer.cornerRadius = 5;
@@ -48,7 +50,7 @@
     }else if(_model.Status == 2){
         _successLabel.text = @"待审核";
     } else {
-        _successLabel.text = @"未通过";
+        _successLabel.text = @"审核失败";
     }
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

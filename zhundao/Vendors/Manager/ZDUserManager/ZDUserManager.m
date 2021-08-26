@@ -118,7 +118,7 @@
         [[SignManager shareManager].dataBase executeUpdate:updateSql12];
         [[SignManager shareManager].dataBase close];
     }
-    LoginViewController *login = [[LoginViewController alloc]init];
+    BaseNavigationViewController *login = [[BaseNavigationViewController alloc] initWithRootViewController:[[LoginViewController alloc]init]];
     [UIApplication sharedApplication].delegate.window.rootViewController = login;
 }
 

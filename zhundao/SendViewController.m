@@ -61,7 +61,7 @@
 }
 - (IBAction)backaction:(id)sender {
     
-    LoginViewController *login = [[LoginViewController alloc]init];
+    BaseNavigationViewController *login = [[BaseNavigationViewController alloc] initWithRootViewController:[[LoginViewController alloc]init]];
      AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     appDelegate.window.rootViewController = login;
     

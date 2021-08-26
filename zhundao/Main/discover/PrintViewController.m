@@ -246,7 +246,7 @@
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:10 andShowCancel:YES];
     // 2. Block 方式
     sheet.ClickIndex = ^(NSInteger index){
-        NSLog(@"Show Index %zi",index); //取消0
+        DDLogVerbose(@"Show Index %zi",index); //取消0
         
         if (index==1) {   //测试打印
              [_ViewModel printQRCode:@"m819993" name:@"准到科技" isPrint:YES offsetx:[_offsetX intValue] offsety:[_offsetY intValue]];

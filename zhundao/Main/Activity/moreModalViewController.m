@@ -16,7 +16,7 @@
 #import "ConsultViewController.h"
 #import "WXApi.h"
 #import "PostSignViewController.h"
-#import "oneActivityViewController.h"
+#import "ZDActivitySignListVC.h"
 #import "postActivityViewController.h"
 #import "SignUpViewController.h"
 
@@ -29,7 +29,7 @@ static const CGFloat itemSpace = 1;
 static NSString *cellID = @"moreModalCell";
 static NSString *headerID = @"moreModalHeaderView";
 
-@interface moreModalViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, moreModalHeaderViewDelegate> {
+@interface moreModalViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, moreModalHeaderViewDelegate, ZDShareViewDelegate> {
     NSString *accesskey;
     NSString *_endTimeStr; // 截止时间
 }
@@ -45,7 +45,7 @@ static NSString *headerID = @"moreModalHeaderView";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"model = %@",_moreModel);
+    DDLogVerbose(@"model = %@",_moreModel);
     [self initSet];
     accesskey = [[SignManager shareManager]getaccseekey];
 }
@@ -88,6 +88,7 @@ static NSString *headerID = @"moreModalHeaderView";
                    [moreModalModel inviteModel],
                    [moreModalModel qrcodeModel],
                    [moreModalModel copyModel],
+                   [moreModalModel visitorRadarModel],
                    [moreModalModel signinModel]];
     [self.view addSubview:self.collectionView];
 }
@@ -143,7 +144,7 @@ static NSString *headerID = @"moreModalHeaderView";
         }
             break;
         case MoreMoalTypeShare: {
-            [[SignManager shareManager]shareImagewithModel:_moreModel withCTR:self Withtype:5 withImage:nil];
+            [ZDShareView showWithDelegate:self];
         }
             break;
         case MoreMoalTypeInvite: {
@@ -162,6 +163,14 @@ static NSString *headerID = @"moreModalHeaderView";
             code.titlestr = _moreModel.Title;
             code.labelStr = @"报名";
             [self presentViewController:code animated:YES completion:nil];
+        }
+            break;
+        case MoreMoalTypeVisitorRadar: {
+            ZDWebViewController *web = [[ZDWebViewController alloc]init];
+            NSString *url =   [NSString stringWithFormat:@"%@Activity/VisitRader?activityid=%li&token=%@",zhundaoH5Api,(long)_moreModel.ID, [[SignManager shareManager] getToken]];
+            web.urlString = url;
+            web.isClose = YES;
+            [self.navigationController pushViewController:web animated:YES];
         }
             break;
         case MoreMoalTypeSignin: {
@@ -223,10 +232,9 @@ static NSString *headerID = @"moreModalHeaderView";
 #pragma mark --- action
 // 签到
 - (void)signin {
-    oneActivityViewController *one = [[oneActivityViewController alloc]init];
-    one.acID = _moreModel.ID;
-    one.activityName = _moreModel.Title;
-    [self.navigationController pushViewController:one animated:YES];
+    ZDActivitySignListVC *signVc = [[ZDActivitySignListVC alloc] init];
+    signVc.activityModel = _moreModel;
+    [self.navigationController pushViewController:signVc animated:YES];
 }
 
 // 删除活动
@@ -236,7 +244,7 @@ static NSString *headerID = @"moreModalHeaderView";
         NSString *urlStr = [NSString stringWithFormat:@"%@api/v2/activity/deleteActivity?token=%@&activityId=%li&from=ios",zhundaoApi,[SignManager shareManager].getToken,(long)_moreModel.ID];
         [ZD_NetWorkM postDataWithMethod:urlStr parameters:nil succ:^(NSDictionary *obj) {
             NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
-            NSLog(@"%@",dic);
+            DDLogVerbose(@"%@",dic);
             [hud hideAnimated:YES];
             if ([dic[@"Res"] integerValue]==0) {
                 MBProgressHUD *hud1 = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"删除成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
@@ -250,7 +258,7 @@ static NSString *headerID = @"moreModalHeaderView";
                 [label labelAnimationWithViewlong:self.view];
             }
         } fail:^(NSError *error) {
-            NSLog(@"error = %@",error);
+            DDLogVerbose(@"error = %@",error);
             [hud hideAnimated:YES];
         }];
     } cancelBlock:^{
@@ -281,13 +289,7 @@ static NSString *headerID = @"moreModalHeaderView";
     else
     {
         ListViewController *list = [[ListViewController alloc]init];
-        list.listID =_moreModel.ID;
-        list.feeArray = [_moreModel.ActivityFees copy];
-        list.userInfo = _moreModel.UserInfo;
-        list.HasJoinNum = _moreModel.HasJoinNum;
-        list.listName = _moreModel.Title;
-        list.timeStart = _moreModel.TimeStart;
-        list.address = _moreModel.Address;
+        list.activityModel = _moreModel;
         [self setHidesBottomBarWhenPushed:YES];
         [self.navigationController pushViewController:list animated:YES];
     }
@@ -309,7 +311,7 @@ static NSString *headerID = @"moreModalHeaderView";
         hud.animationType = MBProgressHUDAnimationFade;
         [hud showAnimated: YES];
         [ZD_NetWorkM getDataWithMethod:urlstr parameters:nil succ:^(NSDictionary *obj) {
-            NSLog(@"设置成功");
+            DDLogVerbose(@"设置成功");
             [hud hideAnimated:YES];
             MBProgressHUD *hud1 = [[MBProgressHUD alloc]init];
             hud1.mode = MBProgressHUDModeCustomView;
@@ -323,7 +325,7 @@ static NSString *headerID = @"moreModalHeaderView";
             [_collectionView reloadData];
         } fail:^(NSError *error) {
             [hud hideAnimated:YES];
-            NSLog(@"error = %@",error);
+            DDLogVerbose(@"error = %@",error);
         }];
     } cancelBlock:^{
         
@@ -342,7 +344,16 @@ static NSString *headerID = @"moreModalHeaderView";
     UIPasteboard *pastboard = [UIPasteboard generalPasteboard];
     [pastboard setString:[NSString stringWithFormat:@"%@event/%li",zhundaoH5Api,(long)_moreModel.ID]];
     [ZDAlertView alertWithTitle:@"已成功复制到粘贴板" message:nil cancelBlock:nil];
-    NSLog(@"pastboardstr = %@",[NSString stringWithFormat:@"%@event/%li?accesskey=%@",zhundaoH5Api,(long)_moreModel.ID,accesskey]);
+    DDLogVerbose(@"pastboardstr = %@",[NSString stringWithFormat:@"%@event/%li?accesskey=%@",zhundaoH5Api,(long)_moreModel.ID,accesskey]);
+}
+
+#pragma mark --- ZDShareViewDelegate
+- (void)shareView:(ZDShareView *)shareView didSelectType:(ZDShareType)shareType {
+    if (shareType == ZDShareTypeWechat) {
+        [[SignManager shareManager]shareImagewithModel:_moreModel withCTR:self Withtype:5 withImage:nil scene:0];
+    } else {
+        [[SignManager shareManager]shareImagewithModel:_moreModel withCTR:self Withtype:5 withImage:nil scene:1];
+    }
 }
 
 #pragma mark --- network
@@ -354,7 +365,7 @@ static NSString *headerID = @"moreModalHeaderView";
                           @"pageSize":@"10000",
                           @"curPage":@"1"};
     [ZD_NetWorkM postDataWithMethod:url parameters:dic succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
         NSArray *array = dic[@"Data"];
         if (array.count>0) {

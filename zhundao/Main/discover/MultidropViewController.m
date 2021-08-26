@@ -58,7 +58,7 @@ static NSString *muliData =@"muliData";
 
 - (void)backNav {
     if (self.navigationController.viewControllers.count == 1) {
-        LoginViewController *login = [[LoginViewController alloc]init];
+        BaseNavigationViewController *login = [[BaseNavigationViewController alloc] initWithRootViewController:[[LoginViewController alloc]init]];
         [UIApplication sharedApplication].delegate.window.rootViewController = login;
     } else {
         [self.navigationController popViewControllerAnimated:YES];
@@ -179,7 +179,7 @@ static NSString *muliData =@"muliData";
             acckey = dic[@"AccessToken"];
             [self JudgeWithDic:dic];
         } fail:^(NSError *error) {
-            NSLog(@"error = %@",error);
+            DDLogVerbose(@"error = %@",error);
             [hud hideAnimated:YES];
             [self showResultWithTitle:@"请确认签到ID"];
         }];

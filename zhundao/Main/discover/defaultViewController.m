@@ -79,7 +79,6 @@
     [self.view addSubview:self.addressLabel];
     /*! 截屏 分享 */
     if (_activityTitle) {
-        _image = [self imageWithUIView:self.view];
         _shareButton = [[BigSizeButton alloc]initWithFrame:CGRectMake(kScreenWidth-60, 30, 30, 30)];
         [_shareButton addTarget:self action:@selector(shareImage) forControlEvents:UIControlEventTouchUpInside];
         [_shareButton setImage:[UIImage imageNamed:@"detailShare"] forState:UIControlStateNormal];
@@ -211,8 +210,9 @@
 #pragma mark--- 分享
 
 - (void)shareImage{
+    _image = [self imageWithUIView:self.view];
     if (![WXApi isWXAppInstalled]) {
-        NSLog(@"请移步App Store去下载微信客户端");
+        DDLogVerbose(@"请移步App Store去下载微信客户端");
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请先下载微信" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];

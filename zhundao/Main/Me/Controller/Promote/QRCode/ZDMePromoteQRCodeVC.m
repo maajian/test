@@ -10,7 +10,7 @@
 
 #import "ZDMePromoteQRCodeView.h"
 
-@interface ZDMePromoteQRCodeVC ()<ZDMePromoteQRCodeViewDelegate>
+@interface ZDMePromoteQRCodeVC ()<ZDMePromoteQRCodeViewDelegate, ZDShareViewDelegate>
 
 @property (nonatomic, strong) ZDMePromoteQRCodeView *mePromoteQRCodeView;
 @property (nonatomic, copy) NSString *urlString;
@@ -55,9 +55,19 @@
     [self saveImageWithFrame:promoteQRCodeView.qrcodeImageView.image];
 }
 
+
+#pragma mark --- ZDShareViewDelegate
+- (void)shareView:(ZDShareView *)shareView didSelectType:(ZDShareType)shareType {
+    if (shareType == ZDShareTypeWechat) {
+        [[SignManager shareManager] shareWithTitle:@"准到会员注册" detailTitle:@"新用户可享优惠" thumImage:[UIImage imageNamed:@"120"] webpageUrl:self.urlString withCTR:self Withtype:5 scene:0];
+    } else {
+        [[SignManager shareManager] shareWithTitle:@"准到会员注册" detailTitle:@"新用户可享优惠" thumImage:[UIImage imageNamed:@"120"] webpageUrl:self.urlString withCTR:self Withtype:5 scene:1];
+    }
+}
+
 #pragma mark --- Action
 - (void)shareWechat:(UIImage *)image {
-    [[SignManager shareManager] shareWithTitle:@"准到会员注册" detailTitle:@"新用户可享优惠" thumImage:[UIImage imageNamed:@"120"] webpageUrl:self.urlString withCTR:self Withtype:5];
+    [ZDShareView showWithDelegate:self];
 }
 - (void)saveImageWithFrame:(UIImage *)image   //保存到相册
 {

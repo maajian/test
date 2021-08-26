@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSDictionary *)zd_jsonDictionary;
 - (NSArray *)zd_jsonArray;
+- (BOOL)compareVesionWithServerVersion;
+- (NSString *)getSortTime;
 
 @end
 

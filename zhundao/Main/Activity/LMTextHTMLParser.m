@@ -29,7 +29,7 @@
     while (effectiveRange.location + effectiveRange.length < attributedString.length) {
         
         NSDictionary *attributes = [attributedString attributesAtIndex:effectiveRange.location effectiveRange:&effectiveRange];
-        NSLog(@"dic = %@",attributes);
+        DDLogVerbose(@"dic = %@",attributes);
         
         NSTextAttachment *attachment = attributes[@"NSAttachment"];
         NSParagraphStyle *paragraph = attributes[@"NSParagraphStyle"];

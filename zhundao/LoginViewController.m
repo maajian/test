@@ -21,6 +21,7 @@
 #import "BaseNavigationViewController.h"
 #import "CodeLoginViewController.h"
 #import "ZDWebViewController.h"
+#import "LBFinderVC.h"
 
 #define URL_APPID @"appid"
 #define URL_SECRET @"app secret"
@@ -39,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *appImageView;
 @property (weak, nonatomic) IBOutlet UILabel *weixinlabel;
 @property (weak, nonatomic) IBOutlet UIButton *phonelogin;
+@property (nonatomic, assign) NSInteger tapCount;
 
 @property(nonatomic,strong)MBProgressHUD *hud;
 @end
@@ -187,6 +189,7 @@
          _loginButton.hidden  = YES;
          _weixinlabel.hidden = YES;
      }
+    [self initSet];
 }
 -(UITextField *)lockTextLabel
 {
@@ -272,15 +275,29 @@
     _lockTextLabel.layer.mask = maskLayer1;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.tapCount = 0;
     [self createTextField];
     [self setimageView];
     [self.view layoutIfNeeded];
     [self setLeftView];
     if (!ZD_UserM.hasShowPrivacy) {
         [ZDServiceAlertView privacyAlertWithDelegate:self];
+    }
+}
+
+#pragma mark --- init
+- (void)initSet {
+    [self.appImageView addTapGestureTarget:self action:@selector(tapAction:)];
+}
+
+#pragma mark --- action
+- (void)tapAction:(id)sender {
+    self.tapCount += 1;
+    if (self.tapCount > 10) {
+        LBFinderVC *finder = [LBFinderVC instanceWithPath:[NSFileManager logFolder]];
+        [self.navigationController pushViewController:finder animated:YES];
     }
 }
 
@@ -303,20 +320,5 @@
     }
     alertView = nil;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -15,7 +15,12 @@ pod 'AMap2DMap'
 pod 'AMapSearch'
 
 pod 'WechatOpenSDK'
-#pod 'UMCCommon'
+pod 'CocoaLumberjack'
+
+pod 'UMCommon'
+pod 'UMDevice'
+pod 'UMCCommonLog'
+
 #pod 'UMCShare/UI'
 #pod 'UMCShare/Social/WeChat'
 #pod 'UMCShare/Social/QQ'

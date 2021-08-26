@@ -311,7 +311,7 @@
 - (LMTextStyle *)textStyleForSelection {
     
     LMTextStyle *textStyle = [[LMTextStyle alloc] init];
-    NSLog(@"%@",self.textView.typingAttributes);
+    DDLogVerbose(@"%@",self.textView.typingAttributes);
     UIFont *font = self.textView.typingAttributes[NSFontAttributeName];
     textStyle.bold = font.bold;
     textStyle.italic = font.italic;
@@ -555,7 +555,7 @@
             [formData appendPartWithFileData:data name:@"imgFile" fileName:fileName mimeType:@"image/jpeg"];
         }
     } succ:^(NSDictionary *obj) {
-        NSLog(@"responseObject = %@",obj);
+        DDLogVerbose(@"responseObject = %@",obj);
         [hud1 hideAnimated:YES];
         MBProgressHUD *hud = [MyHud initWithMode:MBProgressHUDModeCustomView labelText:@"添加成功" showAnimated:YES UIView:self.view imageName:@"签到打勾"];
         [hud hideAnimated:YES afterDelay:1];

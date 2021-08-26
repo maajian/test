@@ -145,7 +145,7 @@
 - (void)getData{
     [self.deviceArray removeAllObjects];
     [self.faceVM getListWithBlock:^(NSArray *dataArray) {
-        NSLog(@"dic1 = %@",dataArray);
+        DDLogVerbose(@"dic1 = %@",dataArray);
             for (NSDictionary *dic in dataArray) {
                 FaceModel *model = [FaceModel yy_modelWithJSON:dic];
                 [self.deviceArray addObject:model];

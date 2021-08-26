@@ -46,7 +46,7 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier1"];
         }
         for (UIView *subview in cell.subviews) {
-            NSLog(@"view = %@",cell.subviews);
+            DDLogVerbose(@"view = %@",cell.subviews);
             if ([subview isKindOfClass:[UILabel class]]) {
                 [subview removeFromSuperview];
             }
@@ -114,7 +114,7 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier2"];
         }
         for (UIView *subview in cell.subviews) {
-            NSLog(@"view = %@",cell.subviews);
+            DDLogVerbose(@"view = %@",cell.subviews);
             if ([subview isKindOfClass:[UILabel class]]) {
                 [subview removeFromSuperview];
             }
@@ -166,7 +166,7 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier2"];
         }
         for (UIView *subview in cell.subviews) {
-            NSLog(@"view = %@",cell.subviews);
+            DDLogVerbose(@"view = %@",cell.subviews);
             if ([subview isKindOfClass:[UILabel class]]) {
                 [subview removeFromSuperview];
             }
@@ -217,7 +217,7 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier2"];
         }
         for (UIView *subview in cell.subviews) {
-            NSLog(@"view = %@",cell.subviews);
+            DDLogVerbose(@"view = %@",cell.subviews);
             if ([subview isKindOfClass:[UILabel class]]) {
                 [subview removeFromSuperview];
             }
@@ -271,7 +271,7 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier2"];
         }
         for (UIView *subview in cell.subviews) {
-            NSLog(@"view = %@",cell.subviews);
+            DDLogVerbose(@"view = %@",cell.subviews);
             if ([subview isKindOfClass:[UILabel class]]) {
                 [subview removeFromSuperview];
             }

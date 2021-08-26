@@ -37,63 +37,78 @@ ZD_Singleton_Implementation(NetWorkManager)
  get请求
  */
 - (void)getDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
-    [[ZDNetWorkManager shareHTTPSessionManager] GET:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
-        succ(responseObject);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@, method = %@", error, method);
-//        if (error.code == -1011) {
-//            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-//        } else
-            if (self.isDefaultNetworkLine) {
-                fail([self networkError]);
-            [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
-        } else {
-            fail([self networkError]);
-        }
-    }];
+     __block BOOL hasRequest = NO;
+    ZD_WeakSelf
+    ZDBlock_Void getBlock = ^(NSString *url, id param, ZDBlock_Str firstFail) {
+        [[ZDNetWorkManager shareHTTPSessionManager] GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            DDLogVerbose(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
+            succ(responseObject);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            DDLogVerbose(@"error = %@, method = %@", error, method);
+            NSString *newMethod = [self getNewMethodWithOldMethod:method];
+            if (newMethod.length && hasRequest == NO) {
+                hasRequest = YES;
+                firstFail(newMethod);
+            } else {
+                hasRequest = YES;
+                fail([weakSelf networkError]);
+            }
+        }];
+    };
+    getBlock(method, parameters, ^(NSString *str) {
+        getBlock(str, parameters, nil);
+    });
 }
 
 /**
  post请求
  */
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
-    [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@, method = %@, params = %@", responseObject, method, parameters);
-        succ(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@, method = %@", error, method);
-//        if (error.code == -1011) {
-//            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-//        } else
-            if (self.isDefaultNetworkLine) {
-                fail([self networkError]);
-            [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
-        } else {
-            fail([self networkError]);
-        }
-    }];
+    __block BOOL hasRequest = NO;
+   ZD_WeakSelf
+   ZDBlock_Void postBlock = ^(NSString *url, id param, ZDBlock_Str firstFail) {
+       [[ZDNetWorkManager shareHTTPSessionManager] POST:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+           DDLogVerbose(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
+           succ(responseObject);
+       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+           DDLogVerbose(@"error = %@, method = %@", error, method);
+           NSString *newMethod = [self getNewMethodWithOldMethod:method];
+           if (newMethod.length && hasRequest == NO) {
+               hasRequest = YES;
+               firstFail(newMethod);
+           } else {
+               hasRequest = YES;
+               fail([weakSelf networkError]);
+           }
+       }];
+   };
+    postBlock(method, parameters, ^(NSString *str) {
+        postBlock(str, parameters, nil);
+   });
 }
 
 - (void)postDataWithMethod:(NSString *)method parameters:(id)parameters constructing:(void (^)(id<AFMultipartFormData> formData))constructing succ:(ZDBlock_Dic)succ fail:(ZDBlock_Error)fail {
-    [[ZDNetWorkManager shareHTTPSessionManager] POST:method parameters:parameters constructingBodyWithBlock:constructing progress: nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@, method = %@, params = %@", responseObject, method, parameters);
-        succ(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error = %@, method = %@", error, method);
-//        if (error.code == -1011) {
-//            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-//        }
-//        else
-            if (self.isDefaultNetworkLine) {
-           fail([self networkError]);
-           [ZD_NotificationCenter postNotificationName:ZDNotification_Network_Change object:nil];
-       }
-        else {
-           fail([self networkError]);
-       }
-    }];
+    __block BOOL hasRequest = NO;
+   ZD_WeakSelf
+   ZDBlock_Void postBlock = ^(NSString *url, id param, ZDBlock_Str firstFail) {
+       [[ZDNetWorkManager shareHTTPSessionManager] POST:url parameters:parameters constructingBodyWithBlock:constructing progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+           DDLogVerbose(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
+           succ(responseObject);
+       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+           DDLogVerbose(@"error = %@, method = %@", error, method);
+           NSString *newMethod = [self getNewMethodWithOldMethod:method];
+           if (newMethod.length && hasRequest == NO) {
+               hasRequest = YES;
+               firstFail(newMethod);
+           } else {
+               hasRequest = YES;
+               fail([weakSelf networkError]);
+           }
+       }];
+   };
+    postBlock(method, parameters, ^(NSString *str) {
+        postBlock(str, parameters, nil);
+   });
 }
 
 #pragma mark --- public
@@ -102,7 +117,7 @@ ZD_Singleton_Implementation(NetWorkManager)
     NSDictionary *dic = @{@"error code": @(1002),
                           @"error description": @"网络错误, 请检查网络设置",
                           };
-    NSError *error = [NSError errorWithDomain:@"network error" code:1002 userInfo:dic];
+    NSError *error = [NSError errorWithDomain:@"网络错误, 请检查网络设置" code:1002 userInfo:dic];
     return error;
 }
 
@@ -117,6 +132,20 @@ ZD_Singleton_Implementation(NetWorkManager)
         }
     }
 }
+- (NSString *)getNewMethodWithOldMethod:(NSString *)method {
+    NSString *newUrl = @"open.zhundaoyun.com";
+    NSString *oldUrl = @"open.zhundao.com.cn";
+    if ([method containsString:oldUrl]) {
+        method = [method stringByReplacingOccurrencesOfString:oldUrl withString:newUrl];
+    } else if ([method containsString:newUrl]) {
+        method = [method stringByReplacingOccurrencesOfString:newUrl withString:oldUrl];
+    } else {
+        method = @"";
+    }
+    return method;
+}
+
+//#define zhundaoApi ([[NSUserDefaults standardUserDefaults]objectForKey:@"ZDUserDefault_Network_Line"]?@"https://open.zhundao.com.cn/":@"https://open.zhundaoyun.com/")
 
 #pragma mark --- getter
 - (BOOL)isDefaultNetworkLine {

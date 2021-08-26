@@ -148,6 +148,7 @@
         
 - (void)postLocalDataWithSignID:(NSInteger)signID success:(ZDBlock_Void)success fail:(ZDBlock_Void)fail {
     NSMutableArray *postArray = [NSMutableArray array];
+    _dataArray = ((NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, signID]]).mutableCopy;
     [_dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([ZD_SafeStringValue(obj[@"needPost"])isEqualToString:@"1"]) {
             NSMutableDictionary *postdic = [NSMutableDictionary dictionary];
@@ -201,9 +202,9 @@
                              };
     [ZD_NetWorkM postDataWithMethod:urlStr parameters:params succ:^(NSDictionary *obj) {
         
-        NSLog(@"succsss --- ");
+        DDLogVerbose(@"succsss --- ");
     } fail:^(NSError *error) {
-        NSLog(@"error --- ");
+        DDLogVerbose(@"error --- ");
     }];
 }
 

@@ -21,7 +21,8 @@ typedef NS_ENUM(NSInteger, MoreMoalType) {
     MoreMoalTypeInvite,
     MoreMoalTypeQRCode,
     MoreMoalTypeSignin,
-    MoreMoalTypeCopy
+    MoreMoalTypeCopy,
+    MoreMoalTypeVisitorRadar, // 访客雷达
 };
 
 @interface moreModalModel : UICollectionReusableView
@@ -57,6 +58,8 @@ typedef NS_ENUM(NSInteger, MoreMoalType) {
 + (instancetype)signinModel;
 // 活动复制
 + (instancetype)copyModel;
+// 访客雷达
++ (instancetype)visitorRadarModel;
 
 @end
 

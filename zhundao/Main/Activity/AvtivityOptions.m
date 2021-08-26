@@ -10,24 +10,24 @@
 
 @implementation AvtivityOptions
 
-- (void)networkwithBlock :(netBlock)netBlock
+- (void)networkWithActivityId:(NSInteger)activityId success:(optionBlock)success failure:(ZDBlock_Void)failure
 {
-    NSString *str = [NSString stringWithFormat:@"%@api/PerActivity/PostActivityOptions?accessKey=%@",zhundaoApi,[[SignManager shareManager]getaccseekey]];
-    _block = [netBlock copy];
-    NSLog(@"str = %@",str);
+    NSString *str = [NSString stringWithFormat:@"%@api/v2/activity/getActivityOptionList?token=%@&activityId=%li",zhundaoApi,[[SignManager shareManager] getToken], (long)activityId];
+    DDLogVerbose(@"str = %@",str);
+    NSMutableArray *extraInfoArray = [NSMutableArray array];
+    NSMutableArray *userInfoArray = [NSMutableArray array];
     [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
-        NSMutableArray *dataArray = [NSMutableArray array];
-        for (NSDictionary *dic in obj[@"Data"]) {
-            if (![dic[@"Hidden"] boolValue]) {
-                [dataArray addObject:dic];
-            }
+        for (NSDictionary *dic in obj[@"data"][@"extraInfo"]) {
+            ZDActivityOptionModel *model = [ZDActivityOptionModel yy_modelWithDictionary:dic];
+            [extraInfoArray addObject:model];
         }
-        
-        if (_block) {
-            _block(dataArray);
+        for (NSDictionary *dic in obj[@"data"][@"userInfo"]) {
+            ZDActivityOptionModel *model = [ZDActivityOptionModel yy_modelWithDictionary:dic];
+            [userInfoArray addObject:model];
         }
+        success(userInfoArray, extraInfoArray);
     } fail:^(NSError *error) {
-        
+        failure();
     }];
 }
 @end

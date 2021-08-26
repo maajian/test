@@ -93,7 +93,7 @@
             
             
             NSAttributedString *attstr = [NSString strToAttriWithStr:_htmlStr];
-            NSLog(@"attstr = %@",attstr);
+            DDLogVerbose(@"attstr = %@",attstr);
             _textStr = [attstr copy];
             
         }
@@ -283,18 +283,18 @@
 - (UITextField *)activityNumbertField
 {
     if (!_activityNumbertField) {
-        _activityNumbertField = [myTextField initWithFrame:CGRectMake(85, 0, kScreenWidth-105, 44) placeholder:@"默认不限" font:KHeitiSCMedium(15) TextAlignment:NSTextAlignmentRight textColor:[UIColor blackColor]];
+        _activityNumbertField = [myTextField initWithFrame:CGRectMake(85, 0, kScreenWidth-105, 44) placeholder:@"默认不限,仅对免费活动有效" font:KHeitiSCMedium(15) TextAlignment:NSTextAlignmentRight textColor:[UIColor blackColor]];
         _activityNumbertField.keyboardType = UIKeyboardTypeNumberPad;
         if (_activityModel) {
             if (_activityModel.UserLimit ==0) {
-                [_activityNumbertField initWithString:@"默认不限" font:KHeitiSCMedium(15)];
+                [_activityNumbertField initWithString:@"默认不限,仅对免费活动有效" font:KHeitiSCMedium(15)];
             }else
             {
                 _activityNumbertField.text = [NSString stringWithFormat:@"%li",(long)_activityModel.UserLimit];
             }
         }
         else{
-            [_activityNumbertField initWithString:@"默认不限" font:KHeitiSCMedium(15)];
+            [_activityNumbertField initWithString:@"默认不限,仅对免费活动有效" font:KHeitiSCMedium(15)];
         }
         
     }

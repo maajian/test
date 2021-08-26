@@ -44,7 +44,7 @@
 - (UIView *)blackView {
     if (!_blackView) {
         _blackView = [[UIView alloc] init];
-        _blackView.backgroundColor = ZDBlackColor2;
+        _blackView.backgroundColor = ZDBlackColor;
     }
     return _blackView;
 }

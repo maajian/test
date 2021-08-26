@@ -149,7 +149,7 @@
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
-    NSLog(@"[ConnectViewController] didReceiveMemoryWarning");
+    DDLogVerbose(@"[ConnectViewController] didReceiveMemoryWarning");
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
@@ -171,7 +171,7 @@
 }
 
 - (void) switchToMainFeaturePage {
-    NSLog(@"[ConnectViewController] switchToMainFeaturePage");
+    DDLogVerbose(@"[ConnectViewController] switchToMainFeaturePage");
 
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    if ([[[appDelegate navigationController] viewControllers] containsObject:[deviceInfo mainViewController]] == FALSE) {
@@ -210,7 +210,7 @@
 }
 
 - (IBAction)actionButtonCancelScan:(id)sender {
-    NSLog(@"[ConnectViewController] actionButtonCancelScan");
+    DDLogVerbose(@"[ConnectViewController] actionButtonCancelScan");
     [self stopScan];
     [self setConnectionStatus:LE_STATUS_IDLE];
 }
@@ -222,12 +222,12 @@
             MyPeripheral *connectingPeripheral = [connectingList objectAtIndex:i];
             
             if (connectingPeripheral.connectStaus == MYPERIPHERAL_CONNECT_STATUS_CONNECTING) {
-                //NSLog(@"startScan add connecting List: %@",connectingPeripheral.advName);
+                //DDLogVerbose(@"startScan add connecting List: %@",connectingPeripheral.advName);
                 [devicesList addObject:connectingPeripheral];
             }
             else {
                 [connectingList removeObjectAtIndex:i];
-                //NSLog(@"startScan remove connecting List: %@",connectingPeripheral.advName);
+                //DDLogVerbose(@"startScan remove connecting List: %@",connectingPeripheral.advName);
             }
         }
     }
@@ -258,7 +258,7 @@
 }
 
 - (void)updateMyPeripheralForDisconnect:(MyPeripheral *)myPeripheral {
-    NSLog(@"updateMyPeripheralForDisconnect");//, %@", myPeripheral.advName);
+    DDLogVerbose(@"updateMyPeripheralForDisconnect");//, %@", myPeripheral.advName);
     if (myPeripheral == controlPeripheral) {
         [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(popToRootPage) userInfo:nil repeats:NO];
     }
@@ -267,7 +267,7 @@
         DeviceInfo *tmpDeviceInfo = [connectedDeviceInfo objectAtIndex:idx];
         if (tmpDeviceInfo.myPeripheral == myPeripheral) {
             [connectedDeviceInfo removeObjectAtIndex:idx];
-            //NSLog(@"updateMyPeripheralForDisconnect1");
+            //DDLogVerbose(@"updateMyPeripheralForDisconnect1");
             break;
         }
     }
@@ -276,11 +276,11 @@
         MyPeripheral *tmpPeripheral = [connectingList objectAtIndex:idx];
         if (tmpPeripheral == myPeripheral) {
             [connectingList removeObjectAtIndex:idx];
-            //NSLog(@"updateMyPeripheralForDisconnect2");
+            //DDLogVerbose(@"updateMyPeripheralForDisconnect2");
             break;
         }
         else{
-            //NSLog(@"updateMyPeripheralForDisconnect3 %@, %@", tmpPeripheral.advName, myPeripheral.advName);
+            //DDLogVerbose(@"updateMyPeripheralForDisconnect3 %@, %@", tmpPeripheral.advName, myPeripheral.advName);
         }
         
     }
@@ -299,7 +299,7 @@
     
     [[BLKWrite Instance] setPeripheral:myPeripheral];
     
-    NSLog(@"[ConnectViewController] updateMyPeripheralForNewConnected");
+    DDLogVerbose(@"[ConnectViewController] updateMyPeripheralForNewConnected");
     DeviceInfo *tmpDeviceInfo = [[DeviceInfo alloc]init];
 //    tmpDeviceInfo.mainViewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
 //    tmpDeviceInfo.mainViewController.connectedPeripheral = myPeripheral;
@@ -319,13 +319,13 @@
         [connectedDeviceInfo addObject:tmpDeviceInfo];
     }
     else{
-        NSLog(@"Connected List Filter!");
+        DDLogVerbose(@"Connected List Filter!");
     }
     
     for (int idx =0; idx< [connectingList count]; idx++) {
         MyPeripheral *tmpPeripheral = [connectingList objectAtIndex:idx];
         if (tmpPeripheral == myPeripheral) {
-            //NSLog(@"connectingList removeObject:%@",tmpPeripheral.advName);
+            //DDLogVerbose(@"connectingList removeObject:%@",tmpPeripheral.advName);
             [connectingList removeObjectAtIndex:idx];
             break;
         }
@@ -334,7 +334,7 @@
     for (int idx =0; idx< [devicesList count]; idx++) {
         MyPeripheral *tmpPeripheral = [devicesList objectAtIndex:idx];
         if (tmpPeripheral == myPeripheral) {
-            NSLog(@"devicesList removeObject:%@",tmpPeripheral.advName);
+            DDLogVerbose(@"devicesList removeObject:%@",tmpPeripheral.advName);
             [devicesList removeObjectAtIndex:idx];
             break;
         }
@@ -345,7 +345,7 @@
 
 // DataSource methods
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //NSLog(@"[ConnectViewController] numberOfRowsInSection,device count = %d", [devicesList count]);
+    //DDLogVerbose(@"[ConnectViewController] numberOfRowsInSection,device count = %d", [devicesList count]);
     switch (section) {
         case 0:
             return [connectedDeviceInfo count];
@@ -363,7 +363,7 @@
     switch (indexPath.section) {
         case 0:
         {
-            //NSLog(@"[ConnectViewController] CellForRowAtIndexPath section 0, Row = %d",[indexPath row]);
+            //DDLogVerbose(@"[ConnectViewController] CellForRowAtIndexPath section 0, Row = %d",[indexPath row]);
             cell = [tableView dequeueReusableCellWithIdentifier:@"connectedList"];
             if (cell == nil) {
                 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"connectedList"] autorelease];
@@ -387,7 +387,7 @@
             
         case 1:
         {
-            //NSLog(@"[ConnectViewController] CellForRowAtIndexPath section 1, Row = %d",[indexPath row]);
+            //DDLogVerbose(@"[ConnectViewController] CellForRowAtIndexPath section 1, Row = %d",[indexPath row]);
             
             cell = [tableView dequeueReusableCellWithIdentifier:@"devicesList"];
             if (cell == nil) {
@@ -443,7 +443,7 @@
     switch (indexPath.section) {
         case 0:
         {
-            //NSLog(@"[ConnectViewController] didSelectRowAtIndexPath section 0, Row = %d",[indexPath row]);
+            //DDLogVerbose(@"[ConnectViewController] didSelectRowAtIndexPath section 0, Row = %d",[indexPath row]);
             deviceInfo = [connectedDeviceInfo objectAtIndex:indexPath.row];
             controlPeripheral = deviceInfo.myPeripheral;
             [self stopScan];
@@ -459,12 +459,12 @@
         case 1:
         {
             //Derek
-            NSLog(@"[ConnectViewController] didSelectRowAtIndexPath section 0, Row = %ld",(long)[indexPath row]);
+            DDLogVerbose(@"[ConnectViewController] didSelectRowAtIndexPath section 0, Row = %ld",(long)[indexPath row]);
             int count = (int)[devicesList count];
             if ((count != 0) && count > indexPath.row) {
                 MyPeripheral *tmpPeripheral = [devicesList objectAtIndex:indexPath.row];
                 if (tmpPeripheral.connectStaus != MYPERIPHERAL_CONNECT_STATUS_IDLE) {
-                    //NSLog(@"Device is not idle - break");
+                    //DDLogVerbose(@"Device is not idle - break");
                     break;
                 }
                 [self connectDevice:tmpPeripheral];
@@ -483,7 +483,7 @@
 }
 
 - (IBAction)refreshDeviceList:(id)sender {
-    NSLog(@"[ConnectViewController] refreshDeviceList");
+    DDLogVerbose(@"[ConnectViewController] refreshDeviceList");
         [self stopScan];
         [self startScan];
         [devicesTableView reloadData];
@@ -501,7 +501,7 @@
 
 //Derek
 - (IBAction)actionButtonDisconnect:(id)sender {
-    //NSLog(@"[ConnectViewController] actionButtonDisconnect idx = %d",[sender tag]);
+    //DDLogVerbose(@"[ConnectViewController] actionButtonDisconnect idx = %d",[sender tag]);
     int idx = (int)[sender tag];
     DeviceInfo *tmpDeviceInfo = [connectedDeviceInfo objectAtIndex:idx];
     [self disconnectDevice:tmpDeviceInfo.myPeripheral];
@@ -509,7 +509,7 @@
 
 //Derek
 - (IBAction)actionButtonCancelConnect:(id)sender {
-    //NSLog(@"[ConnectViewController] actionButtonCancelConnect idx = %d",[sender tag]);
+    //DDLogVerbose(@"[ConnectViewController] actionButtonCancelConnect idx = %d",[sender tag]);
     int idx = (int)[sender tag];
     MyPeripheral *tmpPeripheral = [devicesList objectAtIndex:idx];
     tmpPeripheral.connectStaus = MYPERIPHERAL_CONNECT_STATUS_IDLE;

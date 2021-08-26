@@ -60,19 +60,19 @@
     r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-            NSLog(@"wu");
+            DDLogVerbose(@"wu");
         {
             [self notHaveNet];
             break;
         }
         case ReachableViaWWAN:
             // 使用3G网络
-            NSLog(@"wan");
+            DDLogVerbose(@"wan");
             [self netWork];
             break;
         case ReachableViaWiFi:
             // 使用WiFi网络
-            NSLog(@"wifi");
+            DDLogVerbose(@"wifi");
             [self netWork];
             break;
     }
@@ -509,13 +509,13 @@
 #pragma  mark  UISearchControllerDelegate 实现
 - (void)willPresentSearchController:(UISearchController *)searchController
 {
-    NSLog(@"搜索即将出现");
+    DDLogVerbose(@"搜索即将出现");
     _tableView.frame = CGRectMake(0,0, kScreenWidth, kScreenHeight);
     searchController.searchBar.backgroundColor = ZDBackgroundColor;
 }
 - (void)willDismissSearchController:(UISearchController *)searchController
 {
-    NSLog(@"视图即将消失");
+    DDLogVerbose(@"视图即将消失");
     [UIView animateWithDuration:0.1 animations:^{
         _tableView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-64);
     }];
@@ -550,7 +550,7 @@
 }
 - (void)dealloc
 {
-    NSLog(@"没有内存泄漏");
+    DDLogVerbose(@"没有内存泄漏");
 }
 /*
 #pragma  mark  mark - Navigation

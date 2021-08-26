@@ -301,7 +301,7 @@
 
 - (void)dealloc{
     [self removeObserver:self forKeyPath:@"currentItem"];
-    NSLog(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
+    DDLogVerbose(@"%@", [NSString stringWithFormat:@"%@dealloc",self.title]);
 }
 
 

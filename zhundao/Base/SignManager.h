@@ -15,6 +15,7 @@
 #import "MyHud.h"
 #import "myTextField.h"
 #import "ActivityModel.h"
+#import "WXApiObject.h"
 @interface SignManager : NSObject
 {
     UIViewController *SaveCtr;
@@ -39,8 +40,8 @@
                 
 ;
 
-- (void)shareImagewithModel:(ActivityModel *)model withCTR:(UIViewController *)ctr Withtype:(NSInteger)type withImage :(UIImage *)image;  // 保存图片至相册
-- (void)shareWithTitle:(NSString *)title detailTitle:(NSString *)detailTitle thumImage:(UIImage *)thumImage webpageUrl:(NSString *)webpageUrl withCTR:(UIViewController *)ctr Withtype:(NSInteger)type;
+- (void)shareImagewithModel:(ActivityModel *)model withCTR:(UIViewController *)ctr Withtype:(NSInteger)type withImage :(UIImage *)image scene:(int)scene;  // 保存图片至相册
+- (void)shareWithTitle:(NSString *)title detailTitle:(NSString *)detailTitle thumImage:(UIImage *)thumImage webpageUrl:(NSString *)webpageUrl withCTR:(UIViewController *)ctr Withtype:(NSInteger)type scene:(int)scene;
 
 - (void)saveData:(NSArray *)array name :(NSString *)name; //保存入本地
 
