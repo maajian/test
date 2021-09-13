@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = self.webTitle;
+    self.navigationItem.title = self.webTitle;
     [self.view addSubview:self.webView];
     [self addBackButton];
     
@@ -101,9 +101,8 @@
  */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [_indicator stopAnimating];
-    NSString *titleStr = self.title;
-    if (!titleStr.length) {
-        self.title = self.webView.title;
+    if (!self.webTitle.length) {
+        self.navigationItem.title = self.webView.title;
     }
 }
 
@@ -156,19 +155,19 @@
 #pragma mark --- 返回按钮
 - (void)addBackButton {
     // 返回一层
-    UIView *popOneView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 60, 20)];
+    UIView *popOneView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 40, 20)];
     UIButton *popOneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    popOneButton.frame = CGRectMake(0, 0, 20, 20);
+    popOneButton.frame = CGRectMake(8, 0, 20, 20);
     [popOneButton setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
     [popOneButton addTarget:self action:@selector(popOne) forControlEvents:(UIControlEventTouchUpInside)];
-    UILabel *backLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 0, 35, 20)];
-    backLabel.text = @"返回";
-    backLabel.textColor = [UIColor blackColor];
-    backLabel.font = [UIFont systemFontOfSize:17];
-    backLabel.textAlignment = NSTextAlignmentCenter;
-    [backLabel addTapGestureTarget:self action:@selector(popOne)];
+//    UILabel *backLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 0, 35, 20)];
+//    backLabel.text = @"返回";
+//    backLabel.textColor = [UIColor blackColor];
+//    backLabel.font = [UIFont systemFontOfSize:17];
+//    backLabel.textAlignment = NSTextAlignmentCenter;
+//    [backLabel addTapGestureTarget:self action:@selector(popOne)];
     [popOneView addSubview:popOneButton];
-    [popOneView addSubview:backLabel];
+//    [popOneView addSubview:backLabel];
     UIBarButtonItem *popOneItem = [[UIBarButtonItem alloc]initWithCustomView:popOneView];
     self.navigationItem.leftBarButtonItem = popOneItem;
     

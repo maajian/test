@@ -299,8 +299,9 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
+        ZD_UserM.identifierType = ZDIdentifierTypeSponsor;
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
-        NSDictionary  *userdic = data[@"data"];
+        NSDictionary *userdic = data[@"data"];
         // 手机号码
         NSString *mobile = userdic[@"phone"] ? userdic[@"phone"] : @"";
         if (mobile.length) {

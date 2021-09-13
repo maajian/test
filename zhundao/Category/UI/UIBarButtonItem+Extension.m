@@ -103,6 +103,11 @@
                                                action:action];
 }
 
+#pragma mark --- 图片文字
++ (UIBarButtonItem *)identifierButtonWithText:(NSString *)text Target:(id)target action:(SEL)action {
+    return [UIBarButtonItem buttonItemWithText:text textColor:ZDGrayColor2 imageName:@"public_image_arrow_right" Target:target action:action];
+}
+
 #pragma mark - 全能方法
 
 /**
@@ -130,6 +135,32 @@
     if (selectedImageName) [btn setImage:[UIImage imageNamed:selectedImageName] forState:UIControlStateSelected];
     if (target && action) [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    return item;
+}
+
++ (UIBarButtonItem *)buttonItemWithText:(NSString *)text
+                                     textColor:(UIColor *)textColor
+                                     imageName:(NSString *)imageName
+                                        Target:(id)target
+                                        action:(SEL)action {
+    UIView *view = [[UIView alloc] init];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.titleLabel.font = ZDMediumFont(14);
+    [btn setTitle:text forState:UIControlStateNormal];
+    [btn setTitleColor:textColor forState:UIControlStateNormal];
+    CGSize size = [btn.titleLabel sizeThatFits:CGSizeMake(200, 30)];
+    view.frame = CGRectMake(0, 0, size.width + 20, 30);
+    [view addSubview:btn];
+    btn.frame = CGRectMake(0, 0, size.width, 30);
+    btn.enabled = NO;
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    imageView.frame = CGRectMake(size.width, 8, 15, 15);
+    [view addSubview:imageView];
+    [view addTapGestureTarget:target action:action];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:view];
     return item;
 }
 

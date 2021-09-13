@@ -132,7 +132,7 @@
             }else{
                 [_UserNameSearchArray addObject:model.UserName];
             }
-            if (model.UserName ==nil) {
+            if (model.Company ==nil) {
                 [_companySearchArray addObject:@"没有公司"];
             }else{
                 [_companySearchArray addObject:model.Company];
@@ -371,7 +371,7 @@
                     }else{
                         [_UserNameSearchArray addObject:model.UserName];
                     }
-                    if (model.UserName ==nil) {
+                    if (model.Company ==nil) {
                         [_companySearchArray addObject:@"没有公司"];
                     }else{
                         [_companySearchArray addObject:model.Company];

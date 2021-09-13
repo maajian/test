@@ -29,6 +29,8 @@
 #import "MyMessageViewController.h"
 #import "ZDMePromoteMainVC.h"
 
+#import "ZDMainSupplierTabbarVC.h"
+
 @interface MeViewController ()<UITableViewDataSource, UITableViewDelegate, ZDMeHeaderCellDelegate> {
     NSDictionary *userdic;
 }
@@ -46,6 +48,7 @@
     
     [self initSet];
     [self initLayout];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem identifierButtonWithText:@"当前身份:主办方" Target:self action:@selector(changeIdentifier)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,6 +59,8 @@
     [self checkVersin:^(BOOL obj) {
         ZD_UserM.iosHiddenFlag = obj;
     }];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    ZD_UserM.identifierType = ZDIdentifierTypeSupplier;
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -136,9 +141,9 @@
             if (weakSelf.viewModel.allowPromote) {
                 [self.dataSource[3] addObject:[ZDMeModel promoteModel]];
             }
-            if (weakSelf.viewModel.allowSupplier) {
-                [self.dataSource[3] addObject:[ZDMeModel supplierModel]];
-            }
+//            if (weakSelf.viewModel.allowSupplier) {
+//                [self.dataSource[3] addObject:[ZDMeModel supplierModel]];
+//            }
         }
         [weakSelf.tableView reloadData];
     } failure:^{
@@ -162,6 +167,47 @@
     } fail:^(NSError *error) {
         block(true);
         ZD_HUD_DISMISS
+    }];
+}
+- (void)checkRegisterSupplier {
+    NSString *url = [NSString stringWithFormat:@"https://settlement.zhundaoyun.com/api/check_register?token=%@",[[SignManager shareManager] getToken]];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"code"] integerValue] == 0) {
+            ZD_UserM.identifierType = ZDIdentifierTypeSupplier;
+            ZD_UserM.supplier_access_token = obj[@"data"][@"supplier_access_token"];
+            ZDMainSupplierTabbarVC *vc = [[ZDMainSupplierTabbarVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        } else {
+            ZDWebViewController *web = [[ZDWebViewController alloc] init];
+            web.isClose = YES;
+            web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/settlement/supplier.html?token=%@#/register/",[[SignManager shareManager] getToken]];
+            [self setHidesBottomBarWhenPushed:YES];
+            [self.navigationController pushViewController:web animated:YES];
+            [self setHidesBottomBarWhenPushed:NO];
+        }
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR(error)
+    }];
+}
+
+// 检查是否有会务公司
+- (void)checkRegisterConference {
+    NSString *url = [NSString stringWithFormat:@"https://corp.zhundaoyun.com/api/get_bind_corp_list?token=%@",[[SignManager shareManager] getToken]];
+    NSMutableArray *conferenceArray = [NSMutableArray array];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"code"] integerValue] == 0) {
+            for (NSDictionary *dic in obj[@"data"]) {
+                ZDSupplierMeModel *model = [[ZDSupplierMeModel alloc] initWithConferenceDic:dic];
+                [conferenceArray addObject:model];
+            }
+            if (conferenceArray.count) {
+                [self showConferenceList:conferenceArray];
+            }
+        } else {
+            ZD_HUD_SHOW_ERROR_STATUS(obj[@"msg"])
+        }
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR(error)
     }];
 }
 
@@ -373,6 +419,27 @@
     [self setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:main animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
+}
+- (void)changeIdentifier {
+    [AJAlertSheet showWithArray:@[@"主办方", @"会务公司", @"供应商"] title:@"请选择你的身份" isDelete:NO selectBlock:^(NSInteger index) {
+        if (index == 1) {
+            [self checkRegisterConference];
+        } else if (index == 2) {
+            [self checkRegisterSupplier];
+        }
+    }];
+}
+- (void)showConferenceList:(NSMutableArray<ZDSupplierMeModel *> *)conferenceArray {
+    NSMutableArray *nameArray = [NSMutableArray array];
+    [conferenceArray enumerateObjectsUsingBlock:^(ZDSupplierMeModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [nameArray addObject:obj.company];
+    }];
+    [AJAlertSheet showWithArray:nameArray title:@"请选择会务公司" isDelete:NO selectBlock:^(NSInteger index) {
+        ZD_UserM.supplierMeModel = conferenceArray[index];
+        ZD_UserM.identifierType = ZDIdentifierTypeConference;
+        ZDMainSupplierTabbarVC *vc = [[ZDMainSupplierTabbarVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
 }
 
 #pragma mark 通知公告小红点

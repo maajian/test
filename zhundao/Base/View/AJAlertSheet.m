@@ -26,6 +26,7 @@
 @property(nonatomic,strong)        UIView    *backView ; //全屏幕的视图 进入后视图透明度变化
 @property(nonatomic,strong)        UIView     *titleView ;//遮挡titlelabel
 @property(nonatomic,strong)        UIView    *sheetView  ;  //弹出视图的底部背景视图
+@property (nonatomic, strong)  UIView *bottomWhiteView;
 @end
 @implementation AJAlertSheet
 
@@ -120,13 +121,26 @@ const static NSInteger cellHeight  = 44 ;
 - (UIView *)sheetView
 {
     if (!_sheetView) {
-        _sheetView = [[UIView alloc]initWithFrame:CGRectMake(0, kHeight- cellHeight *(_buttonCount +1) - crackHeight -    titleHeight  , kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight)];
+        _sheetView = [[UIView alloc]initWithFrame:CGRectMake(0, kHeight- cellHeight *(_buttonCount +1) - crackHeight -    titleHeight  , kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight - ZD_SAFE_BOTTOM_LAYOUT)];
         _sheetView.backgroundColor = kColorA(225, 225, 231, 1);
         [_sheetView addSubview:self.titleView];
         [_sheetView addSubview:self.titleLabel];
         [_sheetView addSubview:self.cancelButton];
+        [_sheetView addSubview:self.bottomWhiteView];
+        
+        [_bottomWhiteView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.leading.trailing.equalTo(_sheetView);
+            make.height.mas_equalTo(-ZD_SAFE_BOTTOM_LAYOUT);
+        }];
     }
     return  _sheetView;
+}
+- (UIView *)bottomWhiteView {
+    if (!_bottomWhiteView) {
+        _bottomWhiteView = [UIView new];
+        _bottomWhiteView.backgroundColor = [UIColor whiteColor];
+    }
+    return _bottomWhiteView;
 }
 
 #pragma mark button 创建 
@@ -153,7 +167,7 @@ const static NSInteger cellHeight  = 44 ;
     self.alpha = 0.0    ;
     _sheetView.frame =CGRectMake(0, kHeight-ZD_TopBar_H, kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight);
      [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionTransitionCurlUp animations:^{
-         _sheetView.frame =CGRectMake(0,kHeight- cellHeight *(_buttonCount +1) - crackHeight -    titleHeight , kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight - ZD_SAFE_BOTTOM_LAYOUT);
+         _sheetView.frame =CGRectMake(0, kHeight- cellHeight *(_buttonCount +1) - crackHeight -    titleHeight + ZD_SAFE_BOTTOM_LAYOUT, kWidth, cellHeight *(_buttonCount +1) + crackHeight +    titleHeight - ZD_SAFE_BOTTOM_LAYOUT);
          self.alpha = 1.0;
      } completion:nil];
 }

@@ -182,6 +182,11 @@
 		28D4E5CF26203934003110E7 /* LBFinderItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4E5C926203934003110E7 /* LBFinderItemVC.m */; };
 		28D4E5D026203935003110E7 /* LBFinderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4E5CC26203934003110E7 /* LBFinderItem.m */; };
 		28D4E5D326203BD2003110E7 /* NSFileManager+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4E5D226203BD2003110E7 /* NSFileManager+Extension.m */; };
+		28DA1E1C26E069420047C8F3 /* ZDMainSupplierTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA1E1B26E069420047C8F3 /* ZDMainSupplierTabbarVC.m */; };
+		28DA1E1F26E070130047C8F3 /* ZDSupplierMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA1E1E26E070130047C8F3 /* ZDSupplierMainVC.m */; };
+		28DA1E2226E071480047C8F3 /* ZDSupplierMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA1E2126E071480047C8F3 /* ZDSupplierMeVC.m */; };
+		28DA1E2626E0AC530047C8F3 /* ZDSupplierMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA1E2526E0AC530047C8F3 /* ZDSupplierMeModel.m */; };
+		28DA1E2C26E0B45A0047C8F3 /* ZDSupplierMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA1E2B26E0B45A0047C8F3 /* ZDSupplierMeCell.m */; };
 		28F2431D24F2D4E300C66E3E /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F2431C24F2D4E300C66E3E /* SignUpViewController.m */; };
 		28F3AA83214963D800DFE44B /* wechatWithDraw.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F3AA82214963D700DFE44B /* wechatWithDraw.png */; };
 		28F97D69229C3A14008C98F3 /* ZDConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F97D68229C3A14008C98F3 /* ZDConst.m */; };
@@ -1113,6 +1118,16 @@
 		28D4E5CC26203934003110E7 /* LBFinderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBFinderItem.m; sourceTree = "<group>"; };
 		28D4E5D126203BD2003110E7 /* NSFileManager+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Extension.h"; sourceTree = "<group>"; };
 		28D4E5D226203BD2003110E7 /* NSFileManager+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Extension.m"; sourceTree = "<group>"; };
+		28DA1E1A26E069420047C8F3 /* ZDMainSupplierTabbarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMainSupplierTabbarVC.h; sourceTree = "<group>"; };
+		28DA1E1B26E069420047C8F3 /* ZDMainSupplierTabbarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMainSupplierTabbarVC.m; sourceTree = "<group>"; };
+		28DA1E1D26E070130047C8F3 /* ZDSupplierMainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDSupplierMainVC.h; sourceTree = "<group>"; };
+		28DA1E1E26E070130047C8F3 /* ZDSupplierMainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSupplierMainVC.m; sourceTree = "<group>"; };
+		28DA1E2026E071480047C8F3 /* ZDSupplierMeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDSupplierMeVC.h; sourceTree = "<group>"; };
+		28DA1E2126E071480047C8F3 /* ZDSupplierMeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSupplierMeVC.m; sourceTree = "<group>"; };
+		28DA1E2426E0AC530047C8F3 /* ZDSupplierMeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDSupplierMeModel.h; sourceTree = "<group>"; };
+		28DA1E2526E0AC530047C8F3 /* ZDSupplierMeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSupplierMeModel.m; sourceTree = "<group>"; };
+		28DA1E2A26E0B45A0047C8F3 /* ZDSupplierMeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDSupplierMeCell.h; sourceTree = "<group>"; };
+		28DA1E2B26E0B45A0047C8F3 /* ZDSupplierMeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDSupplierMeCell.m; sourceTree = "<group>"; };
 		28F2431C24F2D4E300C66E3E /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		28F3AA82214963D700DFE44B /* wechatWithDraw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechatWithDraw.png; sourceTree = "<group>"; };
 		28F97D67229C3A14008C98F3 /* ZDConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDConst.h; sourceTree = "<group>"; };
@@ -2676,6 +2691,47 @@
 				28D4E5C926203934003110E7 /* LBFinderItemVC.m */,
 			);
 			path = LBFinder;
+			sourceTree = "<group>";
+		};
+		28DA1E1626DFA9730047C8F3 /* Supplier */ = {
+			isa = PBXGroup;
+			children = (
+				28DA1E2326E0AC260047C8F3 /* Model */,
+				28DA1E1926DFA9E20047C8F3 /* Controller */,
+				28DA1E1826DFA9E10047C8F3 /* View */,
+			);
+			name = Supplier;
+			sourceTree = "<group>";
+		};
+		28DA1E1826DFA9E10047C8F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28DA1E2A26E0B45A0047C8F3 /* ZDSupplierMeCell.h */,
+				28DA1E2B26E0B45A0047C8F3 /* ZDSupplierMeCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		28DA1E1926DFA9E20047C8F3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28DA1E1A26E069420047C8F3 /* ZDMainSupplierTabbarVC.h */,
+				28DA1E1B26E069420047C8F3 /* ZDMainSupplierTabbarVC.m */,
+				28DA1E1D26E070130047C8F3 /* ZDSupplierMainVC.h */,
+				28DA1E1E26E070130047C8F3 /* ZDSupplierMainVC.m */,
+				28DA1E2026E071480047C8F3 /* ZDSupplierMeVC.h */,
+				28DA1E2126E071480047C8F3 /* ZDSupplierMeVC.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		28DA1E2326E0AC260047C8F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28DA1E2426E0AC530047C8F3 /* ZDSupplierMeModel.h */,
+				28DA1E2526E0AC530047C8F3 /* ZDSupplierMeModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		28FFBCA3229A29B200C4752E /* Header */ = {
@@ -5058,6 +5114,7 @@
 		9C7752DE1DF02EB000FC31BB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				28DA1E1626DFA9730047C8F3 /* Supplier */,
 				285DCA1323C37C0200946869 /* Promote */,
 				9C933B191FAC8106003DC309 /* MyMessage */,
 				9CBBCF941FA86F3A009074F2 /* personInfo */,
@@ -5877,6 +5934,7 @@
 				281486D922C8BCFB000BAE70 /* NewPersonViewController.m in Sources */,
 				9CCD13DE1E12543400FBD451 /* WebViewController.m in Sources */,
 				841DAED820D3B396006B0F65 /* InfoEditViewModel.m in Sources */,
+				28DA1E2226E071480047C8F3 /* ZDSupplierMeVC.m in Sources */,
 				9C5DFDBE1E9B86FE00E22EEF /* UITextField+TextLeftOffset_ffset.m in Sources */,
 				9C3F38F31E08D2E500F38FB2 /* LoadAllSignViewController.m in Sources */,
 				9C4505DE1DF51AF100C79165 /* NSData+ImageContentType.m in Sources */,
@@ -5933,6 +5991,7 @@
 				9C5D24281F6948B10040C3B7 /* DetailWithDrawViewController.m in Sources */,
 				28295E7C2613725F008A8656 /* ZDActivityMoreChioceModel.m in Sources */,
 				9C54C5421E8109B300545630 /* oneActivityViewController.m in Sources */,
+				28DA1E2C26E0B45A0047C8F3 /* ZDSupplierMeCell.m in Sources */,
 				9C4A86091EF8F3EF003DEF70 /* EditSignListTableViewCell.m in Sources */,
 				9C4505E61DF51AF100C79165 /* UIButton+WebCache.m in Sources */,
 				285DCA1D23C37D5800946869 /* ZDMePromoteCustomContactVC.m in Sources */,
@@ -6038,6 +6097,7 @@
 				9C62771F1ED3C30E002787FA /* ContactViewController.m in Sources */,
 				28B35412239D3A10003BB7BD /* ZDSignAlertView+ZDAdd.m in Sources */,
 				9C17D0DB1DF6B589001B2F1E /* NSObject+YYModel.m in Sources */,
+				28DA1E1F26E070130047C8F3 /* ZDSupplierMainVC.m in Sources */,
 				9C1F975A1EC58731003280F4 /* LMParagraphConfig.m in Sources */,
 				28295E792613706F008A8656 /* ZDActivityMoreChioceVC.m in Sources */,
 				9C54D5CA1F09DB350053501E /* DBManager.m in Sources */,
@@ -6108,6 +6168,7 @@
 				281486B622C8BC59000BAE70 /* customInviteViewModel.m in Sources */,
 				84BD8E5F20DA44B300175510 /* UIView+SGExtension.m in Sources */,
 				9C614A271ED530C000E853D6 /* PopMenuTableViewCell.m in Sources */,
+				28DA1E1C26E069420047C8F3 /* ZDMainSupplierTabbarVC.m in Sources */,
 				9CA2B3BB1F8B091900DF6C95 /* defaultViewController.m in Sources */,
 				28D4E5CD26203934003110E7 /* UIViewController+LBFinder.m in Sources */,
 				9C4505E51DF51AF100C79165 /* SDWebImagePrefetcher.m in Sources */,
@@ -6135,6 +6196,7 @@
 				9C62772E1ED41D8E002787FA /* ContactModel.m in Sources */,
 				9C8635211E2CE47500364FD6 /* CustomTableViewCell.m in Sources */,
 				2814866822C8BA09000BAE70 /* ChangeContentViewController.m in Sources */,
+				28DA1E2626E0AC530047C8F3 /* ZDSupplierMeModel.m in Sources */,
 				5B9957171FCD8BBA00A26866 /* MJRefreshBackStateFooter.m in Sources */,
 				9C53AABB1E07CCAB00EF1B6A /* Reachability.m in Sources */,
 				281090A123CDB4D600B48115 /* ZDServiceAlertView+ZDAdd.m in Sources */,
@@ -6385,13 +6447,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Zhundao Information Technology Co., Ltd. (YH49M9STFP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 97;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YH49M9STFP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = GTPushNotificationService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 4.6.3;
+				MARKETING_VERSION = 4.6.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhundao.zhundao1.GTPushNotificationService;
@@ -6421,13 +6483,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Zhundao Information Technology Co., Ltd. (YH49M9STFP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 97;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YH49M9STFP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = GTPushNotificationService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 4.6.3;
+				MARKETING_VERSION = 4.6.6;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhundao.zhundao1.GTPushNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6540,7 +6602,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Zhundao Information Technology Co., Ltd. (YH49M9STFP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 98;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YH49M9STFP;
@@ -6573,7 +6635,7 @@
 					"$(PROJECT_DIR)/zhundao/第三方类库/UMSocial/WeChat/WechatSDK",
 					"$(PROJECT_DIR)/zhundao/第三方类库/UMSocial/UMSocialSDKPlugin",
 				);
-				MARKETING_VERSION = 4.6.4;
+				MARKETING_VERSION = 4.6.6;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -6603,7 +6665,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Zhundao Information Technology Co., Ltd. (YH49M9STFP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 98;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YH49M9STFP;
@@ -6637,7 +6699,7 @@
 					"$(PROJECT_DIR)/zhundao/第三方类库/UMSocial/WeChat/WechatSDK",
 					"$(PROJECT_DIR)/zhundao/第三方类库/UMSocial/UMSocialSDKPlugin",
 				);
-				MARKETING_VERSION = 4.6.4;
+				MARKETING_VERSION = 4.6.6;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",

@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ZDSupplierMeModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 #define ZD_UserM [ZDUserManager shareManager]
+
+typedef NS_ENUM(NSInteger, ZDIdentifierType) {
+    ZDIdentifierTypeSponsor = 0, // 主办方
+    ZDIdentifierTypeConference, // 会务公司
+    ZDIdentifierTypeSupplier, // 供应商
+};
 
 @interface ZDUserManager : NSObject
 
@@ -48,6 +56,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger unreadMessage;
 // 个推clientId
 @property (nonatomic, copy) NSString *clientId;
+// 登录身份
+@property (nonatomic, assign) ZDIdentifierType identifierType;
+@property (nonatomic, copy) NSString *supplier_access_token; // 供应商token
+@property (nonatomic, strong) ZDSupplierMeModel *supplierMeModel; // 会务公司token
+
  
 #pragma mark --- public
 - (void)initWithDic:(NSDictionary *)dic;

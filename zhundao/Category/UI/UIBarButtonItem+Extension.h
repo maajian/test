@@ -26,6 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIBarButtonItem *)moreItemWithTarget:(id)target action:(SEL)action;
 
 #pragma mark --- 文字
++ (UIBarButtonItem *)textBarButtonItemWithText:(NSString *)text
+                                         color:(UIColor *)color
+                                        Target:(id)target
+                                        action:(SEL)action;
 // 保存
 + (UIBarButtonItem *)saveTextItemWithTarget:(id)target action:(SEL)action ;
 // 清除未读
@@ -34,6 +38,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIBarButtonItem *)cancelTextItemWithTarget:(id)target action:(SEL)action;
 // 保存
 + (UIBarButtonItem *)saveText2ItemWithTarget:(id)target action:(SEL)action;
+
+#pragma mark --- 图片文字
+#pragma mark --- 图片文字
++ (UIBarButtonItem *)identifierButtonWithText:(NSString *)text Target:(id)target action:(SEL)action;
 
 @end
 

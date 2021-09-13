@@ -99,6 +99,7 @@
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
+        ZD_UserM.identifierType = ZDIdentifierTypeSponsor;
         [_hud hideAnimated:YES];
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary  *userdic = data[@"data"];

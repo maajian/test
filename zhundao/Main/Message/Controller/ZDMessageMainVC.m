@@ -60,6 +60,10 @@
     
     self.tableView.rowHeight = 71;
     [self.view addSubview:self.tableView];
+    if (ZD_UserM.identifierType != ZDIdentifierTypeSponsor) {
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem backImageItemWithTarget:self action:@selector(popBack)];
+        self.navigationItem.title = @"消息";
+    }
 }
 - (void)initLayout {
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -135,4 +139,9 @@
         [weakSelf networkForClearAllAction];
     } cancelBlock:nil];
 }
+- (void)popBack {
+    ZD_UserM.identifierType = ZDIdentifierTypeSponsor;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ZDMainSupplierTabbarPop" object:nil];
+}
+
 @end

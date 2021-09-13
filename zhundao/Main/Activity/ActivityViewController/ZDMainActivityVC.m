@@ -277,6 +277,7 @@
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         if ([obj[@"errcode"] integerValue] == 0) {
             [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
+            ZD_UserM.identifierType = ZDIdentifierTypeSponsor;
             [[NSUserDefaults standardUserDefaults]setObject:@(ZD_UserM.gradeId) forKey:@"GradeId"];
             [[NSUserDefaults  standardUserDefaults]setObject:ZD_UserM.phone forKey:@"mobile"];
             [[NSUserDefaults standardUserDefaults]setObject:ZD_UserM.email forKey:@"email"];
