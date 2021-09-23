@@ -95,6 +95,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
                         [PGAvtivityMoreModalModel linkModel],
                         [PGAvtivityMoreModalModel shareModel],
                         [PGAvtivityMoreModalModel qrcodeModel],
+                        [PGAvtivityMoreModalModel statisticsModel],
         ];
     }
     [self.view addSubview:self.collectionView];
@@ -198,9 +199,16 @@ dispatch_async(dispatch_get_main_queue(), ^{
         }
             break;
         case MoreMoalTypeStatistics: {
-            PGStatisticsVC *statistics = [[PGStatisticsVC alloc] init];
-            statistics.moreModel = self.moreModel;
-            [self.navigationController pushViewController:statistics animated:YES];
+            PGBaseWebViewVC *web = [[PGBaseWebViewVC alloc] init];
+            if (ZD_UserM.isAdmin) {
+                web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/p/JinTa/h5/JTh5/Statistics.html?ActivityId=%li&token=%@&IsAdmin=true", self.moreModel.ID, [[PGSignManager shareManager] getToken]];
+            } else {
+                web.urlString = [NSString stringWithFormat:@"https://app.zhundao.net/p/JinTa/h5/JTh5/Statistics.html?ActivityId=%li&token=%@&IsAdmin=false", self.moreModel.ID, [[PGSignManager shareManager] getToken]];
+            }
+            web.isClose = YES;
+            [self setHidesBottomBarWhenPushed:YES];
+            [self.navigationController pushViewController:web animated:YES];
+            [self setHidesBottomBarWhenPushed:NO];
         }
             break;
         default:
