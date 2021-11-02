@@ -14,6 +14,7 @@
 
 #import "ZDMeHeaderCell.h"
 #import "ZDMeNormalCell.h"
+#import "ZDMeAdsPopView.h"
 
 #import "ZDMeViewModel.h"
 
@@ -101,8 +102,8 @@
                     @[[ZDMeModel walletModel], [ZDMeModel messageModel], [ZDMeModel contactModel], [ZDMeModel questionModel]],
                     @[[ZDMeModel honorModel], [ZDMeModel zhundaobiModel], [ZDMeModel voucherModel]].mutableCopy,
                     @[[ZDMeModel settingModel]]].mutableCopy;
-    
     [self.view addSubview:self.tableView];
+    [self networkGetNotify];
 }
 - (void)initLayout {
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -168,6 +169,22 @@
         block(true);
         ZD_HUD_DISMISS
     }];
+}
+// 获取弹窗推送
+- (void)networkGetNotify {
+    ZD_WeakSelf
+    [self.viewModel networkGetNotifySuccess:^(ZDMeADModel * _Nullable model) {
+        [SDWebImageManager.sharedManager downloadImageWithURL:[NSURL URLWithString:model.PicM] options:SDWebImageCacheMemoryOnly progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            [ZDMeAdsPopView showWithImage:image clickBlock:^{
+                ZDWebViewController *web = [[ZDWebViewController alloc] init];
+                web.urlString = model.UrlM;
+                [weakSelf.navigationController pushViewController:web animated:YES];
+                [weakSelf.viewModel networForAdsPopRespond:NO AdsPopID:model.ID];
+            } cancelBlock:^{
+                [weakSelf.viewModel networForAdsPopRespond:NO AdsPopID:model.ID];
+            }];
+        }];
+    } failure:nil];
 }
 - (void)checkRegisterSupplier {
     NSString *url = [NSString stringWithFormat:@"https://settlement.zhundaoyun.com/api/check_register?token=%@",[[SignManager shareManager] getToken]];
@@ -420,11 +437,18 @@
     [self.navigationController pushViewController:main animated:YES];
     [self setHidesBottomBarWhenPushed:NO];
 }
+- (void)showPartner {
+    ZD_UserM.identifierType = ZDIdentifierTypePartner;
+    ZDMainSupplierTabbarVC *vc = [[ZDMainSupplierTabbarVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)changeIdentifier {
-    [AJAlertSheet showWithArray:@[@"主办方", @"会务公司", @"供应商"] title:@"请选择你的身份" isDelete:NO selectBlock:^(NSInteger index) {
+    [AJAlertSheet showWithArray:@[@"主办方", @"参与者", @"会务公司", @"供应商"] title:@"请选择你的身份" isDelete:NO selectBlock:^(NSInteger index) {
         if (index == 1) {
-            [self checkRegisterConference];
+            [self showPartner];
         } else if (index == 2) {
+            [self checkRegisterConference];
+        } else if (index == 3) {
             [self checkRegisterSupplier];
         }
     }];

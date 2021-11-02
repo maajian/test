@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, ZDIdentifierType) {
     ZDIdentifierTypeSponsor = 0, // 主办方
     ZDIdentifierTypeConference, // 会务公司
     ZDIdentifierTypeSupplier, // 供应商
+    ZDIdentifierTypePartner, // 参会者
 };
 
 @interface ZDUserManager : NSObject

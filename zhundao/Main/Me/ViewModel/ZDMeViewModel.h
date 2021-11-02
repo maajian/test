@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ZDMeModel.h"
+
+typedef void (^ZDMeADBlock) (ZDMeADModel * _Nullable model);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDMeViewModel : NSObject
@@ -17,6 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL allowSupplier;
 
 - (void)getPromoteSuccess:(ZDBlock_Void)success failure:(ZDBlock_Void)failure;
+
+// 获取弹窗广告
+- (void)networkGetNotifySuccess:(ZDMeADBlock)success failure:(ZDBlock_Error)failure;
+// 插入弹窗广告阅读结果
+- (void)networForAdsPopRespond:(BOOL)respond AdsPopID:(NSInteger)AdsPopID;
 
 @end
 

@@ -57,7 +57,7 @@
 #define ZDMediumFont(r) [UIFont systemMediumFonWithSize:r]
 #define ZDSystemFont(r) [UIFont systemFontOfSize:r]
 #define ZDBoldFont(r) [UIFont boldSystemFontOfSize:r]
-
+#define ZDLightFont(r) [UIFont systemFontOfSize:r weight:(UIFontWeightLight)]
 
 #define zhundaoApi ([[NSUserDefaults standardUserDefaults]objectForKey:@"ZDUserDefault_Network_Line"]?@"https://open.zhundao.com.cn/":@"https://open.zhundaoyun.com/")
 #define zhundaoH5Api @"https://m.zhundao.net/"

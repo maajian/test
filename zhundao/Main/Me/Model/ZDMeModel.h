@@ -46,4 +46,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface ZDMeADModel : NSObject
+@property (nonatomic, copy) NSString *UrlM; // 手机端广告图链接
+@property (nonatomic, copy) NSString *PicM; // 手机端广告图
+@property (nonatomic, assign) NSInteger ID;
+
+@end
+
 NS_ASSUME_NONNULL_END

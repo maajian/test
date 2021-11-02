@@ -10,21 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, ZDServiceAlertViewDismissType) {
-    ZDServiceAlertViewDismissTypeAnimation = 0, // 透明度变化
-    ZDServiceAlertViewDismissTypeDirect, // 直接退出
-};
-
-typedef NS_ENUM(NSInteger, ZDServiceAlertViewType) {
-    ZDServiceAlertViewTypePrivacyNormalAlert,
-    ZDServiceAlertViewTypePrivacyNeedCheck,
-};
 
 @class ZDServiceAlertView;
 @protocol ZDServiceAlertViewDelegate <NSObject>
-- (void)alertView:(ZDServiceAlertView *)alertView didTapUrl:(NSString *)url;
-- (void)alertView:(ZDServiceAlertView *)alertView didTapCancelButton:(UIButton *)button;
-- (void)alertView:(ZDServiceAlertView *)alertView didTapSureButton:(UIButton *)button;
+- (void)alertView:(ZDServiceAlertView *)alertView didTapUrl:(NSString *)url title:(NSString *)title;
 
 @end
 
@@ -45,25 +34,11 @@ typedef NS_ENUM(NSInteger, ZDServiceAlertViewType) {
 @property (nonatomic, copy) NSAttributedString *attributeContent;
 // 富文本链接的样式
 @property (nonatomic, copy) NSDictionary<NSAttributedStringKey,id> *linkTextAttributes;
-// 取消按钮标题 default "取消"
-@property (nonatomic, strong) NSString *cancelTitle;
-// 确定按钮标题 default "确定"
-@property (nonatomic, strong) NSString *sureTitle;
-// 只有一个按钮显示
-@property (nonatomic, assign) BOOL onlyOneButton;
-// 取消按钮消失动画
-@property (nonatomic, assign) ZDServiceAlertViewDismissType cancelDismissType;
-// 确定按钮消失动画
-@property (nonatomic, assign) ZDServiceAlertViewDismissType sureDismissType;
-// 类型
-@property (nonatomic, assign) ZDServiceAlertViewType alertViewType;
 
 - (instancetype)initWithCancelBlock:(ZDBlock_Void)cancelBlock sureBlock:(ZDBlock_Void)sureBlock;
 
 - (void)animationIn;
 - (void)animationOut;
-- (void)contentIn;
-- (void)contentOut;
 
 
 @end

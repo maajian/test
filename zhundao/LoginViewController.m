@@ -191,6 +191,7 @@
          _weixinlabel.hidden = YES;
      }
     [self initSet];
+    [ZDServiceAlertView privacyAlertWithDelegate:self];
 }
 -(UITextField *)lockTextLabel
 {
@@ -283,9 +284,6 @@
     [self setimageView];
     [self.view layoutIfNeeded];
     [self setLeftView];
-    if (!ZD_UserM.hasShowPrivacy) {
-        [ZDServiceAlertView privacyAlertWithDelegate:self];
-    }
 }
 
 #pragma mark --- init
@@ -303,23 +301,12 @@
 }
 
 #pragma mark --- ZDServiceAlertViewDelegate
-- (void)alertView:(ZDServiceAlertView *)alertView didTapUrl:(NSString *)url {
+- (void)alertView:(ZDServiceAlertView *)alertView didTapUrl:(NSString *)url title:(nonnull NSString *)title {
     ZDWebViewController *web = [[ZDWebViewController alloc] init];
     BaseNavigationViewController *nav = [[BaseNavigationViewController alloc] initWithRootViewController:web];
+    web.webTitle = title;
     web.urlString = url;
     nav.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:nav animated:YES completion:nil];
 }
-- (void)alertView:(ZDServiceAlertView *)alertView didTapCancelButton:(UIButton *)button {
-    [ZDServiceAlertView privacyNeedCheckAlertWithDelegate:self];
-}
-- (void)alertView:(ZDServiceAlertView *)alertView didTapSureButton:(UIButton *)button {
-    if (alertView.alertViewType == ZDServiceAlertViewTypePrivacyNormalAlert) {
-        ZD_UserM.hasShowPrivacy = YES;
-    } else {
-        [ZDServiceAlertView privacyAlertWithDelegate:self];
-    }
-    alertView = nil;
-}
-
 @end

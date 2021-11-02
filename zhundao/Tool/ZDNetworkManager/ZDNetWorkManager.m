@@ -42,16 +42,16 @@ ZD_Singleton_Implementation(NetWorkManager)
     ZDBlock_Void getBlock = ^(NSString *url, id param, ZDBlock_Str firstFail) {
         [[ZDNetWorkManager shareHTTPSessionManager] GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             DDLogVerbose(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
-            succ(responseObject);
+            ZDDo_Block_Safe_Main1(succ, responseObject)
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             DDLogVerbose(@"error = %@, method = %@", error, method);
             NSString *newMethod = [self getNewMethodWithOldMethod:method];
             if (newMethod.length && hasRequest == NO) {
                 hasRequest = YES;
-                firstFail(newMethod);
+                ZDDo_Block_Safe_Main1(firstFail, newMethod)
             } else {
                 hasRequest = YES;
-                fail([weakSelf networkError]);
+                ZDDo_Block_Safe_Main1(fail, [weakSelf networkError])
             }
         }];
     };
@@ -69,16 +69,16 @@ ZD_Singleton_Implementation(NetWorkManager)
    ZDBlock_Void postBlock = ^(NSString *url, id param, ZDBlock_Str firstFail) {
        [[ZDNetWorkManager shareHTTPSessionManager] POST:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
            DDLogVerbose(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
-           succ(responseObject);
+           ZDDo_Block_Safe_Main1(succ, responseObject)
        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
            DDLogVerbose(@"error = %@, method = %@", error, method);
            NSString *newMethod = [self getNewMethodWithOldMethod:method];
            if (newMethod.length && hasRequest == NO) {
                hasRequest = YES;
-               firstFail(newMethod);
+               ZDDo_Block_Safe_Main1(firstFail, newMethod)
            } else {
                hasRequest = YES;
-               fail([weakSelf networkError]);
+               ZDDo_Block_Safe_Main1(fail, [weakSelf networkError])
            }
        }];
    };
@@ -93,16 +93,16 @@ ZD_Singleton_Implementation(NetWorkManager)
    ZDBlock_Void postBlock = ^(NSString *url, id param, ZDBlock_Str firstFail) {
        [[ZDNetWorkManager shareHTTPSessionManager] POST:url parameters:parameters constructingBodyWithBlock:constructing progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
            DDLogVerbose(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
-           succ(responseObject);
+           ZDDo_Block_Safe_Main1(succ, responseObject)
        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
            DDLogVerbose(@"error = %@, method = %@", error, method);
            NSString *newMethod = [self getNewMethodWithOldMethod:method];
            if (newMethod.length && hasRequest == NO) {
                hasRequest = YES;
-               firstFail(newMethod);
+               ZDDo_Block_Safe_Main1(firstFail, newMethod)
            } else {
                hasRequest = YES;
-               fail([weakSelf networkError]);
+               ZDDo_Block_Safe_Main1(fail, [weakSelf networkError])
            }
        }];
    };

@@ -63,6 +63,26 @@
     
     decisionHandler(WKNavigationResponsePolicyAllow);
 }
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    // 如果是跳转一个新页面
+    NSString *url = [[navigationAction request].URL.absoluteString stringByRemovingPercentEncoding];
+    NSString* scheme = [navigationAction request].URL.scheme;
+    if(![url containsString:@"https"] && ![url containsString:@"http"]){
+        if ([[UIDevice currentDevice].systemVersion floatValue] <= 10.0) {
+            [[UIApplication sharedApplication] openURL:[navigationAction request].URL];
+        }else {
+            [[UIApplication sharedApplication] openURL:[navigationAction request].URL options:@{} completionHandler:^(BOOL success) {}];
+        }
+        //不允许跳转
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return ;
+    }
+    if (navigationAction.targetFrame == nil) {
+        [webView loadRequest:navigationAction.request];
+    }
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

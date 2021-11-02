@@ -12,6 +12,7 @@
 #import "ZDSupplierMainVC.h"
 #import "ZDMessageMainVC.h"
 #import "ZDSupplierMeVC.h"
+#import "ZDPartnerMeVC.h"
 
 @interface ZDMainSupplierTabbarVC ()
 
@@ -52,7 +53,12 @@
     BaseNavigationViewController *mainVC = [[BaseNavigationViewController alloc] initWithRootViewController:[ZDSupplierMainVC new]];
     BaseNavigationViewController *messageVC = [[BaseNavigationViewController alloc] initWithRootViewController:[ZDMessageMainVC new]];
     BaseNavigationViewController *meVC = [[BaseNavigationViewController alloc] initWithRootViewController:[ZDSupplierMeVC new]];
-    self.viewControllers = @[mainVC, messageVC, meVC];
+    BaseNavigationViewController *partnerMeVC = [[BaseNavigationViewController alloc] initWithRootViewController:[[ZDPartnerMeVC alloc] init]];
+    if (ZD_UserM.identifierType == ZDIdentifierTypePartner) {
+        self.viewControllers = @[mainVC, messageVC, partnerMeVC];
+    } else {
+        self.viewControllers = @[mainVC, messageVC, meVC];
+    }
 }
 // 添加自定义tabbar
 - (void)addCustomTabbar {
@@ -66,7 +72,7 @@
     //,@"img_tabbar_friend_normal"
     NSArray *normalImageArray = @[@"tabbar_activity",@"tabbar_message",@"tabbar_me"];
     NSArray *selectImageArray = @[@"tabbar_activity_select",@"tabbar_message_select",@"tabbar_me_select"];
-    NSArray *titleArray = @[@"活动",@"消息",@"我"];
+    NSArray *titleArray = @[@"首页",@"消息",@"我"];
     // 添加自定义按钮
     CGFloat buttonWidth = ZD_ScreenWidth / titleArray.count;
     for (int i = 0; i < titleArray.count; i++) {

@@ -37,5 +37,25 @@
         ZDDo_Block_Safe_Main(failure);
     }];
 }
+- (void)networkGetNotifySuccess:(ZDMeADBlock)success failure:(ZDBlock_Error)failure {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/agent/getAdsPop?token=%@&from=ios",zhundaoApi, [[SignManager shareManager] getToken]];
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        if ([obj[@"errcode"] integerValue] == 0) {
+            ZDMeADModel *model = [ZDMeADModel yy_modelWithJSON:obj[@"data"]];
+            ZDDo_Block_Safe_Main1(success, model);
+        } else {
+            ZDDo_Block_Safe_Main1(failure, [NSError errorWithDomain:obj[@"errmsg"] code:100 userInfo:nil]);
+        }
+    } fail:^(NSError *error) {
+        ZDDo_Block_Safe_Main1(failure, error);
+    }];
+}
+- (void)networForAdsPopRespond:(BOOL)respond AdsPopID:(NSInteger)AdsPopID {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/agent/addAdsPopList?token=%@",zhundaoApi, [[SignManager shareManager] getToken]];
+    NSDictionary *param = @{@"AdsPopID": @(AdsPopID),
+                            @"Result": respond ? @(1) : @(0),
+                            @"From": @"ios"};
+    [ZD_NetWorkM postDataWithMethod:url parameters:param succ:nil fail:nil];
+}
 
 @end

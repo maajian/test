@@ -37,6 +37,7 @@ PODS:
     - UMDevice
   - UMDevice (1.2.0)
   - WechatOpenSDK (1.8.7.1)
+  - YBAttributeTextTapAction (3.0.3)
   - YYCache (1.0.4)
 
 DEPENDENCIES:
@@ -55,6 +56,7 @@ DEPENDENCIES:
   - UMCommon
   - UMDevice
   - WechatOpenSDK
+  - YBAttributeTextTapAction
   - YYCache
 
 SPEC REPOS:
@@ -77,6 +79,7 @@ SPEC REPOS:
     - UMCommon
     - UMDevice
     - WechatOpenSDK
+    - YBAttributeTextTapAction
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -95,8 +98,9 @@ SPEC CHECKSUMS:
   UMCommon: 87e2bf6a5c44df6f60509219a7279d9f94c31d24
   UMDevice: da050ba77e5075b1ec08303065722d25f599e483
   WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
+  YBAttributeTextTapAction: b7e61f0265b5673e7ce7bad7319e8eff9e209a2b
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 821dc19192c307473bbf0efb08152bfaf910103f
+PODFILE CHECKSUM: c24e8a501e487b37ae204ce4c17e9d505f7aa4fc
 
 COCOAPODS: 1.10.0
