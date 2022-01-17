@@ -19,6 +19,7 @@
 #import "DDFileLogger.h"
 #import <UMCommon/UMCommon.h>
 #import "WXApi.h"
+#import "ZDMainSupplierTabbarVC.h"
 #import <UMCommonLog/UMCommonLogHeaders.h>
 #import <GTSDK/GeTuiSdk.h> 
 
@@ -73,22 +74,28 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     [UMConfigure setLogEnabled:YES];
     [UMCommonLogManager setUpUMCommonLogManager];
     
-    //是否登录
-    if (Unionid==nil&&access==nil) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:ZDUserDefault_UserInfo]) {
+        NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:ZDUserDefault_UserInfo];
+        [ZDUserManager.shareManager initWithDic:dic];
+        if (ZD_UserM.identifierType == ZDIdentifierTypeSponsor) {
+            MainViewController *tabbar = [[MainViewController alloc]init];
+            self.window.rootViewController = tabbar;
+        } else {
+            ZDMainSupplierTabbarVC *vc = [[ZDMainSupplierTabbarVC alloc] init];
+            self.window.rootViewController = vc;
+        }
+    } else {
         self.window.rootViewController = login;
     }
-    if (access) {
-        MainViewController *tabbar = [[MainViewController alloc]init];
-        self.window.rootViewController = tabbar;
-    }
-    if (Unionid&&[mobile isEqualToString:@"<null>"]) {
-        self.window.rootViewController = login;
-    }
-    if (Unionid&&![mobile isEqualToString:@"<null>"]) {
-        MainViewController *tabbar = [[MainViewController alloc]init];
-        self.window.rootViewController = tabbar;
-    }
-    
+
+//    //是否登录
+//    if ((Unionid&&![mobile isEqualToString:@"<null>"]) || access.length) {
+//        MainViewController *tabbar = [[MainViewController alloc]init];
+//        self.window.rootViewController = tabbar;
+//    } else {
+//        self.window.rootViewController = login;
+//    }
+//
     if (@available(iOS 11.0, *)) {
         UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
@@ -298,7 +305,9 @@ __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0)) {
 - (void)getUserInfo {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
-        [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
+        NSDictionary *dic = [obj[@"data"] deleteNullObj];
+        [[NSUserDefaults standardUserDefaults] setObject:dic forKey:ZDUserDefault_UserInfo];
+        [ZDUserManager.shareManager initWithDic:dic];
         ZD_UserM.identifierType = ZDIdentifierTypeSponsor;
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary *userdic = data[@"data"];

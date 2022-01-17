@@ -8,7 +8,7 @@
 
 #import "ZDWebViewController.h"
 
-@interface ZDWebViewController ()<WKNavigationDelegate>
+@interface ZDWebViewController ()<WKNavigationDelegate, WKUIDelegate>
 
 @end
 
@@ -40,6 +40,7 @@
 
         _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kStatusBarHeight - ZD_SAFE_TOP) configuration:configuration];
         _webView.navigationDelegate = self;
+        _webView.UIDelegate = self;
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.urlString]
                                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                                            timeoutInterval:20];
@@ -147,6 +148,16 @@
     }])];
     
     
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:message?:@"" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:([UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler();
+    }])];
+    [alertController addAction:([UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler();
+    }])];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 

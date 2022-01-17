@@ -64,6 +64,35 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     [ZD_NotificationCenter postNotificationName:ZDNotification_UnreadMessageChange object:nil];
 }
+- (void)setIdentifierType:(ZDIdentifierType)identifierType {
+    [[NSUserDefaults standardUserDefaults] setInteger:identifierType forKey:[NSString stringWithFormat:@"%@-%li",ZDUserDefault_IdentifierType, ZD_UserM.userID]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+- (ZDIdentifierType)identifierType {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:[NSString stringWithFormat:@"%@-%li",ZDUserDefault_IdentifierType, ZD_UserM.userID]];
+}
+- (void)setSupplier_access_token:(NSString *)supplier_access_token {
+    [[NSUserDefaults standardUserDefaults] setObject:supplier_access_token forKey:[NSString stringWithFormat:@"%@-%li",ZDUserDefault_SupplierToken, ZD_UserM.userID]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+- (NSString *)supplier_access_token {
+    NSLog(@"userID = %li", ZD_UserM.userID);
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@-%li",ZDUserDefault_SupplierToken, ZD_UserM.userID]]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@-%li",ZDUserDefault_SupplierToken, ZD_UserM.userID]];
+    } else {
+        return  @"";
+    }
+}
+- (void)setSupplierMeModel:(ZDSupplierMeModel *)supplierMeModel {
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:supplierMeModel];
+    NSUserDefaults *model = [NSUserDefaults standardUserDefaults];
+    [model setObject:data forKey:@"supplierMeModel"];
+}
+- (ZDSupplierMeModel *)supplierMeModel {
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"supplierMeModel"];
+    ZDSupplierMeModel *supplierMeModel = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    return supplierMeModel;
+}
 
 - (BOOL)loginExpired {
     if ([[NSUserDefaults standardUserDefaults] objectForKey:ZDUserDefault_LoginTime]) {

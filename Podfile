@@ -9,6 +9,7 @@ pod 'GTSDK', '~>2.5.2.0'
 pod 'FMDB'
 pod 'AFNetworking'
 pod 'YBAttributeTextTapAction'
+#pod 'Masonry'
 
 # 缓存框架
 pod 'YYCache'

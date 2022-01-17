@@ -12,6 +12,7 @@
 @property (nonatomic, strong) UIImageView *iconImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *desTitleLabel;
+@property (nonatomic, strong) UILabel *dutyLabel; // 职务
 
 @end
 
@@ -31,6 +32,7 @@
     [self.contentView addSubview:self.iconImageView];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.desTitleLabel];
+    [self.contentView addSubview:self.dutyLabel];
 }
 - (void)initLayout {
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -41,7 +43,10 @@
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.iconImageView.mas_trailing).offset(8);
         make.bottom.equalTo(self.iconImageView.mas_centerY).offset(-2);
-        make.trailing.equalTo(self.contentView).offset(-16);
+    }];
+    [self.dutyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.titleLabel.mas_trailing).offset(6);
+        make.centerY.equalTo(self.titleLabel);
     }];
     [self.desTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.iconImageView.mas_trailing).offset(8);
@@ -53,9 +58,10 @@
 #pragma mark --- setter
 - (void)setModel:(ZDSupplierMeModel *)model {
     _model = model;
-    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"user"]];
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.headImg] placeholderImage:[UIImage imageNamed:@"user"]];
     self.titleLabel.text = model.admin_name;
     self.desTitleLabel.text = model.company;
+    self.dutyLabel.text = model.duty;
 }
 
 #pragma mark --- Lazyload
@@ -73,11 +79,18 @@
     }
     return _titleLabel;
 }
+- (UILabel *)dutyLabel {
+    if (!_dutyLabel) {
+        _dutyLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDGreyColor666 font:ZDSystemFont(14) numberOfLines:1 lineBreakMode:NSLineBreakByTruncatingTail lineAlignment:0];
+    }
+    return _dutyLabel;
+}
 - (UILabel *)desTitleLabel {
     if (!_desTitleLabel) {
         _desTitleLabel = [UILabel labelWithFrame:CGRectZero textColor:ZDGreyColor666 font:ZDSystemFont(14) numberOfLines:1 lineBreakMode:NSLineBreakByTruncatingTail lineAlignment:0];
     }
     return _desTitleLabel;
 }
+
 
 @end

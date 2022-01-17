@@ -79,7 +79,7 @@
     CGFloat buttonWidth = kScreenWidth/4;
     NSArray *imageArray = @[@"tabbar_activity",@"tabbar_message",@"tabbar_discover",@"tabbar_me"];
     NSArray *imagedarray = @[@"tabbar_activity_select",@"tabbar_message_select",@"tabbar_discover_select",@"tabbar_me_select"];
-    NSArray *titleArray = @[@"活动",@"消息",@"发现",@"我"];
+    NSArray *titleArray = @[@"活动",@"消息",@"发现",@"我的"];
     for (int i = 0; i < 4; i++) {
         UIButton *button = [UIButton buttonWithFrame:CGRectMake(i * buttonWidth , 0, kScreenWidth / 4, 49) normalImage:[UIImage imageNamed:imageArray[i]] selectedImage:[UIImage imageNamed:imagedarray[i]] target:self action:@selector(buttonAction:)];
         [button setTitle:titleArray[i] forState:UIControlStateNormal];

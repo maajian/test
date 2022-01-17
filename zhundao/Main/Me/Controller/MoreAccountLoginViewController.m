@@ -113,12 +113,12 @@
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
-        NSDictionary  *userdic = data[@"data"];
+        NSDictionary  *userdic = [data[@"data"] deleteNullObj];
         [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
-        NSDictionary *dic = @{@"name":userdic[@"nickName"],
+        NSDictionary *dic = @{@"name":ZD_SafeStringValue(userdic[@"nickName"]),
                               @"phone":_accountTF.text,
                               @"password":_passwordTF.text,
-                              @"headImgurl":userdic[@"headImgUrl"]
+                              @"headImgurl":ZD_SafeStringValue(userdic[@"headImgUrl"])
                               };
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userArray"]) {
             NSMutableArray *userArray = [[[NSUserDefaults standardUserDefaults] objectForKey:@"userArray"] mutableCopy];

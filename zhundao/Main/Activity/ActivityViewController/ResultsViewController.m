@@ -135,7 +135,7 @@
         signle.datadic =datadic;
         signle.userInfo = [weakSelf getUserInfo:datadic];
     }else{
-        NSArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)_signID]];
+        NSArray *arr = (NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, _signID]];
         signle.userInfo = @"100,101";
         signle.datadic = [arr objectAtIndex:myCell.tag];
     }
@@ -194,27 +194,25 @@
     ZD_WeakSelf
     [ZDAlertView alertWithTitle:[NSString stringWithFormat:@"确定为 %@ 代签",myCell.model.TrueName] message:@"代签后不能修改" sureBlock:^{
         [[signResult alloc] dealAdminSignWithSignID:weakSelf.signID phone:myCell.model.Mobile action1:^{
-            [weakSelf TableReloadData];
+            [weakSelf TableReloadData:myCell.model.UserID];
         }];
     } cancelBlock:^{
         
     }];
 }
-- (void)TableReloadData
+- (void)TableReloadData:(NSInteger)UserID
 {
     self.alldata = [self getallData];
-   NSInteger index = [dataArray indexOfObject:myCell.model];
-    NSMutableArray *arr  = [dataArray mutableCopy];
-    [arr removeObjectAtIndex:index];
-    NSArray *array = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"signed%li",(long)_signID]];
-   LoadallsignModel *model =[self.alldata objectAtIndex:array.count-1];
-    [arr insertObject:model atIndex:index];
-    dataArray = [arr mutableCopy];
+    [dataArray enumerateObjectsUsingBlock:^(LoadallsignModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.UserID == UserID) {
+            obj.Status = 1;
+        }
+    }];
     [_tableView reloadData];
 }
 - (NSArray *)getallData
 {
-    NSArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)_signID]];
+    NSArray *arr = (NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, _signID]];
     NSMutableArray *alldataarray = [NSMutableArray array];
     for (NSDictionary *acdic in arr) {
         LoadallsignModel *model = [LoadallsignModel yy_modelWithJSON:acdic];

@@ -276,7 +276,9 @@
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         if ([obj[@"errcode"] integerValue] == 0) {
-            [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
+            NSDictionary *dic = [obj[@"data"] deleteNullObj];
+            [[NSUserDefaults standardUserDefaults] setObject:dic forKey:ZDUserDefault_UserInfo];
+            [ZDUserManager.shareManager initWithDic:dic];
             ZD_UserM.identifierType = ZDIdentifierTypeSponsor;
             [[NSUserDefaults standardUserDefaults]setObject:@(ZD_UserM.gradeId) forKey:@"GradeId"];
             [[NSUserDefaults  standardUserDefaults]setObject:ZD_UserM.phone forKey:@"mobile"];

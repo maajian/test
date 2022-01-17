@@ -308,7 +308,7 @@
         signle.datadic =datadic;
         signle.userInfo = [weakSelf getUserInfo:datadic];
     }else{
-        NSArray *arr = [[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"all%li",(long)self.signInModel.ID]];
+        NSArray *arr = (NSArray *)[ZDCache.sharedCache cacheForKey:[NSString stringWithFormat:@"%@%li", ZDCacheSign_One_List, (long)self.signInModel.ID]];
         signle.userInfo = @"100,101";
         signle.datadic = [arr objectAtIndex:myCell.tag];
     }

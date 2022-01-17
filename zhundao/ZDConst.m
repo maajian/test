@@ -28,6 +28,10 @@ NSString *const ZDUserDefault_LoginTime = @"ZDUserDefault_LoginTime";
 NSString *const ZDUserDefault_ClientId = @"ZDUserDefault_ClientId";
 NSString *const ZDUserDefault_UnreadMessage = @"ZDUserDefault_UnreadMessage";
 NSString *const ZDUserDefault_SignList = @"ZDUserDefault_SignList";
+NSString *const ZDUserDefault_IdentifierType = @"ZDUserDefault_IdentifierType";
+NSString *const ZDUserDefault_UserInfo = @"ZDUserDefault_UserInfo";
+NSString *const ZDUserDefault_SupplierToken = @"ZDUserDefault_SupplierToken";
+NSString *const ZDUserDefault_SupplierMeModel = @"ZDUserDefault_SupplierMeModel";
 
 #pragma mark --- Cache
 NSString *const ZDCacheSign_One_List = @"ZDCacheSign_One_List";

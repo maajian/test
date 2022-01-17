@@ -116,7 +116,9 @@
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
         if ([obj[@"errcode"] integerValue] == 0) {
-            [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
+            NSDictionary *dic = [obj[@"data"] deleteNullObj];
+            [[NSUserDefaults standardUserDefaults] setObject:dic forKey:ZDUserDefault_UserInfo];
+            [ZDUserManager.shareManager initWithDic:dic];
             userdic = [obj[@"data"] copy];
             [[NSUserDefaults standardUserDefaults]setObject:@(ZD_UserM.gradeId) forKey:@"GradeId"];
             [[NSUserDefaults  standardUserDefaults]setObject:ZD_UserM.phone forKey:@"mobile"];
@@ -193,7 +195,8 @@
             ZD_UserM.identifierType = ZDIdentifierTypeSupplier;
             ZD_UserM.supplier_access_token = obj[@"data"][@"supplier_access_token"];
             ZDMainSupplierTabbarVC *vc = [[ZDMainSupplierTabbarVC alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
+            vc.selectedIndex = 2;
+            [UIApplication sharedApplication].delegate.window.rootViewController = vc;
         } else {
             ZDWebViewController *web = [[ZDWebViewController alloc] init];
             web.isClose = YES;
@@ -440,7 +443,8 @@
 - (void)showPartner {
     ZD_UserM.identifierType = ZDIdentifierTypePartner;
     ZDMainSupplierTabbarVC *vc = [[ZDMainSupplierTabbarVC alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    vc.selectedIndex = 2;
+    [UIApplication sharedApplication].delegate.window.rootViewController = vc;
 }
 - (void)changeIdentifier {
     [AJAlertSheet showWithArray:@[@"主办方", @"参与者", @"会务公司", @"供应商"] title:@"请选择你的身份" isDelete:NO selectBlock:^(NSInteger index) {
@@ -462,7 +466,8 @@
         ZD_UserM.supplierMeModel = conferenceArray[index];
         ZD_UserM.identifierType = ZDIdentifierTypeConference;
         ZDMainSupplierTabbarVC *vc = [[ZDMainSupplierTabbarVC alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        vc.selectedIndex = 2;
+        [UIApplication sharedApplication].delegate.window.rootViewController = vc;
     }];
 }
 

@@ -83,7 +83,9 @@
 - (void)getGrade {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
-        [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
+        NSDictionary *dic = [obj[@"data"] deleteNullObj];
+        [[NSUserDefaults standardUserDefaults] setObject:dic forKey:ZDUserDefault_UserInfo];
+        [ZDUserManager.shareManager initWithDic:dic];
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
         NSDictionary  *userdic = data[@"data"];
         [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];

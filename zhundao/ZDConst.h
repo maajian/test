@@ -29,6 +29,10 @@ UIKIT_EXTERN NSString *const ZDUserDefault_LoginTime;
 UIKIT_EXTERN NSString *const ZDUserDefault_ClientId; // 客户端clientID
 UIKIT_EXTERN NSString *const ZDUserDefault_UnreadMessage; // 未读消息个数
 UIKIT_EXTERN NSString *const ZDUserDefault_SignList; // 签到列表
+UIKIT_EXTERN NSString *const ZDUserDefault_IdentifierType; // 用户角色类型
+UIKIT_EXTERN NSString *const ZDUserDefault_UserInfo; // 用户信息
+UIKIT_EXTERN NSString *const ZDUserDefault_SupplierToken; // 用户信息
+UIKIT_EXTERN NSString *const ZDUserDefault_SupplierMeModel; // 用户信息
  
 #pragma mark --- Cache
 UIKIT_EXTERN NSString *const ZDCacheSign_One_List;

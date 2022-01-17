@@ -98,16 +98,18 @@
 {
     NSString *userstr = [NSString stringWithFormat:@"%@api/v2/user/getUserInfo?token=%@",zhundaoApi,[[SignManager shareManager] getToken]];
     [ZD_NetWorkM getDataWithMethod:userstr parameters:nil succ:^(NSDictionary *obj) {
-        [ZDUserManager.shareManager initWithDic:[obj[@"data"] deleteNullObj]];
+        NSDictionary *userDic = [obj[@"data"] deleteNullObj];
+        [[NSUserDefaults standardUserDefaults] setObject:userDic forKey:ZDUserDefault_UserInfo];
+        [ZDUserManager.shareManager initWithDic:userDic];
         ZD_UserM.identifierType = ZDIdentifierTypeSponsor;
         [_hud hideAnimated:YES];
         NSDictionary *data = [NSDictionary dictionaryWithDictionary:obj];
-        NSDictionary  *userdic = data[@"data"];
+        NSDictionary  *userdic = [data[@"data"] deleteNullObj];
         [[NSUserDefaults standardUserDefaults]setObject:userdic[@"gradeId"] forKey:@"GradeId"];
-        NSDictionary *dic = @{@"name":userdic[@"nickName"],
+        NSDictionary *dic = @{@"name":ZD_SafeStringValue(userdic[@"nickName"]),
                               @"phone":_phoneTextLabel.text,
                               @"password":_lockTextLabel.text,
-                              @"headImgurl":userdic[@"headImgUrl"]
+                              @"headImgurl":ZD_SafeStringValue(userdic[@"headImgUrl"])
                               };
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userArray"]) {
             NSMutableArray *userArray = [[[NSUserDefaults standardUserDefaults] objectForKey:@"userArray"] mutableCopy];

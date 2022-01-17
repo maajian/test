@@ -44,7 +44,7 @@ ZD_Singleton_Implementation(NetWorkManager)
             DDLogVerbose(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
             ZDDo_Block_Safe_Main1(succ, responseObject)
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            DDLogVerbose(@"error = %@, method = %@", error, method);
+            DDLogVerbose(@"error = %@, method = %@, param = %@", error, method, parameters);
             NSString *newMethod = [self getNewMethodWithOldMethod:method];
             if (newMethod.length && hasRequest == NO) {
                 hasRequest = YES;
@@ -71,7 +71,7 @@ ZD_Singleton_Implementation(NetWorkManager)
            DDLogVerbose(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
            ZDDo_Block_Safe_Main1(succ, responseObject)
        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-           DDLogVerbose(@"error = %@, method = %@", error, method);
+           DDLogVerbose(@"error = %@, method = %@, param = %@", error, method, parameters);
            NSString *newMethod = [self getNewMethodWithOldMethod:method];
            if (newMethod.length && hasRequest == NO) {
                hasRequest = YES;
@@ -95,7 +95,7 @@ ZD_Singleton_Implementation(NetWorkManager)
            DDLogVerbose(@"responseObject = %@, method = %@, param = %@", responseObject, method, parameters);
            ZDDo_Block_Safe_Main1(succ, responseObject)
        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-           DDLogVerbose(@"error = %@, method = %@", error, method);
+           DDLogVerbose(@"error = %@, method = %@, param = %@", error, method, parameters);
            NSString *newMethod = [self getNewMethodWithOldMethod:method];
            if (newMethod.length && hasRequest == NO) {
                hasRequest = YES;
