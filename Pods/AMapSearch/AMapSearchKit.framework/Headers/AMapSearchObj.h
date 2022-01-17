@@ -61,6 +61,14 @@ typedef NS_ENUM(NSInteger, AMapDrivingRouteExcludeType)
     AMapDrivingRouteExcludeTypeFerry      = 3, ///< 渡船
 };
 
+///距离测量类型 @since 7.7.0
+typedef NS_ENUM(NSInteger, AMapDistanceSearchType)
+{
+    AMapDistanceSearchTypeStraight        = 0, ///< 直线距离
+    AMapDistanceSearchTypeDrive           = 1, ///< 驾车导航距离
+    AMapDistanceSearchTypeWalk            = 3, ///< 步行导航距离
+};
+
 #pragma mark - AMapPOISearchBaseRequest
 
 ///POI搜索请求基类
@@ -69,7 +77,7 @@ typedef NS_ENUM(NSInteger, AMapDrivingRouteExcludeType)
 @property (nonatomic, copy)   NSString  *types;
 ///排序规则, 0-距离排序；1-综合排序, 默认0
 @property (nonatomic, assign) NSInteger  sortrule;
-///每页记录数, 范围1-50, [default = 20]
+///每页记录数, 范围1-25, [default = 20]
 @property (nonatomic, assign) NSInteger  offset;
 ///当前页数, 范围1-100, [default = 1]
 @property (nonatomic, assign) NSInteger  page;
@@ -106,10 +114,12 @@ typedef NS_ENUM(NSInteger, AMapDrivingRouteExcludeType)
 @property (nonatomic, copy)   NSString     *keywords; 
 ///中心点坐标
 @property (nonatomic, copy)   AMapGeoPoint *location; 
-///查询半径，范围：0-50000，单位：米 [default = 3000]
+///查询半径，范围：0-50000，单位：米 [default = 1500]
 @property (nonatomic, assign) NSInteger     radius;
 ///查询城市，可选值：cityname（中文或中文全拼）、citycode、adcode。注：当用户指定的经纬度和city出现冲突，若范围内有用户指定city的数据，则返回相关数据，否则返回为空。（since 5.7.0）
 @property (nonatomic, copy)   NSString     *city;
+///是否对结果进行人工干预，如火车站，原因为poi较为特殊，结果存在人工干预，干预结果优先，所以距离优先的排序未生效,默认为YES (since 7.4.0)
+@property (nonatomic, assign) BOOL special;
 
 @end
 
@@ -410,6 +420,8 @@ typedef NS_ENUM(NSInteger, AMapDrivingRouteExcludeType)
 @interface AMapRidingRouteSearchRequest : AMapRouteSearchBaseRequest
 ///路径方案类型([default = 0])\n 0-推荐路线及最快路线综合\n 1-推荐路线\n 2-最快路线
 @property (nonatomic, assign) NSInteger type __attribute__((deprecated("已废弃, from 5.0.0")));
+///是否返回扩展信息，默认为 NO （since 7.6.0）
+@property (nonatomic, assign) BOOL requireExtension;
 @end
 
 ///路径规划返回
@@ -468,7 +480,8 @@ typedef NS_ENUM(NSInteger, AMapDrivingRouteExcludeType)
 @property (nonatomic, assign) CGFloat weight;
 ///车辆轴数，单位个，取值[0 –255]个，默认 2个轴
 @property (nonatomic, assign) NSInteger axis;
-
+///是否返回扩展信息，默认为 NO （since 7.6.0）
+@property (nonatomic, assign) BOOL requireExtension;
 @end
 
 #pragma mark - AMapDistanceSearchRequest
@@ -479,9 +492,12 @@ typedef NS_ENUM(NSInteger, AMapDrivingRouteExcludeType)
 @property (nonatomic, strong) NSArray<AMapGeoPoint *> *origins;
 ///终点坐标
 @property (nonatomic, strong) AMapGeoPoint *destination;
-///路径计算的方式和方法.0：直线距离; 1：驾车导航距离（仅支持国内坐标）此时会考虑路况，故在不同时间请求返回结果可能不同，此策略和driving接口的 strategy=4策略一致; 默认为1
-@property (nonatomic, assign) NSInteger type;
-
+///路径计算的类型，当type为导航距离时，会考虑路况，故在不同时间请求返回结果可能不同；
+@property (nonatomic, assign) AMapDistanceSearchType type;
+///驾车距离测量策略，参考驾车路径规划。仅当type为AMapDistanceSearchTypeDrive时有效，默认4
+@property (nonatomic, assign) NSInteger strategy;
+///是否返回扩展信息，默认为 NO （since 7.6.0）
+@property (nonatomic, assign) BOOL requireExtension;
 @end
 
 ///距离查询结果（since 6.1.0）
@@ -507,46 +523,6 @@ typedef NS_ENUM(NSInteger, AMapDrivingRouteExcludeType)
 @property (nonatomic, strong) NSArray<AMapLocalWeatherLive *> *lives; 
 ///预报天气数据信息 AMapLocalWeatherForecast 数组，仅在请求预报天气时有返回
 @property (nonatomic, strong) NSArray<AMapLocalWeatherForecast *> *forecasts; 
-
-@end
-
-#pragma mark - AMapRoadTrafficSearchRequest
-
-@interface AMapRoadTrafficSearchBaseRequest : AMapSearchObject
-
-///道路等级，1：高速（京藏高速）2：城市快速路、国道(西三环、103国道) 3：高速辅路（G6辅路）4：主要道路（长安街、三环辅路路）5：一般道路（彩和坊路）6：无名道路。默认为5. since 5.5.0
-@property (nonatomic, assign)   NSInteger level;
-
-///是否返回扩展信息，默认为 NO
-@property (nonatomic, assign) BOOL requireExtension;
-
-@end
-
-///道路实时路况查询请求 since 5.1.0
-@interface AMapRoadTrafficSearchRequest : AMapRoadTrafficSearchBaseRequest
-
-///道路名称，可通过逆地理编码查询获取
-@property (nonatomic, copy)   NSString *roadName;
-
-///城市adcode，可参考 http://a.amap.com/lbs/static/zip/AMap_adcode_citycode.zip
-@property (nonatomic, copy)   NSString *adcode;
-
-@end
-
-///圆形区域道路实时路况查询请求 since 5.5.0  注意:返回路况结果取决于发起请求时刻的实时路况，不保证范围内的所有路线路况都会返回，也不保证返回的路况长度一定在限制半径内
-@interface AMapRoadTrafficCircleSearchRequest : AMapRoadTrafficSearchBaseRequest
-
-///必填，中心点坐标。
-@property (nonatomic, copy) AMapGeoPoint *location;
-///查询半径,单位：米。[0, 5000], 默认值为1000.
-@property (nonatomic, assign) NSInteger radius;
-
-@end
-
-///道路实时路况查询返回 since 5.1.0
-@interface AMapRoadTrafficSearchResponse : AMapSearchObject
-///路况信息
-@property (nonatomic, strong) AMapTrafficInfo *trafficInfo;
 
 @end
 
@@ -607,7 +583,7 @@ typedef NS_ENUM(NSInteger, AMapDrivingRouteExcludeType)
 @interface AMapCloudPOIPolygonSearchRequest : AMapCloudSearchBaseRequest
 ///必填，多边形。
 @property (nonatomic, copy) AMapGeoPolygon *polygon;
-///可选，搜索关键词。\n 说明：\n 1. 请先在企业地图数据管理台添加或删除文本索引字段，系统默认为 _name 和 _address 建立文本索引；\n 2.支持关键字模糊检索，即对建立【文本索引字段】对应列内容进行模糊检索；如 keywords = “工商银行”，检索返回已建立文本索引列值中包含“工商”或者“银行”或者“工商银行”关键字的POI结果集。\n 3. 支持关键字“或”精准检索，即对建立【文本索引字段】对应列内容进行多关键字检索；如 keywords = "招商银行|华夏银行|工商银行"，检索返回已建立索引列值中包含“招商银行”或者“华夏银行”或者“工商银行”的POI结果集，不会返回检索词切分后，如仅包含“招商”或者“银行”的POI集。\n 4. 可赋值为空值，即 keywords = " " 表示空值；\n 5. 若 city = "城市名"，keywords = " " 或者 keywords = "关键字"，返回对应城市的全部数据或对应关键字的数据；\n 6. 一次请求最多返回2000条数据。\n 注意: 所设置的keywords中不能含有&、#、%等URL的特殊符号。
+///可选，搜索关键词。\n 说明：1. 只支持建立过文本索引的字段查询/n 2.支持关键字模糊检索，即对建立【文本索引字段】对应列内容进行模糊检索；如keywords=工商银行，检索返回已建立文本索引列值中包含“工商”或者“银行”或者“工商银行”关键字的POI结果集。/n 3.支持关键字多值模糊检索；如keywords=招商银行&&华夏银行&&工商银行，检索返回已建立索引列值中包含“招商银行”或者“华夏银行”或者“工商银行”的POI结果集，不会返回检索词切分后，如仅包含“招商”或者“银行”的POI集
 @property (nonatomic, copy) NSString *keywords;
 @end
 
@@ -619,7 +595,7 @@ typedef NS_ENUM(NSInteger, AMapDrivingRouteExcludeType)
 
 ///企业地图本地查询请求
 @interface AMapCloudPOILocalSearchRequest : AMapCloudSearchBaseRequest
-///必填，搜索关键词。\n 说明：\n 1. 请先在企业地图数据管理台添加或删除文本索引字段，系统默认为 _name 和 _address 建立文本索引；\n 2.支持关键字模糊检索，即对建立【文本索引字段】对应列内容进行模糊检索；如 keywords = "工商银行"，检索返回已建立文本索引列值中包含“工商”或者“银行”或者“工商银行”关键字的POI结果集。\n 3. 支持关键字“或”精准检索，即对建立【文本索引字段】对应列内容进行多关键字检索；如 keywords = "招商银行|华夏银行|工商银行"，检索返回已建立索引列值中包含“招商银行”或者“华夏银行”或者“工商银行”的POI结果集，不会返回检索词切分后，如仅包含“招商”或者“银行”的POI集。\n 4. 可赋值为空值，即 keywords = " " 表示空值；\n 5. 若 city = "城市名"，keywords = " " 或者 keywords = "关键字"，返回对应城市的全部数据或对应关键字的数据；\n 6. 一次请求最多返回2000条数据。 注意: 所设置的keywords中不能含有&、#、%等URL的特殊符号。
+///可选，搜索关键词。\n 说明：1. 只支持建立过文本索引的字段查询/n 2.支持关键字模糊检索，即对建立【文本索引字段】对应列内容进行模糊检索；如keywords=工商银行，检索返回已建立文本索引列值中包含“工商”或者“银行”或者“工商银行”关键字的POI结果集。/n 3.支持关键字多值模糊检索；如keywords=招商银行&&华夏银行&&工商银行，检索返回已建立索引列值中包含“招商银行”或者“华夏银行”或者“工商银行”的POI结果集，不会返回检索词切分后，如仅包含“招商”或者“银行”的POI集
 @property (nonatomic, copy) NSString *keywords;
 ///必填，城市名称\n 说明：\n 1. 支持全国/省/市/区县行政区划范围的检索；\n 2. city = "全国"，即对用户全表搜索；\n 3. 当city值设置非法或不正确时，按照 city = "全国"返回。
 @property (nonatomic, copy) NSString *city; 

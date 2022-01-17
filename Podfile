@@ -1,15 +1,14 @@
-platform:ios,'8.0'
 project 'zhundao.xcodeproj'
+source 'https://github.com/CocoaPods/Specs.git'
 target 'zhundao' do
-pod 'CocoaAsyncSocket'
+platform:ios,'8.0'
 pod 'IQKeyboardManager'
 pod 'SVProgressHUD'
-pod 'DZNEmptyDataSet', '~>1.8.1'
-pod 'GTSDK', '~>2.5.2.0'
+pod 'DZNEmptyDataSet'
 pod 'FMDB'
 pod 'AFNetworking'
 pod 'YBAttributeTextTapAction'
-#pod 'Masonry'
+pod 'Masonry'
 
 # 缓存框架
 pod 'YYCache'
@@ -20,12 +19,9 @@ pod 'AMapSearch'
 pod 'WechatOpenSDK'
 pod 'CocoaLumberjack'
 
+pod 'GTSDK', '~>2.5.2.0'
 pod 'UMCommon'
 pod 'UMDevice'
 pod 'UMCCommonLog'
-
-#pod 'UMCShare/UI'
-#pod 'UMCShare/Social/WeChat'
-#pod 'UMCShare/Social/QQ'
 
 end
