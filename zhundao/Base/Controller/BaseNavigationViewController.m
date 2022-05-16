@@ -24,6 +24,15 @@
     self.navigationBar.translucent = NO;
     self.navigationBar.tintColor = [UIColor blackColor];
     self.navigationBar.barTintColor = ZDBackgroundColor;
+    // 兼容iOS15 黑屏问题
+    if (@available(iOS 15, *)) {
+        UINavigationBarAppearance *app = [[UINavigationBarAppearance alloc] init];
+        [app configureWithOpaqueBackground]; // 重置背景和阴影颜色
+        app.backgroundColor = ZDBackgroundColor;  // 设置导航栏背景色
+        app.shadowImage = [UIImage imageWithColor:UIColor.clearColor];  // 设置导航栏下边界分割线透明
+        self.navigationBar.scrollEdgeAppearance = app;  // 带scroll滑动的页面
+        self.navigationBar.standardAppearance = app; // 常规页面
+    }
     // Do any additional setup after loading the view.
 }
 

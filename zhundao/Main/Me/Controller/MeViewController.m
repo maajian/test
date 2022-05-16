@@ -61,7 +61,7 @@
         ZD_UserM.iosHiddenFlag = obj;
     }];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    ZD_UserM.identifierType = ZDIdentifierTypeSupplier;
+    ZD_UserM.identifierType = ZDIdentifierTypeSponsor;
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

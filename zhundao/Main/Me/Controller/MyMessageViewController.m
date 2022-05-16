@@ -11,6 +11,7 @@
 #import "BuyMessageViewController.h"
 #import "GroupSendViewModel.h"
 #import "sendMessageDetailViewController.h"
+#import "MessageContentViewController.h"
 
 @interface MyMessageViewController ()<MyMessageViewDelegate>
 /*! 视图 */
@@ -68,6 +69,28 @@
     questionVC.urlString = @"https://www.zhundao.net/service/help/index/68";
     questionVC.isClose = YES;
     [self.navigationController pushViewController:questionVC animated:YES];
+}
+- (void)showModel {
+    NSString *str = [NSString stringWithFormat:@"%@api/CoreByAccessKey/GetAdminInfo?token=%@",zhundaoMessageApi,[[SignManager shareManager] getToken]];
+    __block NSString *remark = @"【准到】";
+    [ZD_NetWorkM getDataWithMethod:str parameters:nil succ:^(NSDictionary *obj) {
+        DDLogVerbose(@"responseObject = %@",obj );
+        /*! 获取短信数 */
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:obj];
+        NSArray *array = dic[@"data"];
+        NSDictionary *dataDic = array.firstObject;
+        if (![dataDic[@"JH_Remark"] isEqual:[NSNull null]]) {
+            remark = dataDic[@"JH_Remark"];
+            _es_id = [dataDic[@"es_id"] integerValue];
+        }
+        MessageContentViewController *message = [[MessageContentViewController alloc]init];
+        [self setHidesBottomBarWhenPushed:YES];
+        message.signCount = remark.length;
+        message.es_id = _es_id;
+        [self.navigationController pushViewController:message animated:YES];
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR(error)
+    }];
 }
 
 #pragma mark --- 获取短信条数

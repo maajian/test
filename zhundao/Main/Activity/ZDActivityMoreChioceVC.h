@@ -17,7 +17,12 @@ typedef void(^ZDChioceBlock) (NSString *imageUrl, NSMutableArray *userArray, NSM
 
 @interface ZDActivityMoreChioceVC : BaseViewController
 // 初始化
-- (instancetype)initWithImageUrl:(NSString *)imageUrl alert:(BOOL)alert showList:(NSInteger)showList isEditActivity:(BOOL)isEditActivity chioceBlock:(ZDChioceBlock)chioceBlock;
+- (instancetype)initWithImageUrl:(NSString *)imageUrl
+                           alert:(BOOL)alert
+                        showList:(NSInteger)showList
+                  isEditActivity:(BOOL)isEditActivity
+                     configModel:(ZDActivityConfigModel *)configModel
+                     chioceBlock:(nonnull ZDChioceBlock)chioceBlock;
 
 @property(nonatomic ,strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<ZDActivityMoreChioceModel *> *dataSource;

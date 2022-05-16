@@ -99,6 +99,9 @@ NSString * const kdbManagerVersion = @"DBManagerVersion";
     if (@available(iOS 11.0, *)) {
         UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
+    if (@available(iOS 15.0, *)) {
+        [UITableView appearance].sectionHeaderTopPadding = 0;
+    }
     self.mConnBLE = [[ConnectViewController alloc] initWithNibName:nil bundle:nil];
     
      // app杀死时通知

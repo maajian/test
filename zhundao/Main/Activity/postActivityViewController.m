@@ -183,7 +183,7 @@ ZDGetter_MutableDictionary(moredic)
 
 /*! 跳转编辑更多 */
 - (void)pushMoreChoose{
-    ZDActivityMoreChioceVC *moreChioce = [[ZDActivityMoreChioceVC alloc] initWithImageUrl:_smallImageUrl.length ? _smallImageUrl : self.postView.bigImageStr alert:[self.moredic[kAlertSwitch] boolValue] showList:[self.moredic[kHiddenList] integerValue]    isEditActivity:self.activityModel ? YES : NO chioceBlock:^(NSString * _Nonnull imageUrl, NSMutableArray * _Nonnull userArray, NSMutableArray * _Nonnull extraArray, BOOL alert, ZDActivityShowListType showListType) {
+    ZDActivityMoreChioceVC *moreChioce = [[ZDActivityMoreChioceVC alloc] initWithImageUrl:_smallImageUrl.length ? _smallImageUrl : self.postView.bigImageStr alert:[self.moredic[kAlertSwitch] boolValue] showList:[self.moredic[kHiddenList] integerValue] isEditActivity:self.activityModel ? YES : NO configModel:self.activityModel.configModel chioceBlock:^(NSString * _Nonnull imageUrl, NSMutableArray * _Nonnull userArray, NSMutableArray * _Nonnull extraArray, BOOL alert, ZDActivityShowListType showListType) {
         _smallImageUrl = imageUrl;
         self.userInfoOptionArray = [[NSMutableArray alloc] initWithArray:userArray copyItems:YES];;
         self.extraInfoOptionArray = [[NSMutableArray alloc] initWithArray:extraArray copyItems:YES];
@@ -325,6 +325,14 @@ ZDGetter_MutableDictionary(moredic)
         }
         [dic setObject:@(_activityModel.MaxPeople) forKey:@"maxPeople"];
         [dic setObject:@(_activityModel.MinPeople) forKey:@"minPeople"];
+    }
+    // 设置config ZD_UserM.gradeId >= 3 手机端设置ad
+    if (ZD_UserM.gradeId >= 3) {
+        NSDictionary *adDic = _activityModel.configModel.ad.yy_modelToJSONObject;
+        NSDictionary *configDic = _activityModel.Config.zd_jsonDictionary;
+        if (_activityModel.configModel.ad) {
+            
+        }
     }
     [self havedic:dic str:str];
 }

@@ -46,7 +46,9 @@
     [self.view addSubview:self.segmentView];
     [self.view addSubview:self.scrollView];
     _sysVC = [[ZDMeaageSystemVC alloc] init];
+    _sysVC.sendMessage = self.sendMessage;
     _customVC = [[ZDMessageCustomVC alloc] init];
+    _customVC.sendMessage = self.sendMessage;
     [self addChildViewController:_sysVC];
     [self addChildViewController:_customVC];
     [self.scrollView addSubview:_sysVC.view];

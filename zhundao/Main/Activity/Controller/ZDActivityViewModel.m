@@ -60,6 +60,8 @@
             [[ZDCache sharedCache] setCache:tempArray forKey:@"ZDAllActivity"];
             for (NSDictionary *dic in tempArray) {
                 ActivityModel *model = [ActivityModel yy_modelWithJSON:dic];
+                ZDActivityConfigModel *configModel = [ZDActivityConfigModel yy_modelWithJSON:model.Config];
+                model.configModel = configModel;
                 [_allDataArray addObject:model];
                 [_allTitleArray addObject:model.Title];
             }
@@ -73,6 +75,8 @@
             [_allDataArray removeAllObjects];
             for (NSDictionary *dic in array) {
                 ActivityModel *model = [ActivityModel yy_modelWithJSON:dic];
+                ZDActivityConfigModel *configModel = [ZDActivityConfigModel yy_modelWithJSON:model.Config];
+                model.configModel = configModel;
                 [_allDataArray addObject:model];
             }
             success(_allDataArray);
@@ -101,6 +105,8 @@
             [[ZDCache sharedCache] setCache:tempArray forKey:@"ZDOnActivity"];
             for (NSDictionary *dic in tempArray) {
                 ActivityModel *model = [ActivityModel yy_modelWithJSON:dic];
+                ZDActivityConfigModel *configModel = [ZDActivityConfigModel yy_modelWithJSON:model.Config];
+                model.configModel = configModel;
                 [_onDataArray addObject:model];
                 [_onTitleArray addObject:model.Title];
             }
@@ -114,6 +120,8 @@
             [_onDataArray removeAllObjects];
             for (NSDictionary *dic in array) {
                 ActivityModel *model = [ActivityModel yy_modelWithJSON:dic];
+                ZDActivityConfigModel *configModel = [ZDActivityConfigModel yy_modelWithJSON:model.Config];
+                model.configModel = configModel;
                 [_onDataArray addObject:model];
             }
             success(_onDataArray);
@@ -142,6 +150,8 @@
             [[ZDCache sharedCache] setCache:tempArray forKey:@"ZDCloseActivity"];
             for (NSDictionary *dic in tempArray) {
                 ActivityModel *model = [ActivityModel yy_modelWithJSON:dic];
+                ZDActivityConfigModel *configModel = [ZDActivityConfigModel yy_modelWithJSON:model.Config];
+                model.configModel = configModel;
                 [_closeDataArray addObject:model];
                 [_closeTitleArray addObject:model.Title];
             }
@@ -155,6 +165,8 @@
             [_closeDataArray removeAllObjects];
             for (NSDictionary *dic in array) {
                 ActivityModel *model = [ActivityModel yy_modelWithJSON:dic];
+                ZDActivityConfigModel *configModel = [ZDActivityConfigModel yy_modelWithJSON:model.Config];
+                model.configModel = configModel;
                 [_closeDataArray addObject:model];
             }
             success(_closeDataArray);

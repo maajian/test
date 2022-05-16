@@ -61,6 +61,7 @@
         }
         [_tableView reloadData];
     } error:^(NSError *error) {
+        
     }];
 }
 - (void)showAlertWithStr:(NSString *)str{
@@ -170,6 +171,7 @@
     [self setHidesBottomBarWhenPushed:YES];
     message.signCount = _remark.length;
     message.es_id = _es_id;
+    message.sendMessage = YES;
     [self.navigationController pushViewController:message animated:YES];
 }
 

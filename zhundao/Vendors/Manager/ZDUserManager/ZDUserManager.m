@@ -65,10 +65,14 @@
     [ZD_NotificationCenter postNotificationName:ZDNotification_UnreadMessageChange object:nil];
 }
 - (void)setIdentifierType:(ZDIdentifierType)identifierType {
+    NSLog(@"---- %@", [NSString stringWithFormat:@"%@-%li",ZDUserDefault_IdentifierType, ZD_UserM.userID]);
     [[NSUserDefaults standardUserDefaults] setInteger:identifierType forKey:[NSString stringWithFormat:@"%@-%li",ZDUserDefault_IdentifierType, ZD_UserM.userID]];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    NSLog(@" ----- %li", [[NSUserDefaults standardUserDefaults] integerForKey:[NSString stringWithFormat:@"%@-%li",ZDUserDefault_IdentifierType, ZD_UserM.userID]]);
 }
 - (ZDIdentifierType)identifierType {
+    NSLog(@"---- %@", [NSString stringWithFormat:@"%@-%li",ZDUserDefault_IdentifierType, ZD_UserM.userID]);
+    NSLog(@" ----- %li", [[NSUserDefaults standardUserDefaults] integerForKey:[NSString stringWithFormat:@"%@-%li",ZDUserDefault_IdentifierType, ZD_UserM.userID]]);
     return [[NSUserDefaults standardUserDefaults] integerForKey:[NSString stringWithFormat:@"%@-%li",ZDUserDefault_IdentifierType, ZD_UserM.userID]];
 }
 - (void)setSupplier_access_token:(NSString *)supplier_access_token {

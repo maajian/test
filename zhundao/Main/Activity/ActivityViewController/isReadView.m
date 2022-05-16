@@ -17,7 +17,6 @@
 
 - (instancetype)init{
     if (self = [super init]) {
-        self.frame = CGRectMake(0, kScreenHeight-64-44, kScreenWidth, 44);
         self.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.cancelButton];
         [self addSubview:self.nextStepButton];

@@ -12,7 +12,7 @@
 
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
-        self.ID = [dic[@"msg_id"] integerValue];
+        self.ID = [dic[@"ID"] integerValue];
         self.es_content = dic[@"Msg_Info"] ? dic[@"Msg_Info"] : dic[@"es_content"];
         self.Reason = ZD_SafeValue(dic[@"Reason"]);
         if (dic[@"Status"]) {

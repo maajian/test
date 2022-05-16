@@ -125,6 +125,8 @@
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         if ([obj[@"res"] boolValue]) {
             ActivityModel *model = [ActivityModel yy_modelWithDictionary:obj[@"data"]];
+            ZDActivityConfigModel *configModel = [ZDActivityConfigModel yy_modelWithJSON:model.Config];
+            model.configModel = configModel;
             ListViewController *list = [[ListViewController alloc]init];
             list.activityModel = model;
             [self.navigationController pushViewController:list animated:YES];

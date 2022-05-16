@@ -18,10 +18,8 @@
 
 - (instancetype)init{
     if (self = [super init]) {
-        self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-64);
-        self.contentSize = CGSizeMake(kScreenWidth, kScreenHeight-63);
+        self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight-ZD_TopBar_H);
         self.backgroundColor = ZDBackgroundColor;
-//        self.showsVerticalScrollIndicator = NO;
         [self setupUI];
     }
     return self;
@@ -91,9 +89,33 @@
         make.centerX.equalTo(self.mas_centerX).offset(0);
     }];
     
-   UIButton *queButton = [MyButton initWithButtonFrame:CGRectMake(50, kScreenHeight-64-50, kScreenWidth-100, 30) title:@"常见问题" textcolor:kColorA(90, 109, 150, 1) Target:self action:@selector(showQus) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
-    queButton.titleLabel.font = [UIFont systemFontOfSize:13];
-    [self addSubview:queButton];
+    UIView *lineView = [[UIView alloc] init];
+    lineView.backgroundColor = ZDLineColor;
+    [self addSubview:lineView];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self);
+        make.bottom.equalTo(self.mas_bottom).offset(ZD_SAFE_BOTTOM_LAYOUT-20);
+        make.height.mas_equalTo(10);
+        make.width.mas_equalTo(2);
+    }];
+    
+    UIButton *queButton = [MyButton initWithButtonFrame:CGRectZero title:@"常见问题" textcolor:kColorA(90, 109, 150, 1) Target:self action:@selector(showQus) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
+     queButton.titleLabel.font = [UIFont systemFontOfSize:13];
+     [self addSubview:queButton];
+     [queButton mas_makeConstraints:^(MASConstraintMaker *make) {
+         make.trailing.equalTo(lineView.mas_leading).offset(-3);
+         make.centerY.equalTo(lineView);
+         make.size.mas_equalTo(CGSizeMake(70, 30));
+     }];
+
+    UIButton *modelButton = [MyButton initWithButtonFrame:CGRectZero title:@"短信模版" textcolor:kColorA(90, 109, 150, 1) Target:self action:@selector(modelAcion:) BackgroundColor:nil cornerRadius:0 masksToBounds:0];
+    modelButton.titleLabel.font = [UIFont systemFontOfSize:13];
+     [self addSubview:modelButton];
+    [modelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(lineView.mas_trailing).offset(3);
+        make.centerY.equalTo(lineView);
+        make.size.mas_equalTo(CGSizeMake(70, 30));
+    }];
     
 }
 
@@ -114,6 +136,11 @@
 - (void)showQus{
     if ([self.MyMessageViewDelegate respondsToSelector:@selector(allQues)]) {
         [self.MyMessageViewDelegate allQues];
+    }
+}
+- (void)modelAcion:(UIButton *)sender {
+    if ([self.MyMessageViewDelegate respondsToSelector:@selector(showModel)]) {
+        [self.MyMessageViewDelegate showModel];
     }
 }
 

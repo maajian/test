@@ -681,9 +681,9 @@
     NSInteger Grade = [[[NSUserDefaults standardUserDefaults]objectForKey:@"GradeId"]integerValue];
     NSArray *array;
     if (Grade>1) {
-         array = @[@"打印二维码",@"添加报名人员",@"发送名单到邮箱",@"群发短信"];
+         array = @[@"打印二维码",@"添加报名人员",@"发送名单到邮箱",@"下载名单",@"群发短信"];
     }else{
-         array = @[@"打印二维码",@"添加报名人员",@"发送名单到邮箱"];
+         array = @[@"打印二维码",@"添加报名人员",@"发送名单到邮箱",@"下载名单"];
     }
     GZActionSheet *sheet = [[GZActionSheet alloc]initWithTitleArray:array WithRedIndex:5 andShowCancel:YES];
     // 2. Block 方式
@@ -769,7 +769,15 @@
         ZD_HUD_SHOW_ERROR_STATUS(@"请检查网络设置");
     }];
 }
-
+- (void)networkForGetEmail {
+    NSString *url = [NSString stringWithFormat:@"%@api/v2/activity/exporeActivityList?token=%@&id=%li",zhundaoApi,[[SignManager shareManager] getToken], (long)_activityModel.ID];
+    ZD_HUD_SHOW_WAITING
+    [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
+        ZD_HUD_DISMISS
+    } fail:^(NSError *error) {
+        ZD_HUD_SHOW_ERROR(error)
+    }];
+}
 - (void)rightButton   // 添加rightbutton
 {
     [UIButton initCreateButtonWithFrame:CGRectMake(0, 0, 25, 25) WithImageName:@"nav_more" Withtarget:self Selector:@selector(showPost)];

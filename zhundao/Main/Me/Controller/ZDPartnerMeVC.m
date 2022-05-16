@@ -39,6 +39,7 @@
         } else {
             MainViewController *tabbar = [[MainViewController alloc] init];
             tabbar.selectedIndex = 3;
+            ZD_UserM.identifierType = ZDIdentifierTypeSponsor;
             [UIApplication sharedApplication].delegate.window.rootViewController= tabbar;
         }
     }];

@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, ZDActivityMoreChioceType) {
     ZDActivityMoreChioceTypeOption, // 报名填写项
     ZDActivityMoreChioceTypeAlert, // 用户报名提醒
     ZDActivityMoreChioceTypeShowList, // 报名名单显示和隐藏
+    ZDActivityMoreChioceTypeSuccess, // 报名成功后设置
 };
 
 typedef NS_ENUM(NSInteger, ZDActivityOptionType) {
@@ -53,6 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)optionModel;
 + (instancetype)alertModel:(BOOL)isAlert;
 + (instancetype)showListModel:(NSInteger)showList;
++ (instancetype)successModel:(NSInteger)showList;
 
 @end
 

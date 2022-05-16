@@ -14,3 +14,15 @@
 //             };
 //}
 @end
+
+@implementation ZDActivityConfigModel
+
+@end
+
+@implementation ZDActivityADModel
+
+@end
+
+@implementation ZDActivityConfigUserInfoModel
+
+@end

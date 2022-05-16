@@ -11,8 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDMeaageSystemVC : BaseViewController
-
 @property (nonatomic, assign) NSInteger es_id;
+// 发送消息
+@property (nonatomic, assign) BOOL sendMessage;
 
 @end
 

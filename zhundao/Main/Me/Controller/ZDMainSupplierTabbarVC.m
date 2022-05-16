@@ -53,6 +53,14 @@
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (ZD_UserM.loginExpired) {
+            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+        }
+    });
+}
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 }
@@ -178,6 +186,8 @@
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         if ([obj[@"res"] boolValue]) {
             ActivityModel *model = [ActivityModel yy_modelWithDictionary:obj[@"data"]];
+            ZDActivityConfigModel *configModel = [ZDActivityConfigModel yy_modelWithJSON:model.Config];
+            model.configModel = configModel;
             ListViewController *list = [[ListViewController alloc]init];
             list.activityModel = model;
             [self.selectedViewController pushViewController:list animated:YES];

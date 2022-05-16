@@ -17,11 +17,11 @@
 /*! 返回 */
 - (void)backpop;
 
-
+- (void)showModel;
 
 @end
 
-@interface MyMessageView : UIScrollView
+@interface MyMessageView : UIView
 /*! 剩余短信label */
 @property(nonatomic,strong)UILabel *countLabel;
 

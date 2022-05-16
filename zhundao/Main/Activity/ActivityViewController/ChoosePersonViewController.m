@@ -42,6 +42,7 @@
     _isSelectAll = NO;
     [self.view addSubview:self.tableView];
     [self setupUI];
+    [self initLayout];
     [self selectALL];
     [self OpenMessage];
     // Do any additional setup after loading the view.
@@ -61,7 +62,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64-44)];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectZero];
         _tableView.delegate =self;
         _tableView.dataSource =self;
         _tableView.backgroundColor = ZDBackgroundColor;
@@ -83,6 +84,17 @@
     _readView = [[isReadView alloc]init];
     _readView.readDelegate = self;
     [self.view addSubview:_readView];
+}
+- (void)initLayout {
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.top.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(ZD_SAFE_BOTTOM_LAYOUT - 44);
+    }];
+    [self.readView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self.view);
+        make.top.equalTo(self.tableView.mas_bottom);
+        make.height.mas_equalTo(44);
+    }];
 }
 
 #pragma mark -------UITableViewDataSource

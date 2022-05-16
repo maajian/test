@@ -99,6 +99,9 @@ static NSString *cellID = @"MessageContentCell";
     return [self.viewModel.systemHeightArray[indexPath.row] integerValue];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (!self.sendMessage) {
+        return;
+    }
     MessageContentModel *model = self.viewModel.systemArray[indexPath.row];
     [[NSNotificationCenter defaultCenter] postNotificationName:ZDNotification_Message_Select object:model.es_content];
     [self.navigationController popViewControllerAnimated:YES];

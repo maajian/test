@@ -7,37 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-//ActivityFees =     (
-//);
-//ActivityGenre = 0;
-//ActivityOptions = "<null>";
-//AddTime = "2016-12-01T18:16:13.717";
-//Address = "\U676d\U5dde";
-//Alert = 0;
-//Amount = 0;
-//BackImgurl = "http://joinheadoss.img-cn-hangzhou.aliyuncs.com/qinglong/Static/zhundao/img/bg/1.jpg";
-//Content = "<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\U8fbe\U5230\n &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>";
-//ExtraUserInfo = 3;
-//Fee = 0;
-//HasJoinNum = 0;
-//HideList = 0;
-//ID = 3563;
-//IsDeleted = 0;
-//IsPublic = 1;
-//Lat = 0;
-//Lng = 0;
-//PassCode = "<null>";
-//SendSms = 0;
-//ShareImgurl = "http://joinheadoss.img-cn-hangzhou.aliyuncs.com/qinglong/Static/zhundao/img/bg/1.jpg";
-//Status = 0;
-//TimeStart = "2016-12-08T18:15:00";
-//TimeStop = "2016-12-07T18:15:00";
-//TimeSure = "2016-12-01T18:16:19.057";
-//Title = "\U6d4b\U8bd5\U6cd5";
-//UserID = 4;
-//UserInfo = "100,101";
-//UserLimit = 0;
-//UserType = "<null>";
+
+typedef NS_ENUM(NSInteger, ZDActivityADType) {
+    ZDActivityADTypeNone = -1,
+    ZDActivityADTypeImage = 0,
+    ZDActivityADTypeLink = 1,
+};
+
+@class ZDActivityConfigModel;
 @interface ActivityModel : NSObject
 
 @property(nonatomic,copy)NSString *Title;
@@ -58,6 +35,8 @@
 @property(nonatomic,assign)NSInteger Alert;
 @property(nonatomic,copy)NSString *BackImgurl;
 @property(nonatomic,copy)NSString *ExtraUserInfo;
+@property (nonatomic, copy) NSString *Config;
+@property (nonatomic, strong) ZDActivityConfigModel *configModel;
 @property(nonatomic,copy)NSString *UserInfo;
 @property(nonatomic,assign)NSInteger Fee;
 @property(nonatomic,assign)NSInteger HideInfo;
@@ -69,4 +48,46 @@
 @property (nonatomic, assign) NSInteger MaxPeople;
 /*! 是否为团体报名 */
 @property(nonatomic,assign)NSInteger ActivityGenre;
+@end
+
+@class ZDActivityADModel;
+@class ZDActivityConfigUserInfoModel;
+@interface ZDActivityConfigModel : NSObject
+@property (nonatomic, assign) BOOL VerifyPhone;
+@property (nonatomic, assign) BOOL OpenInvioce;
+@property (nonatomic, assign) BOOL share;
+@property (nonatomic, assign) BOOL PhoneStrict;
+@property (nonatomic, assign) BOOL FaceImgIfNull;
+@property (nonatomic, assign) BOOL EmailIfNull;
+@property (nonatomic, assign) BOOL RewardFlag;
+
+@property (nonatomic, assign) NSInteger IsTourist;
+@property (nonatomic, assign) NSInteger JoinModel;
+@property (nonatomic, assign) NSInteger MinPeople;
+@property (nonatomic, assign) NSInteger MaxPeople;
+@property (nonatomic, assign) NSInteger shareObject;
+
+@property (nonatomic, copy)  NSString *shareBtnName;
+@property (nonatomic, copy) NSString *queryBtnName;
+//@property (nonatomic, copy) NSString *ad;
+
+@property (nonatomic, strong) ZDActivityADModel *ad;
+@property (nonatomic, strong) ZDActivityConfigUserInfoModel *userInfo;
+@end
+
+@interface ZDActivityADModel : NSObject
+@property (nonatomic, assign) ZDActivityADType adtype;
+@property (nonatomic, copy) NSString *adurl;
+@property (nonatomic, copy) NSString *adimg;
+
+@end
+
+@interface ZDActivityConfigUserInfoModel : NSObject
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *value;
+@property (nonatomic, copy) NSString *cn;
+
+@property (nonatomic, assign) BOOL select;
+@property (nonatomic, assign) BOOL require;
+
 @end

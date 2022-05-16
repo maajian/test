@@ -102,6 +102,9 @@ static NSString *cellID = @"MessageContentCell";
     if (model.messageStatusType != ZDMessageStatusTypeSuccess) {
         return;
     }
+    if (!self.sendMessage) {
+        return;
+    }
     [[NSNotificationCenter defaultCenter] postNotificationName:ZDNotification_Message_Select object:model.es_content];
     [self.navigationController popViewControllerAnimated:YES];
 }

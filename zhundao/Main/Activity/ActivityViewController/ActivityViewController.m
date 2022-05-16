@@ -231,6 +231,8 @@
 - (void)dealDataWithArray:(NSArray *)array {
     for (NSDictionary *acdic in array) {
         ActivityModel *model = [ActivityModel yy_modelWithJSON:acdic];
+        ZDActivityConfigModel *configModel = [ZDActivityConfigModel yy_modelWithJSON:model.Config];
+        model.configModel = configModel;
         if (model.Status==2) {
             [self.dataArray1 addObject:model];
         } else {

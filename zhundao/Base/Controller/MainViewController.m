@@ -40,6 +40,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBar.translucent = NO;
+    if (@available(iOS 15, *)) {
+        UITabBarAppearance *app = [[UITabBarAppearance alloc] init];
+        [app configureWithOpaqueBackground]; // 重置背景和阴影颜色
+//        app.titleTextAttributes = [
+//            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18),
+//            NSAttributedString.Key.foregroundColor: UIColor.white
+//        ]
+        app.backgroundColor = ZDBackgroundColor;  // 设置导航栏背景色
+        app.shadowImage = [UIImage imageWithColor:[UIColor clearColor]];  // 设置导航栏下边界分割线透明
+        self.tabBar.standardAppearance = app; // 常规页面
+    }
+    [[UITabBar appearance]setBackgroundImage:[[UIImage alloc] init]];
+    [[UITabBar appearance]setBackgroundColor:ZDBackgroundColor];
     // Do any additional setup after loading the view.
 }
 
@@ -49,6 +62,14 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (ZD_UserM.loginExpired) {
+            [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
+        }
+    });
 }
 
 - (void)dealloc {
@@ -89,6 +110,7 @@
         button.tag = 100 + i;
         button.imageView.tag = 1000 + i;
         [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [button addLineViewAtTop];
         [button setButtonWithButtonInsetType:WYButtonInsetTypeTitleBottom space:4];
         [self.tabBar addSubview:button];
         self.selectedIndex = 0;
@@ -174,6 +196,8 @@
     [ZD_NetWorkM getDataWithMethod:url parameters:nil succ:^(NSDictionary *obj) {
         if ([obj[@"res"] boolValue]) {
             ActivityModel *model = [ActivityModel yy_modelWithDictionary:obj[@"data"]];
+            ZDActivityConfigModel *configModel = [ZDActivityConfigModel yy_modelWithJSON:model.Config];
+            model.configModel = configModel;
             ListViewController *list = [[ListViewController alloc]init];
             list.activityModel = model;
             [self.selectedViewController pushViewController:list animated:YES];

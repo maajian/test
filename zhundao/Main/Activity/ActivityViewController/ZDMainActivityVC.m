@@ -82,9 +82,6 @@
     [self.scrollView addSubview:_allVC.view];
     // 添加活动
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem activityAddItemWithTarget:self action:@selector(pushAddActivity)];
-    if (ZD_UserM.loginExpired) {
-        [ZD_NotificationCenter postNotificationName:ZDNotification_Logout object:nil];
-    }
     [ZD_UserM networkForSendClientID];
     [self getRedDot];
     [self checkVersin:^(BOOL obj) {

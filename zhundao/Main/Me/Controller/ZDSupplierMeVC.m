@@ -141,6 +141,7 @@ ZDGetter_MutableArray(dataSource)
             MainViewController *tabbar = [[MainViewController alloc] init];
             tabbar.selectedIndex = 3;
             [UIApplication sharedApplication].delegate.window.rootViewController= tabbar;
+            ZD_UserM.identifierType = ZDIdentifierTypeSponsor;
         }
     }];
 }

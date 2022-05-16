@@ -41,10 +41,21 @@
 + (instancetype)showListModel:(NSInteger)showList {
     ZDActivityMoreChioceModel *model = [ZDActivityMoreChioceModel new];
     model.moreChioceType = ZDActivityMoreChioceTypeShowList;
-    model.headerStr = @"开启后，活动详情页将不再显示报名人数";
-    model.title = @"隐藏报名名单";
+    model.headerStr = @"活动报名页面报名人数显示设置";
+    model.title = @"报名名单显示设置";
     model.showListType = showList;
-    NSArray *titleArray = @[@"显示人数和头像姓名", @"显示人数和头像昵称", @"显示人数", @"隐藏"];
+    NSArray *titleArray = @[@"显示人数和头像姓名职位公司",@"显示人数和头像姓名", @"显示人数和头像昵称", @"显示人数", @"隐藏"];
+    model.detailTitle = titleArray[showList];
+    return model;
+}
+
++ (instancetype)successModel:(NSInteger)showList {
+    ZDActivityMoreChioceModel *model = [ZDActivityMoreChioceModel new];
+    model.moreChioceType = ZDActivityMoreChioceTypeSuccess;
+    model.headerStr = @"可在此处设置报名后跳转直播间或者微信入群二维码等功能";
+    model.title = @"报名成功后设置";
+    model.showListType = showList;
+    NSArray *titleArray = @[@"系统默认",@"跳转链接", @"显示图片(如微信群二维码)"];
     model.detailTitle = titleArray[showList];
     return model;
 }
